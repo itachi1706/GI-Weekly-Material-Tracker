@@ -22,7 +22,8 @@ Update Firestore Public Data:
   image: node:alpine
   stage: deploy
   before_script:
-    - cp public/data/*.json importer
+    - mkdir importer/import
+    - cp public/data/*.json importer/import
     - cat $FIREBASE_SERVICE_ACCOUNT > importer/serviceAccountKey.json
     - cd importer
     - npm i
@@ -61,3 +62,4 @@ Generate Flutter App:
     paths:
       - release/
       - app-fatapk.apk
+    expire_in: 14 days

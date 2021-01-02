@@ -1,17 +1,22 @@
 const firestore = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
+const fs = require('fs');
+const path = require('path');
 
 firestore.initializeApp(serviceAccount);
 
-console.log("Beginning Restore of Materials, Characters and Weapons");
-firestore.restore('characters.json', {
-    refs: ['refKey', 'arrayRef'],
-}).then(() => {console.log("Character restore Complete!")});
+let files = fs.readdirSync('./import');
 
-firestore.restore('materials.json', {
-    refs: ['refKey', 'arrayRef'],
-}).then(() => {console.log("Materials restore Complete!")});
+const EXTENSION = ".json";
+let jsonFiles = files.filter((file) => {return path.extname(file).toLowerCase() === EXTENSION});
 
-firestore.restore('weapons.json', {
-    refs: ['refKey', 'arrayRef'],
-}).then(() => {console.log("Weapons restore Complete!")});
+console.log(">>> Updating data...");
+jsonFiles.forEach(async (file) => {
+    let fn = file.replace(".json", "");
+    console.log(fn);
+
+    console.log(`>>> Restoring ${fn}...`);
+    await firestore.restore(`import/${file}`);
+    console.log(`>>> ${fn} restore completed!`);
+})
+console.log(">>> Data Update Complete!");
