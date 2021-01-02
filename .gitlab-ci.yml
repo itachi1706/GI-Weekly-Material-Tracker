@@ -19,7 +19,7 @@ Deploy Security Rules:
         - firebase/**/*
 
 Generate Flutter App:
-  image: itachi1706/flutter-alpine-android:stable
+  image: itachi1706/flutter-alpine-android:beta
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
