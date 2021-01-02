@@ -6,7 +6,7 @@ service cloud.firestore {
       allow read, write: if false;
     }
     
-  	// Public data, accessible to public use without authentication
+  	// Public data, accessible to public use without authentication for read only
   	match /characters/{character} {
     	allow read: if true;
     }
