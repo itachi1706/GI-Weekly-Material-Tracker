@@ -18,6 +18,19 @@ Deploy Security Rules:
     - changes:
         - firebase/**/*
 
+Update Firestore Public Data:
+  image: node:alpine
+  stage: deploy
+  before_script:
+    - cp public/data/*.json importer
+    - cat $FIREBASE_SERVICE_ACCOUNT > importer/serviceAccountKey.json
+    - cd importer
+    - npm i
+  script: npm start
+  rules:
+    - changes:
+        - public/data/**/*
+
 Generate Flutter App:
   image: itachi1706/flutter-alpine-android:beta
   stage: build
