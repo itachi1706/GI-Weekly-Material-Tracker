@@ -2,6 +2,21 @@ image: alpine:latest
 
 stages:
   - build
+  - deploy
+
+Deploy Security Rules:
+  image: ubuntu:latest
+  stage: deploy
+  before_script:
+    - apt-get update && apt-get install -y curl sudo
+    - curl -sL https://firebase.tools | bash
+    - cd firebase
+  script:
+    - firebase --token $FIREBASE_TOKEN deploy --only storage
+    - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
+  rules:
+    - changes:
+        - firebase/**/*
 
 Generate Flutter App:
   image: itachi1706/flutter-alpine-android:stable

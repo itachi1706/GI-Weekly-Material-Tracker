@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	// Default deny
+  	match /{document=**} {
+      allow read, write: if false;
+    }
+    
+  	// Public data, accessible to public use without authentication
+  	match /characters/{character} {
+    	allow read: if true;
+    }
+    match /materials/{material} {
+    	allow read: if true;
+    }
+    match /weapons/{weapons} {
+    	allow read: if true;
+    }
+    
+    // Private user data
+    match /users/{userid} {
+        allow read, update, delete: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
+        allow create: if request.auth != null; // All users can create their own collection data
+    }
+  }
+}
