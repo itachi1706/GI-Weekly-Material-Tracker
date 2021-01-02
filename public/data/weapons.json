@@ -1,0 +1,29 @@
+{
+  "weapons": {
+    "Alley_Hunter": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
+      "name": "Alley Hunter",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        }
+      },
+      "image": "Weapons/Bow/Alley_Hunter.png",
+      "secondary_stat": "8%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effect": " Every 4s a character is on the field, their ATK increases by 4% and their CRIT DMG increases by 4%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG.",
+      "subCollection": {}
+    }
+  }
+}
