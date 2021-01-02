@@ -22,14 +22,14 @@ Generate Flutter App:
     - echo $CI_COMMIT_SHORT_SHA
     - chmod +x ./ciscripts/get_version.sh
     - ./ciscripts/get_version.sh
-    script:
-      - flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
-      - mv ./build/app/outputs/apk/release/*.apk ./release
-      - flutter build apk
-    after_script:
-      - cp build/app/outputs/apk/release/app-release.apk ./release
-      - cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-    artifacts:
-      paths:
-        - release/
-        - app-fatapk.apk
+  script:
+    - flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+    - mv ./build/app/outputs/apk/release/*.apk ./release
+    - flutter build apk
+  after_script:
+    - cp build/app/outputs/apk/release/app-release.apk ./release
+    - cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
+  artifacts:
+    paths:
+      - release/
+      - app-fatapk.apk
