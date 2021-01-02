@@ -1,0 +1,35 @@
+image: alpine:latest
+
+stages:
+  - build
+
+Generate Flutter App:
+  image: itachi1706/flutter-alpine-android:stable
+  stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    ANDROID_HOME: "/usr/local/android-sdk"
+    APP_BUILD_VER: dogfood
+  before_script:
+    - flutter doctor -v
+    - echo $DEBUG_KEYSTORE | base64 -d > android/app/debug.keystore
+    - cat $KEY_PROPERTIES > android/key.properties
+    - rm ./android/app/build.gradle
+    - mv ./android/app/build.gradle.ci ./android/app/build.gradle
+    - mkdir release
+    - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+    - echo $GIT_COMMIT_COUNT
+    - echo $CI_COMMIT_SHORT_SHA
+    - chmod +x ./ciscripts/get_version.sh
+    - ./ciscripts/get_version.sh
+    script:
+      - flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+      - mv ./build/app/outputs/apk/release/*.apk ./release
+      - flutter build apk
+    after_script:
+      - cp build/app/outputs/apk/release/app-release.apk ./release
+      - cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
+    artifacts:
+      paths:
+        - release/
+        - app-fatapk.apk
