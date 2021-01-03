@@ -44,6 +44,7 @@ Generate Flutter App:
     - echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
     - cat $KEY_PROPERTIES > android/key.properties
     - cat $GOOGLE_SVC_ANDROID > android/app/google-services.json
+    - cat $GOOGLE_SVC_IOS > ios/Runner/GoogleService-Info.plist
     - mkdir release
     - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
     - echo $GIT_COMMIT_COUNT
