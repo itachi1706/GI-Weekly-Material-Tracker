@@ -41,7 +41,7 @@ Generate Flutter App:
     APP_BUILD_VER: dogfood
   before_script:
     - flutter doctor -v
-    - echo $DEBUG_KEYSTORE | base64 -d > android/app/flutter.jks
+    - echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
     - cat $KEY_PROPERTIES > android/key.properties
     - mkdir release
     - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
