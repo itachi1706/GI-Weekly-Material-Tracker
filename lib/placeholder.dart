@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +23,7 @@ class PlaceholderPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Placeholder after sign in"),
+            Text("Page Coming Soon"),
           ],
         ),
       ),
@@ -39,5 +37,26 @@ class PlaceholderPage extends StatelessWidget {
     Get.offAllNamed('/');
 
     //Navigator.pushNamed(context, '/');
+  }
+}
+
+class PlaceholderWidgetContainer extends StatelessWidget {
+  final Color color;
+
+  PlaceholderWidgetContainer(this.color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Container Impl Coming Soon", style: TextStyle(color: Colors.white, fontSize: 24),)
+          ],
+        ),
+      ),
+    );
   }
 }
