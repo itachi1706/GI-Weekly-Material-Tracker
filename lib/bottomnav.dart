@@ -17,7 +17,6 @@ class MainNavigationPage extends StatefulWidget {
 }
 
 class _MainNavigationPageState extends State<MainNavigationPage> {
-
   int _currentIndex = 0;
   final List<Widget> _children = [
     PlaceholderWidgetContainer(Colors.red),
@@ -29,55 +28,77 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.logout),
-            onPressed: _signOut,
-          )
-        ],
-      ),
-      body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentIndex,
-        onTap: onTabTapped,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tracker',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Characters',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(MdiIcons.sword),
-            label: 'Weapons',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(MdiIcons.diamondStone),
-            label: 'Materials',
-          )
-        ],
-      )
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.refresh),
+              onPressed: () =>
+                  PlaceholderUtil.showUnimplementedSnackbar(context),
+            ),
+            PopupMenuButton(
+              onSelected: _overflowMenuSelection,
+              elevation: 2.0,
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  value: "exit",
+                  child: Text('Logout'),
+                ),
+                PopupMenuItem(
+                  value: "settings",
+                  child: Text('Settings'),
+                )
+              ],
+            )
+          ],
+        ),
+        body: _children[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          currentIndex: _currentIndex,
+          onTap: _onTabTapped,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Tracker',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label: 'Characters',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(MdiIcons.sword),
+              label: 'Weapons',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(MdiIcons.diamondStone),
+              label: 'Materials',
+            )
+          ],
+        ));
   }
 
-  void onTabTapped(int index) {
+  void _onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
     });
   }
 
+  void _overflowMenuSelection(String action) {
+    print("Menu Overflow Action: ${action}");
+    switch (action) {
+      case 'exit':
+        _signOut();
+        break;
+      default:
+        PlaceholderUtil.showUnimplementedSnackbar(context);
+        break;
+    }
+  }
+
   void _signOut() async {
     await _auth.signOut();
-    // Go to login screen
-
-    Get.offAllNamed('/');
-
-    //Navigator.pushNamed(context, '/');
+    Get.offAllNamed('/'); // Go to login screem
   }
 }

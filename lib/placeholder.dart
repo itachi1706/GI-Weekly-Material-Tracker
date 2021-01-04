@@ -60,3 +60,9 @@ class PlaceholderWidgetContainer extends StatelessWidget {
     );
   }
 }
+
+class PlaceholderUtil {
+  static void showUnimplementedSnackbar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Unimplemented"), duration: Duration(seconds: 2)));
+  }
+}
