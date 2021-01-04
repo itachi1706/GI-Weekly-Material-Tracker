@@ -19,9 +19,17 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => LoginPage(title: 'Login',)),
+        GetPage(
+            name: '/',
+            page: () => LoginPage(
+                  title: 'Login',
+                )),
         GetPage(name: '/placeholder', page: () => PlaceholderPage()),
-        GetPage(name: '/menu', page: () => MainNavigationPage(title: 'GI Materials Tracker',)),
+        GetPage(
+            name: '/menu',
+            page: () => MainNavigationPage(
+                  title: 'GI Materials Tracker',
+                )),
       ],
     );
   }
