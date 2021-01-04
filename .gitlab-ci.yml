@@ -63,3 +63,28 @@ Generate Flutter App:
       - release/
       - app-fatapk.apk
     expire_in: 14 days
+
+Deploy to Firebase:
+  image: ubuntu:latest
+  stage: deploy
+  variables:
+    APP_TYPE: dogfood
+  before_script:
+    - apt-get update && apt-get install -y curl sudo
+    - curl -sL https://firebase.tools | bash
+    - echo $CI_COMMIT_MESSAGE > release-dogfood.txt
+    - builddate="$(date +"%A, %d %B %Y %T %Z")"
+    - printf "\nRelease Notes\n" >> release-dogfood.txt
+    - cat LATEST >> release-dogfood.txt
+    - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-dogfood.txt
+    - cat release-dogfood.txt
+    - cp ./release/app-arm64-v8a-release.apk app.apk
+  script: firebase --token $FIREBASE_TOKEN appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt"
+  dependencies:
+    - Generate Flutter App
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
+      when: always
+    - when: never
+
+
