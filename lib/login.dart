@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
             final User user = snapshot.data;
             if (user != null) {
               SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-                Get.offAllNamed('/placeholder');
+                Get.offAllNamed('/menu');
               });
               return _loginScreen();
             }
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loading() {
-    // TODO: Replace with splashs screen in the future
+    // TODO: Replace with splash screen in the future
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
