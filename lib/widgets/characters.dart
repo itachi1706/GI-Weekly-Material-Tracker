@@ -1,11 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
+import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:image_fade/image_fade.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 
@@ -33,8 +30,9 @@ class _CharacterListGridState extends State<CharacterListGrid> {
             crossAxisCount: 3,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () => Util.showSnackbarQuick(context, "TODO: Show ${document.data()['name']} (${document.id}) info"),
-                child: Util.getGridData(document),
+                onTap: () => Util.showSnackbarQuick(context,
+                    "TODO: Show ${document.data()['name']} (${document.id}) info"),
+                child: GridData.getGridData(document),
               );
             }).toList(),
           );

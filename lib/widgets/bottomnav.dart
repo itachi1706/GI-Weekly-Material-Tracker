@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gi_weekly_material_tracker/characters.dart';
-import 'package:gi_weekly_material_tracker/materials.dart';
+import 'package:gi_weekly_material_tracker/widgets/characters.dart';
+import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
