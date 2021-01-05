@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
@@ -29,12 +31,37 @@ class _MaterialListGridState extends State<MaterialListGrid> {
             crossAxisCount: 3,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () => Util.showSnackbarQuick(context,
-                    "TODO: Show ${document.data()['name']} (${document.id}) info"),
+                onTap: () => Get.toNamed('/materials', arguments: [document.id, document.data()]),
                 child: GridData.getGridData(document),
               );
             }).toList(),
           );
         });
   }
+}
+
+class MaterialInfoPage extends StatefulWidget {
+  @override
+  _MaterialInfoPageState createState() => _MaterialInfoPageState();
+}
+
+class _MaterialInfoPageState extends State<MaterialInfoPage> {
+
+  Map<String, dynamic> _infoData;
+  String _infoId;
+
+  @override
+  void initState() {
+    _infoData = Get.arguments[1];
+    _infoId = Get.arguments[0];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    print(_infoId);
+    //throw UnimplementedError();
+    return PlaceholderPage();
+  }
+
 }

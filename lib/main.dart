@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:gi_weekly_material_tracker/widgets//bottomnav.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
+import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             page: () => MainNavigationPage(
                   title: 'GI Materials Tracker',
                 )),
-        GetPage(name: '/materials', page: () => PlaceholderPage()),
+        GetPage(name: '/materials', page: () => MaterialInfoPage()),
         GetPage(name: '/characters', page: () => PlaceholderPage()),
         GetPage(name: '/weapons', page: () => PlaceholderPage()),
       ],
