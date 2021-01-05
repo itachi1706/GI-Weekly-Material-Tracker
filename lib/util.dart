@@ -1,10 +1,13 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+FirebaseStorage storage = FirebaseStorage.instance;
+
 class Util {
   static void showSnackbarQuick(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(message), duration: Duration(seconds: 2)));
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message), duration: Duration(seconds: 2)));
   }
 
   static Widget centerLoadingCircle(String loadText) {
@@ -14,5 +17,9 @@ class Util {
         children: [CircularProgressIndicator(), Text(loadText)],
       ),
     );
+  }
+
+  static Future<String> getFirebaseStorageUrl(String ref) async {
+    return await storage.ref(ref).getDownloadURL();
   }
 }

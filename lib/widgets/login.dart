@@ -42,7 +42,10 @@ class _LoginPageState extends State<LoginPage> {
           ));
     }
     if (_loggingIn) {
-      wid.add(Padding(padding: EdgeInsets.all(16.0), child: CircularProgressIndicator(),));
+      wid.add(Padding(
+        padding: EdgeInsets.all(16.0),
+        child: CircularProgressIndicator(),
+      ));
       wid.add(Text("Logging In"));
     }
     return wid;
