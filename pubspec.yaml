@@ -33,7 +33,7 @@ dependencies:
   get: ^3.24.0
   material_design_icons_flutter: ^4.0.5755
   transparent_image: ^1.0.0
-  image_fade: ^0.2.1
+  cached_network_image: ^2.5.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -43,6 +43,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  dependency_validator: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
