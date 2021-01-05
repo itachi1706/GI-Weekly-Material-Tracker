@@ -7,6 +7,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -24,6 +25,8 @@ class _LoginPageState extends State<LoginPage> {
   bool _initialized = false;
   bool _error = false;
 
+  bool _loggingIn = false;
+
   List<Widget> _signInButtons() {
     List<Widget> wid = <Widget>[
       Text("Genshin Impact Weekly Material Tracker"),
@@ -37,6 +40,10 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: _signIn,
             text: "Sign in with Test Account",
           ));
+    }
+    if (_loggingIn) {
+      wid.add(Padding(padding: EdgeInsets.all(16.0), child: CircularProgressIndicator(),));
+      wid.add(Text("Logging In"));
     }
     return wid;
   }
@@ -72,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
             final User user = snapshot.data;
             if (user != null) {
               SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+                Util.showSnackbarQuick(context, "Logged in as ${user.email}");
                 Get.offAllNamed('/menu');
               });
               return _loginScreen();
@@ -114,8 +122,15 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  void _loggingInState() {
+    setState(() {
+      _loggingIn = true;
+    });
+  }
+
   void _signIn() async {
     print("Signing In with Test Account");
+    _loggingInState();
     try {
       await _auth.signInWithEmailAndPassword(
           email: "test@itachi1706.com", password: "testP@ssw0rd");
@@ -130,6 +145,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<UserCredential> _signInGoogle() async {
     print("Signing In with Google");
+    _loggingInState();
     // Trigger the authentication flow
     final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
 
