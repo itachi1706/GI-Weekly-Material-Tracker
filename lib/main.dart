@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
             page: () => MainNavigationPage(
                   title: 'GI Materials Tracker',
                 )),
+        GetPage(name: '/materials', page: () => PlaceholderPage()),
       ],
     );
   }
