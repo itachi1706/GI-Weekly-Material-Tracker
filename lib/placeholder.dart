@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -61,7 +62,6 @@ class PlaceholderWidgetContainer extends StatelessWidget {
 
 class PlaceholderUtil {
   static void showUnimplementedSnackbar(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Unimplemented"), duration: Duration(seconds: 2)));
+    Util.showSnackbarQuick(context, "Unimplemented");
   }
 }
