@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
                 )),
         GetPage(name: '/materials', page: () => PlaceholderPage()),
         GetPage(name: '/characters', page: () => PlaceholderPage()),
+        GetPage(name: '/weapons', page: () => PlaceholderPage()),
       ],
     );
   }

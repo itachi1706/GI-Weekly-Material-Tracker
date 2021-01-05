@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
+import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -23,7 +24,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   final List<Widget> _children = [
     PlaceholderWidgetContainer(Colors.red),
     CharacterListGrid(),
-    PlaceholderWidgetContainer(Colors.indigo),
+    WeaponListGrid(),
     MaterialListGrid(),
   ];
 
