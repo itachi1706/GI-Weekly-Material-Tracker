@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'GI Weekly Tracker',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        fontFamily: 'Product-Sans',
       ),
       initialRoute: '/',
       getPages: [
