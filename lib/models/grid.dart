@@ -5,8 +5,21 @@ import 'package:image_fade/image_fade.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class GridData {
+
+  static Color getRarityColor(int rarity) {
+    switch (rarity) {
+      case 1: return Color(0xFF72778b);
+      case 2: return Color(0xFF2a9072);
+      case 3: return Color(0xFF5180cc);
+      case 4: return Color(0xFFa256e1);
+      case 5: return Color(0xFFbd6932);
+      default: return Colors.black;
+    }
+  }
+
   static Widget getGridData(QueryDocumentSnapshot document) {
     return Card(
+      color: getRarityColor(document.data()['rarity']),
       child: GridTile(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -44,14 +57,18 @@ class GridData {
             ],
           ),
         ),
-        footer: Text(
-          document.data()['name'],
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
+        footer: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Text(
+            document.data()['name'],
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.white
+            ),
           ),
-        ),
+        )
       ),
     );
   }
