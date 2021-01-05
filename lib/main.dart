@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
                   title: 'GI Materials Tracker',
                 )),
         GetPage(name: '/materials', page: () => PlaceholderPage()),
+        GetPage(name: '/characters', page: () => PlaceholderPage()),
       ],
     );
   }
