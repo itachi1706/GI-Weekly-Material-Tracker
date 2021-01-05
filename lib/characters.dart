@@ -9,15 +9,15 @@ import 'package:transparent_image/transparent_image.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 
-class MaterialListGrid extends StatefulWidget {
+class CharacterListGrid extends StatefulWidget {
   @override
-  _MaterialListGridState createState() => _MaterialListGridState();
+  _CharacterListGridState createState() => _CharacterListGridState();
 }
 
-class _MaterialListGridState extends State<MaterialListGrid> {
+class _CharacterListGridState extends State<CharacterListGrid> {
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = db.collection('materials');
+    CollectionReference materialRef = db.collection('characters');
     return StreamBuilder(
         stream: materialRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
