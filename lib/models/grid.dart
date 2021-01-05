@@ -1,7 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:image_fade/image_fade.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class GridData {
@@ -32,14 +32,11 @@ class GridData {
                     return Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: ImageFade(
-                          image: NetworkImage(snapshot.data),
-                          placeholder: Image.memory(kTransparentImage),
-                          alignment: Alignment.center,
-                          loadingBuilder: (context, child, event) {
-                            if (event == null) return child;
-                            return CircularProgressIndicator();
-                          },
+                        child: CachedNetworkImage(
+                          imageUrl: snapshot.data,
+                          placeholder: (context, url) => CircularProgressIndicator(),
+                          errorWidget: (context, url, error) => Icon(Icons.error),
+                          placeholderFadeInDuration: Duration(seconds: 2),
                         ),
                       ),
                     );
