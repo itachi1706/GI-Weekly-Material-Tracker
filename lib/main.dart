@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'GI Weekly Tracker',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        fontFamily: 'Product-Sans',
       ),
       initialRoute: '/',
       getPages: [
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
             page: () => MainNavigationPage(
                   title: 'GI Materials Tracker',
                 )),
+        GetPage(name: '/materials', page: () => PlaceholderPage()),
       ],
     );
   }

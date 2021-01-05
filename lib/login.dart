@@ -99,12 +99,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [CircularProgressIndicator(), Text("Initializing App")],
-        ),
-      ),
+      body: Util.centerLoadingCircle("Initializing App"),
     );
   }
 
