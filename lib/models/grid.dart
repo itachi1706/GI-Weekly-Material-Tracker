@@ -35,6 +35,26 @@ class GridData {
     return null;
   }
 
+  static Future<Map<String, dynamic>> retrieveMaterialsMapData(FirebaseFirestore instance) async {
+    QuerySnapshot snapshot = await instance.collection("materials").get();
+    Map<String, dynamic> data = new Map();
+    snapshot.docs.forEach((element) { data.putIfAbsent(element.id, () => element.data()); });
+    return data;
+  }
+
+  static String getRomanNumberArray(int number) {
+    switch (number) {
+      case 0: return "I";
+      case 1: return "II";
+      case 2: return "III";
+      case 3: return "IV";
+      case 4: return "V";
+      case 5: return "VI";
+      case 6: return "VII";
+      default: return (number+1).toString();
+    }
+  }
+
   static Widget getImageAssetFromFirebase(imageRef, {double height}) {
     if (imageRef == null) return Image.memory(kTransparentImage);
     return FutureBuilder(
@@ -59,7 +79,11 @@ class GridData {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Center(
-                child: CircularProgressIndicator(),
+                child: SizedBox(
+                  child: CircularProgressIndicator(),
+                  height: height,
+                  width: height,
+                ),
               ),
             ),
             Padding(
