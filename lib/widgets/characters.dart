@@ -1,10 +1,14 @@
+import 'dart:collection';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 FirebaseFirestore db = FirebaseFirestore.instance;
 
@@ -53,11 +57,76 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Color _rarityColor;
 
+  Map<String, dynamic> _materialData;
+
   @override
   void initState() {
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+    GridData.retrieveMaterialsMapData(db).then((value) => {
+      setState(() {_materialData = value;})
+    });
+  }
+
+  Widget _getAscenionImage(String itemKey) {
+    if (itemKey == null) return Image.memory(kTransparentImage);
+    
+    return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'], height: 16);
+  }
+
+  Widget _generateAscensionData() {
+    if (_materialData == null) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: CircularProgressIndicator(),
+      );
+    }
+
+    Map<String, dynamic> dataMap = _infoData['ascension'];
+    List<MapEntry<String, dynamic>> data = dataMap.entries.map((e) => e).toList();
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        Map<String, dynamic> curData = data[index].value;
+        return Container(
+          child: Card(
+            child: InkWell(
+              onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Text(GridData.getRomanNumberArray(index), style: TextStyle(fontSize: 24),),
+                    Spacer(),
+                    Icon(Icons.show_chart),
+                    Text(curData['level'].toString()),
+                    Spacer(),
+                    Image.asset("assets/images/items/Icon_Mora.png", height: 16),
+                    Text(curData['mora'].toString()),
+                    Spacer(),
+                    _getAscenionImage(curData['material2']),
+                    Text((curData['material2qty'] == 0) ? "" : curData['material2qty'].toString()),
+                    Spacer(),
+                    _getAscenionImage(curData['material1']),
+                    Text(curData['material1qty'].toString()),
+                    Spacer(),
+                    _getAscenionImage(curData['material3']),
+                    Text(curData['material3qty'].toString()),
+                    Spacer(),
+                    _getAscenionImage(curData['material4']),
+                    Text(curData['material4qty'].toString()),
+                    Spacer(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -99,8 +168,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     ],
                   ),
                   Spacer(),
-                  GridData.getImageAssetFromFirebase(
-                      GridData.getElementImageRef(_infoData['element']))
+                  Image.asset(GridData.getElementImageRef(_infoData['element']))
                 ],
               ),
               Divider(),
@@ -223,7 +291,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       ),
                     ],
                   )),
-              Text("Coming Soon"),
+              _generateAscensionData(),
             ],
           ),
         ),
