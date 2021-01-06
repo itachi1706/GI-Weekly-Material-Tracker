@@ -17,8 +17,8 @@ service cloud.firestore {
     	allow read: if true;
     }
     
-    // Private user data
-    match /users/{userid} {
+    // Private user data for tracking
+    match /tracking/{userid} {
         allow read, update, delete: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
         allow create: if request.auth != null; // All users can create their own collection data
     }
