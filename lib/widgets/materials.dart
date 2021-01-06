@@ -62,9 +62,6 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    print(_infoId);
-    //throw UnimplementedError();
     return Scaffold(
       appBar: AppBar(
         title: Text(_infoData['name']),
