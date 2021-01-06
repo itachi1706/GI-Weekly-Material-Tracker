@@ -127,7 +127,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['description']),
+                        child: Text(_infoData['description'].toString().replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -142,7 +142,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['introduction']),
+                        child: Text(_infoData['introduction'].toString().replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
