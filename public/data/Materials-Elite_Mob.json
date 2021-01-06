@@ -1,0 +1,202 @@
+{
+  "materials": {
+    "Heavy_Horn": {
+      "image": "Materials/Elite_Mob/Item_Heavy_Horn.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon.",
+      "enemies": ["Mitachurls", "Lawachurls"],
+      "obtained": "- Dropped by Mitachurls",
+      "name": "Heavy Horn",
+      "subCollection": {}
+    },
+    "Black_Bronze_Horn": {
+      "image": "Materials/Elite_Mob/Item_Black_Bronze_Horn.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength.",
+      "enemies": ["Mitachurls", "Lawachurls"],
+      "obtained": "- Alchemy (3x Heavy Horn)\n- Dropped by Lv.40+ Mitachurls",
+      "name": "Black Bronze Horn",
+      "subCollection": {}
+    },
+    "Black_Crystal_Horn": {
+      "image": "Materials/Elite_Mob/Item_Black_Crystal_Horn.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'.",
+      "enemies": ["Mitachurls", "Lawachurls"],
+      "obtained": "- Alchemy (3x Black Bronze Horn)\n- Dropped by Lv.60+ Mitachurls",
+      "name": "Black Crystal Horn",
+      "subCollection": {}
+    },
+    "Dead_Ley_Line_Branch": {
+      "image": "Materials/Elite_Mob/Item_Dead_Ley_Line_Branch.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Fragile branches from deep within the earth. Even after years of age, from beneath it's mottled surface you can see that its power is not yet entirely lost.",
+      "enemies": ["Abyss Mages"],
+      "obtained": "- Dropped by Abyss Mages",
+      "name": "Dead Ley Line Branch",
+      "subCollection": {}
+    },
+    "Dead_Ley_Line_Leaves": {
+      "image": "Materials/Elite_Mob/Item_Dead_Ley_Line_Leaves.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy.",
+      "enemies": ["Abyss Mages"],
+      "obtained": "- Alchemy (3x Dead Ley Line Branch)\n- Dropped by Lv.40+ Abyss Mages",
+      "name": "Dead Ley Line Leaves",
+      "subCollection": {}
+    },
+    "Ley_Line_Sprouts": {
+      "image": "Materials/Elite_Mob/Item_Ley_Line_Sprouts.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now.",
+      "enemies": ["Abyss Mages"],
+      "obtained": "- Alchemy (3x Dead Ley Line Leaves)\n- Dropped by Lv.60+ Abyss Mages",
+      "name": "Ley Line Sprouts",
+      "subCollection": {}
+    },
+    "Fragile_Bone_Shard": {
+      "image": "Materials/Elite_Mob/Item_Fragile_Bone_Shard.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A bone shard once carried by a Geovishap Hatchling. Although they are quite fragile, they seem to still harbor some indescribable power.",
+      "enemies": ["Geovishap Hatchling"],
+      "obtained": "- Dropped by Geovishap Hatchlings",
+      "name": "Fragile Bone Shard",
+      "subCollection": {}
+    },
+    "Sturdy_Bone_Shard": {
+      "image": "Materials/Elite_Mob/Item_Sturdy_Bone_Shard.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishap Hatchlings for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards.",
+      "enemies": ["Geovishap Hatchling"],
+      "obtained": "- Alchemy (3x Fragile Bone Shard)\n- Dropped by Lv.40+ Geovishap Hatchlings",
+      "name": "Sturdy Bone Shard",
+      "subCollection": {}
+    },
+    "Fossilized_Bone_Shard": {
+      "image": "Materials/Elite_Mob/Item_Fossilized_Bone_Shard.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A fossilized bone fragment sometimes found after defeating Geovishap Hatchlings.\nGeovishap Hatchlings all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power.",
+      "enemies": ["Geovishap Hatchling"],
+      "obtained": "- Alchemy (3x Sturdy Bone Shard)\n- Dropped by Lv.60+ Geovishap Hatchlings",
+      "name": "Fossilized Bone Shard",
+      "subCollection": {}
+    },
+    "Mist_Grass_Pollen": {
+      "image": "Materials/Elite_Mob/Item_Mist_Grass_Pollen.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food.",
+      "enemies": ["Fatui Cicin Mage"],
+      "obtained": "- Dropped by Electro Cicin Mages",
+      "name": "Mist Grass Pollen",
+      "subCollection": {}
+    },
+    "Mist_Grass": {
+      "image": "Materials/Elite_Mob/Item_Mist_Grass.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them.",
+      "enemies": ["Fatui Cicin Mage"],
+      "obtained": "- Alchemy (3x Mist Grass Pollen)\n- Dropped by Lv.40+ Electro Cicin Mages",
+      "name": "Mist Grass",
+      "subCollection": {}
+    },
+    "Mist_Grass_Wick": {
+      "image": "Materials/Elite_Mob/Item_Mist_Grass_Wick.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune.",
+      "enemies": ["Fatui Cicin Mage"],
+      "obtained": "- Alchemy (3x Mist Grass)\n- Dropped by Lv.60+ Electro Cicin Mages",
+      "name": "Mist Grass Wick",
+      "subCollection": {}
+    },
+    "Hunter_Sacrificial_Knife": {
+      "image": "Materials/Elite_Mob/Item_Hunter_Sacrificial_Knife.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light.",
+      "enemies": ["Fatui Agent"],
+      "obtained": "- Dropped by Agents",
+      "name": "Hunter's Sacrificial Knife",
+      "subCollection": {}
+    },
+    "Agent_Sacrificial_Knife": {
+      "image": "Materials/Elite_Mob/Item_Agent_Sacrificial_Knife.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon.",
+      "enemies": ["Fatui Agent"],
+      "obtained": "- Alchemy (3x Hunter's Sacrificial Knife)\n- Dropped by Lv.40+ Agents",
+      "name": "Agent's Sacrificial Knife",
+      "subCollection": {}
+    },
+    "Inspector_Sacrificial_Knife": {
+      "image": "Materials/Elite_Mob/Item_Inspector_Sacrificial_Knife.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "In the hands of its lord, this fierce weapon has handled many \"debts.\" No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness.",
+      "enemies": ["Fatui Agent"],
+      "obtained": "- Alchemy (3x Agent's Sacrificial Knife)\n- Dropped by Lv.60+ Agents",
+      "name": "Inspector's Sacrificial Knife",
+      "subCollection": {}
+    },
+    "Chaos_Device": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Device.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite.",
+      "enemies": ["Ruin Guard", "Ruin Hunter", "Ruin Grader"],
+      "obtained": "- Dropped by Ruin Guards\n- Dropped by Ruin Hunters",
+      "name": "Chaos Device",
+      "subCollection": {}
+    },
+    "Chaos_Circuit": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Circuit.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked.",
+      "enemies": ["Ruin Guard", "Ruin Hunter", "Ruin Grader"],
+      "obtained": "- Alchemy (3x Chaos Device)\n- Dropped by Lv.40+ Ruin Guards\n- Dropped by Lv.40+ Ruin Hunters",
+      "name": "Chaos Circuit",
+      "subCollection": {}
+    },
+    "Chaos_Core": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Core.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world.",
+      "enemies": ["Ruin Guard", "Ruin Hunter", "Ruin Grader"],
+      "obtained": "- Alchemy (3x Chaos Circuit)\n- Dropped by Lv.60+ Ruin Guards\n- Dropped by Lv.60+ Ruin Hunters",
+      "name": "Chaos Core",
+      "subCollection": {}
+    }
+  }
+}
