@@ -77,7 +77,10 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Widget _generateAscensionData() {
     if (_materialData == null) {
-      return CircularProgressIndicator();
+      return Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: CircularProgressIndicator(),
+      );
     }
 
     Map<String, dynamic> dataMap = _infoData['ascension'];
