@@ -24,13 +24,13 @@ class GridData {
 
   static String getElementImageRef(String element) {
     switch (element.toLowerCase()) {
-      case "geo": return "Characters/Element_Geo.png";
-      case "anemo": return "Characters/Element_Anemo.png";
-      case "cryo": return "Characters/Element_Cryo.png";
-      case "dendro": return "Characters/Element_Dendro.png";
-      case "electro": return "Characters/Element_Electro.png";
-      case "hydro": return "Characters/Element_Hydro.png";
-      case "pyro": return "Characters/Element_Pyro.png";
+      case "geo": return "assets/images/elements/Element_Geo.png";
+      case "anemo": return "assets/images/elements/Element_Anemo.png";
+      case "cryo": return "assets/images/elements/Element_Cryo.png";
+      case "dendro": return "assets/images/elements/Element_Dendro.png";
+      case "electro": return "assets/images/elements/Element_Electro.png";
+      case "hydro": return "assets/images/elements/Element_Hydro.png";
+      case "pyro": return "assets/images/elements/Element_Pyro.png";
     }
     return null;
   }

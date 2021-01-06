@@ -99,8 +99,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     ],
                   ),
                   Spacer(),
-                  GridData.getImageAssetFromFirebase(
-                      GridData.getElementImageRef(_infoData['element']))
+                  Image.asset(GridData.getElementImageRef(_infoData['element']))
                 ],
               ),
               Divider(),
