@@ -22,7 +22,21 @@ class GridData {
     }
   }
 
+  static String getElementImageRef(String element) {
+    switch (element.toLowerCase()) {
+      case "geo": return "Characters/Element_Geo.png";
+      case "anemo": return "Characters/Element_Anemo.png";
+      case "cryo": return "Characters/Element_Cryo.png";
+      case "dendro": return "Characters/Element_Dendro.png";
+      case "electro": return "Characters/Element_Electro.png";
+      case "hydro": return "Characters/Element_Hydro.png";
+      case "pyro": return "Characters/Element_Pyro.png";
+    }
+    return null;
+  }
+
   static Widget getImageAssetFromFirebase(imageRef, {double height}) {
+    if (imageRef == null) return Image.memory(kTransparentImage);
     return FutureBuilder(
       future: Util.getFirebaseStorageUrl(imageRef),
       builder: (context, snapshot) {
