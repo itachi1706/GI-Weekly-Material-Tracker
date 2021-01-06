@@ -1,0 +1,235 @@
+{
+  "materials": {
+    "Slime_Condensate": {
+      "image": "Materials/Common_Mob/Item_Slime_Condensate.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops.",
+      "enemies": ["Slimes"],
+      "obtained": "- Dropped by slimes",
+      "name": "Slime Condensate",
+      "subCollection": {}
+    },
+    "Slime_Secretions": {
+      "image": "Materials/Common_Mob/Item_Slime_Secretions.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure.",
+      "enemies": ["Slimes"],
+      "obtained": "- Alchemy (3x Slime Condensate)\n- Dropped by Lv.40+ slimes",
+      "name": "Slime Secretions",
+      "subCollection": {}
+    },
+    "Slime_Concentrate": {
+      "image": "Materials/Common_Mob/Item_Slime_Concentrate.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Concentrated slime essence. When left on its own, it will begin to move on its own.",
+      "enemies": ["Slimes"],
+      "obtained": "- Alchemy (3x Slime Secretions)\n- Dropped by Lv.60+ slimes",
+      "name": "Slime Concentrate",
+      "subCollection": {}
+    },
+    "Damaged_Mask": {
+      "image": "Materials/Common_Mob/Item_Damaged_Mask.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function.",
+      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "obtained": "- Dropped by hilichurls\n- Dropped by some ranged hilichurls\n- Dropped by some samachurls\n- Dropped by some mitachurls",
+      "name": "Damaged Mask",
+      "subCollection": {}
+    },
+    "Stained_Mask": {
+      "image": "Materials/Common_Mob/Item_Stained_Mask.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A bone mask covered in unidentifiable stains and a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless.",
+      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "obtained": "- Alchemy (3x Damaged Mask)\n- Dropped by Lv.40+ hilichurls\n- Dropped by some Lv.40+ ranged hilichurls\n- Dropped by some Lv.40+ samachurls\n- Dropped by some Lv.40+ mitachurls",
+      "name": "Stained Mask",
+      "subCollection": {}
+    },
+    "Ominous_Mask": {
+      "image": "Materials/Common_Mob/Item_Ominous_Mask.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say it's because they don't want to see their own reflections in the water.",
+      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "obtained": "- Alchemy (3x Stained Mask)\n- Dropped by Lv.60+ hilichurls\n- Dropped by some Lv.60+ ranged hilichurls\n- Dropped by some Lv.60+ samachurls\n- Dropped by some Lv.60+ mitachurls",
+      "name": "Ominous Mask",
+      "subCollection": {}
+    },
+    "Firm_Arrowhead": {
+      "image": "Materials/Common_Mob/Item_Firm_Arrowhead.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear.",
+      "enemies": ["Hilichurl Shooters"],
+      "obtained": "- Dropped by Ranged Hilichurls",
+      "name": "Firm Arrowhead",
+      "subCollection": {}
+    },
+    "Sharp_Arrowhead": {
+      "image": "Materials/Common_Mob/Item_Sharp_Arrowhead.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water.",
+      "enemies": ["Hilichurl Shooters"],
+      "obtained": "- Alchemy (3x Firm Arrowhead)\n- Dropped by Lv.40+ Ranged Hilichurls",
+      "name": "Sharp Arrowhead",
+      "subCollection": {}
+    },
+    "Weathered_Arrowhead": {
+      "image": "Materials/Common_Mob/Item_Weathered_Arrowhead.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.∂\nHowever it represents the pride of a hunter and acts as both an amulet and a medal.",
+      "enemies": ["Hilichurl Shooters"],
+      "obtained": "- Alchemy (3x Sharp Arrowhead)\n- Dropped by Lv.60+ Ranged Hilichurls",
+      "name": "Weathered Arrowhead",
+      "subCollection": {}
+    },
+    "Divining_Scroll": {
+      "image": "Materials/Common_Mob/Item_Divining_Scroll.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth.",
+      "enemies": ["Samachurls"],
+      "obtained": "- Dropped by samachurls",
+      "name": "Divining Scroll",
+      "subCollection": {}
+    },
+    "Sealed_Scroll": {
+      "image": "Materials/Common_Mob/Item_Sealed_Scroll.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic.",
+      "enemies": ["Samachurls"],
+      "obtained": "- Alchemy (3x Divining Scroll)\n- Dropped by Lv.40+ samachurls",
+      "name": "Sealed Scroll",
+      "subCollection": {}
+    },
+    "Forbidden_Curse_Scroll": {
+      "image": "Materials/Common_Mob/Item_Forbidden_Curse_Scroll.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad.",
+      "enemies": ["Samachurls"],
+      "obtained": "- Alchemy (3x Sealed Scroll)\n- Dropped by Lv.60+ samachurls",
+      "name": "Forbidden Curse Scroll",
+      "subCollection": {}
+    },
+    "Treasure_Hoarder_Insignia": {
+      "image": "Materials/Common_Mob/Item_Treasure_Hoarder_Insignia.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A signet that proudly represents it's owner's position as a member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... is being a thief something to be proud of?",
+      "enemies": ["Treasure Hoarders"],
+      "obtained": "- Dropped by Treasure Hoarders",
+      "name": "Treasure Hoarder Insignia",
+      "subCollection": {}
+    },
+    "Silver_Raven_Insignia": {
+      "image": "Materials/Common_Mob/Item_Silver_Raven_Insignia.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member.",
+      "enemies": ["Treasure Hoarders"],
+      "obtained": "- Alchemy (3x Treasure Hoarder Insignia)\n- Dropped by Lv.40+ Treasure Hoarders",
+      "name": "Silver Raven Insignia",
+      "subCollection": {}
+    },
+    "Golden_Raven_Insignia": {
+      "image": "Materials/Common_Mob/Item_Golden_Raven_Insignia.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die.",
+      "enemies": ["Treasure Hoarders"],
+      "obtained": "- Alchemy (3x Silver Raven Insignia)\n- Dropped by Lv.60+ Treasure Hoarders",
+      "name": "Golden Raven Insignia",
+      "subCollection": {}
+    },
+    "Recruit_Insignia": {
+      "image": "Materials/Common_Mob/Item_Recruit_Insignia.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking.",
+      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "obtained": "- Dropped by Skirmishers\n- Dropped by some Agents\n- Dropped by some Electro Cicin Mages",
+      "name": "Recruit's Insignia",
+      "subCollection": {}
+    },
+    "Sergeant_Insignia": {
+      "image": "Materials/Common_Mob/Item_Sergeant_Insignia.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An insignia with a different shape to tell the sergeants from new recruits. Perhaps there are complicated emotions behind it.",
+      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "obtained": "- Alchemy (3x Recruit's Insignia)\n- Dropped by Lv.40+ Skirmishers\n- Dropped by some Lv.40+ Agents\n- Dropped by some Lv.40+ Electro Cicin Mages",
+      "name": "Sergeant's Insignia",
+      "subCollection": {}
+    },
+    "Lieutenant_Insignia": {
+      "image": "Materials/Common_Mob/Item_Lieutenant_Insignia.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group.",
+      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "obtained": "- Alchemy (3x Sergeant's Insignia)\n- Dropped by Lv.60+ Skirmishers\n- Dropped by some Lv.60+ Agents\n- Dropped by some Lv.60+ Electro Cicin Mages",
+      "name": "Lieutenant's Insignia",
+      "subCollection": {}
+    },
+    "Whopperflower_Nectar": {
+      "image": "Materials/Common_Mob/Item_Whopperflower_Nectar.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elements. The taste of the nectar has a hint of Sweet Flower in it.",
+      "enemies": ["Whopperflowers"],
+      "obtained": "- Dropped by Whopperflower",
+      "name": "Whopperflower Nectar",
+      "subCollection": {}
+    },
+    "Shimmering_Nectar": {
+      "image": "Materials/Common_Mob/Item_Shimmering_Nectar.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Nectar that is full of pure elements.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits.",
+      "enemies": ["Whopperflowers"],
+      "obtained": "- Alchemy (3x Whopperflower Nectar)\n- Dropped by Lv.40+ Whopperflower",
+      "name": "Shimmering Nectar",
+      "subCollection": {}
+    },
+    "Energy_Nectar": {
+      "image": "Materials/Common_Mob/Item_Energy_Nectar.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A thick and sticky honey that is full of energy. The Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form.",
+      "enemies": ["Whopperflowers"],
+      "obtained": "- Alchemy (3x Shimmering Nectar)\n- Dropped by Lv.60+ Whopperflower",
+      "name": "Energy Nectar",
+      "subCollection": {}
+    }
+  }
+}

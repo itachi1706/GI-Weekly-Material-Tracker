@@ -4,7 +4,7 @@ stages:
   - build
   - deploy
 
-Deploy Security Rules:
+Deploy Firebase Security Rules:
   image: ubuntu:latest
   stage: deploy
   before_script:
@@ -15,8 +15,11 @@ Deploy Security Rules:
     - firebase --token $FIREBASE_TOKEN deploy --only storage
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
   rules:
-    - changes:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
         - firebase/**/*
+      when: always
+    - when: never
 
 Update Firestore Public Data:
   image: node:alpine
@@ -29,8 +32,11 @@ Update Firestore Public Data:
     - npm i
   script: npm start
   rules:
-    - changes:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
         - public/data/**/*
+      when: always
+    - when: never
 
 Generate Flutter App:
   image: itachi1706/flutter-alpine-android:beta
