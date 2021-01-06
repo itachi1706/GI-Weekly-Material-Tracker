@@ -63,9 +63,6 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    print(_infoId);
-    //throw UnimplementedError();
     return Scaffold(
       appBar: AppBar(
         title: Text(_infoData['name']),
