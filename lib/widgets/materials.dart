@@ -115,7 +115,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_infoData['obtained'].toString().replaceAll('\\n', "\n")),
+                      child: Text(_infoData['obtained'].toString().replaceAll('\\n', "\n").replaceAll("- ", "")),
                     ),
                   ),
                 ],
