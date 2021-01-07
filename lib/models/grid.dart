@@ -67,7 +67,11 @@ class GridData {
               child: CachedNetworkImage(
                 imageUrl: snapshot.data,
                 height: height,
-                placeholder: (context, url) => CircularProgressIndicator(),
+                placeholder: (context, url) => SizedBox(
+                  child: CircularProgressIndicator(),
+                  height: height,
+                  width: height,
+                ),
                 errorWidget: (context, url, error) => Icon(Icons.error),
                 placeholderFadeInDuration: Duration(seconds: 2),
               ),
