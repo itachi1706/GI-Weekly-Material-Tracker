@@ -83,11 +83,14 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      _infoData['type'],
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          fontSize: 20
+                    Container(
+                      width: MediaQuery.of(context).size.width - 128,
+                      child: Text(
+                        _infoData['type'],
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize: 20
+                        ),
                       ),
                     ),
                     RatingBar.builder(
