@@ -72,7 +72,1392 @@
       "type": "Bow",
       "base_atk": 41,
       "obtained": "Gacha",
-      "effect": " Every 4s a character is on the field, their ATK increases by 4% and their CRIT DMG increases by 4%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG.",
+      "effect": "Every 4s a character is on the field, their ATK increases by 4% and their CRIT DMG increases by 4%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG.",
+      "subCollection": {}
+    },
+    "Amos_Bow": {
+      "secondary_stat_type": "ATK",
+      "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires the more.",
+      "name": "Amos' Bow",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/Amos_Bow.png",
+      "secondary_stat": "10.8%",
+      "rarity": 5,
+      "type": "Bow",
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effect": "Increases Normal Attack and Charged Attack DMG by 12%. Normal and Charged Attack DMG increases by 8% every 0.1 seconds for up to 5 times.",
+      "subCollection": {}
+    },
+    "Blackcliff_Warbow": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A bow made of blackstone that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
+      "name": "Blackcliff Warbow",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 2,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 12,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Blackcliff_Warbow.png",
+      "secondary_stat": "8%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 44,
+      "obtained": "Paimon's Bargains",
+      "effect": "After defeating an opponent, ATK is increased by 12% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+      "subCollection": {}
+    },
+    "Compound_Bow": {
+      "secondary_stat_type": "Physical DMG Bonus",
+      "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
+      "name": "Compound Bow",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 2,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 12,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Compound_Bow.png",
+      "secondary_stat": "15%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 41,
+      "obtained": "Forging (1x Northlander Bow Prototype, 50x Crystal Chunk, 50x White Iron Chunk)",
+      "effect": "Normal Attack and Charged Attack hits increase ATK by 4% and Normal ATK SPD by 1.2% for 6s. Max 4 stacks. Can only occur once every 0.3s.",
+      "subCollection": {}
+    },
+    "Ebony_Bow": {
+      "secondary_stat_type": "ATK",
+      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
+      "name": "Ebony Bow",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Ebony_Bow.png",
+      "secondary_stat": "7.7%",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 39,
+      "obtained": "Chests",
+      "effect": "Increases DMG against mechanoid Ruin opponents by 40%.",
+      "subCollection": {}
+    },
+    "Favonius_Warbow": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
+      "name": "Favonius Warbow",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Favonius_Warbow.png",
+      "secondary_stat": "13.3%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 41,
+      "obtained": "Gacha, Mondstadt Archon Quest Reward",
+      "effect": "CRIT hits have a 60% chance to generate 1 Elemental Orb, which will regenerate 6 Energy for the character. Can only occur once every 12s.",
+      "subCollection": {}
+    },
+    "Hunter_Bow": {
+      "secondary_stat_type": "None",
+      "description": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+      "name": "Hunter's Bow",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 0
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 10000
+        }
+      },
+      "image": "Weapons/Bow/Hunter_Bow.png",
+      "secondary_stat": "None",
+      "rarity": 1,
+      "type": "Bow",
+      "base_atk": 23,
+      "obtained": "Chests",
+      "effect": "No Effects",
+      "subCollection": {}
+    },
+    "Messenger": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
+      "name": "Messenger",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 1,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 5,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 4,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 4,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Messenger.png",
+      "secondary_stat": "6.8%",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 40,
+      "obtained": "Chests",
+      "effect": "Charged Attack hits on weak spots deal an additional 100% ATK DMG as CRIT DMG. Can only occur once every 10s.",
+      "subCollection": {}
+    },
+    "Prototype_Crescent": {
+      "secondary_stat_type": "ATK",
+      "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
+      "name": "Prototype Crescent",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Prototype_Crescent.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 42,
+      "obtained": "Forging (1x Northlander Bow Prototype, 50x Crystal Chunk, 50x White Iron Chunk)",
+      "effect": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by 36% for 10s.",
+      "subCollection": {}
+    },
+    "Raven_Bow": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
+      "name": "Raven Bow",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 1,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 5,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 4,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 4,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 8,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Raven_Bow.png",
+      "secondary_stat": "20",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 40,
+      "obtained": "Gacha",
+      "effect": "Increases DMG against opponents affected by Hydro or Pyro by 12%.",
+      "subCollection": {}
+    },
+    "Recurve_Bow": {
+      "secondary_stat_type": "HP",
+      "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
+      "name": "Recurve Bow",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 1,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 5,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 4,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 4,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 8,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Recurve_Bow.png",
+      "secondary_stat": "10.2%",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 38,
+      "obtained": "Chests",
+      "effect": "Defeating an opponent restores 8% HP.",
+      "subCollection": {}
+    },
+    "Royal_Bow": {
+      "secondary_stat_type": "HP",
+      "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
+      "name": "Royal Bow",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Royal_Bow.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 42,
+      "obtained": "Paimon's Bargains",
+      "effect": "Upon damaging an opponent, increases CRIT Rate by 8%. Max 5 stacks. A CRIT hit removes all stacks.",
+      "subCollection": {}
+    },
+    "Rust": {
+      "secondary_stat_type": "ATK",
+      "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
+      "name": "Rust",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 2,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 12,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Rust.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effect": "Increases Normal Attack DMG by 40% but decreases Charged Attack DMG by 10%.",
+      "subCollection": {}
+    },
+    "Sacrificial_Bow": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+      "name": "Sacrificial Bow",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Sacrificial_Bow.png",
+      "secondary_stat": "6.7%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effect": "After dealing damage to an opponent with an Elemental Skill, the skill has a 40% chance to end its own CD. Can only occur once every 30s.",
+      "subCollection": {}
+    },
+    "Seasoned_Hunter_Bow": {
+      "secondary_stat_type": "None",
+      "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
+      "name": "Seasoned Hunter's Bow",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 10000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 15000
+        }
+      },
+      "image": "Weapons/Bow/Seasoned_Hunter_Bow.png",
+      "secondary_stat": "None",
+      "rarity": 2,
+      "type": "Bow",
+      "base_atk": 33,
+      "obtained": "Chests",
+      "effect": "No Effects",
+      "subCollection": {}
+    },
+    "Sharpshooter_Oath": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
+      "name": "Sharpshooter's Oath",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 5,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Sharpshooter_Oath.png",
+      "secondary_stat": "10.2%",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 39,
+      "obtained": "Gacha",
+      "effect": "Increases DMG against weak spots by 24%.",
+      "subCollection": {}
+    },
+    "Skyward_Harp": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within.",
+      "name": "Skyward Harp",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 14,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 18,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/Skyward_Harp.png",
+      "secondary_stat": "4.8%",
+      "rarity": 5,
+      "type": "Bow",
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effect": "Increases CRIT DMG by 20%. Hits have a 60% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every 4s.",
+      "subCollection": {}
+    },
+    "Slingshot": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
+      "name": "Slingshot",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 1,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 5,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 4,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 4,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Bow/Slingshot.png",
+      "secondary_stat": "6.8%",
+      "rarity": 3,
+      "type": "Bow",
+      "base_atk": 38,
+      "obtained": "Gacha",
+      "effect": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by 36%. Otherwise, decreases DMG by 10%.",
+      "subCollection": {}
+    },
+    "The_Stringless": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
+      "name": "The Stringless",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/The_Stringless.png",
+      "secondary_stat": "36",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effect": "Increases Elemental Skill and Elemental Burst DMG by 24%.",
+      "subCollection": {}
+    },
+    "The_Viridescent_Hunt": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
+      "name": "The Viridescent Hunt",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/The_Viridescent_Hunt.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Bow",
+      "base_atk": 42,
+      "obtained": "Battle Pass",
+      "effect": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing 40% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every 14s.",
       "subCollection": {}
     }
   }
