@@ -18,9 +18,14 @@ service cloud.firestore {
     }
     
     // Private user data for tracking
-    match /tracking/{userid} {
+    match /tracking/{userId} {
         allow read, update, delete: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
         allow create: if request.auth != null; // All users can create their own collection data
+    }
+
+    // Allow access to tracking subcollections for the individual material trackers
+    match /tracking/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
     }
   }
 }
