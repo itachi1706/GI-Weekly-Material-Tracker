@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -148,10 +146,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        _infoData['affiliation'],
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20),
+                      Container(
+                        width: 200,
+                        child: Text(
+                          _infoData['affiliation'].toString(),//.replaceAll(", ", "\n").replaceAll("Former", "Old"),
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
                       RatingBar.builder(
                         ignoreGestures: true,
