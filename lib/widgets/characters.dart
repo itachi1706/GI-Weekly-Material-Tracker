@@ -149,7 +149,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       Container(
                         width: 200,
                         child: Text(
-                          _infoData['affiliation'].toString(),//.replaceAll(", ", "\n").replaceAll("Former", "Old"),
+                          _infoData['affiliation'].toString(),
                           textAlign: TextAlign.start,
                           style: TextStyle(fontSize: 20),
                         ),
