@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
+import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -18,20 +20,47 @@ class MainNavigationPage extends StatefulWidget {
   _MainNavigationPageState createState() => _MainNavigationPageState();
 }
 
-class _MainNavigationPageState extends State<MainNavigationPage> {
+class _MainNavigationPageState extends State<MainNavigationPage> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
-  final List<Widget> _children = [
-    PlaceholderWidgetContainer(Colors.red),
-    CharacterListGrid(),
-    WeaponListGrid(),
-    MaterialListGrid(),
+
+  List<Widget> _children;
+  TabController _tabController;
+
+  final List<Tab> _tabs = [
+    Tab(text: "Boss"),
+    Tab(text: "Domains"),
+    Tab(text: "Monster"),
+    Tab(text: "Local Speciality"),
+    Tab(text: "Week Planner")
   ];
+
+  Widget _showAppBar() {
+    if (_currentIndex != 0) return null;
+    return TabBar(
+      controller: _tabController,
+      tabs: _tabs,
+      isScrollable: true
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: _tabs.length);
+    _children = [
+      TabControllerWidget(tabController: _tabController,),
+      CharacterListGrid(),
+      WeaponListGrid(),
+      MaterialListGrid(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          bottom: _showAppBar(),
           actions: [
             IconButton(
               icon: Icon(Icons.refresh),
