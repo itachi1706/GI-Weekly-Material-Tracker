@@ -20,6 +20,7 @@ Deploy Firebase Security Rules:
         - firebase/**/*
       when: always
     - when: never
+  needs: []
 
 Update Firestore Public Data:
   image: node:alpine
@@ -37,6 +38,7 @@ Update Firestore Public Data:
         - public/data/**/*
       when: always
     - when: never
+  needs: []
 
 Generate Flutter App:
   image: itachi1706/flutter-alpine-android:beta
