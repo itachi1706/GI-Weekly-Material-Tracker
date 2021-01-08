@@ -61,11 +61,16 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   Map<String, int> _isBeingTracked;
 
   void _refreshTrackingStatus() {
-    setState(() {if (_isBeingTracked == null) _isBeingTracked = new Map(); else _isBeingTracked.clear();});
-    Map<String, dynamic> dataMap = _infoData['ascension'];
-    dataMap.keys.forEach((key) { _isBeingTracked[key] = 0; });
+    if (_isBeingTracked == null) {
+      Map<String, dynamic> _tmpTracker = new Map();
+      _infoData['ascension'].keys.forEach((key) { _tmpTracker[key] = 0; });
+      setState(() {
+        _isBeingTracked = _tmpTracker;
+      });
+    }
 
     TrackingData.getTrackingCategory('character').then((_dataList) {
+      print(_dataList);
       _isBeingTracked.keys.forEach((key) {
         bool _isTracked = TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
         setState(() {
@@ -91,8 +96,22 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _trackCharacterAction() {
-    // TODO: Code Stub
-    PlaceholderUtil.showUnimplementedSnackbar(context);
+    print("Selected: $_selectedTier");
+    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    print(_ascendTier);
+
+    TrackingData.addToRecord('character', "${_infoId}_$_selectedTier").then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context, "${_infoData['name']} Ascension Tier $_selectedTier added to tracker!");
+    });
+    if (_ascendTier['material1'] != null) TrackingData.addToCollection("Character_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
+        _ascendTier['material1'], _ascendTier['material1qty'], _materialData[_ascendTier['material1']]['innerType'], 'character', _infoId);
+    if (_ascendTier['material2'] != null) TrackingData.addToCollection("Character_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
+        _ascendTier['material2'], _ascendTier['material2qty'], _materialData[_ascendTier['material2']]['innerType'], 'character', _infoId);
+    if (_ascendTier['material3'] != null) TrackingData.addToCollection("Character_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
+        _ascendTier['material3'], _ascendTier['material3qty'], _materialData[_ascendTier['material3']]['innerType'], 'character', _infoId);
+    if (_ascendTier['material4'] != null) TrackingData.addToCollection("Character_${_infoId}_${_ascendTier['material4']}_$_selectedTier",
+        _ascendTier['material4'], _ascendTier['material4qty'], _materialData[_ascendTier['material4']]['innerType'], 'character', _infoId);
     Navigator.of(context).pop();
   }
 
@@ -110,12 +129,18 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     ];
   }
 
+  String _selectedTier;
+
   void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
     String key = index.toString();
     if (_isBeingTrackedStatus(key) == 0) {
       Util.showSnackbarQuick(context, "Checking tracking status");
       return;
     }
+
+    setState(() {
+      _selectedTier = key;
+    });
 
     if (_isBeingTrackedStatus(key) == 1) {
       showDialog(

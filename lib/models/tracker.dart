@@ -24,8 +24,9 @@ class TrackingData {
   }
 
   static bool isBeingTrackedLocal(List<dynamic> _data, String item) {
+    if (_data == null) return false;
     return _data.contains(item);
-}
+  }
 
   static Future<void> addToRecord(String key, String item) async {
     if (_auth.currentUser == null) return;
@@ -36,8 +37,8 @@ class TrackingData {
     else trackRef.set({key: [item]});
   }
 
-  static void addToCollection(String key, String itemKey, int numToTrack, String materialType, String addType) async {
-    if (_auth.currentUser == null) return;
+  static void addToCollection(String key, String itemKey, int numToTrack, String materialType, String addType, String extraData) async {
+    if (_auth.currentUser == null || itemKey == null) return;
     String uid = _auth.currentUser.uid;
     await _db.collection("tracking").doc(uid).collection(materialType).doc(key).set({
       "name": itemKey,
@@ -45,6 +46,7 @@ class TrackingData {
       "current": 0,
       "type": materialType,
       "addedBy": addType,
+      "addData": extraData
     });
   }
 

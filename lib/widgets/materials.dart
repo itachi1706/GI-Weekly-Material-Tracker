@@ -88,7 +88,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       refreshTrackingStatus();
       Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
     });
-    TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
+    TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material', "");
     Navigator.of(context).pop();
   }
 
