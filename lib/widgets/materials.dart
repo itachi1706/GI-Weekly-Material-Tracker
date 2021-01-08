@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -65,17 +66,22 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   }
 
   void refreshTrackingStatus() {
-    setState(() {_addCheckObtained = false;});
-    GridData.isBeingTracked(_infoData['innerType'], _infoId).then((isTracked) => setState(() {
-      _isAdded = isTracked;
-      _addCheckObtained = true;
-    }));
+    setState(() {
+      _addCheckObtained = false;
+    });
+    TrackingData.isBeingTracked(_infoData['innerType'], _infoId)
+        .then((isTracked) => setState(() {
+              _isAdded = isTracked;
+              _addCheckObtained = true;
+            }));
   }
 
   Widget _getFabWidget() {
     if (!_addCheckObtained) return CircularProgressIndicator();
-    if (_isAdded) return Icon(Icons.remove);
-    else return Icon(Icons.add);
+    if (_isAdded)
+      return Icon(Icons.remove);
+    else
+      return Icon(Icons.add);
   }
 
   String _cntTrack = "";
@@ -83,17 +89,25 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
-    GridData.addToRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
-    GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
+    TrackingData.addToRecord(_infoData['innerType'], _infoId).then((value) {
+      refreshTrackingStatus();
+      Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
+    });
+    TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack,
+        _infoData['innerType'], 'material', "");
     Navigator.of(context).pop();
-    Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
   }
 
   void _untrackMaterialAction() {
+    TrackingData.removeFromRecord(_infoData['innerType'], _infoId)
+        .then((value) {
+      refreshTrackingStatus();
+      Util.showSnackbarQuick(
+          context, "${_infoData['name']} removed from tracker!");
+    });
+    TrackingData.removeFromCollection(
+        "Material_$_infoId", _infoData['innerType']);
     Navigator.of(context).pop();
-    GridData.removeFromRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
-    GridData.removeFromCollection("Material_$_infoId",_infoData['innerType']);
-    Util.showSnackbarQuick(context, "${_infoData['name']} removed from tracker!");
   }
 
   void _addOrRemoveMaterial() async {
@@ -111,8 +125,10 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
-                  Text("This will remove the currently tracked data for this material from the tracker"),
+                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                      height: 64),
+                  Text(
+                      "This will remove the currently tracked data for this material from the tracker"),
                 ],
               ),
             ),
@@ -138,7 +154,8 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
+                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                      height: 64),
                   TextField(
                     onChanged: (newValue) {
                       setState(() {
@@ -196,9 +213,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                       child: Text(
                         _infoData['type'],
                         textAlign: TextAlign.start,
-                        style: TextStyle(
-                            fontSize: 20
-                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
                     RatingBar.builder(
@@ -206,7 +221,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                       itemCount: 5,
                       itemSize: 30,
                       initialRating:
-                      double.tryParse(_infoData['rarity'].toString()),
+                          double.tryParse(_infoData['rarity'].toString()),
                       itemBuilder: (context, _) =>
                           Icon(Icons.star, color: Colors.amber),
                       onRatingUpdate: (rating) {
@@ -226,7 +241,10 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_infoData['obtained'].toString().replaceAll('\\n', "\n").replaceAll("- ", "")),
+                      child: Text(_infoData['obtained']
+                          .toString()
+                          .replaceAll('\\n', "\n")
+                          .replaceAll("- ", "")),
                     ),
                   ),
                 ],
@@ -241,7 +259,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_infoData['description'].toString().replaceAll('\\n', "\n")),
+                      child: Text(_infoData['description']
+                          .toString()
+                          .replaceAll('\\n', "\n")),
                     ),
                   ),
                 ],

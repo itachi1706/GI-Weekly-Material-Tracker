@@ -60,7 +60,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   Widget _getAscenionImage(String itemKey) {
     if (itemKey == null) return Image.memory(kTransparentImage);
 
-    return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'], height: 16);
+    return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'],
+        height: 16);
   }
 
   Widget _generateAscensionData() {
@@ -72,7 +73,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     }
 
     Map<String, dynamic> dataMap = _infoData['ascension'];
-    List<MapEntry<String, dynamic>> data = dataMap.entries.map((e) => e).toList();
+    List<MapEntry<String, dynamic>> data =
+        dataMap.entries.map((e) => e).toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -87,19 +89,25 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                 padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
-                    Text(GridData.getRomanNumberArray(index), style: TextStyle(fontSize: 24),),
+                    Text(
+                      GridData.getRomanNumberArray(index),
+                      style: TextStyle(fontSize: 24),
+                    ),
                     Spacer(),
                     Icon(Icons.show_chart),
                     Text(curData['level'].toString()),
                     Spacer(),
-                    Image.asset("assets/images/items/Icon_Mora.png", height: 16),
+                    Image.asset("assets/images/items/Icon_Mora.png",
+                        height: 16),
                     Text(curData['mora'].toString()),
                     Spacer(),
                     _getAscenionImage(curData['material1']),
                     Text(curData['material1qty'].toString()),
                     Spacer(),
                     _getAscenionImage(curData['material2']),
-                    Text((curData['material2qty'] == 0) ? "" : curData['material2qty'].toString()),
+                    Text((curData['material2qty'] == 0)
+                        ? ""
+                        : curData['material2qty'].toString()),
                     Spacer(),
                     _getAscenionImage(curData['material3']),
                     Text(curData['material3qty'].toString()),
@@ -120,8 +128,10 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
     GridData.retrieveMaterialsMapData().then((value) => {
-      setState(() {_materialData = value;})
-    });
+          setState(() {
+            _materialData = value;
+          })
+        });
   }
 
   @override
@@ -153,7 +163,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         itemCount: 5,
                         itemSize: 30,
                         initialRating:
-                        double.tryParse(_infoData['rarity'].toString()),
+                            double.tryParse(_infoData['rarity'].toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -173,7 +183,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['obtained'].toString().replaceAll('\\n', "\n")),
+                        child: Text(_infoData['obtained']
+                            .toString()
+                            .replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -188,7 +200,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['description'].toString().replaceAll('\\n', "\n")),
+                        child: Text(_infoData['description']
+                            .toString()
+                            .replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -203,7 +217,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['effect'].toString().replaceAll('\\n', "\n")),
+                        child: Text(_infoData['effect']
+                            .toString()
+                            .replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -250,8 +266,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         style: TextStyle(fontSize: 24),
                       ),
                     ],
-                  )
-              ),
+                  )),
               _generateAscensionData(),
             ],
           ),
