@@ -84,17 +84,21 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
-    TrackingData.addToRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
+    TrackingData.addToRecord(_infoData['innerType'], _infoId).then((value) {
+      refreshTrackingStatus();
+      Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
+    });
     TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
     Navigator.of(context).pop();
-    Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
   }
 
   void _untrackMaterialAction() {
-    Navigator.of(context).pop();
-    TrackingData.removeFromRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
+    TrackingData.removeFromRecord(_infoData['innerType'], _infoId).then((value) {
+      refreshTrackingStatus();
+      Util.showSnackbarQuick(context, "${_infoData['name']} removed from tracker!");
+    });
     TrackingData.removeFromCollection("Material_$_infoId",_infoData['innerType']);
-    Util.showSnackbarQuick(context, "${_infoData['name']} removed from tracker!");
+    Navigator.of(context).pop();
   }
 
   void _addOrRemoveMaterial() async {
