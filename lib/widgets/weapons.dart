@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -57,7 +57,224 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   Map<String, dynamic> _materialData;
 
-  Widget _getAscenionImage(String itemKey) {
+  Map<String, int> _isBeingTracked;
+
+  void _refreshTrackingStatus() {
+    if (_isBeingTracked == null) {
+      Map<String, int> _tmpTracker = new Map();
+      _infoData['ascension'].keys.forEach((key) {
+        _tmpTracker[key] = 0;
+      });
+      setState(() {
+        _isBeingTracked = _tmpTracker;
+      });
+    }
+
+    TrackingData.getTrackingCategory('weapon').then((_dataList) {
+      print(_dataList);
+      _isBeingTracked.keys.forEach((key) {
+        bool _isTracked =
+            TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
+        setState(() {
+          _isBeingTracked[key] = (_isTracked) ? 1 : 2; // 1 - Yes, 2 - No
+        });
+      });
+    });
+  }
+
+  Color _getTrackingColor(int index) {
+    if (!_isBeingTracked.keys.contains(index.toString()))
+      return Colors.yellow; // No such key (loading)
+    switch (_isBeingTracked[index.toString()]) {
+      case 0:
+        return Colors.white;
+      case 1:
+        return Colors.lightGreen;
+      case 2:
+        return Colors.white;
+    }
+    return Colors.yellow; // Error
+  }
+
+  int _isBeingTrackedStatus(String key) {
+    if (!_isBeingTracked.keys.contains(key)) return 0;
+    return _isBeingTracked[key];
+  }
+
+  void _trackWeaponAction() {
+    print("Selected: $_selectedTier");
+    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+
+    TrackingData.addToRecord('weapon', "${_infoId}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "${_infoData['name']} Ascension Tier $_selectedTier added to tracker!");
+    });
+    if (_ascendTier['material1'] != null)
+      TrackingData.addToCollection(
+          "Weapon_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
+          _ascendTier['material1'],
+          _ascendTier['material1qty'],
+          _materialData[_ascendTier['material1']]['innerType'],
+          'weapon',
+          _infoId);
+    if (_ascendTier['material2'] != null)
+      TrackingData.addToCollection(
+          "Weapon_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
+          _ascendTier['material2'],
+          _ascendTier['material2qty'],
+          _materialData[_ascendTier['material2']]['innerType'],
+          'weapon',
+          _infoId);
+    if (_ascendTier['material3'] != null)
+      TrackingData.addToCollection(
+          "Weapon_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
+          _ascendTier['material3'],
+          _ascendTier['material3qty'],
+          _materialData[_ascendTier['material3']]['innerType'],
+          'weapon',
+          _infoId);
+    Navigator.of(context).pop();
+  }
+
+  void _untrackWeaponAction() {
+    print("Selected: $_selectedTier");
+    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+
+    TrackingData.removeFromRecord('weapon', "${_infoId}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "${_infoData['name']} Ascension Tier $_selectedTier removed from tracker!");
+    });
+    if (_ascendTier['material1'] != null)
+      TrackingData.removeFromCollection(
+          "Weapon_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
+          _materialData[_ascendTier['material1']]['innerType']);
+    if (_ascendTier['material2'] != null)
+      TrackingData.removeFromCollection(
+          "Weapon_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
+          _materialData[_ascendTier['material2']]['innerType']);
+    if (_ascendTier['material3'] != null)
+      TrackingData.removeFromCollection(
+          "Weapon_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
+          _materialData[_ascendTier['material3']]['innerType']);
+
+    Navigator.of(context).pop();
+  }
+
+  List<Widget> _getAscensionTierMaterialRowChild(
+      Map<String, dynamic> curData, String key) {
+    return [
+      _getAscensionImage(curData[key]),
+      Text(curData[key] == null ? "" : _materialData[curData[key]]['name']),
+      Text((curData["${key}qty"] == 0)
+          ? ""
+          : " x${curData["${key}qty"].toString()}"),
+    ];
+  }
+
+  String _selectedTier;
+
+  void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
+    String key = index.toString();
+    if (_isBeingTrackedStatus(key) == 0) {
+      Util.showSnackbarQuick(context, "Checking tracking status");
+      return;
+    }
+
+    setState(() {
+      _selectedTier = key;
+    });
+
+    if (_isBeingTrackedStatus(key) == 1) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Remove ${_infoData['name']} Ascension Tier $key from the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                      height: 64),
+                  Text(
+                      "This will remove the following materials being tracked for this weapon from the tracker:"),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                  ),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                  ),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Untrack'),
+                onPressed: _untrackWeaponAction,
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Add ${_infoData['name']} Ascension Tier $key to the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                      height: 64),
+                  Text("Items being added to tracker:"),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                  ),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                  ),
+                  Row(
+                    children:
+                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Track'),
+                onPressed: _trackWeaponAction,
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+  Widget _getAscensionImage(String itemKey) {
     if (itemKey == null) return Image.memory(kTransparentImage);
 
     return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'],
@@ -83,8 +300,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
+            color: _getTrackingColor(index + 1),
             child: InkWell(
-              onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+              onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
@@ -101,15 +319,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         height: 16),
                     Text(curData['mora'].toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material1']),
+                    _getAscensionImage(curData['material1']),
                     Text(curData['material1qty'].toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material2']),
+                    _getAscensionImage(curData['material2']),
                     Text((curData['material2qty'] == 0)
                         ? ""
                         : curData['material2qty'].toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material3']),
+                    _getAscensionImage(curData['material3']),
                     Text(curData['material3qty'].toString()),
                     Spacer(),
                   ],
@@ -124,6 +342,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   @override
   void initState() {
+    super.initState();
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
@@ -132,6 +351,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             _materialData = value;
           })
         });
+
+    // Init map
+    _refreshTrackingStatus();
   }
 
   @override
