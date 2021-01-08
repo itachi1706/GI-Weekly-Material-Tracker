@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
@@ -43,6 +45,32 @@ class TrackerPage extends StatefulWidget {
 
 class _TrackerPageState extends State<TrackerPage> {
   final String _uid = _auth.currentUser.uid;
+  Map<String, dynamic> _materialData;
+  Map<String, dynamic> _weaponData;
+  Map<String, dynamic> _characterData;
+
+  @override
+  void initState() {
+    super.initState();
+
+    GridData.retrieveMaterialsMapData().then((value) => {
+          setState(() {
+            _materialData = value;
+          })
+        });
+
+    GridData.retrieveCharactersMapData().then((value) => {
+      setState(() {
+        _characterData = value;
+      })
+    });
+
+    GridData.retrieveWeaponsMapData().then((value) => {
+      setState(() {
+        _weaponData = value;
+      })
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +83,8 @@ class _TrackerPageState extends State<TrackerPage> {
             return Text("Error occurred getting snapshot");
           }
 
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState == ConnectionState.waiting || _materialData == null
+              || _characterData == null || _weaponData == null) {
             return Util.centerLoadingCircle("");
           }
 
@@ -66,16 +95,98 @@ class _TrackerPageState extends State<TrackerPage> {
             return ListView.builder(
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
-                return ListTile(
-                  onTap: () =>
-                      PlaceholderUtil.showUnimplementedSnackbar(context),
-                  title: Text("YOLO $index"),
-                );
+                Map<String, dynamic> _data = data.docs[index].data();
+                print(_data);
+                Map<String, dynamic> _material = _materialData[_data["name"]];
+                String extraImageRef, extraNameRef;
+                if (_data["addData"] != null) {
+                  // Grab image ref of extra data based on addedBy
+                  if (_data["addedBy"] == "character") {
+                    // Grab from character
+                    extraImageRef = _characterData[_data["addData"]]["image"];
+                    extraNameRef = _characterData[_data["addData"]]["name"];
+                  } else if (_data["addedBy"] == "weapon") {
+                    // Grab from weapon
+                    extraImageRef = _weaponData[_data["addData"]]["image"];
+                    extraNameRef = _weaponData[_data["addData"]]["name"];
+                  }
+                }
+
+                return Card(
+                    child: InkWell(
+                      onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            GridData.getImageAssetFromFirebase(_material["image"], height: 48),
+                            Container(
+                              width: MediaQuery.of(context).size.width - 180,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(_material["name"], style: TextStyle(fontSize: 20),),
+                                  RatingBar.builder(
+                                    ignoreGestures: true,
+                                    itemCount: 5,
+                                    itemSize: 12,
+                                    initialRating:
+                                    double.tryParse(_material['rarity'].toString()),
+                                    itemBuilder: (context, _) =>
+                                        Icon(Icons.star, color: Colors.amber),
+                                    onRatingUpdate: (rating) {
+                                      print(rating);
+                                    },
+                                  ),
+                                  Text(_material["obtained"].toString().replaceAll("\\n", "\n"),
+                                    style: TextStyle(fontSize: 11),),
+                                ],
+                              ),
+                            )
+                            ,
+                            Spacer(),
+                            Column(
+                              children: [
+                                Text("${_data["current"]}/${_data["max"]}", style: TextStyle(fontSize: 18),),
+                                Row(
+                                  children: [
+                                    ButtonTheme(
+                                      padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0), //adds padding inside the button
+                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap, //limits the touch area to the button area
+                                      minWidth: 0, //wraps child's width
+                                      height: 0, //wraps child's height
+                                      child: FlatButton(
+                                        onPressed: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                                        child: Icon(Icons.remove),
+                                      ),
+                                    ),
+                                    ButtonTheme(
+                                      padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0), //adds padding inside the button
+                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap, //limits the touch area to the button area
+                                      minWidth: 0, //wraps child's width
+                                      height: 0, //wraps child's height
+                                      child: FlatButton(
+                                        onPressed: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                                        child: Icon(Icons.add),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                GridData.getImageAssetFromFirebase(extraImageRef, height: 32)
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
               },
             );
           } else {
             return Center(
-              child: Text("Not tracking any items for this category"),
+              child: Text("No items being tracked for this material category"),
             );
           }
         });

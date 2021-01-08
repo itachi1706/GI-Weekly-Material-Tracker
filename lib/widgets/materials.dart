@@ -69,7 +69,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     setState(() {
       _addCheckObtained = false;
     });
-    TrackingData.isBeingTracked(_infoData['innerType'], _infoId)
+    TrackingData.isBeingTracked('material', _infoId)
         .then((isTracked) => setState(() {
               _isAdded = isTracked;
               _addCheckObtained = true;
@@ -89,17 +89,17 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
-    TrackingData.addToRecord(_infoData['innerType'], _infoId).then((value) {
+    TrackingData.addToRecord('material', _infoId).then((value) {
       refreshTrackingStatus();
       Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
     });
     TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack,
-        _infoData['innerType'], 'material', "");
+        _infoData['innerType'], 'material', null);
     Navigator.of(context).pop();
   }
 
   void _untrackMaterialAction() {
-    TrackingData.removeFromRecord(_infoData['innerType'], _infoId)
+    TrackingData.removeFromRecord('material', _infoId)
         .then((value) {
       refreshTrackingStatus();
       Util.showSnackbarQuick(
