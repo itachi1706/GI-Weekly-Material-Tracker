@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -57,14 +58,41 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Map<String, dynamic> _materialData;
 
+  Map<String, int> _isBeingTracked = new Map();
+
+  void _refreshTrackingStatus() {
+    setState(() {_isBeingTracked = new Map();});
+    Map<String, dynamic> dataMap = _infoData['ascension'];
+    dataMap.keys.forEach((key) { _isBeingTracked[key] = 0; });
+    _isBeingTracked.keys.forEach((key) {
+      TrackingData.isBeingTracked('character', "${_infoId}_$key").then((isTracked) => setState(() {
+        _isBeingTracked[key] = (isTracked) ? 1 : 2; // 1 - Yes, 2 - No
+      }));
+    });
+  }
+
+  Color _getTrackingColor(int index) {
+    if (!_isBeingTracked.keys.contains(index.toString())) return Colors.yellow; // No such key (loading)
+    switch (_isBeingTracked[index.toString()]) {
+      case 0: return Colors.white;
+      case 1: return Colors.lightGreen;
+      case 2: return Colors.white;
+    }
+    return Colors.yellow; // Error
+  }
+
   @override
   void initState() {
+    super.initState();
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
     GridData.retrieveMaterialsMapData().then((value) => {
       setState(() {_materialData = value;})
     });
+
+    // Init map
+    _refreshTrackingStatus();
   }
 
   Widget _getAscenionImage(String itemKey) {
@@ -91,6 +119,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
+            color: _getTrackingColor(index+1),
             child: InkWell(
               onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
               child: Padding(
