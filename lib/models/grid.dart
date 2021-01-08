@@ -53,6 +53,24 @@ class GridData {
     return data;
   }
 
+  static Future<Map<String, dynamic>> retrieveWeaponsMapData() async {
+    QuerySnapshot snapshot = await _db.collection("weapons").get();
+    Map<String, dynamic> data = new Map();
+    snapshot.docs.forEach((element) {
+      data.putIfAbsent(element.id, () => element.data());
+    });
+    return data;
+  }
+
+  static Future<Map<String, dynamic>> retrieveCharactersMapData() async {
+    QuerySnapshot snapshot = await _db.collection("characters").get();
+    Map<String, dynamic> data = new Map();
+    snapshot.docs.forEach((element) {
+      data.putIfAbsent(element.id, () => element.data());
+    });
+    return data;
+  }
+
   static String getRomanNumberArray(int number) {
     switch (number) {
       case 0:
@@ -83,16 +101,20 @@ class GridData {
           return Center(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: CachedNetworkImage(
-                imageUrl: snapshot.data,
+              child: SizedBox(
                 height: height,
-                placeholder: (context, url) => SizedBox(
-                  child: CircularProgressIndicator(),
+                width: height,
+                child: CachedNetworkImage(
+                  imageUrl: snapshot.data,
                   height: height,
-                  width: height,
+                  placeholder: (context, url) => SizedBox(
+                    child: CircularProgressIndicator(),
+                    height: height,
+                    width: height,
+                  ),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  placeholderFadeInDuration: Duration(seconds: 2),
                 ),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-                placeholderFadeInDuration: Duration(seconds: 2),
               ),
             ),
           );

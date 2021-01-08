@@ -43,6 +43,25 @@ class TrackingData {
       });
   }
 
+  static void incrementCount(String key, String type, int curCnt, int maxCnt) async {
+    if (curCnt >= maxCnt) return; // Invalid action
+    if (_auth.currentUser == null || key == null) return;
+    String uid = _auth.currentUser.uid;
+
+    await _db.collection("tracking").doc(uid).collection(type).doc(key).update(
+        {"current": FieldValue.increment(1)});
+
+  }
+
+  static void decrementCount(String key, String type, int curCnt) async {
+    if (curCnt <= 0) return; // Invalid action
+    if (_auth.currentUser == null || key == null) return;
+    String uid = _auth.currentUser.uid;
+
+    await _db.collection("tracking").doc(uid).collection(type).doc(key).update(
+        {"current": FieldValue.increment(-1)});
+  }
+
   static void addToCollection(String key, String itemKey, int numToTrack,
       String materialType, String addType, String extraData) async {
     if (_auth.currentUser == null || itemKey == null) return;
