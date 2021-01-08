@@ -8,7 +8,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-FirebaseFirestore db = FirebaseFirestore.instance;
+final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class CharacterListGrid extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class CharacterListGrid extends StatefulWidget {
 class _CharacterListGridState extends State<CharacterListGrid> {
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = db.collection('characters');
+    CollectionReference materialRef = _db.collection('characters');
     return StreamBuilder(
         stream: materialRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -62,7 +62,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
-    GridData.retrieveMaterialsMapData(db).then((value) => {
+    GridData.retrieveMaterialsMapData().then((value) => {
       setState(() {_materialData = value;})
     });
   }
