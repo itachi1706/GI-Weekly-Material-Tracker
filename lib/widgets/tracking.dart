@@ -115,6 +115,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 }
 
                 return Card(
+                  color: GridData.getRarityColor(_material["rarity"]),
                     child: InkWell(
                       onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
                       child: Padding(
@@ -129,11 +130,12 @@ class _TrackerPageState extends State<TrackerPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(_material["name"], style: TextStyle(fontSize: 20),),
+                                  Text(_material["name"], style: TextStyle(fontSize: 20, color: Colors.white),),
                                   RatingBar.builder(
                                     ignoreGestures: true,
                                     itemCount: 5,
                                     itemSize: 12,
+                                    unratedColor: Colors.transparent,
                                     initialRating:
                                     double.tryParse(_material['rarity'].toString()),
                                     itemBuilder: (context, _) =>
@@ -143,7 +145,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                     },
                                   ),
                                   Text(_material["obtained"].toString().replaceAll("\\n", "\n"),
-                                    style: TextStyle(fontSize: 11),),
+                                    style: TextStyle(fontSize: 11, color: Colors.white),),
                                 ],
                               ),
                             )
@@ -151,7 +153,7 @@ class _TrackerPageState extends State<TrackerPage> {
                             Spacer(),
                             Column(
                               children: [
-                                Text("${_data["current"]}/${_data["max"]}", style: TextStyle(fontSize: 18),),
+                                Text("${_data["current"]}/${_data["max"]}", style: TextStyle(fontSize: 18, color: Colors.white),),
                                 Row(
                                   children: [
                                     ButtonTheme(
@@ -161,7 +163,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                       height: 0, //wraps child's height
                                       child: FlatButton(
                                         onPressed: () => TrackingData.decrementCount(_dataId, _data["type"], _data["current"]),
-                                        child: Icon(Icons.remove),
+                                        child: Icon(Icons.remove, color: Colors.white),
                                       ),
                                     ),
                                     ButtonTheme(
@@ -171,7 +173,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                       height: 0, //wraps child's height
                                       child: FlatButton(
                                         onPressed: () => TrackingData.incrementCount(_dataId, _data["type"], _data["current"], _data["max"]),
-                                        child: Icon(Icons.add),
+                                        child: Icon(Icons.add, color: Colors.white),
                                       ),
                                     ),
                                   ],
