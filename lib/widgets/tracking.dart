@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
@@ -96,6 +97,7 @@ class _TrackerPageState extends State<TrackerPage> {
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
                 Map<String, dynamic> _data = data.docs[index].data();
+                String _dataId = data.docs[index].id;
                 print(_data);
                 Map<String, dynamic> _material = _materialData[_data["name"]];
                 String extraImageRef, extraNameRef;
@@ -158,7 +160,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                       minWidth: 0, //wraps child's width
                                       height: 0, //wraps child's height
                                       child: FlatButton(
-                                        onPressed: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                                        onPressed: () => TrackingData.decrementCount(_dataId, _data["type"], _data["current"]),
                                         child: Icon(Icons.remove),
                                       ),
                                     ),
@@ -168,7 +170,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                       minWidth: 0, //wraps child's width
                                       height: 0, //wraps child's height
                                       child: FlatButton(
-                                        onPressed: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                                        onPressed: () => TrackingData.incrementCount(_dataId, _data["type"], _data["current"], _data["max"]),
                                         child: Icon(Icons.add),
                                       ),
                                     ),
