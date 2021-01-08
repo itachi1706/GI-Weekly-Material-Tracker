@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
@@ -116,7 +115,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
   }
 
   void _overflowMenuSelection(String action) {
-    print("Menu Overflow Action: ${action}");
+    print("Menu Overflow Action: $action");
     switch (action) {
       case 'exit':
         _signOut();

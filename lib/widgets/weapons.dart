@@ -74,7 +74,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       print(_dataList);
       _isBeingTracked.keys.forEach((key) {
         bool _isTracked =
-        TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
+            TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
         setState(() {
           _isBeingTracked[key] = (_isTracked) ? 1 : 2; // 1 - Yes, 2 - No
         });
@@ -204,15 +204,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                       "This will remove the following materials being tracked for this weapon from the tracker:"),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material1'),
+                        _getAscensionTierMaterialRowChild(curData, 'material1'),
                   ),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material2'),
+                        _getAscensionTierMaterialRowChild(curData, 'material2'),
                   ),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material3'),
+                        _getAscensionTierMaterialRowChild(curData, 'material3'),
                   ),
                 ],
               ),
@@ -245,15 +245,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                   Text("Items being added to tracker:"),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material1'),
+                        _getAscensionTierMaterialRowChild(curData, 'material1'),
                   ),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material2'),
+                        _getAscensionTierMaterialRowChild(curData, 'material2'),
                   ),
                   Row(
                     children:
-                    _getAscensionTierMaterialRowChild(curData, 'material3'),
+                        _getAscensionTierMaterialRowChild(curData, 'material3'),
                   ),
                 ],
               ),
@@ -300,7 +300,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color: _getTrackingColor(index+1),
+            color: _getTrackingColor(index + 1),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(
