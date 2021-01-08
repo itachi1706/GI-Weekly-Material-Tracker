@@ -6,7 +6,7 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
-FirebaseFirestore db = FirebaseFirestore.instance;
+final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class MaterialListGrid extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class MaterialListGrid extends StatefulWidget {
 class _MaterialListGridState extends State<MaterialListGrid> {
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = db.collection('materials');
+    CollectionReference materialRef = _db.collection('materials');
     return StreamBuilder(
         stream: materialRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -53,11 +53,90 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   Color _rarityColor;
 
+  bool _isAdded = false;
+  bool _addCheckObtained = false;
+
   @override
   void initState() {
+    super.initState();
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+    GridData.isBeingTracked(_infoData['innerType'], _infoId).then((isTracked) => setState(() {
+      _isAdded = isTracked;
+      _addCheckObtained = true;
+    }));
+  }
+
+  Widget _getFabWidget() {
+    if (!_addCheckObtained) return CircularProgressIndicator();
+    if (_isAdded) return Icon(Icons.remove);
+    else return Icon(Icons.add);
+  }
+
+  String _cntTrack = "";
+  TextEditingController _textEditingController = TextEditingController();
+
+  void _trackMaterialAction() {
+    int toTrack = int.tryParse(_cntTrack) ?? 0;
+    GridData.addToRecord(_infoData['innerType'], _infoId);
+    GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType']);
+    Navigator.of(context).pop();
+    Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
+  }
+
+  void _untrackMaterialAction() {
+    // TODO: Code Stub
+  }
+
+  void _addOrRemoveMaterial() async {
+    if (!_addCheckObtained) {
+      Util.showSnackbarQuick(context, "Checking tracking status");
+      return;
+    }
+
+    if (_isAdded) {
+      // TODO: Remove from tracker
+    } else {
+      // TODO: Add to tracker
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Add ${_infoData['name']} to the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
+                  TextField(
+                    onChanged: (newValue) {
+                      setState(() {
+                        _cntTrack = newValue;
+                      });
+                    },
+                    controller: _textEditingController,
+                    decoration: InputDecoration(hintText: "Quantity to track"),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Track'),
+                onPressed: _trackMaterialAction,
+              ),
+            ],
+          );
+        },
+      );
+      return;
+    }
+    PlaceholderUtil.showUnimplementedSnackbar(context);
   }
 
   @override
@@ -68,9 +147,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         backgroundColor: _rarityColor,
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: _getFabWidget(),
         backgroundColor: _rarityColor,
-        onPressed: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+        onPressed: _addOrRemoveMaterial,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
