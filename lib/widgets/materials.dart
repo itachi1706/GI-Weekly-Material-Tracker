@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -66,7 +67,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void refreshTrackingStatus() {
     setState(() {_addCheckObtained = false;});
-    GridData.isBeingTracked(_infoData['innerType'], _infoId).then((isTracked) => setState(() {
+    TrackingData.isBeingTracked(_infoData['innerType'], _infoId).then((isTracked) => setState(() {
       _isAdded = isTracked;
       _addCheckObtained = true;
     }));
@@ -83,16 +84,16 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
-    GridData.addToRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
-    GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
+    TrackingData.addToRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
+    TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
     Navigator.of(context).pop();
     Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
   }
 
   void _untrackMaterialAction() {
     Navigator.of(context).pop();
-    GridData.removeFromRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
-    GridData.removeFromCollection("Material_$_infoId",_infoData['innerType']);
+    TrackingData.removeFromRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
+    TrackingData.removeFromCollection("Material_$_infoId",_infoData['innerType']);
     Util.showSnackbarQuick(context, "${_infoData['name']} removed from tracker!");
   }
 
