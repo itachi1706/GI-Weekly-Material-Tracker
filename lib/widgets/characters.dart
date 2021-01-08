@@ -58,16 +58,20 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Map<String, dynamic> _materialData;
 
-  Map<String, int> _isBeingTracked = new Map();
+  Map<String, int> _isBeingTracked;
 
   void _refreshTrackingStatus() {
-    setState(() {_isBeingTracked = new Map();});
+    setState(() {if (_isBeingTracked == null) _isBeingTracked = new Map(); else _isBeingTracked.clear();});
     Map<String, dynamic> dataMap = _infoData['ascension'];
     dataMap.keys.forEach((key) { _isBeingTracked[key] = 0; });
-    _isBeingTracked.keys.forEach((key) {
-      TrackingData.isBeingTracked('character', "${_infoId}_$key").then((isTracked) => setState(() {
-        _isBeingTracked[key] = (isTracked) ? 1 : 2; // 1 - Yes, 2 - No
-      }));
+
+    TrackingData.getTrackingCategory('character').then((_dataList) {
+      _isBeingTracked.keys.forEach((key) {
+        bool _isTracked = TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
+        setState(() {
+          _isBeingTracked[key] = (_isTracked) ? 1 : 2; // 1 - Yes, 2 - No
+        });
+      });
     });
   }
 

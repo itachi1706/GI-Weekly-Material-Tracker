@@ -6,16 +6,26 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class TrackingData {
 
-  static Future<bool> isBeingTracked(String key, String item) async {
-    if (_auth.currentUser == null) return false;
+  static Future<List<dynamic>> getTrackingCategory(String key) async {
+    if (_auth.currentUser == null) return null;
     String uid = _auth.currentUser.uid;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
     DocumentSnapshot snapshot = await trackRef.get();
     Map<String, dynamic> fields = snapshot.data();
-    if (fields == null || fields.length <= 0 || !fields.containsKey(key)) return false; // No tracking
-    List<dynamic> _data = fields[key];
+    if (fields == null || fields.length <= 0 || !fields.containsKey(key)) return null;
+    return fields[key];
+  }
+
+  static Future<bool> isBeingTracked(String key, String item) async {
+    List<dynamic> _data = await getTrackingCategory(key);
+    if (_data == null) return false;
+
     return _data.contains(item);
   }
+
+  static bool isBeingTrackedLocal(List<dynamic> _data, String item) {
+    return _data.contains(item);
+}
 
   static Future<void> addToRecord(String key, String item) async {
     if (_auth.currentUser == null) return;
