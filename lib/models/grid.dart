@@ -26,13 +26,20 @@ class GridData {
 
   static String getElementImageRef(String element) {
     switch (element.toLowerCase()) {
-      case "geo": return "assets/images/elements/Element_Geo.png";
-      case "anemo": return "assets/images/elements/Element_Anemo.png";
-      case "cryo": return "assets/images/elements/Element_Cryo.png";
-      case "dendro": return "assets/images/elements/Element_Dendro.png";
-      case "electro": return "assets/images/elements/Element_Electro.png";
-      case "hydro": return "assets/images/elements/Element_Hydro.png";
-      case "pyro": return "assets/images/elements/Element_Pyro.png";
+      case "geo":
+        return "assets/images/elements/Element_Geo.png";
+      case "anemo":
+        return "assets/images/elements/Element_Anemo.png";
+      case "cryo":
+        return "assets/images/elements/Element_Cryo.png";
+      case "dendro":
+        return "assets/images/elements/Element_Dendro.png";
+      case "electro":
+        return "assets/images/elements/Element_Electro.png";
+      case "hydro":
+        return "assets/images/elements/Element_Hydro.png";
+      case "pyro":
+        return "assets/images/elements/Element_Pyro.png";
     }
     return null;
   }
@@ -40,20 +47,30 @@ class GridData {
   static Future<Map<String, dynamic>> retrieveMaterialsMapData() async {
     QuerySnapshot snapshot = await _db.collection("materials").get();
     Map<String, dynamic> data = new Map();
-    snapshot.docs.forEach((element) { data.putIfAbsent(element.id, () => element.data()); });
+    snapshot.docs.forEach((element) {
+      data.putIfAbsent(element.id, () => element.data());
+    });
     return data;
   }
 
   static String getRomanNumberArray(int number) {
     switch (number) {
-      case 0: return "I";
-      case 1: return "II";
-      case 2: return "III";
-      case 3: return "IV";
-      case 4: return "V";
-      case 5: return "VI";
-      case 6: return "VII";
-      default: return (number+1).toString();
+      case 0:
+        return "I";
+      case 1:
+        return "II";
+      case 2:
+        return "III";
+      case 3:
+        return "IV";
+      case 4:
+        return "V";
+      case 5:
+        return "VI";
+      case 6:
+        return "VII";
+      default:
+        return (number + 1).toString();
     }
   }
 

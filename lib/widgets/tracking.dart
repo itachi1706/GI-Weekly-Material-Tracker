@@ -18,7 +18,6 @@ class TabControllerWidget extends StatefulWidget {
 }
 
 class _TabControllerWidgetState extends State<TabControllerWidget> {
-
   final List<Widget> _children = [
     TrackerPage(path: "boss_drops"),
     TrackerPage(path: "domain_forgery"),
@@ -29,10 +28,7 @@ class _TabControllerWidgetState extends State<TabControllerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return TabBarView(
-        controller: widget.tabController,
-        children: _children
-    );
+    return TabBarView(controller: widget.tabController, children: _children);
   }
 }
 
@@ -46,13 +42,12 @@ class TrackerPage extends StatefulWidget {
 }
 
 class _TrackerPageState extends State<TrackerPage> {
-
   final String _uid = _auth.currentUser.uid;
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference ref = _db.collection("tracking").doc(_uid).collection(
-        widget.path);
+    CollectionReference ref =
+        _db.collection("tracking").doc(_uid).collection(widget.path);
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -72,7 +67,8 @@ class _TrackerPageState extends State<TrackerPage> {
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
                 return ListTile(
-                  onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+                  onTap: () =>
+                      PlaceholderUtil.showUnimplementedSnackbar(context),
                   title: Text("YOLO $index"),
                 );
               },

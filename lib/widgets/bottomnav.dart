@@ -20,7 +20,8 @@ class MainNavigationPage extends StatefulWidget {
   _MainNavigationPageState createState() => _MainNavigationPageState();
 }
 
-class _MainNavigationPageState extends State<MainNavigationPage> with SingleTickerProviderStateMixin {
+class _MainNavigationPageState extends State<MainNavigationPage>
+    with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<Widget> _children;
@@ -36,11 +37,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> with SingleTick
 
   Widget _showAppBar() {
     if (_currentIndex != 0) return null;
-    return TabBar(
-      controller: _tabController,
-      tabs: _tabs,
-      isScrollable: true
-    );
+    return TabBar(controller: _tabController, tabs: _tabs, isScrollable: true);
   }
 
   @override
@@ -48,7 +45,9 @@ class _MainNavigationPageState extends State<MainNavigationPage> with SingleTick
     super.initState();
     _tabController = TabController(vsync: this, length: _tabs.length);
     _children = [
-      TabControllerWidget(tabController: _tabController,),
+      TabControllerWidget(
+        tabController: _tabController,
+      ),
       CharacterListGrid(),
       WeaponListGrid(),
       MaterialListGrid(),

@@ -5,14 +5,14 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class TrackingData {
-
   static Future<List<dynamic>> getTrackingCategory(String key) async {
     if (_auth.currentUser == null) return null;
     String uid = _auth.currentUser.uid;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
     DocumentSnapshot snapshot = await trackRef.get();
     Map<String, dynamic> fields = snapshot.data();
-    if (fields == null || fields.length <= 0 || !fields.containsKey(key)) return null;
+    if (fields == null || fields.length <= 0 || !fields.containsKey(key))
+      return null;
     return fields[key];
   }
 
@@ -33,14 +33,26 @@ class TrackingData {
     String uid = _auth.currentUser.uid;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
     DocumentSnapshot snapshot = await trackRef.get();
-    if (snapshot.exists) await trackRef.update({key: FieldValue.arrayUnion([item])});
-    else trackRef.set({key: [item]});
+    if (snapshot.exists)
+      await trackRef.update({
+        key: FieldValue.arrayUnion([item])
+      });
+    else
+      trackRef.set({
+        key: [item]
+      });
   }
 
-  static void addToCollection(String key, String itemKey, int numToTrack, String materialType, String addType, String extraData) async {
+  static void addToCollection(String key, String itemKey, int numToTrack,
+      String materialType, String addType, String extraData) async {
     if (_auth.currentUser == null || itemKey == null) return;
     String uid = _auth.currentUser.uid;
-    await _db.collection("tracking").doc(uid).collection(materialType).doc(key).set({
+    await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(materialType)
+        .doc(key)
+        .set({
       "name": itemKey,
       "max": numToTrack,
       "current": 0,
@@ -54,13 +66,19 @@ class TrackingData {
     if (_auth.currentUser == null) return;
     String uid = _auth.currentUser.uid;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
-    await trackRef.update({key: FieldValue.arrayRemove([item])});
+    await trackRef.update({
+      key: FieldValue.arrayRemove([item])
+    });
   }
 
   static void removeFromCollection(String key, String materialType) async {
     if (_auth.currentUser == null) return;
     String uid = _auth.currentUser.uid;
-    await _db.collection("tracking").doc(uid).collection(materialType).doc(key).delete();
+    await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(materialType)
+        .doc(key)
+        .delete();
   }
-
 }
