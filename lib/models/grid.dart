@@ -41,8 +41,8 @@ class GridData {
     return null;
   }
 
-  static Future<Map<String, dynamic>> retrieveMaterialsMapData(FirebaseFirestore instance) async {
-    QuerySnapshot snapshot = await instance.collection("materials").get();
+  static Future<Map<String, dynamic>> retrieveMaterialsMapData() async {
+    QuerySnapshot snapshot = await _db.collection("materials").get();
     Map<String, dynamic> data = new Map();
     snapshot.docs.forEach((element) { data.putIfAbsent(element.id, () => element.data()); });
     return data;
