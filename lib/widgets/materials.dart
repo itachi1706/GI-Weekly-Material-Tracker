@@ -80,7 +80,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
     GridData.addToRecord(_infoData['innerType'], _infoId);
-    GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType']);
+    GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
     Navigator.of(context).pop();
     Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
   }
