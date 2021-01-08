@@ -81,6 +81,107 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     return Colors.yellow; // Error
   }
 
+  int _isBeingTrackedStatus(String key) {
+    if (!_isBeingTracked.keys.contains(key)) return 0;
+    return _isBeingTracked[key];
+  }
+
+  void _trackCharacterAction() {
+    // TODO: Code Stub
+    PlaceholderUtil.showUnimplementedSnackbar(context);
+    Navigator.of(context).pop();
+  }
+
+  void _untrackCharacterAction() {
+    // TODO: Code Stub
+    PlaceholderUtil.showUnimplementedSnackbar(context);
+    Navigator.of(context).pop();
+  }
+
+  List<Widget> _getAscensionTierMaterialRowChild(Map<String, dynamic> curData, String key) {
+    return [
+      _getAscenionImage(curData[key]),
+      Text(curData[key] == null ? "" : _materialData[curData[key]]['name']),
+      Text((curData["${key}qty"] == 0) ? "" : " x${curData["${key}qty"].toString()}"),
+    ];
+  }
+
+  void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
+    String key = index.toString();
+    if (_isBeingTrackedStatus(key) == 0) {
+      Util.showSnackbarQuick(context, "Checking tracking status");
+      return;
+    }
+
+    if (_isBeingTrackedStatus(key) == 1) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Remove ${_infoData['name']} Ascension Tier $key from the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
+                  Text("This will remove the currently tracked data for this character from the tracker"),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Untrack'),
+                onPressed: _untrackCharacterAction,
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Add ${_infoData['name']} Ascension Tier $key to the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
+                  Text("Items being added to tracker:"),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(curData, 'material2'),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(curData, 'material1'),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(curData, 'material3'),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(curData, 'material4'),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Track'),
+                onPressed: _trackCharacterAction,
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -96,7 +197,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   Widget _getAscenionImage(String itemKey) {
-    if (itemKey == null) return Image.memory(kTransparentImage);
+    if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
     
     return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'], height: 16);
   }
@@ -121,7 +222,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           child: Card(
             color: _getTrackingColor(index+1),
             child: InkWell(
-              onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+              onTap: () => _addOrRemoveMaterial(index+1, curData),
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
