@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -62,6 +61,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+    refreshTrackingStatus();
+  }
+
+  void refreshTrackingStatus() {
+    setState(() {_addCheckObtained = false;});
     GridData.isBeingTracked(_infoData['innerType'], _infoId).then((isTracked) => setState(() {
       _isAdded = isTracked;
       _addCheckObtained = true;
@@ -79,14 +83,17 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
-    GridData.addToRecord(_infoData['innerType'], _infoId);
+    GridData.addToRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
     GridData.addToCollection("Material_$_infoId", _infoId, toTrack, _infoData['innerType'], 'material');
     Navigator.of(context).pop();
     Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
   }
 
   void _untrackMaterialAction() {
-    // TODO: Code Stub
+    Navigator.of(context).pop();
+    GridData.removeFromRecord(_infoData['innerType'], _infoId).then((value) => refreshTrackingStatus());
+    GridData.removeFromCollection("Material_$_infoId",_infoData['innerType']);
+    Util.showSnackbarQuick(context, "${_infoData['name']} removed from tracker!");
   }
 
   void _addOrRemoveMaterial() async {
@@ -96,9 +103,33 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     }
 
     if (_isAdded) {
-      // TODO: Remove from tracker
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Remove ${_infoData['name']} from the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_infoData['image'], height: 64),
+                  Text("This will remove the currently tracked data for this material from the tracker"),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Untrack'),
+                onPressed: _untrackMaterialAction,
+              ),
+            ],
+          );
+        },
+      );
     } else {
-      // TODO: Add to tracker
       showDialog(
         context: context,
         builder: (context) {
@@ -134,9 +165,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           );
         },
       );
-      return;
     }
-    PlaceholderUtil.showUnimplementedSnackbar(context);
   }
 
   @override

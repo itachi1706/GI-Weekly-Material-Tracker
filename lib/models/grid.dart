@@ -146,7 +146,7 @@ class GridData {
     return _data.contains(item);
   }
 
-  static void addToRecord(String key, String item) async {
+  static Future<void> addToRecord(String key, String item) async {
     if (_auth.currentUser == null) return;
     String uid = _auth.currentUser.uid;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
@@ -165,5 +165,18 @@ class GridData {
       "type": materialType,
       "addedBy": addType,
     });
+  }
+  
+  static Future<void> removeFromRecord(String key, String item) async {
+    if (_auth.currentUser == null) return;
+    String uid = _auth.currentUser.uid;
+    DocumentReference trackRef = _db.collection("tracking").doc(uid);
+    await trackRef.update({key: FieldValue.arrayRemove([item])});
+  }
+
+  static void removeFromCollection(String key, String materialType) async {
+    if (_auth.currentUser == null) return;
+    String uid = _auth.currentUser.uid;
+    await _db.collection("tracking").doc(uid).collection(materialType).doc(key).delete();
   }
 }
