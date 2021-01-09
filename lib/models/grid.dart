@@ -88,6 +88,8 @@ class GridData {
         return "VI";
       case 6:
         return "VII";
+      case -1:
+        return ""; // Disabled
       default:
         return (number + 1).toString();
     }
