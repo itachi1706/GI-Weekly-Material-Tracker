@@ -36,7 +36,7 @@ class _WeaponListGridState extends State<WeaponListGrid> {
               return GestureDetector(
                 onTap: () => Get.toNamed('/weapons',
                     arguments: [document.id, document.data()]),
-                child: GridData.getGridData(document),
+                child: GridData.getGridData(document.data()),
               );
             }).toList(),
           );

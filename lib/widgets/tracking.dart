@@ -7,6 +7,8 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -27,7 +29,7 @@ class _TabControllerWidgetState extends State<TabControllerWidget> {
     TrackerPage(path: "domain_forgery"),
     TrackerPage(path: "mob_drops"),
     TrackerPage(path: "local_speciality"),
-    PlaceholderWidgetContainer(Colors.pink),
+    PlannerPage(),
   ];
 
   @override
@@ -276,5 +278,129 @@ class _TrackerPageState extends State<TrackerPage> {
             );
           }
         });
+  }
+}
+
+class PlannerPage extends StatefulWidget {
+  @override
+  _PlannerPageState createState() => _PlannerPageState();
+}
+
+class _PlannerPageState extends State<PlannerPage> {
+  final String _uid = _auth.currentUser.uid;
+  Map<String, dynamic> _materialData;
+
+  tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
+
+  @override
+  void initState() {
+    super.initState();
+    GridData.retrieveMaterialsMapData().then((value) => {
+          setState(() {
+            _materialData = value;
+          })
+        });
+
+    tz.initializeTimeZones();
+    var gmt8 = tz.getLocation("Asia/Singapore");
+    _cDT = tz.TZDateTime.now(gmt8);
+    _beforeDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
+    _dbDT = _cDT.subtract(Duration(days: 1));
+    _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
+    _coffDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference ref =
+        _db.collection("tracking").doc(_uid).collection("domain_forgery");
+    return StreamBuilder(
+        stream: ref.snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text("Error occurred getting snapshot");
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting ||
+              _materialData == null) {
+            return Util.centerLoadingCircle("");
+          }
+
+          QuerySnapshot data = snapshot.data;
+          List<String> _finalDomainMaterials = data.docs
+              .map((snapshot) => snapshot.data()["name"].toString())
+              .toSet()
+              .toList();
+          Map<int, Set<String>> _mappedData = {
+            1: new Set(),
+            2: new Set(),
+            3: new Set(),
+            4: new Set(),
+            5: new Set(),
+            6: new Set(),
+            7: new Set(),
+          };
+          _finalDomainMaterials.forEach((domainMaterial) {
+            List<dynamic> _daysForMaterial =
+                _materialData[domainMaterial]["days"];
+            _daysForMaterial.forEach((day) {
+              _mappedData[day].add(domainMaterial);
+            });
+          });
+
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+                  child: Text("Day resets at 4am GMT+8 (Asia). US/EU times coming soon",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: _mappedData.length,
+                  itemBuilder: (context, index) {
+                    int key = _mappedData.keys.elementAt(index);
+                    List<String> _curData = _mappedData[key].toList();
+                    return ListTile(
+                      tileColor: _getTileColorIfCurrentDay(key),
+                      leading: Text(GridData.getDayString(key)),
+                      title: _getGridMaterials(_curData),
+                    );
+                  },
+                  separatorBuilder: (context, index) => Divider(height: 1),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
+  Color _getTileColorIfCurrentDay(int key) {
+    bool currentDay = false;
+    if (_cDT.isAfter(_coffDT) && _cDT.isBefore(_afterDT) && _cDT.weekday == key) currentDay = true;
+    else if (_cDT.isBefore(_coffDT) && _cDT.isAfter(_beforeDT) && _dbDT.weekday == key) currentDay = true;
+
+    if (currentDay) return Colors.lightGreen;
+    else return Colors.transparent;
+  }
+  
+  Widget _getGridMaterials(List<String> _curData) {
+    if (_curData.isEmpty) return Text("Not tracking any domain materials for this day");
+    return GridView.count(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      crossAxisCount: 3,
+      children: _curData.map((materialId) {
+        return GestureDetector(
+          onTap: () => Get.toNamed('/materials',
+              arguments: [materialId, _materialData[materialId]]),
+          child: GridData.getGridData(_materialData[materialId]),
+        );
+      }).toList(),
+    );
   }
 }
