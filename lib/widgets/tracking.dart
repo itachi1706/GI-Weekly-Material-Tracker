@@ -358,7 +358,7 @@ class _PlannerPageState extends State<PlannerPage> {
                     style: TextStyle(fontSize: 12),
                   ),
                 ),
-                ListView.builder(
+                ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: _mappedData.length,
@@ -367,10 +367,11 @@ class _PlannerPageState extends State<PlannerPage> {
                     List<String> _curData = _mappedData[key].toList();
                     return ListTile(
                       tileColor: _getTileColorIfCurrentDay(key),
-                      title: Text(GridData.getDayString(key)),
-                      subtitle: _getGridMaterials(_curData),
+                      leading: Text(GridData.getDayString(key)),
+                      title: _getGridMaterials(_curData),
                     );
                   },
+                  separatorBuilder: (context, index) => Divider(height: 1),
                 ),
               ],
             ),
