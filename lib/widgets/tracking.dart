@@ -92,6 +92,26 @@ class _TrackerPageState extends State<TrackerPage> {
     }
   }
 
+  Widget _getSupportingWidget(String image, int ascension) {
+    if (image == null) return Container();
+    return Container(
+      height: 48,
+      width: 48,
+      child: Stack(
+        children: [
+          GridData.getImageAssetFromFirebase(image, height: 32),
+          Align(
+            alignment: FractionalOffset.bottomLeft,
+            child: Text(
+              GridData.getRomanNumberArray(ascension - 1).toString(),
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     CollectionReference ref =
@@ -121,17 +141,19 @@ class _TrackerPageState extends State<TrackerPage> {
                 String _dataId = data.docs[index].id;
                 print(_data);
                 Map<String, dynamic> _material = _materialData[_data["name"]];
-                String extraImageRef, extraNameRef;
+                String extraImageRef;
+                int extraAscensionRef = 0;
+                var _ascendTier = _dataId.substring(_dataId.length - 1);
                 if (_data["addData"] != null) {
                   // Grab image ref of extra data based on addedBy
                   if (_data["addedBy"] == "character") {
                     // Grab from character
                     extraImageRef = _characterData[_data["addData"]]["image"];
-                    extraNameRef = _characterData[_data["addData"]]["name"];
+                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   } else if (_data["addedBy"] == "weapon") {
                     // Grab from weapon
                     extraImageRef = _weaponData[_data["addData"]]["image"];
-                    extraNameRef = _weaponData[_data["addData"]]["name"];
+                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   }
                 }
 
@@ -237,8 +259,8 @@ class _TrackerPageState extends State<TrackerPage> {
                                   ),
                                 ],
                               ),
-                              GridData.getImageAssetFromFirebase(extraImageRef,
-                                  height: 32)
+                              _getSupportingWidget(
+                                  extraImageRef, extraAscensionRef),
                             ],
                           ),
                         ],
