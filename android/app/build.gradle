@@ -39,12 +39,8 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-
     defaultConfig {
-        applicationId "com.itachi1706.genshinweeklytracker.gi_weekly_material_tracker"
+        applicationId "com.itachi1706.gi_weekly_material_tracker"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()

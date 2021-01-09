@@ -1,6 +1,6 @@
 # gi_weekly_material_tracker
 
-Weekly Material Tracker App for Genshin Impact
+Genshin Impact Weekly Material Tracker App
 
 ## Getting Started
 
