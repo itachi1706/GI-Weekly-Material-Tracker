@@ -27,7 +27,7 @@ class _TabControllerWidgetState extends State<TabControllerWidget> {
     TrackerPage(path: "domain_forgery"),
     TrackerPage(path: "mob_drops"),
     TrackerPage(path: "local_speciality"),
-    PlaceholderWidgetContainer(Colors.pink),
+    PlannerPage(),
   ];
 
   @override
@@ -276,5 +276,97 @@ class _TrackerPageState extends State<TrackerPage> {
             );
           }
         });
+  }
+}
+
+class PlannerPage extends StatefulWidget {
+  @override
+  _PlannerPageState createState() => _PlannerPageState();
+}
+
+class _PlannerPageState extends State<PlannerPage> {
+  final String _uid = _auth.currentUser.uid;
+  Map<String, dynamic> _materialData;
+
+  @override
+  void initState() {
+    super.initState();
+    GridData.retrieveMaterialsMapData().then((value) => {
+          setState(() {
+            _materialData = value;
+          })
+        });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference ref =
+        _db.collection("tracking").doc(_uid).collection("domain_forgery");
+    return StreamBuilder(
+        stream: ref.snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text("Error occurred getting snapshot");
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting ||
+              _materialData == null) {
+            return Util.centerLoadingCircle("");
+          }
+
+          QuerySnapshot data = snapshot.data;
+          List<String> _finalDomainMaterials = data.docs
+              .map((snapshot) => snapshot.data()["name"].toString())
+              .toSet()
+              .toList();
+          Map<int, Set<String>> _mappedData = {
+            1: new Set(),
+            2: new Set(),
+            3: new Set(),
+            4: new Set(),
+            5: new Set(),
+            6: new Set(),
+            7: new Set(),
+          };
+          _finalDomainMaterials.forEach((domainMaterial) {
+            List<dynamic> _daysForMaterial =
+                _materialData[domainMaterial]["days"];
+            _daysForMaterial.forEach((day) {
+              _mappedData[day].add(domainMaterial);
+            });
+          });
+
+          print(_mappedData);
+
+          return ListView.builder(
+            shrinkWrap: true,
+            itemCount: _mappedData.length,
+            itemBuilder: (context, index) {
+              int key = _mappedData.keys.elementAt(index);
+              List<String> _curData = _mappedData[key].toList();
+              print(_curData);
+              return ListTile(
+                title: Text(GridData.getDayString(key)),
+                subtitle: _getGridMaterials(_curData),
+              );
+            },
+          );
+        });
+  }
+  
+  Widget _getGridMaterials(List<String> _curData) {
+    if (_curData.isEmpty) return Text("Not tracking any domain materials for this day");
+    return GridView.count(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      crossAxisCount: 3,
+      children: _curData.map((materialId) {
+        return GestureDetector(
+          onTap: () => Get.toNamed('/materials',
+              arguments: [materialId, _materialData]),
+          child: GridData.getGridData(_materialData[materialId]),
+        );
+      }).toList(),
+    );
   }
 }

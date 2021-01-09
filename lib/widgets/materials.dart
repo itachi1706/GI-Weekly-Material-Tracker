@@ -34,7 +34,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
               return GestureDetector(
                 onTap: () => Get.toNamed('/materials',
                     arguments: [document.id, document.data()]),
-                child: GridData.getGridData(document),
+                child: GridData.getGridData(document.data()),
               );
             }).toList(),
           );

@@ -72,6 +72,19 @@ class GridData {
     return data;
   }
 
+  static String getDayString(int day) {
+    switch (day) {
+      case 1: return "Monday";
+      case 2: return "Tuesday";
+      case 3: return "Wednesday";
+      case 4: return "Thursday";
+      case 5: return "Friday";
+      case 6: return "Saturday";
+      case 7: return "Sunday";
+    }
+    return "Unknown";
+  }
+
   static String getRomanNumberArray(int number) {
     switch (number) {
       case 0:
@@ -146,22 +159,22 @@ class GridData {
     );
   }
 
-  static Widget getGridData(QueryDocumentSnapshot document) {
+  static Widget getGridData(Map<String, dynamic> data) {
     return Card(
-      color: getRarityColor(document.data()['rarity']),
+      color: getRarityColor(data['rarity']),
       child: GridTile(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Stack(
               children: [
-                getImageAssetFromFirebase(document.data()['image']),
+                getImageAssetFromFirebase(data['image']),
               ],
             ),
           ),
           footer: Padding(
             padding: const EdgeInsets.all(2),
             child: Text(
-              document.data()['name'],
+              data['name'],
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 12,
