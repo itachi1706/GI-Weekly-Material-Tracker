@@ -61,9 +61,9 @@ class _MainNavigationPageState extends State<MainNavigationPage>
           bottom: _showAppBar(),
           actions: [
             IconButton(
-              icon: Icon(Icons.refresh),
-              onPressed: () =>
-                  PlaceholderUtil.showUnimplementedSnackbar(context),
+              icon: Icon(MdiIcons.fileDocument),
+              tooltip: "View Consolidated Material List",
+              onPressed: () => Get.toNamed('/globalTracking'),
             ),
             PopupMenuButton(
               onSelected: _overflowMenuSelection,
