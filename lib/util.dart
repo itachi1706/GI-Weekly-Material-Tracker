@@ -1,7 +1,6 @@
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-final FirebaseStorage _storage = FirebaseStorage.instance;
+final String _firebaseStorageUrl = "gs://gi-weekly-material-tracker.appspot.com/";
 
 class Util {
   static void showSnackbarQuick(BuildContext context, String message) {
@@ -19,6 +18,6 @@ class Util {
   }
 
   static Future<String> getFirebaseStorageUrl(String ref) async {
-    return await _storage.ref(ref).getDownloadURL();
+    return "$_firebaseStorageUrl$ref";
   }
 }

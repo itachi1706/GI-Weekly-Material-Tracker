@@ -1,7 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:octo_image/octo_image.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -104,15 +105,14 @@ class GridData {
               child: SizedBox(
                 height: height,
                 width: height,
-                child: CachedNetworkImage(
-                  imageUrl: snapshot.data,
-                  height: height,
-                  placeholder: (context, url) => SizedBox(
+                child: OctoImage(
+                  placeholderBuilder: (context) => SizedBox(
                     child: CircularProgressIndicator(),
                     height: height,
                     width: height,
                   ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorBuilder: (context, obj, trace) => Icon(Icons.error),
+                  image: FirebaseImage(snapshot.data),
                   placeholderFadeInDuration: Duration(seconds: 2),
                 ),
               ),
