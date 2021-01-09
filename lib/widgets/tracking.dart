@@ -7,6 +7,8 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -288,6 +290,8 @@ class _PlannerPageState extends State<PlannerPage> {
   final String _uid = _auth.currentUser.uid;
   Map<String, dynamic> _materialData;
 
+  tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
+
   @override
   void initState() {
     super.initState();
@@ -296,6 +300,14 @@ class _PlannerPageState extends State<PlannerPage> {
             _materialData = value;
           })
         });
+
+    tz.initializeTimeZones();
+    var gmt8 = tz.getLocation("Asia/Singapore");
+    _cDT = tz.TZDateTime.now(gmt8);
+    _beforeDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
+    _dbDT = _cDT.subtract(Duration(days: 1));
+    _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
+    _coffDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
   }
 
   @override
@@ -336,22 +348,43 @@ class _PlannerPageState extends State<PlannerPage> {
             });
           });
 
-          print(_mappedData);
-
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: _mappedData.length,
-            itemBuilder: (context, index) {
-              int key = _mappedData.keys.elementAt(index);
-              List<String> _curData = _mappedData[key].toList();
-              print(_curData);
-              return ListTile(
-                title: Text(GridData.getDayString(key)),
-                subtitle: _getGridMaterials(_curData),
-              );
-            },
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+                  child: Text("Day resets at 4am GMT+8 (Asia). US/EU times coming soon",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: _mappedData.length,
+                  itemBuilder: (context, index) {
+                    int key = _mappedData.keys.elementAt(index);
+                    List<String> _curData = _mappedData[key].toList();
+                    return ListTile(
+                      tileColor: _getTileColorIfCurrentDay(key),
+                      title: Text(GridData.getDayString(key)),
+                      subtitle: _getGridMaterials(_curData),
+                    );
+                  },
+                ),
+              ],
+            ),
           );
         });
+  }
+
+  Color _getTileColorIfCurrentDay(int key) {
+    bool currentDay = false;
+    if (_cDT.isAfter(_coffDT) && _cDT.isBefore(_afterDT) && _cDT.weekday == key) currentDay = true;
+    else if (_cDT.isBefore(_coffDT) && _cDT.isAfter(_beforeDT) && _dbDT.weekday == key) currentDay = true;
+
+    if (currentDay) return Colors.lightGreen;
+    else return Colors.transparent;
   }
   
   Widget _getGridMaterials(List<String> _curData) {
@@ -363,7 +396,7 @@ class _PlannerPageState extends State<PlannerPage> {
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials',
-              arguments: [materialId, _materialData]),
+              arguments: [materialId, _materialData[materialId]]),
           child: GridData.getGridData(_materialData[materialId]),
         );
       }).toList(),
