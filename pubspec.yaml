@@ -1,5 +1,5 @@
 name: gi_weekly_material_tracker
-description: Weekly Material Tracker App for Genshin Impact
+description: Genshin Impact Weekly Weekly Tracker App
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -45,6 +45,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   dependency_validator: ^2.0.1
 
