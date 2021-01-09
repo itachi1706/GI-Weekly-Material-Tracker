@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/materials', page: () => MaterialInfoPage()),
         GetPage(name: '/characters', page: () => CharacterInfoPage()),
         GetPage(name: '/weapons', page: () => WeaponInfoPage()),
-        GetPage(name: '/globalTracking', page: () => GlobalTrackingPage())
+        GetPage(name: '/globalTracking', page: () => GlobalTrackingPage()),
+        GetPage(name: '/globalMaterial', page: () => GlobalMaterialPage()),
       ],
     );
   }
