@@ -83,7 +83,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         ),
         body: _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.green,
+          selectedItemColor: Colors.deepOrange,
           unselectedItemColor: Colors.grey,
           currentIndex: _currentIndex,
           onTap: _onTabTapped,
