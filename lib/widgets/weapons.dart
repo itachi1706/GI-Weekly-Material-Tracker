@@ -104,12 +104,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   void _trackWeaponAction() {
     print("Selected: $_selectedTier");
     Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    String _ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord('weapon', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_selectedTier added to tracker!");
+          "${_infoData['name']} Ascension Tier $_ascensionTierSel added to tracker!");
     });
     if (_ascendTier['material1'] != null)
       TrackingData.addToCollection(
@@ -141,12 +142,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   void _untrackWeaponAction() {
     print("Selected: $_selectedTier");
     Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    String _ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord('weapon', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_selectedTier removed from tracker!");
+          "${_infoData['name']} Ascension Tier $_ascensionTierSel removed from tracker!");
     });
     if (_ascendTier['material1'] != null)
       TrackingData.removeFromCollection(
