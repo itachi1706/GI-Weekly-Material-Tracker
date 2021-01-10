@@ -2,6 +2,7 @@ image: alpine:latest
 
 stages:
   - build
+  - upload
   - deploy
 
 Deploy Firebase Security Rules:
