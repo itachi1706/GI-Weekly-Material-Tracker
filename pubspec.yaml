@@ -18,7 +18,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 # RELEASE USE ONLY. LEAVE COMMENTED OTHERWISE
-#version: 1.0.0+1
+# flutter build apk --target-platform android-arm64 --split-per-abi
+#version: 1.0.0+141
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
