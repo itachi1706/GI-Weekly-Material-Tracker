@@ -4,7 +4,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
       "name": "Amber Catalyst",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Amber_Catalyst.png",
       "secondary_stat": "16",
       "rarity": 3,
@@ -18,7 +79,48 @@
       "secondary_stat_type": "None",
       "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
       "name": "Apprentice's Notes",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 0
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 10000
+        }
+      },
       "image": "Weapons/Catalyst/Apprentice_Notes.png",
       "secondary_stat": "None",
       "rarity": 1,
@@ -32,7 +134,68 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A mysterious catalyst made of blackstone. It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
       "name": "Blackcliff Agate",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Blackcliff_Amulet.png",
       "secondary_stat": "12%",
       "rarity": 4,
@@ -46,7 +209,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A catalyst carved out of the hard jade from Jueyunjian north of Liyue. It is small, light, and durable.",
       "name": "Emerald Orb",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Emerald_Orb.png",
       "secondary_stat": "20",
       "rarity": 3,
@@ -60,7 +284,68 @@
       "secondary_stat_type": "ATK",
       "description": "A dim black glaze pearl that is said to have the power to reach the purity of one's heart.",
       "name": "Eye of Perception",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Eye_of_Perception.png",
       "secondary_stat": "12%",
       "rarity": 4,
@@ -74,7 +359,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
       "name": "Favonius Codex",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Favonius_Codex.png",
       "secondary_stat": "10%",
       "rarity": 4,
@@ -88,7 +434,68 @@
       "secondary_stat_type": "ATK",
       "description": "A fruit that possesses a strange frosty will. A faint sense of agony emanates from it.",
       "name": "Frostbearer",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Frostbearer.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -102,7 +509,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
       "name": "Lost Prayer to the Sacred Winds",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Catalyst/Lost_Prayer_to_the_Sacred_Winds.png",
       "secondary_stat": "7.2%",
       "rarity": 5,
@@ -116,7 +584,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
       "name": "Magic Guide",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Magic_Guide.png",
       "secondary_stat": "41",
       "rarity": 3,
@@ -130,7 +659,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
       "name": "Mappa Mare",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Mappa_Mare.png",
       "secondary_stat": "24",
       "rarity": 4,
@@ -144,7 +734,68 @@
       "secondary_stat_type": "ATK",
       "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
       "name": "Memory of Dust",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Catalyst/Memory_of_Dust.png",
       "secondary_stat": "10.8%",
       "rarity": 5,
@@ -158,7 +809,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
       "name": "Otherworldly Story",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Otherworldly_Story.png",
       "secondary_stat": "8.5%",
       "rarity": 3,
@@ -172,7 +884,48 @@
       "secondary_stat_type": "None",
       "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
       "name": "Pocket Grimoire",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 10000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 15000
+        }
+      },
       "image": "Weapons/Catalyst/Pocket_Grimoire.png",
       "secondary_stat": "None",
       "rarity": 2,
@@ -186,7 +939,68 @@
       "secondary_stat_type": "HP",
       "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
       "name": "Prototype Amber (Formerly Malice)",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Prototype_Malice.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -200,7 +1014,68 @@
       "secondary_stat_type": "ATK",
       "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
       "name": "Royal Grimoire",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Royal_Grimoire.png",
       "secondary_stat": "6%",
       "rarity": 4,
@@ -214,7 +1089,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
       "name": "Sacrificial Fragments",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Sacrificial_Fragments.png",
       "secondary_stat": "48",
       "rarity": 4,
@@ -228,7 +1164,68 @@
       "secondary_stat_type": "ATK",
       "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
       "name": "Skyward Atlas",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Catalyst/Skyward_Atlas.png",
       "secondary_stat": "7.2%",
       "rarity": 5,
@@ -242,7 +1239,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
       "name": "Solar Pearl",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Solar_Pearl.png",
       "secondary_stat": "6%",
       "rarity": 4,
@@ -256,7 +1314,68 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
       "name": "The Widsith",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/The_Widsith.png",
       "secondary_stat": "12%",
       "rarity": 4,
@@ -270,7 +1389,68 @@
       "secondary_stat_type": "HP",
       "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
       "name": "Thrilling Tales of Dragon Slayers",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Thrilling_Tales_of_Dragon_Slayers.png",
       "secondary_stat": "7.7%",
       "rarity": 3,
@@ -284,7 +1464,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A jade pendant formed by piecing together two jade stones.",
       "name": "Twin Nephrite",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Catalyst/Twin_Nephrite.png",
       "secondary_stat": "3.4%",
       "rarity": 3,
@@ -298,7 +1539,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
       "name": "Wine and Song",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Catalyst/Wine_and_Song.png",
       "secondary_stat": "10%",
       "rarity": 4,

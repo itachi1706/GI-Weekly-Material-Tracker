@@ -4,7 +4,68 @@
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "The sword of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil—just like the last heroine who wielded it.",
       "name": "Aquila Favonia",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Sword/Aquila_Favonia.png",
       "secondary_stat": "9%",
       "rarity": 5,
@@ -18,7 +79,68 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A sword made of blackstone. It has a dark crimson glow on its black blade.",
       "name": "Blackcliff Longsword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Blackcliff_Longsword.png",
       "secondary_stat": "8%",
       "rarity": 4,
@@ -32,7 +154,68 @@
       "secondary_stat_type": "ATK",
       "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
       "name": "Cool Steel",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Cool_Steel.png",
       "secondary_stat": "7.7%",
       "rarity": 3,
@@ -46,7 +229,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A perfectly ordinary iron sword, just slightly darker than most.",
       "name": "Dark Iron Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Dark_Iron_Sword.png",
       "secondary_stat": "31",
       "rarity": 3,
@@ -60,7 +304,48 @@
       "secondary_stat_type": "None",
       "description": "Youthful dreams and the thrill of adventure. If this isn't enough, then make it up with valiance.",
       "name": "Dull Blade",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 0
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 10000
+        }
+      },
       "image": "Weapons/Sword/Dull_Blade.png",
       "secondary_stat": "None",
       "rarity": 1,
@@ -74,7 +359,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
       "name": "Favonius Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Favonius_Sword.png",
       "secondary_stat": "13.3%",
       "rarity": 4,
@@ -88,7 +434,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
       "name": "Festering Desire",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Festering_Desire.png",
       "secondary_stat": "10%",
       "rarity": 4,
@@ -102,7 +509,68 @@
       "secondary_stat_type": "ATK",
       "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
       "name": "Fillet Blade",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Fillet_Blade.png",
       "secondary_stat": "7.7%",
       "rarity": 3,
@@ -116,7 +584,68 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
       "name": "Harbinger of Dawn",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Harbinger_of_Dawn.png",
       "secondary_stat": "10.2%",
       "rarity": 3,
@@ -130,7 +659,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
       "name": "Iron Sting",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Iron_Sting.png",
       "secondary_stat": "36",
       "rarity": 4,
@@ -144,7 +734,68 @@
       "secondary_stat_type": "ATK",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
       "name": "Lion's Roar",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Lion_Roar.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -158,7 +809,68 @@
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
       "name": "Prototype Rancour",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Prototype_Rancour.png",
       "secondary_stat": "7.5%",
       "rarity": 4,
@@ -172,7 +884,68 @@
       "secondary_stat_type": "ATK",
       "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
       "name": "Royal Longsword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Royal_Longsword.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -186,7 +959,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
       "name": "Sacrificial Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Sacrificial_Sword.png",
       "secondary_stat": "13.3%",
       "rarity": 4,
@@ -200,7 +1034,48 @@
       "secondary_stat_type": "None",
       "description": "A sword for chasing away demons. Everyone knows it's made of a silver alloy, not pure silver.",
       "name": "Silver Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 10000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 15000
+        }
+      },
       "image": "Weapons/Sword/Silver_Sword.png",
       "secondary_stat": "None",
       "rarity": 2,
@@ -214,7 +1089,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
       "name": "Skyrider Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Skyrider_Sword.png",
       "secondary_stat": "11.3%",
       "rarity": 3,
@@ -228,7 +1164,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
       "name": "Skyward Blade",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Sword/Skyward_Blade.png",
       "secondary_stat": "12%",
       "rarity": 5,
@@ -242,7 +1239,68 @@
       "secondary_stat_type": "ATK",
       "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
       "name": "Summit Shaper",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Sword/Summit_Shaper.png",
       "secondary_stat": "10.8%",
       "rarity": 5,
@@ -256,7 +1314,68 @@
       "secondary_stat_type": "ATK",
       "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
       "name": "Sword of Descension",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/Sword_of_Descension.png",
       "secondary_stat": "7.7%",
       "rarity": 4,
@@ -270,7 +1389,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
       "name": "The Alley Flash",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/The_Alley_Flash.png",
       "secondary_stat": "4%",
       "rarity": 4,
@@ -284,7 +1464,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
       "name": "The Black Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/The_Black_Sword.png",
       "secondary_stat": "6%",
       "rarity": 4,
@@ -298,7 +1539,68 @@
       "secondary_stat_type": "ATK",
       "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
       "name": "The Flute",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Sword/The_Flute.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -312,7 +1614,68 @@
       "secondary_stat_type": "DEF",
       "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
       "name": "Traveler's Handy Sword",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Sword/Traveler_Handy_Sword.png",
       "secondary_stat": "6.4%",
       "rarity": 3,

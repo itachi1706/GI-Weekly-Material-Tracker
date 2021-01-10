@@ -4,7 +4,48 @@
       "secondary_stat_type": "None",
       "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
       "name": "Beginner's Protector",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 0
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 10000
+        }
+      },
       "image": "Weapons/Polearm/Beginner_Protector.png",
       "secondary_stat": "None",
       "rarity": 1,
@@ -18,7 +59,68 @@
       "secondary_stat_type": "HP",
       "description": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
       "name": "Black Tassel",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Polearm/Black_Tassel.png",
       "secondary_stat": "10.2%",
       "rarity": 3,
@@ -32,7 +134,68 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A weapon made of blackstone and aerosiderite. There is a dark crimson glow on its cold black sheen.",
       "name": "Blackcliff Pole",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Blackcliff_Pole.png",
       "secondary_stat": "12%",
       "rarity": 4,
@@ -46,7 +209,68 @@
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
       "name": "Crescent Pike",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Crescent_Pike.png",
       "secondary_stat": "7.5%",
       "rarity": 4,
@@ -60,7 +284,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A sharp crimson polearm that was once a gladiator's priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
       "name": "Deathmatch",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Deathmatch.png",
       "secondary_stat": "8%",
       "rarity": 4,
@@ -74,7 +359,68 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
       "name": "Dragon's Bane",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Dragon_Bane.png",
       "secondary_stat": "48",
       "rarity": 4,
@@ -88,7 +434,68 @@
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "A Spear created from the fang of a dragon. It is oddly warm to the touch.",
       "name": "Dragonspine Spear",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Dragonspine_Spear.png",
       "secondary_stat": "15%",
       "rarity": 4,
@@ -102,7 +509,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
       "name": "Favonius Lance",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Favonius_Lance.png",
       "secondary_stat": "6.7%",
       "rarity": 4,
@@ -116,7 +584,68 @@
       "secondary_stat_type": "ATK",
       "description": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It's favored by the Millelith officers.",
       "name": "Halberd",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Polearm/Halberd.png",
       "secondary_stat": "5.1%",
       "rarity": 3,
@@ -130,7 +659,48 @@
       "secondary_stat_type": "None",
       "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
       "name": "Iron Point",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 10000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 15000
+        }
+      },
       "image": "Weapons/Polearm/Iron_Point.png",
       "secondary_stat": "None",
       "rarity": 2,
@@ -144,7 +714,68 @@
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
       "name": "Lithic Spear",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Lithic_Spear.png",
       "secondary_stat": "9%",
       "rarity": 4,
@@ -158,7 +789,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
       "name": "Primordial Jade Winged-Spear",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Polearm/Primordial_Jade_Winged-Spear.png",
       "secondary_stat": "4.8%",
       "rarity": 5,
@@ -172,7 +864,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
       "name": "Prototype Starglitter (Formerly Grudge)",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Prototype_Grudge.png",
       "secondary_stat": "10.0%",
       "rarity": 4,
@@ -186,7 +939,68 @@
       "secondary_stat_type": "ATK",
       "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
       "name": "Royal Spear",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
       "image": "Weapons/Polearm/Royal_Spear.png",
       "secondary_stat": "6%",
       "rarity": 4,
@@ -200,7 +1014,68 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A polearm that symbolizes Dvalin's fire resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
       "name": "Skyward Spine",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Polearm/Skyward_Spine.png",
       "secondary_stat": "8%",
       "rarity": 5,
@@ -214,7 +1089,68 @@
       "secondary_stat_type": "ATK",
       "description": "(Formerly Kunwu's Iris Rift)\n\nThis sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
       "name": "Vortex Vanquisher",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
       "image": "Weapons/Polearm/Vortex_Vanquisher.png",
       "secondary_stat": "10.8%",
       "rarity": 5,
@@ -228,7 +1164,68 @@
       "secondary_stat_type": "CRIT Rate",
       "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It's a reliable weapon.",
       "name": "White Tassel",
-      "ascension": {},
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
       "image": "Weapons/Polearm/White_Tassel.png",
       "secondary_stat": "5.1%",
       "rarity": 3,
