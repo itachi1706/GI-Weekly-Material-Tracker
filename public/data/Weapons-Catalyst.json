@@ -1,0 +1,1614 @@
+{
+  "weapons": {
+    "Amber_Catalyst": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
+      "name": "Amber Catalyst",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Amber_Catalyst.png",
+      "secondary_stat": "16",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 40,
+      "obtained": "Chests",
+      "effect": "Normal Attack hits increase all Elemental DMG by 6% for 6s. Max 2 stacks.",
+      "subCollection": {}
+    },
+    "Apprentice_Notes": {
+      "secondary_stat_type": "None",
+      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "name": "Apprentice's Notes",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 1,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 0
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 2,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 3,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 4,
+          "material1qty": 1,
+          "mora": 10000
+        }
+      },
+      "image": "Weapons/Catalyst/Apprentice_Notes.png",
+      "secondary_stat": "None",
+      "rarity": 1,
+      "type": "Catalyst",
+      "base_atk": 23,
+      "obtained": "Chests",
+      "effect": "No effects",
+      "subCollection": {}
+    },
+    "Blackcliff_Amulet": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A mysterious catalyst made of blackstone. It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
+      "name": "Blackcliff Agate",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 2,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 12,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Blackcliff_Amulet.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Paimon's Bargains",
+      "effect": "After defeating an opponent, ATK is increased by 12% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+      "subCollection": {}
+    },
+    "Emerald_Orb": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A catalyst carved out of the hard jade from Jueyunjian north of Liyue. It is small, light, and durable.",
+      "name": "Emerald Orb",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 1,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 5,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 4,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 4,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Emerald_Orb.png",
+      "secondary_stat": "20",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 40,
+      "obtained": "Gacha",
+      "effect": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by 20% for 12s.",
+      "subCollection": {}
+    },
+    "Eye_of_Perception": {
+      "secondary_stat_type": "ATK",
+      "description": "A dim black glaze pearl that is said to have the power to reach the purity of one's heart.",
+      "name": "Eye of Perception",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Eye_of_Perception.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effect": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing 240% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every 12s.",
+      "subCollection": {}
+    },
+    "Favonius_Codex": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
+      "name": "Favonius Codex",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Favonius_Codex.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effect": "CRIT hits have a 60% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every 12s.",
+      "subCollection": {}
+    },
+    "Frostbearer": {
+      "secondary_stat_type": "ATK",
+      "description": "A fruit that possesses a strange frosty will. A faint sense of agony emanates from it.",
+      "name": "Frostbearer",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Frostbearer.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Forging (1x Northlander Catalyst Prototype, 50x Crystal Chunk, 50x Starsilver)",
+      "effect": "Hitting an opponent with Normal and Charged Attacks has a 60% chance of forming and dropping an Everfrost Icicle above them, dealing 80% AoE ATK DMG.\nOpponents affected by Cryo are dealt 200% ATK DMG. Can only occur once every 10s.",
+      "subCollection": {}
+    },
+    "Lost_Prayer_to_the_Sacred_Winds": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
+      "name": "Lost Prayer to the Sacred Winds",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Lost_Prayer_to_the_Sacred_Winds.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effect": "Increases Movement SPD by 10%. When in battle, gain an 8% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+      "subCollection": {}
+    },
+    "Magic_Guide": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
+      "name": "Magic Guide",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 1,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 5,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 4,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 4,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 8,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Magic_Guide.png",
+      "secondary_stat": "41",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 38,
+      "obtained": "Gacha",
+      "effect": "Increases DMG against opponents affected by Hydro or Electro by 12%.",
+      "subCollection": {}
+    },
+    "Mappa_Mare": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
+      "name": "Mappa Mare",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 2,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 12,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Mappa_Mare.png",
+      "secondary_stat": "24",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 44,
+      "obtained": "Forging (1x Northlander Catalyst Prototype, 50x Crystal Chunk, 50x White Iron Chunk)",
+      "effect": "Triggering an Elemental reaction grants a 8% Elemental DMG Bonus for 10s. Max 2 stacks.",
+      "subCollection": {}
+    },
+    "Memory_of_Dust": {
+      "secondary_stat_type": "ATK",
+      "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
+      "name": "Memory of Dust",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 3,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 12,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 14,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 18,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Memory_of_Dust.png",
+      "secondary_stat": "10.8%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effect": "Increases Shield Strength by 20%. Scoring hits on opponents increases ATK by 4% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+      "subCollection": {}
+    },
+    "Otherworldly_Story": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+      "name": "Otherworldly Story",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 1,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 5,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 4,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 4,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 8,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Otherworldly_Story.png",
+      "secondary_stat": "8.5%",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 39,
+      "obtained": "Chests",
+      "effect": "Each Elemental Orb or Particle collected restores 1% HP.",
+      "subCollection": {}
+    },
+    "Pocket_Grimoire": {
+      "secondary_stat_type": "None",
+      "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+      "name": "Pocket Grimoire",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 1,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 1,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 4,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 5000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 3,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 10000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 4,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 5,
+          "material1qty": 1,
+          "mora": 15000
+        }
+      },
+      "image": "Weapons/Catalyst/Pocket_Grimoire.png",
+      "secondary_stat": "None",
+      "rarity": 2,
+      "type": "Catalyst",
+      "base_atk": 33,
+      "obtained": "Chests",
+      "effect": "No effects",
+      "subCollection": {}
+    },
+    "Prototype_Malice": {
+      "secondary_stat_type": "HP",
+      "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
+      "name": "Prototype Amber (Formerly Malice)",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Prototype_Malice.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Forging (1x Northlander Catalyst Prototype, 50x Crystal Chunk, 50x White Iron Chunk)",
+      "effect": "Using an Elemental Burst regenerates 4 Energy every 2s for 6s. All party members will regenerate 4% HP every 2s for this duration.",
+      "subCollection": {}
+    },
+    "Royal_Grimoire": {
+      "secondary_stat_type": "ATK",
+      "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+      "name": "Royal Grimoire",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Royal_Grimoire.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 44,
+      "obtained": "Paimon's Bargains",
+      "effect": "Upon damaging an opponent, increases CRIT Rate by 8%. Max 5 stacks. A CRIT hit removes all stacks.",
+      "subCollection": {}
+    },
+    "Sacrificial_Fragments": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
+      "name": "Sacrificial Fragments",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Sacrificial_Fragments.png",
+      "secondary_stat": "48",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effect": "After dealing damage to an opponent with an Elemental Skill, the skill has a 40% chance to end its own CD. Can only occur once every 30s.",
+      "subCollection": {}
+    },
+    "Skyward_Atlas": {
+      "secondary_stat_type": "ATK",
+      "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
+      "name": "Skyward Atlas",
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 3,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 14,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 18,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Skyward_Atlas.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effect": "Increases Elemental DMG Bonus by 12%. Normal Attack hits have a 50% chance to earn the favor of the clouds. which actively seek out nearby opponents to attack for 15s, dealing 160% ATK DMG. Can only occur once every 30s.",
+      "subCollection": {}
+    },
+    "Solar_Pearl": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
+      "name": "Solar Pearl",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 2,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 8,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 12,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Solar_Pearl.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effect": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by 20% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by 20% for 6s.",
+      "subCollection": {}
+    },
+    "The_Widsith": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
+      "name": "The Widsith",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/The_Widsith.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effect": "When a character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s.\nRecitative: ATK is increased by 60%.\nAria: Increases all Elemental DMG by 48%.\nInterlude: Elemental Mastery is increased by 240.",
+      "subCollection": {}
+    },
+    "Thrilling_Tales_of_Dragon_Slayers": {
+      "secondary_stat_type": "HP",
+      "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
+      "name": "Thrilling Tales of Dragon Slayers",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 1,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 5,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 4,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Thrilling_Tales_of_Dragon_Slayers.png",
+      "secondary_stat": "7.7%",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 39,
+      "obtained": "Gacha",
+      "effect": "When switching characters, the new character taking the field has their ATK increased by 24% for 10s. This effect can only occur once every 20s.",
+      "subCollection": {}
+    },
+    "Twin_Nephrite": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A jade pendant formed by piecing together two jade stones.",
+      "name": "Twin Nephrite",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 1,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 5,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 4,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 4,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Twin_Nephrite.png",
+      "secondary_stat": "3.4%",
+      "rarity": 3,
+      "type": "Catalyst",
+      "base_atk": 40,
+      "obtained": "Chests",
+      "effect": "Defeating an opponent increases Movement SPD and ATK by 12% for 15s.",
+      "subCollection": {}
+    },
+    "Wine_and_Song": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
+      "name": "Wine and Song",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Boreal_Wolf_Milk_Tooth",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Cracked_Tooth",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Boreal_Wolf_Broken_Fang",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Boreal_Wolf_Nostalgia",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Wine_and_Song.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "base_atk": 42,
+      "obtained": "Unavailable for now",
+      "effect": "For every character in the party who hails from Mondstadt, the character who equips this weapon gains 8% ATK increase and 3% Movement SPD increase.",
+      "subCollection": {}
+    }
+  }
+}
