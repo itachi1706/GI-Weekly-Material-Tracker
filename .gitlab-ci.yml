@@ -194,6 +194,9 @@ Deploy to Firebase Hosting Staging:
     - curl -sL https://firebase.tools | bash
     - cd firebase
   script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy staging
+  after_script:
+    - cd firebase
+    - firebase --token $FIREBASE_TOKEN hosting:channel:open staging
   dependencies:
     - Build Web App
   artifacts:
