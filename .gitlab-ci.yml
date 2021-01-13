@@ -167,6 +167,39 @@ Deploy Beta to Firebase:
       when: always
     - when: never
 
+Build Web App:
+  image: itachi1706/flutter-alpine-android:beta
+  stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  before_script:
+    - flutter config --enable-web
+    - flutter doctor -v
+  script: flutter build web
+  after_script:
+    - apk add --no-cache zip
+    - mkdir -p firebase/public
+    - mv build/web/* ./firebase/public
+    - zip -r webapp.zip ./firebase/public
+  artifacts:
+    paths:
+      - firebase/
+      - webapp.zip
+
+Deploy to Firebase Hosting Staging:
+  image: ubuntu:latest
+  stage: deploy
+  before_script:
+    - apt-get update && apt-get install -y curl sudo
+    - curl -sL https://firebase.tools | bash
+    - cd firebase
+  script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy staging
+  dependencies:
+    - Build Web App
+  artifacts:
+    paths:
+      - firebase/
+
 
 variables:
   APK_BINARY: "gi-material-tracker-arm64-"
