@@ -409,7 +409,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         padding: const EdgeInsets.only(left: 8, right: 8),
                         child: Text(_infoData['obtained']
                             .toString()
-                            .replaceAll('\\n', "\n")),
+                            .replaceAll('\\n', "\n")
+                            .replaceAll("- ", "")),
                       ),
                     ),
                   ],
