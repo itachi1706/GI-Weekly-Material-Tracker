@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -8,7 +7,6 @@ import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
-final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class GlobalTrackingPage extends StatelessWidget {
   final List<Tab> _tabs = [
@@ -54,7 +52,6 @@ class GlobalTracker extends StatefulWidget {
 }
 
 class _GlobalTrackerState extends State<GlobalTracker> {
-  final String _uid = _auth.currentUser.uid;
   Map<String, dynamic> _materialData;
 
   @override
@@ -71,7 +68,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
   @override
   Widget build(BuildContext context) {
     CollectionReference ref =
-        _db.collection("tracking").doc(_uid).collection(widget.path);
+        _db.collection("tracking").doc(Util.getFirebaseUid()).collection(widget.path);
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -196,7 +193,6 @@ class GlobalMaterialPage extends StatefulWidget {
 }
 
 class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
-  final String _uid = _auth.currentUser.uid;
   String _materialKey;
   Map<String, dynamic> _material;
   Map<String, dynamic> _weaponData;
@@ -324,7 +320,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   Widget _getCharacterData() {
     Query ref = _db
         .collection("tracking")
-        .doc(_uid)
+        .doc(Util.getFirebaseUid())
         .collection(_material["innerType"])
         .where("name", isEqualTo: _materialKey);
 
