@@ -233,87 +233,89 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                GridData.getImageAssetFromFirebase(_material['image'],
-                    height: 64),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width - 128,
-                      child: Text(
-                        _material['type'],
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  GridData.getImageAssetFromFirebase(_material['image'],
+                      height: 64),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width - 128,
+                        child: Text(
+                          _material['type'],
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                    ),
-                    RatingBar.builder(
-                      ignoreGestures: true,
-                      itemCount: 5,
-                      itemSize: 30,
-                      initialRating:
-                          double.tryParse(_material['rarity'].toString()),
-                      itemBuilder: (context, _) =>
-                          Icon(Icons.star, color: Colors.amber),
-                      onRatingUpdate: (rating) {
-                        print(rating);
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Icon(Icons.location_pin),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_material['obtained']
-                          .toString()
-                          .replaceAll('\\n', "\n")
-                          .replaceAll("- ", "")),
-                    ),
+                      RatingBar.builder(
+                        ignoreGestures: true,
+                        itemCount: 5,
+                        itemSize: 30,
+                        initialRating:
+                            double.tryParse(_material['rarity'].toString()),
+                        itemBuilder: (context, _) =>
+                            Icon(Icons.star, color: Colors.amber),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Icon(Icons.format_list_bulleted),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_material['description']
-                          .toString()
-                          .replaceAll('\\n', "\n")),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Divider(),
-            Padding(
+              Divider(),
+              Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
-                    Text(
-                      "Tracking For",
-                      style: TextStyle(fontSize: 24),
+                    Icon(Icons.location_pin),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: Text(_material['obtained']
+                            .toString()
+                            .replaceAll('\\n', "\n")
+                            .replaceAll("- ", "")),
+                      ),
                     ),
                   ],
-                )),
-            _getCharacterData(),
-          ],
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Icon(Icons.format_list_bulleted),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: Text(_material['description']
+                            .toString()
+                            .replaceAll('\\n', "\n")),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(),
+              Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Tracking For",
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ],
+                  )),
+              _getCharacterData(),
+            ],
+          ),
         ),
       ),
     );
