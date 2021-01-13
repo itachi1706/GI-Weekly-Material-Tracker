@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_image/firebase_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
@@ -107,6 +109,11 @@ class GridData {
         return (number + 1).toString();
     }
   }
+  
+  static ImageProvider _getFirebaseImage(String url) {
+    if (kIsWeb) return CachedNetworkImageProvider(url);
+    return FirebaseImage(url);
+  }
 
   static Widget getImageAssetFromFirebase(imageRef, {double height}) {
     if (imageRef == null) return Image.memory(kTransparentImage);
@@ -127,7 +134,7 @@ class GridData {
                     width: height,
                   ),
                   errorBuilder: (context, obj, trace) => Icon(Icons.error),
-                  image: FirebaseImage(snapshot.data),
+                  image: _getFirebaseImage(snapshot.data),
                   placeholderFadeInDuration: Duration(seconds: 2),
                 ),
               ),
