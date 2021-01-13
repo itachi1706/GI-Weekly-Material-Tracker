@@ -108,6 +108,66 @@ Deploy to Firebase:
     - when: never
 
 # Releases
+Generate Release Flutter App:
+  image: itachi1706/flutter-alpine-android:beta
+  stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    ANDROID_HOME: "/usr/local/android-sdk"
+    APP_BUILD_VER: beta
+  before_script:
+    - flutter doctor -v
+    - echo $FLUTTER_RELEASE_KEYSTORE | base64 -d > android/app/flutter.jks
+    - cat $RELEASE_KEY_PROPERTIES > android/key.properties
+    - cat $GOOGLE_SVC_ANDROID > android/app/google-services.json
+    - cat $GOOGLE_SVC_IOS > ios/Runner/GoogleService-Info.plist
+    - mkdir release
+    - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+    - echo $GIT_COMMIT_COUNT
+    - echo $CI_COMMIT_SHORT_SHA
+    - chmod +x ./ciscripts/get_version.sh
+    - ./ciscripts/get_version.sh
+  script:
+    - flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+    - mv ./build/app/outputs/apk/release/*.apk ./release
+    - flutter build apk
+  after_script:
+    - cp build/app/outputs/apk/release/app-release.apk ./release
+    - cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
+  artifacts:
+    paths:
+      - release/
+      - app-fatapk.apk
+    expire_in: 14 days
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: always
+    - when: never
+
+Deploy Beta to Firebase:
+  image: ubuntu:latest
+  stage: deploy
+  variables:
+    APP_TYPE: beta
+  before_script:
+    - apt-get update && apt-get install -y curl sudo
+    - curl -sL https://firebase.tools | bash
+    - echo $CI_COMMIT_MESSAGE > release-beta.txt
+    - builddate="$(date +"%A, %d %B %Y %T %Z")"
+    - printf "\nRelease Notes\n" >> release-beta.txt
+    - cat LATEST >> release-beta.txt
+    - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
+    - cat release-beta.txt
+    - cp ./release/app-arm64-v8a-release.apk app.apk
+  script: firebase --token $FIREBASE_TOKEN appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "beta" --release-notes-file "release-beta.txt"
+  dependencies:
+    - Generate Release Flutter App
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: manual
+    - when: never
+
+
 variables:
   APK_BINARY: "gi-material-tracker-arm64-"
   PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/releaseapks/"
@@ -148,6 +208,3 @@ Deploy Artifact:
       --assets-link "{\"name\":\"${APK_BINARY}${APP_VERSION}.apk\",\"url\":\"${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}\"}"
   rules:
     - if: $CI_COMMIT_TAG
-
-
-
