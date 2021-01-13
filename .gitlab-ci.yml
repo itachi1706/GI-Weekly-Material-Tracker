@@ -188,7 +188,7 @@ Upload Artifact:
     - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
     - cat release-beta.txt
     - cp ./release/app-arm64-v8a-release.apk app.apk
-    - APP_VERSION=$(cat ../VERSION)
+    - APP_VERSION=$(cat ./VERSION)
   script:
     - |
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}
@@ -202,7 +202,7 @@ Deploy Artifact:
     - Generate Flutter App
     - Upload Artifact
   script:
-    - APP_VERSION=$(cat ../VERSION)
+    - APP_VERSION=$(cat ./VERSION)
     - echo "Releasing tagged release"
     - release-cli create --name "Release $CI_COMMIT_TAG" --tag-name $CI_COMMIT_TAG --description release-beta.txt --ref "$CI_COMMIT_TAG" \
       --assets-link "{\"name\":\"${APK_BINARY}${APP_VERSION}.apk\",\"url\":\"${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}\"}"
