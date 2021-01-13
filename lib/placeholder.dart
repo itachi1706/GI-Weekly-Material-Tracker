@@ -61,6 +61,6 @@ class PlaceholderWidgetContainer extends StatelessWidget {
 
 class PlaceholderUtil {
   static void showUnimplementedSnackbar(BuildContext context) {
-    Util.showSnackbarQuick(context, "Unimplemented");
+    Util.showSnackbarQuick(context, "Feature Coming Soon!");
   }
 }
