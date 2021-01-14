@@ -79,9 +79,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   Widget _getFabWidget() {
     if (!_addCheckObtained) return CircularProgressIndicator();
     if (_isAdded)
-      return Icon(Icons.remove);
+      return Icon(Icons.remove, color: Colors.white,);
     else
-      return Icon(Icons.add);
+      return Icon(Icons.add, color: Colors.white,);
   }
 
   String _cntTrack = "";
