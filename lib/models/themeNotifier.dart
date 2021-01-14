@@ -8,6 +8,10 @@ class ThemeNotifier with ChangeNotifier {
     return _isDark ? ThemeMode.dark : ThemeMode.light;
   }
 
+  bool isDarkMode() {
+    return _isDark;
+  }
+
   void toggleTheme() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     _isDark = sp.getBool("dark_mode") ?? false;

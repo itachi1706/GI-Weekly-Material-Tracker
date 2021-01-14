@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -11,7 +10,6 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
-final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class TabControllerWidget extends StatefulWidget {
   TabControllerWidget({Key key, @required this.tabController})
@@ -115,8 +113,10 @@ class _TrackerPageState extends State<TrackerPage> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference ref =
-        _db.collection("tracking").doc(Util.getFirebaseUid()).collection(widget.path);
+    CollectionReference ref = _db
+        .collection("tracking")
+        .doc(Util.getFirebaseUid())
+        .collection(widget.path);
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -310,17 +310,23 @@ class _PlannerPageState extends State<PlannerPage> {
 
   String _getLoc() {
     switch (_location) {
-      case "EU": return "Europe/Paris";
-      case "NA": return "America/New_York";
-      default: return "Asia/Singapore";
+      case "EU":
+        return "Europe/Paris";
+      case "NA":
+        return "America/New_York";
+      default:
+        return "Asia/Singapore";
     }
   }
 
   String _getLocStr() {
     switch (_location) {
-      case "EU": return "+1 (EU)";
-      case "NA": return "-5 (NA)";
-      default: return "+8 (Asia)";
+      case "EU":
+        return "+1 (EU)";
+      case "NA":
+        return "-5 (NA)";
+      default:
+        return "+8 (Asia)";
     }
   }
 
@@ -328,13 +334,17 @@ class _PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
-    _beforeDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
+    _beforeDT = tz.TZDateTime(
+        loc, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
     _dbDT = _cDT.subtract(Duration(days: 1));
     _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
-    _coffDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
+    _coffDT = tz.TZDateTime(
+        loc, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
 
-    CollectionReference ref =
-        _db.collection("tracking").doc(Util.getFirebaseUid()).collection("domain_forgery");
+    CollectionReference ref = _db
+        .collection("tracking")
+        .doc(Util.getFirebaseUid())
+        .collection("domain_forgery");
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -375,7 +385,8 @@ class _PlannerPageState extends State<PlannerPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-                  child: Text("Day resets at 4am GMT${_getLocStr()}",
+                  child: Text(
+                    "Day resets at 4am GMT${_getLocStr()}",
                     style: TextStyle(fontSize: 12),
                   ),
                 ),
@@ -402,15 +413,23 @@ class _PlannerPageState extends State<PlannerPage> {
 
   Color _getTileColorIfCurrentDay(int key) {
     bool currentDay = false;
-    if (_cDT.isAfter(_coffDT) && _cDT.isBefore(_afterDT) && _cDT.weekday == key) currentDay = true;
-    else if (_cDT.isBefore(_coffDT) && _cDT.isAfter(_beforeDT) && _dbDT.weekday == key) currentDay = true;
+    if (_cDT.isAfter(_coffDT) && _cDT.isBefore(_afterDT) && _cDT.weekday == key)
+      currentDay = true;
+    else if (_cDT.isBefore(_coffDT) &&
+        _cDT.isAfter(_beforeDT) &&
+        _dbDT.weekday == key) currentDay = true;
 
-    if (currentDay) return Colors.lightGreen;
-    else return Colors.transparent;
+    if (currentDay)
+      return (Util.themeNotifier.isDarkMode())
+          ? Colors.green
+          : Colors.lightGreen;
+    else
+      return Colors.transparent;
   }
-  
+
   Widget _getGridMaterials(List<String> _curData) {
-    if (_curData.isEmpty) return Text("Not tracking any domain materials for this day");
+    if (_curData.isEmpty)
+      return Text("Not tracking any domain materials for this day");
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),

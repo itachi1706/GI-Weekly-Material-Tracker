@@ -6,7 +6,6 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -289,7 +288,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode, context),
+            color:
+                GridData.getTrackingColor(index + 1, _isBeingTracked, context),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(
@@ -329,8 +329,6 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     );
   }
 
-  bool _isDarkMode = false;
-
   @override
   void initState() {
     super.initState();
@@ -342,12 +340,6 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             _materialData = value;
           })
         });
-
-    SharedPreferences.getInstance().then((value) {
-      setState(() {
-        _isDarkMode = value.getBool("dark_mode") ?? false;
-      });
-    });
 
     // Init map
     _refreshTrackingStatus();
