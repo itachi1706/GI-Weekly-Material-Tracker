@@ -222,6 +222,8 @@ Deploy to Firebase Hosting Dev:
   rules:
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
       when: always
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
     - when: never
 
 Deploy to Firebase Hosting Prod:
