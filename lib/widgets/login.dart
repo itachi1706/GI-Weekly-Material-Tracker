@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:isolate';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/scheduler.dart';
@@ -58,11 +59,16 @@ class _LoginPageState extends State<LoginPage> {
       await Firebase.initializeApp();
       if (!kIsWeb) {
         FirebaseCrashlytics _crashHandler = FirebaseCrashlytics.instance;
+        FirebasePerformance _perfHandler = FirebasePerformance.instance;
         if (kDebugMode) {
           await _crashHandler.setCrashlyticsCollectionEnabled(false);
+          await _perfHandler.setPerformanceCollectionEnabled(false);
         } else {
           if (!_crashHandler.isCrashlyticsCollectionEnabled) {
             await _crashHandler.setCrashlyticsCollectionEnabled(true);
+          }
+          if (!(await _perfHandler.isPerformanceCollectionEnabled())) {
+            await _perfHandler.setPerformanceCollectionEnabled(true);
           }
           FlutterError.onError = _crashHandler.recordFlutterError;
           Isolate.current.addErrorListener(RawReceivePort((pair) async {
@@ -72,8 +78,13 @@ class _LoginPageState extends State<LoginPage> {
               errorAndStacktrace.last,
             );
           }).sendPort);
-
         }
+        print(
+            "Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}");
+        print(
+            "Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}");
+      } else {
+        print("Web Mode, Crashlytics and Performance disabled");
       }
 
       setState(() {
