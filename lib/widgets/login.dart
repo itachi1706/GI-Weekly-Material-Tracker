@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:isolate';
 
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/scheduler.dart';
@@ -54,6 +56,26 @@ class _LoginPageState extends State<LoginPage> {
   void initializeFirebase() async {
     try {
       await Firebase.initializeApp();
+      if (!kIsWeb) {
+        FirebaseCrashlytics _crashHandler = FirebaseCrashlytics.instance;
+        if (kDebugMode) {
+          await _crashHandler.setCrashlyticsCollectionEnabled(false);
+        } else {
+          if (!_crashHandler.isCrashlyticsCollectionEnabled) {
+            await _crashHandler.setCrashlyticsCollectionEnabled(true);
+          }
+          FlutterError.onError = _crashHandler.recordFlutterError;
+          Isolate.current.addErrorListener(RawReceivePort((pair) async {
+            final List<dynamic> errorAndStacktrace = pair;
+            await _crashHandler.recordError(
+              errorAndStacktrace.first,
+              errorAndStacktrace.last,
+            );
+          }).sendPort);
+
+        }
+      }
+
       setState(() {
         _initialized = true;
       });

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -78,7 +78,6 @@
 				13C44F789ACA1EB83DE4A8FD /* Pods-Runner.release.xcconfig */,
 				B2AF3D236A2DA8899F114205 /* Pods-Runner.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +143,7 @@
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				B57465CC4306EA5924645D96 /* [CP] Embed Pods Frameworks */,
 				2772E3909779984BA7BCCD72 /* [CP] Copy Pods Resources */,
+				9F5A8B1125B03CEB00B14874 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -269,6 +269,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+		};
+		9F5A8B1125B03CEB00B14874 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/FirebaseCrashlytics/run\n";
 		};
 		B57465CC4306EA5924645D96 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
