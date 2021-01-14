@@ -51,7 +51,7 @@ class GridData {
 
   static Color getCountColorBW(int current, int max) {
     if (current >= max) return Colors.green;
-    return Colors.black;
+    return (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
   }
 
   static String getElementImageRef(String element) {
