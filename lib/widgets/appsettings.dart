@@ -82,7 +82,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: "Dark Mode",
                 leading: Icon(Icons.wb_sunny_outlined),
                 onToggle: (bool value) {
-                  _prefs.setBool("dark_mode", value);
+                  _prefs.setBool("dark_mode", value).then((value) {
+                    Util.themeNotifier.toggleTheme();
+                  });
                   setState(() {
                     _darkMode = value;
                   });

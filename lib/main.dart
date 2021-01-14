@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets//bottomnav.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/widgets/appsettings.dart';
@@ -14,10 +15,27 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _theme = Util.themeNotifier.currentTheme();
+
+  @override
+  void initState() {
+    super.initState();
+    Util.themeNotifier.toggleTheme();
+    Util.themeNotifier.addListener(() {
+      setState(() {
+        _theme = Util.themeNotifier.currentTheme();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
@@ -29,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(),
         fontFamily: 'Product-Sans',
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: _theme,
       initialRoute: '/',
       getPages: [
         GetPage(

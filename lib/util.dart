@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gi_weekly_material_tracker/models/themeNotifier.dart';
 
 final String _firebaseStorageUrl =
     "gs://gi-weekly-material-tracker.appspot.com/";
@@ -48,4 +49,6 @@ class Util {
     else
       return _auth.currentUser.email;
   }
+
+  static ThemeNotifier themeNotifier = ThemeNotifier();
 }
