@@ -6,6 +6,7 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -82,6 +83,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     });
   }
 
+  @deprecated
   Color _getTrackingColor(int index) {
     if (!_isBeingTracked.keys.contains(index.toString()))
       return Colors.yellow; // No such key (loading)
@@ -296,6 +298,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     }
   }
 
+  bool _isDarkMode = false;
+
   @override
   void initState() {
     super.initState();
@@ -307,6 +311,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             _materialData = value;
           })
         });
+
+    SharedPreferences.getInstance().then((value) {
+      setState(() {
+        _isDarkMode = value.getBool("dark_mode") ?? false;
+      });
+    });
 
     // Init map
     _refreshTrackingStatus();
@@ -338,7 +348,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color: _getTrackingColor(index + 1),
+            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(

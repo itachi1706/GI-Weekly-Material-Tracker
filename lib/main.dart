@@ -17,12 +17,19 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
         fontFamily: 'Product-Sans',
       ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+        colorScheme: ColorScheme.dark(),
+        fontFamily: 'Product-Sans',
+      ),
+      themeMode: ThemeMode.dark,
       initialRoute: '/',
       getPages: [
         GetPage(
