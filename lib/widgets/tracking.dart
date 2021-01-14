@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
@@ -290,6 +291,8 @@ class _PlannerPageState extends State<PlannerPage> {
 
   tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
 
+  String _location = "Asia";
+
   @override
   void initState() {
     super.initState();
@@ -299,17 +302,37 @@ class _PlannerPageState extends State<PlannerPage> {
           })
         });
 
+    SharedPreferences.getInstance().then((value) {
+      _location = value.getString("location") ?? "Asia";
+    });
     tz.initializeTimeZones();
-    var gmt8 = tz.getLocation("Asia/Singapore");
-    _cDT = tz.TZDateTime.now(gmt8);
-    _beforeDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
-    _dbDT = _cDT.subtract(Duration(days: 1));
-    _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
-    _coffDT = tz.TZDateTime(gmt8, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
+  }
+
+  String _getLoc() {
+    switch (_location) {
+      case "EU": return "Europe/Paris";
+      case "NA": return "America/New_York";
+      default: return "Asia/Singapore";
+    }
+  }
+
+  String _getLocStr() {
+    switch (_location) {
+      case "EU": return "+1 (EU)";
+      case "NA": return "-5 (NA)";
+      default: return "+8 (Asia)";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    var loc = tz.getLocation(_getLoc());
+    _cDT = tz.TZDateTime.now(loc);
+    _beforeDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
+    _dbDT = _cDT.subtract(Duration(days: 1));
+    _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
+    _coffDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
+
     CollectionReference ref =
         _db.collection("tracking").doc(Util.getFirebaseUid()).collection("domain_forgery");
     return StreamBuilder(
@@ -352,7 +375,7 @@ class _PlannerPageState extends State<PlannerPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-                  child: Text("Day resets at 4am GMT+8 (Asia). US/EU times coming soon",
+                  child: Text("Day resets at 4am GMT${_getLocStr()}",
                     style: TextStyle(fontSize: 12),
                   ),
                 ),
