@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info/package_info.dart';
@@ -105,7 +104,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 leading: Icon(MdiIcons.trashCanOutline),
                 enabled: !kIsWeb,
                 onPressed: (context) {
-                  PlaceholderUtil.showUnimplementedSnackbar(context);
+                  _clearCache();
                 },
               ),
             ],
@@ -126,6 +125,16 @@ class _SettingsPageState extends State<SettingsPage> {
         ],
       ),
     );
+  }
+
+  void _clearCache() async {
+    Directory tmp = await getTemporaryDirectory();
+    List<FileSystemEntity> files = tmp.listSync();
+    files.forEach((file) async {
+      await file.delete(recursive: true);
+    });
+    Util.showSnackbarQuick(context, "Cache Cleared");
+    _refresh();
   }
 
   Map<String, int> _dirStatSync(String dirPath) {
