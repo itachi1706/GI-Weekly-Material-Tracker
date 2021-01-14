@@ -27,6 +27,23 @@ class GridData {
     }
   }
 
+  static Color getTrackingColor(
+      int index, Map<String, int> _isBeingTracked, BuildContext context) {
+    if (!_isBeingTracked.keys.contains(index.toString()))
+      return Colors.yellow; // No such key (loading)
+    switch (_isBeingTracked[index.toString()]) {
+      case 0:
+        return Theme.of(context).cardColor;
+      case 1:
+        return (Util.themeNotifier.isDarkMode())
+            ? Colors.green
+            : Colors.lightGreen;
+      case 2:
+        return Theme.of(context).cardColor;
+    }
+    return Colors.yellow; // Error
+  }
+
   static String getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case "geo":
@@ -76,13 +93,20 @@ class GridData {
 
   static String getDayString(int day) {
     switch (day) {
-      case 1: return "Mon";
-      case 2: return "Tue";
-      case 3: return "Wed";
-      case 4: return "Thu";
-      case 5: return "Fri";
-      case 6: return "Sat";
-      case 7: return "Sun";
+      case 1:
+        return "Mon";
+      case 2:
+        return "Tue";
+      case 3:
+        return "Wed";
+      case 4:
+        return "Thu";
+      case 5:
+        return "Fri";
+      case 6:
+        return "Sat";
+      case 7:
+        return "Sun";
     }
     return "Unknown";
   }
@@ -109,7 +133,7 @@ class GridData {
         return (number + 1).toString();
     }
   }
-  
+
   static ImageProvider _getFirebaseImage(String url) {
     if (kIsWeb) return CachedNetworkImageProvider(url);
     return FirebaseImage(url);
