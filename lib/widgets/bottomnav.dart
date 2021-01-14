@@ -121,7 +121,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         _signOut();
         break;
       default:
-        PlaceholderUtil.showUnimplementedSnackbar(context);
+        Get.toNamed('/settings');
         break;
     }
   }
