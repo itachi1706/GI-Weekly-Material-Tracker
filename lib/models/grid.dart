@@ -27,16 +27,16 @@ class GridData {
     }
   }
 
-  static Color getTrackingColor(int index, Map<String, int> _isBeingTracked, bool _isDarkMode) {
+  static Color getTrackingColor(int index, Map<String, int> _isBeingTracked, bool _isDarkMode, BuildContext context) {
     if (!_isBeingTracked.keys.contains(index.toString()))
       return Colors.yellow; // No such key (loading)
     switch (_isBeingTracked[index.toString()]) {
       case 0:
-        return (_isDarkMode) ? Colors.black12 : Colors.white;
+        return Theme.of(context).cardColor;
       case 1:
         return (_isDarkMode) ? Colors.green : Colors.lightGreen;
       case 2:
-        return (_isDarkMode) ? Colors.black12 : Colors.white;
+        return Theme.of(context).cardColor;
     }
     return Colors.yellow; // Error
   }

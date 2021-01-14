@@ -44,7 +44,9 @@ class _MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         primarySwatch: Colors.deepOrange,
-        colorScheme: ColorScheme.dark(),
+        toggleableActiveColor: Colors.deepOrangeAccent,
+        accentColor: Colors.deepOrangeAccent,
+        colorScheme: ColorScheme.dark().copyWith(primary: Colors.deepOrange),
         fontFamily: 'Product-Sans',
       ),
       themeMode: _theme,

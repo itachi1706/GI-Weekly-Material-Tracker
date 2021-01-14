@@ -83,21 +83,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     });
   }
 
-  @deprecated
-  Color _getTrackingColor(int index) {
-    if (!_isBeingTracked.keys.contains(index.toString()))
-      return Colors.yellow; // No such key (loading)
-    switch (_isBeingTracked[index.toString()]) {
-      case 0:
-        return Colors.white;
-      case 1:
-        return Colors.lightGreen;
-      case 2:
-        return Colors.white;
-    }
-    return Colors.yellow; // Error
-  }
-
   int _isBeingTrackedStatus(String key) {
     if (!_isBeingTracked.keys.contains(key)) return 0;
     return _isBeingTracked[key];
@@ -348,7 +333,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode),
+            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode, context),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(

@@ -83,21 +83,6 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     });
   }
 
-  @deprecated
-  Color _getTrackingColor(int index) {
-    if (!_isBeingTracked.keys.contains(index.toString()))
-      return Colors.yellow; // No such key (loading)
-    switch (_isBeingTracked[index.toString()]) {
-      case 0:
-        return (_isDarkMode) ? Colors.black12 : Colors.white;
-      case 1:
-        return (_isDarkMode) ? Colors.green : Colors.lightGreen;
-      case 2:
-        return (_isDarkMode) ? Colors.black12 : Colors.white;
-    }
-    return Colors.yellow; // Error
-  }
-
   int _isBeingTrackedStatus(String key) {
     if (!_isBeingTracked.keys.contains(key)) return 0;
     return _isBeingTracked[key];
@@ -304,7 +289,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode),
+            color: GridData.getTrackingColor(index + 1, _isBeingTracked, _isDarkMode, context),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(
