@@ -73,7 +73,7 @@ Generate Flutter App:
       - app-fatapk.apk
     expire_in: 14 days
 
-Deploy to Firebase:
+Deploy Dogfood to Firebase:
   image: ubuntu:latest
   stage: deploy
   variables:
