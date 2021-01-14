@@ -44,6 +44,16 @@ class GridData {
     return Colors.yellow; // Error
   }
 
+  static Color getCountColor(int current, int max) {
+    if (current >= max) return Colors.greenAccent;
+    return Colors.white;
+  }
+
+  static Color getCountColorBW(int current, int max) {
+    if (current >= max) return Colors.green;
+    return (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+  }
+
   static String getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case "geo":

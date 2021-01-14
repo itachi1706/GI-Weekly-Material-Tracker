@@ -214,7 +214,7 @@ class _TrackerPageState extends State<TrackerPage> {
                               Text(
                                 "${_data["current"]}/${_data["max"]}",
                                 style: TextStyle(
-                                    fontSize: 18, color: Colors.white),
+                                    fontSize: 18, color: GridData.getCountColor(_data["current"], _data["max"])),
                               ),
                               Row(
                                 children: [
