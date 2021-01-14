@@ -80,6 +80,7 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             final User user = snapshot.data;
+            Util.updateFirebaseUid();
             if (user != null) {
               SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
                 Util.showSnackbarQuick(context, "Logged in as ${user.email}");
@@ -144,20 +145,29 @@ class _LoginPageState extends State<LoginPage> {
   Future<UserCredential> _signInGoogle() async {
     print("Signing In with Google");
     _loggingInState();
-    // Trigger the authentication flow
-    final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+    if (kIsWeb) {
+      GoogleAuthProvider googleProvider = GoogleAuthProvider();
 
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
+      googleProvider.setCustomParameters({'login_hint': 'user@gmail.com'});
 
-    // Create a new credential
-    final GoogleAuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
+      // Once signed in, return the UserCredential
+      return await FirebaseAuth.instance.signInWithPopup(googleProvider);
+    } else {
+      // Trigger the authentication flow
+      final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
 
-    // Once signed in, return the UserCredential
-    return await _auth.signInWithCredential(credential);
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      // Create a new credential
+      final GoogleAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      return await _auth.signInWithCredential(credential);
+    }
   }
 }

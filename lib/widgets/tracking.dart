@@ -47,7 +47,6 @@ class TrackerPage extends StatefulWidget {
 }
 
 class _TrackerPageState extends State<TrackerPage> {
-  final String _uid = _auth.currentUser.uid;
   Map<String, dynamic> _materialData;
   Map<String, dynamic> _weaponData;
   Map<String, dynamic> _characterData;
@@ -116,11 +115,12 @@ class _TrackerPageState extends State<TrackerPage> {
   @override
   Widget build(BuildContext context) {
     CollectionReference ref =
-        _db.collection("tracking").doc(_uid).collection(widget.path);
+        _db.collection("tracking").doc(Util.getFirebaseUid()).collection(widget.path);
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
+            print(snapshot.error);
             return Text("Error occurred getting snapshot");
           }
 
@@ -286,7 +286,6 @@ class PlannerPage extends StatefulWidget {
 }
 
 class _PlannerPageState extends State<PlannerPage> {
-  final String _uid = _auth.currentUser.uid;
   Map<String, dynamic> _materialData;
 
   tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
@@ -312,7 +311,7 @@ class _PlannerPageState extends State<PlannerPage> {
   @override
   Widget build(BuildContext context) {
     CollectionReference ref =
-        _db.collection("tracking").doc(_uid).collection("domain_forgery");
+        _db.collection("tracking").doc(Util.getFirebaseUid()).collection("domain_forgery");
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {

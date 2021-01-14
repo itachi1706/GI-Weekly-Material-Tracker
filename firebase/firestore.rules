@@ -1,31 +1,33 @@
 rules_version = '2';
 service cloud.firestore {
-  match /databases/{database}/documents {
-  	// Default deny
-  	match /{document=**} {
-      allow read, write: if false;
-    }
-    
-  	// Public data, accessible to public use without authentication for read only
-  	match /characters/{character} {
-    	allow read: if true;
-    }
-    match /materials/{material} {
-    	allow read: if true;
-    }
-    match /weapons/{weapons} {
-    	allow read: if true;
-    }
-    
-    // Private user data for tracking
-    match /tracking/{userId} {
-        allow read, update, delete: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
-        allow create: if request.auth != null; // All users can create their own collection data
-    }
+    match /databases/{database}/documents {
+        // Default deny
+        match /{document=**} {
+            allow read, write: if false;
+        }
 
-    // Allow access to tracking subcollections for the individual material trackers
-    match /tracking/{userId}/{document=**} {
-      allow read, write: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
+        // Public data, accessible to public use without authentication for read only
+        match /characters/{character} {
+            allow read: if true;
+        }
+        match /materials/{material} {
+            allow read: if true;
+        }
+        match /weapons/{weapons} {
+            allow read: if true;
+        }
+
+        // Private user data for tracking
+        match /tracking/{userId} {
+            allow read: if true;
+            allow update, delete: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
+            allow create: if request.auth != null; // All users can create their own collection data
+        }
+
+        // Allow access to tracking subcollections for the individual material trackers
+        match /tracking/{userId}/{document=**} {
+            allow read: if true;
+            allow write: if request.auth != null && request.auth.uid == userId; // Only the user can read/edit their own data
+        }
     }
-  }
 }
