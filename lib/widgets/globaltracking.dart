@@ -350,6 +350,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               Map<String, dynamic> _data = _trackerData[key];
               String imageRef = _material["image"];
               int extraAscensionRef = 0;
+              String extraTypeRef;
               String name = _material["name"];
               var _ascendTier = key.substring(key.length - 1);
               if (_data["addData"] != null) {
@@ -358,6 +359,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                   // Grab from character
                   name = _characterData[_data["addData"]]["name"];
                   imageRef = _characterData[_data["addData"]]["image"];
+                  extraTypeRef = _characterData[_data["addData"]]["element"];
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 } else if (_data["addedBy"] == "weapon") {
                   // Grab from weapon
@@ -368,6 +370,14 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 name =
                     "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef)})";
               }
+
+              Widget typeWidget = Text("");
+              if (extraTypeRef != null) typeWidget = Image.asset(
+                GridData.getElementImageRef(extraTypeRef),
+                height: 20,
+                width: 20,
+              );
+
               return Container(
                 child: Card(
                   child: Padding(
@@ -387,6 +397,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                                 child: Text(GridData.getRomanNumberArray(
                                         extraAscensionRef - 1)
                                     .toString()),
+                              ),
+                              Align(
+                                alignment: FractionalOffset.bottomRight,
+                                child: typeWidget,
                               ),
                             ],
                           ),
