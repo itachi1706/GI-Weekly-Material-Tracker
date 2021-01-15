@@ -67,8 +67,10 @@ class _GlobalTrackerState extends State<GlobalTracker> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference ref =
-        _db.collection("tracking").doc(Util.getFirebaseUid()).collection(widget.path);
+    CollectionReference ref = _db
+        .collection("tracking")
+        .doc(Util.getFirebaseUid())
+        .collection(widget.path);
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -167,7 +169,9 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                               Text(
                                 "${_data["current"]}/${_data["max"]}",
                                 style: TextStyle(
-                                    fontSize: 18, color: GridData.getCountColor(_data["current"], _data["max"])),
+                                    fontSize: 18,
+                                    color: GridData.getCountColor(
+                                        _data["current"], _data["max"])),
                               ),
                             ],
                           ),
@@ -350,6 +354,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               Map<String, dynamic> _data = _trackerData[key];
               String imageRef = _material["image"];
               int extraAscensionRef = 0;
+              String extraTypeRef;
               String name = _material["name"];
               var _ascendTier = key.substring(key.length - 1);
               if (_data["addData"] != null) {
@@ -358,6 +363,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                   // Grab from character
                   name = _characterData[_data["addData"]]["name"];
                   imageRef = _characterData[_data["addData"]]["image"];
+                  extraTypeRef = _characterData[_data["addData"]]["element"];
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 } else if (_data["addedBy"] == "weapon") {
                   // Grab from weapon
@@ -368,6 +374,15 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 name =
                     "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef)})";
               }
+
+              Widget typeWidget = Text("");
+              if (extraTypeRef != null)
+                typeWidget = Image.asset(
+                  GridData.getElementImageRef(extraTypeRef),
+                  height: 20,
+                  width: 20,
+                );
+
               return Container(
                 child: Card(
                   child: Padding(
@@ -387,6 +402,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                                 child: Text(GridData.getRomanNumberArray(
                                         extraAscensionRef - 1)
                                     .toString()),
+                              ),
+                              Align(
+                                alignment: FractionalOffset.bottomRight,
+                                child: typeWidget,
                               ),
                             ],
                           ),
@@ -409,7 +428,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                           children: [
                             Text(
                               "${_data["current"]}/${_data["max"]}",
-                              style: TextStyle(fontSize: 18, color: GridData.getCountColorBW(_data["current"], _data["max"])),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: GridData.getCountColorBW(
+                                      _data["current"], _data["max"])),
                             ),
                             Row(
                               children: [
