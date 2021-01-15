@@ -94,13 +94,12 @@ class _TrackerPageState extends State<TrackerPage> {
   Widget _getSupportingWidget(String image, int ascension, String type) {
     if (image == null) return Container();
     Widget typeWidget = Text("");
-    if (type != null) typeWidget = Image.asset(
+    if (type != null)
+      typeWidget = Image.asset(
         GridData.getElementImageRef(type),
-      height: 20,
-      width: 20,
-    );
-
-
+        height: 20,
+        width: 20,
+      );
 
     return Container(
       height: 48,
@@ -230,7 +229,9 @@ class _TrackerPageState extends State<TrackerPage> {
                               Text(
                                 "${_data["current"]}/${_data["max"]}",
                                 style: TextStyle(
-                                    fontSize: 18, color: GridData.getCountColor(_data["current"], _data["max"])),
+                                    fontSize: 18,
+                                    color: GridData.getCountColor(
+                                        _data["current"], _data["max"])),
                               ),
                               Row(
                                 children: [
@@ -277,8 +278,8 @@ class _TrackerPageState extends State<TrackerPage> {
                                   ),
                                 ],
                               ),
-                              _getSupportingWidget(
-                                  extraImageRef, extraAscensionRef, extraTypeRef),
+                              _getSupportingWidget(extraImageRef,
+                                  extraAscensionRef, extraTypeRef),
                             ],
                           ),
                         ],
