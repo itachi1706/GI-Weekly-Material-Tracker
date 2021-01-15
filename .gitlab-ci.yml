@@ -48,6 +48,7 @@ Generate Flutter App:
     GIT_SUBMODULE_STRATEGY: recursive
     ANDROID_HOME: "/usr/local/android-sdk"
     APP_BUILD_VER: dogfood
+    APP_TYPE: Android
   before_script:
     - flutter doctor -v
     - echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
@@ -115,6 +116,7 @@ Generate Release Flutter App:
     GIT_SUBMODULE_STRATEGY: recursive
     ANDROID_HOME: "/usr/local/android-sdk"
     APP_BUILD_VER: beta
+    APP_TYPE: Android
   before_script:
     - flutter doctor -v
     - echo $FLUTTER_RELEASE_KEYSTORE | base64 -d > android/app/flutter.jks
@@ -172,9 +174,16 @@ Build Web App:
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
+    APP_BUILD_VER: web
+    APP_TYPE: Web
   before_script:
     - flutter config --enable-web
     - flutter doctor -v
+    - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+    - echo $GIT_COMMIT_COUNT
+    - echo $CI_COMMIT_SHORT_SHA
+    - chmod +x ./ciscripts/get_version.sh
+    - ./ciscripts/get_version.sh
   script: flutter build web
   after_script:
     - apk add --no-cache zip
