@@ -1,3 +1,8 @@
+# 1.0.1
+- Fixed unscrollable consolidated material info page
+- Fixed weapon obtained section having dashes
+- Updated "Unimplemented" popup to show "Coming soon" instead
+
 # 1.0.0
 - First release!
 - Added Login Page with Login with Google Support
