@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,15 +28,12 @@ class _SettingsPageState extends State<SettingsPage> {
     SharedPreferences pref = await SharedPreferences.getInstance();
     Map<String, int> _files = {"fileNum": 0, "size": 0};
 
-    String version = "N.A", build = "N.A";
+    PackageInfo pkgInfo = await PackageInfo.fromPlatform();
+    String version = pkgInfo.version, build = pkgInfo.buildNumber;
     if (!kIsWeb) {
       Directory dir = await getTemporaryDirectory();
       Directory _cacheDir = dir;
       _files = _dirStatSync(_cacheDir.path);
-      PackageInfo pkgInfo = await PackageInfo.fromPlatform();
-
-      version = pkgInfo.version;
-      build = pkgInfo.buildNumber;
     }
     String type = (kIsWeb)
         ? "Web"
