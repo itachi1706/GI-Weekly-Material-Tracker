@@ -557,7 +557,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       padding: const EdgeInsets.all(8),
                       child: Row(
                         children: [
-                          Icon(MdiIcons.genderMaleFemale),
+                          _getGenderIcon(
+                              _infoData['gender'], _infoData['name']),
                           Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
                             child: Text(_infoData['gender']),
@@ -597,7 +598,10 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Row(
-                  children: [Text("Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials")],
+                  children: [
+                    Text(
+                        "Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials")
+                  ],
                 ),
               ),
               _generateAscensionData(),
@@ -606,5 +610,23 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         ),
       ),
     );
+  }
+
+  Icon _getGenderIcon(String gender, String name) {
+    Color color;
+    IconData icon = MdiIcons.genderFemale;
+    if (gender.toLowerCase() == "male") {
+      icon = MdiIcons.genderMale;
+      if (Util.themeNotifier.isDarkMode())
+        color = Colors.lightBlue;
+      else
+        color = Colors.blue;
+    } else if (Util.themeNotifier.isDarkMode())
+      color = Colors.pinkAccent;
+    else
+      color = Colors.pink;
+
+    if (name == "Aether/Lumine") return Icon(MdiIcons.genderMaleFemale);
+    return Icon(icon, color: color);
   }
 }
