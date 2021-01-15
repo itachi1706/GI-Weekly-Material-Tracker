@@ -70,14 +70,70 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       });
     }
 
-    TrackingData.getTrackingCategory('character').then((_dataList) {
+    if (_materialData == null) return; // No data to process yet
+
+    Map<String, int> _tracker = _isBeingTracked;
+    TrackingData.getTrackingCategory('character').then((_dataList) async {
       print(_dataList);
-      _isBeingTracked.keys.forEach((key) {
+      Set<String> datasets = new Set();
+      // Check tracking status and get material list
+      _tracker.keys.forEach((key) {
         bool _isTracked =
             TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
-        setState(() {
-          _isBeingTracked[key] = (_isTracked) ? 1 : 2; // 1 - Yes, 2 - No
-        });
+        Map<String, dynamic> data = _infoData['ascension'][key];
+        if (data["material1"] != null)
+          datasets.add(_materialData[data["material1"]]["innerType"]);
+        if (data["material2"] != null)
+          datasets.add(_materialData[data["material2"]]["innerType"]);
+        if (data["material3"] != null)
+          datasets.add(_materialData[data["material3"]]["innerType"]);
+        if (data["material4"] != null)
+          datasets.add(_materialData[data["material4"]]["innerType"]);
+        _tracker[key] =
+            (_isTracked) ? 1 : 2; // 1 - Yes, tracking (yellow), 2 - No
+      });
+
+      // Get all datasets into a map to check if completed
+      Map<String, Map<String, dynamic>> collectionList = new Map();
+      for (String ds in datasets.toList()) {
+        collectionList[ds] = await TrackingData.getCollectionList(ds);
+      }
+      // Run through tracking status and check if its fully tracked
+      _tracker.keys.forEach((key) {
+        if (_tracker[key] != 1) return; // Does not matter as not being tracked
+        bool fullTrack = true;
+        Map<String, dynamic> data = _infoData['ascension'][key];
+        if (data["material1"] != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data["material1"]]["innerType"],
+              collectionList,
+              _materialData,
+              "Character_${_infoId}_${data["material1"]}_$key");
+        if (data["material2"] != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data["material2"]]["innerType"],
+              collectionList,
+              _materialData,
+              "Character_${_infoId}_${data["material2"]}_$key");
+        if (data["material3"] != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data["material3"]]["innerType"],
+              collectionList,
+              _materialData,
+              "Character_${_infoId}_${data["material3"]}_$key");
+        if (data["material4"] != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data["material4"]]["innerType"],
+              collectionList,
+              _materialData,
+              "Character_${_infoId}_${data["material4"]}_$key");
+        _tracker[key] = (fullTrack)
+            ? 3
+            : 1; // 1 - Yes, tracking (yellow), 3 - Yes, tracking (green)
+      });
+
+      setState(() {
+        _isBeingTracked = _tracker;
       });
     });
   }
@@ -288,11 +344,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
     _rarityColor = GridData.getRarityColor(_infoData['rarity']);
-    GridData.retrieveMaterialsMapData().then((value) => {
-          setState(() {
-            _materialData = value;
-          })
-        });
+    GridData.retrieveMaterialsMapData().then((value) {
+      setState(() {
+        _materialData = value;
+      });
+      _refreshTrackingStatus();
+    });
 
     // Init map
     _refreshTrackingStatus();
@@ -540,7 +597,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Row(
-                  children: [Text("Select a tier to toggle tracking")],
+                  children: [Text("Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials")],
                 ),
               ),
               _generateAscensionData(),

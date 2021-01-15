@@ -36,10 +36,14 @@ class GridData {
         return Theme.of(context).cardColor;
       case 1:
         return (Util.themeNotifier.isDarkMode())
-            ? Colors.green
-            : Colors.lightGreen;
+            ? Colors.indigo
+            : Colors.lightBlue;
       case 2:
         return Theme.of(context).cardColor;
+      case 3:
+        return (Util.themeNotifier.isDarkMode())
+            ? Colors.green
+            : Colors.lightGreen;
     }
     return Colors.yellow; // Error
   }
