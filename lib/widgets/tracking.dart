@@ -91,8 +91,17 @@ class _TrackerPageState extends State<TrackerPage> {
     }
   }
 
-  Widget _getSupportingWidget(String image, int ascension) {
+  Widget _getSupportingWidget(String image, int ascension, String type) {
     if (image == null) return Container();
+    Widget typeWidget = Text("");
+    if (type != null) typeWidget = Image.asset(
+        GridData.getElementImageRef(type),
+      height: 20,
+      width: 20,
+    );
+
+
+
     return Container(
       height: 48,
       width: 48,
@@ -104,7 +113,12 @@ class _TrackerPageState extends State<TrackerPage> {
             child: Text(
               GridData.getRomanNumberArray(ascension - 1).toString(),
               style: TextStyle(color: Colors.white),
+              textAlign: TextAlign.end,
             ),
+          ),
+          Align(
+            alignment: FractionalOffset.bottomRight,
+            child: typeWidget,
           ),
         ],
       ),
@@ -145,6 +159,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 Map<String, dynamic> _material = _materialData[_data["name"]];
                 String extraImageRef;
                 int extraAscensionRef = 0;
+                String extraTypeRef;
                 var _ascendTier = _dataId.substring(_dataId.length - 1);
                 if (_data["addData"] != null) {
                   // Grab image ref of extra data based on addedBy
@@ -152,6 +167,7 @@ class _TrackerPageState extends State<TrackerPage> {
                     // Grab from character
                     extraImageRef = _characterData[_data["addData"]]["image"];
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                    extraTypeRef = _characterData[_data["addData"]]["element"];
                   } else if (_data["addedBy"] == "weapon") {
                     // Grab from weapon
                     extraImageRef = _weaponData[_data["addData"]]["image"];
@@ -262,7 +278,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                 ],
                               ),
                               _getSupportingWidget(
-                                  extraImageRef, extraAscensionRef),
+                                  extraImageRef, extraAscensionRef, extraTypeRef),
                             ],
                           ),
                         ],
