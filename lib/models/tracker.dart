@@ -42,14 +42,18 @@ class TrackingData {
       });
   }
 
-  static void incrementCount(String key, String type, int curCnt, int maxCnt) async {
+  static void incrementCount(
+      String key, String type, int curCnt, int maxCnt) async {
     if (curCnt >= maxCnt) return; // Invalid action
     String uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
 
-    await _db.collection("tracking").doc(uid).collection(type).doc(key).update(
-        {"current": FieldValue.increment(1)});
-
+    await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(type)
+        .doc(key)
+        .update({"current": FieldValue.increment(1)});
   }
 
   static void decrementCount(String key, String type, int curCnt) async {
@@ -57,8 +61,12 @@ class TrackingData {
     String uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
 
-    await _db.collection("tracking").doc(uid).collection(type).doc(key).update(
-        {"current": FieldValue.increment(-1)});
+    await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(type)
+        .doc(key)
+        .update({"current": FieldValue.increment(-1)});
   }
 
   static void addToCollection(String key, String itemKey, int numToTrack,
@@ -98,5 +106,29 @@ class TrackingData {
         .collection(materialType)
         .doc(key)
         .delete();
+  }
+
+  static Future<Map<String, dynamic>> getCollectionList(
+      String materialType) async {
+    String uid = Util.getFirebaseUid();
+    QuerySnapshot snaps = await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(materialType)
+        .get();
+    Map<String, dynamic> data = new Map();
+    snaps.docs.forEach((element) {
+      data.putIfAbsent(element.id, () => element.data());
+    });
+    return data;
+  }
+
+  static bool isMaterialFull(String type, Map<String, dynamic> tracker,
+      Map<String, dynamic> materialData, String key) {
+    // Get type of material
+    Map<String, dynamic> trackerData = tracker[type];
+    Map<String, dynamic> data = trackerData[key];
+    print("${data["current"]} | ${data["max"]} | ${data["current"] >= data["max"]}");
+    return data["current"] >= data["max"];
   }
 }

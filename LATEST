@@ -1,3 +1,12 @@
-- Fixed unscrollable consolidated material info page
-- Fixed weapon obtained section having dashes
-- Updated "Unimplemented" popup to show "Coming soon" instead
+- Initial beta web support @ https://gi-weekly-material-tracker.web.app/
+- Added some basic crash handling tracking for crash reporting
+- Implemented an app settings page
+- Added dark mode to the application (accessible through app settings)
+- Added server selection (through app settings).
+    This allows you to be able to select your Genshin Impact Account Server for the Weekly Planner to mark your domains properly
+
+- Marked material count text green when you have accumulated enough materials.
+- Updated character and weapon ascension tier colors to denote your current state
+    * No Colour - Not currently tracking item
+    * Blue - Currently tracking item and gathering materials for that ascension tier
+    * Green - Currently tracking item and have finished gathering materials for that ascension tier
