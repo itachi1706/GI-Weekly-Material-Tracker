@@ -1,10 +1,12 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -66,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
       body: SettingsList(
         sections: [
           SettingsSection(
-            title: 'User Login',
+            title: 'User Data',
             titlePadding: const EdgeInsets.all(16),
             tiles: [
               SettingsTile(
@@ -74,6 +76,12 @@ class _SettingsPageState extends State<SettingsPage> {
                 trailing: Text(""),
                 subtitle: Util.getUserEmail(),
                 leading: Icon(Icons.face),
+              ),
+              SettingsTile(
+                title: "Clear tracking data",
+                trailing: Text(""),
+                leading: Icon(Icons.delete_forever),
+                onPressed: _clearTrackingDataPrompt,
               ),
             ],
           ),
@@ -134,6 +142,44 @@ class _SettingsPageState extends State<SettingsPage> {
         ],
       ),
     );
+  }
+
+  void _clearTrackingDataPrompt(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Clear Tracking Data"),
+          content: Text("Claer all materials currently being tracked from the app?"),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () => Get.back(),
+            ),
+            TextButton(
+              child: Text('Clear'),
+              onPressed: _clearTrackingData,
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _clearTrackingData() async {
+    // Clear tracking data by deleting the document
+    String _uid = Util.getFirebaseUid();
+    Get.back();
+    if (_uid == null) return;
+    FirebaseFirestore _db = FirebaseFirestore.instance;
+    // Deleting all subcollections
+    DocumentReference ref = _db.collection("tracking").doc(_uid);
+    await TrackingData.clearCollection("boss_drops");
+    await TrackingData.clearCollection("domain_forgery");
+    await TrackingData.clearCollection("local_speciality");
+    await TrackingData.clearCollection("mob_drops");
+    await ref.delete(); // Delete fields
+    Util.showSnackbarQuick(context, "Cleared all tracking information");
   }
 
   void _clearCache() async {
