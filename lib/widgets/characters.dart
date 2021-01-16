@@ -10,7 +10,40 @@ import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+class CharacterTabControllerWidget extends StatefulWidget {
+  CharacterTabControllerWidget({Key key, @required this.tabController})
+      : super(key: key);
+
+  final TabController tabController;
+
+  @override
+  _CharacterTabControllerWidget createState() =>
+      _CharacterTabControllerWidget();
+}
+
+class _CharacterTabControllerWidget
+    extends State<CharacterTabControllerWidget> {
+  final List<Widget> _children = [
+    CharacterListGrid(),
+    CharacterListGrid(filter: "Anemo"),
+    CharacterListGrid(filter: "Cryo"),
+    CharacterListGrid(filter: "Electro"),
+    CharacterListGrid(filter: "Geo"),
+    CharacterListGrid(filter: "Hydro"),
+    CharacterListGrid(filter: "Pyro"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(controller: widget.tabController, children: _children);
+  }
+}
+
 class CharacterListGrid extends StatefulWidget {
+  CharacterListGrid({Key key, this.filter});
+
+  final String filter;
+
   @override
   _CharacterListGridState createState() => _CharacterListGridState();
 }
@@ -19,8 +52,12 @@ class _CharacterListGridState extends State<CharacterListGrid> {
   @override
   Widget build(BuildContext context) {
     CollectionReference materialRef = _db.collection('characters');
+    Query queryRef;
+    if (widget.filter != null)
+      queryRef = materialRef.where("element", isEqualTo: widget.filter);
     return StreamBuilder(
-        stream: materialRef.snapshots(),
+        stream:
+            (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return Text("Error occurred getting snapshot");
@@ -32,7 +69,10 @@ class _CharacterListGridState extends State<CharacterListGrid> {
 
           GridData.setStaticData("characters", snapshot.data);
           return GridView.count(
-            crossAxisCount: (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
+            crossAxisCount:
+                (MediaQuery.of(context).orientation == Orientation.portrait)
+                    ? 3
+                    : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () =>
