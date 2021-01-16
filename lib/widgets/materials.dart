@@ -30,7 +30,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
 
           GridData.setStaticData("materials", snapshot.data);
           return GridView.count(
-            crossAxisCount: 3,
+            crossAxisCount: (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () =>
