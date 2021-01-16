@@ -57,13 +57,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Map<String, dynamic> _materialData;
 
-  Map<String, int> _isBeingTracked;
+  Map<String, TrackingStatus> _isBeingTracked;
 
   void _refreshTrackingStatus() {
     if (_isBeingTracked == null) {
-      Map<String, int> _tmpTracker = new Map();
+      Map<String, TrackingStatus> _tmpTracker = new Map();
       _infoData['ascension'].keys.forEach((key) {
-        _tmpTracker[key] = 0;
+        _tmpTracker[key] = TrackingStatus.UNKNOWN;
       });
       setState(() {
         _isBeingTracked = _tmpTracker;
@@ -72,7 +72,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
     if (_materialData == null) return; // No data to process yet
 
-    Map<String, int> _tracker = _isBeingTracked;
+    Map<String, TrackingStatus> _tracker = _isBeingTracked;
     TrackingData.getTrackingCategory('character').then((_dataList) async {
       print(_dataList);
       Set<String> datasets = new Set();
@@ -90,7 +90,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         if (data["material4"] != null)
           datasets.add(_materialData[data["material4"]]["innerType"]);
         _tracker[key] =
-            (_isTracked) ? 1 : 2; // 1 - Yes, tracking (yellow), 2 - No
+            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
       });
 
       // Get all datasets into a map to check if completed
@@ -100,7 +100,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       }
       // Run through tracking status and check if its fully tracked
       _tracker.keys.forEach((key) {
-        if (_tracker[key] != 1) return; // Does not matter as not being tracked
+        if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
         bool fullTrack = true;
         Map<String, dynamic> data = _infoData['ascension'][key];
         if (data["material1"] != null && fullTrack)
@@ -128,8 +128,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               _materialData,
               "Character_${_infoId}_${data["material4"]}_$key");
         _tracker[key] = (fullTrack)
-            ? 3
-            : 1; // 1 - Yes, tracking (yellow), 3 - Yes, tracking (green)
+            ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
+            : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
       });
 
       setState(() {
@@ -138,8 +138,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     });
   }
 
-  int _isBeingTrackedStatus(String key) {
-    if (!_isBeingTracked.keys.contains(key)) return 0;
+  TrackingStatus _isBeingTrackedStatus(String key) {
+    if (!_isBeingTracked.keys.contains(key)) return TrackingStatus.UNKNOWN;
     return _isBeingTracked[key];
   }
 
@@ -235,7 +235,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
     String key = index.toString();
-    if (_isBeingTrackedStatus(key) == 0) {
+    TrackingStatus isTracked = _isBeingTrackedStatus(key);
+    if (isTracked == TrackingStatus.UNKNOWN ||
+        isTracked == TrackingStatus.CHECKING) {
       Util.showSnackbarQuick(context, "Checking tracking status");
       return;
     }
@@ -244,7 +246,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _selectedTier = key;
     });
 
-    if (_isBeingTrackedStatus(key) == 1) {
+    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
+        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
       showDialog(
         context: context,
         builder: (context) {
@@ -381,8 +384,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         Map<String, dynamic> curData = data[index].value;
         return Container(
           child: Card(
-            color:
-                GridData.getTrackingColor(index + 1, _isBeingTracked, context),
+            color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
             child: InkWell(
               onTap: () => _addOrRemoveMaterial(index + 1, curData),
               child: Padding(
