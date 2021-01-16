@@ -141,6 +141,20 @@ class TrackingData {
         .delete();
   }
 
+  static Future<void> clearCollection(String materialType) async {
+    String uid = Util.getFirebaseUid();
+    if (uid == null) return;
+    int deleted = 0, limit = 50;
+    QuerySnapshot qs = await _db.collection("tracking").doc(uid).collection(materialType).limit(limit).get();
+    do {
+      deleted = 0;
+      for (QueryDocumentSnapshot qds in qs.docs) {
+        await qds.reference.delete();
+        deleted++;
+      }
+    } while (deleted >= limit);
+  }
+
   static Future<Map<String, dynamic>> getCollectionList(
       String materialType) async {
     String uid = Util.getFirebaseUid();
