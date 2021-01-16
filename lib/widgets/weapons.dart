@@ -490,33 +490,37 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                 ),
               ),
               Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
+              IntrinsicHeight(
                 child: Row(
                   children: [
-                    Icon(MdiIcons.swordCross),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['base_atk'].toString()),
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Icon(MdiIcons.swordCross),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Text(_infoData['base_atk'].toString()),
+                          )
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Icon(MdiIcons.shield),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(
-                            "${_infoData['secondary_stat']} (${_infoData['secondary_stat_type']})"),
+                    Spacer(),
+                    VerticalDivider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Icon(MdiIcons.shield),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: Text(
+                                "${_infoData['secondary_stat']} (${_infoData['secondary_stat_type']})"),
+                          ),
+                        ],
                       ),
                     ),
+                    Spacer(),
                   ],
                 ),
               ),

@@ -525,32 +525,36 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                 ),
               ),
               Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
+              IntrinsicHeight(
                 child: Row(
                   children: [
-                    Icon(MdiIcons.weatherNight),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['constellation']),
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Icon(MdiIcons.weatherNight),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Text(_infoData['constellation']),
+                          )
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Icon(MdiIcons.swordCross),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['weapon']),
+                    Spacer(),
+                    VerticalDivider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        children: [
+                          Icon(MdiIcons.swordCross),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            child: Text(_infoData['weapon']),
+                          )
+                        ],
                       ),
                     ),
+                    Spacer(),
                   ],
                 ),
               ),
@@ -565,7 +569,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                           _getGenderIcon(
                               _infoData['gender'], _infoData['name']),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8, right: 8),
+                            padding: const EdgeInsets.only(left: 8),
                             child: Text(_infoData['gender']),
                           ),
                         ],
