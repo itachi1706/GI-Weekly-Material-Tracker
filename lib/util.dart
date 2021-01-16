@@ -17,23 +17,26 @@ class Util {
         SnackBar(content: Text(message), duration: Duration(seconds: 2)));
   }
 
-  static Widget centerLoadingCircle(String loadText) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [CircularProgressIndicator(), Text(loadText)],
-      ),
-    );
-  }
+  static Widget loadingScreen() => Scaffold(
+        appBar: AppBar(
+          title: Text("Loading..."),
+        ),
+        body: Util.centerLoadingCircle("Getting Data"),
+      );
+
+  static Widget centerLoadingCircle(String loadText) => Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [CircularProgressIndicator(), Text(loadText)],
+        ),
+      );
 
   static Future<String> getFirebaseStorageUrl(String ref) async {
     if (kIsWeb) return await _storage.ref(ref).getDownloadURL();
     return "$_firebaseStorageUrl$ref";
   }
 
-  static void updateFirebaseUid() {
-    _uid = _auth.currentUser.uid;
-  }
+  static void updateFirebaseUid() => _uid = _auth.currentUser.uid;
 
   static String getFirebaseUid() {
     if (_auth.currentUser == null) return null;

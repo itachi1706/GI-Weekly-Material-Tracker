@@ -30,12 +30,13 @@ class _CharacterListGridState extends State<CharacterListGrid> {
             return Util.centerLoadingCircle("");
           }
 
+          GridData.setStaticData("characters", snapshot.data);
           return GridView.count(
             crossAxisCount: 3,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () => Get.toNamed('/characters',
-                    arguments: [document.id, document.data()]),
+                onTap: () =>
+                    Get.toNamed('/characters', arguments: [document.id]),
                 child: GridData.getGridData(document.data()),
               );
             }).toList(),
@@ -60,6 +61,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   Map<String, TrackingStatus> _isBeingTracked;
 
   void _refreshTrackingStatus() {
+    if (_materialData == null || _infoData == null) return; // No data
     if (_isBeingTracked == null) {
       Map<String, TrackingStatus> _tmpTracker = new Map();
       _infoData['ascension'].keys.forEach((key) {
@@ -69,8 +71,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         _isBeingTracked = _tmpTracker;
       });
     }
-
-    if (_materialData == null) return; // No data to process yet
 
     Map<String, TrackingStatus> _tracker = _isBeingTracked;
     TrackingData.getTrackingCategory('character').then((_dataList) async {
@@ -344,17 +344,19 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
-    _rarityColor = GridData.getRarityColor(_infoData['rarity']);
-    GridData.retrieveMaterialsMapData().then((value) {
-      setState(() {
-        _materialData = value;
-      });
-      _refreshTrackingStatus();
-    });
+    _getStaticData();
+  }
 
-    // Init map
+  void _getStaticData() async {
+    Map<String, dynamic> infoData = await GridData.retrieveCharactersMapData();
+    Map<String, dynamic> materialData =
+        await GridData.retrieveMaterialsMapData();
+    setState(() {
+      _infoData = infoData[_infoId];
+      _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+      _materialData = materialData;
+    });
     _refreshTrackingStatus();
   }
 
@@ -429,6 +431,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_infoData == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
         title: Text(_infoData['name']),
