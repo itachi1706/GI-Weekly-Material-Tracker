@@ -33,7 +33,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () => Get.toNamed('/materials',
-                    arguments: [document.id, document.data()]),
+                    arguments: [document.id]),
                 child: GridData.getGridData(document.data()),
               );
             }).toList(),
@@ -59,13 +59,17 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoData = Get.arguments[1];
     _infoId = Get.arguments[0];
-    _rarityColor = GridData.getRarityColor(_infoData['rarity']);
-    refreshTrackingStatus();
+    GridData.retrieveMaterialsMapData().then((value) {
+      setState(() {
+        _infoData = value[_infoId];
+        _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+      });
+      _refreshTrackingStatus();
+    });
   }
 
-  void refreshTrackingStatus() {
+  void _refreshTrackingStatus() {
     setState(() {
       _addCheckObtained = false;
     });
@@ -90,7 +94,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _trackMaterialAction() {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
     TrackingData.addToRecord('material', _infoId).then((value) {
-      refreshTrackingStatus();
+      _refreshTrackingStatus();
       Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
     });
     TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack,
@@ -101,7 +105,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId)
         .then((value) {
-      refreshTrackingStatus();
+      _refreshTrackingStatus();
       Util.showSnackbarQuick(
           context, "${_infoData['name']} removed from tracker!");
     });
@@ -187,6 +191,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_infoData == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
         title: Text(_infoData['name']),

@@ -208,24 +208,26 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   void initState() {
     super.initState();
     _materialKey = Get.arguments[0];
-    _material = Get.arguments[1];
-    _rarityColor = GridData.getRarityColor(_material['rarity']);
+    _getStaticData();
+  }
 
-    GridData.retrieveCharactersMapData().then((value) => {
-          setState(() {
-            _characterData = value;
-          })
-        });
-
-    GridData.retrieveWeaponsMapData().then((value) => {
-          setState(() {
-            _weaponData = value;
-          })
-        });
+  void _getStaticData() async {
+    Map<String, dynamic> characterData =
+        await GridData.retrieveCharactersMapData();
+    Map<String, dynamic> weaponData = await GridData.retrieveWeaponsMapData();
+    Map<String, dynamic> materialData =
+        await GridData.retrieveMaterialsMapData();
+    setState(() {
+      _characterData = characterData;
+      _weaponData = weaponData;
+      _material = materialData[_materialKey];
+      _rarityColor = GridData.getRarityColor(_material['rarity']);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    if (_material == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
         title: Text(_material['name']),

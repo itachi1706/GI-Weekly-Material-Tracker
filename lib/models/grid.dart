@@ -57,32 +57,31 @@ class GridData {
     return null;
   }
 
-  static Future<Map<String, dynamic>> retrieveMaterialsMapData() async {
-    QuerySnapshot snapshot = await _db.collection("materials").get();
-    Map<String, dynamic> data = new Map();
-    snapshot.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => element.data());
-    });
-    return data;
+  static Map<String, Map<String, dynamic>> _staticData = new Map();
+
+  static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
+    if (!_staticData.containsKey(type)) {
+      QuerySnapshot snapshot = await _db.collection(type).get();
+      Map<String, dynamic> data = new Map();
+      snapshot.docs.forEach((element) {
+        data.putIfAbsent(element.id, () => element.data());
+      });
+      setStaticData(type, data);
+    }
+    return _staticData[type];
   }
 
-  static Future<Map<String, dynamic>> retrieveWeaponsMapData() async {
-    QuerySnapshot snapshot = await _db.collection("weapons").get();
-    Map<String, dynamic> data = new Map();
-    snapshot.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => element.data());
-    });
-    return data;
-  }
+  static void setStaticData(String type, Map<String, dynamic> data) =>
+      _staticData[type] = data;
 
-  static Future<Map<String, dynamic>> retrieveCharactersMapData() async {
-    QuerySnapshot snapshot = await _db.collection("characters").get();
-    Map<String, dynamic> data = new Map();
-    snapshot.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => element.data());
-    });
-    return data;
-  }
+  static Future<Map<String, dynamic>> retrieveMaterialsMapData() async =>
+      _retrieveStaticData("materials");
+
+  static Future<Map<String, dynamic>> retrieveWeaponsMapData() async =>
+      _retrieveStaticData("weapons");
+
+  static Future<Map<String, dynamic>> retrieveCharactersMapData() async =>
+      _retrieveStaticData("characters");
 
   static String getDayString(int day) {
     switch (day) {
