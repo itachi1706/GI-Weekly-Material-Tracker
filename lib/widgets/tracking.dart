@@ -53,24 +53,19 @@ class _TrackerPageState extends State<TrackerPage> {
   @override
   void initState() {
     super.initState();
+    _retrieveData();
+  }
 
-    GridData.retrieveMaterialsMapData().then((value) => {
-          setState(() {
-            _materialData = value;
-          })
-        });
-
-    GridData.retrieveCharactersMapData().then((value) => {
-          setState(() {
-            _characterData = value;
-          })
-        });
-
-    GridData.retrieveWeaponsMapData().then((value) => {
-          setState(() {
-            _weaponData = value;
-          })
-        });
+  void _retrieveData() async {
+    Map<String, dynamic> m = await GridData.retrieveMaterialsMapData();
+    Map<String, dynamic> c = await GridData.retrieveCharactersMapData();
+    Map<String, dynamic> w = await GridData.retrieveWeaponsMapData();
+    if (this.mounted)
+      setState(() {
+        _materialData = m;
+        _characterData = c;
+        _weaponData = w;
+      });
   }
 
   void _itemClickedAction(String type, String key) {
@@ -450,7 +445,7 @@ class _PlannerPageState extends State<PlannerPage> {
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      crossAxisCount: 3,
+      crossAxisCount: (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials',

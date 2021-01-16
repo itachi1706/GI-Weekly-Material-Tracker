@@ -32,7 +32,7 @@ class _CharacterListGridState extends State<CharacterListGrid> {
 
           GridData.setStaticData("characters", snapshot.data);
           return GridView.count(
-            crossAxisCount: 3,
+            crossAxisCount: (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () =>

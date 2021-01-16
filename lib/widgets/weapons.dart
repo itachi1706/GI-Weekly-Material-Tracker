@@ -33,7 +33,7 @@ class _WeaponListGridState extends State<WeaponListGrid> {
           GridData.setStaticData("weapons", snapshot.data);
 
           return GridView.count(
-            crossAxisCount: 3,
+            crossAxisCount: (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () => Get.toNamed('/weapons', arguments: [document.id]),
