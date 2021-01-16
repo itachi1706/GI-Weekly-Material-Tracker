@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
@@ -19,34 +20,83 @@ class MainNavigationPage extends StatefulWidget {
 }
 
 class _MainNavigationPageState extends State<MainNavigationPage>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<Widget> _children;
-  TabController _tabController;
 
-  final List<Tab> _tabs = [
-    Tab(text: "Boss"),
-    Tab(text: "Domains"),
-    Tab(text: "Monster"),
-    Tab(text: "Local Speciality"),
-    Tab(text: "Week Planner")
-  ];
+  final Map<int, List<Tab>> _tabs = {
+    0: [
+      Tab(text: "Boss"),
+      Tab(text: "Domains"),
+      Tab(text: "Monster"),
+      Tab(text: "Local Speciality"),
+      Tab(text: "Week Planner")
+    ],
+    1: [
+      Tab(text: "All"),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Anemo"),
+          height: 20,
+        ),
+      ),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Cryo"),
+          height: 20,
+        ),
+      ),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Electro"),
+          height: 20,
+        ),
+      ),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Geo"),
+          height: 20,
+        ),
+      ),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Hydro"),
+          height: 20,
+        ),
+      ),
+      Tab(
+        icon: Image.asset(
+          GridData.getElementImageRef("Pyro"),
+          height: 20,
+        ),
+      ),
+    ]
+  };
+  Map<int, TabController> _tabControllers;
 
   Widget _showAppBar() {
-    if (_currentIndex != 0) return null;
-    return TabBar(controller: _tabController, tabs: _tabs, isScrollable: true);
+    if (!_tabs.containsKey(_currentIndex)) return null;
+    return TabBar(
+        controller: _tabControllers[_currentIndex],
+        tabs: _tabs[_currentIndex],
+        isScrollable: true);
   }
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: _tabs.length);
+    _tabControllers = {
+      0: TabController(vsync: this, length: _tabs[0].length),
+      1: TabController(vsync: this, length: _tabs[1].length),
+    };
     _children = [
       TabControllerWidget(
-        tabController: _tabController,
+        tabController: _tabControllers[0],
       ),
-      CharacterListGrid(),
+      CharacterTabControllerWidget(
+        tabController: _tabControllers[1],
+      ),
       WeaponListGrid(),
       MaterialListGrid(),
     ];
