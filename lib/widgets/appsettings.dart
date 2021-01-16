@@ -24,6 +24,12 @@ class _SettingsPageState extends State<SettingsPage> {
 
   SharedPreferences _prefs;
 
+  @override
+  void initState() {
+    super.initState();
+    _refresh();
+  }
+
   void _refresh() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     Map<String, int> _files = {"fileNum": 0, "size": 0};
@@ -55,7 +61,6 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    _refresh();
     return Scaffold(
       appBar: AppBar(title: Text("Settings")),
       body: SettingsList(

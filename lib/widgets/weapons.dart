@@ -30,6 +30,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
             return Util.centerLoadingCircle("");
           }
 
+          GridData.setStaticData("weapons", snapshot.data);
+
           return GridView.count(
             crossAxisCount: 3,
             children: snapshot.data.docs.map((document) {

@@ -28,12 +28,13 @@ class _MaterialListGridState extends State<MaterialListGrid> {
             return Util.centerLoadingCircle("");
           }
 
+          GridData.setStaticData("materials", snapshot.data);
           return GridView.count(
             crossAxisCount: 3,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () => Get.toNamed('/materials',
-                    arguments: [document.id]),
+                onTap: () =>
+                    Get.toNamed('/materials', arguments: [document.id]),
                 child: GridData.getGridData(document.data()),
               );
             }).toList(),
@@ -83,9 +84,15 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   Widget _getFabWidget() {
     if (!_addCheckObtained) return CircularProgressIndicator();
     if (_isAdded)
-      return Icon(Icons.remove, color: Colors.white,);
+      return Icon(
+        Icons.remove,
+        color: Colors.white,
+      );
     else
-      return Icon(Icons.add, color: Colors.white,);
+      return Icon(
+        Icons.add,
+        color: Colors.white,
+      );
   }
 
   String _cntTrack = "";
@@ -103,8 +110,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   }
 
   void _untrackMaterialAction() {
-    TrackingData.removeFromRecord('material', _infoId)
-        .then((value) {
+    TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
           context, "${_infoData['name']} removed from tracker!");

@@ -121,7 +121,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                   color: GridData.getRarityColor(_material["rarity"]),
                   child: InkWell(
                     onTap: () => Get.toNamed('/globalMaterial',
-                        arguments: [_data["name"], _material]),
+                        arguments: [_data["name"]]),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(

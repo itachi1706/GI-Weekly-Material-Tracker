@@ -61,18 +61,22 @@ class GridData {
 
   static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
     if (!_staticData.containsKey(type)) {
+      print("Retrieving $type static data in memory");
       QuerySnapshot snapshot = await _db.collection(type).get();
-      Map<String, dynamic> data = new Map();
-      snapshot.docs.forEach((element) {
-        data.putIfAbsent(element.id, () => element.data());
-      });
-      setStaticData(type, data);
+      setStaticData(type, snapshot);
     }
     return _staticData[type];
   }
 
-  static void setStaticData(String type, Map<String, dynamic> data) =>
-      _staticData[type] = data;
+  static void setStaticData(String type, QuerySnapshot snapshot) {
+    if (snapshot == null) return;
+    print("Updating $type static data in memory");
+    Map<String, dynamic> data = new Map();
+    snapshot.docs.forEach((element) {
+      data.putIfAbsent(element.id, () => element.data());
+    });
+    _staticData[type] = data;
+  }
 
   static Future<Map<String, dynamic>> retrieveMaterialsMapData() async =>
       _retrieveStaticData("materials");
