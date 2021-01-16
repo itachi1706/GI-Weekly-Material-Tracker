@@ -1,7 +1,40 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+enum TrackingStatus {
+  UNKNOWN,
+  CHECKING,
+  NOT_TRACKED,
+  TRACKED_INCOMPLETE_MATERIAL,
+  TRACKED_COMPLETE_MATERIAL
+}
+
+class TrackingUtils {
+  static Color getTrackingColor(
+      int index, Map<String, TrackingStatus> _isBeingTracked) {
+    if (!_isBeingTracked.keys.contains(index.toString()))
+      return Colors.yellow; // No such key (loading)
+    switch (_isBeingTracked[index.toString()]) {
+      case TrackingStatus.UNKNOWN:
+      case TrackingStatus.CHECKING:
+      case TrackingStatus.NOT_TRACKED:
+        return Get.theme.cardColor;
+      case TrackingStatus.TRACKED_COMPLETE_MATERIAL:
+        return (Util.themeNotifier.isDarkMode())
+            ? Colors.green
+            : Colors.lightGreen;
+      case TrackingStatus.TRACKED_INCOMPLETE_MATERIAL:
+        return (Util.themeNotifier.isDarkMode())
+            ? Colors.indigo
+            : Colors.lightBlue;
+    }
+    return Colors.yellow; // Error
+  }
+}
 
 class TrackingData {
   static Future<List<dynamic>> getTrackingCategory(String key) async {
@@ -128,7 +161,8 @@ class TrackingData {
     // Get type of material
     Map<String, dynamic> trackerData = tracker[type];
     Map<String, dynamic> data = trackerData[key];
-    print("${data["current"]} | ${data["max"]} | ${data["current"] >= data["max"]}");
+    print(
+        "${data["current"]} | ${data["max"]} | ${data["current"] >= data["max"]}");
     return data["current"] >= data["max"];
   }
 }

@@ -27,27 +27,6 @@ class GridData {
     }
   }
 
-  static Color getTrackingColor(
-      int index, Map<String, int> _isBeingTracked, BuildContext context) {
-    if (!_isBeingTracked.keys.contains(index.toString()))
-      return Colors.yellow; // No such key (loading)
-    switch (_isBeingTracked[index.toString()]) {
-      case 0:
-        return Theme.of(context).cardColor;
-      case 1:
-        return (Util.themeNotifier.isDarkMode())
-            ? Colors.indigo
-            : Colors.lightBlue;
-      case 2:
-        return Theme.of(context).cardColor;
-      case 3:
-        return (Util.themeNotifier.isDarkMode())
-            ? Colors.green
-            : Colors.lightGreen;
-    }
-    return Colors.yellow; // Error
-  }
-
   static Color getCountColor(int current, int max) {
     if (current >= max) return Colors.greenAccent;
     return Colors.white;
