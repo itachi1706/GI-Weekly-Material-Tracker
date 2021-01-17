@@ -197,11 +197,15 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   void _itemClickedAction(
-      Map<String, dynamic> data, String docId, Map<String, dynamic> extraData) {
+      Map<String, dynamic> data, String docId, Map<String, dynamic> extraData, bool editDialog) {
     String type = data["addedBy"];
     String key =
         (data["addedBy"] == "material") ? data["name"] : data["addData"];
     _cntKey = docId;
+    if (!editDialog) {
+      Get.toNamed('/${type}s', arguments: [key]);
+      return;
+    }
     switch (type) {
       case "material":
         _displayDialogMat("/materials", key, data);
@@ -312,7 +316,12 @@ class _TrackerPageState extends State<TrackerPage> {
                       "img": extraImageRef,
                       "asc": extraAscensionRef,
                       "type": extraTypeRef
-                    }),
+                    }, false),
+                    onLongPress: () => _itemClickedAction(_data, _dataId, {
+                      "img": extraImageRef,
+                      "asc": extraAscensionRef,
+                      "type": extraTypeRef
+                    }, true),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
