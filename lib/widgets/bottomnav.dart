@@ -79,7 +79,14 @@ class _MainNavigationPageState extends State<MainNavigationPage>
       Tab(text: "Claymore"),
       Tab(text: "Polearm"),
       Tab(text: "Sword"),
-    ]
+    ],
+    3: [
+      Tab(text: "All"),
+      Tab(text: "Boss"),
+      Tab(text: "Domains"),
+      Tab(text: "Monster"),
+      Tab(text: "Local Speciality"),
+    ],
   };
   Map<int, TabController> _tabControllers;
 
@@ -98,12 +105,13 @@ class _MainNavigationPageState extends State<MainNavigationPage>
       0: TabController(vsync: this, length: _tabs[0].length),
       1: TabController(vsync: this, length: _tabs[1].length),
       2: TabController(vsync: this, length: _tabs[2].length),
+      3: TabController(vsync: this, length: _tabs[3].length),
     };
     _children = [
       TrackingTabController(tabController: _tabControllers[0]),
       CharacterTabController(tabController: _tabControllers[1]),
       WeaponTabController(tabController: _tabControllers[2]),
-      MaterialListGrid(),
+      MaterialTabController(tabController: _tabControllers[3]),
     ];
   }
 

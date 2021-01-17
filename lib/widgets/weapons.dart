@@ -17,11 +17,10 @@ class WeaponTabController extends StatefulWidget {
   final TabController tabController;
 
   @override
-  _CharacterTabControllerWidgetState createState() =>
-      _CharacterTabControllerWidgetState();
+  _WeaponTabControllerState createState() => _WeaponTabControllerState();
 }
 
-class _CharacterTabControllerWidgetState extends State<WeaponTabController> {
+class _WeaponTabControllerState extends State<WeaponTabController> {
   final List<Widget> _children = [
     WeaponListGrid(),
     WeaponListGrid(filter: "Bow"),
