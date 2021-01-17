@@ -377,7 +377,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                     "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef)})";
               }
 
-              Widget typeWidget = Text("");
+              Widget typeWidget = SizedBox.shrink();
               if (extraTypeRef != null)
                 typeWidget = Image.asset(
                   GridData.getElementImageRef(extraTypeRef),

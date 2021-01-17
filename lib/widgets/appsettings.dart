@@ -73,13 +73,13 @@ class _SettingsPageState extends State<SettingsPage> {
             tiles: [
               SettingsTile(
                 title: "Currently Logged in as",
-                trailing: Text(""),
+                trailing: SizedBox.shrink(),
                 subtitle: Util.getUserEmail(),
                 leading: Icon(Icons.face),
               ),
               SettingsTile(
                 title: "Clear tracking data",
-                trailing: Text(""),
+                trailing: SizedBox.shrink(),
                 leading: Icon(Icons.delete_forever),
                 onPressed: _clearTrackingDataPrompt,
               ),
@@ -112,7 +112,7 @@ class _SettingsPageState extends State<SettingsPage> {
               SettingsTile(
                 title: "Cache",
                 subtitle: "Currently using $_cacheSize ($_cacheFiles files)",
-                trailing: Text(""),
+                trailing: SizedBox.shrink(),
                 enabled: !kIsWeb,
                 leading: Icon(Icons.cached_rounded),
               ),

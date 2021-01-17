@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
@@ -132,6 +133,17 @@ class _MainNavigationPageState extends State<MainNavigationPage>
     _notifier.updateSortKey(sorter, descending);
   }
 
+  Widget _showSortWidget() {
+    if (_currentIndex > 0) {
+      return PopupMenuButton(
+        icon: Icon(Icons.sort),
+        elevation: 2.0,
+        onSelected: _sortBy,
+        itemBuilder: (context) => _sortList.getSortList(_currentIndex),
+      );
+    } else return SizedBox.shrink();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,12 +151,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
           title: Text(widget.title),
           bottom: _showAppBar(),
           actions: [
-            PopupMenuButton(
-              icon: Icon(Icons.sort),
-              elevation: 2.0,
-              onSelected: _sortBy,
-              itemBuilder: (context) => _sortList.getSortList(_currentIndex),
-            ),
+            _showSortWidget(),
             IconButton(
               icon: Icon(MdiIcons.fileDocument),
               tooltip: "View Consolidated Material List",

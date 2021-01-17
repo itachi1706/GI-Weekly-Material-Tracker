@@ -88,7 +88,7 @@ class _TrackerPageState extends State<TrackerPage> {
 
   Widget _getSupportingWidget(String image, int ascension, String type) {
     if (image == null) return Container();
-    Widget typeWidget = Text("");
+    Widget typeWidget = SizedBox.shrink();
     if (type != null)
       typeWidget = Image.asset(
         GridData.getElementImageRef(type),
