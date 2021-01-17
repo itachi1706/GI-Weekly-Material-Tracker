@@ -41,8 +41,7 @@ class SortBy {
         child: Row(
           children: [
             Text("Default"),
-            Spacer(),
-            Icon(_getSortingData(false, null), color: _matchColor(null))
+            Spacer()
           ],
         ),
       ),
