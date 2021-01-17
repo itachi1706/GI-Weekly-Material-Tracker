@@ -253,6 +253,9 @@ Deploy to Firebase Hosting Prod:
     - if: $CI_COMMIT_TAG
       when: always
     - when: never
+  environment:
+    name: Production
+    url: https://gi-weekly-material-tracker.web.app/
 
 
 variables:
