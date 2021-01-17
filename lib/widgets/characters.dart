@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -11,10 +12,11 @@ import 'package:transparent_image/transparent_image.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class CharacterTabController extends StatefulWidget {
-  CharacterTabController({Key key, @required this.tabController})
+  CharacterTabController({Key key, @required this.tabController, this.notifier})
       : super(key: key);
 
   final TabController tabController;
+  final SortNotifier notifier;
 
   @override
   _CharacterTabControllerWidgetState createState() =>
@@ -22,38 +24,60 @@ class CharacterTabController extends StatefulWidget {
 }
 
 class _CharacterTabControllerWidgetState extends State<CharacterTabController> {
-  final List<Widget> _children = [
-    CharacterListGrid(),
-    CharacterListGrid(filter: "Anemo"),
-    CharacterListGrid(filter: "Cryo"),
-    CharacterListGrid(filter: "Electro"),
-    CharacterListGrid(filter: "Geo"),
-    CharacterListGrid(filter: "Hydro"),
-    CharacterListGrid(filter: "Pyro"),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: _children);
+    return TabBarView(controller: widget.tabController, children: [
+      CharacterListGrid(notifier: widget.notifier),
+      CharacterListGrid(filter: "Anemo", notifier: widget.notifier),
+      CharacterListGrid(filter: "Cryo", notifier: widget.notifier),
+      CharacterListGrid(filter: "Electro", notifier: widget.notifier),
+      CharacterListGrid(filter: "Geo", notifier: widget.notifier),
+      CharacterListGrid(filter: "Hydro", notifier: widget.notifier),
+      CharacterListGrid(filter: "Pyro", notifier: widget.notifier),
+    ]);
   }
 }
 
 class CharacterListGrid extends StatefulWidget {
-  CharacterListGrid({Key key, this.filter});
+  CharacterListGrid({Key key, this.filter, this.notifier});
 
   final String filter;
+  final SortNotifier notifier;
 
   @override
   _CharacterListGridState createState() => _CharacterListGridState();
 }
 
 class _CharacterListGridState extends State<CharacterListGrid> {
+  String _sorter;
+  bool _isDescending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.notifier.addListener(() {
+      if (!mounted) return;
+      setState(() {
+        _sorter = widget.notifier.getSortKey();
+        _isDescending = widget.notifier.isDescending();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     CollectionReference characterRef = _db.collection('characters');
     Query queryRef;
     if (widget.filter != null)
       queryRef = characterRef.where("element", isEqualTo: widget.filter);
+    if (_sorter != null && queryRef == null)
+      queryRef = characterRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
+    else if (_sorter != null)
+      queryRef = queryRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
     return StreamBuilder(
         stream: (queryRef == null)
             ? characterRef.snapshots()

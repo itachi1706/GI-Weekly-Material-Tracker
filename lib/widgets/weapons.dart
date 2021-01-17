@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -11,47 +12,70 @@ import 'package:transparent_image/transparent_image.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class WeaponTabController extends StatefulWidget {
-  WeaponTabController({Key key, @required this.tabController})
+  WeaponTabController({Key key, @required this.tabController, this.notifier})
       : super(key: key);
 
   final TabController tabController;
+  final SortNotifier notifier;
 
   @override
   _WeaponTabControllerState createState() => _WeaponTabControllerState();
 }
 
 class _WeaponTabControllerState extends State<WeaponTabController> {
-  final List<Widget> _children = [
-    WeaponListGrid(),
-    WeaponListGrid(filter: "Bow"),
-    WeaponListGrid(filter: "Catalyst"),
-    WeaponListGrid(filter: "Claymore"),
-    WeaponListGrid(filter: "Polearm"),
-    WeaponListGrid(filter: "Sword"),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: _children);
+    return TabBarView(controller: widget.tabController, children: [
+      WeaponListGrid(notifier: widget.notifier),
+      WeaponListGrid(filter: "Bow", notifier: widget.notifier),
+      WeaponListGrid(filter: "Catalyst", notifier: widget.notifier),
+      WeaponListGrid(filter: "Claymore", notifier: widget.notifier),
+      WeaponListGrid(filter: "Polearm", notifier: widget.notifier),
+      WeaponListGrid(filter: "Sword", notifier: widget.notifier),
+    ]);
   }
 }
 
 class WeaponListGrid extends StatefulWidget {
-  WeaponListGrid({Key key, this.filter});
+  WeaponListGrid({Key key, this.filter, this.notifier});
 
   final String filter;
+  final SortNotifier notifier;
 
   @override
   _WeaponListGridState createState() => _WeaponListGridState();
 }
 
 class _WeaponListGridState extends State<WeaponListGrid> {
+  String _sorter;
+  bool _isDescending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.notifier.addListener(() {
+      if (!mounted) return;
+      setState(() {
+        _sorter = widget.notifier.getSortKey();
+        _isDescending = widget.notifier.isDescending();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     CollectionReference weaponRef = _db.collection('weapons');
     Query queryRef;
     if (widget.filter != null)
       queryRef = weaponRef.where("type", isEqualTo: widget.filter);
+    if (_sorter != null && queryRef == null)
+      queryRef = weaponRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
+    else if (_sorter != null)
+      queryRef = queryRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
     return StreamBuilder(
         stream:
             (queryRef == null) ? weaponRef.snapshots() : queryRef.snapshots(),

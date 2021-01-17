@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
@@ -98,6 +100,8 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         isScrollable: true);
   }
 
+  SortNotifier _notifier;
+
   @override
   void initState() {
     super.initState();
@@ -107,12 +111,40 @@ class _MainNavigationPageState extends State<MainNavigationPage>
       2: TabController(vsync: this, length: _tabs[2].length),
       3: TabController(vsync: this, length: _tabs[3].length),
     };
+    _notifier = new SortNotifier();
     _children = [
       TrackingTabController(tabController: _tabControllers[0]),
-      CharacterTabController(tabController: _tabControllers[1]),
-      WeaponTabController(tabController: _tabControllers[2]),
-      MaterialTabController(tabController: _tabControllers[3]),
+      CharacterTabController(
+          tabController: _tabControllers[1], notifier: _notifier),
+      WeaponTabController(
+          tabController: _tabControllers[2], notifier: _notifier),
+      MaterialTabController(
+          tabController: _tabControllers[3], notifier: _notifier),
     ];
+    _sortList = SortBy(_notifier);
+  }
+
+  SortBy _sortList;
+
+  void _sortBy(dynamic sorter) {
+    bool descending = false;
+    if (_notifier.getSortKey() == sorter)
+      descending = !_notifier.isDescending();
+    print(
+        "Sorting by $sorter in ${(descending) ? "Descending" : "Ascending"} order");
+    _notifier.updateSortKey(sorter, descending);
+  }
+
+  Widget _showSortWidget() {
+    if (_currentIndex > 0) {
+      return PopupMenuButton(
+        icon: Icon(Icons.sort),
+        elevation: 2.0,
+        onSelected: _sortBy,
+        itemBuilder: (context) => _sortList.getSortList(_currentIndex),
+      );
+    } else
+      return SizedBox.shrink();
   }
 
   @override
@@ -122,6 +154,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
           title: Text(widget.title),
           bottom: _showAppBar(),
           actions: [
+            _showSortWidget(),
             IconButton(
               icon: Icon(MdiIcons.fileDocument),
               tooltip: "View Consolidated Material List",

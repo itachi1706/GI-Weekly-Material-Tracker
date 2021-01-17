@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -9,46 +10,69 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class MaterialTabController extends StatefulWidget {
-  MaterialTabController({Key key, @required this.tabController})
+  MaterialTabController({Key key, @required this.tabController, this.notifier})
       : super(key: key);
 
   final TabController tabController;
+  final SortNotifier notifier;
 
   @override
   _MaterialTabControllerState createState() => _MaterialTabControllerState();
 }
 
 class _MaterialTabControllerState extends State<MaterialTabController> {
-  final List<Widget> _children = [
-    MaterialListGrid(),
-    MaterialListGrid(filter: "boss_drops"),
-    MaterialListGrid(filter: "domain_forgery"),
-    MaterialListGrid(filter: "mob_drops"),
-    MaterialListGrid(filter: "local_speciality"),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: _children);
+    return TabBarView(controller: widget.tabController, children: [
+      MaterialListGrid(notifier: widget.notifier),
+      MaterialListGrid(filter: "boss_drops", notifier: widget.notifier),
+      MaterialListGrid(filter: "domain_forgery", notifier: widget.notifier),
+      MaterialListGrid(filter: "mob_drops", notifier: widget.notifier),
+      MaterialListGrid(filter: "local_speciality", notifier: widget.notifier),
+    ]);
   }
 }
 
 class MaterialListGrid extends StatefulWidget {
-  MaterialListGrid({Key key, this.filter});
+  MaterialListGrid({Key key, this.filter, this.notifier});
 
   final String filter;
+  final SortNotifier notifier;
 
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
 }
 
 class _MaterialListGridState extends State<MaterialListGrid> {
+  String _sorter;
+  bool _isDescending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.notifier.addListener(() {
+      if (!mounted) return;
+      setState(() {
+        _sorter = widget.notifier.getSortKey();
+        _isDescending = widget.notifier.isDescending();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     CollectionReference materialRef = _db.collection('materials');
     Query queryRef;
     if (widget.filter != null)
       queryRef = materialRef.where("innerType", isEqualTo: widget.filter);
+    if (_sorter != null && queryRef == null)
+      queryRef = materialRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
+    else if (_sorter != null)
+      queryRef = queryRef
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
     return StreamBuilder(
         stream:
             (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
