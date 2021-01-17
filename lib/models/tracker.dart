@@ -75,6 +75,21 @@ class TrackingData {
       });
   }
 
+  static void setCount(String key, String type, int curCnt, int maxCnt) async {
+    if (maxCnt < 0) maxCnt = 0;
+    if (curCnt >= maxCnt)
+      curCnt = maxCnt;
+    else if (curCnt < 0) curCnt = 0;
+    String uid = Util.getFirebaseUid();
+    if (uid == null || key == null) return;
+    await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(type)
+        .doc(key)
+        .update({"current": curCnt, "max": maxCnt});
+  }
+
   static void incrementCount(
       String key, String type, int curCnt, int maxCnt) async {
     if (curCnt >= maxCnt) return; // Invalid action
@@ -145,7 +160,12 @@ class TrackingData {
     String uid = Util.getFirebaseUid();
     if (uid == null) return;
     int deleted = 0, limit = 50;
-    QuerySnapshot qs = await _db.collection("tracking").doc(uid).collection(materialType).limit(limit).get();
+    QuerySnapshot qs = await _db
+        .collection("tracking")
+        .doc(uid)
+        .collection(materialType)
+        .limit(limit)
+        .get();
     do {
       deleted = 0;
       for (QueryDocumentSnapshot qds in qs.docs) {

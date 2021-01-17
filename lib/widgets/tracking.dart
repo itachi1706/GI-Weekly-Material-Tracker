@@ -68,16 +68,149 @@ class _TrackerPageState extends State<TrackerPage> {
       });
   }
 
-  void _itemClickedAction(String type, String key) {
+  String _cntCurrent = "", _cntTotal = "", _cntKey = "", _cntType = "";
+  TextEditingController _textCurrentController = TextEditingController();
+  TextEditingController _textTotalController = TextEditingController();
+
+  void _updateRecord() {
+    print("$_cntKey | $_cntType | $_cntCurrent | $_cntTotal");
+    TrackingData.setCount(_cntKey, _cntType, int.tryParse(_cntCurrent) ?? 0,
+        int.tryParse(_cntTotal) ?? 0);
+    Get.back();
+  }
+
+  void _displayDialogNonMat(String navigateTo, String key,
+      Map<String, dynamic> data, Map<String, dynamic> extraData) {
+    _cntCurrent = data["current"].toString();
+    _cntTotal = data["max"].toString();
+    _textCurrentController.text = _cntCurrent;
+    showDialog(
+        context: context,
+        builder: (context) {
+          Map<String, dynamic> _mat = _materialData[data["name"]];
+          _cntType = data["type"];
+          return AlertDialog(
+            title: Text("Update tracked amount for ${_mat["name"]}"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GridData.getImageAssetFromFirebase(_mat["image"],
+                          height: 48),
+                      _getSupportingWidget(extraData["img"], extraData["asc"],
+                          extraData["type"]),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text("Max: $_cntTotal"),
+                  ),
+                  TextField(
+                    onChanged: (newValue) {
+                      _cntCurrent = newValue;
+                    },
+                    controller: _textCurrentController,
+                    decoration: InputDecoration(labelText: "Tracked"),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Info'),
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(navigateTo, arguments: [key]);
+                },
+              ),
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Get.back(),
+              ),
+              TextButton(
+                child: Text('Update'),
+                onPressed: _updateRecord,
+              ),
+            ],
+          );
+        });
+  }
+
+  void _displayDialogMat(
+      String navigateTo, String key, Map<String, dynamic> data) {
+    _cntCurrent = data["current"].toString();
+    _cntTotal = data["max"].toString();
+    _textCurrentController.text = _cntCurrent;
+    _textTotalController.text = _cntTotal;
+    showDialog(
+        context: context,
+        builder: (context) {
+          Map<String, dynamic> _mat = _materialData[data["name"]];
+          _cntType = data["type"];
+          return AlertDialog(
+            title: Text("Update tracked amount for ${_mat["name"]}"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(_mat["image"], height: 48),
+                  TextField(
+                    onChanged: (newValue) {
+                      _cntCurrent = newValue;
+                    },
+                    controller: _textCurrentController,
+                    decoration: InputDecoration(labelText: "Tracked"),
+                    keyboardType: TextInputType.number,
+                  ),
+                  TextField(
+                    onChanged: (newValue) {
+                      _cntTotal = newValue;
+                    },
+                    controller: _textTotalController,
+                    decoration: InputDecoration(labelText: "Max"),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Info'),
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(navigateTo, arguments: [key]);
+                },
+              ),
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Get.back(),
+              ),
+              TextButton(
+                child: Text('Update'),
+                onPressed: _updateRecord,
+              ),
+            ],
+          );
+        });
+  }
+
+  void _itemClickedAction(
+      Map<String, dynamic> data, String docId, Map<String, dynamic> extraData) {
+    String type = data["addedBy"];
+    String key =
+        (data["addedBy"] == "material") ? data["name"] : data["addData"];
+    _cntKey = docId;
     switch (type) {
       case "material":
-        Get.toNamed('/materials', arguments: [key, _materialData[key]]);
-        break; // TODO: Update with the dialog box and stuff
+        _displayDialogMat("/materials", key, data);
+        break;
       case "weapon":
-        Get.toNamed('/weapons', arguments: [key, _weaponData[key]]);
+        _displayDialogNonMat("/weapons", key, data, extraData);
         break;
       case "character":
-        Get.toNamed('/characters', arguments: [key, _characterData[key]]);
+        _displayDialogNonMat("/characters", key, data, extraData);
         break;
       default:
         Util.showSnackbarQuick(
@@ -175,11 +308,11 @@ class _TrackerPageState extends State<TrackerPage> {
                 return Card(
                   color: GridData.getRarityColor(_material["rarity"]),
                   child: InkWell(
-                    onTap: () => _itemClickedAction(
-                        _data["addedBy"],
-                        (_data["addedBy"] == "material")
-                            ? _data["name"]
-                            : _data["addData"]),
+                    onTap: () => _itemClickedAction(_data, _dataId, {
+                      "img": extraImageRef,
+                      "asc": extraAscensionRef,
+                      "type": extraTypeRef
+                    }),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(

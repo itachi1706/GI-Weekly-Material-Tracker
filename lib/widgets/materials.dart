@@ -231,7 +231,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                       });
                     },
                     controller: _textEditingController,
-                    decoration: InputDecoration(hintText: "Quantity to track"),
+                    decoration: InputDecoration(labelText: "Quantity to track"),
                     keyboardType: TextInputType.number,
                   ),
                 ],
