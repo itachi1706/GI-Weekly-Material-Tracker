@@ -10,7 +10,38 @@ import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+class WeaponTabController extends StatefulWidget {
+  WeaponTabController({Key key, @required this.tabController})
+      : super(key: key);
+
+  final TabController tabController;
+
+  @override
+  _CharacterTabControllerWidgetState createState() =>
+      _CharacterTabControllerWidgetState();
+}
+
+class _CharacterTabControllerWidgetState extends State<WeaponTabController> {
+  final List<Widget> _children = [
+    WeaponListGrid(),
+    WeaponListGrid(filter: "Bow"),
+    WeaponListGrid(filter: "Catalyst"),
+    WeaponListGrid(filter: "Claymore"),
+    WeaponListGrid(filter: "Polearm"),
+    WeaponListGrid(filter: "Sword"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(controller: widget.tabController, children: _children);
+  }
+}
+
 class WeaponListGrid extends StatefulWidget {
+  WeaponListGrid({Key key, this.filter});
+
+  final String filter;
+
   @override
   _WeaponListGridState createState() => _WeaponListGridState();
 }
@@ -18,9 +49,13 @@ class WeaponListGrid extends StatefulWidget {
 class _WeaponListGridState extends State<WeaponListGrid> {
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = _db.collection('weapons');
+    CollectionReference weaponRef = _db.collection('weapons');
+    Query queryRef;
+    if (widget.filter != null)
+      queryRef = weaponRef.where("type", isEqualTo: widget.filter);
     return StreamBuilder(
-        stream: materialRef.snapshots(),
+        stream:
+            (queryRef == null) ? weaponRef.snapshots() : queryRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return Text("Error occurred getting snapshot");
@@ -33,7 +68,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
           GridData.setStaticData("weapons", snapshot.data);
 
           return GridView.count(
-            crossAxisCount: (Get.context.orientation == Orientation.portrait) ? 3 : 6,
+            crossAxisCount:
+                (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () => Get.toNamed('/weapons', arguments: [document.id]),
