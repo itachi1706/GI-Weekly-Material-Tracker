@@ -51,7 +51,7 @@ class SplashPage extends StatelessWidget {
 
   Future<String> _login() async {
     List<dynamic> res = await Future.wait(
-        [_initFirebase(), Future.delayed(Duration(seconds: 5))]);
+        [_initFirebase(), Future.delayed(Duration(seconds: 2))]);
     return (res[0]) ? "/menu" : "/";
   }
 
