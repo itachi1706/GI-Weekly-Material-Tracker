@@ -170,7 +170,7 @@ Deploy Beta to Firebase:
     - when: never
 
 Build Web App:
-  image: itachi1706/flutter-alpine-android:beta
+  image: itachi1706/flutter-alpine-android:beta-web
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
