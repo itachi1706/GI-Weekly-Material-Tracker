@@ -9,6 +9,7 @@ import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/globaltracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
+import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 
 void main() {
@@ -50,8 +51,9 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'Product-Sans',
       ),
       themeMode: _theme,
-      initialRoute: '/',
+      initialRoute: '/splash',
       getPages: [
+        GetPage(name: '/splash', page: () => SplashPage()),
         GetPage(
             name: '/',
             page: () => LoginPage(
