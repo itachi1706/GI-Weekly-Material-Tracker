@@ -121,6 +121,9 @@ class _TrackerPageState extends State<TrackerPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (_materialData == null || _characterData == null || _weaponData == null)
+      return Util.centerLoadingCircle("Loading");
+
     CollectionReference ref = _db
         .collection("tracking")
         .doc(Util.getFirebaseUid())

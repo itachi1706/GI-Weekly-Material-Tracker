@@ -61,7 +61,7 @@ class GridData {
 
   static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
     if (!_staticData.containsKey(type)) {
-      print("Retrieving $type static data in memory");
+      print("Retrieving $type static data from Firestore");
       QuerySnapshot snapshot = await _db.collection(type).get();
       setStaticData(type, snapshot);
     }
