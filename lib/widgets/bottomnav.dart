@@ -128,8 +128,10 @@ class _MainNavigationPageState extends State<MainNavigationPage>
 
   void _sortBy(dynamic sorter) {
     bool descending = false;
-    if (_notifier.getSortKey() == sorter) descending = !_notifier.isDescending();
-    print("Sorting by $sorter in ${(descending) ? "Descending" : "Ascending"} order");
+    if (_notifier.getSortKey() == sorter)
+      descending = !_notifier.isDescending();
+    print(
+        "Sorting by $sorter in ${(descending) ? "Descending" : "Ascending"} order");
     _notifier.updateSortKey(sorter, descending);
   }
 
@@ -141,7 +143,8 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         onSelected: _sortBy,
         itemBuilder: (context) => _sortList.getSortList(_currentIndex),
       );
-    } else return SizedBox.shrink();
+    } else
+      return SizedBox.shrink();
   }
 
   @override

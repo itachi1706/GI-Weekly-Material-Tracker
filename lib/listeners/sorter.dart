@@ -28,7 +28,8 @@ class SortBy {
   final SortNotifier _internalSorter;
 
   Color _matchColor(String key) {
-    if (key != _internalSorter.getSortKey()) return Get.theme.textTheme.bodyText1.color;
+    if (key != _internalSorter.getSortKey())
+      return Get.theme.textTheme.bodyText1.color;
     return Get.theme.accentColor;
   }
 
@@ -77,7 +78,8 @@ class SortBy {
           children: [
             Text("Affiliation"),
             Spacer(),
-            Icon(_getSortingData(false, "affiliation"), color: _matchColor("affiliation"))
+            Icon(_getSortingData(false, "affiliation"),
+                color: _matchColor("affiliation"))
           ],
         ),
       ),
@@ -113,7 +115,8 @@ class SortBy {
           children: [
             Text("Base Attack"),
             Spacer(),
-            Icon(_getSortingData(true, "base_atk"), color: _matchColor("base_atk"))
+            Icon(_getSortingData(true, "base_atk"),
+                color: _matchColor("base_atk"))
           ],
         ),
       ),
@@ -124,7 +127,8 @@ class SortBy {
           children: [
             Text("Secondary Stats"),
             Spacer(),
-            Icon(_getSortingData(false, "secondary_stat_type"), color: _matchColor("secondary_stat_type"))
+            Icon(_getSortingData(false, "secondary_stat_type"),
+                color: _matchColor("secondary_stat_type"))
           ],
         ),
       ),

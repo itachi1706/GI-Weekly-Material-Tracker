@@ -63,7 +63,8 @@ class GridData {
   static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
     if (_downloading.containsKey(type) && _downloading[type]) {
       // Wait for processing to end
-      return Future.delayed(const Duration(seconds: 1), () => _retrieveStaticData(type));
+      return Future.delayed(
+          const Duration(seconds: 1), () => _retrieveStaticData(type));
     }
     if (!_staticData.containsKey(type)) {
       _downloading[type] = true;

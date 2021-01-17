@@ -150,7 +150,8 @@ class _SettingsPageState extends State<SettingsPage> {
       builder: (context) {
         return AlertDialog(
           title: Text("Clear Tracking Data"),
-          content: Text("Claer all materials currently being tracked from the app?"),
+          content:
+              Text("Claer all materials currently being tracked from the app?"),
           actions: [
             TextButton(
               child: Text('Cancel'),

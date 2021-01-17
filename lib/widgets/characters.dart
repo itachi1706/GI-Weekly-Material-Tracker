@@ -72,10 +72,12 @@ class _CharacterListGridState extends State<CharacterListGrid> {
       queryRef = characterRef.where("element", isEqualTo: widget.filter);
     if (_sorter != null && queryRef == null)
       queryRef = characterRef
-          .orderBy(_sorter, descending: _isDescending).orderBy(FieldPath.documentId);
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
     else if (_sorter != null)
       queryRef = queryRef
-          .orderBy(_sorter, descending: _isDescending).orderBy(FieldPath.documentId);
+          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(FieldPath.documentId);
     return StreamBuilder(
         stream: (queryRef == null)
             ? characterRef.snapshots()
