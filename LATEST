@@ -13,3 +13,14 @@
 
 - Added Gender colouring to character info page
 - Added character element to tracker page
+- Added support for landscape mode with more compact grids
+- Added button in settings page to clear all tracking data
+- Added various tabs to the data pages to filter character/weapon/material data by
+    * Characters - Filter by Elements
+    * Weapons - Filter by Weapon Type
+    * Materials - Filter by item type (Boss/Domain/Speciality)
+- Added ability to sort through the data pages
+    * All: Rarity (1-5, 5-1)
+    * Characters: Weapon Type (A-Z, Z-A), Affliation (A-Z, Z-A), Gender (F/M, M/F), Nation (A-Z, Z-A)
+    * Weapons: Base Attack (Ascending/Descending), Secondary Stat Type (A-Z, Z-A)
+- Improved overall data retrieval mechanism to reduce calls made to the database
