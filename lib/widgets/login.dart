@@ -1,14 +1,10 @@
 import 'dart:async';
-import 'dart:isolate';
 
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/foundation.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -25,9 +21,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _initialized = false;
-  bool _error = false;
-
   bool _loggingIn = false;
 
   List<Widget> _signInButtons() {
@@ -54,89 +47,31 @@ class _LoginPageState extends State<LoginPage> {
     return wid;
   }
 
-  void initializeFirebase() async {
-    try {
-      await Firebase.initializeApp();
-      if (!kIsWeb) {
-        FirebaseCrashlytics _crashHandler = FirebaseCrashlytics.instance;
-        FirebasePerformance _perfHandler = FirebasePerformance.instance;
-        if (kDebugMode) {
-          await _crashHandler.setCrashlyticsCollectionEnabled(false);
-          await _perfHandler.setPerformanceCollectionEnabled(false);
-        } else {
-          if (!_crashHandler.isCrashlyticsCollectionEnabled) {
-            await _crashHandler.setCrashlyticsCollectionEnabled(true);
-          }
-          if (!(await _perfHandler.isPerformanceCollectionEnabled())) {
-            await _perfHandler.setPerformanceCollectionEnabled(true);
-          }
-          FlutterError.onError = _crashHandler.recordFlutterError;
-          Isolate.current.addErrorListener(RawReceivePort((pair) async {
-            final List<dynamic> errorAndStacktrace = pair;
-            await _crashHandler.recordError(
-              errorAndStacktrace.first,
-              errorAndStacktrace.last,
-            );
-          }).sendPort);
-        }
-        print(
-            "Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}");
-        print(
-            "Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}");
-      } else {
-        print("Web Mode, Crashlytics and Performance disabled");
-      }
-
-      setState(() {
-        _initialized = true;
-      });
-    } catch (e) {
-      setState(() {
-        _error = true;
-      });
-    }
-  }
-
   @override
   void initState() {
-    initializeFirebase();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!_initialized || _error) {
-      return _loading();
-    } else {
-      return StreamBuilder(
-        stream: _auth.authStateChanges(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            final User user = snapshot.data;
-            Util.updateFirebaseUid();
-            if (user != null) {
-              SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-                Util.showSnackbarQuick(context, "Logged in as ${user.email}");
-                Get.offAllNamed('/menu');
-              });
-              return _loginScreen();
-            }
+    return StreamBuilder(
+      stream: _auth.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final User user = snapshot.data;
+          Util.updateFirebaseUid();
+          if (user != null) {
+            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+              Util.showSnackbarQuick(context, "Logged in as ${user.email}");
+              Get.offAllNamed('/menu');
+            });
+            return _loginScreen();
           }
-          // Signed out
-          print("Signed out");
-          return _loginScreen();
-        },
-      );
-    }
-  }
-
-  Widget _loading() {
-    // TODO: Replace with splash screen in the future
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Util.centerLoadingCircle("Initializing App"),
+        }
+        // Signed out
+        print("Signed out");
+        return _loginScreen();
+      },
     );
   }
 
