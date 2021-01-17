@@ -8,7 +8,36 @@ import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+class MaterialTabController extends StatefulWidget {
+  MaterialTabController({Key key, @required this.tabController})
+      : super(key: key);
+
+  final TabController tabController;
+
+  @override
+  _MaterialTabControllerState createState() => _MaterialTabControllerState();
+}
+
+class _MaterialTabControllerState extends State<MaterialTabController> {
+  final List<Widget> _children = [
+    MaterialListGrid(),
+    MaterialListGrid(filter: "boss_drops"),
+    MaterialListGrid(filter: "domain_forgery"),
+    MaterialListGrid(filter: "mob_drops"),
+    MaterialListGrid(filter: "local_speciality"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(controller: widget.tabController, children: _children);
+  }
+}
+
 class MaterialListGrid extends StatefulWidget {
+  MaterialListGrid({Key key, this.filter});
+
+  final String filter;
+
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
 }
@@ -17,8 +46,12 @@ class _MaterialListGridState extends State<MaterialListGrid> {
   @override
   Widget build(BuildContext context) {
     CollectionReference materialRef = _db.collection('materials');
+    Query queryRef;
+    if (widget.filter != null)
+      queryRef = materialRef.where("innerType", isEqualTo: widget.filter);
     return StreamBuilder(
-        stream: materialRef.snapshots(),
+        stream:
+            (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return Text("Error occurred getting snapshot");
@@ -30,7 +63,8 @@ class _MaterialListGridState extends State<MaterialListGrid> {
 
           GridData.setStaticData("materials", snapshot.data);
           return GridView.count(
-            crossAxisCount: (Get.context.orientation == Orientation.portrait) ? 3 : 6,
+            crossAxisCount:
+                (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () =>
