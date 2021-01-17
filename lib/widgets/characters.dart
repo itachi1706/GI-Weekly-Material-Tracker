@@ -91,7 +91,8 @@ class _CharacterListGridState extends State<CharacterListGrid> {
             return Util.centerLoadingCircle("");
           }
 
-          GridData.setStaticData("characters", snapshot.data);
+          if (widget.filter == null)
+            GridData.setStaticData("characters", snapshot.data);
           return GridView.count(
             crossAxisCount:
                 (MediaQuery.of(context).orientation == Orientation.portrait)
@@ -197,6 +198,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       });
 
       setState(() {
+        if (!mounted) return;
         _isBeingTracked = _tracker;
       });
     });

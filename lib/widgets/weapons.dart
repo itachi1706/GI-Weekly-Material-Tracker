@@ -88,7 +88,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
             return Util.centerLoadingCircle("");
           }
 
-          GridData.setStaticData("weapons", snapshot.data);
+          if (widget.filter == null)
+            GridData.setStaticData("weapons", snapshot.data);
 
           return GridView.count(
             crossAxisCount:
@@ -125,6 +126,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
       });
       setState(() {
+        if (!mounted) return;
         _isBeingTracked = _tmpTracker;
       });
     }

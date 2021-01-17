@@ -85,7 +85,9 @@ class _MaterialListGridState extends State<MaterialListGrid> {
             return Util.centerLoadingCircle("");
           }
 
-          GridData.setStaticData("materials", snapshot.data);
+          if (widget.filter == null)
+            GridData.setStaticData("materials", snapshot.data);
+
           return GridView.count(
             crossAxisCount:
                 (Get.context.orientation == Orientation.portrait) ? 3 : 6,
@@ -130,10 +132,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _refreshTrackingStatus() {
     setState(() {
+      if (!mounted) return;
       _addCheckObtained = false;
     });
     TrackingData.isBeingTracked('material', _infoId)
         .then((isTracked) => setState(() {
+              if (!mounted) return;
               _isAdded = isTracked;
               _addCheckObtained = true;
             }));
