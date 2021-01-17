@@ -11,17 +11,17 @@ import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-class TabControllerWidget extends StatefulWidget {
-  TabControllerWidget({Key key, @required this.tabController})
+class TrackingTabController extends StatefulWidget {
+  TrackingTabController({Key key, @required this.tabController})
       : super(key: key);
 
   final TabController tabController;
 
   @override
-  _TabControllerWidgetState createState() => _TabControllerWidgetState();
+  _TrackingTabControllerState createState() => _TrackingTabControllerState();
 }
 
-class _TabControllerWidgetState extends State<TabControllerWidget> {
+class _TrackingTabControllerState extends State<TrackingTabController> {
   final List<Widget> _children = [
     TrackerPage(path: "boss_drops"),
     TrackerPage(path: "domain_forgery"),
@@ -445,7 +445,8 @@ class _PlannerPageState extends State<PlannerPage> {
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      crossAxisCount: (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
+      crossAxisCount:
+          (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials',

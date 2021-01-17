@@ -10,19 +10,18 @@ import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-class CharacterTabControllerWidget extends StatefulWidget {
-  CharacterTabControllerWidget({Key key, @required this.tabController})
+class CharacterTabController extends StatefulWidget {
+  CharacterTabController({Key key, @required this.tabController})
       : super(key: key);
 
   final TabController tabController;
 
   @override
-  _CharacterTabControllerWidget createState() =>
-      _CharacterTabControllerWidget();
+  _CharacterTabControllerWidgetState createState() =>
+      _CharacterTabControllerWidgetState();
 }
 
-class _CharacterTabControllerWidget
-    extends State<CharacterTabControllerWidget> {
+class _CharacterTabControllerWidgetState extends State<CharacterTabController> {
   final List<Widget> _children = [
     CharacterListGrid(),
     CharacterListGrid(filter: "Anemo"),
@@ -51,13 +50,14 @@ class CharacterListGrid extends StatefulWidget {
 class _CharacterListGridState extends State<CharacterListGrid> {
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = _db.collection('characters');
+    CollectionReference characterRef = _db.collection('characters');
     Query queryRef;
     if (widget.filter != null)
-      queryRef = materialRef.where("element", isEqualTo: widget.filter);
+      queryRef = characterRef.where("element", isEqualTo: widget.filter);
     return StreamBuilder(
-        stream:
-            (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
+        stream: (queryRef == null)
+            ? characterRef.snapshots()
+            : queryRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return Text("Error occurred getting snapshot");
