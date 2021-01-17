@@ -58,11 +58,18 @@ class GridData {
   }
 
   static Map<String, Map<String, dynamic>> _staticData = new Map();
+  static Map<String, bool> _downloading = new Map();
 
   static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
+    if (_downloading.containsKey(type) && _downloading[type]) {
+      // Wait for processing to end
+      return Future.delayed(const Duration(seconds: 1), () => _retrieveStaticData(type));
+    }
     if (!_staticData.containsKey(type)) {
+      _downloading[type] = true;
       print("Retrieving $type static data from Firestore");
       QuerySnapshot snapshot = await _db.collection(type).get();
+      _downloading[type] = false;
       setStaticData(type, snapshot);
     }
     return _staticData[type];
