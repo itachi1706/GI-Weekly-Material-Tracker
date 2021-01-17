@@ -1,29 +1,4 @@
-- Initial beta web support @ https://gi-weekly-material-tracker.web.app/
-- Added some basic crash handling tracking for crash reporting
-- Implemented an app settings page
-- Added dark mode to the application (accessible through app settings)
-- Added server selection (through app settings).
-    This allows you to be able to select your Genshin Impact Account Server for the Weekly Planner to mark your domains properly
-
-- Marked material count text green when you have accumulated enough materials.
-- Updated character and weapon ascension tier colors to denote your current state
-    * No Colour - Not currently tracking item
-    * Blue - Currently tracking item and gathering materials for that ascension tier
-    * Green - Currently tracking item and have finished gathering materials for that ascension tier
-
-- Added Gender colouring to character info page
-- Added character element to tracker page
-- Added support for landscape mode with more compact grids
-- Added button in settings page to clear all tracking data
-- Added various tabs to the data pages to filter character/weapon/material data by
-    * Characters - Filter by Elements
-    * Weapons - Filter by Weapon Type
-    * Materials - Filter by item type (Boss/Domain/Speciality)
-- Added ability to sort through the data pages
-    * All: Rarity (1-5, 5-1)
-    * Characters: Weapon Type (A-Z, Z-A), Affliation (A-Z, Z-A), Gender (F/M, M/F), Nation (A-Z, Z-A)
-    * Weapons: Base Attack (Ascending/Descending), Secondary Stat Type (A-Z, Z-A)
-- Improved overall data retrieval mechanism to reduce calls made to the database
-- Added a dialog prompt when clicking on a tracked item to update the quantity
-    This is so that you do not have to spam click the +/- button to update the tracked material by more than 1 material
-- Added app splash screen to replace previous init screen
+- Fixed bug where switching to filtered view causes tracker page to fail to load if you have a character/weapon/material not present in that filtered data page
+- Reduced time splash screen stays on the screen
+- Restored tracker tap action
+- Long tapping on a tracker card will now display the dialog box instead
