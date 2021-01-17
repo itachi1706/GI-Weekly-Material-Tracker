@@ -177,7 +177,6 @@ Build Web App:
     APP_BUILD_VER: web
     APP_TYPE: Web
   before_script:
-    - flutter config --enable-web
     - flutter doctor -v
     - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
     - echo $GIT_COMMIT_COUNT
