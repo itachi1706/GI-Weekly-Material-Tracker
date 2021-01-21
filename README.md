@@ -1,16 +1,5 @@
-# gi_weekly_material_tracker
+# Genshin Impact Weekly Material Tracker App
 
-Genshin Impact Weekly Material Tracker App
+This is a Flutter based application that provides weekly material tracking and planning capabilities to the game Genshin Impact. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It is available right now in both Android apk format (see [Releases](https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/releases)) and as a [web app](https://gi-weekly-material-tracker.web.app/#/)
