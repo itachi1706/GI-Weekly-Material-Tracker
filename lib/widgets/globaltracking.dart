@@ -203,6 +203,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   Map<String, dynamic> _characterData;
 
   Color _rarityColor;
+  int _tapCount = 0;
 
   @override
   void initState() {
@@ -494,6 +495,13 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                               "type": extraTypeRef
                             },
                             true),
+                    onTap: () {
+                      _tapCount++;
+                      if (_tapCount > 5) {
+                        Util.showSnackbarQuick(context,
+                            "Long press to bulk update tracked materials");
+                      }
+                    },
                   ),
                 ),
               );

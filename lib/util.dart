@@ -14,6 +14,7 @@ class Util {
   static final String genshinGGUrl = "https://genshin.gg/";
 
   static void showSnackbarQuick(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message), duration: Duration(seconds: 2)));
   }
