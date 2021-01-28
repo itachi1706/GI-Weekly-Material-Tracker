@@ -61,10 +61,10 @@ class GridData {
     return null;
   }
 
-  static Map<String, Map<String, dynamic>> _staticData = new Map();
+  static Map<String, Map<String, CommonData>> _staticData = new Map();
   static Map<String, bool> _downloading = new Map();
 
-  static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
+  static Future<Map<String, CommonData>> _retrieveStaticData(String type) async {
     if (_downloading.containsKey(type) && _downloading[type]) {
       // Wait for processing to end
       return Future.delayed(
@@ -87,17 +87,21 @@ class GridData {
     snapshot.docs.forEach((element) {
       data.putIfAbsent(element.id, () => element.data());
     });
-    _staticData[type] = data;
+    switch (type) {
+      case "characters": _staticData[type] = CharacterData.getList(data); break;
+      case "weapons": _staticData[type] = WeaponData.getList(data); break;
+      case "materials": _staticData[type] = MaterialDataCommon.getList(data); break;
+    }
   }
 
   static Future<Map<String, MaterialDataCommon>> retrieveMaterialsMapData() async =>
-      MaterialDataCommon.getList(await _retrieveStaticData("materials"));
+      (await _retrieveStaticData("materials")) as Map<String, MaterialDataCommon>;
 
   static Future<Map<String, WeaponData>> retrieveWeaponsMapData() async =>
-      WeaponData.getList(await _retrieveStaticData("weapons"));
+      (await _retrieveStaticData("weapons")) as Map<String, WeaponData>;
 
   static Future<Map<String, CharacterData>> retrieveCharactersMapData() async =>
-      CharacterData.getList(await _retrieveStaticData("characters"));
+      (await _retrieveStaticData("characters")) as Map<String, CharacterData>;
 
   static String getDayString(int day) {
     switch (day) {
@@ -195,33 +199,6 @@ class GridData {
           ],
         );
       },
-    );
-  }
-
-  @deprecated
-  static Widget getGridDataLegacy(Map<String, dynamic> data) {
-    return Card(
-      color: getRarityColor(data["rarity"]),
-      child: GridTile(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                getImageAssetFromFirebase(data["image"]),
-              ],
-            ),
-          ),
-          footer: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Text(
-              data["name"],
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-          )),
     );
   }
 
