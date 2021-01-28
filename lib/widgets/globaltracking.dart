@@ -203,6 +203,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   Map<String, dynamic> _characterData;
 
   Color _rarityColor;
+  int _tapCount = 0;
 
   @override
   void initState() {
@@ -387,101 +388,120 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
               return Container(
                 child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 64,
-                          width: 64,
-                          child: Stack(
-                            children: [
-                              GridData.getImageAssetFromFirebase(imageRef,
-                                  height: 48),
-                              Align(
-                                alignment: FractionalOffset.bottomLeft,
-                                child: Text(GridData.getRomanNumberArray(
-                                        extraAscensionRef - 1)
-                                    .toString()),
-                              ),
-                              Align(
-                                alignment: FractionalOffset.bottomRight,
-                                child: typeWidget,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: MediaQuery.of(context).size.width - 200,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                name,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Spacer(),
-                        Column(
-                          children: [
-                            Text(
-                              "${_data["current"]}/${_data["max"]}",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: GridData.getCountColorBW(
-                                      _data["current"], _data["max"])),
-                            ),
-                            Row(
+                  child: InkWell(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 64,
+                            width: 64,
+                            child: Stack(
                               children: [
-                                ButtonTheme(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 4.0, horizontal: 8.0),
-                                  //adds padding inside the button
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  //limits the touch area to the button area
-                                  minWidth: 0,
-                                  //wraps child's width
-                                  height: 0,
-                                  //wraps child's height
-                                  child: FlatButton(
-                                    onPressed: () =>
-                                        TrackingData.decrementCount(key,
-                                            _data["type"], _data["current"]),
-                                    child: Icon(Icons.remove),
-                                  ),
+                                GridData.getImageAssetFromFirebase(imageRef,
+                                    height: 48),
+                                Align(
+                                  alignment: FractionalOffset.bottomLeft,
+                                  child: Text(GridData.getRomanNumberArray(
+                                          extraAscensionRef - 1)
+                                      .toString()),
                                 ),
-                                ButtonTheme(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 4.0, horizontal: 8.0),
-                                  //adds padding inside the button
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  //limits the touch area to the button area
-                                  minWidth: 0,
-                                  //wraps child's width
-                                  height: 0,
-                                  //wraps child's height
-                                  child: FlatButton(
-                                    onPressed: () =>
-                                        TrackingData.incrementCount(
-                                            key,
-                                            _data["type"],
-                                            _data["current"],
-                                            _data["max"]),
-                                    child: Icon(Icons.add),
-                                  ),
+                                Align(
+                                  alignment: FractionalOffset.bottomRight,
+                                  child: typeWidget,
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                      ],
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width - 200,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  name,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Spacer(),
+                          Column(
+                            children: [
+                              Text(
+                                "${_data["current"]}/${_data["max"]}",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: GridData.getCountColorBW(
+                                        _data["current"], _data["max"])),
+                              ),
+                              Row(
+                                children: [
+                                  ButtonTheme(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 4.0, horizontal: 8.0),
+                                    //adds padding inside the button
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    //limits the touch area to the button area
+                                    minWidth: 0,
+                                    //wraps child's width
+                                    height: 0,
+                                    //wraps child's height
+                                    child: FlatButton(
+                                      onPressed: () =>
+                                          TrackingData.decrementCount(key,
+                                              _data["type"], _data["current"]),
+                                      child: Icon(Icons.remove),
+                                    ),
+                                  ),
+                                  ButtonTheme(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 4.0, horizontal: 8.0),
+                                    //adds padding inside the button
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    //limits the touch area to the button area
+                                    minWidth: 0,
+                                    //wraps child's width
+                                    height: 0,
+                                    //wraps child's height
+                                    child: FlatButton(
+                                      onPressed: () =>
+                                          TrackingData.incrementCount(
+                                              key,
+                                              _data["type"],
+                                              _data["current"],
+                                              _data["max"]),
+                                      child: Icon(Icons.add),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
+                    onLongPress: () => UpdateMultiTracking(context, _material)
+                        .itemClickedAction(
+                            _data,
+                            key,
+                            {
+                              "img": imageRef,
+                              "asc": extraAscensionRef,
+                              "type": extraTypeRef
+                            },
+                            true),
+                    onTap: () {
+                      _tapCount++;
+                      if (_tapCount > 5) {
+                        Util.showSnackbarQuick(context,
+                            "Long press to bulk update tracked materials");
+                      }
+                    },
                   ),
                 ),
               );
