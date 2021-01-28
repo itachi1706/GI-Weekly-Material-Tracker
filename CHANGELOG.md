@@ -1,3 +1,9 @@
+# 1.1.2
+- Fixed bug where switching to filtered view causes tracker page to fail to load if you have a character/weapon/material not present in that filtered data page
+- Reduced time splash screen stays on the screen
+- Restored tracker tap action
+- Long tapping on a tracker card will now display the dialog box instead
+
 # 1.1.0
 - Initial beta web support @ https://gi-weekly-material-tracker.web.app/
 - Added some basic crash handling tracking for crash reporting
