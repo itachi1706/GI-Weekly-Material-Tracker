@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -43,10 +45,17 @@ class TrackingData {
     if (uid == null) return null;
     DocumentReference trackRef = _db.collection("tracking").doc(uid);
     DocumentSnapshot snapshot = await trackRef.get();
-    Map<String, dynamic> fields = snapshot.data();
-    if (fields == null || fields.length <= 0 || !fields.containsKey(key))
-      return null;
-    return fields[key];
+    TrackingUserInfo fields = TrackingUserInfo.fromJson(snapshot.data());
+    switch (key) {
+      case "character":
+        return fields.character;
+      case "material":
+        return fields.material;
+      case "weapon":
+        return fields.weapon;
+      default:
+        return null;
+    }
   }
 
   static Future<bool> isBeingTracked(String key, String item) async {
@@ -176,7 +185,7 @@ class TrackingData {
     } while (deleted >= limit);
   }
 
-  static Future<Map<String, dynamic>> getCollectionList(
+  static Future<Map<String, TrackingUserData>> getCollectionList(
       String materialType) async {
     String uid = Util.getFirebaseUid();
     QuerySnapshot snaps = await _db
@@ -184,21 +193,24 @@ class TrackingData {
         .doc(uid)
         .collection(materialType)
         .get();
-    Map<String, dynamic> data = new Map();
+    Map<String, TrackingUserData> data = new Map();
     snaps.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => element.data());
+      data.putIfAbsent(
+          element.id, () => TrackingUserData.fromJson(element.data()));
     });
     return data;
   }
 
-  static bool isMaterialFull(String type, Map<String, dynamic> tracker,
-      Map<String, dynamic> materialData, String key) {
+  static bool isMaterialFull(
+      String type,
+      Map<String, Map<String, TrackingUserData>> tracker,
+      Map<String, MaterialDataCommon> materialData,
+      String key) {
     // Get type of material
-    Map<String, dynamic> trackerData = tracker[type];
-    Map<String, dynamic> data = trackerData[key];
-    print(
-        "${data["current"]} | ${data["max"]} | ${data["current"] >= data["max"]}");
-    return data["current"] >= data["max"];
+    Map<String, TrackingUserData> trackerData = tracker[type];
+    TrackingUserData data = trackerData[key];
+    print("${data.current} | ${data.max} | ${data.current >= data.max}");
+    return data.current >= data.max;
   }
 
   static Widget getSupportingWidget(String image, int ascension, String type) {
@@ -239,14 +251,13 @@ class UpdateMultiTracking {
   UpdateMultiTracking(this.context, this._material);
 
   BuildContext context;
-  Map<String, dynamic> _material;
+  MaterialDataCommon _material;
 
-  void itemClickedAction(Map<String, dynamic> data, String docId,
+  void itemClickedAction(TrackingUserData data, String docId,
       Map<String, dynamic> extraData, bool editDialog) {
     print(docId);
-    String type = data["addedBy"];
-    String key =
-        (data["addedBy"] == "material") ? data["name"] : data["addData"];
+    String type = data.addedBy;
+    String key = (data.addedBy == "material") ? data.name : data.addData;
     _cntKey = docId;
     if (!editDialog) {
       Get.toNamed('/${type}s', arguments: [key]);
@@ -273,22 +284,21 @@ class UpdateMultiTracking {
   TextEditingController _textCurrentController = TextEditingController();
   TextEditingController _textTotalController = TextEditingController();
 
-  void _displayDialogMat(
-      String navigateTo, String key, Map<String, dynamic> data) {
-    _cntCurrent = data["current"].toString();
-    _cntTotal = data["max"].toString();
+  void _displayDialogMat(String navigateTo, String key, TrackingUserData data) {
+    _cntCurrent = data.current.toString();
+    _cntTotal = data.max.toString();
     _textCurrentController.text = _cntCurrent;
     _textTotalController.text = _cntTotal;
     showDialog(
         context: context,
         builder: (context) {
-          _cntType = data["type"];
+          _cntType = data.type;
           return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
+            title: Text("Update tracked amount for ${_material.name}"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_material["image"],
+                  GridData.getImageAssetFromFirebase(_material.image,
                       height: 48),
                   TextField(
                     onChanged: (newValue) {
@@ -331,23 +341,23 @@ class UpdateMultiTracking {
   }
 
   void _displayDialogNonMat(String navigateTo, String key,
-      Map<String, dynamic> data, Map<String, dynamic> extraData) {
-    _cntCurrent = data["current"].toString();
-    _cntTotal = data["max"].toString();
+      TrackingUserData data, Map<String, dynamic> extraData) {
+    _cntCurrent = data.current.toString();
+    _cntTotal = data.max.toString();
     _textCurrentController.text = _cntCurrent;
     showDialog(
         context: context,
         builder: (context) {
-          _cntType = data["type"];
+          _cntType = data.type;
           return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
+            title: Text("Update tracked amount for ${_material.name}"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GridData.getImageAssetFromFirebase(_material["image"],
+                      GridData.getImageAssetFromFirebase(_material.image,
                           height: 48),
                       TrackingData.getSupportingWidget(extraData["img"],
                           extraData["asc"], extraData["type"]),

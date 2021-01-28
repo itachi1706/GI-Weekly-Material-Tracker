@@ -3,6 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -57,10 +61,11 @@ class GridData {
     return null;
   }
 
-  static Map<String, Map<String, dynamic>> _staticData = new Map();
+  static Map<String, Map<String, CommonData>> _staticData = new Map();
   static Map<String, bool> _downloading = new Map();
 
-  static Future<Map<String, dynamic>> _retrieveStaticData(String type) async {
+  static Future<Map<String, CommonData>> _retrieveStaticData(
+      String type) async {
     if (_downloading.containsKey(type) && _downloading[type]) {
       // Wait for processing to end
       return Future.delayed(
@@ -83,17 +88,29 @@ class GridData {
     snapshot.docs.forEach((element) {
       data.putIfAbsent(element.id, () => element.data());
     });
-    _staticData[type] = data;
+    switch (type) {
+      case "characters":
+        _staticData[type] = CharacterData.getList(data);
+        break;
+      case "weapons":
+        _staticData[type] = WeaponData.getList(data);
+        break;
+      case "materials":
+        _staticData[type] = MaterialDataCommon.getList(data);
+        break;
+    }
   }
 
-  static Future<Map<String, dynamic>> retrieveMaterialsMapData() async =>
-      _retrieveStaticData("materials");
+  static Future<Map<String, MaterialDataCommon>>
+      retrieveMaterialsMapData() async =>
+          (await _retrieveStaticData("materials"))
+              as Map<String, MaterialDataCommon>;
 
-  static Future<Map<String, dynamic>> retrieveWeaponsMapData() async =>
-      _retrieveStaticData("weapons");
+  static Future<Map<String, WeaponData>> retrieveWeaponsMapData() async =>
+      (await _retrieveStaticData("weapons")) as Map<String, WeaponData>;
 
-  static Future<Map<String, dynamic>> retrieveCharactersMapData() async =>
-      _retrieveStaticData("characters");
+  static Future<Map<String, CharacterData>> retrieveCharactersMapData() async =>
+      (await _retrieveStaticData("characters")) as Map<String, CharacterData>;
 
   static String getDayString(int day) {
     switch (day) {
@@ -194,22 +211,22 @@ class GridData {
     );
   }
 
-  static Widget getGridData(Map<String, dynamic> data) {
+  static Widget getGridData(CommonData data) {
     return Card(
-      color: getRarityColor(data['rarity']),
+      color: getRarityColor(data.rarity),
       child: GridTile(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Stack(
               children: [
-                getImageAssetFromFirebase(data['image']),
+                getImageAssetFromFirebase(data.image),
               ],
             ),
           ),
           footer: Padding(
             padding: const EdgeInsets.all(2),
             child: Text(
-              data['name'],
+              data.name,
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 12,

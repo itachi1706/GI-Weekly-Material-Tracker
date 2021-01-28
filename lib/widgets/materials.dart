@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
@@ -95,7 +96,8 @@ class _MaterialListGridState extends State<MaterialListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/materials', arguments: [document.id]),
-                child: GridData.getGridData(document.data()),
+                child: GridData.getGridData(
+                    MaterialDataCommon.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -109,7 +111,7 @@ class MaterialInfoPage extends StatefulWidget {
 }
 
 class _MaterialInfoPageState extends State<MaterialInfoPage> {
-  Map<String, dynamic> _infoData;
+  MaterialDataCommon _info;
   String _infoId;
 
   Color _rarityColor;
@@ -123,8 +125,8 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     _infoId = Get.arguments[0];
     GridData.retrieveMaterialsMapData().then((value) {
       setState(() {
-        _infoData = value[_infoId];
-        _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+        _info = value[_infoId];
+        _rarityColor = GridData.getRarityColor(_info.rarity);
       });
       _refreshTrackingStatus();
     });
@@ -164,21 +166,19 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     int toTrack = int.tryParse(_cntTrack) ?? 0;
     TrackingData.addToRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, "${_infoData['name']} added to tracker!");
+      Util.showSnackbarQuick(context, "${_info.name} added to tracker!");
     });
     TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack,
-        _infoData['innerType'], 'material', null);
+        _info.innerType, 'material', null);
     Navigator.of(context).pop();
   }
 
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-          context, "${_infoData['name']} removed from tracker!");
+      Util.showSnackbarQuick(context, "${_info.name} removed from tracker!");
     });
-    TrackingData.removeFromCollection(
-        "Material_$_infoId", _infoData['innerType']);
+    TrackingData.removeFromCollection("Material_$_infoId", _info.innerType);
     Navigator.of(context).pop();
   }
 
@@ -193,12 +193,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Remove ${_infoData['name']} from the tracker?"),
+            title: Text("Remove ${_info.name} from the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text(
                       "This will remove the currently tracked data for this material from the tracker"),
                 ],
@@ -222,12 +221,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text("Add ${_infoData['name']} to the tracker?"),
+            title: Text("Add ${_info.name} to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   TextField(
                     onChanged: (newValue) {
                       setState(() {
@@ -259,10 +257,10 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (_infoData == null) return Util.loadingScreen();
+    if (_info == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
-        title: Text(_infoData['name']),
+        title: Text(_info.name),
         backgroundColor: _rarityColor,
       ),
       floatingActionButton: FloatingActionButton(
@@ -276,15 +274,14 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           children: [
             Row(
               children: [
-                GridData.getImageAssetFromFirebase(_infoData['image'],
-                    height: 64),
+                GridData.getImageAssetFromFirebase(_info.image, height: 64),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width - 128,
                       child: Text(
-                        _infoData['type'],
+                        _info.type,
                         textAlign: TextAlign.start,
                         style: TextStyle(fontSize: 20),
                       ),
@@ -293,8 +290,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                       ignoreGestures: true,
                       itemCount: 5,
                       itemSize: 30,
-                      initialRating:
-                          double.tryParse(_infoData['rarity'].toString()),
+                      initialRating: double.tryParse(_info.rarity.toString()),
                       itemBuilder: (context, _) =>
                           Icon(Icons.star, color: Colors.amber),
                       onRatingUpdate: (rating) {
@@ -314,8 +310,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_infoData['obtained']
-                          .toString()
+                      child: Text(_info.obtained
                           .replaceAll('\\n', "\n")
                           .replaceAll("- ", "")),
                     ),
@@ -332,9 +327,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_infoData['description']
-                          .toString()
-                          .replaceAll('\\n', "\n")),
+                      child: Text(_info.description.replaceAll('\\n', "\n")),
                     ),
                   ),
                 ],

@@ -5,7 +5,10 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -105,7 +108,8 @@ class _CharacterListGridState extends State<CharacterListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/characters', arguments: [document.id]),
-                child: GridData.getGridData(document.data()),
+                child: GridData.getGridData(
+                    CharacterData.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -119,20 +123,20 @@ class CharacterInfoPage extends StatefulWidget {
 }
 
 class _CharacterInfoPageState extends State<CharacterInfoPage> {
-  Map<String, dynamic> _infoData;
+  CharacterData _info;
   String _infoId;
 
   Color _rarityColor;
 
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
 
   Map<String, TrackingStatus> _isBeingTracked;
 
   void _refreshTrackingStatus() {
-    if (_materialData == null || _infoData == null) return; // No data
+    if (_materialData == null || _info == null) return; // No data
     if (_isBeingTracked == null) {
       Map<String, TrackingStatus> _tmpTracker = new Map();
-      _infoData['ascension'].keys.forEach((key) {
+      _info.ascension.keys.forEach((key) {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
       });
       setState(() {
@@ -148,21 +152,21 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _tracker.keys.forEach((key) {
         bool _isTracked =
             TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
-        Map<String, dynamic> data = _infoData['ascension'][key];
-        if (data["material1"] != null)
-          datasets.add(_materialData[data["material1"]]["innerType"]);
-        if (data["material2"] != null)
-          datasets.add(_materialData[data["material2"]]["innerType"]);
-        if (data["material3"] != null)
-          datasets.add(_materialData[data["material3"]]["innerType"]);
-        if (data["material4"] != null)
-          datasets.add(_materialData[data["material4"]]["innerType"]);
+        CharacterAscension data = _info.ascension[key];
+        if (data.material1 != null)
+          datasets.add(_materialData[data.material1].innerType);
+        if (data.material2 != null)
+          datasets.add(_materialData[data.material2].innerType);
+        if (data.material3 != null)
+          datasets.add(_materialData[data.material3].innerType);
+        if (data.material4 != null)
+          datasets.add(_materialData[data.material4].innerType);
         _tracker[key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
       });
 
       // Get all datasets into a map to check if completed
-      Map<String, Map<String, dynamic>> collectionList = new Map();
+      Map<String, Map<String, TrackingUserData>> collectionList = new Map();
       for (String ds in datasets.toList()) {
         collectionList[ds] = await TrackingData.getCollectionList(ds);
       }
@@ -170,31 +174,31 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _tracker.keys.forEach((key) {
         if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
         bool fullTrack = true;
-        Map<String, dynamic> data = _infoData['ascension'][key];
-        if (data["material1"] != null && fullTrack)
+        CharacterAscension data = _info.ascension[key];
+        if (data.material1 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material1"]]["innerType"],
+              _materialData[data.material1].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data["material1"]}_$key");
-        if (data["material2"] != null && fullTrack)
+              "Character_${_infoId}_${data.material1}_$key");
+        if (data.material2 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material2"]]["innerType"],
+              _materialData[data.material2].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data["material2"]}_$key");
-        if (data["material3"] != null && fullTrack)
+              "Character_${_infoId}_${data.material2}_$key");
+        if (data.material3 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material3"]]["innerType"],
+              _materialData[data.material3].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data["material3"]}_$key");
-        if (data["material4"] != null && fullTrack)
+              "Character_${_infoId}_${data.material3}_$key");
+        if (data.material4 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material4"]]["innerType"],
+              _materialData[data.material4].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data["material4"]}_$key");
+              "Character_${_infoId}_${data.material4}_$key");
         _tracker[key] = (fullTrack)
             ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
             : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
@@ -214,45 +218,45 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _trackCharacterAction() {
     print("Selected: $_selectedTier");
-    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    CharacterAscension _ascendTier = _info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord('character', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_ascensionTierSel added to tracker!");
+          "${_info.name} Ascension Tier $_ascensionTierSel added to tracker!");
     });
-    if (_ascendTier['material1'] != null)
+    if (_ascendTier.material1 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
-          _ascendTier['material1'],
-          _ascendTier['material1qty'],
-          _materialData[_ascendTier['material1']]['innerType'],
+          "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          _ascendTier.material1,
+          _ascendTier.material1Qty,
+          _materialData[_ascendTier.material1].innerType,
           'character',
           _infoId);
-    if (_ascendTier['material2'] != null)
+    if (_ascendTier.material2 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
-          _ascendTier['material2'],
-          _ascendTier['material2qty'],
-          _materialData[_ascendTier['material2']]['innerType'],
+          "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          _ascendTier.material2,
+          _ascendTier.material2Qty,
+          _materialData[_ascendTier.material2].innerType,
           'character',
           _infoId);
-    if (_ascendTier['material3'] != null)
+    if (_ascendTier.material3 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
-          _ascendTier['material3'],
-          _ascendTier['material3qty'],
-          _materialData[_ascendTier['material3']]['innerType'],
+          "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          _ascendTier.material3,
+          _ascendTier.material3Qty,
+          _materialData[_ascendTier.material3].innerType,
           'character',
           _infoId);
-    if (_ascendTier['material4'] != null)
+    if (_ascendTier.material4 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier['material4']}_$_selectedTier",
-          _ascendTier['material4'],
-          _ascendTier['material4qty'],
-          _materialData[_ascendTier['material4']]['innerType'],
+          "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
+          _ascendTier.material4,
+          _ascendTier.material4Qty,
+          _materialData[_ascendTier.material4].innerType,
           'character',
           _infoId);
     Navigator.of(context).pop();
@@ -260,49 +264,46 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _untrackCharacterAction() {
     print("Selected: $_selectedTier");
-    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    CharacterAscension _ascendTier = _info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord('character', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_ascensionTierSel removed from tracker!");
+          "${_info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
     });
-    if (_ascendTier['material1'] != null)
+    if (_ascendTier.material1 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
-          _materialData[_ascendTier['material1']]['innerType']);
-    if (_ascendTier['material2'] != null)
+          "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          _materialData[_ascendTier.material1].innerType);
+    if (_ascendTier.material2 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
-          _materialData[_ascendTier['material2']]['innerType']);
-    if (_ascendTier['material3'] != null)
+          "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          _materialData[_ascendTier.material2].innerType);
+    if (_ascendTier.material3 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
-          _materialData[_ascendTier['material3']]['innerType']);
-    if (_ascendTier['material4'] != null)
+          "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          _materialData[_ascendTier.material3].innerType);
+    if (_ascendTier.material4 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier['material4']}_$_selectedTier",
-          _materialData[_ascendTier['material4']]['innerType']);
+          "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
+          _materialData[_ascendTier.material4].innerType);
 
     Navigator.of(context).pop();
   }
 
-  List<Widget> _getAscensionTierMaterialRowChild(
-      Map<String, dynamic> curData, String key) {
+  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
     return [
-      _getAscenionImage(curData[key]),
-      Text(curData[key] == null ? "" : _materialData[curData[key]]['name']),
-      Text((curData["${key}qty"] == 0)
-          ? ""
-          : " x${curData["${key}qty"].toString()}"),
+      _getAscensionImage(key),
+      Text(key == null ? "" : _materialData[key].name),
+      Text((qty == 0) ? "" : " x$qty"),
     ];
   }
 
   String _selectedTier;
 
-  void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
+  void _addOrRemoveMaterial(int index, CharacterAscension curData) async {
     String key = index.toString();
     TrackingStatus isTracked = _isBeingTrackedStatus(key);
     if (isTracked == TrackingStatus.UNKNOWN ||
@@ -322,29 +323,28 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         builder: (context) {
           return AlertDialog(
             title: Text(
-                "Remove ${_infoData['name']} Ascension Tier $key from the tracker?"),
+                "Remove ${_info.name} Ascension Tier $key from the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text(
                       "This will remove the following materials being tracked for this character from the tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material4'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
                   ),
                 ],
               ),
@@ -367,29 +367,28 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(
-                "Add ${_infoData['name']} Ascension Tier $key to the tracker?"),
+            title:
+                Text("Add ${_info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text("Items being added to tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData, 'material4'),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
                   ),
                 ],
               ),
@@ -418,21 +417,22 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _getStaticData() async {
-    Map<String, dynamic> infoData = await GridData.retrieveCharactersMapData();
-    Map<String, dynamic> materialData =
+    Map<String, CharacterData> infoData =
+        await GridData.retrieveCharactersMapData();
+    Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
-      _infoData = infoData[_infoId];
-      _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+      _info = infoData[_infoId];
+      _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });
     _refreshTrackingStatus();
   }
 
-  Widget _getAscenionImage(String itemKey) {
+  Widget _getAscensionImage(String itemKey) {
     if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
 
-    return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'],
+    return GridData.getImageAssetFromFirebase(_materialData[itemKey].image,
         height: 16);
   }
 
@@ -444,15 +444,15 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       );
     }
 
-    Map<String, dynamic> dataMap = _infoData['ascension'];
-    List<MapEntry<String, dynamic>> data =
-        dataMap.entries.map((e) => e).toList();
+    Map<String, CharacterAscension> dataMap = _info.ascension;
+    List<CharacterAscension> data =
+        dataMap.entries.map((e) => e.value).toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) {
-        Map<String, dynamic> curData = data[index].value;
+        CharacterAscension curData = data[index];
         return Container(
           child: Card(
             color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
@@ -468,25 +468,25 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     ),
                     Spacer(),
                     Icon(Icons.show_chart),
-                    Text(curData['level'].toString()),
+                    Text(curData.level.toString()),
                     Spacer(),
                     Image.asset("assets/images/items/Icon_Mora.png",
                         height: 16),
-                    Text(curData['mora'].toString()),
+                    Text(curData.mora.toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material2']),
-                    Text((curData['material2qty'] == 0)
+                    _getAscensionImage(curData.material2),
+                    Text((curData.material2Qty == 0)
                         ? ""
-                        : curData['material2qty'].toString()),
+                        : curData.material2Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material1']),
-                    Text(curData['material1qty'].toString()),
+                    _getAscensionImage(curData.material1),
+                    Text(curData.material1Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material3']),
-                    Text(curData['material3qty'].toString()),
+                    _getAscensionImage(curData.material3),
+                    Text(curData.material3Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData['material4']),
-                    Text(curData['material4qty'].toString()),
+                    _getAscensionImage(curData.material4),
+                    Text(curData.material4Qty.toString()),
                     Spacer(),
                   ],
                 ),
@@ -499,13 +499,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _openCharacterInfo() async {
-    if (!_infoData.containsKey("genshinggpath") ||
-        _infoData["genshinggpath"] == null) {
+    if (_info.genshinGGPath == null) {
       Util.showSnackbarQuick(
-          context, "More Info Page not available for ${_infoData["name"]}");
+          context, "More Info Page not available for ${_info.name}");
       return;
     }
-    String fullUrl = Util.genshinGGUrl + _infoData["genshinggpath"];
+    String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
     if (GetPlatform.isAndroid || GetPlatform.isIOS) {
       FlutterWebBrowser.openWebPage(
         url: fullUrl,
@@ -529,16 +528,16 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       await launch(fullUrl);
     } else {
       Util.showSnackbarQuick(
-          context, "Failed to launch more info page for ${_infoData["name"]}");
+          context, "Failed to launch more info page for ${_info.name}");
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_infoData == null) return Util.loadingScreen();
+    if (_info == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
-        title: Text(_infoData['name']),
+        title: Text(_info.name),
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
@@ -555,15 +554,14 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         width: 200,
                         child: Text(
-                          _infoData['affiliation'].toString(),
+                          _info.affiliation,
                           textAlign: TextAlign.start,
                           style: TextStyle(fontSize: 20),
                         ),
@@ -572,8 +570,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                         ignoreGestures: true,
                         itemCount: 5,
                         itemSize: 30,
-                        initialRating:
-                            double.tryParse(_infoData['rarity'].toString()),
+                        initialRating: double.tryParse(_info.rarity.toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -583,7 +580,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     ],
                   ),
                   Spacer(),
-                  Image.asset(GridData.getElementImageRef(_infoData['element']))
+                  Image.asset(GridData.getElementImageRef(_info.element))
                 ],
               ),
               Divider(),
@@ -595,7 +592,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['nation']),
+                        child: Text(_info.nation),
                       ),
                     ),
                   ],
@@ -610,9 +607,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['description']
-                            .toString()
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.description.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -627,9 +622,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['introduction']
-                            .toString()
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.introduction.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -646,7 +639,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                           Icon(MdiIcons.weatherNight),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(_infoData['constellation']),
+                            child: Text(_info.constellation),
                           )
                         ],
                       ),
@@ -660,7 +653,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                           Icon(MdiIcons.swordCross),
                           Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Text(_infoData['weapon']),
+                            child: Text(_info.weapon),
                           )
                         ],
                       ),
@@ -677,11 +670,10 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       padding: const EdgeInsets.all(8),
                       child: Row(
                         children: [
-                          _getGenderIcon(
-                              _infoData['gender'], _infoData['name']),
+                          _getGenderIcon(_info.gender, _info.name),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(_infoData['gender']),
+                            child: Text(_info.gender),
                           ),
                         ],
                       ),
@@ -695,7 +687,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                           Icon(Icons.cake),
                           Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Text(_infoData['birthday']),
+                            child: Text(_info.birthday),
                           ),
                         ],
                       ),

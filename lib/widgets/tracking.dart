@@ -2,8 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -46,9 +50,9 @@ class TrackerPage extends StatefulWidget {
 }
 
 class _TrackerPageState extends State<TrackerPage> {
-  Map<String, dynamic> _materialData;
-  Map<String, dynamic> _weaponData;
-  Map<String, dynamic> _characterData;
+  Map<String, MaterialDataCommon> _materialData;
+  Map<String, WeaponData> _weaponData;
+  Map<String, CharacterData> _characterData;
 
   @override
   void initState() {
@@ -57,9 +61,10 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   void _retrieveData() async {
-    Map<String, dynamic> m = await GridData.retrieveMaterialsMapData();
-    Map<String, dynamic> c = await GridData.retrieveCharactersMapData();
-    Map<String, dynamic> w = await GridData.retrieveWeaponsMapData();
+    Map<String, MaterialDataCommon> m =
+        await GridData.retrieveMaterialsMapData();
+    Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
+    Map<String, WeaponData> w = await GridData.retrieveWeaponsMapData();
     if (this.mounted)
       setState(() {
         _materialData = m;
@@ -99,59 +104,60 @@ class _TrackerPageState extends State<TrackerPage> {
             return ListView.builder(
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
-                Map<String, dynamic> _data = data.docs[index].data();
+                TrackingUserData _data =
+                    TrackingUserData.fromJson(data.docs[index].data());
                 String _dataId = data.docs[index].id;
                 print(_data);
-                Map<String, dynamic> _material = _materialData[_data["name"]];
+                MaterialDataCommon _material = _materialData[_data.name];
                 String extraImageRef;
                 int extraAscensionRef = 0;
                 String extraTypeRef;
                 var _ascendTier = _dataId.substring(_dataId.length - 1);
-                if (_data["addData"] != null) {
+                if (_data.addData != null) {
                   // Grab image ref of extra data based on addedBy
-                  if (_data["addedBy"] == "character") {
+                  if (_data.addedBy == "character") {
                     // Grab from character
-                    extraImageRef = _characterData[_data["addData"]]["image"];
+                    extraImageRef = _characterData[_data.addData].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                    extraTypeRef = _characterData[_data["addData"]]["element"];
-                  } else if (_data["addedBy"] == "weapon") {
+                    extraTypeRef = _characterData[_data.addData].element;
+                  } else if (_data.addedBy == "weapon") {
                     // Grab from weapon
-                    extraImageRef = _weaponData[_data["addData"]]["image"];
+                    extraImageRef = _weaponData[_data.addData].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   }
                 }
 
                 return Card(
-                  color: GridData.getRarityColor(_material["rarity"]),
+                  color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
-                    onTap: () => UpdateMultiTracking(
-                            context, _materialData[_data["name"]])
-                        .itemClickedAction(
-                            _data,
-                            _dataId,
-                            {
-                              "img": extraImageRef,
-                              "asc": extraAscensionRef,
-                              "type": extraTypeRef
-                            },
-                            false),
-                    onLongPress: () => UpdateMultiTracking(
-                            context, _materialData[_data["name"]])
-                        .itemClickedAction(
-                            _data,
-                            _dataId,
-                            {
-                              "img": extraImageRef,
-                              "asc": extraAscensionRef,
-                              "type": extraTypeRef
-                            },
-                            true),
+                    onTap: () =>
+                        UpdateMultiTracking(context, _materialData[_data.name])
+                            .itemClickedAction(
+                                _data,
+                                _dataId,
+                                {
+                                  "img": extraImageRef,
+                                  "asc": extraAscensionRef,
+                                  "type": extraTypeRef
+                                },
+                                false),
+                    onLongPress: () =>
+                        UpdateMultiTracking(context, _materialData[_data.name])
+                            .itemClickedAction(
+                                _data,
+                                _dataId,
+                                {
+                                  "img": extraImageRef,
+                                  "asc": extraAscensionRef,
+                                  "type": extraTypeRef
+                                },
+                                true),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          GridData.getImageAssetFromFirebase(_material["image"],
+                          GridData.getImageAssetFromFirebase(_material.image,
                               height: 48),
                           Container(
                             width: MediaQuery.of(context).size.width - 180,
@@ -160,7 +166,7 @@ class _TrackerPageState extends State<TrackerPage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  _material["name"],
+                                  _material.name,
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 ),
@@ -170,7 +176,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                   itemSize: 12,
                                   unratedColor: Colors.transparent,
                                   initialRating: double.tryParse(
-                                      _material['rarity'].toString()),
+                                      _material.rarity.toString()),
                                   itemBuilder: (context, _) =>
                                       Icon(Icons.star, color: Colors.amber),
                                   onRatingUpdate: (rating) {
@@ -178,9 +184,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                   },
                                 ),
                                 Text(
-                                  _material["obtained"]
-                                      .toString()
-                                      .replaceAll("\\n", "\n"),
+                                  _material.obtained.replaceAll("\\n", "\n"),
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.white),
                                 ),
@@ -191,11 +195,11 @@ class _TrackerPageState extends State<TrackerPage> {
                           Column(
                             children: [
                               Text(
-                                "${_data["current"]}/${_data["max"]}",
+                                "${_data.current}/${_data.max}",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: GridData.getCountColor(
-                                        _data["current"], _data["max"])),
+                                        _data.current, _data.max)),
                               ),
                               Row(
                                 children: [
@@ -213,7 +217,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                     child: FlatButton(
                                       onPressed: () =>
                                           TrackingData.decrementCount(_dataId,
-                                              _data["type"], _data["current"]),
+                                              _data.type, _data.current),
                                       child: Icon(Icons.remove,
                                           color: Colors.white),
                                     ),
@@ -233,9 +237,9 @@ class _TrackerPageState extends State<TrackerPage> {
                                       onPressed: () =>
                                           TrackingData.incrementCount(
                                               _dataId,
-                                              _data["type"],
-                                              _data["current"],
-                                              _data["max"]),
+                                              _data.type,
+                                              _data.current,
+                                              _data.max),
                                       child:
                                           Icon(Icons.add, color: Colors.white),
                                     ),
@@ -268,7 +272,7 @@ class PlannerPage extends StatefulWidget {
 }
 
 class _PlannerPageState extends State<PlannerPage> {
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
 
   tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
 
@@ -353,8 +357,10 @@ class _PlannerPageState extends State<PlannerPage> {
             7: new Set(),
           };
           _finalDomainMaterials.forEach((domainMaterial) {
-            List<dynamic> _daysForMaterial =
-                _materialData[domainMaterial]["days"];
+            if (!(_materialData[domainMaterial] is MaterialDataDomains)) return;
+
+            List<int> _daysForMaterial =
+                (_materialData[domainMaterial] as MaterialDataDomains).days;
             _daysForMaterial.forEach((day) {
               _mappedData[day].add(domainMaterial);
             });
