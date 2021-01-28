@@ -11,6 +11,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class Util {
   static String _uid;
+  static final String genshinGGUrl = "https://genshin.gg/";
 
   static void showSnackbarQuick(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(

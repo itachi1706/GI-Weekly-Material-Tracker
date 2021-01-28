@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
@@ -8,6 +10,7 @@ import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -495,6 +498,41 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     );
   }
 
+  void _openCharacterInfo() async {
+    if (!_infoData.containsKey("genshinggpath") ||
+        _infoData["genshinggpath"] == null) {
+      Util.showSnackbarQuick(
+          context, "More Info Page not available for ${_infoData["name"]}");
+      return;
+    }
+    String fullUrl = Util.genshinGGUrl + _infoData["genshinggpath"];
+    if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      FlutterWebBrowser.openWebPage(
+        url: fullUrl,
+        customTabsOptions: CustomTabsOptions(
+            colorScheme: (Util.themeNotifier.isDarkMode())
+                ? CustomTabsColorScheme.dark
+                : CustomTabsColorScheme.light,
+            toolbarColor: _rarityColor,
+            addDefaultShareMenuItem: true,
+            showTitle: true,
+            urlBarHidingEnabled: true),
+        safariVCOptions: SafariViewControllerOptions(
+            barCollapsingEnabled: true,
+            dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
+            modalPresentationCapturesStatusBarAppearance: true),
+      );
+      return;
+    }
+    // Launch through Web
+    if (await canLaunch(fullUrl)) {
+      await launch(fullUrl);
+    } else {
+      Util.showSnackbarQuick(
+          context, "Failed to launch more info page for ${_infoData["name"]}");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_infoData == null) return Util.loadingScreen();
@@ -502,6 +540,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       appBar: AppBar(
         title: Text(_infoData['name']),
         backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: _openCharacterInfo,
+            tooltip: "More Info Page",
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
