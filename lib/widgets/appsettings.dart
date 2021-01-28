@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/cupertino.dart';
@@ -126,6 +127,16 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ],
           ),
+          SettingsSection(
+            title: "More Info",
+            tiles: [
+              SettingsTile(
+                title: "About This App",
+                leading: Icon(Icons.info_outline),
+                onPressed: _showAboutPage,
+              ),
+            ],
+          ),
           CustomSection(
             child: Column(
               children: [
@@ -213,6 +224,34 @@ class _SettingsPageState extends State<SettingsPage> {
     }
 
     return {'fileNum': fileNum, 'size': totalSize};
+  }
+
+  void _showAboutPage(BuildContext context) {
+    showAboutPage(
+      context: context,
+      title: Text("About this app"),
+      applicationLegalese: "Copyright © Kenneth Soh, {{ year }}",
+      applicationDescription: const Text(
+          'Weekly Material Planner and Tracking Application for Genshin Impact'),
+      children: <Widget>[
+        MarkdownPageListTile(
+          icon: Icon(Icons.list),
+          title: const Text('Changelog'),
+          filename: 'CHANGELOG.md',
+        ),
+        LicensesPageListTile(
+          title: Text("Open Source Licenses"),
+          icon: Icon(Icons.favorite),
+        ),
+      ],
+      applicationIcon: const SizedBox(
+        width: 100,
+        height: 100,
+        child: Image(
+          image: AssetImage('assets/logo.png'),
+        ),
+      ),
+    );
   }
 }
 
