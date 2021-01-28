@@ -3,7 +3,6 @@ import 'package:gi_weekly_material_tracker/models/commondata.dart';
 class MaterialDataCommon extends CommonData {
   String type;
   String innerType;
-  String description;
   String obtained;
 
   MaterialDataCommon(
@@ -12,8 +11,10 @@ class MaterialDataCommon extends CommonData {
       this.type,
       this.innerType,
       name,
-      this.description,
-      this.obtained}) : super(name: name, rarity: rarity, image: image);
+      description,
+      this.obtained})
+      : super(
+            name: name, rarity: rarity, image: image, description: description);
 
   factory MaterialDataCommon.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataCommon(

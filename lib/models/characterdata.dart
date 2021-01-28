@@ -4,7 +4,6 @@ class CharacterData extends CommonData {
   String affiliation;
   String birthday;
   String constellation;
-  String description;
   String element;
   String gender;
   String genshinGGPath;
@@ -17,7 +16,7 @@ class CharacterData extends CommonData {
       {this.affiliation,
       this.birthday,
       this.constellation,
-      this.description,
+      description,
       this.element,
       this.gender,
       this.genshinGGPath,
@@ -27,7 +26,9 @@ class CharacterData extends CommonData {
       this.nation,
       rarity,
       this.weapon,
-      this.ascension}) : super(image: image, name: name, rarity: rarity);
+      this.ascension})
+      : super(
+            image: image, name: name, rarity: rarity, description: description);
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(
@@ -47,37 +48,40 @@ class CharacterData extends CommonData {
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
     );
   }
-  
+
   static Map<String, CharacterData> getList(Map<String, dynamic> listString) {
     Map<String, CharacterData> _fin = new Map();
-    listString.forEach((key, value) {_fin.putIfAbsent(key, () => CharacterData.fromJson(value));});
+    listString.forEach((key, value) {
+      _fin.putIfAbsent(key, () => CharacterData.fromJson(value));
+    });
     return _fin;
   }
 }
 
-class CharacterAscension {
-  int level;
-  String material1;
-  int material1Qty;
-  String material2;
-  int material2Qty;
-  String material3;
-  int material3Qty;
+class CharacterAscension extends CommonAscension {
   String material4;
   int material4Qty;
-  int mora;
 
   CharacterAscension(
-      {this.level,
-      this.material1,
-      this.material1Qty,
-      this.material2,
-      this.material2Qty,
-      this.material3,
-      this.material3Qty,
+      {level,
+      material1,
+      material1Qty,
+      material2,
+      material2Qty,
+      material3,
+      material3Qty,
       this.material4,
       this.material4Qty,
-      this.mora});
+      mora})
+      : super(
+            level: level,
+            mora: mora,
+            material1: material1,
+            material1Qty: material1Qty,
+            material2: material2,
+            material2Qty: material2Qty,
+            material3: material3,
+            material3Qty: material3Qty);
 
   factory CharacterAscension.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterAscension(
