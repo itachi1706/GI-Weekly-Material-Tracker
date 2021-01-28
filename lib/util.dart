@@ -28,7 +28,11 @@ class Util {
   static Widget centerLoadingCircle(String loadText) => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [CircularProgressIndicator(), Text(loadText)],
+          children: [
+            CircularProgressIndicator(),
+            SizedBox(height: 10),
+            Text(loadText)
+          ],
         ),
       );
 
