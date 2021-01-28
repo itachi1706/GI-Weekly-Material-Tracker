@@ -61,7 +61,8 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   void _retrieveData() async {
-    Map<String, MaterialDataCommon> m = await GridData.retrieveMaterialsMapData();
+    Map<String, MaterialDataCommon> m =
+        await GridData.retrieveMaterialsMapData();
     Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
     Map<String, WeaponData> w = await GridData.retrieveWeaponsMapData();
     if (this.mounted)
@@ -103,7 +104,8 @@ class _TrackerPageState extends State<TrackerPage> {
             return ListView.builder(
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
-                TrackingUserData _data = TrackingUserData.fromJson(data.docs[index].data());
+                TrackingUserData _data =
+                    TrackingUserData.fromJson(data.docs[index].data());
                 String _dataId = data.docs[index].id;
                 print(_data);
                 MaterialDataCommon _material = _materialData[_data.name];
@@ -128,28 +130,28 @@ class _TrackerPageState extends State<TrackerPage> {
                 return Card(
                   color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
-                    onTap: () => UpdateMultiTracking(
-                            context, _materialData[_data.name])
-                        .itemClickedAction(
-                            _data,
-                            _dataId,
-                            {
-                              "img": extraImageRef,
-                              "asc": extraAscensionRef,
-                              "type": extraTypeRef
-                            },
-                            false),
-                    onLongPress: () => UpdateMultiTracking(
-                            context, _materialData[_data.name])
-                        .itemClickedAction(
-                            _data,
-                            _dataId,
-                            {
-                              "img": extraImageRef,
-                              "asc": extraAscensionRef,
-                              "type": extraTypeRef
-                            },
-                            true),
+                    onTap: () =>
+                        UpdateMultiTracking(context, _materialData[_data.name])
+                            .itemClickedAction(
+                                _data,
+                                _dataId,
+                                {
+                                  "img": extraImageRef,
+                                  "asc": extraAscensionRef,
+                                  "type": extraTypeRef
+                                },
+                                false),
+                    onLongPress: () =>
+                        UpdateMultiTracking(context, _materialData[_data.name])
+                            .itemClickedAction(
+                                _data,
+                                _dataId,
+                                {
+                                  "img": extraImageRef,
+                                  "asc": extraAscensionRef,
+                                  "type": extraTypeRef
+                                },
+                                true),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
@@ -182,8 +184,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                   },
                                 ),
                                 Text(
-                                  _material.obtained
-                                      .replaceAll("\\n", "\n"),
+                                  _material.obtained.replaceAll("\\n", "\n"),
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.white),
                                 ),
@@ -359,7 +360,7 @@ class _PlannerPageState extends State<PlannerPage> {
             if (!(_materialData[domainMaterial] is MaterialDataDomains)) return;
 
             List<int> _daysForMaterial =
-              (_materialData[domainMaterial] as MaterialDataDomains).days;
+                (_materialData[domainMaterial] as MaterialDataDomains).days;
             _daysForMaterial.forEach((day) {
               _mappedData[day].add(domainMaterial);
             });

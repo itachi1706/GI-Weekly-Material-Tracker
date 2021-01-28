@@ -47,10 +47,14 @@ class TrackingData {
     DocumentSnapshot snapshot = await trackRef.get();
     TrackingUserInfo fields = TrackingUserInfo.fromJson(snapshot.data());
     switch (key) {
-      case "character": return fields.character;
-      case "material": return fields.material;
-      case "weapon": return fields.weapon;
-      default: return null;
+      case "character":
+        return fields.character;
+      case "material":
+        return fields.material;
+      case "weapon":
+        return fields.weapon;
+      default:
+        return null;
     }
   }
 
@@ -191,18 +195,21 @@ class TrackingData {
         .get();
     Map<String, TrackingUserData> data = new Map();
     snaps.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => TrackingUserData.fromJson(element.data()));
+      data.putIfAbsent(
+          element.id, () => TrackingUserData.fromJson(element.data()));
     });
     return data;
   }
 
-  static bool isMaterialFull(String type, Map<String, Map<String, TrackingUserData>> tracker,
-      Map<String, MaterialDataCommon> materialData, String key) {
+  static bool isMaterialFull(
+      String type,
+      Map<String, Map<String, TrackingUserData>> tracker,
+      Map<String, MaterialDataCommon> materialData,
+      String key) {
     // Get type of material
     Map<String, TrackingUserData> trackerData = tracker[type];
     TrackingUserData data = trackerData[key];
-    print(
-        "${data.current} | ${data.max} | ${data.current >= data.max}");
+    print("${data.current} | ${data.max} | ${data.current >= data.max}");
     return data.current >= data.max;
   }
 
@@ -250,8 +257,7 @@ class UpdateMultiTracking {
       Map<String, dynamic> extraData, bool editDialog) {
     print(docId);
     String type = data.addedBy;
-    String key =
-        (data.addedBy == "material") ? data.name : data.addData;
+    String key = (data.addedBy == "material") ? data.name : data.addData;
     _cntKey = docId;
     if (!editDialog) {
       Get.toNamed('/${type}s', arguments: [key]);
@@ -278,8 +284,7 @@ class UpdateMultiTracking {
   TextEditingController _textCurrentController = TextEditingController();
   TextEditingController _textTotalController = TextEditingController();
 
-  void _displayDialogMat(
-      String navigateTo, String key, TrackingUserData data) {
+  void _displayDialogMat(String navigateTo, String key, TrackingUserData data) {
     _cntCurrent = data.current.toString();
     _cntTotal = data.max.toString();
     _textCurrentController.text = _cntCurrent;

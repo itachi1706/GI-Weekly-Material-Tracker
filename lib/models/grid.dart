@@ -64,7 +64,8 @@ class GridData {
   static Map<String, Map<String, CommonData>> _staticData = new Map();
   static Map<String, bool> _downloading = new Map();
 
-  static Future<Map<String, CommonData>> _retrieveStaticData(String type) async {
+  static Future<Map<String, CommonData>> _retrieveStaticData(
+      String type) async {
     if (_downloading.containsKey(type) && _downloading[type]) {
       // Wait for processing to end
       return Future.delayed(
@@ -88,14 +89,22 @@ class GridData {
       data.putIfAbsent(element.id, () => element.data());
     });
     switch (type) {
-      case "characters": _staticData[type] = CharacterData.getList(data); break;
-      case "weapons": _staticData[type] = WeaponData.getList(data); break;
-      case "materials": _staticData[type] = MaterialDataCommon.getList(data); break;
+      case "characters":
+        _staticData[type] = CharacterData.getList(data);
+        break;
+      case "weapons":
+        _staticData[type] = WeaponData.getList(data);
+        break;
+      case "materials":
+        _staticData[type] = MaterialDataCommon.getList(data);
+        break;
     }
   }
 
-  static Future<Map<String, MaterialDataCommon>> retrieveMaterialsMapData() async =>
-      (await _retrieveStaticData("materials")) as Map<String, MaterialDataCommon>;
+  static Future<Map<String, MaterialDataCommon>>
+      retrieveMaterialsMapData() async =>
+          (await _retrieveStaticData("materials"))
+              as Map<String, MaterialDataCommon>;
 
   static Future<Map<String, WeaponData>> retrieveWeaponsMapData() async =>
       (await _retrieveStaticData("weapons")) as Map<String, WeaponData>;

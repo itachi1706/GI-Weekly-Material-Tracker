@@ -108,7 +108,8 @@ class _CharacterListGridState extends State<CharacterListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/characters', arguments: [document.id]),
-                child: GridData.getGridData(CharacterData.fromJson(document.data())),
+                child: GridData.getGridData(
+                    CharacterData.fromJson(document.data())),
               );
             }).toList(),
           );

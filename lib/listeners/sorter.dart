@@ -39,10 +39,7 @@ class SortBy {
         textStyle: TextStyle(color: _matchColor(null)),
         value: "",
         child: Row(
-          children: [
-            Text("Default"),
-            Spacer()
-          ],
+          children: [Text("Default"), Spacer()],
         ),
       ),
       PopupMenuItem(

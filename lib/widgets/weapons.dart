@@ -100,7 +100,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () => Get.toNamed('/weapons', arguments: [document.id]),
-                child: GridData.getGridData(WeaponData.fromJson(document.data())),
+                child:
+                    GridData.getGridData(WeaponData.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -296,21 +297,20 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text(
                       "This will remove the following materials being tracked for this weapon from the tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                 ],
               ),
@@ -333,25 +333,24 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(
-                "Add ${_info.name} Ascension Tier $key to the tracker?"),
+            title:
+                Text("Add ${_info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text("Items being added to tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                 ],
               ),
@@ -388,8 +387,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     }
 
     Map<String, WeaponAscension> dataMap = _info.ascension;
-    List<WeaponAscension> data =
-        dataMap.entries.map((e) => e.value).toList();
+    List<WeaponAscension> data = dataMap.entries.map((e) => e.value).toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -472,8 +470,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -486,8 +483,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         ignoreGestures: true,
                         itemCount: 5,
                         itemSize: 30,
-                        initialRating:
-                            double.tryParse(_info.rarity.toString()),
+                        initialRating: double.tryParse(_info.rarity.toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -524,8 +520,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.description
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.description.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -540,8 +535,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.effect
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.effect.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],

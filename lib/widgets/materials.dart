@@ -96,7 +96,8 @@ class _MaterialListGridState extends State<MaterialListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/materials', arguments: [document.id]),
-                child: GridData.getGridData(MaterialDataCommon.fromJson(document.data())),
+                child: GridData.getGridData(
+                    MaterialDataCommon.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -175,11 +176,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-          context, "${_info.name} removed from tracker!");
+      Util.showSnackbarQuick(context, "${_info.name} removed from tracker!");
     });
-    TrackingData.removeFromCollection(
-        "Material_$_infoId", _info.innerType);
+    TrackingData.removeFromCollection("Material_$_infoId", _info.innerType);
     Navigator.of(context).pop();
   }
 
@@ -198,8 +197,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text(
                       "This will remove the currently tracked data for this material from the tracker"),
                 ],
@@ -227,8 +225,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   TextField(
                     onChanged: (newValue) {
                       setState(() {
@@ -277,8 +274,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           children: [
             Row(
               children: [
-                GridData.getImageAssetFromFirebase(_info.image,
-                    height: 64),
+                GridData.getImageAssetFromFirebase(_info.image, height: 64),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -294,8 +290,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                       ignoreGestures: true,
                       itemCount: 5,
                       itemSize: 30,
-                      initialRating:
-                          double.tryParse(_info.rarity.toString()),
+                      initialRating: double.tryParse(_info.rarity.toString()),
                       itemBuilder: (context, _) =>
                           Icon(Icons.star, color: Colors.amber),
                       onRatingUpdate: (rating) {
@@ -332,8 +327,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_info.description
-                          .replaceAll('\\n', "\n")),
+                      child: Text(_info.description.replaceAll('\\n', "\n")),
                     ),
                   ),
                 ],
