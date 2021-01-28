@@ -35,4 +35,9 @@ class CommonTracking {
   String type;
 
   CommonTracking({this.current, this.max, this.name, this.type});
+
+  @override
+  String toString() {
+    return "CommonTracking{ name: $name, type: $type, current: $current, max: $max }";
+  }
 }

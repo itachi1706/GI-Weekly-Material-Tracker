@@ -51,4 +51,9 @@ class TrackingUserData extends CommonTracking {
     });
     return _fin;
   }
+
+  @override
+  String toString() {
+    return "TrackingUserData{ name: $name, type: $type, addData: $addData, addedBy: $addedBy, current: $current, max: $max }";
+  }
 }
