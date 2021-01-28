@@ -6,6 +6,7 @@ import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -49,7 +50,7 @@ class TrackerPage extends StatefulWidget {
 
 class _TrackerPageState extends State<TrackerPage> {
   Map<String, MaterialDataCommon> _materialData;
-  Map<String, dynamic> _weaponData;
+  Map<String, WeaponData> _weaponData;
   Map<String, CharacterData> _characterData;
 
   @override
@@ -61,7 +62,7 @@ class _TrackerPageState extends State<TrackerPage> {
   void _retrieveData() async {
     Map<String, MaterialDataCommon> m = await GridData.retrieveMaterialsMapData();
     Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
-    Map<String, dynamic> w = await GridData.retrieveWeaponsMapData();
+    Map<String, WeaponData> w = await GridData.retrieveWeaponsMapData();
     if (this.mounted)
       setState(() {
         _materialData = m;
@@ -118,7 +119,7 @@ class _TrackerPageState extends State<TrackerPage> {
                     extraTypeRef = _characterData[_data["addData"]].element;
                   } else if (_data["addedBy"] == "weapon") {
                     // Grab from weapon
-                    extraImageRef = _weaponData[_data["addData"]]["image"];
+                    extraImageRef = _weaponData[_data["addData"]].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   }
                 }

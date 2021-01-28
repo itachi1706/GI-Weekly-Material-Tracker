@@ -293,7 +293,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
     return [
-      _getAscenionImage(key),
+      _getAscensionImage(key),
       Text(key == null ? "" : _materialData[key].name),
       Text((qty == 0) ? "" : " x$qty"),
     ];
@@ -427,7 +427,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     _refreshTrackingStatus();
   }
 
-  Widget _getAscenionImage(String itemKey) {
+  Widget _getAscensionImage(String itemKey) {
     if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
 
     return GridData.getImageAssetFromFirebase(_materialData[itemKey].image,
@@ -472,18 +472,18 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                         height: 16),
                     Text(curData.mora.toString()),
                     Spacer(),
-                    _getAscenionImage(curData.material2),
+                    _getAscensionImage(curData.material2),
                     Text((curData.material2Qty == 0)
                         ? ""
                         : curData.material2Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData.material1),
+                    _getAscensionImage(curData.material1),
                     Text(curData.material1Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData.material3),
+                    _getAscensionImage(curData.material3),
                     Text(curData.material3Qty.toString()),
                     Spacer(),
-                    _getAscenionImage(curData.material4),
+                    _getAscensionImage(curData.material4),
                     Text(curData.material4Qty.toString()),
                     Spacer(),
                   ],

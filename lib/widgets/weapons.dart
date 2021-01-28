@@ -6,6 +6,7 @@ import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -98,7 +99,7 @@ class _WeaponListGridState extends State<WeaponListGrid> {
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
                 onTap: () => Get.toNamed('/weapons', arguments: [document.id]),
-                child: GridData.getGridDataLegacy(document.data()),
+                child: GridData.getGridData(WeaponData.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -115,15 +116,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   String _infoId;
   Color _rarityColor;
 
-  Map<String, dynamic> _infoData;
+  WeaponData _info;
   Map<String, MaterialDataCommon> _materialData;
   Map<String, TrackingStatus> _isBeingTracked;
 
   void _refreshTrackingStatus() {
-    if (_materialData == null || _infoData == null) return; // No data
+    if (_materialData == null) return; // No data
     if (_isBeingTracked == null) {
       Map<String, TrackingStatus> _tmpTracker = new Map();
-      _infoData['ascension'].keys.forEach((key) {
+      _info.ascension.keys.forEach((key) {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
       });
       setState(() {
@@ -140,13 +141,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _isBeingTracked.keys.forEach((key) {
         bool _isTracked =
             TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
-        Map<String, dynamic> data = _infoData['ascension'][key];
-        if (data["material1"] != null)
-          datasets.add(_materialData[data["material1"]].innerType);
-        if (data["material2"] != null)
-          datasets.add(_materialData[data["material2"]].innerType);
-        if (data["material3"] != null)
-          datasets.add(_materialData[data["material3"]].innerType);
+        WeaponAscension data = _info.ascension[key];
+        if (data.material1 != null)
+          datasets.add(_materialData[data.material1].innerType);
+        if (data.material2 != null)
+          datasets.add(_materialData[data.material2].innerType);
+        if (data.material3 != null)
+          datasets.add(_materialData[data.material3].innerType);
         _tracker[key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
       });
@@ -160,25 +161,25 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _tracker.keys.forEach((key) {
         if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
         bool fullTrack = true;
-        Map<String, dynamic> data = _infoData['ascension'][key];
-        if (data["material1"] != null && fullTrack)
+        WeaponAscension data = _info.ascension[key];
+        if (data.material1 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material1"]].innerType,
+              _materialData[data.material1].innerType,
               collectionList,
               _materialData,
-              "Weapon_${_infoId}_${data["material1"]}_$key");
-        if (data["material2"] != null && fullTrack)
+              "Weapon_${_infoId}_${data.material1}_$key");
+        if (data.material2 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material2"]].innerType,
+              _materialData[data.material2].innerType,
               collectionList,
               _materialData,
-              "Weapon_${_infoId}_${data["material2"]}_$key");
-        if (data["material3"] != null && fullTrack)
+              "Weapon_${_infoId}_${data.material2}_$key");
+        if (data.material3 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data["material3"]].innerType,
+              _materialData[data.material3].innerType,
               collectionList,
               _materialData,
-              "Weapon_${_infoId}_${data["material3"]}_$key");
+              "Weapon_${_infoId}_${data.material3}_$key");
         _tracker[key] = (fullTrack)
             ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
             : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
@@ -197,37 +198,37 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   void _trackWeaponAction() {
     print("Selected: $_selectedTier");
-    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    WeaponAscension _ascendTier = _info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord('weapon', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_ascensionTierSel added to tracker!");
+          "${_info.name} Ascension Tier $_ascensionTierSel added to tracker!");
     });
-    if (_ascendTier['material1'] != null)
+    if (_ascendTier.material1 != null)
       TrackingData.addToCollection(
-          "Weapon_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
-          _ascendTier['material1'],
-          _ascendTier['material1qty'],
-          _materialData[_ascendTier['material1']].innerType,
+          "Weapon_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          _ascendTier.material1,
+          _ascendTier.material1Qty,
+          _materialData[_ascendTier.material1].innerType,
           'weapon',
           _infoId);
-    if (_ascendTier['material2'] != null)
+    if (_ascendTier.material2 != null)
       TrackingData.addToCollection(
-          "Weapon_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
-          _ascendTier['material2'],
-          _ascendTier['material2qty'],
-          _materialData[_ascendTier['material2']].innerType,
+          "Weapon_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          _ascendTier.material2,
+          _ascendTier.material2Qty,
+          _materialData[_ascendTier.material2].innerType,
           'weapon',
           _infoId);
-    if (_ascendTier['material3'] != null)
+    if (_ascendTier.material3 != null)
       TrackingData.addToCollection(
-          "Weapon_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
-          _ascendTier['material3'],
-          _ascendTier['material3qty'],
-          _materialData[_ascendTier['material3']].innerType,
+          "Weapon_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          _ascendTier.material3,
+          _ascendTier.material3Qty,
+          _materialData[_ascendTier.material3].innerType,
           'weapon',
           _infoId);
     Navigator.of(context).pop();
@@ -235,45 +236,42 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   void _untrackWeaponAction() {
     print("Selected: $_selectedTier");
-    Map<String, dynamic> _ascendTier = _infoData['ascension'][_selectedTier];
+    WeaponAscension _ascendTier = _info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord('weapon', "${_infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_infoData['name']} Ascension Tier $_ascensionTierSel removed from tracker!");
+          "${_info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
     });
-    if (_ascendTier['material1'] != null)
+    if (_ascendTier.material1 != null)
       TrackingData.removeFromCollection(
-          "Weapon_${_infoId}_${_ascendTier['material1']}_$_selectedTier",
-          _materialData[_ascendTier['material1']].innerType);
-    if (_ascendTier['material2'] != null)
+          "Weapon_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          _materialData[_ascendTier.material1].innerType);
+    if (_ascendTier.material2 != null)
       TrackingData.removeFromCollection(
-          "Weapon_${_infoId}_${_ascendTier['material2']}_$_selectedTier",
-          _materialData[_ascendTier['material2']].innerType);
-    if (_ascendTier['material3'] != null)
+          "Weapon_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          _materialData[_ascendTier.material2].innerType);
+    if (_ascendTier.material3 != null)
       TrackingData.removeFromCollection(
-          "Weapon_${_infoId}_${_ascendTier['material3']}_$_selectedTier",
-          _materialData[_ascendTier['material3']].innerType);
+          "Weapon_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          _materialData[_ascendTier.material3].innerType);
 
     Navigator.of(context).pop();
   }
 
-  List<Widget> _getAscensionTierMaterialRowChild(
-      Map<String, dynamic> curData, String key) {
+  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
     return [
-      _getAscensionImage(curData[key]),
-      Text(curData[key] == null ? "" : _materialData[curData[key]].name),
-      Text((curData["${key}qty"] == 0)
-          ? ""
-          : " x${curData["${key}qty"].toString()}"),
+      _getAscensionImage(key),
+      Text(key == null ? "" : _materialData[key].name),
+      Text((qty == 0) ? "" : " x$qty"),
     ];
   }
 
   String _selectedTier;
 
-  void _addOrRemoveMaterial(int index, Map<String, dynamic> curData) async {
+  void _addOrRemoveMaterial(int index, WeaponAscension curData) async {
     String key = index.toString();
     TrackingStatus isTracked = _isBeingTrackedStatus(key);
     if (isTracked == TrackingStatus.UNKNOWN ||
@@ -293,25 +291,25 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         builder: (context) {
           return AlertDialog(
             title: Text(
-                "Remove ${_infoData['name']} Ascension Tier $key from the tracker?"),
+                "Remove ${_info.name} Ascension Tier $key from the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                  GridData.getImageAssetFromFirebase(_info.image,
                       height: 64),
                   Text(
                       "This will remove the following materials being tracked for this weapon from the tracker:"),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
                   ),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
                   ),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
                   ),
                 ],
               ),
@@ -335,24 +333,24 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         builder: (context) {
           return AlertDialog(
             title: Text(
-                "Add ${_infoData['name']} Ascension Tier $key to the tracker?"),
+                "Add ${_info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                  GridData.getImageAssetFromFirebase(_info.image,
                       height: 64),
                   Text("Items being added to tracker:"),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material1'),
+                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
                   ),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material2'),
+                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
                   ),
                   Row(
                     children:
-                        _getAscensionTierMaterialRowChild(curData, 'material3'),
+                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
                   ),
                 ],
               ),
@@ -388,15 +386,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       );
     }
 
-    Map<String, dynamic> dataMap = _infoData['ascension'];
-    List<MapEntry<String, dynamic>> data =
-        dataMap.entries.map((e) => e).toList();
+    Map<String, WeaponAscension> dataMap = _info.ascension;
+    List<WeaponAscension> data =
+        dataMap.entries.map((e) => e.value).toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) {
-        Map<String, dynamic> curData = data[index].value;
+        WeaponAscension curData = data[index];
         return Container(
           child: Card(
             color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
@@ -412,22 +410,22 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     ),
                     Spacer(),
                     Icon(Icons.show_chart),
-                    Text(curData['level'].toString()),
+                    Text(curData.level.toString()),
                     Spacer(),
                     Image.asset("assets/images/items/Icon_Mora.png",
                         height: 16),
-                    Text(curData['mora'].toString()),
+                    Text(curData.mora.toString()),
                     Spacer(),
-                    _getAscensionImage(curData['material1']),
-                    Text(curData['material1qty'].toString()),
+                    _getAscensionImage(curData.material1),
+                    Text(curData.material1Qty.toString()),
                     Spacer(),
-                    _getAscensionImage(curData['material2']),
-                    Text((curData['material2qty'] == 0)
+                    _getAscensionImage(curData.material2),
+                    Text((curData.material2Qty == 0)
                         ? ""
-                        : curData['material2qty'].toString()),
+                        : curData.material2Qty.toString()),
                     Spacer(),
-                    _getAscensionImage(curData['material3']),
-                    Text(curData['material3qty'].toString()),
+                    _getAscensionImage(curData.material3),
+                    Text(curData.material3Qty.toString()),
                     Spacer(),
                   ],
                 ),
@@ -447,12 +445,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   void _getStaticData() async {
-    Map<String, dynamic> infoData = await GridData.retrieveWeaponsMapData();
+    Map<String, WeaponData> infoData = await GridData.retrieveWeaponsMapData();
     Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
-      _infoData = infoData[_infoId];
-      _rarityColor = GridData.getRarityColor(_infoData['rarity']);
+      _info = infoData[_infoId];
+      _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });
     _refreshTrackingStatus();
@@ -460,10 +458,10 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (_infoData == null) return Util.loadingScreen();
+    if (_info == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
-        title: Text(_infoData['name']),
+        title: Text(_info.name),
         backgroundColor: _rarityColor,
       ),
       body: Padding(
@@ -473,13 +471,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_infoData['image'],
+                  GridData.getImageAssetFromFirebase(_info.image,
                       height: 64),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _infoData['type'],
+                        _info.type,
                         textAlign: TextAlign.start,
                         style: TextStyle(fontSize: 20),
                       ),
@@ -488,7 +486,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                         itemCount: 5,
                         itemSize: 30,
                         initialRating:
-                            double.tryParse(_infoData['rarity'].toString()),
+                            double.tryParse(_info.rarity.toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -508,8 +506,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['obtained']
-                            .toString()
+                        child: Text(_info.obtained
                             .replaceAll('\\n', "\n")
                             .replaceAll("- ", "")),
                       ),
@@ -526,8 +523,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['description']
-                            .toString()
+                        child: Text(_info.description
                             .replaceAll('\\n', "\n")),
                       ),
                     ),
@@ -543,8 +539,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_infoData['effect']
-                            .toString()
+                        child: Text(_info.effect
                             .replaceAll('\\n', "\n")),
                       ),
                     ),
@@ -562,7 +557,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                           Icon(MdiIcons.swordCross),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
-                            child: Text(_infoData['base_atk'].toString()),
+                            child: Text(_info.baseAtk.toString()),
                           )
                         ],
                       ),
@@ -577,7 +572,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 8, right: 8),
                             child: Text(
-                                "${_infoData['secondary_stat']} (${_infoData['secondary_stat_type']})"),
+                                "${_info.secondaryStat} (${_info.secondaryStatType})"),
                           ),
                         ],
                       ),

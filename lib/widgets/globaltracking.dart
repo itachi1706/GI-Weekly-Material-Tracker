@@ -6,6 +6,7 @@ import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -200,7 +201,7 @@ class GlobalMaterialPage extends StatefulWidget {
 class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   String _materialKey;
   MaterialDataCommon _material;
-  Map<String, dynamic> _weaponData;
+  Map<String, WeaponData> _weaponData;
   Map<String, CharacterData> _characterData;
 
   Color _rarityColor;
@@ -216,7 +217,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   void _getStaticData() async {
     Map<String, CharacterData> characterData =
         await GridData.retrieveCharactersMapData();
-    Map<String, dynamic> weaponData = await GridData.retrieveWeaponsMapData();
+    Map<String, WeaponData> weaponData = await GridData.retrieveWeaponsMapData();
     Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
@@ -369,8 +370,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 } else if (_data["addedBy"] == "weapon") {
                   // Grab from weapon
-                  imageRef = _weaponData[_data["addData"]]["image"];
-                  name = _weaponData[_data["addData"]]["name"];
+                  imageRef = _weaponData[_data["addData"]].image;
+                  name = _weaponData[_data["addData"]].name;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 }
                 name =

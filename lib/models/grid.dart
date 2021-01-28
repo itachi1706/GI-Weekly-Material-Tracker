@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -89,11 +90,11 @@ class GridData {
     _staticData[type] = data;
   }
 
-  static Future<Map<String, dynamic>> retrieveMaterialsMapData() async =>
+  static Future<Map<String, MaterialDataCommon>> retrieveMaterialsMapData() async =>
       MaterialDataCommon.getList(await _retrieveStaticData("materials"));
 
-  static Future<Map<String, dynamic>> retrieveWeaponsMapData() async =>
-      _retrieveStaticData("weapons");
+  static Future<Map<String, WeaponData>> retrieveWeaponsMapData() async =>
+      WeaponData.getList(await _retrieveStaticData("weapons"));
 
   static Future<Map<String, CharacterData>> retrieveCharactersMapData() async =>
       CharacterData.getList(await _retrieveStaticData("characters"));
