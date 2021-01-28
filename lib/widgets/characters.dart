@@ -290,18 +290,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     Navigator.of(context).pop();
   }
 
-  // @deprecated
-  // List<Widget> _getAscensionTierMaterialRowChild(
-  //     CharacterAscension curData, String key) {
-  //   return [
-  //     _getAscenionImage(curData.[key]),
-  //     Text(curData[key] == null ? "" : _materialData[curData[key]]['name']),
-  //     Text((curData["${key}qty"] == 0)
-  //         ? ""
-  //         : " x${curData["${key}qty"].toString()}"),
-  //   ];
-  // }
-
   List<Widget> _getAscensionTierMaterialRowChild(
       String key, int qty) {
     return [
@@ -309,7 +297,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       Text(key == null ? "" : _materialData[key]['name']),
       Text((qty == 0)
           ? ""
-          : " x${qty.toString()}"),
+          : " x$qty"),
     ];
   }
 
@@ -623,7 +611,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
                         child: Text(_info.description
-                            .toString()
                             .replaceAll('\\n', "\n")),
                       ),
                     ),
@@ -640,7 +627,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
                         child: Text(_info.introduction
-                            .toString()
                             .replaceAll('\\n', "\n")),
                       ),
                     ),
