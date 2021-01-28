@@ -27,3 +27,12 @@ class CommonAscension {
       this.material3Qty,
       this.mora});
 }
+
+class CommonTracking {
+  int current;
+  int max;
+  String name;
+  String type;
+
+  CommonTracking({this.current, this.max, this.name, this.type});
+}

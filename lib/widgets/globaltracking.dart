@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -92,24 +94,22 @@ class _GlobalTrackerState extends State<GlobalTracker> {
 
           if (_collectionLen > 0) {
             // Consolidate stuff together
-            Map<String, Map<String, dynamic>> _conData = new Map();
+            Map<String, CommonTracking> _conData = new Map();
             data.docs.forEach((snap) {
-              Map<String, dynamic> _tmp = snap.data();
-              if (_conData.containsKey(_tmp["name"])) {
+              TrackingUserData _tmp = TrackingUserData.fromJson(snap.data());
+              if (_conData.containsKey(_tmp.name)) {
                 // Append
-                _conData[_tmp["name"]]["current"] =
-                    _conData[_tmp["name"]]["current"] + _tmp["current"];
-                _conData[_tmp["name"]]["max"] =
-                    _conData[_tmp["name"]]["max"] + _tmp["max"];
+                _conData[_tmp.name].current =
+                    _conData[_tmp.name].current + _tmp.current;
+                _conData[_tmp.name].max = _conData[_tmp.name].max + _tmp.max;
               } else {
                 _conData.putIfAbsent(
-                    _tmp["name"],
-                    () => {
-                          "current": _tmp["current"],
-                          "max": _tmp["max"],
-                          "name": _tmp["name"],
-                          "type": _tmp["type"]
-                        });
+                    _tmp.name,
+                    () => new CommonTracking(
+                        current: _tmp.current,
+                        max: _tmp.max,
+                        name: _tmp.name,
+                        type: _tmp.type));
               }
             });
 
@@ -117,15 +117,15 @@ class _GlobalTrackerState extends State<GlobalTracker> {
               itemCount: _conData.length,
               itemBuilder: (context, index) {
                 String key = _conData.keys.elementAt(index);
-                Map<String, dynamic> _data = _conData[key];
+                CommonTracking _data = _conData[key];
                 print(_data);
-                MaterialDataCommon _material = _materialData[_data["name"]];
+                MaterialDataCommon _material = _materialData[_data.name];
 
                 return Card(
                   color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
-                    onTap: () => Get.toNamed('/globalMaterial',
-                        arguments: [_data["name"]]),
+                    onTap: () =>
+                        Get.toNamed('/globalMaterial', arguments: [_data.name]),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
@@ -169,11 +169,11 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                           Column(
                             children: [
                               Text(
-                                "${_data["current"]}/${_data["max"]}",
+                                "${_data.current}/${_data.max}",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: GridData.getCountColor(
-                                        _data["current"], _data["max"])),
+                                        _data.current, _data.max)),
                               ),
                             ],
                           ),
@@ -217,7 +217,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   void _getStaticData() async {
     Map<String, CharacterData> characterData =
         await GridData.retrieveCharactersMapData();
-    Map<String, WeaponData> weaponData = await GridData.retrieveWeaponsMapData();
+    Map<String, WeaponData> weaponData =
+        await GridData.retrieveWeaponsMapData();
     Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
@@ -298,8 +299,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_material.description
-                            .replaceAll('\\n', "\n")),
+                        child:
+                            Text(_material.description.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -344,9 +345,11 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           }
 
           QuerySnapshot qs = snapshot.data;
-          Map<String, dynamic> _trackerData = new Map();
-          qs.docs.forEach(
-              (data) => {_trackerData.putIfAbsent(data.id, () => data.data())});
+          Map<String, TrackingUserData> _trackerData = new Map();
+          qs.docs.forEach((data) => {
+                _trackerData.putIfAbsent(
+                    data.id, () => TrackingUserData.fromJson(data.data()))
+              });
 
           return ListView.builder(
             shrinkWrap: true,
@@ -354,24 +357,24 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             itemCount: _trackerData.length,
             itemBuilder: (context, index) {
               String key = _trackerData.keys.elementAt(index);
-              Map<String, dynamic> _data = _trackerData[key];
+              TrackingUserData _data = _trackerData[key];
               String imageRef = _material.image;
               int extraAscensionRef = 0;
               String extraTypeRef;
               String name = _material.name;
               var _ascendTier = key.substring(key.length - 1);
-              if (_data["addData"] != null) {
+              if (_data.addData != null) {
                 // Grab image ref of extra data based on addedBy
-                if (_data["addedBy"] == "character") {
+                if (_data.addedBy == "character") {
                   // Grab from character
-                  name = _characterData[_data["addData"]].name;
-                  imageRef = _characterData[_data["addData"]].image;
-                  extraTypeRef = _characterData[_data["addData"]].element;
+                  name = _characterData[_data.addData].name;
+                  imageRef = _characterData[_data.addData].image;
+                  extraTypeRef = _characterData[_data.addData].element;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                } else if (_data["addedBy"] == "weapon") {
+                } else if (_data.addedBy == "weapon") {
                   // Grab from weapon
-                  imageRef = _weaponData[_data["addData"]].image;
-                  name = _weaponData[_data["addData"]].name;
+                  imageRef = _weaponData[_data.addData].image;
+                  name = _weaponData[_data.addData].name;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 }
                 name =
@@ -431,11 +434,11 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                           Column(
                             children: [
                               Text(
-                                "${_data["current"]}/${_data["max"]}",
+                                "${_data.current}/${_data.max}",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: GridData.getCountColorBW(
-                                        _data["current"], _data["max"])),
+                                        _data.current, _data.max)),
                               ),
                               Row(
                                 children: [
@@ -452,8 +455,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                                     //wraps child's height
                                     child: FlatButton(
                                       onPressed: () =>
-                                          TrackingData.decrementCount(key,
-                                              _data["type"], _data["current"]),
+                                          TrackingData.decrementCount(
+                                              key, _data.type, _data.current),
                                       child: Icon(Icons.remove),
                                     ),
                                   ),
@@ -472,9 +475,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                                       onPressed: () =>
                                           TrackingData.incrementCount(
                                               key,
-                                              _data["type"],
-                                              _data["current"],
-                                              _data["max"]),
+                                              _data.type,
+                                              _data.current,
+                                              _data.max),
                                       child: Icon(Icons.add),
                                     ),
                                   ),

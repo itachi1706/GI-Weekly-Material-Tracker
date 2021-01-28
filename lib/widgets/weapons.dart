@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -153,7 +154,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       });
 
       // Get all datasets into a map to check if completed
-      Map<String, Map<String, dynamic>> collectionList = new Map();
+      Map<String, Map<String, TrackingUserData>> collectionList = new Map();
       for (String ds in datasets.toList()) {
         collectionList[ds] = await TrackingData.getCollectionList(ds);
       }

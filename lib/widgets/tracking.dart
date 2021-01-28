@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -102,24 +103,24 @@ class _TrackerPageState extends State<TrackerPage> {
             return ListView.builder(
               itemCount: _collectionLen,
               itemBuilder: (context, index) {
-                Map<String, dynamic> _data = data.docs[index].data();
+                TrackingUserData _data = TrackingUserData.fromJson(data.docs[index].data());
                 String _dataId = data.docs[index].id;
                 print(_data);
-                MaterialDataCommon _material = _materialData[_data["name"]];
+                MaterialDataCommon _material = _materialData[_data.name];
                 String extraImageRef;
                 int extraAscensionRef = 0;
                 String extraTypeRef;
                 var _ascendTier = _dataId.substring(_dataId.length - 1);
-                if (_data["addData"] != null) {
+                if (_data.addData != null) {
                   // Grab image ref of extra data based on addedBy
-                  if (_data["addedBy"] == "character") {
+                  if (_data.addedBy == "character") {
                     // Grab from character
-                    extraImageRef = _characterData[_data["addData"]].image;
+                    extraImageRef = _characterData[_data.addData].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                    extraTypeRef = _characterData[_data["addData"]].element;
-                  } else if (_data["addedBy"] == "weapon") {
+                    extraTypeRef = _characterData[_data.addData].element;
+                  } else if (_data.addedBy == "weapon") {
                     // Grab from weapon
-                    extraImageRef = _weaponData[_data["addData"]].image;
+                    extraImageRef = _weaponData[_data.addData].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   }
                 }
@@ -128,7 +129,7 @@ class _TrackerPageState extends State<TrackerPage> {
                   color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
                     onTap: () => UpdateMultiTracking(
-                            context, _materialData[_data["name"]])
+                            context, _materialData[_data.name])
                         .itemClickedAction(
                             _data,
                             _dataId,
@@ -139,7 +140,7 @@ class _TrackerPageState extends State<TrackerPage> {
                             },
                             false),
                     onLongPress: () => UpdateMultiTracking(
-                            context, _materialData[_data["name"]])
+                            context, _materialData[_data.name])
                         .itemClickedAction(
                             _data,
                             _dataId,
@@ -193,11 +194,11 @@ class _TrackerPageState extends State<TrackerPage> {
                           Column(
                             children: [
                               Text(
-                                "${_data["current"]}/${_data["max"]}",
+                                "${_data.current}/${_data.max}",
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: GridData.getCountColor(
-                                        _data["current"], _data["max"])),
+                                        _data.current, _data.max)),
                               ),
                               Row(
                                 children: [
@@ -215,7 +216,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                     child: FlatButton(
                                       onPressed: () =>
                                           TrackingData.decrementCount(_dataId,
-                                              _data["type"], _data["current"]),
+                                              _data.type, _data.current),
                                       child: Icon(Icons.remove,
                                           color: Colors.white),
                                     ),
@@ -235,9 +236,9 @@ class _TrackerPageState extends State<TrackerPage> {
                                       onPressed: () =>
                                           TrackingData.incrementCount(
                                               _dataId,
-                                              _data["type"],
-                                              _data["current"],
-                                              _data["max"]),
+                                              _data.type,
+                                              _data.current,
+                                              _data.max),
                                       child:
                                           Icon(Icons.add, color: Colors.white),
                                     ),

@@ -1,3 +1,5 @@
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
+
 class TrackingUserInfo {
   List<String> character;
   List<String> material;
@@ -7,30 +9,28 @@ class TrackingUserInfo {
 
   factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
     return TrackingUserInfo(
-      character:
-          parsedJson['character'].map((e) => e.toString()).toSet().toList(),
-      material:
-          parsedJson['material'].map((e) => e.toString()).toSet().toList(),
-      weapon: parsedJson['weapon'].map((e) => e.toString()).toSet().toList(),
+      character: (parsedJson['character'] as List<dynamic>)
+          .map((e) => e.toString())
+          .toSet()
+          .toList(),
+      material: (parsedJson['material'] as List<dynamic>)
+          .map((e) => e.toString())
+          .toSet()
+          .toList(),
+      weapon: (parsedJson['weapon'] as List<dynamic>)
+          .map((e) => e.toString())
+          .toSet()
+          .toList(),
     );
   }
 }
 
-class TrackingUserData {
+class TrackingUserData extends CommonTracking {
   String addData;
   String addedBy;
-  int current;
-  int max;
-  String name;
-  String type;
 
-  TrackingUserData(
-      {this.addData,
-      this.addedBy,
-      this.current,
-      this.max,
-      this.name,
-      this.type});
+  TrackingUserData({this.addData, this.addedBy, current, max, name, type})
+      : super(current: current, max: max, name: name, type: type);
 
   factory TrackingUserData.fromJson(Map<String, dynamic> parsedJson) {
     return TrackingUserData(
