@@ -69,7 +69,6 @@ class MaterialDataMob extends MaterialDataCommon {
             obtained: obtained);
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
-    List<dynamic> _tmp = parsedJson['enemies'];
     return MaterialDataMob(
         image: parsedJson['image'],
         rarity: parsedJson['rarity'],
@@ -78,7 +77,10 @@ class MaterialDataMob extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
-        enemies: _tmp.map((e) => e.toString()).toSet().toList());
+        enemies: (parsedJson['enemies'] as List<dynamic>)
+            .map((e) => e.toString())
+            .toSet()
+            .toList());
   }
 }
 
@@ -97,7 +99,6 @@ class MaterialDataDomains extends MaterialDataCommon {
             obtained: obtained);
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
-    List<dynamic> _tmp = parsedJson['days'];
     return MaterialDataDomains(
         image: parsedJson['image'],
         rarity: parsedJson['rarity'],
@@ -106,7 +107,9 @@ class MaterialDataDomains extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
-        days:
-            _tmp.map((e) => int.tryParse(e.toString()) ?? 0).toSet().toList());
+        days: (parsedJson['days'] as List<dynamic>)
+            .map((e) => int.tryParse(e.toString()) ?? 0)
+            .toSet()
+            .toList());
   }
 }
