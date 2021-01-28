@@ -431,11 +431,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _getStaticData() async {
-    Map<String, dynamic> infoData = await GridData.retrieveCharactersMapData();
+    Map<String, CharacterData> infoData = await GridData.retrieveCharactersMapData();
     Map<String, dynamic> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
-      _info = new CharacterData.fromJson(infoData[_infoId]);
+      _info = infoData[_infoId];
       _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });

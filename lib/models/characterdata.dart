@@ -48,6 +48,12 @@ class CharacterData {
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
     );
   }
+  
+  static Map<String, CharacterData> getList(Map<String, dynamic> listString) {
+    Map<String, CharacterData> _fin = new Map();
+    listString.forEach((key, value) {_fin.putIfAbsent(key, () => CharacterData.fromJson(value));});
+    return _fin;
+  }
 }
 
 class CharacterAscension {

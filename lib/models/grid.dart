@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -92,8 +93,8 @@ class GridData {
   static Future<Map<String, dynamic>> retrieveWeaponsMapData() async =>
       _retrieveStaticData("weapons");
 
-  static Future<Map<String, dynamic>> retrieveCharactersMapData() async =>
-      _retrieveStaticData("characters");
+  static Future<Map<String, CharacterData>> retrieveCharactersMapData() async =>
+      CharacterData.getList(await _retrieveStaticData("characters"));
 
   static String getDayString(int day) {
     switch (day) {

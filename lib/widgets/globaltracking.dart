@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -200,7 +201,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   String _materialKey;
   Map<String, dynamic> _material;
   Map<String, dynamic> _weaponData;
-  Map<String, dynamic> _characterData;
+  Map<String, CharacterData> _characterData;
 
   Color _rarityColor;
   int _tapCount = 0;
@@ -213,7 +214,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   }
 
   void _getStaticData() async {
-    Map<String, dynamic> characterData =
+    Map<String, CharacterData> characterData =
         await GridData.retrieveCharactersMapData();
     Map<String, dynamic> weaponData = await GridData.retrieveWeaponsMapData();
     Map<String, dynamic> materialData =
@@ -364,9 +365,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 // Grab image ref of extra data based on addedBy
                 if (_data["addedBy"] == "character") {
                   // Grab from character
-                  name = _characterData[_data["addData"]]["name"];
-                  imageRef = _characterData[_data["addData"]]["image"];
-                  extraTypeRef = _characterData[_data["addData"]]["element"];
+                  name = _characterData[_data["addData"]].name;
+                  imageRef = _characterData[_data["addData"]].image;
+                  extraTypeRef = _characterData[_data["addData"]].element;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 } else if (_data["addedBy"] == "weapon") {
                   // Grab from weapon

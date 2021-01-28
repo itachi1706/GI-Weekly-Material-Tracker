@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -48,7 +49,7 @@ class TrackerPage extends StatefulWidget {
 class _TrackerPageState extends State<TrackerPage> {
   Map<String, dynamic> _materialData;
   Map<String, dynamic> _weaponData;
-  Map<String, dynamic> _characterData;
+  Map<String, CharacterData> _characterData;
 
   @override
   void initState() {
@@ -58,7 +59,7 @@ class _TrackerPageState extends State<TrackerPage> {
 
   void _retrieveData() async {
     Map<String, dynamic> m = await GridData.retrieveMaterialsMapData();
-    Map<String, dynamic> c = await GridData.retrieveCharactersMapData();
+    Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
     Map<String, dynamic> w = await GridData.retrieveWeaponsMapData();
     if (this.mounted)
       setState(() {
@@ -111,9 +112,9 @@ class _TrackerPageState extends State<TrackerPage> {
                   // Grab image ref of extra data based on addedBy
                   if (_data["addedBy"] == "character") {
                     // Grab from character
-                    extraImageRef = _characterData[_data["addData"]]["image"];
+                    extraImageRef = _characterData[_data["addData"]].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                    extraTypeRef = _characterData[_data["addData"]]["element"];
+                    extraTypeRef = _characterData[_data["addData"]].element;
                   } else if (_data["addedBy"] == "weapon") {
                     // Grab from weapon
                     extraImageRef = _weaponData[_data["addData"]]["image"];
