@@ -4,6 +4,8 @@ import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -88,7 +90,7 @@ class GridData {
   }
 
   static Future<Map<String, dynamic>> retrieveMaterialsMapData() async =>
-      _retrieveStaticData("materials");
+      MaterialDataCommon.getList(await _retrieveStaticData("materials"));
 
   static Future<Map<String, dynamic>> retrieveWeaponsMapData() async =>
       _retrieveStaticData("weapons");
@@ -195,22 +197,49 @@ class GridData {
     );
   }
 
-  static Widget getGridData(Map<String, dynamic> data) {
+  @deprecated
+  static Widget getGridDataLegacy(Map<String, dynamic> data) {
     return Card(
-      color: getRarityColor(data['rarity']),
+      color: getRarityColor(data["rarity"]),
       child: GridTile(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Stack(
               children: [
-                getImageAssetFromFirebase(data['image']),
+                getImageAssetFromFirebase(data["image"]),
               ],
             ),
           ),
           footer: Padding(
             padding: const EdgeInsets.all(2),
             child: Text(
-              data['name'],
+              data["name"],
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+          )),
+    );
+  }
+
+  static Widget getGridData(CommonData data) {
+    return Card(
+      color: getRarityColor(data.rarity),
+      child: GridTile(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              children: [
+                getImageAssetFromFirebase(data.image),
+              ],
+            ),
+          ),
+          footer: Padding(
+            padding: const EdgeInsets.all(2),
+            child: Text(
+              data.name,
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 12,

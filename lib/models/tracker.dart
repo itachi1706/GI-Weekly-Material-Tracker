@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -239,7 +240,7 @@ class UpdateMultiTracking {
   UpdateMultiTracking(this.context, this._material);
 
   BuildContext context;
-  Map<String, dynamic> _material;
+  MaterialDataCommon _material;
 
   void itemClickedAction(Map<String, dynamic> data, String docId,
       Map<String, dynamic> extraData, bool editDialog) {
@@ -284,11 +285,11 @@ class UpdateMultiTracking {
         builder: (context) {
           _cntType = data["type"];
           return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
+            title: Text("Update tracked amount for ${_material.name}"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_material["image"],
+                  GridData.getImageAssetFromFirebase(_material.image,
                       height: 48),
                   TextField(
                     onChanged: (newValue) {
@@ -340,14 +341,14 @@ class UpdateMultiTracking {
         builder: (context) {
           _cntType = data["type"];
           return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
+            title: Text("Update tracked amount for ${_material.name}"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GridData.getImageAssetFromFirebase(_material["image"],
+                      GridData.getImageAssetFromFirebase(_material.image,
                           height: 48),
                       TrackingData.getSupportingWidget(extraData["img"],
                           extraData["asc"], extraData["type"]),

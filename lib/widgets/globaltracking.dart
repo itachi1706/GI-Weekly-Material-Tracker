@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
@@ -53,7 +54,7 @@ class GlobalTracker extends StatefulWidget {
 }
 
 class _GlobalTrackerState extends State<GlobalTracker> {
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
 
   @override
   void initState() {
@@ -61,6 +62,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
 
     GridData.retrieveMaterialsMapData().then((value) => {
           setState(() {
+            if (!mounted) return;
             _materialData = value;
           })
         });
@@ -116,10 +118,10 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                 String key = _conData.keys.elementAt(index);
                 Map<String, dynamic> _data = _conData[key];
                 print(_data);
-                Map<String, dynamic> _material = _materialData[_data["name"]];
+                MaterialDataCommon _material = _materialData[_data["name"]];
 
                 return Card(
-                  color: GridData.getRarityColor(_material["rarity"]),
+                  color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
                     onTap: () => Get.toNamed('/globalMaterial',
                         arguments: [_data["name"]]),
@@ -128,7 +130,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          GridData.getImageAssetFromFirebase(_material["image"],
+                          GridData.getImageAssetFromFirebase(_material.image,
                               height: 48),
                           Container(
                             width: MediaQuery.of(context).size.width - 180,
@@ -137,7 +139,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  _material["name"],
+                                  _material.name,
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 ),
@@ -147,7 +149,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                                   itemSize: 12,
                                   unratedColor: Colors.transparent,
                                   initialRating: double.tryParse(
-                                      _material['rarity'].toString()),
+                                      _material.rarity.toString()),
                                   itemBuilder: (context, _) =>
                                       Icon(Icons.star, color: Colors.amber),
                                   onRatingUpdate: (rating) {
@@ -155,9 +157,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                                   },
                                 ),
                                 Text(
-                                  _material["obtained"]
-                                      .toString()
-                                      .replaceAll("\\n", "\n"),
+                                  _material.obtained.replaceAll("\\n", "\n"),
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.white),
                                 ),
@@ -199,7 +199,7 @@ class GlobalMaterialPage extends StatefulWidget {
 
 class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   String _materialKey;
-  Map<String, dynamic> _material;
+  MaterialDataCommon _material;
   Map<String, dynamic> _weaponData;
   Map<String, CharacterData> _characterData;
 
@@ -217,13 +217,13 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     Map<String, CharacterData> characterData =
         await GridData.retrieveCharactersMapData();
     Map<String, dynamic> weaponData = await GridData.retrieveWeaponsMapData();
-    Map<String, dynamic> materialData =
+    Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
       _characterData = characterData;
       _weaponData = weaponData;
       _material = materialData[_materialKey];
-      _rarityColor = GridData.getRarityColor(_material['rarity']);
+      _rarityColor = GridData.getRarityColor(_material.rarity);
     });
   }
 
@@ -232,7 +232,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     if (_material == null) return Util.loadingScreen();
     return Scaffold(
       appBar: AppBar(
-        title: Text(_material['name']),
+        title: Text(_material.name),
         backgroundColor: _rarityColor,
       ),
       body: Padding(
@@ -242,7 +242,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_material['image'],
+                  GridData.getImageAssetFromFirebase(_material.image,
                       height: 64),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -250,7 +250,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                       Container(
                         width: MediaQuery.of(context).size.width - 128,
                         child: Text(
-                          _material['type'],
+                          _material.type,
                           textAlign: TextAlign.start,
                           style: TextStyle(fontSize: 20),
                         ),
@@ -260,7 +260,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                         itemCount: 5,
                         itemSize: 30,
                         initialRating:
-                            double.tryParse(_material['rarity'].toString()),
+                            double.tryParse(_material.rarity.toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -280,8 +280,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_material['obtained']
-                            .toString()
+                        child: Text(_material.obtained
                             .replaceAll('\\n', "\n")
                             .replaceAll("- ", "")),
                       ),
@@ -298,8 +297,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_material['description']
-                            .toString()
+                        child: Text(_material.description
                             .replaceAll('\\n', "\n")),
                       ),
                     ),
@@ -329,7 +327,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     Query ref = _db
         .collection("tracking")
         .doc(Util.getFirebaseUid())
-        .collection(_material["innerType"])
+        .collection(_material.innerType)
         .where("name", isEqualTo: _materialKey);
 
     return StreamBuilder(
@@ -356,10 +354,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             itemBuilder: (context, index) {
               String key = _trackerData.keys.elementAt(index);
               Map<String, dynamic> _data = _trackerData[key];
-              String imageRef = _material["image"];
+              String imageRef = _material.image;
               int extraAscensionRef = 0;
               String extraTypeRef;
-              String name = _material["name"];
+              String name = _material.name;
               var _ascendTier = key.substring(key.length - 1);
               if (_data["addData"] != null) {
                 // Grab image ref of extra data based on addedBy

@@ -1,4 +1,6 @@
-class CharacterData {
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
+
+class CharacterData extends CommonData {
   String affiliation;
   String birthday;
   String constellation;
@@ -6,11 +8,8 @@ class CharacterData {
   String element;
   String gender;
   String genshinGGPath;
-  String image;
   String introduction;
-  String name;
   String nation;
-  int rarity;
   String weapon;
   Map<String, CharacterAscension> ascension;
 
@@ -22,13 +21,13 @@ class CharacterData {
       this.element,
       this.gender,
       this.genshinGGPath,
-      this.image,
+      image,
       this.introduction,
-      this.name,
+      name,
       this.nation,
-      this.rarity,
+      rarity,
       this.weapon,
-      this.ascension});
+      this.ascension}) : super(image: image, name: name, rarity: rarity);
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(

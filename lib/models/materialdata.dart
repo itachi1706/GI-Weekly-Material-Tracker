@@ -1,31 +1,48 @@
-class MaterialDataCommon {
-  String image;
-  int rarity;
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
+
+class MaterialDataCommon extends CommonData {
   String type;
   String innerType;
   String description;
   String obtained;
-  String name;
 
   MaterialDataCommon(
-      {this.image,
-      this.rarity,
+      {image,
+      rarity,
       this.type,
       this.innerType,
-      this.name,
+      name,
       this.description,
-      this.obtained});
+      this.obtained}) : super(name: name, rarity: rarity, image: image);
 
   factory MaterialDataCommon.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataCommon(
-      image: parsedJson['image'],
-      rarity: parsedJson['rarity'],
-      type: parsedJson['type'],
-      innerType: parsedJson['innerType'],
-      name: parsedJson['name'],
-      description: parsedJson['description'],
-      obtained: parsedJson['obtained']
-    );
+        image: parsedJson['image'],
+        rarity: parsedJson['rarity'],
+        type: parsedJson['type'],
+        innerType: parsedJson['innerType'],
+        name: parsedJson['name'],
+        description: parsedJson['description'],
+        obtained: parsedJson['obtained']);
+  }
+
+  static Map<String, MaterialDataCommon> getList(
+      Map<String, dynamic> listString) {
+    Map<String, MaterialDataCommon> _fin = new Map();
+    listString.forEach((key, value) {
+      switch (value["innerType"]) {
+        case "mob_drops":
+          _fin.putIfAbsent(key, () => MaterialDataMob.fromJson(value));
+          break;
+        case "domain_forgery":
+          _fin.putIfAbsent(key, () => MaterialDataDomains.fromJson(value));
+          break;
+        default:
+          _fin.putIfAbsent(key, () => MaterialDataCommon.fromJson(value));
+          break;
+      }
+    });
+    return _fin;
   }
 }
 
@@ -51,6 +68,7 @@ class MaterialDataMob extends MaterialDataCommon {
             obtained: obtained);
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
+    List<dynamic> _tmp = parsedJson['enemies'];
     return MaterialDataMob(
         image: parsedJson['image'],
         rarity: parsedJson['rarity'],
@@ -59,8 +77,7 @@ class MaterialDataMob extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
-        enemies: parsedJson['enemies']
-    );
+        enemies: _tmp.map((e) => e.toString()).toSet().toList());
   }
 }
 
@@ -79,6 +96,7 @@ class MaterialDataDomains extends MaterialDataCommon {
             obtained: obtained);
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
+    List<dynamic> _tmp = parsedJson['days'];
     return MaterialDataDomains(
         image: parsedJson['image'],
         rarity: parsedJson['rarity'],
@@ -87,7 +105,7 @@ class MaterialDataDomains extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
-        days: parsedJson['days']
-    );
+        days:
+            _tmp.map((e) => int.tryParse(e.toString()) ?? 0).toSet().toList());
   }
 }

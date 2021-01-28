@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,7 +48,7 @@ class TrackerPage extends StatefulWidget {
 }
 
 class _TrackerPageState extends State<TrackerPage> {
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
   Map<String, dynamic> _weaponData;
   Map<String, CharacterData> _characterData;
 
@@ -58,7 +59,7 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   void _retrieveData() async {
-    Map<String, dynamic> m = await GridData.retrieveMaterialsMapData();
+    Map<String, MaterialDataCommon> m = await GridData.retrieveMaterialsMapData();
     Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
     Map<String, dynamic> w = await GridData.retrieveWeaponsMapData();
     if (this.mounted)
@@ -103,7 +104,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 Map<String, dynamic> _data = data.docs[index].data();
                 String _dataId = data.docs[index].id;
                 print(_data);
-                Map<String, dynamic> _material = _materialData[_data["name"]];
+                MaterialDataCommon _material = _materialData[_data["name"]];
                 String extraImageRef;
                 int extraAscensionRef = 0;
                 String extraTypeRef;
@@ -123,7 +124,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 }
 
                 return Card(
-                  color: GridData.getRarityColor(_material["rarity"]),
+                  color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
                     onTap: () => UpdateMultiTracking(
                             context, _materialData[_data["name"]])
@@ -152,7 +153,7 @@ class _TrackerPageState extends State<TrackerPage> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          GridData.getImageAssetFromFirebase(_material["image"],
+                          GridData.getImageAssetFromFirebase(_material.image,
                               height: 48),
                           Container(
                             width: MediaQuery.of(context).size.width - 180,
@@ -161,7 +162,7 @@ class _TrackerPageState extends State<TrackerPage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  _material["name"],
+                                  _material.name,
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 ),
@@ -171,7 +172,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                   itemSize: 12,
                                   unratedColor: Colors.transparent,
                                   initialRating: double.tryParse(
-                                      _material['rarity'].toString()),
+                                      _material.rarity.toString()),
                                   itemBuilder: (context, _) =>
                                       Icon(Icons.star, color: Colors.amber),
                                   onRatingUpdate: (rating) {
@@ -179,8 +180,7 @@ class _TrackerPageState extends State<TrackerPage> {
                                   },
                                 ),
                                 Text(
-                                  _material["obtained"]
-                                      .toString()
+                                  _material.obtained
                                       .replaceAll("\\n", "\n"),
                                   style: TextStyle(
                                       fontSize: 11, color: Colors.white),
@@ -269,7 +269,7 @@ class PlannerPage extends StatefulWidget {
 }
 
 class _PlannerPageState extends State<PlannerPage> {
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
 
   tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
 
@@ -354,8 +354,10 @@ class _PlannerPageState extends State<PlannerPage> {
             7: new Set(),
           };
           _finalDomainMaterials.forEach((domainMaterial) {
-            List<dynamic> _daysForMaterial =
-                _materialData[domainMaterial]["days"];
+            if (!(_materialData[domainMaterial] is MaterialDataDomains)) return;
+
+            List<int> _daysForMaterial =
+              (_materialData[domainMaterial] as MaterialDataDomains).days;
             _daysForMaterial.forEach((day) {
               _mappedData[day].add(domainMaterial);
             });

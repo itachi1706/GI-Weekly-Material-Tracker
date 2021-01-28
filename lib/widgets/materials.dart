@@ -96,7 +96,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/materials', arguments: [document.id]),
-                child: GridData.getGridData(document.data()),
+                child: GridData.getGridData(MaterialDataCommon.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -124,7 +124,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     _infoId = Get.arguments[0];
     GridData.retrieveMaterialsMapData().then((value) {
       setState(() {
-        _info = MaterialDataCommon.fromJson(value[_infoId]);
+        _info = value[_infoId];
         _rarityColor = GridData.getRarityColor(_info.rarity);
       });
       _refreshTrackingStatus();

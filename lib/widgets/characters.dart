@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/grid.dart';
+import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -106,7 +107,7 @@ class _CharacterListGridState extends State<CharacterListGrid> {
               return GestureDetector(
                 onTap: () =>
                     Get.toNamed('/characters', arguments: [document.id]),
-                child: GridData.getGridData(document.data()),
+                child: GridData.getGridData(CharacterData.fromJson(document.data())),
               );
             }).toList(),
           );
@@ -125,7 +126,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Color _rarityColor;
 
-  Map<String, dynamic> _materialData;
+  Map<String, MaterialDataCommon> _materialData;
 
   Map<String, TrackingStatus> _isBeingTracked;
 
@@ -151,13 +152,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
         CharacterAscension data = _info.ascension[key];
         if (data.material1 != null)
-          datasets.add(_materialData[data.material1]["innerType"]);
+          datasets.add(_materialData[data.material1].innerType);
         if (data.material2 != null)
-          datasets.add(_materialData[data.material2]["innerType"]);
+          datasets.add(_materialData[data.material2].innerType);
         if (data.material3 != null)
-          datasets.add(_materialData[data.material3]["innerType"]);
+          datasets.add(_materialData[data.material3].innerType);
         if (data.material4 != null)
-          datasets.add(_materialData[data.material4]["innerType"]);
+          datasets.add(_materialData[data.material4].innerType);
         _tracker[key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
       });
@@ -174,25 +175,25 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         CharacterAscension data = _info.ascension[key];
         if (data.material1 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material1]["innerType"],
+              _materialData[data.material1].innerType,
               collectionList,
               _materialData,
               "Character_${_infoId}_${data.material1}_$key");
         if (data.material2 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material2]["innerType"],
+              _materialData[data.material2].innerType,
               collectionList,
               _materialData,
               "Character_${_infoId}_${data.material2}_$key");
         if (data.material3 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material3]["innerType"],
+              _materialData[data.material3].innerType,
               collectionList,
               _materialData,
               "Character_${_infoId}_${data.material3}_$key");
         if (data.material4 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material4]["innerType"],
+              _materialData[data.material4].innerType,
               collectionList,
               _materialData,
               "Character_${_infoId}_${data.material4}_$key");
@@ -229,7 +230,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
           _ascendTier.material1,
           _ascendTier.material1Qty,
-          _materialData[_ascendTier.material1]['innerType'],
+          _materialData[_ascendTier.material1].innerType,
           'character',
           _infoId);
     if (_ascendTier.material2 != null)
@@ -237,7 +238,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
           _ascendTier.material2,
           _ascendTier.material2Qty,
-          _materialData[_ascendTier.material2]['innerType'],
+          _materialData[_ascendTier.material2].innerType,
           'character',
           _infoId);
     if (_ascendTier.material3 != null)
@@ -245,7 +246,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
           _ascendTier.material3,
           _ascendTier.material3Qty,
-          _materialData[_ascendTier.material3]['innerType'],
+          _materialData[_ascendTier.material3].innerType,
           'character',
           _infoId);
     if (_ascendTier.material4 != null)
@@ -253,7 +254,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
           _ascendTier.material4,
           _ascendTier.material4Qty,
-          _materialData[_ascendTier.material4]['innerType'],
+          _materialData[_ascendTier.material4].innerType,
           'character',
           _infoId);
     Navigator.of(context).pop();
@@ -273,31 +274,28 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     if (_ascendTier.material1 != null)
       TrackingData.removeFromCollection(
           "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
-          _materialData[_ascendTier.material1]['innerType']);
+          _materialData[_ascendTier.material1].innerType);
     if (_ascendTier.material2 != null)
       TrackingData.removeFromCollection(
           "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
-          _materialData[_ascendTier.material2]['innerType']);
+          _materialData[_ascendTier.material2].innerType);
     if (_ascendTier.material3 != null)
       TrackingData.removeFromCollection(
           "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
-          _materialData[_ascendTier.material3]['innerType']);
+          _materialData[_ascendTier.material3].innerType);
     if (_ascendTier.material4 != null)
       TrackingData.removeFromCollection(
           "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
-          _materialData[_ascendTier.material4]['innerType']);
+          _materialData[_ascendTier.material4].innerType);
 
     Navigator.of(context).pop();
   }
 
-  List<Widget> _getAscensionTierMaterialRowChild(
-      String key, int qty) {
+  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
     return [
       _getAscenionImage(key),
-      Text(key == null ? "" : _materialData[key]['name']),
-      Text((qty == 0)
-          ? ""
-          : " x$qty"),
+      Text(key == null ? "" : _materialData[key].name),
+      Text((qty == 0) ? "" : " x$qty"),
     ];
   }
 
@@ -327,25 +325,24 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text(
                       "This will remove the following materials being tracked for this character from the tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material4, curData.material4Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
                   ),
                 ],
               ),
@@ -368,29 +365,28 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text(
-                "Add ${_info.name} Ascension Tier $key to the tracker?"),
+            title:
+                Text("Add ${_info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Text("Items being added to tracker:"),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material2, curData.material2Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material1, curData.material1Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material3, curData.material3Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
                   ),
                   Row(
-                    children:
-                        _getAscensionTierMaterialRowChild(curData.material4, curData.material4Qty),
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
                   ),
                 ],
               ),
@@ -419,8 +415,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _getStaticData() async {
-    Map<String, CharacterData> infoData = await GridData.retrieveCharactersMapData();
-    Map<String, dynamic> materialData =
+    Map<String, CharacterData> infoData =
+        await GridData.retrieveCharactersMapData();
+    Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
       _info = infoData[_infoId];
@@ -433,7 +430,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   Widget _getAscenionImage(String itemKey) {
     if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
 
-    return GridData.getImageAssetFromFirebase(_materialData[itemKey]['image'],
+    return GridData.getImageAssetFromFirebase(_materialData[itemKey].image,
         height: 16);
   }
 
@@ -555,8 +552,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -572,8 +568,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                         ignoreGestures: true,
                         itemCount: 5,
                         itemSize: 30,
-                        initialRating:
-                            double.tryParse(_info.rarity.toString()),
+                        initialRating: double.tryParse(_info.rarity.toString()),
                         itemBuilder: (context, _) =>
                             Icon(Icons.star, color: Colors.amber),
                         onRatingUpdate: (rating) {
@@ -610,8 +605,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.description
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.description.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -626,8 +620,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.introduction
-                            .replaceAll('\\n', "\n")),
+                        child: Text(_info.introduction.replaceAll('\\n', "\n")),
                       ),
                     ),
                   ],
@@ -675,8 +668,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       padding: const EdgeInsets.all(8),
                       child: Row(
                         children: [
-                          _getGenderIcon(
-                              _info.gender, _info.name),
+                          _getGenderIcon(_info.gender, _info.name),
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(_info.gender),
