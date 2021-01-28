@@ -121,7 +121,6 @@ class _LoginPageState extends State<LoginPage> {
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithRedirect(googleProvider);
       return FirebaseAuth.instance.getRedirectResult();
-      //return await FirebaseAuth.instance.signInWithPopup(googleProvider);
     } else {
       // Trigger the authentication flow
       final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
