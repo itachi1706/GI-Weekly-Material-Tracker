@@ -484,200 +484,21 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                         ],
                       ),
                     ),
-                    onLongPress: () => _itemClickedAction(_data, key, {
-                      "img": imageRef,
-                      "asc": extraAscensionRef,
-                      "type": extraTypeRef
-                    }),
+                    onLongPress: () => UpdateMultiTracking(context, _material)
+                        .itemClickedAction(
+                            _data,
+                            key,
+                            {
+                              "img": imageRef,
+                              "asc": extraAscensionRef,
+                              "type": extraTypeRef
+                            },
+                            true),
                   ),
                 ),
               );
             },
           );
         });
-  }
-
-  void _itemClickedAction(
-      Map<String, dynamic> data, String docId, Map<String, dynamic> extraData) {
-    print(docId);
-    String type = data["addedBy"];
-    String key =
-        (data["addedBy"] == "material") ? data["name"] : data["addData"];
-    _cntKey = docId;
-    switch (type) {
-      case "material":
-        _displayDialogMat("/materials", key, data);
-        break;
-      case "weapon":
-        _displayDialogNonMat("/weapons", key, data, extraData);
-        break;
-      case "character":
-        _displayDialogNonMat("/characters", key, data, extraData);
-        break;
-      default:
-        Util.showSnackbarQuick(
-            context, "Unsupported Action. Contact Developer");
-        break;
-    }
-  }
-
-  String _cntCurrent = "", _cntTotal = "", _cntKey = "", _cntType = "";
-  TextEditingController _textCurrentController = TextEditingController();
-  TextEditingController _textTotalController = TextEditingController();
-
-  void _displayDialogMat(
-      String navigateTo, String key, Map<String, dynamic> data) {
-    _cntCurrent = data["current"].toString();
-    _cntTotal = data["max"].toString();
-    _textCurrentController.text = _cntCurrent;
-    _textTotalController.text = _cntTotal;
-    showDialog(
-        context: context,
-        builder: (context) {
-          _cntType = data["type"];
-          return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  GridData.getImageAssetFromFirebase(_material["image"],
-                      height: 48),
-                  TextField(
-                    onChanged: (newValue) {
-                      _cntCurrent = newValue;
-                    },
-                    controller: _textCurrentController,
-                    decoration: InputDecoration(labelText: "Tracked"),
-                    keyboardType: TextInputType.number,
-                  ),
-                  TextField(
-                    onChanged: (newValue) {
-                      _cntTotal = newValue;
-                    },
-                    controller: _textTotalController,
-                    decoration: InputDecoration(labelText: "Max"),
-                    keyboardType: TextInputType.number,
-                  ),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Info'),
-                onPressed: () {
-                  Get.back();
-                  Get.toNamed(navigateTo, arguments: [key]);
-                },
-              ),
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Get.back(),
-              ),
-              TextButton(
-                child: Text('Update'),
-                onPressed: _updateRecord,
-              ),
-            ],
-          );
-        });
-  }
-
-  void _displayDialogNonMat(String navigateTo, String key,
-      Map<String, dynamic> data, Map<String, dynamic> extraData) {
-    _cntCurrent = data["current"].toString();
-    _cntTotal = data["max"].toString();
-    _textCurrentController.text = _cntCurrent;
-    showDialog(
-        context: context,
-        builder: (context) {
-          _cntType = data["type"];
-          return AlertDialog(
-            title: Text("Update tracked amount for ${_material["name"]}"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GridData.getImageAssetFromFirebase(_material["image"],
-                          height: 48),
-                      _getSupportingWidget(extraData["img"], extraData["asc"],
-                          extraData["type"]),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text("Max: $_cntTotal"),
-                  ),
-                  TextField(
-                    onChanged: (newValue) {
-                      _cntCurrent = newValue;
-                    },
-                    controller: _textCurrentController,
-                    decoration: InputDecoration(labelText: "Tracked"),
-                    keyboardType: TextInputType.number,
-                  ),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Info'),
-                onPressed: () {
-                  Get.back();
-                  Get.toNamed(navigateTo, arguments: [key]);
-                },
-              ),
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Get.back(),
-              ),
-              TextButton(
-                child: Text('Update'),
-                onPressed: _updateRecord,
-              ),
-            ],
-          );
-        });
-  }
-
-  void _updateRecord() {
-    print("$_cntKey | $_cntType | $_cntCurrent | $_cntTotal");
-    TrackingData.setCount(_cntKey, _cntType, int.tryParse(_cntCurrent) ?? 0,
-        int.tryParse(_cntTotal) ?? 0);
-    Get.back();
-  }
-
-  Widget _getSupportingWidget(String image, int ascension, String type) {
-    if (image == null) return Container();
-    Widget typeWidget = SizedBox.shrink();
-    if (type != null)
-      typeWidget = Image.asset(
-        GridData.getElementImageRef(type),
-        height: 20,
-        width: 20,
-      );
-
-    return Container(
-      height: 48,
-      width: 48,
-      child: Stack(
-        children: [
-          GridData.getImageAssetFromFirebase(image, height: 32),
-          Align(
-            alignment: FractionalOffset.bottomLeft,
-            child: Text(
-              GridData.getRomanNumberArray(ascension - 1).toString(),
-              style: TextStyle(color: Colors.white),
-              textAlign: TextAlign.end,
-            ),
-          ),
-          Align(
-            alignment: FractionalOffset.bottomRight,
-            child: typeWidget,
-          ),
-        ],
-      ),
-    );
   }
 }
