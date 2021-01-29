@@ -170,18 +170,21 @@ class TrackingData {
     String uid = Util.getFirebaseUid();
     if (uid == null) return;
     int deleted = 0, limit = 50;
-    QuerySnapshot qs = await _db
-        .collection("tracking")
-        .doc(uid)
-        .collection(materialType)
-        .limit(limit)
-        .get();
     do {
+      QuerySnapshot qs = await _db
+          .collection("tracking")
+          .doc(uid)
+          .collection(materialType)
+          .limit(limit)
+          .get();
+
+      WriteBatch batch = _db.batch();
       deleted = 0;
       for (QueryDocumentSnapshot qds in qs.docs) {
-        await qds.reference.delete();
+        batch.delete(qds.reference);
         deleted++;
       }
+      await batch.commit();
     } while (deleted >= limit);
   }
 
