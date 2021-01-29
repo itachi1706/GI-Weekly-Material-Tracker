@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
@@ -13,7 +12,6 @@ import 'package:gi_weekly_material_tracker/models/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -498,37 +496,16 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     );
   }
 
-  void _openCharacterInfo() async {
+  void _openCharBuildGuide() async {
     if (_info.genshinGGPath == null) {
       Util.showSnackbarQuick(
-          context, "More Info Page not available for ${_info.name}");
+          context, "Build Guide not available for ${_info.name}");
       return;
     }
     String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
-    if (GetPlatform.isAndroid || GetPlatform.isIOS) {
-      FlutterWebBrowser.openWebPage(
-        url: fullUrl,
-        customTabsOptions: CustomTabsOptions(
-            colorScheme: (Util.themeNotifier.isDarkMode())
-                ? CustomTabsColorScheme.dark
-                : CustomTabsColorScheme.light,
-            toolbarColor: _rarityColor,
-            addDefaultShareMenuItem: true,
-            showTitle: true,
-            urlBarHidingEnabled: true),
-        safariVCOptions: SafariViewControllerOptions(
-            barCollapsingEnabled: true,
-            dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
-            modalPresentationCapturesStatusBarAppearance: true),
-      );
-      return;
-    }
-    // Launch through Web
-    if (await canLaunch(fullUrl)) {
-      await launch(fullUrl);
-    } else {
+    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
       Util.showSnackbarQuick(
-          context, "Failed to launch more info page for ${_info.name}");
+          context, "Failed to launch build guide for ${_info.name}");
     }
   }
 
@@ -542,8 +519,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         actions: [
           IconButton(
             icon: Icon(Icons.info_outline),
-            onPressed: _openCharacterInfo,
-            tooltip: "More Info Page",
+            onPressed: () => GridData.launchWikiUrl(context, _info),
+            tooltip: "View Wiki",
+          ),
+          IconButton(
+            icon: Icon(MdiIcons.swordCross),
+            onPressed: _openCharBuildGuide,
+            tooltip: "Build Guide",
           )
         ],
       ),

@@ -20,9 +20,14 @@ class WeaponData extends CommonData {
       image,
       name,
       rarity,
+      wiki,
       this.ascension})
       : super(
-            image: image, name: name, rarity: rarity, description: description);
+            image: image,
+            name: name,
+            rarity: rarity,
+            description: description,
+            wiki: wiki);
 
   factory WeaponData.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponData(
@@ -36,6 +41,7 @@ class WeaponData extends CommonData {
       obtained: parsedJson['obtained'],
       effect: parsedJson['effect'],
       rarity: parsedJson['rarity'],
+      wiki: parsedJson['wiki'],
       ascension: WeaponAscension.getFromMap(parsedJson['ascension']),
     );
   }

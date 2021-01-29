@@ -12,9 +12,14 @@ class MaterialDataCommon extends CommonData {
       this.innerType,
       name,
       description,
+      wiki,
       this.obtained})
       : super(
-            name: name, rarity: rarity, image: image, description: description);
+            name: name,
+            rarity: rarity,
+            image: image,
+            description: description,
+            wiki: wiki);
 
   factory MaterialDataCommon.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataCommon(
@@ -24,6 +29,7 @@ class MaterialDataCommon extends CommonData {
         innerType: parsedJson['innerType'],
         name: parsedJson['name'],
         description: parsedJson['description'],
+        wiki: parsedJson['wiki'],
         obtained: parsedJson['obtained']);
   }
 
@@ -58,6 +64,7 @@ class MaterialDataMob extends MaterialDataCommon {
       name,
       description,
       obtained,
+      wiki,
       this.enemies})
       : super(
             image: image,
@@ -66,6 +73,7 @@ class MaterialDataMob extends MaterialDataCommon {
             innerType: innerType,
             name: name,
             description: description,
+            wiki: wiki,
             obtained: obtained);
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
@@ -77,6 +85,7 @@ class MaterialDataMob extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
+        wiki: parsedJson['wiki'],
         enemies: (parsedJson['enemies'] as List<dynamic>)
             .map((e) => e.toString())
             .toSet()
@@ -88,7 +97,15 @@ class MaterialDataDomains extends MaterialDataCommon {
   List<int> days;
 
   MaterialDataDomains(
-      {image, rarity, type, innerType, name, description, obtained, this.days})
+      {image,
+      rarity,
+      type,
+      innerType,
+      name,
+      description,
+      obtained,
+      wiki,
+      this.days})
       : super(
             image: image,
             rarity: rarity,
@@ -96,6 +113,7 @@ class MaterialDataDomains extends MaterialDataCommon {
             innerType: innerType,
             name: name,
             description: description,
+            wiki: wiki,
             obtained: obtained);
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
@@ -107,6 +125,7 @@ class MaterialDataDomains extends MaterialDataCommon {
         name: parsedJson['name'],
         description: parsedJson['description'],
         obtained: parsedJson['obtained'],
+        wiki: parsedJson['wiki'],
         days: (parsedJson['days'] as List<dynamic>)
             .map((e) => int.tryParse(e.toString()) ?? 0)
             .toSet()

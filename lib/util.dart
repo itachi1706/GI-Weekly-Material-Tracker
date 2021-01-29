@@ -2,7 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_browser/flutter_web_browser.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/themeNotifier.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final String _firebaseStorageUrl =
     "gs://gi-weekly-material-tracker.appspot.com/";
@@ -60,4 +63,34 @@ class Util {
   }
 
   static ThemeNotifier themeNotifier = ThemeNotifier();
+
+  static Future<bool> launchWebPage(String url,
+      {rarityColor = Colors.orange}) async {
+    if (url == null) return false;
+    if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      FlutterWebBrowser.openWebPage(
+        url: url,
+        customTabsOptions: CustomTabsOptions(
+            colorScheme: (Util.themeNotifier.isDarkMode())
+                ? CustomTabsColorScheme.dark
+                : CustomTabsColorScheme.light,
+            toolbarColor: rarityColor,
+            addDefaultShareMenuItem: true,
+            showTitle: true,
+            urlBarHidingEnabled: true),
+        safariVCOptions: SafariViewControllerOptions(
+            barCollapsingEnabled: true,
+            dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
+            modalPresentationCapturesStatusBarAppearance: true),
+      );
+      return true;
+    }
+    // Launch through Web
+    if (await canLaunch(url)) {
+      await launch(url);
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
