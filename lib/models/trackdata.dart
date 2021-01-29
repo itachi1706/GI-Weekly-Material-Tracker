@@ -8,6 +8,8 @@ class TrackingUserInfo {
   TrackingUserInfo({this.character, this.material, this.weapon});
 
   factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
+    if (parsedJson == null)
+      return TrackingUserInfo(character: null, material: null, weapon: null);
     return TrackingUserInfo(
       character: (parsedJson.containsKey('character'))
           ? (parsedJson['character'] as List<dynamic>)
