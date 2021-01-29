@@ -3,8 +3,9 @@ class CommonData {
   int rarity;
   String image;
   String description;
+  String wiki;
 
-  CommonData({this.name, this.rarity, this.image, this.description});
+  CommonData({this.name, this.rarity, this.image, this.description, this.wiki});
 }
 
 class CommonAscension {

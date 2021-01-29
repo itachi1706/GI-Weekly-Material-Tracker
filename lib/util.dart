@@ -64,7 +64,9 @@ class Util {
 
   static ThemeNotifier themeNotifier = ThemeNotifier();
 
-  static Future<bool> launchWebPage(String url, {rarityColor = Colors.orange}) async {
+  static Future<bool> launchWebPage(String url,
+      {rarityColor = Colors.orange}) async {
+    if (url == null) return false;
     if (GetPlatform.isAndroid || GetPlatform.isIOS) {
       FlutterWebBrowser.openWebPage(
         url: url,

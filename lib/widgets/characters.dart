@@ -502,7 +502,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           context, "Build Guide not available for ${_info.name}");
       return;
     }
-  String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
+    String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
     if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
       Util.showSnackbarQuick(
           context, "Failed to launch build guide for ${_info.name}");
@@ -517,6 +517,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         title: Text(_info.name),
         backgroundColor: _rarityColor,
         actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info),
+            tooltip: "View Wiki",
+          ),
           IconButton(
             icon: Icon(MdiIcons.swordCross),
             onPressed: _openCharBuildGuide,

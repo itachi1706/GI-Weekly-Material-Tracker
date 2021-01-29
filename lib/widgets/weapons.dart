@@ -462,6 +462,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       appBar: AppBar(
         title: Text(_info.name),
         backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info),
+            tooltip: "View Wiki",
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),

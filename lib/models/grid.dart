@@ -236,4 +236,11 @@ class GridData {
           )),
     );
   }
+
+  static void launchWikiUrl(BuildContext context, CommonData data) async {
+    if (!await Util.launchWebPage(data.wiki, rarityColor: data.rarity)) {
+      Util.showSnackbarQuick(
+          context, "Wiki Page not available for ${data.name}");
+    }
+  }
 }

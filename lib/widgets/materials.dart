@@ -262,6 +262,13 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       appBar: AppBar(
         title: Text(_info.name),
         backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info),
+            tooltip: "View Wiki",
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: _getFabWidget(),

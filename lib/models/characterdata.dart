@@ -26,9 +26,14 @@ class CharacterData extends CommonData {
       this.nation,
       rarity,
       this.weapon,
-      this.ascension})
+      this.ascension,
+      wiki})
       : super(
-            image: image, name: name, rarity: rarity, description: description);
+            image: image,
+            name: name,
+            rarity: rarity,
+            description: description,
+            wiki: wiki);
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(
@@ -45,6 +50,7 @@ class CharacterData extends CommonData {
       introduction: parsedJson['introduction'],
       genshinGGPath: parsedJson['genshinggpath'],
       element: parsedJson['element'],
+      wiki: parsedJson['wiki'],
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
     );
   }
