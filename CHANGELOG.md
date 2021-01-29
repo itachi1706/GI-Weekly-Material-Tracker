@@ -1,3 +1,6 @@
+# 1.2.1
+- Fixed bug where not tracking one of the 3 categories (characters/weapons/materials) prevents you from tracking/untracking anything
+
 # 1.2.0
 - Added link to genshin.gg database to character info page
 - Added link to the Genshin Impact Wiki for all characters/weapons/materials

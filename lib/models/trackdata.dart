@@ -9,18 +9,24 @@ class TrackingUserInfo {
 
   factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
     return TrackingUserInfo(
-      character: (parsedJson['character'] as List<dynamic>)
-          .map((e) => e.toString())
-          .toSet()
-          .toList(),
-      material: (parsedJson['material'] as List<dynamic>)
-          .map((e) => e.toString())
-          .toSet()
-          .toList(),
-      weapon: (parsedJson['weapon'] as List<dynamic>)
-          .map((e) => e.toString())
-          .toSet()
-          .toList(),
+      character: (parsedJson.containsKey('character'))
+          ? (parsedJson['character'] as List<dynamic>)
+              .map((e) => e.toString())
+              .toSet()
+              .toList()
+          : null,
+      material: (parsedJson.containsKey('material'))
+          ? (parsedJson['material'] as List<dynamic>)
+              .map((e) => e.toString())
+              .toSet()
+              .toList()
+          : null,
+      weapon: (parsedJson.containsKey('weapon'))
+          ? (parsedJson['weapon'] as List<dynamic>)
+              .map((e) => e.toString())
+              .toSet()
+              .toList()
+          : null,
     );
   }
 }
