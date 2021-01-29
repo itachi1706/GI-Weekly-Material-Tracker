@@ -1,3 +1,12 @@
+# 1.2.0
+- Added link to genshin.gg database to character info page
+- Added link to the Genshin Impact Wiki for all characters/weapons/materials
+- Added an about app page
+- Optimized data retrieval code
+- Fixed login for iOS Web App
+- Dependency Updates
+- Various Bug Fixes and App performance improvements
+
 # 1.1.2
 - Fixed bug where switching to filtered view causes tracker page to fail to load if you have a character/weapon/material not present in that filtered data page
 - Reduced time splash screen stays on the screen
