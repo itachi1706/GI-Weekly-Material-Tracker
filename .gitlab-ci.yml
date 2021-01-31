@@ -6,12 +6,8 @@ stages:
   - deploy
 
 Deploy Firebase Security Rules:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
-  before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
-    - cd firebase
   script:
     - firebase --token $FIREBASE_TOKEN deploy --only storage
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
@@ -75,13 +71,11 @@ Generate Flutter App:
     expire_in: 14 days
 
 Deploy Dogfood to Firebase:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
   variables:
     APP_TYPE: dogfood
   before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
     - echo $CI_COMMIT_MESSAGE > release-dogfood.txt
     - builddate="$(date +"%A, %d %B %Y %T %Z")"
     - printf "\nRelease Notes\n" >> release-dogfood.txt
@@ -147,13 +141,11 @@ Generate Release Flutter App:
     - when: never
 
 Deploy Beta to Firebase:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
   variables:
     APP_TYPE: beta
   before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
     - echo $CI_COMMIT_MESSAGE > release-beta.txt
     - builddate="$(date +"%A, %d %B %Y %T %Z")"
     - printf "\nRelease Notes\n" >> release-beta.txt
@@ -195,12 +187,8 @@ Build Web App:
       - webapp.zip
 
 Deploy to Firebase Hosting Staging:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
-  before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
-    - cd firebase
   script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy staging
   dependencies:
     - Build Web App
@@ -214,12 +202,8 @@ Deploy to Firebase Hosting Staging:
     - when: never
 
 Deploy to Firebase Hosting Dev:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
-  before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
-    - cd firebase
   script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy dev --expires 1d
   dependencies:
     - Build Web App
@@ -237,12 +221,8 @@ Deploy to Firebase Hosting Dev:
     - when: never
 
 Deploy to Firebase Hosting Prod:
-  image: ubuntu:latest
+  image: itachi1706/docker-firebase-cli:latest
   stage: deploy
-  before_script:
-    - apt-get update && apt-get install -y curl sudo
-    - curl -sL https://firebase.tools | bash
-    - cd firebase
   script: firebase --token $FIREBASE_TOKEN deploy --only hosting
   dependencies:
     - Build Web App
