@@ -325,6 +325,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     );
   }
 
+  bool _firstLoad = false;
+
   Widget _getCharacterData() {
     Query ref = _db
         .collection("tracking")
@@ -337,12 +339,15 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (_characterData == null ||
               _weaponData == null ||
-              snapshot.connectionState == ConnectionState.waiting) {
+              (snapshot.connectionState == ConnectionState.waiting &&
+                  !_firstLoad)) {
             return Padding(
               padding: const EdgeInsets.only(top: 16),
               child: CircularProgressIndicator(),
             );
           }
+
+          _firstLoad = true;
 
           QuerySnapshot qs = snapshot.data;
           Map<String, TrackingUserData> _trackerData = new Map();
