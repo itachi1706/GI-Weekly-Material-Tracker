@@ -261,7 +261,10 @@ Deploy to Firebase Hosting Prod:
 
 variables:
   APK_BINARY: "gi-material-tracker-arm64-"
-  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/releaseapks/"
+  APK_ARM32_BINARY: "gi-material-tracker-arm-"
+  APK_MULTI_BINARY: "gi-material-tracker-multiarch-"
+  APK_x64_BINARY: "gi-material-tracker-x64-"
+  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/releases/"
 
 Upload Artifact:
   image: curlimages/curl:latest
@@ -278,11 +281,16 @@ Upload Artifact:
     - cat LATEST >> release-beta.txt
     - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
     - cat release-beta.txt
-    - cp ./release/app-arm64-v8a-release.apk app.apk
+    - cp ./release/app-arm64-v8a-release.apk app_arm64.apk
+    - cp ./release/app-x86_64-release.apk app_x64.apk
+    - cp ./release/app-armeabi-v7a-release.apk app_arm.apk
     - APP_VERSION=$(cat ./VERSION)
   script:
     - |
-      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app_arm64.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app_x64.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_x64_BINARY}${APP_VERSION}
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app_arm.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_ARM32_BINARY}${APP_VERSION}
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app-fatapk.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_MULTI_BINARY}${APP_VERSION}
   rules:
     - if: $CI_COMMIT_TAG
   artifacts:
