@@ -86,11 +86,13 @@ class Util {
       return true;
     }
     // Launch through Web
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: false);
-      return true;
-    } else {
-      return false;
-    }
+    await launch(url);
+    return true;
+    // if (await canLaunch(url)) {
+    //   await launch(url, forceSafariVC: false);
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 }
