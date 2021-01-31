@@ -87,7 +87,7 @@ class Util {
     }
     // Launch through Web
     if (await canLaunch(url)) {
-      await launch(url);
+      await launch(url, forceSafariVC: false);
       return true;
     } else {
       return false;
