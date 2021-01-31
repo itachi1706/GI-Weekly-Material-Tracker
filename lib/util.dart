@@ -78,10 +78,10 @@ class Util {
   static Future<bool> launchWebPage(String url,
       {rarityColor = Colors.orange}) async {
     if (url == null) return false;
-    if (GetPlatform.isAndroid || GetPlatform.isIOS) {
-      print("Wait are they accessing this legacy O.o");
-      // If using web mode on Android/iOS
-      if (kIsWeb) return await _launchWebPageWeb(url);
+    // Web Browser for web mode
+    if (kIsWeb) return await _launchWebPageWeb(url);
+    else if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      // Native call for mobile app mode
       FlutterWebBrowser.openWebPage(
         url: url,
         customTabsOptions: CustomTabsOptions(
@@ -99,7 +99,7 @@ class Util {
       );
       return true;
     }
-    // Launch through Web
+    // Launch web browser for all other platforms
     return await _launchWebPageWeb(url);
   }
 }
