@@ -549,37 +549,34 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                 ),
               ),
               Divider(),
-              IntrinsicHeight(
+              Padding(
+                padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
+                    Icon(MdiIcons.swordCross),
                     Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Icon(MdiIcons.swordCross),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Text(_info.baseAtk.toString()),
-                          )
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    VerticalDivider(),
+                      padding: const EdgeInsets.only(left: 8),
+                      child: (_info.maxBaseAtk == null)
+                          ? Text(_info.baseAtk.toString())
+                          : Text("${_info.baseAtk} -> ${_info.maxBaseAtk}"),
+                    )
+                  ],
+                ),
+              ),
+              Divider(),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Icon(MdiIcons.shield),
                     Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Icon(MdiIcons.shield),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Text(
-                                "${_info.secondaryStat} (${_info.secondaryStatType})"),
-                          ),
-                        ],
-                      ),
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: (_info.maxSecondaryStat == null)
+                          ? Text(
+                              "${_info.secondaryStat} (${_info.secondaryStatType})")
+                          : Text(
+                              "${_info.secondaryStat} -> ${_info.maxSecondaryStat} (${_info.secondaryStatType})"),
                     ),
-                    Spacer(),
                   ],
                 ),
               ),
