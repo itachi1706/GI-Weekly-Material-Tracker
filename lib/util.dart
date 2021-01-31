@@ -68,6 +68,7 @@ class Util {
       {rarityColor = Colors.orange}) async {
     if (url == null) return false;
     if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      print("Wait are they accessing this O.o");
       FlutterWebBrowser.openWebPage(
         url: url,
         customTabsOptions: CustomTabsOptions(
