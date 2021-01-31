@@ -378,7 +378,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 }
                 name =
-                    "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef)})";
+                    "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})";
               }
 
               Widget typeWidget = SizedBox.shrink();
