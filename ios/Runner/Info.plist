@@ -58,6 +58,10 @@
     <!-- End of the Google Sign-in Section -->
 	<key>UIStatusBarHidden</key>
 	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>https</string>
+    </array>
 
 </dict>
 </plist>
