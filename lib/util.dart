@@ -86,6 +86,7 @@ class Util {
       return true;
     }
     // Launch through Web
+    print("Launching $url");
     await launch(url);
     return true;
     // if (await canLaunch(url)) {
