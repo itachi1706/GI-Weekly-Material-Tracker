@@ -64,10 +64,24 @@ class Util {
 
   static ThemeNotifier themeNotifier = ThemeNotifier();
 
+  static Future<bool> _launchWebPageWeb(String url) async {
+    // Launch through Web
+    print("Launching $url");
+    if (await canLaunch(url)) {
+      await launch(url, forceSafariVC: false);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   static Future<bool> launchWebPage(String url,
       {rarityColor = Colors.orange}) async {
     if (url == null) return false;
-    if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+    // Web Browser for web mode
+    if (kIsWeb) return await _launchWebPageWeb(url);
+    else if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      // Native call for mobile app mode
       FlutterWebBrowser.openWebPage(
         url: url,
         customTabsOptions: CustomTabsOptions(
@@ -85,12 +99,7 @@ class Util {
       );
       return true;
     }
-    // Launch through Web
-    if (await canLaunch(url)) {
-      await launch(url);
-      return true;
-    } else {
-      return false;
-    }
+    // Launch web browser for all other platforms
+    return await _launchWebPageWeb(url);
   }
 }
