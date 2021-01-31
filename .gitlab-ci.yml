@@ -8,6 +8,8 @@ stages:
 Deploy Firebase Security Rules:
   image: itachi1706/docker-firebase-cli:latest
   stage: deploy
+  before_script:
+    - cd firebase
   script:
     - firebase --token $FIREBASE_TOKEN deploy --only storage
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
@@ -189,6 +191,8 @@ Build Web App:
 Deploy to Firebase Hosting Staging:
   image: itachi1706/docker-firebase-cli:latest
   stage: deploy
+  before_script:
+    - cd firebase
   script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy staging
   dependencies:
     - Build Web App
@@ -204,6 +208,8 @@ Deploy to Firebase Hosting Staging:
 Deploy to Firebase Hosting Dev:
   image: itachi1706/docker-firebase-cli:latest
   stage: deploy
+  before_script:
+    - cd firebase
   script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy dev --expires 1d
   dependencies:
     - Build Web App
@@ -223,6 +229,8 @@ Deploy to Firebase Hosting Dev:
 Deploy to Firebase Hosting Prod:
   image: itachi1706/docker-firebase-cli:latest
   stage: deploy
+  before_script:
+    - cd firebase
   script: firebase --token $FIREBASE_TOKEN deploy --only hosting
   dependencies:
     - Build Web App
