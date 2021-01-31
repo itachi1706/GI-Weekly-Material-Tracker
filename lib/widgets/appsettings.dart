@@ -234,6 +234,12 @@ class _SettingsPageState extends State<SettingsPage> {
       applicationDescription: const Text(
           'Weekly Material Planner and Tracking Application for Genshin Impact'),
       children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.source_outlined),
+          trailing: SizedBox.shrink(),
+          title: Text("View Source Code"),
+          onTap: () => Util.launchWebPage("https://gitlab.com/itachi1706/gi-weekly-material-tracker"),
+        ),
         MarkdownPageListTile(
           icon: Icon(Icons.list),
           title: const Text('Changelog'),
