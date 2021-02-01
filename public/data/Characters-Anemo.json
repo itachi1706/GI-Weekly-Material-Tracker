@@ -1,459 +1,1349 @@
 {
-  "characters": {
-    "Traveler": {
-      "image": "Characters/Anemo/Traveler.png",
-      "gender": "Male/Female",
-      "birthday": "Up to Player",
-      "name": "Aether/Lumine",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
-      "nation": "Mondstadt",
-      "weapon": "Sword",
-      "rarity": 5,
-      "affiliation": "Knights of Favonius, Adventurers' Guild",
-      "constellation": "Viator/Viatrix",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Damaged_Mask",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Windwheel_Aster"
+    "characters": {
+        "Traveler": {
+            "image": "Characters/Anemo/Traveler.png",
+            "gender": "Male/Female",
+            "birthday": "Up to Player",
+            "name": "Aether/Lumine",
+            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Adventurers' Guild",
+            "constellation": "Viator/Viatrix",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Windwheel_Aster"
+                },
+                "2": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": null,
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Windwheel_Aster"
+                },
+                "3": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": null,
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Windwheel_Aster"
+                },
+                "4": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": null,
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Windwheel_Aster"
+                },
+                "5": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": null,
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Windwheel_Aster"
+                },
+                "6": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": null,
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Windwheel_Aster"
+                }
+            },
+            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+            "genshinggpath": "characters/Traveler(Anemo)",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+            "subCollection": {}
         },
-        "2": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": null,
-          "level": 40,
-          "material4": "Damaged_Mask",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Windwheel_Aster"
+        "Jean": {
+            "image": "Characters/Anemo/Jean.png",
+            "gender": "Female",
+            "birthday": "14/3",
+            "name": "Jean",
+            "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius of Mondstadt.",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Four Winds",
+            "constellation": "Leo Minor",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vayuda_Turquoise_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Dandelion_Seed"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Hurricane_Seed",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Dandelion_Seed"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Hurricane_Seed",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Dandelion_Seed"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Hurricane_Seed",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Dandelion_Seed"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Hurricane_Seed",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Dandelion_Seed"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vayuda_Turquoise_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Hurricane_Seed",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Dandelion_Seed"
+                }
+            },
+            "introduction": "As the Acting Grand Master of the Knights, Jean has always been devoted to her duties and maintaining peace in Mondstadt. She had taken precautions long before the onset of Stormterror's assault, and she will guard Mondstadt with her life as always.",
+            "genshinggpath": "characters/Jean",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Jean",
+            "subCollection": {}
         },
-        "3": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": null,
-          "level": 50,
-          "material4": "Stained_Mask",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Windwheel_Aster"
+        "Sucrose": {
+            "image": "Characters/Anemo/Sucrose.png",
+            "gender": "Female",
+            "birthday": "26/11",
+            "name": "Sucrose",
+            "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+            "nation": "Mondstadt",
+            "weapon": "Catalyst",
+            "rarity": 4,
+            "affiliation": "Knights of Favonius",
+            "constellation": "Ampulla",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vayuda_Turquoise_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Windwheel_Aster"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Hurricane_Seed",
+                    "level": 40,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Windwheel_Aster"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Hurricane_Seed",
+                    "level": 50,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Windwheel_Aster"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Hurricane_Seed",
+                    "level": 60,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Windwheel_Aster"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Hurricane_Seed",
+                    "level": 70,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Windwheel_Aster"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vayuda_Turquoise_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Hurricane_Seed",
+                    "level": 80,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Windwheel_Aster"
+                }
+            },
+            "introduction": "An alchemist with an insatiable curiosity towards the world and everything in it. Attached to the Knights of Favonius as an assistant to Albedo, her area of focus is \"bio-alchemy.\" She strives to enrich the world by transforming living things with the power of alchemy. Granted, the products of her research sometimes prove to be more weird than wonderful — but on the whole, she has made monumental contributions to the field of bio-alchemy.",
+            "genshinggpath": "characters/Sucrose",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Sucrose",
+            "subCollection": {}
         },
-        "4": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": null,
-          "level": 60,
-          "material4": "Stained_Mask",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Windwheel_Aster"
+        "Venti": {
+            "image": "Characters/Anemo/Venti.png",
+            "gender": "Male",
+            "birthday": "16/6",
+            "name": "Venti",
+            "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
+            "nation": "Mondstadt",
+            "weapon": "Bow",
+            "rarity": 5,
+            "affiliation": "Archons",
+            "constellation": "Carmen Dei",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vayuda_Turquoise_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cecilia"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Hurricane_Seed",
+                    "level": 40,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cecilia"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Hurricane_Seed",
+                    "level": 50,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cecilia"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Hurricane_Seed",
+                    "level": 60,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cecilia"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Hurricane_Seed",
+                    "level": 70,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cecilia"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vayuda_Turquoise_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Hurricane_Seed",
+                    "level": 80,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cecilia"
+                }
+            },
+            "introduction": "A bard that seems to have arrived on some unknown wind - sometimes sings songs as old as the hills, and other times sings poems fresh and new. Likes apples and lively places but is not a fan of cheese or anything sticky. When using his Anemo power to control the wind, it often appears as feathers, as he's fond of that which appears light and breezy.",
+            "genshinggpath": "characters/Venti",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Venti",
+            "subCollection": {}
         },
-        "5": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": null,
-          "level": 70,
-          "material4": "Ominous_Mask",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
-          "material1": "Brilliant_Diamond_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": null,
-          "level": 80,
-          "material4": "Ominous_Mask",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Windwheel_Aster"
+        "Xiao": {
+            "image": "Characters/Anemo/Xiao.png",
+            "gender": "Male",
+            "birthday": "17/4",
+            "name": "Xiao (UNRELEASED)",
+            "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Guardian Yaksha.\"",
+            "nation": "Liyue",
+            "weapon": "Polearm",
+            "rarity": 5,
+            "affiliation": "Liyue Adeptus",
+            "constellation": "Alatus Nemeseos",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vayuda_Turquoise_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Firm_Arrowhead",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Qingxin"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Hurricane_Seed",
+                    "level": 40,
+                    "material4": "Firm_Arrowhead",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Qingxin"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Hurricane_Seed",
+                    "level": 50,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Qingxin"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Hurricane_Seed",
+                    "level": 60,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Qingxin"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Hurricane_Seed",
+                    "level": 70,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Qingxin"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vayuda_Turquoise_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Hurricane_Seed",
+                    "level": 80,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Qingxin"
+                }
+            },
+            "introduction": "One of the \"Mighty and Illuminated Adepti\" guarding Liyue, also heralded as the \"Guardian yaksha.\"\nDespite his appearance as a young man, occasional legends about him have been documented in ancient books for thousands of years.\nHe is especially fond of Wangshu Inn's Almond Tofu. The reason is that the dish tastes just like the \"dreams\" he used to devour.",
+            "genshinggpath": "characters/Xiao",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Xiao",
+            "subCollection": {}
         }
-      },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-      "genshinggpath": "characters/Traveler(Anemo)",
-      "element": "Anemo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
-      "subCollection": {}
-    },
-    "Jean": {
-      "image": "Characters/Anemo/Jean.png",
-      "gender": "Female",
-      "birthday": "14/3",
-      "name": "Jean",
-      "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius of Mondstadt.",
-      "nation": "Mondstadt",
-      "weapon": "Sword",
-      "rarity": 5,
-      "affiliation": "Knights of Favonius, Four Winds",
-      "constellation": "Leo Minor",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vayuda_Turquoise_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Damaged_Mask",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Dandelion_Seed"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Hurricane_Seed",
-          "level": 40,
-          "material4": "Damaged_Mask",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Dandelion_Seed"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Hurricane_Seed",
-          "level": 50,
-          "material4": "Stained_Mask",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Dandelion_Seed"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Hurricane_Seed",
-          "level": 60,
-          "material4": "Stained_Mask",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Dandelion_Seed"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Hurricane_Seed",
-          "level": 70,
-          "material4": "Ominous_Mask",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Dandelion_Seed"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vayuda_Turquoise_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Hurricane_Seed",
-          "level": 80,
-          "material4": "Ominous_Mask",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Dandelion_Seed"
-        }
-      },
-      "introduction": "As the Acting Grand Master of the Knights, Jean has always been devoted to her duties and maintaining peace in Mondstadt. She had taken precautions long before the onset of Stormterror's assault, and she will guard Mondstadt with her life as always.",
-      "genshinggpath": "characters/Jean",
-      "element": "Anemo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Jean",
-      "subCollection": {}
-    },
-    "Sucrose": {
-      "image": "Characters/Anemo/Sucrose.png",
-      "gender": "Female",
-      "birthday": "26/11",
-      "name": "Sucrose",
-      "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
-      "nation": "Mondstadt",
-      "weapon": "Catalyst",
-      "rarity": 4,
-      "affiliation": "Knights of Favonius",
-      "constellation": "Ampulla",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vayuda_Turquoise_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Hurricane_Seed",
-          "level": 40,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Hurricane_Seed",
-          "level": 50,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Hurricane_Seed",
-          "level": 60,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Hurricane_Seed",
-          "level": 70,
-          "material4": "Energy_Nectar",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vayuda_Turquoise_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Hurricane_Seed",
-          "level": 80,
-          "material4": "Energy_Nectar",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
-      },
-      "introduction": "An alchemist with an insatiable curiosity towards the world and everything in it. Attached to the Knights of Favonius as an assistant to Albedo, her area of focus is \"bio-alchemy.\" She strives to enrich the world by transforming living things with the power of alchemy. Granted, the products of her research sometimes prove to be more weird than wonderful — but on the whole, she has made monumental contributions to the field of bio-alchemy.",
-      "genshinggpath": "characters/Sucrose",
-      "element": "Anemo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Sucrose",
-      "subCollection": {}
-    },
-    "Venti": {
-      "image": "Characters/Anemo/Venti.png",
-      "gender": "Male",
-      "birthday": "16/6",
-      "name": "Venti",
-      "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
-      "nation": "Mondstadt",
-      "weapon": "Bow",
-      "rarity": 5,
-      "affiliation": "Archons",
-      "constellation": "Carmen Dei",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vayuda_Turquoise_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Slime_Condensate",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Cecilia"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Hurricane_Seed",
-          "level": 40,
-          "material4": "Slime_Condensate",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Cecilia"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Hurricane_Seed",
-          "level": 50,
-          "material4": "Slime_Secretions",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Cecilia"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Hurricane_Seed",
-          "level": 60,
-          "material4": "Slime_Secretions",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Cecilia"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Hurricane_Seed",
-          "level": 70,
-          "material4": "Slime_Concentrate",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Cecilia"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vayuda_Turquoise_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Hurricane_Seed",
-          "level": 80,
-          "material4": "Slime_Concentrate",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Cecilia"
-        }
-      },
-      "introduction": "A bard that seems to have arrived on some unknown wind - sometimes sings songs as old as the hills, and other times sings poems fresh and new. Likes apples and lively places but is not a fan of cheese or anything sticky. When using his Anemo power to control the wind, it often appears as feathers, as he's fond of that which appears light and breezy.",
-      "genshinggpath": "characters/Venti",
-      "element": "Anemo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Venti",
-      "subCollection": {}
-    },
-    "Xiao": {
-      "image": "Characters/Anemo/Xiao.png",
-      "gender": "Male",
-      "birthday": "17/4",
-      "name": "Xiao (UNRELEASED)",
-      "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Guardian Yaksha.\"",
-      "nation": "Liyue",
-      "weapon": "Polearm",
-      "rarity": 5,
-      "affiliation": "Liyue Adeptus",
-      "constellation": "Alatus Nemeseos",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vayuda_Turquoise_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Firm_Arrowhead",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Qingxin"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Hurricane_Seed",
-          "level": 40,
-          "material4": "Firm_Arrowhead",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Qingxin"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vayuda_Turquoise_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Hurricane_Seed",
-          "level": 50,
-          "material4": "Sharp_Arrowhead",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Qingxin"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Hurricane_Seed",
-          "level": 60,
-          "material4": "Sharp_Arrowhead",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Qingxin"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vayuda_Turquoise_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Hurricane_Seed",
-          "level": 70,
-          "material4": "Weathered_Arrowhead",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Qingxin"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vayuda_Turquoise_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Hurricane_Seed",
-          "level": 80,
-          "material4": "Weathered_Arrowhead",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Qingxin"
-        }
-      },
-      "introduction": "One of the \"Mighty and Illuminated Adepti\" guarding Liyue, also heralded as the \"Guardian yaksha.\"\nDespite his appearance as a young man, occasional legends about him have been documented in ancient books for thousands of years.\nHe is especially fond of Wangshu Inn's Almond Tofu. The reason is that the dish tastes just like the \"dreams\" he used to devour.",
-      "genshinggpath": "characters/Xiao",
-      "element": "Anemo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Xiao",
-      "subCollection": {}
     }
-  }
 }

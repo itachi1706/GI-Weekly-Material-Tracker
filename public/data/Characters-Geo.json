@@ -1,368 +1,1080 @@
 {
-  "characters": {
-    "Albedo": {
-      "image": "Characters/Geo/Albedo.png",
-      "gender": "Male",
-      "birthday": "13/9",
-      "name": "Albedo",
-      "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
-      "nation": "Mondstadt",
-      "weapon": "Sword",
-      "rarity": 5,
-      "affiliation": "Knights of Favonius",
-      "constellation": "Princeps Cretaceus",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Prithiva_Topaz_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Divining_Scroll",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Cecilia"
+    "characters": {
+        "Albedo": {
+            "image": "Characters/Geo/Albedo.png",
+            "gender": "Male",
+            "birthday": "13/9",
+            "name": "Albedo",
+            "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius",
+            "constellation": "Princeps Cretaceus",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cecilia"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cecilia"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cecilia"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cecilia"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cecilia"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cecilia"
+                }
+            },
+            "introduction": "Albedo — an alchemist based in Mondstadt, in the service of the Knights of Favonius.  \"Genius,\" \"Kreideprinz,\" or \"Captain of the Investigation Team\"... Such titles and honors are of no consequence to him when there is so much more research to conduct.  The pursuit of fortune and connections cannot hold a candle to his heart's desire — acquiring the limitless, obscure knowledge left behind by previous generations of scholars.",
+            "genshinggpath": "characters/Albedo",
+            "element": "Geo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Albedo",
+            "subCollection": {}
         },
-        "2": {
-          "material2qty": 2,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Basalt_Pillar",
-          "level": 40,
-          "material4": "Divining_Scroll",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Cecilia"
+        "Ningguang": {
+            "image": "Characters/Geo/Ningguang.png",
+            "gender": "Female",
+            "birthday": "26/8",
+            "name": "Ningguang",
+            "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+            "nation": "Liyue",
+            "weapon": "Catalyst",
+            "rarity": 4,
+            "affiliation": "Liyue Qixing",
+            "constellation": "Opus Aequilibrium",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Glaze_Lily"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Glaze_Lily"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Glaze_Lily"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Glaze_Lily"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Glaze_Lily"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Glaze_Lily"
+                }
+            },
+            "introduction": "Owner of the Jade Chamber in the skies above Liyue, there are stories abound about Ningguang, with her elegance and mysterious smile. As a Tianquan of the Liyue Qixing, not only does she embody law and order, she also represents fortune and wit.",
+            "genshinggpath": "characters/Ningguang",
+            "element": "Geo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Ningguang",
+            "subCollection": {}
         },
-        "3": {
-          "material2qty": 4,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Basalt_Pillar",
-          "level": 50,
-          "material4": "Sealed_Scroll",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Cecilia"
+        "Noelle": {
+            "image": "Characters/Geo/Noelle.png",
+            "gender": "Female",
+            "birthday": "21/3",
+            "name": "Noelle",
+            "description": "Noelle has much greater dreams and ambitions than other maids in the Knights of Favonius. Like anyone else in this city protected by the Knights of Favonius, she too dreams of donning the honored armor. Even if her skills are not enough to pass the rigorous selection trials, she still wishes to observe and learn from them every chance she gets. Aside from her training, she enjoys her current life, helping everyone in need. \"You can leave absolutely anything to me!\" That's her signature line. If there's anything that you need, Noelle is glad to be of help.",
+            "nation": "Mondstadt",
+            "weapon": "Claymore",
+            "rarity": 4,
+            "affiliation": "Knights of Favonius",
+            "constellation": "Parma Cordis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Valberry"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Valberry"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Valberry"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Valberry"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Valberry"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Valberry"
+                }
+            },
+            "introduction": "Like most of Mondstadt's young people, Noelle always dreamed of being a knight of Favonius when she grew up. She may not have what it takes to be a knight just yet, but she is learning. Working as a maid at the Knights' headquarters, she is constantly taking notes on what constitutes knightly speech, knightly conduct, and knightly customs. She holds firm to her belief that one day she will join their ranks - she just needs to keep trying her hardest at everything she does.",
+            "genshinggpath": "characters/Noelle",
+            "element": "Geo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Noelle",
+            "subCollection": {}
         },
-        "4": {
-          "material2qty": 8,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Basalt_Pillar",
-          "level": 60,
-          "material4": "Sealed_Scroll",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Cecilia"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Basalt_Pillar",
-          "level": 70,
-          "material4": "Forbidden_Curse_Scroll",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Cecilia"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Prithiva_Topaz_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Basalt_Pillar",
-          "level": 80,
-          "material4": "Forbidden_Curse_Scroll",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Cecilia"
+        "Zhongli": {
+            "image": "Characters/Geo/Zhongli.png",
+            "gender": "Male",
+            "birthday": "31/12",
+            "name": "Zhongli",
+            "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
+            "nation": "Liyue",
+            "weapon": "Polearm",
+            "rarity": 5,
+            "affiliation": "Wangsheng Funeral Parlor, Archons",
+            "constellation": "Lapis Dei",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cor_Lapis"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cor_Lapis"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cor_Lapis"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cor_Lapis"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cor_Lapis"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cor_Lapis"
+                }
+            },
+            "introduction": "Wangsheng Funeral Parlor's mysterious consultant. Handsome, elegant, and surpassingly learned.\nThough no one knows where Zhongli is from, he is a master of courtesy and rules. From his seat at Wangsheng Funeral Parlor, he performs all manner of rituals.",
+            "genshinggpath": "characters/Zhongli",
+            "element": "Geo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Zhongli",
+            "subCollection": {}
         }
-      },
-      "introduction": "Albedo — an alchemist based in Mondstadt, in the service of the Knights of Favonius.  \"Genius,\" \"Kreideprinz,\" or \"Captain of the Investigation Team\"... Such titles and honors are of no consequence to him when there is so much more research to conduct.  The pursuit of fortune and connections cannot hold a candle to his heart's desire — acquiring the limitless, obscure knowledge left behind by previous generations of scholars.",
-      "genshinggpath": "characters/Albedo",
-      "element": "Geo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Albedo",
-      "subCollection": {}
-    },
-    "Ningguang": {
-      "image": "Characters/Geo/Ningguang.png",
-      "gender": "Female",
-      "birthday": "26/8",
-      "name": "Ningguang",
-      "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
-      "nation": "Liyue",
-      "weapon": "Catalyst",
-      "rarity": 4,
-      "affiliation": "Liyue Qixing",
-      "constellation": "Opus Aequilibrium",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Prithiva_Topaz_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Recruit_Insignia",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Glaze_Lily"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Basalt_Pillar",
-          "level": 40,
-          "material4": "Recruit_Insignia",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Glaze_Lily"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Basalt_Pillar",
-          "level": 50,
-          "material4": "Sergeant_Insignia",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Glaze_Lily"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Basalt_Pillar",
-          "level": 60,
-          "material4": "Sergeant_Insignia",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Glaze_Lily"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Basalt_Pillar",
-          "level": 70,
-          "material4": "Lieutenant_Insignia",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Glaze_Lily"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Prithiva_Topaz_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Basalt_Pillar",
-          "level": 80,
-          "material4": "Lieutenant_Insignia",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Glaze_Lily"
-        }
-      },
-      "introduction": "Owner of the Jade Chamber in the skies above Liyue, there are stories abound about Ningguang, with her elegance and mysterious smile. As a Tianquan of the Liyue Qixing, not only does she embody law and order, she also represents fortune and wit.",
-      "genshinggpath": "characters/Ningguang",
-      "element": "Geo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Ningguang",
-      "subCollection": {}
-    },
-    "Noelle": {
-      "image": "Characters/Geo/Noelle.png",
-      "gender": "Female",
-      "birthday": "21/3",
-      "name": "Noelle",
-      "description": "Noelle has much greater dreams and ambitions than other maids in the Knights of Favonius. Like anyone else in this city protected by the Knights of Favonius, she too dreams of donning the honored armor. Even if her skills are not enough to pass the rigorous selection trials, she still wishes to observe and learn from them every chance she gets. Aside from her training, she enjoys her current life, helping everyone in need. \"You can leave absolutely anything to me!\" That's her signature line. If there's anything that you need, Noelle is glad to be of help.",
-      "nation": "Mondstadt",
-      "weapon": "Claymore",
-      "rarity": 4,
-      "affiliation": "Knights of Favonius",
-      "constellation": "Parma Cordis",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Prithiva_Topaz_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Damaged_Mask",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Valberry"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Basalt_Pillar",
-          "level": 40,
-          "material4": "Damaged_Mask",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Valberry"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Basalt_Pillar",
-          "level": 50,
-          "material4": "Stained_Mask",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Valberry"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Basalt_Pillar",
-          "level": 60,
-          "material4": "Stained_Mask",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Valberry"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Basalt_Pillar",
-          "level": 70,
-          "material4": "Ominous_Mask",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Valberry"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Prithiva_Topaz_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Basalt_Pillar",
-          "level": 80,
-          "material4": "Ominous_Mask",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Valberry"
-        }
-      },
-      "introduction": "Like most of Mondstadt's young people, Noelle always dreamed of being a knight of Favonius when she grew up. She may not have what it takes to be a knight just yet, but she is learning. Working as a maid at the Knights' headquarters, she is constantly taking notes on what constitutes knightly speech, knightly conduct, and knightly customs. She holds firm to her belief that one day she will join their ranks - she just needs to keep trying her hardest at everything she does.",
-      "genshinggpath": "characters/Noelle",
-      "element": "Geo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Noelle",
-      "subCollection": {}
-    },
-    "Zhongli": {
-      "image": "Characters/Geo/Zhongli.png",
-      "gender": "Male",
-      "birthday": "31/12",
-      "name": "Zhongli",
-      "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
-      "nation": "Liyue",
-      "weapon": "Polearm",
-      "rarity": 5,
-      "affiliation": "Wangsheng Funeral Parlor, Archons",
-      "constellation": "Lapis Dei",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Prithiva_Topaz_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Slime_Condensate",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Cor_Lapis"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Basalt_Pillar",
-          "level": 40,
-          "material4": "Slime_Condensate",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Cor_Lapis"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Prithiva_Topaz_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Basalt_Pillar",
-          "level": 50,
-          "material4": "Slime_Secretions",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Cor_Lapis"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Basalt_Pillar",
-          "level": 60,
-          "material4": "Slime_Secretions",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Cor_Lapis"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Prithiva_Topaz_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Basalt_Pillar",
-          "level": 70,
-          "material4": "Slime_Concentrate",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Cor_Lapis"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Prithiva_Topaz_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Basalt_Pillar",
-          "level": 80,
-          "material4": "Slime_Concentrate",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Cor_Lapis"
-        }
-      },
-      "introduction": "Wangsheng Funeral Parlor's mysterious consultant. Handsome, elegant, and surpassingly learned.\nThough no one knows where Zhongli is from, he is a master of courtesy and rules. From his seat at Wangsheng Funeral Parlor, he performs all manner of rituals.",
-      "genshinggpath": "characters/Zhongli",
-      "element": "Geo",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Zhongli",
-      "subCollection": {}
     }
-  }
 }

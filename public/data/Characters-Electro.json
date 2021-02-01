@@ -1,459 +1,1349 @@
 {
-  "characters": {
-    "Beidou": {
-      "image": "Characters/Electro/Beidou.png",
-      "gender": "Female",
-      "birthday": "14/2",
-      "name": "Beidou",
-      "description": "Captain of the Crux and its crew. She's quite an unbound and forthright woman.",
-      "nation": "Liyue",
-      "weapon": "Claymore",
-      "rarity": 4,
-      "affiliation": "Crux Fleet",
-      "constellation": "Victor Mare",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vajrada_Amethyst_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Treasure_Hoarder_Insignia",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Noctilucous_Jade"
+    "characters": {
+        "Beidou": {
+            "image": "Characters/Electro/Beidou.png",
+            "gender": "Female",
+            "birthday": "14/2",
+            "name": "Beidou",
+            "description": "Captain of the Crux and its crew. She's quite an unbound and forthright woman.",
+            "nation": "Liyue",
+            "weapon": "Claymore",
+            "rarity": 4,
+            "affiliation": "Crux Fleet",
+            "constellation": "Victor Mare",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Noctilucous_Jade"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Lightning_Prism",
+                    "level": 40,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Noctilucous_Jade"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Lightning_Prism",
+                    "level": 50,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Noctilucous_Jade"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Lightning_Prism",
+                    "level": 60,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Noctilucous_Jade"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Lightning_Prism",
+                    "level": 70,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Noctilucous_Jade"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Lightning_Prism",
+                    "level": 80,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Noctilucous_Jade"
+                }
+            },
+            "introduction": "Captain of the Crux, with quite the reputation in Liyue. There are those who say she can split mountains and part the sea. Others say she draws lightning through her sword. Some say that even the mightiest of sea beasts are no match for her. For those not from Liyue, it may sound like a hearty joke, but those that have sailed with her will say— \"No matter what sea beasts there may be, Beidou will be sure to split them all in two.\"",
+            "genshinggpath": "characters/Beidou",
+            "element": "Electro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Beidou",
+            "subCollection": {}
         },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Lightning_Prism",
-          "level": 40,
-          "material4": "Treasure_Hoarder_Insignia",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Noctilucous_Jade"
+        "Fischl": {
+            "image": "Characters/Electro/Fischl.png",
+            "gender": "Female",
+            "birthday": "27/5",
+            "name": "Fischl",
+            "description": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz.",
+            "nation": "Mondstadt",
+            "weapon": "Bow",
+            "rarity": 4,
+            "affiliation": "Adventurers' Guild",
+            "constellation": "Corvus",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Firm_Arrowhead",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Small_Lamp_Grass"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Lightning_Prism",
+                    "level": 40,
+                    "material4": "Firm_Arrowhead",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Small_Lamp_Grass"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Lightning_Prism",
+                    "level": 50,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Small_Lamp_Grass"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Lightning_Prism",
+                    "level": 60,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Small_Lamp_Grass"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Lightning_Prism",
+                    "level": 70,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Small_Lamp_Grass"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Lightning_Prism",
+                    "level": 80,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Small_Lamp_Grass"
+                }
+            },
+            "introduction": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz. Currently serves as an investigator in the Adventurers' Guild. Through her unique abilities, eccentric character, and (while she would never admit it herself) hard work, Fischl has become a rising star among the Adventurers' Guild's investigators, earning the recognition of all.",
+            "genshinggpath": "characters/Fischl",
+            "element": "Electro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Fischl",
+            "subCollection": {}
         },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Lightning_Prism",
-          "level": 50,
-          "material4": "Silver_Raven_Insignia",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Noctilucous_Jade"
+        "Keqing": {
+            "image": "Characters/Electro/Keqing.png",
+            "gender": "Female",
+            "birthday": "20/11",
+            "name": "Keqing",
+            "description": "One of the Liyue Qixing, Keqing has an uncompromising belief in actions over words. If she sees something that needs doing, she'll do it herself. For example, she traveled around Liyue and carefully memorized each detail of the land so that she may one day be able to maximize the utility of every last inch of Liyue.",
+            "nation": "Liyue",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Liyue Qixing",
+            "constellation": "Trulla Cementarii",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cor_Lapis"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Lightning_Prism",
+                    "level": 40,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cor_Lapis"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Lightning_Prism",
+                    "level": 50,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cor_Lapis"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Lightning_Prism",
+                    "level": 60,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cor_Lapis"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Lightning_Prism",
+                    "level": 70,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cor_Lapis"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Lightning_Prism",
+                    "level": 80,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cor_Lapis"
+                }
+            },
+            "introduction": "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis' unilateral approach to policymaking in Liyue — but in truth, gods admire skeptics such as her quite a lot.\nShe firmly believes that humanity's future should be determined by humans themselves, and that they can even do better than the archons and adepti have done for them. In order to prove this, she works harder than anyone else.",
+            "genshinggpath": "characters/Keqing",
+            "element": "Electro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Keqing",
+            "subCollection": {}
         },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Lightning_Prism",
-          "level": 60,
-          "material4": "Silver_Raven_Insignia",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Noctilucous_Jade"
+        "Lisa": {
+            "image": "Characters/Electro/Lisa.png",
+            "gender": "Female",
+            "birthday": "9/6",
+            "name": "Lisa",
+            "description": "The librarian of the Knights of Favonius. In addition to her elegance and charm, Lisa is also highly educated. She is said to have been the most talented sorceress to study at the Sumeru Academia in the last two centuries. It is known that Lisa chose to return to Mondstadt after two years of advanced study in Sumeru, but the reason for the decision is not. Lisa currently serves as a librarian in the Knights of Favonius.",
+            "nation": "Mondstadt",
+            "weapon": "Catalyst",
+            "rarity": 4,
+            "affiliation": "Knights of Favonius, Sumeru Academia (Former)",
+            "constellation": "Tempus Fugit",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Valberry"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Lightning_Prism",
+                    "level": 40,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Valberry"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Lightning_Prism",
+                    "level": 50,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Valberry"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Lightning_Prism",
+                    "level": 60,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Valberry"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Lightning_Prism",
+                    "level": 70,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Valberry"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Lightning_Prism",
+                    "level": 80,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Valberry"
+                }
+            },
+            "introduction": "She is an intellectual witch who can never get enough naps. As the Librarian of the Knights of Favonius, Lisa is smart in that she always knows exactly what to do with whatever troubles her. As much as she loves her sleep, she still manages to keep everything under control in a calm, composed manner.",
+            "genshinggpath": "characters/Lisa",
+            "element": "Electro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Lisa",
+            "subCollection": {}
         },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Lightning_Prism",
-          "level": 70,
-          "material4": "Golden_Raven_Insignia",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Noctilucous_Jade"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vajrada_Amethyst_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Lightning_Prism",
-          "level": 80,
-          "material4": "Golden_Raven_Insignia",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Noctilucous_Jade"
+        "Razor": {
+            "image": "Characters/Electro/Razor.png",
+            "gender": "Male",
+            "birthday": "9/9",
+            "name": "Razor",
+            "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+            "nation": "Mondstadt",
+            "weapon": "Claymore",
+            "rarity": 4,
+            "affiliation": "Wolvendom, Andrius",
+            "constellation": "Lupus Minor",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Wolfhook"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Lightning_Prism",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Wolfhook"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Lightning_Prism",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Wolfhook"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Lightning_Prism",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Wolfhook"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Lightning_Prism",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Wolfhook"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Lightning_Prism",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Wolfhook"
+                }
+            },
+            "introduction": "Some say he is an orphan raised by wolves. Others say he is a wolf spirit in human form. He is most at home in the wild, fighting with claw and thunder. To this day the wolf boy can be found prowling the forest, where he and his wolf pack hunt to survive using nothing more than their animal instincts.",
+            "genshinggpath": "characters/Razor",
+            "element": "Electro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Razor",
+            "subCollection": {}
         }
-      },
-      "introduction": "Captain of the Crux, with quite the reputation in Liyue. There are those who say she can split mountains and part the sea. Others say she draws lightning through her sword. Some say that even the mightiest of sea beasts are no match for her. For those not from Liyue, it may sound like a hearty joke, but those that have sailed with her will say— \"No matter what sea beasts there may be, Beidou will be sure to split them all in two.\"",
-      "genshinggpath": "characters/Beidou",
-      "element": "Electro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Beidou",
-      "subCollection": {}
-    },
-    "Fischl": {
-      "image": "Characters/Electro/Fischl.png",
-      "gender": "Female",
-      "birthday": "27/5",
-      "name": "Fischl",
-      "description": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz.",
-      "nation": "Mondstadt",
-      "weapon": "Bow",
-      "rarity": 4,
-      "affiliation": "Adventurers' Guild",
-      "constellation": "Corvus",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vajrada_Amethyst_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Firm_Arrowhead",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Small_Lamp_Grass"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Lightning_Prism",
-          "level": 40,
-          "material4": "Firm_Arrowhead",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Small_Lamp_Grass"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Lightning_Prism",
-          "level": 50,
-          "material4": "Sharp_Arrowhead",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Small_Lamp_Grass"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Lightning_Prism",
-          "level": 60,
-          "material4": "Sharp_Arrowhead",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Small_Lamp_Grass"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Lightning_Prism",
-          "level": 70,
-          "material4": "Weathered_Arrowhead",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Small_Lamp_Grass"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vajrada_Amethyst_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Lightning_Prism",
-          "level": 80,
-          "material4": "Weathered_Arrowhead",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Small_Lamp_Grass"
-        }
-      },
-      "introduction": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz. Currently serves as an investigator in the Adventurers' Guild. Through her unique abilities, eccentric character, and (while she would never admit it herself) hard work, Fischl has become a rising star among the Adventurers' Guild's investigators, earning the recognition of all.",
-      "genshinggpath": "characters/Fischl",
-      "element": "Electro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Fischl",
-      "subCollection": {}
-    },
-    "Keqing": {
-      "image": "Characters/Electro/Keqing.png",
-      "gender": "Female",
-      "birthday": "20/11",
-      "name": "Keqing",
-      "description": "One of the Liyue Qixing, Keqing has an uncompromising belief in actions over words. If she sees something that needs doing, she'll do it herself. For example, she traveled around Liyue and carefully memorized each detail of the land so that she may one day be able to maximize the utility of every last inch of Liyue.",
-      "nation": "Liyue",
-      "weapon": "Sword",
-      "rarity": 5,
-      "affiliation": "Liyue Qixing",
-      "constellation": "Trulla Cementarii",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vajrada_Amethyst_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Cor_Lapis"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Lightning_Prism",
-          "level": 40,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Cor_Lapis"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Lightning_Prism",
-          "level": 50,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Cor_Lapis"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Lightning_Prism",
-          "level": 60,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Cor_Lapis"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Lightning_Prism",
-          "level": 70,
-          "material4": "Energy_Nectar",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Cor_Lapis"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vajrada_Amethyst_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Lightning_Prism",
-          "level": 80,
-          "material4": "Energy_Nectar",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Cor_Lapis"
-        }
-      },
-      "introduction": "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis' unilateral approach to policymaking in Liyue ⁠— but in truth, gods admire skeptics such as her quite a lot.\nShe firmly believes that humanity's future should be determined by humans themselves, and that they can even do better than the archons and adepti have done for them. In order to prove this, she works harder than anyone else.",
-      "genshinggpath": "characters/Keqing",
-      "element": "Electro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Keqing",
-      "subCollection": {}
-    },
-    "Lisa": {
-      "image": "Characters/Electro/Lisa.png",
-      "gender": "Female",
-      "birthday": "9/6",
-      "name": "Lisa",
-      "description": "The librarian of the Knights of Favonius. In addition to her elegance and charm, Lisa is also highly educated. She is said to have been the most talented sorceress to study at the Sumeru Academia in the last two centuries. It is known that Lisa chose to return to Mondstadt after two years of advanced study in Sumeru, but the reason for the decision is not. Lisa currently serves as a librarian in the Knights of Favonius.",
-      "nation": "Mondstadt",
-      "weapon": "Catalyst",
-      "rarity": 4,
-      "affiliation": "Knights of Favonius, Sumeru Academia (Former)",
-      "constellation": "Tempus Fugit",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vajrada_Amethyst_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Slime_Condensate",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Valberry"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Lightning_Prism",
-          "level": 40,
-          "material4": "Slime_Condensate",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Valberry"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Lightning_Prism",
-          "level": 50,
-          "material4": "Slime_Secretions",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Valberry"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Lightning_Prism",
-          "level": 60,
-          "material4": "Slime_Secretions",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Valberry"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Lightning_Prism",
-          "level": 70,
-          "material4": "Slime_Concentrate",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Valberry"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vajrada_Amethyst_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Lightning_Prism",
-          "level": 80,
-          "material4": "Slime_Concentrate",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Valberry"
-        }
-      },
-      "introduction": "She is an intellectual witch who can never get enough naps. As the Librarian of the Knights of Favonius, Lisa is smart in that she always knows exactly what to do with whatever troubles her. As much as she loves her sleep, she still manages to keep everything under control in a calm, composed manner.",
-      "genshinggpath": "characters/Lisa",
-      "element": "Electro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Lisa",
-      "subCollection": {}
-    },
-    "Razor": {
-      "image": "Characters/Electro/Razor.png",
-      "gender": "Male",
-      "birthday": "9/9",
-      "name": "Razor",
-      "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
-      "nation": "Mondstadt",
-      "weapon": "Claymore",
-      "rarity": 4,
-      "affiliation": "Wolvendom, Andrius",
-      "constellation": "Lupus Minor",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Vajrada_Amethyst_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Damaged_Mask",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Wolfhook"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Lightning_Prism",
-          "level": 40,
-          "material4": "Damaged_Mask",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Wolfhook"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Vajrada_Amethyst_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Lightning_Prism",
-          "level": 50,
-          "material4": "Stained_Mask",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Wolfhook"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Lightning_Prism",
-          "level": 60,
-          "material4": "Stained_Mask",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Wolfhook"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Vajrada_Amethyst_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Lightning_Prism",
-          "level": 70,
-          "material4": "Ominous_Mask",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Wolfhook"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Vajrada_Amethyst_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Lightning_Prism",
-          "level": 80,
-          "material4": "Ominous_Mask",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Wolfhook"
-        }
-      },
-      "introduction": "Some say he is an orphan raised by wolves. Others say he is a wolf spirit in human form. He is most at home in the wild, fighting with claw and thunder. To this day the wolf boy can be found prowling the forest, where he and his wolf pack hunt to survive using nothing more than their animal instincts.",
-      "genshinggpath": "characters/Razor",
-      "element": "Electro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Razor",
-      "subCollection": {}
     }
-  }
 }

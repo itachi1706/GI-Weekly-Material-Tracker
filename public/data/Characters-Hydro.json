@@ -1,368 +1,1080 @@
 {
-  "characters": {
-    "Barbara": {
-      "image": "Characters/Hydro/Barbara.png",
-      "gender": "Female",
-      "birthday": "5/7",
-      "name": "Barbara",
-      "description": "Every citizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
-      "nation": "Mondstadt",
-      "weapon": "Catalyst",
-      "rarity": 4,
-      "affiliation": "Church of Favonius",
-      "constellation": "Crater",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Varunada_Lazurite_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Divining_Scroll",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Philanemo_Mushroom"
+    "characters": {
+        "Barbara": {
+            "image": "Characters/Hydro/Barbara.png",
+            "gender": "Female",
+            "birthday": "5/7",
+            "name": "Barbara",
+            "description": "Every citizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
+            "nation": "Mondstadt",
+            "weapon": "Catalyst",
+            "rarity": 4,
+            "affiliation": "Church of Favonius",
+            "constellation": "Crater",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Varunada_Lazurite_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Cleansing_Heart",
+                    "level": 40,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Cleansing_Heart",
+                    "level": 50,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Cleansing_Heart",
+                    "level": 60,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Cleansing_Heart",
+                    "level": 70,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Varunada_Lazurite_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Cleansing_Heart",
+                    "level": 80,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Philanemo_Mushroom"
+                }
+            },
+            "introduction": "The Deaconess of the Favonius Church and a shining starlet adored by all. Although the concept of a starlet is rather novel in a city of bards, the people of Mondstadt love Barbara nonetheless. \"I owe everything to the city's spirit of freedom\" — Barbara, regarding her popularity.",
+            "genshinggpath": "characters/Barbara",
+            "element": "Hydro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
+            "subCollection": {}
         },
-        "2": {
-          "material2qty": 2,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Cleansing_Heart",
-          "level": 40,
-          "material4": "Divining_Scroll",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Philanemo_Mushroom"
+        "Mona": {
+            "image": "Characters/Hydro/Mona.png",
+            "gender": "Female",
+            "birthday": "31/8",
+            "name": "Mona",
+            "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
+            "nation": "Mondstadt",
+            "weapon": "Catalyst",
+            "rarity": 5,
+            "affiliation": "Hexenzirkel",
+            "constellation": "Astrolabos",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Varunada_Lazurite_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Cleansing_Heart",
+                    "level": 40,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Cleansing_Heart",
+                    "level": 50,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Cleansing_Heart",
+                    "level": 60,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Cleansing_Heart",
+                    "level": 70,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Philanemo_Mushroom"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Varunada_Lazurite_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Cleansing_Heart",
+                    "level": 80,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Philanemo_Mushroom"
+                }
+            },
+            "introduction": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful. Though she is often strapped for cash and lives a life of thrift, she is resolved to never use astrology for profit... It is this very resolution that has caused her to constantly fret about money.",
+            "genshinggpath": "characters/Mona",
+            "element": "Hydro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Mona",
+            "subCollection": {}
         },
-        "3": {
-          "material2qty": 4,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Cleansing_Heart",
-          "level": 50,
-          "material4": "Sealed_Scroll",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Philanemo_Mushroom"
+        "Tartaglia": {
+            "image": "Characters/Hydro/Tartaglia.png",
+            "gender": "Male",
+            "birthday": "20/7",
+            "name": "Tartaglia",
+            "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
+            "nation": "Snezhnaya",
+            "weapon": "Bow",
+            "rarity": 5,
+            "affiliation": "Fatui",
+            "constellation": "Monoceros Caeli",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Varunada_Lazurite_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Starconch"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Cleansing_Heart",
+                    "level": 40,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Starconch"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Cleansing_Heart",
+                    "level": 50,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Starconch"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Cleansing_Heart",
+                    "level": 60,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Starconch"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Cleansing_Heart",
+                    "level": 70,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Starconch"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Varunada_Lazurite_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Cleansing_Heart",
+                    "level": 80,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Starconch"
+                }
+            },
+            "introduction": "Meet Tartaglia — the cunning Snezhnayan whose unpredictable personality keeps people guessing his every move.\nDon't be under any illusion as to what he might be thinking or what his intentions are. Just remember this: Behind that innocent, childlike exterior lies a finely honed instrument of war.",
+            "genshinggpath": "characters/Tartaglia",
+            "element": "Hydro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Tartaglia",
+            "subCollection": {}
         },
-        "4": {
-          "material2qty": 8,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Cleansing_Heart",
-          "level": 60,
-          "material4": "Sealed_Scroll",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Philanemo_Mushroom"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Cleansing_Heart",
-          "level": 70,
-          "material4": "Forbidden_Curse_Scroll",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Philanemo_Mushroom"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Varunada_Lazurite_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Cleansing_Heart",
-          "level": 80,
-          "material4": "Forbidden_Curse_Scroll",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Philanemo_Mushroom"
+        "Xingqiu": {
+            "image": "Characters/Hydro/Xingqiu.png",
+            "gender": "Male",
+            "birthday": "9/10",
+            "name": "Xingqiu",
+            "description": "A young man carrying a longsword who is frequently seen at book booths. He has a heart of gold and yearns for justice and fairness for all.",
+            "nation": "Liyue",
+            "weapon": "Sword",
+            "rarity": 4,
+            "affiliation": "Feiyun Commerce Guild",
+            "constellation": "Fabulae Textile",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "3": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "4": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "5": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "6": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "7": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "8": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "9": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    },
+                    "10": {
+                        "material2qty": 0,
+                        "material1": "Vayuda_Turquoise_Silver",
+                        "material1qty": 1,
+                        "mora": 20000,
+                        "material2": null,
+                        "level": 20,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 3,
+                        "material3qty": 3,
+                        "material3": "Cecilia"
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": ""
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Varunada_Lazurite_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Silk_Flower"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Cleansing_Heart",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Silk_Flower"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Varunada_Lazurite_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Cleansing_Heart",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Silk_Flower"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Cleansing_Heart",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Silk_Flower"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Varunada_Lazurite_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Cleansing_Heart",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Silk_Flower"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Varunada_Lazurite_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Cleansing_Heart",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Silk_Flower"
+                }
+            },
+            "introduction": "The second son of the Feiyun Commerce Guild, Xingqiu has had a reputation for being studious and polite ever since he was a young child. But there is another side to the mild-mannered Xingqiu everyone knows. A daring, adventurous and much more mischievous side...",
+            "genshinggpath": "characters/Xingqiu",
+            "element": "Hydro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
+            "subCollection": {}
         }
-      },
-      "introduction": "The Deaconess of the Favonius Church and a shining starlet adored by all. Although the concept of a starlet is rather novel in a city of bards, the people of Mondstadt love Barbara nonetheless. \"I owe everything to the city's spirit of freedom\" — Barbara, regarding her popularity.",
-      "genshinggpath": "characters/Barbara",
-      "element": "Hydro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
-      "subCollection": {}
-    },
-    "Mona": {
-      "image": "Characters/Hydro/Mona.png",
-      "gender": "Female",
-      "birthday": "31/8",
-      "name": "Mona",
-      "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
-      "nation": "Mondstadt",
-      "weapon": "Catalyst",
-      "rarity": 5,
-      "affiliation": "Hexenzirkel",
-      "constellation": "Astrolabos",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Varunada_Lazurite_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Philanemo_Mushroom"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Cleansing_Heart",
-          "level": 40,
-          "material4": "Whopperflower_Nectar",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Philanemo_Mushroom"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Cleansing_Heart",
-          "level": 50,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Philanemo_Mushroom"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Cleansing_Heart",
-          "level": 60,
-          "material4": "Shimmering_Nectar",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Philanemo_Mushroom"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Cleansing_Heart",
-          "level": 70,
-          "material4": "Energy_Nectar",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Philanemo_Mushroom"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Varunada_Lazurite_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Cleansing_Heart",
-          "level": 80,
-          "material4": "Energy_Nectar",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Philanemo_Mushroom"
-        }
-      },
-      "introduction": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful. Though she is often strapped for cash and lives a life of thrift, she is resolved to never use astrology for profit... It is this very resolution that has caused her to constantly fret about money.",
-      "genshinggpath": "characters/Mona",
-      "element": "Hydro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Mona",
-      "subCollection": {}
-    },
-    "Tartaglia": {
-      "image": "Characters/Hydro/Tartaglia.png",
-      "gender": "Male",
-      "birthday": "20/7",
-      "name": "Tartaglia",
-      "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
-      "nation": "Snezhnaya",
-      "weapon": "Bow",
-      "rarity": 5,
-      "affiliation": "Fatui",
-      "constellation": "Monoceros Caeli",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Varunada_Lazurite_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Recruit_Insignia",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Starconch"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Cleansing_Heart",
-          "level": 40,
-          "material4": "Recruit_Insignia",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Starconch"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Cleansing_Heart",
-          "level": 50,
-          "material4": "Sergeant_Insignia",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Starconch"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Cleansing_Heart",
-          "level": 60,
-          "material4": "Sergeant_Insignia",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Starconch"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Cleansing_Heart",
-          "level": 70,
-          "material4": "Lieutenant_Insignia",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Starconch"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Varunada_Lazurite_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Cleansing_Heart",
-          "level": 80,
-          "material4": "Lieutenant_Insignia",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Starconch"
-        }
-      },
-      "introduction": "Meet Tartaglia — the cunning Snezhnayan whose unpredictable personality keeps people guessing his every move.\nDon't be under any illusion as to what he might be thinking or what his intentions are. Just remember this: Behind that innocent, childlike exterior lies a finely honed instrument of war.",
-      "genshinggpath": "characters/Tartaglia",
-      "element": "Hydro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Tartaglia",
-      "subCollection": {}
-    },
-    "Xingqiu": {
-      "image": "Characters/Hydro/Xingqiu.png",
-      "gender": "Male",
-      "birthday": "9/10",
-      "name": "Xingqiu",
-      "description": "A young man carrying a longsword who is frequently seen at book booths. He has a heart of gold and yearns for justice and fairness for all.",
-      "nation": "Liyue",
-      "weapon": "Sword",
-      "rarity": 4,
-      "affiliation": "Feiyun Commerce Guild",
-      "constellation": "Fabulae Textile",
-      "ascension": {
-        "1": {
-          "material2qty": 0,
-          "material1": "Varunada_Lazurite_Silver",
-          "material1qty": 1,
-          "mora": 20000,
-          "material2": null,
-          "level": 20,
-          "material4": "Damaged_Mask",
-          "material4qty": 3,
-          "material3qty": 3,
-          "material3": "Silk_Flower"
-        },
-        "2": {
-          "material2qty": 2,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 3,
-          "mora": 40000,
-          "material2": "Cleansing_Heart",
-          "level": 40,
-          "material4": "Damaged_Mask",
-          "material4qty": 15,
-          "material3qty": 10,
-          "material3": "Silk_Flower"
-        },
-        "3": {
-          "material2qty": 4,
-          "material1": "Varunada_Lazurite_Fragment",
-          "material1qty": 6,
-          "mora": 60000,
-          "material2": "Cleansing_Heart",
-          "level": 50,
-          "material4": "Stained_Mask",
-          "material4qty": 12,
-          "material3qty": 20,
-          "material3": "Silk_Flower"
-        },
-        "4": {
-          "material2qty": 8,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 3,
-          "mora": 80000,
-          "material2": "Cleansing_Heart",
-          "level": 60,
-          "material4": "Stained_Mask",
-          "material4qty": 18,
-          "material3qty": 30,
-          "material3": "Silk_Flower"
-        },
-        "5": {
-          "material2qty": 12,
-          "material1": "Varunada_Lazurite_Chunk",
-          "material1qty": 6,
-          "mora": 100000,
-          "material2": "Cleansing_Heart",
-          "level": 70,
-          "material4": "Ominous_Mask",
-          "material4qty": 12,
-          "material3qty": 45,
-          "material3": "Silk_Flower"
-        },
-        "6": {
-          "material2qty": 20,
-          "material1": "Varunada_Lazurite_Gemstone",
-          "material1qty": 6,
-          "mora": 120000,
-          "material2": "Cleansing_Heart",
-          "level": 80,
-          "material4": "Ominous_Mask",
-          "material4qty": 24,
-          "material3qty": 60,
-          "material3": "Silk_Flower"
-        }
-      },
-      "introduction": "The second son of the Feiyun Commerce Guild, Xingqiu has had a reputation for being studious and polite ever since he was a young child. But there is another side to the mild-mannered Xingqiu everyone knows. A daring, adventurous and much more mischievous side...",
-      "genshinggpath": "characters/Xingqiu",
-      "element": "Hydro",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
-      "subCollection": {}
     }
-  }
 }
