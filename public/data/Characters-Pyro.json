@@ -114,42 +114,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Every_Arrow_Finds_Its_Target": {
+                        "name": "Every Arrow Finds Its Target",
+                        "effect": "Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.",
+                        "image": "Talents/Passive/Talent_Every_Arrow_Finds_Its_Target.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Precise_Shot": {
+                        "name": "Precise Shot",
+                        "effect": "Aimed Shot hits on weak spots increase ATK by 15% for 10s.",
+                        "image": "Talents/Passive/Talent_Precise_Shot.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Gliding_Champion": {
+                        "name": "Gliding Champion",
+                        "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Gliding_Champion.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Sharpshooter": {
+                        "name": "Sharpshooter",
+                        "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal Pyro DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Sharpshooter.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Explosive_Puppet": {
+                        "name": "Explosive Puppet",
+                        "effect": "The ever-reliable Baron Bunny takes the stage.\nBaron Bunny:\n\nContinuously taunts the enemy, drawing their fire.\nBaron Bunny's HP scales with Amber's Max HP.\nWhen destroyed or when its timer expires, Baron Bunny explodes, dealing AoE Pyro DMG.\nGenerate 4 elemental particles when it hit at least 1 target.\nHold: Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.",
+                        "image": "Talents/Skill/Talent_Explosive_Puppet.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Fiery_Rain": {
+                        "name": "Fiery Rain",
+                        "effect": "Fires off a shower of arrows, dealing continuous AoE Pyro DMG.",
+                        "image": "Talents/Burst/Talent_Fiery_Rain.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -380,42 +380,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Rekindle": {
+                        "name": "Rekindle",
+                        "effect": "Decreases Passion Overload's CD by 20%.",
+                        "image": "Talents/Passive/Talent_Rekindle.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Fearnaught": {
+                        "name": "Fearnaught",
+                        "effect": "When inside Fantastic Voyage's circle, Passion Overload's CD is decreased by 50% and Bennett cannot be launched by this skill's explosion.",
+                        "image": "Talents/Passive/Talent_Fearnaught.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "It_Should_Be_Safe": {
+                        "name": "It Should Be Safe...",
+                        "effect": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.",
+                        "image": "Talents/Passive/Talent_It_Should_Be_Safe.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Strike_of_Fortune": {
+                        "name": "Strike of Fortune",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword swings.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Strike_of_Fortune.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Passion_Overload": {
+                        "name": "Passion Overload",
+                        "effect": "Bennett concentrates the spirit of Adventure and Pyro into his blade. Depending on how long he charges for, different effects occur.\nTap: A single, swift flame strike that deals Pyro DMG.\nHold (Short): Charges up, resulting in different effects when unleashed based on the Charge Level\nLevel 1: Strikes twice, dealing Pyro DMG and launching opponents.\nLevel 2: Unleashes 3 consecutive attacks that deal impressive Pyro DMG, but the last attack triggers an explosion that launches both Bennett and the enemy.\nBennett takes no damage from being launched, but can take fall damage if he falls down a cliff.",
+                        "image": "Talents/Skill/Talent_Passion_Overload.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Fantastic_Voyage": {
+                        "name": "Fantastic Voyage",
+                        "effect": "Bennett performs a jumping attack that deals Pyro DMG, creating an Inspiration Field for 12 seconds.\nInspiration Field:\n\nIf the health of a character within the AoE is equal to or falls below 70%, their health will regenerate each second. The amount of HP restores scales off Bennett's Max HP.\nIf the health of a character within the AoE is higher than 70%, they gain an ATK Bonus that scales based on Bennett's Base ATK.\nImbues characters within the AoE with Pyro.",
+                        "image": "Talents/Burst/Talent_Fantastic_Voyage.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -646,42 +646,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Relentless": {
+                        "name": "Relentless",
+                        "effect": "Diluc's Charged Attack Stamina Cost is decreased by 50%, and its duration is increased by 3s.",
+                        "image": "Talents/Passive/Talent_Relentless.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Blessing_of_Phoenix": {
+                        "name": "Blessing of Phoenix",
+                        "effect": "The Pyro Enchantment provided by Dawn lasts for 4s longer. Additionally. Diluc gains 20% Pyro DMG Bonus during the duration of this effect.",
+                        "image": "Talents/Passive/Talent_Blessing_of_Phoenix.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Tradition_of_the_Dawn_Knight": {
+                        "name": "Tradition of the Dawn Knight",
+                        "effect": "Refunds 15% of the ores used when crafting Claymore-type weapons.",
+                        "image": "Talents/Passive/Talent_Tradition_of_the_Dawn_Knight.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Tempered_Sword": {
+                        "name": "Tempered Sword",
+                        "effect": "Normal Attack: Perform up to 4 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Tempered_Sword.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Searing_Onslaught": {
+                        "name": "Searing Onslaught",
+                        "effect": "Performs a forward slash that deals Pyro DMG.\nThis skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).",
+                        "image": "Talents/Skill/Talent_Searing_Onslaught.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Dawn": {
+                        "name": "Dawn",
+                        "effect": "Releases intense flames to knock nearby opponents back, dealing Pyro DMG. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive Pyro DMG to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of AoE Pyro DMG.\nThe searing flames that run down his blade cause it to be infused with Pyro.",
+                        "image": "Talents/Burst/Talent_Dawn.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -912,42 +912,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Pounding_Surprise": {
+                        "name": "Pounding Surprise",
+                        "effect": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+                        "image": "Talents/Passive/Talent_Pounding_Surprise.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Sparkling_Burst": {
+                        "name": "Sparkling Burst",
+                        "effect": "When Klee's Charged Attack results in a CRIT, all party members gain 2 Elemental Energy.",
+                        "image": "Talents/Passive/Talent_Sparkling_Burst.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "All_Of_My_Treasures": {
+                        "name": "All Of My Treasures!",
+                        "effect": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+                        "image": "Talents/Passive/Talent_All_Of_My_Treasures.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Kaboom": {
+                        "name": "Kaboom!",
+                        "effect": "Normal Attack: Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.\nCharged Attack: Consumes a certain amount of Stamina and deals AoE Pyro DMG to opponents after a short casting time.\nPlunging Attack: Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Kaboom.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Jumpy_Dumpty": {
+                        "name": "Jumpy Dumpty",
+                        "effect": "Jumpy Dumpty is tons of boom-bang-fun!\nWhen thrown, Jumpy Dumpty bounces thrice, igniting and dealing AoE Pyro DMG with every bounce.\nOn the third bounce, the bomb splits into 8 mines. The mines will explode upon contact with opponents, or after a short period of time, dealing AoE Pyro DMG.\nStarts with 2 charges.",
+                        "image": "Talents/Skill/Talent_Jumpy_Dumpty.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Sparks_n_Splash": {
+                        "name": "Sparks 'n' Splash",
+                        "effect": "Klee's Blazing Delight! For 10 seconds, summons 5 times 4 Sparks 'n' Splash to attack nearby opponents, dealing AoE Pyro DMG.",
+                        "image": "Talents/Burst/Talent_Sparks_n_Splash.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -1178,42 +1178,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Crossfire": {
+                        "name": "Crossfire",
+                        "effect": "Increases the flame range of Guoba by 20%.",
+                        "image": "Talents/Passive/Talent_Crossfire.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Beware_Its_Super_Hot": {
+                        "name": "Beware, It's Super Hot!",
+                        "effect": "When Guoba Attack's effects end, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+                        "image": "Talents/Passive/Talent_Beware_It_Super_Hot.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Chef_de_Cuisine": {
+                        "name": "Chef de Cuisine",
+                        "effect": "When a Perfect Cooking is achieved on an ATK-boosting dish, Xiangling has a 12% chance to receive double the product.",
+                        "image": "Talents/Passive/Talent_Chef_de_Cuisine.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Dough_Fu": {
+                        "name": "Dough-Fu",
+                        "effect": "Normal Attack: Performs up to five consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Dough-Fu.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Guoba_Attack": {
+                        "name": "Guoba Attack",
+                        "effect": "Summons Guoba the Panda. After 2 seconds, Guoba starts breathing fire at an opponent, dealing AoE Pyro DMG every 1.5 seconds 4 times.\nEach breath generates 1 elemental particle when it hits at least 1 target.",
+                        "image": "Talents/Skill/Talent_Guoba_Attack.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Pyronado": {
+                        "name": "Pyronado",
+                        "effect": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for so long as the ability persists, dealing Pyro DMG to all opponents in its path.",
+                        "image": "Talents/Burst/Talent_Pyronado.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -1444,42 +1444,42 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "The_Show_Goes_On_Even_Without_an_Audience": {
+                        "name": "\"The Show Goes On, Even Without an Audience...\"",
+                        "effect": "Decreases the number of opponents Sweeping Fervor must hit to trigger each level of shielding.\nShield Level 2: Lead-In requirement reduced to 1 opponent hit.\nShield Level 3: Rave requirement reduced to 2 opponents hit or more.",
+                        "image": "Talents/Passive/Talent_The_Show_Goes_On_Even_Without_an_Audience.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Now_Thats_Rock_N_Roll": {
+                        "name": "\"...Now That's Rock 'N' Roll!\"",
+                        "effect": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.",
+                        "image": "Talents/Passive/Talent_Now_That_Rock_N_Roll.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "A_Rad_Recipe": {
+                        "name": "A Rad Recipe",
+                        "effect": "When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_A_Rad_Recipe.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Dance_on_Fire": {
+                        "name": "Dance on Fire",
+                        "effect": "Normal Attack: Performs up to 4 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Dance_on_Fire.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Sweeping_Fervor": {
+                        "name": "Sweeping Fervor",
+                        "effect": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby opponents, forming a shield made out of her audience's passion.\nThe shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.\nHitting 0-1 opponents grants Shield Level 1: Ad Lib.\nHitting 2 opponents grants Shield Level 2: Lead-In.\nHitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby opponents.\nThe shield has the following special properties:\n\nWhen unleashed, it infuses Xinyan with Pyro.\nIt has 250% DMG Absorption effectiveness against Pyro DMG.\nGenerate 4 elemental particles when it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Sweeping_Fervor.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Riff_Revolution": {
+                        "name": "Riff Revolution",
+                        "effect": "Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd. The sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby opponents.",
+                        "image": "Talents/Burst/Talent_Riff_Revolution.png",
                         "type": "Elemental Burst"
                     }
                 }
