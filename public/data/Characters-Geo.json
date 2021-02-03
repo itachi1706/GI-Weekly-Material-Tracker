@@ -1,5 +1,271 @@
 {
     "characters": {
+        "TravelerGeo": {
+            "image": "Characters/Anemo/Traveler.png",
+            "gender": "Male/Female",
+            "birthday": "Up to Player",
+            "name": "Aether/Lumine (Geo)",
+            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Adventurers' Guild",
+            "constellation": "Viator/Viatrix",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Prosperity",
+                        "material3qty": 3,
+                        "material4": "Firm_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 2,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Gold",
+                        "material3qty": 4,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Prosperity",
+                        "material3qty": 6,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 9,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Gold",
+                        "material3qty": 4,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Prosperity",
+                        "material3qty": 6,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 12,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Gold",
+                        "material3qty": 16,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "PASSIVE_1": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Passive 1"
+                    },
+                    "PASSIVE_2": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Passive 2"
+                    },
+                    "PASSIVE_3": {
+                        "name": "Passive",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "ATTACK_1": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Normal/Charged Attack"
+                    },
+                    "ATTACK_2": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Elemental Skill"
+                    },
+                    "ATTACK_3": {
+                        "name": "attack",
+                        "effect": "effect",
+                        "image": "",
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Windwheel_Aster"
+                },
+                "2": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": null,
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Windwheel_Aster"
+                },
+                "3": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": null,
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Windwheel_Aster"
+                },
+                "4": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": null,
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Windwheel_Aster"
+                },
+                "5": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": null,
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Windwheel_Aster"
+                },
+                "6": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": null,
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Windwheel_Aster"
+                }
+            },
+            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+            "genshinggpath": "characters/Traveler(Anemo)",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+            "subCollection": {}
+        },
         "Albedo": {
             "image": "Characters/Geo/Albedo.png",
             "gender": "Male",
