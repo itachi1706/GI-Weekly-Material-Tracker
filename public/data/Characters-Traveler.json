@@ -114,42 +114,36 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Slitting_Wind": {
+                        "name": "Slitting Wind",
+                        "effect": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+                        "image": "Talents/Passive/Talent_Slitting_Wind.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Second_Wind": {
+                        "name": "Second Wind",
+                        "effect": "Palm Vortex kills regenerate 2% HP for 5s. This effect can only occur once every 5s.",
+                        "image": "Talents/Passive/Talent_Second_Wind.png",
                         "type": "Passive 2"
-                    },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Foreign_Ironwind": {
+                        "name": "Foreign Ironwind",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Foreign_Ironwind.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Palm_Vortex": {
+                        "name": "Palm Vortex",
+                        "effect": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing Anemo DMG 6 times in 1.5 seconds to opponents in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.\nHold: DMG and AoE will gradually increase.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 23% additional elemental DMG of that type. Elemental Absorption may only occur once per use.\nGenerate 2 elemental particles when press and 3.5 when hold, if it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Palm_Vortex.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Gust_Surge": {
+                        "name": "Gust Surge",
+                        "effect": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing Anemo DMG each 0.5 seconds, 9 times.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 30.7% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                        "image": "Talents/Burst/Talent_Gust_Surge.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -380,42 +374,36 @@
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Shattered_Darkrock": {
+                        "name": "Shattered Darkrock",
+                        "effect": "Reduces Starfell Sword's CD by 2s.",
+                        "image": "Talents/Passive/Talent_Shattered_Darkrock.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Frenzied_Rockslide": {
+                        "name": "Frenzied Rockslide",
+                        "effect": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+                        "image": "Talents/Passive/Talent_Frenzied_Rockslide.png",
                         "type": "Passive 2"
-                    },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Foreign_Rockblade": {
+                        "name": "Foreign Rockblade",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Foreign_Rockblade.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Starfell_Sword": {
+                        "name": "Starfell Sword",
+                        "effect": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.\nHold: This skill's positioning may be adjusted.",
+                        "image": "Talents/Skill/Talent_Starfell_Sword.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Wake_of_Earth": {
+                        "name": "Wake of Earth",
+                        "effect": "Energizing the Geo elements deep underground, you set off expanding shockwaves.\nLaunches surrounding opponents back and deals AoE Geo DMG.\nA stone wall is erected at the edges of the shockwave.\nThe stone wall is considered a Geo Construct, and may be used to block attacks.",
+                        "image": "Talents/Burst/Talent_Wake_of_Earth.png",
                         "type": "Elemental Burst"
                     }
                 }
