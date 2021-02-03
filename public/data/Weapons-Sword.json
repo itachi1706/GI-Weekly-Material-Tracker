@@ -1707,6 +1707,82 @@
       "effect": "Each Elemental Orb or Particle collected restores 1% HP.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Traveler%27s_Handy_Sword",
       "subCollection": {}
+    },
+    "Primordial_Jade_Cutter": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
+      "name": "Primordial Jade Cutter",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 3,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 14,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 18,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Sword/Primordial_Jade_Cutter.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Sword",
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effect": "HP increased by 20%. Additionally, provides an ATK Bonus based on 1.2% of the wielder’s Max HP.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Cutter",
+      "subCollection": {}
     }
   }
 }
