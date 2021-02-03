@@ -19,9 +19,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Divining_Scroll",
                         "material4qty": 6
                     },
                     "3": {
@@ -30,9 +30,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 3
                     },
                     "4": {
@@ -41,9 +41,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 4
                     },
                     "5": {
@@ -52,9 +52,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 6
                     },
                     "6": {
@@ -63,93 +63,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Calcite_Might": {
+                        "name": "Calcite Might",
+                        "effect": "Transient Blossoms generated by Abiogenesis: Solar Isotoma deal 25% more DMG to opponents whose HP is below 50%.",
+                        "image": "Talents/Passive/Talent_Calcite_Might.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Homuncular_Nature": {
+                        "name": "Homuncular Nature",
+                        "effect": "Using Rite of Progeniture: Tectonic Tide increases the Elemental Mastery of nearby party members by 125 for 10s.",
+                        "image": "Talents/Passive/Talent_Homuncular_Nature.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Flash_of_Genius_Albedo": {
+                        "name": "Flash of Genius (Albedo)",
+                        "effect": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
+                        "image": "Talents/Passive/Talent_Flash_of_Genius_Albedo.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Favonius_Bladework_Weiss": {
+                        "name": "Favonius Bladework - Weiss",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Favonius_Bladework_-_Weiss.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Abiogenesis_Solar_Isotoma": {
+                        "name": "Abiogenesis: Solar Isotoma",
+                        "effect": "Albedo creates a Solar Isotoma using alchemy, which deals AoE Geo DMG on appearance.\nSolar Isotoma has the following properties:\n\nWhen enemies within the Solar Isotoma zone take damage, the Solar Isotoma will generate Transient Blossoms which deal AoE Geo DMG. DMG dealt scales off Albedo's DEF. Transient Blossoms can only be generated once every 2s.\nWhen a character is located at the locus of the Solar Isotoma, the Solar Isotoma will accumulate Geo power to form a crystallized platform that lifts the character up to a certain height. Only one crystallized platform can exist at a time.\nSolar Isotoma is a Geo Construct.\nHold to designate the location of the skill.",
+                        "image": "Talents/Skill/Talent_Abiogenesis_-_Solar_Isotoma.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Rite_of_Progeniture_Tectonic_Tide": {
+                        "name": "Rite of Progeniture: Tectonic Tide",
+                        "effect": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG\n\nTecotonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
+                        "image": "Talents/Burst/Talent_Rite_of_Progeniture_-_Tectonic_Tide.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -285,9 +285,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Prosperity",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Recruit_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -296,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -307,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -318,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -329,93 +329,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Backup_Plan": {
+                        "name": "Backup Plan",
+                        "effect": "When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.",
+                        "image": "Talents/Passive/Talent_Backup_Plan.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Strategic_Reserve": {
+                        "name": "Strategic Reserve",
+                        "effect": "A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.",
+                        "image": "Talents/Passive/Talent_Strategic_Reserve.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Trove_of_Marvelous_Treasures": {
+                        "name": "Trove of Marvelous Treasures",
+                        "effect": "Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, and Starsilver) on the mini-map.",
+                        "image": "Talents/Passive/Talent_Trove_of_Marvelous_Treasures.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Sparkling_Scatter": {
+                        "name": "Sparkling Scatter",
+                        "effect": "Normal Attack: Shoots gems that deal Geo DMG. Upon hit, this grants Ningguang 1 Star Jade.\nCharged Attack: Consumes a certain amount of stamina to fire off a giant gem that deals Geo DMG. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.\nPlunging Attack: Gathering the might of Geo, Ningguang plunges toward the ground from mid-air, damaging all opponents in her path. Deals AoE Geo DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Sparkling_Scatter.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Jade_Screen": {
+                        "name": "Jade Screen",
+                        "effect": "Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing AoE Geo DMG.\nJade Screen\n\nBlocks opponents' projectiles.\nEndurance scales based on Ningguang's Max HP.\nJade Screen is considered a Geo Construct and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at a time.\nGenerates 3 elemental particles when it hits at least 1 target.",
+                        "image": "Talents/Skill/Talent_Jade_Screen.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Starshatter": {
+                        "name": "Starshatter",
+                        "effect": "Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her opponents that deal massive Geo DMG.\nIf Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.",
+                        "image": "Talents/Burst/Talent_Starshatter.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -551,7 +551,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Resistance",
                         "material3qty": 3,
                         "material4": "Damaged_Mask",
                         "material4qty": 6
@@ -562,7 +562,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 2,
                         "material4": "Stained_Mask",
                         "material4qty": 3
@@ -573,7 +573,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 4,
                         "material4": "Stained_Mask",
                         "material4qty": 4
@@ -584,7 +584,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 6,
                         "material4": "Stained_Mask",
                         "material4qty": 6
@@ -595,7 +595,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 9,
                         "material4": "Stained_Mask",
                         "material4qty": 9
@@ -604,9 +604,9 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 4,
                         "material4": "Ominous_Mask",
                         "material4qty": 4
@@ -615,9 +615,9 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 6,
                         "material4": "Ominous_Mask",
                         "material4qty": 6
@@ -626,62 +626,62 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 12,
                         "material4": "Ominous_Mask",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 16,
                         "material4": "Ominous_Mask",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Devotion": {
+                        "name": "Devotion",
+                        "effect": "When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:\nCreates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. The shield has a 250% DMG Absorption effectiveness against Geo DMG. This effect can only occur once every 60s.",
+                        "image": "Talents/Passive/Talent_Devotion.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Nice_and_Clean": {
+                        "name": "Nice and Clean",
+                        "effect": "Every 4 Normal or Charged Attack hits will decrease the CD of Breastplate by 1s.\nHitting multiple opponents with a single attack is only counted as 1 hit.",
+                        "image": "Talents/Passive/Talent_Nice_and_Clean.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Maid_Knighthood": {
+                        "name": "Maid's Knighthood",
+                        "effect": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_Maid_Knighthood.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Favonius_Bladework_Maid": {
+                        "name": "Favonius Bladework - Maid",
+                        "effect": "Normal Attack: Performs up to 4 consecutive slashes\nCharged Attack: Drains Stamina over time to perform continuous swirling attack on all nearby opponents. At the end of the sequence, performs an additional powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Favonius_Bladework_-_Maid.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Breastplate": {
+                        "name": "Breastplate",
+                        "effect": "Summons protective stone armor, dealing Geo DMG to surrounding opponents and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.\nThe shield has the following properties:\nWhen Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.\nPossesses 150% DMG Absorption efficiency against all Elemental and Physical DMG.\nThe amount of HP healed when regeneration is triggered scales based on Noelle's DEF.",
+                        "image": "Talents/Skill/Talent_Breastplate.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Sweeping_Time": {
+                        "name": "Sweeping Time",
+                        "effect": "Gathering the strength of stone around her weapon, Noelle strikes the opponents surrounding her within a large AoE, dealing Geo DMG.\nAfterwards, Noelle gains the following effects:\nLarger attack AoE\nConverts attack DMG to Geo DMG that cannot be overridden by any other elemental infusion.\nIncreased ATK that scales based on her DEF.",
+                        "image": "Talents/Burst/Talent_Sweeping_Time.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -817,9 +817,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Gold",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Slime_Condensate",
                         "material4qty": 6
                     },
                     "3": {
@@ -828,9 +828,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 3
                     },
                     "4": {
@@ -839,9 +839,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 4
                     },
                     "5": {
@@ -850,9 +850,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 6
                     },
                     "6": {
@@ -861,93 +861,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tusk_of_Monoceros_Caeli",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Resonant_Waves": {
+                        "name": "Resonant Waves",
+                        "effect": "When the Jade Shield takes DMG, it will Fortify:\nFortified characters have 5% increased Shield Strength.\nCan stack up to 5 times, and lasts until the Jade Shield disappears.",
+                        "image": "Talents/Passive/Talent_Resonant_Waves.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Dominance_of_Earth": {
+                        "name": "Dominance of Earth",
+                        "effect": "Zhongli deals bonus DMG based on his Max HP:\nNormal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.\nDominus Lapidis Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.\nPlanet Befall deals additional DMG equal to 33% of Zhongli's Max HP.",
+                        "image": "Talents/Passive/Talent_Dominance_of_Earth.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Arcanum_of_Crystal": {
+                        "name": "Arcanum of Crystal",
+                        "effect": "Refunds 15% of the ores used when crafting Polearm-type weapons.",
+                        "image": "Talents/Passive/Talent_Arcanum_of_Crystal.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Rain_of_Stone": {
+                        "name": "Rain of Stone",
+                        "effect": "Normal Attack: Performs up to 6 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.\nPlunging Attack: Plunges from mid-air to strike the gronud below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Rain_of_Stone.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Dominus_Lapidis": {
+                        "name": "Dominus Lapidis",
+                        "effect": "Every mountain, rock, and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.\nPress: Commands the omnipresent power of the earth to solidify into a Stone Stele, standing 30 seconds, dealing AoE Geo DMG at the creation.\n\nHold: Causes nearby Geo energy to explode, causing the following effects:\n\nIf their maximum number hasn't been reached, creates a Stone Stele.\nCreates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP. Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nDeals AoE Geo DMG.\nIf there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG.\n\nStone Stele: When created, deals AoE Geo DMG. Additionally, every 2 seconds, it will resonate with other nearby Geo Constructs, dealing Geo DMG to surrounding opponents. Stele creation and Resonance generate 0.5 elemental particles.\nThe Stone Stele is considered a Geo Construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time.\n\nJade Shield: Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+                        "image": "Talents/Skill/Talent_Dominus_Lapidis.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Planet_Befall": {
+                        "name": "Planet Befall",
+                        "effect": "Brings a falling meteor down to earth, dealing massive Geo DMG to opponents caught in its AoE and applying the Petrification status to them.\nPetrification: Opponents affected by the Petrification status cannot move.",
+                        "image": "Talents/Burst/Talent_Planet_Befall.png",
                         "type": "Elemental Burst"
                     }
                 }

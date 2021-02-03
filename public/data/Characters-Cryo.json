@@ -19,7 +19,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Diligence",
                         "material3qty": 3,
                         "material4": "Damaged_Mask",
                         "material4qty": 6
@@ -30,7 +30,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 2,
                         "material4": "Stained_Mask",
                         "material4qty": 3
@@ -41,7 +41,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 4,
                         "material4": "Stained_Mask",
                         "material4qty": 4
@@ -52,7 +52,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 6,
                         "material4": "Stained_Mask",
                         "material4qty": 6
@@ -63,7 +63,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 9,
                         "material4": "Stained_Mask",
                         "material4qty": 9
@@ -72,9 +72,9 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 4,
                         "material4": "Ominous_Mask",
                         "material4qty": 4
@@ -83,9 +83,9 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 6,
                         "material4": "Ominous_Mask",
                         "material4qty": 6
@@ -94,62 +94,62 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 12,
                         "material4": "Ominous_Mask",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 16,
                         "material4": "Ominous_Mask",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Steady_Breathing": {
+                        "name": "Steady Breathing",
+                        "effect": "Sword, Claymore, or Polearm-wielding characters within the field created by Spirit Blade: Chonghua's Layered Frost have their Normal ATK SPD increased by 8%.",
+                        "image": "Talents/Passive/Talent_Steady_Breathing.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Rimechaser_Blade": {
+                        "name": "Rimechaser Blade",
+                        "effect": "When the field created by Spirit Blade: Chonghua's Layered Frost disappears, another spirit blade will be summoned to strike nearby opponents, dealing 100% of Chonghua's Layered Frost's Skill DMG as AoE Cryo DMG.Opponents hit by this blade will have their Cryo RES decreased by 10% for 8s.",
+                        "image": "Talents/Passive/Talent_Rimechaser_Blade.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Gallant_Journey": {
+                        "name": "Gallant Journey",
+                        "effect": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+                        "image": "Talents/Passive/Talent_Gallant_Journey.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Demonbane": {
+                        "name": "Demonbane",
+                        "effect": "Normal Attack: Perform up to 4 consecutive strikes.Charged Attack: Drains Stamina over time to perform continuous swirling attacks against all nearby opponents. At the end of the sequence, perform a more powerful slash.Plunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Demonbane.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
+                    "Spirit_Blade_Chonghua_Layered_Frost": {
+                        "name": "Spirit Blade: Chonghua's Layered Frost",
+                        "effect": "Chongyun strikes the ground with his greatsword, causing a Cryo explosion in a circular AoE in front of him that deals Cryo DMG.\nAfter a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all Sword, Claymore and Polearm-wielding characters' weapons will be infused with Cryo.",
                         "image": "",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Spirit_Blade_Cloud_Parting_Star": {
+                        "name": "Spirit Blade: Cloud-Parting Star",
+                        "effect": "Performing the secret hand seals, Chongyun summons 3 giant spirit blades in mid-air that fall to the earth one by one after a short delay, exploding as they hit the ground.\nWhen the spirit blades explode, they will deal AoE Cryo DMG and launch opponents.",
+                        "image": "Talents/Burst/Talent_Spirit_Blade_-_Cloud-parting_Star.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -285,9 +285,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Freedom",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Firm_Arrowhead",
                         "material4qty": 6
                     },
                     "3": {
@@ -296,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 3
                     },
                     "4": {
@@ -307,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 4
                     },
                     "5": {
@@ -318,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 6
                     },
                     "6": {
@@ -329,93 +329,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Cat_Tail_Secret_Menu": {
+                        "name": "Cat's Tail Secret Menu",
+                        "effect": "Characters shielded by Icy Paws have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%.",
+                        "image": "Talents/Passive/Talent_Cat_Tail_Secret_Menu.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Drunkards_Farce": {
+                        "name": "Drunkards' Farce",
+                        "effect": "Opponents who enter the AoE of Signature Mix have 10% decreased ATK for 15s.",
+                        "image": "Talents/Passive/Talent_Drunkards_Farce.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Complimentary_Bar_Food": {
+                        "name": "Complimentary Bar Food",
+                        "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Diona has a 12% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_Complimentary_Bar_Food.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Katzlein_Style": {
+                        "name": "Kätzlein Style",
+                        "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo Damage.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG on impact.",
+                        "image": "Talents/Normal/Talent_Katzlein_Style.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Icy_Paws": {
+                        "name": "Icy Paws",
+                        "effect": "Fires an Icy Paw that deals Cryo DMG to opponents and forms a shield on hit. The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.\nPress: Rapidly fires off 2 Icy Paws.\nHold: Dashes back quickly before firing 5 Icy Paws. The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.\nThe shield has a 250% Cryo DMG Absorption Bonus, and will infuse Diona with Cryo at the point of formation for a short duration.\nEach Icy Paw which hits an opponent generates approximately 0.8 elemental particles.",
+                        "image": "Talents/Skill/Talent_Icy_Paws.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Signature_Mix": {
+                        "name": "Signature Mix",
+                        "effect": "Tosses out a special cold brew that deals AoE Cryo DMG and creates a Drunken Mist in an AoE.\nEvery 2 seconds, for 12 seconds, Drunken Mist:\n\nDeals Cryo DMG to opponents within the field.\nRegenerates the HP of characters within the field.",
+                        "image": "Talents/Burst/Talent_Signature_Mix.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -551,9 +551,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Treasure_Hoarder_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -562,9 +562,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -573,9 +573,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -584,9 +584,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -595,93 +595,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Cold_Blooded_Strike": {
+                        "name": "Cold-Blooded Strike",
+                        "effect": "Every hit with Frostgnaw regenerates HP for Kaeya equal to 15% of his ATK.",
+                        "image": "Talents/Passive/Talent_Cold-Blooded_Strike.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Glacial_Heart": {
+                        "name": "Glacial Heart",
+                        "effect": "Opponents Frozen by Frostgnaw will drop additional Elemental Particles. Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use.",
+                        "image": "Talents/Passive/Talent_Glacial_Heart.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Hidden_Strength": {
+                        "name": "Hidden Strength",
+                        "effect": "Decreases sprinting Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Hidden_Strength.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Ceremonial_Bladework": {
+                        "name": "Ceremonial Bladework",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Ceremonial_Bladework.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Frostgnaw": {
+                        "name": "Frostgnaw",
+                        "effect": "Unleashes a frigid blast, dealing Cryo DMG to opponents in front of Kaeya.\nGenerates 2.5 elemental particles when it hits at least 1 target.",
+                        "image": "Talents/Skill/Talent_Frostgnaw.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Glacial_Waltz": {
+                        "name": "Glacial Waltz",
+                        "effect": "Coalescing the frost in the air, Kaeya summons 3 icicles that revolve 4 times around him for 8 seconds.\nThese icicles will follow the character around and deal Cryo DMG to opponents in their path for so long as they persist.",
+                        "image": "Talents/Burst/Talent_Glacial_Waltz.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -817,9 +817,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Prosperity",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Divining_Scroll",
                         "material4qty": 6
                     },
                     "3": {
@@ -828,9 +828,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 3
                     },
                     "4": {
@@ -839,9 +839,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 4
                     },
                     "5": {
@@ -850,9 +850,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 6
                     },
                     "6": {
@@ -861,93 +861,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Life_Prolonging_Methods": {
+                        "name": "Life-Prolonging Methods",
+                        "effect": "When a character under the effects of Adeptus Art: Herald of Frost triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.",
+                        "image": "Talents/Passive/Talent_Life-Prolonging_Methods.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "A_Glimpse_into_Arcanum": {
+                        "name": "A Glimpse into Arcanum",
+                        "effect": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s.  This effect can only occur once every 30s.",
+                        "image": "Talents/Passive/Talent_A_Glimpse_into_Arcanum.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Former_Life_Memories": {
+                        "name": "Former Life Memories",
+                        "effect": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+                        "image": "Talents/Passive/Talent_Former_Life_Memories.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Ancient_Sword_Art": {
+                        "name": "Ancient Sword Art",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Ancient_Sword_Art.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Adeptus_Art_Herald_of_Frost": {
+                        "name": "Adeptus Art: Herald of Frost",
+                        "effect": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing Cryo DMG to surrounding opponents.\nHerald of Frost:\n\nOn hit, Qiqi's Normal and Charged Attacks regenerate HP for your own party members and nearby teammates. Healing scales based on Qiqi's ATK.\nPeriodically regenerates your active character's HP.\nFollows the character around, dealing Cryo DMG to opponents in their path.",
+                        "image": "Talents/Skill/Talent_Adeptus_Art_-_Herald_of_Frost.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Adeptus_Art_Preserver_of_Fortune": {
+                        "name": "Adeptus Art: Preserver of Fortune",
+                        "effect": "Qiqi releases the adeptus power sealed within her body, marking nearby opponents with a Fortune-Preserving Talisman that deals Cryo DMG.\nFortune-Preserving Talisman:\n\nWhen opponents affected by this Talisman take DMG, the character that dealt this DMG regenerates HP.",
+                        "image": "Talents/Burst/Talent_Adeptus_Art_-_Preserver_of_Fortune.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -1064,272 +1064,6 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Qiqi",
             "subCollection": {}
         },
-        "Ayaka": {
-            "image": "Characters/Cryo/Ayaka.png",
-            "gender": "Female",
-            "birthday": "28/9",
-            "name": "Ayaka (UNRELEASED)",
-            "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
-            "nation": "Inazuma",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Kamisato House",
-            "constellation": "~Unknown Constellation~",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_1",
-                        "material3qty": 3,
-                        "material4": "Damaged_Mask",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 2,
-                        "material4": "Stained_Mask",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 4,
-                        "material4": "Stained_Mask",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 6,
-                        "material4": "Stained_Mask",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 9,
-                        "material4": "Stained_Mask",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 1,
-                        "material3": "TALENT_3",
-                        "material3qty": 4,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 1,
-                        "material3": "TALENT_3",
-                        "material3qty": 6,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 2,
-                        "material3": "TALENT_3",
-                        "material3qty": 12,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "EVENT_TALENT",
-                        "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 2,
-                        "material3": "TALENT_3",
-                        "material3qty": 16,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 1"
-                    },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 2"
-                    },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Normal/Charged Attack"
-                    },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Elemental Skill"
-                    },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "2": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "3": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "4": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "5": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "6": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Shivada_Jade_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Divining_Scroll",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Small_Lamp_Grass"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Shivada_Jade_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Hoarfrost_Core",
-                    "level": 40,
-                    "material4": "Divining_Scroll",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Small_Lamp_Grass"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Shivada_Jade_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Hoarfrost_Core",
-                    "level": 50,
-                    "material4": "Sealed_Scroll",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Small_Lamp_Grass"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Shivada_Jade_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Hoarfrost_Core",
-                    "level": 60,
-                    "material4": "Sealed_Scroll",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Small_Lamp_Grass"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Shivada_Jade_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Hoarfrost_Core",
-                    "level": 70,
-                    "material4": "Forbidden_Curse_Scroll",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Small_Lamp_Grass"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Shivada_Jade_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Hoarfrost_Core",
-                    "level": 80,
-                    "material4": "Forbidden_Curse_Scroll",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Small_Lamp_Grass"
-                }
-            },
-            "introduction": "The princess of the Kamisato House. She occasionally practices swordsmanship so that she can pass time by slicing every falling snowflake floating around her on a snowy day.",
-            "genshinggpath": null,
-            "element": "Cryo",
-            "wiki": "https://genshin-impact.fandom.com/wiki/Ayaka",
-            "subCollection": {}
-        },
         "Ganyu": {
             "image": "Characters/Cryo/Ganyu.png",
             "gender": "Female",
@@ -1349,9 +1083,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Diligence",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Whopperflower_Nectar",
                         "material4qty": 6
                     },
                     "3": {
@@ -1360,9 +1094,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 3
                     },
                     "4": {
@@ -1371,9 +1105,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 4
                     },
                     "5": {
@@ -1382,9 +1116,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 6
                     },
                     "6": {
@@ -1393,93 +1127,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Diligence",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Diligence",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Undivided_Heart": {
+                        "name": "Undivided Heart",
+                        "effect": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
+                        "image": "Talents/Passive/Talent_Undivided_Heart.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Harmony_between_Heaven_and_Earth": {
+                        "name": "Harmony between Heaven and Earth",
+                        "effect": "Celestial Shower grants a 20% Cryo DMG Bonus to active members in the AoE.",
+                        "image": "Talents/Passive/Talent_Harmony_between_Heaven_and_Earth.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Preserved_for_the_Hunt": {
+                        "name": "Preserved for the Hunt",
+                        "effect": "Refunds 15% of the ores used when crafting Bow-type weapons.",
+                        "image": "Talents/Passive/Talent_Preserved_for_the_Hunt.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Liutian_Archery": {
+                        "name": "Liutian Archery",
+                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, an icy aura will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Fires off an icy arrow that deals Cryo DMG.\nCharge Level 2: Fires off a Frostflake Arrow that deals Cryo DMG.\nThe Frostflake Arrow blooms after hitting its target, dealing AoE Cryo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Liutian_Archery.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Trail_of_the_Qilin": {
+                        "name": "Trail of the Qilin",
+                        "effect": "Leaving a single Ice Lotus behind, Ganyu dashes backward, shunning all impurity and dealing AoE Cryo DMG.\nIce Lotus:\n\nContinuously taunts surrounding opponents, attracting them to attack it.\nEndurance scales based on Ganyu's Max HP.\nBlooms profusely when destroyed or once its duration ends, dealing AoE Cryo DMG.\nGenerates 2 elemental particles when the creation hits at least 1 target, and 2 elemental particles when the explosion hits at least 1 target",
+                        "image": "Talents/Skill/Talent_Trail_of_the_Qilin.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Celestial_Shower": {
+                        "name": "Celestial Shower",
+                        "effect": "Coalesces atmospheric frost and snow to summon a Sacred Cryo Pearl that exorcises evil.\nDuring its ability duration, the Sacred Cryo Pearl will continuously rain down shards of ice, striking opponents within an AoE and dealing Cryo DMG.",
+                        "image": "Talents/Burst/Talent_Celestial_Shower.png",
                         "type": "Elemental Burst"
                     }
                 }

@@ -19,9 +19,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Gold",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Treasure_Hoarder_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -30,9 +30,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -41,9 +41,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -52,9 +52,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -63,93 +63,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Sigh",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Retribution": {
+                        "name": "Retribution",
+                        "effect": "Counterattacking with Tidecaller at the precise moment when the character is hit grants the maximum DMG Bonus.",
+                        "image": "Talents/Passive/Talent_Retribution.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Lightning_Storm": {
+                        "name": "Lightning Storm",
+                        "effect": "Gain the following effects for 10s after unleashing Tidecaller with its maximum DMG Bonus:\nDMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.\nGreatly reduced delay before unleashing Charged Attacks.",
+                        "image": "Talents/Passive/Talent_Lightning_Storm.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Conqueror_of_Tides": {
+                        "name": "Conqueror of Tides",
+                        "effect": "Decreases swimming Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Conqueror_of_Tides.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Oceanborne": {
+                        "name": "Oceanborne",
+                        "effect": "Normal Attack: Perform up to 5 successive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Oceanborne.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Tidecaller": {
+                        "name": "Tidecaller",
+                        "effect": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.\nPress: Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing Electro DMG.\nHold: Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.\nAttacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing Electro DMG. DMG dealt scales with the number of times beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.\nThe shield possesses the following properties:\nHas 250% Electro DMG Absorption Efficiency.\nApplies the Electro element to Beidou upon activation.\nGenerate 2 elemental particles when it hit at least 1 target, or 4 when hit with energy stored.",
+                        "image": "Talents/Skill/Talent_Tidecaller.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Stormbreaker": {
+                        "name": "Stormbreaker",
+                        "effect": "Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing Electro DMG to nearby opponents.\nThunderbeast's Targe:\n\nWhen Normal and Charged Attacks hit, they create a lightning discharge that can jump between opponents, dealing Electro DMG.\nIncreases the character's resistance to interruption, and decreases DMG taken.\nTriggers a maximum of 1 lightning discharge per second.",
+                        "image": "Talents/Burst/Talent_Stormbreaker.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -285,9 +285,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Firm_Arrowhead",
                         "material4qty": 6
                     },
                     "3": {
@@ -296,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 3
                     },
                     "4": {
@@ -307,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 4
                     },
                     "5": {
@@ -318,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 6
                     },
                     "6": {
@@ -329,93 +329,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sharp_Arrowhead",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Weathered_Arrowhead",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Stellar_Predator": {
+                        "name": "Stellar Predator",
+                        "effect": "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down Thundering Retribution, dealing AoE Electro DMG equal to 152.7% of the arrow's DMG.",
+                        "image": "Talents/Passive/Talent_Stellar_Predator.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Undone_Be_Thy_Sinful_Hex": {
+                        "name": "Undone Be Thy Sinful Hex",
+                        "effect": "If your active character triggers an Electro-related Elemental Reaction when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing Electro DMG equal to 80% of Fischl's ATK.",
+                        "image": "Talents/Passive/Talent_Undone_Be_Thy_Sinful_Hex.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Mein_Hausgarten": {
+                        "name": "Mein Hausgarten",
+                        "effect": "When dispatched on an expedition in Mondstadt, the time consumed is reduced by 25%.",
+                        "image": "Talents/Passive/Talent_Mein_Hausgarten.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Bolts_of_Downfall": {
+                        "name": "Bolts of Downfall",
+                        "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense Electro DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Bolts_of_Downfall.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Nightrider": {
+                        "name": "Nightrider",
+                        "effect": "Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing Electro DMG in a small AoE.\nFor the ability's duration, Oz will continuously attack nearby opponents with Freikugel.\nHold to adjust the location Oz will be summoned to.\nPress again any time during the ability's duration to once again summon him to Fischl's side.",
+                        "image": "Talents/Skill/Talent_Nightrider.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Midnight_Phantasmagoria": {
+                        "name": "Midnight Phantasmagoria",
+                        "effect": "Summons Oz to spread his twin wings of twilight and defend Fischl. Has the following properties during the ability's duration:\nFischl takes on Oz's form, greatly increasing her Movement Speed.\nStrikes nearby opponents with lightning, dealing Electro DMG to opponents she comes in contact with. Each opponent can only be struck once.\nOnce this ability's effects end, Oz will remain on the battlefield and attack his Prinzessin's foes. If Oz is already on the field, then this will reset the duration of his presence.",
+                        "image": "Talents/Burst/Talent_Midnight_Phantasmagoria.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -551,9 +551,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Prosperity",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Whopperflower_Nectar",
                         "material4qty": 6
                     },
                     "3": {
@@ -562,9 +562,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 3
                     },
                     "4": {
@@ -573,9 +573,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 4
                     },
                     "5": {
@@ -584,9 +584,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 6
                     },
                     "6": {
@@ -595,93 +595,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Thundering_Penance": {
+                        "name": "Thundering Penance",
+                        "effect": "After recasting Stellar Restoration while a Lightning Stiletto is present, Keqing's weapon gains an Electro Infusion for 5s.",
+                        "image": "Talents/Passive/Talent_Thundering_Penance.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Aristocratic_Dignity": {
+                        "name": "Aristocratic Dignity",
+                        "effect": "When casting Starward Sword, Keqing's CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.",
+                        "image": "Talents/Passive/Talent_Aristocratic_Dignity.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Land_Overseer": {
+                        "name": "Land's Overseer",
+                        "effect": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+                        "image": "Talents/Passive/Talent_Land_Overseer.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Yunlai_Swordsmanship": {
+                        "name": "Yunlai Swordsmanship",
+                        "effect": "Keqing unleashes the power of lightning, dealing Electro DMG in an AoE.\nShe then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of Electro DMG. The final attack deals massive AoE Electro DMG.",
+                        "image": "Talents/Normal/Talent_Yunlai_Swordsmanship.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Stellar_Restoration": {
+                        "name": "Stellar Restoration",
+                        "effect": "Hurls a Lightning Stiletto that annihilates her opponents like the swift thunder. When the Stiletto hits its target, it deals Electro DMG to opponents in a small AoE, and places a Stiletto Mark on the spot hit.\nHold: Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.\nLightning Stiletto: If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:\n\nIf she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals AoE Electro DMG. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.\nIf Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing AoE Electro DMG.",
+                        "image": "Talents/Skill/Talent_Stellar_Restoration.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Starward_Sword": {
+                        "name": "Starward Sword",
+                        "effect": "Keqing unleashes the power of lightning, dealing Electro DMG in an AoE.\nShe then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of Electro DMG. The final attack deals massive AoE Electro DMG.",
+                        "image": "Talents/Burst/Talent_Starward_Sword.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -817,9 +817,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Slime_Condensate",
                         "material4qty": 6
                     },
                     "3": {
@@ -828,9 +828,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 3
                     },
                     "4": {
@@ -839,9 +839,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 4
                     },
                     "5": {
@@ -850,9 +850,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 6
                     },
                     "6": {
@@ -861,93 +861,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Induced_Aftershock": {
+                        "name": "Induced Aftershock",
+                        "effect": "Hits by Charged Attacks apply Violet Arc's Conductive status to opponents.",
+                        "image": "Talents/Passive/Talent_Induced_Aftershock.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Static_Electricity_Field": {
+                        "name": "Static Electricity Field",
+                        "effect": "Opponents hit by Lightning Rose have their DEF decreased by 15% for 10s.",
+                        "image": "Talents/Passive/Talent_Static_Electricity_Field.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "General_Pharmaceutics": {
+                        "name": "General Pharmaceutics",
+                        "effect": "When Lisa crafts a potion, she has a 20% chance to refund one count of one material out of all the crafting materials used.",
+                        "image": "Talents/Passive/Talent_General_Pharmaceutics.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Lightning_Touch": {
+                        "name": "Lightning Touch",
+                        "effect": "Normal Attack: Performs up to 4 Electro attacks, dealing Electro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal Electro DMG after a short casting time.\nPlunging Attack: Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Electro DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Lightning_Touch.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Violet_Arc": {
+                        "name": "Violet Arc",
+                        "effect": "Channels the power of lightning to sweep bothersome matters away\nPress: Releases a homing lightning orb. On hit, it deals Electro DMG, and applies a stack of the Conductive status (Max 3 stacks) to opponents in a small AoE.\nHold: After an extended casting time, calls down lightning from the heavens, dealing massive Electro DMG to all nearby opponents.\nDeals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them and clears their Conductive status.\nHold generate 5 elemental particles when it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Violet_Arc.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Lightning_Rose": {
+                        "name": "Lightning Rose",
+                        "effect": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding opponents and dealing Electro DMG.\nThe Lightning Rose will continuously emit lightning to knock back opponents and deal Electro DMG for so long as it persists.",
+                        "image": "Talents/Burst/Talent_Lightning_Rose.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -1083,7 +1083,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Resistance",
                         "material3qty": 3,
                         "material4": "Damaged_Mask",
                         "material4qty": 6
@@ -1094,7 +1094,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 2,
                         "material4": "Stained_Mask",
                         "material4qty": 3
@@ -1105,7 +1105,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 4,
                         "material4": "Stained_Mask",
                         "material4qty": 4
@@ -1116,7 +1116,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 6,
                         "material4": "Stained_Mask",
                         "material4qty": 6
@@ -1127,7 +1127,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 9,
                         "material4": "Stained_Mask",
                         "material4qty": 9
@@ -1136,9 +1136,9 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 4,
                         "material4": "Ominous_Mask",
                         "material4qty": 4
@@ -1147,9 +1147,9 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 6,
                         "material4": "Ominous_Mask",
                         "material4qty": 6
@@ -1158,62 +1158,62 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 12,
                         "material4": "Ominous_Mask",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Claw",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 16,
                         "material4": "Ominous_Mask",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Awakening": {
+                        "name": "Awakening",
+                        "effect": "Decreases Claw and Thunder's CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+                        "image": "Talents/Passive/Talent_Awakening.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Hunger": {
+                        "name": "Hunger",
+                        "effect": "When Razor's Energy is below 50%, increases Energy Recharge by 30%.",
+                        "image": "Talents/Passive/Talent_Hunger.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Wolvensprint": {
+                        "name": "Wolvensprint",
+                        "effect": "Decreases sprinting Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Wolvensprint.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Steel_Fang": {
+                        "name": "Steel Fang",
+                        "effect": "Normal Attack: Perform up to 4 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous swirling attacks against all nearby opponents. At end of the sequence, perform a more powerful slash.\nPlunging Aattack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Steel_Fang.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Claw_and_Thunder": {
+                        "name": "Claw and Thunder",
+                        "effect": "Hunts his prey using the techniques taught to him by his master and his Lupical.\nPress: Swings the Thunder Wolf Claw, dealing Electro DMG to opponents in front of Razor.\nUpon striking an opponent, Razor gains an Electro Sigil, which increases his Energy Recharge rate.\nRazor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.\nHold: Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor's Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.\nGenerate 3 elemental particles when press and 4 when hold, if it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Claw_and_Thunder.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Lightning_Fang": {
+                        "name": "Lightning Fang",
+                        "effect": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into elemental energy for him.\nThe Wolf Within will fight alongside Razor for the skill's duration.\nThe Wolf Within:\nStrikes alongside Razor's normal attacks, dealing Electro DMG.\nRaises Razor's ATK SPD and Electro RES.\nCauses Razor to be immune to DMG inflicted by the Electro-Charged status.\nDisables Razor's Charged Attacks.\nIncreases Razor's resistance to interruption",
+                        "image": "Talents/Burst/Talent_Lightning_Fang.png",
                         "type": "Elemental Burst"
                     }
                 }

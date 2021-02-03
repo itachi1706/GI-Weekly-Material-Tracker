@@ -1,0 +1,524 @@
+{
+    "characters": {
+        "TravelerAnemo": {
+            "image": "Characters/Anemo/Traveler.png",
+            "gender": "Male/Female",
+            "birthday": "Up to Player",
+            "name": "Aether/Lumine (Anemo)",
+            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Adventurers' Guild",
+            "constellation": "Viator/Viatrix",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Freedom",
+                        "material3qty": 3,
+                        "material4": "Divining_Scroll",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 2,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 4,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 6,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 9,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dvalin_Sigh",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 4,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dvalin_Sigh",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 6,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dvalin_Sigh",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Resistance",
+                        "material3qty": 12,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Dvalin_Sigh",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 16,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Slitting_Wind": {
+                        "name": "Slitting Wind",
+                        "effect": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+                        "image": "Talents/Passive/Talent_Slitting_Wind.png",
+                        "type": "Passive 1"
+                    },
+                    "Second_Wind": {
+                        "name": "Second Wind",
+                        "effect": "Palm Vortex kills regenerate 2% HP for 5s. This effect can only occur once every 5s.",
+                        "image": "Talents/Passive/Talent_Second_Wind.png",
+                        "type": "Passive 2"
+                    }
+                },
+                "attack": {
+                    "Foreign_Ironwind": {
+                        "name": "Foreign Ironwind",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Foreign_Ironwind.png",
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Palm_Vortex": {
+                        "name": "Palm Vortex",
+                        "effect": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing Anemo DMG 6 times in 1.5 seconds to opponents in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.\nHold: DMG and AoE will gradually increase.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 23% additional elemental DMG of that type. Elemental Absorption may only occur once per use.\nGenerate 2 elemental particles when press and 3.5 when hold, if it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Palm_Vortex.png",
+                        "type": "Elemental Skill"
+                    },
+                    "Gust_Surge": {
+                        "name": "Gust Surge",
+                        "effect": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing Anemo DMG each 0.5 seconds, 9 times.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 30.7% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                        "image": "Talents/Burst/Talent_Gust_Surge.png",
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Windwheel_Aster"
+                },
+                "2": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": null,
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Windwheel_Aster"
+                },
+                "3": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": null,
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Windwheel_Aster"
+                },
+                "4": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": null,
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Windwheel_Aster"
+                },
+                "5": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": null,
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Windwheel_Aster"
+                },
+                "6": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": null,
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Windwheel_Aster"
+                }
+            },
+            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+            "genshinggpath": "characters/Traveler(Anemo)",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+            "subCollection": {}
+        },
+        "TravelerGeo": {
+            "image": "Characters/Anemo/Traveler.png",
+            "gender": "Male/Female",
+            "birthday": "Up to Player",
+            "name": "Aether/Lumine (Geo)",
+            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Adventurers' Guild",
+            "constellation": "Viator/Viatrix",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Prosperity",
+                        "material3qty": 3,
+                        "material4": "Firm_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 2,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Gold",
+                        "material3qty": 4,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Prosperity",
+                        "material3qty": 6,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 9,
+                        "material4": "Sharp_Arrowhead",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Gold",
+                        "material3qty": 4,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Prosperity",
+                        "material3qty": 6,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 12,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Tail_of_Boreas",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Gold",
+                        "material3qty": 16,
+                        "material4": "Weathered_Arrowhead",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Shattered_Darkrock": {
+                        "name": "Shattered Darkrock",
+                        "effect": "Reduces Starfell Sword's CD by 2s.",
+                        "image": "Talents/Passive/Talent_Shattered_Darkrock.png",
+                        "type": "Passive 1"
+                    },
+                    "Frenzied_Rockslide": {
+                        "name": "Frenzied Rockslide",
+                        "effect": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+                        "image": "Talents/Passive/Talent_Frenzied_Rockslide.png",
+                        "type": "Passive 2"
+                    }
+                },
+                "attack": {
+                    "Foreign_Rockblade": {
+                        "name": "Foreign Rockblade",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Foreign_Rockblade.png",
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Starfell_Sword": {
+                        "name": "Starfell Sword",
+                        "effect": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.\nHold: This skill's positioning may be adjusted.",
+                        "image": "Talents/Skill/Talent_Starfell_Sword.png",
+                        "type": "Elemental Skill"
+                    },
+                    "Wake_of_Earth": {
+                        "name": "Wake of Earth",
+                        "effect": "Energizing the Geo elements deep underground, you set off expanding shockwaves.\nLaunches surrounding opponents back and deals AoE Geo DMG.\nA stone wall is erected at the edges of the shockwave.\nThe stone wall is considered a Geo Construct, and may be used to block attacks.",
+                        "image": "Talents/Burst/Talent_Wake_of_Earth.png",
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Name",
+                    "effect": "effect",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Windwheel_Aster"
+                },
+                "2": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": null,
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Windwheel_Aster"
+                },
+                "3": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": null,
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Windwheel_Aster"
+                },
+                "4": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": null,
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Windwheel_Aster"
+                },
+                "5": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": null,
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Windwheel_Aster"
+                },
+                "6": {
+                    "material2qty": 0,
+                    "material1": "Brilliant_Diamond_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": null,
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Windwheel_Aster"
+                }
+            },
+            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+            "genshinggpath": "characters/Traveler(Geo)",
+            "element": "Geo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+            "subCollection": {}
+        }
+    }
+}

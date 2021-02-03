@@ -1,271 +1,5 @@
 {
     "characters": {
-        "Traveler": {
-            "image": "Characters/Anemo/Traveler.png",
-            "gender": "Male/Female",
-            "birthday": "Up to Player",
-            "name": "Aether/Lumine",
-            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Knights of Favonius, Adventurers' Guild",
-            "constellation": "Viator/Viatrix",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_1",
-                        "material3qty": 3,
-                        "material4": "Damaged_Mask",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 2,
-                        "material4": "Stained_Mask",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 4,
-                        "material4": "Stained_Mask",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 6,
-                        "material4": "Stained_Mask",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "TALENT_2",
-                        "material3qty": 9,
-                        "material4": "Stained_Mask",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 1,
-                        "material3": "TALENT_3",
-                        "material3qty": 4,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 1,
-                        "material3": "TALENT_3",
-                        "material3qty": 6,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 2,
-                        "material3": "TALENT_3",
-                        "material3qty": 12,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "EVENT_TALENT",
-                        "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
-                        "material2qty": 2,
-                        "material3": "TALENT_3",
-                        "material3qty": 16,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 1"
-                    },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 2"
-                    },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Normal/Charged Attack"
-                    },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Elemental Skill"
-                    },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "2": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "3": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "4": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "5": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                },
-                "6": {
-                    "name": "Name",
-                    "effect": "effect",
-                    "image": ""
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Windwheel_Aster"
-                },
-                "2": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": null,
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Windwheel_Aster"
-                },
-                "3": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": null,
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Windwheel_Aster"
-                },
-                "4": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": null,
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Windwheel_Aster"
-                },
-                "5": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": null,
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Windwheel_Aster"
-                },
-                "6": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": null,
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Windwheel_Aster"
-                }
-            },
-            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-            "genshinggpath": "characters/Traveler(Anemo)",
-            "element": "Anemo",
-            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
-            "subCollection": {}
-        },
         "Jean": {
             "image": "Characters/Anemo/Jean.png",
             "gender": "Female",
@@ -285,7 +19,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Freedom",
                         "material3qty": 3,
                         "material4": "Damaged_Mask",
                         "material4qty": 6
@@ -296,7 +30,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 2,
                         "material4": "Stained_Mask",
                         "material4qty": 3
@@ -307,7 +41,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 4,
                         "material4": "Stained_Mask",
                         "material4qty": 4
@@ -318,7 +52,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 6,
                         "material4": "Stained_Mask",
                         "material4qty": 6
@@ -329,7 +63,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 9,
                         "material4": "Stained_Mask",
                         "material4qty": 9
@@ -338,9 +72,9 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Plume",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 4,
                         "material4": "Ominous_Mask",
                         "material4qty": 4
@@ -349,9 +83,9 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Plume",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 6,
                         "material4": "Ominous_Mask",
                         "material4qty": 6
@@ -360,62 +94,62 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Plume",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 12,
                         "material4": "Ominous_Mask",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Dvalin_Plume",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 16,
                         "material4": "Ominous_Mask",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Wind_Companion": {
+                        "name": "Wind Companion",
+                        "effect": "Hits by Jean's Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean's ATK for all party members.",
+                        "image": "Talents/Passive/Talent_Wind_Companion.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Let_the_Wind_Lead": {
+                        "name": "Let the Wind Lead",
+                        "effect": "Using Dandelion Breeze will regenerate 20% of its Energy.",
+                        "image": "Talents/Passive/Talent_Let_the_Wind_Lead.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Guiding_Breeze": {
+                        "name": "Guiding Breeze",
+                        "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Jean has a 12% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_Guiding_Breeze.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Favonius_Bladework": {
+                        "name": "Favonius Bladework",
+                        "effect": "Normal Attack: Performs up to 5 consecutive strikes.\nCharged Attack: Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Favonius_Bladework.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Gale_Blade": {
+                        "name": "Gale Blade",
+                        "effect": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching opponents in the direction she aims at, dealing massive Anemo DMG.\nHold: At the cost of continued stamina consumption, Jean can command the whirlwind to pull surrounding opponents and objects towards her front.\nDirection can be adjusted.\nCharacter is immobile during skill duration.",
+                        "image": "Talents/Skill/Talent_Gale_Blade.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Dandelion_Breeze": {
+                        "name": "Dandelion Breeze",
+                        "effect": "Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and causing Anemo DMG. At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.\nDandelion Field:\nContinuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.\nDeals Anemo DMG to opponents entering or exiting the Dandelion Field.",
+                        "image": "Talents/Burst/Talent_Dandelion_Breeze.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -551,9 +285,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Freedom",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Whopperflower_Nectar",
                         "material4qty": 6
                     },
                     "3": {
@@ -562,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 3
                     },
                     "4": {
@@ -573,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 4
                     },
                     "5": {
@@ -584,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 6
                     },
                     "6": {
@@ -595,93 +329,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Spirit_Locket_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Catalyst_Conversion": {
+                        "name": "Catalyst Conversion",
+                        "effect": "When Sucrose triggers a Swirl effect, all characters in the party with the matching element (excluding Sucrose) have their Elemental Mastery increased by 50 for 8s.",
+                        "image": "Talents/Passive/Talent_Catalyst_Conversion.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Mollis_Favonius": {
+                        "name": "Mollis Favonius",
+                        "effect": "When Astable Anemohypostasis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an opponent, increases all party members' (excluding Sucrose) Elemental Mastery based on 20% of Sucrose's Elemental Mastery for 8s.",
+                        "image": "Talents/Passive/Talent_Mollis_Favonius.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Astable_Invention": {
+                        "name": "Astable Invention",
+                        "effect": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_Astable_Invention.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Wind_Spirit_Creation": {
+                        "name": "Wind Spirit Creation",
+                        "effect": "Normal Attack: Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.\nCharged Attack: Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.\nPlunging Attack: Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Wind_Spirit_Creation.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Astable_Anemohypostasis Creation_6308": {
+                        "name": "Astable Anemohypostasis Creation - 6308",
+                        "effect": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals Anemo DMG\nGenerate 4 elemental particles when it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Astable_Anemohypostasis_Creation_-_6308.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Forbidden_Creation_Isomer_75_Type_II": {
+                        "name": "Forbidden Creation - Isomer 75 / Type II",
+                        "effect": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby opponents, and deal Anemo DMG.\nElemental Absorption: If the Wind Spirit comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                        "image": "Talents/Burst/Talent_Forbidden_Creation_-_Isomer_75_Type_II.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -817,9 +551,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Slime_Condensate",
                         "material4qty": 6
                     },
                     "3": {
@@ -828,9 +562,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 3
                     },
                     "4": {
@@ -839,9 +573,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 4
                     },
                     "5": {
@@ -850,9 +584,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 6
                     },
                     "6": {
@@ -861,93 +595,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Embrace_of_Winds": {
+                        "name": "Embrace of Winds",
+                        "effect": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+                        "image": "Talents/Passive/Talent_Embrace_of_Winds.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Stormeye": {
+                        "name": "Stormeye",
+                        "effect": "Regenerates 15 Energy for Venti after the effects of Wind's Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+                        "image": "Talents/Passive/Talent_Stormeye.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Windrider": {
+                        "name": "Windrider",
+                        "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Windrider.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Divine_Marksmanship": {
+                        "name": "Divine Marksmanship",
+                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Divine_Marksmanship.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Skyward_Sonnet": {
+                        "name": "Skyward Sonnet",
+                        "effect": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!\nPress: Summons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.\nHold: Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air.\nOpponents hit by Skyward Sonnet will fall to the ground slowly.\nGenerate 3/4 elemental particles for press/hold when it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Skyward_Sonnet.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Winds_Grand_Ode": {
+                        "name": "Wind's Grand Ode",
+                        "effect": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times Anemo DMG in 8 seconds.\nElemental Absorption: If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                        "image": "Talents/Burst/Talent_Wind_Grand_Ode.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -1083,9 +817,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Prosperity",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Slime_Condensate",
                         "material4qty": 6
                     },
                     "3": {
@@ -1094,9 +828,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 3
                     },
                     "4": {
@@ -1105,9 +839,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 4
                     },
                     "5": {
@@ -1116,9 +850,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 6
                     },
                     "6": {
@@ -1127,93 +861,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Prosperity",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Slime_Secretions",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Prosperity",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Evil_Conqueror_Tamer_of_Demons": {
+                        "name": "Evil Conqueror - Tamer of Demons",
+                        "effect": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.",
+                        "image": "Talents/Passive/Talent_Evil_Conqueror_-_Tamer_of_Demons.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Dissolution_Eon_Heaven_Fall": {
+                        "name": "Dissolution Eon - Heaven Fall",
+                        "effect": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
+                        "image": "Talents/Passive/Talent_Dissolution_Eon_-_Heaven_Fall.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Transcension_Gravity_Defier": {
+                        "name": "Transcension - Gravity Defier",
+                        "effect": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Transcension_-_Gravity_Defier.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Whirlwind_Thrust": {
+                        "name": "Whirlwind Thrust",
+                        "effect": "Normal Attack: Performs up to 6 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward thrust.\nPlunging Attack: Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+                        "image": "Talents/Normal/Talent_Whirlwind_Thrust.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Lemniscatic_Wind_Cycling": {
+                        "name": "Lemniscatic Wind Cycling",
+                        "effect": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+                        "image": "Talents/Skill/Talent_Lemniscatic_Wind_Cycling.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Bane_of_All_Evil": {
+                        "name": "Bane of All Evil",
+                        "effect": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.\nYaksha's Mask:\n\nGreatly increases Xiao's jumping ability.\nIncreases his attack AoE and attack DMG.\nConverts attack DMG into Anemo DMG, which cannot be overriden by any other elemental infusion.\nIn this state, Xiao will continuously lose HP.\nThe effects of this skill end when Xiao leaves the field.",
+                        "image": "Talents/Burst/Talent_Bane_of_All_Evil.png",
                         "type": "Elemental Burst"
                     }
                 }

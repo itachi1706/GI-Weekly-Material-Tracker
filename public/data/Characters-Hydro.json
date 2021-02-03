@@ -19,9 +19,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Freedom",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Divining_Scroll",
                         "material4qty": 6
                     },
                     "3": {
@@ -30,9 +30,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 3
                     },
                     "4": {
@@ -41,9 +41,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 4
                     },
                     "5": {
@@ -52,9 +52,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 6
                     },
                     "6": {
@@ -63,93 +63,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sealed_Scroll",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Forbidden_Curse_Scroll",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Glorious_Season": {
+                        "name": "Glorious Season",
+                        "effect": "The Stamina Consumption of characters within Let the Show Begin's Melody Loop is reduced by 12%.",
+                        "image": "Talents/Passive/Talent_Glorious_Season.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Encore": {
+                        "name": "Encore",
+                        "effect": "When your active character gains an Elemental Orb/Particle, the duration of Let the Show Begin's Melody Loop is extended by 1s. The maximum extension is 5s.",
+                        "image": "Talents/Passive/Talent_Encore.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "With_My_Whole_Heart": {
+                        "name": "With My Whole Heart♪",
+                        "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.",
+                        "image": "Talents/Passive/Talent_With_My_Whole_Heart.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Whisper_of_Water": {
+                        "name": "Whisper of Water",
+                        "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Whisper_of_Water.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Let_the_Show_Begin": {
+                        "name": "Let the Show Begin♪",
+                        "effect": "Summons water droplets resembling musical notes that form a Melody Loop, dealing Hydro DMG to surrounding opponents and afflicting them with the Wet status.\nMelody Loop:\n\nBarbara's Normal Attacks heal your characters in the party and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.\nHer Charged Attack generates 4 times the amount of healing.\nRegenerates a certain amount of HP at regular intervals for your active character.\nApplies the Wet status to the character and opponents who come in contact with them.",
+                        "image": "Talents/Skill/Talent_Let_the_Show_Begin.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Shining_Miracle": {
+                        "name": "Shining Miracle♪",
+                        "effect": "Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.",
+                        "image": "Talents/Burst/Talent_Shining_Miracle.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -285,9 +285,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Resistance",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Whopperflower_Nectar",
                         "material4qty": 6
                     },
                     "3": {
@@ -296,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 3
                     },
                     "4": {
@@ -307,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 4
                     },
                     "5": {
@@ -318,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 6
                     },
                     "6": {
@@ -329,93 +329,99 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Resistance",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Shimmering_Nectar",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Ring_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Resistance",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Energy_Nectar",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Come_n_Get_Me_Hag": {
+                        "name": "Come 'n' Get Me, Hag!",
+                        "effect": "After she has used Illusory Torrent for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.\nA Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+                        "image": "Talents/Passive/Talent_Come_n_Get_Me_Hag.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Waterborne_Destiny": {
+                        "name": "Waterborne Destiny",
+                        "effect": "Increases Mona's Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+                        "image": "Talents/Passive/Talent_Waterborne_Destiny.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Principium_of_Astrology": {
+                        "name": "Principium of Astrology",
+                        "effect": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.",
+                        "image": "Talents/Passive/Talent_Principium_of_Astrology.png",
                         "type": "Passive 3"
+                    },
+                    "Illusory_Torrent": {
+                        "name": "Illusory Torrent",
+                        "effect": "Alternate Sprint: Mona cloaks herself within the water's flow, consuming stamina to move rapidly.\nWhen under the effect of Illusory Torrent, Mona can move at high speed on water.\nApplies the Wet status to nearby opponents when she reappears.",
+                        "image": "Talents/Passive/Talent_Illusory_Torrent.png",
+                        "type": "Alternate Sprint"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Ripple_of_Fate": {
+                        "name": "Ripple of Fate",
+                        "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Ripple_of_Fate.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Mirror_Reflection_of_Doom": {
+                        "name": "Mirror Reflection of Doom",
+                        "effect": "Creates an illusory Phantom of fate from coalesced waterspouts.\nThe Phantom has the following special properties:\n\nContinuously taunts nearby opponents, attracting their fire.\nEach second, 4 times, deals AoE Hydro DMG.\nWhen its duration expires, the Phantom explodes, dealing AoE Hydro DMG.\nHold: Utilizes water currents to move backwards swiftly before conjuring a Phantom\nOnly one Phantom created by Mirror Reflection of Doom can exist at any time.\nWhen the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.",
+                        "image": "Talents/Skill/Talent_Mirror_Reflection_of_Doom.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Stellaris_Phantasm": {
+                        "name": "Stellaris Phantasm",
+                        "effect": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.\nIllusory Bubble: Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:\n\nApplies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.\nRemoves the Illusory Bubble, dealing Hydro DMG in the process.\nOmen: During its duration, increases DMG taken by opponents.",
+                        "image": "Talents/Burst/Talent_Stellaris_Phantasm.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -551,9 +557,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Freedom",
                         "material3qty": 3,
-                        "material4": "Damaged_Mask",
+                        "material4": "Recruit_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -562,9 +568,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 2,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -573,9 +579,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 4,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -584,9 +590,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 6,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -595,93 +601,93 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Freedom",
                         "material3qty": 9,
-                        "material4": "Stained_Mask",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 4,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 6,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 12,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Shard_of_a_Foul_Legacy",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Freedom",
                         "material3qty": 16,
-                        "material4": "Ominous_Mask",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Never_Ending": {
+                        "name": "Never Ending",
+                        "effect": "Extends Riptide duration by 8s.",
+                        "image": "Talents/Passive/Talent_Never_Ending.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Sword_of_Torrents": {
+                        "name": "Sword of Torrents",
+                        "effect": "When Tartaglia is in Foul Legacy: Raging Tide's Melee stance, on dealing a CRIT hit, Normal and Charged Attacks apply the Riptide status effects to opponents.",
+                        "image": "Talents/Passive/Talent_Sword_of_Torrents.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Master_of_Weaponry": {
+                        "name": "Master of Weaponry",
+                        "effect": "Increases your own party members' Normal Attack Level by 1.",
+                        "image": "Talents/Passive/Talent_Master_of_Weaponry.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Cutting_Torrent": {
+                        "name": "Cutting Torrent",
+                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply the Riptide status.\nRiptide: Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack dmg.\n\nRiptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.\nRiptide Burst: Defeating an opponent affected by Riptide creates a Hydro burst that inflicts the Riptide status on nearby opponents hit.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\nWhen Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, he cannot perform a plunging attack.",
+                        "image": "Talents/Normal/Talent_Cutting_Torrent.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Foul_Legacy_Raging_Tide": {
+                        "name": "Foul Legacy: Raging Tide",
+                        "effect": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering Melee Stance.\nIn this Stance, Tartaglia's Normal and Charged Attacks are converted to Hydro DMG that cannot be overridden by any other elemental infusion and change as follows:\nNormal Attack: Perform up to 6 consecutive Hydro strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.\nRiptide Slash: Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s.\nAfter 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+                        "image": "Talents/Skill/Talent_Foul_Legacy_Raging_Tide.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Havoc_Obliteration": {
+                        "name": "Havoc: Obliteration",
+                        "effect": "Performs different attacks based on what stance Tartaglia is in when casting.\nRanged Stance: Flash of Havoc: Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.\nMelee Stance: Light of Obliteration: Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.\nRiptide Blast: When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+                        "image": "Talents/Burst/Talent_Havoc_Obliteration.png",
                         "type": "Elemental Burst"
                     }
                 }
@@ -817,7 +823,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_1",
+                        "material3": "Teachings_of_Gold",
                         "material3qty": 3,
                         "material4": "Damaged_Mask",
                         "material4qty": 6
@@ -828,7 +834,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 2,
                         "material4": "Stained_Mask",
                         "material4qty": 3
@@ -839,7 +845,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 4,
                         "material4": "Stained_Mask",
                         "material4qty": 4
@@ -850,7 +856,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 6,
                         "material4": "Stained_Mask",
                         "material4qty": 6
@@ -861,7 +867,7 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "TALENT_2",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 9,
                         "material4": "Stained_Mask",
                         "material4qty": 9
@@ -870,9 +876,9 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 4,
                         "material4": "Ominous_Mask",
                         "material4qty": 4
@@ -881,9 +887,9 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 1,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 6,
                         "material4": "Ominous_Mask",
                         "material4qty": 6
@@ -892,62 +898,62 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 12,
                         "material4": "Ominous_Mask",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
-                        "material1": "EVENT_TALENT",
+                        "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "WEEKLY_BOSS_TALENT",
+                        "material2": "Tail_of_Boreas",
                         "material2qty": 2,
-                        "material3": "TALENT_3",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 16,
                         "material4": "Ominous_Mask",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "PASSIVE_1": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Hydropathic": {
+                        "name": "Hydropathic",
+                        "effect": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP.",
+                        "image": "Talents/Passive/Talent_Hydropathic.png",
                         "type": "Passive 1"
                     },
-                    "PASSIVE_2": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Blades_Amidst_Raindrops": {
+                        "name": "Blades Amidst Raindrops",
+                        "effect": "Xingqiu gains a 20% Hydro DMG Bonus.",
+                        "image": "Talents/Passive/Talent_Blades_Amidst_Raindrops.png",
                         "type": "Passive 2"
                     },
-                    "PASSIVE_3": {
-                        "name": "Passive",
-                        "effect": "effect",
-                        "image": "",
+                    "Flash_of_Genius": {
+                        "name": "Flash of Genius",
+                        "effect": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund one count of one material out of all the crafting materials used.",
+                        "image": "Talents/Passive/Talent_Flash_of_Genius.png",
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "ATTACK_1": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Guhua_Style": {
+                        "name": "Guhua Style",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Guhua_Style.png",
                         "type": "Normal/Charged Attack"
                     },
-                    "ATTACK_2": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Guhua_Sword_Fatal_Rainscreen": {
+                        "name": "Guhua Sword: Fatal Rainscreen",
+                        "effect": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, his ability creates the maximum number of Rain Swords, which will orbit your active character.\nThe Rain Swords have the following properties:\nWhen a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.\nIncrease the character's resistance to interruption.\n20% of Xingqiu's Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%.\nThe initial maximum number of Rain Swords is 3.\nUsing this ability applies the Wet status onto the character.\nThe twin strikes generate 5 elemental particles when it hit at least 1 target.",
+                        "image": "Talents/Skill/Talent_Guhua_Sword_-_Fatal_Rainscreen.png",
                         "type": "Elemental Skill"
                     },
-                    "ATTACK_3": {
-                        "name": "attack",
-                        "effect": "effect",
-                        "image": "",
+                    "Guhua_Sword_Raincutter": {
+                        "name": "Guhua Sword: Raincutter",
+                        "effect": "Rainbow Bladework:\nYour active character's Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.\nRain Swords will remain at the maximum number throughout the ability's duration.\nThese effects carry over to other characters.",
+                        "image": "Talents/Burst/Talent_Guhua_Sword_-_Raincutter.png",
                         "type": "Elemental Burst"
                     }
                 }
