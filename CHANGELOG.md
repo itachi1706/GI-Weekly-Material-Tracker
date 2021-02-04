@@ -1,3 +1,10 @@
+# 1.2.3
+- Fixed Web reload simply showing a black screen
+- Preparing for inclusion of talent tracking
+- Added Domain of Mastery materials into the domains filters
+- Weekly Planner can now track materials from Domains of Mastery
+- Various minor optimiztion and bug fixes
+
 # 1.2.2
 - Optimized clearing of tracking information to be more reliable
 - Fix minor crash if you have no tracking information at all

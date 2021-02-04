@@ -1,7 +1,7 @@
-- Optimized clearing of tracking information to be more reliable
-- Fix minor crash if you have no tracking information at all
-- Added link to source code in about page
-- Fixed global ascension page showing character/weapon tiers as 1 tier above its actual tier
-- Fixed issue where updating tracked materials in the global ascension page causes the page to refresh when the keyboard is shown/hidden
-- Added max possible base attack and secondary stat values into the weapons information page
-- Fixed web app on iOS not being able to open up build guide or wiki page
+Note: Breaking change, Update to this version
+
+- Fixed Web reload simply showing a black screen
+- Preparing for inclusion of talent tracking
+- Added Domain of Mastery materials into the domains filters
+- Weekly Planner can now track materials from Domains of Mastery
+- Various minor optimiztion and bug fixes
