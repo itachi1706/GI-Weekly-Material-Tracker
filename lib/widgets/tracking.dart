@@ -424,8 +424,7 @@ class _PlannerPageState extends State<PlannerPage> {
           (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
       children: _curData.map((materialId) {
         return GestureDetector(
-          onTap: () => Get.toNamed('/materials',
-              arguments: [materialId, _materialData[materialId]]),
+          onTap: () => Get.toNamed('/materials/$materialId'),
           child: GridData.getGridData(_materialData[materialId]),
         );
       }).toList(),

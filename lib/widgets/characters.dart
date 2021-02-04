@@ -104,8 +104,7 @@ class _CharacterListGridState extends State<CharacterListGrid> {
                     : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () =>
-                    Get.toNamed('/characters', arguments: [document.id]),
+                onTap: () => Get.toNamed('/characters/${document.id}'),
                 child: GridData.getGridData(
                     CharacterData.fromJson(document.data())),
               );
@@ -410,7 +409,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoId = Get.arguments[0];
+    _infoId = Get.parameters['character'];
     _getStaticData();
   }
 
@@ -421,6 +420,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         await GridData.retrieveMaterialsMapData();
     setState(() {
       _info = infoData[_infoId];
+      if (_info == null) Get.offAndToNamed('/splash');
       _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });

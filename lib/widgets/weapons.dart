@@ -99,7 +99,7 @@ class _WeaponListGridState extends State<WeaponListGrid> {
                 (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () => Get.toNamed('/weapons', arguments: [document.id]),
+                onTap: () => Get.toNamed('/weapons/${document.id}'),
                 child:
                     GridData.getGridData(WeaponData.fromJson(document.data())),
               );
@@ -439,7 +439,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoId = Get.arguments[0];
+    _infoId = Get.parameters['weapon'];
     _getStaticData();
   }
 
@@ -449,6 +449,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         await GridData.retrieveMaterialsMapData();
     setState(() {
       _info = infoData[_infoId];
+      if (_info == null) Get.offAndToNamed('/splash');
       _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });

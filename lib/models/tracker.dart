@@ -263,7 +263,7 @@ class UpdateMultiTracking {
     String key = (data.addedBy == "material") ? data.name : data.addData;
     _cntKey = docId;
     if (!editDialog) {
-      Get.toNamed('/${type}s', arguments: [key]);
+      Get.toNamed('/${type}s/$key');
       return;
     }
     switch (type) {
@@ -327,7 +327,7 @@ class UpdateMultiTracking {
                 child: Text('Info'),
                 onPressed: () {
                   Get.back();
-                  Get.toNamed(navigateTo, arguments: [key]);
+                  Get.toNamed("$navigateTo/$key");
                 },
               ),
               TextButton(
@@ -386,7 +386,7 @@ class UpdateMultiTracking {
                 child: Text('Info'),
                 onPressed: () {
                   Get.back();
-                  Get.toNamed(navigateTo, arguments: [key]);
+                  Get.toNamed("$navigateTo/$key");
                 },
               ),
               TextButton(
