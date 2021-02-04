@@ -41,7 +41,7 @@ class MaterialDataCommon extends CommonData {
         case "mob_drops":
           _fin.putIfAbsent(key, () => MaterialDataMob.fromJson(value));
           break;
-        case "domain_forgery":
+        case "domain_material":
           _fin.putIfAbsent(key, () => MaterialDataDomains.fromJson(value));
           break;
         default:

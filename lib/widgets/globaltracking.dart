@@ -23,7 +23,7 @@ class GlobalTrackingPage extends StatelessWidget {
 
   final List<Widget> _children = [
     GlobalTracker(path: "boss_drops"),
-    GlobalTracker(path: "domain_forgery"),
+    GlobalTracker(path: "domain_material"),
     GlobalTracker(path: "mob_drops"),
     GlobalTracker(path: "local_speciality"),
   ];

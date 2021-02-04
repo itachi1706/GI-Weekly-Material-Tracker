@@ -27,7 +27,7 @@ class _MaterialTabControllerState extends State<MaterialTabController> {
     return TabBarView(controller: widget.tabController, children: [
       MaterialListGrid(notifier: widget.notifier),
       MaterialListGrid(filter: "boss_drops", notifier: widget.notifier),
-      MaterialListGrid(filter: "domain_forgery", notifier: widget.notifier),
+      MaterialListGrid(filter: "domain_material", notifier: widget.notifier),
       MaterialListGrid(filter: "mob_drops", notifier: widget.notifier),
       MaterialListGrid(filter: "local_speciality", notifier: widget.notifier),
     ]);

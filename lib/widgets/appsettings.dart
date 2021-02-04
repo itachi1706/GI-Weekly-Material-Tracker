@@ -187,7 +187,7 @@ class _SettingsPageState extends State<SettingsPage> {
     // Deleting all subcollections
     DocumentReference ref = _db.collection("tracking").doc(_uid);
     await TrackingData.clearCollection("boss_drops");
-    await TrackingData.clearCollection("domain_forgery");
+    await TrackingData.clearCollection("domain_material");
     await TrackingData.clearCollection("local_speciality");
     await TrackingData.clearCollection("mob_drops");
     await ref.delete(); // Delete fields

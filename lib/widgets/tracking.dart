@@ -28,7 +28,7 @@ class TrackingTabController extends StatefulWidget {
 class _TrackingTabControllerState extends State<TrackingTabController> {
   final List<Widget> _children = [
     TrackerPage(path: "boss_drops"),
-    TrackerPage(path: "domain_forgery"),
+    TrackerPage(path: "domain_material"),
     TrackerPage(path: "mob_drops"),
     TrackerPage(path: "local_speciality"),
     PlannerPage(),
@@ -329,7 +329,7 @@ class _PlannerPageState extends State<PlannerPage> {
     CollectionReference ref = _db
         .collection("tracking")
         .doc(Util.getFirebaseUid())
-        .collection("domain_forgery");
+        .collection("domain_material");
     return StreamBuilder(
         stream: ref.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
