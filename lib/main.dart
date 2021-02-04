@@ -65,11 +65,14 @@ class _MyAppState extends State<MyApp> {
             page: () => MainNavigationPage(
                   title: 'GI Materials Tracker',
                 )),
-        GetPage(name: '/materials', page: () => MaterialInfoPage()),
-        GetPage(name: '/characters', page: () => CharacterInfoPage()),
-        GetPage(name: '/weapons', page: () => WeaponInfoPage()),
+        GetPage(name: '/materials/:material', page: () => MaterialInfoPage()),
+        GetPage(
+            name: '/characters/:character', page: () => CharacterInfoPage()),
+        GetPage(name: '/weapons/:weapon', page: () => WeaponInfoPage()),
         GetPage(name: '/globalTracking', page: () => GlobalTrackingPage()),
-        GetPage(name: '/globalMaterial', page: () => GlobalMaterialPage()),
+        GetPage(
+            name: '/globalMaterial/:materialKey',
+            page: () => GlobalMaterialPage()),
         GetPage(name: '/settings', page: () => SettingsPage()),
       ],
     );

@@ -124,8 +124,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                 return Card(
                   color: GridData.getRarityColor(_material.rarity),
                   child: InkWell(
-                    onTap: () =>
-                        Get.toNamed('/globalMaterial', arguments: [_data.name]),
+                    onTap: () => Get.toNamed('/globalMaterial/${_data.name}'),
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
@@ -210,7 +209,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   @override
   void initState() {
     super.initState();
-    _materialKey = Get.arguments[0];
+    print(Get.parameters);
+    _materialKey = Get.parameters["materialKey"];
     _getStaticData();
   }
 

@@ -94,8 +94,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
                 (Get.context.orientation == Orientation.portrait) ? 3 : 6,
             children: snapshot.data.docs.map((document) {
               return GestureDetector(
-                onTap: () =>
-                    Get.toNamed('/materials', arguments: [document.id]),
+                onTap: () => Get.toNamed('/materials/${document.id}'),
                 child: GridData.getGridData(
                     MaterialDataCommon.fromJson(document.data())),
               );
@@ -122,7 +121,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoId = Get.arguments[0];
+    _infoId = Get.parameters['material'];
     GridData.retrieveMaterialsMapData().then((value) {
       setState(() {
         _info = value[_infoId];
