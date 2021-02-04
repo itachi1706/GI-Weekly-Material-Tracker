@@ -125,6 +125,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     GridData.retrieveMaterialsMapData().then((value) {
       setState(() {
         _info = value[_infoId];
+        if (_info == null) Get.offAndToNamed('/splash');
         _rarityColor = GridData.getRarityColor(_info.rarity);
       });
       _refreshTrackingStatus();

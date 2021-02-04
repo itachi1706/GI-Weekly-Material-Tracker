@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
       ),
       themeMode: _theme,
       initialRoute: '/splash',
+      unknownRoute: GetPage(name: '/splash', page: () => SplashPage()),
       getPages: [
         GetPage(name: '/splash', page: () => SplashPage()),
         GetPage(

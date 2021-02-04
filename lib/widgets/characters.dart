@@ -420,6 +420,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         await GridData.retrieveMaterialsMapData();
     setState(() {
       _info = infoData[_infoId];
+      if (_info == null) Get.offAndToNamed('/splash');
       _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });

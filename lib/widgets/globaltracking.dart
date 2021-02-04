@@ -225,6 +225,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
       _characterData = characterData;
       _weaponData = weaponData;
       _material = materialData[_materialKey];
+      if (_material == null) Get.offAndToNamed('/splash');
       _rarityColor = GridData.getRarityColor(_material.rarity);
     });
   }
