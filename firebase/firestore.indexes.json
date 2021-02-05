@@ -15,86 +15,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "gender",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "characters",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "nation",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "characters",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "rarity",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "characters",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "weapon",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "materials",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "rarity",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "weapons",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "base_atk",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "weapons",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "rarity",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "weapons",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "secondary_stat_type",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "characters",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
           "fieldPath": "element",
           "order": "ASCENDING"
         },
@@ -113,8 +33,36 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "affiliation",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "element",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "gender",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "element",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "gender",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -141,8 +89,36 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "nation",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "element",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "rarity",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "element",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -161,6 +137,60 @@
       ]
     },
     {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "element",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "weapon",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "gender",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "nation",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "characters",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "weapon",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "materials",
       "queryScope": "COLLECTION",
       "fields": [
@@ -171,6 +201,60 @@
         {
           "fieldPath": "rarity",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "materials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "innerType",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "materials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "base_atk",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "secondary_stat_type",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -197,6 +281,20 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "base_atk",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "rarity",
           "order": "ASCENDING"
         }
@@ -211,8 +309,36 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "rarity",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "secondary_stat_type",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "secondary_stat_type",
+          "order": "DESCENDING"
         }
       ]
     }
