@@ -96,7 +96,7 @@
       "fields": [
         {
           "fieldPath": "element",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "affiliation",
@@ -110,7 +110,7 @@
       "fields": [
         {
           "fieldPath": "element",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "gender",
@@ -124,7 +124,7 @@
       "fields": [
         {
           "fieldPath": "element",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "nation",
@@ -138,7 +138,7 @@
       "fields": [
         {
           "fieldPath": "element",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "rarity",
@@ -152,7 +152,7 @@
       "fields": [
         {
           "fieldPath": "element",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "weapon",
@@ -166,7 +166,7 @@
       "fields": [
         {
           "fieldPath": "innerType",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "rarity",
@@ -180,7 +180,7 @@
       "fields": [
         {
           "fieldPath": "type",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "base_atk",
@@ -194,7 +194,7 @@
       "fields": [
         {
           "fieldPath": "type",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "rarity",
@@ -208,25 +208,11 @@
       "fields": [
         {
           "fieldPath": "type",
-          "order": "DESCENDING"
+          "order": "ASCENDING"
         },
         {
           "fieldPath": "secondary_stat_type",
           "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "materials",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "innerType",
-          "order": "DESCENDING"
-        },
-        {
-          "fieldPath": "rarity",
-          "order": "ASCENDING"
         }
       ]
     }
