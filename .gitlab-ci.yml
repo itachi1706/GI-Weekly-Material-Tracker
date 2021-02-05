@@ -27,7 +27,7 @@ Deploy Firebase Firestore Indexes:
   before_script:
     - cd firebase
   script:
-    - firebase --token $FIREBASE_TOKEN deploy --only firestore:indexes
+    - firebase --token $FIREBASE_TOKEN deploy --only firestore:indexes --force
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
