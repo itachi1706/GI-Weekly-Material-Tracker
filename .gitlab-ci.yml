@@ -21,6 +21,21 @@ Deploy Firebase Security Rules:
     - when: never
   needs: []
 
+Deploy Firebase Firestore Indexes:
+  image: itachi1706/docker-firebase-cli:latest
+  stage: deploy
+  before_script:
+    - cd firebase
+  script:
+    - firebase --token $FIREBASE_TOKEN deploy --only firestore:indexes
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - firebase/firestore.indexes.json
+      when: always
+    - when: never
+  needs: []
+
 Update Firestore Public Data:
   image: node:alpine
   stage: deploy
