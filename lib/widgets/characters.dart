@@ -174,7 +174,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
           body: TabBarView(
             children: [
               CharacterInfoPage(info: _info, infoId: _infoId),
-              PlaceholderWidgetContainer(Colors.blue),
+              CharacterTalentPage(info: _info, infoId: _infoId),
               PlaceholderWidgetContainer(Colors.green)
             ],
           ),
@@ -208,288 +208,7 @@ class CharacterInfoPage extends StatefulWidget {
 
 class _CharacterInfoPageState extends State<CharacterInfoPage> {
   Map<String, MaterialDataCommon> _materialData;
-
   Map<String, TrackingStatus> _isBeingTracked;
-
-  void _refreshTrackingStatus() {
-    if (_materialData == null || widget.info == null) return; // No data
-    if (_isBeingTracked == null) {
-      Map<String, TrackingStatus> _tmpTracker = new Map();
-      widget.info.ascension.keys.forEach((key) {
-        _tmpTracker[key] = TrackingStatus.UNKNOWN;
-      });
-      setState(() {
-        _isBeingTracked = _tmpTracker;
-      });
-    }
-
-    Map<String, TrackingStatus> _tracker = _isBeingTracked;
-    TrackingData.getTrackingCategory('character').then((_dataList) async {
-      print(_dataList);
-      Set<String> datasets = new Set();
-      // Check tracking status and get material list
-      _tracker.keys.forEach((key) {
-        bool _isTracked = TrackingData.isBeingTrackedLocal(
-            _dataList, "${widget.infoId}_$key");
-        CharacterAscension data = widget.info.ascension[key];
-        if (data.material1 != null)
-          datasets.add(_materialData[data.material1].innerType);
-        if (data.material2 != null)
-          datasets.add(_materialData[data.material2].innerType);
-        if (data.material3 != null)
-          datasets.add(_materialData[data.material3].innerType);
-        if (data.material4 != null)
-          datasets.add(_materialData[data.material4].innerType);
-        _tracker[key] =
-            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
-      });
-
-      // Get all datasets into a map to check if completed
-      Map<String, Map<String, TrackingUserData>> collectionList = new Map();
-      for (String ds in datasets.toList()) {
-        collectionList[ds] = await TrackingData.getCollectionList(ds);
-      }
-      // Run through tracking status and check if its fully tracked
-      _tracker.keys.forEach((key) {
-        if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
-        bool fullTrack = true;
-        CharacterAscension data = widget.info.ascension[key];
-        if (data.material1 != null && fullTrack)
-          fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material1].innerType,
-              collectionList,
-              _materialData,
-              "Character_${widget.infoId}_${data.material1}_$key");
-        if (data.material2 != null && fullTrack)
-          fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material2].innerType,
-              collectionList,
-              _materialData,
-              "Character_${widget.infoId}_${data.material2}_$key");
-        if (data.material3 != null && fullTrack)
-          fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material3].innerType,
-              collectionList,
-              _materialData,
-              "Character_${widget.infoId}_${data.material3}_$key");
-        if (data.material4 != null && fullTrack)
-          fullTrack = TrackingData.isMaterialFull(
-              _materialData[data.material4].innerType,
-              collectionList,
-              _materialData,
-              "Character_${widget.infoId}_${data.material4}_$key");
-        _tracker[key] = (fullTrack)
-            ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
-            : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
-      });
-
-      setState(() {
-        if (!mounted) return;
-        _isBeingTracked = _tracker;
-      });
-    });
-  }
-
-  TrackingStatus _isBeingTrackedStatus(String key) {
-    if (!_isBeingTracked.keys.contains(key)) return TrackingStatus.UNKNOWN;
-    return _isBeingTracked[key];
-  }
-
-  void _trackCharacterAction() {
-    print("Selected: $_selectedTier");
-    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
-    String _ascensionTierSel = _selectedTier;
-
-    TrackingData.addToRecord('character', "${widget.infoId}_$_selectedTier")
-        .then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(context,
-          "${widget.info.name} Ascension Tier $_ascensionTierSel added to tracker!");
-    });
-    if (_ascendTier.material1 != null)
-      TrackingData.addToCollection(
-          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
-          _ascendTier.material1,
-          _ascendTier.material1Qty,
-          _materialData[_ascendTier.material1].innerType,
-          'character',
-          widget.infoId);
-    if (_ascendTier.material2 != null)
-      TrackingData.addToCollection(
-          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
-          _ascendTier.material2,
-          _ascendTier.material2Qty,
-          _materialData[_ascendTier.material2].innerType,
-          'character',
-          widget.infoId);
-    if (_ascendTier.material3 != null)
-      TrackingData.addToCollection(
-          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
-          _ascendTier.material3,
-          _ascendTier.material3Qty,
-          _materialData[_ascendTier.material3].innerType,
-          'character',
-          widget.infoId);
-    if (_ascendTier.material4 != null)
-      TrackingData.addToCollection(
-          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
-          _ascendTier.material4,
-          _ascendTier.material4Qty,
-          _materialData[_ascendTier.material4].innerType,
-          'character',
-          widget.infoId);
-    Navigator.of(context).pop();
-  }
-
-  void _untrackCharacterAction() {
-    print("Selected: $_selectedTier");
-    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
-    String _ascensionTierSel = _selectedTier;
-
-    TrackingData.removeFromRecord(
-            'character', "${widget.infoId}_$_selectedTier")
-        .then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(context,
-          "${widget.info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
-    });
-    if (_ascendTier.material1 != null)
-      TrackingData.removeFromCollection(
-          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
-          _materialData[_ascendTier.material1].innerType);
-    if (_ascendTier.material2 != null)
-      TrackingData.removeFromCollection(
-          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
-          _materialData[_ascendTier.material2].innerType);
-    if (_ascendTier.material3 != null)
-      TrackingData.removeFromCollection(
-          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
-          _materialData[_ascendTier.material3].innerType);
-    if (_ascendTier.material4 != null)
-      TrackingData.removeFromCollection(
-          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
-          _materialData[_ascendTier.material4].innerType);
-
-    Navigator.of(context).pop();
-  }
-
-  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
-    return [
-      _getAscensionImage(key),
-      Text(key == null ? "" : _materialData[key].name),
-      Text((qty == 0) ? "" : " x$qty"),
-    ];
-  }
-
-  String _selectedTier;
-
-  void _addOrRemoveMaterial(int index, CharacterAscension curData) async {
-    String key = index.toString();
-    TrackingStatus isTracked = _isBeingTrackedStatus(key);
-    if (isTracked == TrackingStatus.UNKNOWN ||
-        isTracked == TrackingStatus.CHECKING) {
-      Util.showSnackbarQuick(context, "Checking tracking status");
-      return;
-    }
-
-    setState(() {
-      _selectedTier = key;
-    });
-
-    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
-        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text(
-                "Remove ${widget.info.name} Ascension Tier $key from the tracker?"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  GridData.getImageAssetFromFirebase(widget.info.image,
-                      height: 64),
-                  Text(
-                      "This will remove the following materials being tracked for this character from the tracker:"),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material2, curData.material2Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material1, curData.material1Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material3, curData.material3Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material4, curData.material4Qty),
-                  ),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              TextButton(
-                child: Text('Untrack'),
-                onPressed: _untrackCharacterAction,
-              ),
-            ],
-          );
-        },
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text(
-                "Add ${widget.info.name} Ascension Tier $key to the tracker?"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  GridData.getImageAssetFromFirebase(widget.info.image,
-                      height: 64),
-                  Text("Items being added to tracker:"),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material2, curData.material2Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material1, curData.material1Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material3, curData.material3Qty),
-                  ),
-                  Row(
-                    children: _getAscensionTierMaterialRowChild(
-                        curData.material4, curData.material4Qty),
-                  ),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              TextButton(
-                child: Text('Track'),
-                onPressed: _trackCharacterAction,
-              ),
-            ],
-          );
-        },
-      );
-    }
-  }
 
   @override
   void initState() {
@@ -504,75 +223,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _materialData = materialData;
     });
     _refreshTrackingStatus();
-  }
-
-  Widget _getAscensionImage(String itemKey) {
-    if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
-
-    return GridData.getImageAssetFromFirebase(_materialData[itemKey].image,
-        height: 16);
-  }
-
-  Widget _generateAscensionData() {
-    if (_materialData == null) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 16),
-        child: CircularProgressIndicator(),
-      );
-    }
-
-    Map<String, CharacterAscension> dataMap = widget.info.ascension;
-    List<CharacterAscension> data =
-        dataMap.entries.map((e) => e.value).toList();
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: data.length,
-      itemBuilder: (context, index) {
-        CharacterAscension curData = data[index];
-        return Container(
-          child: Card(
-            color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
-            child: InkWell(
-              onTap: () => _addOrRemoveMaterial(index + 1, curData),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Text(
-                      GridData.getRomanNumberArray(index),
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    Spacer(),
-                    Icon(Icons.show_chart),
-                    Text(curData.level.toString()),
-                    Spacer(),
-                    Image.asset("assets/images/items/Icon_Mora.png",
-                        height: 16),
-                    Text(curData.mora.toString()),
-                    Spacer(),
-                    _getAscensionImage(curData.material2),
-                    Text((curData.material2Qty == 0)
-                        ? ""
-                        : curData.material2Qty.toString()),
-                    Spacer(),
-                    _getAscensionImage(curData.material1),
-                    Text(curData.material1Qty.toString()),
-                    Spacer(),
-                    _getAscensionImage(curData.material3),
-                    Text(curData.material3Qty.toString()),
-                    Spacer(),
-                    _getAscensionImage(curData.material4),
-                    Text(curData.material4Qty.toString()),
-                    Spacer(),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   @override
@@ -758,6 +408,348 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     );
   }
 
+  void _refreshTrackingStatus() {
+    if (_materialData == null || widget.info == null) return; // No data
+    if (_isBeingTracked == null) {
+      Map<String, TrackingStatus> _tmpTracker = new Map();
+      widget.info.ascension.keys.forEach((key) {
+        _tmpTracker[key] = TrackingStatus.UNKNOWN;
+      });
+      setState(() {
+        _isBeingTracked = _tmpTracker;
+      });
+    }
+
+    Map<String, TrackingStatus> _tracker = _isBeingTracked;
+    TrackingData.getTrackingCategory('character').then((_dataList) async {
+      print(_dataList);
+      Set<String> datasets = new Set();
+      // Check tracking status and get material list
+      _tracker.keys.forEach((key) {
+        bool _isTracked = TrackingData.isBeingTrackedLocal(
+            _dataList, "${widget.infoId}_$key");
+        CharacterAscension data = widget.info.ascension[key];
+        if (data.material1 != null)
+          datasets.add(_materialData[data.material1].innerType);
+        if (data.material2 != null)
+          datasets.add(_materialData[data.material2].innerType);
+        if (data.material3 != null)
+          datasets.add(_materialData[data.material3].innerType);
+        if (data.material4 != null)
+          datasets.add(_materialData[data.material4].innerType);
+        _tracker[key] =
+            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
+      });
+
+      // Get all datasets into a map to check if completed
+      Map<String, Map<String, TrackingUserData>> collectionList = new Map();
+      for (String ds in datasets.toList()) {
+        collectionList[ds] = await TrackingData.getCollectionList(ds);
+      }
+      // Run through tracking status and check if its fully tracked
+      _tracker.keys.forEach((key) {
+        if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+        bool fullTrack = true;
+        CharacterAscension data = widget.info.ascension[key];
+        if (data.material1 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material1].innerType,
+              collectionList,
+              _materialData,
+              "Character_${widget.infoId}_${data.material1}_$key");
+        if (data.material2 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material2].innerType,
+              collectionList,
+              _materialData,
+              "Character_${widget.infoId}_${data.material2}_$key");
+        if (data.material3 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material3].innerType,
+              collectionList,
+              _materialData,
+              "Character_${widget.infoId}_${data.material3}_$key");
+        if (data.material4 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material4].innerType,
+              collectionList,
+              _materialData,
+              "Character_${widget.infoId}_${data.material4}_$key");
+        _tracker[key] = (fullTrack)
+            ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
+            : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
+      });
+
+      setState(() {
+        if (!mounted) return;
+        _isBeingTracked = _tracker;
+      });
+    });
+  }
+
+  TrackingStatus _isBeingTrackedStatus(String key) {
+    if (!_isBeingTracked.keys.contains(key)) return TrackingStatus.UNKNOWN;
+    return _isBeingTracked[key];
+  }
+
+  void _trackCharacterAction() {
+    print("Selected: $_selectedTier");
+    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
+    String _ascensionTierSel = _selectedTier;
+
+    TrackingData.addToRecord('character', "${widget.infoId}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "${widget.info.name} Ascension Tier $_ascensionTierSel added to tracker!");
+    });
+    if (_ascendTier.material1 != null)
+      TrackingData.addToCollection(
+          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
+          _ascendTier.material1,
+          _ascendTier.material1Qty,
+          _materialData[_ascendTier.material1].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material2 != null)
+      TrackingData.addToCollection(
+          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
+          _ascendTier.material2,
+          _ascendTier.material2Qty,
+          _materialData[_ascendTier.material2].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material3 != null)
+      TrackingData.addToCollection(
+          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
+          _ascendTier.material3,
+          _ascendTier.material3Qty,
+          _materialData[_ascendTier.material3].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material4 != null)
+      TrackingData.addToCollection(
+          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
+          _ascendTier.material4,
+          _ascendTier.material4Qty,
+          _materialData[_ascendTier.material4].innerType,
+          'character',
+          widget.infoId);
+    Navigator.of(context).pop();
+  }
+
+  void _untrackCharacterAction() {
+    print("Selected: $_selectedTier");
+    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
+    String _ascensionTierSel = _selectedTier;
+
+    TrackingData.removeFromRecord(
+            'character', "${widget.infoId}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "${widget.info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
+    });
+    if (_ascendTier.material1 != null)
+      TrackingData.removeFromCollection(
+          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
+          _materialData[_ascendTier.material1].innerType);
+    if (_ascendTier.material2 != null)
+      TrackingData.removeFromCollection(
+          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
+          _materialData[_ascendTier.material2].innerType);
+    if (_ascendTier.material3 != null)
+      TrackingData.removeFromCollection(
+          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
+          _materialData[_ascendTier.material3].innerType);
+    if (_ascendTier.material4 != null)
+      TrackingData.removeFromCollection(
+          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
+          _materialData[_ascendTier.material4].innerType);
+
+    Navigator.of(context).pop();
+  }
+
+  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
+    return [
+      GridData.getAscensionImage(key, _materialData),
+      Text(key == null ? "" : _materialData[key].name),
+      Text((qty == 0) ? "" : " x$qty"),
+    ];
+  }
+
+  String _selectedTier;
+
+  void _addOrRemoveMaterial(int index, CharacterAscension curData) async {
+    String key = index.toString();
+    TrackingStatus isTracked = _isBeingTrackedStatus(key);
+    if (isTracked == TrackingStatus.UNKNOWN ||
+        isTracked == TrackingStatus.CHECKING) {
+      Util.showSnackbarQuick(context, "Checking tracking status");
+      return;
+    }
+
+    setState(() {
+      _selectedTier = key;
+    });
+
+    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
+        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Remove ${widget.info.name} Ascension Tier $key from the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(widget.info.image,
+                      height: 64),
+                  Text(
+                      "This will remove the following materials being tracked for this character from the tracker:"),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Untrack'),
+                onPressed: _untrackCharacterAction,
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Add ${widget.info.name} Ascension Tier $key to the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GridData.getImageAssetFromFirebase(widget.info.image,
+                      height: 64),
+                  Text("Items being added to tracker:"),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Track'),
+                onPressed: _trackCharacterAction,
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+  Widget _generateAscensionData() {
+    if (_materialData == null) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: CircularProgressIndicator(),
+      );
+    }
+
+    Map<String, CharacterAscension> dataMap = widget.info.ascension;
+    List<CharacterAscension> data =
+        dataMap.entries.map((e) => e.value).toList();
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        CharacterAscension curData = data[index];
+        return Container(
+          child: Card(
+            color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
+            child: InkWell(
+              onTap: () => _addOrRemoveMaterial(index + 1, curData),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Text(
+                      GridData.getRomanNumberArray(index),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    Spacer(),
+                    Icon(Icons.show_chart),
+                    Text(curData.level.toString()),
+                    Spacer(),
+                    Image.asset("assets/images/items/Icon_Mora.png",
+                        height: 16),
+                    Text(curData.mora.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material2, _materialData),
+                    Text((curData.material2Qty == 0)
+                        ? ""
+                        : curData.material2Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material1, _materialData),
+                    Text(curData.material1Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material3, _materialData),
+                    Text(curData.material3Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material4, _materialData),
+                    Text(curData.material4Qty.toString()),
+                    Spacer(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Icon _getGenderIcon(String gender, String name) {
     Color color;
     IconData icon = MdiIcons.genderFemale;
@@ -774,5 +766,175 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
     if (name == "Aether/Lumine") return Icon(MdiIcons.genderMaleFemale);
     return Icon(icon, color: color);
+  }
+}
+
+class CharacterTalentPage extends StatefulWidget {
+  CharacterTalentPage({Key key, @required this.info, @required this.infoId})
+      : super(key: key);
+
+  final CharacterData info;
+  final String infoId;
+
+  @override
+  _CharacterTalentPageState createState() => _CharacterTalentPageState();
+}
+
+class _CharacterTalentPageState extends State<CharacterTalentPage> {
+  Map<String, MaterialDataCommon> _materialData;
+
+  @override
+  void initState() {
+    super.initState();
+    _getStaticData();
+  }
+
+  void _getStaticData() async {
+    Map<String, MaterialDataCommon> materialData =
+        await GridData.retrieveMaterialsMapData();
+    setState(() {
+      _materialData = materialData;
+    });
+    // TODO: Track Talents
+    //_refreshTrackingStatus();
+  }
+  
+  Map<String, TrackingStatus> _isBeingTracked = new Map();
+
+  Widget _generateAscensionData(Map<String, CharacterAscension> ascendInfo) {
+    if (_materialData == null) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: CircularProgressIndicator(),
+      );
+    }
+    
+    List<CharacterAscension> data = ascendInfo.entries.map((e) => e.value).toList();
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        CharacterAscension curData = data[index];
+        return Container(
+          child: Card(
+            //color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
+            child: InkWell(
+              //onTap: () => _addOrRemoveMaterial(index + 1, curData),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Text(
+                      GridData.getRomanNumberArray(index),
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    Spacer(),
+                    Image.asset("assets/images/items/Icon_Mora.png", height: 16),
+                    Padding(padding: const EdgeInsets.only(left: 4),
+                    child: Text(curData.mora.toString()),),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material3, _materialData),
+                    Text((curData.material3Qty == 0) ? "" : curData.material3Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material4, _materialData),
+                    Text((curData.material4Qty == 0) ? "" : curData.material4Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material2, _materialData),
+                    Text((curData.material2Qty == 0) ? "" : curData.material2Qty.toString()),
+                    Spacer(),
+                    GridData.getAscensionImage(curData.material1, _materialData),
+                    Text((curData.material1Qty == 0) ? "" : curData.material1Qty.toString()),
+                    Spacer(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _generateTalentWidget(TalentInfo _talInfo) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        children: [
+          IntrinsicHeight(
+            child: Row(
+              children: [
+                GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width - 80,
+                      child: Text(
+                        _talInfo.name,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                    Text(_talInfo.type),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8, bottom: 8),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(_talInfo.effect),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _attackTalentWidgets() {
+    List<Widget> _wid = [];
+    widget.info.talent.attack.forEach((key, value) {
+      Map<String, CharacterAscension> _ascendInfo = widget.info.talent.ascension;
+      _wid.add(_generateTalentWidget(value));
+      _wid.add(_generateAscensionData(_ascendInfo));
+      _wid.add(Divider());
+    });
+
+    return _wid;
+  }
+
+  List<Widget> _passiveTalentWidgets() {
+    List<Widget> _wid = [];
+    widget.info.talent.passive.forEach((key, value) {
+      _wid.add(_generateTalentWidget(value));
+      _wid.add(Divider());
+    });
+
+    return _wid;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.info == null) return Util.loadingScreen();
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Attack Talents", style: TextStyle(fontSize: 18)),
+            ..._attackTalentWidgets(),
+            Text("Passive Talents", style: TextStyle(fontSize: 18)),
+            ..._passiveTalentWidgets()
+          ],
+        ),
+      ),
+    );
   }
 }

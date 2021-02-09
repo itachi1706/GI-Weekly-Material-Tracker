@@ -31,6 +31,13 @@ class GridData {
     }
   }
 
+  static Widget getAscensionImage(String itemKey, Map<String, MaterialDataCommon> data) {
+    if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
+
+    return GridData.getImageAssetFromFirebase(data[itemKey].image,
+        height: 16);
+  }
+
   static Color getCountColor(int current, int max) {
     if (current >= max) return Colors.greenAccent;
     return Colors.white;
@@ -148,6 +155,14 @@ class GridData {
         return "VI";
       case 6:
         return "VII";
+      case 7:
+        return "VIII";
+      case 8:
+        return "IX";
+      case 9:
+        return "X";
+      case 10:
+        return "XI";
       case -1:
         return ""; // Disabled
       default:
