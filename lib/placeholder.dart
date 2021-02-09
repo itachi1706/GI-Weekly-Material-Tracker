@@ -49,7 +49,7 @@ class PlaceholderWidgetContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Container Impl Coming Soon",
+              "Coming Soon!",
               style: TextStyle(color: Colors.white, fontSize: 24),
             )
           ],
