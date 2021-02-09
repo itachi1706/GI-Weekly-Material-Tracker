@@ -368,7 +368,11 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               int extraAscensionRef = 0;
               String extraTypeRef;
               String name = _material.name;
-              var _ascendTier = key.substring(key.length - 1);
+              bool override = false;
+              print(key);
+              List<String> _splitKey = key.split("_");
+              var _ascendTier = _splitKey[_splitKey.length - 1];
+              print(_ascendTier);
               if (_data.addData != null) {
                 // Grab image ref of extra data based on addedBy
                 if (_data.addedBy == "character") {
@@ -382,9 +386,19 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                   imageRef = _weaponData[_data.addData].image;
                   name = _weaponData[_data.addData].name;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                } else if (_data.addedBy == "talent") {
+                  // Grab from character talent
+                  List<String> _cData = _data.addData.split("|");
+                  imageRef =
+                      _characterData[_cData[0]].talent.attack[_cData[1]].image;
+                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                  name =
+                      "${_characterData[_cData[0]].name}'s ${_characterData[_cData[0]].talent.attack[_cData[1]].name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
+                  override = true;
                 }
-                name =
-                    "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})";
+                if (!override)
+                  name =
+                      "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})";
               }
 
               Widget typeWidget = SizedBox.shrink();

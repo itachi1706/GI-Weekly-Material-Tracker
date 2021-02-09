@@ -19,6 +19,11 @@ enum TrackingStatus {
 class TrackingUtils {
   static Color getTrackingColor(
       int index, Map<String, TrackingStatus> _isBeingTracked) {
+    return getTrackingColorString(index.toString(), _isBeingTracked);
+  }
+
+  static Color getTrackingColorString(
+      String index, Map<String, TrackingStatus> _isBeingTracked) {
     if (!_isBeingTracked.keys.contains(index.toString()))
       return Colors.yellow; // No such key (loading)
     switch (_isBeingTracked[index.toString()]) {
@@ -53,6 +58,8 @@ class TrackingData {
         return fields.material;
       case "weapon":
         return fields.weapon;
+      case "talents":
+        return fields.talent;
       default:
         return null;
     }
@@ -263,7 +270,10 @@ class UpdateMultiTracking {
     String key = (data.addedBy == "material") ? data.name : data.addData;
     _cntKey = docId;
     if (!editDialog) {
-      Get.toNamed('/${type}s/$key');
+      if (data.addedBy == "talent")
+        Get.toNamed('/characters/${data.addData.split("|")[0]}');
+      else
+        Get.toNamed('/${type}s/$key');
       return;
     }
     switch (type) {
@@ -275,6 +285,10 @@ class UpdateMultiTracking {
         break;
       case "character":
         _displayDialogNonMat("/characters", key, data, extraData);
+        break;
+      case "talent":
+        _displayDialogNonMat(
+            "/characters", data.addData.split("|")[0], data, extraData);
         break;
       default:
         Util.showSnackbarQuick(

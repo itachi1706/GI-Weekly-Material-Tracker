@@ -11,6 +11,7 @@ class CharacterData extends CommonData {
   String nation;
   String weapon;
   Map<String, CharacterAscension> ascension;
+  CharacterTalent talent;
 
   CharacterData(
       {this.affiliation,
@@ -27,6 +28,7 @@ class CharacterData extends CommonData {
       rarity,
       this.weapon,
       this.ascension,
+      this.talent,
       wiki})
       : super(
             image: image,
@@ -52,6 +54,7 @@ class CharacterData extends CommonData {
       element: parsedJson['element'],
       wiki: parsedJson['wiki'],
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
+      talent: CharacterTalent.getFromMap(parsedJson["talents"],)
     );
   }
 
@@ -119,6 +122,74 @@ class CharacterAscension extends CommonAscension {
       _fin.putIfAbsent("5", () => new CharacterAscension.fromJson(ascend['5']));
     if (ascend.containsKey("6"))
       _fin.putIfAbsent("6", () => new CharacterAscension.fromJson(ascend['6']));
+    return _fin;
+  }
+}
+
+class CharacterTalent {
+  Map<String, CharacterAscension> ascension;
+  Map<String, TalentInfo> attack;
+  Map<String, TalentInfo> passive;
+
+  CharacterTalent({
+    this.ascension,
+    this.attack,
+    this.passive
+});
+
+  static CharacterTalent getFromMap(Map<String, dynamic> ascend) {
+    return CharacterTalent(
+      ascension: getAscensionFromMap(ascend["ascension"]),
+      attack: TalentInfo.getFromMap(ascend["attack"]),
+      passive: TalentInfo.getFromMap(ascend["passives"])
+    );
+  }
+
+  static Map<String, CharacterAscension> getAscensionFromMap(
+      Map<String, dynamic> ascend) {
+    Map<String, CharacterAscension> _fin = new Map();
+    if (ascend.containsKey("2"))
+      _fin.putIfAbsent("2", () => new CharacterAscension.fromJson(ascend['2']));
+    if (ascend.containsKey("3"))
+      _fin.putIfAbsent("3", () => new CharacterAscension.fromJson(ascend['3']));
+    if (ascend.containsKey("4"))
+      _fin.putIfAbsent("4", () => new CharacterAscension.fromJson(ascend['4']));
+    if (ascend.containsKey("5"))
+      _fin.putIfAbsent("5", () => new CharacterAscension.fromJson(ascend['5']));
+    if (ascend.containsKey("6"))
+      _fin.putIfAbsent("6", () => new CharacterAscension.fromJson(ascend['6']));
+    if (ascend.containsKey("7"))
+      _fin.putIfAbsent("7", () => new CharacterAscension.fromJson(ascend['7']));
+    if (ascend.containsKey("8"))
+      _fin.putIfAbsent("8", () => new CharacterAscension.fromJson(ascend['8']));
+    if (ascend.containsKey("9"))
+      _fin.putIfAbsent("9", () => new CharacterAscension.fromJson(ascend['9']));
+    if (ascend.containsKey("10"))
+      _fin.putIfAbsent("10", () => new CharacterAscension.fromJson(ascend['10']));
+    return _fin;
+  }
+}
+
+class TalentInfo {
+  String name;
+  String effect;
+  String image;
+  String type;
+
+  TalentInfo({this.name, this.effect, this.image, this.type});
+
+  factory TalentInfo.fromJson(Map<String, dynamic> parsedJson) {
+    return TalentInfo(
+      name: parsedJson['name'],
+      effect: parsedJson['effect'],
+      image: parsedJson['image'],
+      type: parsedJson['type'],
+    );
+  }
+
+  static Map<String, TalentInfo> getFromMap(Map<String, dynamic> data) {
+    Map<String, TalentInfo> _fin = new Map();
+    data.forEach((key, value) => _fin.putIfAbsent(key, () => new TalentInfo.fromJson(value)));
     return _fin;
   }
 }

@@ -124,6 +124,14 @@ class _TrackerPageState extends State<TrackerPage> {
                     // Grab from weapon
                     extraImageRef = _weaponData[_data.addData].image;
                     extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                  } else if (_data.addedBy == "talent") {
+                    // Grab from character talent
+                    List<String> _cData = _data.addData.split("|");
+                    extraImageRef = _characterData[_cData[0]]
+                        .talent
+                        .attack[_cData[1]]
+                        .image;
+                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                   }
                 }
 
