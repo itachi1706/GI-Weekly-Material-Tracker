@@ -196,11 +196,12 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
 }
 
 class CharacterInfoPage extends StatefulWidget {
-  CharacterInfoPage({Key key, @required this.info, @required this.infoId}) : super(key: key);
-  
+  CharacterInfoPage({Key key, @required this.info, @required this.infoId})
+      : super(key: key);
+
   final CharacterData info;
   final String infoId;
-  
+
   @override
   _CharacterInfoPageState createState() => _CharacterInfoPageState();
 }
@@ -228,8 +229,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       Set<String> datasets = new Set();
       // Check tracking status and get material list
       _tracker.keys.forEach((key) {
-        bool _isTracked =
-            TrackingData.isBeingTrackedLocal(_dataList, "${widget.infoId}_$key");
+        bool _isTracked = TrackingData.isBeingTrackedLocal(
+            _dataList, "${widget.infoId}_$key");
         CharacterAscension data = widget.info.ascension[key];
         if (data.material1 != null)
           datasets.add(_materialData[data.material1].innerType);
@@ -345,7 +346,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
-    TrackingData.removeFromRecord('character', "${widget.infoId}_$_selectedTier")
+    TrackingData.removeFromRecord(
+            'character', "${widget.infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
@@ -405,7 +407,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
+                  GridData.getImageAssetFromFirebase(widget.info.image,
+                      height: 64),
                   Text(
                       "This will remove the following materials being tracked for this character from the tracker:"),
                   Row(
@@ -445,12 +448,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title:
-                Text("Add ${widget.info.name} Ascension Tier $key to the tracker?"),
+            title: Text(
+                "Add ${widget.info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
+                  GridData.getImageAssetFromFirebase(widget.info.image,
+                      height: 64),
                   Text("Items being added to tracker:"),
                   Row(
                     children: _getAscensionTierMaterialRowChild(
@@ -581,7 +585,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           children: [
             Row(
               children: [
-                GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
+                GridData.getImageAssetFromFirebase(widget.info.image,
+                    height: 64),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -597,7 +602,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                       ignoreGestures: true,
                       itemCount: 5,
                       itemSize: 30,
-                      initialRating: double.tryParse(widget.info.rarity.toString()),
+                      initialRating:
+                          double.tryParse(widget.info.rarity.toString()),
                       itemBuilder: (context, _) =>
                           Icon(Icons.star, color: Colors.amber),
                       onRatingUpdate: (rating) {
@@ -634,7 +640,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(widget.info.description.replaceAll('\\n', "\n")),
+                      child:
+                          Text(widget.info.description.replaceAll('\\n', "\n")),
                     ),
                   ),
                 ],
@@ -649,7 +656,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(widget.info.introduction.replaceAll('\\n', "\n")),
+                      child: Text(
+                          widget.info.introduction.replaceAll('\\n', "\n")),
                     ),
                   ),
                 ],
