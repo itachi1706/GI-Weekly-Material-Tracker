@@ -826,7 +826,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                 child: Row(
                   children: [
                     Text(
-                      GridData.getRomanNumberArray(index),
+                      GridData.getRomanNumberArray(index+1),
                       style: TextStyle(fontSize: 24),
                     ),
                     Spacer(),
@@ -856,43 +856,70 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     );
   }
 
-  Widget _generateTalentWidget(TalentInfo _talInfo) {
+  void _showDescription(TalentInfo _talInfo) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Row(
+            children: [
+              GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
+              Expanded(child: Text(_talInfo.name))
+            ],
+          ),
+          content: SingleChildScrollView(
+            child: Text(_talInfo.effect),
+          ),
+          actions: [
+            TextButton(
+              child: Text('Close'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ],
+        );
+      }
+    );
+  }
+
+  Widget _shouldShowTalentDescription(TalentInfo _talInfo, bool show) {
+    if (!show) return SizedBox.shrink();
     return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        children: [
-          IntrinsicHeight(
-            child: Row(
-              children: [
-                GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width - 80,
-                      child: Text(
-                        _talInfo.name,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 18),
+      padding: const EdgeInsets.only(top: 4),
+      child: Text(_talInfo.effect),
+    );
+  }
+
+  Widget _generateTalentWidget(TalentInfo _talInfo, bool _isPassive) {
+    return InkWell(
+      onTap: () => _showDescription(_talInfo),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            IntrinsicHeight(
+              child: Row(
+                children: [
+                  GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width - 80,
+                        child: Text(
+                          _talInfo.name,
+                          textAlign: TextAlign.start,
+                          style: TextStyle(fontSize: 18),
+                        ),
                       ),
-                    ),
-                    Text(_talInfo.type),
-                  ],
-                ),
-              ],
+                      Text(_talInfo.type),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(_talInfo.effect),
-                ),
-              ],
-            ),
-          ),
-        ],
+            _shouldShowTalentDescription(_talInfo, _isPassive)
+          ],
+        ),
       ),
     );
   }
@@ -901,7 +928,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     List<Widget> _wid = [];
     widget.info.talent.attack.forEach((key, value) {
       Map<String, CharacterAscension> _ascendInfo = widget.info.talent.ascension;
-      _wid.add(_generateTalentWidget(value));
+      _wid.add(_generateTalentWidget(value, false));
       _wid.add(_generateAscensionData(_ascendInfo));
       _wid.add(Divider());
     });
@@ -912,7 +939,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   List<Widget> _passiveTalentWidgets() {
     List<Widget> _wid = [];
     widget.info.talent.passive.forEach((key, value) {
-      _wid.add(_generateTalentWidget(value));
+      _wid.add(_generateTalentWidget(value, true));
       _wid.add(Divider());
     });
 
