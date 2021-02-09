@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                 )),
         GetPage(name: '/materials/:material', page: () => MaterialInfoPage()),
         GetPage(
-            name: '/characters/:character', page: () => CharacterInfoPage()),
+            name: '/characters/:character', page: () => CharacterInfoMainPage()),
         GetPage(name: '/weapons/:weapon', page: () => WeaponInfoPage()),
         GetPage(name: '/globalTracking', page: () => GlobalTrackingPage()),
         GetPage(

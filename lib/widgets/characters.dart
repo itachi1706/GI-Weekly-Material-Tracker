@@ -9,6 +9,7 @@ import 'package:gi_weekly_material_tracker/models/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/tracker.dart';
+import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -114,26 +115,106 @@ class _CharacterListGridState extends State<CharacterListGrid> {
   }
 }
 
-class CharacterInfoPage extends StatefulWidget {
+class CharacterInfoMainPage extends StatefulWidget {
   @override
-  _CharacterInfoPageState createState() => _CharacterInfoPageState();
+  _CharacterInfoMainPageState createState() => _CharacterInfoMainPageState();
 }
 
-class _CharacterInfoPageState extends State<CharacterInfoPage> {
+class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   CharacterData _info;
   String _infoId;
 
   Color _rarityColor;
 
+  @override
+  void initState() {
+    super.initState();
+    _infoId = Get.parameters['character'];
+    _getStaticData();
+  }
+
+  void _getStaticData() async {
+    Map<String, CharacterData> infoData =
+        await GridData.retrieveCharactersMapData();
+    setState(() {
+      _info = infoData[_infoId];
+      if (_info == null) Get.offAndToNamed('/splash');
+      _rarityColor = GridData.getRarityColor(_info.rarity);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_info == null) return Util.loadingScreen();
+
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(_info.name),
+            backgroundColor: _rarityColor,
+            bottom: TabBar(tabs: [
+              Tab(text: "General"),
+              Tab(text: "Talents"),
+              Tab(text: "Constellations"),
+            ]),
+            actions: [
+              IconButton(
+                icon: Icon(Icons.info_outline),
+                onPressed: () => GridData.launchWikiUrl(context, _info),
+                tooltip: "View Wiki",
+              ),
+              IconButton(
+                icon: Icon(MdiIcons.swordCross),
+                onPressed: _openCharBuildGuide,
+                tooltip: "Build Guide",
+              )
+            ],
+          ),
+          body: TabBarView(
+            children: [
+              CharacterInfoPage(info: _info, infoId: _infoId),
+              PlaceholderWidgetContainer(Colors.blue),
+              PlaceholderWidgetContainer(Colors.green)
+            ],
+          ),
+        ));
+  }
+
+  void _openCharBuildGuide() async {
+    if (_info.genshinGGPath == null) {
+      Util.showSnackbarQuick(
+          context, "Build Guide not available for ${_info.name}");
+      return;
+    }
+    String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
+    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
+      Util.showSnackbarQuick(
+          context, "Failed to launch build guide for ${_info.name}");
+    }
+  }
+}
+
+class CharacterInfoPage extends StatefulWidget {
+  CharacterInfoPage({Key key, @required this.info, @required this.infoId}) : super(key: key);
+  
+  final CharacterData info;
+  final String infoId;
+  
+  @override
+  _CharacterInfoPageState createState() => _CharacterInfoPageState();
+}
+
+class _CharacterInfoPageState extends State<CharacterInfoPage> {
   Map<String, MaterialDataCommon> _materialData;
 
   Map<String, TrackingStatus> _isBeingTracked;
 
   void _refreshTrackingStatus() {
-    if (_materialData == null || _info == null) return; // No data
+    if (_materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       Map<String, TrackingStatus> _tmpTracker = new Map();
-      _info.ascension.keys.forEach((key) {
+      widget.info.ascension.keys.forEach((key) {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
       });
       setState(() {
@@ -148,8 +229,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       // Check tracking status and get material list
       _tracker.keys.forEach((key) {
         bool _isTracked =
-            TrackingData.isBeingTrackedLocal(_dataList, "${_infoId}_$key");
-        CharacterAscension data = _info.ascension[key];
+            TrackingData.isBeingTrackedLocal(_dataList, "${widget.infoId}_$key");
+        CharacterAscension data = widget.info.ascension[key];
         if (data.material1 != null)
           datasets.add(_materialData[data.material1].innerType);
         if (data.material2 != null)
@@ -171,31 +252,31 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _tracker.keys.forEach((key) {
         if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
         bool fullTrack = true;
-        CharacterAscension data = _info.ascension[key];
+        CharacterAscension data = widget.info.ascension[key];
         if (data.material1 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
               _materialData[data.material1].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data.material1}_$key");
+              "Character_${widget.infoId}_${data.material1}_$key");
         if (data.material2 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
               _materialData[data.material2].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data.material2}_$key");
+              "Character_${widget.infoId}_${data.material2}_$key");
         if (data.material3 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
               _materialData[data.material3].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data.material3}_$key");
+              "Character_${widget.infoId}_${data.material3}_$key");
         if (data.material4 != null && fullTrack)
           fullTrack = TrackingData.isMaterialFull(
               _materialData[data.material4].innerType,
               collectionList,
               _materialData,
-              "Character_${_infoId}_${data.material4}_$key");
+              "Character_${widget.infoId}_${data.material4}_$key");
         _tracker[key] = (fullTrack)
             ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
             : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
@@ -215,76 +296,76 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _trackCharacterAction() {
     print("Selected: $_selectedTier");
-    CharacterAscension _ascendTier = _info.ascension[_selectedTier];
+    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
-    TrackingData.addToRecord('character', "${_infoId}_$_selectedTier")
+    TrackingData.addToRecord('character', "${widget.infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_info.name} Ascension Tier $_ascensionTierSel added to tracker!");
+          "${widget.info.name} Ascension Tier $_ascensionTierSel added to tracker!");
     });
     if (_ascendTier.material1 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
           _ascendTier.material1,
           _ascendTier.material1Qty,
           _materialData[_ascendTier.material1].innerType,
           'character',
-          _infoId);
+          widget.infoId);
     if (_ascendTier.material2 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
           _ascendTier.material2,
           _ascendTier.material2Qty,
           _materialData[_ascendTier.material2].innerType,
           'character',
-          _infoId);
+          widget.infoId);
     if (_ascendTier.material3 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
           _ascendTier.material3,
           _ascendTier.material3Qty,
           _materialData[_ascendTier.material3].innerType,
           'character',
-          _infoId);
+          widget.infoId);
     if (_ascendTier.material4 != null)
       TrackingData.addToCollection(
-          "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
           _ascendTier.material4,
           _ascendTier.material4Qty,
           _materialData[_ascendTier.material4].innerType,
           'character',
-          _infoId);
+          widget.infoId);
     Navigator.of(context).pop();
   }
 
   void _untrackCharacterAction() {
     print("Selected: $_selectedTier");
-    CharacterAscension _ascendTier = _info.ascension[_selectedTier];
+    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
-    TrackingData.removeFromRecord('character', "${_infoId}_$_selectedTier")
+    TrackingData.removeFromRecord('character', "${widget.infoId}_$_selectedTier")
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(context,
-          "${_info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
+          "${widget.info.name} Ascension Tier $_ascensionTierSel removed from tracker!");
     });
     if (_ascendTier.material1 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier.material1}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier",
           _materialData[_ascendTier.material1].innerType);
     if (_ascendTier.material2 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier.material2}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier",
           _materialData[_ascendTier.material2].innerType);
     if (_ascendTier.material3 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier.material3}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier",
           _materialData[_ascendTier.material3].innerType);
     if (_ascendTier.material4 != null)
       TrackingData.removeFromCollection(
-          "Character_${_infoId}_${_ascendTier.material4}_$_selectedTier",
+          "Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier",
           _materialData[_ascendTier.material4].innerType);
 
     Navigator.of(context).pop();
@@ -320,11 +401,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         builder: (context) {
           return AlertDialog(
             title: Text(
-                "Remove ${_info.name} Ascension Tier $key from the tracker?"),
+                "Remove ${widget.info.name} Ascension Tier $key from the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
+                  GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
                   Text(
                       "This will remove the following materials being tracked for this character from the tracker:"),
                   Row(
@@ -365,11 +446,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         builder: (context) {
           return AlertDialog(
             title:
-                Text("Add ${_info.name} Ascension Tier $key to the tracker?"),
+                Text("Add ${widget.info.name} Ascension Tier $key to the tracker?"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
+                  GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
                   Text("Items being added to tracker:"),
                   Row(
                     children: _getAscensionTierMaterialRowChild(
@@ -409,19 +490,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   @override
   void initState() {
     super.initState();
-    _infoId = Get.parameters['character'];
     _getStaticData();
   }
 
   void _getStaticData() async {
-    Map<String, CharacterData> infoData =
-        await GridData.retrieveCharactersMapData();
     Map<String, MaterialDataCommon> materialData =
         await GridData.retrieveMaterialsMapData();
     setState(() {
-      _info = infoData[_infoId];
-      if (_info == null) Get.offAndToNamed('/splash');
-      _rarityColor = GridData.getRarityColor(_info.rarity);
       _materialData = materialData;
     });
     _refreshTrackingStatus();
@@ -442,7 +517,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       );
     }
 
-    Map<String, CharacterAscension> dataMap = _info.ascension;
+    Map<String, CharacterAscension> dataMap = widget.info.ascension;
     List<CharacterAscension> data =
         dataMap.entries.map((e) => e.value).toList();
     return ListView.builder(
@@ -496,211 +571,180 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     );
   }
 
-  void _openCharBuildGuide() async {
-    if (_info.genshinGGPath == null) {
-      Util.showSnackbarQuick(
-          context, "Build Guide not available for ${_info.name}");
-      return;
-    }
-    String fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
-    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
-      Util.showSnackbarQuick(
-          context, "Failed to launch build guide for ${_info.name}");
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    if (_info == null) return Util.loadingScreen();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_info.name),
-        backgroundColor: _rarityColor,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info),
-            tooltip: "View Wiki",
-          ),
-          IconButton(
-            icon: Icon(MdiIcons.swordCross),
-            onPressed: _openCharBuildGuide,
-            tooltip: "Build Guide",
-          )
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
+    if (widget.info == null) return Util.loadingScreen();
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                GridData.getImageAssetFromFirebase(widget.info.image, height: 64),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 200,
+                      child: Text(
+                        widget.info.affiliation,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    RatingBar.builder(
+                      ignoreGestures: true,
+                      itemCount: 5,
+                      itemSize: 30,
+                      initialRating: double.tryParse(widget.info.rarity.toString()),
+                      itemBuilder: (context, _) =>
+                          Icon(Icons.star, color: Colors.amber),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                    ),
+                  ],
+                ),
+                Spacer(),
+                Image.asset(GridData.getElementImageRef(widget.info.element))
+              ],
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 200,
-                        child: Text(
-                          _info.affiliation,
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ),
-                      RatingBar.builder(
-                        ignoreGestures: true,
-                        itemCount: 5,
-                        itemSize: 30,
-                        initialRating: double.tryParse(_info.rarity.toString()),
-                        itemBuilder: (context, _) =>
-                            Icon(Icons.star, color: Colors.amber),
-                        onRatingUpdate: (rating) {
-                          print(rating);
-                        },
-                      ),
-                    ],
+                  Icon(Icons.location_pin),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: Text(widget.info.nation),
+                    ),
                   ),
-                  Spacer(),
-                  Image.asset(GridData.getElementImageRef(_info.element))
                 ],
               ),
-              Divider(),
-              Padding(
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                children: [
+                  Icon(Icons.format_list_bulleted),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: Text(widget.info.description.replaceAll('\\n', "\n")),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                children: [
+                  Icon(Icons.book),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      child: Text(widget.info.introduction.replaceAll('\\n', "\n")),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            IntrinsicHeight(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        Icon(MdiIcons.weatherNight),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Text(widget.info.constellation),
+                        )
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  VerticalDivider(),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        Icon(MdiIcons.swordCross),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
+                          child: Text(widget.info.weapon),
+                        )
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                ],
+              ),
+            ),
+            Divider(),
+            IntrinsicHeight(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        _getGenderIcon(widget.info.gender, widget.info.name),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Text(widget.info.gender),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  VerticalDivider(),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      children: [
+                        Icon(Icons.cake),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 8),
+                          child: Text(widget.info.birthday),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                ],
+              ),
+            ),
+            Divider(),
+            Padding(
                 padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Icon(Icons.location_pin),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.nation),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Icon(Icons.format_list_bulleted),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.description.replaceAll('\\n', "\n")),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: [
-                    Icon(Icons.book),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Text(_info.introduction.replaceAll('\\n', "\n")),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(),
-              IntrinsicHeight(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Icon(MdiIcons.weatherNight),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Text(_info.constellation),
-                          )
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    VerticalDivider(),
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Icon(MdiIcons.swordCross),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Text(_info.weapon),
-                          )
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                  ],
-                ),
-              ),
-              Divider(),
-              IntrinsicHeight(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          _getGenderIcon(_info.gender, _info.name),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Text(_info.gender),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                    VerticalDivider(),
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          Icon(Icons.cake),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8, right: 8),
-                            child: Text(_info.birthday),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
-                  ],
-                ),
-              ),
-              Divider(),
-              Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Ascension Materials",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ],
-                  )),
-              Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Row(
                   children: [
                     Text(
-                        "Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials")
+                      "Ascension Materials",
+                      style: TextStyle(fontSize: 24),
+                    ),
                   ],
-                ),
+                )),
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Row(
+                children: [
+                  Text(
+                      "Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials")
+                ],
               ),
-              _generateAscensionData(),
-            ],
-          ),
+            ),
+            _generateAscensionData(),
+          ],
         ),
       ),
     );
