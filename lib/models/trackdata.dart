@@ -4,8 +4,9 @@ class TrackingUserInfo {
   List<String> character;
   List<String> material;
   List<String> weapon;
+  List<String> talent;
 
-  TrackingUserInfo({this.character, this.material, this.weapon});
+  TrackingUserInfo({this.character, this.material, this.weapon, this.talent});
 
   factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
     if (parsedJson == null)
@@ -25,6 +26,12 @@ class TrackingUserInfo {
           : null,
       weapon: (parsedJson.containsKey('weapon'))
           ? (parsedJson['weapon'] as List<dynamic>)
+              .map((e) => e.toString())
+              .toSet()
+              .toList()
+          : null,
+      talent: (parsedJson.containsKey('talents'))
+          ? (parsedJson['talents'] as List<dynamic>)
               .map((e) => e.toString())
               .toSet()
               .toList()

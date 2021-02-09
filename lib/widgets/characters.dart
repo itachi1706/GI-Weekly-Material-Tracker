@@ -726,18 +726,22 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                         height: 16),
                     Text(curData.mora.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material2, _materialData),
+                    GridData.getAscensionImage(
+                        curData.material2, _materialData),
                     Text((curData.material2Qty == 0)
                         ? ""
                         : curData.material2Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material1, _materialData),
+                    GridData.getAscensionImage(
+                        curData.material1, _materialData),
                     Text(curData.material1Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material3, _materialData),
+                    GridData.getAscensionImage(
+                        curData.material3, _materialData),
                     Text(curData.material3Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material4, _materialData),
+                    GridData.getAscensionImage(
+                        curData.material4, _materialData),
                     Text(curData.material4Qty.toString()),
                     Spacer(),
                   ],
@@ -795,56 +799,362 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     setState(() {
       _materialData = materialData;
     });
-    // TODO: Track Talents
-    //_refreshTrackingStatus();
+    _refreshTrackingStatus();
   }
-  
-  Map<String, TrackingStatus> _isBeingTracked = new Map();
 
-  Widget _generateAscensionData(Map<String, CharacterAscension> ascendInfo) {
+  void _refreshTrackingStatus() {
+    if (_materialData == null || widget.info == null) return; // No data
+    if (_isBeingTracked == null) {
+      Map<String, TrackingStatus> _tmpTracker = new Map();
+      widget.info.talent.attack.keys.forEach((key) {
+        widget.info.talent.ascension.keys.forEach((k2) {
+          _tmpTracker["${key}_$k2"] = TrackingStatus.UNKNOWN;
+        });
+      });
+      setState(() {
+        _isBeingTracked = _tmpTracker;
+      });
+    }
+
+    Map<String, TrackingStatus> _tracker = _isBeingTracked;
+    TrackingData.getTrackingCategory('talents').then((_dataList) async {
+      print(_dataList);
+      Set<String> datasets = new Set();
+      // Check tracking status and get material list
+      _tracker.keys.forEach((key) {
+        bool _isTracked = TrackingData.isBeingTrackedLocal(
+            _dataList, "${widget.infoId}_$key");
+        List<String> splitKey = key.split("_");
+        CharacterAscension data =
+            widget.info.talent.ascension[splitKey[splitKey.length - 1]];
+        if (data.material1 != null)
+          datasets.add(_materialData[data.material1].innerType);
+        if (data.material2 != null)
+          datasets.add(_materialData[data.material2].innerType);
+        if (data.material3 != null)
+          datasets.add(_materialData[data.material3].innerType);
+        if (data.material4 != null)
+          datasets.add(_materialData[data.material4].innerType);
+        _tracker[key] =
+            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
+      });
+
+      // Get all datasets into a map to check if completed
+      Map<String, Map<String, TrackingUserData>> collectionList = new Map();
+      for (String ds in datasets.toList()) {
+        collectionList[ds] = await TrackingData.getCollectionList(ds);
+      }
+      // Run through tracking status and check if its fully tracked
+      _tracker.keys.forEach((key) {
+        if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+        bool fullTrack = true;
+        List<String> splitKey = key.split("_");
+        CharacterAscension data =
+            widget.info.talent.ascension[splitKey[splitKey.length - 1]];
+        if (data.material1 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material1].innerType,
+              collectionList,
+              _materialData,
+              "Talent_${widget.infoId}_${data.material1}_$key");
+        if (data.material2 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material2].innerType,
+              collectionList,
+              _materialData,
+              "Talent_${widget.infoId}_${data.material2}_$key");
+        if (data.material3 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material3].innerType,
+              collectionList,
+              _materialData,
+              "Talent_${widget.infoId}_${data.material3}_$key");
+        if (data.material4 != null && fullTrack)
+          fullTrack = TrackingData.isMaterialFull(
+              _materialData[data.material4].innerType,
+              collectionList,
+              _materialData,
+              "Talent_${widget.infoId}_${data.material4}_$key");
+        _tracker[key] = (fullTrack)
+            ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
+            : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
+      });
+
+      setState(() {
+        if (!mounted) return;
+        _isBeingTracked = _tracker;
+      });
+    });
+  }
+
+  void _trackTalentAction() {
+    print("Selected: $_selectedTalent : $_selectedTier");
+    CharacterAscension _ascendTier =
+        widget.info.talent.ascension[_selectedTier];
+    String _ascensionTierSel = _selectedTier;
+
+    TrackingData.addToRecord(
+            'talents', "${widget.infoId}_${_selectedTalent}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "Tracking Tier $_ascensionTierSel of ${widget.info.name}'s ${widget.info.talent.attack[_selectedTalent].name}");
+    });
+    if (_ascendTier.material1 != null)
+      TrackingData.addToCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier",
+          _ascendTier.material1,
+          _ascendTier.material1Qty,
+          _materialData[_ascendTier.material1].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material2 != null)
+      TrackingData.addToCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier",
+          _ascendTier.material2,
+          _ascendTier.material2Qty,
+          _materialData[_ascendTier.material2].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material3 != null)
+      TrackingData.addToCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier",
+          _ascendTier.material3,
+          _ascendTier.material3Qty,
+          _materialData[_ascendTier.material3].innerType,
+          'character',
+          widget.infoId);
+    if (_ascendTier.material4 != null)
+      TrackingData.addToCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier",
+          _ascendTier.material4,
+          _ascendTier.material4Qty,
+          _materialData[_ascendTier.material4].innerType,
+          'character',
+          widget.infoId);
+    Navigator.of(context).pop();
+  }
+
+  void _untrackTalentAction() {
+    print("Selected: $_selectedTalent : $_selectedTier");
+    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
+    String _ascensionTierSel = _selectedTier;
+
+    TrackingData.removeFromRecord(
+            'talents', "${widget.infoId}_${_selectedTalent}_$_selectedTier")
+        .then((value) {
+      _refreshTrackingStatus();
+      Util.showSnackbarQuick(context,
+          "Untracked Tier $_ascensionTierSel of ${widget.info.name}'s ${widget.info.talent.attack[_selectedTalent].name}");
+    });
+    if (_ascendTier.material1 != null)
+      TrackingData.removeFromCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier",
+          _materialData[_ascendTier.material1].innerType);
+    if (_ascendTier.material2 != null)
+      TrackingData.removeFromCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier",
+          _materialData[_ascendTier.material2].innerType);
+    if (_ascendTier.material3 != null)
+      TrackingData.removeFromCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier",
+          _materialData[_ascendTier.material3].innerType);
+    if (_ascendTier.material4 != null)
+      TrackingData.removeFromCollection(
+          "Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier",
+          _materialData[_ascendTier.material4].innerType);
+
+    Navigator.of(context).pop();
+  }
+
+  TrackingStatus _isBeingTrackedStatus(String key) {
+    if (!_isBeingTracked.keys.contains(key)) return TrackingStatus.UNKNOWN;
+    return _isBeingTracked[key];
+  }
+
+  Map<String, TrackingStatus> _isBeingTracked;
+
+  List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
+    if (key == null) return [SizedBox.shrink()];
+    return [
+      GridData.getAscensionImage(key, _materialData),
+      Text(key == null ? "" : _materialData[key].name),
+      Text((qty == 0) ? "" : " x$qty"),
+    ];
+  }
+
+  String _selectedTier;
+  String _selectedTalent;
+
+  void _addOrRemoveMaterial(
+      String talent, int index, CharacterAscension curData) async {
+    String key = "${talent}_$index";
+    TrackingStatus isTracked = _isBeingTrackedStatus(key);
+    if (isTracked == TrackingStatus.UNKNOWN ||
+        isTracked == TrackingStatus.CHECKING) {
+      Util.showSnackbarQuick(context, "Checking tracking status");
+      return;
+    }
+
+    setState(() {
+      _selectedTier = index.toString();
+      _selectedTalent = talent;
+    });
+
+    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
+        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Remove ${widget.info.name}'s ${widget.info.talent.attack[talent].name} Tier $index from the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Text(
+                      "This will remove the following materials being tracked for this talent from the tracker:"),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Untrack'),
+                onPressed: _untrackTalentAction,
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+                "Add ${widget.info.name}'s ${widget.info.talent.attack[talent].name} Tier $index to the tracker?"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Text("Items being added to tracker:"),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material3, curData.material3Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material4, curData.material4Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material2, curData.material2Qty),
+                  ),
+                  Row(
+                    children: _getAscensionTierMaterialRowChild(
+                        curData.material1, curData.material1Qty),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('Track'),
+                onPressed: _trackTalentAction,
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+  Widget _generateAscensionData(
+      String talent, Map<String, CharacterAscension> ascendInfo) {
     if (_materialData == null) {
       return Padding(
         padding: const EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
       );
     }
-    
-    List<CharacterAscension> data = ascendInfo.entries.map((e) => e.value).toList();
+
+    List<CharacterAscension> data =
+        ascendInfo.entries.map((e) => e.value).toList();
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) {
         CharacterAscension curData = data[index];
+        //print("${talent}_${index+2}");
         return Container(
           child: Card(
-            //color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked),
+            color: TrackingUtils.getTrackingColorString(
+                "${talent}_${index + 2}", _isBeingTracked),
             child: InkWell(
-              //onTap: () => _addOrRemoveMaterial(index + 1, curData),
+              onTap: () => _addOrRemoveMaterial(talent, index + 2, curData),
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
                     Text(
-                      GridData.getRomanNumberArray(index+1),
+                      GridData.getRomanNumberArray(index + 1),
                       style: TextStyle(fontSize: 24),
                     ),
                     Spacer(),
-                    Image.asset("assets/images/items/Icon_Mora.png", height: 16),
-                    Padding(padding: const EdgeInsets.only(left: 4),
-                    child: Text(curData.mora.toString()),),
+                    Image.asset("assets/images/items/Icon_Mora.png",
+                        height: 16),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4),
+                      child: Text(curData.mora.toString()),
+                    ),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material3, _materialData),
-                    Text((curData.material3Qty == 0) ? "" : curData.material3Qty.toString()),
+                    GridData.getAscensionImage(
+                        curData.material3, _materialData),
+                    Text((curData.material3Qty == 0)
+                        ? ""
+                        : curData.material3Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material4, _materialData),
-                    Text((curData.material4Qty == 0) ? "" : curData.material4Qty.toString()),
+                    GridData.getAscensionImage(
+                        curData.material4, _materialData),
+                    Text((curData.material4Qty == 0)
+                        ? ""
+                        : curData.material4Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material2, _materialData),
-                    Text((curData.material2Qty == 0) ? "" : curData.material2Qty.toString()),
+                    GridData.getAscensionImage(
+                        curData.material2, _materialData),
+                    Text((curData.material2Qty == 0)
+                        ? ""
+                        : curData.material2Qty.toString()),
                     Spacer(),
-                    GridData.getAscensionImage(curData.material1, _materialData),
-                    Text((curData.material1Qty == 0) ? "" : curData.material1Qty.toString()),
+                    GridData.getAscensionImage(
+                        curData.material1, _materialData),
+                    Text((curData.material1Qty == 0)
+                        ? ""
+                        : curData.material1Qty.toString()),
                     Spacer(),
                   ],
                 ),
@@ -858,27 +1168,26 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
   void _showDescription(TalentInfo _talInfo) {
     showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Row(
-            children: [
-              GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
-              Expanded(child: Text(_talInfo.name))
-            ],
-          ),
-          content: SingleChildScrollView(
-            child: Text(_talInfo.effect),
-          ),
-          actions: [
-            TextButton(
-              child: Text('Close'),
-              onPressed: () => Navigator.of(context).pop(),
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Row(
+              children: [
+                GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
+                Expanded(child: Text(_talInfo.name))
+              ],
             ),
-          ],
-        );
-      }
-    );
+            content: SingleChildScrollView(
+              child: Text(_talInfo.effect),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Close'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ],
+          );
+        });
   }
 
   Widget _shouldShowTalentDescription(TalentInfo _talInfo, bool show) {
@@ -899,7 +1208,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
             IntrinsicHeight(
               child: Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
+                  GridData.getImageAssetFromFirebase(_talInfo.image,
+                      height: 32),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -927,9 +1237,10 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   List<Widget> _attackTalentWidgets() {
     List<Widget> _wid = [];
     widget.info.talent.attack.forEach((key, value) {
-      Map<String, CharacterAscension> _ascendInfo = widget.info.talent.ascension;
+      Map<String, CharacterAscension> _ascendInfo =
+          widget.info.talent.ascension;
       _wid.add(_generateTalentWidget(value, false));
-      _wid.add(_generateAscensionData(_ascendInfo));
+      _wid.add(_generateAscensionData(key, _ascendInfo));
       _wid.add(Divider());
     });
 

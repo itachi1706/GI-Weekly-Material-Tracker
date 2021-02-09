@@ -17,13 +17,13 @@ enum TrackingStatus {
 }
 
 class TrackingUtils {
-  static Color getTrackingColor(int index,
-      Map<String, TrackingStatus> _isBeingTracked) {
+  static Color getTrackingColor(
+      int index, Map<String, TrackingStatus> _isBeingTracked) {
     return getTrackingColorString(index.toString(), _isBeingTracked);
   }
 
-  static Color getTrackingColorString(String index,
-      Map<String, TrackingStatus> _isBeingTracked) {
+  static Color getTrackingColorString(
+      String index, Map<String, TrackingStatus> _isBeingTracked) {
     if (!_isBeingTracked.keys.contains(index.toString()))
       return Colors.yellow; // No such key (loading)
     switch (_isBeingTracked[index.toString()]) {
@@ -58,6 +58,8 @@ class TrackingData {
         return fields.material;
       case "weapon":
         return fields.weapon;
+      case "talents":
+        return fields.talent;
       default:
         return null;
     }
@@ -105,8 +107,8 @@ class TrackingData {
         .update({"current": curCnt, "max": maxCnt});
   }
 
-  static void incrementCount(String key, String type, int curCnt,
-      int maxCnt) async {
+  static void incrementCount(
+      String key, String type, int curCnt, int maxCnt) async {
     if (curCnt >= maxCnt) return; // Invalid action
     String uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
@@ -174,8 +176,7 @@ class TrackingData {
   static Future<void> clearCollection(String materialType) async {
     String uid = Util.getFirebaseUid();
     if (uid == null) return;
-    int deleted = 0,
-        limit = 50;
+    int deleted = 0, limit = 50;
     do {
       QuerySnapshot qs = await _db
           .collection("tracking")
@@ -210,7 +211,8 @@ class TrackingData {
     return data;
   }
 
-  static bool isMaterialFull(String type,
+  static bool isMaterialFull(
+      String type,
       Map<String, Map<String, TrackingUserData>> tracker,
       Map<String, MaterialDataCommon> materialData,
       String key) {
@@ -288,10 +290,7 @@ class UpdateMultiTracking {
     }
   }
 
-  String _cntCurrent = "",
-      _cntTotal = "",
-      _cntKey = "",
-      _cntType = "";
+  String _cntCurrent = "", _cntTotal = "", _cntKey = "", _cntType = "";
   TextEditingController _textCurrentController = TextEditingController();
   TextEditingController _textTotalController = TextEditingController();
 
