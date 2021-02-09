@@ -1,3 +1,9 @@
+# 1.3.0
+- Added talent tracking
+- Ability to view attack talents and passive talents
+- Click on talent name to view talent effect
+- Added a constellation tab that currently will only tell you its coming soon
+
 # 1.2.3
 - Fixed Web reload simply showing a black screen
 - Preparing for inclusion of talent tracking
