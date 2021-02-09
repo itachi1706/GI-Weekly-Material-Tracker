@@ -480,10 +480,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
       });
 
-      setState(() {
-        if (!mounted) return;
-        _isBeingTracked = _tracker;
-      });
+      if (mounted)
+        setState(() {
+          if (!mounted) return;
+          _isBeingTracked = _tracker;
+        });
     });
   }
 
@@ -906,38 +907,39 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           _ascendTier.material1,
           _ascendTier.material1Qty,
           _materialData[_ascendTier.material1].innerType,
-          'character',
-          widget.infoId);
+          'talent',
+          widget.infoId + "|" + _selectedTalent);
     if (_ascendTier.material2 != null)
       TrackingData.addToCollection(
           "Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier",
           _ascendTier.material2,
           _ascendTier.material2Qty,
           _materialData[_ascendTier.material2].innerType,
-          'character',
-          widget.infoId);
+          'talent',
+          widget.infoId + "|" + _selectedTalent);
     if (_ascendTier.material3 != null)
       TrackingData.addToCollection(
           "Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier",
           _ascendTier.material3,
           _ascendTier.material3Qty,
           _materialData[_ascendTier.material3].innerType,
-          'character',
-          widget.infoId);
+          'talent',
+          widget.infoId + "|" + _selectedTalent);
     if (_ascendTier.material4 != null)
       TrackingData.addToCollection(
           "Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier",
           _ascendTier.material4,
           _ascendTier.material4Qty,
           _materialData[_ascendTier.material4].innerType,
-          'character',
-          widget.infoId);
+          'talent',
+          widget.infoId + "|" + _selectedTalent);
     Navigator.of(context).pop();
   }
 
   void _untrackTalentAction() {
     print("Selected: $_selectedTalent : $_selectedTier");
-    CharacterAscension _ascendTier = widget.info.ascension[_selectedTier];
+    CharacterAscension _ascendTier =
+        widget.info.talent.ascension[_selectedTier];
     String _ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord(

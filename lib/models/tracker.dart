@@ -270,7 +270,10 @@ class UpdateMultiTracking {
     String key = (data.addedBy == "material") ? data.name : data.addData;
     _cntKey = docId;
     if (!editDialog) {
-      Get.toNamed('/${type}s/$key');
+      if (data.addedBy == "talent")
+        Get.toNamed('/characters/${data.addData.split("|")[0]}');
+      else
+        Get.toNamed('/${type}s/$key');
       return;
     }
     switch (type) {
@@ -282,6 +285,10 @@ class UpdateMultiTracking {
         break;
       case "character":
         _displayDialogNonMat("/characters", key, data, extraData);
+        break;
+      case "talent":
+        _displayDialogNonMat(
+            "/characters", data.addData.split("|")[0], data, extraData);
         break;
       default:
         Util.showSnackbarQuick(
