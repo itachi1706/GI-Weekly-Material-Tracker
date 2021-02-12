@@ -265,6 +265,272 @@
         "wiki": "https://genshin-impact.fandom.com/wiki/Ayaka",
         "subCollection": {}
     },
+    "Rosaria": {
+        "image": "Characters/Cryo/Rosaria.png",
+        "gender": "Female",
+        "birthday": "24/1",
+        "name": "Rosaria",
+        "description": "",
+        "nation": "Mondstadt",
+        "weapon": "Polearm",
+        "rarity": 4,
+        "affiliation": "Church of Favonius",
+        "constellation": "",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Ballad",
+                    "material3qty": 3,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 2,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 4,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 6,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 9,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 4,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 6,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 12,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 16,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Night_Walk": {
+                    "name": "Night Walk",
+                    "effect": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+                    "image": "",
+                    "type": "Passive 1"
+                },
+                "Extracted_Confession": {
+                    "name": "Extracted Confession",
+                    "effect": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+                    "image": "",
+                    "type": "Passive 2"
+                },
+                "Shadow_Samaritan": {
+                    "name": "Shadow Samaritan",
+                    "effect": "Casting Last Rites increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+                    "image": "",
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Spear_of_Worship": {
+                    "name": "Spear of Worship",
+                    "effect": "Normal Attack\nPerforms up to five consecutive spear strikes.\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "",
+                    "type": "Normal/Charged Attack"
+                },
+                "Ravaging_Confession": {
+                    "name": "Ravaging Confession",
+                    "effect": "Rosaria swiftly shifts her position to appear behind her target, then pierces and slashes it with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.ect",
+                    "image": "",
+                    "type": "Elemental Skill"
+                },
+                "Last_Rites": {
+                    "name": "Last Rites",
+                    "effect": "Rosaria's signature act of prayer. After swinging her weapon to slash nearby opponents, she summons a frigid Ice Lance that strikes the ground, dealing Cryo DMG both times.While active, the Ice Lance will periodically release cold air, dealing Cryo DMG to the surrounding opponents.",
+                    "image": "",
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Unholy Revelation",
+                "effect": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+                "image": ""
+            },
+            "2": {
+                "name": "Land Without Promise",
+                "effect": "The duration of the Ice Lance created by Last Rites is increased by 4s.",
+                "image": ""
+            },
+            "3": {
+                "name": "Sacrament of Penance",
+                "effect": "Increases the Level of Ravaging Confessionby 3.\nMaximum upgrade level is 15.",
+                "image": ""
+            },
+            "4": {
+                "name": "Amazing Disgrace",
+                "effect": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria.\nCan only be triggered once each time Ravaging Confession is cast.",
+                "image": ""
+            },
+            "5": {
+                "name": "Extreme Unction",
+                "effect": "Increases the Level of Last Rites by 3.\nMaximum upgrade level is 15.",
+                "image": ""
+            },
+            "6": {
+                "name": "Divine Retribution",
+                "effect": "Last Rites' attack decreases opponents' Physical RES by 5% for 10s. Max 4 stacks.",
+                "image": ""
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Shivada_Jade_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Recruit_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Valberry"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Hoarfrost_Core",
+                "level": 40,
+                "material4": "Recruit_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Valberry"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Hoarfrost_Core",
+                "level": 50,
+                "material4": "Sergeant_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Valberry"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Hoarfrost_Core",
+                "level": 60,
+                "material4": "Sergeant_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Valberry"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Hoarfrost_Core",
+                "level": 70,
+                "material4": "Lieutenant_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Valberry"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Shivada_Jade_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Hoarfrost_Core",
+                "level": 80,
+                "material4": "Lieutenant_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Valberry"
+            }
+        },
+        "introduction": "Placeholder",
+        "genshinggpath": null,
+        "element": "Cryo",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Rosaria",
+        "subCollection": {}
+    },
     "Hu_Tao": {
             "image": "Characters/Pyro/Hu_Tao.png",
             "gender": "Female",
@@ -526,7 +792,7 @@
                 }
             },
             "introduction": "Placeholder",
-            "genshinggpath": "characters/Placeholder",
+            "genshinggpath": null,
             "element": "Pyro",
             "wiki": "https://genshin-impact.fandom.com/wiki/Hu_Tao",
             "subCollection": {}
