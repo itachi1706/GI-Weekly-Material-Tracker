@@ -112,7 +112,8 @@ class _TrackerPageState extends State<TrackerPage> {
                 String extraImageRef;
                 int extraAscensionRef = 0;
                 String extraTypeRef;
-                var _ascendTier = _dataId.substring(_dataId.length - 1);
+                List<String> _splitKey = _dataId.split("_");
+                var _ascendTier = _splitKey[_splitKey.length - 1];
                 if (_data.addData != null) {
                   // Grab image ref of extra data based on addedBy
                   if (_data.addedBy == "character") {
