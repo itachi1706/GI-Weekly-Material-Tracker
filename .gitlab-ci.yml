@@ -46,7 +46,7 @@ Update Google Cloud Storage Data:
     - gcloud config set project $GCP_PROJECT_ID
     - cd public/images
   script:
-    - gsutil -m rsync -d -r . $GCS_BUCKET
+    - gsutil -m rsync -d -r . gs://$GCS_BUCKET/
   rules:
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
       changes:
