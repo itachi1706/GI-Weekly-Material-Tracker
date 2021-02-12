@@ -74,6 +74,7 @@ Code Quality Check:
       codequality: quality.json
     paths:
       - metrics/
+      - quality.json
   needs: []
 
 Generate Flutter App:
