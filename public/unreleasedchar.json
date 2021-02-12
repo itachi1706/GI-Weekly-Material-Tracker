@@ -2,8 +2,8 @@
     "Ayaka": {
         "image": "Characters/Cryo/Ayaka.png",
         "gender": "Female",
-        "birthday": "28/9",
-        "name": "Ayaka (UNRELEASED)",
+        "birthday": "?/12",
+        "name": "Ayaka",
         "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
         "nation": "Inazuma",
         "weapon": "Sword",
@@ -113,75 +113,81 @@
                 }
             },
             "passives": {
-                "PASSIVE_1": {
-                    "name": "Passive",
-                    "effect": "effect",
+                "Daily_Cooking": {
+                    "name": "Daily Cooking",
+                    "effect": "Kamisato Ayaka gains 1 additional Proficiency when she cooks a steamed Dish perfectly.",
                     "image": "",
                     "type": "Passive 1"
                 },
-                "PASSIVE_2": {
-                    "name": "Passive",
-                    "effect": "effect",
+                "Kanten_Senmyou_Norito": {
+                    "name": "Kanten Senmyou Norito",
+                    "effect": "Normal Attack hits on enemies affected by Cryo have a 6%/18% chance respectively of shortening the CD of Kamisato Art: Hyouka by 0.5s.",
                     "image": "",
                     "type": "Passive 2"
                 },
-                "PASSIVE_3": {
-                    "name": "Passive",
-                    "effect": "effect",
+                "Amatsumi_Kunitsumi_Ihahigoto": {
+                    "name": "Amatsumi Kunitsumi Ihahigoto",
+                    "effect": "While in Kamisato Art: Senho form, Kamisato Ayaka marks nearby opponents below 30% HP.\nLeaving Senho form near marked opponents and immediately hitting them with a Normal Attack deals Cryo DMG equal to 300% of ATK.\nThis attack counts as a Charged Attack.",
                     "image": "",
                     "type": "Passive 3"
+                },
+                "Kamisato_Art_Senho": {
+                    "name": "Kamisato Art: Senho",
+                    "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\n• Inflicts Cold on nearby opponents.\n• Cold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
+                    "image": "Talents/Passive/Talent_Kamisato_Art_Senho.png",
+                    "type": "Alternate Sprint"
                 }
             },
             "attack": {
-                "ATTACK_1": {
-                    "name": "attack",
-                    "effect": "effect",
+                "Kamisato_Art_Naname": {
+                    "name": "Kamisato Art - Naname",
+                    "effect": "Normal Attack\nPerform up to 5 rapid strikes.\nCharged Attack\nConsumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                     "image": "",
                     "type": "Normal/Charged Attack"
                 },
-                "ATTACK_2": {
-                    "name": "attack",
-                    "effect": "effect",
-                    "image": "",
+                "Kamisato_Art_Hyouka": {
+                    "name": "Kamisato Art: Hyouka",
+                    "effect": "Ayaka emits ice around herself and shortly afterward launches nearby opponents, dealing AoE Cryo DMG.",
+                    "image": "Talents/Skill/Talent_Kamisato_Art_Hyouka.png",
                     "type": "Elemental Skill"
                 },
-                "ATTACK_3": {
-                    "name": "attack",
-                    "effect": "effect",
-                    "image": "",
+                "Kamisato_Art_Soumetsu": {
+                    "name": "Kamisato Art: Soumetsu",
+                    "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\n• Deals Cryo DMG over time to all enemies in its path.\n• After the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
+                    "image": "Talents/Burst/Talent_Kamisato_Art_Soumetsu.png",
                     "type": "Elemental Burst"
                 }
             }
         },
         "constellations": {
             "1": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Sousai Sumizome Sakura",
+                "effect": "Increases the DMG of Kamisato Art: Hyouka against enemies affected by Cryo by 20%.",
                 "image": ""
             },
             "2": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Ai Suigetsu",
+                "effect": "Decreases the CD of Kamisato Art: Soumetsu by 2s.\nIncreases Energy Recharge by 15%.",
                 "image": ""
             },
             "3": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Hanano Nishikie Kamifubuki",
+                "effect": "Increases the Level of Kamisato Art: Soumetsu by 3. Maximum upgrade level is 15.",
                 "image": ""
             },
             "4": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Eikyo Ryuuhan",
+                "effect": "When Kamisato Ayaka's Energy is above 50%, her Normal Attack DMG is increased by 20%.\nWhen Energy is below 50%, her Normal Attack CRIT Rate is increased by 10%.",
                 "image": ""
             },
             "5": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Hanani Kumo Kaneni Irutsuki",
+                "effect": "Increases the Level of Kamisato Art: Hyoukaby 3. Maximum upgrade level is 15.",
                 "image": ""
             },
             "6": {
-                "name": "Name",
-                "effect": "effect",
+                "name": "Mie Yuki no Seki no To",
+                "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional bladestorms, each dealing 20% of the original storm's DMG.",
                 "image": ""
             }
         },
