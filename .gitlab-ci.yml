@@ -2,6 +2,7 @@ image: alpine:latest
 
 stages:
   - build
+  - test
   - upload
   - deploy
 
@@ -52,6 +53,28 @@ Update Firestore Public Data:
         - public/data/**/*
       when: always
     - when: never
+  needs: []
+
+Code Quality Check:
+  image: itachi1706/flutter-alpine-android:beta-web
+  stage: test
+  variables:
+    APP_BUILD_VER: qa
+    APP_TYPE: QA
+  before_script:
+    - flutter doctor -v
+    - ./ciscripts/get_version.sh
+    - flutter pub global activate dart_code_metrics
+    - echo Running Code Quality Checks. This may take a while
+  script:
+    # Execute for JSON reporter and HTML metrics
+    - flutter pub global run dart_code_metrics:metrics --gitlab -r codeclimate lib > quality.json
+    - flutter pub global run dart_code_metrics:metrics -r html lib > quality.json
+  artifacts:
+    reports:
+      codequality: quality.json
+    paths:
+      - metrics/
   needs: []
 
 Generate Flutter App:
