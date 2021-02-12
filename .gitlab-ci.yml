@@ -51,6 +51,7 @@ Update Google Cloud Storage Data:
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
       changes:
         - public/images/**/*
+        - public/images/*
       when: always
     - when: never
   needs: []
