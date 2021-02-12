@@ -86,7 +86,7 @@ Code Quality Check:
   script:
     # Execute for JSON reporter and HTML metrics
     - flutter pub global run dart_code_metrics:metrics --gitlab -r codeclimate lib > quality.json
-    - flutter pub global run dart_code_metrics:metrics -r html lib > quality.json
+    - flutter pub global run dart_code_metrics:metrics -r html lib
   artifacts:
     reports:
       codequality: quality.json
