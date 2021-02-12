@@ -37,6 +37,24 @@ Deploy Firebase Firestore Indexes:
     - when: never
   needs: []
 
+Update Google Cloud Storage Data:
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
+  stage: deploy
+  before_script:
+    - cat $GCP_SVC_USER > gcloud-key.json
+    - gcloud auth activate-service-account --key-file gcloud-key.json
+    - gcloud config set project $GCP_PROJECT_ID
+    - cd public/images
+  script:
+    - gsutil -m rsync -d -r . gs://$GCS_BUCKET/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - public/images/**/*
+      when: always
+    - when: never
+  needs: []
+
 Update Firestore Public Data:
   image: node:alpine
   stage: deploy
