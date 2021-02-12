@@ -63,7 +63,6 @@ Code Quality Check:
     APP_TYPE: QA
   before_script:
     - flutter doctor -v
-    - ./ciscripts/get_version.sh
     - flutter pub global activate dart_code_metrics
     - echo Running Code Quality Checks. This may take a while
   script:
