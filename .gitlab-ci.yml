@@ -38,7 +38,7 @@ Deploy Firebase Firestore Indexes:
   needs: []
 
 Update Google Cloud Storage Data:
-  image: gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
   stage: deploy
   before_script:
     - cat $GCP_SVC_USER > gcloud-key.json
