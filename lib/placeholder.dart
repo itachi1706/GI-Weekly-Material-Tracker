@@ -10,19 +10,19 @@ class PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Placeholder Page"),
+        title: Text('Placeholder Page'),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: _signOut,
-          )
+          ),
         ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Page Coming Soon"),
+            Text('Page Coming Soon'),
           ],
         ),
       ),
@@ -31,7 +31,7 @@ class PlaceholderPage extends StatelessWidget {
 
   void _signOut() async {
     await _auth.signOut();
-    Get.offAllNamed('/');
+    await Get.offAllNamed('/');
   }
 }
 
@@ -49,9 +49,9 @@ class PlaceholderWidgetContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Coming Soon!",
+              'Coming Soon!',
               style: TextStyle(color: Colors.white, fontSize: 24),
-            )
+            ),
           ],
         ),
       ),
@@ -61,6 +61,6 @@ class PlaceholderWidgetContainer extends StatelessWidget {
 
 class PlaceholderUtil {
   static void showUnimplementedSnackbar(BuildContext context) {
-    Util.showSnackbarQuick(context, "Feature Coming Soon!");
+    Util.showSnackbarQuick(context, 'Feature Coming Soon!');
   }
 }
