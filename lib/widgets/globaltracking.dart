@@ -15,17 +15,17 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class GlobalTrackingPage extends StatelessWidget {
   final List<Tab> _tabs = [
-    Tab(text: "Boss"),
-    Tab(text: "Domains"),
-    Tab(text: "Monster"),
-    Tab(text: "Local Speciality")
+    Tab(text: 'Boss'),
+    Tab(text: 'Domains'),
+    Tab(text: 'Monster'),
+    Tab(text: 'Local Speciality'),
   ];
 
   final List<Widget> _children = [
-    GlobalTracker(path: "boss_drops"),
-    GlobalTracker(path: "domain_material"),
-    GlobalTracker(path: "mob_drops"),
-    GlobalTracker(path: "local_speciality"),
+    GlobalTracker(path: 'boss_drops'),
+    GlobalTracker(path: 'domain_material'),
+    GlobalTracker(path: 'mob_drops'),
+    GlobalTracker(path: 'local_speciality'),
   ];
 
   @override
@@ -34,7 +34,7 @@ class GlobalTrackingPage extends StatelessWidget {
       length: _tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Consolidated Material List"),
+          title: Text('Consolidated Material List'),
           bottom: TabBar(
             tabs: _tabs,
           ),
@@ -67,128 +67,141 @@ class _GlobalTrackerState extends State<GlobalTracker> {
           setState(() {
             if (!mounted) return;
             _materialData = value;
-          })
+          }),
         });
   }
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference ref = _db
-        .collection("tracking")
+    var ref = _db
+        .collection('tracking')
         .doc(Util.getFirebaseUid())
         .collection(widget.path);
     return StreamBuilder(
-        stream: ref.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return Text("Error occurred getting snapshot");
-          }
+      stream: ref.snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error occurred getting snapshot');
+        }
 
-          if (snapshot.connectionState == ConnectionState.waiting ||
-              _materialData == null) {
-            return Util.centerLoadingCircle("");
-          }
+        if (snapshot.connectionState == ConnectionState.waiting ||
+            _materialData == null) {
+          return Util.centerLoadingCircle("");
+        }
 
-          QuerySnapshot data = snapshot.data;
-          final int _collectionLen = data.docs.length;
+        QuerySnapshot data = snapshot.data;
+        final int _collectionLen = data.docs.length;
 
-          if (_collectionLen > 0) {
-            // Consolidate stuff together
-            Map<String, CommonTracking> _conData = new Map();
-            data.docs.forEach((snap) {
-              TrackingUserData _tmp = TrackingUserData.fromJson(snap.data());
-              if (_conData.containsKey(_tmp.name)) {
-                // Append
-                _conData[_tmp.name].current =
-                    _conData[_tmp.name].current + _tmp.current;
-                _conData[_tmp.name].max = _conData[_tmp.name].max + _tmp.max;
-              } else {
-                _conData.putIfAbsent(
-                    _tmp.name,
-                    () => new CommonTracking(
-                        current: _tmp.current,
-                        max: _tmp.max,
-                        name: _tmp.name,
-                        type: _tmp.type));
-              }
-            });
+        if (_collectionLen > 0) {
+          // Consolidate stuff together
+          Map<String, CommonTracking> _conData = new Map();
+          data.docs.forEach((snap) {
+            TrackingUserData _tmp = TrackingUserData.fromJson(snap.data());
+            if (_conData.containsKey(_tmp.name)) {
+              // Append
+              _conData[_tmp.name].current =
+                  _conData[_tmp.name].current + _tmp.current;
+              _conData[_tmp.name].max = _conData[_tmp.name].max + _tmp.max;
+            } else {
+              _conData.putIfAbsent(
+                _tmp.name,
+                () => CommonTracking(
+                  current: _tmp.current,
+                  max: _tmp.max,
+                  name: _tmp.name,
+                  type: _tmp.type,
+                ),
+              );
+            }
+          });
 
-            return ListView.builder(
-              itemCount: _conData.length,
-              itemBuilder: (context, index) {
-                String key = _conData.keys.elementAt(index);
-                CommonTracking _data = _conData[key];
-                print(_data);
-                MaterialDataCommon _material = _materialData[_data.name];
+          return ListView.builder(
+            itemCount: _conData.length,
+            itemBuilder: (context, index) {
+              String key = _conData.keys.elementAt(index);
+              CommonTracking _data = _conData[key];
+              print(_data);
+              MaterialDataCommon _material = _materialData[_data.name];
 
-                return Card(
-                  color: GridData.getRarityColor(_material.rarity),
-                  child: InkWell(
-                    onTap: () => Get.toNamed('/globalMaterial/${_data.name}'),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          GridData.getImageAssetFromFirebase(_material.image,
-                              height: 48),
-                          Container(
-                            width: MediaQuery.of(context).size.width - 180,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  _material.name,
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                RatingBar.builder(
-                                  ignoreGestures: true,
-                                  itemCount: 5,
-                                  itemSize: 12,
-                                  unratedColor: Colors.transparent,
-                                  initialRating: double.tryParse(
-                                      _material.rarity.toString()),
-                                  itemBuilder: (context, _) =>
-                                      Icon(Icons.star, color: Colors.amber),
-                                  onRatingUpdate: (rating) {
-                                    print(rating);
-                                  },
-                                ),
-                                Text(
-                                  _material.obtained.replaceAll("\\n", "\n"),
-                                  style: TextStyle(
-                                      fontSize: 11, color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Spacer(),
-                          Column(
+              return Card(
+                color: GridData.getRarityColor(_material.rarity),
+                child: InkWell(
+                  onTap: () => Get.toNamed('/globalMaterial/${_data.name}'),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        GridData.getImageAssetFromFirebase(
+                          _material.image,
+                          height: 48,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width - 180,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "${_data.current}/${_data.max}",
+                                _material.name,
                                 style: TextStyle(
-                                    fontSize: 18,
-                                    color: GridData.getCountColor(
-                                        _data.current, _data.max)),
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              RatingBar.builder(
+                                ignoreGestures: true,
+                                itemCount: 5,
+                                itemSize: 12,
+                                unratedColor: Colors.transparent,
+                                initialRating: double.tryParse(
+                                  _material.rarity.toString(),
+                                ),
+                                itemBuilder: (context, _) =>
+                                    Icon(Icons.star, color: Colors.amber),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                              Text(
+                                _material.obtained.replaceAll("\\n", "\n"),
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Colors.white,
+                                ),
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Spacer(),
+                        Column(
+                          children: [
+                            Text(
+                              "${_data.current}/${_data.max}",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: GridData.getCountColor(
+                                  _data.current,
+                                  _data.max,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                );
-              },
-            );
-          } else {
-            return Center(
-              child: Text("No items being tracked for this material category"),
-            );
-          }
-        });
+                ),
+              );
+            },
+          );
+        } else {
+          return Center(
+            child: Text("No items being tracked for this material category"),
+          );
+        }
+      },
+    );
   }
 }
 
@@ -215,12 +228,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   }
 
   void _getStaticData() async {
-    Map<String, CharacterData> characterData =
-        await GridData.retrieveCharactersMapData();
-    Map<String, WeaponData> weaponData =
-        await GridData.retrieveWeaponsMapData();
-    Map<String, MaterialDataCommon> materialData =
-        await GridData.retrieveMaterialsMapData();
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    var materialData = await GridData.retrieveMaterialsMapData();
     setState(() {
       _characterData = characterData;
       _weaponData = weaponData;
@@ -245,8 +255,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             children: [
               Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(_material.image,
-                      height: 64),
+                  GridData.getImageAssetFromFirebase(
+                    _material.image,
+                    height: 64,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -309,15 +321,16 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               ),
               Divider(),
               Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Tracking For",
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ],
-                  )),
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Text(
+                      "Tracking For",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ],
+                ),
+              ),
               _getCharacterData(),
             ],
           ),
@@ -336,200 +349,217 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         .where("name", isEqualTo: _materialKey);
 
     return StreamBuilder(
-        stream: ref.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (_characterData == null ||
-              _weaponData == null ||
-              (snapshot.connectionState == ConnectionState.waiting &&
-                  !_firstLoad)) {
-            return Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: CircularProgressIndicator(),
-            );
-          }
+      stream: ref.snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (_characterData == null ||
+            _weaponData == null ||
+            (snapshot.connectionState == ConnectionState.waiting &&
+                !_firstLoad)) {
+          return Padding(
+            padding: const EdgeInsets.only(top: 16),
+            child: CircularProgressIndicator(),
+          );
+        }
 
-          _firstLoad = true;
+        _firstLoad = true;
 
-          QuerySnapshot qs = snapshot.data;
-          Map<String, TrackingUserData> _trackerData = new Map();
-          qs.docs.forEach((data) => {
-                _trackerData.putIfAbsent(
-                    data.id, () => TrackingUserData.fromJson(data.data()))
-              });
+        QuerySnapshot qs = snapshot.data;
+        Map<String, TrackingUserData> _trackerData = new Map();
+        qs.docs.forEach((data) => {
+              _trackerData.putIfAbsent(
+                data.id,
+                () => TrackingUserData.fromJson(data.data()),
+              ),
+            });
 
-          return ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: _trackerData.length,
-            itemBuilder: (context, index) {
-              String key = _trackerData.keys.elementAt(index);
-              TrackingUserData _data = _trackerData[key];
-              String imageRef = _material.image;
-              int extraAscensionRef = 0;
-              String extraTypeRef;
-              String name = _material.name;
-              bool override = false;
-              print(key);
-              List<String> _splitKey = key.split("_");
-              var _ascendTier = _splitKey[_splitKey.length - 1];
-              print(_ascendTier);
-              if (_data.addData != null) {
-                // Grab image ref of extra data based on addedBy
-                if (_data.addedBy == "character") {
-                  // Grab from character
-                  name = _characterData[_data.addData].name;
-                  imageRef = _characterData[_data.addData].image;
-                  extraTypeRef = _characterData[_data.addData].element;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                } else if (_data.addedBy == "weapon") {
-                  // Grab from weapon
-                  imageRef = _weaponData[_data.addData].image;
-                  name = _weaponData[_data.addData].name;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                } else if (_data.addedBy == "talent") {
-                  // Grab from character talent
-                  List<String> _cData = _data.addData.split("|");
-                  imageRef =
-                      _characterData[_cData[0]].talent.attack[_cData[1]].image;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                  name =
-                      "${_characterData[_cData[0]].name}'s ${_characterData[_cData[0]].talent.attack[_cData[1]].name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
-                  override = true;
-                }
-                if (!override)
-                  name =
-                      "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})";
+        return ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: _trackerData.length,
+          itemBuilder: (context, index) {
+            String key = _trackerData.keys.elementAt(index);
+            TrackingUserData _data = _trackerData[key];
+            String imageRef = _material.image;
+            int extraAscensionRef = 0;
+            String extraTypeRef;
+            String name = _material.name;
+            bool override = false;
+            print(key);
+            List<String> _splitKey = key.split("_");
+            var _ascendTier = _splitKey[_splitKey.length - 1];
+            print(_ascendTier);
+            if (_data.addData != null) {
+              // Grab image ref of extra data based on addedBy
+              if (_data.addedBy == "character") {
+                // Grab from character
+                name = _characterData[_data.addData].name;
+                imageRef = _characterData[_data.addData].image;
+                extraTypeRef = _characterData[_data.addData].element;
+                extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+              } else if (_data.addedBy == "weapon") {
+                // Grab from weapon
+                imageRef = _weaponData[_data.addData].image;
+                name = _weaponData[_data.addData].name;
+                extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+              } else if (_data.addedBy == "talent") {
+                // Grab from character talent
+                List<String> _cData = _data.addData.split("|");
+                imageRef =
+                    _characterData[_cData[0]].talent.attack[_cData[1]].image;
+                extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                name =
+                    "${_characterData[_cData[0]].name}'s ${_characterData[_cData[0]].talent.attack[_cData[1]].name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
+                override = true;
               }
+              if (!override)
+                name =
+                    "$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})";
+            }
 
-              Widget typeWidget = SizedBox.shrink();
-              if (extraTypeRef != null)
-                typeWidget = Image.asset(
-                  GridData.getElementImageRef(extraTypeRef),
-                  height: 20,
-                  width: 20,
-                );
+            Widget typeWidget = SizedBox.shrink();
+            if (extraTypeRef != null)
+              typeWidget = Image.asset(
+                GridData.getElementImageRef(extraTypeRef),
+                height: 20,
+                width: 20,
+              );
 
-              return Container(
-                child: Card(
-                  child: InkWell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 64,
-                            width: 64,
-                            child: Stack(
-                              children: [
-                                GridData.getImageAssetFromFirebase(imageRef,
-                                    height: 48),
-                                Align(
-                                  alignment: FractionalOffset.bottomLeft,
-                                  child: Text(GridData.getRomanNumberArray(
-                                          extraAscensionRef - 1)
-                                      .toString()),
-                                ),
-                                Align(
-                                  alignment: FractionalOffset.bottomRight,
-                                  child: typeWidget,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width - 200,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  name,
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Spacer(),
-                          Column(
+            return Container(
+              child: Card(
+                child: InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 64,
+                          width: 64,
+                          child: Stack(
                             children: [
-                              Text(
-                                "${_data.current}/${_data.max}",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: GridData.getCountColorBW(
-                                        _data.current, _data.max)),
+                              GridData.getImageAssetFromFirebase(
+                                imageRef,
+                                height: 48,
                               ),
-                              Row(
-                                children: [
-                                  ButtonTheme(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4.0, horizontal: 8.0),
-                                    //adds padding inside the button
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    //limits the touch area to the button area
-                                    minWidth: 0,
-                                    //wraps child's width
-                                    height: 0,
-                                    //wraps child's height
-                                    child: FlatButton(
-                                      onPressed: () =>
-                                          TrackingData.decrementCount(
-                                              key, _data.type, _data.current),
-                                      child: Icon(Icons.remove),
-                                    ),
-                                  ),
-                                  ButtonTheme(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4.0, horizontal: 8.0),
-                                    //adds padding inside the button
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    //limits the touch area to the button area
-                                    minWidth: 0,
-                                    //wraps child's width
-                                    height: 0,
-                                    //wraps child's height
-                                    child: FlatButton(
-                                      onPressed: () =>
-                                          TrackingData.incrementCount(
-                                              key,
-                                              _data.type,
-                                              _data.current,
-                                              _data.max),
-                                      child: Icon(Icons.add),
-                                    ),
-                                  ),
-                                ],
+                              Align(
+                                alignment: FractionalOffset.bottomLeft,
+                                child: Text(GridData.getRomanNumberArray(
+                                  extraAscensionRef - 1,
+                                ).toString()),
+                              ),
+                              Align(
+                                alignment: FractionalOffset.bottomRight,
+                                child: typeWidget,
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width - 200,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                name,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        Column(
+                          children: [
+                            Text(
+                              "${_data.current}/${_data.max}",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: GridData.getCountColorBW(
+                                    _data.current, _data.max),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                ButtonTheme(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 4.0,
+                                    horizontal: 8.0,
+                                  ),
+                                  //adds padding inside the button
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  //limits the touch area to the button area
+                                  minWidth: 0,
+                                  //wraps child's width
+                                  height: 0,
+                                  //wraps child's height
+                                  child: FlatButton(
+                                    onPressed: () =>
+                                        TrackingData.decrementCount(
+                                      key,
+                                      _data.type,
+                                      _data.current,
+                                    ),
+                                    child: Icon(Icons.remove),
+                                  ),
+                                ),
+                                ButtonTheme(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 4.0,
+                                    horizontal: 8.0,
+                                  ),
+                                  //adds padding inside the button
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  //limits the touch area to the button area
+                                  minWidth: 0,
+                                  //wraps child's width
+                                  height: 0,
+                                  //wraps child's height
+                                  child: FlatButton(
+                                    onPressed: () =>
+                                        TrackingData.incrementCount(
+                                      key,
+                                      _data.type,
+                                      _data.current,
+                                      _data.max,
+                                    ),
+                                    child: Icon(Icons.add),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    onLongPress: () => UpdateMultiTracking(context, _material)
-                        .itemClickedAction(
-                            _data,
-                            key,
-                            {
-                              "img": imageRef,
-                              "asc": extraAscensionRef,
-                              "type": extraTypeRef
-                            },
-                            true),
-                    onTap: () {
-                      _tapCount++;
-                      if (_tapCount > 5) {
-                        Util.showSnackbarQuick(context,
-                            "Long press to bulk update tracked materials");
-                      }
-                    },
                   ),
+                  onLongPress: () =>
+                      UpdateMultiTracking(context, _material).itemClickedAction(
+                    _data,
+                    key,
+                    {
+                      "img": imageRef,
+                      "asc": extraAscensionRef,
+                      "type": extraTypeRef,
+                    },
+                    true,
+                  ),
+                  onTap: () {
+                    _tapCount++;
+                    if (_tapCount > 5) {
+                      Util.showSnackbarQuick(
+                        context,
+                        'Long press to bulk update tracked materials',
+                      );
+                    }
+                  },
                 ),
-              );
-            },
-          );
-        });
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 }
