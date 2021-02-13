@@ -249,6 +249,26 @@ class GridData {
     }
   }
 
+  static List<Widget> generateInfoLine(String textData, IconData icon) {
+    return [
+      Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          children: [
+            Icon(icon),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Text(textData.replaceAll('\\n', '\n')),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Divider(),
+    ];
+  }
+
   static Future<Map<String, CommonData>> _retrieveStaticData(
       String type,) async {
     if (_downloading.containsKey(type) && _downloading[type]) {

@@ -156,15 +156,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               _generateWeaponHeader(),
               Divider(),
-              ..._generateInfoLine(
+              ...GridData.generateInfoLine(
                 _info.obtained.replaceAll('- ', ''),
                 Icons.location_pin,
               ),
-              ..._generateInfoLine(
+              ...GridData.generateInfoLine(
                 _info.description,
                 Icons.format_list_bulleted,
               ),
-              ..._generateInfoLine(_info.effect, MdiIcons.sparkles),
+              ...GridData.generateInfoLine(_info.effect, MdiIcons.sparkles),
               ..._getWeaponStats(),
               Divider(),
               ...TrackingData.getAscensionHeader(),
@@ -203,26 +203,6 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         ),
       ],
     );
-  }
-
-  List<Widget> _generateInfoLine(String textData, IconData icon) {
-    return [
-      Padding(
-        padding: const EdgeInsets.all(8),
-        child: Row(
-          children: [
-            Icon(icon),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
-                child: Text(textData.replaceAll('\\n', '\n')),
-              ),
-            ),
-          ],
-        ),
-      ),
-      Divider(),
-    ];
   }
 
   List<Widget> _getWeaponStats() {

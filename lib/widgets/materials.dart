@@ -11,11 +11,11 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class MaterialTabController extends StatefulWidget {
-  MaterialTabController({Key key, @required this.tabController, this.notifier})
-      : super(key: key);
-
   final TabController tabController;
   final SortNotifier notifier;
+
+  MaterialTabController({Key key, @required this.tabController, this.notifier})
+      : super(key: key);
 
   @override
   _MaterialTabControllerState createState() => _MaterialTabControllerState();
@@ -26,19 +26,19 @@ class _MaterialTabControllerState extends State<MaterialTabController> {
   Widget build(BuildContext context) {
     return TabBarView(controller: widget.tabController, children: [
       MaterialListGrid(notifier: widget.notifier),
-      MaterialListGrid(filter: "boss_drops", notifier: widget.notifier),
-      MaterialListGrid(filter: "domain_material", notifier: widget.notifier),
-      MaterialListGrid(filter: "mob_drops", notifier: widget.notifier),
-      MaterialListGrid(filter: "local_speciality", notifier: widget.notifier),
+      MaterialListGrid(filter: 'boss_drops', notifier: widget.notifier),
+      MaterialListGrid(filter: 'domain_material', notifier: widget.notifier),
+      MaterialListGrid(filter: 'mob_drops', notifier: widget.notifier),
+      MaterialListGrid(filter: 'local_speciality', notifier: widget.notifier),
     ]);
   }
 }
 
 class MaterialListGrid extends StatefulWidget {
-  MaterialListGrid({Key key, this.filter, this.notifier});
-
   final String filter;
   final SortNotifier notifier;
+
+  MaterialListGrid({Key key, this.filter, this.notifier});
 
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
@@ -62,45 +62,51 @@ class _MaterialListGridState extends State<MaterialListGrid> {
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference materialRef = _db.collection('materials');
+    var materialRef = _db.collection('materials');
     Query queryRef;
-    if (widget.filter != null)
-      queryRef = materialRef.where("innerType", isEqualTo: widget.filter);
-    if (_sorter != null && queryRef == null)
+    if (widget.filter != null) {
+      queryRef = materialRef.where('innerType', isEqualTo: widget.filter);
+    }
+    if (_sorter != null && queryRef == null) {
       queryRef = materialRef
           .orderBy(_sorter, descending: _isDescending)
           .orderBy(FieldPath.documentId);
-    else if (_sorter != null)
+    } else if (_sorter != null) {
       queryRef = queryRef
           .orderBy(_sorter, descending: _isDescending)
           .orderBy(FieldPath.documentId);
+    }
+
     return StreamBuilder(
-        stream:
-            (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return Text("Error occurred getting snapshot");
-          }
+      stream:
+          (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error occurred getting snapshot');
+        }
 
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Util.centerLoadingCircle("");
-          }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Util.centerLoadingCircle('');
+        }
 
-          if (widget.filter == null)
-            GridData.setStaticData("materials", snapshot.data);
+        if (widget.filter == null) {
+          GridData.setStaticData('materials', snapshot.data);
+        }
 
-          return GridView.count(
-            crossAxisCount:
-                (Get.context.orientation == Orientation.portrait) ? 3 : 6,
-            children: snapshot.data.docs.map((document) {
-              return GestureDetector(
-                onTap: () => Get.toNamed('/materials/${document.id}'),
-                child: GridData.getGridData(
-                    MaterialDataCommon.fromJson(document.data())),
-              );
-            }).toList(),
-          );
-        });
+        return GridView.count(
+          crossAxisCount:
+              (Get.context.orientation == Orientation.portrait) ? 3 : 6,
+          children: snapshot.data.docs.map((document) {
+            return GestureDetector(
+              onTap: () => Get.toNamed('/materials/${document.id}'),
+              child: GridData.getGridData(
+                MaterialDataCommon.fromJson(document.data()),
+              ),
+            );
+          }).toList(),
+        );
+      },
+    );
   }
 }
 
@@ -118,6 +124,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   bool _isAdded = false;
   bool _addCheckObtained = false;
 
+  String _cntTrack = '';
+  final TextEditingController _textEditingController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -130,6 +139,79 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       });
       _refreshTrackingStatus();
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_info == null) return Util.loadingScreen();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_info.name),
+        backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info),
+            tooltip: 'View Wiki',
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: _getFabWidget(),
+        backgroundColor: _rarityColor,
+        onPressed: _addOrRemoveMaterial,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            _getMaterialHeader(),
+            Divider(),
+            ...GridData.generateInfoLine(
+              _info.obtained.replaceAll('- ', ''),
+              Icons.location_pin,
+            ),
+            ...GridData.generateInfoLine(
+              _info.description,
+              Icons.format_list_bulleted,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _getMaterialHeader() {
+    return Row(
+      children: [
+        GridData.getImageAssetFromFirebase(_info.image, height: 64),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width - 128,
+              child: Text(
+                _info.type,
+                textAlign: TextAlign.start,
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+            RatingBar.builder(
+              ignoreGestures: true,
+              itemCount: 5,
+              itemSize: 30,
+              initialRating: double.tryParse(_info.rarity.toString()),
+              itemBuilder: (context, _) =>
+                  Icon(Icons.star, color: Colors.amber),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            ),
+          ],
+        ),
+      ],
+    );
   }
 
   void _refreshTrackingStatus() {
@@ -147,202 +229,118 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
   Widget _getFabWidget() {
     if (!_addCheckObtained) return CircularProgressIndicator();
-    if (_isAdded)
-      return Icon(
-        Icons.remove,
-        color: Colors.white,
-      );
-    else
-      return Icon(
-        Icons.add,
-        color: Colors.white,
-      );
+
+    return _isAdded
+        ? Icon(Icons.remove, color: Colors.white)
+        : Icon(Icons.add, color: Colors.white);
   }
 
-  String _cntTrack = "";
-  TextEditingController _textEditingController = TextEditingController();
-
   void _trackMaterialAction() {
-    int toTrack = int.tryParse(_cntTrack) ?? 0;
+    var toTrack = int.tryParse(_cntTrack) ?? 0;
     TrackingData.addToRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, "${_info.name} added to tracker!");
+      Util.showSnackbarQuick(context, '${_info.name} added to tracker!');
     });
-    TrackingData.addToCollection("Material_$_infoId", _infoId, toTrack,
-        _info.innerType, 'material', null);
+    TrackingData.addToCollection(
+      'Material_$_infoId',
+      _infoId,
+      toTrack,
+      _info.innerType,
+      'material',
+      null,
+    );
     Navigator.of(context).pop();
   }
 
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, "${_info.name} removed from tracker!");
+      Util.showSnackbarQuick(context, '${_info.name} removed from tracker!');
     });
-    TrackingData.removeFromCollection("Material_$_infoId", _info.innerType);
+    TrackingData.removeFromCollection('Material_$_infoId', _info.innerType);
     Navigator.of(context).pop();
   }
 
   void _addOrRemoveMaterial() async {
     if (!_addCheckObtained) {
-      Util.showSnackbarQuick(context, "Checking tracking status");
+      Util.showSnackbarQuick(context, 'Checking tracking status');
+
       return;
     }
 
     if (_isAdded) {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text("Remove ${_info.name} from the tracker?"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
-                  Text(
-                      "This will remove the currently tracked data for this material from the tracker"),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              TextButton(
-                child: Text('Untrack'),
-                onPressed: _untrackMaterialAction,
-              ),
-            ],
-          );
-        },
-      );
+      await _removeMaterialDialog();
     } else {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text("Add ${_info.name} to the tracker?"),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  GridData.getImageAssetFromFirebase(_info.image, height: 64),
-                  TextField(
-                    onChanged: (newValue) {
-                      setState(() {
-                        _cntTrack = newValue;
-                      });
-                    },
-                    controller: _textEditingController,
-                    decoration: InputDecoration(labelText: "Quantity to track"),
-                    keyboardType: TextInputType.number,
-                  ),
-                ],
-              ),
-            ),
-            actions: [
-              TextButton(
-                child: Text('Cancel'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              TextButton(
-                child: Text('Track'),
-                onPressed: _trackMaterialAction,
-              ),
-            ],
-          );
-        },
-      );
+      await _addMaterialDialog();
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    if (_info == null) return Util.loadingScreen();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_info.name),
-        backgroundColor: _rarityColor,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info),
-            tooltip: "View Wiki",
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: _getFabWidget(),
-        backgroundColor: _rarityColor,
-        onPressed: _addOrRemoveMaterial,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            Row(
+  void _addMaterialDialog() async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Add ${_info.name} to the tracker?'),
+          content: SingleChildScrollView(
+            child: ListBody(
               children: [
                 GridData.getImageAssetFromFirebase(_info.image, height: 64),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width - 128,
-                      child: Text(
-                        _info.type,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    RatingBar.builder(
-                      ignoreGestures: true,
-                      itemCount: 5,
-                      itemSize: 30,
-                      initialRating: double.tryParse(_info.rarity.toString()),
-                      itemBuilder: (context, _) =>
-                          Icon(Icons.star, color: Colors.amber),
-                      onRatingUpdate: (rating) {
-                        print(rating);
-                      },
-                    ),
-                  ],
+                TextField(
+                  onChanged: (newValue) {
+                    setState(() {
+                      _cntTrack = newValue;
+                    });
+                  },
+                  controller: _textEditingController,
+                  decoration: InputDecoration(labelText: 'Quantity to track'),
+                  keyboardType: TextInputType.number,
                 ),
               ],
             ),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Icon(Icons.location_pin),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_info.obtained
-                          .replaceAll('\\n', "\n")
-                          .replaceAll("- ", "")),
-                    ),
-                  ),
-                ],
-              ),
+          ),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () => Navigator.of(context).pop(),
             ),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Icon(Icons.format_list_bulleted),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(_info.description.replaceAll('\\n', "\n")),
-                    ),
-                  ),
-                ],
-              ),
+            TextButton(
+              child: Text('Track'),
+              onPressed: _trackMaterialAction,
             ),
           ],
-        ),
-      ),
+        );
+      },
+    );
+  }
+
+  void _removeMaterialDialog() async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Remove ${_info.name} from the tracker?'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                GridData.getImageAssetFromFirebase(_info.image, height: 64),
+                Text(
+                  'This will remove the currently tracked data for this material from the tracker',
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            TextButton(
+              child: Text('Untrack'),
+              onPressed: _untrackMaterialAction,
+            ),
+          ],
+        );
+      },
     );
   }
 }
