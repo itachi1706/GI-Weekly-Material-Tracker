@@ -9,12 +9,27 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      navigateAfterFuture: _login(),
+      image: Image.asset('assets/logo.png'),
+      loadingText: Text('Initializing App'),
+      title: Text(
+        'Genshin Impact Weekly Material Tracker',
+        style: TextStyle(fontSize: 20.0, fontFamily: 'Product-Sans-Bold'),
+      ),
+      backgroundColor: Colors.black,
+      photoSize: 100.0,
+    );
+  }
+
   Future<void> _initFirebase() async {
     try {
       await Firebase.initializeApp();
       if (!kIsWeb) {
-        FirebaseCrashlytics _crashHandler = FirebaseCrashlytics.instance;
-        FirebasePerformance _perfHandler = FirebasePerformance.instance;
+        var _crashHandler = FirebaseCrashlytics.instance;
+        var _perfHandler = FirebasePerformance.instance;
         if (kDebugMode) {
           await _crashHandler.setCrashlyticsCollectionEnabled(false);
           await _perfHandler.setPerformanceCollectionEnabled(false);
@@ -35,38 +50,28 @@ class SplashPage extends StatelessWidget {
           }).sendPort);
         }
         print(
-            "Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}");
+          'Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}',
+        );
         print(
-            "Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}");
+          'Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}',
+        );
       } else {
-        print("Web Mode, Crashlytics and Performance disabled");
+        print('Web Mode, Crashlytics and Performance disabled');
       }
-      FirebaseAuth _auth = FirebaseAuth.instance;
+      var _auth = FirebaseAuth.instance;
       if (_auth.currentUser != null) return true;
     } catch (e) {
       print(e);
     }
+
     return false;
   }
 
   Future<String> _login() async {
-    List<dynamic> res = await Future.wait(
-        [_initFirebase(), Future.delayed(Duration(seconds: 2))]);
-    return (res[0]) ? "/menu" : "/";
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SplashScreen(
-      navigateAfterFuture: _login(),
-      image: Image.asset("assets/logo.png"),
-      loadingText: Text("Initializing App"),
-      title: Text(
-        "Genshin Impact Weekly Material Tracker",
-        style: new TextStyle(fontSize: 20.0, fontFamily: 'Product-Sans-Bold'),
-      ),
-      backgroundColor: Colors.black,
-      photoSize: 100.0,
+    var res = await Future.wait(
+      [_initFirebase(), Future.delayed(Duration(seconds: 2))],
     );
+
+    return (res[0]) ? '/menu' : '/';
   }
 }
