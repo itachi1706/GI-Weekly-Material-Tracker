@@ -16,10 +16,10 @@ import 'package:timezone/timezone.dart' as tz;
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class TrackingTabController extends StatefulWidget {
+  final TabController tabController;
+
   TrackingTabController({Key key, @required this.tabController})
       : super(key: key);
-
-  final TabController tabController;
 
   @override
   _TrackingTabControllerState createState() => _TrackingTabControllerState();
@@ -27,10 +27,10 @@ class TrackingTabController extends StatefulWidget {
 
 class _TrackingTabControllerState extends State<TrackingTabController> {
   final List<Widget> _children = [
-    TrackerPage(path: "boss_drops"),
-    TrackerPage(path: "domain_material"),
-    TrackerPage(path: "mob_drops"),
-    TrackerPage(path: "local_speciality"),
+    TrackerPage(path: 'boss_drops'),
+    TrackerPage(path: 'domain_material'),
+    TrackerPage(path: 'mob_drops'),
+    TrackerPage(path: 'local_speciality'),
     PlannerPage(),
   ];
 
@@ -41,9 +41,9 @@ class _TrackingTabControllerState extends State<TrackingTabController> {
 }
 
 class TrackerPage extends StatefulWidget {
-  TrackerPage({Key key, @required this.path}) : super(key: key);
-
   final String path;
+
+  TrackerPage({Key key, @required this.path}) : super(key: key);
 
   @override
   _TrackerPageState createState() => _TrackerPageState();
@@ -54,224 +54,273 @@ class _TrackerPageState extends State<TrackerPage> {
   Map<String, WeaponData> _weaponData;
   Map<String, CharacterData> _characterData;
 
+  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
+    primary: Colors.black87,
+    minimumSize: Size(0, 0),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
+
   @override
   void initState() {
     super.initState();
     _retrieveData();
   }
 
+  @override
+  Widget build(BuildContext context) {
+    if (_materialData == null ||
+        _characterData == null ||
+        _weaponData == null) {
+      return Util.centerLoadingCircle('Loading');
+    }
+
+    var ref = _db
+        .collection('tracking')
+        .doc(Util.getFirebaseUid())
+        .collection(widget.path);
+
+    return StreamBuilder(
+      stream: ref.snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          print(snapshot.error);
+
+          return Text('Error occurred getting snapshot');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting ||
+            _materialData == null ||
+            _characterData == null ||
+            _weaponData == null) {
+          return Util.centerLoadingCircle('');
+        }
+
+        var data = snapshot.data;
+        final _collectionLen = data.docs.length;
+
+        return _process(_collectionLen, data);
+      },
+    );
+  }
+
+  Widget _process(int _collectionLen, QuerySnapshot data) {
+    return _collectionLen > 0
+        ? ListView.builder(
+            itemCount: _collectionLen,
+            itemBuilder: (context, index) {
+              var _data = TrackingUserData.fromJson(data.docs[index].data());
+              var _dataId = data.docs[index].id;
+              print(_data);
+              var _material = _materialData[_data.name];
+              String extraImageRef;
+              var extraAscensionRef = 0;
+              String extraTypeRef;
+              var _splitKey = _dataId.split('_');
+              var _ascendTier = _splitKey[_splitKey.length - 1];
+              if (_data.addData != null) {
+                if (_data.addedBy == 'character') {
+                  extraImageRef = _characterData[_data.addData].image;
+                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                  extraTypeRef = _characterData[_data.addData].element;
+                } else if (_data.addedBy == 'weapon') {
+                  extraImageRef = _weaponData[_data.addData].image;
+                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                } else if (_data.addedBy == 'talent') {
+                  var _cData = _data.addData.split('|');
+                  extraImageRef =
+                      _characterData[_cData[0]].talent.attack[_cData[1]].image;
+                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+                }
+              }
+
+              return _getCardData(
+                _data,
+                _dataId,
+                extraImageRef,
+                extraAscensionRef,
+                extraTypeRef,
+                _material,
+              );
+            },
+          )
+        : Center(
+            child: Text('No items being tracked for this material category'),
+          );
+  }
+
+  Widget _getCardData(
+    TrackingUserData _data,
+    String _dataId,
+    String extraImageRef,
+    int extraAscensionRef,
+    String extraTypeRef,
+    MaterialDataCommon _material,
+  ) {
+    return Card(
+      color: GridData.getRarityColor(_material.rarity),
+      child: InkWell(
+        onTap: () => UpdateMultiTracking(
+          context,
+          _materialData[_data.name],
+        ).itemClickedAction(
+          _data,
+          _dataId,
+          {
+            'img': extraImageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
+          },
+          false,
+        ),
+        onLongPress: () => UpdateMultiTracking(
+          context,
+          _materialData[_data.name],
+        ).itemClickedAction(
+          _data,
+          _dataId,
+          {
+            'img': extraImageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
+          },
+          true,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GridData.getImageAssetFromFirebase(
+                _material.image,
+                height: 48,
+              ),
+              _trackerInfo(_material),
+              Spacer(),
+              _trackerControls(
+                _data,
+                _dataId,
+                extraImageRef,
+                extraAscensionRef,
+                extraTypeRef,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _trackerInfo(MaterialDataCommon _material) {
+    return Container(
+      width: MediaQuery.of(context).size.width - 180,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            _material.name,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+          RatingBar.builder(
+            ignoreGestures: true,
+            itemCount: 5,
+            itemSize: 12,
+            unratedColor: Colors.transparent,
+            initialRating: double.tryParse(
+              _material.rarity.toString(),
+            ),
+            itemBuilder: (context, _) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) {
+              print(rating);
+            },
+          ),
+          Text(
+            _material.obtained.replaceAll('\\n', '\n'),
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _trackerControls(
+    TrackingUserData _data,
+    String _dataId,
+    String extraImageRef,
+    int extraAscensionRef,
+    String extraTypeRef,
+  ) {
+    return Column(
+      children: [
+        Text(
+          '${_data.current}/${_data.max}',
+          style: TextStyle(
+            fontSize: 18,
+            color: GridData.getCountColor(
+              _data.current,
+              _data.max,
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            TextButton(
+              style: _flatButtonStyle,
+              onPressed: () => TrackingData.decrementCount(
+                _dataId,
+                _data.type,
+                _data.current,
+              ),
+              child: Icon(
+                Icons.remove,
+                color: Colors.white,
+              ),
+            ),
+            TextButton(
+              style: _flatButtonStyle,
+              onPressed: () => TrackingData.incrementCount(
+                _dataId,
+                _data.type,
+                _data.current,
+                _data.max,
+              ),
+              child: Icon(Icons.add, color: Colors.white),
+            ),
+          ],
+        ),
+        TrackingData.getSupportingWidget(
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+        ),
+      ],
+    );
+  }
+
   void _retrieveData() async {
-    Map<String, MaterialDataCommon> m =
-        await GridData.retrieveMaterialsMapData();
-    Map<String, CharacterData> c = await GridData.retrieveCharactersMapData();
-    Map<String, WeaponData> w = await GridData.retrieveWeaponsMapData();
-    if (this.mounted)
+    var m = await GridData.retrieveMaterialsMapData();
+    var c = await GridData.retrieveCharactersMapData();
+    var w = await GridData.retrieveWeaponsMapData();
+    if (mounted) {
       setState(() {
         _materialData = m;
         _characterData = c;
         _weaponData = w;
       });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (_materialData == null || _characterData == null || _weaponData == null)
-      return Util.centerLoadingCircle("Loading");
-
-    CollectionReference ref = _db
-        .collection("tracking")
-        .doc(Util.getFirebaseUid())
-        .collection(widget.path);
-    return StreamBuilder(
-        stream: ref.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            print(snapshot.error);
-            return Text("Error occurred getting snapshot");
-          }
-
-          if (snapshot.connectionState == ConnectionState.waiting ||
-              _materialData == null ||
-              _characterData == null ||
-              _weaponData == null) {
-            return Util.centerLoadingCircle("");
-          }
-
-          QuerySnapshot data = snapshot.data;
-          final int _collectionLen = data.docs.length;
-
-          if (_collectionLen > 0) {
-            return ListView.builder(
-              itemCount: _collectionLen,
-              itemBuilder: (context, index) {
-                TrackingUserData _data =
-                    TrackingUserData.fromJson(data.docs[index].data());
-                String _dataId = data.docs[index].id;
-                print(_data);
-                MaterialDataCommon _material = _materialData[_data.name];
-                String extraImageRef;
-                int extraAscensionRef = 0;
-                String extraTypeRef;
-                List<String> _splitKey = _dataId.split("_");
-                var _ascendTier = _splitKey[_splitKey.length - 1];
-                if (_data.addData != null) {
-                  // Grab image ref of extra data based on addedBy
-                  if (_data.addedBy == "character") {
-                    // Grab from character
-                    extraImageRef = _characterData[_data.addData].image;
-                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                    extraTypeRef = _characterData[_data.addData].element;
-                  } else if (_data.addedBy == "weapon") {
-                    // Grab from weapon
-                    extraImageRef = _weaponData[_data.addData].image;
-                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                  } else if (_data.addedBy == "talent") {
-                    // Grab from character talent
-                    List<String> _cData = _data.addData.split("|");
-                    extraImageRef = _characterData[_cData[0]]
-                        .talent
-                        .attack[_cData[1]]
-                        .image;
-                    extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                  }
-                }
-
-                return Card(
-                  color: GridData.getRarityColor(_material.rarity),
-                  child: InkWell(
-                    onTap: () =>
-                        UpdateMultiTracking(context, _materialData[_data.name])
-                            .itemClickedAction(
-                                _data,
-                                _dataId,
-                                {
-                                  "img": extraImageRef,
-                                  "asc": extraAscensionRef,
-                                  "type": extraTypeRef
-                                },
-                                false),
-                    onLongPress: () =>
-                        UpdateMultiTracking(context, _materialData[_data.name])
-                            .itemClickedAction(
-                                _data,
-                                _dataId,
-                                {
-                                  "img": extraImageRef,
-                                  "asc": extraAscensionRef,
-                                  "type": extraTypeRef
-                                },
-                                true),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          GridData.getImageAssetFromFirebase(_material.image,
-                              height: 48),
-                          Container(
-                            width: MediaQuery.of(context).size.width - 180,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  _material.name,
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                RatingBar.builder(
-                                  ignoreGestures: true,
-                                  itemCount: 5,
-                                  itemSize: 12,
-                                  unratedColor: Colors.transparent,
-                                  initialRating: double.tryParse(
-                                      _material.rarity.toString()),
-                                  itemBuilder: (context, _) =>
-                                      Icon(Icons.star, color: Colors.amber),
-                                  onRatingUpdate: (rating) {
-                                    print(rating);
-                                  },
-                                ),
-                                Text(
-                                  _material.obtained.replaceAll("\\n", "\n"),
-                                  style: TextStyle(
-                                      fontSize: 11, color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Spacer(),
-                          Column(
-                            children: [
-                              Text(
-                                "${_data.current}/${_data.max}",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    color: GridData.getCountColor(
-                                        _data.current, _data.max)),
-                              ),
-                              Row(
-                                children: [
-                                  ButtonTheme(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4.0, horizontal: 8.0),
-                                    //adds padding inside the button
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    //limits the touch area to the button area
-                                    minWidth: 0,
-                                    //wraps child's width
-                                    height: 0,
-                                    //wraps child's height
-                                    child: FlatButton(
-                                      onPressed: () =>
-                                          TrackingData.decrementCount(_dataId,
-                                              _data.type, _data.current),
-                                      child: Icon(Icons.remove,
-                                          color: Colors.white),
-                                    ),
-                                  ),
-                                  ButtonTheme(
-                                    padding: EdgeInsets.symmetric(
-                                        vertical: 4.0, horizontal: 8.0),
-                                    //adds padding inside the button
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    //limits the touch area to the button area
-                                    minWidth: 0,
-                                    //wraps child's width
-                                    height: 0,
-                                    //wraps child's height
-                                    child: FlatButton(
-                                      onPressed: () =>
-                                          TrackingData.incrementCount(
-                                              _dataId,
-                                              _data.type,
-                                              _data.current,
-                                              _data.max),
-                                      child:
-                                          Icon(Icons.add, color: Colors.white),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              TrackingData.getSupportingWidget(extraImageRef,
-                                  extraAscensionRef, extraTypeRef),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-            );
-          } else {
-            return Center(
-              child: Text("No items being tracked for this material category"),
-            );
-          }
-        });
+    }
   }
 }
 
@@ -281,47 +330,25 @@ class PlannerPage extends StatefulWidget {
 }
 
 class _PlannerPageState extends State<PlannerPage> {
-  Map<String, MaterialDataCommon> _materialData;
+  Map<String, MaterialDataCommon> _matData;
 
   tz.TZDateTime _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
 
-  String _location = "Asia";
+  String _location = 'Asia';
 
   @override
   void initState() {
     super.initState();
     GridData.retrieveMaterialsMapData().then((value) => {
           setState(() {
-            _materialData = value;
-          })
+            _matData = value;
+          }),
         });
 
     SharedPreferences.getInstance().then((value) {
-      _location = value.getString("location") ?? "Asia";
+      _location = value.getString('location') ?? 'Asia';
     });
     tz.initializeTimeZones();
-  }
-
-  String _getLoc() {
-    switch (_location) {
-      case "EU":
-        return "Europe/Paris";
-      case "NA":
-        return "America/New_York";
-      default:
-        return "Asia/Singapore";
-    }
-  }
-
-  String _getLocStr() {
-    switch (_location) {
-      case "EU":
-        return "+1 (EU)";
-      case "NA":
-        return "-5 (NA)";
-      default:
-        return "+8 (Asia)";
-    }
   }
 
   @override
@@ -329,103 +356,147 @@ class _PlannerPageState extends State<PlannerPage> {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
     _beforeDT = tz.TZDateTime(
-        loc, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0); // This day at 12am
+      loc,
+      _cDT.year,
+      _cDT.month,
+      _cDT.day,
+      0,
+      0,
+      0,
+      0,
+    ); // This day at 12am
     _dbDT = _cDT.subtract(Duration(days: 1));
     _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
     _coffDT = tz.TZDateTime(
-        loc, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0); // This day at 4am
+      loc,
+      _cDT.year,
+      _cDT.month,
+      _cDT.day,
+      4,
+      0,
+      0,
+      0,
+    ); // This day at 4am
 
-    CollectionReference ref = _db
-        .collection("tracking")
+    var ref = _db
+        .collection('tracking')
         .doc(Util.getFirebaseUid())
-        .collection("domain_material");
+        .collection('domain_material');
+
     return StreamBuilder(
-        stream: ref.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (snapshot.hasError) {
-            return Text("Error occurred getting snapshot");
+      stream: ref.snapshots(),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Error occurred getting snapshot');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting ||
+            _matData == null) {
+          return Util.centerLoadingCircle('');
+        }
+
+        var data = snapshot.data;
+        var _finalDomainMaterials = data.docs
+            .map((snapshot) => snapshot.data()['name'].toString())
+            .toSet()
+            .toList();
+        var _mappedData = <int, Set<String>>{};
+        _finalDomainMaterials.forEach((domainMaterial) {
+          if (!(_matData[domainMaterial] is MaterialDataDomains)) return;
+
+          var _daysForMaterial =
+              (_matData[domainMaterial] as MaterialDataDomains).days;
+
+          for (var i = 1; i <= 7; i++) {
+            _mappedData.putIfAbsent(i, () => {});
           }
-
-          if (snapshot.connectionState == ConnectionState.waiting ||
-              _materialData == null) {
-            return Util.centerLoadingCircle("");
-          }
-
-          QuerySnapshot data = snapshot.data;
-          List<String> _finalDomainMaterials = data.docs
-              .map((snapshot) => snapshot.data()["name"].toString())
-              .toSet()
-              .toList();
-          Map<int, Set<String>> _mappedData = {
-            1: new Set(),
-            2: new Set(),
-            3: new Set(),
-            4: new Set(),
-            5: new Set(),
-            6: new Set(),
-            7: new Set(),
-          };
-          _finalDomainMaterials.forEach((domainMaterial) {
-            if (!(_materialData[domainMaterial] is MaterialDataDomains)) return;
-
-            List<int> _daysForMaterial =
-                (_materialData[domainMaterial] as MaterialDataDomains).days;
-            _daysForMaterial.forEach((day) {
-              _mappedData[day].add(domainMaterial);
-            });
+          _daysForMaterial.forEach((day) {
+            _mappedData[day].add(domainMaterial);
           });
-
-          return SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-                  child: Text(
-                    "Day resets at 4am GMT${_getLocStr()}",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: _mappedData.length,
-                  itemBuilder: (context, index) {
-                    int key = _mappedData.keys.elementAt(index);
-                    List<String> _curData = _mappedData[key].toList();
-                    return ListTile(
-                      tileColor: _getTileColorIfCurrentDay(key),
-                      leading: Text(GridData.getDayString(key)),
-                      title: _getGridMaterials(_curData),
-                    );
-                  },
-                  separatorBuilder: (context, index) => Divider(height: 1),
-                ),
-              ],
-            ),
-          );
         });
+
+        return _buildWeeklyMaterials(_mappedData);
+      },
+    );
+  }
+
+  String _getLoc() {
+    switch (_location) {
+      case 'EU':
+        return 'Europe/Paris';
+      case 'NA':
+        return 'America/New_York';
+      default:
+        return 'Asia/Singapore';
+    }
+  }
+
+  String _getLocStr() {
+    switch (_location) {
+      case 'EU':
+        return '+1 (EU)';
+      case 'NA':
+        return '-5 (NA)';
+      default:
+        return '+8 (Asia)';
+    }
+  }
+
+  Widget _buildWeeklyMaterials(Map<int, Set<String>> _mappedData) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+            child: Text(
+              'Day resets at 4am GMT${_getLocStr()}',
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+          ListView.separated(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: _mappedData.length,
+            itemBuilder: (context, index) {
+              var key = _mappedData.keys.elementAt(index);
+              var _curData = _mappedData[key].toList();
+
+              return ListTile(
+                tileColor: _getTileColorIfCurrentDay(key),
+                leading: Text(GridData.getDayString(key)),
+                title: _getGridMaterials(_curData),
+              );
+            },
+            separatorBuilder: (context, index) => Divider(height: 1),
+          ),
+        ],
+      ),
+    );
   }
 
   Color _getTileColorIfCurrentDay(int key) {
-    bool currentDay = false;
-    if (_cDT.isAfter(_coffDT) && _cDT.isBefore(_afterDT) && _cDT.weekday == key)
+    var currentDay = false;
+    if (_cDT.isAfter(_coffDT) &&
+        _cDT.isBefore(_afterDT) &&
+        _cDT.weekday == key) {
       currentDay = true;
-    else if (_cDT.isBefore(_coffDT) &&
+    } else if (_cDT.isBefore(_coffDT) &&
         _cDT.isAfter(_beforeDT) &&
         _dbDT.weekday == key) currentDay = true;
 
-    if (currentDay)
-      return (Util.themeNotifier.isDarkMode())
-          ? Colors.green
-          : Colors.lightGreen;
-    else
-      return Colors.transparent;
+    return currentDay
+        ? (Util.themeNotifier.isDarkMode())
+            ? Colors.green
+            : Colors.lightGreen
+        : Colors.transparent;
   }
 
   Widget _getGridMaterials(List<String> _curData) {
-    if (_curData.isEmpty)
-      return Text("Not tracking any domain materials for this day");
+    if (_curData.isEmpty) {
+      return Text('Not tracking any domain materials for this day');
+    }
+
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
@@ -434,7 +505,7 @@ class _PlannerPageState extends State<PlannerPage> {
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials/$materialId'),
-          child: GridData.getGridData(_materialData[materialId]),
+          child: GridData.getGridData(_matData[materialId]),
         );
       }).toList(),
     );
