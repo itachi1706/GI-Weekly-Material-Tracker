@@ -9,8 +9,10 @@ class TrackingUserInfo {
   TrackingUserInfo({this.character, this.material, this.weapon, this.talent});
 
   factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
-    if (parsedJson == null)
+    if (parsedJson == null) {
       return TrackingUserInfo(character: null, material: null, weapon: null);
+    }
+
     return TrackingUserInfo(
       character: (parsedJson.containsKey('character'))
           ? (parsedJson['character'] as List<dynamic>)
@@ -58,17 +60,17 @@ class TrackingUserData extends CommonTracking {
     );
   }
 
-  static Map<String, TrackingUserData> getList(
-      Map<String, dynamic> listString) {
-    Map<String, TrackingUserData> _fin = new Map();
-    listString.forEach((key, value) {
+  static Map<String, TrackingUserData> getList(Map<String, dynamic> list) {
+    var _fin = <String, TrackingUserData>{};
+    list.forEach((key, value) {
       _fin.putIfAbsent(key, () => TrackingUserData.fromJson(value));
     });
+
     return _fin;
   }
 
   @override
   String toString() {
-    return "TrackingUserData{ name: $name, type: $type, addData: $addData, addedBy: $addedBy, current: $current, max: $max }";
+    return 'TrackingUserData{ name: $name, type: $type, addData: $addData, addedBy: $addedBy, current: $current, max: $max }';
   }
 }

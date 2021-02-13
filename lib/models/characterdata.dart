@@ -13,29 +13,30 @@ class CharacterData extends CommonData {
   Map<String, CharacterAscension> ascension;
   CharacterTalent talent;
 
-  CharacterData(
-      {this.affiliation,
-      this.birthday,
-      this.constellation,
-      description,
-      this.element,
-      this.gender,
-      this.genshinGGPath,
-      image,
-      this.introduction,
-      name,
-      this.nation,
-      rarity,
-      this.weapon,
-      this.ascension,
-      this.talent,
-      wiki})
-      : super(
-            image: image,
-            name: name,
-            rarity: rarity,
-            description: description,
-            wiki: wiki);
+  CharacterData({
+    this.affiliation,
+    this.birthday,
+    this.constellation,
+    description,
+    this.element,
+    this.gender,
+    this.genshinGGPath,
+    image,
+    this.introduction,
+    name,
+    this.nation,
+    rarity,
+    this.weapon,
+    this.ascension,
+    this.talent,
+    wiki,
+  }) : super(
+          image: image,
+          name: name,
+          rarity: rarity,
+          description: description,
+          wiki: wiki,
+        );
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(
@@ -54,15 +55,18 @@ class CharacterData extends CommonData {
       element: parsedJson['element'],
       wiki: parsedJson['wiki'],
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
-      talent: CharacterTalent.getFromMap(parsedJson["talents"],)
+      talent: CharacterTalent.getFromMap(
+        parsedJson['talents'],
+      ),
     );
   }
 
   static Map<String, CharacterData> getList(Map<String, dynamic> listString) {
-    Map<String, CharacterData> _fin = new Map();
+    var _fin = <String, CharacterData>{};
     listString.forEach((key, value) {
       _fin.putIfAbsent(key, () => CharacterData.fromJson(value));
     });
+
     return _fin;
   }
 }
@@ -71,26 +75,27 @@ class CharacterAscension extends CommonAscension {
   String material4;
   int material4Qty;
 
-  CharacterAscension(
-      {level,
-      material1,
-      material1Qty,
-      material2,
-      material2Qty,
-      material3,
-      material3Qty,
-      this.material4,
-      this.material4Qty,
-      mora})
-      : super(
-            level: level,
-            mora: mora,
-            material1: material1,
-            material1Qty: material1Qty,
-            material2: material2,
-            material2Qty: material2Qty,
-            material3: material3,
-            material3Qty: material3Qty);
+  CharacterAscension({
+    level,
+    material1,
+    material1Qty,
+    material2,
+    material2Qty,
+    material3,
+    material3Qty,
+    this.material4,
+    this.material4Qty,
+    mora,
+  }) : super(
+          level: level,
+          mora: mora,
+          material1: material1,
+          material1Qty: material1Qty,
+          material2: material2,
+          material2Qty: material2Qty,
+          material3: material3,
+          material3Qty: material3Qty,
+        );
 
   factory CharacterAscension.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterAscension(
@@ -108,20 +113,28 @@ class CharacterAscension extends CommonAscension {
   }
 
   static Map<String, CharacterAscension> getFromMap(
-      Map<String, dynamic> ascend) {
-    Map<String, CharacterAscension> _fin = new Map();
-    if (ascend.containsKey("1"))
-      _fin.putIfAbsent("1", () => new CharacterAscension.fromJson(ascend['1']));
-    if (ascend.containsKey("2"))
-      _fin.putIfAbsent("2", () => new CharacterAscension.fromJson(ascend['2']));
-    if (ascend.containsKey("3"))
-      _fin.putIfAbsent("3", () => new CharacterAscension.fromJson(ascend['3']));
-    if (ascend.containsKey("4"))
-      _fin.putIfAbsent("4", () => new CharacterAscension.fromJson(ascend['4']));
-    if (ascend.containsKey("5"))
-      _fin.putIfAbsent("5", () => new CharacterAscension.fromJson(ascend['5']));
-    if (ascend.containsKey("6"))
-      _fin.putIfAbsent("6", () => new CharacterAscension.fromJson(ascend['6']));
+    Map<String, dynamic> ascend,
+  ) {
+    var _fin = <String, CharacterAscension>{};
+    if (ascend.containsKey('1')) {
+      _fin.putIfAbsent('1', () => CharacterAscension.fromJson(ascend['1']));
+    }
+    if (ascend.containsKey('2')) {
+      _fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
+    }
+    if (ascend.containsKey('3')) {
+      _fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
+    }
+    if (ascend.containsKey('4')) {
+      _fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
+    }
+    if (ascend.containsKey('5')) {
+      _fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
+    }
+    if (ascend.containsKey('6')) {
+      _fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
+    }
+
     return _fin;
   }
 }
@@ -131,41 +144,51 @@ class CharacterTalent {
   Map<String, TalentInfo> attack;
   Map<String, TalentInfo> passive;
 
-  CharacterTalent({
-    this.ascension,
-    this.attack,
-    this.passive
-});
+  CharacterTalent({this.ascension, this.attack, this.passive});
 
   static CharacterTalent getFromMap(Map<String, dynamic> ascend) {
     return CharacterTalent(
-      ascension: getAscensionFromMap(ascend["ascension"]),
-      attack: TalentInfo.getFromMap(ascend["attack"]),
-      passive: TalentInfo.getFromMap(ascend["passives"])
+      ascension: getAscensionFromMap(ascend['ascension']),
+      attack: TalentInfo.getFromMap(ascend['attack']),
+      passive: TalentInfo.getFromMap(ascend['passives']),
     );
   }
 
   static Map<String, CharacterAscension> getAscensionFromMap(
-      Map<String, dynamic> ascend) {
-    Map<String, CharacterAscension> _fin = new Map();
-    if (ascend.containsKey("2"))
-      _fin.putIfAbsent("2", () => new CharacterAscension.fromJson(ascend['2']));
-    if (ascend.containsKey("3"))
-      _fin.putIfAbsent("3", () => new CharacterAscension.fromJson(ascend['3']));
-    if (ascend.containsKey("4"))
-      _fin.putIfAbsent("4", () => new CharacterAscension.fromJson(ascend['4']));
-    if (ascend.containsKey("5"))
-      _fin.putIfAbsent("5", () => new CharacterAscension.fromJson(ascend['5']));
-    if (ascend.containsKey("6"))
-      _fin.putIfAbsent("6", () => new CharacterAscension.fromJson(ascend['6']));
-    if (ascend.containsKey("7"))
-      _fin.putIfAbsent("7", () => new CharacterAscension.fromJson(ascend['7']));
-    if (ascend.containsKey("8"))
-      _fin.putIfAbsent("8", () => new CharacterAscension.fromJson(ascend['8']));
-    if (ascend.containsKey("9"))
-      _fin.putIfAbsent("9", () => new CharacterAscension.fromJson(ascend['9']));
-    if (ascend.containsKey("10"))
-      _fin.putIfAbsent("10", () => new CharacterAscension.fromJson(ascend['10']));
+    Map<String, dynamic> ascend,
+  ) {
+    var _fin = <String, CharacterAscension>{};
+    if (ascend.containsKey('2')) {
+      _fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
+    }
+    if (ascend.containsKey('3')) {
+      _fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
+    }
+    if (ascend.containsKey('4')) {
+      _fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
+    }
+    if (ascend.containsKey('5')) {
+      _fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
+    }
+    if (ascend.containsKey('6')) {
+      _fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
+    }
+    if (ascend.containsKey('7')) {
+      _fin.putIfAbsent('7', () => CharacterAscension.fromJson(ascend['7']));
+    }
+    if (ascend.containsKey('8')) {
+      _fin.putIfAbsent('8', () => CharacterAscension.fromJson(ascend['8']));
+    }
+    if (ascend.containsKey('9')) {
+      _fin.putIfAbsent('9', () => CharacterAscension.fromJson(ascend['9']));
+    }
+    if (ascend.containsKey('10')) {
+      _fin.putIfAbsent(
+        '10',
+        () => CharacterAscension.fromJson(ascend['10']),
+      );
+    }
+
     return _fin;
   }
 }
@@ -188,8 +211,10 @@ class TalentInfo {
   }
 
   static Map<String, TalentInfo> getFromMap(Map<String, dynamic> data) {
-    Map<String, TalentInfo> _fin = new Map();
-    data.forEach((key, value) => _fin.putIfAbsent(key, () => new TalentInfo.fromJson(value)));
+    var _fin = <String, TalentInfo>{};
+    data.forEach((key, value) =>
+        _fin.putIfAbsent(key, () => TalentInfo.fromJson(value)));
+
     return _fin;
   }
 }
