@@ -278,6 +278,32 @@ class TrackingData {
       ),
     );
   }
+
+  static List<Widget> getAscensionHeader() {
+    return [
+      Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          children: [
+            Text(
+              'Ascension Materials',
+              style: TextStyle(fontSize: 24),
+            ),
+          ],
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8),
+        child: Row(
+          children: [
+            Text(
+              'Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials',
+            ),
+          ],
+        ),
+      ),
+    ];
+  }
 }
 
 class UpdateMultiTracking {
