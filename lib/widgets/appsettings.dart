@@ -21,7 +21,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  String _location = "Loading", _cacheSize = "Loading", _version = "Loading";
+  String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   bool _darkMode = false;
   int _cacheFiles = 0;
 
@@ -33,126 +33,141 @@ class _SettingsPageState extends State<SettingsPage> {
     _refresh();
   }
 
-  void _refresh() async {
-    SharedPreferences pref = await SharedPreferences.getInstance();
-    Map<String, int> _files = {"fileNum": 0, "size": 0};
-
-    PackageInfo pkgInfo = await PackageInfo.fromPlatform();
-    String version = pkgInfo.version, build = pkgInfo.buildNumber;
-    if (!kIsWeb) {
-      Directory dir = await getTemporaryDirectory();
-      Directory _cacheDir = dir;
-      _files = _dirStatSync(_cacheDir.path);
-    }
-    String type = (kIsWeb)
-        ? "Web"
-        : (Platform.isAndroid)
-            ? "Android"
-            : (Platform.isIOS)
-                ? 'iOS'
-                : "Others";
-
-    setState(() {
-      _prefs = pref;
-      _location = _prefs.getString("location") ?? "Asia";
-      _darkMode = _prefs.getBool("dark_mode") ?? false;
-      _cacheFiles = _files["fileNum"];
-      _cacheSize = filesize(_files["size"]);
-      _version = "Version: $version build $build ($type)";
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Settings")),
+      appBar: AppBar(title: Text('Settings')),
       body: SettingsList(
         sections: [
-          SettingsSection(
-            title: 'User Data',
-            titlePadding: const EdgeInsets.all(16),
-            tiles: [
-              SettingsTile(
-                title: "Currently Logged in as",
-                trailing: SizedBox.shrink(),
-                subtitle: Util.getUserEmail(),
-                leading: Icon(Icons.face),
-              ),
-              SettingsTile(
-                title: "Clear tracking data",
-                trailing: SizedBox.shrink(),
-                leading: Icon(Icons.delete_forever),
-                onPressed: _clearTrackingDataPrompt,
-              ),
-            ],
-          ),
-          SettingsSection(
-            title: "Settings",
-            tiles: [
-              SettingsTile.switchTile(
-                title: "Dark Mode",
-                leading: Icon(Icons.wb_sunny_outlined),
-                onToggle: (bool value) {
-                  _prefs.setBool("dark_mode", value).then((value) {
-                    Util.themeNotifier.toggleTheme();
-                  });
-                  setState(() {
-                    _darkMode = value;
-                  });
-                },
-                switchValue: _darkMode,
-              ),
-              SettingsTile(
-                title: "Game Server Location",
-                subtitle: _location,
-                leading: Icon(MdiIcons.server),
-                onPressed: (context) {
-                  Get.to(RegionSettingsPage());
-                },
-              ),
-              SettingsTile(
-                title: "Cache",
-                subtitle: "Currently using $_cacheSize ($_cacheFiles files)",
-                trailing: SizedBox.shrink(),
-                enabled: !kIsWeb,
-                leading: Icon(Icons.cached_rounded),
-              ),
-              SettingsTile(
-                title: "Clear Cache",
-                leading: Icon(MdiIcons.trashCanOutline),
-                enabled: !kIsWeb,
-                onPressed: (context) {
-                  _clearCache();
-                },
-              ),
-            ],
-          ),
-          SettingsSection(
-            title: "More Info",
-            tiles: [
-              SettingsTile(
-                title: "About This App",
-                leading: Icon(Icons.info_outline),
-                onPressed: _showAboutPage,
-              ),
-            ],
-          ),
-          CustomSection(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 22, bottom: 8),
-                  child: Text(
-                    _version,
-                    style: TextStyle(color: Color(0xFF777777)),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          _userDataSettings(),
+          _appDataSettings(),
+          ..._infoSettings(),
         ],
       ),
     );
+  }
+
+  void _refresh() async {
+    var pref = await SharedPreferences.getInstance();
+    var _files = <String, int>{'fileNum': 0, 'size': 0};
+
+    var pkgInfo = await PackageInfo.fromPlatform();
+    var version = pkgInfo.version;
+    var build = pkgInfo.buildNumber;
+    if (!kIsWeb) {
+      var dir = await getTemporaryDirectory();
+      var _cacheDir = dir;
+      _files = _dirStatSync(_cacheDir.path);
+    }
+    var type = (kIsWeb)
+        ? 'Web'
+        : (Platform.isAndroid)
+            ? 'Android'
+            : (Platform.isIOS)
+                ? 'iOS'
+                : 'Others';
+
+    setState(() {
+      _prefs = pref;
+      _location = _prefs.getString('location') ?? 'Asia';
+      _darkMode = _prefs.getBool('dark_mode') ?? false;
+      _cacheFiles = _files['fileNum'];
+      _cacheSize = filesize(_files['size']);
+      _version = 'Version: $version build $build ($type)';
+    });
+  }
+
+  Widget _userDataSettings() {
+    return SettingsSection(
+      title: 'User Data',
+      titlePadding: const EdgeInsets.all(16),
+      tiles: [
+        SettingsTile(
+          title: 'Currently Logged in as',
+          trailing: SizedBox.shrink(),
+          subtitle: Util.getUserEmail(),
+          leading: Icon(Icons.face),
+        ),
+        SettingsTile(
+          title: 'Clear tracking data',
+          trailing: SizedBox.shrink(),
+          leading: Icon(Icons.delete_forever),
+          onPressed: _clearTrackingDataPrompt,
+        ),
+      ],
+    );
+  }
+
+  Widget _appDataSettings() {
+    return SettingsSection(
+      title: 'Settings',
+      tiles: [
+        SettingsTile.switchTile(
+          title: 'Dark Mode',
+          leading: Icon(Icons.wb_sunny_outlined),
+          onToggle: (bool value) {
+            _prefs.setBool('dark_mode', value).then((value) {
+              Util.themeNotifier.toggleTheme();
+            });
+            setState(() {
+              _darkMode = value;
+            });
+          },
+          switchValue: _darkMode,
+        ),
+        SettingsTile(
+          title: 'Game Server Location',
+          subtitle: _location,
+          leading: Icon(MdiIcons.server),
+          onPressed: (context) {
+            Get.to(RegionSettingsPage());
+          },
+        ),
+        SettingsTile(
+          title: 'Cache',
+          subtitle: 'Currently using $_cacheSize ($_cacheFiles files)',
+          trailing: SizedBox.shrink(),
+          enabled: !kIsWeb,
+          leading: Icon(Icons.cached_rounded),
+        ),
+        SettingsTile(
+          title: 'Clear Cache',
+          leading: Icon(MdiIcons.trashCanOutline),
+          enabled: !kIsWeb,
+          onPressed: (context) {
+            _clearCache();
+          },
+        ),
+      ],
+    );
+  }
+
+  List<Widget> _infoSettings() {
+    return [
+      SettingsSection(
+        title: 'More Info',
+        tiles: [
+          SettingsTile(
+            title: 'About This App',
+            leading: Icon(Icons.info_outline),
+            onPressed: _showAboutPage,
+          ),
+        ],
+      ),
+      CustomSection(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 22, bottom: 8),
+              child: Text(
+                _version,
+                style: TextStyle(color: Color(0xFF777777)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ];
   }
 
   void _clearTrackingDataPrompt(BuildContext context) {
@@ -160,9 +175,9 @@ class _SettingsPageState extends State<SettingsPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Clear Tracking Data"),
+          title: Text('Clear Tracking Data'),
           content:
-              Text("Claer all materials currently being tracked from the app?"),
+              Text('Claer all materials currently being tracked from the app?'),
           actions: [
             TextButton(
               child: Text('Cancel'),
@@ -180,33 +195,33 @@ class _SettingsPageState extends State<SettingsPage> {
 
   void _clearTrackingData() async {
     // Clear tracking data by deleting the document
-    String _uid = Util.getFirebaseUid();
+    var _uid = Util.getFirebaseUid();
     Get.back();
     if (_uid == null) return;
-    FirebaseFirestore _db = FirebaseFirestore.instance;
+    var _db = FirebaseFirestore.instance;
     // Deleting all subcollections
-    DocumentReference ref = _db.collection("tracking").doc(_uid);
-    await TrackingData.clearCollection("boss_drops");
-    await TrackingData.clearCollection("domain_material");
-    await TrackingData.clearCollection("local_speciality");
-    await TrackingData.clearCollection("mob_drops");
+    var ref = _db.collection('tracking').doc(_uid);
+    await TrackingData.clearCollection('boss_drops');
+    await TrackingData.clearCollection('domain_material');
+    await TrackingData.clearCollection('local_speciality');
+    await TrackingData.clearCollection('mob_drops');
     await ref.delete(); // Delete fields
-    Util.showSnackbarQuick(context, "Cleared all tracking information");
+    Util.showSnackbarQuick(context, 'Cleared all tracking information');
   }
 
   void _clearCache() async {
-    Directory tmp = await getTemporaryDirectory();
-    List<FileSystemEntity> files = tmp.listSync();
+    var tmp = await getTemporaryDirectory();
+    var files = tmp.listSync();
     files.forEach((file) async {
       await file.delete(recursive: true);
     });
-    Util.showSnackbarQuick(context, "Cache Cleared");
+    Util.showSnackbarQuick(context, 'Cache Cleared');
     _refresh();
   }
 
   Map<String, int> _dirStatSync(String dirPath) {
-    int fileNum = 0;
-    int totalSize = 0;
+    var fileNum = 0;
+    var totalSize = 0;
     var dir = Directory(dirPath);
     try {
       if (dir.existsSync()) {
@@ -229,16 +244,19 @@ class _SettingsPageState extends State<SettingsPage> {
   void _showAboutPage(BuildContext context) {
     showAboutPage(
       context: context,
-      title: Text("About this app"),
-      applicationLegalese: "Copyright © Kenneth Soh, {{ year }}",
+      title: Text('About this app'),
+      applicationLegalese: 'Copyright © Kenneth Soh, {{ year }}',
       applicationDescription: const Text(
-          'Weekly Material Planner and Tracking Application for Genshin Impact'),
+        'Weekly Material Planner and Tracking Application for Genshin Impact',
+      ),
       children: <Widget>[
         ListTile(
           leading: Icon(Icons.source_outlined),
           trailing: SizedBox.shrink(),
-          title: Text("View Source Code"),
-          onTap: () => Util.launchWebPage("https://gitlab.com/itachi1706/gi-weekly-material-tracker"),
+          title: Text('View Source Code'),
+          onTap: () => Util.launchWebPage(
+            'https://gitlab.com/itachi1706/gi-weekly-material-tracker',
+          ),
         ),
         MarkdownPageListTile(
           icon: Icon(Icons.list),
@@ -246,7 +264,7 @@ class _SettingsPageState extends State<SettingsPage> {
           filename: 'CHANGELOG.md',
         ),
         LicensesPageListTile(
-          title: Text("Open Source Licenses"),
+          title: Text('Open Source Licenses'),
           icon: Icon(Icons.favorite),
         ),
       ],
@@ -276,39 +294,48 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
     SharedPreferences.getInstance().then((value) {
       setState(() {
         _prefs = value;
-        _regionKey = value.getString("location") ?? "Asia";
+        _regionKey = value.getString('location') ?? 'Asia';
       });
     });
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Game Server Location')),
+      body: _buildBody(),
+    );
+  }
+
   Widget _buildBody() {
-    if (_regionKey == null) return Util.centerLoadingCircle("Getting Region");
+    if (_regionKey == null) return Util.centerLoadingCircle('Getting Region');
+
     return SettingsList(
       sections: [
         SettingsSection(
           tiles: [
             SettingsTile(
-              title: "Asia",
-              subtitle: "GMT+8",
-              trailing: trailingWidget("Asia"),
+              title: 'Asia',
+              subtitle: 'GMT+8',
+              trailing: _trailingWidget('Asia'),
               onPressed: (context) {
-                changeRegion("Asia");
+                _changeRegion('Asia');
               },
             ),
             SettingsTile(
-              title: "America",
-              subtitle: "GMT-5",
-              trailing: trailingWidget("NA"),
+              title: 'America',
+              subtitle: 'GMT-5',
+              trailing: _trailingWidget('NA'),
               onPressed: (context) {
-                changeRegion("NA");
+                _changeRegion('NA');
               },
             ),
             SettingsTile(
-              title: "Europe",
-              subtitle: "GMT+1",
-              trailing: trailingWidget("EU"),
+              title: 'Europe',
+              subtitle: 'GMT+1',
+              trailing: _trailingWidget('EU'),
               onPressed: (context) {
-                changeRegion("EU");
+                _changeRegion('EU');
               },
             ),
           ],
@@ -317,26 +344,20 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Game Server Location")),
-      body: _buildBody(),
-    );
-  }
-
-  Widget trailingWidget(String region) {
+  Widget _trailingWidget(String region) {
     return Radio(
       toggleable: false,
       autofocus: false,
       value: region,
-      onChanged: (ig) {},
+      onChanged: (ig) {
+        print('Set to $_regionKey');
+      },
       groupValue: _regionKey,
     );
   }
 
-  void changeRegion(String region) async {
-    await _prefs.setString("location", region);
+  void _changeRegion(String region) async {
+    await _prefs.setString('location', region);
     setState(() {
       _regionKey = region;
     });
