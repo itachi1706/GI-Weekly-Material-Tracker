@@ -219,33 +219,39 @@ class GridData {
     return Card(
       color: getRarityColor(data.rarity),
       child: GridTile(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                getImageAssetFromFirebase(data.image),
-              ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Stack(
+            children: [
+              getImageAssetFromFirebase(data.image),
+            ],
+          ),
+        ),
+        footer: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Text(
+            data.name,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          footer: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Text(
-              data.name,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,),
-            ),
-          ),),
+        ),
+      ),
     );
   }
 
   static void launchWikiUrl(BuildContext context, CommonData data) async {
-    if (!await Util.launchWebPage(data.wiki,
-        rarityColor: GridData.getRarityColor(data.rarity),)) {
+    if (!await Util.launchWebPage(
+      data.wiki,
+      rarityColor: GridData.getRarityColor(data.rarity),
+    )) {
       Util.showSnackbarQuick(
-          context, 'Wiki Page not available for ${data.name}',);
+        context,
+        'Wiki Page not available for ${data.name}',
+      );
     }
   }
 
@@ -269,12 +275,27 @@ class GridData {
     ];
   }
 
+  static List<Widget> getAscensionMaterialDataWidgets(
+    int qty,
+    String name,
+    Map<String, MaterialDataCommon> data,
+  ) {
+    return [
+      getAscensionImage(name, data),
+      Text((qty == 0) ? '' : qty.toString()),
+      Spacer(),
+    ];
+  }
+
   static Future<Map<String, CommonData>> _retrieveStaticData(
-      String type,) async {
+    String type,
+  ) async {
     if (_downloading.containsKey(type) && _downloading[type]) {
       // Wait for processing to end
       return Future.delayed(
-          const Duration(seconds: 1), () => _retrieveStaticData(type),);
+        const Duration(seconds: 1),
+        () => _retrieveStaticData(type),
+      );
     }
     if (!_staticData.containsKey(type)) {
       _downloading[type] = true;
