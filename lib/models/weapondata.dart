@@ -11,27 +11,28 @@ class WeaponData extends CommonData {
   String maxSecondaryStat;
   Map<String, WeaponAscension> ascension;
 
-  WeaponData(
-      {this.secondaryStat,
-      this.secondaryStatType,
-      this.type,
-      description,
-      this.baseAtk,
-      this.obtained,
-      this.effect,
-      image,
-      name,
-      rarity,
-      wiki,
-      this.maxBaseAtk,
-      this.maxSecondaryStat,
-      this.ascension,})
-      : super(
-            image: image,
-            name: name,
-            rarity: rarity,
-            description: description,
-            wiki: wiki,);
+  WeaponData({
+    this.secondaryStat,
+    this.secondaryStatType,
+    this.type,
+    description,
+    this.baseAtk,
+    this.obtained,
+    this.effect,
+    image,
+    name,
+    rarity,
+    wiki,
+    this.maxBaseAtk,
+    this.maxSecondaryStat,
+    this.ascension,
+  }) : super(
+          image: image,
+          name: name,
+          rarity: rarity,
+          description: description,
+          wiki: wiki,
+        );
 
   factory WeaponData.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponData(
@@ -57,30 +58,31 @@ class WeaponData extends CommonData {
     listString.forEach((key, value) {
       _fin.putIfAbsent(key, () => WeaponData.fromJson(value));
     });
-    
+
     return _fin;
   }
 }
 
 class WeaponAscension extends CommonAscension {
-  WeaponAscension(
-      {level,
-      material1,
-      material1Qty,
-      material2,
-      material2Qty,
-      material3,
-      material3Qty,
-      mora,})
-      : super(
-            level: level,
-            mora: mora,
-            material1: material1,
-            material1Qty: material1Qty,
-            material2: material2,
-            material2Qty: material2Qty,
-            material3: material3,
-            material3Qty: material3Qty,);
+  WeaponAscension({
+    level,
+    material1,
+    material1Qty,
+    material2,
+    material2Qty,
+    material3,
+    material3Qty,
+    mora,
+  }) : super(
+          level: level,
+          mora: mora,
+          material1: material1,
+          material1Qty: material1Qty,
+          material2: material2,
+          material2Qty: material2Qty,
+          material3: material3,
+          material3Qty: material3Qty,
+        );
 
   factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponAscension(

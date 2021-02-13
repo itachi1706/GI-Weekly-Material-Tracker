@@ -63,7 +63,10 @@ class SortBy {
           children: [
             Text('Weapon Type'),
             Spacer(),
-            Icon(_getSortingData(false, 'weapon'), color: _matchColor('weapon')),
+            Icon(
+              _getSortingData(false, 'weapon'),
+              color: _matchColor('weapon'),
+            ),
           ],
         ),
       ),
@@ -74,8 +77,10 @@ class SortBy {
           children: [
             Text('Affiliation'),
             Spacer(),
-            Icon(_getSortingData(false, 'affiliation'),
-              color: _matchColor('affiliation'),),
+            Icon(
+              _getSortingData(false, 'affiliation'),
+              color: _matchColor('affiliation'),
+            ),
           ],
         ),
       ),
@@ -86,7 +91,10 @@ class SortBy {
           children: [
             Text('Gender'),
             Spacer(),
-            Icon(_getSortingData(false, 'gender'), color: _matchColor('gender')),
+            Icon(
+              _getSortingData(false, 'gender'),
+              color: _matchColor('gender'),
+            ),
           ],
         ),
       ),
@@ -97,7 +105,10 @@ class SortBy {
           children: [
             Text('Nation'),
             Spacer(),
-            Icon(_getSortingData(false, 'nation'), color: _matchColor('nation')),
+            Icon(
+              _getSortingData(false, 'nation'),
+              color: _matchColor('nation'),
+            ),
           ],
         ),
       ),
@@ -113,8 +124,10 @@ class SortBy {
           children: [
             Text('Base Attack'),
             Spacer(),
-            Icon(_getSortingData(true, 'base_atk'),
-              color: _matchColor('base_atk'),),
+            Icon(
+              _getSortingData(true, 'base_atk'),
+              color: _matchColor('base_atk'),
+            ),
           ],
         ),
       ),
@@ -125,8 +138,10 @@ class SortBy {
           children: [
             Text('Secondary Stats'),
             Spacer(),
-            Icon(_getSortingData(false, 'secondary_stat_type'),
-              color: _matchColor('secondary_stat_type'),),
+            Icon(
+              _getSortingData(false, 'secondary_stat_type'),
+              color: _matchColor('secondary_stat_type'),
+            ),
           ],
         ),
       ),

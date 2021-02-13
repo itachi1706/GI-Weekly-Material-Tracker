@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
+import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
@@ -207,7 +207,8 @@ class _MainNavigationPageState extends State<MainNavigationPage>
             icon: Icon(Icons.sort),
             elevation: 2.0,
             onSelected: _sortBy,
-            itemBuilder: (context) => _sortList.getSortList(_currentIndex),)
+            itemBuilder: (context) => _sortList.getSortList(_currentIndex),
+          )
         : SizedBox.shrink();
   }
 
