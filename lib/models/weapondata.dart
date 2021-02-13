@@ -11,27 +11,28 @@ class WeaponData extends CommonData {
   String maxSecondaryStat;
   Map<String, WeaponAscension> ascension;
 
-  WeaponData(
-      {this.secondaryStat,
-      this.secondaryStatType,
-      this.type,
-      description,
-      this.baseAtk,
-      this.obtained,
-      this.effect,
-      image,
-      name,
-      rarity,
-      wiki,
-      this.maxBaseAtk,
-      this.maxSecondaryStat,
-      this.ascension})
-      : super(
-            image: image,
-            name: name,
-            rarity: rarity,
-            description: description,
-            wiki: wiki);
+  WeaponData({
+    this.secondaryStat,
+    this.secondaryStatType,
+    this.type,
+    description,
+    this.baseAtk,
+    this.obtained,
+    this.effect,
+    image,
+    name,
+    rarity,
+    wiki,
+    this.maxBaseAtk,
+    this.maxSecondaryStat,
+    this.ascension,
+  }) : super(
+          image: image,
+          name: name,
+          rarity: rarity,
+          description: description,
+          wiki: wiki,
+        );
 
   factory WeaponData.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponData(
@@ -53,33 +54,35 @@ class WeaponData extends CommonData {
   }
 
   static Map<String, WeaponData> getList(Map<String, dynamic> listString) {
-    Map<String, WeaponData> _fin = new Map();
+    var _fin = <String, WeaponData>{};
     listString.forEach((key, value) {
       _fin.putIfAbsent(key, () => WeaponData.fromJson(value));
     });
+
     return _fin;
   }
 }
 
 class WeaponAscension extends CommonAscension {
-  WeaponAscension(
-      {level,
-      material1,
-      material1Qty,
-      material2,
-      material2Qty,
-      material3,
-      material3Qty,
-      mora})
-      : super(
-            level: level,
-            mora: mora,
-            material1: material1,
-            material1Qty: material1Qty,
-            material2: material2,
-            material2Qty: material2Qty,
-            material3: material3,
-            material3Qty: material3Qty);
+  WeaponAscension({
+    level,
+    material1,
+    material1Qty,
+    material2,
+    material2Qty,
+    material3,
+    material3Qty,
+    mora,
+  }) : super(
+          level: level,
+          mora: mora,
+          material1: material1,
+          material1Qty: material1Qty,
+          material2: material2,
+          material2Qty: material2Qty,
+          material3: material3,
+          material3Qty: material3Qty,
+        );
 
   factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponAscension(
@@ -95,19 +98,26 @@ class WeaponAscension extends CommonAscension {
   }
 
   static Map<String, WeaponAscension> getFromMap(Map<String, dynamic> ascend) {
-    Map<String, WeaponAscension> _fin = new Map();
-    if (ascend.containsKey("1"))
-      _fin.putIfAbsent("1", () => new WeaponAscension.fromJson(ascend['1']));
-    if (ascend.containsKey("2"))
-      _fin.putIfAbsent("2", () => new WeaponAscension.fromJson(ascend['2']));
-    if (ascend.containsKey("3"))
-      _fin.putIfAbsent("3", () => new WeaponAscension.fromJson(ascend['3']));
-    if (ascend.containsKey("4"))
-      _fin.putIfAbsent("4", () => new WeaponAscension.fromJson(ascend['4']));
-    if (ascend.containsKey("5"))
-      _fin.putIfAbsent("5", () => new WeaponAscension.fromJson(ascend['5']));
-    if (ascend.containsKey("6"))
-      _fin.putIfAbsent("6", () => new WeaponAscension.fromJson(ascend['6']));
+    var _fin = <String, WeaponAscension>{};
+    if (ascend.containsKey('1')) {
+      _fin.putIfAbsent('1', () => WeaponAscension.fromJson(ascend['1']));
+    }
+    if (ascend.containsKey('2')) {
+      _fin.putIfAbsent('2', () => WeaponAscension.fromJson(ascend['2']));
+    }
+    if (ascend.containsKey('3')) {
+      _fin.putIfAbsent('3', () => WeaponAscension.fromJson(ascend['3']));
+    }
+    if (ascend.containsKey('4')) {
+      _fin.putIfAbsent('4', () => WeaponAscension.fromJson(ascend['4']));
+    }
+    if (ascend.containsKey('5')) {
+      _fin.putIfAbsent('5', () => WeaponAscension.fromJson(ascend['5']));
+    }
+    if (ascend.containsKey('6')) {
+      _fin.putIfAbsent('6', () => WeaponAscension.fromJson(ascend['6']));
+    }
+
     return _fin;
   }
 }

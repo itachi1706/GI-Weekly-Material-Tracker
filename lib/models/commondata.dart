@@ -18,15 +18,16 @@ class CommonAscension {
   int material3Qty;
   int mora;
 
-  CommonAscension(
-      {this.level,
-      this.material1,
-      this.material1Qty,
-      this.material2,
-      this.material2Qty,
-      this.material3,
-      this.material3Qty,
-      this.mora});
+  CommonAscension({
+    this.level,
+    this.material1,
+    this.material1Qty,
+    this.material2,
+    this.material2Qty,
+    this.material3,
+    this.material3Qty,
+    this.mora,
+  });
 }
 
 class CommonTracking {
@@ -39,6 +40,6 @@ class CommonTracking {
 
   @override
   String toString() {
-    return "CommonTracking{ name: $name, type: $type, current: $current, max: $max }";
+    return 'CommonTracking{ name: $name, type: $type, current: $current, max: $max }';
   }
 }
