@@ -115,7 +115,7 @@ class WeaponAscension extends CommonAscension {
     if (ascend.containsKey('6')) {
       _fin.putIfAbsent('6', () => WeaponAscension.fromJson(ascend['6']));
     }
-    
+
     return _fin;
   }
 }
