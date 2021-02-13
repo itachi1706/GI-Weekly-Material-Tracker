@@ -13,8 +13,8 @@ class ThemeNotifier with ChangeNotifier {
   }
 
   void toggleTheme() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    _isDark = sp.getBool("dark_mode") ?? false;
+    var sp = await SharedPreferences.getInstance();
+    _isDark = sp.getBool('dark_mode') ?? false;
     notifyListeners();
   }
 }
