@@ -11,7 +11,6 @@ import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -172,7 +171,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
           children: [
             CharacterInfoPage(info: _info, infoId: _infoId),
             CharacterTalentPage(info: _info, infoId: _infoId),
-            PlaceholderWidgetContainer(Colors.green),
+            CharacterConstellationPage(info: _info),
           ],
         ),
       ),
@@ -1434,5 +1433,84 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     });
 
     return _wid;
+  }
+}
+
+class CharacterConstellationPage extends StatelessWidget {
+  final CharacterData info;
+
+  CharacterConstellationPage({Key key, @required this.info}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (info == null) return Util.loadingScreen();
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _constellationWidgets(context),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _constellationWidgets(BuildContext context) {
+    var _wid = <Widget>[];
+    info.constellations.forEach((key, value) {
+      _wid.add(_generateConstellationWidget(key, value, context));
+      _wid.add(Divider());
+    });
+
+    return _wid;
+  }
+
+  Widget _generateConstellationWidget(
+    int index,
+    CharacterConstellations constellation,
+    BuildContext context,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        children: [
+          IntrinsicHeight(
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    GridData.getImageAssetFromFirebase(
+                      constellation.image,
+                      height: 32,
+                    ),
+                    Align(
+                      alignment: FractionalOffset.bottomLeft,
+                      child: Text(
+                        GridData.getRomanNumberArray(index - 1).toString(),
+                        style: TextStyle(color: Colors.white),
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width - 80,
+                  child: Text(
+                    constellation.name,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(constellation.effect),
+          ),
+        ],
+      ),
+    );
   }
 }
