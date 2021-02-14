@@ -198,8 +198,9 @@ class TalentInfo {
   String effect;
   String image;
   String type;
+  int order;
 
-  TalentInfo({this.name, this.effect, this.image, this.type});
+  TalentInfo({this.name, this.effect, this.image, this.type, this.order});
 
   factory TalentInfo.fromJson(Map<String, dynamic> parsedJson) {
     return TalentInfo(
@@ -207,6 +208,7 @@ class TalentInfo {
       effect: parsedJson['effect'],
       image: parsedJson['image'],
       type: parsedJson['type'],
+      order: parsedJson['order'],
     );
   }
 
