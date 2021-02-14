@@ -1,3 +1,9 @@
+# 1.3.1
+- Refactored the app to optimize some of the code
+- Fixed Tier 10 Talents not showing the roman numeral 'X' in its image
+- Fixed Talents not being displayed in the correct order
+- Added Character Constellation Info page
+
 # 1.3.0
 - Added talent tracking
 - Ability to view attack talents and passive talents
