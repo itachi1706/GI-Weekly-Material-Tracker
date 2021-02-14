@@ -11,7 +11,6 @@ import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -133,6 +132,8 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
 
   Color _rarityColor;
 
+  Map<String, MaterialDataCommon> _materialData;
+
   @override
   void initState() {
     super.initState();
@@ -170,9 +171,17 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
         ),
         body: TabBarView(
           children: [
-            CharacterInfoPage(info: _info, infoId: _infoId),
-            CharacterTalentPage(info: _info, infoId: _infoId),
-            PlaceholderWidgetContainer(Colors.green),
+            CharacterInfoPage(
+              info: _info,
+              infoId: _infoId,
+              materialData: _materialData,
+            ),
+            CharacterTalentPage(
+              info: _info,
+              infoId: _infoId,
+              materialData: _materialData,
+            ),
+            CharacterConstellationPage(info: _info),
           ],
         ),
       ),
@@ -181,9 +190,11 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
 
   void _getStaticData() async {
     var infoData = await GridData.retrieveCharactersMapData();
+    var materialData = await GridData.retrieveMaterialsMapData();
     setState(() {
       _info = infoData[_infoId];
       if (_info == null) Get.offAndToNamed('/splash');
+      _materialData = materialData;
       _rarityColor = GridData.getRarityColor(_info.rarity);
     });
   }
@@ -210,16 +221,20 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
 class CharacterInfoPage extends StatefulWidget {
   final CharacterData info;
   final String infoId;
+  final Map<String, MaterialDataCommon> materialData;
 
-  CharacterInfoPage({Key key, @required this.info, @required this.infoId})
-      : super(key: key);
+  CharacterInfoPage({
+    Key key,
+    @required this.info,
+    @required this.infoId,
+    @required this.materialData,
+  }) : super(key: key);
 
   @override
   _CharacterInfoPageState createState() => _CharacterInfoPageState();
 }
 
 class _CharacterInfoPageState extends State<CharacterInfoPage> {
-  Map<String, MaterialDataCommon> _materialData;
   Map<String, TrackingStatus> _isBeingTracked;
 
   String _selectedTier;
@@ -227,7 +242,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   @override
   void initState() {
     super.initState();
-    _getStaticData();
+    _refreshTrackingStatus();
   }
 
   @override
@@ -260,14 +275,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         ),
       ),
     );
-  }
-
-  void _getStaticData() async {
-    var materialData = await GridData.retrieveMaterialsMapData();
-    setState(() {
-      _materialData = materialData;
-    });
-    _refreshTrackingStatus();
   }
 
   Widget _getGenderBirthdayWidget() {
@@ -380,7 +387,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _refreshTrackingStatus() {
-    if (_materialData == null || widget.info == null) return; // No data
+    if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
       widget.info.ascension.keys.forEach((key) {
@@ -403,16 +410,16 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         );
         var data = widget.info.ascension[key];
         if (data.material1 != null) {
-          datasets.add(_materialData[data.material1].innerType);
+          datasets.add(widget.materialData[data.material1].innerType);
         }
         if (data.material2 != null) {
-          datasets.add(_materialData[data.material2].innerType);
+          datasets.add(widget.materialData[data.material2].innerType);
         }
         if (data.material3 != null) {
-          datasets.add(_materialData[data.material3].innerType);
+          datasets.add(widget.materialData[data.material3].innerType);
         }
         if (data.material4 != null) {
-          datasets.add(_materialData[data.material4].innerType);
+          datasets.add(widget.materialData[data.material4].innerType);
         }
         _tracker[key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
@@ -444,33 +451,33 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       var data = widget.info.ascension[key];
       if (data.material1 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material1].innerType,
+          widget.materialData[data.material1].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Character_${widget.infoId}_${data.material1}_$key',
         );
       }
       if (data.material2 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material2].innerType,
+          widget.materialData[data.material2].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Character_${widget.infoId}_${data.material2}_$key',
         );
       }
       if (data.material3 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material3].innerType,
+          widget.materialData[data.material3].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Character_${widget.infoId}_${data.material3}_$key',
         );
       }
       if (data.material4 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material4].innerType,
+          widget.materialData[data.material4].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Character_${widget.infoId}_${data.material4}_$key',
         );
       }
@@ -506,7 +513,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         'Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier',
         _ascendTier.material1,
         _ascendTier.material1Qty,
-        _materialData[_ascendTier.material1].innerType,
+        widget.materialData[_ascendTier.material1].innerType,
         'character',
         widget.infoId,
       );
@@ -516,7 +523,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         'Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier',
         _ascendTier.material2,
         _ascendTier.material2Qty,
-        _materialData[_ascendTier.material2].innerType,
+        widget.materialData[_ascendTier.material2].innerType,
         'character',
         widget.infoId,
       );
@@ -526,7 +533,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         'Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier',
         _ascendTier.material3,
         _ascendTier.material3Qty,
-        _materialData[_ascendTier.material3].innerType,
+        widget.materialData[_ascendTier.material3].innerType,
         'character',
         widget.infoId,
       );
@@ -536,7 +543,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         'Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier',
         _ascendTier.material4,
         _ascendTier.material4Qty,
-        _materialData[_ascendTier.material4].innerType,
+        widget.materialData[_ascendTier.material4].innerType,
         'character',
         widget.infoId,
       );
@@ -562,25 +569,25 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     if (_ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
         'Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier',
-        _materialData[_ascendTier.material1].innerType,
+        widget.materialData[_ascendTier.material1].innerType,
       );
     }
     if (_ascendTier.material2 != null) {
       TrackingData.removeFromCollection(
         'Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier',
-        _materialData[_ascendTier.material2].innerType,
+        widget.materialData[_ascendTier.material2].innerType,
       );
     }
     if (_ascendTier.material3 != null) {
       TrackingData.removeFromCollection(
         'Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier',
-        _materialData[_ascendTier.material3].innerType,
+        widget.materialData[_ascendTier.material3].innerType,
       );
     }
     if (_ascendTier.material4 != null) {
       TrackingData.removeFromCollection(
         'Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier',
-        _materialData[_ascendTier.material4].innerType,
+        widget.materialData[_ascendTier.material4].innerType,
       );
     }
 
@@ -589,8 +596,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   List<Widget> _getAscensionTierMaterialRowChild(String key, int qty) {
     return [
-      GridData.getAscensionImage(key, _materialData),
-      Text(key == null ? '' : _materialData[key].name),
+      GridData.getAscensionImage(key, widget.materialData),
+      Text(key == null ? '' : widget.materialData[key].name),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -736,7 +743,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   Widget _generateAscensionData() {
-    if (_materialData == null) {
+    if (widget.materialData == null) {
       return Padding(
         padding: const EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
@@ -785,22 +792,22 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material2Qty,
                   curData.material2,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material1Qty,
                   curData.material1,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material3Qty,
                   curData.material3,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material4Qty,
                   curData.material4,
-                  _materialData,
+                  widget.materialData,
                 ),
               ],
             ),
@@ -831,17 +838,20 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 class CharacterTalentPage extends StatefulWidget {
   final CharacterData info;
   final String infoId;
+  final Map<String, MaterialDataCommon> materialData;
 
-  CharacterTalentPage({Key key, @required this.info, @required this.infoId})
-      : super(key: key);
+  CharacterTalentPage({
+    Key key,
+    @required this.info,
+    @required this.infoId,
+    @required this.materialData,
+  }) : super(key: key);
 
   @override
   _CharacterTalentPageState createState() => _CharacterTalentPageState();
 }
 
 class _CharacterTalentPageState extends State<CharacterTalentPage> {
-  Map<String, MaterialDataCommon> _materialData;
-
   Map<String, TrackingStatus> _isBeingTracked;
 
   String _selectedTier;
@@ -850,7 +860,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   @override
   void initState() {
     super.initState();
-    _getStaticData();
+    _refreshTrackingStatus();
   }
 
   @override
@@ -873,16 +883,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     );
   }
 
-  void _getStaticData() async {
-    var materialData = await GridData.retrieveMaterialsMapData();
-    setState(() {
-      _materialData = materialData;
-    });
-    _refreshTrackingStatus();
-  }
-
   void _refreshTrackingStatus() {
-    if (_materialData == null || widget.info == null) return; // No data
+    if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
       widget.info.talent.attack.keys.forEach((key) {
@@ -908,16 +910,16 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         var splitKey = key.split('_');
         var data = widget.info.talent.ascension[splitKey[splitKey.length - 1]];
         if (data.material1 != null) {
-          datasets.add(_materialData[data.material1].innerType);
+          datasets.add(widget.materialData[data.material1].innerType);
         }
         if (data.material2 != null) {
-          datasets.add(_materialData[data.material2].innerType);
+          datasets.add(widget.materialData[data.material2].innerType);
         }
         if (data.material3 != null) {
-          datasets.add(_materialData[data.material3].innerType);
+          datasets.add(widget.materialData[data.material3].innerType);
         }
         if (data.material4 != null) {
-          datasets.add(_materialData[data.material4].innerType);
+          datasets.add(widget.materialData[data.material4].innerType);
         }
         _tracker[key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
@@ -950,33 +952,33 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       var data = widget.info.talent.ascension[splitKey[splitKey.length - 1]];
       if (data.material1 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material1].innerType,
+          widget.materialData[data.material1].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Talent_${widget.infoId}_${data.material1}_$key',
         );
       }
       if (data.material2 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material2].innerType,
+          widget.materialData[data.material2].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Talent_${widget.infoId}_${data.material2}_$key',
         );
       }
       if (data.material3 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material3].innerType,
+          widget.materialData[data.material3].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Talent_${widget.infoId}_${data.material3}_$key',
         );
       }
       if (data.material4 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
-          _materialData[data.material4].innerType,
+          widget.materialData[data.material4].innerType,
           collectionList,
-          _materialData,
+          widget.materialData,
           'Talent_${widget.infoId}_${data.material4}_$key',
         );
       }
@@ -1008,7 +1010,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         'Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier',
         _ascendTier.material1,
         _ascendTier.material1Qty,
-        _materialData[_ascendTier.material1].innerType,
+        widget.materialData[_ascendTier.material1].innerType,
         'talent',
         widget.infoId + '|' + _selectedTalent,
       );
@@ -1018,7 +1020,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         'Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier',
         _ascendTier.material2,
         _ascendTier.material2Qty,
-        _materialData[_ascendTier.material2].innerType,
+        widget.materialData[_ascendTier.material2].innerType,
         'talent',
         widget.infoId + '|' + _selectedTalent,
       );
@@ -1028,7 +1030,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         'Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier',
         _ascendTier.material3,
         _ascendTier.material3Qty,
-        _materialData[_ascendTier.material3].innerType,
+        widget.materialData[_ascendTier.material3].innerType,
         'talent',
         widget.infoId + '|' + _selectedTalent,
       );
@@ -1038,7 +1040,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         'Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier',
         _ascendTier.material4,
         _ascendTier.material4Qty,
-        _materialData[_ascendTier.material4].innerType,
+        widget.materialData[_ascendTier.material4].innerType,
         'talent',
         widget.infoId + '|' + _selectedTalent,
       );
@@ -1064,25 +1066,25 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     if (_ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
         'Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier',
-        _materialData[_ascendTier.material1].innerType,
+        widget.materialData[_ascendTier.material1].innerType,
       );
     }
     if (_ascendTier.material2 != null) {
       TrackingData.removeFromCollection(
         'Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier',
-        _materialData[_ascendTier.material2].innerType,
+        widget.materialData[_ascendTier.material2].innerType,
       );
     }
     if (_ascendTier.material3 != null) {
       TrackingData.removeFromCollection(
         'Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier',
-        _materialData[_ascendTier.material3].innerType,
+        widget.materialData[_ascendTier.material3].innerType,
       );
     }
     if (_ascendTier.material4 != null) {
       TrackingData.removeFromCollection(
         'Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier',
-        _materialData[_ascendTier.material4].innerType,
+        widget.materialData[_ascendTier.material4].innerType,
       );
     }
 
@@ -1099,8 +1101,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     if (key == null) return [SizedBox.shrink()];
 
     return [
-      GridData.getAscensionImage(key, _materialData),
-      Text(key == null ? '' : _materialData[key].name),
+      GridData.getAscensionImage(key, widget.materialData),
+      Text(key == null ? '' : widget.materialData[key].name),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -1254,7 +1256,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     String talent,
     Map<String, CharacterAscension> ascendInfo,
   ) {
-    if (_materialData == null) {
+    if (widget.materialData == null) {
       return Padding(
         padding: const EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
@@ -1310,22 +1312,22 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material3Qty,
                   curData.material3,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material4Qty,
                   curData.material4,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material2Qty,
                   curData.material2,
-                  _materialData,
+                  widget.materialData,
                 ),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material1Qty,
                   curData.material1,
-                  _materialData,
+                  widget.materialData,
                 ),
               ],
             ),
@@ -1434,5 +1436,84 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     });
 
     return _wid;
+  }
+}
+
+class CharacterConstellationPage extends StatelessWidget {
+  final CharacterData info;
+
+  CharacterConstellationPage({Key key, @required this.info}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (info == null) return Util.loadingScreen();
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _constellationWidgets(context),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _constellationWidgets(BuildContext context) {
+    var _wid = <Widget>[];
+    info.constellations.forEach((key, value) {
+      _wid.add(_generateConstellationWidget(key, value, context));
+      _wid.add(Divider());
+    });
+
+    return _wid;
+  }
+
+  Widget _generateConstellationWidget(
+    int index,
+    CharacterConstellations constellation,
+    BuildContext context,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        children: [
+          IntrinsicHeight(
+            child: Row(
+              children: [
+                Stack(
+                  children: [
+                    GridData.getImageAssetFromFirebase(
+                      constellation.image,
+                      height: 32,
+                    ),
+                    Align(
+                      alignment: FractionalOffset.bottomLeft,
+                      child: Text(
+                        GridData.getRomanNumberArray(index - 1).toString(),
+                        style: TextStyle(color: Colors.white),
+                        textAlign: TextAlign.end,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width - 80,
+                  child: Text(
+                    constellation.name,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(constellation.effect),
+          ),
+        ],
+      ),
+    );
   }
 }

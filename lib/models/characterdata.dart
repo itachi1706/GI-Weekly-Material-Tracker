@@ -11,6 +11,7 @@ class CharacterData extends CommonData {
   String nation;
   String weapon;
   Map<String, CharacterAscension> ascension;
+  Map<int, CharacterConstellations> constellations;
   CharacterTalent talent;
 
   CharacterData({
@@ -29,6 +30,7 @@ class CharacterData extends CommonData {
     this.weapon,
     this.ascension,
     this.talent,
+    this.constellations,
     wiki,
   }) : super(
           image: image,
@@ -57,6 +59,9 @@ class CharacterData extends CommonData {
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
       talent: CharacterTalent.getFromMap(
         parsedJson['talents'],
+      ),
+      constellations: CharacterConstellations.getFromMap(
+        parsedJson['constellations'],
       ),
     );
   }
@@ -216,6 +221,36 @@ class TalentInfo {
     var _fin = <String, TalentInfo>{};
     data.forEach((key, value) =>
         _fin.putIfAbsent(key, () => TalentInfo.fromJson(value)));
+
+    return _fin;
+  }
+}
+
+class CharacterConstellations {
+  String name;
+  String image;
+  String effect;
+
+  CharacterConstellations({this.name, this.image, this.effect});
+
+  factory CharacterConstellations.fromJson(Map<String, dynamic> parsedJson) {
+    return CharacterConstellations(
+      name: parsedJson['name'],
+      image: parsedJson['image'],
+      effect: parsedJson['effect'],
+    );
+  }
+
+  static Map<int, CharacterConstellations> getFromMap(
+    Map<String, dynamic> data,
+  ) {
+    var _fin = <int, CharacterConstellations>{};
+    data.forEach((key, value) {
+      _fin.putIfAbsent(
+        int.tryParse(key) ?? 0,
+        () => CharacterConstellations.fromJson(value),
+      );
+    });
 
     return _fin;
   }
