@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -1405,9 +1407,16 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     );
   }
 
+  SplayTreeMap<String, TalentInfo> _sortTalent(Map<String, TalentInfo> talent) {
+    return SplayTreeMap.from(
+      talent,
+      (a, b) => talent[a].order.compareTo(talent[b].order),
+    );
+  }
+
   List<Widget> _attackTalentWidgets() {
     var _wid = <Widget>[];
-    widget.info.talent.attack.forEach((key, value) {
+    _sortTalent(widget.info.talent.attack).forEach((key, value) {
       var _ascendInfo = widget.info.talent.ascension;
       _wid.add(_generateTalentWidget(value, false));
       _wid.add(_generateAscensionData(key, _ascendInfo));
@@ -1419,7 +1428,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
   List<Widget> _passiveTalentWidgets() {
     var _wid = <Widget>[];
-    widget.info.talent.passive.forEach((key, value) {
+    _sortTalent(widget.info.talent.passive).forEach((key, value) {
       _wid.add(_generateTalentWidget(value, true));
       _wid.add(Divider());
     });
