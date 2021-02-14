@@ -246,8 +246,10 @@ class CharacterConstellations {
   ) {
     var _fin = <int, CharacterConstellations>{};
     data.forEach((key, value) {
-      _fin.putIfAbsent(int.tryParse(key) ?? 0,
-          () => CharacterConstellations.fromJson(value));
+      _fin.putIfAbsent(
+        int.tryParse(key) ?? 0,
+        () => CharacterConstellations.fromJson(value),
+      );
     });
 
     return _fin;
