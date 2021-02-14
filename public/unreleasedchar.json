@@ -117,24 +117,28 @@
                     "name": "Daily Cooking",
                     "effect": "Kamisato Ayaka gains 1 additional Proficiency when she cooks a steamed Dish perfectly.",
                     "image": "",
+                    "order": 0,
                     "type": "Passive 1"
                 },
                 "Kanten_Senmyou_Norito": {
                     "name": "Kanten Senmyou Norito",
                     "effect": "Normal Attack hits on enemies affected by Cryo have a 6%/18% chance respectively of shortening the CD of Kamisato Art: Hyouka by 0.5s.",
                     "image": "",
+                    "order": 1,
                     "type": "Passive 2"
                 },
                 "Amatsumi_Kunitsumi_Ihahigoto": {
                     "name": "Amatsumi Kunitsumi Ihahigoto",
                     "effect": "While in Kamisato Art: Senho form, Kamisato Ayaka marks nearby opponents below 30% HP.\nLeaving Senho form near marked opponents and immediately hitting them with a Normal Attack deals Cryo DMG equal to 300% of ATK.\nThis attack counts as a Charged Attack.",
                     "image": "",
+                    "order": 2,
                     "type": "Passive 3"
                 },
                 "Kamisato_Art_Senho": {
                     "name": "Kamisato Art: Senho",
                     "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\n• Inflicts Cold on nearby opponents.\n• Cold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
                     "image": "Talents/Passive/Talent_Kamisato_Art_Senho.png",
+                    "order": 3,
                     "type": "Alternate Sprint"
                 }
             },
@@ -143,18 +147,21 @@
                     "name": "Kamisato Art - Naname",
                     "effect": "Normal Attack\nPerform up to 5 rapid strikes.\nCharged Attack\nConsumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                     "image": "",
+                    "order": 0,
                     "type": "Normal/Charged Attack"
                 },
                 "Kamisato_Art_Hyouka": {
                     "name": "Kamisato Art: Hyouka",
                     "effect": "Ayaka emits ice around herself and shortly afterward launches nearby opponents, dealing AoE Cryo DMG.",
                     "image": "Talents/Skill/Talent_Kamisato_Art_Hyouka.png",
+                    "order": 1,
                     "type": "Elemental Skill"
                 },
                 "Kamisato_Art_Soumetsu": {
                     "name": "Kamisato Art: Soumetsu",
                     "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\n• Deals Cryo DMG over time to all enemies in its path.\n• After the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
                     "image": "Talents/Burst/Talent_Kamisato_Art_Soumetsu.png",
+                    "order": 2,
                     "type": "Elemental Burst"
                 }
             }
@@ -389,18 +396,21 @@
                     "name": "Night Walk",
                     "effect": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
                     "image": "",
+                    "order": 0,
                     "type": "Passive 1"
                 },
                 "Extracted_Confession": {
                     "name": "Extracted Confession",
                     "effect": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
                     "image": "",
+                    "order": 1,
                     "type": "Passive 2"
                 },
                 "Shadow_Samaritan": {
                     "name": "Shadow Samaritan",
                     "effect": "Casting Last Rites increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
                     "image": "",
+                    "order": 2,
                     "type": "Passive 3"
                 }
             },
@@ -409,18 +419,21 @@
                     "name": "Spear of Worship",
                     "effect": "Normal Attack\nPerforms up to five consecutive spear strikes.\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                     "image": "",
+                    "order": 0,
                     "type": "Normal/Charged Attack"
                 },
                 "Ravaging_Confession": {
                     "name": "Ravaging Confession",
                     "effect": "Rosaria swiftly shifts her position to appear behind her target, then pierces and slashes it with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.ect",
                     "image": "",
+                    "order": 1,
                     "type": "Elemental Skill"
                 },
                 "Last_Rites": {
                     "name": "Last Rites",
                     "effect": "Rosaria's signature act of prayer. After swinging her weapon to slash nearby opponents, she summons a frigid Ice Lance that strikes the ground, dealing Cryo DMG both times.While active, the Ice Lance will periodically release cold air, dealing Cryo DMG to the surrounding opponents.",
                     "image": "",
+                    "order": 2,
                     "type": "Elemental Burst"
                 }
             }
@@ -655,18 +668,21 @@
                         "name": "The More the Merrier",
                         "effect": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
                         "image": "Talents/Passive/Placeholder.png",
+                        "order": 0,
                         "type": "Passive 1"
                     },
                     "Flutter_By": {
                         "name": "Flutter By",
                         "effect": "When Paramita Papilio state activated by Guide to Afterlife is over, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
                         "image": "Talents/Passive/Placeholder.png",
+                        "order": 1,
                         "type": "Passive 2"
                     },
                     "Sanguine_Rouge": {
                         "name": "Sanguine Rouge",
                         "effect": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
                         "image": "Talents/Passive/Placeholder.png",
+                        "order": 2,
                         "type": "Passive 3"
                     }
                 },
@@ -675,18 +691,21 @@
                         "name": "Secret Spear of Wangsheng",
                         "effect": "Normal Attack\nPerforms up to six consecutive spear strikes.\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                         "image": "Talents/Normal/Placeholder.png",
+                        "order": 0,
                         "type": "Normal/Charged Attack"
                     },
                     "Guide_to_Afterlife": {
                         "name": "Guide to Afterlife",
                         "effect": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.\nParamita Papilio\n• Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.\n• Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.\n• Charged Attacks apply the Blood Blossom effect to the enemies hit.\n• Increases Hu Tao's resistance to interruption.\nBlood Blossom\nEnemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
                         "image": "Talents/Skill/Placeholder.png",
+                        "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Spirit_Soother": {
                         "name": "Spirit Soother",
                         "effect": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
                         "image": "Talents/Burst/Placeholder.png",
+                        "order": 2,
                         "type": "Elemental Burst"
                     }
                 }
