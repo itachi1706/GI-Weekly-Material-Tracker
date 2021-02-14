@@ -40,7 +40,7 @@ class GridData {
   ) {
     if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
 
-    return GridData.getImageAssetFromFirebase(
+    return getImageAssetFromFirebase(
       data[itemKey].image,
       height: 16,
     );
