@@ -1285,6 +1285,84 @@
       "effect": "Increases Normal Attack DMG by 24%.",
       "wiki": "https://genshin-impact.fandom.com/wiki/White_Tassel",
       "subCollection": {}
+    },
+    "Staff_Of_Homa": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
+      "name": "Staff of Homa",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 3,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 12,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 14,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 18,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Polearm/Staff_Of_Homa.png",
+      "secondary_stat": "14.4%",
+      "rarity": 5,
+      "type": "Polearm",
+      "max_secondary_stat": "66.2%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effect": "HP increased by 20%. Additionally, provides an ATK Bonus based on 0.8% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional 1% of Max HP.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Staff_of_Homa",
+      "subCollection": {}
     }
   }
 }
