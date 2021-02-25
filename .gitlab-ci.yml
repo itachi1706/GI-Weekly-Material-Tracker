@@ -299,7 +299,7 @@ Deploy to Firebase Hosting Prod:
       when: always
     - when: never
   environment:
-    name: Production
+    name: production
     url: https://gi-weekly-material-tracker.web.app/
 
 
