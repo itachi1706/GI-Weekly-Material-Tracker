@@ -741,7 +741,7 @@
       "subCollection": {}
     },
     "Lithic_Spear": {
-      "secondary_stat_type": "ATK%",
+      "secondary_stat_type": "ATK",
       "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
       "name": "Lithic Spear",
       "ascension": {
@@ -814,7 +814,8 @@
       "max_base_atk": 565,
       "base_atk": 44,
       "obtained": "Gacha",
-      "effect": "For every characters who hails from Liyue, the characters who equips this weapon gains 7% ATK increase and a 3% CRIT Rate increase. This effect stacks up to 4 times.",
+      "effectName": "Lithic Axiom - Unity",
+      "effect": "For every characters who hails from Liyue, the characters who equips this weapon gains 7~11% ATK increase and a 3~7% CRIT Rate increase. This effect stacks up to 4 times.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Lithic_Spear",
       "subCollection": {}
     },
@@ -1360,7 +1361,8 @@
       "max_base_atk": 608,
       "base_atk": 46,
       "obtained": "Gacha",
-      "effect": "HP increased by 20%. Additionally, provides an ATK Bonus based on 0.8% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional 1% of Max HP.",
+      "effectName": "Reckless Cinnabar",
+      "effect": "HP increased by 20~40%. Additionally, provides an ATK Bonus based on 0.8~1.6% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK bonus is increased by an additional 1~1.8% of Max HP.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Staff_of_Homa",
       "subCollection": {}
     }
