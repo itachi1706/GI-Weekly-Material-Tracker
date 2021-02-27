@@ -5,7 +5,10 @@ const fs = require('fs');
 const path = require('path');
 
 firestore.initializeApp(serviceAccount);
-admin.initializeApp(serviceAccount);
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://gi-weekly-material-tracker-default-rtdb.firebaseio.com"
+});
 const firestoreAdmin = admin.firestore();
 
 async function deleteCollection(db, collectionPath, batchSize) {
