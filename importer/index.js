@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 firestore.initializeApp(serviceAccount);
+admin.initializeApp(serviceAccount);
 const firestoreAdmin = admin.firestore();
 
 async function deleteCollection(db, collectionPath, batchSize) {
