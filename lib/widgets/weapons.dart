@@ -164,7 +164,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
                 _info.description,
                 Icons.format_list_bulleted,
               ),
-              ...GridData.generateInfoLine(_info.effect, MdiIcons.sparkles),
+              ..._generateEffectName(),
               ..._getWeaponStats(),
               Divider(),
               ...TrackingData.getAscensionHeader(),
@@ -174,6 +174,16 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         ),
       ),
     );
+  }
+
+  List<Widget> _generateEffectName() {
+    return _info.effectName != null
+        ? GridData.generateHeaderInfoLine(
+            _info.effectName,
+            _info.effect,
+            MdiIcons.sparkles,
+          )
+        : GridData.generateInfoLine(_info.effect, MdiIcons.sparkles);
   }
 
   Widget _generateWeaponHeader() {
