@@ -255,6 +255,43 @@ class GridData {
     }
   }
 
+  static List<Widget> generateHeaderInfoLine(
+    String header,
+    String description,
+    IconData icon,
+  ) {
+    return [
+      Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          children: [
+            Icon(icon),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      header,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(description.replaceAll('\\n', '\n')),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Divider(),
+    ];
+  }
+
   static List<Widget> generateInfoLine(String textData, IconData icon) {
     return [
       Padding(
