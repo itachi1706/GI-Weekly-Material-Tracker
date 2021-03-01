@@ -229,15 +229,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
   bool _firstLoad = false;
 
-  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
-    primary: Colors.white,
-    minimumSize: Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(2.0)),
-    ),
-  );
+  ButtonStyle _flatButtonStyle;
 
   @override
   void initState() {
@@ -245,6 +237,15 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     print(Get.parameters);
     _materialKey = Get.parameters['materialKey'];
     _getStaticData();
+    _flatButtonStyle = TextButton.styleFrom(
+      primary: (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black,
+      minimumSize: Size(0, 0),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(2.0)),
+      ),
+    );
   }
 
   @override
