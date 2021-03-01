@@ -1,3 +1,9 @@
+# 1.4.0
+- Added character captions to character info page
+- Added weapon effect name if available to weapon info page
+- Fixed issue in light theme where buttons cannot be seen
+- General app improvements
+
 # 1.3.1
 - Refactored the app to optimize some of the code
 - Fixed Tier 10 Talents not showing the roman numeral 'X' in its image
