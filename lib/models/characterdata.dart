@@ -4,6 +4,7 @@ class CharacterData extends CommonData {
   String affiliation;
   String birthday;
   String constellation;
+  String caption;
   String element;
   String gender;
   String genshinGGPath;
@@ -17,6 +18,7 @@ class CharacterData extends CommonData {
   CharacterData({
     this.affiliation,
     this.birthday,
+    this.caption,
     this.constellation,
     description,
     this.element,
@@ -63,6 +65,7 @@ class CharacterData extends CommonData {
       constellations: CharacterConstellations.getFromMap(
         parsedJson['constellations'],
       ),
+      caption: parsedJson['caption'],
     );
   }
 
