@@ -257,6 +257,10 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             _getCharacterHeader(),
             Divider(),
             ...GridData.generateInfoLine(
+              widget.info.affiliation,
+              Icons.account_circle,
+            ),
+            ...GridData.generateInfoLine(
               widget.info.nation,
               Icons.location_pin,
             ),
@@ -362,7 +366,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             Container(
               width: 200,
               child: Text(
-                widget.info.affiliation,
+                widget.info.caption,
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 20),
               ),
