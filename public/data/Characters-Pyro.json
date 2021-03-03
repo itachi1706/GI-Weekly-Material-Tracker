@@ -1755,22 +1755,22 @@
                 "passives": {
                     "Flutter_By": {
                         "name": "Flutter By",
-                        "effect": "When Paramita Papilio state activated by Guide to Afterlife is over, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                        "effect": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
                         "image": "Talents/Passive/Talent_Flutter_By.png",
                         "order": 0,
                         "type": "Passive 1"
-                    },
-                    "The_More_the_Merrier": {
-                        "name": "The More the Merrier",
-                        "effect": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
-                        "image": "Talents/Passive/Talent_The_More_the_Merrier.png",
-                        "order": 1,
-                        "type": "Passive 2"
                     },
                     "Sanguine_Rouge": {
                         "name": "Sanguine Rouge",
                         "effect": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
                         "image": "Talents/Passive/Talent_Sanguine_Rouge.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "The_More_the_Merrier": {
+                        "name": "The More the Merrier",
+                        "effect": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+                        "image": "Talents/Passive/Talent_The_More_the_Merrier.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
@@ -1802,12 +1802,12 @@
             "constellations": {
                 "1": {
                     "name": "Crimson Bouquet",
-                    "effect": "While in Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+                    "effect": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
                     "image": "Constellation/Crimson_Bouquet.png"
                 },
                 "2": {
                     "name": "Ominous Rainfall",
-                    "effect": "Increases the Blood Blossom DMG by the amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+                    "effect": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
                     "image": "Constellation/Ominous_Rainfall.png"
                 },
                 "3": {
@@ -1817,7 +1817,7 @@
                 },
                 "4": {
                     "name": "Garden of Eternal Rest",
-                    "effect": "Upon defeating an enemy affected by Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+                    "effect": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
                     "image": "Constellation/Garden_of_Eternal_Rest.png"
                 },
                 "5": {
