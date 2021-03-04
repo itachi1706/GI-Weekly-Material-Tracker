@@ -104,6 +104,7 @@ Code Coverage:
     APP_TYPE: QA
   before_script:
     - flutter doctor -v
+    - apk add --no-cache make perl
     - git clone https://github.com/linux-test-project/lcov.git
     - cd lcov
     - make install
