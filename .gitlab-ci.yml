@@ -95,6 +95,30 @@ Code Quality Check:
       - quality.json
   needs: []
 
+Code Coverage:
+  image: itachi1706/flutter-alpine-android:beta-web
+  stage: test
+  allow_failure: true
+  variables:
+    APP_BUILD_VER: qa
+    APP_TYPE: QA
+  before_script:
+    - flutter doctor -v
+    - git clone https://github.com/linux-test-project/lcov.git
+    - cd lcov
+    - make install
+  script:
+    # Allow failure for now as we are not really using it tbh
+    - flutter test --coverage || true
+    - lcov --list coverage/lcov.info
+    - genhtml -o coverage coverage/lcov.info
+  coverage:
+    '/\s*lines\.*:\s*([\d\.]+%)/'
+  artifacts:
+    paths:
+      - coverage/
+  needs: []
+
 Generate Flutter App:
   image: itachi1706/flutter-alpine-android:beta
   stage: build
