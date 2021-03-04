@@ -74,7 +74,7 @@ Update Firestore Public Data:
   needs: []
 
 Code Quality Check:
-  image: itachi1706/flutter-alpine-android:beta-web
+  image: itachi1706/flutter-alpine-android:web
   stage: test
   variables:
     APP_BUILD_VER: qa
@@ -96,7 +96,7 @@ Code Quality Check:
   needs: []
 
 #Code Coverage:
-#  image: itachi1706/flutter-alpine-android:beta-web
+#  image: itachi1706/flutter-alpine-android:web
 #  stage: test
 #  allow_failure: true
 #  variables:
@@ -121,7 +121,7 @@ Code Quality Check:
 #  needs: []
 
 Generate Flutter App:
-  image: itachi1706/flutter-alpine-android:beta
+  image: itachi1706/flutter-alpine-android:stable
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
@@ -187,7 +187,7 @@ Deploy Dogfood to Firebase:
 
 # Releases
 Generate Release Flutter App:
-  image: itachi1706/flutter-alpine-android:beta
+  image: itachi1706/flutter-alpine-android:stable
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
@@ -245,7 +245,7 @@ Deploy Beta to Firebase:
     - when: never
 
 Build Web App:
-  image: itachi1706/flutter-alpine-android:beta-web
+  image: itachi1706/flutter-alpine-android:web
   stage: build
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
