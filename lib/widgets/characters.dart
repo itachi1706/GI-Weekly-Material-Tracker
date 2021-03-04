@@ -833,7 +833,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       color = Colors.pink;
     }
 
-    if (name == 'Aether/Lumine') return Icon(MdiIcons.genderMaleFemale);
+    if (name.startsWith('Aether/Lumine')) return Icon(MdiIcons.genderMaleFemale);
 
     return Icon(icon, color: color);
   }
