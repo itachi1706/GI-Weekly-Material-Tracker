@@ -1,3 +1,9 @@
+# 1.4.1
+- Fixed Traveller not having the correct gender icon
+- Updated application dependencies for app stability
+- Updated to use new Flutter 2.0
+- Minor bug fixes and improvements
+
 # 1.4.0
 - Added character captions to character info page
 - Added weapon effect name if available to weapon info page
