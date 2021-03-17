@@ -283,7 +283,7 @@
         "gender": "Female",
         "birthday": "24/1",
         "name": "Rosaria",
-        "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+        "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
         "nation": "Mondstadt",
         "weapon": "Polearm",
         "rarity": 4,
@@ -394,45 +394,45 @@
             "passives": {
                 "Night_Walk": {
                     "name": "Night Walk",
-                    "effect": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
-                    "image": "",
+                    "effect": "Rosaria increases the movement speed of her party members at night between 6:00PM and 6:00AM.",
+                    "image": null,
                     "order": 0,
                     "type": "Passive 1"
                 },
                 "Extracted_Confession": {
-                    "name": "Extracted Confession",
-                    "effect": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
-                    "image": "",
+                    "name": "Regina Probationum",
+                    "effect": "Rosaria's CRIT rate increases while attacking enemies from behind using Ravaging Confession.",
+                    "image": null,
                     "order": 1,
                     "type": "Passive 2"
                 },
                 "Shadow_Samaritan": {
                     "name": "Shadow Samaritan",
-                    "effect": "Casting Last Rites increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
-                    "image": "",
+                    "effect": "Rosaria increases nearby party members' CRIT Rate after unleashing her Elemental Burst Rites of Termination.",
+                    "image": null,
                     "order": 2,
                     "type": "Passive 3"
                 }
             },
             "attack": {
                 "Spear_of_Worship": {
-                    "name": "Spear of Worship",
-                    "effect": "Normal Attack\nPerforms up to five consecutive spear strikes.\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                    "image": "",
+                    "name": "Spear of the Church",
+                    "effect": "Normal Attack: Performs up to five consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Spear_of_the_Church.png",
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
                 "Ravaging_Confession": {
                     "name": "Ravaging Confession",
-                    "effect": "Rosaria swiftly shifts her position to appear behind her target, then pierces and slashes it with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.ect",
-                    "image": "",
+                    "effect": "Rosaria swiftly shifts her position to appear behind the enemy, and then pierces and slashes them with her polearm, dealing Cryo DMG.\nRosaria cannot use this skill to appear behind larger enemies.",
+                    "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
                 "Last_Rites": {
-                    "name": "Last Rites",
-                    "effect": "Rosaria's signature act of prayer. After swinging her weapon to slash nearby opponents, she summons a frigid Ice Lance that strikes the ground, dealing Cryo DMG both times.While active, the Ice Lance will periodically release cold air, dealing Cryo DMG to the surrounding opponents.",
-                    "image": "",
+                    "name": "Rites of Termination",
+                    "effect": "Rosaria's signature act of prayer.\nRosaria swings her weapon to slash nearby enemies and summons a frigid Ice Lance that strikes the ground, dealing Cryo DMG.\nThe Ice Lance will periodically release blasts of cold air, dealing more Cryo DMG.",
+                    "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
                 }
@@ -446,27 +446,27 @@
             },
             "2": {
                 "name": "Land Without Promise",
-                "effect": "The duration of the Ice Lance created by Last Rites is increased by 4s.",
+                "effect": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
                 "image": ""
             },
             "3": {
-                "name": "Sacrament of Penance",
-                "effect": "Increases the Level of Ravaging Confessionby 3.\nMaximum upgrade level is 15.",
+                "name": "The Wages of Sin",
+                "effect": "Increases the Level of Ravaging Confession by 3.\nMaximum upgrade level is 15.",
                 "image": ""
             },
             "4": {
-                "name": "Amazing Disgrace",
-                "effect": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria.\nCan only be triggered once each time Ravaging Confession is cast.",
+                "name": "Painful Grace",
+                "effect": "Ravaging Confession's CRIT Hits regenerate 5 Energy for Rosaria.\nCan only be triggered once each time Ravaging Confession is cast.",
                 "image": ""
             },
             "5": {
-                "name": "Extreme Unction",
-                "effect": "Increases the Level of Last Rites by 3.\nMaximum upgrade level is 15.",
+                "name": "Last Rites",
+                "effect": "Increases the Level of Rites of Termination by 3.\nMaximum upgrade level is 15.",
                 "image": ""
             },
             "6": {
                 "name": "Divine Retribution",
-                "effect": "Last Rites' attack decreases opponents' Physical RES by 5% for 10s. Max 4 stacks.",
+                "effect": "Rites of Termination's attack decreases opponents' Physical RES by 20% for 10s.",
                 "image": ""
             }
         },
@@ -548,6 +548,552 @@
         "genshinggpath": null,
         "element": "Cryo",
         "wiki": "https://genshin-impact.fandom.com/wiki/Rosaria",
+        "subCollection": {}
+    },
+    "Eula": {
+        "image": null,
+        "gender": "Female",
+        "birthday": "25/10",
+        "caption": null,
+        "name": "Eula",
+        "description": "The Spindrift Knight, a scion of old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+        "nation": "Mondstadt",
+        "weapon": "Claymore",
+        "rarity": 5,
+        "affiliation": "Knights of Favonius",
+        "constellation": null,
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Resistance",
+                    "material3qty": 3,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 2,
+                    "material4": "Stained_Mask",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 4,
+                    "material4": "Stained_Mask",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 6,
+                    "material4": "Stained_Mask",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 9,
+                    "material4": "Stained_Mask",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dragon_Lords_Crown",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 4,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dragon_Lords_Crown",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 6,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dragon_Lords_Crown",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 12,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Dragon_Lords_Crown",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 16,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Aristocratic_Introspection": {
+                    "name": "Aristocratic Introspection",
+                    "effect": "When Eula crafts Character Talent Materials, she has a 10% to receive double the product.",
+                    "image": null,
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Roiling_Rime": {
+                    "name": "Roiling Rime",
+                    "effect": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Lightfall Sword Remnant will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+                    "image": null,
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Wellspring_of_War-Lust": {
+                    "name": "Wellspring of War-Lust",
+                    "effect": "When Eula's Normal Attacks score CRIT Hits, Icetide Vortex's CD will be decreased by 0.3s. This effect can occur once every 0.1s.",
+                    "image": null,
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Favonius_Bladework_Edel": {
+                    "name": "Favonius Bladework - Edel",
+                    "effect": "Normal Attack: Perform up to 5 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes.\nAt end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": null,
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Icetide_Vortex": {
+                    "name": "Icetide Vortex",
+                    "effect": "#Sharp frost, swift blade.\nPress\nSlashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.\nGrimheart\nIncreases Eula's resistance to interruption and DEF.\n\nHold\nWielding her sword, Eula slashes forward, dealing AoE Cryo DMG to opponents in front of her, consuming all the stacks of Grimheart that Eula possess.\nEach stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents, decreasing their Physical RES and Cryo RES. Multiple hits will not cause this stack to effect, but will extend the effect's duration.",
+                    "image": null,
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Glacial_Illumination": {
+                    "name": "Glacial Illumination",
+                    "effect": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creates a Lightfall Sword that follows her around for a certain duration.\nWhen Eula's own Normal Attacks, Elemental Skills and Elemental Bursts deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula dies or leaves the field, the Lightfall Sword will immediately explode",
+                    "image": null,
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": null,
+                "effect": null,
+                "image": null
+            },
+            "2": {
+                "name": null,
+                "effect": null,
+                "image": null
+            },
+            "3": {
+                "name": "Ascendant Praise",
+                "effect": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "4": {
+                "name": "Divine Suppression",
+                "effect": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+                "image": null
+            },
+            "5": {
+                "name": "Crimson Lotus Bloom",
+                "effect": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "6": {
+                "name": "Rite of Resurrection",
+                "effect": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+                "image": null
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Shivada_Jade_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Damaged_Mask",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Dandelion_Seed"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Crystalline_Bloom",
+                "level": 40,
+                "material4": "Damaged_Mask",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Dandelion_Seed"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Crystalline_Bloom",
+                "level": 50,
+                "material4": "Stained_Mask",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Dandelion_Seed"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Crystalline_Bloom",
+                "level": 60,
+                "material4": "Stained_Mask",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Dandelion_Seed"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Crystalline_Bloom",
+                "level": 70,
+                "material4": "Ominous_Mask",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Dandelion_Seed"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Shivada_Jade_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Crystalline_Bloom",
+                "level": 80,
+                "material4": "Ominous_Mask",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Dandelion_Seed"
+            }
+        },
+        "introduction": null,
+        "genshinggpath": null,
+        "element": "Cryo",
+        "wiki": null,
+        "subCollection": {}
+    },
+    "Yan_Fei": {
+        "image": null,
+        "gender": "Female",
+        "birthday": "28/7",
+        "caption": null,
+        "name": "Yan Fei",
+        "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the mixed blood of an illuminated beast.",
+        "nation": "Liyue",
+        "weapon": "Catalyst",
+        "rarity": 4,
+        "affiliation": "Liyue Harbor",
+        "constellation": "Bestia Iustitia",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Gold",
+                    "material3qty": 3,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 2,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 4,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 6,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 9,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Bloodjade_Branch",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 4,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Bloodjade_Branch",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 6,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Bloodjade_Branch",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 12,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Bloodjade_Branch",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 16,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Encyclopedic_Expertise": {
+                    "name": "Encyclopedic Expertise",
+                    "effect": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+                    "image": null,
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Proviso": {
+                    "name": "Proviso",
+                    "effect": null,
+                    "image": null,
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Xiezhis_Eye": {
+                    "name": "Xiezhi's Eye",
+                    "effect": "When Yanfei's Charged Attacks deal CRIT Hits, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+                    "image": null,
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Seal_of_Approval": {
+                    "name": "Seal of Approval",
+                    "effect": "Normal Attack: Shoots fireballs hat deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently-possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.\nCharged Attack: Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.\nPlunging Attack: Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+                    "image": null,
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Signed_Edict": {
+                    "name": "Signed Edict",
+                    "effect": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+                    "image": null,
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Done_Deal": {
+                    "name": "Done Deal",
+                    "effect": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals and applying Brilliance to her.Brilliance\nHas the following effects:\n• Grants Yanfei a Scarlet Seal at fixed intervals.\n• Increases the DMG dealt by her Charged Attacks.\n\nThe effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
+                    "image": null,
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "The Law Knows No Kindness",
+                "effect": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+                "image": null
+            },
+            "2": {
+                "name": "Right of Final Interpretation",
+                "effect": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+                "image": null
+            },
+            "3": {
+                "name": "Samadhi Fire-Forged",
+                "effect": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "4": {
+                "name": "Supreme Amnesty",
+                "effect": "When Done Deal is used:\nCreates a shield that absorbs up to 75% of Yanfei's Max HP for 15s.\nThis shield absorbs Pyro DMG 250% more effectively.",
+                "image": null
+            },
+            "5": {
+                "name": "Legal Cheat Sheet",
+                "effect": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "6": {
+                "name": "Extra Clause",
+                "effect": "Increases the maximum number of Scarlet Seals by 1.",
+                "image": null
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Agnidus_Agate_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Noctilucous_Jade"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Juvenile_Jade",
+                "level": 40,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Noctilucous_Jade"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Juvenile_Jade",
+                "level": 50,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Noctilucous_Jade"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Juvenile_Jade",
+                "level": 60,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Noctilucous_Jade"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Juvenile_Jade",
+                "level": 70,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Noctilucous_Jade"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Agnidus_Agate_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Juvenile_Jade",
+                "level": 80,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Noctilucous_Jade"
+            }
+        },
+        "introduction": null,
+        "genshinggpath": null,
+        "element": "Pyro",
+        "wiki": null,
         "subCollection": {}
     }
 }
