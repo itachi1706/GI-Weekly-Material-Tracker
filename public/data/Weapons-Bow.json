@@ -1618,6 +1618,85 @@
       "effect": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing 40~80% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every 14~10s.",
       "wiki": "https://genshin-impact.fandom.com/wiki/The_Viridescent_Hunt",
       "subCollection": {}
+    },
+    "Windblume_Ode": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
+      "name": "Windblume Ode",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Dead_Ley_Line_Branch",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Dead_Ley_Line_Leaves",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Ley_Line_Sprouts",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Windblume_Ode.png",
+      "secondary_stat": "36",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "165",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Invitation of Windblume Event",
+      "effectName": "Windblume Wish",
+      "effect": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by 16~32% for 6s.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Windblume_Ode",
+      "subCollection": {}
     }
   }
 }
