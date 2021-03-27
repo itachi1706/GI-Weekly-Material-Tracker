@@ -65,13 +65,15 @@ Update Firestore Public Data:
     - cd importer
     - npm i
   script: npm start
+  dependencies:
+    - Build and Test Importer
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - public/data/**/*
       when: always
     - when: never
-  needs: []
+  needs: ["Build and Test Importer"]
 
 Code Quality Check:
   image: itachi1706/flutter-alpine-android:web
@@ -379,3 +381,29 @@ Deploy Artifact:
       --assets-link='{"name":"${APK_BINARY}${APP_VERSION}.apk","type":"other","url":"${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}"}'
   rules:
     - if: $CI_COMMIT_TAG
+
+# Importer
+Install Importer Dependencies:
+  image: node:alpine
+  stage: build
+  before_script: 
+    - cd importer
+  script: npm ci
+  artifacts:
+    paths:
+      - node_modules
+    expire_in: 1h
+  needs: []
+
+Build and Test Importer:
+  image: node:alpine
+  stage: test
+  before_script:
+    - cd importer
+  script:
+    - npm run build --if-present
+    - npm run test --if-present
+  dependencies:
+    - Install Importer Dependencies
+  needs: ["Install Importer Dependencies"]
+
