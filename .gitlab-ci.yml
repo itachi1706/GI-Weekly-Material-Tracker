@@ -391,7 +391,7 @@ Install Importer Dependencies:
   script: npm ci
   artifacts:
     paths:
-      - node_modules
+      - importer/node_modules
     expire_in: 1h
   needs: []
 
