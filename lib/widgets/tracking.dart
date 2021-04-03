@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
@@ -449,9 +450,16 @@ class _PlannerPageState extends State<PlannerPage> {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-            child: Text(
-              'Day resets at 4am GMT${_getLocStr()}',
-              style: TextStyle(fontSize: 12),
+            child: Row(
+              children: [
+                Text(
+                  'Day resets at 4am GMT${_getLocStr()}',
+                  style: TextStyle(fontSize: 12),
+                ),
+                Spacer(),
+                Text('Day Reset in: ', style: TextStyle(fontSize: 12)),
+                _getCountdown(),
+              ],
             ),
           ),
           ListView.separated(
@@ -473,6 +481,45 @@ class _PlannerPageState extends State<PlannerPage> {
         ],
       ),
     );
+  }
+
+  Widget _getCountdown() {
+    return CountdownTimer(
+      endTime: _getResetTime(),
+      widgetBuilder: (_, CurrentRemainingTime time) {
+        if (time == null) {
+          return Text('Refreshing', style: TextStyle(fontSize: 12));
+        }
+        var finalStr = '';
+        if (time.days != null) {
+          if (time.days < 10) finalStr += '0';
+          finalStr += '${time.days}:';
+        }
+        if (time.hours != null) {
+          if (time.hours < 10) finalStr += '0';
+          finalStr += '${time.hours}:';
+        }
+        if (time.min != null) {
+          if (time.min < 10) finalStr += '0';
+          finalStr += '${time.min}:';
+        }
+        if (time.sec != null) {
+          if (time.sec < 10) finalStr += '0';
+          finalStr += '${time.sec}';
+        }
+
+        return Text(finalStr, style: TextStyle(fontSize: 12));
+      },
+    );
+  }
+
+  int _getResetTime() {
+    var _actualCDT = _coffDT;
+    if (_cDT.isAfter(_coffDT)) {
+      _actualCDT = _coffDT.add(Duration(days: 1));
+    }
+
+    return _actualCDT.millisecondsSinceEpoch;
   }
 
   Color _getTileColorIfCurrentDay(int key) {
