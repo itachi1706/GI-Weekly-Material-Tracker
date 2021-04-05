@@ -42,7 +42,10 @@ class _SettingsPageState extends State<SettingsPage> {
         sections: [
           _userDataSettings(),
           _appDataSettings(),
-          _notificationSettings(),
+          SettingsSection(
+            title: 'Notifications',
+            tiles: _showNotificationTestMenu(),
+          ),
           ..._infoSettings(),
         ],
       ),
@@ -101,37 +104,55 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Widget _notificationSettings() {
-    return SettingsSection(
-      title: 'Notifications',
-      tiles: [
-        SettingsTile.switchTile(
-          title: 'Daily Forum Reminder (WIP)',
-          leading: Icon(Icons.alarm),
-          onToggle: (bool value) {
-            _prefs.setBool('daily_login', value).then((s) async {
-              var notifyManager = NotificationManager.getInstance();
-              await notifyManager.scheduleDailyForumReminder(value);
-              Util.showSnackbarQuick(
-                context,
-                '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
-              );
-            });
-            setState(() {
-              _dailylogin = value;
-            });
-          },
-          switchValue: _dailylogin,
-        ),
-        SettingsTile(
-          title: 'Notification Test',
-          leading: Icon(Icons.bug_report),
-          onPressed: (context) {
-            Get.to(() => NotificationDebugPage());
-          },
-        ),
-      ],
-    );
+  List<SettingsTile> _showNotificationTestMenu() {
+    return kDebugMode
+        ? [
+            SettingsTile.switchTile(
+              title: 'Daily Forum Reminders',
+              leading: Icon(Icons.alarm),
+              onToggle: (bool value) {
+                _prefs.setBool('daily_login', value).then((s) async {
+                  var notifyManager = NotificationManager.getInstance();
+                  await notifyManager.scheduleDailyForumReminder(value);
+                  Util.showSnackbarQuick(
+                    context,
+                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+                  );
+                });
+                setState(() {
+                  _dailylogin = value;
+                });
+              },
+              switchValue: _dailylogin,
+            ),
+            SettingsTile(
+              title: 'Notification Test Menu',
+              leading: Icon(Icons.bug_report),
+              onPressed: (context) {
+                Get.to(() => NotificationDebugPage());
+              },
+            ),
+          ]
+        : [
+            SettingsTile.switchTile(
+              title: 'Daily Forum Reminders',
+              leading: Icon(Icons.alarm),
+              onToggle: (bool value) {
+                _prefs.setBool('daily_login', value).then((s) async {
+                  var notifyManager = NotificationManager.getInstance();
+                  await notifyManager.scheduleDailyForumReminder(value);
+                  Util.showSnackbarQuick(
+                    context,
+                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+                  );
+                });
+                setState(() {
+                  _dailylogin = value;
+                });
+              },
+              switchValue: _dailylogin,
+            ),
+          ];
   }
 
   Widget _appDataSettings() {
