@@ -40,6 +40,9 @@ class NotificationManager {
         AndroidInitializationSettings('splash');
     final initializationSettingsIOS = IOSInitializationSettings(
       onDidReceiveLocalNotification: onDidReceiveLocalNotification,
+      requestSoundPermission: true,
+      requestBadgePermission: true,
+      requestAlertPermission: true,
     );
     final initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
