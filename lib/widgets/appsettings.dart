@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -110,12 +109,13 @@ class _SettingsPageState extends State<SettingsPage> {
           title: 'Daily Forum Reminder (WIP)',
           leading: Icon(Icons.alarm),
           onToggle: (bool value) {
-            print(value);
             _prefs.setBool('daily_login', value).then((s) async {
-              print(value);
               var notifyManager = NotificationManager.getInstance();
               await notifyManager.scheduleDailyForumReminder(value);
-              Util.showSnackbarQuick(context, '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8');
+              Util.showSnackbarQuick(
+                context,
+                '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+              );
             });
             setState(() {
               _dailylogin = value;
@@ -216,12 +216,12 @@ class _SettingsPageState extends State<SettingsPage> {
               Text('Claer all materials currently being tracked from the app?'),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Get.back(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Clear'),
               onPressed: _clearTrackingData,
+              child: Text('Clear'),
             ),
           ],
         );
@@ -415,7 +415,12 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Daily Forum Reminder',
                 onPressed: (context) {
                   var data = notifyManager.getDailyCheckInMessages();
-                  notifyManager.showNotification(data[0], data[1], data[2], notifyManager.craftDailyForumReminder(), payload: 'forum-login',
+                  notifyManager.showNotification(
+                    data[0],
+                    data[1],
+                    data[2],
+                    notifyManager.craftDailyForumReminder(),
+                    payload: 'forum-login',
                   );
                 },
               ),
@@ -423,18 +428,21 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Scheduled Reminders List',
                 onPressed: (context) async {
                   var msg = await notifyManager.getScheduledReminders();
-                  await showDialog(context: context, builder: (context) {
-                    return AlertDialog(
-                      title: Text('Upcoming Reminders'),
-                      content: Text(msg),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Get.back(),
-                          child: Text('Close'),
-                        ),
-                      ],
-                    );
-                  });
+                  await showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Upcoming Reminders'),
+                        content: Text(msg),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Get.back(),
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
               ),
               SettingsTile(
@@ -449,5 +457,4 @@ class NotificationDebugPage extends StatelessWidget {
       ),
     );
   }
-
 }

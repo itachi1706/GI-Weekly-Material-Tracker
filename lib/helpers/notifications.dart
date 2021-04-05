@@ -4,13 +4,14 @@ import 'package:get/get.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 class NotificationManager {
-
   static NotificationManager _instance;
   FlutterLocalNotificationsPlugin _plugin;
+  bool _appLaunch = false;
 
   NotificationManager() {
     _plugin = null;
@@ -24,6 +25,8 @@ class NotificationManager {
   }
 
   Future<void> processNotificationAppLaunch() async {
+    if (_appLaunch) return; // Run once
+    _appLaunch = true;
     var appLaunchDetails = await _plugin.getNotificationAppLaunchDetails();
     if (appLaunchDetails.didNotificationLaunchApp) {
       await selectNotification(appLaunchDetails.payload);
@@ -34,15 +37,18 @@ class NotificationManager {
     _plugin = FlutterLocalNotificationsPlugin();
 
     const initializationSettingsAndroid =
-    AndroidInitializationSettings('splash');
-    final initializationSettingsIOS =
-    IOSInitializationSettings(
-      onDidReceiveLocalNotification: onDidReceiveLocalNotification,);
+        AndroidInitializationSettings('splash');
+    final initializationSettingsIOS = IOSInitializationSettings(
+      onDidReceiveLocalNotification: onDidReceiveLocalNotification,
+    );
     final initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,);
-    await _plugin.initialize(initializationSettings,
-      onSelectNotification: selectNotification,);
+      iOS: initializationSettingsIOS,
+    );
+    await _plugin.initialize(
+      initializationSettings,
+      onSelectNotification: selectNotification,
+    );
 
     tz.initializeTimeZones();
     tz.setLocalLocation(tz.getLocation('Asia/Singapore'));
@@ -50,9 +56,20 @@ class NotificationManager {
     print('Initializing Notification Manager');
   }
 
-  Future onDidReceiveLocalNotification(int id, String title, String body,
-      String payload) async {
+  Future onDidReceiveLocalNotification(
+    int id,
+    String title,
+    String body,
+    String payload,
+  ) async {
     PlaceholderUtil.showUnimplementedSnackbar(Get.context);
+  }
+
+  Future rescheduleAllScheduledReminders() async {
+    print('Rescheduling all scheduled reminders');
+    var pref = await SharedPreferences.getInstance();
+    await scheduleDailyForumReminder(pref.getBool('daily_login') ?? false);
+    print('Scheduled Reminders rescheduled');
   }
 
   Future selectNotification(String payload) async {
@@ -60,7 +77,9 @@ class NotificationManager {
       debugPrint('notification payload: $payload');
       switch (payload) {
         case 'forum-login':
-          await Util.launchWebPage('https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us');
+          await Util.launchWebPage(
+            'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us',
+          );
           // Open page to forum
           break;
       }
@@ -69,7 +88,10 @@ class NotificationManager {
 
   void removeNotificationChannel(String channelId) async {
     if (GetPlatform.isAndroid) {
-      await _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>().deleteNotificationChannel(channelId);
+      await _plugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          .deleteNotificationChannel(channelId);
       Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
     }
   }
@@ -81,7 +103,8 @@ class NotificationManager {
       result = 'No Pending Notifications';
     } else {
       pendingRequests.forEach((element) {
-        result += '${element.id}|${element.title}|${element.body}|${element.payload}\n';
+        result +=
+            '${element.id}|${element.title}|${element.body}|${element.payload}\n';
       });
     }
 
@@ -89,42 +112,40 @@ class NotificationManager {
   }
 
   List<dynamic> getDailyCheckInMessages() {
-    return [1001, 'Claim your Genshin Impact Daily Check In', 'Click to open the webpage'];
+    return [
+      1001,
+      'Claim your Genshin Impact Daily Check In',
+      'Click to open the webpage',
+    ];
   }
 
   Future<void> scheduleDailyForumReminder(bool toEnable) async {
-    // TODO: Delete forum reminders
     var data = getDailyCheckInMessages();
     await _plugin.cancel(data[0], tag: 'daily_forum');
     print('Deleted Daily Forum Reminder');
 
     if (toEnable) {
-      // TODO: Schedule
       print('Scheduling Daily Forum Reminder');
-      await _plugin.zonedSchedule(data[0], data[1], data[2], _nextInstanceOfMidnight(), craftDailyForumReminder(),
-          uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-          matchDateTimeComponents: DateTimeComponents.time,
-          payload: 'forum-login',
-          androidAllowWhileIdle: true);
+      await _plugin.zonedSchedule(
+        data[0],
+        data[1],
+        data[2],
+        _nextInstanceOfMidnight(),
+        craftDailyForumReminder(),
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
+        matchDateTimeComponents: DateTimeComponents.time,
+        payload: 'forum-login',
+        androidAllowWhileIdle: true,
+      );
     }
-  }
-
-  tz.TZDateTime _nextInstanceOfMidnight() {
-    final now = tz.TZDateTime.now(tz.local); // 12AM GMT+8
-    var scheduledDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, 0);
-    if (scheduledDate.isBefore(now)) {
-      scheduledDate = scheduledDate.add(const Duration(days: 1));
-    }
-    print(now);
-    print(scheduledDate);
-
-    return scheduledDate;
   }
 
   NotificationDetails craftDailyForumReminder() {
     const androidNotificationDetails = AndroidNotificationDetails(
-        'scheduled_notify', 'Scheduled Notification',
-        'Channel Concerning Scheduled Notifications',
+      'scheduled_notify',
+      'Scheduled Notification',
+      'Channel Concerning Scheduled Notifications',
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
@@ -135,15 +156,37 @@ class NotificationManager {
       autoCancel: true,
       tag: 'daily_forum',
     );
-    const platformChannelSpecifics = NotificationDetails(android: androidNotificationDetails);
+    const platformChannelSpecifics =
+        NotificationDetails(android: androidNotificationDetails);
 
     return platformChannelSpecifics;
   }
 
-  Future<void> showNotification(int id, String title, String body, NotificationDetails notificationDetails, {String payload}) async {
-    await _plugin.show(id, title, body, notificationDetails, payload: (payload != null) ? payload : null);
+  Future<void> showNotification(
+    int id,
+    String title,
+    String body,
+    NotificationDetails notificationDetails, {
+    String payload,
+  }) async {
+    await _plugin.show(
+      id,
+      title,
+      body,
+      notificationDetails,
+      payload: (payload != null) ? payload : null,
+    );
   }
 
+  tz.TZDateTime _nextInstanceOfMidnight() {
+    final now = tz.TZDateTime.now(tz.local); // 12AM GMT+8
+    var scheduledDate =
+        tz.TZDateTime(tz.local, now.year, now.month, now.day, 0);
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+    print('Now: $now | Scheduled: $scheduledDate');
 
-
+    return scheduledDate;
+  }
 }
