@@ -1,3 +1,6 @@
+# 1.5.1
+- Hotfix for daily forum notification sounds
+
 # 1.5.0
 - Updated some dependencies
 - Removed redundant dependencies to reduce app size
