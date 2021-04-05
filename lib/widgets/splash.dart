@@ -13,7 +13,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      navigateAfterFuture: _login(context),
+      navigateAfterFuture: _login(),
       image: Image.asset('assets/logo.png'),
       loadingText: Text('Initializing App'),
       title: Text(
@@ -25,8 +25,8 @@ class SplashPage extends StatelessWidget {
     );
   }
 
-  Future<void> _setupNotifications(BuildContext context) async {
-    var manager = NotificationManager.getInstance(context);
+  Future<void> _setupNotifications() async {
+    var manager = NotificationManager.getInstance();
     await manager.initialize();
     print('Initialized Notifications');
   }
@@ -74,9 +74,9 @@ class SplashPage extends StatelessWidget {
     return false;
   }
 
-  Future<String> _login(BuildContext context) async {
+  Future<String> _login() async {
     var res = await Future.wait(
-      [_initFirebase(), _setupNotifications(context), Future.delayed(Duration(seconds: 2))],
+      [_initFirebase(), _setupNotifications(), Future.delayed(Duration(seconds: 2))],
     );
 
     return (res[0]) ? '/menu' : '/';

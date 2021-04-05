@@ -24,7 +24,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
-  bool _darkMode = false;
+  bool _darkMode = false, _dailylogin = false;
   int _cacheFiles = 0;
 
   SharedPreferences _prefs;
@@ -74,6 +74,7 @@ class _SettingsPageState extends State<SettingsPage> {
       _prefs = pref;
       _location = _prefs.getString('location') ?? 'Asia';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
+      _dailylogin = _prefs.getBool('daily_login') ?? false;
       _cacheFiles = _files['fileNum'];
       _cacheSize = filesize(_files['size']);
       _version = 'Version: $version build $build ($type)';
@@ -393,7 +394,7 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
 class NotificationDebugPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var notifyManager = NotificationManager.getInstance(context);
+    var notifyManager = NotificationManager.getInstance();
 
     return Scaffold(
       appBar: AppBar(title: Text('Notification Debug')),
@@ -404,8 +405,15 @@ class NotificationDebugPage extends StatelessWidget {
               SettingsTile(
                 title: 'Daily Forum Reminder',
                 onPressed: (context) {
-                  notifyManager.showNotification(1001, 'Claim your Genshin Impact Daily Check In', 'Click to open the webpage', notifyManager.craftDailyForumReminder(), payload: 'forum-login');
-                  //PlaceholderUtil.showUnimplementedSnackbar(context);
+                  notifyManager.showNotification(1001, 'Claim your Genshin Impact Daily Check In',
+                      'Click to open the webpage', notifyManager.craftDailyForumReminder(), payload: 'forum-login',
+                  );
+                },
+              ),
+              SettingsTile(
+                title: 'Delete Scheduled Notification Channel',
+                onPressed: (context) {
+                  notifyManager.removeNotificationChannel('scheduled_notify');
                 },
               ),
             ],

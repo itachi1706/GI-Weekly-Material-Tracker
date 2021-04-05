@@ -1,22 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 class NotificationManager {
 
   static NotificationManager _instance;
-  BuildContext _context;
   FlutterLocalNotificationsPlugin _plugin;
 
-  NotificationManager(BuildContext context) {
-    _context = context;
+  NotificationManager() {
     _plugin = null;
     print('Notification Manager Created');
   }
 
-  static NotificationManager getInstance(BuildContext context) {
-    _instance ??= NotificationManager(context);
+  static NotificationManager getInstance() {
+    _instance ??= NotificationManager();
 
     return _instance;
   }
@@ -40,7 +40,7 @@ class NotificationManager {
 
   Future onDidReceiveLocalNotification(int id, String title, String body,
       String payload) async {
-    PlaceholderUtil.showUnimplementedSnackbar(_context);
+    PlaceholderUtil.showUnimplementedSnackbar(Get.context);
   }
 
   Future selectNotification(String payload) async {
@@ -55,6 +55,13 @@ class NotificationManager {
     }
   }
 
+  void removeNotificationChannel(String channelId) async {
+    if (GetPlatform.isAndroid) {
+      await _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>().deleteNotificationChannel(channelId);
+      Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
+    }
+  }
+
   NotificationDetails craftDailyForumReminder() {
     const androidNotificationDetails = AndroidNotificationDetails(
         'scheduled_notify', 'Scheduled Notification',
@@ -65,6 +72,7 @@ class NotificationManager {
       playSound: true,
       enableLights: true,
       enableVibration: true,
+      sound: RawResourceAndroidNotificationSound('xpup'),
       autoCancel: true,
       tag: 'daily_forum',
     );
