@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 class NotificationManager {
 
@@ -21,6 +23,13 @@ class NotificationManager {
     return _instance;
   }
 
+  Future<void> processNotificationAppLaunch() async {
+    var appLaunchDetails = await _plugin.getNotificationAppLaunchDetails();
+    if (appLaunchDetails.didNotificationLaunchApp) {
+      await selectNotification(appLaunchDetails.payload);
+    }
+  }
+
   Future<void> initialize() async {
     _plugin = FlutterLocalNotificationsPlugin();
 
@@ -34,6 +43,9 @@ class NotificationManager {
       iOS: initializationSettingsIOS,);
     await _plugin.initialize(initializationSettings,
       onSelectNotification: selectNotification,);
+
+    tz.initializeTimeZones();
+    tz.setLocalLocation(tz.getLocation('Asia/Singapore'));
 
     print('Initializing Notification Manager');
   }
@@ -60,6 +72,53 @@ class NotificationManager {
       await _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>().deleteNotificationChannel(channelId);
       Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
     }
+  }
+
+  Future<String> getScheduledReminders() async {
+    var result = '';
+    var pendingRequests = await _plugin.pendingNotificationRequests();
+    if (pendingRequests.isEmpty) {
+      result = 'No Pending Notifications';
+    } else {
+      pendingRequests.forEach((element) {
+        result += '${element.id}|${element.title}|${element.body}|${element.payload}\n';
+      });
+    }
+
+    return result;
+  }
+
+  List<dynamic> getDailyCheckInMessages() {
+    return [1001, 'Claim your Genshin Impact Daily Check In', 'Click to open the webpage'];
+  }
+
+  Future<void> scheduleDailyForumReminder(bool toEnable) async {
+    // TODO: Delete forum reminders
+    var data = getDailyCheckInMessages();
+    await _plugin.cancel(data[0], tag: 'daily_forum');
+    print('Deleted Daily Forum Reminder');
+
+    if (toEnable) {
+      // TODO: Schedule
+      print('Scheduling Daily Forum Reminder');
+      await _plugin.zonedSchedule(data[0], data[1], data[2], _nextInstanceOfMidnight(), craftDailyForumReminder(),
+          uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+          matchDateTimeComponents: DateTimeComponents.time,
+          payload: 'forum-login',
+          androidAllowWhileIdle: true);
+    }
+  }
+
+  tz.TZDateTime _nextInstanceOfMidnight() {
+    final now = tz.TZDateTime.now(tz.local); // 12AM GMT+8
+    var scheduledDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, 0);
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+    print(now);
+    print(scheduledDate);
+
+    return scheduledDate;
   }
 
   NotificationDetails craftDailyForumReminder() {

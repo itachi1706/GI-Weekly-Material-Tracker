@@ -110,9 +110,18 @@ class _SettingsPageState extends State<SettingsPage> {
           title: 'Daily Forum Reminder (WIP)',
           leading: Icon(Icons.alarm),
           onToggle: (bool value) {
-            PlaceholderUtil.showUnimplementedSnackbar(context);
+            print(value);
+            _prefs.setBool('daily_login', value).then((s) async {
+              print(value);
+              var notifyManager = NotificationManager.getInstance();
+              await notifyManager.scheduleDailyForumReminder(value);
+              Util.showSnackbarQuick(context, '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8');
+            });
+            setState(() {
+              _dailylogin = value;
+            });
           },
-          switchValue: false,
+          switchValue: _dailylogin,
         ),
         SettingsTile(
           title: 'Notification Test',
@@ -405,9 +414,27 @@ class NotificationDebugPage extends StatelessWidget {
               SettingsTile(
                 title: 'Daily Forum Reminder',
                 onPressed: (context) {
-                  notifyManager.showNotification(1001, 'Claim your Genshin Impact Daily Check In',
-                      'Click to open the webpage', notifyManager.craftDailyForumReminder(), payload: 'forum-login',
+                  var data = notifyManager.getDailyCheckInMessages();
+                  notifyManager.showNotification(data[0], data[1], data[2], notifyManager.craftDailyForumReminder(), payload: 'forum-login',
                   );
+                },
+              ),
+              SettingsTile(
+                title: 'Scheduled Reminders List',
+                onPressed: (context) async {
+                  var msg = await notifyManager.getScheduledReminders();
+                  await showDialog(context: context, builder: (context) {
+                    return AlertDialog(
+                      title: Text('Upcoming Reminders'),
+                      content: Text(msg),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Get.back(),
+                          child: Text('Close'),
+                        ),
+                      ],
+                    );
+                  });
                 },
               ),
               SettingsTile(
