@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -22,7 +23,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
-  bool _darkMode = false;
+  bool _darkMode = false, _dailylogin = false;
   int _cacheFiles = 0;
 
   SharedPreferences _prefs;
@@ -41,6 +42,10 @@ class _SettingsPageState extends State<SettingsPage> {
         sections: [
           _userDataSettings(),
           _appDataSettings(),
+          SettingsSection(
+            title: 'Notifications',
+            tiles: _showNotificationTestMenu(),
+          ),
           ..._infoSettings(),
         ],
       ),
@@ -71,6 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
       _prefs = pref;
       _location = _prefs.getString('location') ?? 'Asia';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
+      _dailylogin = _prefs.getBool('daily_login') ?? false;
       _cacheFiles = _files['fileNum'];
       _cacheSize = filesize(_files['size']);
       _version = 'Version: $version build $build ($type)';
@@ -98,6 +104,57 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  List<SettingsTile> _showNotificationTestMenu() {
+    return kDebugMode
+        ? [
+            SettingsTile.switchTile(
+              title: 'Daily Forum Reminders',
+              leading: Icon(Icons.alarm),
+              onToggle: (bool value) {
+                _prefs.setBool('daily_login', value).then((s) async {
+                  var notifyManager = NotificationManager.getInstance();
+                  await notifyManager.scheduleDailyForumReminder(value);
+                  Util.showSnackbarQuick(
+                    context,
+                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+                  );
+                });
+                setState(() {
+                  _dailylogin = value;
+                });
+              },
+              switchValue: _dailylogin,
+            ),
+            SettingsTile(
+              title: 'Notification Test Menu',
+              leading: Icon(Icons.bug_report),
+              onPressed: (context) {
+                Get.to(() => NotificationDebugPage());
+              },
+            ),
+          ]
+        : [
+            SettingsTile.switchTile(
+              title: 'Daily Forum Reminders',
+              leading: Icon(Icons.alarm),
+              onToggle: (bool value) {
+                _prefs.setBool('daily_login', value).then((s) async {
+                  var notifyManager = NotificationManager.getInstance();
+                  await notifyManager.scheduleDailyForumReminder(value);
+                  Util.showSnackbarQuick(
+                    context,
+                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+                  );
+                });
+                setState(() {
+                  _dailylogin = value;
+                });
+              },
+              switchValue: _dailylogin,
+            ),
+          ];
+  }
+
   Widget _appDataSettings() {
     return SettingsSection(
       title: 'Settings',
@@ -120,7 +177,7 @@ class _SettingsPageState extends State<SettingsPage> {
           subtitle: _location,
           leading: Icon(MdiIcons.server),
           onPressed: (context) {
-            Get.to(RegionSettingsPage());
+            Get.to(() => RegionSettingsPage());
           },
         ),
         SettingsTile(
@@ -180,12 +237,12 @@ class _SettingsPageState extends State<SettingsPage> {
               Text('Claer all materials currently being tracked from the app?'),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Get.back(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Clear'),
               onPressed: _clearTrackingData,
+              child: Text('Clear'),
             ),
           ],
         );
@@ -361,5 +418,64 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
     setState(() {
       _regionKey = region;
     });
+  }
+}
+
+class NotificationDebugPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var notifyManager = NotificationManager.getInstance();
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Notification Debug')),
+      body: SettingsList(
+        sections: [
+          SettingsSection(
+            tiles: [
+              SettingsTile(
+                title: 'Daily Forum Reminder',
+                onPressed: (context) {
+                  var data = notifyManager.getDailyCheckInMessages();
+                  notifyManager.showNotification(
+                    data[0],
+                    data[1],
+                    data[2],
+                    notifyManager.craftDailyForumReminder(),
+                    payload: 'forum-login',
+                  );
+                },
+              ),
+              SettingsTile(
+                title: 'Scheduled Reminders List',
+                onPressed: (context) async {
+                  var msg = await notifyManager.getScheduledReminders();
+                  await showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Upcoming Reminders'),
+                        content: Text(msg),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Get.back(),
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
+              SettingsTile(
+                title: 'Delete Scheduled Notification Channel',
+                onPressed: (context) {
+                  notifyManager.removeNotificationChannel('scheduled_notify');
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }

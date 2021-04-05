@@ -6,6 +6,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashPage extends StatelessWidget {
@@ -22,6 +23,14 @@ class SplashPage extends StatelessWidget {
       backgroundColor: Colors.black,
       photoSize: 100.0,
     );
+  }
+
+  Future<void> _setupNotifications() async {
+    var manager = NotificationManager.getInstance();
+    await manager.initialize();
+    print('Initialized Notifications');
+    await manager.processNotificationAppLaunch();
+    await manager.rescheduleAllScheduledReminders();
   }
 
   Future<void> _initFirebase() async {
@@ -69,7 +78,11 @@ class SplashPage extends StatelessWidget {
 
   Future<String> _login() async {
     var res = await Future.wait(
-      [_initFirebase(), Future.delayed(Duration(seconds: 2))],
+      [
+        _initFirebase(),
+        _setupNotifications(),
+        Future.delayed(Duration(seconds: 2)),
+      ],
     );
 
     return (res[0]) ? '/menu' : '/';
