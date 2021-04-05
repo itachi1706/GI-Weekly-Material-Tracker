@@ -7,7 +7,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
+import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -41,6 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
         sections: [
           _userDataSettings(),
           _appDataSettings(),
+          _notificationSettings(),
           ..._infoSettings(),
         ],
       ),
@@ -98,6 +101,29 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  Widget _notificationSettings() {
+    return SettingsSection(
+      title: 'Notifications',
+      tiles: [
+        SettingsTile.switchTile(
+          title: 'Daily Forum Reminder (WIP)',
+          leading: Icon(Icons.alarm),
+          onToggle: (bool value) {
+            PlaceholderUtil.showUnimplementedSnackbar(context);
+          },
+          switchValue: false,
+        ),
+        SettingsTile(
+          title: 'Notification Test',
+          leading: Icon(Icons.bug_report),
+          onPressed: (context) {
+            Get.to(() => NotificationDebugPage());
+          },
+        ),
+      ],
+    );
+  }
+
   Widget _appDataSettings() {
     return SettingsSection(
       title: 'Settings',
@@ -120,7 +146,7 @@ class _SettingsPageState extends State<SettingsPage> {
           subtitle: _location,
           leading: Icon(MdiIcons.server),
           onPressed: (context) {
-            Get.to(RegionSettingsPage());
+            Get.to(() => RegionSettingsPage());
           },
         ),
         SettingsTile(
@@ -362,4 +388,31 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
       _regionKey = region;
     });
   }
+}
+
+class NotificationDebugPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var notifyManager = NotificationManager.getInstance(context);
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Notification Debug')),
+      body: SettingsList(
+        sections: [
+          SettingsSection(
+            tiles: [
+              SettingsTile(
+                title: 'Daily Forum Reminder',
+                onPressed: (context) {
+                  notifyManager.showNotification(1001, 'Claim your Genshin Impact Daily Check In', 'Click to open the webpage', notifyManager.craftDailyForumReminder(), payload: 'forum-login');
+                  //PlaceholderUtil.showUnimplementedSnackbar(context);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
 }

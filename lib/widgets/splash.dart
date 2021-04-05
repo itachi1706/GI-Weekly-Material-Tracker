@@ -6,13 +6,14 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      navigateAfterFuture: _login(),
+      navigateAfterFuture: _login(context),
       image: Image.asset('assets/logo.png'),
       loadingText: Text('Initializing App'),
       title: Text(
@@ -22,6 +23,12 @@ class SplashPage extends StatelessWidget {
       backgroundColor: Colors.black,
       photoSize: 100.0,
     );
+  }
+
+  Future<void> _setupNotifications(BuildContext context) async {
+    var manager = NotificationManager.getInstance(context);
+    await manager.initialize();
+    print('Initialized Notifications');
   }
 
   Future<void> _initFirebase() async {
@@ -67,9 +74,9 @@ class SplashPage extends StatelessWidget {
     return false;
   }
 
-  Future<String> _login() async {
+  Future<String> _login(BuildContext context) async {
     var res = await Future.wait(
-      [_initFirebase(), Future.delayed(Duration(seconds: 2))],
+      [_initFirebase(), _setupNotifications(context), Future.delayed(Duration(seconds: 2))],
     );
 
     return (res[0]) ? '/menu' : '/';
