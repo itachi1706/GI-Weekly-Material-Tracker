@@ -1,3 +1,10 @@
+# 1.5.0
+- Updated some dependencies
+- Removed redundant dependencies to reduce app size
+- Added a countdown timer in the weekly planner tab
+- Implemented an option to allow for daily forum notifications (Beta)
+- General app improvements and optimizations
+
 # 1.4.1
 - Fixed Traveller not having the correct gender icon
 - Updated application dependencies for app stability
