@@ -71,6 +71,7 @@ Update Firestore Public Data:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - public/data/**/*
+        - importer/**/*
       when: always
     - when: never
   needs: ["Build and Test Importer"]
