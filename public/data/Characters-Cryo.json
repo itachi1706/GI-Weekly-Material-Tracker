@@ -546,6 +546,279 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Diona",
             "subCollection": {}
         },
+        "Ganyu": {
+            "image": "Characters/Cryo/Ganyu.png",
+            "gender": "Female",
+            "birthday": "2/12",
+            "caption": "Plenilune Gaze",
+            "name": "Ganyu",
+            "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+            "nation": "Liyue",
+            "weapon": "Bow",
+            "rarity": 5,
+            "affiliation": "Yuehai Pavilion",
+            "constellation": "Sinae Unicornis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Diligence",
+                        "material3qty": 3,
+                        "material4": "Whopperflower_Nectar",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 2,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 4,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 6,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 9,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shadow_of_the_Warrior",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 4,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shadow_of_the_Warrior",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 6,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shadow_of_the_Warrior",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 12,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Shadow_of_the_Warrior",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 16,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Undivided_Heart": {
+                        "name": "Undivided Heart",
+                        "effect": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
+                        "image": "Talents/Passive/Talent_Undivided_Heart.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Harmony_between_Heaven_and_Earth": {
+                        "name": "Harmony between Heaven and Earth",
+                        "effect": "Celestial Shower grants a 20% Cryo DMG Bonus to active members in the AoE.",
+                        "image": "Talents/Passive/Talent_Harmony_between_Heaven_and_Earth.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Preserved_for_the_Hunt": {
+                        "name": "Preserved for the Hunt",
+                        "effect": "Refunds 15% of the ores used when crafting Bow-type weapons.",
+                        "image": "Talents/Passive/Talent_Preserved_for_the_Hunt.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Liutian_Archery": {
+                        "name": "Liutian Archery",
+                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, an icy aura will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Fires off an icy arrow that deals Cryo DMG.\nCharge Level 2: Fires off a Frostflake Arrow that deals Cryo DMG.\nThe Frostflake Arrow blooms after hitting its target, dealing AoE Cryo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Liutian_Archery.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Trail_of_the_Qilin": {
+                        "name": "Trail of the Qilin",
+                        "effect": "Leaving a single Ice Lotus behind, Ganyu dashes backward, shunning all impurity and dealing AoE Cryo DMG.\nIce Lotus:\n\nContinuously taunts surrounding opponents, attracting them to attack it.\nEndurance scales based on Ganyu's Max HP.\nBlooms profusely when destroyed or once its duration ends, dealing AoE Cryo DMG.\nGenerates 2 elemental particles when the creation hits at least 1 target, and 2 elemental particles when the explosion hits at least 1 target",
+                        "image": "Talents/Skill/Talent_Trail_of_the_Qilin.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Celestial_Shower": {
+                        "name": "Celestial Shower",
+                        "effect": "Coalesces atmospheric frost and snow to summon a Sacred Cryo Pearl that exorcises evil.\nDuring its ability duration, the Sacred Cryo Pearl will continuously rain down shards of ice, striking opponents within an AoE and dealing Cryo DMG.",
+                        "image": "Talents/Burst/Talent_Celestial_Shower.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Dew-Drinker",
+                    "effect": "Taking DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom decreases opponents' Cryo RES by 15% for 6s.\nA hit regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hit the target.",
+                    "image": "Constellation/Dew-Drinker.png"
+                },
+                "2": {
+                    "name": "The Auspicious",
+                    "effect": "Trail of the Qilin gains 1 additional charge.",
+                    "image": "Constellation/The_Auspicious.png"
+                },
+                "3": {
+                    "name": "Cloud-Strider",
+                    "effect": "Increases the Level of Celestial Shower by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/Cloud-Strider.png"
+                },
+                "4": {
+                    "name": "Westward Sojourn",
+                    "effect": "Opponents standing within the AoE of Celestial Shower take increased DMG. This effect strengthens over time. Increased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\nThe effect lingers for 3s after the opponent leaves the AoE.",
+                    "image": "Constellation/Westward_Sojourn.png"
+                },
+                "5": {
+                    "name": "The Merciful",
+                    "effect": "Increases the Level of Trail of the Qilin by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/The_Merciful.png"
+                },
+                "6": {
+                    "name": "The Clement",
+                    "effect": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.",
+                    "image": "Constellation/The_Clement.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Shivada_Jade_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Qingxin"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Hoarfrost_Core",
+                    "level": 40,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Qingxin"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Hoarfrost_Core",
+                    "level": 50,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Qingxin"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Hoarfrost_Core",
+                    "level": 60,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Qingxin"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Hoarfrost_Core",
+                    "level": 70,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Qingxin"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Shivada_Jade_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Hoarfrost_Core",
+                    "level": 80,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Qingxin"
+                }
+            },
+            "introduction": "The secretary to the Liyue Qixing. The blood of both human and illuminated beast flows within her veins.\n\nGraceful and quiet by nature, yet the gentle disposition of qilin sees not even the slightest conflict with even the most arduous of workloads.\n\nAfter all, Ganyu firmly believes that all the work she does is in honor of her contract with Rex Lapis, seeking the well-being of all living things within Liyue.",
+            "genshinggpath": "characters/Ganyu",
+            "element": "Cryo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Ganyu",
+            "subCollection": {}
+        },
         "Kaeya": {
             "image": "Characters/Cryo/Kaeya.png",
             "gender": "Male",
@@ -1092,18 +1365,17 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Qiqi",
             "subCollection": {}
         },
-        "Ganyu": {
-            "image": "Characters/Cryo/Ganyu.png",
+        "Rosaria": {
+            "image": "Characters/Cryo/Rosaria.png",
             "gender": "Female",
-            "birthday": "2/12",
-            "caption": "Plenilune Gaze",
-            "name": "Ganyu",
-            "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
-            "nation": "Liyue",
-            "weapon": "Bow",
-            "rarity": 5,
-            "affiliation": "Yuehai Pavilion",
-            "constellation": "Sinae Unicornis",
+            "birthday": "24/1",
+            "name": "Rosaria",
+            "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
+            "nation": "Mondstadt",
+            "weapon": "Polearm",
+            "rarity": 4,
+            "affiliation": "Church of Favonius",
+            "constellation": "Spinea Corona",
             "talents": {
                 "ascension": {
                     "2": {
@@ -1112,9 +1384,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Teachings_of_Diligence",
+                        "material3": "Teachings_of_Ballad",
                         "material3qty": 3,
-                        "material4": "Whopperflower_Nectar",
+                        "material4": "Recruit_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -1123,9 +1395,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 2,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -1134,9 +1406,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 4,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -1145,9 +1417,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 6,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -1156,9 +1428,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Ballad",
                         "material3qty": 9,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Sergeant_Insignia",
                         "material4qty": 9
                     },
                     "7": {
@@ -1167,9 +1439,9 @@
                         "material1qty": 0,
                         "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 4,
-                        "material4": "Energy_Nectar",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 4
                     },
                     "8": {
@@ -1178,9 +1450,9 @@
                         "material1qty": 0,
                         "material2": "Shadow_of_the_Warrior",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 6,
-                        "material4": "Energy_Nectar",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 6
                     },
                     "9": {
@@ -1189,9 +1461,9 @@
                         "material1qty": 0,
                         "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 12,
-                        "material4": "Energy_Nectar",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 9
                     },
                     "10": {
@@ -1200,54 +1472,54 @@
                         "material1qty": 1,
                         "material2": "Shadow_of_the_Warrior",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Ballad",
                         "material3qty": 16,
-                        "material4": "Energy_Nectar",
+                        "material4": "Lieutenant_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "Undivided_Heart": {
-                        "name": "Undivided Heart",
-                        "effect": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
-                        "image": "Talents/Passive/Talent_Undivided_Heart.png",
+                    "Regina_Probationum": {
+                        "name": "Regina Probationum",
+                        "effect": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+                        "image": "Talents/Passive/Talent_Regina_Probationum.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
-                    "Harmony_between_Heaven_and_Earth": {
-                        "name": "Harmony between Heaven and Earth",
-                        "effect": "Celestial Shower grants a 20% Cryo DMG Bonus to active members in the AoE.",
-                        "image": "Talents/Passive/Talent_Harmony_between_Heaven_and_Earth.png",
+                    "Shadow_Samaritan": {
+                        "name": "Shadow Samaritan",
+                        "effect": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nRosaria's CRIT Rate Bonus gained this way cannot exceed 15%.",
+                        "image": "Talents/Passive/Talent_Shadow_Samaritan.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "Preserved_for_the_Hunt": {
-                        "name": "Preserved for the Hunt",
-                        "effect": "Refunds 15% of the ores used when crafting Bow-type weapons.",
-                        "image": "Talents/Passive/Talent_Preserved_for_the_Hunt.png",
+                    "Night_Walk": {
+                        "name": "Night Walk",
+                        "effect": "At night (18:00 - 6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the same effects.",
+                        "image": "Talents/Passive/Talent_Night_Walk.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "Liutian_Archery": {
-                        "name": "Liutian Archery",
-                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, an icy aura will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Fires off an icy arrow that deals Cryo DMG.\nCharge Level 2: Fires off a Frostflake Arrow that deals Cryo DMG.\nThe Frostflake Arrow blooms after hitting its target, dealing AoE Cryo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Liutian_Archery.png",
+                    "Spear_of_the_Church": {
+                        "name": "Spear of the Church",
+                        "effect": "Normal Attack: Performs up to five rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Spear_of_the_Church.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
-                    "Trail_of_the_Qilin": {
-                        "name": "Trail of the Qilin",
-                        "effect": "Leaving a single Ice Lotus behind, Ganyu dashes backward, shunning all impurity and dealing AoE Cryo DMG.\nIce Lotus:\n\nContinuously taunts surrounding opponents, attracting them to attack it.\nEndurance scales based on Ganyu's Max HP.\nBlooms profusely when destroyed or once its duration ends, dealing AoE Cryo DMG.\nGenerates 2 elemental particles when the creation hits at least 1 target, and 2 elemental particles when the explosion hits at least 1 target",
-                        "image": "Talents/Skill/Talent_Trail_of_the_Qilin.png",
+                    "Ravaging_Confession": {
+                        "name": "Ravaging Confession",
+                        "effect": "Rosaria swiftly positions herself behind her opponent, then pierces and slashes the enemy with her polearm, dealing Cryo DMG.\nRosaria cannot use this ability to move behind larger opponents.",
+                        "image": "Talents/Skill/Talent_Ravaging_Confession.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
-                    "Celestial_Shower": {
-                        "name": "Celestial Shower",
-                        "effect": "Coalesces atmospheric frost and snow to summon a Sacred Cryo Pearl that exorcises evil.\nDuring its ability duration, the Sacred Cryo Pearl will continuously rain down shards of ice, striking opponents within an AoE and dealing Cryo DMG.",
-                        "image": "Talents/Burst/Talent_Celestial_Shower.png",
+                    "Last_Rites": {
+                        "name": "Rites of Termination",
+                        "effect": "Rosaria's unique take on this prayer ritual.\nFirst, she swings her weapon to slash surrounding enemies; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding enemies.",
+                        "image": "Talents/Burst/Talent_Rites_of_Termination.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -1255,34 +1527,34 @@
             },
             "constellations": {
                 "1": {
-                    "name": "Dew-Drinker",
-                    "effect": "Taking DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom decreases opponents' Cryo RES by 15% for 6s.\nA hit regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hit the target.",
-                    "image": "Constellation/Dew-Drinker.png"
+                    "name": "Unholy Revelation",
+                    "effect": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+                    "image": "Constellation/Unholy_Revelation.png"
                 },
                 "2": {
-                    "name": "The Auspicious",
-                    "effect": "Trail of the Qilin gains 1 additional charge.",
-                    "image": "Constellation/The_Auspicious.png"
+                    "name": "Land Without Promise",
+                    "effect": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+                    "image": "Constellation/Land_Without_Promise.png"
                 },
                 "3": {
-                    "name": "Cloud-Strider",
-                    "effect": "Increases the Level of Celestial Shower by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Cloud-Strider.png"
+                    "name": "The Wages of Sin",
+                    "effect": "Increases the Level of Ravaging Confession by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/The_Wages_of_Sin.png"
                 },
                 "4": {
-                    "name": "Westward Sojourn",
-                    "effect": "Opponents standing within the AoE of Celestial Shower take increased DMG. This effect strengthens over time. Increased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\nThe effect lingers for 3s after the opponent leaves the AoE.",
-                    "image": "Constellation/Westward_Sojourn.png"
+                    "name": "Painful Grace",
+                    "effect": "Ravaging Confession's CRIT Hits regenerate 5 Energy for Rosaria.\nCan only be triggered once each time Ravaging Confession is cast.",
+                    "image": "Constellation/Painful_Grace.png"
                 },
                 "5": {
-                    "name": "The Merciful",
-                    "effect": "Increases the Level of Trail of the Qilin by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/The_Merciful.png"
+                    "name": "Last Rites",
+                    "effect": "Increases the Level of Rites of Termination by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Last_Rites.png"
                 },
                 "6": {
-                    "name": "The Clement",
-                    "effect": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.",
-                    "image": "Constellation/The_Clement.png"
+                    "name": "Divine Retribution",
+                    "effect": "Rites of Termination's attack decreases opponents' Physical RES by 20% for 10s.",
+                    "image": "Constellation/Divine_Retribution.png"
                 }
             },
             "ascension": {
@@ -1293,10 +1565,10 @@
                     "mora": 20000,
                     "material2": null,
                     "level": 20,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Recruit_Insignia",
                     "material4qty": 3,
                     "material3qty": 3,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 },
                 "2": {
                     "material2qty": 2,
@@ -1305,10 +1577,10 @@
                     "mora": 40000,
                     "material2": "Hoarfrost_Core",
                     "level": 40,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Recruit_Insignia",
                     "material4qty": 15,
                     "material3qty": 10,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 },
                 "3": {
                     "material2qty": 4,
@@ -1317,10 +1589,10 @@
                     "mora": 60000,
                     "material2": "Hoarfrost_Core",
                     "level": 50,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sergeant_Insignia",
                     "material4qty": 12,
                     "material3qty": 20,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 },
                 "4": {
                     "material2qty": 8,
@@ -1329,10 +1601,10 @@
                     "mora": 80000,
                     "material2": "Hoarfrost_Core",
                     "level": 60,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sergeant_Insignia",
                     "material4qty": 18,
                     "material3qty": 30,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 },
                 "5": {
                     "material2qty": 12,
@@ -1341,10 +1613,10 @@
                     "mora": 100000,
                     "material2": "Hoarfrost_Core",
                     "level": 70,
-                    "material4": "Energy_Nectar",
+                    "material4": "Lieutenant_Insignia",
                     "material4qty": 12,
                     "material3qty": 45,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 },
                 "6": {
                     "material2qty": 20,
@@ -1353,16 +1625,16 @@
                     "mora": 120000,
                     "material2": "Hoarfrost_Core",
                     "level": 80,
-                    "material4": "Energy_Nectar",
+                    "material4": "Lieutenant_Insignia",
                     "material4qty": 24,
                     "material3qty": 60,
-                    "material3": "Qingxin"
+                    "material3": "Valberry"
                 }
             },
-            "introduction": "The secretary to the Liyue Qixing. The blood of both human and illuminated beast flows within her veins.\n\nGraceful and quiet by nature, yet the gentle disposition of qilin sees not even the slightest conflict with even the most arduous of workloads.\n\nAfter all, Ganyu firmly believes that all the work she does is in honor of her contract with Rex Lapis, seeking the well-being of all living things within Liyue.",
-            "genshinggpath": "characters/Ganyu",
+            "introduction": "Rosaria, a sister in Mondstadt's Church of Favonius.\nA sister of the church, though you wouldn't know it if it weren't for her attire. An unusual woman with sharp, piercing words and a cold manner.\nHer movements are unpredictable. She often leaves without notifying anyone. She acts with some kind of purpose, but others don't seem to know exactly what she stands for...",
+            "genshinggpath": "characters/Rosaria",
             "element": "Cryo",
-            "wiki": "https://genshin-impact.fandom.com/wiki/Ganyu",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Rosaria",
             "subCollection": {}
         }
     }
