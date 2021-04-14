@@ -1,10 +1,10 @@
 {
-    "Ayaka": {
+    "Kamisato_Ayaka": {
         "image": "Characters/Cryo/Ayaka.png",
         "gender": "Female",
         "birthday": "?/12",
         "caption": null,
-        "name": "Ayaka",
+        "name": "Kamisato Ayaka",
         "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
         "nation": "Inazuma",
         "weapon": "Sword",
@@ -283,14 +283,14 @@
         "image": null,
         "gender": "Female",
         "birthday": "25/10",
-        "caption": null,
+        "caption": "Dance of the Shimmering Wave",
         "name": "Eula",
         "description": "The Spindrift Knight, a scion of old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
         "nation": "Mondstadt",
         "weapon": "Claymore",
         "rarity": 5,
         "affiliation": "Knights of Favonius",
-        "constellation": null,
+        "constellation": "Aphros Delos",
         "talents": {
             "ascension": {
                 "2": {
@@ -442,13 +442,13 @@
         },
         "constellations": {
             "1": {
-                "name": null,
-                "effect": null,
+                "name": "Tidal Illusion",
+                "effect": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
                 "image": null
             },
             "2": {
-                "name": null,
-                "effect": null,
+                "name": "Lady of Seafoam",
+                "effect": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Press CD.",
                 "image": null
             },
             "3": {
@@ -552,12 +552,12 @@
         "wiki": null,
         "subCollection": {}
     },
-    "Yan_Fei": {
+    "Yanfei": {
         "image": null,
         "gender": "Female",
         "birthday": "28/7",
-        "caption": null,
-        "name": "Yan Fei",
+        "caption": "Wise Innocence",
+        "name": "Yanfei",
         "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the mixed blood of an illuminated beast.",
         "nation": "Liyue",
         "weapon": "Catalyst",
@@ -676,7 +676,7 @@
                 },
                 "Proviso": {
                     "name": "Proviso",
-                    "effect": null,
+                    "effect": "When Yanfei consumes a Scarlet Seal by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5% for 6s. When this effect is triggered again while its current duration lasts, it will dispel the previous effect.",
                     "image": null,
                     "order": 1,
                     "type": "Passive 2"
