@@ -88,7 +88,7 @@ Code Quality Check:
     - echo Running Code Quality Checks. This may take a while
   script:
     # Execute for JSON reporter and HTML metrics
-    - flutter pub global run dart_code_metrics:metrics --gitlab -r codeclimate lib > quality.json
+    - flutter pub global run dart_code_metrics:metrics -r gitlab lib > quality.json
     - flutter pub global run dart_code_metrics:metrics -r html lib
   artifacts:
     reports:
