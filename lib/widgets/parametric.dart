@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_time_picker/date_time_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:intl/intl.dart';
@@ -136,11 +138,13 @@ class _ParametricPageState extends State<ParametricPage> {
     PlaceholderUtil.showUnimplementedSnackbar(context);
   }
 
-  void _updateOnlineData(String resetTime) async {
+  Future<void> _updateOnlineData(String resetTime) async {
     var uid = Util.getFirebaseUid();
+    var time = DateTime.parse(resetTime).millisecondsSinceEpoch;
     var data = {
-      'parametricReset': DateTime.parse(resetTime).millisecondsSinceEpoch
+      'parametricReset': time,
     };
+    await _prefs.setInt('parametric-reset-time', time);
     await _db
         .collection('userdata')
         .doc(uid)
@@ -157,19 +161,26 @@ class _ParametricPageState extends State<ParametricPage> {
     });
   }
 
-  void _resetTime() {
-    _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now());
-    print('_resetTime: $_newDateTime');
-    // TODO: Update notification if any
-    _updateNewEndTime(_newDateTime);
-    _updateOnlineData(_newDateTime);
+  Future<void> _updateNotification() async {
+    if (kIsWeb) return; // NO-OP for web
+    var notifyParametric = _prefs.getBool('parametric_notification') ?? false;
+    await NotificationManager.getInstance()
+        .scheduleParametricReminder(notifyParametric);
   }
 
-  void _updateLastUseTime() {
-    print('_updateLastUseTime: $_newDateTime');
-    // TODO: Update notification if any
+  Future<void> _resetTime() async {
+    _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now());
+    print('_resetTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
-    _updateOnlineData(_newDateTime);
+    await _updateOnlineData(_newDateTime);
+    await _updateNotification();
+  }
+
+  Future<void> _updateLastUseTime() async {
+    print('_updateLastUseTime: $_newDateTime');
+    _updateNewEndTime(_newDateTime);
+    await _updateOnlineData(_newDateTime);
+    await _updateNotification();
     Navigator.of(context).pop();
   }
 
