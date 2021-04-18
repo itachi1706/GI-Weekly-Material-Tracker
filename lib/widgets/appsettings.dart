@@ -23,7 +23,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   String _versionStr = 'Unknown';
-  bool _darkMode = false, _dailylogin = false;
+  bool _darkMode = false, _dailylogin = false, _weeklyParametric = false;
   int _cacheFiles = 0;
 
   SharedPreferences _prefs;
@@ -81,6 +81,7 @@ class _SettingsPageState extends State<SettingsPage> {
       _cacheSize = filesize(_files['size']);
       _version = 'Version: $version build $build ($type)';
       _versionStr = version;
+      _weeklyParametric = _prefs.getBool('parametric_notification') ?? false;
     });
   }
 
@@ -105,6 +106,56 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  List<SettingsTile> _getNotificationTiles() {
+    return [
+      SettingsTile.switchTile(
+        title: 'Daily Forum Reminders',
+        leading: Icon(Icons.alarm),
+        onToggle: (bool value) {
+          _prefs.setBool('daily_login', value).then((s) async {
+            var notifyManager = NotificationManager.getInstance();
+            await notifyManager.scheduleDailyForumReminder(
+              value,
+              resetNotificationChannel: true,
+            );
+            Util.showSnackbarQuick(
+              context,
+              '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+            );
+          });
+          setState(() {
+            _dailylogin = value;
+          });
+        },
+        switchValue: _dailylogin,
+      ),
+      SettingsTile.switchTile(
+        title: 'Parametric Transformer',
+        subtitle:
+            'Make sure to set the time on the Parametric Transformer page',
+        subtitleMaxLines: 2,
+        leading: Icon(Icons.alarm),
+        onToggle: (bool value) {
+          _prefs.setBool('parametric_notification', value).then((s) async {
+            var notifyManager = NotificationManager.getInstance();
+            await notifyManager.scheduleParametricReminder(
+              value,
+              resetNotificationChannel: true,
+            );
+            Util.showSnackbarQuick(
+              context,
+              '${(value) ? "Enabled" : "Disabled"} parametric transformer reminders',
+            );
+          });
+          setState(() {
+            _weeklyParametric = value;
+          });
+        },
+        switchValue: _weeklyParametric,
+      ),
+    ];
+  }
+
   List<SettingsTile> _showNotificationTestMenu() {
     if (kIsWeb) {
       // Return no op
@@ -116,61 +167,20 @@ class _SettingsPageState extends State<SettingsPage> {
       ];
     }
 
-    return kDebugMode
-        ? [
-            SettingsTile.switchTile(
-              title: 'Daily Forum Reminders',
-              leading: Icon(Icons.alarm),
-              onToggle: (bool value) {
-                _prefs.setBool('daily_login', value).then((s) async {
-                  var notifyManager = NotificationManager.getInstance();
-                  await notifyManager.scheduleDailyForumReminder(
-                    value,
-                    resetNotificationChannel: true,
-                  );
-                  Util.showSnackbarQuick(
-                    context,
-                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
-                  );
-                });
-                setState(() {
-                  _dailylogin = value;
-                });
-              },
-              switchValue: _dailylogin,
-            ),
-            SettingsTile(
-              title: 'Notification Test Menu',
-              leading: Icon(Icons.bug_report),
-              trailing: SizedBox.shrink(),
-              onPressed: (context) {
-                Get.to(() => NotificationDebugPage());
-              },
-            ),
-          ]
-        : [
-            SettingsTile.switchTile(
-              title: 'Daily Forum Reminders',
-              leading: Icon(Icons.alarm),
-              onToggle: (bool value) {
-                _prefs.setBool('daily_login', value).then((s) async {
-                  var notifyManager = NotificationManager.getInstance();
-                  await notifyManager.scheduleDailyForumReminder(
-                    value,
-                    resetNotificationChannel: true,
-                  );
-                  Util.showSnackbarQuick(
-                    context,
-                    '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
-                  );
-                });
-                setState(() {
-                  _dailylogin = value;
-                });
-              },
-              switchValue: _dailylogin,
-            ),
-          ];
+    var tiles = _getNotificationTiles();
+
+    if (kDebugMode) {
+      tiles.add(SettingsTile(
+        title: 'Notification Test Menu',
+        leading: Icon(Icons.bug_report),
+        trailing: SizedBox.shrink(),
+        onPressed: (context) {
+          Get.to(() => NotificationDebugPage());
+        },
+      ));
+    }
+
+    return tiles;
   }
 
   Widget _appDataSettings() {
@@ -461,13 +471,21 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Daily Forum Reminder',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  var data = notifyManager.getDailyCheckInMessages();
                   notifyManager.showNotification(
-                    data[0],
-                    data[1],
-                    data[2],
+                    notifyManager.getDailyCheckInMessages(),
                     notifyManager.craftDailyForumReminder(),
                     payload: 'forum-login',
+                  );
+                },
+              ),
+              SettingsTile(
+                title: 'Parametric Transformer Reminder',
+                trailing: SizedBox.shrink(),
+                onPressed: (context) {
+                  notifyManager.showNotification(
+                    notifyManager.getParametricTransformerMesssages(),
+                    notifyManager.craftParametricTransformerReminder(),
+                    payload: 'parametric-weekly',
                   );
                 },
               ),
@@ -476,21 +494,7 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager.getScheduledReminders();
-                  await showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text('Upcoming Reminders'),
-                        content: Text(msg),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Get.back(),
-                            child: Text('Close'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
+                  await _showDialog(context, msg);
                 },
               ),
               SettingsTile(
@@ -504,6 +508,24 @@ class NotificationDebugPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showDialog(BuildContext context, String msg) async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Upcoming Reminders'),
+          content: Text(msg),
+          actions: [
+            TextButton(
+              onPressed: () => Get.back(),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

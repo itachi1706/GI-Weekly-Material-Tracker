@@ -141,20 +141,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
           PopupMenuButton(
             onSelected: _overflowMenuSelection,
             elevation: 2.0,
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: 'forum-login',
-                child: Text('Daily Forum Login'),
-              ),
-              PopupMenuItem(
-                value: 'exit',
-                child: Text('Logout'),
-              ),
-              PopupMenuItem(
-                value: 'settings',
-                child: Text('Settings'),
-              ),
-            ],
+            itemBuilder: (context) => _generatePopupMenuItems(),
           ),
         ],
       ),
@@ -184,6 +171,27 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         ],
       ),
     );
+  }
+
+  List<PopupMenuEntry<String>> _generatePopupMenuItems() {
+    return [
+      PopupMenuItem(
+        value: 'parametric-reminder',
+        child: Text('Parametric Transformer'),
+      ),
+      PopupMenuItem(
+        value: 'forum-login',
+        child: Text('Daily Forum Login'),
+      ),
+      PopupMenuItem(
+        value: 'exit',
+        child: Text('Logout'),
+      ),
+      PopupMenuItem(
+        value: 'settings',
+        child: Text('Settings'),
+      ),
+    ];
   }
 
   Widget _showAppBar() {
@@ -235,6 +243,9 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         break;
       case 'settings':
         Get.toNamed('/settings');
+        break;
+      case 'parametric-reminder':
+        Get.toNamed('/parametric');
         break;
       default:
         Util.showSnackbarQuick(context, 'Undefined action ($action)');

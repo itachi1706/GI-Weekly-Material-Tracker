@@ -72,6 +72,9 @@ class NotificationManager {
     print('Rescheduling all scheduled reminders');
     var pref = await SharedPreferences.getInstance();
     await scheduleDailyForumReminder(pref.getBool('daily_login') ?? false);
+    await scheduleParametricReminder(
+      pref.getBool('parametric_notification') ?? false,
+    );
     print('Scheduled Reminders rescheduled');
   }
 
@@ -79,6 +82,9 @@ class NotificationManager {
     if (payload != null) {
       debugPrint('notification payload: $payload');
       switch (payload) {
+        case 'parametric-weekly':
+          await Get.toNamed('/parametric');
+          break;
         case 'forum-login':
           await Util.launchWebPage(
             'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us',
@@ -89,7 +95,10 @@ class NotificationManager {
     }
   }
 
-  void removeNotificationChannel(String channelId, {bool silent = false}) async {
+  void removeNotificationChannel(
+    String channelId, {
+    bool silent = false,
+  }) async {
     if (GetPlatform.isAndroid) {
       await _plugin
           .resolvePlatformSpecificImplementation<
@@ -125,10 +134,18 @@ class NotificationManager {
       'Click to open the webpage',
     ];
   }
-  
+
+  List<dynamic> getParametricTransformerMesssages() {
+    return [
+      1002,
+      'Your Parametric Transformer is Ready!',
+      'Click to view the reminder page in the app',
+    ];
+  }
+
   Future<void> resetScheduledIfNotInUse() async {
     if (kIsWeb || !GetPlatform.isAndroid) return;
-    
+
     // scheduled_notify remove if not in use
     var toRemove = false;
     var pref = await SharedPreferences.getInstance();
@@ -136,17 +153,56 @@ class NotificationManager {
       var dailyLogin = pref.getBool('daily_login') ?? false;
       if (!dailyLogin) toRemove = true;
     }
-    
+
     if (toRemove) {
       removeNotificationChannel('scheduled_notify', silent: true);
     }
   }
 
-  Future<void> scheduleDailyForumReminder(bool toEnable, {bool resetNotificationChannel = false}) async {
+  Future<void> scheduleParametricReminder(
+    bool toEnable, {
+    bool resetNotificationChannel = false,
+  }) async {
+    var data = getParametricTransformerMesssages();
+    await _plugin.cancel(data[0], tag: 'weekly_parametric');
+    print('Deleted Parametric Transformer Reminder');
+
+    if (resetNotificationChannel) {
+      await resetScheduledIfNotInUse();
+    }
+
+    // Get from preference
+    var prefs = await SharedPreferences.getInstance();
+    var reminderTime = -1;
+    if (prefs.containsKey('parametric-reset-time')) {
+      reminderTime = prefs.getInt('parametric-reset-time') ?? -1;
+    }
+
+    if (toEnable && reminderTime > 0) {
+      print('Scheduling Parametric Transformer Reminder');
+      await _plugin.zonedSchedule(
+        data[0],
+        data[1],
+        data[2],
+        tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, reminderTime),
+        craftParametricTransformerReminder(),
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
+        matchDateTimeComponents: DateTimeComponents.time,
+        payload: 'parametric-weekly',
+        androidAllowWhileIdle: true,
+      );
+    }
+  }
+
+  Future<void> scheduleDailyForumReminder(
+    bool toEnable, {
+    bool resetNotificationChannel = false,
+  }) async {
     var data = getDailyCheckInMessages();
     await _plugin.cancel(data[0], tag: 'daily_forum');
     print('Deleted Daily Forum Reminder');
-    
+
     if (resetNotificationChannel) {
       await resetScheduledIfNotInUse();
     }
@@ -166,6 +222,28 @@ class NotificationManager {
         androidAllowWhileIdle: true,
       );
     }
+  }
+
+  NotificationDetails craftParametricTransformerReminder() {
+    const androidNotificationDetails = AndroidNotificationDetails(
+      'scheduled_notify',
+      'Scheduled Notification',
+      'Channel Concerning Scheduled Notifications',
+      priority: Priority.high,
+      importance: Importance.high,
+      showWhen: true,
+      playSound: true,
+      enableLights: true,
+      enableVibration: true,
+      sound: RawResourceAndroidNotificationSound('xpup'),
+      autoCancel: true,
+      tag: 'weekly_parametric',
+    );
+
+    const platformChannelSpecifics =
+        NotificationDetails(android: androidNotificationDetails);
+
+    return platformChannelSpecifics;
   }
 
   NotificationDetails craftDailyForumReminder() {
@@ -190,16 +268,14 @@ class NotificationManager {
   }
 
   Future<void> showNotification(
-    int id,
-    String title,
-    String body,
+    List<dynamic> data,
     NotificationDetails notificationDetails, {
     String payload,
   }) async {
     await _plugin.show(
-      id,
-      title,
-      body,
+      data[0],
+      data[1],
+      data[2],
       notificationDetails,
       payload: (payload != null) ? payload : null,
     );

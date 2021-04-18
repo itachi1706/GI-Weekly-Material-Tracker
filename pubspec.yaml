@@ -28,8 +28,11 @@ dependencies:
   flutter:
     sdk: flutter
   about: ^2.0.0
+  app_installer: ^1.0.0
   cached_network_image: ^3.0.0
   cloud_firestore: ^1.0.5
+  date_time_picker: ^2.0.0
+  device_apps: ^2.1.0
   filesize_ns: ^1.1.0
   firebase_analytics: ^8.0.0
   firebase_auth: ^1.1.0
@@ -45,6 +48,7 @@ dependencies:
   flutter_web_browser: ^0.14.0
   get: ^4.1.4
   google_sign_in: ^5.0.2
+  intl: ^0.17.0
   material_design_icons_flutter: ^4.0.5955
   octo_image: ^1.0.0+1
   package_info_plus: ^1.0.0
