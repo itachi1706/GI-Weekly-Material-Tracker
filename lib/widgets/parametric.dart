@@ -38,9 +38,10 @@ class _ParametricPageState extends State<ParametricPage> {
         title: Text('Parametric Transformer'),
         actions: [
           IconButton(
-              icon: Icon(Icons.settings),
-              tooltip: 'Settings',
-              onPressed: () => Get.toNamed('/settings')),
+            icon: Icon(Icons.settings),
+            tooltip: 'Settings',
+            onPressed: () => Get.toNamed('/settings'),
+          ),
         ],
       ),
       body: Center(
@@ -57,8 +58,9 @@ class _ParametricPageState extends State<ParametricPage> {
               children: [
                 TextButton(onPressed: _resetTime, child: Text('Reset Time')),
                 TextButton(
-                    onPressed: _showLastUseDialog,
-                    child: Text('Set Last Use Time')),
+                  onPressed: _showLastUseDialog,
+                  child: Text('Set Last Use Time'),
+                ),
               ],
             ),
             Padding(
@@ -85,28 +87,33 @@ class _ParametricPageState extends State<ParametricPage> {
     if (_prefs == null) return Text('Loading...');
 
     var notifyParametric = _prefs.getBool('parametric_notification') ?? false;
-    if (notifyParametric)
+    if (notifyParametric) {
       return Text(
         'Enabled',
         style: TextStyle(color: Colors.green),
       );
+    }
 
     return Text('Disabled', style: TextStyle(color: Colors.red));
   }
 
   Widget _countdownTimer() {
-    if (_endTimeCountdown == -1)
+    if (_endTimeCountdown == -1) {
       return Padding(
         padding: const EdgeInsets.only(top: 16),
         child: Util.centerLoadingCircle(''),
       );
+    }
 
     return CountdownTimer(
       endTime: _endTimeCountdown,
       endWidget: Text(
-        'READY!',
+        'ITEM READY!',
         style: TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.red, fontSize: 32),
+          fontWeight: FontWeight.bold,
+          color: Colors.red,
+          fontSize: 32,
+        ),
       ),
       textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
     );

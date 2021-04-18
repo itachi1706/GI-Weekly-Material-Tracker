@@ -106,18 +106,8 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  List<SettingsTile> _showNotificationTestMenu() {
-    if (kIsWeb) {
-      // Return no op
-      return [
-        SettingsTile(
-          title: 'Notifications not supported on web',
-          enabled: false,
-        ),
-      ];
-    }
-
-    var tiles = [
+  List<SettingsTile> _getNotificationTiles() {
+    return [
       SettingsTile.switchTile(
         title: 'Daily Forum Reminders',
         leading: Icon(Icons.alarm),
@@ -141,7 +131,8 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
       SettingsTile.switchTile(
         title: 'Parametric Transformer',
-        subtitle: 'Make sure to set the time on the Parametric Transformer page',
+        subtitle:
+            'Make sure to set the time on the Parametric Transformer page',
         subtitleMaxLines: 2,
         leading: Icon(Icons.alarm),
         onToggle: (bool value) {
@@ -163,6 +154,20 @@ class _SettingsPageState extends State<SettingsPage> {
         switchValue: _weeklyParametric,
       ),
     ];
+  }
+
+  List<SettingsTile> _showNotificationTestMenu() {
+    if (kIsWeb) {
+      // Return no op
+      return [
+        SettingsTile(
+          title: 'Notifications not supported on web',
+          enabled: false,
+        ),
+      ];
+    }
+
+    var tiles = _getNotificationTiles();
 
     if (kDebugMode) {
       tiles.add(SettingsTile(
@@ -466,11 +471,8 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Daily Forum Reminder',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  var data = notifyManager.getDailyCheckInMessages();
                   notifyManager.showNotification(
-                    data[0],
-                    data[1],
-                    data[2],
+                    notifyManager.getDailyCheckInMessages(),
                     notifyManager.craftDailyForumReminder(),
                     payload: 'forum-login',
                   );
@@ -480,11 +482,8 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Parametric Transformer Reminder',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  var data = notifyManager.getParametricTransformerMesssages();
                   notifyManager.showNotification(
-                    data[0],
-                    data[1],
-                    data[2],
+                    notifyManager.getParametricTransformerMesssages(),
                     notifyManager.craftParametricTransformerReminder(),
                     payload: 'parametric-weekly',
                   );
@@ -495,21 +494,7 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager.getScheduledReminders();
-                  await showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text('Upcoming Reminders'),
-                        content: Text(msg),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Get.back(),
-                            child: Text('Close'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
+                  await _showDialog(context, msg);
                 },
               ),
               SettingsTile(
@@ -523,6 +508,24 @@ class NotificationDebugPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showDialog(BuildContext context, String msg) async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Upcoming Reminders'),
+          content: Text(msg),
+          actions: [
+            TextButton(
+              onPressed: () => Get.back(),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

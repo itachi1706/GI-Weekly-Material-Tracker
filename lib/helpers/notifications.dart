@@ -95,8 +95,10 @@ class NotificationManager {
     }
   }
 
-  void removeNotificationChannel(String channelId,
-      {bool silent = false}) async {
+  void removeNotificationChannel(
+    String channelId, {
+    bool silent = false,
+  }) async {
     if (GetPlatform.isAndroid) {
       await _plugin
           .resolvePlatformSpecificImplementation<
@@ -266,16 +268,14 @@ class NotificationManager {
   }
 
   Future<void> showNotification(
-    int id,
-    String title,
-    String body,
+    List<dynamic> data,
     NotificationDetails notificationDetails, {
     String payload,
   }) async {
     await _plugin.show(
-      id,
-      title,
-      body,
+      data[0],
+      data[1],
+      data[2],
       notificationDetails,
       payload: (payload != null) ? payload : null,
     );
