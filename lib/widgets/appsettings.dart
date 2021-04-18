@@ -22,6 +22,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
+  String _versionStr = 'Unknown';
   bool _darkMode = false, _dailylogin = false;
   int _cacheFiles = 0;
 
@@ -79,6 +80,7 @@ class _SettingsPageState extends State<SettingsPage> {
       _cacheFiles = _files['fileNum'];
       _cacheSize = filesize(_files['size']);
       _version = 'Version: $version build $build ($type)';
+      _versionStr = version;
     });
   }
 
@@ -321,6 +323,10 @@ class _SettingsPageState extends State<SettingsPage> {
     showAboutPage(
       context: context,
       title: Text('About this app'),
+      values: {
+        'version': _versionStr,
+        'year': DateTime.now().year.toString(),
+      },
       applicationLegalese: 'Copyright © Kenneth Soh, {{ year }}',
       applicationDescription: const Text(
         'Weekly Material Planner and Tracking Application for Genshin Impact',
