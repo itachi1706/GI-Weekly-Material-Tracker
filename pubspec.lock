@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  app_installer:
+    dependency: "direct main"
+    description:
+      name: app_installer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   archive:
     dependency: transitive
     description:
@@ -169,6 +176,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  device_apps:
+    dependency: "direct main"
+    description:
+      name: device_apps
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   fake_async:
     dependency: transitive
     description:

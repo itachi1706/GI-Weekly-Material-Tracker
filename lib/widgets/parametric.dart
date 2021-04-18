@@ -1,11 +1,14 @@
+import 'dart:io';
+
+import 'package:app_installer/app_installer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_time_picker/date_time_picker.dart';
+import 'package:device_apps/device_apps.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -76,7 +79,7 @@ class _ParametricPageState extends State<ParametricPage> {
                 _getNotificationState(),
               ],
             ),
-            TextButton(onPressed: _noOp, child: Text('Launch Game')),
+            TextButton(onPressed: _launchApp, child: Text('Launch Game')),
           ],
         ),
       ),
@@ -141,8 +144,27 @@ class _ParametricPageState extends State<ParametricPage> {
     });
   }
 
-  void _noOp() {
-    PlaceholderUtil.showUnimplementedSnackbar(context);
+  void _launchApp() async {
+    if (kIsWeb) {
+      // Launch the website
+      await Util.launchWebPage('https://genshin.mihoyo.com/en/download');
+    } else {
+      var androidId = 'com.miHoYo.GenshinImpact';
+      if (Platform.isAndroid) {
+        // Returns a list of only those apps that have launch intent
+        var apps = await DeviceApps.getInstalledApplications(
+            onlyAppsWithLaunchIntent: true);
+        print(apps);
+        var isInstalled = await DeviceApps.isAppInstalled(androidId);
+        print('App Installed: $isInstalled');
+        if (isInstalled) {
+          await DeviceApps.openApp(androidId);
+          return;
+        }
+      }
+      await AppInstaller.goStore(
+          androidId, '1517783697'); // If not installed or iOS, launch app store
+    }
   }
 
   Future<void> _updateOnlineData(String resetTime) async {
