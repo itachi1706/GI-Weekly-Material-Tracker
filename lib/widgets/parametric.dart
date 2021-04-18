@@ -127,16 +127,22 @@ class _ParametricPageState extends State<ParametricPage> {
     var data = await _db.collection('userdata').doc(uid).get();
     var epochTime = DateTime.now().millisecondsSinceEpoch;
     var lastResetStr = 'Unknown';
+    var pref = await SharedPreferences.getInstance();
     if (data.exists) {
       var map = data.data();
       if (map.containsKey('parametricReset')) {
         var dt = DateTime.fromMillisecondsSinceEpoch(map['parametricReset']);
         lastResetStr = DateFormat('yyyy-MM-dd HH:mm').format(dt);
+        await pref.setInt('parametric-reset-time', map['parametricReset']);
         dt = dt.add(Duration(days: 7));
         epochTime = dt.millisecondsSinceEpoch;
+        if (!kIsWeb) {
+          await NotificationManager.getInstance().scheduleParametricReminder(
+            pref.getBool('parametric_notification') ?? false,
+          );
+        }
       }
     }
-    var pref = await SharedPreferences.getInstance();
     setState(() {
       _endTimeCountdown = epochTime;
       _resetTimeString = lastResetStr;
