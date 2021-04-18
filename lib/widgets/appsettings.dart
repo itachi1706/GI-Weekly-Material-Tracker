@@ -105,6 +105,16 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   List<SettingsTile> _showNotificationTestMenu() {
+    if (kIsWeb) {
+      // Return no op
+      return [
+        SettingsTile(
+          title: 'Notifications not supported on web',
+          enabled: false,
+        ),
+      ];
+    }
+
     return kDebugMode
         ? [
             SettingsTile.switchTile(
