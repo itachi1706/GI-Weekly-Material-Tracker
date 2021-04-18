@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
@@ -89,13 +89,17 @@ class NotificationManager {
     }
   }
 
-  void removeNotificationChannel(String channelId) async {
+  void removeNotificationChannel(String channelId, {bool silent = false}) async {
     if (GetPlatform.isAndroid) {
       await _plugin
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
           .deleteNotificationChannel(channelId);
-      Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
+      if (!silent) {
+        Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
+      } else {
+        print('Notification Channel $channelId deleted');
+      }
     }
   }
 
@@ -121,11 +125,31 @@ class NotificationManager {
       'Click to open the webpage',
     ];
   }
+  
+  Future<void> resetScheduledIfNotInUse() async {
+    if (kIsWeb || !GetPlatform.isAndroid) return;
+    
+    // scheduled_notify remove if not in use
+    var toRemove = false;
+    var pref = await SharedPreferences.getInstance();
+    if (pref.containsKey('daily_login')) {
+      var dailyLogin = pref.getBool('daily_login') ?? false;
+      if (!dailyLogin) toRemove = true;
+    }
+    
+    if (toRemove) {
+      removeNotificationChannel('scheduled_notify', silent: true);
+    }
+  }
 
-  Future<void> scheduleDailyForumReminder(bool toEnable) async {
+  Future<void> scheduleDailyForumReminder(bool toEnable, {bool resetNotificationChannel = false}) async {
     var data = getDailyCheckInMessages();
     await _plugin.cancel(data[0], tag: 'daily_forum');
     print('Deleted Daily Forum Reminder');
+    
+    if (resetNotificationChannel) {
+      await resetScheduledIfNotInUse();
+    }
 
     if (toEnable) {
       print('Scheduling Daily Forum Reminder');

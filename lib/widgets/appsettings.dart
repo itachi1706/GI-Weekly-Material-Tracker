@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize_ns/filesize_ns.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -113,7 +112,10 @@ class _SettingsPageState extends State<SettingsPage> {
               onToggle: (bool value) {
                 _prefs.setBool('daily_login', value).then((s) async {
                   var notifyManager = NotificationManager.getInstance();
-                  await notifyManager.scheduleDailyForumReminder(value);
+                  await notifyManager.scheduleDailyForumReminder(
+                    value,
+                    resetNotificationChannel: true,
+                  );
                   Util.showSnackbarQuick(
                     context,
                     '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
@@ -140,7 +142,10 @@ class _SettingsPageState extends State<SettingsPage> {
               onToggle: (bool value) {
                 _prefs.setBool('daily_login', value).then((s) async {
                   var notifyManager = NotificationManager.getInstance();
-                  await notifyManager.scheduleDailyForumReminder(value);
+                  await notifyManager.scheduleDailyForumReminder(
+                    value,
+                    resetNotificationChannel: true,
+                  );
                   Util.showSnackbarQuick(
                     context,
                     '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
