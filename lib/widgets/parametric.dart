@@ -153,17 +153,22 @@ class _ParametricPageState extends State<ParametricPage> {
       if (Platform.isAndroid) {
         // Returns a list of only those apps that have launch intent
         var apps = await DeviceApps.getInstalledApplications(
-            onlyAppsWithLaunchIntent: true);
+          onlyAppsWithLaunchIntent: true,
+        );
         print(apps);
         var isInstalled = await DeviceApps.isAppInstalled(androidId);
         print('App Installed: $isInstalled');
         if (isInstalled) {
           await DeviceApps.openApp(androidId);
+
           return;
         }
       }
+      // If not installed or iOS, launch app store
       await AppInstaller.goStore(
-          androidId, '1517783697'); // If not installed or iOS, launch app store
+        androidId,
+        '1517783697',
+      );
     }
   }
 
