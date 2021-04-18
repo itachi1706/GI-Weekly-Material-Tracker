@@ -144,7 +144,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
             itemBuilder: (context) => [
               PopupMenuItem(
                 value: 'parametric-reminder',
-                child: Text('Parametric Converter Reminder'),
+                child: Text('Parametric Transformer'),
               ),
               PopupMenuItem(
                 value: 'forum-login',
