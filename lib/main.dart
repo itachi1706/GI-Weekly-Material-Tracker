@@ -9,6 +9,7 @@ import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/globaltracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
+import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 
@@ -80,6 +81,7 @@ class _MyAppState extends State<MyApp> {
           page: () => GlobalMaterialPage(),
         ),
         GetPage(name: '/settings', page: () => SettingsPage()),
+        GetPage(name: '/parametric', page: () => ParametricPage()),
       ],
     );
   }

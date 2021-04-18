@@ -143,6 +143,10 @@ class _MainNavigationPageState extends State<MainNavigationPage>
             elevation: 2.0,
             itemBuilder: (context) => [
               PopupMenuItem(
+                value: 'parametric-reminder',
+                child: Text('Parametric Converter Reminder'),
+              ),
+              PopupMenuItem(
                 value: 'forum-login',
                 child: Text('Daily Forum Login'),
               ),
@@ -235,6 +239,9 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         break;
       case 'settings':
         Get.toNamed('/settings');
+        break;
+      case 'parametric-reminder':
+        Get.toNamed('/parametric');
         break;
       default:
         Util.showSnackbarQuick(context, 'Undefined action ($action)');
