@@ -1,3 +1,11 @@
+# 1.5.2
+- Added initial parametric transformer notification reminder feature in overflow menu
+- Updated many app dependencies to the latest version
+- Fixed webapp not leaving the intiialization page due to a crash
+- Fixed iOS build not compiling
+- Added button to overflow menu to launch the forum daily check-in page directly
+- (Android) Automatically cleans up notification channels if not in use
+
 # 1.5.1
 - Hotfix for daily forum notification sounds
 
