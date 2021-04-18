@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
@@ -141,6 +143,10 @@ class _MainNavigationPageState extends State<MainNavigationPage>
             elevation: 2.0,
             itemBuilder: (context) => [
               PopupMenuItem(
+                value: 'forum-login',
+                child: Text('Daily Forum Login'),
+              ),
+              PopupMenuItem(
                 value: 'exit',
                 child: Text('Logout'),
               ),
@@ -224,8 +230,14 @@ class _MainNavigationPageState extends State<MainNavigationPage>
       case 'exit':
         _signOut();
         break;
-      default:
+      case 'forum-login':
+        NotificationManager.getInstance().selectNotification(action);
+        break;
+      case 'settings':
         Get.toNamed('/settings');
+        break;
+      default:
+        Util.showSnackbarQuick(context, 'Undefined action ($action)');
         break;
     }
   }
