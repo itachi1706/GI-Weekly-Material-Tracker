@@ -26,6 +26,7 @@ class SplashPage extends StatelessWidget {
   }
 
   Future<void> _setupNotifications() async {
+    if (kIsWeb) return; // Return straight away for web as it is not supported
     var manager = NotificationManager.getInstance();
     await manager.initialize();
     print('Initialized Notifications');

@@ -105,6 +105,16 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   List<SettingsTile> _showNotificationTestMenu() {
+    if (kIsWeb) {
+      // Return no op
+      return [
+        SettingsTile(
+          title: 'Notifications not supported on web',
+          enabled: false,
+        ),
+      ];
+    }
+
     return kDebugMode
         ? [
             SettingsTile.switchTile(
@@ -128,6 +138,7 @@ class _SettingsPageState extends State<SettingsPage> {
             SettingsTile(
               title: 'Notification Test Menu',
               leading: Icon(Icons.bug_report),
+              trailing: SizedBox.shrink(),
               onPressed: (context) {
                 Get.to(() => NotificationDebugPage());
               },
@@ -176,6 +187,7 @@ class _SettingsPageState extends State<SettingsPage> {
           title: 'Game Server Location',
           subtitle: _location,
           leading: Icon(MdiIcons.server),
+          trailing: SizedBox.shrink(),
           onPressed: (context) {
             Get.to(() => RegionSettingsPage());
           },
@@ -190,6 +202,7 @@ class _SettingsPageState extends State<SettingsPage> {
         SettingsTile(
           title: 'Clear Cache',
           leading: Icon(MdiIcons.trashCanOutline),
+          trailing: SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {
             _clearCache();
@@ -207,6 +220,7 @@ class _SettingsPageState extends State<SettingsPage> {
           SettingsTile(
             title: 'About This App',
             leading: Icon(Icons.info_outline),
+            trailing: SizedBox.shrink(),
             onPressed: _showAboutPage,
           ),
         ],
@@ -434,6 +448,7 @@ class NotificationDebugPage extends StatelessWidget {
             tiles: [
               SettingsTile(
                 title: 'Daily Forum Reminder',
+                trailing: SizedBox.shrink(),
                 onPressed: (context) {
                   var data = notifyManager.getDailyCheckInMessages();
                   notifyManager.showNotification(
@@ -447,6 +462,7 @@ class NotificationDebugPage extends StatelessWidget {
               ),
               SettingsTile(
                 title: 'Scheduled Reminders List',
+                trailing: SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager.getScheduledReminders();
                   await showDialog(
@@ -468,6 +484,7 @@ class NotificationDebugPage extends StatelessWidget {
               ),
               SettingsTile(
                 title: 'Delete Scheduled Notification Channel',
+                trailing: SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager.removeNotificationChannel('scheduled_notify');
                 },
