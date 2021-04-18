@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:intl/intl.dart';
@@ -32,7 +33,13 @@ class _ParametricPageState extends State<ParametricPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Parametric Transformer Reminder'),
+        title: Text('Parametric Transformer'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.settings),
+              tooltip: 'Settings',
+              onPressed: () => Get.toNamed('/settings')),
+        ],
       ),
       body: Center(
         child: Column(
