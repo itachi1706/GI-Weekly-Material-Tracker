@@ -59,22 +59,22 @@ Update Firestore Public Data:
   image: node:alpine
   stage: deploy
   before_script:
-    - mkdir importer/import
-    - cp public/data/*.json importer/import
-    - cat $FIREBASE_SERVICE_ACCOUNT > importer/serviceAccountKey.json
-    - cd importer
+    - mkdir util/import
+    - cp public/data/*.json util/import
+    - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
+    - cd util
     - npm i
   script: npm start
   dependencies:
-    - Build and Test Importer
+    - Build and Test Admin Util
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - public/data/**/*
-        - importer/**/*
+        - util/**/*
       when: always
     - when: never
-  needs: ["Build and Test Importer"]
+  needs: ["Build and Test Admin Util"]
 
 Code Quality Check:
   image: itachi1706/flutter-alpine-android:web
@@ -383,28 +383,28 @@ Deploy Artifact:
   rules:
     - if: $CI_COMMIT_TAG
 
-# Importer
-Install Importer Dependencies:
+# Admin Util
+Install Admin Util Dependencies:
   image: node:alpine
   stage: build
   before_script: 
-    - cd importer
+    - cd util
   script: npm ci
   artifacts:
     paths:
-      - importer/node_modules
+      - util/node_modules
     expire_in: 1h
   needs: []
 
-Build and Test Importer:
+Build and Test Admin Util:
   image: node:alpine
   stage: test
   before_script:
-    - cd importer
+    - cd util
   script:
     - npm run build --if-present
     - npm run test --if-present
   dependencies:
-    - Install Importer Dependencies
-  needs: ["Install Importer Dependencies"]
+    - Install Admin Util Dependencies
+  needs: ["Install Admin Util Dependencies"]
 
