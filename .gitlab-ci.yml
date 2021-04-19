@@ -109,6 +109,10 @@ Code Quality Check:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
 
 #Code Coverage:
 #  image: itachi1706/flutter-alpine-android:web
@@ -170,6 +174,10 @@ Generate Flutter App:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
 
 Deploy Dogfood to Firebase:
   image: itachi1706/docker-firebase-cli:latest
@@ -295,6 +303,10 @@ Build Web App:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
 
 Deploy to Firebase Hosting Staging:
   image: itachi1706/docker-firebase-cli:latest
