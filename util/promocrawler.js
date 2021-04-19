@@ -67,6 +67,8 @@ fetch('https://www.gensh.in/events/promotion-codes')
     }
 
     console.log(">>> Update complete")
+
+    // TODO: Process any promo codes to notify users on
     process.exit(0);
 });
 
