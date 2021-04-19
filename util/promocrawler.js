@@ -27,8 +27,7 @@ fetch('https://www.gensh.in/events/promotion-codes')
     let table = root.querySelector(".ce-table-bordered");
     let tableBody = table.querySelector("tbody");
     let td = tableBody.querySelectorAll("td");
-    //tableBody.childNodes.forEach((e) => console.log(e));
-    console.log(td.length);
+    console.log(`Cell Count: ${td.length}`);
 
     console.log(">>> Cleaning crawled codes");
     td = td.map(s => s.removeWhitespace());
@@ -47,7 +46,6 @@ fetch('https://www.gensh.in/events/promotion-codes')
     }
 
     console.log(">>> Adding UTC date to code array");
-    console.log(Date.parse(codes[0].dateString))
     codes.forEach(c => c.date=Date.parse(c.dateString + ' UTC'));
 
     console.log(">>> Codes Crawled:");
