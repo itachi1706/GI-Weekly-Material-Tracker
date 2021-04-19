@@ -1,0 +1,23 @@
+{
+  "name": "gi-weekly-tracker-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node index.js",
+    "updateFirestoreData": "node restore.js",
+    "updatePromoCode": "node promocrawler.js",
+    "trackingBackup": "node backupTracker.js",
+    "userdataBackup": "node backupUserData.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^9.6.0",
+    "firestore-export-import": "^0.14.0",
+    "node-fetch": "^2.6.1",
+    "node-html-parser": "^3.1.5"
+  }
+}
