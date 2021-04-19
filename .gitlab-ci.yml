@@ -465,7 +465,8 @@ Crawl for Promo Codes Cron:
     - npm run updatePromoCode --if-present
   dependencies:
     - Install Admin Util Dependencies
-  needs: ["Install Admin Util Dependencies"]
+    - Build and Test Admin Util
+  needs: ["Install Admin Util Dependencies", "Build and Test Admin Util"]
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: always
