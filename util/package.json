@@ -1,12 +1,14 @@
 {
-  "name": "firestore-import-export",
+  "name": "gi-weekly-tracker-utilities",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node index.js",
-    "trackingbackup": "node backupTracker.js"
+    "updateFirestoreData": "node restore.js",
+    "trackingBackup": "node backupTracker.js",
+    "userdataBackup": "node backupUserData.js"
   },
   "keywords": [],
   "author": "",
