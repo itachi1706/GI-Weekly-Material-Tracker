@@ -466,3 +466,9 @@ Crawl for Promo Codes Cron:
   dependencies:
     - Install Admin Util Dependencies
   needs: ["Install Admin Util Dependencies"]
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: always
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
+      when: always
+    - when: never
