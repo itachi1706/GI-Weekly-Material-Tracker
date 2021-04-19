@@ -5,6 +5,7 @@ stages:
   - test
   - upload
   - deploy
+  - cron
 
 Deploy Firebase Security Rules:
   image: itachi1706/docker-firebase-cli:latest
@@ -15,6 +16,8 @@ Deploy Firebase Security Rules:
     - firebase --token $FIREBASE_TOKEN deploy --only storage
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - firebase/**/*
@@ -30,6 +33,8 @@ Deploy Firebase Firestore Indexes:
   script:
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:indexes --force
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - firebase/firestore.indexes.json
@@ -48,6 +53,8 @@ Update Google Cloud Storage Data:
   script:
     - gsutil -m rsync -d -r . gs://$GCS_BUCKET/
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - public/images/**/*
@@ -68,6 +75,8 @@ Update Firestore Public Data:
   dependencies:
     - Build and Test Admin Util
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       changes:
         - public/data/**/*
@@ -97,6 +106,10 @@ Code Quality Check:
       - metrics/
       - quality.json
   needs: []
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - when: always
 
 #Code Coverage:
 #  image: itachi1706/flutter-alpine-android:web
@@ -155,6 +168,10 @@ Generate Flutter App:
       - release/
       - app-fatapk.apk
     expire_in: 14 days
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - when: always
 
 Deploy Dogfood to Firebase:
   image: itachi1706/docker-firebase-cli:latest
@@ -173,6 +190,8 @@ Deploy Dogfood to Firebase:
   dependencies:
     - Generate Flutter App
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
       changes:
         - android/**/*
@@ -222,6 +241,8 @@ Generate Release Flutter App:
       - app-fatapk.apk
     expire_in: 14 days
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: $CI_COMMIT_TAG
       when: always
     - when: never
@@ -243,6 +264,8 @@ Deploy Beta to Firebase:
   dependencies:
     - Generate Release Flutter App
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: $CI_COMMIT_TAG
       when: always
     - when: never
@@ -271,6 +294,10 @@ Build Web App:
     paths:
       - firebase/
       - webapp.zip
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - when: always
 
 Deploy to Firebase Hosting Staging:
   image: itachi1706/docker-firebase-cli:latest
@@ -285,6 +312,8 @@ Deploy to Firebase Hosting Staging:
       - firebase/
   needs: ["Build Web App"]
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
       when: always
     - when: never
@@ -302,6 +331,8 @@ Deploy to Firebase Hosting Dev:
       - firebase/
   needs: ["Build Web App"]
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: never
     - if: $CI_COMMIT_TAG
@@ -323,6 +354,8 @@ Deploy to Firebase Hosting Prod:
       - firebase/
   needs: ["Build Web App"]
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: $CI_COMMIT_TAG
       when: always
     - when: never
@@ -364,6 +397,8 @@ Upload Artifact:
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app_arm.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_ARM32_BINARY}${APP_VERSION}
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file app-fatapk.apk ${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_MULTI_BINARY}${APP_VERSION}
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: $CI_COMMIT_TAG
   artifacts:
     paths:
@@ -381,6 +416,8 @@ Deploy Artifact:
     - release-cli create --name "Release $CI_COMMIT_TAG" --tag-name $CI_COMMIT_TAG --description release-beta.txt --ref "$CI_COMMIT_TAG" \
       --assets-link='{"name":"${APK_BINARY}${APP_VERSION}.apk","type":"other","url":"${PACKAGE_REGISTRY_URL}${APP_VERSION}/${APK_BINARY}${APP_VERSION}"}'
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: $CI_COMMIT_TAG
 
 # Admin Util
@@ -408,3 +445,15 @@ Build and Test Admin Util:
     - Install Admin Util Dependencies
   needs: ["Install Admin Util Dependencies"]
 
+
+Crawl for Promo Codes Cron:
+  image: node:alpine
+  stage: cron
+  before_script:
+    - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
+    - cd util
+  script:
+    - npm run updatePromoCode --if-present
+  dependencies:
+    - Install Admin Util Dependencies
+  needs: ["Install Admin Util Dependencies"]
