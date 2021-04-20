@@ -1,6 +1,7 @@
 import 'dart:core';
 
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gi_weekly_material_tracker/models/promocodedata.dart';
@@ -33,6 +34,11 @@ class _PromoCodePageState extends State<PromoCodePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (kIsWeb) {
+      // Unsupported for now
+      return _webUnsupported();
+    }
+
     if (_codes == null || _location == null) {
       return Util.loadingScreen();
     }
@@ -116,6 +122,20 @@ class _PromoCodePageState extends State<PromoCodePage> {
         : (Util.themeNotifier.isDarkMode())
             ? Colors.green
             : Colors.lightGreen;
+  }
+
+  Widget _webUnsupported() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Not supported on web'),
+      ),
+      body: Center(
+        child: Text(
+          'Promo Codes on web is coming soon!',
+          style: TextStyle(fontSize: 32),
+        ),
+      ),
+    );
   }
 
   Future<void> _retrievePromoCodes() async {
