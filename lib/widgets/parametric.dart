@@ -141,7 +141,7 @@ class _ParametricPageState extends State<ParametricPage> {
         var dt = DateTime.fromMillisecondsSinceEpoch(map['parametricReset']);
         lastResetStr = DateFormat('yyyy-MM-dd HH:mm').format(dt);
         await pref.setInt('parametric-reset-time', map['parametricReset']);
-        dt = dt.add(Duration(days: 7));
+        dt = dt.add(Duration(days: 6, hours: 22));
         epochTime = dt.millisecondsSinceEpoch;
         if (!kIsWeb) {
           await NotificationManager.getInstance().scheduleParametricReminder(
@@ -202,7 +202,7 @@ class _ParametricPageState extends State<ParametricPage> {
   void _updateNewEndTime(String resetTime) {
     setState(() {
       _endTimeCountdown = DateTime.parse(_newDateTime)
-          .add(Duration(days: 7))
+          .add(Duration(days: 6, hours: 22))
           .millisecondsSinceEpoch;
       _resetTimeString = resetTime;
     });
