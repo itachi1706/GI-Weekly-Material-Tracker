@@ -59,10 +59,17 @@ class _ParametricPageState extends State<ParametricPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Spacer(
+                  flex: 20,
+                ),
                 TextButton(onPressed: _resetTime, child: Text('Reset Time')),
+                Spacer(),
                 TextButton(
                   onPressed: _showLastUseDialog,
                   child: Text('Set Last Use Time'),
+                ),
+                Spacer(
+                  flex: 20,
                 ),
               ],
             ),
