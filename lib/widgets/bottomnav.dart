@@ -176,6 +176,10 @@ class _MainNavigationPageState extends State<MainNavigationPage>
   List<PopupMenuEntry<String>> _generatePopupMenuItems() {
     return [
       PopupMenuItem(
+        value: 'promo-code',
+        child: Text('Promotion Codes'),
+      ),
+      PopupMenuItem(
         value: 'parametric-reminder',
         child: Text('Parametric Transformer'),
       ),
@@ -246,6 +250,9 @@ class _MainNavigationPageState extends State<MainNavigationPage>
         break;
       case 'parametric-reminder':
         Get.toNamed('/parametric');
+        break;
+      case 'promo-code':
+        Get.toNamed('/promos');
         break;
       default:
         Util.showSnackbarQuick(context, 'Undefined action ($action)');
