@@ -1,3 +1,6 @@
+# 1.5.4
+- Fixed wrong parametric transformer countdown period
+
 # 1.5.3
 - See available promo code for the game
 - (Web) Fixed spacing issue between parametric transformer's buttons
