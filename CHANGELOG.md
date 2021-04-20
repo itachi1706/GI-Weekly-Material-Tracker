@@ -1,3 +1,9 @@
+# 1.5.3
+- See available promo code for the game
+- (Web) Fixed spacing issue between parametric transformer's buttons
+- Disabled viewing of promo code on Web as it is currently not supported
+- Various bug fixes
+
 # 1.5.2
 - Added initial parametric transformer notification reminder feature in overflow menu
 - Updated many app dependencies to the latest version
