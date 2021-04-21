@@ -1,8 +1,8 @@
+# 1.5.5
+- Fixed parametric transformer notification causing daily forum login notification to disappear when disabling it
+
 # 1.5.4
 - Fixed wrong parametric transformer countdown period
-
-# 1.5.3
-- Fixed parametric transformer notification causing daily forum login notification to disappear when disabling it
 
 # 1.5.3
 - See available promo code for the game
