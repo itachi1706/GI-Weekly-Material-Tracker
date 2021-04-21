@@ -2,6 +2,9 @@
 - Fixed wrong parametric transformer countdown period
 
 # 1.5.3
+- Fixed parametric transformer notification causing daily forum login notification to disappear when disabling it
+
+# 1.5.3
 - See available promo code for the game
 - (Web) Fixed spacing issue between parametric transformer's buttons
 - Disabled viewing of promo code on Web as it is currently not supported

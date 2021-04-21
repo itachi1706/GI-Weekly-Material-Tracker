@@ -146,12 +146,22 @@ class NotificationManager {
   Future<void> resetScheduledIfNotInUse() async {
     if (kIsWeb || !GetPlatform.isAndroid) return;
 
-    // scheduled_notify remove if not in use
     var toRemove = false;
     var pref = await SharedPreferences.getInstance();
+
+    var dailyLogin = false;
+    var paraNotif = false;
+
     if (pref.containsKey('daily_login')) {
-      var dailyLogin = pref.getBool('daily_login') ?? false;
-      if (!dailyLogin) toRemove = true;
+      dailyLogin = pref.getBool('daily_login') ?? false;
+    }
+
+    if (pref.containsKey('parametric_notification')) {
+      paraNotif = pref.getBool('parametric_notification') ?? false;
+    }
+
+    if (!dailyLogin && !paraNotif) {
+      toRemove = true;
     }
 
     if (toRemove) {
