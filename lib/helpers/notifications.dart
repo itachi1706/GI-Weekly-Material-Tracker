@@ -146,27 +146,24 @@ class NotificationManager {
   Future<void> resetScheduledIfNotInUse() async {
     if (kIsWeb || !GetPlatform.isAndroid) return;
 
-    var toRemove = false;
     var pref = await SharedPreferences.getInstance();
 
-    var dailyLogin = false;
-    var paraNotif = false;
-
     if (pref.containsKey('daily_login')) {
-      dailyLogin = pref.getBool('daily_login') ?? false;
+      var dailyLogin = pref.getBool('daily_login') ?? false;
+      if (!dailyLogin) {
+        removeNotificationChannel('notify_forum', silent: true);
+      }
     }
 
     if (pref.containsKey('parametric_notification')) {
-      paraNotif = pref.getBool('parametric_notification') ?? false;
+      var paraNotif = pref.getBool('parametric_notification') ?? false;
+      if (!paraNotif) {
+        removeNotificationChannel('notify_parametric', silent: true);
+      }
     }
 
-    if (!dailyLogin && !paraNotif) {
-      toRemove = true;
-    }
-
-    if (toRemove) {
-      removeNotificationChannel('scheduled_notify', silent: true);
-    }
+    // Remove old channel
+    removeNotificationChannel('scheduled_notify', silent: true);
   }
 
   Future<void> scheduleParametricReminder(
@@ -236,9 +233,9 @@ class NotificationManager {
 
   NotificationDetails craftParametricTransformerReminder() {
     const androidNotificationDetails = AndroidNotificationDetails(
-      'scheduled_notify',
-      'Scheduled Notification',
-      'Channel Concerning Scheduled Notifications',
+      'notify_parametric',
+      'Parametric Transformer Notification',
+      'Channel related to parametric transformer',
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
@@ -258,9 +255,9 @@ class NotificationManager {
 
   NotificationDetails craftDailyForumReminder() {
     const androidNotificationDetails = AndroidNotificationDetails(
-      'scheduled_notify',
-      'Scheduled Notification',
-      'Channel Concerning Scheduled Notifications',
+      'notify_forum',
+      'Forum Notification',
+      'Scheduled daily reminder on forum',
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
