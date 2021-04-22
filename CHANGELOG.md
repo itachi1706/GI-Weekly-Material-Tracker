@@ -1,3 +1,6 @@
+# 1.5.6
+- Tweaked notification channels for reminder notifications
+
 # 1.5.5
 - Fixed parametric transformer notification causing daily forum login notification to disappear when disabling it
 
