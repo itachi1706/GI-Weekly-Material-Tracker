@@ -15,6 +15,7 @@ Deploy Firebase Security Rules:
   script:
     - firebase --token $FIREBASE_TOKEN deploy --only storage
     - firebase --token $FIREBASE_TOKEN deploy --only firestore:rules
+    - firebase --token $FIREBASE_TOKEN deploy --only database
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
