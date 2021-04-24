@@ -1,8 +1,9 @@
 {
   "rules": {
+    ".read": false,
+    ".write": false,
     "codes": {
-      ".read": true,
-      ".write": false
+      ".read": true
     }
   }
 }
