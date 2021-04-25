@@ -72,7 +72,7 @@ Update Firestore Public Data:
     - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
     - cd util
     - npm i
-  script: npm start
+  script: npm run updateFirestoreData
   dependencies:
     - Build and Test Admin Util
   rules:
