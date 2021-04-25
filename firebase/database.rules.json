@@ -3,7 +3,7 @@
     ".read": false,
     ".write": false,
     "codes": {
-      ".read": true
+      ".read": "auth.uid != null"
     }
   }
 }
