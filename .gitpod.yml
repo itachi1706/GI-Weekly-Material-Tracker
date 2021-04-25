@@ -1,3 +1,6 @@
+image:
+  file: .gitpod.dockerfile
+
 tasks:
   - before: >
       mkdir -p ~/.ssh &&
@@ -5,3 +8,24 @@ tasks:
       chmod 644 ~/.ssh/id_rsa.pub &&
       echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa &&
       chmod 600 ~/.ssh/id_rsa
+      source ~/.bashrc
+    init: |
+      echo "Wait for the installation"
+      yes | sdk i java 8.0.232-open
+      sdk i kotlin
+      sdkmanager --update
+      yes | sdkmanager --licenses
+      flutter pub get
+      flutter run -d web-server --no-resident
+    command: >
+      echo "Ready!"
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+  - port: 5037
+    onOpen: ignore
+vscode:
+  extensions:
+    - Dart-Code.flutter@3.7.1:gujVOCgsbgoN2/po8X1tfA==
+    - Dart-Code.dart-code@3.7.1:3XT4xvtPoRdNasA5smNMiA==
