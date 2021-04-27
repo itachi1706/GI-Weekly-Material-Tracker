@@ -7,6 +7,6 @@ updates:
       interval: "daily"
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
-    directory: "/importer"
+    directory: "/util"
     schedule:
       interval: "daily"
