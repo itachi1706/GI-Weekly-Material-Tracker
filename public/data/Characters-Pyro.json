@@ -819,6 +819,279 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Diluc",
             "subCollection": {}
         },
+        "Hu_Tao": {
+            "image": "Characters/Pyro/Hu_Tao.png",
+            "gender": "Female",
+            "birthday": "15/7",
+            "caption": "Fragrance in Thaw",
+            "name": "Hu Tao",
+            "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+            "nation": "Liyue",
+            "weapon": "Polearm",
+            "rarity": 5,
+            "affiliation": "Wangsheng Funeral Parlor",
+            "constellation": "Papilio Charontis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Diligence",
+                        "material3qty": 3,
+                        "material4": "Whopperflower_Nectar",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 2,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 4,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 6,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 9,
+                        "material4": "Shimmering_Nectar",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 4,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 6,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 12,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 16,
+                        "material4": "Energy_Nectar",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Flutter_By": {
+                        "name": "Flutter By",
+                        "effect": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                        "image": "Talents/Passive/Talent_Flutter_By.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Sanguine_Rouge": {
+                        "name": "Sanguine Rouge",
+                        "effect": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+                        "image": "Talents/Passive/Talent_Sanguine_Rouge.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "The_More_the_Merrier": {
+                        "name": "The More the Merrier",
+                        "effect": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+                        "image": "Talents/Passive/Talent_The_More_the_Merrier.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Secret_Spear_of_Wangsheng": {
+                        "name": "Secret Spear of Wangsheng",
+                        "effect": "Normal Attack: Performs up to 6 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+                        "image": "Talents/Normal/Talent_Secret_Spear_of_Wangsheng.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Guide_to_Afterlife": {
+                        "name": "Guide to Afterlife",
+                        "effect": "Hu Tao consumes a part of her HP, knocking nearby enemies back and entering the Paramita Papilio State.\nParamita Papilio State:\nIncreases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK. Hu Tao's attack DMG is converted to Pyro DMG, which cannot be overridden by any other elemental infusion.\nIncreases Hu Tao's resistance to interruption.\nParamita Papilio ends when its duration is over, or when Hu Tao has left the battlefield or fallen.\nIn the Paramita Papilio state, Hu Tao's Charged Attacks apply the Blood Blossom effect to enemies it hits.\nBlood Blossom Effect:\nEnemies affected by Blood Blossom will take Pyro DMG every 4s.\nThis DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.",
+                        "image": "Talents/Skill/Talent_Guide_to_Afterlife.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Spirit_Soother": {
+                        "name": "Spirit Soother",
+                        "effect": "Hu Tao commands a blazing spirit to deal Pyro DMG in a large AoE. Upon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                        "image": "Talents/Burst/Talent_Spirit_Soother.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Crimson Bouquet",
+                    "effect": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+                    "image": "Constellation/Crimson_Bouquet.png"
+                },
+                "2": {
+                    "name": "Ominous Rainfall",
+                    "effect": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+                    "image": "Constellation/Ominous_Rainfall.png"
+                },
+                "3": {
+                    "name": "Lingering Carmine",
+                    "effect": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/Lingering_Carmine.png"
+                },
+                "4": {
+                    "name": "Garden of Eternal Rest",
+                    "effect": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+                    "image": "Constellation/Garden_of_Eternal_Rest.png"
+                },
+                "5": {
+                    "name": "Floral Incense",
+                    "effect": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/Floral_Incense.png"
+                },
+                "6": {
+                    "name": "Butterfly's Embrace",
+                    "effect": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:\nHu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.\nThis effect triggers automatically when Hu Tao has 1 HP left.\nCan only occur once every 60s.",
+                    "image": "Constellation/Butterfly_Embrace.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Agnidus_Agate_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Silk_Flower"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Agnidus_Agate_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Juvenile_Jade",
+                    "level": 40,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Silk_Flower"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Agnidus_Agate_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Juvenile_Jade",
+                    "level": 50,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Silk_Flower"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Agnidus_Agate_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Juvenile_Jade",
+                    "level": 60,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Silk_Flower"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Agnidus_Agate_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Juvenile_Jade",
+                    "level": 70,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Silk_Flower"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Agnidus_Agate_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Juvenile_Jade",
+                    "level": 80,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Silk_Flower"
+                }
+            },
+            "introduction": "Hu Tao is the 77th Director of the Wangsheng Funeral Parlor, a person vital to managing Liyue's funerary affairs.\nShe does her utmost to flawlessly carry out a person's last rites and preserve the world's balance of yin and yang.\nAside from this, she is also a talented poet whose many \"masterpieces\" have passed around Liyue's populace by word of mouth.",
+            "genshinggpath": "characters/HuTao",
+            "element": "Pyro",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Hu_Tao",
+            "subCollection": {}
+        },
         "Klee": {
             "image": "Characters/Pyro/Klee.png",
             "gender": "Female",
@@ -1638,18 +1911,18 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Xinyan",
             "subCollection": {}
         },
-        "Hu_Tao": {
-            "image": "Characters/Pyro/Hu_Tao.png",
+        "Yanfei": {
+            "image": "Characters/Pyro/Yanfei.png",
             "gender": "Female",
-            "birthday": "15/7",
-            "caption": "Fragrance in Thaw",
-            "name": "Hu Tao",
-            "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+            "birthday": "28/7",
+            "caption": "Wise Innocence",
+            "name": "Yanfei",
+            "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the mixed blood of an illuminated beast.",
             "nation": "Liyue",
-            "weapon": "Polearm",
-            "rarity": 5,
-            "affiliation": "Wangsheng Funeral Parlor",
-            "constellation": "Papilio Charontis",
+            "weapon": "Catalyst",
+            "rarity": 4,
+            "affiliation": "Liyue Harbor",
+            "constellation": "Bestia Iustitia",
             "talents": {
                 "ascension": {
                     "2": {
@@ -1658,9 +1931,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Teachings_of_Diligence",
+                        "material3": "Teachings_of_Gold",
                         "material3qty": 3,
-                        "material4": "Whopperflower_Nectar",
+                        "material4": "Treasure_Hoarder_Insignia",
                         "material4qty": 6
                     },
                     "3": {
@@ -1669,9 +1942,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 2,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 3
                     },
                     "4": {
@@ -1680,9 +1953,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 4,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 4
                     },
                     "5": {
@@ -1691,9 +1964,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 6,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 6
                     },
                     "6": {
@@ -1702,98 +1975,98 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Gold",
                         "material3qty": 9,
-                        "material4": "Shimmering_Nectar",
+                        "material4": "Silver_Raven_Insignia",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2": "Bloodjade_Branch",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 4,
-                        "material4": "Energy_Nectar",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2": "Bloodjade_Branch",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 6,
-                        "material4": "Energy_Nectar",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2": "Bloodjade_Branch",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 12,
-                        "material4": "Energy_Nectar",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
                         "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "Shard_of_a_Foul_Legacy",
+                        "material2": "Bloodjade_Branch",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Gold",
                         "material3qty": 16,
-                        "material4": "Energy_Nectar",
+                        "material4": "Golden_Raven_Insignia",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "Flutter_By": {
-                        "name": "Flutter By",
-                        "effect": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
-                        "image": "Talents/Passive/Talent_Flutter_By.png",
+                    "Encyclopedic_Expertise": {
+                        "name": "Encyclopedic Expertise",
+                        "effect": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+                        "image": null,
                         "order": 0,
                         "type": "Passive 1"
                     },
-                    "Sanguine_Rouge": {
-                        "name": "Sanguine Rouge",
-                        "effect": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
-                        "image": "Talents/Passive/Talent_Sanguine_Rouge.png",
+                    "Proviso": {
+                        "name": "Proviso",
+                        "effect": "When Yanfei consumes a Scarlet Seal by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5% for 6s. When this effect is triggered again while its current duration lasts, it will dispel the previous effect.",
+                        "image": null,
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "The_More_the_Merrier": {
-                        "name": "The More the Merrier",
-                        "effect": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
-                        "image": "Talents/Passive/Talent_The_More_the_Merrier.png",
+                    "Xiezhis_Eye": {
+                        "name": "Xiezhi's Eye",
+                        "effect": "When Yanfei's Charged Attacks deal CRIT Hits, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+                        "image": null,
                         "order": 2,
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "Secret_Spear_of_Wangsheng": {
-                        "name": "Secret Spear of Wangsheng",
-                        "effect": "Normal Attack: Performs up to 6 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
-                        "image": "Talents/Normal/Talent_Secret_Spear_of_Wangsheng.png",
+                    "Seal_of_Approval": {
+                        "name": "Seal of Approval",
+                        "effect": "Normal Attack: Shoots fireballs hat deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently-possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.\nCharged Attack: Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.\nPlunging Attack: Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+                        "image": null,
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
-                    "Guide_to_Afterlife": {
-                        "name": "Guide to Afterlife",
-                        "effect": "Hu Tao consumes a part of her HP, knocking nearby enemies back and entering the Paramita Papilio State.\nParamita Papilio State:\nIncreases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK. Hu Tao's attack DMG is converted to Pyro DMG, which cannot be overridden by any other elemental infusion.\nIncreases Hu Tao's resistance to interruption.\nParamita Papilio ends when its duration is over, or when Hu Tao has left the battlefield or fallen.\nIn the Paramita Papilio state, Hu Tao's Charged Attacks apply the Blood Blossom effect to enemies it hits.\nBlood Blossom Effect:\nEnemies affected by Blood Blossom will take Pyro DMG every 4s.\nThis DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.",
-                        "image": "Talents/Skill/Talent_Guide_to_Afterlife.png",
+                    "Signed_Edict": {
+                        "name": "Signed Edict",
+                        "effect": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+                        "image": null,
                         "order": 1,
                         "type": "Elemental Skill"
                     },
-                    "Spirit_Soother": {
-                        "name": "Spirit Soother",
-                        "effect": "Hu Tao commands a blazing spirit to deal Pyro DMG in a large AoE. Upon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
-                        "image": "Talents/Burst/Talent_Spirit_Soother.png",
+                    "Done_Deal": {
+                        "name": "Done Deal",
+                        "effect": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals and applying Brilliance to her.Brilliance\nHas the following effects:\n• Grants Yanfei a Scarlet Seal at fixed intervals.\n• Increases the DMG dealt by her Charged Attacks.\n\nThe effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
+                        "image": null,
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -1801,34 +2074,34 @@
             },
             "constellations": {
                 "1": {
-                    "name": "Crimson Bouquet",
-                    "effect": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
-                    "image": "Constellation/Crimson_Bouquet.png"
+                    "name": "The Law Knows No Kindness",
+                    "effect": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+                    "image": null
                 },
                 "2": {
-                    "name": "Ominous Rainfall",
-                    "effect": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
-                    "image": "Constellation/Ominous_Rainfall.png"
+                    "name": "Right of Final Interpretation",
+                    "effect": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+                    "image": null
                 },
                 "3": {
-                    "name": "Lingering Carmine",
-                    "effect": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Lingering_Carmine.png"
+                    "name": "Samadhi Fire-Forged",
+                    "effect": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+                    "image": null
                 },
                 "4": {
-                    "name": "Garden of Eternal Rest",
-                    "effect": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
-                    "image": "Constellation/Garden_of_Eternal_Rest.png"
+                    "name": "Supreme Amnesty",
+                    "effect": "When Done Deal is used:\nCreates a shield that absorbs up to 75% of Yanfei's Max HP for 15s.\nThis shield absorbs Pyro DMG 250% more effectively.",
+                    "image": null
                 },
                 "5": {
-                    "name": "Floral Incense",
-                    "effect": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Floral_Incense.png"
+                    "name": "Legal Cheat Sheet",
+                    "effect": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+                    "image": null
                 },
                 "6": {
-                    "name": "Butterfly's Embrace",
-                    "effect": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:\nHu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.\nThis effect triggers automatically when Hu Tao has 1 HP left.\nCan only occur once every 60s.",
-                    "image": "Constellation/Butterfly_Embrace.png"
+                    "name": "Extra Clause",
+                    "effect": "Increases the maximum number of Scarlet Seals by 1.",
+                    "image": null
                 }
             },
             "ascension": {
@@ -1839,10 +2112,10 @@
                     "mora": 20000,
                     "material2": null,
                     "level": 20,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Treasure_Hoarder_Insignia",
                     "material4qty": 3,
                     "material3qty": 3,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 },
                 "2": {
                     "material2qty": 2,
@@ -1851,10 +2124,10 @@
                     "mora": 40000,
                     "material2": "Juvenile_Jade",
                     "level": 40,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Treasure_Hoarder_Insignia",
                     "material4qty": 15,
                     "material3qty": 10,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 },
                 "3": {
                     "material2qty": 4,
@@ -1863,10 +2136,10 @@
                     "mora": 60000,
                     "material2": "Juvenile_Jade",
                     "level": 50,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Silver_Raven_Insignia",
                     "material4qty": 12,
                     "material3qty": 20,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 },
                 "4": {
                     "material2qty": 8,
@@ -1875,10 +2148,10 @@
                     "mora": 80000,
                     "material2": "Juvenile_Jade",
                     "level": 60,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Silver_Raven_Insignia",
                     "material4qty": 18,
                     "material3qty": 30,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 },
                 "5": {
                     "material2qty": 12,
@@ -1887,10 +2160,10 @@
                     "mora": 100000,
                     "material2": "Juvenile_Jade",
                     "level": 70,
-                    "material4": "Energy_Nectar",
+                    "material4": "Golden_Raven_Insignia",
                     "material4qty": 12,
                     "material3qty": 45,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 },
                 "6": {
                     "material2qty": 20,
@@ -1899,16 +2172,16 @@
                     "mora": 120000,
                     "material2": "Juvenile_Jade",
                     "level": 80,
-                    "material4": "Energy_Nectar",
+                    "material4": "Golden_Raven_Insignia",
                     "material4qty": 24,
                     "material3qty": 60,
-                    "material3": "Silk_Flower"
+                    "material3": "Noctilucous_Jade"
                 }
             },
-            "introduction": "Hu Tao is the 77th Director of the Wangsheng Funeral Parlor, a person vital to managing Liyue's funerary affairs.\nShe does her utmost to flawlessly carry out a person's last rites and preserve the world's balance of yin and yang.\nAside from this, she is also a talented poet whose many \"masterpieces\" have passed around Liyue's populace by word of mouth.",
-            "genshinggpath": "characters/HuTao",
+            "introduction": null,
+            "genshinggpath": null,
             "element": "Pyro",
-            "wiki": "https://genshin-impact.fandom.com/wiki/Hu_Tao",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Yanfei",
             "subCollection": {}
         }
     }
