@@ -1921,7 +1921,7 @@
             "nation": "Liyue",
             "weapon": "Catalyst",
             "rarity": 4,
-            "affiliation": "Liyue Harbor",
+            "affiliation": "Liyue Harbor, Adepti",
             "constellation": "Bestia Iustitia",
             "talents": {
                 "ascension": {
@@ -2029,21 +2029,21 @@
                     "Encyclopedic_Expertise": {
                         "name": "Encyclopedic Expertise",
                         "effect": "Displays the location of nearby resources unique to Liyue on the mini-map.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_Encyclopedic_Expertise.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
                     "Proviso": {
                         "name": "Proviso",
-                        "effect": "When Yanfei consumes a Scarlet Seal by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5% for 6s. When this effect is triggered again while its current duration lasts, it will dispel the previous effect.",
-                        "image": null,
+                        "effect": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+                        "image": "Talents/Passive/Talent_Proviso.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "Xiezhis_Eye": {
-                        "name": "Xiezhi's Eye",
-                        "effect": "When Yanfei's Charged Attacks deal CRIT Hits, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
-                        "image": null,
+                    "Blazing Eye": {
+                        "name": "Blazing Eye",
+                        "effect": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+                        "image": "Talents/Passive/Talent_Blazing_Eye.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
@@ -2051,22 +2051,22 @@
                 "attack": {
                     "Seal_of_Approval": {
                         "name": "Seal of Approval",
-                        "effect": "Normal Attack: Shoots fireballs hat deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently-possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.\nCharged Attack: Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.\nPlunging Attack: Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
-                        "image": null,
+                        "effect": "Normal Attack: Shoots fireballs that deal up to three counts of Pyro DMG. When Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh. Each Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.\nCharged Attack: Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to the opponents after a short casting time. This Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.\nPlunging Attack: Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+                        "image": "Talents/Normal/Talent_Seal_of_Approval.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
                     "Signed_Edict": {
                         "name": "Signed Edict",
-                        "effect": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
-                        "image": null,
+                        "effect": "Summons blistering flames that deal AoE Pyro DMG.\nIf this attack hits an enemy, Yanfei is granted the maximum number of Scarlet Seals.",
+                        "image": "Talents/Skill/Talent_Signed_Edict.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Done_Deal": {
                         "name": "Done Deal",
-                        "effect": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals and applying Brilliance to her.Brilliance\nHas the following effects:\n• Grants Yanfei a Scarlet Seal at fixed intervals.\n• Increases the DMG dealt by her Charged Attacks.\n\nThe effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
-                        "image": null,
+                        "effect": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.\n\nBrilliance\nPerodically grants Yanfei a Scarlet Seal. Increases the DMG of her Charged Attacks. The Brilliance effect stops when Yanfei leaves the field or dies.",
+                        "image": "Talents/Burst/Talent_Done_Deal.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -2075,33 +2075,33 @@
             "constellations": {
                 "1": {
                     "name": "The Law Knows No Kindness",
-                    "effect": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
-                    "image": null
+                    "effect": "When Yanfei uses her Charged Attacks,each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+                    "image": "Constellation/The_Law_Knows_No_Kindness.png"
                 },
                 "2": {
                     "name": "Right of Final Interpretation",
-                    "effect": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
-                    "image": null
+                    "effect": "Increases Yanfei's Charged Attack CRIT rate by 20% against enemies below 50% HP.",
+                    "image": "Constellation/Right_of_Final_Interpretation.png"
                 },
                 "3": {
                     "name": "Samadhi Fire-Forged",
-                    "effect": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "effect": "Increases the level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Samadhi_Fire-Forged.png"
                 },
                 "4": {
                     "name": "Supreme Amnesty",
-                    "effect": "When Done Deal is used:\nCreates a shield that absorbs up to 75% of Yanfei's Max HP for 15s.\nThis shield absorbs Pyro DMG 250% more effectively.",
-                    "image": null
+                    "effect": "When Done Deal is used:\nCreates a shield which absorbes upto 45% of Yanfei's Max HP for 15s. This shield absorbes Pyro DMG 250% more efficiently.",
+                    "image": "Constellation/Supreme_Amnesty.png"
                 },
                 "5": {
-                    "name": "Legal Cheat Sheet",
-                    "effect": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "name": "Abiding Affidavit",
+                    "effect": "Increases the level of Done Deal by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Abiding_Affidavit.png"
                 },
                 "6": {
                     "name": "Extra Clause",
                     "effect": "Increases the maximum number of Scarlet Seals by 1.",
-                    "image": null
+                    "image": "Constellation/Extra_Clause.png"
                 }
             },
             "ascension": {
