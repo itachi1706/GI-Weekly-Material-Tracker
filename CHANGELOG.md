@@ -1,3 +1,7 @@
+# 1.5.7
+- Fixed bug where parametric transformer reminder is reminding every day
+- Various bug fixes and code optimizations for app dependencies
+
 # 1.5.6
 - Tweaked notification channels for reminder notifications
 
