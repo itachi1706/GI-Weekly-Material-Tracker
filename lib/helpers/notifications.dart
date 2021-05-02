@@ -180,25 +180,35 @@ class NotificationManager {
 
     // Get from preference
     var prefs = await SharedPreferences.getInstance();
-    var reminderTime = -1;
+    var resetTime = -1;
     if (prefs.containsKey('parametric-reset-time')) {
-      reminderTime = prefs.getInt('parametric-reset-time') ?? -1;
+      resetTime = prefs.getInt('parametric-reset-time') ?? -1;
     }
 
-    if (toEnable && reminderTime > 0) {
-      print('Scheduling Parametric Transformer Reminder');
-      await _plugin.zonedSchedule(
-        data[0],
-        data[1],
-        data[2],
-        tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, reminderTime),
-        craftParametricTransformerReminder(),
-        uiLocalNotificationDateInterpretation:
-            UILocalNotificationDateInterpretation.absoluteTime,
-        matchDateTimeComponents: DateTimeComponents.time,
-        payload: 'parametric-weekly',
-        androidAllowWhileIdle: true,
-      );
+    var currentTime = tz.TZDateTime.now(tz.local).millisecondsSinceEpoch;
+    print('Now (ms): $currentTime | Reset (ms): $resetTime');
+
+    // Prevent creating reminder if reminder time is before current time (aka its over)
+    if (toEnable && resetTime > 0) {
+      print('Parametric Reminder Enabled. Calculating reminder time');
+      var remindTime = tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, resetTime).add(Duration(days: 6, hours: 22));
+      print('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
+      if (remindTime.millisecondsSinceEpoch > currentTime) {
+        print('Scheduling Parametric Transformer Reminder');
+        await _plugin.zonedSchedule(
+          data[0],
+          data[1],
+          data[2],
+          remindTime,
+          craftParametricTransformerReminder(),
+          uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+          payload: 'parametric-weekly',
+          androidAllowWhileIdle: true,
+        );
+      } else {
+        print('Reminder Time is before current time. Aborting scheduling of reminder');
+      }
     }
   }
 
