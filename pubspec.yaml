@@ -69,6 +69,7 @@ dev_dependencies:
   #  sdk: flutter
   # Temporary disabled until its updated
   #dependency_validator: ^2.0.1
+  flutter_launcher_icons: ^0.9.0
   flutter_native_splash: ^1.1.7+1
   pedantic: ^1.11.0
   dart_code_metrics: ^3.0.0
@@ -82,6 +83,16 @@ flutter_native_splash:
   color: "ffffff"
   image_dark: assets/logo.png
   color_dark: "000000"
+
+# Update with flutter pub run flutter_launcher_icons:main
+flutter_icons:
+  android: "ic_launcher_custom"
+  ios: true
+  remove_alpha_ios: true
+  adaptive_icon_foreground: assets/android_foreground.png
+  adaptive_icon_background: "#FF5722"
+  image_path_android: assets/launcher_icon.png
+  image_path_ios: assets/launcher_ios.png
 
 # The following section is specific to Flutter.
 flutter:
@@ -98,7 +109,8 @@ flutter:
   assets:
     - assets/images/elements/
     - assets/images/items/
-    - assets/logo.png
+    - assets/splash.png
+    - assets/splash_dark.png
     - CHANGELOG.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
