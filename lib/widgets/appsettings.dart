@@ -363,7 +363,7 @@ class _SettingsPageState extends State<SettingsPage> {
       applicationIcon: SizedBox(
         width: 100,
         height: 100,
-        child: Image.asset(Util.themeNotifier.isDarkMode() ? 'assets/splash_dark.png' : 'assets/splash.png'),
+        child: Image.asset(Util.themeNotifier.isDarkMode() ? 'assets/icons/splash/splash_dark.png' : 'assets/icons/splash/splash.png'),
       ),
     );
   }

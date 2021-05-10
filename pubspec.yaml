@@ -79,9 +79,9 @@ dev_dependencies:
 
 # Update with flutter pub run flutter_native_splash:create
 flutter_native_splash:
-  image: assets/splash.png
+  image: assets/icons/splash/splash.png
   color: "ffffff"
-  image_dark: assets/splash_dark.png
+  image_dark: assets/icons/splash/splash_dark.png
   color_dark: "000000"
 
 # Update with flutter pub run flutter_launcher_icons:main
@@ -89,10 +89,10 @@ flutter_icons:
   android: "ic_launcher_custom"
   ios: true
   remove_alpha_ios: true
-  adaptive_icon_foreground: assets/android_foreground.png
+  adaptive_icon_foreground: assets/icons/appicon/android_foreground.png
   adaptive_icon_background: "#FF5722"
-  image_path_android: assets/launcher_icon.png
-  image_path_ios: assets/launcher_ios.png
+  image_path_android: assets/icons/appicon/launcher_icon.png
+  image_path_ios: assets/icons/appicon/launcher_ios.png
 
 # The following section is specific to Flutter.
 flutter:
@@ -109,8 +109,8 @@ flutter:
   assets:
     - assets/images/elements/
     - assets/images/items/
-    - assets/splash.png
-    - assets/splash_dark.png
+    - assets/icons/splash/splash.png
+    - assets/icons/splash/splash_dark.png
     - CHANGELOG.md
 
   # An image asset can refer to one or more resolution-specific "variants", see

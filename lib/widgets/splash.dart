@@ -15,7 +15,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       navigateAfterFuture: _login(),
-      image: Image.asset('assets/splash_dark.png'),
+      image: Image.asset('assets/icons/splash/splash_dark.png'),
       loadingText: Text('Initializing App'),
       title: Text(
         'Genshin Impact Weekly Material Tracker',
