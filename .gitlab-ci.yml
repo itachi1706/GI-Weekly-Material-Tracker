@@ -254,6 +254,42 @@ Generate Release Flutter App:
       when: always
     - when: never
 
+Generate Release Flutter AppBundle Android:
+  image: itachi1706/flutter-alpine-android:stable
+  stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    ANDROID_HOME: "/usr/local/android-sdk"
+    APP_BUILD_VER: beta
+    APP_TYPE: Android
+  before_script:
+    - flutter doctor -v
+    - echo $FLUTTER_RELEASE_KEYSTORE | base64 -d > android/app/flutter.jks
+    - cat $UPLOAD_KEY_PROPERTIES > android/key.properties
+    - cat $GOOGLE_SVC_ANDROID > android/app/google-services.json
+    - cat $GOOGLE_SVC_IOS > ios/Runner/GoogleService-Info.plist
+    - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+    - echo $GIT_COMMIT_COUNT
+    - echo $CI_COMMIT_SHORT_SHA
+    - chmod +x ./ciscripts/get_version.sh
+    - ./ciscripts/get_version.sh
+  script:
+    - flutter build appbundle
+    - cp build/app/outputs/bundle/release/app-release.aab ./appbundle-signed.aab
+  artifacts:
+    paths:
+      - appbundle-signed.aab
+    expire_in: 14 days
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: always
+    # Temporary push allow
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
+    - when: never
+
 Deploy Beta to Firebase:
   image: itachi1706/docker-firebase-cli:latest
   stage: deploy
