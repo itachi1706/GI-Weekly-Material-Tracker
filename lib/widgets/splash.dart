@@ -7,6 +7,7 @@ import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashPage extends StatelessWidget {
@@ -14,7 +15,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       navigateAfterFuture: _login(),
-      image: Image.asset('assets/logo.png'),
+      image: Image.asset('assets/icons/splash/splash_dark.png'),
       loadingText: Text('Initializing App'),
       title: Text(
         'Genshin Impact Weekly Material Tracker',
