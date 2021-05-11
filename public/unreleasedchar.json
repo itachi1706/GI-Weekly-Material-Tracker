@@ -139,21 +139,21 @@
             "attack": {
                 "Favonius_Bladework_Edel": {
                     "name": "Favonius Bladework - Edel",
-                    "effect": "Normal Attack: Perform up to 5 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes.\nAt end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "effect": "Normal Attack: Performs up to five consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes. At the end of the sequence, performs a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
                     "image": null,
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
                 "Icetide_Vortex": {
                     "name": "Icetide Vortex",
-                    "effect": "#Sharp frost, swift blade.\nPress\nSlashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.\nGrimheart\nIncreases Eula's resistance to interruption and DEF.\n\nHold\nWielding her sword, Eula slashes forward, dealing AoE Cryo DMG to opponents in front of her, consuming all the stacks of Grimheart that Eula possess.\nEach stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents, decreasing their Physical RES and Cryo RES. Multiple hits will not cause this stack to effect, but will extend the effect's duration.",
+                    "effect": "Eula slashes swiftly, dealing Cryo DMG.\nPress: Slashes swiftly, dealing Cryo DMG. When it hits an opponent, Eula gains a stack of Grimheart that stacks up to two times. These stats can only be gained once every 0.3s.\nGrimheart: Increases Eula's resistance to interruption and DEF.\nHold: Consumes all stacks of Grimheart and lashes forward, dealing AoE Cryo DMG.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach stack of Grimheart consumed will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
                     "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
                 "Glacial_Illumination": {
                     "name": "Glacial Illumination",
-                    "effect": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creates a Lightfall Sword that follows her around for a certain duration.\nWhen Eula's own Normal Attacks, Elemental Skills and Elemental Bursts deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula dies or leaves the field, the Lightfall Sword will immediately explode",
+                    "effect": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated. If Eula leaves the field, the Lightfall Sword will immediately explode.",
                     "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
@@ -266,7 +266,7 @@
                 "material3": "Dandelion_Seed"
             }
         },
-        "introduction": null,
+        "introduction": "A rebellious descendant of the old aristocracy who is always out on the battlefield.\nAs one born into the old aristocracy, carrying the bloodline of sinners, Eula has needed a unique approach to the world to navigate the towering walls of prejudice peacefully. Of course, this did not prevent her from severing ties with her clan. As the outstanding Spindrift Knight, she hunts down Mondstadt's enemies in the wild to exact her unique \"vengeance.\"",
         "genshinggpath": null,
         "element": "Cryo",
         "wiki": "https://genshin-impact.fandom.com/wiki/Eula",
