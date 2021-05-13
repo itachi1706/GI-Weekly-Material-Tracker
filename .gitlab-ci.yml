@@ -285,7 +285,36 @@ Generate Release Flutter AppBundle Android:
       when: never
     - if: $CI_COMMIT_TAG
       when: always
+    # Temp push to test build
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: always
     - when: never
+
+Deploy to Google Play Alpha:
+  image: itachi1706/flutter-alpine-android:fastlane-cli
+  stage: deploy
+  before_script:
+    - cat $GPLAY_SVC_ACCT > android/gplayserviceaccount.json
+    - cd android
+    - fastlane run download_from_play_store track:"alpha"
+    - cp ../LATEST fastlane/metadata/android/en-US/changelogs/$CI_PIPELINE_IID.txt
+    - cp ../appbundle-signed.aab .
+  script:
+    - echo Deploying to Alpha Track on Google Play
+    - fastlane supply --aab appbundle-signed.aab --track alpha
+  dependencies:
+    - Generate Release Flutter AppBundle Android
+  needs: ["Generate Release Flutter AppBundle Android"]
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: manual
+    # Temp push to test build
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      when: manual
+    - when: never
+
 
 Deploy Beta to Firebase:
   image: itachi1706/docker-firebase-cli:latest
