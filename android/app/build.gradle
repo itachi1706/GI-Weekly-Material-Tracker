@@ -36,6 +36,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion 30
+    ndkVersion "22.1.7171670"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -60,6 +61,9 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
         }
     }
 }

@@ -30,20 +30,20 @@ dependencies:
   about: ^2.0.0
   app_installer: ^1.0.0
   cached_network_image: ^3.0.0
-  cloud_firestore: ^1.0.5
+  cloud_firestore: ^1.0.7
   date_time_picker: ^2.0.0
-  device_apps: ^2.1.0
+  device_apps: ^2.1.1
   filesize_ns: ^1.1.0
-  firebase_analytics: ^8.0.0
-  firebase_auth: ^1.1.0
-  firebase_core: ^1.0.3
-  firebase_crashlytics: ^2.0.0
+  firebase_analytics: ^8.0.4
+  firebase_auth: ^1.1.4
+  firebase_core: ^1.1.1
+  firebase_crashlytics: ^2.0.3
   firebase_database: ^6.1.2
   firebase_image: ^1.0.1
-  firebase_performance: ^0.7.0
-  firebase_storage: ^8.0.3
-  flutter_countdown_timer: ^4.0.2
-  flutter_local_notifications: ^5.0.0+1
+  firebase_performance: ^0.7.0+2
+  firebase_storage: ^8.0.6
+  flutter_countdown_timer: ^4.1.0
+  flutter_local_notifications: ^5.0.0+4
   flutter_rating_bar: ^4.0.0
   flutter_signin_button: ^2.0.0
   flutter_web_browser: ^0.14.0
@@ -52,7 +52,7 @@ dependencies:
   intl: ^0.17.0
   material_design_icons_flutter: ^4.0.5955
   octo_image: ^1.0.0+1
-  package_info_plus: ^1.0.0
+  package_info_plus: ^1.0.1
   path_provider: ^2.0.1
   settings_ui: ^1.0.0
   shared_preferences: ^2.0.5
@@ -70,9 +70,9 @@ dev_dependencies:
   # Temporary disabled until its updated
   #dependency_validator: ^2.0.1
   flutter_launcher_icons: ^0.9.0
-  flutter_native_splash: ^1.1.7+1
+  flutter_native_splash: ^1.1.8+4
   pedantic: ^1.11.0
-  dart_code_metrics: ^3.0.0
+  dart_code_metrics: ^3.2.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
