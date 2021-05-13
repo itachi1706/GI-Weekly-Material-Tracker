@@ -292,13 +292,14 @@ Deploy to Google Play Alpha:
   stage: deploy
   before_script:
     - cat $GPLAY_SVC_ACCT > android/gplayserviceaccount.json
+    - APP_VERSION=$(cat ../VERSION)
     - cd android
     - fastlane run download_from_play_store track:"alpha"
     - cp ../LATEST fastlane/metadata/android/en-US/changelogs/$CI_PIPELINE_IID.txt
     - cp ../appbundle-signed.aab .
   script:
     - echo Deploying to Alpha Track on Google Play
-    - fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true
+    - fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true --version_name "$CI_PIPELINE_IID ($APP_VERSION)"
   dependencies:
     - Generate Release Flutter AppBundle Android
   needs: ["Generate Release Flutter AppBundle Android"]
