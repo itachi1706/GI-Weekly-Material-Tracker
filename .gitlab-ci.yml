@@ -279,7 +279,7 @@ Generate Release Flutter AppBundle Android:
   artifacts:
     paths:
       - appbundle-signed.aab
-    expire_in: 14 days
+    expire_in: 30 days
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
