@@ -301,7 +301,7 @@ Deploy to Google Play Alpha:
     - cp ../appbundle-signed.aab .
   script:
     - echo Deploying to Alpha Track on Google Play
-    - fastlane supply --aab appbundle-signed.aab --track alpha
+    - fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true
   dependencies:
     - Generate Release Flutter AppBundle Android
   needs: ["Generate Release Flutter AppBundle Android"]
