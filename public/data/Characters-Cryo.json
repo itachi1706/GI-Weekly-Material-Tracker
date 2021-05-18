@@ -546,6 +546,280 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Diona",
             "subCollection": {}
         },
+        "Eula": {
+            "image": "Characters/Cryo/Eula.png",
+            "gender": "Female",
+            "birthday": "25/10",
+            "caption": "Dance of the Shimmering Wave",
+            "name": "Eula",
+            "fullName": "Eula Lawrence",
+            "description": "The Spindrift Knight, a scion of old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+            "nation": "Mondstadt",
+            "weapon": "Claymore",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius, Lawrence Clan",
+            "constellation": "Aphros Delos",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Resistance",
+                        "material3qty": 3,
+                        "material4": "Damaged_Mask",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 2,
+                        "material4": "Stained_Mask",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 4,
+                        "material4": "Stained_Mask",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 6,
+                        "material4": "Stained_Mask",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Resistance",
+                        "material3qty": 9,
+                        "material4": "Stained_Mask",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dragon_Lords_Crown",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Resistance",
+                        "material3qty": 4,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dragon_Lords_Crown",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Resistance",
+                        "material3qty": 6,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Dragon_Lords_Crown",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Resistance",
+                        "material3qty": 12,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Dragon_Lords_Crown",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Resistance",
+                        "material3qty": 16,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Roiling_Rime": {
+                        "name": "Roiling Rime",
+                        "effect": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+                        "image": "Talents/Passive/Talent_Roiling_Rime.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Wellspring_of_War-Lust": {
+                        "name": "Wellspring of War-Lust",
+                        "effect": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+                        "image": "Talents/Passive/Talent_Wellspring_of_War-Lust.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    },
+                    "Aristocratic_Introspection": {
+                        "name": "Aristocratic Introspection",
+                        "effect": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+                        "image": "Talents/Passive/Talent_Aristocratic_Introspection.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    }
+                },
+                "attack": {
+                    "Favonius_Bladework_Edel": {
+                        "name": "Favonius Bladework - Edel",
+                        "effect": "Normal Attack: Perform up to five consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.\nPlunging Attack: Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Favonius_Bladework_-_Edel.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Icetide_Vortex": {
+                        "name": "Icetide Vortex",
+                        "effect": "Sharp frost, swift blade.\nTap: Slashes swiftly, dealing Cryo DMG. When it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stats can only be gained once every 0.3s.\nGrimheart: Increases Eula's resistance to interruption and DEF.\nHold: Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+                        "image": "Talents/Skill/Talent_Icetide_Vortex.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Glacial_Illumination": {
+                        "name": "Glacial Illumination",
+                        "effect": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will immediately explode.",
+                        "image": "Talents/Burst/Talent_Glacial_Illumination.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Tidal Illusion",
+                    "effect": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+                    "image": "Constellation/Tidal_Illusion.png"
+                },
+                "2": {
+                    "name": "Lady of Seafoam",
+                    "effect": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tapping CD.",
+                    "image": "Constellation/Lady_of_Seafoam.png"
+                },
+                "3": {
+                    "name": "Lawrence Pedigree",
+                    "effect": "Increases the level of Glacial Illumination by 3.\n Maximum upgrade level is 15.",
+                    "image": "Constellation/Lawrence_Pedigree.png"
+                },
+                "4": {
+                    "name": "The Obstinacy of One's Inferiors",
+                    "effect": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+                    "image": "Constellation/The_Obstinacy_of_Ones_Inferiors.png"
+                },
+                "5": {
+                    "name": "Chivalric Quality",
+                    "effect": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Chivalric_Quality.png"
+                },
+                "6": {
+                    "name": "Noble Obligation",
+                    "effect": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightning Sword an additional stack of energy.",
+                    "image": "Constellation/Noble_Obligation.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Shivada_Jade_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Dandelion_Seed"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Dandelion_Seed"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Dandelion_Seed"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Dandelion_Seed"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Dandelion_Seed"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Shivada_Jade_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Dandelion_Seed"
+                }
+            },
+            "introduction": "A rebellious descendant of the old aristocracy who is always out on the battlefield.\nAs one born into the old aristocracy, carrying the bloodline of sinners, Eula has needed a unique approach to the world to navigate the towering walls of prejudice peacefully. Of course, this did not prevent her from severing ties with her clan. As the outstanding Spindrift Knight, she hunts down Mondstadt's enemies in the wild to exact her unique \"vengeance.\"",
+            "genshinggpath": null,
+            "element": "Cryo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Eula",
+            "subCollection": {}
+        },
         "Ganyu": {
             "image": "Characters/Cryo/Ganyu.png",
             "gender": "Female",
