@@ -386,7 +386,7 @@ class _PlannerPageState extends State<PlannerPage> {
 
     return StreamBuilder(
       stream: ref.snapshots(),
-      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+      builder: (context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           return Text('Error occurred getting snapshot');
         }
