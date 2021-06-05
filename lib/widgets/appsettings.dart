@@ -350,6 +350,22 @@ class _SettingsPageState extends State<SettingsPage> {
             'https://gitlab.com/itachi1706/gi-weekly-material-tracker',
           ),
         ),
+        ListTile(
+          leading: Icon(Icons.bug_report),
+          trailing: SizedBox.shrink(),
+          title: Text('Report a Bug'),
+          onTap: () => Util.launchWebPage(
+            'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Bug%20Report',
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.lightbulb),
+          trailing: SizedBox.shrink(),
+          title: Text('Suggest a new Feature'),
+          onTap: () => Util.launchWebPage(
+            'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Feature%20Request',
+          ),
+        ),
         MarkdownPageListTile(
           icon: Icon(Icons.list),
           title: const Text('Changelog'),
