@@ -386,7 +386,8 @@ class _PlannerPageState extends State<PlannerPage> {
 
     return StreamBuilder(
       stream: ref.snapshots(),
-      builder: (context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+      builder: (context,
+          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.hasError) {
           return Text('Error occurred getting snapshot');
         }
@@ -402,15 +403,15 @@ class _PlannerPageState extends State<PlannerPage> {
             .toSet()
             .toList();
         var _mappedData = <int, Set<String>>{};
+        for (var i = 1; i <= 7; i++) {
+          _mappedData.putIfAbsent(i, () => {});
+        }
         _finalDomainMaterials.forEach((domainMaterial) {
           if (!(_matData[domainMaterial] is MaterialDataDomains)) return;
 
           var _daysForMaterial =
               (_matData[domainMaterial] as MaterialDataDomains).days;
 
-          for (var i = 1; i <= 7; i++) {
-            _mappedData.putIfAbsent(i, () => {});
-          }
           _daysForMaterial.forEach((day) {
             _mappedData[day].add(domainMaterial);
           });
