@@ -312,6 +312,69 @@ class GridData {
     ];
   }
 
+  static Widget generateElementalColoredLine(String textData) {
+    print(textData);
+    var textSplit = textData.split('§');
+    var textElements = <TextSpan>[];
+
+    for (var i = 0; i < textSplit.length; i++) {
+      var txt = textSplit[i];
+      if (i == 0) {
+        textElements.add(
+          TextSpan(text: txt.replaceAll('\\n', '\n')),
+        ); // Presume default
+      } else {
+        var effect = txt[0];
+        if (effect.toLowerCase() == 'r') {
+          textElements
+              .add(TextSpan(text: txt.substring(1).replaceAll('\\n', '\n')));
+        } else {
+          textElements.add(TextSpan(
+            text: txt.substring(1).replaceAll('\\n', '\n'),
+            style: TextStyle(
+              color: getElementalColor(effect),
+              fontFamily: 'Product-Sans-Bold',
+            ),
+          ));
+        }
+      }
+    }
+
+    return Text.rich(TextSpan(children: textElements));
+  }
+
+  static Color getElementalColor(String colorChar) {
+    var color = Colors.white;
+    switch (colorChar.toLowerCase()) {
+      case 'a':
+        color = Color(0xFF26A684);
+        break;
+      case 'c':
+        color = Color(0xFF4878a8);
+        break;
+      case 'd':
+        color = Color(0xFF51810e);
+        break;
+      case 'e':
+        color = Color(0xFF9336b0);
+        break;
+      case 'g':
+        color = Color(0xFFb67607);
+        break;
+      case 'h':
+        color = Color(0xFF0b4dda);
+        break;
+      case 'p':
+        color = Color(0xFFbf2818);
+        break;
+      default:
+        color = (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+        break;
+    }
+
+    return color;
+  }
+
   static List<Widget> getAscensionMaterialDataWidgets(
     int qty,
     String name,

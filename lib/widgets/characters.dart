@@ -1353,7 +1353,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
             ],
           ),
           content: SingleChildScrollView(
-            child: Text(_talInfo.effect),
+            child: GridData.generateElementalColoredLine(_talInfo.effect),
           ),
           actions: [
             TextButton(
@@ -1371,7 +1371,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         ? SizedBox.shrink()
         : Padding(
             padding: const EdgeInsets.only(top: 4),
-            child: Text(_talInfo.effect),
+            child: GridData.generateElementalColoredLine(_talInfo.effect),
           );
   }
 
@@ -1514,7 +1514,7 @@ class CharacterConstellationPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 4),
-            child: Text(constellation.effect),
+            child: GridData.generateElementalColoredLine(constellation.effect),
           ),
         ],
       ),
