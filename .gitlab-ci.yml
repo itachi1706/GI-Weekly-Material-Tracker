@@ -292,7 +292,7 @@ Deploy to Google Play Alpha:
   stage: deploy
   before_script:
     - cat $GPLAY_SVC_ACCT > android/gplayserviceaccount.json
-    - APP_VERSION=$(cat ../VERSION)
+    - APP_VERSION=$(cat ./VERSION)
     - cd android
     - fastlane run download_from_play_store track:"alpha"
     - cp ../LATEST fastlane/metadata/android/en-US/changelogs/$CI_PIPELINE_IID.txt
@@ -310,29 +310,29 @@ Deploy to Google Play Alpha:
       when: manual
     - when: never
 
-
-Deploy Beta to Firebase:
-  image: itachi1706/docker-firebase-cli:latest
-  stage: deploy
-  variables:
-    APP_TYPE: beta
-  before_script:
-    - echo $CI_COMMIT_MESSAGE > release-beta.txt
-    - builddate="$(date +"%A, %d %B %Y %T %Z")"
-    - printf "\nRelease Notes\n" >> release-beta.txt
-    - cat LATEST >> release-beta.txt
-    - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
-    - cat release-beta.txt
-    - cp ./release/app-arm64-v8a-release.apk app.apk
-  script: firebase --token $FIREBASE_TOKEN appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "beta" --release-notes-file "release-beta.txt"
-  dependencies:
-    - Generate Release Flutter App
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-    - if: $CI_COMMIT_TAG
-      when: always
-    - when: never
+# Disabled as we now deploy to Google Play instead
+#Deploy Beta to Firebase:
+#  image: itachi1706/docker-firebase-cli:latest
+#  stage: deploy
+#  variables:
+#    APP_TYPE: beta
+#  before_script:
+#    - echo $CI_COMMIT_MESSAGE > release-beta.txt
+#    - builddate="$(date +"%A, %d %B %Y %T %Z")"
+#    - printf "\nRelease Notes\n" >> release-beta.txt
+#    - cat LATEST >> release-beta.txt
+#    - printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
+#    - cat release-beta.txt
+#    - cp ./release/app-arm64-v8a-release.apk app.apk
+#  script: firebase --token $FIREBASE_TOKEN appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "beta" --release-notes-file "release-beta.txt"
+#  dependencies:
+#    - Generate Release Flutter App
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+#      when: never
+#    - if: $CI_COMMIT_TAG
+#      when: always
+#    - when: never
 
 Build Web App:
   image: itachi1706/flutter-alpine-android:web

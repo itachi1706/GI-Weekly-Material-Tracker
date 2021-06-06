@@ -1,3 +1,11 @@
+# 1.6.0
+- General bug fixes and improvements
+- Added application icon and updated splash screen
+- Dependency updates
+- Fixed issue when weekly planner tab is blank when you are not tracking any domain materials
+- Added bug report and feature suggestion options in the settings page
+- Updated talents and constellation description to support colors. This will come in a future update to the data
+
 # 1.5.7
 - Fixed bug where parametric transformer reminder is reminding every day
 - Various bug fixes and code optimizations for app dependencies
