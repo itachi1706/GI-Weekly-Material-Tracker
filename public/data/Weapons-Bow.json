@@ -612,6 +612,85 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Messenger",
       "subCollection": {}
     },
+    "Mitternachts_Waltz": {
+      "secondary_stat_type": "Physical DMG Bonus",
+      "description": "A bow painted the color of transgression and nights of illusion.",
+      "name": "Mitternachts Waltz",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Heavy_Horn",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Heavy_Horn",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Black_Bronze_Horn",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Black_Crystal_Horn",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Mitternachts_Waltz.png",
+      "secondary_stat": "11.3%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "51.7%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effectName": "Evernight Duet",
+      "effect": "Normal Attack hits on opponents increase Elemental Skill DMG by 20~40% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by 20~40% for 5s.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mitternachts_Waltz",
+      "subCollection": {}
+    },
     "Prototype_Crescent": {
       "secondary_stat_type": "ATK",
       "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
