@@ -18,5 +18,7 @@ ports:
     onOpen: open-preview
 vscode:
   extensions:
-    - Dart-Code.flutter@3.7.1:gujVOCgsbgoN2/po8X1tfA==
-    - Dart-Code.dart-code@3.7.1:3XT4xvtPoRdNasA5smNMiA==
+    - dart-code.flutter
+    - dart-code.dart-code
+    - felixangelov.bloc
+    - caponetto.vscode-diff-viewer
