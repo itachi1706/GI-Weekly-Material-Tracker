@@ -83,6 +83,7 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "A sword made of blackstone. It has a dark crimson glow on its black blade.",
       "name": "Blackcliff Longsword",
+      "series": "Blackcliff Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -162,6 +163,7 @@
       "secondary_stat_type": "ATK",
       "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
       "name": "Cool Steel",
+      "series": "Bane Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -320,6 +322,7 @@
       "secondary_stat_type": "None",
       "description": "Youthful dreams and the thrill of adventure. If this isn't enough, then make it up with valiance.",
       "name": "Dull Blade",
+      "series": "1-Star Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -379,6 +382,7 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
       "name": "Favonius Sword",
+      "series": "Favonius Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -695,6 +699,7 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
       "name": "Iron Sting",
+      "series": "Infusion Series",
       "ascension": {
         "1": {
           "material3": "Whopperflower_Nectar",
@@ -774,6 +779,7 @@
       "secondary_stat_type": "ATK",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
       "name": "Lion's Roar",
+      "series": "Bane Series",
       "ascension": {
         "1": {
           "material3": "Treasure_Hoarder_Insignia",
@@ -849,10 +855,91 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Lion%27s_Roar",
       "subCollection": {}
     },
+    "Primordial_Jade_Cutter": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
+      "name": "Primordial Jade Cutter",
+      "series": "Primordial Jade Series",
+      "ascension": {
+        "1": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 3,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Treasure_Hoarder_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Silver_Raven_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 14,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Golden_Raven_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 18,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Sword/Primordial_Jade_Cutter.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "43.9%",
+      "max_base_atk": 565,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Protector's Virtue",
+      "effect": "HP increased by 20~40%. Additionally, provides an ATK Bonus based on 1.2~2.4% of the wielder's Max HP.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Cutter",
+      "subCollection": {}
+    },
     "Prototype_Rancour": {
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
       "name": "Prototype Rancour",
+      "series": "Prototype Series",
       "ascension": {
         "1": {
           "material3": "Recruit_Insignia",
@@ -932,6 +1019,7 @@
       "secondary_stat_type": "ATK",
       "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
       "name": "Royal Longsword",
+      "series": "Royal Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -1011,6 +1099,7 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
       "name": "Sacrificial Sword",
+      "series": "Sacrificial Series",
       "ascension": {
         "1": {
           "material3": "Divining_Scroll",
@@ -1090,6 +1179,7 @@
       "secondary_stat_type": "None",
       "description": "A sword for chasing away demons. Everyone knows it's made of a silver alloy, not pure silver.",
       "name": "Silver Sword",
+      "series": "2-Star Series",
       "ascension": {
         "1": {
           "material3": "Firm_Arrowhead",
@@ -1149,6 +1239,7 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
       "name": "Skyrider Sword",
+      "series": "Skyrider Series",
       "ascension": {
         "1": {
           "material3": "Recruit_Insignia",
@@ -1228,6 +1319,7 @@
       "secondary_stat_type": "Energy Recharge",
       "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
       "name": "Skyward Blade",
+      "series": "Mondstadt Series",
       "ascension": {
         "1": {
           "material3": "Slime_Condensate",
@@ -1307,6 +1399,7 @@
       "secondary_stat_type": "ATK",
       "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
       "name": "Summit Shaper",
+      "series": "Liyue Series",
       "ascension": {
         "1": {
           "material3": "Damaged_Mask",
@@ -1465,6 +1558,7 @@
       "secondary_stat_type": "Elemental Mastery",
       "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
       "name": "The Alley Flash",
+      "series": "Alley Series",
       "ascension": {
         "1": {
           "material3": "Divining_Scroll",
@@ -1623,6 +1717,7 @@
       "secondary_stat_type": "ATK",
       "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
       "name": "The Flute",
+      "series": "Wanderer's Troupe Series",
       "ascension": {
         "1": {
           "material3": "Slime_Condensate",
@@ -1776,85 +1871,6 @@
       "effect": "Each Elemental Orb or Particle collected restores 1~2% HP.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Traveler%27s_Handy_Sword",
       "subCollection": {}
-    },
-    "Primordial_Jade_Cutter": {
-      "secondary_stat_type": "CRIT Rate",
-      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "name": "Primordial Jade Cutter",
-      "ascension": {
-        "1": {
-          "material3": "Treasure_Hoarder_Insignia",
-          "level": 20,
-          "material2": "Mist_Grass_Pollen",
-          "material3qty": 3,
-          "material1": "Mist_Veiled_Lead_Elixir",
-          "material2qty": 5,
-          "material1qty": 5,
-          "mora": 10000
-        },
-        "2": {
-          "material3": "Treasure_Hoarder_Insignia",
-          "level": 40,
-          "material2": "Mist_Grass_Pollen",
-          "material3qty": 12,
-          "material1": "Mist_Veiled_Mercury_Elixir",
-          "material2qty": 18,
-          "material1qty": 5,
-          "mora": 20000
-        },
-        "3": {
-          "material3": "Silver_Raven_Insignia",
-          "level": 50,
-          "material2": "Mist_Grass",
-          "material3qty": 9,
-          "material1": "Mist_Veiled_Mercury_Elixir",
-          "material2qty": 9,
-          "material1qty": 9,
-          "mora": 30000
-        },
-        "4": {
-          "material3": "Silver_Raven_Insignia",
-          "level": 60,
-          "material2": "Mist_Grass",
-          "material3qty": 14,
-          "material1": "Mist_Veiled_Gold_Elixir",
-          "material2qty": 18,
-          "material1qty": 5,
-          "mora": 45000
-        },
-        "5": {
-          "material3": "Golden_Raven_Insignia",
-          "level": 70,
-          "material2": "Mist_Grass_Wick",
-          "material3qty": 9,
-          "material1": "Mist_Veiled_Gold_Elixir",
-          "material2qty": 14,
-          "material1qty": 9,
-          "mora": 55000
-        },
-        "6": {
-          "material3": "Golden_Raven_Insignia",
-          "level": 80,
-          "material2": "Mist_Grass_Wick",
-          "material3qty": 18,
-          "material1": "Mist_Veiled_Primo_Elixir",
-          "material2qty": 27,
-          "material1qty": 6,
-          "mora": 65000
-        }
-      },
-      "image": "Weapons/Sword/Primordial_Jade_Cutter.png",
-      "secondary_stat": "9.6%",
-      "rarity": 5,
-      "type": "Sword",
-      "max_secondary_stat": "43.9%",
-      "max_base_atk": 565,
-      "base_atk": 46,
-      "obtained": "Gacha",
-      "effectName": "Protector's Virtue",
-      "effect": "HP increased by 20~40%. Additionally, provides an ATK Bonus based on 1.2~2.4% of the wielder's Max HP.",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Cutter",
-      "subCollection": {}
-    } 
+    }
   }
 }
