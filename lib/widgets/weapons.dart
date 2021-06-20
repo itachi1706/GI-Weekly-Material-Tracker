@@ -156,6 +156,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               _generateWeaponHeader(),
               Divider(),
+              ..._getSeriesIfExists(_info),
               ...GridData.generateInfoLine(
                 _info.obtained.replaceAll('- ', ''),
                 Icons.location_pin,
@@ -174,6 +175,15 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         ),
       ),
     );
+  }
+
+  List<Widget> _getSeriesIfExists(WeaponData info) {
+    var finalWidgets = <Widget>[SizedBox.shrink()];
+    if (info.series != null) {
+      finalWidgets = GridData.generateInfoLine(info.series, MdiIcons.bookshelf);
+    }
+
+    return finalWidgets;
   }
 
   List<Widget> _generateEffectName() {

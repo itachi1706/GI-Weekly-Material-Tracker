@@ -10,6 +10,7 @@ class WeaponData extends CommonData {
   String effect;
   int maxBaseAtk;
   String maxSecondaryStat;
+  String series;
   Map<String, WeaponAscension> ascension;
 
   WeaponData({
@@ -28,6 +29,7 @@ class WeaponData extends CommonData {
     this.maxBaseAtk,
     this.maxSecondaryStat,
     this.ascension,
+    this.series,
   }) : super(
           image: image,
           name: name,
@@ -53,6 +55,7 @@ class WeaponData extends CommonData {
       maxSecondaryStat: parsedJson['max_secondary_stat'],
       ascension: WeaponAscension.getFromMap(parsedJson['ascension']),
       effectName: parsedJson['effectName'],
+      series: parsedJson['series'],
     );
   }
 
