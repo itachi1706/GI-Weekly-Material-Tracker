@@ -1,3 +1,8 @@
+# 1.6.1
+- Added full names of characters to the character info page if it exists
+- Added weapon family to the weapon info page if it is part of a series
+- Dependency Updates and Code Optimizations
+
 # 1.6.0
 - General bug fixes and improvements
 - Added application icon and updated splash screen
