@@ -191,7 +191,9 @@ class NotificationManager {
     // Prevent creating reminder if reminder time is before current time (aka its over)
     if (toEnable && resetTime > 0) {
       print('Parametric Reminder Enabled. Calculating reminder time');
-      var remindTime = tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, resetTime).add(Duration(days: 6, hours: 22));
+      var remindTime =
+          tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, resetTime)
+              .add(Duration(days: 6, hours: 22));
       print('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
       if (remindTime.millisecondsSinceEpoch > currentTime) {
         print('Scheduling Parametric Transformer Reminder');
@@ -202,12 +204,13 @@ class NotificationManager {
           remindTime,
           craftParametricTransformerReminder(),
           uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
+              UILocalNotificationDateInterpretation.absoluteTime,
           payload: 'parametric-weekly',
           androidAllowWhileIdle: true,
         );
       } else {
-        print('Reminder Time is before current time. Aborting scheduling of reminder');
+        print(
+            'Reminder Time is before current time. Aborting scheduling of reminder');
       }
     }
   }

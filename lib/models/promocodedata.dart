@@ -31,7 +31,8 @@ class PromoCode {
 
   static List<PromoCode> fromDB(Map<String, dynamic> dbString) {
     var finalList = <PromoCode>[];
-    dbString.forEach((key, value) => finalList.add(PromoCode.fromJson(Map<String, dynamic>.from(value))));
+    dbString.forEach((key, value) =>
+        finalList.add(PromoCode.fromJson(Map<String, dynamic>.from(value))));
 
     return finalList;
   }
