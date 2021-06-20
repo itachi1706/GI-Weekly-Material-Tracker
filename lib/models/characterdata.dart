@@ -6,6 +6,7 @@ class CharacterData extends CommonData {
   String constellation;
   String caption;
   String element;
+  String fullName;
   String gender;
   String genshinGGPath;
   String introduction;
@@ -33,6 +34,7 @@ class CharacterData extends CommonData {
     this.ascension,
     this.talent,
     this.constellations,
+    this.fullName,
     wiki,
   }) : super(
           image: image,
@@ -66,6 +68,7 @@ class CharacterData extends CommonData {
         parsedJson['constellations'],
       ),
       caption: parsedJson['caption'],
+      fullName: parsedJson['fullName'],
     );
   }
 

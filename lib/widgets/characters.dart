@@ -256,9 +256,10 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           children: [
             _getCharacterHeader(),
             Divider(),
+            ..._getCharacterFullNameWidget(widget.info),
             ...GridData.generateInfoLine(
               widget.info.affiliation,
-              Icons.account_circle,
+              Icons.flag,
             ),
             ...GridData.generateInfoLine(
               widget.info.nation,
@@ -279,6 +280,18 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         ),
       ),
     );
+  }
+
+  List<Widget> _getCharacterFullNameWidget(CharacterData info) {
+    var finalWidget = <Widget>[SizedBox.shrink()];
+    if (info.fullName != null) {
+      finalWidget = GridData.generateInfoLine(
+        info.fullName,
+        Icons.account_circle,
+      );
+    }
+
+    return finalWidget;
   }
 
   Widget _getGenderBirthdayWidget() {
@@ -833,8 +846,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       color = Colors.pink;
     }
 
-    if (name.startsWith('Aether/Lumine'))
+    if (name.startsWith('Aether/Lumine')) {
       return Icon(MdiIcons.genderMaleFemale);
+    }
 
     return Icon(icon, color: color);
   }
