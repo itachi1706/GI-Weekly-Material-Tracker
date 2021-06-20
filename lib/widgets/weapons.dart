@@ -459,7 +459,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     }
   }
 
-  void _showRemoveDialog(WeaponAscension curData, String key) async {
+  Future<void> _showRemoveDialog(WeaponAscension curData, String key) async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -497,12 +497,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Untrack'),
               onPressed: _untrackWeaponAction,
+              child: Text('Untrack'),
             ),
           ],
         );
@@ -510,7 +510,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     );
   }
 
-  void _showAddDialog(WeaponAscension curData, String key) async {
+  Future<void> _showAddDialog(WeaponAscension curData, String key) async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -544,12 +544,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Track'),
               onPressed: _trackWeaponAction,
+              child: Text('Track'),
             ),
           ],
         );

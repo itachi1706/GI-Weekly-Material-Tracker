@@ -520,6 +520,26 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     return Container(
       child: Card(
         child: InkWell(
+          onLongPress: () =>
+              UpdateMultiTracking(context, _material).itemClickedAction(
+            _data,
+            key,
+            {
+              'img': imageRef,
+              'asc': extraAscensionRef,
+              'type': extraTypeRef,
+            },
+            true,
+          ),
+          onTap: () {
+            _tapCount++;
+            if (_tapCount > 5) {
+              Util.showSnackbarQuick(
+                context,
+                'Long press to bulk update tracked materials',
+              );
+            }
+          },
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: Row(
@@ -544,26 +564,6 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               ],
             ),
           ),
-          onLongPress: () =>
-              UpdateMultiTracking(context, _material).itemClickedAction(
-            _data,
-            key,
-            {
-              'img': imageRef,
-              'asc': extraAscensionRef,
-              'type': extraTypeRef,
-            },
-            true,
-          ),
-          onTap: () {
-            _tapCount++;
-            if (_tapCount > 5) {
-              Util.showSnackbarQuick(
-                context,
-                'Long press to bulk update tracked materials',
-              );
-            }
-          },
         ),
       ),
     );

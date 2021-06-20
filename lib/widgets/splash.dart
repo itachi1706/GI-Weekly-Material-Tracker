@@ -7,7 +7,6 @@ import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
-import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashPage extends StatelessWidget {

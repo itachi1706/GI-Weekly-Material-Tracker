@@ -164,6 +164,7 @@ class GridData {
 
   static Widget getImageAssetFromFirebase(imageRef, {double height}) {
     if (imageRef == null) return Image.memory(kTransparentImage);
+    var width = height;
 
     return FutureBuilder(
       future: Util.getFirebaseStorageUrl(imageRef),
@@ -174,12 +175,12 @@ class GridData {
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
                 height: height,
-                width: height,
+                width: width,
                 child: OctoImage(
                   placeholderBuilder: (context) => SizedBox(
-                    child: CircularProgressIndicator(),
                     height: height,
-                    width: height,
+                    width: width,
+                    child: CircularProgressIndicator(),
                   ),
                   errorBuilder: (context, obj, trace) => Icon(Icons.error),
                   image: _getFirebaseImage(snapshot.data),
@@ -196,9 +197,9 @@ class GridData {
               padding: const EdgeInsets.all(8),
               child: Center(
                 child: SizedBox(
-                  child: CircularProgressIndicator(),
                   height: height,
-                  width: height,
+                  width: width,
+                  child: CircularProgressIndicator(),
                 ),
               ),
             ),
@@ -219,14 +220,6 @@ class GridData {
     return Card(
       color: getRarityColor(data.rarity),
       child: GridTile(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Stack(
-            children: [
-              getImageAssetFromFirebase(data.image),
-            ],
-          ),
-        ),
         footer: Padding(
           padding: const EdgeInsets.all(2),
           child: Text(
@@ -237,6 +230,14 @@ class GridData {
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Stack(
+            children: [
+              getImageAssetFromFirebase(data.image),
+            ],
           ),
         ),
       ),

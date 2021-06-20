@@ -158,9 +158,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: _getFabWidget(),
         backgroundColor: _rarityColor,
         onPressed: _addOrRemoveMaterial,
+        child: _getFabWidget(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
@@ -275,7 +275,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     }
   }
 
-  void _addMaterialDialog() async {
+  Future<void> _addMaterialDialog() async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -300,12 +300,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Track'),
               onPressed: _trackMaterialAction,
+              child: Text('Track'),
             ),
           ],
         );
@@ -313,7 +313,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     );
   }
 
-  void _removeMaterialDialog() async {
+  Future<void> _removeMaterialDialog() async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -331,12 +331,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Untrack'),
               onPressed: _untrackMaterialAction,
+              child: Text('Untrack'),
             ),
           ],
         );

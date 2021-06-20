@@ -54,97 +54,36 @@ class SortBy {
     return Get.theme.accentColor;
   }
 
+  PopupMenuItem _getSorterMenuWidget(String type, String title, bool isNumber) {
+    return PopupMenuItem(
+      textStyle: TextStyle(color: _matchColor(type)),
+      value: type,
+      child: Row(
+        children: [
+          Text(title),
+          Spacer(),
+          Icon(
+            _getSortingData(isNumber, type),
+            color: _matchColor(type),
+          ),
+        ],
+      ),
+    );
+  }
+
   List<PopupMenuEntry<dynamic>> _getCharSorter() {
     return [
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('weapon')),
-        value: 'weapon',
-        child: Row(
-          children: [
-            Text('Weapon Type'),
-            Spacer(),
-            Icon(
-              _getSortingData(false, 'weapon'),
-              color: _matchColor('weapon'),
-            ),
-          ],
-        ),
-      ),
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('affiliation')),
-        value: 'affiliation',
-        child: Row(
-          children: [
-            Text('Affiliation'),
-            Spacer(),
-            Icon(
-              _getSortingData(false, 'affiliation'),
-              color: _matchColor('affiliation'),
-            ),
-          ],
-        ),
-      ),
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('gender')),
-        value: 'gender',
-        child: Row(
-          children: [
-            Text('Gender'),
-            Spacer(),
-            Icon(
-              _getSortingData(false, 'gender'),
-              color: _matchColor('gender'),
-            ),
-          ],
-        ),
-      ),
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('nation')),
-        value: 'nation',
-        child: Row(
-          children: [
-            Text('Nation'),
-            Spacer(),
-            Icon(
-              _getSortingData(false, 'nation'),
-              color: _matchColor('nation'),
-            ),
-          ],
-        ),
-      ),
+      _getSorterMenuWidget('weapon', 'Weapon Type', false),
+      _getSorterMenuWidget('affiliation', 'Affiliation', false),
+      _getSorterMenuWidget('gender', 'Gender', false),
+      _getSorterMenuWidget('nation', 'Nation', false),
     ];
   }
 
   List<PopupMenuEntry<dynamic>> _getWeaponSorter() {
     return [
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('base_atk')),
-        value: 'base_atk',
-        child: Row(
-          children: [
-            Text('Base Attack'),
-            Spacer(),
-            Icon(
-              _getSortingData(true, 'base_atk'),
-              color: _matchColor('base_atk'),
-            ),
-          ],
-        ),
-      ),
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('secondary_stat_type')),
-        value: 'secondary_stat_type',
-        child: Row(
-          children: [
-            Text('Secondary Stats'),
-            Spacer(),
-            Icon(
-              _getSortingData(false, 'secondary_stat_type'),
-              color: _matchColor('secondary_stat_type'),
-            ),
-          ],
-        ),
-      ),
+      _getSorterMenuWidget('base_atk', 'Base Attack', true),
+      _getSorterMenuWidget('secondary_stat_type', 'Secondary Stats', false),
     ];
   }
 
@@ -157,17 +96,7 @@ class SortBy {
           children: [Text('Default'), Spacer()],
         ),
       ),
-      PopupMenuItem(
-        textStyle: TextStyle(color: _matchColor('rarity')),
-        value: 'rarity',
-        child: Row(
-          children: [
-            Text('Rarity'),
-            Spacer(),
-            Icon(_getSortingData(true, 'rarity'), color: _matchColor('rarity')),
-          ],
-        ),
-      ),
+      _getSorterMenuWidget('rarity', 'Rarity', true),
     ];
 
     _charOnlySorter = _getCharSorter();

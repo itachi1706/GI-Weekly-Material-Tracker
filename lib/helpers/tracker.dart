@@ -365,12 +365,12 @@ class UpdateMultiTracking {
   List<Widget> _commonDialogButtons() {
     return [
       TextButton(
-        child: Text('Cancel'),
         onPressed: () => Get.back(),
+        child: Text('Cancel'),
       ),
       TextButton(
-        child: Text('Update'),
         onPressed: _updateRecord,
+        child: Text('Update'),
       ),
     ];
   }
@@ -412,11 +412,11 @@ class UpdateMultiTracking {
           ),
           actions: [
             TextButton(
-              child: Text('Info'),
               onPressed: () {
                 Get.back();
                 Get.toNamed('$navigateTo/$key');
               },
+              child: Text('Info'),
             ),
             ..._commonDialogButtons(),
           ],
@@ -479,11 +479,11 @@ class UpdateMultiTracking {
           ),
           actions: [
             TextButton(
-              child: Text('Info'),
               onPressed: () {
                 Get.back();
                 Get.toNamed('$navigateTo/$key');
               },
+              child: Text('Info'),
             ),
             ..._commonDialogButtons(),
           ],

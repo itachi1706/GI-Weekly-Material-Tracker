@@ -628,7 +628,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     }
   }
 
-  void _removeMaterial(CharacterAscension curData, String key) async {
+  Future<void> _removeMaterial(CharacterAscension curData, String key) async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -675,12 +675,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Untrack'),
               onPressed: _untrackCharacterAction,
+              child: Text('Untrack'),
             ),
           ],
         );
@@ -688,7 +688,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     );
   }
 
-  void _addMaterial(CharacterAscension curData, String key) async {
+  Future<void> _addMaterial(CharacterAscension curData, String key) async {
     await showDialog(
       context: context,
       builder: (context) {
@@ -733,12 +733,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Track'),
               onPressed: _trackCharacterAction,
+              child: Text('Track'),
             ),
           ],
         );
@@ -1185,12 +1185,12 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Untrack'),
               onPressed: _untrackTalentAction,
+              child: Text('Untrack'),
             ),
           ],
         );
@@ -1243,12 +1243,12 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Cancel'),
             ),
             TextButton(
-              child: Text('Track'),
               onPressed: _trackTalentAction,
+              child: Text('Track'),
             ),
           ],
         );
@@ -1357,8 +1357,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           ),
           actions: [
             TextButton(
-              child: Text('Close'),
               onPressed: () => Navigator.of(context).pop(),
+              child: Text('Close'),
             ),
           ],
         );
