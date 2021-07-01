@@ -274,6 +274,280 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Jean",
             "subCollection": {}
         },
+        "Kaedehara_Kazuha": {
+            "image": "Characters/Anemo/Kazuha.png",
+            "gender": "Male",
+            "birthday": "29/10",
+            "caption": "Scarlet Leaves Pursue Wild Waves",
+            "name": "Kazuha",
+            "fullName": "Kaedehara Kazuha",
+            "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+            "nation": "Inazuma",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "The Crux",
+            "constellation": "Acer Palmatum",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Diligence",
+                        "material3qty": 3,
+                        "material4": "Treasure_Hoarder_Insignia",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 2,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 4,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 6,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Diligence",
+                        "material3qty": 9,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Gilded_Scale",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 4,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Gilded_Scale",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 6,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Gilded_Scale",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 12,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Gilded_Scale",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Diligence",
+                        "material3qty": 16,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Poetics_of_Fuubutsu": {
+                        "name": "Poetics of Fuubutsu",
+                        "effect": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant teammates a 0.04% Elemental DMG Bonus to their corresponding Element for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist.",
+                        "image": "Talents/Passive/Talent_Poetics_of_Fuubutsu.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Soumon_Swordmanship": {
+                        "name": "Soumon Swordmanship",
+                        "effect": "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro when cast, Chihayaburu will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.\nElemental Absorption may only occur once per use of Chihayaburu.",
+                        "image": "Talents/Passive/Talent_Soumon_Swordsmanship.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Cloud_Strider": {
+                        "name": "Cloud Strider",
+                        "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                        "image": "Talents/Passive/Talent_Cloud_Strider.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Garyuu_Bladework": {
+                        "name": "Garyuu Bladework",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.\nPlunging Attack: Midare Ranzan: When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
+                        "image": "Talents/Normal/Talent_Garyuu_Bladework.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Chihayaburu": {
+                        "name": "Chihayaburu",
+                        "effect": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing Anemo DMG and lifting Kazuha into the air on a rushing gust of wind.\nPress: Can be used in mid-air.\nHold: Charges up before unleashing greater Anemo DMG over a larger AoE than Press Mode.\nPlunging Attack: Midare Ranzan: Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.\nWhen a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents. Midare Ranzan's DMG is considered Plunging Attack DMG.",
+                        "image": "Talents/Skill/Talent_Chihayaburu.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Kazuha_Slash": {
+                        "name": "Kazuha Slash",
+                        "effect": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing AoE Anemo DMG. The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals AoE Anemo DMG to opponents within its range.\nElemental Absorption: If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                        "image": "Talents/Burst/Talent_Kazuha_Slash.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Scarlet Hills",
+                    "effect": "Decreases Chihayaburu's CD by 10%.\nUsing Kazuha Slash resets the CD of Chihayaburu.",
+                    "image": "Constellation/Scarlet_Hills.png"
+                },
+                "2": {
+                    "name": "Yamaarashi Tailwind",
+                    "effect": "The Autumn Whirlwind field created by Kazuha Slash has the following effects:\n- Increases Kaedehara Kazuha's own Elemental Mastery by 200.\n- Increases the Elemental Mastery of characters within the field by 200.\nThe Elemental Mastery-increasing effects of this Constellation do not stack.",
+                    "image": "Constellation/Yamaarashi_Tailwind.png"
+                },
+                "3": {
+                    "name": "Maple Monogatari",
+                    "effect": "Increases the Level of Chihayaburu by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Maple_Monogatari.png"
+                },
+                "4": {
+                    "name": "Oozora Genpou",
+                    "effect": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n- Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.\n- When gliding, Kaedehara Kazuha regenerates 2 Energy per second.",
+                    "image": "Constellation/Oozora_Genpou.png"
+                },
+                "5": {
+                    "name": "Wisdom of Bansei",
+                    "effect": "Increases the Level of Kazuha Slash by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Wisdom_of_Bansei.png"
+                },
+                "6": {
+                    "name": "Crimson Momiji",
+                    "effect": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%.",
+                    "image": "Constellation/Crimson_Momiji.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vayuda_Turquoise_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Sea_Ganoderma"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Marionette_Core",
+                    "level": 40,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Sea_Ganoderma"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vayuda_Turquoise_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Marionette_Core",
+                    "level": 50,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Sea_Ganoderma"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Marionette_Core",
+                    "level": 60,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Sea_Ganoderma"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vayuda_Turquoise_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Marionette_Core",
+                    "level": 70,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Sea_Ganoderma"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vayuda_Turquoise_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Marionette_Core",
+                    "level": 80,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Sea_Ganoderma"
+                }
+            },
+            "introduction": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.\nIt's hard to say if weathering life's storms has eroded any sharp edges he once had or his reserved nature keeps them hidden from view. The first time most people meet Kaedehara Kazuha, they presume he is just another trainee crew member aboard The Crux.",
+            "genshinggpath": "characters/Kazuha",
+            "element": "Anemo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Kazuha",
+            "subCollection": {}
+        },
         "Sucrose": {
             "image": "Characters/Anemo/Sucrose.png",
             "gender": "Female",
