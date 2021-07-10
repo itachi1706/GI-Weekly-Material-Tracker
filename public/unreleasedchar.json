@@ -283,11 +283,11 @@
     "Yoimiya": {
         "image": "Characters/Pyro/Yoimiya.png",
         "gender": "Female",
-        "birthday": null,
+        "birthday": "21/6",
         "caption": "Frolicking Flames",
         "name": "Yoimiya",
         "fullName": null,
-        "description": null,
+        "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival\", she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
         "nation": "Inazuma",
         "weapon": "Bow",
         "rarity": 5,
@@ -301,9 +301,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Teachings_of_Prosperity",
+                    "material3": "Teachings_of_Transience",
                     "material3qty": 3,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Divining_Scroll",
                     "material4qty": 6
                 },
                 "3": {
@@ -312,9 +312,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 2,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 3
                 },
                 "4": {
@@ -323,9 +323,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 4,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 4
                 },
                 "5": {
@@ -334,9 +334,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 6,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 6
                 },
                 "6": {
@@ -345,97 +345,97 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 9,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 9
                 },
                 "7": {
                     "mora": 120000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 4,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 4
                 },
                 "8": {
                     "mora": 260000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 6,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 6
                 },
                 "9": {
                     "mora": 450000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 12,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 9
                 },
                 "10": {
                     "mora": 700000,
                     "material1": "Crown_of_Insight",
                     "material1qty": 1,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 16,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 12
                 }
             },
             "passives": {
-                "P1": {
-                    "name": null,
-                    "effect": null,
+                "Blazing_Match": {
+                    "name": "Blazing Match",
+                    "effect": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
                     "image": null,
                     "order": 0,
                     "type": "Passive 1"
                 },
-                "P2": {
-                    "name": null,
-                    "effect": null,
+                "Tricks_of_the_Trouble-Maker": {
+                    "name": "Tricks of the Trouble-Maker",
+                    "effect": "During Teika Fire-Dance, hits with Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2%. This effect lasts for 3s and can have a maximum of 10 stacks.",
                     "image": null,
                     "order": 1,
                     "type": "Passive 2"
                 },
-                "P3": {
-                    "name": null,
-                    "effect": null,
+                "Summer_Scorch": {
+                    "name": "Summer Scorch",
+                    "effect": "Using Ryukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
                     "image": null,
                     "order": 2,
                     "type": "Passive 3"
                 }
             },
             "attack": {
-                "AA": {
-                    "name": null,
-                    "effect": null,
+                "Firework_Flare-Up": {
+                    "name": "Firework Flare-Up",
+                    "effect": "Normal Attack\nPerform up to 5 consecutive shots with a bow.\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:\n• Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.\n• Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit.\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                     "image": null,
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
-                "Skill": {
-                    "name": null,
-                    "effect": null,
+                "Teika_Fire-Dance": {
+                    "name": "Teika Fire-Dance",
+                    "effect": "With a flourish of incense fireworks, a ring of saltpeter surrounds Yoimiya.\nTeika Enshou\nDuring this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. The 2nd Charge Level of Normal Attack: Firework Flare-Up will not generate Kindling Arrows during this time.\nThis effect will deactivate when Yoimiya leaves the field.",
                     "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
-                "Burst": {
-                    "name": null,
-                    "effect": null,
+                "Ryukin_Saxifrage": {
+                    "name": "Ryukin Saxifrage",
+                    "effect": "As her original creation, the \"Ryukin Saxifrage\", leaps into the sky, Yoimiya fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.\nAurous Blaze\nAll Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger explosions, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated during the skill's duration, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion may occur every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
                     "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
@@ -444,33 +444,33 @@
         },
         "constellations": {
             "1": {
-                "name": null,
-                "effect": null,
+                "name": "Agate Ryukin",
+                "effect": "The Aurous Blaze created by Ryukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
                 "image": null
             },
             "2": {
-                "name": null,
-                "effect": null,
+                "name": "A Procession of Bonfires",
+                "effect": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
                 "image": null
             },
             "3": {
-                "name": null,
-                "effect": null,
+                "name": "Trickster's Flare",
+                "effect": "Increases the Level of Teika Fire-Dance by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "4": {
-                "name": null,
-                "effect": null,
+                "name": "Pyrotechnic Professional",
+                "effect": "When Yoimiya's own Aurous Blaze triggers an explosion, Teika Fire-Dance's CD is decreased by 1.2s.",
                 "image": null
             },
             "5": {
-                "name": null,
-                "effect": null,
+                "name": "A Summer Festival's Eve",
+                "effect": "Increases the Level of Ryukin Saxifrage by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "6": {
-                "name": null,
-                "effect": null,
+                "name": "Naganohara Meteor Swarm",
+                "effect": "During Teika Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
                 "image": null
             }
         },
@@ -485,67 +485,67 @@
                 "material4": "Divining_Scroll",
                 "material4qty": 3,
                 "material3qty": 3,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "2": {
                 "material2qty": 2,
                 "material1": "Agnidus_Agate_Fragment",
                 "material1qty": 3,
                 "mora": 40000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 40,
                 "material4": "Divining_Scroll",
                 "material4qty": 15,
                 "material3qty": 10,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "3": {
                 "material2qty": 4,
                 "material1": "Agnidus_Agate_Fragment",
                 "material1qty": 6,
                 "mora": 60000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 50,
                 "material4": "Sealed_Scroll",
                 "material4qty": 12,
                 "material3qty": 20,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "4": {
                 "material2qty": 8,
                 "material1": "Agnidus_Agate_Chunk",
                 "material1qty": 3,
                 "mora": 80000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 60,
                 "material4": "Sealed_Scroll",
                 "material4qty": 18,
                 "material3qty": 30,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "5": {
                 "material2qty": 12,
                 "material1": "Agnidus_Agate_Chunk",
                 "material1qty": 6,
                 "mora": 100000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 70,
                 "material4": "Forbidden_Curse_Scroll",
                 "material4qty": 12,
                 "material3qty": 45,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "6": {
                 "material2qty": 20,
                 "material1": "Agnidus_Agate_Gemstone",
                 "material1qty": 6,
                 "mora": 120000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 80,
                 "material4": "Forbidden_Curse_Scroll",
                 "material4qty": 24,
                 "material3qty": 60,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             }
         },
         "introduction": null,
