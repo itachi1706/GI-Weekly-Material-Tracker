@@ -2,16 +2,16 @@
     "Kamisato_Ayaka": {
         "image": "Characters/Cryo/Ayaka.png",
         "gender": "Female",
-        "birthday": "?/12",
-        "caption": null,
+        "birthday": "28/9",
+        "caption": "Frostflake Heron",
         "name": "Ayaka",
         "fullName": "Kamisato Ayaka",
-        "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
+        "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
         "nation": "Inazuma",
         "weapon": "Sword",
         "rarity": 5,
-        "affiliation": "Kamisato House",
-        "constellation": "~Unknown Constellation~",
+        "affiliation": "Kamisato Clan",
+        "constellation": "Grus Nivis",
         "talents": {
             "ascension": {
                 "2": {
@@ -20,9 +20,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Teachings_of_Prosperity",
+                    "material3": "Teachings_of_Elegance",
                     "material3qty": 3,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Old_Handguard",
                     "material4qty": 6
                 },
                 "3": {
@@ -31,9 +31,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Elegance",
                     "material3qty": 2,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Kageuchi_Handguard",
                     "material4qty": 3
                 },
                 "4": {
@@ -42,9 +42,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Elegance",
                     "material3qty": 4,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Kageuchi_Handguard",
                     "material4qty": 4
                 },
                 "5": {
@@ -53,9 +53,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Elegance",
                     "material3qty": 6,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Kageuchi_Handguard",
                     "material4qty": 6
                 },
                 "6": {
@@ -64,81 +64,81 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Elegance",
                     "material3qty": 9,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Kageuchi_Handguard",
                     "material4qty": 9
                 },
                 "7": {
                     "mora": 120000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Bloodjade_Branch",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Elegance",
                     "material3qty": 4,
-                    "material4": "Energy_Nectar",
+                    "material4": "Famed_Handguard",
                     "material4qty": 4
                 },
                 "8": {
                     "mora": 260000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Bloodjade_Branch",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Elegance",
                     "material3qty": 6,
-                    "material4": "Energy_Nectar",
+                    "material4": "Famed_Handguard",
                     "material4qty": 6
                 },
                 "9": {
                     "mora": 450000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Bloodjade_Branch",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Elegance",
                     "material3qty": 12,
-                    "material4": "Energy_Nectar",
+                    "material4": "Famed_Handguard",
                     "material4qty": 9
                 },
                 "10": {
                     "mora": 700000,
                     "material1": "Crown_of_Insight",
                     "material1qty": 1,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Bloodjade_Branch",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Elegance",
                     "material3qty": 16,
-                    "material4": "Energy_Nectar",
+                    "material4": "Famed_Handguard",
                     "material4qty": 12
                 }
             },
             "passives": {
-                "Daily_Cooking": {
-                    "name": "Daily Cooking",
-                    "effect": "Kamisato Ayaka gains 1 additional Proficiency when she cooks a steamed Dish perfectly.",
+                "The_Fruits_of_Reflection": {
+                    "name": "The Fruits of Reflection",
+                    "effect": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
                     "image": "",
                     "order": 0,
                     "type": "Passive 1"
                 },
                 "Kanten_Senmyou_Norito": {
                     "name": "Kanten Senmyou Norito",
-                    "effect": "Normal Attack hits on enemies affected by Cryo have a 6%/18% chance respectively of shortening the CD of Kamisato Art: Hyouka by 0.5s.",
+                    "effect": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:\n• Restores 10 Stamina\n• Gains 10% Cryo DMG Bonus for 10s",
                     "image": "",
                     "order": 1,
                     "type": "Passive 2"
                 },
                 "Amatsumi_Kunitsumi_Ihahigoto": {
                     "name": "Amatsumi Kunitsumi Ihahigoto",
-                    "effect": "While in Kamisato Art: Senho form, Kamisato Ayaka marks nearby opponents below 30% HP.\nLeaving Senho form near marked opponents and immediately hitting them with a Normal Attack deals Cryo DMG equal to 300% of ATK.\nThis attack counts as a Charged Attack.",
+                    "effect": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
                     "image": "",
                     "order": 2,
                     "type": "Passive 3"
                 },
                 "Kamisato_Art_Senho": {
                     "name": "Kamisato Art: Senho",
-                    "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\n• Inflicts Cold on nearby opponents.\n• Cold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
+                    "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\nInflicts Cold on nearby opponents.\nCold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
                     "image": "Talents/Passive/Talent_Kamisato_Art_Senho.png",
                     "order": 3,
                     "type": "Alternate Sprint"
@@ -146,22 +146,22 @@
             },
             "attack": {
                 "Kamisato_Art_Naname": {
-                    "name": "Kamisato Art - Naname",
-                    "effect": "Normal Attack\nPerform up to 5 rapid strikes.\nCharged Attack\nConsumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
-                    "image": "",
+                    "name": "Kamisato Art: Naname",
+                    "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Kamisato_Art_Naname.png",
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
                 "Kamisato_Art_Hyouka": {
                     "name": "Kamisato Art: Hyouka",
-                    "effect": "Ayaka emits ice around herself and shortly afterward launches nearby opponents, dealing AoE Cryo DMG.",
+                    "effect": "A gracious style of Kamisato Art.\nKamisato Ayaka emits ice around herself and shortly afterwards, launches nearby opponents and deals Cryo DMG.",
                     "image": "Talents/Skill/Talent_Kamisato_Art_Hyouka.png",
                     "order": 1,
                     "type": "Elemental Skill"
                 },
                 "Kamisato_Art_Soumetsu": {
                     "name": "Kamisato Art: Soumetsu",
-                    "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\n• Deals Cryo DMG over time to all enemies in its path.\n• After the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
+                    "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\nDeals Cryo DMG over time to all enemies in its path.\nAfter the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
                     "image": "Talents/Burst/Talent_Kamisato_Art_Soumetsu.png",
                     "order": 2,
                     "type": "Elemental Burst"
@@ -171,32 +171,32 @@
         "constellations": {
             "1": {
                 "name": "Sousai Sumizome Sakura",
-                "effect": "Increases the DMG of Kamisato Art: Hyouka against enemies affected by Cryo by 20%.",
+                "effect": "When Kamisato Ayaka's normal attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
                 "image": ""
             },
             "2": {
-                "name": "Ai Suigetsu",
-                "effect": "Decreases the CD of Kamisato Art: Soumetsu by 2s.\nIncreases Energy Recharge by 15%.",
+                "name": "Mie Yuki no Seki no To",
+                "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Souken Gates, each dealing 20% of the original storm's DMG.",
                 "image": ""
             },
             "3": {
                 "name": "Hanano Nishikie Kamifubuki",
-                "effect": "Increases the Level of Kamisato Art: Soumetsu by 3. Maximum upgrade level is 15.",
+                "effect": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
                 "image": ""
             },
             "4": {
                 "name": "Eikyo Ryuuhan",
-                "effect": "When Kamisato Ayaka's Energy is above 50%, her Normal Attack DMG is increased by 20%.\nWhen Energy is below 50%, her Normal Attack CRIT Rate is increased by 10%.",
+                "effect": "Opponents damaged by Kamisato Art: Soumetsu's Souken Gates will have their DEF decreased by 30% for 6s.",
                 "image": ""
             },
             "5": {
                 "name": "Hanani Kumo Kaneni Irutsuki",
-                "effect": "Increases the Level of Kamisato Art: Hyoukaby 3. Maximum upgrade level is 15.",
+                "effect": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
                 "image": ""
             },
             "6": {
-                "name": "Mie Yuki no Seki no To",
-                "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional bladestorms, each dealing 20% of the original storm's DMG.",
+                "name": "Ai Suigetsu",
+                "effect": "When Kamisato Ayaka's Cryo DMG scores CRIT Hits, her DMG is increased by 10% for 3s. This effect can stack up to 5 times and can be triggered once every 0.1s.",
                 "image": ""
             }
         },
@@ -208,86 +208,86 @@
                 "mora": 20000,
                 "material2": null,
                 "level": 20,
-                "material4": "Divining_Scroll",
+                "material4": "Old_Handguard",
                 "material4qty": 3,
                 "material3qty": 3,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             },
             "2": {
                 "material2qty": 2,
                 "material1": "Shivada_Jade_Fragment",
                 "material1qty": 3,
                 "mora": 40000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Perpetual_Heart",
                 "level": 40,
-                "material4": "Divining_Scroll",
+                "material4": "Old_Handguard",
                 "material4qty": 15,
                 "material3qty": 10,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             },
             "3": {
                 "material2qty": 4,
                 "material1": "Shivada_Jade_Fragment",
                 "material1qty": 6,
                 "mora": 60000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Perpetual_Heart",
                 "level": 50,
-                "material4": "Sealed_Scroll",
+                "material4": "Kageuchi_Handguard",
                 "material4qty": 12,
                 "material3qty": 20,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             },
             "4": {
                 "material2qty": 8,
                 "material1": "Shivada_Jade_Chunk",
                 "material1qty": 3,
                 "mora": 80000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Perpetual_Heart",
                 "level": 60,
-                "material4": "Sealed_Scroll",
+                "material4": "Kageuchi_Handguard",
                 "material4qty": 18,
                 "material3qty": 30,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             },
             "5": {
                 "material2qty": 12,
                 "material1": "Shivada_Jade_Chunk",
                 "material1qty": 6,
                 "mora": 100000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Perpetual_Heart",
                 "level": 70,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Famed_Handguard",
                 "material4qty": 12,
                 "material3qty": 45,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             },
             "6": {
                 "material2qty": 20,
                 "material1": "Shivada_Jade_Gemstone",
                 "material1qty": 6,
                 "mora": 120000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Perpetual_Heart",
                 "level": 80,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Famed_Handguard",
                 "material4qty": 24,
                 "material3qty": 60,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Sakura_Bloom"
             }
         },
         "introduction": "The princess of the Kamisato House. She occasionally practices swordsmanship so that she can pass time by slicing every falling snowflake floating around her on a snowy day.",
         "genshinggpath": null,
         "element": "Cryo",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Ayaka",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayaka",
         "subCollection": {}
     },
     "Yoimiya": {
         "image": "Characters/Pyro/Yoimiya.png",
         "gender": "Female",
-        "birthday": null,
+        "birthday": "21/6",
         "caption": "Frolicking Flames",
         "name": "Yoimiya",
         "fullName": null,
-        "description": null,
+        "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival\", she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
         "nation": "Inazuma",
         "weapon": "Bow",
         "rarity": 5,
@@ -301,9 +301,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Teachings_of_Prosperity",
+                    "material3": "Teachings_of_Transience",
                     "material3qty": 3,
-                    "material4": "Whopperflower_Nectar",
+                    "material4": "Divining_Scroll",
                     "material4qty": 6
                 },
                 "3": {
@@ -312,9 +312,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 2,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 3
                 },
                 "4": {
@@ -323,9 +323,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 4,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 4
                 },
                 "5": {
@@ -334,9 +334,9 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 6,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 6
                 },
                 "6": {
@@ -345,97 +345,97 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Transience",
                     "material3qty": 9,
-                    "material4": "Shimmering_Nectar",
+                    "material4": "Sealed_Scroll",
                     "material4qty": 9
                 },
                 "7": {
                     "mora": 120000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 4,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 4
                 },
                 "8": {
                     "mora": 260000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 6,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 6
                 },
                 "9": {
                     "mora": 450000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 12,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 9
                 },
                 "10": {
                     "mora": 700000,
                     "material1": "Crown_of_Insight",
                     "material1qty": 1,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Dragon_Lords_Crown",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Transience",
                     "material3qty": 16,
-                    "material4": "Energy_Nectar",
+                    "material4": "Forbidden_Curse_Scroll",
                     "material4qty": 12
                 }
             },
             "passives": {
-                "P1": {
-                    "name": null,
-                    "effect": null,
+                "Blazing_Match": {
+                    "name": "Blazing Match",
+                    "effect": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
                     "image": null,
                     "order": 0,
                     "type": "Passive 1"
                 },
-                "P2": {
-                    "name": null,
-                    "effect": null,
+                "Tricks_of_the_Trouble-Maker": {
+                    "name": "Tricks of the Trouble-Maker",
+                    "effect": "During Teika Fire-Dance, hits with Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2%. This effect lasts for 3s and can have a maximum of 10 stacks.",
                     "image": null,
                     "order": 1,
                     "type": "Passive 2"
                 },
-                "P3": {
-                    "name": null,
-                    "effect": null,
+                "Summer_Scorch": {
+                    "name": "Summer Scorch",
+                    "effect": "Using Ryukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
                     "image": null,
                     "order": 2,
                     "type": "Passive 3"
                 }
             },
             "attack": {
-                "AA": {
-                    "name": null,
-                    "effect": null,
+                "Firework_Flare-Up": {
+                    "name": "Firework Flare-Up",
+                    "effect": "Normal Attack\nPerform up to 5 consecutive shots with a bow.\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:\n• Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.\n• Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit.\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                     "image": null,
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
-                "Skill": {
-                    "name": null,
-                    "effect": null,
+                "Teika_Fire-Dance": {
+                    "name": "Teika Fire-Dance",
+                    "effect": "With a flourish of incense fireworks, a ring of saltpeter surrounds Yoimiya.\nTeika Enshou\nDuring this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. The 2nd Charge Level of Normal Attack: Firework Flare-Up will not generate Kindling Arrows during this time.\nThis effect will deactivate when Yoimiya leaves the field.",
                     "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
-                "Burst": {
-                    "name": null,
-                    "effect": null,
+                "Ryukin_Saxifrage": {
+                    "name": "Ryukin Saxifrage",
+                    "effect": "As her original creation, the \"Ryukin Saxifrage\", leaps into the sky, Yoimiya fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.\nAurous Blaze\nAll Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger explosions, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated during the skill's duration, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion may occur every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
                     "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
@@ -444,33 +444,33 @@
         },
         "constellations": {
             "1": {
-                "name": null,
-                "effect": null,
+                "name": "Agate Ryukin",
+                "effect": "The Aurous Blaze created by Ryukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
                 "image": null
             },
             "2": {
-                "name": null,
-                "effect": null,
+                "name": "A Procession of Bonfires",
+                "effect": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
                 "image": null
             },
             "3": {
-                "name": null,
-                "effect": null,
+                "name": "Trickster's Flare",
+                "effect": "Increases the Level of Teika Fire-Dance by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "4": {
-                "name": null,
-                "effect": null,
+                "name": "Pyrotechnic Professional",
+                "effect": "When Yoimiya's own Aurous Blaze triggers an explosion, Teika Fire-Dance's CD is decreased by 1.2s.",
                 "image": null
             },
             "5": {
-                "name": null,
-                "effect": null,
+                "name": "A Summer Festival's Eve",
+                "effect": "Increases the Level of Ryukin Saxifrage by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "6": {
-                "name": null,
-                "effect": null,
+                "name": "Naganohara Meteor Swarm",
+                "effect": "During Teika Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
                 "image": null
             }
         },
@@ -485,67 +485,67 @@
                 "material4": "Divining_Scroll",
                 "material4qty": 3,
                 "material3qty": 3,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "2": {
                 "material2qty": 2,
                 "material1": "Agnidus_Agate_Fragment",
                 "material1qty": 3,
                 "mora": 40000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 40,
                 "material4": "Divining_Scroll",
                 "material4qty": 15,
                 "material3qty": 10,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "3": {
                 "material2qty": 4,
                 "material1": "Agnidus_Agate_Fragment",
                 "material1qty": 6,
                 "mora": 60000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 50,
                 "material4": "Sealed_Scroll",
                 "material4qty": 12,
                 "material3qty": 20,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "4": {
                 "material2qty": 8,
                 "material1": "Agnidus_Agate_Chunk",
                 "material1qty": 3,
                 "mora": 80000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 60,
                 "material4": "Sealed_Scroll",
                 "material4qty": 18,
                 "material3qty": 30,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "5": {
                 "material2qty": 12,
                 "material1": "Agnidus_Agate_Chunk",
                 "material1qty": 6,
                 "mora": 100000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 70,
                 "material4": "Forbidden_Curse_Scroll",
                 "material4qty": 12,
                 "material3qty": 45,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             },
             "6": {
                 "material2qty": 20,
                 "material1": "Agnidus_Agate_Gemstone",
                 "material1qty": 6,
                 "mora": 120000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Smoldering_Pearl",
                 "level": 80,
                 "material4": "Forbidden_Curse_Scroll",
                 "material4qty": 24,
                 "material3qty": 60,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Naku_Weed"
             }
         },
         "introduction": null,
@@ -557,14 +557,14 @@
     "Sayu": {
         "image": "Characters/Anemo/Sayu.png",
         "gender": "Female",
-        "birthday": null,
+        "birthday": "19/10",
         "caption": "Mujina Ninja",
         "name": "Sayu",
         "fullName": null,
-        "description": null,
+        "description": "A pint-sized ninja attached to the Shiyuumatsu-Ban, who always seems sleep-deprived.",
         "nation": "Inazuma",
         "weapon": "Claymore",
-        "rarity": 5,
+        "rarity": 4,
         "affiliation": "Shiyuumatsu-Ban",
         "constellation": "Nyctereutes Minor",
         "talents": {
@@ -575,7 +575,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Teachings_of_Prosperity",
+                    "material3": "Teachings_of_Light",
                     "material3qty": 3,
                     "material4": "Whopperflower_Nectar",
                     "material4qty": 6
@@ -586,7 +586,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 2,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 3
@@ -597,7 +597,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 4,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 4
@@ -608,7 +608,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 6,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 6
@@ -619,7 +619,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 9,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 9
@@ -628,9 +628,9 @@
                     "mora": 120000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 4,
                     "material4": "Energy_Nectar",
                     "material4qty": 4
@@ -639,9 +639,9 @@
                     "mora": 260000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 6,
                     "material4": "Energy_Nectar",
                     "material4qty": 6
@@ -650,9 +650,9 @@
                     "mora": 450000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 12,
                     "material4": "Energy_Nectar",
                     "material4qty": 9
@@ -661,55 +661,55 @@
                     "mora": 700000,
                     "material1": "Crown_of_Insight",
                     "material1qty": 1,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 16,
                     "material4": "Energy_Nectar",
                     "material4qty": 12
                 }
             },
             "passives": {
-                "P1": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Silencers_Secret": {
+                    "name": "Yoohoo Art: Silencer's Secret",
+                    "effect": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
                     "image": null,
                     "order": 0,
                     "type": "Passive 1"
                 },
-                "P2": {
-                    "name": null,
-                    "effect": null,
+                "Go_Find_Someone_Else": {
+                    "name": "Go Find Someone Else~",
+                    "effect": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additiona 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
                     "image": null,
                     "order": 1,
                     "type": "Passive 2"
                 },
-                "P3": {
-                    "name": null,
-                    "effect": null,
+                "I_Dont_Wanna_Work": {
+                    "name": "I Don't Wanna Work!",
+                    "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Madness gains the following effects:\n• When healing a character, it will also heal characters near that healed character for 20% the amount of HP.\n• Increases the AoE of its attack against opponents.",
                     "image": null,
                     "order": 2,
                     "type": "Passive 3"
                 }
             },
             "attack": {
-                "AA": {
-                    "name": null,
-                    "effect": null,
+                "Shiyuumatsu-Ban_Ninja_Blade": {
+                    "name": "Shiyuumatsu-Ban Ninja Blade",
+                    "effect": "Normal Attack\nPerform up to 4 consecutive strikes.\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                     "image": null,
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
-                "Skill": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Fuuin_Dash": {
+                    "name": "Yoohoo Art: Fuuin Dash",
+                    "effect": "#The special technique of the Yoohoo Ninja Arts!\nCurl up into a rolling Fufu Windwheel and smash into opponents at high speed, dealing Anemo DMG. When the duration ends, unleashes a Fufu Whirlwind Kick, dealing AoE Anemo DMG.\nPress\nEnter the Fufu Windwheel state, roll forward a short distance before using the Fufu Whirlwind Kick.\nHold\nRoll about continuously in the Fufu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fufu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.\nElemental Absorption\nIf Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
                     "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
-                "Burst": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Mujina_Madness": {
+                    "name": "Yoohoo Art: Mujina Madness",
+                    "effect": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.\nMuji-Muji Daruma\nAt specific intervals, the Daruma will take one of several actions based on the situation around it:\n• If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Aemo DMG.\n• If there are characters with 70% or less HP nearby, it will heal the character with the lowest percentage HP left. If there are no opponents nearby and nearby characters are above 70% HP, it will heal characters.",
                     "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
@@ -718,33 +718,33 @@
         },
         "constellations": {
             "1": {
-                "name": null,
-                "effect": null,
+                "name": "Multi-Task no Jutsu",
+                "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Madness will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
                 "image": null
             },
             "2": {
-                "name": null,
-                "effect": null,
+                "name": "Egress Prep",
+                "effect": "Yoohoo Art: Fuuin Dash gains the following effects:\n• DMG of Fufu Whirlwind Kick in Press Mode increased by 3.3%.\n• Every 0.5s in the Fufu Windwheel state will increase the DMG of this Fufu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.",
                 "image": null
             },
             "3": {
-                "name": null,
-                "effect": null,
+                "name": "Eh, the Bunshin Can Handle It",
+                "effect": "Increases the Level of Yoohoo Art: Mujina Madness by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "4": {
-                "name": null,
-                "effect": null,
+                "name": "Skiving: New and Improved",
+                "effect": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
                 "image": null
             },
             "5": {
-                "name": null,
-                "effect": null,
+                "name": "Speed Comes First",
+                "effect": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "6": {
-                "name": null,
-                "effect": null,
+                "name": "Sleep O'Clock",
+                "effect": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Madness will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\n• Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.\n• The amount of HP restored by the Muji-Muji Daruma is increased by 3. A maximum of 6,000 HP can be restored in this manner.",
                 "image": null
             }
         },
@@ -756,76 +756,343 @@
                 "mora": 20000,
                 "material2": null,
                 "level": 20,
-                "material4": "Divining_Scroll",
+                "material4": "Whopperflower_Nectar",
                 "material4qty": 3,
                 "material3qty": 3,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "2": {
                 "material2qty": 2,
                 "material1": "Vayuda_Turquoise_Fragment",
                 "material1qty": 3,
                 "mora": 40000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 40,
-                "material4": "Divining_Scroll",
+                "material4": "Whopperflower_Nectar",
                 "material4qty": 15,
                 "material3qty": 10,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "3": {
                 "material2qty": 4,
                 "material1": "Vayuda_Turquoise_Fragment",
                 "material1qty": 6,
                 "mora": 60000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 50,
-                "material4": "Sealed_Scroll",
+                "material4": "Shimmering_Nectar",
                 "material4qty": 12,
                 "material3qty": 20,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "4": {
                 "material2qty": 8,
                 "material1": "Vayuda_Turquoise_Chunk",
                 "material1qty": 3,
                 "mora": 80000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 60,
-                "material4": "Sealed_Scroll",
+                "material4": "Shimmering_Nectar",
                 "material4qty": 18,
                 "material3qty": 30,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "5": {
                 "material2qty": 12,
                 "material1": "Vayuda_Turquoise_Chunk",
                 "material1qty": 6,
                 "mora": 100000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 70,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Energy_Nectar",
                 "material4qty": 12,
                 "material3qty": 45,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "6": {
                 "material2qty": 20,
                 "material1": "Vayuda_Turquoise_Gemstone",
                 "material1qty": 6,
                 "mora": 120000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 80,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Energy_Nectar",
                 "material4qty": 24,
                 "material3qty": 60,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             }
         },
         "introduction": null,
         "genshinggpath": null,
         "element": "Anemo",
         "wiki": "https://genshin-impact.fandom.com/wiki/Sayu",
+        "subCollection": {}
+    },
+    "TravelerElectro": {
+        "image": "Characters/Anemo/Traveler.png",
+        "gender": "Male/Female",
+        "birthday": "Up to Player",
+        "caption": "Outlander",
+        "name": "Traveler (Electro)",
+        "fullName": "Aether/Lumine",
+        "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+        "nation": "Mondstadt",
+        "weapon": "Sword",
+        "rarity": 5,
+        "affiliation": "Knights of Favonius, Adventurers' Guild",
+        "constellation": "Viator/Viatrix",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Prosperity",
+                    "material3qty": 3,
+                    "material4": "Firm_Arrowhead",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 2,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 4,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Prosperity",
+                    "material3qty": 6,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 9,
+                    "material4": "Sharp_Arrowhead",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 4,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Prosperity",
+                    "material3qty": 6,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 12,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 16,
+                    "material4": "Weathered_Arrowhead",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Thunderflash": {
+                    "name": "Thunderflash",
+                    "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+                    "image": null,
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Resounding_Roar": {
+                    "name": "Resounding Roar",
+                    "effect": "Increases the Energy Recharge effects granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+                    "image": null,
+                    "order": 1,
+                    "type": "Passive 2"
+                }
+            },
+            "attack": {
+                "Foreign_Thundershock": {
+                    "name": "Foreign Rockblade",
+                    "effect": null,
+                    "image": null,
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Lightning_Blade": {
+                    "name": "Lightning Blade",
+                    "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n• Restore Elemental Energy and increase Energy Recharge.",
+                    "image": null,
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Bellowing_Thunder": {
+                    "name": "Bellowing Thunder",
+                    "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+                    "image": null,
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Spring Harvest Thunder",
+                "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+                "image": null
+            },
+            "2": {
+                "name": "Violet Vehemence",
+                "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+                "image": null
+            },
+            "3": {
+                "name": "Distant Crackling",
+                "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "4": {
+                "name": "Fickle Cloudstrike",
+                "effect": "When a character obtains a Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+                "image": null
+            },
+            "5": {
+                "name": "Clamour in the Wilds",
+                "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+                "image": null
+            },
+            "6": {
+                "name": "World-Shaker",
+                "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+                "image": null
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Damaged_Mask",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Windwheel_Aster"
+            },
+            "2": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": null,
+                "level": 40,
+                "material4": "Damaged_Mask",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Windwheel_Aster"
+            },
+            "3": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": null,
+                "level": 50,
+                "material4": "Stained_Mask",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Windwheel_Aster"
+            },
+            "4": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": null,
+                "level": 60,
+                "material4": "Stained_Mask",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Windwheel_Aster"
+            },
+            "5": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": null,
+                "level": 70,
+                "material4": "Ominous_Mask",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Windwheel_Aster"
+            },
+            "6": {
+                "material2qty": 0,
+                "material1": "Brilliant_Diamond_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": null,
+                "level": 80,
+                "material4": "Ominous_Mask",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Windwheel_Aster"
+            }
+        },
+        "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+        "genshinggpath": "characters/Traveler(Electro)",
+        "element": "Electro",
+        "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
         "subCollection": {}
     }
 }
