@@ -557,14 +557,14 @@
     "Sayu": {
         "image": "Characters/Anemo/Sayu.png",
         "gender": "Female",
-        "birthday": null,
+        "birthday": "19/10",
         "caption": "Mujina Ninja",
         "name": "Sayu",
         "fullName": null,
-        "description": null,
+        "description": "A pint-sized ninja attached to the Shiyuumatsu-Ban, who always seems sleep-deprived.",
         "nation": "Inazuma",
         "weapon": "Claymore",
-        "rarity": 5,
+        "rarity": 4,
         "affiliation": "Shiyuumatsu-Ban",
         "constellation": "Nyctereutes Minor",
         "talents": {
@@ -575,7 +575,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Teachings_of_Prosperity",
+                    "material3": "Teachings_of_Light",
                     "material3qty": 3,
                     "material4": "Whopperflower_Nectar",
                     "material4qty": 6
@@ -586,7 +586,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 2,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 3
@@ -597,7 +597,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 4,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 4
@@ -608,7 +608,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 6,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 6
@@ -619,7 +619,7 @@
                     "material1qty": 0,
                     "material2": null,
                     "material2qty": 0,
-                    "material3": "Guide_to_Prosperity",
+                    "material3": "Guide_to_Light",
                     "material3qty": 9,
                     "material4": "Shimmering_Nectar",
                     "material4qty": 9
@@ -628,9 +628,9 @@
                     "mora": 120000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 4,
                     "material4": "Energy_Nectar",
                     "material4qty": 4
@@ -639,9 +639,9 @@
                     "mora": 260000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 1,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 6,
                     "material4": "Energy_Nectar",
                     "material4qty": 6
@@ -650,9 +650,9 @@
                     "mora": 450000,
                     "material1": null,
                     "material1qty": 0,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 12,
                     "material4": "Energy_Nectar",
                     "material4qty": 9
@@ -661,55 +661,55 @@
                     "mora": 700000,
                     "material1": "Crown_of_Insight",
                     "material1qty": 1,
-                    "material2": "Ring_of_Boreas",
+                    "material2": "Gilded_Scale",
                     "material2qty": 2,
-                    "material3": "Philosophies_of_Prosperity",
+                    "material3": "Philosophies_of_Light",
                     "material3qty": 16,
                     "material4": "Energy_Nectar",
                     "material4qty": 12
                 }
             },
             "passives": {
-                "P1": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Silencers_Secret": {
+                    "name": "Yoohoo Art: Silencer's Secret",
+                    "effect": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
                     "image": null,
                     "order": 0,
                     "type": "Passive 1"
                 },
-                "P2": {
-                    "name": null,
-                    "effect": null,
+                "Go_Find_Someone_Else": {
+                    "name": "Go Find Someone Else~",
+                    "effect": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additiona 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
                     "image": null,
                     "order": 1,
                     "type": "Passive 2"
                 },
-                "P3": {
-                    "name": null,
-                    "effect": null,
+                "I_Dont_Wanna_Work": {
+                    "name": "I Don't Wanna Work!",
+                    "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Madness gains the following effects:\n• When healing a character, it will also heal characters near that healed character for 20% the amount of HP.\n• Increases the AoE of its attack against opponents.",
                     "image": null,
                     "order": 2,
                     "type": "Passive 3"
                 }
             },
             "attack": {
-                "AA": {
-                    "name": null,
-                    "effect": null,
+                "Shiyuumatsu-Ban_Ninja_Blade": {
+                    "name": "Shiyuumatsu-Ban Ninja Blade",
+                    "effect": "Normal Attack\nPerform up to 4 consecutive strikes.\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                     "image": null,
                     "order": 0,
                     "type": "Normal/Charged Attack"
                 },
-                "Skill": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Fuuin_Dash": {
+                    "name": "Yoohoo Art: Fuuin Dash",
+                    "effect": "#The special technique of the Yoohoo Ninja Arts!\nCurl up into a rolling Fufu Windwheel and smash into opponents at high speed, dealing Anemo DMG. When the duration ends, unleashes a Fufu Whirlwind Kick, dealing AoE Anemo DMG.\nPress\nEnter the Fufu Windwheel state, roll forward a short distance before using the Fufu Whirlwind Kick.\nHold\nRoll about continuously in the Fufu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fufu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.\nElemental Absorption\nIf Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
                     "image": null,
                     "order": 1,
                     "type": "Elemental Skill"
                 },
-                "Burst": {
-                    "name": null,
-                    "effect": null,
+                "Yoohoo_Art_Mujina_Madness": {
+                    "name": "Yoohoo Art: Mujina Madness",
+                    "effect": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.\nMuji-Muji Daruma\nAt specific intervals, the Daruma will take one of several actions based on the situation around it:\n• If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Aemo DMG.\n• If there are characters with 70% or less HP nearby, it will heal the character with the lowest percentage HP left. If there are no opponents nearby and nearby characters are above 70% HP, it will heal characters.",
                     "image": null,
                     "order": 2,
                     "type": "Elemental Burst"
@@ -718,33 +718,33 @@
         },
         "constellations": {
             "1": {
-                "name": null,
-                "effect": null,
+                "name": "Multi-Task no Jutsu",
+                "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Madness will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
                 "image": null
             },
             "2": {
-                "name": null,
-                "effect": null,
+                "name": "Egress Prep",
+                "effect": "Yoohoo Art: Fuuin Dash gains the following effects:\n• DMG of Fufu Whirlwind Kick in Press Mode increased by 3.3%.\n• Every 0.5s in the Fufu Windwheel state will increase the DMG of this Fufu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.",
                 "image": null
             },
             "3": {
-                "name": null,
-                "effect": null,
+                "name": "Eh, the Bunshin Can Handle It",
+                "effect": "Increases the Level of Yoohoo Art: Mujina Madness by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "4": {
-                "name": null,
-                "effect": null,
+                "name": "Skiving: New and Improved",
+                "effect": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
                 "image": null
             },
             "5": {
-                "name": null,
-                "effect": null,
+                "name": "Speed Comes First",
+                "effect": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
                 "image": null
             },
             "6": {
-                "name": null,
-                "effect": null,
+                "name": "Sleep O'Clock",
+                "effect": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Madness will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\n• Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.\n• The amount of HP restored by the Muji-Muji Daruma is increased by 3. A maximum of 6,000 HP can be restored in this manner.",
                 "image": null
             }
         },
@@ -756,70 +756,70 @@
                 "mora": 20000,
                 "material2": null,
                 "level": 20,
-                "material4": "Divining_Scroll",
+                "material4": "Whopperflower_Nectar",
                 "material4qty": 3,
                 "material3qty": 3,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "2": {
                 "material2qty": 2,
                 "material1": "Vayuda_Turquoise_Fragment",
                 "material1qty": 3,
                 "mora": 40000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 40,
-                "material4": "Divining_Scroll",
+                "material4": "Whopperflower_Nectar",
                 "material4qty": 15,
                 "material3qty": 10,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "3": {
                 "material2qty": 4,
                 "material1": "Vayuda_Turquoise_Fragment",
                 "material1qty": 6,
                 "mora": 60000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 50,
-                "material4": "Sealed_Scroll",
+                "material4": "Shimmering_Nectar",
                 "material4qty": 12,
                 "material3qty": 20,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "4": {
                 "material2qty": 8,
                 "material1": "Vayuda_Turquoise_Chunk",
                 "material1qty": 3,
                 "mora": 80000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 60,
-                "material4": "Sealed_Scroll",
+                "material4": "Shimmering_Nectar",
                 "material4qty": 18,
                 "material3qty": 30,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "5": {
                 "material2qty": 12,
                 "material1": "Vayuda_Turquoise_Chunk",
                 "material1qty": 6,
                 "mora": 100000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 70,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Energy_Nectar",
                 "material4qty": 12,
                 "material3qty": 45,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             },
             "6": {
                 "material2qty": 20,
                 "material1": "Vayuda_Turquoise_Gemstone",
                 "material1qty": 6,
                 "mora": 120000,
-                "material2": "Hoarfrost_Core",
+                "material2": "Marionette_Core",
                 "level": 80,
-                "material4": "Forbidden_Curse_Scroll",
+                "material4": "Energy_Nectar",
                 "material4qty": 24,
                 "material3qty": 60,
-                "material3": "Small_Lamp_Grass"
+                "material3": "Crystal_Marrow"
             }
         },
         "introduction": null,
