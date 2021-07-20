@@ -1367,6 +1367,287 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Kaeya",
             "subCollection": {}
         },
+        "Kamisato_Ayaka": {
+            "image": "Characters/Cryo/Ayaka.png",
+            "gender": "Female",
+            "birthday": "28/9",
+            "caption": "Frostflake Heron",
+            "name": "Ayaka",
+            "fullName": "Kamisato Ayaka",
+            "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+            "nation": "Inazuma",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Kamisato Clan",
+            "constellation": "Grus Nivis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Elegance",
+                        "material3qty": 3,
+                        "material4": "Old_Handguard",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 2,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 4,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 6,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 9,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Bloodjade_Branch",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 4,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Bloodjade_Branch",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 6,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Bloodjade_Branch",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 12,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Bloodjade_Branch",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 16,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "The_Fruits_of_Reflection": {
+                        "name": "The Fruits of Reflection",
+                        "effect": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+                        "image": "",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Kanten_Senmyou_Norito": {
+                        "name": "Kanten Senmyou Norito",
+                        "effect": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:\n• Restores 10 Stamina\n• Gains 10% Cryo DMG Bonus for 10s",
+                        "image": "",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Amatsumi_Kunitsumi_Ihahigoto": {
+                        "name": "Amatsumi Kunitsumi Ihahigoto",
+                        "effect": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+                        "image": "",
+                        "order": 2,
+                        "type": "Passive 3"
+                    },
+                    "Kamisato_Art_Senho": {
+                        "name": "Kamisato Art: Senho",
+                        "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\nInflicts Cold on nearby opponents.\nCold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
+                        "image": "Talents/Passive/Talent_Kamisato_Art_Senho.png",
+                        "order": 3,
+                        "type": "Alternate Sprint"
+                    }
+                },
+                "attack": {
+                    "Kamisato_Art_Naname": {
+                        "name": "Kamisato Art: Naname",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Kamisato_Art_Naname.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Kamisato_Art_Hyouka": {
+                        "name": "Kamisato Art: Hyouka",
+                        "effect": "A gracious style of Kamisato Art.\nKamisato Ayaka emits ice around herself and shortly afterwards, launches nearby opponents and deals Cryo DMG.",
+                        "image": "Talents/Skill/Talent_Kamisato_Art_Hyouka.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Kamisato_Art_Soumetsu": {
+                        "name": "Kamisato Art: Soumetsu",
+                        "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\nDeals Cryo DMG over time to all enemies in its path.\nAfter the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
+                        "image": "Talents/Burst/Talent_Kamisato_Art_Soumetsu.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Sousai Sumizome Sakura",
+                    "effect": "When Kamisato Ayaka's normal attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+                    "image": ""
+                },
+                "2": {
+                    "name": "Mie Yuki no Seki no To",
+                    "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Souken Gates, each dealing 20% of the original storm's DMG.",
+                    "image": ""
+                },
+                "3": {
+                    "name": "Hanano Nishikie Kamifubuki",
+                    "effect": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+                    "image": ""
+                },
+                "4": {
+                    "name": "Eikyo Ryuuhan",
+                    "effect": "Opponents damaged by Kamisato Art: Soumetsu's Souken Gates will have their DEF decreased by 30% for 6s.",
+                    "image": ""
+                },
+                "5": {
+                    "name": "Hanani Kumo Kaneni Irutsuki",
+                    "effect": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+                    "image": ""
+                },
+                "6": {
+                    "name": "Ai Suigetsu",
+                    "effect": "When Kamisato Ayaka's Cryo DMG scores CRIT Hits, her DMG is increased by 10% for 3s. This effect can stack up to 5 times and can be triggered once every 0.1s.",
+                    "image": ""
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Shivada_Jade_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Old_Handguard",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Sakura_Bloom"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Perpetual_Heart",
+                    "level": 40,
+                    "material4": "Old_Handguard",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Sakura_Bloom"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Perpetual_Heart",
+                    "level": 50,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Sakura_Bloom"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Perpetual_Heart",
+                    "level": 60,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Sakura_Bloom"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Perpetual_Heart",
+                    "level": 70,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Sakura_Bloom"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Shivada_Jade_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Perpetual_Heart",
+                    "level": 80,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Sakura_Bloom"
+                }
+            },
+            "introduction": "The princess of the Kamisato House. She occasionally practices swordsmanship so that she can pass time by slicing every falling snowflake floating around her on a snowy day.",
+            "genshinggpath": null,
+            "element": "Cryo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayaka",
+            "subCollection": {}
+        },
         "Qiqi": {
             "image": "Characters/Cryo/Qiqi.png",
             "gender": "Female",
