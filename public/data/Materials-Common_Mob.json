@@ -251,6 +251,42 @@
       "name": "Energy Nectar",
       "wiki": "https://genshin-impact.fandom.com/wiki/Energy_Nectar",
       "subCollection": {}
+    },
+    "Old_Handguard": {
+      "image": "Materials/Common_Mob/Item_Old_Handguard.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": null,
+      "enemies": [],
+      "obtained": "- Dropped by Whopperflower",
+      "name": "Old Handguard",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Old_Handguard",
+      "subCollection": {}
+    },
+    "Kageuchi_Handguard": {
+      "image": "Materials/Common_Mob/Item_Kageuchi_Handguard.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description":null,
+      "enemies": [],
+      "obtained": "- Alchemy (3x Old Handguard)\n- Dropped by Lv.40+ Whopperflower",
+      "name": "Kageuchi Handguard",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kageuchi_Handguard",
+      "subCollection": {}
+    },
+    "Famed_Handguard": {
+      "image": "Materials/Common_Mob/Item_Famed_Handguard.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": null,
+      "enemies": [],
+      "obtained": "- Alchemy (3x Kageuchi Handguard)\n- Dropped by Lv.60+ Whopperflower",
+      "name": "Famed Handguard",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Famed_Handguard",
+      "subCollection": {}
     }
   }
 }
