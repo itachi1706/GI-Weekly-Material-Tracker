@@ -479,6 +479,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Favonius_Warbow",
       "subCollection": {}
     },
+    "Hamayumi": {
+      "secondary_stat_type": "ATK%",
+      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
+      "name": "Hamayumi",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Dismal_Prism",
+          "material3qty": 2,
+          "material1": "Narukamis_Wisdom",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Dismal_Prism",
+          "material3qty": 8,
+          "material1": "Narukamis_Joy",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Crystal_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Joy",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Crystal_Prism",
+          "material3qty": 9,
+          "material1": "Narukamis_Affection",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Polarizing_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Affection",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Polarizing_Prism",
+          "material3qty": 12,
+          "material1": "Narukamis_Valor",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Hamayumi.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Forging",
+      "effectName": "Full Draw",
+      "effect": "Increases Normal Attack DMG by 16~32% and Charged ATK DMG by 12~24%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Hamayumi",
+      "subCollection": {}
+    },
     "Hunter_Bow": {
       "secondary_stat_type": "None",
       "description": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",

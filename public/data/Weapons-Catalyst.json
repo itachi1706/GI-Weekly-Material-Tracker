@@ -537,6 +537,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Frostbearer",
       "subCollection": {}
     },
+    "Hakushin_Ring": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. And yet, this device is but an impoverished vessel for the full breadth of her thought.",
+      "name": "Hakushin Ring",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Dismal_Prism",
+          "material3qty": 2,
+          "material1": "Coral_Branch_of_a_Distant_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Dismal_Prism",
+          "material3qty": 8,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Crystal_Prism",
+          "material3qty": 6,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Crystal_Prism",
+          "material3qty": 9,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Polarizing_Prism",
+          "material3qty": 6,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Polarizing_Prism",
+          "material3qty": 12,
+          "material1": "Golden_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Hakushin_Ring.png",
+      "secondary_stat": "6.7%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "30.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Forging",
+      "effectName": "Sakura Palace",
+      "effect": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a 10~20% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Hakushin_Ring",
+      "subCollection": {}
+    },
     "Lost_Prayer_to_the_Sacred_Winds": {
       "secondary_stat_type": "CRIT Rate",
       "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
