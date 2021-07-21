@@ -555,9 +555,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Teachings_of_Prosperity",
+                        "material3": "Teachings_of_Transience",
                         "material3qty": 3,
-                        "material4": "Firm_Arrowhead",
+                        "material4": "Old_Handguard",
                         "material4qty": 6
                     },
                     "3": {
@@ -566,9 +566,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 2,
-                        "material4": "Sharp_Arrowhead",
+                        "material4": "Kageuchi_Handguard",
                         "material4qty": 3
                     },
                     "4": {
@@ -577,9 +577,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Gold",
+                        "material3": "Guide_to_Light",
                         "material3qty": 4,
-                        "material4": "Sharp_Arrowhead",
+                        "material4": "Kageuchi_Handguard",
                         "material4qty": 4
                     },
                     "5": {
@@ -588,9 +588,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
+                        "material3": "Guide_to_Transience",
                         "material3qty": 6,
-                        "material4": "Sharp_Arrowhead",
+                        "material4": "Kageuchi_Handguard",
                         "material4qty": 6
                     },
                     "6": {
@@ -599,53 +599,53 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 9,
-                        "material4": "Sharp_Arrowhead",
+                        "material4": "Kageuchi_Handguard",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
+                        "material2": "Dragon_Lords_Crown",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Gold",
+                        "material3": "Philosophies_of_Light",
                         "material3qty": 4,
-                        "material4": "Weathered_Arrowhead",
+                        "material4": "Famed_Handguard",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
+                        "material2": "Dragon_Lords_Crown",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Prosperity",
+                        "material3": "Philosophies_of_Transience",
                         "material3qty": 6,
-                        "material4": "Weathered_Arrowhead",
+                        "material4": "Famed_Handguard",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
+                        "material2": "Dragon_Lords_Crown",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
+                        "material3": "Philosophies_of_Elegance",
                         "material3qty": 12,
-                        "material4": "Weathered_Arrowhead",
+                        "material4": "Famed_Handguard",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
                         "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "Tail_of_Boreas",
+                        "material2": "Dragon_Lords_Crown",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Gold",
+                        "material3": "Philosophies_of_Light",
                         "material3qty": 16,
-                        "material4": "Weathered_Arrowhead",
+                        "material4": "Famed_Handguard",
                         "material4qty": 12
                     }
                 },
@@ -667,23 +667,23 @@
                 },
                 "attack": {
                     "Foreign_Thundershock": {
-                        "name": "Foreign Rockblade",
-                        "effect": null,
-                        "image": null,
+                        "name": "Foreign Thundershock",
+                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
                     "Lightning_Blade": {
                         "name": "Lightning Blade",
-                        "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n• Restore Elemental Energy and increase Energy Recharge.",
-                        "image": null,
+                        "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+                        "image": "Talents/Skill/Talent_Lightning_Blade.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Bellowing_Thunder": {
                         "name": "Bellowing Thunder",
                         "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
-                        "image": null,
+                        "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -796,7 +796,7 @@
                 }
             },
             "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-            "genshinggpath": "characters/Traveler(Electro)",
+            "genshinggpath": null,
             "element": "Electro",
             "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
             "subCollection": {}
