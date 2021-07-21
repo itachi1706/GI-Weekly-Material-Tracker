@@ -1368,7 +1368,7 @@
             "subCollection": {}
         },
         "Kamisato_Ayaka": {
-            "image": "Characters/Cryo/Ayaka.png",
+            "image": "Characters/Cryo/Kamisato_Ayaka.png",
             "gender": "Female",
             "birthday": "28/9",
             "caption": "Frostflake Heron",
@@ -1378,7 +1378,7 @@
             "nation": "Inazuma",
             "weapon": "Sword",
             "rarity": 5,
-            "affiliation": "Kamisato Clan",
+            "affiliation": "Kamisato Clan, Yashiro Commission",
             "constellation": "Grus Nivis",
             "talents": {
                 "ascension": {
@@ -1483,53 +1483,53 @@
                     }
                 },
                 "passives": {
-                    "The_Fruits_of_Reflection": {
-                        "name": "The Fruits of Reflection",
-                        "effect": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
-                        "image": "",
+                    "Amatsumi_Kunitsumi_Sanctification": {
+                        "name": "Amatsumi Kunitsumi Sanctification",
+                        "effect": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged attacks deal 30% increased DMG for 6s.",
+                        "image": "Talents/Passive/Talent_Amatsumi_Kunitsumi_Sanctification.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
-                    "Kanten_Senmyou_Norito": {
-                        "name": "Kanten Senmyou Norito",
-                        "effect": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:\n• Restores 10 Stamina\n• Gains 10% Cryo DMG Bonus for 10s",
-                        "image": "",
+                    "Kanten_Senmyou_Blessing": {
+                        "name": "Kanten Senmyou Blessing",
+                        "effect": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the fllowing effects:\nRestores 10 Stamina\nGains 18% Cryo DMG Bonus for 10s.",
+                        "image": "Talents/Passive/Talent_Kanten_Senmyou_Blessing.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "Amatsumi_Kunitsumi_Ihahigoto": {
-                        "name": "Amatsumi Kunitsumi Ihahigoto",
-                        "effect": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
-                        "image": "",
+                    "Fruits_of_Shinsa": {
+                        "name": "Fruits of Shinsa",
+                        "effect": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+                        "image": "Talents/Passive/Talent_Fruits_of_Shinsa.png",
                         "order": 2,
                         "type": "Passive 3"
                     },
                     "Kamisato_Art_Senho": {
                         "name": "Kamisato Art: Senho",
-                        "effect": "Ayaka consumes Stamina to hide within a swift flow of sleet that moves as she moves.\nIn Senho form, she moves at high speed on water.\nWhen she reappears, the following effects are produced:\nInflicts Cold on nearby opponents.\nCold congeals along Ayaka's blade, converting her Attack DMG into Cryo DMG for a brief period.",
+                        "effect": "Ayaka consumes Stamina and cloaks herself in a frozen fog that moves with her. In Senho form, she moves swiftly upon water.\nWhen she reappears, the following effects occur:\nAyaka unleashes frigid energy to apply Cryo on nearby opponents.\nColdness condenses around Ayaka's blade, infusing her attacks with Cryo for a brief period.",
                         "image": "Talents/Passive/Talent_Kamisato_Art_Senho.png",
                         "order": 3,
                         "type": "Alternate Sprint"
                     }
                 },
                 "attack": {
-                    "Kamisato_Art_Naname": {
-                        "name": "Kamisato Art: Naname",
+                    "Kamisato_Art_Kabuki": {
+                        "name": "Kamisato Art: Kabuki",
                         "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Kamisato_Art_Naname.png",
+                        "image": "Talents/Normal/Talent_Kamisato_Art_Kabuki.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
                     "Kamisato_Art_Hyouka": {
                         "name": "Kamisato Art: Hyouka",
-                        "effect": "A gracious style of Kamisato Art.\nKamisato Ayaka emits ice around herself and shortly afterwards, launches nearby opponents and deals Cryo DMG.",
+                        "effect": "Summons blooming ice to launch nearby opponents, dealing AoE Cryo DMG.",
                         "image": "Talents/Skill/Talent_Kamisato_Art_Hyouka.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Kamisato_Art_Soumetsu": {
                         "name": "Kamisato Art: Soumetsu",
-                        "effect": "Ayaka gathers frost with her fan and sword, creating bladestorms that continuously advance forward.\nBladestorm\nDeals Cryo DMG over time to all enemies in its path.\nAfter the damage over time has ended, the created bladestorm will burst, dealing Cryo DMG to all enemies in a bigger radius.",
+                        "effect": "Summons forth a snowstorm with flawless poise, unleashing a Frostflake Seki no To that moves forward continuously.\nFrostflake Seki no To\nA storm of whirling icy winds that slashes repeatedly at every enemy it touches, dealing Cryo DMG\nThe snowstorm explodes after its duration ends, dealing AoE Cryo DMG.",
                         "image": "Talents/Burst/Talent_Kamisato_Art_Soumetsu.png",
                         "order": 2,
                         "type": "Elemental Burst"
@@ -1538,34 +1538,34 @@
             },
             "constellations": {
                 "1": {
-                    "name": "Sousai Sumizome Sakura",
-                    "effect": "When Kamisato Ayaka's normal attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
-                    "image": ""
+                    "name": "Snowswept Sakura",
+                    "effect": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+                    "image": "Constellation/Snowswept_Sakura.png"
                 },
                 "2": {
-                    "name": "Mie Yuki no Seki no To",
-                    "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Souken Gates, each dealing 20% of the original storm's DMG.",
-                    "image": ""
+                    "name": "Blizzard Blade Seki no To",
+                    "effect": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+                    "image": "Constellation/Blizzard_Blade_Seki_no_To.png"
                 },
                 "3": {
-                    "name": "Hanano Nishikie Kamifubuki",
+                    "name": "Frostbloom Kamifubuki",
                     "effect": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
-                    "image": ""
+                    "image": "Constellation/Frostbloom_Kamifubuki.png"
                 },
                 "4": {
-                    "name": "Eikyo Ryuuhan",
-                    "effect": "Opponents damaged by Kamisato Art: Soumetsu's Souken Gates will have their DEF decreased by 30% for 6s.",
-                    "image": ""
+                    "name": "Ebb and Flow",
+                    "effect": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+                    "image": "Constellation/Ebb_and_Flow.png"
                 },
                 "5": {
-                    "name": "Hanani Kumo Kaneni Irutsuki",
+                    "name": "Blossom Cloud Irutsuki",
                     "effect": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
-                    "image": ""
+                    "image": "Constellation/Blossom_Cloud_Irutsuki.png"
                 },
                 "6": {
-                    "name": "Ai Suigetsu",
-                    "effect": "When Kamisato Ayaka's Cryo DMG scores CRIT Hits, her DMG is increased by 10% for 3s. This effect can stack up to 5 times and can be triggered once every 0.1s.",
-                    "image": ""
+                    "name": "Dance of Suigetsu",
+                    "effect": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+                    "image": "Constellation/Dance_of_Suigetsu.png"
                 }
             },
             "ascension": {
@@ -1642,7 +1642,7 @@
                     "material3": "Sakura_Bloom"
                 }
             },
-            "introduction": "The princess of the Kamisato House. She occasionally practices swordsmanship so that she can pass time by slicing every falling snowflake floating around her on a snowy day.",
+            "introduction": "Daughter of the Yashiro Commission's Kamisato Clan from Inazuma. Dignified and elegant, wise and determined.\nSincere and pleasant to others. Universally loved by the Inazuma people, she has earned the title of Shirasagi Himegimi.",
             "genshinggpath": null,
             "element": "Cryo",
             "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayaka",
