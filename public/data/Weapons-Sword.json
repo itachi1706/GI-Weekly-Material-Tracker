@@ -1,5 +1,85 @@
 {
   "weapons": {
+    "Amenoma_Kageuchi": {
+      "secondary_stat_type": "ATK",
+      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
+      "name": "Amenoma Kageuchi",
+      "series": "Amethyst Series",
+      "ascension": {
+        "1": {
+          "material3": "Old_Handguard",
+          "level": 20,
+          "material2": "Chaos_Gear",
+          "material3qty": 2,
+          "material1": "Coral_Branch_of_a_Distant_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Old_Handguard",
+          "level": 40,
+          "material2": "Chaos_Gear",
+          "material3qty": 8,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Kageuchi_Handguard",
+          "level": 50,
+          "material2": "Chaos_Axis",
+          "material3qty": 6,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Kageuchi_Handguard",
+          "level": 60,
+          "material2": "Chaos_Axis",
+          "material3qty": 9,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Famed_Handguard",
+          "level": 70,
+          "material2": "Chaos_Oculus",
+          "material3qty": 6,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Famed_Handguard",
+          "level": 80,
+          "material2": "Chaos_Oculus",
+          "material3qty": 12,
+          "material1": "Golden_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Amenoma_Kageuchi.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Forging (1x Northlander Sword Billet, 50x Amethyst Lump, 50x White Iron Chunk)",
+      "effectName": "Iwakura Succession",
+      "effect": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates 6~12 Energy for each seed consumed.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Amenoma_Kageuchi",
+      "subCollection": {}
+    },
     "Aquila_Favonia": {
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "The sword of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil—just like the last heroine who wielded it.",
@@ -933,6 +1013,86 @@
       "effectName": "Bane of Fire and Thunder",
       "effect": "Increases DMG against enemies affected by Pyro or Electro by 20~36%.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Lion%27s_Roar",
+      "subCollection": {}
+    },
+    "Mistsplitter_Reforged": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
+      "name": "Mistsplitter Reforged",
+      "series": "Inazuma Series",
+      "ascension": {
+        "1": {
+          "material3": "Old_Handguard",
+          "level": 20,
+          "material2": "Chaos_Gear",
+          "material3qty": 3,
+          "material1": "Coral_Branch_of_a_Distant_Sea",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Old_Handguard",
+          "level": 40,
+          "material2": "Chaos_Gear",
+          "material3qty": 12,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Kageuchi_Handguard",
+          "level": 50,
+          "material2": "Chaos_Axis",
+          "material3qty": 9,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Kageuchi_Handguard",
+          "level": 60,
+          "material2": "Chaos_Axis",
+          "material3qty": 14,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Famed_Handguard",
+          "level": 70,
+          "material2": "Chaos_Oculus",
+          "material3qty": 9,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Famed_Handguard",
+          "level": 80,
+          "material2": "Chaos_Oculus",
+          "material3qty": 18,
+          "material1": "Golden_Branch_of_a_Distant_Sea",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Sword/Mistsplitter_Reforged.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "44.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "Mistsplitter's Edge",
+      "effect": "Gain a 12~24% Elemental DMG Bonus for every element and receive the might of Mistsplitter's Emblem. At stack levels 1/2/3, Mistsplitter's Emblem provides a 8/16/28~16/32/56% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mistsplitter_Reforged",
       "subCollection": {}
     },
     "Primordial_Jade_Cutter": {
