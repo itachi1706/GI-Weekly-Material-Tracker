@@ -159,6 +159,86 @@
         "wiki": null,
         "subCollection": {}
     },
+    "Predator": {
+      "secondary_stat_type": "ATK",
+      "description": "A uniquely designed bow. This should not belong in this world.",
+      "name": "Predator",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Predator.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "41.3%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "- Playstation Event In-Game Mail system",
+      "effectName": "Strong Strike",
+      "effect": "Effective for players on \"PlayStation Network\" only.\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10~?' for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66~?'.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Predator",
+      "subCollection": {}
+    },
     "Quartz": {
         "secondary_stat_type": "Elemental Mastery",
         "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
