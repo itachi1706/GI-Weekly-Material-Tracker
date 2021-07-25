@@ -1,8 +1,8 @@
 {
   "weapons": {
     "Amenoma_Kageuchi": {
-      "secondary_stat_type": "ATK%",
-      "description": "A blade that was said to have been made to order by a famed samurai who could even cut a tengu warrior, famed for their skill in using their incredible speed, down from the air.",
+      "secondary_stat_type": "ATK",
+      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
       "name": "Amenoma Kageuchi",
       "series": null,
       "ascension": {
@@ -74,7 +74,7 @@
       "max_secondary_stat": "55.1%",
       "max_base_atk": 454,
       "base_atk": 41,
-      "obtained": "Forging",
+      "obtained": "Forging (1x Northlander Sword Billet, 50x Amethyst Lump, 50x White Iron Chunk)",
       "effectName": "Iwakura Succession",
       "effect": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates 6~12 Energy for each seed consumed.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Amenoma_Kageuchi",
@@ -1017,7 +1017,7 @@
     },
     "Mistsplitter_Reforged": {
       "secondary_stat_type": "CRIT DMG",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reflection\" comes from its once having been broken.",
+      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
       "name": "Mistsplitter Reforged",
       "series": "Inazuma Series",
       "ascension": {
@@ -1090,8 +1090,8 @@
       "max_base_atk": 674,
       "base_atk": 48,
       "obtained": "Gacha",
-      "effectName": "Mistsplitter's Sheath",
-      "effect": "Gain a 12~24% Elemental DMG Bonus for every element and receive the might of Mistsplitter's Seal. At stack levels 1/2/3, Mistsplitter's Seal provides a 8~16/16~32/28~56% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Seal in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stacks lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+      "effectName": "Mistsplitter's Edge",
+      "effect": "Gain a 12~24% Elemental DMG Bonus for every element and receive the might of Mistsplitter's Emblem. At stack levels 1/2/3, Mistsplitter's Emblem provides a 8/16/28~16/32/56% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
       "wiki": "https://genshin-impact.fandom.com/wiki/Mistsplitter_Reforged",
       "subCollection": {}
     },
