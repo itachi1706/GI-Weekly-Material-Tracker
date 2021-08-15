@@ -7,6 +7,7 @@ import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
+import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
@@ -145,6 +146,7 @@ class _MainNavigationPageState extends State<MainNavigationPage>
           ),
         ],
       ),
+      drawer: DrawerComponent(),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.deepOrange,
