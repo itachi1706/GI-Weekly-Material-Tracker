@@ -17,7 +17,7 @@ class DrawerComponent extends StatelessWidget {
           _drawerHeader(context),
           _drawerItem(icon: Icons.home, title: 'Legacy (Deprecated)', route: '/menu'), // TODO: Remove when done
           _drawerItem(icon: Icons.home, title: 'Tracking', route: '/menu'), // TODO: Only tracking
-          _drawerItem(icon: MdiIcons.fileDocument, title: 'Consolidated Tracking', route: '/globalTracking', offPrev: false),
+          // _drawerItem(icon: MdiIcons.fileDocument, title: 'Consolidated Tracking', route: '/globalTracking', offPrev: false),
           _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/menu'), // TODO: Only dictionary
           _drawerItem(icon: MdiIcons.compass, title: 'Parametric Transformer', route: '/parametric'),
           _drawerItem(icon: MdiIcons.ticket, title: 'Promo Codes', route: '/promos'),

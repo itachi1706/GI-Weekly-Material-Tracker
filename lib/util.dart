@@ -32,6 +32,14 @@ class Util {
         body: Util.centerLoadingCircle('Getting Data'),
       );
 
+  static Widget loadingScreenWithDrawer(Widget drawer) => Scaffold(
+    appBar: AppBar(
+      title: Text('Loading...'),
+    ),
+    drawer: drawer,
+    body: Util.centerLoadingCircle('Getting Data'),
+  );
+
   static Widget centerLoadingCircle(String loadText) => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

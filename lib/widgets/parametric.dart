@@ -10,6 +10,7 @@ import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -47,6 +48,7 @@ class _ParametricPageState extends State<ParametricPage> {
           ),
         ],
       ),
+      drawer: DrawerComponent(),
       body: Center(
         child: Column(
           children: [
