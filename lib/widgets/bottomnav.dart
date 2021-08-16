@@ -267,3 +267,85 @@ class _MainNavigationPageState extends State<MainNavigationPage>
     await Get.offAllNamed('/'); // Go to login screem
   }
 }
+
+class TrackingPage extends StatefulWidget {
+  final String title;
+
+  TrackingPage({Key key, this.title}) : super(key: key);
+
+  @override
+  _TrackingPageState createState() => _TrackingPageState();
+}
+
+class _TrackingPageState extends State<TrackingPage>
+    with TickerProviderStateMixin {
+
+  final List<Tab> _tabs = [
+    Tab(text: 'Boss'),
+    Tab(text: 'Domains'),
+    Tab(text: 'Monster'),
+    Tab(text: 'Local Speciality'),
+    Tab(text: 'Week Planner'),
+  ];
+
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: _tabs.length);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        bottom: _showAppBar(),
+        actions: [
+          IconButton(
+            icon: Icon(MdiIcons.fileDocument),
+            tooltip: 'View Consolidated Material List',
+            onPressed: () => Get.toNamed('/globalTracking'),
+          ),
+          PopupMenuButton(
+            onSelected: _overflowMenuSelection,
+            elevation: 2.0,
+            itemBuilder: (context) => _generatePopupMenuItems(),
+          ),
+        ],
+      ),
+      drawer: DrawerComponent(),
+      body: TrackingTabController(tabController: _tabController),
+    );
+  }
+
+  List<PopupMenuEntry<String>> _generatePopupMenuItems() {
+    return [
+      PopupMenuItem(
+        value: 'forum-login',
+        child: Text('Daily Forum Login'),
+      ),
+    ];
+  }
+
+  Widget _showAppBar() {
+    return TabBar(
+      controller: _tabController,
+      tabs: _tabs,
+      isScrollable: true,
+    );
+  }
+
+  void _overflowMenuSelection(String action) {
+    print('Menu Overflow Action: $action');
+    switch (action) {
+      case 'forum-login':
+        NotificationManager.getInstance().selectNotification(action);
+        break;
+      default:
+        Util.showSnackbarQuick(context, 'Undefined action ($action)');
+        break;
+    }
+  }
+}

@@ -7,7 +7,18 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class DrawerComponent extends StatelessWidget {
+class DrawerComponent extends StatefulWidget {
+  @override
+  _DrawerComponentState createState() => _DrawerComponentState();
+}
+
+class _DrawerComponentState extends State<DrawerComponent> {
+
+  @override
+  void initState() {
+    Util.currentRoute ??= '/menu';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -20,9 +31,9 @@ class DrawerComponent extends StatelessWidget {
               padding: EdgeInsets.zero,
               children: [
                 _drawerItem(icon: Icons.home, title: 'Legacy (Deprecated)', route: '/menu'), // TODO: Remove when done
-                _drawerItem(icon: Icons.home, title: 'Tracking', route: '/menu'), // TODO: Only tracking
+                _drawerItem(icon: Icons.home, title: 'Tracking', route: '/tracking'), // TODO: Only tracking
                 // _drawerItem(icon: MdiIcons.fileDocument, title: 'Consolidated Tracking', route: '/globalTracking', offPrev: false),
-                _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/menu'), // TODO: Only dictionary
+                _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/dictionary'), // TODO: Only dictionary
                 _drawerItem(icon: MdiIcons.compass, title: 'Parametric Transformer', route: '/parametric'),
                 _drawerItem(icon: MdiIcons.ticket, title: 'Promo Codes', route: '/promos'),
                 Divider(),
@@ -53,7 +64,18 @@ class DrawerComponent extends StatelessWidget {
             ),
           ],
         ),
-        onTap: () => (offPrev) ? Get.offNamed(route) : Get.toNamed(route),
+        selected: Util.currentRoute == route,
+        onTap: () {
+          if (!offPrev) {
+            Get.toNamed(route);
+          } else {
+            Navigator.pop(Get.context);
+            setState(() {
+              Util.currentRoute = route;
+            });
+            Future.delayed(Duration(milliseconds: 10), () => Get.offAndToNamed(route));
+          }
+        },
       );
     }
 

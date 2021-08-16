@@ -15,6 +15,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 class Util {
   static final String genshinGGUrl = 'https://genshin.gg/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
+  static String currentRoute;
 
   static String _uid;
 

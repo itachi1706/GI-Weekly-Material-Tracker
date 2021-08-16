@@ -72,6 +72,18 @@ class _MyAppState extends State<MyApp> {
             title: 'GI Materials Tracker',
           ),
         ),
+        GetPage(
+          name: '/tracking',
+          page: () => TrackingPage(
+            title: 'GI Materials Tracker',
+          ), transition: Transition.noTransition,
+        ),
+        GetPage(
+          name: '/dictionary',
+          page: () => MainNavigationPage(
+            title: 'GI Materials Tracker',
+          ), transition: Transition.noTransition,
+        ),
         GetPage(name: '/materials/:material', page: () => MaterialInfoPage()),
         GetPage(
           name: '/characters/:character',
@@ -84,8 +96,8 @@ class _MyAppState extends State<MyApp> {
           page: () => GlobalMaterialPage(),
         ),
         GetPage(name: '/settings', page: () => SettingsPage()),
-        GetPage(name: '/parametric', page: () => ParametricPage()),
-        GetPage(name: '/promos', page: () => PromoCodePage()),
+        GetPage(name: '/parametric', page: () => ParametricPage(), transition: Transition.noTransition),
+        GetPage(name: '/promos', page: () => PromoCodePage(), transition: Transition.noTransition),
       ],
     );
   }
