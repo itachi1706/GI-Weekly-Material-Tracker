@@ -4,10 +4,10 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/appsettings.dart';
-import 'package:gi_weekly_material_tracker/widgets/mainnavs.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/globaltracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
+import 'package:gi_weekly_material_tracker/widgets/mainnavs.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
@@ -98,13 +98,15 @@ class _MyAppState extends State<MyApp> {
         ),
         GetPage(name: '/settings', page: () => SettingsPage()),
         GetPage(
-            name: '/parametric',
-            page: () => ParametricPage(),
-            transition: Transition.noTransition),
+          name: '/parametric',
+          page: () => ParametricPage(),
+          transition: Transition.noTransition,
+        ),
         GetPage(
-            name: '/promos',
-            page: () => PromoCodePage(),
-            transition: Transition.noTransition),
+          name: '/promos',
+          page: () => PromoCodePage(),
+          transition: Transition.noTransition,
+        ),
       ],
     );
   }

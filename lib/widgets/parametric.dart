@@ -7,7 +7,6 @@ import 'package:device_apps/device_apps.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
-import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
@@ -40,13 +39,6 @@ class _ParametricPageState extends State<ParametricPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Parametric Transformer'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            tooltip: 'Settings',
-            onPressed: () => Get.toNamed('/settings'),
-          ),
-        ],
       ),
       drawer: DrawerComponent(),
       body: Center(
