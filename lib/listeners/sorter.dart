@@ -35,10 +35,10 @@ class SortBy {
     _refreshData();
     var finalizedSortList = List<PopupMenuEntry>.of(_sorter);
     switch (index) {
-      case 1:
+      case 0:
         finalizedSortList.addAll(_charOnlySorter);
         break;
-      case 2:
+      case 1:
         finalizedSortList.addAll(_weaponOnlySorter);
         break;
     }

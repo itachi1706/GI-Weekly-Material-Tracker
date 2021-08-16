@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -16,7 +17,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
 
   @override
   void initState() {
-    Util.currentRoute ??= '/menu';
+    Util.currentRoute ??= '/tracking';
   }
 
   @override
@@ -30,12 +31,11 @@ class _DrawerComponentState extends State<DrawerComponent> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-                _drawerItem(icon: Icons.home, title: 'Legacy (Deprecated)', route: '/menu'), // TODO: Remove when done
-                _drawerItem(icon: Icons.home, title: 'Tracking', route: '/tracking'), // TODO: Only tracking
-                // _drawerItem(icon: MdiIcons.fileDocument, title: 'Consolidated Tracking', route: '/globalTracking', offPrev: false),
-                _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/dictionary'), // TODO: Only dictionary
+                _drawerItem(icon: Icons.home, title: 'Tracking', route: '/tracking'),
+                _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/dictionary'),
                 _drawerItem(icon: MdiIcons.compass, title: 'Parametric Transformer', route: '/parametric'),
                 _drawerItem(icon: MdiIcons.ticket, title: 'Promo Codes', route: '/promos'),
+                _drawerItem(icon: MdiIcons.alarm, title: 'Daily Forum Login', onTap: _dailyLogin, offPrev: false),
                 Divider(),
                 _drawerItem(icon: Icons.settings, title: 'Settings', route: '/settings', offPrev: false),
                 _drawerItem(icon: Icons.logout, title: 'Logout', onTap: _signOut),
@@ -45,6 +45,10 @@ class _DrawerComponentState extends State<DrawerComponent> {
         ],
       ),
     );
+  }
+
+  void _dailyLogin() async {
+    await NotificationManager.getInstance().selectNotification('forum-login');
   }
 
   void _signOut() async {
