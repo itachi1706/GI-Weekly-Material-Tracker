@@ -210,7 +210,8 @@ class NotificationManager {
         );
       } else {
         print(
-            'Reminder Time is before current time. Aborting scheduling of reminder');
+          'Reminder Time is before current time. Aborting scheduling of reminder',
+        );
       }
     }
   }

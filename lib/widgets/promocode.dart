@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gi_weekly_material_tracker/models/promocodedata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final DatabaseReference db = FirebaseDatabase().reference();
@@ -40,7 +41,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
     }
 
     if (_codes == null || _location == null) {
-      return Util.loadingScreen();
+      return Util.loadingScreenWithDrawer(DrawerComponent());
     }
 
     return Scaffold(
@@ -54,6 +55,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
           ),
         ],
       ),
+      drawer: DrawerComponent(),
       body: RefreshIndicator(
         onRefresh: _retrievePromoCodes,
         child: SingleChildScrollView(

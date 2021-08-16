@@ -15,6 +15,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 class Util {
   static final String genshinGGUrl = 'https://genshin.gg/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
+  static String currentRoute;
 
   static String _uid;
 
@@ -31,6 +32,14 @@ class Util {
         ),
         body: Util.centerLoadingCircle('Getting Data'),
       );
+
+  static Widget loadingScreenWithDrawer(Widget drawer) => Scaffold(
+    appBar: AppBar(
+      title: Text('Loading...'),
+    ),
+    drawer: drawer,
+    body: Util.centerLoadingCircle('Getting Data'),
+  );
 
   static Widget centerLoadingCircle(String loadText) => Center(
         child: Column(
@@ -62,6 +71,18 @@ class Util {
     return _auth.currentUser == null
         ? 'Not Logged In'
         : _auth.currentUser.email;
+  }
+
+  static String getUserName() {
+    return _auth.currentUser == null
+        ? null
+        : _auth.currentUser.displayName;
+  }
+
+  static String getUserPhotoUrl() {
+    return _auth.currentUser == null
+        ? null
+        : _auth.currentUser.photoURL;
   }
 
   static Future<bool> launchWebPage(

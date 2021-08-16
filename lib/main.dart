@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:gi_weekly_material_tracker/widgets//bottomnav.dart';
 import 'package:gi_weekly_material_tracker/widgets/appsettings.dart';
 import 'package:gi_weekly_material_tracker/widgets/characters.dart';
 import 'package:gi_weekly_material_tracker/widgets/globaltracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
+import 'package:gi_weekly_material_tracker/widgets/mainnavs.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
@@ -68,9 +68,22 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/placeholder', page: () => PlaceholderPage()),
         GetPage(
           name: '/menu',
-          page: () => MainNavigationPage(
+          page: () => TransitionPage(),
+          // page: () => MainNavigationPage(
+          //   title: 'GI Materials Tracker',
+          // ),
+        ),
+        GetPage(
+          name: '/tracking',
+          page: () => TrackingPage(
             title: 'GI Materials Tracker',
           ),
+          transition: Transition.noTransition,
+        ),
+        GetPage(
+          name: '/dictionary',
+          page: () => DictionaryPage(),
+          transition: Transition.noTransition,
         ),
         GetPage(name: '/materials/:material', page: () => MaterialInfoPage()),
         GetPage(
@@ -84,9 +97,36 @@ class _MyAppState extends State<MyApp> {
           page: () => GlobalMaterialPage(),
         ),
         GetPage(name: '/settings', page: () => SettingsPage()),
-        GetPage(name: '/parametric', page: () => ParametricPage()),
-        GetPage(name: '/promos', page: () => PromoCodePage()),
+        GetPage(
+          name: '/parametric',
+          page: () => ParametricPage(),
+          transition: Transition.noTransition,
+        ),
+        GetPage(
+          name: '/promos',
+          page: () => PromoCodePage(),
+          transition: Transition.noTransition,
+        ),
       ],
     );
+  }
+}
+
+class TransitionPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: _skip(),
+      builder: (context, snapshot) {
+        return Util.loadingScreen();
+      },
+    );
+  }
+
+  Future<void> _skip() async {
+    Util.currentRoute = '/tracking';
+    Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
+
+    return;
   }
 }
