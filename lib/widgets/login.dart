@@ -54,14 +54,28 @@ class _LoginPageState extends State<LoginPage> {
       SignInButton(Buttons.Google, onPressed: _signInGoogle),
     ];
     if (!kReleaseMode) {
-      wid.insert(
-        1,
-        SignInButton(
-          Buttons.Email,
-          onPressed: _signIn,
-          text: 'Sign in with Test Account',
-        ),
-      );
+      if (kIsWeb) {
+        wid.insert(
+          1,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8, top: 8),
+            child: SignInButton(
+              Buttons.Email,
+              onPressed: _signIn,
+              text: 'Sign in with Test Account',
+            ),
+          ),
+        );
+      } else {
+        wid.insert(
+          1,
+          SignInButton(
+            Buttons.Email,
+            onPressed: _signIn,
+            text: 'Sign in with Test Account',
+          ),
+        );
+      }
     }
     if (_loggingIn) {
       wid.add(Padding(
