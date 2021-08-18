@@ -161,6 +161,7 @@ class _SettingsPageState extends State<SettingsPage> {
       // Return no op
       return [
         SettingsTile(
+          trailing: SizedBox.shrink(),
           title: 'Notifications not supported on web',
           enabled: false,
         ),
