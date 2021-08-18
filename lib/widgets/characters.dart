@@ -846,7 +846,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       color = Colors.pink;
     }
 
-    if (name.startsWith('Aether/Lumine')) {
+    if (name.startsWith('Traveler')) {
       return Icon(MdiIcons.genderMaleFemale);
     }
 
