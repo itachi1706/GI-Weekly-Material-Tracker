@@ -415,26 +415,26 @@ Check Firebase Hosting Branch:
       when: on_success
     - when: never
 
-Stop Firebase Hosting Branch:
-  image: itachi1706/docker-firebase-cli:latest
-  stage: deploy
-  before_script:
-    - cd firebase
-  script:
-    - firebase hosting:channel:delete -f $CI_COMMIT_REF_SLUG
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    action: stop
-  rules:
-    - if: $CI_COMMIT_TAG
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
-      when: manual
-    - when: never
+# .Stop Firebase Hosting Branch:
+#   image: itachi1706/docker-firebase-cli:latest
+#   stage: deploy
+#   before_script:
+#     - cd firebase
+#   script:
+#     - firebase hosting:channel:delete -f $CI_COMMIT_REF_SLUG --expires 1d
+#   environment:
+#     name: review/$CI_COMMIT_REF_NAME
+#     action: stop
+#   rules:
+#     - if: $CI_COMMIT_TAG
+#       when: never
+#     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+#       when: never
+#     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+#       when: never
+#     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
+#       when: manual
+#     - when: never
 
 Deploy to Firebase Hosting Branch:
   image: itachi1706/docker-firebase-cli:latest
@@ -447,10 +447,13 @@ Deploy to Firebase Hosting Branch:
   script:
     # $CI_COMMIT_REF_SLUG is a url friendly version of the branch name that GitLab CI gives us
     - firebase hosting:channel:deploy $CI_COMMIT_REF_SLUG
+  artifacts:
+    paths:
+      - firebase/
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: $MY_DEPLOYED_URL
-    on_stop: Stop Firebase Hosting Branch
+    #on_stop: Stop Firebase Hosting Branch
   needs: ["Build Web App", "Check Firebase Hosting Branch"]
   rules:
     - if: $CI_COMMIT_TAG
@@ -458,29 +461,6 @@ Deploy to Firebase Hosting Branch:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
-      when: on_success
-    - when: never
-
-Deploy to Firebase Hosting Dev:
-  image: itachi1706/docker-firebase-cli:latest
-  stage: deploy
-  before_script:
-    - cd firebase
-  script: firebase --token $FIREBASE_TOKEN hosting:channel:deploy dev --expires 1d
-  dependencies:
-    - Build Web App
-  artifacts:
-    paths:
-      - firebase/
-  needs: ["Build Web App"]
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule"'
-      when: never
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: $CI_COMMIT_TAG
       when: never
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
       when: on_success
