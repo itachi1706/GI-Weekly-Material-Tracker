@@ -6,7 +6,7 @@ const {writeFile} = require('fs/promises');
 
 // attempt to find an existing deploy for the given branch
 const getDeployUrl = async (branch) => {
-  const {stdout} = await promisify(exec)(`firebase hosting:channel:list --json`);
+  const {stdout} = await promisify(exec)(`firebase hosting:channel:list --json`, {cwd: '../firebase'});
   const {result} = JSON.parse(stdout);
 
   return result.channels.find(deploy => deploy.name.split('/').pop() === branch)?.url;
@@ -14,7 +14,7 @@ const getDeployUrl = async (branch) => {
 
 // create a new hosting preview channel without deploying and return its' url
 const generateBranchDeployUrl = async (branch) => {
-  const {stdout} = await promisify(exec)(`firebase hosting:channel:create ${branch} --json`);
+  const {stdout} = await promisify(exec)(`firebase hosting:channel:create ${branch} --json`, {cwd: '../firebase'});
   const {result} = JSON.parse(stdout);
 
   return result.url;
