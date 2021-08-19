@@ -401,7 +401,7 @@ Check Firebase Hosting Branch:
     - npm run gitlabutil
   artifacts:
     reports:
-      dotenv: build.env
+      dotenv: util/build.env
   rules:
     - if: $CI_COMMIT_TAG
       when: never
