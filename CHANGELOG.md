@@ -1,3 +1,12 @@
+# 2.0.0
+- Brand new navigation method with drawers!
+- Split tracking page and character/weapon/material dictionary apart
+- Moved Settings, Parametric Transformer and Daily Login Reminder to drawer
+- Fixed Traveler displaying only female gender
+- Added a refresh page option for web users
+- Fixed web users seeing an unknown icon box in settings for notifications
+- Updated various dependencies
+
 # 1.6.1
 - Added full names of characters to the character info page if it exists
 - Added weapon family to the weapon info page if it is part of a series
