@@ -35,7 +35,7 @@ fetch('https://www.gensh.in/events/promotion-codes')
     console.log(">>> Saving codes crawled to array");
     let codes = [];
     for (let i = 0; i < td.length; i+=6) {
-        let code = { dateString: td[i].text, reward: td[i+1].text, expired: td[i+2].text, eu: td[i+3].text, na: td[i+4].text, asia: td[i+5].text };
+        let code = { dateString: td[i].text, reward: td[i+1].text, expired: td[i+2].text, eu: td[i+3].text.removeWhitespace(), na: td[i+4].text.removeWhitespace(), asia: td[i+5].text.removeWhitespace() };
         if (code.expired.toLowerCase().startsWith('yes')) {
             code.expired = true;
             code.notify = false;
