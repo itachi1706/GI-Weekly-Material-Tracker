@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -546,12 +547,16 @@ class _PlannerPageState extends State<PlannerPage> {
     if (_curData.isEmpty) {
       return Text('Not tracking any domain materials for this day');
     }
+    // Assume each 180px, divide and round up to get how many per grid (min 3)
+    var webWidth = MediaQuery.of(context).size.width;
+    var gridCnt = (webWidth / 180).round();
+    if (gridCnt < 3) gridCnt = 3;
+    print('$webWidth | $gridCnt');
 
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      crossAxisCount:
-          (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
+      crossAxisCount: gridCnt,
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials/$materialId'),
