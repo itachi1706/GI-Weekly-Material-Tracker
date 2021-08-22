@@ -446,7 +446,7 @@ Deploy to Firebase Hosting Branch:
     - cd firebase
   script:
     # $CI_COMMIT_REF_SLUG is a url friendly version of the branch name that GitLab CI gives us
-    - firebase hosting:channel:deploy $CI_COMMIT_REF_SLUG
+    - firebase hosting:channel:deploy $CI_COMMIT_REF_SLUG --expires 1d
   artifacts:
     paths:
       - firebase/
