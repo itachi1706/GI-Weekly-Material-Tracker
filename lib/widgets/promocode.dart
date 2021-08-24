@@ -129,12 +129,14 @@ class _PromoCodePageState extends State<PromoCodePage> {
   Widget _webUnsupported() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Not supported on web'),
+        title: Text('Currently not supported on web'),
       ),
+      drawer: DrawerComponent(),
       body: Center(
         child: Text(
           'Promo Codes on web is coming soon!',
           style: TextStyle(fontSize: 32),
+          textAlign: TextAlign.center,
         ),
       ),
     );
