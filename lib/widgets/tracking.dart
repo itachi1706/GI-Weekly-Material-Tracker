@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -447,6 +448,12 @@ class _PlannerPageState extends State<PlannerPage> {
   }
 
   Widget _buildWeeklyMaterials(Map<int, Set<String>> _mappedData) {
+    // Assume each 180px, divide and round up to get how many per grid (min 3)
+    var webWidth = MediaQuery.of(context).size.width;
+    var gridCnt = (webWidth / 180).round();
+    if (gridCnt < 3) gridCnt = 3;
+    print('Width: $webWidth | Generated Grid: $gridCnt');
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -476,7 +483,7 @@ class _PlannerPageState extends State<PlannerPage> {
               return ListTile(
                 tileColor: _getTileColorIfCurrentDay(key),
                 leading: Text(GridData.getDayString(key)),
-                title: _getGridMaterials(_curData),
+                title: _getGridMaterials(_curData, gridCnt),
               );
             },
             separatorBuilder: (context, index) => Divider(height: 1),
@@ -542,7 +549,7 @@ class _PlannerPageState extends State<PlannerPage> {
         : Colors.transparent;
   }
 
-  Widget _getGridMaterials(List<String> _curData) {
+  Widget _getGridMaterials(List<String> _curData, int gridCnt) {
     if (_curData.isEmpty) {
       return Text('Not tracking any domain materials for this day');
     }
@@ -550,8 +557,7 @@ class _PlannerPageState extends State<PlannerPage> {
     return GridView.count(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      crossAxisCount:
-          (MediaQuery.of(context).orientation == Orientation.portrait) ? 3 : 6,
+      crossAxisCount: gridCnt,
       children: _curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials/$materialId'),

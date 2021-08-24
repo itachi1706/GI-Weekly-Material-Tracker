@@ -134,9 +134,10 @@ class _LoginPageState extends State<LoginPage> {
       googleProvider.setCustomParameters({'login_hint': 'user@gmail.com'});
 
       // Once signed in, return the UserCredential
-      await FirebaseAuth.instance.signInWithRedirect(googleProvider);
+      await _auth.signInWithRedirect(googleProvider);
+      print('Getting redirect info');
 
-      return FirebaseAuth.instance.getRedirectResult();
+      return _auth.getRedirectResult();
     } else {
       // Trigger the authentication flow
       final googleUser = await GoogleSignIn().signIn();
