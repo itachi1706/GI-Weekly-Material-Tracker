@@ -21,7 +21,6 @@ class TrackingPage extends StatefulWidget {
 
 class _TrackingPageState extends State<TrackingPage>
     with TickerProviderStateMixin {
-
   final List<Tab> _tabs = [
     Tab(text: 'Boss'),
     Tab(text: 'Domains'),
