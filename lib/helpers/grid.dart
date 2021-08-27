@@ -46,16 +46,16 @@ class GridData {
     );
   }
 
-  static Color getCountColor(int current, int max) {
-    return (current >= max) ? Colors.greenAccent : Colors.white;
-  }
+  static Color getCountColor(int current, int max, {bw = false}) {
+    if (bw) {
+      return (current >= max)
+          ? Colors.green
+          : (Util.themeNotifier.isDarkMode())
+              ? Colors.white
+              : Colors.black;
+    }
 
-  static Color getCountColorBW(int current, int max) {
-    return (current >= max)
-        ? Colors.green
-        : (Util.themeNotifier.isDarkMode())
-            ? Colors.white
-            : Colors.black;
+    return (current >= max) ? Colors.greenAccent : Colors.white;
   }
 
   static String getElementImageRef(String element) {
