@@ -400,6 +400,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.0"
+  flutter_inappwebview:
+    dependency: "direct main"
+    description:
+      name: flutter_inappwebview
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.3.2"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -454,13 +461,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_browser:
-    dependency: "direct main"
-    description:
-      name: flutter_web_browser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.15.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

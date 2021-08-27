@@ -74,6 +74,12 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   onTap: _launchBattleChronicle,
                   offPrev: false,
                 ),
+                _drawerItem(
+                  icon: Icons.map,
+                  title: 'Game Map',
+                  onTap: _launchMap,
+                  offPrev: false,
+                ),
                 ..._addWebComponent(),
                 Divider(),
                 _drawerItem(
@@ -120,6 +126,12 @@ class _DrawerComponentState extends State<DrawerComponent> {
 
   void _launchBattleChronicle() async => await Util.launchWebPage(
         'https://www.hoyolab.com/genshin/accountCenter/gameRecord',
+      );
+
+  void _launchMap() async => await Util.launchWebPage(
+        'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html',
+        webView: true,
+        hideTopBars: GetPlatform.isAndroid,
       );
 
   List<Widget> _addWebComponent() {

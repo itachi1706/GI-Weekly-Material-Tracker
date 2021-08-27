@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_browser/flutter_web_browser.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/themeNotifier.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,12 +34,12 @@ class Util {
       );
 
   static Widget loadingScreenWithDrawer(Widget drawer) => Scaffold(
-    appBar: AppBar(
-      title: Text('Loading...'),
-    ),
-    drawer: drawer,
-    body: Util.centerLoadingCircle('Getting Data'),
-  );
+        appBar: AppBar(
+          title: Text('Loading...'),
+        ),
+        drawer: drawer,
+        body: Util.centerLoadingCircle('Getting Data'),
+      );
 
   static Widget centerLoadingCircle(String loadText) => Center(
         child: Column(
@@ -74,44 +74,65 @@ class Util {
   }
 
   static String getUserName() {
-    return _auth.currentUser == null
-        ? null
-        : _auth.currentUser.displayName;
+    return _auth.currentUser == null ? null : _auth.currentUser.displayName;
   }
 
   static String getUserPhotoUrl() {
-    return _auth.currentUser == null
-        ? null
-        : _auth.currentUser.photoURL;
+    return _auth.currentUser == null ? null : _auth.currentUser.photoURL;
   }
 
   static Future<bool> launchWebPage(
     String url, {
     rarityColor = Colors.orange,
+    webView = false,
+    hideTopBars = true,
+    iOSBottomBar = false,
+    iOSUrlBar = false,
   }) async {
     if (url == null) return false;
     // Web Browser for web mode
     if (kIsWeb) {
       return await _launchWebPageWeb(url);
     } else if (GetPlatform.isAndroid || GetPlatform.isIOS) {
-      // Native call for mobile app mode
-      await FlutterWebBrowser.openWebPage(
-        url: url,
-        customTabsOptions: CustomTabsOptions(
-          colorScheme: (Util.themeNotifier.isDarkMode())
-              ? CustomTabsColorScheme.dark
-              : CustomTabsColorScheme.light,
-          toolbarColor: rarityColor,
-          addDefaultShareMenuItem: true,
-          showTitle: true,
-          urlBarHidingEnabled: true,
-        ),
-        safariVCOptions: SafariViewControllerOptions(
-          barCollapsingEnabled: true,
-          dismissButtonStyle: SafariViewControllerDismissButtonStyle.close,
-          modalPresentationCapturesStatusBarAppearance: true,
-        ),
-      );
+      if (webView) {
+        // Use WebView instead
+        var browser = InAppBrowser();
+        var options = InAppBrowserClassOptions(
+          crossPlatform: InAppBrowserOptions(
+            hideToolbarTop: hideTopBars,
+            hideUrlBar: !iOSUrlBar,
+            toolbarTopBackgroundColor: rarityColor,
+          ),
+          ios: IOSInAppBrowserOptions(
+            hideToolbarBottom: !iOSBottomBar,
+          ),
+          inAppWebViewGroupOptions: InAppWebViewGroupOptions(
+            crossPlatform: InAppWebViewOptions(javaScriptEnabled: true),
+          ),
+        );
+
+        await browser.openUrlRequest(
+          urlRequest: URLRequest(url: Uri.parse(url)),
+          options: options,
+        );
+      } else {
+        // Native call for mobile app mode
+        var browser = ChromeSafariBrowser();
+        var options = ChromeSafariBrowserClassOptions(
+          android: AndroidChromeCustomTabsOptions(
+            toolbarBackgroundColor: rarityColor,
+            showTitle: true,
+            addDefaultShareMenuItem: true,
+            enableUrlBarHiding: true,
+          ),
+          ios: IOSSafariOptions(
+            barCollapsingEnabled: true,
+            dismissButtonStyle: IOSSafariDismissButtonStyle.CLOSE,
+          ),
+        );
+
+        await browser.open(url: Uri.parse(url), options: options);
+      }
 
       return true;
     }
