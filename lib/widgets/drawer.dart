@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:device_apps/device_apps.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +18,6 @@ class DrawerComponent extends StatefulWidget {
 }
 
 class _DrawerComponentState extends State<DrawerComponent> {
-
   @override
   void initState() {
     super.initState();
@@ -33,15 +35,58 @@ class _DrawerComponentState extends State<DrawerComponent> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-                _drawerItem(icon: Icons.home, title: 'Tracking', route: '/tracking'),
-                _drawerItem(icon: Icons.menu_book_outlined, title: 'Dictionary', route: '/dictionary'),
-                _drawerItem(icon: MdiIcons.compass, title: 'Parametric Transformer', route: '/parametric'),
-                _drawerItem(icon: MdiIcons.ticket, title: 'Promo Codes', route: '/promos'),
-                _drawerItem(icon: MdiIcons.alarm, title: 'Daily Forum Login', onTap: _dailyLogin, offPrev: false),
+                _drawerItem(
+                  icon: Icons.home,
+                  title: 'Tracking',
+                  route: '/tracking',
+                ),
+                _drawerItem(
+                  icon: Icons.menu_book_outlined,
+                  title: 'Dictionary',
+                  route: '/dictionary',
+                ),
+                _drawerItem(
+                  icon: MdiIcons.compass,
+                  title: 'Parametric Transformer',
+                  route: '/parametric',
+                ),
+                _drawerItem(
+                  icon: MdiIcons.ticket,
+                  title: 'Promo Codes',
+                  route: '/promos',
+                ),
+                Divider(),
+                _drawerItem(
+                  icon: MdiIcons.alarm,
+                  title: 'Daily Forum Login',
+                  onTap: _dailyLogin,
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  icon: Icons.forum,
+                  title: 'HoYoLabs Forum',
+                  onTap: _launchHoyoLabs,
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  icon: MdiIcons.swordCross,
+                  title: 'Battle Chronicles',
+                  onTap: _launchBattleChronicle,
+                  offPrev: false,
+                ),
                 ..._addWebComponent(),
                 Divider(),
-                _drawerItem(icon: Icons.settings, title: 'Settings', route: '/settings', offPrev: false),
-                _drawerItem(icon: Icons.logout, title: 'Logout', onTap: _signOut),
+                _drawerItem(
+                  icon: Icons.settings,
+                  title: 'Settings',
+                  route: '/settings',
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  icon: Icons.logout,
+                  title: 'Logout',
+                  onTap: _signOut,
+                ),
               ],
             ),
           ),
@@ -50,8 +95,44 @@ class _DrawerComponentState extends State<DrawerComponent> {
     );
   }
 
+  void _launchHoyoLabs() async {
+    if (!kIsWeb && Platform.isAndroid) {
+      var androidId = 'com.mihoyo.hoyolab';
+      if (Platform.isAndroid) {
+        // Returns a list of only those apps that have launch intent
+        var apps = await DeviceApps.getInstalledApplications(
+          onlyAppsWithLaunchIntent: true,
+        );
+        print(apps);
+        var isInstalled = await DeviceApps.isAppInstalled(androidId);
+        print('App Installed: $isInstalled');
+        if (isInstalled) {
+          await DeviceApps.openApp(androidId);
+
+          return;
+        }
+      }
+    }
+
+    // Launch the website otherwise
+    await Util.launchWebPage('https://www.hoyolab.com/genshin/');
+  }
+
+  void _launchBattleChronicle() async => await Util.launchWebPage(
+        'https://www.hoyolab.com/genshin/accountCenter/gameRecord',
+      );
+
   List<Widget> _addWebComponent() {
-    return (kIsWeb) ? [Divider(), _drawerItem(icon: MdiIcons.refresh, title: 'Reload Page', route: '/splash')] : [];
+    return (kIsWeb)
+        ? [
+            Divider(),
+            _drawerItem(
+              icon: MdiIcons.refresh,
+              title: 'Reload Page',
+              route: '/splash',
+            ),
+          ]
+        : [];
   }
 
   void _dailyLogin() async {
@@ -63,7 +144,13 @@ class _DrawerComponentState extends State<DrawerComponent> {
     await Get.offAllNamed('/'); // Go to login screem
   }
 
-  Widget _drawerItem({IconData icon, String title, GestureTapCallback onTap, String route, bool offPrev = true}) {
+  Widget _drawerItem({
+    IconData icon,
+    String title,
+    GestureTapCallback onTap,
+    String route,
+    bool offPrev = true,
+  }) {
     if (route != null) {
       return ListTile(
         title: Row(
@@ -84,7 +171,10 @@ class _DrawerComponentState extends State<DrawerComponent> {
             setState(() {
               Util.currentRoute = route;
             });
-            Future.delayed(Duration(milliseconds: 10), () => Get.offAndToNamed(route));
+            Future.delayed(
+              Duration(milliseconds: 10),
+              () => Get.offAndToNamed(route),
+            );
           }
         },
       );
