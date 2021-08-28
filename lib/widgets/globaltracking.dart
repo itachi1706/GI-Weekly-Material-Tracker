@@ -478,7 +478,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           '${_data.current}/${_data.max}',
           style: TextStyle(
             fontSize: 18,
-            color: GridData.getCountColorBW(_data.current, _data.max),
+            color: GridData.getCountColor(_data.current, _data.max, bw: true),
           ),
         ),
         Row(
