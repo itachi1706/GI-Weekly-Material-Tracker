@@ -1,4 +1,243 @@
 {
+    "Everlasting_Moonglow": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
+      "name": "Everlasting Moonglow",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 3,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 12,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 14,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 18,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Lost_Prayer_to_the_Sacred_Winds.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "33.1%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Boundless Blessing",
+      "effect": "Increases Movement SPD by 10%. When in battle, gain an 8~16% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lost_Prayer_to_the_Sacred_Winds",
+      "subCollection": {}
+    },
+    "The_Catch": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
+      "name": "\"The Catch\"",
+      "series": "Bane Series",
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Polearm/Dragon_Bane.png",
+      "secondary_stat": "48",
+      "rarity": 4,
+      "type": "Polearm",
+      "max_secondary_stat": "221",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effectName": "Bane of Flame and Water",
+      "effect": "Increases DMG against opponents affected by Hydro or Pyro by 20~36%.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Dragon%27s_Bane",
+      "subCollection": {}
+    },
+    "Luxurious_Sea-Lord": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to the pommel.",
+      "name": "Luxurious Sea-Lord",
+      "series": "Blackcliff Series",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Blackcliff_Slasher.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Paimon's Bargains",
+      "effectName": "Press the Advantage",
+      "effect": "After defeating an opponent, ATK is increased by 12~24% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Blackcliff_Slasher",
+      "subCollection": {}
+    },
     "Primordial_Jade_Greatsword": {
         "secondary_stat_type": null,
         "description": "A jade greatsword that once belonged to an Archon, and cast into the depths of the ocean to calm a monstrous storm.",
@@ -78,86 +317,6 @@
         "effect": "HP increased by 20%. Additionally, provides an ATK Bonus based on 1.2% of the wielder's Max HP.",
         "wiki": null,
         "subCollection": {}
-    },
-    "Predator": {
-      "secondary_stat_type": "ATK",
-      "description": "A uniquely designed bow. This should not belong in this world.",
-      "name": "Predator",
-      "series": null,
-      "ascension": {
-        "1": {
-          "material3": "Whopperflower_Nectar",
-          "level": 20,
-          "material2": "Chaos_Device",
-          "material3qty": 2,
-          "material1": "Fetters_of_the_Dandelion_Gladiator",
-          "material2qty": 3,
-          "material1qty": 3,
-          "mora": 5000
-        },
-        "2": {
-          "material3": "Whopperflower_Nectar",
-          "level": 40,
-          "material2": "Chaos_Device",
-          "material3qty": 8,
-          "material1": "Chains_of_the_Dandelion_Gladiator",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 15000
-        },
-        "3": {
-          "material3": "Shimmering_Nectar",
-          "level": 50,
-          "material2": "Chaos_Circuit",
-          "material3qty": 6,
-          "material1": "Chains_of_the_Dandelion_Gladiator",
-          "material2qty": 6,
-          "material1qty": 6,
-          "mora": 20000
-        },
-        "4": {
-          "material3": "Shimmering_Nectar",
-          "level": 60,
-          "material2": "Chaos_Circuit",
-          "material3qty": 9,
-          "material1": "Shackles_of_the_Dandelion_Gladiator",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 30000
-        },
-        "5": {
-          "material3": "Energy_Nectar",
-          "level": 70,
-          "material2": "Chaos_Core",
-          "material3qty": 6,
-          "material1": "Shackles_of_the_Dandelion_Gladiator",
-          "material2qty": 9,
-          "material1qty": 6,
-          "mora": 35000
-        },
-        "6": {
-          "material3": "Energy_Nectar",
-          "level": 80,
-          "material2": "Chaos_Core",
-          "material3qty": 12,
-          "material1": "Dream_of_the_Dandelion_Gladiator",
-          "material2qty": 18,
-          "material1qty": 4,
-          "mora": 45000
-        }
-      },
-      "image": "Weapons/Bow/Predator.png",
-      "secondary_stat": "9%",
-      "rarity": 4,
-      "type": "Bow",
-      "max_secondary_stat": "41.3%",
-      "max_base_atk": 510,
-      "base_atk": 42,
-      "obtained": "- Playstation Event In-Game Mail system",
-      "effectName": "Strong Strike",
-      "effect": "Effective for players on \"PlayStation Network\" only.\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10~?' for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66~?'.",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Predator",
-      "subCollection": {}
     },
     "Quartz": {
         "secondary_stat_type": "Elemental Mastery",

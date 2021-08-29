@@ -539,6 +539,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Dragonspine_Spear",
       "subCollection": {}
     },
+    "Engulfing_Lightning": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
+      "name": "Engulfing Lightning",
+      "series": "Primordial Jade Series",
+      "ascension": {
+        "1": {
+          "material3": "Recruit_Insignia",
+          "level": 20,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 3,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Recruit_Insignia",
+          "level": 40,
+          "material2": "Hunter_Sacrificial_Knife",
+          "material3qty": 12,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Sergeant_Insignia",
+          "level": 50,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Sergeant_Insignia",
+          "level": 60,
+          "material2": "Agent_Sacrificial_Knife",
+          "material3qty": 14,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Lieutenant_Insignia",
+          "level": 70,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Lieutenant_Insignia",
+          "level": 80,
+          "material2": "Inspector_Sacrificial_Knife",
+          "material3qty": 18,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Polearm/Primordial_Jade_Winged-Spear.png",
+      "secondary_stat": "4.8%",
+      "rarity": 5,
+      "type": "Polearm",
+      "max_secondary_stat": "22.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "Eagle Spear of Justice",
+      "effect": "On hit, increases ATK by 3.2~6.0% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by 12~24%.",
+      "wiki": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Winged-Spear",
+      "subCollection": {}
+    },
     "Favonius_Lance": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",

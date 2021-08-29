@@ -1,5 +1,279 @@
 {
     "characters": {
+        "Aloy": {
+            "image": "Characters/Cryo/Aloy.png",
+            "gender": "Female",
+            "birthday": "4/4",
+            "caption": "Savior From Another World",
+            "name": "Aloy",
+            "fullName": null,
+            "description": "Formerly an outcast, now a hunter of unparalleled keenness. Ready to do the right thing with her bow at any given time.",
+            "nation": "Crossover",
+            "weapon": "Bow",
+            "rarity": 5,
+            "affiliation": null,
+            "constellation": "Nora Fortis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Freedom",
+                        "material3qty": 3,
+                        "material4": "Spectral_Husk",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 2,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 4,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 6,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 9,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Fire_Flower_Thingy",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 4,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Fire_Flower_Thingy",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 6,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Fire_Flower_Thingy",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 12,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Fire_Flower_Thingy",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 16,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Combat_Override": {
+                        "name": "Combat Override",
+                        "effect": "When Aloy receives the Coil effect of Frozen Wilds, her ATK is increased by 16%, while other party members' ATK is increased by 8%. This effect lasts 10s.",
+                        "image": null,
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Strong_Strike": {
+                        "name": "Strong Strike",
+                        "effect": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+                        "image": null,
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Easy_Does_It": {
+                        "name": "Easy Does It",
+                        "effect": "When Aloy is in the party, party members who get close to small animals who can produce Fowl, Raw Meat, or Chilled Meat, they will not easily startle them.",
+                        "image": null,
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Rapid_Fire": {
+                        "name": "Rapid Fire",
+                        "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG.\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": null,
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Frozen_Wilds": {
+                        "name": "Frozen Wilds",
+                        "effect": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is reduced and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.\nCoils\n• Each stack increases Aloy's Normal Attack DMG.\n• When Aloy has 4 Coil stacks, she gains Rushing Ice, which converts her Normal Attack DMG to Cryo DMG.\nWhile under the effect of Rushing Ice, Aloy cannot receive new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field.",
+                        "image": null,
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Prophecies_of_Dawn": {
+                        "name": "Prophecies of Dawn",
+                        "effect": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
+                        "image": null,
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                },
+                "2": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                },
+                "3": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                },
+                "4": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                },
+                "5": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                },
+                "6": {
+                    "name": "Star of Another World",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": null
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Shivada_Jade_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Crystal_Marrow"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 40,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Crystal_Marrow"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 50,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Crystal_Marrow"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 60,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Crystal_Marrow"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 70,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Crystal_Marrow"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Shivada_Jade_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 80,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Crystal_Marrow"
+                }
+            },
+            "introduction": null,
+            "genshinggpath": null,
+            "element": "Cryo",
+            "wiki": "https://genshin-impact.fandom.com/wiki/Aloy",
+            "subCollection": {}
+        },
         "Chongyun": {
             "image": "Characters/Cryo/Chongyun.png",
             "gender": "Male",
