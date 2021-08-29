@@ -311,6 +311,45 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Famed_Handguard",
       "subCollection": {}
+    },
+    "Spectral_Husk": {
+      "image": "Materials/Common_Mob/Item_Spectral_Husk.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed.",
+      "enemies": ["Specters"],
+      "obtained": "- Dropped by Specters",
+      "name": "Spectral Husk",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Spectral_Heart": {
+      "image": "Materials/Common_Mob/Item_Spectral_Heart.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing.",
+      "enemies": ["Specters"],
+      "obtained": "- Alchemy (3x Spectral Husk)\n- Dropped by Lv. 40+ Specters",
+      "name": "Spectral Heart",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Spectral_Nucleus": {
+      "image": "Materials/Common_Mob/Item_Spectral_Nucleus.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?",
+      "enemies": ["Specters"],
+      "obtained": "- Alchemy (3x Spectral Heart)\n- Dropped by Lv.60+ Specters",
+      "name": "Spectral Nucleus",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
     }
   }
 }
