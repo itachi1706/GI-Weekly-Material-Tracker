@@ -828,9 +828,9 @@
             "gender": "Female",
             "birthday": "14/7",
             "caption": "Crowfeather Kaburaya",
-            "name": "Kujou Sara",
-            "fullName": null,
-            "description": "A general of the Tenryou Commission. Audacious, decisive, and skilled in battle.",
+            "name": "Sara",
+            "fullName": "Kujou Sara",
+            "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
             "nation": "Inazuma",
             "weapon": "Bow",
             "rarity": 4,
@@ -939,16 +939,16 @@
                     }
                 },
                 "passives": {
-                    "Tenryou_Affairs": {
-                        "name": "Tenryou Affairs",
-                        "effect": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+                    "Immovable_Will": {
+                        "name": "Immovable Will",
+                        "effect": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
                         "image": null,
                         "order": 0,
                         "type": "Passive 1"
                     },
                     "Decorum": {
                         "name": "Decorum",
-                        "effect": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 0.012 Energy to all party members for every 1% Energy Recharge she has. This effect can be triggered once every 3s.",
+                        "effect": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
                         "image": null,
                         "order": 1,
                         "type": "Passive 2"
@@ -964,22 +964,22 @@
                 "attack": {
                     "Tengu_Bowmanship": {
                         "name": "Tengu Bowmanship",
-                        "effect": "Normal Attack\nPerform up to 5 consecutive shots with a bow.\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it its.\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                         "image": null,
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
                     "Tengu_Stormcall": {
                         "name": "Tengu Stormcall",
-                        "effect": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.\nGains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
-                        "image": null,
+                        "effect": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather. Gains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+                        "image": "Talents/Skill/Talent_Tengu_Stormcall.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
-                    "Subjugation_Koukou_Sentou": {
-                        "name": "Subjugation: Koukou Sentou",
-                        "effect": "Lays down a Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, this Tengu Juurai: Titanbreaker will spread out into 4 consecutive Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster will allow the active character to receive the same ATK Bonus as they would during the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
-                        "image": null,
+                    "Subjugation_Koukou_Sendou": {
+                        "name": "Subjugation: Koukou Sendou",
+                        "effect": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+                        "image": "Talents/Burst/Talent_Subjugation_Koukou_Sendou.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -988,7 +988,7 @@
             "constellations": {
                 "1": {
                     "name": "Crow's Eye",
-                    "effect": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+                    "effect": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
                     "image": null
                 },
                 "2": {
@@ -998,12 +998,12 @@
                 },
                 "3": {
                     "name": "The War Within",
-                    "effect": "Increases the Level of Subjugation: Koukou Sentou by 3.\nMaximum upgrade level is 15.",
+                    "effect": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
                     "image": null
                 },
                 "4": {
                     "name": "Conclusive Proof",
-                    "effect": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sentou is increased to 6.",
+                    "effect": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
                     "image": null
                 },
                 "5": {
@@ -1012,7 +1012,7 @@
                     "image": null
                 },
                 "6": {
-                    "name": "My World",
+                    "name": "Sin of Pride",
                     "effect": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
                     "image": null
                 }
@@ -1091,7 +1091,7 @@
                     "material3": "Dendrobium"
                 }
             },
-            "introduction": null,
+            "introduction": "Leader of the Tenryou Commission's forces. A charismatic woman who acts as swiftly as a storm wind and always honors her word.\nShe bears the title of \"Devotee of the Divine\" and has sworn her allegiance to the Raiden Shogun.\nThe eternity that the Shogun pursues is the cause that she is willing to fight for.",
             "genshinggpath": null,
             "element": "Electro",
             "released": false,
@@ -1379,12 +1379,12 @@
             "birthday": "26/6",
             "caption": "Plane of Euthymia",
             "name": "Raiden Shogun",
-            "fullName": "Baal",
+            "fullName": "Baal, Ei",
             "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
             "nation": "Inazuma",
             "weapon": "Polearm",
             "rarity": 5,
-            "affiliation": "Archons",
+            "affiliation": "Archons, Inazuma Bakufu",
             "constellation": "Imperatrix Umbrosa",
             "talents": {
                 "ascension": {
@@ -1491,7 +1491,7 @@
                 "passives": {
                     "Wishes_Unnumbered": {
                         "name": "Wishes Unnumbered",
-                        "effect": "When nearby party members gain Elemental Orbs or Particles, Shogan Byakugen no Rin gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+                        "effect": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
                         "image": null,
                         "order": 0,
                         "type": "Passive 1"
@@ -1514,22 +1514,22 @@
                 "attack": {
                     "Origin": {
                         "name": "Origin",
-                        "effect": "Normal Attack\nPerforms up to 5 consecutive spear strikes.\nCharged Attack\nConsumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "effect": "Normal Attack: Perform up to 5 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                         "image": null,
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
-                    "Transcendence_Baleful_Light": {
-                        "name": "Transcendence: Baleful Light",
-                        "effect": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.\nEye of Stormy Judgment\nWhen characters with this buff attack and hit opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nThe Eye can initiate one coordinated attack every 0.9s per party.",
-                        "image": null,
+                    "Transcendence_Baleful_Omen": {
+                        "name": "Transcendence: Baleful Omen",
+                        "effect": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.\nEye of Stormy Judgment\n\nWhen characters with this buff attack and deal DMG to opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nCharacters who gain the Eye of Stormy Judgment will have their Elemental Burst DMG increased based on the Energy Cost of the Elemental Burst during the Eye's duration.\nThe Eye can initiate one coordinated attack every 0.9s per party.\nCoordinated attacks generated by characters not controlled by you deal 20% of the normal DMG.",
+                        "image": "Talents/Skill/Talent_Transcendence_Baleful_Omen.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Secret_Art_Musou_Shinsetsu": {
                         "name": "Secret Art: Musou Shinsetsu",
-                        "effect": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks is based on the number of Shogan Byakugen no Rin's Resolve stacks consumed when this skill is used.\nMusou Isshin\nWhile in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.\nShogan Byakugen no Rin\nWhen nearby party members use their Elemental Bursts, the Raiden Shogun will build up Resolve based on the amount of Energy they consume.",
-                        "image": null,
+                        "effect": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks will be increased based on the number of Chakra Desiderata's Resolve stacks consumed when this skill is used.\nMusou Isshin\nWhile in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.\nWhile Musou Isshin is active, the Raiden Shogun's Normal, Charged, and Plunging Attack DMG will be considered Elemental Burst DMG.\nThe effects of Musou Isshin will be cleared when the Raiden Shogun leaves the field.\nChakra Desiderata\nWhen nearby party members (excluding the Raiden Shogun herself) use their Elemental Bursts, the Raiden Shogun will build up Resolve stacks based on the Energy Cost of these Elemental Bursts.\nThe maximum number of Resolve stacks is 60. The Resolve gained by Chakra Desiderata will be cleared 300s after the Raiden Shogun leaves the field.",
+                        "image": "Talents/Burst/Talent_Secret_Art_Musou_Shinsetsu.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -1538,12 +1538,12 @@
             "constellations": {
                 "1": {
                     "name": "Ominous Inscription",
-                    "effect": "Shogan Byakugen no Rin will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+                    "effect": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
                     "image": null
                 },
                 "2": {
-                    "name": "Pledge of Propriety",
-                    "effect": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+                    "name": "Steelbreaker",
+                    "effect": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
                     "image": null
                 },
                 "3": {
@@ -1552,13 +1552,13 @@
                     "image": null
                 },
                 "4": {
-                    "name": "Steelbreaker",
-                    "effect": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's attacks ignore 60% of opponents' DEF.",
+                    "name": "Pledge of Propriety",
+                    "effect": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
                     "image": null
                 },
                 "5": {
                     "name": "Shogun's Descent",
-                    "effect": "Increases the Level of Transcendence: Baleful Light by 3.\nMaximum upgrade level is 15.",
+                    "effect": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
                     "image": null
                 },
                 "6": {
@@ -1641,7 +1641,7 @@
                     "material3": "Tenkumo_Fruit"
                 }
             },
-            "introduction": null,
+            "introduction": "The Raiden Shogun is the awesome and terrible power of thunder incarnate, the exalted ruler of the Inazuma Shogunate.\nWith the might of lightning at her disposal, she commits herself to the solitary pursuit of eternity.",
             "genshinggpath": null,
             "element": "Electro",
             "released": false,

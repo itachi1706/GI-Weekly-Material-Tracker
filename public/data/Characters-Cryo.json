@@ -6,12 +6,11 @@
             "birthday": "4/4",
             "caption": "Savior From Another World",
             "name": "Aloy",
-            "fullName": null,
-            "description": "Formerly an outcast, now a hunter of unparalleled keenness. Ready to do the right thing with her bow at any given time.",
-            "nation": "Crossover",
+            "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
+            "nation": "Crossover (Horizon Zero Dawn)",
             "weapon": "Bow",
             "rarity": 5,
-            "affiliation": null,
+            "affiliation": "Wandering Heroine",
             "constellation": "Nora Fortis",
             "talents": {
                 "ascension": {
@@ -116,9 +115,9 @@
                     }
                 },
                 "passives": {
-                    "Combat_Override": {
-                        "name": "Combat Override",
-                        "effect": "When Aloy receives the Coil effect of Frozen Wilds, her ATK is increased by 16%, while other party members' ATK is increased by 8%. This effect lasts 10s.",
+                    "Easy_Does_It": {
+                        "name": "Easy Does It",
+                        "effect": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
                         "image": null,
                         "order": 0,
                         "type": "Passive 1"
@@ -130,9 +129,9 @@
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "Easy_Does_It": {
-                        "name": "Easy Does It",
-                        "effect": "When Aloy is in the party, party members who get close to small animals who can produce Fowl, Raw Meat, or Chilled Meat, they will not easily startle them.",
+                    "Combat_Override": {
+                        "name": "Combat Override",
+                        "effect": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
                         "image": null,
                         "order": 2,
                         "type": "Passive 3"
@@ -148,15 +147,15 @@
                     },
                     "Frozen_Wilds": {
                         "name": "Frozen Wilds",
-                        "effect": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is reduced and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.\nCoils\n• Each stack increases Aloy's Normal Attack DMG.\n• When Aloy has 4 Coil stacks, she gains Rushing Ice, which converts her Normal Attack DMG to Cryo DMG.\nWhile under the effect of Rushing Ice, Aloy cannot receive new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field.",
-                        "image": null,
+                        "effect": "Throws a Freeze Bomb in the targeted direction and triggers an explosion, dealing Cryo Damage. After the explosion, the Freeze Bomb scatters into multiple Chillwater Bomblets that explode on contact with opponents or after a short delay dealing further Cryo Damage.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's attack is decreased. At the same time, Aloy receives a Coil Stack. This effect increases Aloy's Normal Attack Damage. When she has accumulated 4 Coil stacks, Aloy will gain the Rushing Ice effect, which lasts for a certain duration, during which her Normal Attack Damage will be converted into Cryo Damage.",
+                        "image": "Talents/Skill/Talent_Frozen_Wilds.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
                     "Prophecies_of_Dawn": {
                         "name": "Prophecies of Dawn",
-                        "effect": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
-                        "image": null,
+                        "effect": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo Damage.",
+                        "image": "Talents/Burst/Talent_Prophecies_of_Dawn.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -268,7 +267,7 @@
                     "material3": "Crystal_Marrow"
                 }
             },
-            "introduction": null,
+            "introduction": "An agile hunter from the Nora tribe. With bow in hand, she's always ready to protect the innocent.",
             "genshinggpath": null,
             "element": "Cryo",
             "released": false,
