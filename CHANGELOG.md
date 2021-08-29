@@ -1,3 +1,11 @@
+# 2.0.1
+- Week Planner now shows grids dynamically, no more massive or small tiles!
+- Added URL-based promo codes that launches a web browser on click
+- Added Teyvat Map, Hoyolab Forums and Battle Chronicles quick links on the navigation bar
+- Fixed accessing promo code on web app causing users to get stuck
+- Fixed promo codes duplicating
+- Updated dependencies
+
 # 2.0.0
 - Brand new navigation method with drawers!
 - Split tracking page and character/weapon/material dictionary apart
