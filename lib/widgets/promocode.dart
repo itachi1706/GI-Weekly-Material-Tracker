@@ -74,6 +74,20 @@ class _PromoCodePageState extends State<PromoCodePage> {
                 itemCount: _codes.length,
                 itemBuilder: (context, index) {
                   var codeObj = _codes[index];
+                  if (!codeObj.isCode) {
+                    var subtitle = 'URL: ${codeObj.url}\nTime: ${codeObj.date}, Expired: ${codeObj.expired}';
+                    if (codeObj.expiryString != null && !codeObj.expired) {
+                      subtitle += ', Expires: ${codeObj.expiryString}';
+                    }
+
+                    return ListTile(
+                      tileColor: _getExpiredColor(codeObj.expired),
+                      title: Text(codeObj.reward),
+                      subtitle: Text(subtitle),
+                      isThreeLine: true,
+                      onTap: () => Util.launchWebPage(codeObj.url)
+                    );
+                  }
                   var promoCodeRegion = _getCode(codeObj);
 
                   return ListTile(

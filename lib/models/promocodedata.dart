@@ -5,6 +5,10 @@ class PromoCode {
   String asiaCode;
   String naCode;
   String reward;
+  String url;
+  String expiryString;
+  String typeStr;
+  bool isCode;
   bool expired;
 
   PromoCode({
@@ -15,18 +19,36 @@ class PromoCode {
     this.naCode,
     this.reward,
     this.expired,
+    this.url,
+    this.expiryString,
+    this.typeStr,
+    this.isCode,
   });
 
   factory PromoCode.fromJson(Map<String, dynamic> parsedJson) {
-    return PromoCode(
-      datetime: parsedJson['date'],
-      date: parsedJson['dateString'],
-      euCode: parsedJson['eu'],
-      asiaCode: parsedJson['asia'],
-      naCode: parsedJson['na'],
-      reward: parsedJson['reward'],
-      expired: parsedJson['expired'],
-    );
+    if (parsedJson['type'] == null || parsedJson['type'] == 'code') {
+      return PromoCode(
+        datetime: parsedJson['date'],
+        date: parsedJson['dateString'],
+        euCode: parsedJson['eu'],
+        asiaCode: parsedJson['asia'],
+        naCode: parsedJson['na'],
+        isCode: true,
+        reward: parsedJson['reward'],
+        expired: parsedJson['expired'],
+      );
+    } else {
+      return PromoCode(
+        datetime: parsedJson['date'],
+        date: parsedJson['dateString'],
+        url: parsedJson['url'],
+        expiryString: parsedJson['expiry'],
+        typeStr: parsedJson['type'],
+        isCode: false,
+        reward: parsedJson['reward'],
+        expired: parsedJson['expired'],
+      );
+    }
   }
 
   static List<PromoCode> fromDB(Map<String, dynamic> dbString) {
@@ -39,6 +61,6 @@ class PromoCode {
 
   @override
   String toString() {
-    return 'PromoCode{ date: $date, datetime: $datetime, asia: $asiaCode, eu: $euCode, na: $naCode, reward: $reward, expired: $expired }';
+    return 'PromoCode{ date: $date, datetime: $datetime, asia: $asiaCode, eu: $euCode, na: $naCode, reward: $reward, expired: $expired, type: $typeStr, url: $url, expiry: $expiryString }';
   }
 }
