@@ -897,7 +897,7 @@
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Blaze_Flower_Thingy",
+                        "material2": "Ashen_Heart",
                         "material2qty": 1,
                         "material3": "Philosophies_of_Elegance",
                         "material3qty": 4,
@@ -908,7 +908,7 @@
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Blaze_Flower_Thingy",
+                        "material2": "Ashen_Heart",
                         "material2qty": 1,
                         "material3": "Philosophies_of_Elegance",
                         "material3qty": 6,
@@ -919,7 +919,7 @@
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Blaze_Flower_Thingy",
+                        "material2": "Ashen_Heart",
                         "material2qty": 2,
                         "material3": "Philosophies_of_Elegance",
                         "material3qty": 12,
@@ -930,7 +930,7 @@
                         "mora": 700000,
                         "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "Blaze_Flower_Thingy",
+                        "material2": "Ashen_Heart",
                         "material2qty": 2,
                         "material3": "Philosophies_of_Elegance",
                         "material3qty": 16,
@@ -942,21 +942,21 @@
                     "Immovable_Will": {
                         "name": "Immovable Will",
                         "effect": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_Immovable_Will.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
                     "Decorum": {
                         "name": "Decorum",
                         "effect": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_Decorum.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
                     "Land_Survey": {
                         "name": "Land Survey",
                         "effect": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_Land_Survey.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
@@ -965,7 +965,7 @@
                     "Tengu_Bowmanship": {
                         "name": "Tengu Bowmanship",
                         "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
-                        "image": null,
+                        "image": "Talents/Normal/Talent_Tengu_Bowmanship.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
@@ -989,32 +989,32 @@
                 "1": {
                     "name": "Crow's Eye",
                     "effect": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
-                    "image": null
+                    "image": "Constellation/Crows_Eye.png"
                 },
                 "2": {
                     "name": "Dark Wings",
                     "effect": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
-                    "image": null
+                    "image": "Constellation/Dark_Wings.png"
                 },
                 "3": {
                     "name": "The War Within",
                     "effect": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "image": "Constellation/The_War_Within.png"
                 },
                 "4": {
                     "name": "Conclusive Proof",
                     "effect": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
-                    "image": null
+                    "image": "Constellation/Conclusive_Proof.png"
                 },
                 "5": {
                     "name": "Spellsinger",
                     "effect": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "image": "Constellation/Spellsinger.png"
                 },
                 "6": {
                     "name": "Sin of Pride",
                     "effect": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
-                    "image": null
+                    "image": "Constellation/Sin_of_Pride.png"
                 }
             },
             "ascension": {
@@ -1092,9 +1092,9 @@
                 }
             },
             "introduction": "Leader of the Tenryou Commission's forces. A charismatic woman who acts as swiftly as a storm wind and always honors her word.\nShe bears the title of \"Devotee of the Divine\" and has sworn her allegiance to the Raiden Shogun.\nThe eternity that the Shogun pursues is the cause that she is willing to fight for.",
-            "genshinggpath": null,
+            "genshinggpath": "characters/Sara",
             "element": "Electro",
-            "released": false,
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Kujou_Sara",
             "subCollection": {}
         },
@@ -1374,12 +1374,12 @@
             "subCollection": {}
         },
         "Raiden_Shogun": {
-            "image": "Characters/Electro/Baal.png",
+            "image": "Characters/Electro/Raiden_Shogun.png",
             "gender": "Female",
             "birthday": "26/6",
             "caption": "Plane of Euthymia",
             "name": "Raiden Shogun",
-            "fullName": "Baal, Ei",
+            "fullName": "\"Baal\", Beelzebub, Raiden Ei",
             "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
             "nation": "Inazuma",
             "weapon": "Polearm",
@@ -1492,21 +1492,21 @@
                     "Wishes_Unnumbered": {
                         "name": "Wishes Unnumbered",
                         "effect": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_Wishes_Unnumbered.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
                     "Enlightened_One": {
                         "name": "Enlightened One",
-                        "effect": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:\n• 0.6% greater Energy restoration from Musou Isshin\n• 0.4% Electro DMG Bonus.",
-                        "image": null,
+                        "effect": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:\n0.6% greater Energy restoration from Musou Isshin\n0.4% Electro DMG Bonus",
+                        "image": "Talents/Passive/Talent_Enlightened_One.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
                     "All-Preserver": {
                         "name": "All-Preserver",
                         "effect": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
-                        "image": null,
+                        "image": "Talents/Passive/Talent_All-Preserver.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
@@ -1514,8 +1514,8 @@
                 "attack": {
                     "Origin": {
                         "name": "Origin",
-                        "effect": "Normal Attack: Perform up to 5 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": null,
+                        "effect": "Normal Attack: Performs up to 5 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Origin.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
@@ -1539,32 +1539,32 @@
                 "1": {
                     "name": "Ominous Inscription",
                     "effect": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
-                    "image": null
+                    "image": "Constellation/Ominous_Inscription.png"
                 },
                 "2": {
                     "name": "Steelbreaker",
                     "effect": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
-                    "image": null
+                    "image": "Constellation/Steelbreaker.png"
                 },
                 "3": {
                     "name": "Shinkage Bygones",
                     "effect": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "image": "Constellation/Shinkage_Bygones.png"
                 },
                 "4": {
                     "name": "Pledge of Propriety",
                     "effect": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
-                    "image": null
+                    "image": "Constellation/Pledge_of_Propriety.png"
                 },
                 "5": {
                     "name": "Shogun's Descent",
                     "effect": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
-                    "image": null
+                    "image": "Constellation/Shoguns_Descent.png"
                 },
                 "6": {
                     "name": "Wishbearer",
-                    "effect": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's Normal, Charged, and Plunging Attacks will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
-                    "image": null
+                    "effect": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, attacks by the Raiden Shogun that are considered part of her Elemental Burst will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+                    "image": "Constellation/Wishbearer.png"
                 }
             },
             "ascension": {
@@ -1578,7 +1578,7 @@
                     "material4": "Old_Handguard",
                     "material4qty": 3,
                     "material3qty": 3,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 },
                 "2": {
                     "material2qty": 2,
@@ -1590,7 +1590,7 @@
                     "material4": "Old_Handguard",
                     "material4qty": 15,
                     "material3qty": 10,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 },
                 "3": {
                     "material2qty": 4,
@@ -1602,7 +1602,7 @@
                     "material4": "Kageuchi_Handguard",
                     "material4qty": 12,
                     "material3qty": 20,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 },
                 "4": {
                     "material2qty": 8,
@@ -1614,7 +1614,7 @@
                     "material4": "Kageuchi_Handguard",
                     "material4qty": 18,
                     "material3qty": 30,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 },
                 "5": {
                     "material2qty": 12,
@@ -1626,7 +1626,7 @@
                     "material4": "Famed_Handguard",
                     "material4qty": 12,
                     "material3qty": 45,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 },
                 "6": {
                     "material2qty": 20,
@@ -1638,13 +1638,13 @@
                     "material4": "Famed_Handguard",
                     "material4qty": 24,
                     "material3qty": 60,
-                    "material3": "Tenkumo_Fruit"
+                    "material3": "Amakumo Fruit"
                 }
             },
             "introduction": "The Raiden Shogun is the awesome and terrible power of thunder incarnate, the exalted ruler of the Inazuma Shogunate.\nWith the might of lightning at her disposal, she commits herself to the solitary pursuit of eternity.",
-            "genshinggpath": null,
+            "genshinggpath": "characters/Raiden",
             "element": "Electro",
-            "released": false,
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Raiden_Shogun",
             "subCollection": {}
         },
