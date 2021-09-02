@@ -1,4 +1,165 @@
 {
+    "Everlasting_Moonglow": {
+      "secondary_stat_type": "HP",
+      "description": "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant.",
+      "name": "Everlasting Moonglow",
+      "series": "Inazuma Series",
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Dismal_Prism",
+          "material3qty": 3,
+          "material1": "Coral_Branch_of_a_Distant_Sea",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Dismal_Prism",
+          "material3qty": 12,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Crystal_Prism",
+          "material3qty": 9,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Crystal_Prism",
+          "material3qty": 14,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Polarizing_Prism",
+          "material3qty": 9,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Polarizing_Prism",
+          "material3qty": 18,
+          "material1": "Golden_Branch_of_a_Distant_Sea",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Everlasting_Moonglow.png",
+      "secondary_stat": "10.8%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "49.6%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Byakuya Kougetsu",
+      "effect": "Healing Bonus increased by 10~20%, Normal Attack DMG is increased by 1~3% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Everlasting_Moonglow",
+      "subCollection": {}
+    },
+    "Luxurious_Sea-Lord": {
+      "secondary_stat_type": "ATK",
+      "description": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
+      "name": "Luxurious Sea-Lord",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 2,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 12,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Luxurious_Sea-Lord.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Moonlight Merriment Event",
+      "effectName": "Oceanic Victory",
+      "effect": "Increases Elemental Burst DMG by 12~24%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals 100~200% ATK as AoE DMG. This effect can occur once every 15s.",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Luxurious_Sea-Lord",
+      "subCollection": {}
+    },
     "Primordial_Jade_Greatsword": {
         "secondary_stat_type": null,
         "description": "A jade greatsword that once belonged to an Archon, and cast into the depths of the ocean to calm a monstrous storm.",
@@ -76,88 +237,9 @@
         "obtained": "Probably Gacha",
         "effectName": "Protector's Virtue",
         "effect": "HP increased by 20%. Additionally, provides an ATK Bonus based on 1.2% of the wielder's Max HP.",
-        "wiki": null,
+        "released": false,
+      "wiki": null,
         "subCollection": {}
-    },
-    "Predator": {
-      "secondary_stat_type": "ATK",
-      "description": "A uniquely designed bow. This should not belong in this world.",
-      "name": "Predator",
-      "series": null,
-      "ascension": {
-        "1": {
-          "material3": "Whopperflower_Nectar",
-          "level": 20,
-          "material2": "Chaos_Device",
-          "material3qty": 2,
-          "material1": "Fetters_of_the_Dandelion_Gladiator",
-          "material2qty": 3,
-          "material1qty": 3,
-          "mora": 5000
-        },
-        "2": {
-          "material3": "Whopperflower_Nectar",
-          "level": 40,
-          "material2": "Chaos_Device",
-          "material3qty": 8,
-          "material1": "Chains_of_the_Dandelion_Gladiator",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 15000
-        },
-        "3": {
-          "material3": "Shimmering_Nectar",
-          "level": 50,
-          "material2": "Chaos_Circuit",
-          "material3qty": 6,
-          "material1": "Chains_of_the_Dandelion_Gladiator",
-          "material2qty": 6,
-          "material1qty": 6,
-          "mora": 20000
-        },
-        "4": {
-          "material3": "Shimmering_Nectar",
-          "level": 60,
-          "material2": "Chaos_Circuit",
-          "material3qty": 9,
-          "material1": "Shackles_of_the_Dandelion_Gladiator",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 30000
-        },
-        "5": {
-          "material3": "Energy_Nectar",
-          "level": 70,
-          "material2": "Chaos_Core",
-          "material3qty": 6,
-          "material1": "Shackles_of_the_Dandelion_Gladiator",
-          "material2qty": 9,
-          "material1qty": 6,
-          "mora": 35000
-        },
-        "6": {
-          "material3": "Energy_Nectar",
-          "level": 80,
-          "material2": "Chaos_Core",
-          "material3qty": 12,
-          "material1": "Dream_of_the_Dandelion_Gladiator",
-          "material2qty": 18,
-          "material1qty": 4,
-          "mora": 45000
-        }
-      },
-      "image": "Weapons/Bow/Predator.png",
-      "secondary_stat": "9%",
-      "rarity": 4,
-      "type": "Bow",
-      "max_secondary_stat": "41.3%",
-      "max_base_atk": 510,
-      "base_atk": 42,
-      "obtained": "- Playstation Event In-Game Mail system",
-      "effectName": "Strong Strike",
-      "effect": "Effective for players on \"PlayStation Network\" only.\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10~?' for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66~?'.",
-      "wiki": "https://genshin-impact.fandom.com/wiki/Predator",
-      "subCollection": {}
     },
     "Quartz": {
         "secondary_stat_type": "Elemental Mastery",
@@ -236,7 +318,8 @@
         "obtained": "Chests",
         "effectName": "Residual Heat",
         "effect": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, increases Base ATK by 20~40% for 12s.",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Quartz",
+        "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Quartz",
         "subCollection": {}
     },
     "Ebony_Bow": {
@@ -316,7 +399,8 @@
         "obtained": "Chests",
         "effectName": "Decimate",
         "effect": "Increases DMG against mechanoid Ruin opponents by 40~80%.",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Ebony_Bow",
+        "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ebony_Bow",
         "subCollection": {}
     },
     "Amber_Catalyst": {
@@ -396,7 +480,8 @@
         "obtained": "Chests",
         "effectName": "Elemental Mastery",
         "effect": "Normal Attack hits increase all Elemental DMG by 6~12% for 6s. Max 2 stacks.",
-        "wiki": "https://genshin-impact.fandom.com/wiki/Amber_Catalyst",
+        "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Amber_Catalyst",
         "subCollection": {}
     }
 }

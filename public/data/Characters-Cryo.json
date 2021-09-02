@@ -1,5 +1,280 @@
 {
     "characters": {
+        "Aloy": {
+            "image": "Characters/Cryo/Aloy.png",
+            "gender": "Female",
+            "birthday": "4/4",
+            "caption": "Savior From Another World",
+            "name": "Aloy",
+            "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
+            "nation": "Crossover (Horizon Zero Dawn)",
+            "weapon": "Bow",
+            "rarity": 5,
+            "crossover": true,
+            "affiliation": "Wandering Heroine",
+            "constellation": "Nora Fortis",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Freedom",
+                        "material3qty": 3,
+                        "material4": "Spectral_Husk",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 2,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 4,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 6,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Freedom",
+                        "material3qty": 9,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 4,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 6,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 12,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Freedom",
+                        "material3qty": 16,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Easy_Does_It": {
+                        "name": "Easy Does It",
+                        "effect": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+                        "image": "Talents/Passive/Talent_Easy_Does_It.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Strong_Strike": {
+                        "name": "Strong Strike",
+                        "effect": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+                        "image": "Talents/Passive/Talent_Strong_Strike.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Combat_Override": {
+                        "name": "Combat Override",
+                        "effect": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
+                        "image": "Talents/Passive/Talent_Combat_Override.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Rapid_Fire": {
+                        "name": "Rapid Fire",
+                        "effect": "Normal Attack: Perform up to 4 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Rapid_Fire.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Frozen_Wilds": {
+                        "name": "Frozen Wilds",
+                        "effect": "Aloy throws a Freeze Bomb in the targeted direction and triggers an explosion, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is decreased and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.\nCoil\nEach stack increases Aloy's Normal Attack DMG.\nWhen Aloy has 4 Coil stacks, all stacks of Coil are cleared. She then enters the Rushing Ice state, which further increases the DMG dealt by her Normal Attacks and converts her Normal Attack DMG to Cryo DMG.",
+                        "image": "Talents/Skill/Talent_Frozen_Wilds.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Prophecies_of_Dawn": {
+                        "name": "Prophecies of Dawn",
+                        "effect": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo Damage.",
+                        "image": "Talents/Burst/Talent_Prophecies_of_Dawn.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Star of Another World (1)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                },
+                "2": {
+                    "name": "Star of Another World (2)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                },
+                "3": {
+                    "name": "Star of Another World (3)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                },
+                "4": {
+                    "name": "Star of Another World (4)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                },
+                "5": {
+                    "name": "Star of Another World (5)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                },
+                "6": {
+                    "name": "Star of Another World (6)",
+                    "effect": "The time has not yet come for this person's corner of the night sky to light up.",
+                    "image": "Constellation/Star_of_Another_World.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Shivada_Jade_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Crystal_Marrow"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 40,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Crystal_Marrow"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Shivada_Jade_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 50,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Crystal_Marrow"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 60,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Crystal_Marrow"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Shivada_Jade_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 70,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Crystal_Marrow"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Shivada_Jade_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Crystalline_Bloom",
+                    "level": 80,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Crystal_Marrow"
+                }
+            },
+            "introduction": "An agile hunter from the Nora tribe. With bow in hand, she's always ready to protect the innocent.",
+            "genshinggpath": null,
+            "element": "Cryo",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Aloy",
+            "subCollection": {}
+        },
         "Chongyun": {
             "image": "Characters/Cryo/Chongyun.png",
             "gender": "Male",
@@ -270,6 +545,7 @@
             "introduction": "An exorcist who roams the land with Liyue as his base of operations, evil spirits fleeing wherever he goes. As the heir to a clan of exorcists, he has always possessed abilities superior to most. However, these abilities are not the result of training, but of an inborn trait - congenital positivity.",
             "genshinggpath": "characters/Chongyun",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Chongyun",
             "subCollection": {}
         },
@@ -543,6 +819,7 @@
             "introduction": "The incredibly popular bartender of the Cat's Tail tavern, rising star of Mondstadt's wine industry, and the greatest challenger to its traditional powerhouses.\nA feisty feline young lady from Springvale, any drink mixed by Diona's hand tastes delicious beyond belief.\nYet given her extreme distaste for alcohol, is her talent a blessing or a curse?",
             "genshinggpath": "characters/Diona",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Diona",
             "subCollection": {}
         },
@@ -817,6 +1094,7 @@
             "introduction": "A rebellious descendant of the old aristocracy who is always out on the battlefield.\nAs one born into the old aristocracy, carrying the bloodline of sinners, Eula has needed a unique approach to the world to navigate the towering walls of prejudice peacefully. Of course, this did not prevent her from severing ties with her clan. As the outstanding Spindrift Knight, she hunts down Mondstadt's enemies in the wild to exact her unique \"vengeance.\"",
             "genshinggpath": "characters/Eula",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Eula",
             "subCollection": {}
         },
@@ -1090,6 +1368,7 @@
             "introduction": "The secretary to the Liyue Qixing. The blood of both human and illuminated beast flows within her veins.\n\nGraceful and quiet by nature, yet the gentle disposition of qilin sees not even the slightest conflict with even the most arduous of workloads.\n\nAfter all, Ganyu firmly believes that all the work she does is in honor of her contract with Rex Lapis, seeking the well-being of all living things within Liyue.",
             "genshinggpath": "characters/Ganyu",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Ganyu",
             "subCollection": {}
         },
@@ -1364,6 +1643,7 @@
             "introduction": "In the Knights of Favonius, Kaeya is the most trusted aide for the Acting Grand Master Jean. You can always count on him to solve any intractable problems. Everyone in Mondstadt loves Kaeya, but no one knows what secrets this witty, charming knight has...",
             "genshinggpath": "characters/Kaeya",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Kaeya",
             "subCollection": {}
         },
@@ -1645,6 +1925,7 @@
             "introduction": "Daughter of the Yashiro Commission's Kamisato Clan from Inazuma. Dignified and elegant, wise and determined.\nSincere and pleasant to others. Universally loved by the Inazuma people, she has earned the title of Shirasagi Himegimi.",
             "genshinggpath": "characters/Ayaka",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayaka",
             "subCollection": {}
         },
@@ -1918,6 +2199,7 @@
             "introduction": "An apprentice and herb gatherer at Bubu Pharmacy. \"Blessed\" by the adepti with a body that cannot die, this petite zombie cannot do anything without first giving herself orders to do it. Qiqi's memory is like a sieve. Out of necessity, she always carries around a notebook in which she writes anything important that she is sure to forget later. But on her worst days, she even forgets to look at her notebook...",
             "genshinggpath": "characters/Qiqi",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Qiqi",
             "subCollection": {}
         },
@@ -2191,6 +2473,7 @@
             "introduction": "Rosaria, a sister in Mondstadt's Church of Favonius.\nA sister of the church, though you wouldn't know it if it weren't for her attire. An unusual woman with sharp, piercing words and a cold manner.\nHer movements are unpredictable. She often leaves without notifying anyone. She acts with some kind of purpose, but others don't seem to know exactly what she stands for...",
             "genshinggpath": "characters/Rosaria",
             "element": "Cryo",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Rosaria",
             "subCollection": {}
         }

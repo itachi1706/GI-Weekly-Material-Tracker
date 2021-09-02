@@ -270,6 +270,7 @@
             "introduction": "Captain of the Crux, with quite the reputation in Liyue. There are those who say she can split mountains and part the sea. Others say she draws lightning through her sword. Some say that even the mightiest of sea beasts are no match for her. For those not from Liyue, it may sound like a hearty joke, but those that have sailed with her will say— \"No matter what sea beasts there may be, Beidou will be sure to split them all in two.\"",
             "genshinggpath": "characters/Beidou",
             "element": "Electro",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Beidou",
             "subCollection": {}
         },
@@ -544,6 +545,7 @@
             "introduction": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz. Currently serves as an investigator in the Adventurers' Guild. Through her unique abilities, eccentric character, and (while she would never admit it herself) hard work, Fischl has become a rising star among the Adventurers' Guild's investigators, earning the recognition of all.",
             "genshinggpath": "characters/Fischl",
             "element": "Electro",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Fischl",
             "subCollection": {}
         },
@@ -817,7 +819,283 @@
             "introduction": "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis' unilateral approach to policymaking in Liyue — but in truth, gods admire skeptics such as her quite a lot.\nShe firmly believes that humanity's future should be determined by humans themselves, and that they can even do better than the archons and adepti have done for them. In order to prove this, she works harder than anyone else.",
             "genshinggpath": "characters/Keqing",
             "element": "Electro",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Keqing",
+            "subCollection": {}
+        },
+        "Kujou_Sara": {
+            "image": "Characters/Electro/Kujou_Sara.png",
+            "gender": "Female",
+            "birthday": "14/7",
+            "caption": "Crowfeather Kaburaya",
+            "name": "Sara",
+            "fullName": "Kujou Sara",
+            "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
+            "nation": "Inazuma",
+            "weapon": "Bow",
+            "rarity": 4,
+            "affiliation": "Tenryou Commission",
+            "constellation": "Flabellum",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Elegance",
+                        "material3qty": 3,
+                        "material4": "Damaged_Mask",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 2,
+                        "material4": "Stained_Mask",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 4,
+                        "material4": "Stained_Mask",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 6,
+                        "material4": "Stained_Mask",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 9,
+                        "material4": "Stained_Mask",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 4,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 6,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 12,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 16,
+                        "material4": "Ominous_Mask",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Immovable_Will": {
+                        "name": "Immovable Will",
+                        "effect": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+                        "image": "Talents/Passive/Talent_Immovable_Will.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Decorum": {
+                        "name": "Decorum",
+                        "effect": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
+                        "image": "Talents/Passive/Talent_Decorum.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Land_Survey": {
+                        "name": "Land Survey",
+                        "effect": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
+                        "image": "Talents/Passive/Talent_Land_Survey.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Tengu_Bowmanship": {
+                        "name": "Tengu Bowmanship",
+                        "effect": "Normal Attack: Perform up to 5 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Tengu_Bowmanship.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Tengu_Stormcall": {
+                        "name": "Tengu Stormcall",
+                        "effect": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather. Gains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+                        "image": "Talents/Skill/Talent_Tengu_Stormcall.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Subjugation_Koukou_Sendou": {
+                        "name": "Subjugation: Koukou Sendou",
+                        "effect": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+                        "image": "Talents/Burst/Talent_Subjugation_Koukou_Sendou.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Crow's Eye",
+                    "effect": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+                    "image": "Constellation/Crows_Eye.png"
+                },
+                "2": {
+                    "name": "Dark Wings",
+                    "effect": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
+                    "image": "Constellation/Dark_Wings.png"
+                },
+                "3": {
+                    "name": "The War Within",
+                    "effect": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/The_War_Within.png"
+                },
+                "4": {
+                    "name": "Conclusive Proof",
+                    "effect": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
+                    "image": "Constellation/Conclusive_Proof.png"
+                },
+                "5": {
+                    "name": "Spellsinger",
+                    "effect": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Spellsinger.png"
+                },
+                "6": {
+                    "name": "Sin of Pride",
+                    "effect": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
+                    "image": "Constellation/Sin_of_Pride.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Dendrobium"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Storm_Beads",
+                    "level": 40,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Dendrobium"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Storm_Beads",
+                    "level": 50,
+                    "material4": "Stained_Mask",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Dendrobium"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Storm_Beads",
+                    "level": 60,
+                    "material4": "Stained_Mask",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Dendrobium"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Storm_Beads",
+                    "level": 70,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Dendrobium"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Storm_Beads",
+                    "level": 80,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Dendrobium"
+                }
+            },
+            "introduction": "Leader of the Tenryou Commission's forces. A charismatic woman who acts as swiftly as a storm wind and always honors her word.\nShe bears the title of \"Devotee of the Divine\" and has sworn her allegiance to the Raiden Shogun.\nThe eternity that the Shogun pursues is the cause that she is willing to fight for.",
+            "genshinggpath": "characters/Sara",
+            "element": "Electro",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Kujou_Sara",
             "subCollection": {}
         },
         "Lisa": {
@@ -1091,7 +1369,283 @@
             "introduction": "She is an intellectual witch who can never get enough naps. As the Librarian of the Knights of Favonius, Lisa is smart in that she always knows exactly what to do with whatever troubles her. As much as she loves her sleep, she still manages to keep everything under control in a calm, composed manner.",
             "genshinggpath": "characters/Lisa",
             "element": "Electro",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Lisa",
+            "subCollection": {}
+        },
+        "Raiden_Shogun": {
+            "image": "Characters/Electro/Raiden_Shogun.png",
+            "gender": "Female",
+            "birthday": "26/6",
+            "caption": "Plane of Euthymia",
+            "name": "Raiden Shogun",
+            "fullName": "\"Baal\", Beelzebub, Raiden Ei",
+            "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
+            "nation": "Inazuma",
+            "weapon": "Polearm",
+            "rarity": 5,
+            "affiliation": "Archons, Inazuma Bakufu",
+            "constellation": "Imperatrix Umbrosa",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Light",
+                        "material3qty": 3,
+                        "material4": "Old_Handguard",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 2,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 4,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 6,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 9,
+                        "material4": "Kageuchi_Handguard",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 4,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 6,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 12,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 16,
+                        "material4": "Famed_Handguard",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Wishes_Unnumbered": {
+                        "name": "Wishes Unnumbered",
+                        "effect": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+                        "image": "Talents/Passive/Talent_Wishes_Unnumbered.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Enlightened_One": {
+                        "name": "Enlightened One",
+                        "effect": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:\n0.6% greater Energy restoration from Musou Isshin\n0.4% Electro DMG Bonus",
+                        "image": "Talents/Passive/Talent_Enlightened_One.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "All-Preserver": {
+                        "name": "All-Preserver",
+                        "effect": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+                        "image": "Talents/Passive/Talent_All-Preserver.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Origin": {
+                        "name": "Origin",
+                        "effect": "Normal Attack: Performs up to 5 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Origin.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Transcendence_Baleful_Omen": {
+                        "name": "Transcendence: Baleful Omen",
+                        "effect": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.\nEye of Stormy Judgment\n\nWhen characters with this buff attack and deal DMG to opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nCharacters who gain the Eye of Stormy Judgment will have their Elemental Burst DMG increased based on the Energy Cost of the Elemental Burst during the Eye's duration.\nThe Eye can initiate one coordinated attack every 0.9s per party.\nCoordinated attacks generated by characters not controlled by you deal 20% of the normal DMG.",
+                        "image": "Talents/Skill/Talent_Transcendence_Baleful_Omen.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Secret_Art_Musou_Shinsetsu": {
+                        "name": "Secret Art: Musou Shinsetsu",
+                        "effect": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks will be increased based on the number of Chakra Desiderata's Resolve stacks consumed when this skill is used.\nMusou Isshin\nWhile in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.\nWhile Musou Isshin is active, the Raiden Shogun's Normal, Charged, and Plunging Attack DMG will be considered Elemental Burst DMG.\nThe effects of Musou Isshin will be cleared when the Raiden Shogun leaves the field.\nChakra Desiderata\nWhen nearby party members (excluding the Raiden Shogun herself) use their Elemental Bursts, the Raiden Shogun will build up Resolve stacks based on the Energy Cost of these Elemental Bursts.\nThe maximum number of Resolve stacks is 60. The Resolve gained by Chakra Desiderata will be cleared 300s after the Raiden Shogun leaves the field.",
+                        "image": "Talents/Burst/Talent_Secret_Art_Musou_Shinsetsu.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Ominous Inscription",
+                    "effect": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+                    "image": "Constellation/Ominous_Inscription.png"
+                },
+                "2": {
+                    "name": "Steelbreaker",
+                    "effect": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+                    "image": "Constellation/Steelbreaker.png"
+                },
+                "3": {
+                    "name": "Shinkage Bygones",
+                    "effect": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Shinkage_Bygones.png"
+                },
+                "4": {
+                    "name": "Pledge of Propriety",
+                    "effect": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+                    "image": "Constellation/Pledge_of_Propriety.png"
+                },
+                "5": {
+                    "name": "Shogun's Descent",
+                    "effect": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Shoguns_Descent.png"
+                },
+                "6": {
+                    "name": "Wishbearer",
+                    "effect": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, attacks by the Raiden Shogun that are considered part of her Elemental Burst will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+                    "image": "Constellation/Wishbearer.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Vajrada_Amethyst_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Old_Handguard",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Amakumo_Fruit"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Storm_Beads",
+                    "level": 40,
+                    "material4": "Old_Handguard",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Amakumo_Fruit"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Vajrada_Amethyst_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Storm_Beads",
+                    "level": 50,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Amakumo_Fruit"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Storm_Beads",
+                    "level": 60,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Amakumo_Fruit"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Vajrada_Amethyst_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Storm_Beads",
+                    "level": 70,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Amakumo_Fruit"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Vajrada_Amethyst_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Storm_Beads",
+                    "level": 80,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Amakumo_Fruit"
+                }
+            },
+            "introduction": "The Raiden Shogun is the awesome and terrible power of thunder incarnate, the exalted ruler of the Inazuma Shogunate.\nWith the might of lightning at her disposal, she commits herself to the solitary pursuit of eternity.",
+            "genshinggpath": "characters/Raiden",
+            "element": "Electro",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Raiden_Shogun",
             "subCollection": {}
         },
         "Razor": {
@@ -1364,6 +1918,7 @@
             "introduction": "Some say he is an orphan raised by wolves. Others say he is a wolf spirit in human form. He is most at home in the wild, fighting with claw and thunder. To this day the wolf boy can be found prowling the forest, where he and his wolf pack hunt to survive using nothing more than their animal instincts.",
             "genshinggpath": "characters/Razor",
             "element": "Electro",
+            "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Razor",
             "subCollection": {}
         }
