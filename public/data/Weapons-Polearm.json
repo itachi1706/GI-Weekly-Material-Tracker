@@ -1335,6 +1335,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Skyward_Spine",
       "subCollection": {}
     },
+    "The_Catch": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
+      "name": "\"The Catch\"",
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Chaos_Gear",
+          "material3qty": 2,
+          "material1": "Mask_of_the_Wicked_Lieutenant",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Chaos_Gear",
+          "material3qty": 8,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Chaos_Axis",
+          "material3qty": 6,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Chaos_Axis",
+          "material3qty": 9,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Chaos_Oculus",
+          "material3qty": 6,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Chaos_Oculus",
+          "material3qty": 12,
+          "material1": "Mask_of_the_Kijin",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Polearm/The_Catch.png",
+      "secondary_stat": "10.0%",
+      "rarity": 4,
+      "type": "Polearm",
+      "max_secondary_stat": "45.9%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Inazuma Fishing Association (6x Raimei Angelfish, 20x Golden Koi, 20x Rusty Koi)",
+      "effectName": "Shanty",
+      "effect": "Increases Elemental Burst DMG by 16~32% and Elemental Burst CRIT Rate by 6~12%.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/%22The_Catch%22",
+      "subCollection": {}
+    },
     "Vortex_Vanquisher": {
       "secondary_stat_type": "ATK",
       "description": "(Formerly Kunwu's Iris Rift)\n\nThis sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
