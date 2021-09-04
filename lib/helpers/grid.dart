@@ -17,7 +17,10 @@ class GridData {
   static final Map<String, Map<String, CommonData>> _staticData = {};
   static final Map<String, bool> _downloading = {};
 
-  static Color getRarityColor(int rarity) {
+  static Color getRarityColor(int rarity, {crossover = false}) {
+    if (crossover) {
+      return Color(0xFFb73b47);
+    }
     switch (rarity) {
       case 1:
         return Color(0xFF72778b);
@@ -218,7 +221,7 @@ class GridData {
 
   static Widget getGridData(CommonData data) {
     return Card(
-      color: getRarityColor(data.rarity),
+      color: getRarityColor(data.rarity, crossover: data.crossover),
       child: GridTile(
         footer: Padding(
           padding: const EdgeInsets.all(2),
@@ -247,7 +250,8 @@ class GridData {
   static void launchWikiUrl(BuildContext context, CommonData data) async {
     if (!await Util.launchWebPage(
       data.wiki,
-      rarityColor: GridData.getRarityColor(data.rarity),
+      rarityColor:
+          GridData.getRarityColor(data.rarity, crossover: data.crossover),
     )) {
       Util.showSnackbarQuick(
         context,

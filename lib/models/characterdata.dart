@@ -35,6 +35,7 @@ class CharacterData extends CommonData {
     this.talent,
     this.constellations,
     this.fullName,
+    crossover,
     wiki,
   }) : super(
           image: image,
@@ -42,6 +43,7 @@ class CharacterData extends CommonData {
           rarity: rarity,
           description: description,
           wiki: wiki,
+          crossover: crossover,
         );
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
@@ -69,6 +71,7 @@ class CharacterData extends CommonData {
       ),
       caption: parsedJson['caption'],
       fullName: parsedJson['fullName'],
+      crossover: parsedJson['crossover'] ?? false,
     );
   }
 

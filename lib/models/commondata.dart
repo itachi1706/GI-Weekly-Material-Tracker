@@ -4,8 +4,16 @@ class CommonData {
   String image;
   String description;
   String wiki;
+  bool crossover;
 
-  CommonData({this.name, this.rarity, this.image, this.description, this.wiki});
+  CommonData({
+    this.name,
+    this.rarity,
+    this.image,
+    this.description,
+    this.wiki,
+    this.crossover = false,
+  });
 }
 
 class CommonAscension {

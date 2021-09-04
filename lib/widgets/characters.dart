@@ -195,7 +195,8 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       _info = infoData[_infoId];
       if (_info == null) Get.offAndToNamed('/splash');
       _materialData = materialData;
-      _rarityColor = GridData.getRarityColor(_info.rarity);
+      _rarityColor =
+          GridData.getRarityColor(_info.rarity, crossover: _info.crossover);
     });
   }
 
