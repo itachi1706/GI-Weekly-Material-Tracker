@@ -401,10 +401,27 @@ class _PlannerPageState extends State<PlannerPage> {
         }
 
         var data = snapshot.data;
-        var _finalDomainMaterials = data.docs
+        var _uniqueMaterials = data.docs
             .map((snapshot) => snapshot.data()['name'].toString())
             .toSet()
             .toList();
+
+        var _finalDomainMaterials = <String>[];
+        // Tabulate the materials and remove completed ones
+        _uniqueMaterials.forEach((element) {
+          var _cur = 0, _max = 0;
+          data.docs
+              .where((element2) => element2.data()['name'] == element)
+              .forEach((element) {
+            _cur += element.data()['current'];
+            _max += element.data()['max'];
+          });
+
+          if (_cur < _max) {
+            _finalDomainMaterials.add(element);
+          }
+        });
+
         var _mappedData = <int, Set<String>>{};
         for (var i = 1; i <= 7; i++) {
           _mappedData.putIfAbsent(i, () => {});
