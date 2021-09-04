@@ -1,3 +1,8 @@
+# 2.1.0
+- Added new background color for crossover characters (Aloy)
+- Materials will now be removed from weekly planner when it has been fully collected
+- General bug fixes and improvements
+
 # 2.0.1
 - Week Planner now shows grids dynamically, no more massive or small tiles!
 - Added URL-based promo codes that launches a web browser on click
