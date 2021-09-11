@@ -56,6 +56,8 @@ class _TrackerPageState extends State<TrackerPage> {
   Map<String, WeaponData> _weaponData;
   Map<String, CharacterData> _characterData;
 
+  SharedPreferences _prefs;
+
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     primary: Colors.black87,
     minimumSize: Size(0, 0),
@@ -110,12 +112,27 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   Widget _process(int _collectionLen, QuerySnapshot data) {
+    var dt = data.docs;
+    if (_prefs.getBool('move_completed_bottom') ?? false) {
+      dt.sort((a, b) {
+        var aD = TrackingUserData.fromJson(a.data());
+        var bD = TrackingUserData.fromJson(b.data());
+
+        var aDD = (aD.max - aD.current) <= 0 ? 1 : 0;
+        var bDD = (bD.max - bD.current) <= 0 ? 1 : 0;
+
+        print('${bD.max - bD.current} - ${aD.max - aD.current}');
+
+        return aDD.compareTo(bDD);
+      });
+    }
+
     return _collectionLen > 0
         ? ListView.builder(
             itemCount: _collectionLen,
             itemBuilder: (context, index) {
-              var _data = TrackingUserData.fromJson(data.docs[index].data());
-              var _dataId = data.docs[index].id;
+              var _data = TrackingUserData.fromJson(dt[index].data());
+              var _dataId = dt[index].id;
               print(_data);
               var _material = _materialData[_data.name];
               String extraImageRef;
@@ -313,6 +330,7 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   void _retrieveData() async {
+    var prefs = await SharedPreferences.getInstance();
     var m = await GridData.retrieveMaterialsMapData();
     var c = await GridData.retrieveCharactersMapData();
     var w = await GridData.retrieveWeaponsMapData();
@@ -321,6 +339,7 @@ class _TrackerPageState extends State<TrackerPage> {
         _materialData = m;
         _characterData = c;
         _weaponData = w;
+        _prefs = prefs;
       });
     }
   }
