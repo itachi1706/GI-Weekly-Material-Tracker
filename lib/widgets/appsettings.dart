@@ -23,7 +23,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   String _versionStr = 'Unknown';
-  bool _darkMode = false, _dailylogin = false, _weeklyParametric = false;
+  bool _darkMode = false, _dailylogin = false, _weeklyParametric = false, _moveBot = false;
   int _cacheFiles = 0;
 
   SharedPreferences _prefs;
@@ -76,6 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
       _prefs = pref;
       _location = _prefs.getString('location') ?? 'Asia';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
+      _moveBot = _prefs.getBool('move_completed_bottom') ?? false;
       _dailylogin = _prefs.getBool('daily_login') ?? false;
       _cacheFiles = _files['fileNum'];
       _cacheSize = filesize(_files['size']);
@@ -200,6 +201,20 @@ class _SettingsPageState extends State<SettingsPage> {
             });
           },
           switchValue: _darkMode,
+        ),
+        SettingsTile.switchTile(
+          title: 'Move completed to bottom',
+          subtitle: 'Only for the tracking page',
+          leading: Icon(Icons.checklist),
+          onToggle: (bool value) {
+            _prefs.setBool('move_completed_bottom', value).then((value) {
+              Util.showSnackbarQuick(context, 'Will be moved on next reload');
+            });
+            setState(() {
+              _moveBot = value;
+            });
+          },
+          switchValue: _moveBot,
         ),
         SettingsTile(
           title: 'Game Server Location',
