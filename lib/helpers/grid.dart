@@ -82,13 +82,43 @@ class GridData {
     return null;
   }
 
+  static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
+    var data = <QueryDocumentSnapshot>[];
+    snapshot.forEach((element) {
+      Map<String, dynamic> dt = element.data();
+      if (dt['released']) {
+        data.add(element);
+      } else {
+        print("Skipping ${dt['name']}");
+      }
+    });
+
+    return data;
+  }
+
   static void setStaticData(String type, QuerySnapshot snapshot) {
     if (snapshot == null) return;
     print('Updating $type static data in memory');
+    var _snapData = getDataListFilteredRelease(snapshot.docs);
+    // var data = getDataListFilteredRelease(snapshot);
     var data = <String, dynamic>{};
-    snapshot.docs.forEach((element) {
-      data.putIfAbsent(element.id, () => element.data());
-    });
+    // snapshot.docs.forEach((element) {
+    //   Map<String, dynamic> dt = element.data();
+    //   if (dt['released']) {
+    //     data.putIfAbsent(element.id, () => dt);
+    //   } else {
+    //     print("Skipping ${dt['name']}");
+    //   }
+    // });
+
+    _snapData.forEach((element) {
+        Map<String, dynamic> dt = element.data();
+        if (dt['released']) {
+          data.putIfAbsent(element.id, () => dt);
+        } else {
+          print("Skipping ${dt['name']}");
+        }
+      });
     switch (type) {
       case 'characters':
         _staticData[type] = CharacterData.getList(data);
