@@ -1,3 +1,8 @@
+# 2.1.1
+- Updated to only show released characters, weapons and Materials
+- Add option in settings to move all completed tracked items to the bottom
+- General bug fixes and optimizations
+
 # 2.1.0
 - Added new background color for crossover characters (Aloy)
 - Materials will now be removed from weekly planner when it has been fully collected

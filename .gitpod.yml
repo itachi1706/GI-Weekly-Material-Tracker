@@ -9,9 +9,9 @@ tasks:
       flutter update-packages --force-upgrade &&
       flutter run -d web-server --no-resident && # prebuilds the app
       flutter doctor -v
-    command: >
-      flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0 &&
-      echo Ready!
+    #command: >
+    #  flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0 &&
+    #  echo Ready!
 
 ports:
   - port: 8080
