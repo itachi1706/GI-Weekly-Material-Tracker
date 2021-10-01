@@ -565,6 +565,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Lithic_Blade",
       "subCollection": {}
     },
+    "Luxurious_Sea-Lord": {
+      "secondary_stat_type": "ATK",
+      "description": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
+      "name": "Luxurious Sea-Lord",
+      "ascension": {
+        "1": {
+          "material3": "Slime_Condensate",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 2,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Slime_Condensate",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Slime_Secretions",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Slime_Secretions",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 9,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Slime_Concentrate",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Slime_Concentrate",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 12,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Luxurious_Sea-Lord.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Moonlight Merriment Event",
+      "effectName": "Oceanic Victory",
+      "effect": "Increases Elemental Burst DMG by 12~24%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals 100~200% ATK as AoE DMG. This effect can occur once every 15s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Luxurious_Sea-Lord",
+      "subCollection": {}
+    },
     "Old_Merc_Pal": {
       "secondary_stat_type": "None",
       "description": "A battle-tested greatsword that has seen better days and worse.",
