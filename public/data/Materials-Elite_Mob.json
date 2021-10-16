@@ -311,6 +311,45 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Chaos_Oculus",
       "subCollection": {}
+    },
+    "Concealed_Claw": {
+      "image": "Materials/Elite_Mob/Item_Concealed_Claw.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Residual body tissue left behind by one of the Riftwolves.\nBy ordinary logic, these objects, so alien to this world, should not have remained behind after these abnormal creatures were excised from the land.",
+      "enemies": ["Rifthounds"],
+      "obtained": "- Dropped by Rifthounds",
+      "name": "Concealed Claw",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Concealed_Claw",
+      "subCollection": {}
+    },
+    "Concealed_Unguis": {
+      "image": "Materials/Elite_Mob/Item_Concealed_Unguis.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Body tissue left behind by one of the Riftwolves.\nThough they are quite wondrous indeed, these hunting hounds of \"Alfisol\" are nothing of note before Durin of \"Humus.\"",
+      "enemies": ["Rifthounds"],
+      "obtained": "- Alchemy (3x Concealed Claw)\n- Dropped by Lv.40+ Rifthounds",
+      "name": "Concealed Unguis",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Concealed_Unguis",
+      "subCollection": {}
+    },
+    "Concealed_Talon": {
+      "image": "Materials/Elite_Mob/Item_Concealed_Talon.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A sharp nail left behind by one of the Riftwolves.\nAll the marvels in the world must pale before \"Cretaceus\", the greatest work of them all.",
+      "enemies": ["Rifthounds"],
+      "obtained": "- Alchemy (3x Concealed Unguis)\n- Dropped by Lv.60+ Rifthounds",
+      "name": "Concealed Talon",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Concealed_Talon",
+      "subCollection": {}
     }
   }
 }
