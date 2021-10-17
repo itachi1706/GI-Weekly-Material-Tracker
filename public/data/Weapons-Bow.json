@@ -1,7 +1,7 @@
 {
   "weapons": {
     "Alley_Hunter": {
-      "secondary_stat_type": "ATK%",
+      "secondary_stat_type": "ATK",
       "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
       "name": "Alley Hunter",
       "series": "Alley Series",
@@ -785,6 +785,86 @@
       "effect": "Normal Attack hits on opponents increase Elemental Skill DMG by 20~40% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by 20~40% for 5s.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Mitternachts_Waltz",
+      "subCollection": {}
+    },
+    "Polar_Star": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A pristine bow that is as sharp as the glaciers of the far north.",
+      "name": "Polar Star",
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Concealed_Claw",
+          "material3qty": 3,
+          "material1": "Mask_of_the_Wicked_Lieutenant",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Concealed_Claw",
+          "material3qty": 12,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Concealed_Unguis",
+          "material3qty": 9,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Concealed_Unguis",
+          "material3qty": 14,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Concealed_Talon",
+          "material3qty": 9,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Concealed_Talon",
+          "material3qty": 18,
+          "material1": "Mask_of_the_Kijin",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/Polar_Star.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Bow",
+      "max_secondary_stat": "33.1%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Daylight's Augury",
+      "effect": "Elemental Skill and Elemental Burst DMG increased by 12~24%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by 10/20/30/48~20/40/60/96%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Polar_Star",
       "subCollection": {}
     },
     "Predator": {
