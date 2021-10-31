@@ -4,7 +4,6 @@ const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
 
-admin.initializeApp(serviceAccount);
 firestore.initializeApp(serviceAccount);
 const firestoreAdmin = admin.firestore();
 
