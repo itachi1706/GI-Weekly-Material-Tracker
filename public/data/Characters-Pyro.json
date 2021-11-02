@@ -1376,6 +1376,281 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Klee",
             "subCollection": {}
         },
+        "Tohma": {
+            "image": "Characters/Pyro/Thoma.png",
+            "gender": "Male",
+            "birthday": "9/1",
+            "caption": "Protector From Afar",
+            "name": "Thoma",
+            "description": "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma.",
+            "nation": "Inazuma",
+            "weapon": "Polearm",
+            "rarity": 4,
+            "affiliation": "Yashiro Commission, Kamisato Clan",
+            "constellation": "Rubeum Scutum",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Transience",
+                        "material3qty": 3,
+                        "material4": "Treasure_Hoarder_Insignia",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Transience",
+                        "material3qty": 2,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Transience",
+                        "material3qty": 4,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Transience",
+                        "material3qty": 6,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Transience",
+                        "material3qty": 9,
+                        "material4": "Silver_Raven_Insignia",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Hellfire_Butterfly",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Transience",
+                        "material3qty": 4,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Hellfire_Butterfly",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Transience",
+                        "material3qty": 6,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Hellfire_Butterfly",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Transience",
+                        "material3qty": 12,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Hellfire_Butterfly",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Transience",
+                        "material3qty": 16,
+                        "material4": "Golden_Raven_Insignia",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Imbricated_Armor": {
+                        "name": "Imbricated Armor",
+                        "effect": "When your current active character obtains or refreshes a Blazing Barrier, this character's Shield Strength will increase by 5% for 6s.\nThis effect can be triggered once every 0.3 seconds. Max 5 stacks.",
+                        "image": "public/images/Talents/Passive/Talent_Imbricated_Armor.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Flaming_Assault": {
+                        "name": "Flaming Assault",
+                        "effect": "DMG dealt by Crimson Ooyoroi's Fiery Collapse is increased by 2.2% of Thoma's Max HP.",
+                        "image": "public/images/Talents/Passive/Talent_Flaming_Assault.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Snap_and_Swing": {
+                        "name": "Snap and Swing",
+                        "effect": "When you fish successfully in Inazuma, Thoma's help grants a 20% chance of scoring a double catch.",
+                        "image": "public/images/Talents/Passive/Talent_Snap_and_Swing.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Swiftshatter_Spear": {
+                        "name": "Swiftshatter Spear",
+                        "effect": "Normal Attack: Performs up to four consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "public/images/Talents/Normal/Talent_Swiftshatter_Spear.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Blazing_Blessing": {
+                        "name": "Blazing Blessing",
+                        "effect": "Thoma vaults forward with his polearm and delivers a flame-filled flying kick that deals AoE Pyro DMG, while also summoning a defensive Blazing Barrier.\nAt the moment of casting, Thoma's Elemental Skill applies Pyro to himself.\nThe DMG Absorption of the Blazing Barrier scales off Thoma's Max HP.\nThe Blazing Barrier has the following traits:\nAbsorbs Pyro DMG 250% more effectively.\nWhen a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.\nThe maximum DMG Absoprtion of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
+                        "image": "public/images/Talents/Skill/Talent_Blazing_Blessing.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Crimson_Ooyoroi": {
+                        "name": "Crimson Ooyoroi",
+                        "effect": "Thoma spins his polearm, slicing at his foes with roaring flames that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\nScorching Ooyoroi\nWhile Scorching Ooyoroi is in effect, the active character's Normal Attacks will trigger Fiery Collapse, dealing AoE Pyro DMG and summoning a Blazing Barrier.\nFiery Collapse can be triggered once every 1s.\n\nExcept for the amount of DMG they can absorb, the Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing:\n\nAbsorbs Pyro DMG 250% more effectively.\nWhen a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.\nThe maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.\n\nIf Thoma falls, the effects of Scorching Ooyoroi will be cleared.",
+                        "image": "public/images/Talents/Burst/Talent_Crimson_Ooyoroi.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "A Comrade's Duty",
+                    "effect": "When a character protected by Thoma's own Blazing Barrier (Thoma excluded) is attacked, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\nThis effect can be triggered once every 20s.",
+                    "image": "public/images/Constellation/A_Comrades_Duty.png"
+                },
+                "2": {
+                    "name": "A Subordinate's Skills",
+                    "effect": "Crimson Ooyoroi's duration is increased by 3s.",
+                    "image": "public/images/Constellation/A_Subordinates_Skills.png"
+                },
+                "3": {
+                    "name": "Fortified Resolve",
+                    "effect": "Increases the Level of Blazing Blessing by 3.\nMaximum upgrade level is 15.",
+                    "image": "public/images/Constellation/Fortified_Resolve.png"
+                },
+                "4": {
+                    "name": "Long-Term Planning",
+                    "effect": "After using Crimson Ooyoroi, 15 Energy will be restored to Thoma.",
+                    "image": "public/images/Constellation/Long-Term_Planning.png"
+                },
+                "5": {
+                    "name": "Raging Wildfire",
+                    "effect": "Increases the Level of Crimson Ooyoroi by 3.\nMaximum upgrade level is 15.",
+                    "image": "public/images/Constellation/Raging_Wildfire.png"
+                },
+                "6": {
+                    "name": "Burning Heart",
+                    "effect": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s.",
+                    "image": "public/images/Constellation/Burning_Heart.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Agnidus_Agate_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Fluorescent_Fungus"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Agnidus_Agate_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Smoldering_Pearl",
+                    "level": 40,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Fluorescent_Fungus"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Agnidus_Agate_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Smoldering_Pearl",
+                    "level": 50,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Fluorescent_Fungus"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Agnidus_Agate_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Smoldering_Pearl",
+                    "level": 60,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Fluorescent_Fungus"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Agnidus_Agate_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Smoldering_Pearl",
+                    "level": 70,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Fluorescent_Fungus"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Agnidus_Agate_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Smoldering_Pearl",
+                    "level": 80,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Fluorescent_Fungus"
+                }
+            },
+            "introduction": "The housekeeper of the Yashiro Commission's Kamisato Clan, and a well-known \"fixer\" in Inazuma.\nFriendly and approachable, Thoma fits in with the crowd easily wherever he is.\nAt first glance, he seems to be a very easygoing person, but he is in fact very responsible. He has an extraordinarily serious side, be it in his work or his interpersonal communications.",
+            "paimonmoepath": "characters/thoma",
+            "genshinggpath": "characters/Thoma",
+            "element": "Pyro",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Thoma",
+            "subCollection": {}
+        },
         "Xiangling": {
             "image": "Characters/Pyro/Xiangling.png",
             "gender": "Female",
