@@ -787,6 +787,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Mitternachts_Waltz",
       "subCollection": {}
     },
+    "Mouun_Moon": {
+      "secondary_stat_type": "ATK",
+      "description": "A lovely warbow made from seashells and coral. A mournful brilliance flows along its moonlight-colored arms.",
+      "name": "Mouun's Moon",
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Dismal_Prism",
+          "material3qty": 2,
+          "material1": "Narukamis_Wisdom",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Dismal_Prism",
+          "material3qty": 8,
+          "material1": "Narukamis_Joy",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Crystal_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Joy",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Crystal_Prism",
+          "material3qty": 9,
+          "material1": "Narukamis_Affection",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Polarizing_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Affection",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Polarizing_Prism",
+          "material3qty": 12,
+          "material1": "Narukamis_Valor",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Mouun_Moon.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Watatsumi Wavewalker",
+      "effect": "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by 0.12~0.24%. A maximum of 40~80% increased Elemental Burst DMG can be achieved this way.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mouun%27s_Moon",
+      "subCollection": {}
+    },
     "Polar_Star": {
       "secondary_stat_type": "CRIT Rate",
       "description": "A pristine bow that is as sharp as the glaciers of the far north.",
