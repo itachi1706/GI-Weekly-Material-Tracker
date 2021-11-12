@@ -19,4 +19,6 @@ Version Name: <Replace>
 
 
 
-/label ~"Status::To Triage"
+/label ~"Status::To Triage" ~"Platform::Firebase" ~"Sub Platform::Firestore"
+/estimate 1d
+/weight 2
