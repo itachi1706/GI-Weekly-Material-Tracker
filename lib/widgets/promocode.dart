@@ -75,7 +75,8 @@ class _PromoCodePageState extends State<PromoCodePage> {
                 itemBuilder: (context, index) {
                   var codeObj = _codes[index];
                   if (!codeObj.isCode) {
-                    var subtitle = 'URL: ${codeObj.url}\nTime: ${codeObj.date}, Expired: ${codeObj.expired}';
+                    var subtitle =
+                        'URL: ${codeObj.url}\nTime: ${codeObj.date}, Expired: ${codeObj.expired}';
                     if (codeObj.expiryString != null && !codeObj.expired) {
                       subtitle += ', Expires: ${codeObj.expiryString}';
                     }
@@ -85,7 +86,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
                       title: Text(codeObj.reward),
                       subtitle: Text(subtitle),
                       isThreeLine: true,
-                      onTap: () => Util.launchWebPage(codeObj.url)
+                      onTap: () => Util.launchWebPage(codeObj.url),
                     );
                   }
                   var promoCodeRegion = _getCode(codeObj);

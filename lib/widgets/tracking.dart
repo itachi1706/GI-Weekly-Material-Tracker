@@ -376,28 +376,13 @@ class _PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
-    _beforeDT = tz.TZDateTime(
-      loc,
-      _cDT.year,
-      _cDT.month,
-      _cDT.day,
-      0,
-      0,
-      0,
-      0,
-    ); // This day at 12am
+    // This day at 12am
+    _beforeDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 0, 0, 0, 0);
     _dbDT = _cDT.subtract(Duration(days: 1));
-    _afterDT = _beforeDT.add(Duration(days: 1)); // Next day at 12am
-    _coffDT = tz.TZDateTime(
-      loc,
-      _cDT.year,
-      _cDT.month,
-      _cDT.day,
-      4,
-      0,
-      0,
-      0,
-    ); // This day at 4am
+    // Next day at 12am
+    _afterDT = _beforeDT.add(Duration(days: 1));
+    // This day at 4am
+    _coffDT = tz.TZDateTime(loc, _cDT.year, _cDT.month, _cDT.day, 4, 0, 0, 0);
 
     var ref = _db
         .collection('tracking')

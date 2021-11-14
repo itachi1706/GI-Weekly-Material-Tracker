@@ -12,9 +12,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
-  final String title;
-
-  LoginPage({Key key, this.title}) : super(key: key);
+  LoginPage({Key key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -91,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginScreen() {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Login'),
       ),
       body: Center(
         child: Column(
