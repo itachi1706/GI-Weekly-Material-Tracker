@@ -9,6 +9,7 @@ class CharacterData extends CommonData {
   String fullName;
   String gender;
   String genshinGGPath;
+  String paimonMoePath;
   String introduction;
   String nation;
   String weapon;
@@ -25,6 +26,7 @@ class CharacterData extends CommonData {
     this.element,
     this.gender,
     this.genshinGGPath,
+    this.paimonMoePath,
     image,
     this.introduction,
     name,
@@ -60,6 +62,7 @@ class CharacterData extends CommonData {
       constellation: parsedJson['constellation'],
       introduction: parsedJson['introduction'],
       genshinGGPath: parsedJson['genshinggpath'],
+      paimonMoePath: parsedJson['paimonmoepath'],
       element: parsedJson['element'],
       wiki: parsedJson['wiki'],
       ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
