@@ -59,20 +59,9 @@ class _MyAppState extends State<MyApp> {
       unknownRoute: GetPage(name: '/splash', page: () => SplashPage()),
       getPages: [
         GetPage(name: '/splash', page: () => SplashPage()),
-        GetPage(
-          name: '/',
-          page: () => LoginPage(
-            title: 'Login',
-          ),
-        ),
+        GetPage(name: '/', page: () => LoginPage()),
         GetPage(name: '/placeholder', page: () => PlaceholderPage()),
-        GetPage(
-          name: '/menu',
-          page: () => TransitionPage(),
-          // page: () => MainNavigationPage(
-          //   title: 'GI Materials Tracker',
-          // ),
-        ),
+        GetPage(name: '/menu', page: () => TransitionPage()),
         GetPage(
           name: '/tracking',
           page: () => TrackingPage(
