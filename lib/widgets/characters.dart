@@ -13,6 +13,7 @@ import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -131,10 +132,11 @@ class CharacterInfoMainPage extends StatefulWidget {
 class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   CharacterData _info;
   String _infoId;
-
   Color _rarityColor;
 
   Map<String, MaterialDataCommon> _materialData;
+  SharedPreferences _prefs;
+  String _bgSource;
 
   @override
   void initState() {
@@ -167,7 +169,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
             IconButton(
               icon: Icon(MdiIcons.swordCross),
               onPressed: _openCharBuildGuide,
-              tooltip: 'Build Guide',
+              tooltip: 'Build Guide ($_bgSource)',
             ),
           ],
         ),
@@ -193,29 +195,39 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   void _getStaticData() async {
     var infoData = await GridData.retrieveCharactersMapData();
     var materialData = await GridData.retrieveMaterialsMapData();
+    _prefs = await SharedPreferences.getInstance();
     setState(() {
       _info = infoData[_infoId];
       if (_info == null) Get.offAndToNamed('/splash');
       _materialData = materialData;
+      _bgSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
       _rarityColor =
           GridData.getRarityColor(_info.rarity, crossover: _info.crossover);
     });
   }
 
   void _openCharBuildGuide() async {
-    if (_info.genshinGGPath == null) {
+    var source = Util.genshinGGUrl;
+    var sourcePath = _info.genshinGGPath;
+    if (_bgSource == 'paimon.moe') {
+      source = Util.paimonMoeUrl;
+      sourcePath = _info.paimonMoePath;
+    }
+
+    if (sourcePath == null) {
       Util.showSnackbarQuick(
         context,
-        'Build Guide not available for ${_info.name}',
+        'Build Guide not available for ${_info.name} on $_bgSource',
       );
 
       return;
     }
-    var fullUrl = Util.genshinGGUrl + _info.genshinGGPath;
+
+    var fullUrl = source + sourcePath;
     if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
       Util.showSnackbarQuick(
         context,
-        'Failed to launch build guide for ${_info.name}',
+        'Failed to launch build guide for ${_info.name} on $_bgSource',
       );
     }
   }

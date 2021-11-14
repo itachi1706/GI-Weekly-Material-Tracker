@@ -22,8 +22,11 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
-  String _versionStr = 'Unknown';
-  bool _darkMode = false, _dailylogin = false, _weeklyParametric = false, _moveBot = false;
+  String _versionStr = 'Unknown', _buildSource = 'Loading';
+  bool _darkMode = false,
+      _dailylogin = false,
+      _weeklyParametric = false,
+      _moveBot = false;
   int _cacheFiles = 0;
 
   SharedPreferences _prefs;
@@ -75,6 +78,7 @@ class _SettingsPageState extends State<SettingsPage> {
     setState(() {
       _prefs = pref;
       _location = _prefs.getString('location') ?? 'Asia';
+      _buildSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
       _moveBot = _prefs.getBool('move_completed_bottom') ?? false;
       _dailylogin = _prefs.getBool('daily_login') ?? false;
@@ -185,6 +189,25 @@ class _SettingsPageState extends State<SettingsPage> {
     return tiles;
   }
 
+  // Switches
+  void _toggleDarkMode(bool value) {
+    _prefs.setBool('dark_mode', value).then((value) {
+      Util.themeNotifier.toggleTheme();
+    });
+    setState(() {
+      _darkMode = value;
+    });
+  }
+
+  void _toggleMoveCompletedToBottom(bool value) {
+    _prefs.setBool('move_completed_bottom', value).then((value) {
+      Util.showSnackbarQuick(context, 'Will be moved on next reload');
+    });
+    setState(() {
+      _moveBot = value;
+    });
+  }
+
   Widget _appDataSettings() {
     return SettingsSection(
       title: 'Settings',
@@ -192,29 +215,23 @@ class _SettingsPageState extends State<SettingsPage> {
         SettingsTile.switchTile(
           title: 'Dark Mode',
           leading: Icon(Icons.wb_sunny_outlined),
-          onToggle: (bool value) {
-            _prefs.setBool('dark_mode', value).then((value) {
-              Util.themeNotifier.toggleTheme();
-            });
-            setState(() {
-              _darkMode = value;
-            });
-          },
+          onToggle: _toggleDarkMode,
           switchValue: _darkMode,
         ),
         SettingsTile.switchTile(
           title: 'Move completed to bottom',
           subtitle: 'Only for the tracking page',
           leading: Icon(Icons.checklist),
-          onToggle: (bool value) {
-            _prefs.setBool('move_completed_bottom', value).then((value) {
-              Util.showSnackbarQuick(context, 'Will be moved on next reload');
-            });
-            setState(() {
-              _moveBot = value;
-            });
-          },
+          onToggle: _toggleMoveCompletedToBottom,
           switchValue: _moveBot,
+        ),
+        SettingsTile(
+          title: 'Build Guide Source',
+          subtitle: _buildSource,
+          leading: Icon(MdiIcons.swordCross),
+          onPressed: (context) {
+            Get.to(() => BuildGuideSelectorPage()).then((value) => _refresh());
+          },
         ),
         SettingsTile(
           title: 'Game Server Location',
@@ -222,7 +239,7 @@ class _SettingsPageState extends State<SettingsPage> {
           leading: Icon(MdiIcons.server),
           trailing: SizedBox.shrink(),
           onPressed: (context) {
-            Get.to(() => RegionSettingsPage());
+            Get.to(() => RegionSettingsPage()).then((value) => _refresh());
           },
         ),
         SettingsTile(
@@ -484,6 +501,84 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
     await _prefs.setString('location', region);
     setState(() {
       _regionKey = region;
+    });
+  }
+}
+
+class BuildGuideSelectorPage extends StatefulWidget {
+  @override
+  _BuildGuideSelectorPageState createState() => _BuildGuideSelectorPageState();
+}
+
+class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
+  String _buildGuideKey;
+  SharedPreferences _prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    SharedPreferences.getInstance().then((value) {
+      setState(() {
+        _prefs = value;
+        _buildGuideKey = value.getString('build_guide_source') ?? 'genshin.gg';
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Build Guide Source')),
+      body: _buildBody(),
+    );
+  }
+
+  Widget _buildBody() {
+    if (_buildGuideKey == null)
+      return Util.centerLoadingCircle('Getting source of build guide');
+
+    return SettingsList(
+      sections: [
+        SettingsSection(
+          tiles: [
+            SettingsTile(
+              title: 'Genshin.GG Wiki Database',
+              subtitle: 'genshin.gg',
+              trailing: _trailingWidget('genshin.gg'),
+              onPressed: (context) {
+                _changeBuildGuide('genshin.gg');
+              },
+            ),
+            SettingsTile(
+              title: 'Paimon.moe',
+              subtitle: 'paimon.moe',
+              trailing: _trailingWidget('paimon.moe'),
+              onPressed: (context) {
+                _changeBuildGuide('paimon.moe');
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _trailingWidget(String buildGuideSource) {
+    return Radio(
+      toggleable: false,
+      autofocus: false,
+      value: buildGuideSource,
+      onChanged: (ig) {
+        print('Set to $_buildGuideKey');
+      },
+      groupValue: _buildGuideKey,
+    );
+  }
+
+  void _changeBuildGuide(String buildGuideSource) async {
+    await _prefs.setString('build_guide_source', buildGuideSource);
+    setState(() {
+      _buildGuideKey = buildGuideSource;
     });
   }
 }
