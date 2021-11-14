@@ -1,3 +1,7 @@
+# 2.1.2
+- Added ability to switch Build Guide sources (More coming soon!)
+- General bug fixes and optimizations
+
 # 2.1.1
 - Updated to only show released characters, weapons and Materials
 - Add option in settings to move all completed tracked items to the bottom
