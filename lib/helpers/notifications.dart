@@ -249,7 +249,7 @@ class NotificationManager {
     const androidNotificationDetails = AndroidNotificationDetails(
       'notify_parametric',
       'Parametric Transformer Notification',
-      'Channel related to parametric transformer',
+      channelDescription: 'Channel related to parametric transformer',
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
@@ -271,7 +271,7 @@ class NotificationManager {
     const androidNotificationDetails = AndroidNotificationDetails(
       'notify_forum',
       'Forum Notification',
-      'Scheduled daily reminder on forum',
+      channelDescription: 'Scheduled daily reminder on forum',
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
