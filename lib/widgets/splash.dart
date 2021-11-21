@@ -6,22 +6,101 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
-import 'package:splashscreen/splashscreen.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
+  @override
+  _SplashPageState createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  bool _lightMode = false;
+  final double _photoSize = 100.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _login().then((value) => Get.offNamed(value));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(
-      navigateAfterFuture: _login(),
-      image: Image.asset('assets/icons/splash/splash_dark.png'),
-      loadingText: Text('Initializing App'),
-      title: Text(
-        'Genshin Impact Weekly Material Tracker',
-        style: TextStyle(fontSize: 20.0, fontFamily: 'Product-Sans-Bold'),
+    _lightMode = MediaQuery.of(context).platformBrightness == Brightness.light;
+    var _image = _lightMode
+        ? Image.asset('assets/icons/splash/splash.png')
+        : Image.asset('assets/icons/splash/splash_dark.png');
+    var _backgroundColor = _lightMode ? Colors.white : Colors.black;
+    var _textColor = _lightMode ? Colors.black : Colors.white;
+
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: _backgroundColor,
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                flex: 2,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: _photoSize,
+                        child: Hero(
+                          tag: 'splashscreenImage',
+                          child: Container(child: _image),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                      ),
+                      Text(
+                        'Genshin Impact Weekly Material Tracker',
+                        style: TextStyle(
+                          color: _textColor,
+                          fontSize: 20.0,
+                          fontFamily: 'Product-Sans-Bold',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        null,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0),
+                      child: Text(
+                        'Initializing App',
+                        style: TextStyle(color: _textColor),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      backgroundColor: Colors.black,
-      photoSize: 100.0,
     );
   }
 
