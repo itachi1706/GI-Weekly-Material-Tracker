@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    _lightMode = MediaQuery.of(context).platformBrightness == Brightness.light;
+    _lightMode = !Util.themeNotifier.isDarkMode();
     var _image = _lightMode
         ? Image.asset('assets/icons/splash/splash.png')
         : Image.asset('assets/icons/splash/splash_dark.png');
