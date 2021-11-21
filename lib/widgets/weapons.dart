@@ -193,9 +193,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         ? GridData.generateHeaderInfoLine(
             _info.effectName,
             _info.effect,
-            MdiIcons.sparkles,
+            MdiIcons.shimmer,
           )
-        : GridData.generateInfoLine(_info.effect, MdiIcons.sparkles);
+        : GridData.generateInfoLine(_info.effect, MdiIcons.shimmer);
   }
 
   Widget _generateWeaponHeader() {
