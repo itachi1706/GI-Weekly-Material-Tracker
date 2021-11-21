@@ -94,12 +94,12 @@ Code Quality Check:
     APP_TYPE: QA
   before_script:
     - flutter doctor -v
-    - flutter pub global activate dart_code_metrics
+    - flutter pub get
     - echo Running Code Quality Checks. This may take a while
   script:
     # Execute for JSON reporter and HTML metrics
-    - flutter pub global run dart_code_metrics:metrics -r gitlab lib > quality.json
-    - flutter pub global run dart_code_metrics:metrics -r html lib
+    - flutter pub run dart_code_metrics:metrics analyze -r gitlab lib > quality.json
+    - flutter pub run dart_code_metrics:metrics analyze -r html lib
   artifacts:
     reports:
       codequality: quality.json
