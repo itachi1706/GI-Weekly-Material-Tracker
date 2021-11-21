@@ -534,8 +534,9 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
   }
 
   Widget _buildBody() {
-    if (_buildGuideKey == null)
+    if (_buildGuideKey == null) {
       return Util.centerLoadingCircle('Getting source of build guide');
+    }
 
     return SettingsList(
       sections: [
