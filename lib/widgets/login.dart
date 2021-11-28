@@ -12,7 +12,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -27,10 +27,10 @@ class _LoginPageState extends State<LoginPage> {
       stream: _auth.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          final User user = snapshot.data;
+          final User? user = snapshot.data as User?;
           Util.updateFirebaseUid();
           if (user != null) {
-            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+            SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
               Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
               Get.offAllNamed('/menu');
             });
@@ -138,16 +138,16 @@ class _LoginPageState extends State<LoginPage> {
       return _auth.getRedirectResult();
     } else {
       // Trigger the authentication flow
-      final googleUser = await GoogleSignIn().signIn();
+      final googleUser = await (GoogleSignIn().signIn() as FutureOr<GoogleSignInAccount>);
 
       // Obtain the auth details from the request
       final googleAuth = await googleUser.authentication;
 
       // Create a new credential
-      final GoogleAuthCredential credential = GoogleAuthProvider.credential(
+      final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
-      );
+      ) as GoogleAuthCredential;
 
       // Once signed in, return the UserCredential
       return await _auth.signInWithCredential(credential);

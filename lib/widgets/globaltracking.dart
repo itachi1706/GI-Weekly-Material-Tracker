@@ -50,14 +50,14 @@ class GlobalTrackingPage extends StatelessWidget {
 class GlobalTracker extends StatefulWidget {
   final String path;
 
-  GlobalTracker({Key key, @required this.path}) : super(key: key);
+  GlobalTracker({Key? key, required this.path}) : super(key: key);
 
   @override
   _GlobalTrackerState createState() => _GlobalTrackerState();
 }
 
 class _GlobalTrackerState extends State<GlobalTracker> {
-  Map<String, MaterialDataCommon> _materialData;
+  Map<String, MaterialDataCommon>? _materialData;
 
   @override
   void initState() {
@@ -90,19 +90,19 @@ class _GlobalTrackerState extends State<GlobalTracker> {
           return Util.centerLoadingCircle('');
         }
 
-        var data = snapshot.data;
+        var data = snapshot.data!;
         final _collectionLen = data.docs.length;
 
         if (_collectionLen > 0) {
           // Consolidate stuff together
-          var _conData = <String, CommonTracking>{};
+          var _conData = <String?, CommonTracking>{};
           data.docs.forEach((snap) {
-            var _tmp = TrackingUserData.fromJson(snap.data());
+            var _tmp = TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
             if (_conData.containsKey(_tmp.name)) {
               // Append
-              _conData[_tmp.name].current =
-                  _conData[_tmp.name].current + _tmp.current;
-              _conData[_tmp.name].max = _conData[_tmp.name].max + _tmp.max;
+              _conData[_tmp.name]!.current =
+                  _conData[_tmp.name]!.current! + _tmp.current!;
+              _conData[_tmp.name]!.max = _conData[_tmp.name]!.max! + _tmp.max!;
             } else {
               _conData.putIfAbsent(
                 _tmp.name,
@@ -126,14 +126,14 @@ class _GlobalTrackerState extends State<GlobalTracker> {
     );
   }
 
-  Widget _getGlobalTrackingList(Map<String, CommonTracking> _conData) {
+  Widget _getGlobalTrackingList(Map<String?, CommonTracking> _conData) {
     return ListView.builder(
       itemCount: _conData.length,
       itemBuilder: (context, index) {
         var key = _conData.keys.elementAt(index);
-        var _data = _conData[key];
+        var _data = _conData[key]!;
         print(_data);
-        var _material = _materialData[_data.name];
+        var _material = _materialData![_data.name!]!;
 
         return Card(
           color: GridData.getRarityColor(_material.rarity),
@@ -181,7 +181,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            _material.name,
+            _material.name!,
             style: TextStyle(
               fontSize: 20,
               color: Colors.white,
@@ -194,14 +194,14 @@ class _GlobalTrackerState extends State<GlobalTracker> {
             unratedColor: Colors.transparent,
             initialRating: double.tryParse(
               _material.rarity.toString(),
-            ),
+            )!,
             itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber),
             onRatingUpdate: (rating) {
               print(rating);
             },
           ),
           Text(
-            _material.obtained.replaceAll('\\n', '\n'),
+            _material.obtained!.replaceAll('\\n', '\n'),
             style: TextStyle(
               fontSize: 11,
               color: Colors.white,
@@ -219,17 +219,17 @@ class GlobalMaterialPage extends StatefulWidget {
 }
 
 class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
-  String _materialKey;
-  MaterialDataCommon _material;
-  Map<String, WeaponData> _weaponData;
-  Map<String, CharacterData> _characterData;
+  String? _materialKey;
+  MaterialDataCommon? _material;
+  Map<String, WeaponData>? _weaponData;
+  Map<String, CharacterData>? _characterData;
 
-  Color _rarityColor;
+  Color? _rarityColor;
   int _tapCount = 0;
 
   bool _firstLoad = false;
 
-  ButtonStyle _flatButtonStyle;
+  ButtonStyle? _flatButtonStyle;
 
   @override
   void initState() {
@@ -254,7 +254,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_material.name),
+        title: Text(_material!.name!),
         backgroundColor: _rarityColor,
       ),
       body: Padding(
@@ -265,11 +265,11 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               _materialHeader(),
               Divider(),
               ...GridData.generateInfoLine(
-                _material.obtained.replaceAll('- ', ''),
+                _material!.obtained!.replaceAll('- ', ''),
                 Icons.location_pin,
               ),
               ...GridData.generateInfoLine(
-                _material.description,
+                _material!.description!,
                 Icons.format_list_bulleted,
               ),
               Padding(
@@ -295,7 +295,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     return Row(
       children: [
         GridData.getImageAssetFromFirebase(
-          _material.image,
+          _material!.image,
           height: 64,
         ),
         Column(
@@ -304,7 +304,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             Container(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
-                _material.type,
+                _material!.type!,
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 20),
               ),
@@ -313,7 +313,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               ignoreGestures: true,
               itemCount: 5,
               itemSize: 30,
-              initialRating: double.tryParse(_material.rarity.toString()),
+              initialRating: double.tryParse(_material!.rarity.toString())!,
               itemBuilder: (context, _) =>
                   Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
@@ -333,9 +333,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     setState(() {
       _characterData = characterData;
       _weaponData = weaponData;
-      _material = materialData[_materialKey];
+      _material = materialData![_materialKey!];
       if (_material == null) Get.offAndToNamed('/splash');
-      _rarityColor = GridData.getRarityColor(_material.rarity);
+      _rarityColor = GridData.getRarityColor(_material!.rarity);
     });
   }
 
@@ -343,7 +343,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     var ref = _db
         .collection('tracking')
         .doc(Util.getFirebaseUid())
-        .collection(_material.innerType)
+        .collection(_material!.innerType!)
         .where('name', isEqualTo: _materialKey);
 
     return StreamBuilder(
@@ -361,12 +361,12 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
         _firstLoad = true;
 
-        var qs = snapshot.data;
+        var qs = snapshot.data!;
         var _trackerData = <String, TrackingUserData>{};
         qs.docs.forEach((data) => {
               _trackerData.putIfAbsent(
                 data.id,
-                () => TrackingUserData.fromJson(data.data()),
+                () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
               ),
             });
 
@@ -382,11 +382,11 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
       itemCount: _trackerData.length,
       itemBuilder: (context, index) {
         var key = _trackerData.keys.elementAt(index);
-        var _data = _trackerData[key];
-        var imageRef = _material.image;
+        var _data = _trackerData[key]!;
+        var imageRef = _material!.image;
         var extraAscensionRef = 0;
-        String extraTypeRef;
-        var name = _material.name;
+        String? extraTypeRef;
+        var name = _material!.name;
         var override = false;
         print(key);
         var _splitKey = key.split('_');
@@ -396,22 +396,22 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           // Grab image ref of extra data based on addedBy
           if (_data.addedBy == 'character') {
             // Grab from character
-            name = _characterData[_data.addData].name;
-            imageRef = _characterData[_data.addData].image;
-            extraTypeRef = _characterData[_data.addData].element;
+            name = _characterData![_data.addData!]!.name;
+            imageRef = _characterData![_data.addData!]!.image;
+            extraTypeRef = _characterData![_data.addData!]!.element;
             extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
           } else if (_data.addedBy == 'weapon') {
             // Grab from weapon
-            imageRef = _weaponData[_data.addData].image;
-            name = _weaponData[_data.addData].name;
+            imageRef = _weaponData![_data.addData!]!.image;
+            name = _weaponData![_data.addData!]!.name;
             extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
           } else if (_data.addedBy == 'talent') {
             // Grab from character talent
-            var _cData = _data.addData.split('|');
-            imageRef = _characterData[_cData[0]].talent.attack[_cData[1]].image;
+            var _cData = _data.addData!.split('|');
+            imageRef = _characterData![_cData[0]]!.talent!.attack![_cData[1]]!.image;
             extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
             name =
-                "${_characterData[_cData[0]].name}'s ${_characterData[_cData[0]].talent.attack[_cData[1]].name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
+                "${_characterData![_cData[0]]!.name}'s ${_characterData![_cData[0]]!.talent!.attack![_cData[1]]!.name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
             override = true;
           }
           if (!override) {
@@ -423,7 +423,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         Widget typeWidget = SizedBox.shrink();
         if (extraTypeRef != null) {
           typeWidget = Image.asset(
-            GridData.getElementImageRef(extraTypeRef),
+            GridData.getElementImageRef(extraTypeRef)!,
             height: 20,
             width: 20,
           );
@@ -436,14 +436,14 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           typeWidget,
           key,
           _data,
-          name,
+          name!,
         );
       },
     );
   }
 
   Widget _getCharacterDataImage(
-    String imageRef,
+    String? imageRef,
     int extraAscensionRef,
     Widget typeWidget,
   ) {
@@ -488,7 +488,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               onPressed: () => TrackingData.decrementCount(
                 key,
                 _data.type,
-                _data.current,
+                _data.current!,
               ),
               child: Icon(Icons.remove),
             ),
@@ -497,8 +497,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               onPressed: () => TrackingData.incrementCount(
                 key,
                 _data.type,
-                _data.current,
-                _data.max,
+                _data.current!,
+                _data.max!,
               ),
               child: Icon(Icons.add),
             ),
@@ -509,9 +509,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   }
 
   Widget _getCharacterDataContainer(
-    String imageRef,
+    String? imageRef,
     int extraAscensionRef,
-    String extraTypeRef,
+    String? extraTypeRef,
     Widget typeWidget,
     String key,
     TrackingUserData _data,

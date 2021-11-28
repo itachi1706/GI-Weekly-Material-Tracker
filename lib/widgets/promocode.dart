@@ -12,15 +12,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 final DatabaseReference db = FirebaseDatabase().reference();
 
 class PromoCodePage extends StatefulWidget {
-  PromoCodePage({Key key}) : super(key: key);
+  PromoCodePage({Key? key}) : super(key: key);
 
   @override
   _PromoCodePageState createState() => _PromoCodePageState();
 }
 
 class _PromoCodePageState extends State<PromoCodePage> {
-  List<PromoCode> _codes;
-  String _location;
+  List<PromoCode>? _codes;
+  String? _location;
 
   @override
   void initState() {
@@ -71,19 +71,19 @@ class _PromoCodePageState extends State<PromoCodePage> {
               ListView.separated(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: _codes.length,
+                itemCount: _codes!.length,
                 itemBuilder: (context, index) {
-                  var codeObj = _codes[index];
-                  if (!codeObj.isCode) {
+                  var codeObj = _codes![index];
+                  if (!codeObj.isCode!) {
                     var subtitle =
                         'URL: ${codeObj.url}\nTime: ${codeObj.date}, Expired: ${codeObj.expired}';
-                    if (codeObj.expiryString != null && !codeObj.expired) {
+                    if (codeObj.expiryString != null && !codeObj.expired!) {
                       subtitle += ', Expires: ${codeObj.expiryString}';
                     }
 
                     return ListTile(
-                      tileColor: _getExpiredColor(codeObj.expired),
-                      title: Text(codeObj.reward),
+                      tileColor: _getExpiredColor(codeObj.expired!),
+                      title: Text(codeObj.reward!),
                       subtitle: Text(subtitle),
                       isThreeLine: true,
                       onTap: () => Util.launchWebPage(codeObj.url),
@@ -92,8 +92,8 @@ class _PromoCodePageState extends State<PromoCodePage> {
                   var promoCodeRegion = _getCode(codeObj);
 
                   return ListTile(
-                    tileColor: _getExpiredColor(codeObj.expired),
-                    title: Text(codeObj.reward),
+                    tileColor: _getExpiredColor(codeObj.expired!),
+                    title: Text(codeObj.reward!),
                     subtitle: Text(
                       'Code: $promoCodeRegion\nTime: ${codeObj.date}, Expired: ${codeObj.expired}',
                     ),
@@ -120,7 +120,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
     Util.launchWebPage('https://genshin.mihoyo.com/en/gift');
   }
 
-  String _getCode(PromoCode code) {
+  String? _getCode(PromoCode code) {
     switch (_location) {
       case 'EU':
         return code.euCode;
@@ -165,7 +165,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
     var promoList = PromoCode.fromDB(Map<String, dynamic>.from(data));
     print(promoList);
 
-    promoList.sort((a, b) => (b.expired) ? -1 : 1);
+    promoList.sort((a, b) => b.expired! ? -1 : 1);
 
     setState(() {
       _codes = promoList;

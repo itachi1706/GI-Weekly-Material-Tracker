@@ -27,9 +27,9 @@ class _SettingsPageState extends State<SettingsPage> {
       _dailylogin = false,
       _weeklyParametric = false,
       _moveBot = false;
-  int _cacheFiles = 0;
+  int? _cacheFiles = 0;
 
-  SharedPreferences _prefs;
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -49,7 +49,8 @@ class _SettingsPageState extends State<SettingsPage> {
             title: 'Notifications',
             tiles: _showNotificationTestMenu(),
           ),
-          ..._infoSettings(),
+          _infoSettings(),
+          _endSettings(),
         ],
       ),
     );
@@ -90,7 +91,7 @@ class _SettingsPageState extends State<SettingsPage> {
     });
   }
 
-  Widget _userDataSettings() {
+  SettingsSection _userDataSettings() {
     return SettingsSection(
       title: 'User Data',
       titlePadding: const EdgeInsets.all(16),
@@ -118,7 +119,7 @@ class _SettingsPageState extends State<SettingsPage> {
         leading: Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('daily_login', value).then((s) async {
-            var notifyManager = NotificationManager.getInstance();
+            var notifyManager = NotificationManager.getInstance()!;
             await notifyManager.scheduleDailyForumReminder(
               value,
               resetNotificationChannel: true,
@@ -142,7 +143,7 @@ class _SettingsPageState extends State<SettingsPage> {
         leading: Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('parametric_notification', value).then((s) async {
-            var notifyManager = NotificationManager.getInstance();
+            var notifyManager = NotificationManager.getInstance()!;
             await notifyManager.scheduleParametricReminder(
               value,
               resetNotificationChannel: true,
@@ -208,7 +209,7 @@ class _SettingsPageState extends State<SettingsPage> {
     });
   }
 
-  Widget _appDataSettings() {
+  SettingsSection _appDataSettings() {
     return SettingsSection(
       title: 'Settings',
       tiles: [
@@ -230,7 +231,7 @@ class _SettingsPageState extends State<SettingsPage> {
           subtitle: _buildSource,
           leading: Icon(MdiIcons.swordCross),
           onPressed: (context) {
-            Get.to(() => BuildGuideSelectorPage()).then((value) => _refresh());
+            Get.to(() => BuildGuideSelectorPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
@@ -239,7 +240,7 @@ class _SettingsPageState extends State<SettingsPage> {
           leading: Icon(MdiIcons.server),
           trailing: SizedBox.shrink(),
           onPressed: (context) {
-            Get.to(() => RegionSettingsPage()).then((value) => _refresh());
+            Get.to(() => RegionSettingsPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
@@ -262,33 +263,34 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  List<Widget> _infoSettings() {
-    return [
-      SettingsSection(
-        title: 'More Info',
-        tiles: [
-          SettingsTile(
-            title: 'About This App',
-            leading: Icon(Icons.info_outline),
-            trailing: SizedBox.shrink(),
-            onPressed: _showAboutPage,
+  SettingsSection _infoSettings() {
+    return SettingsSection(
+      title: 'More Info',
+      tiles: [
+        SettingsTile(
+          title: 'About This App',
+          leading: Icon(Icons.info_outline),
+          trailing: SizedBox.shrink(),
+          onPressed: _showAboutPage,
+        ),
+      ],
+    );
+  }
+
+  CustomSection _endSettings() {
+    return CustomSection(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 22, bottom: 8),
+            child: Text(
+              _version,
+              style: TextStyle(color: Color(0xFF777777)),
+            ),
           ),
         ],
       ),
-      CustomSection(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 22, bottom: 8),
-              child: Text(
-                _version,
-                style: TextStyle(color: Color(0xFF777777)),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ];
+    );
   }
 
   void _clearTrackingDataPrompt(BuildContext context) {
@@ -426,8 +428,8 @@ class RegionSettingsPage extends StatefulWidget {
 }
 
 class _RegionSettingsPageState extends State<RegionSettingsPage> {
-  String _regionKey;
-  SharedPreferences _prefs;
+  String? _regionKey;
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -490,7 +492,7 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
       toggleable: false,
       autofocus: false,
       value: region,
-      onChanged: (ig) {
+      onChanged: (dynamic ig) {
         print('Set to $_regionKey');
       },
       groupValue: _regionKey,
@@ -511,8 +513,8 @@ class BuildGuideSelectorPage extends StatefulWidget {
 }
 
 class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
-  String _buildGuideKey;
-  SharedPreferences _prefs;
+  String? _buildGuideKey;
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -569,7 +571,7 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
       toggleable: false,
       autofocus: false,
       value: buildGuideSource,
-      onChanged: (ig) {
+      onChanged: (dynamic ig) {
         print('Set to $_buildGuideKey');
       },
       groupValue: _buildGuideKey,
@@ -599,7 +601,7 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Daily Forum Reminder',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  notifyManager.showNotification(
+                  notifyManager!.showNotification(
                     notifyManager.getDailyCheckInMessages(),
                     notifyManager.craftDailyForumReminder(),
                     payload: 'forum-login',
@@ -610,7 +612,7 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Parametric Transformer Reminder',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  notifyManager.showNotification(
+                  notifyManager!.showNotification(
                     notifyManager.getParametricTransformerMesssages(),
                     notifyManager.craftParametricTransformerReminder(),
                     payload: 'parametric-weekly',
@@ -621,7 +623,7 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Scheduled Reminders List',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) async {
-                  var msg = await notifyManager.getScheduledReminders();
+                  var msg = await notifyManager!.getScheduledReminders();
                   await _showDialog(context, msg);
                 },
               ),
@@ -629,7 +631,7 @@ class NotificationDebugPage extends StatelessWidget {
                 title: 'Delete Scheduled Notification Channel',
                 trailing: SizedBox.shrink(),
                 onPressed: (context) {
-                  notifyManager.removeNotificationChannel('scheduled_notify');
+                  notifyManager!.removeNotificationChannel('scheduled_notify');
                 },
               ),
             ],

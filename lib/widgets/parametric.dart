@@ -16,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class ParametricPage extends StatefulWidget {
-  ParametricPage({Key key}) : super(key: key);
+  ParametricPage({Key? key}) : super(key: key);
 
   @override
   _ParametricPageState createState() => _ParametricPageState();
@@ -24,9 +24,9 @@ class ParametricPage extends StatefulWidget {
 
 class _ParametricPageState extends State<ParametricPage> {
   int _endTimeCountdown = -1;
-  String _resetTimeString = 'Refreshing...';
-  SharedPreferences _prefs;
-  String _newDateTime;
+  String? _resetTimeString = 'Refreshing...';
+  SharedPreferences? _prefs;
+  String? _newDateTime;
 
   @override
   void initState() {
@@ -90,7 +90,7 @@ class _ParametricPageState extends State<ParametricPage> {
   Widget _getNotificationState() {
     if (_prefs == null) return Text('Loading...');
 
-    var notifyParametric = _prefs.getBool('parametric_notification') ?? false;
+    var notifyParametric = _prefs!.getBool('parametric_notification') ?? false;
     if (notifyParametric) {
       return Text(
         'Enabled',
@@ -130,7 +130,7 @@ class _ParametricPageState extends State<ParametricPage> {
     var lastResetStr = 'Unknown';
     var pref = await SharedPreferences.getInstance();
     if (data.exists) {
-      var map = data.data();
+      var map = data.data()!;
       if (map.containsKey('parametricReset')) {
         var dt = DateTime.fromMillisecondsSinceEpoch(map['parametricReset']);
         lastResetStr = DateFormat('yyyy-MM-dd HH:mm').format(dt);
@@ -138,7 +138,7 @@ class _ParametricPageState extends State<ParametricPage> {
         dt = dt.add(Duration(days: 6, hours: 22));
         epochTime = dt.millisecondsSinceEpoch;
         if (!kIsWeb) {
-          await NotificationManager.getInstance().scheduleParametricReminder(
+          await NotificationManager.getInstance()!.scheduleParametricReminder(
             pref.getBool('parametric_notification') ?? false,
           );
         }
@@ -185,7 +185,7 @@ class _ParametricPageState extends State<ParametricPage> {
     var data = {
       'parametricReset': time,
     };
-    await _prefs.setInt('parametric-reset-time', time);
+    await _prefs!.setInt('parametric-reset-time', time);
     await _db
         .collection('userdata')
         .doc(uid)
@@ -193,9 +193,9 @@ class _ParametricPageState extends State<ParametricPage> {
     print('Updated Database with new reset time');
   }
 
-  void _updateNewEndTime(String resetTime) {
+  void _updateNewEndTime(String? resetTime) {
     setState(() {
-      _endTimeCountdown = DateTime.parse(_newDateTime)
+      _endTimeCountdown = DateTime.parse(_newDateTime!)
           .add(Duration(days: 6, hours: 22))
           .millisecondsSinceEpoch;
       _resetTimeString = resetTime;
@@ -204,8 +204,8 @@ class _ParametricPageState extends State<ParametricPage> {
 
   Future<void> _updateNotification() async {
     if (kIsWeb) return; // NO-OP for web
-    var notifyParametric = _prefs.getBool('parametric_notification') ?? false;
-    await NotificationManager.getInstance()
+    var notifyParametric = _prefs!.getBool('parametric_notification') ?? false;
+    await NotificationManager.getInstance()!
         .scheduleParametricReminder(notifyParametric);
   }
 
@@ -213,14 +213,14 @@ class _ParametricPageState extends State<ParametricPage> {
     _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now());
     print('_resetTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
-    await _updateOnlineData(_newDateTime);
+    await _updateOnlineData(_newDateTime!);
     await _updateNotification();
   }
 
   Future<void> _updateLastUseTime() async {
     print('_updateLastUseTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
-    await _updateOnlineData(_newDateTime);
+    await _updateOnlineData(_newDateTime!);
     await _updateNotification();
     Navigator.of(context).pop();
   }

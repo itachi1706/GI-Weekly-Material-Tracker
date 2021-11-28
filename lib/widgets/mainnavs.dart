@@ -11,9 +11,9 @@ import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class TrackingPage extends StatefulWidget {
-  final String title;
+  final String? title;
 
-  TrackingPage({Key key, this.title}) : super(key: key);
+  TrackingPage({Key? key, this.title}) : super(key: key);
 
   @override
   _TrackingPageState createState() => _TrackingPageState();
@@ -29,7 +29,7 @@ class _TrackingPageState extends State<TrackingPage>
     Tab(text: 'Week Planner'),
   ];
 
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -41,8 +41,8 @@ class _TrackingPageState extends State<TrackingPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        bottom: _showAppBar(),
+        title: Text(widget.title!),
+        bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           IconButton(
             icon: Icon(MdiIcons.fileDocument),
@@ -74,44 +74,44 @@ class _DictionaryPageState extends State<DictionaryPage>
     with TickerProviderStateMixin {
   int _currentIndex = 0;
 
-  List<Widget> _children;
+  late List<Widget> _children;
 
   final Map<int, List<Tab>> _tabs = {
     0: [
       Tab(text: 'All'),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Anemo'),
+          GridData.getElementImageRef('Anemo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Cryo'),
+          GridData.getElementImageRef('Cryo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Electro'),
+          GridData.getElementImageRef('Electro')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Geo'),
+          GridData.getElementImageRef('Geo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Hydro'),
+          GridData.getElementImageRef('Hydro')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Pyro'),
+          GridData.getElementImageRef('Pyro')!,
           height: 20,
         ),
       ),
@@ -132,18 +132,18 @@ class _DictionaryPageState extends State<DictionaryPage>
       Tab(text: 'Local Speciality'),
     ],
   };
-  Map<int, TabController> _tabControllers;
+  late Map<int, TabController> _tabControllers;
 
-  SortNotifier _notifier;
-  SortBy _sortList;
+  SortNotifier? _notifier;
+  late SortBy _sortList;
 
   @override
   void initState() {
     super.initState();
     _tabControllers = {
-      0: TabController(vsync: this, length: _tabs[0].length),
-      1: TabController(vsync: this, length: _tabs[1].length),
-      2: TabController(vsync: this, length: _tabs[2].length),
+      0: TabController(vsync: this, length: _tabs[0]!.length),
+      1: TabController(vsync: this, length: _tabs[1]!.length),
+      2: TabController(vsync: this, length: _tabs[2]!.length),
     };
     _notifier = SortNotifier();
     _children = [
@@ -168,7 +168,7 @@ class _DictionaryPageState extends State<DictionaryPage>
     return Scaffold(
       appBar: AppBar(
         title: Text('Dictionary'),
-        bottom: _showAppBar(),
+        bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           _showSortWidget(),
         ],
@@ -198,25 +198,25 @@ class _DictionaryPageState extends State<DictionaryPage>
     );
   }
 
-  Widget _showAppBar() {
+  Widget? _showAppBar() {
     if (!_tabs.containsKey(_currentIndex)) return null;
 
     return TabBar(
       controller: _tabControllers[_currentIndex],
-      tabs: _tabs[_currentIndex],
+      tabs: _tabs[_currentIndex]!,
       isScrollable: true,
     );
   }
 
   void _sortBy(dynamic sorter) {
     var descending = false;
-    if (_notifier.getSortKey() == sorter) {
-      descending = !_notifier.isDescending();
+    if (_notifier!.getSortKey() == sorter) {
+      descending = !_notifier!.isDescending();
     }
     print(
       'Sorting by $sorter in ${(descending) ? 'Descending' : 'Ascending'} order',
     );
-    _notifier.updateSortKey(sorter, descending);
+    _notifier!.updateSortKey(sorter, descending);
   }
 
   Widget _showSortWidget() {

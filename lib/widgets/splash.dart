@@ -81,7 +81,7 @@ class _SplashPageState extends State<SplashPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
+                      valueColor: AlwaysStoppedAnimation<Color?>(
                         null,
                       ),
                     ),
@@ -107,14 +107,14 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> _setupNotifications() async {
     if (kIsWeb) return; // Return straight away for web as it is not supported
-    var manager = NotificationManager.getInstance();
+    var manager = NotificationManager.getInstance()!;
     await manager.initialize();
     print('Initialized Notifications');
     await manager.processNotificationAppLaunch();
     await manager.rescheduleAllScheduledReminders();
   }
 
-  Future<void> _initFirebase() async {
+  Future<bool> _initFirebase() async {
     try {
       await Firebase.initializeApp();
       if (!kIsWeb) {

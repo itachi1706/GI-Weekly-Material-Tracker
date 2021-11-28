@@ -51,7 +51,7 @@ class TrackingUtils {
 }
 
 class TrackingData {
-  static Future<List<dynamic>> getTrackingCategory(String key) async {
+  static Future<List<dynamic>?> getTrackingCategory(String key) async {
     var uid = Util.getFirebaseUid();
     if (uid == null) return null;
     var trackRef = _db.collection('tracking').doc(uid);
@@ -71,17 +71,17 @@ class TrackingData {
     }
   }
 
-  static Future<bool> isBeingTracked(String key, String item) async {
+  static Future<bool> isBeingTracked(String key, String? item) async {
     var _data = await getTrackingCategory(key);
 
     return (_data == null) ? false : _data.contains(item);
   }
 
-  static bool isBeingTrackedLocal(List<dynamic> _data, String item) {
+  static bool isBeingTrackedLocal(List<dynamic>? _data, String item) {
     return (_data == null) ? false : _data.contains(item);
   }
 
-  static Future<void> addToRecord(String key, String item) async {
+  static Future<void> addToRecord(String key, String? item) async {
     var uid = Util.getFirebaseUid();
     if (uid == null) return;
     var trackRef = _db.collection('tracking').doc(uid);
@@ -97,7 +97,7 @@ class TrackingData {
     }
   }
 
-  static void setCount(String key, String type, int curCnt, int maxCnt) async {
+  static void setCount(String? key, String? type, int curCnt, int maxCnt) async {
     if (maxCnt < 0) maxCnt = 0;
     if (curCnt >= maxCnt) {
       curCnt = maxCnt;
@@ -107,14 +107,14 @@ class TrackingData {
     await _db
         .collection('tracking')
         .doc(uid)
-        .collection(type)
+        .collection(type!)
         .doc(key)
         .update({'current': curCnt, 'max': maxCnt});
   }
 
   static void incrementCount(
     String key,
-    String type,
+    String? type,
     int curCnt,
     int maxCnt,
   ) async {
@@ -125,12 +125,12 @@ class TrackingData {
     await _db
         .collection('tracking')
         .doc(uid)
-        .collection(type)
+        .collection(type!)
         .doc(key)
         .update({'current': FieldValue.increment(1)});
   }
 
-  static void decrementCount(String key, String type, int curCnt) async {
+  static void decrementCount(String key, String? type, int curCnt) async {
     if (curCnt <= 0) return; // Invalid action
     var uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
@@ -138,25 +138,25 @@ class TrackingData {
     await _db
         .collection('tracking')
         .doc(uid)
-        .collection(type)
+        .collection(type!)
         .doc(key)
         .update({'current': FieldValue.increment(-1)});
   }
 
   static void addToCollection(
     String key,
-    String itemKey,
-    int numToTrack,
-    String materialType,
+    String? itemKey,
+    int? numToTrack,
+    String? materialType,
     String addType,
-    String extraData,
+    String? extraData,
   ) async {
     var uid = Util.getFirebaseUid();
     if (uid == null || itemKey == null) return;
     await _db
         .collection('tracking')
         .doc(uid)
-        .collection(materialType)
+        .collection(materialType!)
         .doc(key)
         .set({
       'name': itemKey,
@@ -168,7 +168,7 @@ class TrackingData {
     });
   }
 
-  static Future<void> removeFromRecord(String key, String item) async {
+  static Future<void> removeFromRecord(String key, String? item) async {
     var uid = Util.getFirebaseUid();
     if (uid == null) return;
     var trackRef = _db.collection('tracking').doc(uid);
@@ -177,13 +177,13 @@ class TrackingData {
     });
   }
 
-  static void removeFromCollection(String key, String materialType) async {
+  static void removeFromCollection(String key, String? materialType) async {
     var uid = Util.getFirebaseUid();
     if (uid == null) return;
     await _db
         .collection('tracking')
         .doc(uid)
-        .collection(materialType)
+        .collection(materialType!)
         .doc(key)
         .delete();
   }
@@ -232,25 +232,25 @@ class TrackingData {
   }
 
   static bool isMaterialFull(
-    String type,
-    Map<String, Map<String, TrackingUserData>> tracker,
-    Map<String, MaterialDataCommon> materialData,
+    String? type,
+    Map<String?, Map<String, TrackingUserData>> tracker,
+    Map<String, MaterialDataCommon>? materialData,
     String key,
   ) {
     // Get type of material
-    var trackerData = tracker[type];
-    var data = trackerData[key];
-    print('${data.current} | ${data.max} | ${data.current >= data.max}');
+    var trackerData = tracker[type]!;
+    var data = trackerData[key]!;
+    print('${data.current} | ${data.max} | ${data.current! >= data.max!}');
 
-    return data.current >= data.max;
+    return data.current! >= data.max!;
   }
 
-  static Widget getSupportingWidget(String image, int ascension, String type) {
+  static Widget getSupportingWidget(String? image, int? ascension, String? type) {
     if (image == null) return Container();
     Widget typeWidget = SizedBox.shrink();
     if (type != null) {
       typeWidget = Image.asset(
-        GridData.getElementImageRef(type),
+        GridData.getElementImageRef(type)!,
         height: 20,
         width: 20,
       );
@@ -265,7 +265,7 @@ class TrackingData {
           Align(
             alignment: FractionalOffset.bottomLeft,
             child: Text(
-              GridData.getRomanNumberArray(ascension - 1).toString(),
+              GridData.getRomanNumberArray(ascension! - 1).toString(),
               style: TextStyle(color: Colors.white),
               textAlign: TextAlign.end,
             ),
@@ -309,10 +309,10 @@ class TrackingData {
 class UpdateMultiTracking {
   BuildContext context;
 
-  String _cntCurrent = '', _cntTotal = '', _cntKey = '', _cntType = '';
+  String? _cntCurrent = '', _cntTotal = '', _cntKey = '', _cntType = '';
   final TextEditingController _textCurrentController = TextEditingController();
   final TextEditingController _textTotalController = TextEditingController();
-  final MaterialDataCommon _material;
+  final MaterialDataCommon? _material;
 
   UpdateMultiTracking(this.context, this._material);
 
@@ -328,7 +328,7 @@ class UpdateMultiTracking {
     _cntKey = docId;
     if (!editDialog) {
       if (data.addedBy == 'talent') {
-        Get.toNamed('/characters/${data.addData.split('|')[0]}');
+        Get.toNamed('/characters/${data.addData!.split('|')[0]}');
       } else {
         Get.toNamed('/${type}s/$key');
       }
@@ -348,7 +348,7 @@ class UpdateMultiTracking {
       case 'talent':
         _displayDialogNonMat(
           '/characters',
-          data.addData.split('|')[0],
+          data.addData!.split('|')[0],
           data,
           extraData,
         );
@@ -375,22 +375,22 @@ class UpdateMultiTracking {
     ];
   }
 
-  void _displayDialogMat(String navigateTo, String key, TrackingUserData data) {
+  void _displayDialogMat(String navigateTo, String? key, TrackingUserData data) {
     _cntCurrent = data.current.toString();
     _cntTotal = data.max.toString();
-    _textCurrentController.text = _cntCurrent;
-    _textTotalController.text = _cntTotal;
+    _textCurrentController.text = _cntCurrent!;
+    _textTotalController.text = _cntTotal!;
     showDialog(
       context: context,
       builder: (context) {
         _cntType = data.type;
 
         return AlertDialog(
-          title: Text('Update tracked amount for ${_material.name}'),
+          title: Text('Update tracked amount for ${_material!.name}'),
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(_material.image, height: 48),
+                GridData.getImageAssetFromFirebase(_material!.image, height: 48),
                 TextField(
                   onChanged: (newValue) {
                     _cntCurrent = newValue;
@@ -430,7 +430,7 @@ class UpdateMultiTracking {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         GridData.getImageAssetFromFirebase(
-          _material.image,
+          _material!.image,
           height: 48,
         ),
         TrackingData.getSupportingWidget(
@@ -444,20 +444,20 @@ class UpdateMultiTracking {
 
   void _displayDialogNonMat(
     String navigateTo,
-    String key,
+    String? key,
     TrackingUserData data,
     Map<String, dynamic> extraData,
   ) {
     _cntCurrent = data.current.toString();
     _cntTotal = data.max.toString();
-    _textCurrentController.text = _cntCurrent;
+    _textCurrentController.text = _cntCurrent!;
     showDialog(
       context: context,
       builder: (context) {
         _cntType = data.type;
 
         return AlertDialog(
-          title: Text('Update tracked amount for ${_material.name}'),
+          title: Text('Update tracked amount for ${_material!.name}'),
           content: SingleChildScrollView(
             child: ListBody(
               children: [
@@ -497,8 +497,8 @@ class UpdateMultiTracking {
     TrackingData.setCount(
       _cntKey,
       _cntType,
-      int.tryParse(_cntCurrent) ?? 0,
-      int.tryParse(_cntTotal) ?? 0,
+      int.tryParse(_cntCurrent!) ?? 0,
+      int.tryParse(_cntTotal!) ?? 0,
     );
     Get.back();
   }

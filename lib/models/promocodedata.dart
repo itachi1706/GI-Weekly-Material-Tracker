@@ -1,15 +1,15 @@
 class PromoCode {
-  int datetime;
-  String date;
-  String euCode;
-  String asiaCode;
-  String naCode;
-  String reward;
-  String url;
-  String expiryString;
-  String typeStr;
-  bool isCode;
-  bool expired;
+  int? datetime;
+  String? date;
+  String? euCode;
+  String? asiaCode;
+  String? naCode;
+  String? reward;
+  String? url;
+  String? expiryString;
+  String? typeStr;
+  bool? isCode;
+  bool? expired;
 
   PromoCode({
     this.datetime,
