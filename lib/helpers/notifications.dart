@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
@@ -253,6 +254,7 @@ class NotificationManager {
       'notify_parametric',
       'Parametric Transformer Notification',
       channelDescription: 'Channel related to parametric transformer',
+      color: Colors.deepOrange,
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
@@ -275,6 +277,7 @@ class NotificationManager {
       'notify_forum',
       'Forum Notification',
       channelDescription: 'Scheduled daily reminder on forum',
+      color: Colors.deepOrange,
       priority: Priority.high,
       importance: Importance.high,
       showWhen: true,
