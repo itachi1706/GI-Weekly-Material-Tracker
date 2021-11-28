@@ -1,3 +1,11 @@
+# 2.1.3
+- Updated splash package
+- Removed unnecessary dependencies
+- Upgraded all dependencies
+- Migrated codebase to null-safety
+- Notification Icon color is now relevant to the application
+- General bug fixes and improvements
+
 # 2.1.2
 - Added ability to switch Build Guide sources (More coming soon!)
 - General bug fixes and optimizations
