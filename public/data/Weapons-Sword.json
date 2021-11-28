@@ -242,6 +242,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Blackcliff_Longsword",
       "subCollection": {}
     },
+    "Cinnabar_Spindle": {
+      "secondary_stat_type": "DEF",
+      "description": "A sword made from materials that do not belong in this world. The power within might even be able to withstand the corruption of a venom that could corrode a mighty dragon.",
+      "name": "Cinnabar Spindle",
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Cinnabar_Spindle.png",
+      "secondary_stat": "15.0%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "69.0%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Shadows Amidst Snowstorms Event",
+      "effectName": "Spotless Heart",
+      "effect": "Elemental Skill DMG is increased by 40~80% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Cinnabar_Spindle",
+      "subCollection": {}
+    },
     "Cool_Steel": {
       "secondary_stat_type": "ATK",
       "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
