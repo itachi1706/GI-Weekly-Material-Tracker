@@ -11,10 +11,10 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class MaterialTabController extends StatefulWidget {
-  final TabController tabController;
-  final SortNotifier notifier;
+  final TabController? tabController;
+  final SortNotifier? notifier;
 
-  MaterialTabController({Key key, @required this.tabController, this.notifier})
+  MaterialTabController({Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -35,27 +35,27 @@ class _MaterialTabControllerState extends State<MaterialTabController> {
 }
 
 class MaterialListGrid extends StatefulWidget {
-  final String filter;
-  final SortNotifier notifier;
+  final String? filter;
+  final SortNotifier? notifier;
 
-  MaterialListGrid({Key key, this.filter, this.notifier});
+  MaterialListGrid({Key? key, this.filter, this.notifier});
 
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
 }
 
 class _MaterialListGridState extends State<MaterialListGrid> {
-  String _sorter;
+  String? _sorter;
   bool _isDescending = false;
 
   @override
   void initState() {
     super.initState();
-    widget.notifier.addListener(() {
+    widget.notifier!.addListener(() {
       if (!mounted) return;
       setState(() {
-        _sorter = widget.notifier.getSortKey();
-        _isDescending = widget.notifier.isDescending();
+        _sorter = widget.notifier!.getSortKey();
+        _isDescending = widget.notifier!.isDescending();
       });
     });
   }
@@ -63,17 +63,17 @@ class _MaterialListGridState extends State<MaterialListGrid> {
   @override
   Widget build(BuildContext context) {
     var materialRef = _db.collection('materials');
-    Query queryRef;
+    Query? queryRef;
     if (widget.filter != null) {
       queryRef = materialRef.where('innerType', isEqualTo: widget.filter);
     }
     if (_sorter != null && queryRef == null) {
       queryRef = materialRef
-          .orderBy(_sorter, descending: _isDescending)
+          .orderBy(_sorter!, descending: _isDescending)
           .orderBy(FieldPath.documentId);
     } else if (_sorter != null) {
-      queryRef = queryRef
-          .orderBy(_sorter, descending: _isDescending)
+      queryRef = queryRef!
+          .orderBy(_sorter!, descending: _isDescending)
           .orderBy(FieldPath.documentId);
     }
 
@@ -93,16 +93,16 @@ class _MaterialListGridState extends State<MaterialListGrid> {
           GridData.setStaticData('materials', snapshot.data);
         }
 
-        var dt = GridData.getDataListFilteredRelease(snapshot.data.docs);
+        var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
           crossAxisCount:
-              (Get.context.orientation == Orientation.portrait) ? 3 : 6,
+              (Get.context!.orientation == Orientation.portrait) ? 3 : 6,
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/materials/${document.id}'),
               child: GridData.getGridData(
-                MaterialDataCommon.fromJson(document.data()),
+                MaterialDataCommon.fromJson(document.data() as Map<String, dynamic>),
               ),
             );
           }).toList(),
@@ -118,10 +118,10 @@ class MaterialInfoPage extends StatefulWidget {
 }
 
 class _MaterialInfoPageState extends State<MaterialInfoPage> {
-  MaterialDataCommon _info;
-  String _infoId;
+  MaterialDataCommon? _info;
+  String? _infoId;
 
-  Color _rarityColor;
+  Color? _rarityColor;
 
   bool _isAdded = false;
   bool _addCheckObtained = false;
@@ -135,9 +135,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     _infoId = Get.parameters['material'];
     GridData.retrieveMaterialsMapData().then((value) {
       setState(() {
-        _info = value[_infoId];
+        _info = value![_infoId!];
         if (_info == null) Get.offAndToNamed('/splash');
-        _rarityColor = GridData.getRarityColor(_info.rarity);
+        _rarityColor = GridData.getRarityColor(_info!.rarity);
       });
       _refreshTrackingStatus();
     });
@@ -149,12 +149,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_info.name),
+        title: Text(_info!.name!),
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
             icon: Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info),
+            onPressed: () => GridData.launchWikiUrl(context, _info!),
             tooltip: 'View Wiki',
           ),
         ],
@@ -171,11 +171,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             _getMaterialHeader(),
             Divider(),
             ...GridData.generateInfoLine(
-              _info.obtained.replaceAll('- ', ''),
+              _info!.obtained!.replaceAll('- ', ''),
               Icons.location_pin,
             ),
             ...GridData.generateInfoLine(
-              _info.description,
+              _info!.description!,
               Icons.format_list_bulleted,
             ),
           ],
@@ -187,14 +187,14 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   Widget _getMaterialHeader() {
     return Row(
       children: [
-        GridData.getImageAssetFromFirebase(_info.image, height: 64),
+        GridData.getImageAssetFromFirebase(_info!.image, height: 64),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
-                _info.type,
+                _info!.type!,
                 textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 20),
               ),
@@ -203,7 +203,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
               ignoreGestures: true,
               itemCount: 5,
               itemSize: 30,
-              initialRating: double.tryParse(_info.rarity.toString()),
+              initialRating: double.tryParse(_info!.rarity.toString())!,
               itemBuilder: (context, _) =>
                   Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
@@ -241,13 +241,13 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
     var toTrack = int.tryParse(_cntTrack) ?? 0;
     TrackingData.addToRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info.name} added to tracker!');
+      Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
     });
     TrackingData.addToCollection(
       'Material_$_infoId',
       _infoId,
       toTrack,
-      _info.innerType,
+      _info!.innerType,
       'material',
       null,
     );
@@ -257,9 +257,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info.name} removed from tracker!');
+      Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
     });
-    TrackingData.removeFromCollection('Material_$_infoId', _info.innerType);
+    TrackingData.removeFromCollection('Material_$_infoId', _info!.innerType);
     Navigator.of(context).pop();
   }
 
@@ -282,11 +282,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Add ${_info.name} to the tracker?'),
+          title: Text('Add ${_info!.name} to the tracker?'),
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(_info.image, height: 64),
+                GridData.getImageAssetFromFirebase(_info!.image, height: 64),
                 TextField(
                   onChanged: (newValue) {
                     setState(() {
@@ -320,11 +320,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Remove ${_info.name} from the tracker?'),
+          title: Text('Remove ${_info!.name} from the tracker?'),
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(_info.image, height: 64),
+                GridData.getImageAssetFromFirebase(_info!.image, height: 64),
                 Text(
                   'This will remove the currently tracked data for this material from the tracker',
                 ),

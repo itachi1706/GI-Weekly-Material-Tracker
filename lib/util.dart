@@ -16,9 +16,9 @@ class Util {
   static final String genshinGGUrl = 'https://genshin.gg/';
   static final String paimonMoeUrl = 'https://paimon.moe/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
-  static String currentRoute;
+  static String? currentRoute;
 
-  static String _uid;
+  static String? _uid;
 
   static void showSnackbarQuick(BuildContext context, String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
@@ -59,31 +59,31 @@ class Util {
     return '$_firebaseStorageUrl$ref';
   }
 
-  static void updateFirebaseUid() => _uid = _auth.currentUser.uid;
+  static void updateFirebaseUid() => _uid = _auth.currentUser!.uid;
 
-  static String getFirebaseUid() {
+  static String? getFirebaseUid() {
     if (_auth.currentUser == null) return null;
-    _uid ??= _auth.currentUser.uid;
+    _uid ??= _auth.currentUser!.uid;
 
     return _uid;
   }
 
-  static String getUserEmail() {
+  static String? getUserEmail() {
     return _auth.currentUser == null
         ? 'Not Logged In'
-        : _auth.currentUser.email;
+        : _auth.currentUser!.email;
   }
 
-  static String getUserName() {
-    return _auth.currentUser == null ? null : _auth.currentUser.displayName;
+  static String? getUserName() {
+    return _auth.currentUser == null ? null : _auth.currentUser!.displayName;
   }
 
-  static String getUserPhotoUrl() {
-    return _auth.currentUser == null ? null : _auth.currentUser.photoURL;
+  static String? getUserPhotoUrl() {
+    return _auth.currentUser == null ? null : _auth.currentUser!.photoURL;
   }
 
   static Future<bool> launchWebPage(
-    String url, {
+    String? url, {
     rarityColor = Colors.orange,
     webView = false,
     hideTopBars = true,

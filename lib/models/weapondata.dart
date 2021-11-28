@@ -1,17 +1,17 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class WeaponData extends CommonData {
-  String secondaryStat;
-  String secondaryStatType;
-  String type;
-  int baseAtk;
-  String obtained;
-  String effectName;
-  String effect;
-  int maxBaseAtk;
-  String maxSecondaryStat;
-  String series;
-  Map<String, WeaponAscension> ascension;
+  String? secondaryStat;
+  String? secondaryStatType;
+  String? type;
+  int? baseAtk;
+  String? obtained;
+  String? effectName;
+  String? effect;
+  int? maxBaseAtk;
+  String? maxSecondaryStat;
+  String? series;
+  Map<String, WeaponAscension>? ascension;
 
   WeaponData({
     this.secondaryStat,

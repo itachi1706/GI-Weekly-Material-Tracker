@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
@@ -9,8 +11,8 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 class NotificationManager {
-  static NotificationManager _instance;
-  FlutterLocalNotificationsPlugin _plugin;
+  static NotificationManager? _instance;
+  FlutterLocalNotificationsPlugin? _plugin;
   bool _appLaunch = false;
 
   NotificationManager() {
@@ -18,7 +20,7 @@ class NotificationManager {
     print('Notification Manager Created');
   }
 
-  static NotificationManager getInstance() {
+  static NotificationManager? getInstance() {
     _instance ??= NotificationManager();
 
     return _instance;
@@ -27,7 +29,8 @@ class NotificationManager {
   Future<void> processNotificationAppLaunch() async {
     if (_appLaunch) return; // Run once
     _appLaunch = true;
-    var appLaunchDetails = await _plugin.getNotificationAppLaunchDetails();
+    var appLaunchDetails = await _plugin!.getNotificationAppLaunchDetails();
+    if (appLaunchDetails == null) return; // macOS 10.14 and before
     if (appLaunchDetails.didNotificationLaunchApp) {
       await selectNotification(appLaunchDetails.payload);
     }
@@ -48,7 +51,7 @@ class NotificationManager {
       android: initializationSettingsAndroid,
       iOS: initializationSettingsIOS,
     );
-    await _plugin.initialize(
+    await _plugin!.initialize(
       initializationSettings,
       onSelectNotification: selectNotification,
     );
@@ -61,11 +64,11 @@ class NotificationManager {
 
   Future onDidReceiveLocalNotification(
     int id,
-    String title,
-    String body,
-    String payload,
+    String? title,
+    String? body,
+    String? payload,
   ) async {
-    PlaceholderUtil.showUnimplementedSnackbar(Get.context);
+    PlaceholderUtil.showUnimplementedSnackbar(Get.context!);
   }
 
   Future rescheduleAllScheduledReminders() async {
@@ -78,7 +81,7 @@ class NotificationManager {
     print('Scheduled Reminders rescheduled');
   }
 
-  Future selectNotification(String payload) async {
+  Future selectNotification(String? payload) async {
     if (payload != null) {
       debugPrint('notification payload: $payload');
       switch (payload) {
@@ -100,12 +103,12 @@ class NotificationManager {
     bool silent = false,
   }) async {
     if (GetPlatform.isAndroid) {
-      await _plugin
+      await _plugin!
           .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>()
+              AndroidFlutterLocalNotificationsPlugin>()!
           .deleteNotificationChannel(channelId);
       if (!silent) {
-        Util.showSnackbarQuick(Get.context, 'Notification Channel deleted');
+        Util.showSnackbarQuick(Get.context!, 'Notification Channel deleted');
       } else {
         print('Notification Channel $channelId deleted');
       }
@@ -114,7 +117,7 @@ class NotificationManager {
 
   Future<String> getScheduledReminders() async {
     var result = '';
-    var pendingRequests = await _plugin.pendingNotificationRequests();
+    var pendingRequests = await _plugin!.pendingNotificationRequests();
     if (pendingRequests.isEmpty) {
       result = 'No Pending Notifications';
     } else {
@@ -171,7 +174,7 @@ class NotificationManager {
     bool resetNotificationChannel = false,
   }) async {
     var data = getParametricTransformerMesssages();
-    await _plugin.cancel(data[0], tag: 'weekly_parametric');
+    await _plugin!.cancel(data[0], tag: 'weekly_parametric');
     print('Deleted Parametric Transformer Reminder');
 
     if (resetNotificationChannel) {
@@ -197,7 +200,7 @@ class NotificationManager {
       print('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
       if (remindTime.millisecondsSinceEpoch > currentTime) {
         print('Scheduling Parametric Transformer Reminder');
-        await _plugin.zonedSchedule(
+        await _plugin!.zonedSchedule(
           data[0],
           data[1],
           data[2],
@@ -221,7 +224,7 @@ class NotificationManager {
     bool resetNotificationChannel = false,
   }) async {
     var data = getDailyCheckInMessages();
-    await _plugin.cancel(data[0], tag: 'daily_forum');
+    await _plugin!.cancel(data[0], tag: 'daily_forum');
     print('Deleted Daily Forum Reminder');
 
     if (resetNotificationChannel) {
@@ -230,7 +233,7 @@ class NotificationManager {
 
     if (toEnable) {
       print('Scheduling Daily Forum Reminder');
-      await _plugin.zonedSchedule(
+      await _plugin!.zonedSchedule(
         data[0],
         data[1],
         data[2],
@@ -291,9 +294,9 @@ class NotificationManager {
   Future<void> showNotification(
     List<dynamic> data,
     NotificationDetails notificationDetails, {
-    String payload,
+    String? payload,
   }) async {
-    await _plugin.show(
+    await _plugin!.show(
       data[0],
       data[1],
       data[2],

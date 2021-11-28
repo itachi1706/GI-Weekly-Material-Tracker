@@ -1,21 +1,21 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class CharacterData extends CommonData {
-  String affiliation;
-  String birthday;
-  String constellation;
-  String caption;
-  String element;
-  String fullName;
-  String gender;
-  String genshinGGPath;
-  String paimonMoePath;
-  String introduction;
-  String nation;
-  String weapon;
-  Map<String, CharacterAscension> ascension;
-  Map<int, CharacterConstellations> constellations;
-  CharacterTalent talent;
+  String? affiliation;
+  String? birthday;
+  String? constellation;
+  String? caption;
+  String? element;
+  String? fullName;
+  String? gender;
+  String? genshinGGPath;
+  String? paimonMoePath;
+  String? introduction;
+  String? nation;
+  String? weapon;
+  Map<String, CharacterAscension>? ascension;
+  Map<int, CharacterConstellations>? constellations;
+  CharacterTalent? talent;
 
   CharacterData({
     this.affiliation,
@@ -89,8 +89,8 @@ class CharacterData extends CommonData {
 }
 
 class CharacterAscension extends CommonAscension {
-  String material4;
-  int material4Qty;
+  String? material4;
+  int? material4Qty;
 
   CharacterAscension({
     level,
@@ -157,9 +157,9 @@ class CharacterAscension extends CommonAscension {
 }
 
 class CharacterTalent {
-  Map<String, CharacterAscension> ascension;
-  Map<String, TalentInfo> attack;
-  Map<String, TalentInfo> passive;
+  Map<String, CharacterAscension>? ascension;
+  Map<String, TalentInfo>? attack;
+  Map<String, TalentInfo>? passive;
 
   CharacterTalent({this.ascension, this.attack, this.passive});
 
@@ -211,11 +211,11 @@ class CharacterTalent {
 }
 
 class TalentInfo {
-  String name;
-  String effect;
-  String image;
-  String type;
-  int order;
+  String? name;
+  String? effect;
+  String? image;
+  String? type;
+  int? order;
 
   TalentInfo({this.name, this.effect, this.image, this.type, this.order});
 
@@ -239,9 +239,9 @@ class TalentInfo {
 }
 
 class CharacterConstellations {
-  String name;
-  String image;
-  String effect;
+  String? name;
+  String? image;
+  String? effect;
 
   CharacterConstellations({this.name, this.image, this.effect});
 

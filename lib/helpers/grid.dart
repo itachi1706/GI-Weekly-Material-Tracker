@@ -17,7 +17,7 @@ class GridData {
   static final Map<String, Map<String, CommonData>> _staticData = {};
   static final Map<String, bool> _downloading = {};
 
-  static Color getRarityColor(int rarity, {crossover = false}) {
+  static Color getRarityColor(int? rarity, {crossover = false}) {
     if (crossover) {
       return Color(0xFFb73b47);
     }
@@ -38,30 +38,30 @@ class GridData {
   }
 
   static Widget getAscensionImage(
-    String itemKey,
-    Map<String, MaterialDataCommon> data,
+    String? itemKey,
+    Map<String, MaterialDataCommon>? data,
   ) {
     if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
 
     return getImageAssetFromFirebase(
-      data[itemKey].image,
+      data![itemKey]!.image,
       height: 16,
     );
   }
 
-  static Color getCountColor(int current, int max, {bw = false}) {
+  static Color getCountColor(int? current, int? max, {bw = false}) {
     if (bw) {
-      return (current >= max)
+      return (current! >= max!)
           ? Colors.green
           : (Util.themeNotifier.isDarkMode())
               ? Colors.white
               : Colors.black;
     }
 
-    return (current >= max) ? Colors.greenAccent : Colors.white;
+    return (current! >= max!) ? Colors.greenAccent : Colors.white;
   }
 
-  static String getElementImageRef(String element) {
+  static String? getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case 'geo':
         return 'assets/images/elements/Element_Geo.png';
@@ -85,7 +85,7 @@ class GridData {
   static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
     var data = <QueryDocumentSnapshot>[];
     snapshot.forEach((element) {
-      Map<String, dynamic> dt = element.data();
+      Map<String, dynamic> dt = element.data() as Map<String, dynamic>;
       if (dt['released']) {
         data.add(element);
       } else {
@@ -96,7 +96,7 @@ class GridData {
     return data;
   }
 
-  static void setStaticData(String type, QuerySnapshot snapshot) {
+  static void setStaticData(String type, QuerySnapshot? snapshot) {
     if (snapshot == null) return;
     print('Updating $type static data in memory');
     var _snapData = getDataListFilteredRelease(snapshot.docs);
@@ -112,7 +112,7 @@ class GridData {
     // });
 
     _snapData.forEach((element) {
-        Map<String, dynamic> dt = element.data();
+        Map<String, dynamic> dt = element.data() as Map<String, dynamic>;
         if (dt['released']) {
           data.putIfAbsent(element.id, () => dt);
         } else {
@@ -132,16 +132,16 @@ class GridData {
     }
   }
 
-  static Future<Map<String, MaterialDataCommon>>
+  static Future<Map<String, MaterialDataCommon>?>
       retrieveMaterialsMapData() async =>
           (await _retrieveStaticData('materials'))
-              as Map<String, MaterialDataCommon>;
+              as Map<String, MaterialDataCommon>?;
 
-  static Future<Map<String, WeaponData>> retrieveWeaponsMapData() async =>
-      (await _retrieveStaticData('weapons')) as Map<String, WeaponData>;
+  static Future<Map<String, WeaponData>?> retrieveWeaponsMapData() async =>
+      (await _retrieveStaticData('weapons')) as Map<String, WeaponData>?;
 
-  static Future<Map<String, CharacterData>> retrieveCharactersMapData() async =>
-      (await _retrieveStaticData('characters')) as Map<String, CharacterData>;
+  static Future<Map<String, CharacterData>?> retrieveCharactersMapData() async =>
+      (await _retrieveStaticData('characters')) as Map<String, CharacterData>?;
 
   static String getDayString(int day) {
     switch (day) {
@@ -195,7 +195,7 @@ class GridData {
     }
   }
 
-  static Widget getImageAssetFromFirebase(imageRef, {double height}) {
+  static Widget getImageAssetFromFirebase(imageRef, {double? height}) {
     if (imageRef == null) return Image.memory(kTransparentImage);
     var width = height;
 
@@ -216,7 +216,7 @@ class GridData {
                     child: CircularProgressIndicator(),
                   ),
                   errorBuilder: (context, obj, trace) => Icon(Icons.error),
-                  image: _getFirebaseImage(snapshot.data),
+                  image: _getFirebaseImage(snapshot.data.toString()),
                   placeholderFadeInDuration: Duration(seconds: 2),
                 ),
               ),
@@ -256,7 +256,7 @@ class GridData {
         footer: Padding(
           padding: const EdgeInsets.all(2),
           child: Text(
-            data.name,
+            data.name!,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 12,
@@ -411,9 +411,9 @@ class GridData {
   }
 
   static List<Widget> getAscensionMaterialDataWidgets(
-    int qty,
-    String name,
-    Map<String, MaterialDataCommon> data,
+    int? qty,
+    String? name,
+    Map<String, MaterialDataCommon>? data,
   ) {
     return [
       getAscensionImage(name, data),
@@ -422,10 +422,10 @@ class GridData {
     ];
   }
 
-  static Future<Map<String, CommonData>> _retrieveStaticData(
+  static Future<Map<String, CommonData>?> _retrieveStaticData(
     String type,
   ) async {
-    if (_downloading.containsKey(type) && _downloading[type]) {
+    if (_downloading.containsKey(type) && _downloading[type]!) {
       // Wait for processing to end
       return Future.delayed(
         const Duration(seconds: 1),
@@ -443,7 +443,7 @@ class GridData {
     return _staticData[type];
   }
 
-  static ImageProvider _getFirebaseImage(String url) {
-    return (kIsWeb) ? CachedNetworkImageProvider(url) : FirebaseImage(url);
+  static ImageProvider _getFirebaseImage(String? url) {
+    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!)) as ImageProvider<Object>;
   }
 }

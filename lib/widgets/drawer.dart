@@ -148,7 +148,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
   }
 
   void _dailyLogin() async {
-    await NotificationManager.getInstance().selectNotification('forum-login');
+    await NotificationManager.getInstance()!.selectNotification('forum-login');
   }
 
   void _signOut() async {
@@ -157,10 +157,10 @@ class _DrawerComponentState extends State<DrawerComponent> {
   }
 
   Widget _drawerItem({
-    IconData icon,
-    String title,
-    GestureTapCallback onTap,
-    String route,
+    IconData? icon,
+    String? title,
+    GestureTapCallback? onTap,
+    String? route,
     bool offPrev = true,
   }) {
     if (route != null) {
@@ -170,7 +170,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
             Icon(icon),
             Padding(
               padding: const EdgeInsets.only(left: 8),
-              child: Text(title),
+              child: Text(title!),
             ),
           ],
         ),
@@ -179,7 +179,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
           if (!offPrev) {
             Get.toNamed(route);
           } else {
-            Navigator.pop(Get.context);
+            Navigator.pop(Get.context!);
             setState(() {
               Util.currentRoute = route;
             });
@@ -198,7 +198,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
           Icon(icon),
           Padding(
             padding: const EdgeInsets.only(left: 8),
-            child: Text(title),
+            child: Text(title!),
           ),
         ],
       ),
@@ -207,7 +207,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
   }
 
   Widget _drawerHeader(BuildContext context) {
-    var email = Util.getUserEmail();
+    var email = Util.getUserEmail()!;
     var name = Util.getUserName() ?? '';
     var photo = Util.getUserPhotoUrl();
     var photoMode = photo != null;
@@ -251,13 +251,13 @@ class _DrawerComponentState extends State<DrawerComponent> {
     );
   }
 
-  Widget _getUserPhoto(String photo, bool isPhotoMode) {
+  Widget _getUserPhoto(String? photo, bool isPhotoMode) {
     if (!isPhotoMode) {
       return SizedBox.shrink();
     }
 
     return CircleAvatar(
-      backgroundImage: CachedNetworkImageProvider(photo),
+      backgroundImage: CachedNetworkImageProvider(photo!),
     );
   }
 }

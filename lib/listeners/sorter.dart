@@ -3,17 +3,17 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class SortNotifier extends ChangeNotifier {
-  static String _sortKey = '';
+  static String? _sortKey = '';
   static bool _descending = false;
 
-  void updateSortKey(String newKey, bool isDescending) {
+  void updateSortKey(String? newKey, bool isDescending) {
     if (newKey == '') newKey = null;
     _sortKey = newKey;
     _descending = isDescending;
     notifyListeners();
   }
 
-  String getSortKey() {
+  String? getSortKey() {
     return _sortKey;
   }
 
@@ -23,11 +23,11 @@ class SortNotifier extends ChangeNotifier {
 }
 
 class SortBy {
-  final SortNotifier _internalSorter;
+  final SortNotifier? _internalSorter;
 
-  List<PopupMenuEntry> _sorter;
-  List<PopupMenuEntry> _charOnlySorter;
-  List<PopupMenuEntry> _weaponOnlySorter;
+  late List<PopupMenuEntry> _sorter;
+  late List<PopupMenuEntry> _charOnlySorter;
+  late List<PopupMenuEntry> _weaponOnlySorter;
 
   SortBy(this._internalSorter);
 
@@ -46,9 +46,9 @@ class SortBy {
     return finalizedSortList;
   }
 
-  Color _matchColor(String key) {
-    if (key != _internalSorter.getSortKey()) {
-      return Get.theme.textTheme.bodyText1.color;
+  Color? _matchColor(String? key) {
+    if (key != _internalSorter!.getSortKey()) {
+      return Get.theme.textTheme.bodyText1!.color;
     }
 
     return Get.theme.accentColor;
@@ -106,17 +106,17 @@ class SortBy {
 
   IconData _getSortingData(bool number, String key) {
     if (!number) {
-      if (key != _internalSorter.getSortKey()) {
+      if (key != _internalSorter!.getSortKey()) {
         return Icons.sort_by_alpha;
-      } else if (_internalSorter.isDescending()) {
+      } else if (_internalSorter!.isDescending()) {
         return MdiIcons.sortAlphabeticalDescendingVariant;
       } else {
         return MdiIcons.sortAlphabeticalAscendingVariant;
       }
     } else {
-      if (key != _internalSorter.getSortKey()) {
+      if (key != _internalSorter!.getSortKey()) {
         return MdiIcons.sortNumericVariant;
-      } else if (_internalSorter.isDescending()) {
+      } else if (_internalSorter!.isDescending()) {
         return MdiIcons.sortNumericDescendingVariant;
       } else {
         return MdiIcons.sortNumericAscendingVariant;

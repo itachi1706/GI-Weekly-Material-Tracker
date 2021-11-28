@@ -1,14 +1,14 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class TrackingUserInfo {
-  List<String> character;
-  List<String> material;
-  List<String> weapon;
-  List<String> talent;
+  List<String>? character;
+  List<String>? material;
+  List<String>? weapon;
+  List<String>? talent;
 
   TrackingUserInfo({this.character, this.material, this.weapon, this.talent});
 
-  factory TrackingUserInfo.fromJson(Map<String, dynamic> parsedJson) {
+  factory TrackingUserInfo.fromJson(Map<String, dynamic>? parsedJson) {
     if (parsedJson == null) {
       return TrackingUserInfo(character: null, material: null, weapon: null);
     }
@@ -43,8 +43,8 @@ class TrackingUserInfo {
 }
 
 class TrackingUserData extends CommonTracking {
-  String addData;
-  String addedBy;
+  String? addData;
+  String? addedBy;
 
   TrackingUserData({this.addData, this.addedBy, current, max, name, type})
       : super(current: current, max: max, name: name, type: type);

@@ -1,9 +1,9 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class MaterialDataCommon extends CommonData {
-  String type;
-  String innerType;
-  String obtained;
+  String? type;
+  String? innerType;
+  String? obtained;
 
   MaterialDataCommon({
     image,
@@ -58,7 +58,7 @@ class MaterialDataCommon extends CommonData {
 }
 
 class MaterialDataMob extends MaterialDataCommon {
-  List<String> enemies;
+  List<String>? enemies;
 
   MaterialDataMob({
     image,
@@ -100,7 +100,7 @@ class MaterialDataMob extends MaterialDataCommon {
 }
 
 class MaterialDataDomains extends MaterialDataCommon {
-  List<int> days;
+  List<int>? days;
 
   MaterialDataDomains({
     image,
