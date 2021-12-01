@@ -16,23 +16,32 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  bool _lightMode = false;
+  bool _darkMode = true;
   final double _photoSize = 100.0;
+  late VoidCallback _listener;
 
   @override
   void initState() {
     super.initState();
-    _login().then((value) => Get.offNamed(value));
+    _login().then(_complete);
+
+    _listener = () {
+      setState(() {
+        _darkMode = Util.themeNotifier.isDarkMode();
+      });
+    };
+
+    Util.themeNotifier.addListener(_listener);
   }
 
   @override
   Widget build(BuildContext context) {
-    _lightMode = !Util.themeNotifier.isDarkMode();
-    var _image = _lightMode
-        ? Image.asset('assets/icons/splash/splash.png')
-        : Image.asset('assets/icons/splash/splash_dark.png');
-    var _backgroundColor = _lightMode ? Colors.white : Colors.black;
-    var _textColor = _lightMode ? Colors.black : Colors.white;
+    print('Dark Mode: $_darkMode');
+    var _image = _darkMode
+        ? Image.asset('assets/icons/splash/splash_dark.png')
+        : Image.asset('assets/icons/splash/splash.png');
+    var _backgroundColor = _darkMode ? Colors.black : Colors.white;
+    var _textColor = _darkMode ? Colors.white : Colors.black;
 
     return Scaffold(
       body: Stack(
@@ -103,6 +112,11 @@ class _SplashPageState extends State<SplashPage> {
         ],
       ),
     );
+  }
+
+  void _complete(String value) {
+    Util.themeNotifier.removeListener(_listener);
+    Get.offNamed(value);
   }
 
   Future<void> _setupNotifications() async {
