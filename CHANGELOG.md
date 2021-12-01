@@ -1,3 +1,6 @@
+# 2.1.4
+- Fixed splash screen to not blind users of dark mode
+
 # 2.1.3
 - Updated splash package
 - Removed unnecessary dependencies
