@@ -275,6 +275,557 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Albedo",
             "subCollection": {}
         },
+        "Arataki_Itto": {
+            "image": "Characters/Geo/Arataki_Itto.png",
+            "gender": "Male",
+            "birthday": "13/9",
+            "caption": "Kreideprinz",
+            "name": "Arataki Itto",
+            "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+            "nation": "Mondstadt",
+            "weapon": "Sword",
+            "rarity": 5,
+            "affiliation": "Knights of Favonius",
+            "constellation": "Princeps Cretaceus",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Ballad",
+                        "material3qty": 3,
+                        "material4": "Divining_Scroll",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 2,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 4,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 6,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 9,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 4,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 6,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 12,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 16,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Calcite_Might": {
+                        "name": "Calcite Might",
+                        "effect": "Transient Blossoms generated by Abiogenesis: Solar Isotoma deal 25% more DMG to opponents whose HP is below 50%.",
+                        "image": "Talents/Passive/Talent_Calcite_Might.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Homuncular_Nature": {
+                        "name": "Homuncular Nature",
+                        "effect": "Using Rite of Progeniture: Tectonic Tide increases the Elemental Mastery of nearby party members by 125 for 10s.",
+                        "image": "Talents/Passive/Talent_Homuncular_Nature.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Flash_of_Genius_Albedo": {
+                        "name": "Flash of Genius (Albedo)",
+                        "effect": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
+                        "image": "Talents/Passive/Talent_Flash_of_Genius_Albedo.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Favonius_Bladework_Weiss": {
+                        "name": "Favonius Bladework - Weiss",
+                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Favonius_Bladework_-_Weiss.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Abiogenesis_Solar_Isotoma": {
+                        "name": "Abiogenesis: Solar Isotoma",
+                        "effect": "Albedo creates a Solar Isotoma using alchemy, which deals AoE Geo DMG on appearance.\nSolar Isotoma has the following properties:\n\nWhen enemies within the Solar Isotoma zone take damage, the Solar Isotoma will generate Transient Blossoms which deal AoE Geo DMG. DMG dealt scales off Albedo's DEF. Transient Blossoms can only be generated once every 2s.\nWhen a character is located at the locus of the Solar Isotoma, the Solar Isotoma will accumulate Geo power to form a crystallized platform that lifts the character up to a certain height. Only one crystallized platform can exist at a time.\nSolar Isotoma is a Geo Construct.\nHold to designate the location of the skill.",
+                        "image": "Talents/Skill/Talent_Abiogenesis_-_Solar_Isotoma.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Rite_of_Progeniture_Tectonic_Tide": {
+                        "name": "Rite of Progeniture: Tectonic Tide",
+                        "effect": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG\n\nTecotonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
+                        "image": "Talents/Burst/Talent_Rite_of_Progeniture_-_Tectonic_Tide.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Flower of Eden",
+                    "effect": "Transient Blossoms generated by Albedo's Abiogenesis: Solar Isotoma regenerate 1.2 Energy for Albedo.",
+                    "image": "Constellation/Flower_of_Eden.png"
+                },
+                "2": {
+                    "name": "Opening of Phanerozoic",
+                    "effect": "Transient Blossoms generated by Abiogenesis: Solar Isotoma grant Albedo Fatal Reckoning for 30s.\nUnleashing Rite of Progeniture: Tectonic Tide consumes all stacks of Fatal Reckoning. Each stack of Fatal Reckoning consumed increases DMG dealt by Fatal Blossoms and Rite of Progeniture: Tectonic Tide's burst DMG by 30% of Albedo's DEF.\nThe effect stacks up to 4 times.",
+                    "image": "Constellation/Opening_of_Phanerozoic.png"
+                },
+                "3": {
+                    "name": "Grace of Helios",
+                    "effect": "Increases the level of Abiogenesis: Solar Isotoma by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/Grace_of_Helios.png"
+                },
+                "4": {
+                    "name": "Descent of Divinity",
+                    "effect": "Solar Isotoma increases Plunging Attack DMG by 30% for active party members within the AoE.",
+                    "image": "Constellation/Descent_of_Divinity.png"
+                },
+                "5": {
+                    "name": "Tide of Hadaen",
+                    "effect": "Increases the level of Rite of Progeniture: Tectonic Tide by 3. Maximum upgrade level is 15.",
+                    "image": "Constellation/Tide_of_Hadaen.png"
+                },
+                "6": {
+                    "name": "Dust of Purification",
+                    "effect": "If active party members within the AoE are protected by a shield created by Crystallize, Solar Isotoma increases their DMG by 17%.",
+                    "image": "Constellation/Dust_of_Purification.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cecilia"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cecilia"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cecilia"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cecilia"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cecilia"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cecilia"
+                }
+            },
+            "introduction": "Albedo — an alchemist based in Mondstadt, in the service of the Knights of Favonius.  \"Genius,\" \"Kreideprinz,\" or \"Captain of the Investigation Team\"... Such titles and honors are of no consequence to him when there is so much more research to conduct.  The pursuit of fortune and connections cannot hold a candle to his heart's desire — acquiring the limitless, obscure knowledge left behind by previous generations of scholars.",
+            "paimonmoepath": "characters/albedo",
+            "genshinggpath": "characters/Albedo",
+            "element": "Geo",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
+            "subCollection": {}
+        },
+        "Gorou": {
+            "image": "Characters/Geo/Gorou.png",
+            "gender": "Male",
+            "birthday": null,
+            "caption": "General of the Sangonomiya Resistance",
+            "name": "Gorou",
+            "fullName": null,
+            "description": null,
+            "nation": "Inazuma",
+            "weapon": null,
+            "rarity": 4,
+            "affiliation": "Sangonomiya Resistance",
+            "constellation": null,
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Ballad",
+                        "material3qty": 3,
+                        "material4": "Divining_Scroll",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 2,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 4,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 6,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Ballad",
+                        "material3qty": 9,
+                        "material4": "Sealed_Scroll",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 4,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 6,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 12,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Ballad",
+                        "material3qty": 16,
+                        "material4": "Forbidden_Curse_Scroll",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Passive_1": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Passive_2": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Passive_3": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "AA": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Skill": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Burst": {
+                        "name": null,
+                        "effect": null,
+                        "image": null,
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                },
+                "2": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                },
+                "3": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                },
+                "4": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                },
+                "5": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                },
+                "6": {
+                    "name": null,
+                    "effect": null,
+                    "image": null
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Cecilia"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Basalt_Pillar",
+                    "level": 40,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Cecilia"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Basalt_Pillar",
+                    "level": 50,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Cecilia"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Basalt_Pillar",
+                    "level": 60,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Cecilia"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Basalt_Pillar",
+                    "level": 70,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Cecilia"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Basalt_Pillar",
+                    "level": 80,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Cecilia"
+                }
+            },
+            "introduction": null,
+            "paimonmoepath": null,
+            "genshinggpath": null,
+            "element": "Geo",
+            "released": false,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Gorou",
+            "subCollection": {}
+        },
         "Ningguang": {
             "image": "Characters/Geo/Ningguang.png",
             "gender": "Female",
