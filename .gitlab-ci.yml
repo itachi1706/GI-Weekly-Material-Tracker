@@ -349,6 +349,7 @@ Build Web App:
     - export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
     - echo $GIT_COMMIT_COUNT
     - echo $CI_COMMIT_SHORT_SHA
+    - cat $GOOGLE_SVC_DART > lib/firebase_options.dart
     - chmod +x ./ciscripts/get_version.sh
     - ./ciscripts/get_version.sh
   script: flutter build web
