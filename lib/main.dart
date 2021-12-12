@@ -39,8 +39,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var accentColorDark = Colors.deepOrangeAccent;
-
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
@@ -50,8 +48,10 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData(
         primarySwatch: Colors.deepOrange,
         toggleableActiveColor: Colors.deepOrangeAccent,
-        accentColor: accentColorDark,
-        colorScheme: ColorScheme.dark().copyWith(primary: Colors.deepOrange),
+        colorScheme: ColorScheme.dark().copyWith(
+          primary: Colors.deepOrange,
+          secondary: Colors.deepOrange,
+        ),
         fontFamily: 'Product-Sans',
       ),
       themeMode: _theme,
