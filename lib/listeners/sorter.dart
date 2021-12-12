@@ -51,7 +51,7 @@ class SortBy {
       return Get.theme.textTheme.bodyText1!.color;
     }
 
-    return Get.theme.accentColor;
+    return Get.theme.colorScheme.secondary;
   }
 
   PopupMenuItem _getSorterMenuWidget(String type, String title, bool isNumber) {

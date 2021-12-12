@@ -85,7 +85,7 @@ class GridData {
   static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
     var data = <QueryDocumentSnapshot>[];
     snapshot.forEach((element) {
-      Map<String, dynamic> dt = element.data() as Map<String, dynamic>;
+      var dt = element.data() as Map<String, dynamic>;
       if (dt['released']) {
         data.add(element);
       } else {
@@ -112,7 +112,7 @@ class GridData {
     // });
 
     _snapData.forEach((element) {
-        Map<String, dynamic> dt = element.data() as Map<String, dynamic>;
+        var dt = element.data() as Map<String, dynamic>;
         if (dt['released']) {
           data.putIfAbsent(element.id, () => dt);
         } else {

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -131,7 +130,9 @@ class _TrackerPageState extends State<TrackerPage> {
         ? ListView.builder(
             itemCount: _collectionLen,
             itemBuilder: (context, index) {
-              var _data = TrackingUserData.fromJson(dt[index].data() as Map<String, dynamic>);
+              var _data = TrackingUserData.fromJson(
+                dt[index].data() as Map<String, dynamic>,
+              );
               var _dataId = dt[index].id;
               print(_data);
               var _material = _materialData![_data.name!]!;
@@ -150,8 +151,10 @@ class _TrackerPageState extends State<TrackerPage> {
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 } else if (_data.addedBy == 'talent') {
                   var _cData = _data.addData!.split('|');
-                  extraImageRef =
-                      _characterData![_cData[0]]!.talent!.attack![_cData[1]]!.image;
+                  extraImageRef = _characterData![_cData[0]]!
+                      .talent!
+                      .attack![_cData[1]]!
+                      .image;
                   extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
                 }
               }
@@ -377,12 +380,14 @@ class _PlannerPageState extends State<PlannerPage> {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
     // This day at 12am
-    _beforeDT = tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
+    _beforeDT =
+        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
     _dbDT = _cDT!.subtract(Duration(days: 1));
     // Next day at 12am
     _afterDT = _beforeDT!.add(Duration(days: 1));
     // This day at 4am
-    _coffDT = tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
+    _coffDT =
+        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
 
     var ref = _db
         .collection('tracking')
@@ -561,7 +566,9 @@ class _PlannerPageState extends State<PlannerPage> {
       currentDay = true;
     } else if (_cDT!.isBefore(_coffDT!) &&
         _cDT!.isAfter(_beforeDT!) &&
-        _dbDT!.weekday == key) currentDay = true;
+        _dbDT!.weekday == key) {
+      currentDay = true;
+    }
 
     return currentDay
         ? (Util.themeNotifier.isDarkMode())

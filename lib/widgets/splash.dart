@@ -10,6 +10,8 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
+import '../firebase_options.dart';
+
 class SplashPage extends StatefulWidget {
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -130,7 +132,9 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<bool> _initFirebase() async {
     try {
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
       if (!kIsWeb) {
         var _crashHandler = FirebaseCrashlytics.instance;
         var _perfHandler = FirebasePerformance.instance;

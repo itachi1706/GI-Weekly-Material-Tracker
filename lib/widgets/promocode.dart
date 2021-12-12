@@ -1,15 +1,15 @@
 import 'dart:core';
 
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterfire_ui/database.dart';
 import 'package:gi_weekly_material_tracker/models/promocodedata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final DatabaseReference db = FirebaseDatabase().reference();
+final FirebaseDatabase db = FirebaseDatabase.instance;
 
 class PromoCodePage extends StatefulWidget {
   PromoCodePage({Key? key}) : super(key: key);
@@ -19,13 +19,11 @@ class PromoCodePage extends StatefulWidget {
 }
 
 class _PromoCodePageState extends State<PromoCodePage> {
-  List<PromoCode>? _codes;
   String? _location;
 
   @override
   void initState() {
     super.initState();
-    _retrievePromoCodes();
     SharedPreferences.getInstance().then((value) {
       setState(() {
         _location = value.getString('location') ?? 'Asia';
@@ -35,82 +33,79 @@ class _PromoCodePageState extends State<PromoCodePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (kIsWeb) {
-      // Unsupported for now
-      return _webUnsupported();
-    }
-
-    if (_codes == null || _location == null) {
+    if (_location == null) {
       return Util.loadingScreenWithDrawer(DrawerComponent());
     }
+    final query = db.ref('codes');
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Game Promo Codes'),
         actions: [
           IconButton(
+            onPressed: _launchRedemptionSite,
             icon: Icon(Icons.open_in_browser),
             tooltip: 'Launch promo code page',
-            onPressed: _launchRedemptionSite,
           ),
         ],
       ),
       drawer: DrawerComponent(),
-      body: RefreshIndicator(
-        onRefresh: _retrievePromoCodes,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Text(
-                  'Currently viewing promo codes for $_location. Click to copy code to clipboard',
-                  style: TextStyle(fontSize: 12),
-                ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.',
+                style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.center,
               ),
-              ListView.separated(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: _codes!.length,
-                itemBuilder: (context, index) {
-                  var codeObj = _codes![index];
-                  if (!codeObj.isCode!) {
-                    var subtitle =
-                        'URL: ${codeObj.url}\nTime: ${codeObj.date}, Expired: ${codeObj.expired}';
-                    if (codeObj.expiryString != null && !codeObj.expired!) {
-                      subtitle += ', Expires: ${codeObj.expiryString}';
-                    }
+            ),
+            FirebaseDatabaseListView(
+              query: query,
+              pageSize: 20,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, snapshot) {
+                var codes = snapshot.value as Map<dynamic, dynamic>;
+                var promoCode = PromoCode.fromJson(codes);
 
-                    return ListTile(
-                      tileColor: _getExpiredColor(codeObj.expired!),
-                      title: Text(codeObj.reward!),
-                      subtitle: Text(subtitle),
-                      isThreeLine: true,
-                      onTap: () => Util.launchWebPage(codeObj.url),
-                    );
+                if (!promoCode.isCode) {
+                  var subtitle =
+                      'URL: ${promoCode.url}\nTime: ${promoCode.date}, Expired: ${promoCode.expired}';
+                  if (promoCode.expiryString != null && !promoCode.expired) {
+                    subtitle += ', Expires: ${promoCode.expiryString}';
                   }
-                  var promoCodeRegion = _getCode(codeObj);
 
                   return ListTile(
-                    tileColor: _getExpiredColor(codeObj.expired!),
-                    title: Text(codeObj.reward!),
-                    subtitle: Text(
-                      'Code: $promoCodeRegion\nTime: ${codeObj.date}, Expired: ${codeObj.expired}',
-                    ),
+                    tileColor: _getExpiredColor(promoCode.expired),
+                    title: Text(promoCode.reward),
+                    subtitle: Text(subtitle),
                     isThreeLine: true,
-                    onTap: () {
-                      Clipboard.setData(ClipboardData(text: promoCodeRegion));
-                      Util.showSnackbarQuick(
-                        context,
-                        'Code ($promoCodeRegion) copied to clipboard',
-                      );
-                    },
+                    onTap: () => Util.launchWebPage(promoCode.url),
                   );
-                },
-                separatorBuilder: (context, index) => Divider(height: 1),
-              ),
-            ],
-          ),
+                }
+
+                var promoCodeRegion = _getCode(promoCode);
+
+                return ListTile(
+                  title: Text(promoCode.reward),
+                  tileColor: _getExpiredColor(promoCode.expired),
+                  subtitle: Text(
+                    'Code: $promoCodeRegion\nTime: ${promoCode.date}, Expired: ${promoCode.expired}',
+                  ),
+                  isThreeLine: true,
+                  onTap: () {
+                    Clipboard.setData(ClipboardData(text: promoCodeRegion));
+                    Util.showSnackbarQuick(
+                      context,
+                      'Code ($promoCodeRegion) copied to clipboard',
+                    );
+                  },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
@@ -139,36 +134,5 @@ class _PromoCodePageState extends State<PromoCodePage> {
         : (Util.themeNotifier.isDarkMode())
             ? Colors.green
             : Colors.lightGreen;
-  }
-
-  Widget _webUnsupported() {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Currently not supported on web'),
-      ),
-      drawer: DrawerComponent(),
-      body: Center(
-        child: Text(
-          'Promo Codes on web is coming soon!',
-          style: TextStyle(fontSize: 32),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-  }
-
-  Future<void> _retrievePromoCodes() async {
-    var dataSnapshot = await db.child('codes').once();
-    print('Promo Codes: ${dataSnapshot.value}');
-    var data = dataSnapshot.value;
-
-    var promoList = PromoCode.fromDB(Map<String, dynamic>.from(data));
-    print(promoList);
-
-    promoList.sort((a, b) => b.expired! ? -1 : 1);
-
-    setState(() {
-      _codes = promoList;
-    });
   }
 }

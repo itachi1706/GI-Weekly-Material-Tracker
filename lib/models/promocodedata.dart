@@ -4,12 +4,12 @@ class PromoCode {
   String? euCode;
   String? asiaCode;
   String? naCode;
-  String? reward;
+  String reward;
   String? url;
   String? expiryString;
   String? typeStr;
-  bool? isCode;
-  bool? expired;
+  bool isCode;
+  bool expired;
 
   PromoCode({
     this.datetime,
@@ -17,15 +17,15 @@ class PromoCode {
     this.euCode,
     this.asiaCode,
     this.naCode,
-    this.reward,
-    this.expired,
+    required this.reward,
+    required this.expired,
     this.url,
     this.expiryString,
     this.typeStr,
-    this.isCode,
+    required this.isCode,
   });
 
-  factory PromoCode.fromJson(Map<String, dynamic> parsedJson) {
+  factory PromoCode.fromJson(Map<dynamic, dynamic> parsedJson) {
     return parsedJson['type'] == null || parsedJson['type'] == 'code'
         ? PromoCode(
             datetime: parsedJson['date'],
@@ -34,8 +34,8 @@ class PromoCode {
             asiaCode: parsedJson['asia'],
             naCode: parsedJson['na'],
             isCode: true,
-            reward: parsedJson['reward'],
-            expired: parsedJson['expired'],
+            reward: parsedJson['reward'] ?? 'Unknown',
+            expired: parsedJson['expired'] ?? false,
           )
         : PromoCode(
             datetime: parsedJson['date'],
@@ -44,8 +44,8 @@ class PromoCode {
             expiryString: parsedJson['expiry'],
             typeStr: parsedJson['type'],
             isCode: false,
-            reward: parsedJson['reward'],
-            expired: parsedJson['expired'],
+            reward: parsedJson['reward'] ?? 'Unknown',
+            expired: parsedJson['expired'] ?? false,
           );
   }
 

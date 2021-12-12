@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/appsettings.dart';
@@ -15,6 +14,7 @@ import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -39,8 +39,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var accentColorDark = Colors.deepOrangeAccent;
-
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
@@ -50,8 +48,10 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData(
         primarySwatch: Colors.deepOrange,
         toggleableActiveColor: Colors.deepOrangeAccent,
-        accentColor: accentColorDark,
-        colorScheme: ColorScheme.dark().copyWith(primary: Colors.deepOrange),
+        colorScheme: ColorScheme.dark().copyWith(
+          primary: Colors.deepOrange,
+          secondary: Colors.deepOrange,
+        ),
         fontFamily: 'Product-Sans',
       ),
       themeMode: _theme,
