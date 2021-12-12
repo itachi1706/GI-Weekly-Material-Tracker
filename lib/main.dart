@@ -15,6 +15,7 @@ import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
