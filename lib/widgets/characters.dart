@@ -1,7 +1,6 @@
 import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -1136,7 +1135,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(key == null ? '' : widget.materialData![key]!.name!),
+      Text(widget.materialData![key]!.name!),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }

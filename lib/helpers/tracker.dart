@@ -44,9 +44,8 @@ class TrackingUtils {
         return (Util.themeNotifier.isDarkMode())
             ? Colors.indigo
             : Colors.lightBlue;
+      default: return Colors.yellow; // Error
     }
-
-    return Colors.yellow; // Error
   }
 }
 
@@ -101,7 +100,9 @@ class TrackingData {
     if (maxCnt < 0) maxCnt = 0;
     if (curCnt >= maxCnt) {
       curCnt = maxCnt;
-    } else if (curCnt < 0) curCnt = 0;
+    } else if (curCnt < 0) {
+      curCnt = 0;
+    }
     var uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
     await _db
@@ -120,7 +121,7 @@ class TrackingData {
   ) async {
     if (curCnt >= maxCnt) return; // Invalid action
     var uid = Util.getFirebaseUid();
-    if (uid == null || key == null) return;
+    if (uid == null) return;
 
     await _db
         .collection('tracking')
@@ -133,7 +134,7 @@ class TrackingData {
   static void decrementCount(String key, String? type, int curCnt) async {
     if (curCnt <= 0) return; // Invalid action
     var uid = Util.getFirebaseUid();
-    if (uid == null || key == null) return;
+    if (uid == null) return;
 
     await _db
         .collection('tracking')

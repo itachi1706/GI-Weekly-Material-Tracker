@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       stream: _auth.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          final User? user = snapshot.data as User?;
+          final user = snapshot.data as User?;
           Util.updateFirebaseUid();
           if (user != null) {
             SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
