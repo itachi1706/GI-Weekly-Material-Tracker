@@ -59,7 +59,10 @@ dependencies:
   octo_image: ^1.0.1
   package_info_plus: ^1.3.0
   path_provider: ^2.0.8
-  settings_ui: ^1.0.0
+  settings_ui: # Grabbed from git directly for now as v1.0.0 is latest on pub.dev with ListTileTheme fix
+    git:
+      url: https://github.com/beerstorm-net/flutter-settings-ui.git
+      ref: master
   shared_preferences: ^2.0.11
   timezone: ^0.8.0
   transparent_image: ^2.0.0
