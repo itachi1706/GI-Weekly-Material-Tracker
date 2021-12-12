@@ -25,7 +25,7 @@ class PromoCode {
     required this.isCode,
   });
 
-  factory PromoCode.fromJson(Map<String, dynamic> parsedJson) {
+  factory PromoCode.fromJson(Map<dynamic, dynamic> parsedJson) {
     return parsedJson['type'] == null || parsedJson['type'] == 'code'
         ? PromoCode(
             datetime: parsedJson['date'],

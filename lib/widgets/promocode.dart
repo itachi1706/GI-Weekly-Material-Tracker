@@ -57,8 +57,9 @@ class _PromoCodePageState extends State<PromoCodePage> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Text(
-                'Currently viewing promo codes for $_location. Click to copy code to clipboard. Page auto updates',
+                'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.',
                 style: TextStyle(fontSize: 12),
+                textAlign: TextAlign.center,
               ),
             ),
             FirebaseDatabaseListView(
@@ -67,7 +68,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, snapshot) {
-                var codes = snapshot.value as Map<String, dynamic>;
+                var codes = snapshot.value as Map<dynamic, dynamic>;
                 var promoCode = PromoCode.fromJson(codes);
 
                 if (!promoCode.isCode) {
