@@ -275,6 +275,557 @@
             "wiki": "https://genshin-impact.fandom.com/wiki/Albedo",
             "subCollection": {}
         },
+        "Arataki_Itto": {
+            "image": "Characters/Geo/Arataki_Itto.png",
+            "gender": "Male",
+            "birthday": "1/6",
+            "caption": "Hanamizaka Heroics",
+            "name": "Arataki Itto",
+            "fullName": "Itto",
+            "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+            "nation": "Inazuma",
+            "weapon": "Claymore",
+            "rarity": 5,
+            "affiliation": "Arataki Gang, Oni",
+            "constellation": "Taurus Iracundus",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Elegance",
+                        "material3qty": 3,
+                        "material4": "Slime_Condensate",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 2,
+                        "material4": "Slime_Secretions",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 4,
+                        "material4": "Slime_Secretions",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 6,
+                        "material4": "Slime_Secretions",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Elegance",
+                        "material3qty": 9,
+                        "material4": "Slime_Secretions",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 4,
+                        "material4": "Slime_Concentrate",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 6,
+                        "material4": "Slime_Concentrate",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 12,
+                        "material4": "Slime_Concentrate",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Ashen_Heart",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Elegance",
+                        "material3qty": 16,
+                        "material4": "Slime_Concentrate",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Arataki_Ichiban": {
+                        "name": "Arataki Ichiban",
+                        "effect": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\nEach slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.\nIncreases his resistance to interruption.\n\nThese effects will be cleared once he stops performing consecutive slashes.",
+                        "image": "Talents/Passive/Talent_Arataki_Ichiban.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "Bloodline_of_the_Crimson_Oni": {
+                        "name": "Bloodline of the Crimson Oni",
+                        "effect": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.",
+                        "image": "Talents/Passive/Talent_Bloodline_of_the_Crimson_Oni.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Woodchuck_Chucked": {
+                        "name": "Woodchuck Chucked",
+                        "effect": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to obtain an additional log of wood.",
+                        "image": "Talents/Passive/Talent_Woodchuck_Chucked.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Fight_Club_Legend": {
+                        "name": "Fight Club Legend",
+                        "effect": "Normal Attack\nPerform up to 4 consecutive strikes.\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively. Max 5 stacks.\nTriggering this effect will refresh the current duration of any existing stacks.\n\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\n\nCharged Attack\nWhen holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Fight_Club_Legend.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Masatsu_Zetsugi_Akaushi_Burst": {
+                        "name": "Masatsu Zetsugi: Akaushi Burst!",
+                        "effect": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit.\nWhen Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\n\nUshi will remain on the field and provide support in the following ways:\nTaunts surrounding opponents and draws their attacks.\nInherits HP based on a percentage of Arataki Itto's Max HP.\nWhen Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.\nUshi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves.\n\nHold\nAdjust throwing angle.\n\nUshi is considered a Geo Construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.",
+                        "image": "Talents/Skill/Talent_Masatsu_Zetsugi_Akaushi_Burst.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Royal_Descent_Behold_Itto_the_Evil": {
+                        "name": "Royal Descent: Behold, Itto the Evil!",
+                        "effect": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\nThis state has the following special properties:\nConverts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.\nIncreases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.\nOn hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.\nDecreases Itto's Elemental and Physical RES by 20%.\nThe Raging Oni King state will be cleared when Itto leaves the field.",
+                        "image": "Talents/Burst/Talent_Royal_Descent_Behold_Itto_the_Evil.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Stay a While and Listen Up",
+                    "effect": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.",
+                    "image": "Constellation/Stay_a_While_and_Listen_Up.png"
+                },
+                "2": {
+                    "name": "Gather 'Round, It's a Brawl!",
+                    "effect": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.",
+                    "image": "Constellation/Gather_Round_Its_a_Brawl.png"
+                },
+                "3": {
+                    "name": "Horns Lowered, Coming Through",
+                    "effect": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Horns_Lowered_Coming_Through.png"
+                },
+                "4": {
+                    "name": "Jailhouse Bread and Butter",
+                    "effect": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.",
+                    "image": "Constellation/Jailhouse_Bread_and_Butter.png"
+                },
+                "5": {
+                    "name": "10 Years of Hanamizaka Fame",
+                    "effect": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/10_Years_of_Hanamizaka_Fame.png"
+                },
+                "6": {
+                    "name": "Arataki Itto, Present!",
+                    "effect": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.",
+                    "image": "Constellation/Arataki_Itto_Present.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Onikabuto"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Riftborn_Regalia",
+                    "level": 40,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Onikabuto"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Riftborn_Regalia",
+                    "level": 50,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Onikabuto"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Riftborn_Regalia",
+                    "level": 60,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Onikabuto"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Riftborn_Regalia",
+                    "level": 70,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Onikabuto"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Riftborn_Regalia",
+                    "level": 80,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Onikabuto"
+                }
+            },
+            "introduction": "Descendant of the oni, of intrepid spirit and noble heart.\nFast as the wind and mighty as thunder.",
+            "paimonmoepath": "characters/arataki_itto",
+            "genshinggpath": "characters/Itto",
+            "element": "Geo",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
+            "subCollection": {}
+        },
+        "Gorou": {
+            "image": "Characters/Geo/Gorou.png",
+            "gender": "Male",
+            "birthday": "18/5",
+            "caption": "Canine Warrior",
+            "name": "Gorou",
+            "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+            "nation": "Inazuma",
+            "weapon": "Bow",
+            "rarity": 4,
+            "affiliation": "Watatsumi Army",
+            "constellation": "Canis Bellatoris",
+            "talents": {
+                "ascension": {
+                    "2": {
+                        "mora": 12500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Teachings_of_Light",
+                        "material3qty": 3,
+                        "material4": "Spectral_Husk",
+                        "material4qty": 6
+                    },
+                    "3": {
+                        "mora": 17500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 2,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 3
+                    },
+                    "4": {
+                        "mora": 25000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 4,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 4
+                    },
+                    "5": {
+                        "mora": 30000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 6,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 6
+                    },
+                    "6": {
+                        "mora": 37500,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": null,
+                        "material2qty": 0,
+                        "material3": "Guide_to_Light",
+                        "material3qty": 9,
+                        "material4": "Spectral_Heart",
+                        "material4qty": 9
+                    },
+                    "7": {
+                        "mora": 120000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 4,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 4
+                    },
+                    "8": {
+                        "mora": 260000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 1,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 6,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 6
+                    },
+                    "9": {
+                        "mora": 450000,
+                        "material1": null,
+                        "material1qty": 0,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 12,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 9
+                    },
+                    "10": {
+                        "mora": 700000,
+                        "material1": "Crown_of_Insight",
+                        "material1qty": 1,
+                        "material2": "Molten_Moment",
+                        "material2qty": 2,
+                        "material3": "Philosophies_of_Light",
+                        "material3qty": 16,
+                        "material4": "Spectral_Nucleus",
+                        "material4qty": 12
+                    }
+                },
+                "passives": {
+                    "Heedless_of_the_Wind_and_Weather": {
+                        "name": "Heedless of the Wind and Weather",
+                        "effect": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.",
+                        "image": "Talents/Passive/Talent_Heedless_of_the_Wind_and_Weather.png",
+                        "order": 0,
+                        "type": "Passive 1"
+                    },
+                    "A_Favor_Repaid": {
+                        "name": "A Favor Repaid",
+                        "effect": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\nInuzaka All-Round Defense: Skill DMG increased by 156% of DEF\nJuuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF",
+                        "image": "Talents/Passive/Talent_A_Favor_Repaid.png",
+                        "order": 1,
+                        "type": "Passive 2"
+                    },
+                    "Seeker_of_Shinies": {
+                        "name": "Seeker of Shinies",
+                        "effect": "Displays the location of nearby resources unique to Inazuma on the mini-map.",
+                        "image": "Talents/Passive/Talent_Seeker_of_Shinies.png",
+                        "order": 2,
+                        "type": "Passive 3"
+                    }
+                },
+                "attack": {
+                    "Ripping_Fang_Fletching": {
+                        "name": "Ripping Fang Fletching",
+                        "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Ripping_Fang_Fletching.png",
+                        "order": 0,
+                        "type": "Normal/Charged Attack"
+                    },
+                    "Inuzaka_All-Round_Defense": {
+                        "name": "Inuzaka All-Round Defense",
+                        "effect": "Deals AoE Geo DMG and sets up a General's War Banner.\n\nGeneral's War Banner\nProvides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\n1 Geo character: Adds \"Standing Firm\" - DEF Bonus.\n2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.\n3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.\nGorou can deploy only 1 General's War Banner on the field at any one time.\nCharacters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s.\n\nHold\nAdjust the location of the skill.",
+                        "image": "Talents/Skill/Talent_Inuzaka_All-Round_Defense.png",
+                        "order": 1,
+                        "type": "Elemental Skill"
+                    },
+                    "Juuga_Forward_Unto_Victory": {
+                        "name": "Juuga: Forward Unto Victory",
+                        "effect": "Displaying his valor as a general, Gorou deals Aoe Geo DMG and creates a field known as General's Glory to embolden his comrades.\n\nGeneral's Glory\nThis field has the following properties:\nLike the General's War Banner created by Inazuka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.\nGenerates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.\nPulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).\nIf a General's War banner created by Gorou currently exists on the field when his ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inazuka All-Round Defense\" will not create the General's War Banner.\nIf Gorou falls, the effects of General's Glory will be cleared.",
+                        "image": "Talents/Burst/Talent_Juuga_Forward_Unto_Victory.png",
+                        "order": 2,
+                        "type": "Elemental Burst"
+                    }
+                }
+            },
+            "constellations": {
+                "1": {
+                    "name": "Rushing Hound: Swift as the Wind",
+                    "effect": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s. This effect can occur once every 10s.",
+                    "image": "Constellation/Rushing_Hound_Swift_as_the_Wind.png"
+                },
+                "2": {
+                    "name": "Sitting Hound: Steady as a Clock",
+                    "effect": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. This effect can occur once every 0.1s. Max extension is 3s.",
+                    "image": "Constellation/Sitting_Hound_Steady_as_a_Clock.png"
+                },
+                "3": {
+                    "name": "Mauling Hound: Fierce as Fire",
+                    "effect": "Increases the Level of Inuzaka All-Round Defense by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Mauling_Hound_Fierce_as_Fire.png"
+                },
+                "4": {
+                    "name": "Lapping Hound: Warm as Water",
+                    "effect": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.",
+                    "image": "Constellation/Lapping_Hound_Warm_as_Water.png"
+                },
+                "5": {
+                    "name": "Striking Hound: Thunderous Force",
+                    "effect": "Increases the Level of Juuga: Forward Unto Victory by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Striking_Hound_Thunderous_Force.png"
+                },
+                "6": {
+                    "name": "Valiant Hound: Mountainous Fealty",
+                    "effect": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\n\"Standing Firm\": +10%\n\"Impregnable\": +20%\n\"Crunch\": +40%\nThis effect cannot stack and will take reference from the last instance of the effect that is triggered.",
+                    "image": "Constellation/Valiant_Hound_Mountainous_Fealty.png"
+                }
+            },
+            "ascension": {
+                "1": {
+                    "material2qty": 0,
+                    "material1": "Prithiva_Topaz_Silver",
+                    "material1qty": 1,
+                    "mora": 20000,
+                    "material2": null,
+                    "level": 20,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 3,
+                    "material3qty": 3,
+                    "material3": "Sango_Pearl"
+                },
+                "2": {
+                    "material2qty": 2,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 3,
+                    "mora": 40000,
+                    "material2": "Perpetual_Heart",
+                    "level": 40,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 15,
+                    "material3qty": 10,
+                    "material3": "Sango_Pearl"
+                },
+                "3": {
+                    "material2qty": 4,
+                    "material1": "Prithiva_Topaz_Fragment",
+                    "material1qty": 6,
+                    "mora": 60000,
+                    "material2": "Perpetual_Heart",
+                    "level": 50,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 12,
+                    "material3qty": 20,
+                    "material3": "Sango_Pearl"
+                },
+                "4": {
+                    "material2qty": 8,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 3,
+                    "mora": 80000,
+                    "material2": "Perpetual_Heart",
+                    "level": 60,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 18,
+                    "material3qty": 30,
+                    "material3": "Sango_Pearl"
+                },
+                "5": {
+                    "material2qty": 12,
+                    "material1": "Prithiva_Topaz_Chunk",
+                    "material1qty": 6,
+                    "mora": 100000,
+                    "material2": "Perpetual_Heart",
+                    "level": 70,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 12,
+                    "material3qty": 45,
+                    "material3": "Sango_Pearl"
+                },
+                "6": {
+                    "material2qty": 20,
+                    "material1": "Prithiva_Topaz_Gemstone",
+                    "material1qty": 6,
+                    "mora": 120000,
+                    "material2": "Perpetual_Heart",
+                    "level": 80,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 24,
+                    "material3qty": 60,
+                    "material3": "Sango_Pearl"
+                }
+            },
+            "introduction": "The great general of Watatsumi Island's forces. He has gained respect and prestige, but always shows himself to be a humble leader.\nHe is deeply trusted by his subordinates and is someone with whom you can share your feelings without shame.",
+            "paimonmoepath": "characters/gorou",
+            "genshinggpath": "characters/Gorou",
+            "element": "Geo",
+            "released": true,
+            "wiki": "https://genshin-impact.fandom.com/wiki/Gorou",
+            "subCollection": {}
+        },
         "Ningguang": {
             "image": "Characters/Geo/Ningguang.png",
             "gender": "Female",

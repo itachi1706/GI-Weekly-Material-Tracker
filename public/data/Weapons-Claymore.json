@@ -948,6 +948,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Rainslasher",
       "subCollection": {}
     },
+    "Redhorn_Stonethresher": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "According to its previous owner, this weapon is the \"Mighty Redhorn Stoic Stonethreshing Gilded Goldcrushing Lion Lord\" that can send any monster packing with its tail between its legs.",
+      "name": "Redhorn Stonethresher",
+      "ascension": {
+        "1": {
+          "material3": "Old_Handguard",
+          "level": 20,
+          "material2": "Concealed_Claw",
+          "material3qty": 3,
+          "material1": "Narukamis_Wisdom",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Old_Handguard",
+          "level": 40,
+          "material2": "Concealed_Claw",
+          "material3qty": 12,
+          "material1": "Narukamis_Joy",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Kageuchi_Handguard",
+          "level": 50,
+          "material2": "Concealed_Unguis",
+          "material3qty": 9,
+          "material1": "Narukamis_Joy",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Kageuchi_Handguard",
+          "level": 60,
+          "material2": "Concealed_Unguis",
+          "material3qty": 14,
+          "material1": "Narukamis_Affection",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Famed_Handguard",
+          "level": 70,
+          "material2": "Concealed_Talon",
+          "material3qty": 9,
+          "material1": "Narukamis_Affection",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Famed_Handguard",
+          "level": 80,
+          "material2": "Concealed_Talon",
+          "material3qty": 18,
+          "material1": "Narukamis_Valor",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Claymore/Redhorn_Stonethresher.png",
+      "secondary_stat": "19.2%",
+      "rarity": 5,
+      "type": "Claymore",
+      "max_secondary_stat": "88.2%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Gokadaiou Otogibanashi",
+      "effect": "DEF is increased by 28~56%. Normal and Charged Attack DMG is increased by 40~80% of DEF.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Redhorn_Stonethresher",
+      "subCollection": {}
+    },
     "Royal_Greatsword": {
       "secondary_stat_type": "ATK",
       "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
