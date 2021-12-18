@@ -278,15 +278,16 @@
         "Arataki_Itto": {
             "image": "Characters/Geo/Arataki_Itto.png",
             "gender": "Male",
-            "birthday": "13/9",
-            "caption": "Kreideprinz",
+            "birthday": "1/6",
+            "caption": "Hanamizaka Heroics",
             "name": "Arataki Itto",
-            "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
+            "fullName": "Itto",
+            "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+            "nation": "Inazuma",
+            "weapon": "Claymore",
             "rarity": 5,
-            "affiliation": "Knights of Favonius",
-            "constellation": "Princeps Cretaceus",
+            "affiliation": "Arataki Gang, Oni",
+            "constellation": "Taurus Iracundus",
             "talents": {
                 "ascension": {
                     "2": {
@@ -295,9 +296,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Teachings_of_Ballad",
+                        "material3": "Teachings_of_Elegance",
                         "material3qty": 3,
-                        "material4": "Divining_Scroll",
+                        "material4": "Slime_Condensate",
                         "material4qty": 6
                     },
                     "3": {
@@ -306,9 +307,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 2,
-                        "material4": "Sealed_Scroll",
+                        "material4": "Slime_Secretions",
                         "material4qty": 3
                     },
                     "4": {
@@ -317,9 +318,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 4,
-                        "material4": "Sealed_Scroll",
+                        "material4": "Slime_Secretions",
                         "material4qty": 4
                     },
                     "5": {
@@ -328,9 +329,9 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 6,
-                        "material4": "Sealed_Scroll",
+                        "material4": "Slime_Secretions",
                         "material4qty": 6
                     },
                     "6": {
@@ -339,98 +340,98 @@
                         "material1qty": 0,
                         "material2": null,
                         "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
+                        "material3": "Guide_to_Elegance",
                         "material3qty": 9,
-                        "material4": "Sealed_Scroll",
+                        "material4": "Slime_Secretions",
                         "material4qty": 9
                     },
                     "7": {
                         "mora": 120000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2": "Ashen_Heart",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Ballad",
+                        "material3": "Philosophies_of_Elegance",
                         "material3qty": 4,
-                        "material4": "Forbidden_Curse_Scroll",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 4
                     },
                     "8": {
                         "mora": 260000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2": "Ashen_Heart",
                         "material2qty": 1,
-                        "material3": "Philosophies_of_Ballad",
+                        "material3": "Philosophies_of_Light",
                         "material3qty": 6,
-                        "material4": "Forbidden_Curse_Scroll",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 6
                     },
                     "9": {
                         "mora": 450000,
                         "material1": null,
                         "material1qty": 0,
-                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2": "Ashen_Heart",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Ballad",
+                        "material3": "Philosophies_of_Elegance",
                         "material3qty": 12,
-                        "material4": "Forbidden_Curse_Scroll",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 9
                     },
                     "10": {
                         "mora": 700000,
                         "material1": "Crown_of_Insight",
                         "material1qty": 1,
-                        "material2": "Tusk_of_Monoceros_Caeli",
+                        "material2": "Ashen_Heart",
                         "material2qty": 2,
-                        "material3": "Philosophies_of_Ballad",
+                        "material3": "Philosophies_of_Elegance",
                         "material3qty": 16,
-                        "material4": "Forbidden_Curse_Scroll",
+                        "material4": "Slime_Concentrate",
                         "material4qty": 12
                     }
                 },
                 "passives": {
-                    "Calcite_Might": {
-                        "name": "Calcite Might",
-                        "effect": "Transient Blossoms generated by Abiogenesis: Solar Isotoma deal 25% more DMG to opponents whose HP is below 50%.",
-                        "image": "Talents/Passive/Talent_Calcite_Might.png",
+                    "Arataki_Ichiban": {
+                        "name": "Arataki Ichiban",
+                        "effect": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\nEach slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.\nIncreases his resistance to interruption.\n\nThese effects will be cleared once he stops performing consecutive slashes.",
+                        "image": "Talents/Passive/Talent_Arataki_Ichiban.png",
                         "order": 0,
                         "type": "Passive 1"
                     },
-                    "Homuncular_Nature": {
-                        "name": "Homuncular Nature",
-                        "effect": "Using Rite of Progeniture: Tectonic Tide increases the Elemental Mastery of nearby party members by 125 for 10s.",
-                        "image": "Talents/Passive/Talent_Homuncular_Nature.png",
+                    "Bloodline_of_the_Crimson_Oni": {
+                        "name": "Bloodline of the Crimson Oni",
+                        "effect": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.",
+                        "image": "Talents/Passive/Talent_Bloodline_of_the_Crimson_Oni.png",
                         "order": 1,
                         "type": "Passive 2"
                     },
-                    "Flash_of_Genius_Albedo": {
-                        "name": "Flash of Genius (Albedo)",
-                        "effect": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
-                        "image": "Talents/Passive/Talent_Flash_of_Genius_Albedo.png",
+                    "Woodchuck_Chucked": {
+                        "name": "Woodchuck Chucked",
+                        "effect": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to obtain an additional log of wood.",
+                        "image": "Talents/Passive/Talent_Woodchuck_Chucked.png",
                         "order": 2,
                         "type": "Passive 3"
                     }
                 },
                 "attack": {
-                    "Favonius_Bladework_Weiss": {
-                        "name": "Favonius Bladework - Weiss",
-                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Favonius_Bladework_-_Weiss.png",
+                    "Fight_Club_Legend": {
+                        "name": "Fight Club Legend",
+                        "effect": "Normal Attack\nPerform up to 4 consecutive strikes.\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively. Max 5 stacks.\nTriggering this effect will refresh the current duration of any existing stacks.\n\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\n\nCharged Attack\nWhen holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                        "image": "Talents/Normal/Talent_Fight_Club_Legend.png",
                         "order": 0,
                         "type": "Normal/Charged Attack"
                     },
-                    "Abiogenesis_Solar_Isotoma": {
-                        "name": "Abiogenesis: Solar Isotoma",
-                        "effect": "Albedo creates a Solar Isotoma using alchemy, which deals AoE Geo DMG on appearance.\nSolar Isotoma has the following properties:\n\nWhen enemies within the Solar Isotoma zone take damage, the Solar Isotoma will generate Transient Blossoms which deal AoE Geo DMG. DMG dealt scales off Albedo's DEF. Transient Blossoms can only be generated once every 2s.\nWhen a character is located at the locus of the Solar Isotoma, the Solar Isotoma will accumulate Geo power to form a crystallized platform that lifts the character up to a certain height. Only one crystallized platform can exist at a time.\nSolar Isotoma is a Geo Construct.\nHold to designate the location of the skill.",
-                        "image": "Talents/Skill/Talent_Abiogenesis_-_Solar_Isotoma.png",
+                    "Masatsu_Zetsugi_Akaushi_Burst": {
+                        "name": "Masatsu Zetsugi: Akaushi Burst!",
+                        "effect": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit.\nWhen Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\n\nUshi will remain on the field and provide support in the following ways:\nTaunts surrounding opponents and draws their attacks.\nInherits HP based on a percentage of Arataki Itto's Max HP.\nWhen Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.\nUshi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves.\n\nHold\nAdjust throwing angle.\n\nUshi is considered a Geo Construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.",
+                        "image": "Talents/Skill/Talent_Masatsu_Zetsugi_Akaushi_Burst.png",
                         "order": 1,
                         "type": "Elemental Skill"
                     },
-                    "Rite_of_Progeniture_Tectonic_Tide": {
-                        "name": "Rite of Progeniture: Tectonic Tide",
-                        "effect": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG\n\nTecotonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
-                        "image": "Talents/Burst/Talent_Rite_of_Progeniture_-_Tectonic_Tide.png",
+                    "Royal_Descent_Behold_Itto_the_Evil": {
+                        "name": "Royal Descent: Behold, Itto the Evil!",
+                        "effect": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\nThis state has the following special properties:\nConverts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.\nIncreases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.\nOn hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.\nDecreases Itto's Elemental and Physical RES by 20%.\nThe Raging Oni King state will be cleared when Itto leaves the field.",
+                        "image": "Talents/Burst/Talent_Royal_Descent_Behold_Itto_the_Evil.png",
                         "order": 2,
                         "type": "Elemental Burst"
                     }
@@ -438,34 +439,34 @@
             },
             "constellations": {
                 "1": {
-                    "name": "Flower of Eden",
-                    "effect": "Transient Blossoms generated by Albedo's Abiogenesis: Solar Isotoma regenerate 1.2 Energy for Albedo.",
-                    "image": "Constellation/Flower_of_Eden.png"
+                    "name": "Stay a While and Listen Up",
+                    "effect": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.",
+                    "image": "Constellation/Stay_a_While_and_Listen_Up.png"
                 },
                 "2": {
-                    "name": "Opening of Phanerozoic",
-                    "effect": "Transient Blossoms generated by Abiogenesis: Solar Isotoma grant Albedo Fatal Reckoning for 30s.\nUnleashing Rite of Progeniture: Tectonic Tide consumes all stacks of Fatal Reckoning. Each stack of Fatal Reckoning consumed increases DMG dealt by Fatal Blossoms and Rite of Progeniture: Tectonic Tide's burst DMG by 30% of Albedo's DEF.\nThe effect stacks up to 4 times.",
-                    "image": "Constellation/Opening_of_Phanerozoic.png"
+                    "name": "Gather 'Round, It's a Brawl!",
+                    "effect": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.",
+                    "image": "Constellation/Gather_Round_Its_a_Brawl.png"
                 },
                 "3": {
-                    "name": "Grace of Helios",
-                    "effect": "Increases the level of Abiogenesis: Solar Isotoma by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Grace_of_Helios.png"
+                    "name": "Horns Lowered, Coming Through",
+                    "effect": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/Horns_Lowered_Coming_Through.png"
                 },
                 "4": {
-                    "name": "Descent of Divinity",
-                    "effect": "Solar Isotoma increases Plunging Attack DMG by 30% for active party members within the AoE.",
-                    "image": "Constellation/Descent_of_Divinity.png"
+                    "name": "Jailhouse Bread and Butter",
+                    "effect": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.",
+                    "image": "Constellation/Jailhouse_Bread_and_Butter.png"
                 },
                 "5": {
-                    "name": "Tide of Hadaen",
-                    "effect": "Increases the level of Rite of Progeniture: Tectonic Tide by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Tide_of_Hadaen.png"
+                    "name": "10 Years of Hanamizaka Fame",
+                    "effect": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\nMaximum upgrade level is 15.",
+                    "image": "Constellation/10_Years_of_Hanamizaka_Fame.png"
                 },
                 "6": {
-                    "name": "Dust of Purification",
-                    "effect": "If active party members within the AoE are protected by a shield created by Crystallize, Solar Isotoma increases their DMG by 17%.",
-                    "image": "Constellation/Dust_of_Purification.png"
+                    "name": "Arataki Itto, Present!",
+                    "effect": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.",
+                    "image": "Constellation/Arataki_Itto_Present.png"
                 }
             },
             "ascension": {
@@ -476,75 +477,75 @@
                     "mora": 20000,
                     "material2": null,
                     "level": 20,
-                    "material4": "Divining_Scroll",
+                    "material4": "Slime_Condensate",
                     "material4qty": 3,
                     "material3qty": 3,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 },
                 "2": {
                     "material2qty": 2,
                     "material1": "Prithiva_Topaz_Fragment",
                     "material1qty": 3,
                     "mora": 40000,
-                    "material2": "Basalt_Pillar",
+                    "material2": "Riftborn_Regalia",
                     "level": 40,
-                    "material4": "Divining_Scroll",
+                    "material4": "Slime_Condensate",
                     "material4qty": 15,
                     "material3qty": 10,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 },
                 "3": {
                     "material2qty": 4,
                     "material1": "Prithiva_Topaz_Fragment",
                     "material1qty": 6,
                     "mora": 60000,
-                    "material2": "Basalt_Pillar",
+                    "material2": "Riftborn_Regalia",
                     "level": 50,
-                    "material4": "Sealed_Scroll",
+                    "material4": "Slime_Secretions",
                     "material4qty": 12,
                     "material3qty": 20,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 },
                 "4": {
                     "material2qty": 8,
                     "material1": "Prithiva_Topaz_Chunk",
                     "material1qty": 3,
                     "mora": 80000,
-                    "material2": "Basalt_Pillar",
+                    "material2": "Riftborn_Regalia",
                     "level": 60,
-                    "material4": "Sealed_Scroll",
+                    "material4": "Slime_Secretions",
                     "material4qty": 18,
                     "material3qty": 30,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 },
                 "5": {
                     "material2qty": 12,
                     "material1": "Prithiva_Topaz_Chunk",
                     "material1qty": 6,
                     "mora": 100000,
-                    "material2": "Basalt_Pillar",
+                    "material2": "Riftborn_Regalia",
                     "level": 70,
-                    "material4": "Forbidden_Curse_Scroll",
+                    "material4": "Slime_Concentrate",
                     "material4qty": 12,
                     "material3qty": 45,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 },
                 "6": {
                     "material2qty": 20,
                     "material1": "Prithiva_Topaz_Gemstone",
                     "material1qty": 6,
                     "mora": 120000,
-                    "material2": "Basalt_Pillar",
+                    "material2": "Riftborn_Regalia",
                     "level": 80,
-                    "material4": "Forbidden_Curse_Scroll",
+                    "material4": "Slime_Concentrate",
                     "material4qty": 24,
                     "material3qty": 60,
-                    "material3": "Cecilia"
+                    "material3": "Onikabuto"
                 }
             },
-            "introduction": "Albedo — an alchemist based in Mondstadt, in the service of the Knights of Favonius.  \"Genius,\" \"Kreideprinz,\" or \"Captain of the Investigation Team\"... Such titles and honors are of no consequence to him when there is so much more research to conduct.  The pursuit of fortune and connections cannot hold a candle to his heart's desire — acquiring the limitless, obscure knowledge left behind by previous generations of scholars.",
-            "paimonmoepath": "characters/albedo",
-            "genshinggpath": "characters/Albedo",
+            "introduction": "Descendant of the oni, of intrepid spirit and noble heart.\nFast as the wind and mighty as thunder.",
+            "paimonmoepath": "characters/arataki_itto",
+            "genshinggpath": "characters/Itto",
             "element": "Geo",
             "released": true,
             "wiki": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
@@ -818,7 +819,7 @@
                     "material3": "Cecilia"
                 }
             },
-            "introduction": null,
+            "introduction": "The great general of Watatsumi Island's forces. He has gained respect and prestige, but always shows himself to be a humble leader.\nHe is deeply trusted by his subordinates and is someone with whom you can share your feelings without shame.",
             "paimonmoepath": null,
             "genshinggpath": null,
             "element": "Geo",
