@@ -438,7 +438,7 @@ class _PlannerPageState extends State<PlannerPage> {
           _mappedData.putIfAbsent(i, () => {});
         }
         for (var domainMaterial in _finalDomainMaterials) {
-          if (!(_matData![domainMaterial] is MaterialDataDomains)) continue;
+          if (_matData![domainMaterial] is! MaterialDataDomains) continue;
 
           var _daysForMaterial =
               (_matData![domainMaterial] as MaterialDataDomains).days!;

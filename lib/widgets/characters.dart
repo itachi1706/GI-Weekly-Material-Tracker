@@ -424,7 +424,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
       for (var key in widget.info!.ascension!.keys) {
-        _tmpTracker[key] = TrackingStatus.UNKNOWN;
+        _tmpTracker[key] = TrackingStatus.unknown;
       }
       setState(() {
         _isBeingTracked = _tmpTracker;
@@ -455,7 +455,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           datasets.add(widget.materialData![data.material4!]!.innerType);
         }
         _tracker![key] =
-            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
+            (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
       }
 
       _tracker = await _processTrackingStatus(datasets, _tracker!);
@@ -479,7 +479,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     }
     // Run through tracking status and check if its fully tracked
     for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
+      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var data = widget.info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -515,8 +515,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         );
       }
       _tracker[key] = (fullTrack)
-          ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
-          : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
+          ? TrackingStatus.trackedCompleteMaterial
+          : TrackingStatus.trackedIncompleteMaterial;
     }
 
     return _tracker;
@@ -524,7 +524,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
     return (!_isBeingTracked!.keys.contains(key))
-        ? TrackingStatus.UNKNOWN
+        ? TrackingStatus.unknown
         : _isBeingTracked![key];
   }
 
@@ -638,8 +638,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   void _addOrRemoveMaterial(int index, CharacterAscension curData) async {
     var key = index.toString();
     var isTracked = _isBeingTrackedStatus(key);
-    if (isTracked == TrackingStatus.UNKNOWN ||
-        isTracked == TrackingStatus.CHECKING) {
+    if (isTracked == TrackingStatus.unknown ||
+        isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
 
       return;
@@ -649,8 +649,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _selectedTier = key;
     });
 
-    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
-        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+    if (isTracked == TrackingStatus.trackedIncompleteMaterial ||
+        isTracked == TrackingStatus.trackedCompleteMaterial) {
       await _removeMaterial(curData, key);
     } else {
       await _addMaterial(curData, key);
@@ -922,7 +922,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       var _tmpTracker = <String, TrackingStatus>{};
       for (var key in widget.info!.talent!.attack!.keys) {
         for (var k2 in widget.info!.talent!.ascension!.keys) {
-          _tmpTracker['${key}_$k2'] = TrackingStatus.UNKNOWN;
+          _tmpTracker['${key}_$k2'] = TrackingStatus.unknown;
         }
       }
       setState(() {
@@ -955,7 +955,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           datasets.add(widget.materialData![data.material4!]!.innerType);
         }
         _tracker![key] =
-            (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
+            (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
       }
 
       _tracker = await _processTracker(_tracker!, datasets);
@@ -979,7 +979,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     }
     // Run through tracking status and check if its fully tracked
     for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
+      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var splitKey = key.split('_');
       var data = widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
@@ -1016,8 +1016,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         );
       }
       _tracker[key] = (fullTrack)
-          ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
-          : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
+          ? TrackingStatus.trackedCompleteMaterial
+          : TrackingStatus.trackedIncompleteMaterial;
     }
 
     return _tracker;
@@ -1126,7 +1126,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
     return (!_isBeingTracked!.keys.contains(key))
-        ? TrackingStatus.UNKNOWN
+        ? TrackingStatus.unknown
         : _isBeingTracked![key];
   }
 
@@ -1147,8 +1147,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   ) async {
     var key = '${talent}_$index';
     var isTracked = _isBeingTrackedStatus(key);
-    if (isTracked == TrackingStatus.UNKNOWN ||
-        isTracked == TrackingStatus.CHECKING) {
+    if (isTracked == TrackingStatus.unknown ||
+        isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
 
       return;
@@ -1159,8 +1159,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       _selectedTalent = talent;
     });
 
-    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
-        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+    if (isTracked == TrackingStatus.trackedIncompleteMaterial ||
+        isTracked == TrackingStatus.trackedCompleteMaterial) {
       _removeMaterial(curData, talent, index);
     } else {
       _addMaterial(curData, talent, index);

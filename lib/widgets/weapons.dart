@@ -270,7 +270,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
       for (var key in _info!.ascension!.keys) {
-        _tmpTracker[key] = TrackingStatus.UNKNOWN;
+        _tmpTracker[key] = TrackingStatus.unknown;
       }
       setState(() {
         if (!mounted) return;
@@ -303,7 +303,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         datasets.add(_materialData![data.material3!]!.innerType);
       }
       _tracker[key] =
-          (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
+          (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
     }
 
     // Get all datasets into a map to check if completed
@@ -321,7 +321,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   ) async {
     // Run through tracking status and check if its fully tracked
     for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
+      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var data = _info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -349,8 +349,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         );
       }
       _tracker[key] = (fullTrack)
-          ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
-          : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
+          ? TrackingStatus.trackedCompleteMaterial
+          : TrackingStatus.trackedIncompleteMaterial;
     }
 
     return _tracker;
@@ -358,7 +358,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
     return (!_isBeingTracked!.keys.contains(key))
-        ? TrackingStatus.UNKNOWN
+        ? TrackingStatus.unknown
         : _isBeingTracked![key];
   }
 
@@ -454,8 +454,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   void _addOrRemoveMaterial(int index, WeaponAscension curData) async {
     var key = index.toString();
     var isTracked = _isBeingTrackedStatus(key);
-    if (isTracked == TrackingStatus.UNKNOWN ||
-        isTracked == TrackingStatus.CHECKING) {
+    if (isTracked == TrackingStatus.unknown ||
+        isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
 
       return;
@@ -465,8 +465,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _selectedTier = key;
     });
 
-    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
-        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+    if (isTracked == TrackingStatus.trackedIncompleteMaterial ||
+        isTracked == TrackingStatus.trackedCompleteMaterial) {
       await _showRemoveDialog(curData, key);
     } else {
       await _showAddDialog(curData, key);

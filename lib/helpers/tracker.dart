@@ -9,11 +9,11 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 enum TrackingStatus {
-  UNKNOWN,
-  CHECKING,
-  NOT_TRACKED,
-  TRACKED_INCOMPLETE_MATERIAL,
-  TRACKED_COMPLETE_MATERIAL,
+  unknown,
+  checking,
+  notTracked,
+  trackedIncompleteMaterial,
+  trackedCompleteMaterial,
 }
 
 class TrackingUtils {
@@ -32,15 +32,15 @@ class TrackingUtils {
       return Colors.yellow;
     } // No such key (loading)
     switch (_isBeingTracked[index.toString()]) {
-      case TrackingStatus.UNKNOWN:
-      case TrackingStatus.CHECKING:
-      case TrackingStatus.NOT_TRACKED:
+      case TrackingStatus.unknown:
+      case TrackingStatus.checking:
+      case TrackingStatus.notTracked:
         return Get.theme.cardColor;
-      case TrackingStatus.TRACKED_COMPLETE_MATERIAL:
+      case TrackingStatus.trackedCompleteMaterial:
         return (Util.themeNotifier.isDarkMode())
             ? Colors.green
             : Colors.lightGreen;
-      case TrackingStatus.TRACKED_INCOMPLETE_MATERIAL:
+      case TrackingStatus.trackedIncompleteMaterial:
         return (Util.themeNotifier.isDarkMode())
             ? Colors.indigo
             : Colors.lightBlue;
