@@ -58,6 +58,7 @@ class _TrackingPageState extends State<TrackingPage>
   Widget _showAppBar() {
     return TabBar(
       controller: _tabController,
+      indicatorColor: Theme.of(context).colorScheme.secondary,
       tabs: _tabs,
       isScrollable: true,
     );
@@ -205,6 +206,7 @@ class _DictionaryPageState extends State<DictionaryPage>
     return TabBar(
       controller: _tabControllers[_currentIndex],
       tabs: _tabs[_currentIndex]!,
+      indicatorColor: Theme.of(context).colorScheme.secondary,
       isScrollable: true,
     );
   }
