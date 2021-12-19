@@ -1,3 +1,11 @@
+# 2.1.5
+- Added promo code support for Web
+- Built with Flutter 2.8
+- Revamped promo code page to support auto-refresh
+- Updated many dependencies, replacing discontinued dependencies
+- Resolved deprecated code
+- Optimized codebase to make it less buggy
+
 # 2.1.4
 - Fixed splash screen to not blind users of dark mode
 
