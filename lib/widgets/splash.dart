@@ -13,6 +13,8 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import '../firebase_options.dart';
 
 class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
+
   @override
   _SplashPageState createState() => _SplashPageState();
 }
@@ -38,7 +40,7 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Dark Mode: $_darkMode');
+    debugPrint('Dark Mode: $_darkMode');
     var _image = _darkMode
         ? Image.asset('assets/icons/splash/splash_dark.png')
         : Image.asset('assets/icons/splash/splash.png');
@@ -59,31 +61,29 @@ class _SplashPageState extends State<SplashPage> {
             children: <Widget>[
               Expanded(
                 flex: 2,
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        radius: _photoSize,
-                        child: Hero(
-                          tag: 'splashscreenImage',
-                          child: Container(child: _image),
-                        ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: _photoSize,
+                      child: Hero(
+                        tag: 'splashscreenImage',
+                        child: Container(child: _image),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10.0),
+                    ),
+                    Text(
+                      'Genshin Impact Weekly Material Tracker',
+                      style: TextStyle(
+                        color: _textColor,
+                        fontSize: 20.0,
+                        fontFamily: 'Product-Sans-Bold',
                       ),
-                      Text(
-                        'Genshin Impact Weekly Material Tracker',
-                        style: TextStyle(
-                          color: _textColor,
-                          fontSize: 20.0,
-                          fontFamily: 'Product-Sans-Bold',
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
@@ -91,13 +91,13 @@ class _SplashPageState extends State<SplashPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    CircularProgressIndicator(
+                    const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color?>(
                         null,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20.0),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
@@ -125,7 +125,7 @@ class _SplashPageState extends State<SplashPage> {
     if (kIsWeb) return; // Return straight away for web as it is not supported
     var manager = NotificationManager.getInstance()!;
     await manager.initialize();
-    print('Initialized Notifications');
+    debugPrint('Initialized Notifications');
     await manager.processNotificationAppLaunch();
     await manager.rescheduleAllScheduledReminders();
   }
@@ -157,19 +157,19 @@ class _SplashPageState extends State<SplashPage> {
             );
           }).sendPort);
         }
-        print(
+        debugPrint(
           'Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}',
         );
-        print(
+        debugPrint(
           'Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}',
         );
       } else {
-        print('Web Mode, Crashlytics and Performance disabled');
+        debugPrint('Web Mode, Crashlytics and Performance disabled');
       }
       var _auth = FirebaseAuth.instance;
       if (_auth.currentUser != null) return true;
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
 
     return false;
@@ -180,7 +180,7 @@ class _SplashPageState extends State<SplashPage> {
       [
         _initFirebase(),
         _setupNotifications(),
-        Future.delayed(Duration(seconds: 2)),
+        Future.delayed(const Duration(seconds: 2)),
       ],
     );
 

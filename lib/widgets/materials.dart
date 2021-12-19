@@ -14,7 +14,7 @@ class MaterialTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  MaterialTabController({Key? key, required this.tabController, this.notifier})
+  const MaterialTabController({Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -38,7 +38,7 @@ class MaterialListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  MaterialListGrid({Key? key, this.filter, this.notifier});
+  const MaterialListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
 
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
@@ -82,7 +82,7 @@ class _MaterialListGridState extends State<MaterialListGrid> {
           (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -113,6 +113,8 @@ class _MaterialListGridState extends State<MaterialListGrid> {
 }
 
 class MaterialInfoPage extends StatefulWidget {
+  const MaterialInfoPage({Key? key}) : super(key: key);
+
   @override
   _MaterialInfoPageState createState() => _MaterialInfoPageState();
 }
@@ -153,7 +155,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             onPressed: () => GridData.launchWikiUrl(context, _info!),
             tooltip: 'View Wiki',
           ),
@@ -169,7 +171,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         child: Column(
           children: [
             _getMaterialHeader(),
-            Divider(),
+            const Divider(),
             ...GridData.generateInfoLine(
               _info!.obtained!.replaceAll('- ', ''),
               Icons.location_pin,
@@ -191,12 +193,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _info!.type!,
                 textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
             ),
             RatingBar.builder(
@@ -205,9 +207,9 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
               itemSize: 30,
               initialRating: double.tryParse(_info!.rarity.toString())!,
               itemBuilder: (context, _) =>
-                  Icon(Icons.star, color: Colors.amber),
+                  const Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
-                print(rating);
+                debugPrint(rating.toString());
               },
             ),
           ],
@@ -230,11 +232,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   }
 
   Widget _getFabWidget() {
-    if (!_addCheckObtained) return CircularProgressIndicator();
+    if (!_addCheckObtained) return const CircularProgressIndicator();
 
     return _isAdded
-        ? Icon(Icons.remove, color: Colors.white)
-        : Icon(Icons.add, color: Colors.white);
+        ? const Icon(Icons.remove, color: Colors.white)
+        : const Icon(Icons.add, color: Colors.white);
   }
 
   void _trackMaterialAction() {
@@ -294,7 +296,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                     });
                   },
                   controller: _textEditingController,
-                  decoration: InputDecoration(labelText: 'Quantity to track'),
+                  decoration: const InputDecoration(labelText: 'Quantity to track'),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -303,11 +305,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _trackMaterialAction,
-              child: Text('Track'),
+              child: const Text('Track'),
             ),
           ],
         );
@@ -325,7 +327,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
             child: ListBody(
               children: [
                 GridData.getImageAssetFromFirebase(_info!.image, height: 64),
-                Text(
+                const Text(
                   'This will remove the currently tracked data for this material from the tracker',
                 ),
               ],
@@ -334,11 +336,11 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _untrackMaterialAction,
-              child: Text('Untrack'),
+              child: const Text('Untrack'),
             ),
           ],
         );

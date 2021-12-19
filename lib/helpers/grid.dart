@@ -19,19 +19,19 @@ class GridData {
 
   static Color getRarityColor(int? rarity, {crossover = false}) {
     if (crossover) {
-      return Color(0xFFb73b47);
+      return const Color(0xFFb73b47);
     }
     switch (rarity) {
       case 1:
-        return Color(0xFF72778b);
+        return const Color(0xFF72778b);
       case 2:
-        return Color(0xFF2a9072);
+        return const Color(0xFF2a9072);
       case 3:
-        return Color(0xFF5180cc);
+        return const Color(0xFF5180cc);
       case 4:
-        return Color(0xFFa256e1);
+        return const Color(0xFFa256e1);
       case 5:
-        return Color(0xFFbd6932);
+        return const Color(0xFFbd6932);
       default:
         return Colors.black;
     }
@@ -84,21 +84,21 @@ class GridData {
 
   static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
     var data = <QueryDocumentSnapshot>[];
-    snapshot.forEach((element) {
+    for (var element in snapshot) {
       var dt = element.data() as Map<String, dynamic>;
       if (dt['released']) {
         data.add(element);
       } else {
-        print("Skipping ${dt['name']}");
+        debugPrint("Skipping ${dt['name']}");
       }
-    });
+    }
 
     return data;
   }
 
   static void setStaticData(String type, QuerySnapshot? snapshot) {
     if (snapshot == null) return;
-    print('Updating $type static data in memory');
+    debugPrint('Updating $type static data in memory');
     var _snapData = getDataListFilteredRelease(snapshot.docs);
     // var data = getDataListFilteredRelease(snapshot);
     var data = <String, dynamic>{};
@@ -107,18 +107,18 @@ class GridData {
     //   if (dt['released']) {
     //     data.putIfAbsent(element.id, () => dt);
     //   } else {
-    //     print("Skipping ${dt['name']}");
+    //     debugPrint("Skipping ${dt['name']}");
     //   }
     // });
 
-    _snapData.forEach((element) {
+    for (var element in _snapData) {
         var dt = element.data() as Map<String, dynamic>;
         if (dt['released']) {
           data.putIfAbsent(element.id, () => dt);
         } else {
-          print("Skipping ${dt['name']}");
+          debugPrint("Skipping ${dt['name']}");
         }
-      });
+      }
     switch (type) {
       case 'characters':
         _staticData[type] = CharacterData.getList(data);
@@ -213,11 +213,11 @@ class GridData {
                   placeholderBuilder: (context) => SizedBox(
                     height: height,
                     width: width,
-                    child: CircularProgressIndicator(),
+                    child: const CircularProgressIndicator(),
                   ),
-                  errorBuilder: (context, obj, trace) => Icon(Icons.error),
+                  errorBuilder: (context, obj, trace) => const Icon(Icons.error),
                   image: _getFirebaseImage(snapshot.data.toString()),
-                  placeholderFadeInDuration: Duration(seconds: 2),
+                  placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
               ),
             ),
@@ -232,7 +232,7 @@ class GridData {
                 child: SizedBox(
                   height: height,
                   width: width,
-                  child: CircularProgressIndicator(),
+                  child: const CircularProgressIndicator(),
                 ),
               ),
             ),
@@ -258,7 +258,7 @@ class GridData {
           child: Text(
             data.name!,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -309,7 +309,7 @@ class GridData {
                   children: [
                     Text(
                       header,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
                         fontSize: 16,
@@ -323,7 +323,7 @@ class GridData {
           ],
         ),
       ),
-      Divider(),
+      const Divider(),
     ];
   }
 
@@ -343,12 +343,12 @@ class GridData {
           ],
         ),
       ),
-      Divider(),
+      const Divider(),
     ];
   }
 
   static Widget generateElementalColoredLine(String textData) {
-    print(textData);
+    debugPrint(textData);
     var textSplit = textData.split('§');
     var textElements = <TextSpan>[];
 
@@ -382,25 +382,25 @@ class GridData {
     var color = Colors.white;
     switch (colorChar.toLowerCase()) {
       case 'a':
-        color = Color(0xFF26A684);
+        color = const Color(0xFF26A684);
         break;
       case 'c':
-        color = Color(0xFF4878a8);
+        color = const Color(0xFF4878a8);
         break;
       case 'd':
-        color = Color(0xFF51810e);
+        color = const Color(0xFF51810e);
         break;
       case 'e':
-        color = Color(0xFF9336b0);
+        color = const Color(0xFF9336b0);
         break;
       case 'g':
-        color = Color(0xFFb67607);
+        color = const Color(0xFFb67607);
         break;
       case 'h':
-        color = Color(0xFF0b4dda);
+        color = const Color(0xFF0b4dda);
         break;
       case 'p':
-        color = Color(0xFFbf2818);
+        color = const Color(0xFFbf2818);
         break;
       default:
         color = (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
@@ -418,7 +418,7 @@ class GridData {
     return [
       getAscensionImage(name, data),
       Text((qty == 0) ? '' : qty.toString()),
-      Spacer(),
+      const Spacer(),
     ];
   }
 
@@ -434,7 +434,7 @@ class GridData {
     }
     if (!_staticData.containsKey(type)) {
       _downloading[type] = true;
-      print('Retrieving $type static data from Firestore');
+      debugPrint('Retrieving $type static data from Firestore');
       var snapshot = await _db.collection(type).get();
       _downloading[type] = false;
       setStaticData(type, snapshot);

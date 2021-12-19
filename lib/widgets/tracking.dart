@@ -19,7 +19,7 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 class TrackingTabController extends StatefulWidget {
   final TabController? tabController;
 
-  TrackingTabController({Key? key, required this.tabController})
+  const TrackingTabController({Key? key, required this.tabController})
       : super(key: key);
 
   @override
@@ -28,11 +28,11 @@ class TrackingTabController extends StatefulWidget {
 
 class _TrackingTabControllerState extends State<TrackingTabController> {
   final List<Widget> _children = [
-    TrackerPage(path: 'boss_drops'),
-    TrackerPage(path: 'domain_material'),
-    TrackerPage(path: 'mob_drops'),
-    TrackerPage(path: 'local_speciality'),
-    PlannerPage(),
+    const TrackerPage(path: 'boss_drops'),
+    const TrackerPage(path: 'domain_material'),
+    const TrackerPage(path: 'mob_drops'),
+    const TrackerPage(path: 'local_speciality'),
+    const PlannerPage(),
   ];
 
   @override
@@ -44,7 +44,7 @@ class _TrackingTabControllerState extends State<TrackingTabController> {
 class TrackerPage extends StatefulWidget {
   final String path;
 
-  TrackerPage({Key? key, required this.path}) : super(key: key);
+  const TrackerPage({Key? key, required this.path}) : super(key: key);
 
   @override
   _TrackerPageState createState() => _TrackerPageState();
@@ -59,9 +59,9 @@ class _TrackerPageState extends State<TrackerPage> {
 
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     primary: Colors.black87,
-    minimumSize: Size(0, 0),
+    minimumSize: const Size(0, 0),
     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
@@ -90,9 +90,9 @@ class _TrackerPageState extends State<TrackerPage> {
       stream: ref.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          print(snapshot.error);
+          debugPrint(snapshot.error.toString());
 
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting ||
@@ -120,7 +120,7 @@ class _TrackerPageState extends State<TrackerPage> {
         var aDD = (aD.max! - aD.current!) <= 0 ? 1 : 0;
         var bDD = (bD.max! - bD.current!) <= 0 ? 1 : 0;
 
-        print('${bD.max! - bD.current!} - ${aD.max! - aD.current!}');
+        debugPrint('${bD.max! - bD.current!} - ${aD.max! - aD.current!}');
 
         return aDD.compareTo(bDD);
       });
@@ -134,7 +134,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 dt[index].data() as Map<String, dynamic>,
               );
               var _dataId = dt[index].id;
-              print(_data);
+              debugPrint(_data.toString());
               var _material = _materialData![_data.name!]!;
               String? extraImageRef;
               var extraAscensionRef = 0;
@@ -169,7 +169,7 @@ class _TrackerPageState extends State<TrackerPage> {
               );
             },
           )
-        : Center(
+        : const Center(
             child: Text('No items being tracked for this material category'),
           );
   }
@@ -221,7 +221,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 height: 48,
               ),
               _trackerInfo(_material),
-              Spacer(),
+              const Spacer(),
               _trackerControls(
                 _data,
                 _dataId,
@@ -237,7 +237,7 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   Widget _trackerInfo(MaterialDataCommon _material) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -245,7 +245,7 @@ class _TrackerPageState extends State<TrackerPage> {
         children: [
           Text(
             _material.name!,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.white,
             ),
@@ -258,17 +258,17 @@ class _TrackerPageState extends State<TrackerPage> {
             initialRating: double.tryParse(
               _material.rarity.toString(),
             )!,
-            itemBuilder: (context, _) => Icon(
+            itemBuilder: (context, _) => const Icon(
               Icons.star,
               color: Colors.amber,
             ),
             onRatingUpdate: (rating) {
-              print(rating);
+              debugPrint(rating.toString());
             },
           ),
           Text(
             _material.obtained!.replaceAll('\\n', '\n'),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               color: Colors.white,
             ),
@@ -306,7 +306,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 _data.type,
                 _data.current!,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.remove,
                 color: Colors.white,
               ),
@@ -319,7 +319,7 @@ class _TrackerPageState extends State<TrackerPage> {
                 _data.current!,
                 _data.max!,
               ),
-              child: Icon(Icons.add, color: Colors.white),
+              child: const Icon(Icons.add, color: Colors.white),
             ),
           ],
         ),
@@ -349,6 +349,8 @@ class _TrackerPageState extends State<TrackerPage> {
 }
 
 class PlannerPage extends StatefulWidget {
+  const PlannerPage({Key? key}) : super(key: key);
+
   @override
   _PlannerPageState createState() => _PlannerPageState();
 }
@@ -382,9 +384,9 @@ class _PlannerPageState extends State<PlannerPage> {
     // This day at 12am
     _beforeDT =
         tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
-    _dbDT = _cDT!.subtract(Duration(days: 1));
+    _dbDT = _cDT!.subtract(const Duration(days: 1));
     // Next day at 12am
-    _afterDT = _beforeDT!.add(Duration(days: 1));
+    _afterDT = _beforeDT!.add(const Duration(days: 1));
     // This day at 4am
     _coffDT =
         tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
@@ -401,7 +403,7 @@ class _PlannerPageState extends State<PlannerPage> {
         AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
       ) {
         if (snapshot.hasError) {
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting ||
@@ -417,7 +419,7 @@ class _PlannerPageState extends State<PlannerPage> {
 
         var _finalDomainMaterials = <String>[];
         // Tabulate the materials and remove completed ones
-        _uniqueMaterials.forEach((element) {
+        for (var element in _uniqueMaterials) {
           var _cur = 0, _max = 0;
           data.docs
               .where((element2) => element2.data()['name'] == element)
@@ -429,22 +431,22 @@ class _PlannerPageState extends State<PlannerPage> {
           if (_cur < _max) {
             _finalDomainMaterials.add(element);
           }
-        });
+        }
 
         var _mappedData = <int, Set<String>>{};
         for (var i = 1; i <= 7; i++) {
           _mappedData.putIfAbsent(i, () => {});
         }
-        _finalDomainMaterials.forEach((domainMaterial) {
-          if (!(_matData![domainMaterial] is MaterialDataDomains)) return;
+        for (var domainMaterial in _finalDomainMaterials) {
+          if (_matData![domainMaterial] is! MaterialDataDomains) continue;
 
           var _daysForMaterial =
               (_matData![domainMaterial] as MaterialDataDomains).days!;
 
-          _daysForMaterial.forEach((day) {
+          for (var day in _daysForMaterial) {
             _mappedData[day]!.add(domainMaterial);
-          });
-        });
+          }
+        }
 
         return _buildWeeklyMaterials(_mappedData);
       },
@@ -478,7 +480,7 @@ class _PlannerPageState extends State<PlannerPage> {
     var webWidth = MediaQuery.of(context).size.width;
     var gridCnt = (webWidth / 180).round();
     if (gridCnt < 3) gridCnt = 3;
-    print('Width: $webWidth | Generated Grid: $gridCnt');
+    debugPrint('Width: $webWidth | Generated Grid: $gridCnt');
 
     return SingleChildScrollView(
       child: Column(
@@ -490,17 +492,17 @@ class _PlannerPageState extends State<PlannerPage> {
               children: [
                 Text(
                   'Day resets at 4am GMT${_getLocStr()}',
-                  style: TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 12),
                 ),
-                Spacer(),
-                Text('Day Reset in: ', style: TextStyle(fontSize: 12)),
+                const Spacer(),
+                const Text('Day Reset in: ', style: TextStyle(fontSize: 12)),
                 _getCountdown(),
               ],
             ),
           ),
           ListView.separated(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: _mappedData.length,
             itemBuilder: (context, index) {
               var key = _mappedData.keys.elementAt(index);
@@ -512,7 +514,7 @@ class _PlannerPageState extends State<PlannerPage> {
                 title: _getGridMaterials(_curData, gridCnt),
               );
             },
-            separatorBuilder: (context, index) => Divider(height: 1),
+            separatorBuilder: (context, index) => const Divider(height: 1),
           ),
         ],
       ),
@@ -524,7 +526,7 @@ class _PlannerPageState extends State<PlannerPage> {
       endTime: _getResetTime(),
       widgetBuilder: (_, CurrentRemainingTime? time) {
         if (time == null) {
-          return Text('Refreshing', style: TextStyle(fontSize: 12));
+          return const Text('Refreshing', style: TextStyle(fontSize: 12));
         }
         var finalStr = '';
         if (time.days != null) {
@@ -544,7 +546,7 @@ class _PlannerPageState extends State<PlannerPage> {
           finalStr += '${time.sec}';
         }
 
-        return Text(finalStr, style: TextStyle(fontSize: 12));
+        return Text(finalStr, style: const TextStyle(fontSize: 12));
       },
     );
   }
@@ -552,7 +554,7 @@ class _PlannerPageState extends State<PlannerPage> {
   int _getResetTime() {
     var _actualCDT = _coffDT;
     if (_cDT!.isAfter(_coffDT!)) {
-      _actualCDT = _coffDT!.add(Duration(days: 1));
+      _actualCDT = _coffDT!.add(const Duration(days: 1));
     }
 
     return _actualCDT!.millisecondsSinceEpoch;
@@ -579,12 +581,12 @@ class _PlannerPageState extends State<PlannerPage> {
 
   Widget _getGridMaterials(List<String> _curData, int gridCnt) {
     if (_curData.isEmpty) {
-      return Text('Not tracking any domain materials for this day');
+      return const Text('Not tracking any domain materials for this day');
     }
 
     return GridView.count(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: gridCnt,
       children: _curData.map((materialId) {
         return GestureDetector(

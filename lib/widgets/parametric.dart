@@ -16,7 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class ParametricPage extends StatefulWidget {
-  ParametricPage({Key? key}) : super(key: key);
+  const ParametricPage({Key? key}) : super(key: key);
 
   @override
   _ParametricPageState createState() => _ParametricPageState();
@@ -38,14 +38,14 @@ class _ParametricPageState extends State<ParametricPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Parametric Transformer'),
+        title: const Text('Parametric Transformer'),
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: Center(
         child: Column(
           children: [
             Image.asset('assets/images/items/Item_Parametric_Transformer.png'),
-            Text(
+            const Text(
               'Refreshing in',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
@@ -53,16 +53,16 @@ class _ParametricPageState extends State<ParametricPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Spacer(
+                const Spacer(
                   flex: 20,
                 ),
-                TextButton(onPressed: _resetTime, child: Text('Reset Time')),
-                Spacer(),
+                TextButton(onPressed: _resetTime, child: const Text('Reset Time')),
+                const Spacer(),
                 TextButton(
                   onPressed: _showLastUseDialog,
-                  child: Text('Set Last Use Time'),
+                  child: const Text('Set Last Use Time'),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 20,
                 ),
               ],
@@ -71,16 +71,16 @@ class _ParametricPageState extends State<ParametricPage> {
               padding: const EdgeInsets.only(top: 8),
               child: Text('Last updated on $_resetTimeString'),
             ),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('Notifications: '),
+                const Text('Notifications: '),
                 _getNotificationState(),
               ],
             ),
-            TextButton(onPressed: _launchApp, child: Text('Launch Game')),
+            TextButton(onPressed: _launchApp, child: const Text('Launch Game')),
           ],
         ),
       ),
@@ -88,17 +88,17 @@ class _ParametricPageState extends State<ParametricPage> {
   }
 
   Widget _getNotificationState() {
-    if (_prefs == null) return Text('Loading...');
+    if (_prefs == null) return const Text('Loading...');
 
     var notifyParametric = _prefs!.getBool('parametric_notification') ?? false;
     if (notifyParametric) {
-      return Text(
+      return const Text(
         'Enabled',
         style: TextStyle(color: Colors.green),
       );
     }
 
-    return Text('Disabled', style: TextStyle(color: Colors.red));
+    return const Text('Disabled', style: TextStyle(color: Colors.red));
   }
 
   Widget _countdownTimer() {
@@ -111,7 +111,7 @@ class _ParametricPageState extends State<ParametricPage> {
 
     return CountdownTimer(
       endTime: _endTimeCountdown,
-      endWidget: Text(
+      endWidget: const Text(
         'ITEM READY!',
         style: TextStyle(
           fontWeight: FontWeight.bold,
@@ -119,7 +119,7 @@ class _ParametricPageState extends State<ParametricPage> {
           fontSize: 32,
         ),
       ),
-      textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+      textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
     );
   }
 
@@ -135,7 +135,7 @@ class _ParametricPageState extends State<ParametricPage> {
         var dt = DateTime.fromMillisecondsSinceEpoch(map['parametricReset']);
         lastResetStr = DateFormat('yyyy-MM-dd HH:mm').format(dt);
         await pref.setInt('parametric-reset-time', map['parametricReset']);
-        dt = dt.add(Duration(days: 6, hours: 22));
+        dt = dt.add(const Duration(days: 6, hours: 22));
         epochTime = dt.millisecondsSinceEpoch;
         if (!kIsWeb) {
           await NotificationManager.getInstance()!.scheduleParametricReminder(
@@ -162,9 +162,9 @@ class _ParametricPageState extends State<ParametricPage> {
         var apps = await DeviceApps.getInstalledApplications(
           onlyAppsWithLaunchIntent: true,
         );
-        print(apps);
+        debugPrint(apps.toString());
         var isInstalled = await DeviceApps.isAppInstalled(androidId);
-        print('App Installed: $isInstalled');
+        debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
           await DeviceApps.openApp(androidId);
 
@@ -190,13 +190,13 @@ class _ParametricPageState extends State<ParametricPage> {
         .collection('userdata')
         .doc(uid)
         .set(data, SetOptions(merge: true));
-    print('Updated Database with new reset time');
+    debugPrint('Updated Database with new reset time');
   }
 
   void _updateNewEndTime(String? resetTime) {
     setState(() {
       _endTimeCountdown = DateTime.parse(_newDateTime!)
-          .add(Duration(days: 6, hours: 22))
+          .add(const Duration(days: 6, hours: 22))
           .millisecondsSinceEpoch;
       _resetTimeString = resetTime;
     });
@@ -211,14 +211,14 @@ class _ParametricPageState extends State<ParametricPage> {
 
   Future<void> _resetTime() async {
     _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now());
-    print('_resetTime: $_newDateTime');
+    debugPrint('_resetTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
     await _updateOnlineData(_newDateTime!);
     await _updateNotification();
   }
 
   Future<void> _updateLastUseTime() async {
-    print('_updateLastUseTime: $_newDateTime');
+    debugPrint('_updateLastUseTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
     await _updateOnlineData(_newDateTime!);
     await _updateNotification();
@@ -230,25 +230,25 @@ class _ParametricPageState extends State<ParametricPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Update Last Use Time of Parametric Transformer'),
+          title: const Text('Update Last Use Time of Parametric Transformer'),
           content: DateTimePicker(
             type: DateTimePickerType.dateTimeSeparate,
             initialValue: _resetTimeString,
             firstDate: DateTime(2020),
             lastDate: DateTime(2100),
             onChanged: (val) {
-              print('onChanged: $val');
+              debugPrint('onChanged: $val');
               _newDateTime = val;
             },
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _updateLastUseTime,
-              child: Text('Update'),
+              child: const Text('Update'),
             ),
           ],
         );

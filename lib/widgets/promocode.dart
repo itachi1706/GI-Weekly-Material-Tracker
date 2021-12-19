@@ -12,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final FirebaseDatabase db = FirebaseDatabase.instance;
 
 class PromoCodePage extends StatefulWidget {
-  PromoCodePage({Key? key}) : super(key: key);
+  const PromoCodePage({Key? key}) : super(key: key);
 
   @override
   _PromoCodePageState createState() => _PromoCodePageState();
@@ -34,22 +34,22 @@ class _PromoCodePageState extends State<PromoCodePage> {
   @override
   Widget build(BuildContext context) {
     if (_location == null) {
-      return Util.loadingScreenWithDrawer(DrawerComponent());
+      return Util.loadingScreenWithDrawer(const DrawerComponent());
     }
     final query = db.ref('codes');
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game Promo Codes'),
+        title: const Text('Game Promo Codes'),
         actions: [
           IconButton(
             onPressed: _launchRedemptionSite,
-            icon: Icon(Icons.open_in_browser),
+            icon: const Icon(Icons.open_in_browser),
             tooltip: 'Launch promo code page',
           ),
         ],
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -57,14 +57,14 @@ class _PromoCodePageState extends State<PromoCodePage> {
               padding: const EdgeInsets.all(8),
               child: Text(
                 'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.',
-                style: TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 12),
                 textAlign: TextAlign.center,
               ),
             ),
             FirebaseDatabaseListView(
               query: query,
               pageSize: 20,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, snapshot) {
                 var codes = snapshot.value as Map<dynamic, dynamic>;

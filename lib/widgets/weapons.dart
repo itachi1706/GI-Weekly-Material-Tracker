@@ -18,7 +18,7 @@ class WeaponTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  WeaponTabController({Key? key, required this.tabController, this.notifier})
+  const WeaponTabController({Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class WeaponListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  WeaponListGrid({Key? key, this.filter, this.notifier});
+  const WeaponListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
 
   @override
   _WeaponListGridState createState() => _WeaponListGridState();
@@ -86,7 +86,7 @@ class _WeaponListGridState extends State<WeaponListGrid> {
       stream: (queryRef == null) ? weaponRef.snapshots() : queryRef.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -115,6 +115,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
 }
 
 class WeaponInfoPage extends StatefulWidget {
+  const WeaponInfoPage({Key? key}) : super(key: key);
+
   @override
   _WeaponInfoPageState createState() => _WeaponInfoPageState();
 }
@@ -145,7 +147,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             onPressed: () => GridData.launchWikiUrl(context, _info!),
             tooltip: 'View Wiki',
           ),
@@ -157,7 +159,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           child: Column(
             children: [
               _generateWeaponHeader(),
-              Divider(),
+              const Divider(),
               ..._getSeriesIfExists(_info!),
               ...GridData.generateInfoLine(
                 _info!.obtained!.replaceAll('- ', ''),
@@ -169,7 +171,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
               ),
               ..._generateEffectName(),
               ..._getWeaponStats(),
-              Divider(),
+              const Divider(),
               ...TrackingData.getAscensionHeader(),
               _generateAscensionData(),
             ],
@@ -180,7 +182,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {
-    var finalWidgets = <Widget>[SizedBox.shrink()];
+    var finalWidgets = <Widget>[const SizedBox.shrink()];
     if (info.series != null) {
       finalWidgets = GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
     }
@@ -208,7 +210,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             Text(
               _info!.type!,
               textAlign: TextAlign.start,
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             RatingBar.builder(
               ignoreGestures: true,
@@ -216,9 +218,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
               itemSize: 30,
               initialRating: double.tryParse(_info!.rarity.toString())!,
               itemBuilder: (context, _) =>
-                  Icon(Icons.star, color: Colors.amber),
+                  const Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
-                print(rating);
+                debugPrint(rating.toString());
               },
             ),
           ],
@@ -233,7 +235,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [
-            Icon(MdiIcons.swordCross),
+            const Icon(MdiIcons.swordCross),
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: (_info!.maxBaseAtk == null)
@@ -243,12 +245,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           ],
         ),
       ),
-      Divider(),
+      const Divider(),
       Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [
-            Icon(MdiIcons.shield),
+            const Icon(MdiIcons.shield),
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: (_info!.maxSecondaryStat == null)
@@ -267,9 +269,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (_materialData == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
-      _info!.ascension!.keys.forEach((key) {
-        _tmpTracker[key] = TrackingStatus.UNKNOWN;
-      });
+      for (var key in _info!.ascension!.keys) {
+        _tmpTracker[key] = TrackingStatus.unknown;
+      }
       setState(() {
         if (!mounted) return;
         _isBeingTracked = _tmpTracker;
@@ -284,10 +286,10 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   Future<Map<String, TrackingStatus>> _checkStatusAndMaterialList() async {
     var _tracker = _isBeingTracked!;
     var _dataList = await TrackingData.getTrackingCategory('weapon');
-    print(_dataList);
+    debugPrint(_dataList.toString());
     var datasets = <String?>{};
     // Check tracking status and get material list
-    _isBeingTracked!.keys.forEach((key) {
+    for (var key in _isBeingTracked!.keys) {
       var _isTracked =
           TrackingData.isBeingTrackedLocal(_dataList, '${_infoId}_$key');
       var data = _info!.ascension![key]!;
@@ -301,8 +303,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         datasets.add(_materialData![data.material3!]!.innerType);
       }
       _tracker[key] =
-          (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
-    });
+          (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+    }
 
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
@@ -318,8 +320,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     Map<String, TrackingStatus> _tracker,
   ) async {
     // Run through tracking status and check if its fully tracked
-    _tracker.keys.forEach((key) {
-      if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+    for (var key in _tracker.keys) {
+      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var data = _info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -347,21 +349,21 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
         );
       }
       _tracker[key] = (fullTrack)
-          ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
-          : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
-    });
+          ? TrackingStatus.trackedCompleteMaterial
+          : TrackingStatus.trackedIncompleteMaterial;
+    }
 
     return _tracker;
   }
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
     return (!_isBeingTracked!.keys.contains(key))
-        ? TrackingStatus.UNKNOWN
+        ? TrackingStatus.unknown
         : _isBeingTracked![key];
   }
 
   void _trackWeaponAction() {
-    print('Selected: $_selectedTier');
+    debugPrint('Selected: $_selectedTier');
     var _ascendTier = _info!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -407,7 +409,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   void _untrackWeaponAction() {
-    print('Selected: $_selectedTier');
+    debugPrint('Selected: $_selectedTier');
     var _ascendTier = _info!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -444,7 +446,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Text(key == null ? '' : _materialData![key]!.name!),
+      Flexible(child: Text(key == null ? '' : _materialData![key]!.name!)),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -452,8 +454,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   void _addOrRemoveMaterial(int index, WeaponAscension curData) async {
     var key = index.toString();
     var isTracked = _isBeingTrackedStatus(key);
-    if (isTracked == TrackingStatus.UNKNOWN ||
-        isTracked == TrackingStatus.CHECKING) {
+    if (isTracked == TrackingStatus.unknown ||
+        isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
 
       return;
@@ -463,8 +465,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _selectedTier = key;
     });
 
-    if (isTracked == TrackingStatus.TRACKED_INCOMPLETE_MATERIAL ||
-        isTracked == TrackingStatus.TRACKED_COMPLETE_MATERIAL) {
+    if (isTracked == TrackingStatus.trackedIncompleteMaterial ||
+        isTracked == TrackingStatus.trackedCompleteMaterial) {
       await _showRemoveDialog(curData, key);
     } else {
       await _showAddDialog(curData, key);
@@ -483,7 +485,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             child: ListBody(
               children: [
                 GridData.getImageAssetFromFirebase(_info!.image, height: 64),
-                Text(
+                const Text(
                   'This will remove the following materials being tracked for this weapon from the tracker:',
                 ),
                 Row(
@@ -510,11 +512,11 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _untrackWeaponAction,
-              child: Text('Untrack'),
+              child: const Text('Untrack'),
             ),
           ],
         );
@@ -532,7 +534,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             child: ListBody(
               children: [
                 GridData.getImageAssetFromFirebase(_info!.image, height: 64),
-                Text('Items being added to tracker:'),
+                const Text('Items being added to tracker:'),
                 Row(
                   children: _getAscensionTierMaterialRowChild(
                     curData.material1,
@@ -557,11 +559,11 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _trackWeaponAction,
-              child: Text('Track'),
+              child: const Text('Track'),
             ),
           ],
         );
@@ -583,37 +585,37 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       children: [
         Text(
           GridData.getRomanNumberArray(index),
-          style: TextStyle(fontSize: 24),
+          style: const TextStyle(fontSize: 24),
         ),
-        Spacer(),
-        Icon(Icons.show_chart),
+        const Spacer(),
+        const Icon(Icons.show_chart),
         Text(curData.level.toString()),
-        Spacer(),
+        const Spacer(),
         Image.asset(
           'assets/images/items/Icon_Mora.png',
           height: 16,
         ),
         Text(curData.mora.toString()),
-        Spacer(),
+        const Spacer(),
         _getAscensionImage(curData.material1),
         Text(curData.material1Qty.toString()),
-        Spacer(),
+        const Spacer(),
         _getAscensionImage(curData.material2),
         Text(
           (curData.material2Qty == 0) ? '' : curData.material2Qty.toString(),
         ),
-        Spacer(),
+        const Spacer(),
         _getAscensionImage(curData.material3),
         Text(curData.material3Qty.toString()),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }
 
   Widget _generateAscensionData() {
     if (_materialData == null) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 16),
+      return const Padding(
+        padding: EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
       );
     }
@@ -628,15 +630,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       itemBuilder: (context, index) {
         var curData = data[index];
 
-        return Container(
-          child: Card(
-            color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
-            child: InkWell(
-              onTap: () => _addOrRemoveMaterial(index + 1, curData),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: _getAscensionRowItem(curData, index),
-              ),
+        return Card(
+          color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
+          child: InkWell(
+            onTap: () => _addOrRemoveMaterial(index + 1, curData),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: _getAscensionRowItem(curData, index),
             ),
           ),
         );

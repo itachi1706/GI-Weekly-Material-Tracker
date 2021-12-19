@@ -9,11 +9,11 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 enum TrackingStatus {
-  UNKNOWN,
-  CHECKING,
-  NOT_TRACKED,
-  TRACKED_INCOMPLETE_MATERIAL,
-  TRACKED_COMPLETE_MATERIAL,
+  unknown,
+  checking,
+  notTracked,
+  trackedIncompleteMaterial,
+  trackedCompleteMaterial,
 }
 
 class TrackingUtils {
@@ -32,15 +32,15 @@ class TrackingUtils {
       return Colors.yellow;
     } // No such key (loading)
     switch (_isBeingTracked[index.toString()]) {
-      case TrackingStatus.UNKNOWN:
-      case TrackingStatus.CHECKING:
-      case TrackingStatus.NOT_TRACKED:
+      case TrackingStatus.unknown:
+      case TrackingStatus.checking:
+      case TrackingStatus.notTracked:
         return Get.theme.cardColor;
-      case TrackingStatus.TRACKED_COMPLETE_MATERIAL:
+      case TrackingStatus.trackedCompleteMaterial:
         return (Util.themeNotifier.isDarkMode())
             ? Colors.green
             : Colors.lightGreen;
-      case TrackingStatus.TRACKED_INCOMPLETE_MATERIAL:
+      case TrackingStatus.trackedIncompleteMaterial:
         return (Util.themeNotifier.isDarkMode())
             ? Colors.indigo
             : Colors.lightBlue;
@@ -222,12 +222,12 @@ class TrackingData {
         .collection(materialType)
         .get();
     var data = <String, TrackingUserData>{};
-    snaps.docs.forEach((element) {
+    for (var element in snaps.docs) {
       data.putIfAbsent(
         element.id,
         () => TrackingUserData.fromJson(element.data()),
       );
-    });
+    }
 
     return data;
   }
@@ -241,14 +241,14 @@ class TrackingData {
     // Get type of material
     var trackerData = tracker[type]!;
     var data = trackerData[key]!;
-    print('${data.current} | ${data.max} | ${data.current! >= data.max!}');
+    debugPrint('${data.current} | ${data.max} | ${data.current! >= data.max!}');
 
     return data.current! >= data.max!;
   }
 
   static Widget getSupportingWidget(String? image, int? ascension, String? type) {
     if (image == null) return Container();
-    Widget typeWidget = SizedBox.shrink();
+    Widget typeWidget = const SizedBox.shrink();
     if (type != null) {
       typeWidget = Image.asset(
         GridData.getElementImageRef(type)!,
@@ -257,7 +257,7 @@ class TrackingData {
       );
     }
 
-    return Container(
+    return SizedBox(
       height: 48,
       width: 48,
       child: Stack(
@@ -267,7 +267,7 @@ class TrackingData {
             alignment: FractionalOffset.bottomLeft,
             child: Text(
               GridData.getRomanNumberArray(ascension! - 1).toString(),
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               textAlign: TextAlign.end,
             ),
           ),
@@ -285,7 +285,7 @@ class TrackingData {
       Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
-          children: [
+          children: const [
             Text(
               'Ascension Materials',
               style: TextStyle(fontSize: 24),
@@ -296,7 +296,7 @@ class TrackingData {
       Padding(
         padding: const EdgeInsets.only(left: 8, right: 8),
         child: Row(
-          children: [
+          children: const [
             Text(
               'Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials',
             ),
@@ -323,7 +323,7 @@ class UpdateMultiTracking {
     Map<String, dynamic> extraData,
     bool editDialog,
   ) {
-    print(docId);
+    debugPrint(docId);
     var type = data.addedBy;
     var key = (data.addedBy == 'material') ? data.name : data.addData;
     _cntKey = docId;
@@ -367,11 +367,11 @@ class UpdateMultiTracking {
     return [
       TextButton(
         onPressed: () => Get.back(),
-        child: Text('Cancel'),
+        child: const Text('Cancel'),
       ),
       TextButton(
         onPressed: _updateRecord,
-        child: Text('Update'),
+        child: const Text('Update'),
       ),
     ];
   }
@@ -397,7 +397,7 @@ class UpdateMultiTracking {
                     _cntCurrent = newValue;
                   },
                   controller: _textCurrentController,
-                  decoration: InputDecoration(labelText: 'Tracked'),
+                  decoration: const InputDecoration(labelText: 'Tracked'),
                   keyboardType: TextInputType.number,
                 ),
                 TextField(
@@ -405,7 +405,7 @@ class UpdateMultiTracking {
                     _cntTotal = newValue;
                   },
                   controller: _textTotalController,
-                  decoration: InputDecoration(labelText: 'Max'),
+                  decoration: const InputDecoration(labelText: 'Max'),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -417,7 +417,7 @@ class UpdateMultiTracking {
                 Get.back();
                 Get.toNamed('$navigateTo/$key');
               },
-              child: Text('Info'),
+              child: const Text('Info'),
             ),
             ..._commonDialogButtons(),
           ],
@@ -472,7 +472,7 @@ class UpdateMultiTracking {
                     _cntCurrent = newValue;
                   },
                   controller: _textCurrentController,
-                  decoration: InputDecoration(labelText: 'Tracked'),
+                  decoration: const InputDecoration(labelText: 'Tracked'),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -484,7 +484,7 @@ class UpdateMultiTracking {
                 Get.back();
                 Get.toNamed('$navigateTo/$key');
               },
-              child: Text('Info'),
+              child: const Text('Info'),
             ),
             ..._commonDialogButtons(),
           ],
@@ -494,7 +494,7 @@ class UpdateMultiTracking {
   }
 
   void _updateRecord() {
-    print('$_cntKey | $_cntType | $_cntCurrent | $_cntTotal');
+    debugPrint('$_cntKey | $_cntType | $_cntCurrent | $_cntTotal');
     TrackingData.setCount(
       _cntKey,
       _cntType,

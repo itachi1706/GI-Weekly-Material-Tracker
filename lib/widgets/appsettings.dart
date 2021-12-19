@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:filesize_ns/filesize_ns.dart';
+import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +16,8 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -40,7 +42,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Settings')),
+      appBar: AppBar(title: const Text('Settings')),
       body: SettingsList(
         sections: [
           _userDataSettings(),
@@ -98,14 +100,14 @@ class _SettingsPageState extends State<SettingsPage> {
       tiles: [
         SettingsTile(
           title: 'Currently Logged in as',
-          trailing: SizedBox.shrink(),
+          trailing: const SizedBox.shrink(),
           subtitle: Util.getUserEmail(),
-          leading: Icon(Icons.face),
+          leading: const Icon(Icons.face),
         ),
         SettingsTile(
           title: 'Clear tracking data',
-          trailing: SizedBox.shrink(),
-          leading: Icon(Icons.delete_forever),
+          trailing: const SizedBox.shrink(),
+          leading: const Icon(Icons.delete_forever),
           onPressed: _clearTrackingDataPrompt,
         ),
       ],
@@ -116,7 +118,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return [
       SettingsTile.switchTile(
         title: 'Daily Forum Reminders',
-        leading: Icon(Icons.alarm),
+        leading: const Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('daily_login', value).then((s) async {
             var notifyManager = NotificationManager.getInstance()!;
@@ -140,7 +142,7 @@ class _SettingsPageState extends State<SettingsPage> {
         subtitle:
             'Make sure to set the time on the Parametric Transformer page',
         subtitleMaxLines: 2,
-        leading: Icon(Icons.alarm),
+        leading: const Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('parametric_notification', value).then((s) async {
             var notifyManager = NotificationManager.getInstance()!;
@@ -166,7 +168,7 @@ class _SettingsPageState extends State<SettingsPage> {
     if (kIsWeb) {
       // Return no op
       return [
-        SettingsTile(
+        const SettingsTile(
           trailing: SizedBox.shrink(),
           title: 'Notifications not supported on web',
           enabled: false,
@@ -179,10 +181,10 @@ class _SettingsPageState extends State<SettingsPage> {
     if (kDebugMode) {
       tiles.add(SettingsTile(
         title: 'Notification Test Menu',
-        leading: Icon(Icons.bug_report),
-        trailing: SizedBox.shrink(),
+        leading: const Icon(Icons.bug_report),
+        trailing: const SizedBox.shrink(),
         onPressed: (context) {
-          Get.to(() => NotificationDebugPage());
+          Get.to(() => const NotificationDebugPage());
         },
       ));
     }
@@ -215,45 +217,45 @@ class _SettingsPageState extends State<SettingsPage> {
       tiles: [
         SettingsTile.switchTile(
           title: 'Dark Mode',
-          leading: Icon(Icons.wb_sunny_outlined),
+          leading: const Icon(Icons.wb_sunny_outlined),
           onToggle: _toggleDarkMode,
           switchValue: _darkMode,
         ),
         SettingsTile.switchTile(
           title: 'Move completed to bottom',
           subtitle: 'Only for the tracking page',
-          leading: Icon(Icons.checklist),
+          leading: const Icon(Icons.checklist),
           onToggle: _toggleMoveCompletedToBottom,
           switchValue: _moveBot,
         ),
         SettingsTile(
           title: 'Build Guide Source',
           subtitle: _buildSource,
-          leading: Icon(MdiIcons.swordCross),
+          leading: const Icon(MdiIcons.swordCross),
           onPressed: (context) {
-            Get.to(() => BuildGuideSelectorPage())!.then((value) => _refresh());
+            Get.to(() => const BuildGuideSelectorPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
           title: 'Game Server Location',
           subtitle: _location,
-          leading: Icon(MdiIcons.server),
-          trailing: SizedBox.shrink(),
+          leading: const Icon(MdiIcons.server),
+          trailing: const SizedBox.shrink(),
           onPressed: (context) {
-            Get.to(() => RegionSettingsPage())!.then((value) => _refresh());
+            Get.to(() => const RegionSettingsPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
           title: 'Cache',
           subtitle: 'Currently using $_cacheSize ($_cacheFiles files)',
-          trailing: SizedBox.shrink(),
+          trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
-          leading: Icon(Icons.cached_rounded),
+          leading: const Icon(Icons.cached_rounded),
         ),
         SettingsTile(
           title: 'Clear Cache',
-          leading: Icon(MdiIcons.trashCanOutline),
-          trailing: SizedBox.shrink(),
+          leading: const Icon(MdiIcons.trashCanOutline),
+          trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {
             _clearCache();
@@ -269,8 +271,8 @@ class _SettingsPageState extends State<SettingsPage> {
       tiles: [
         SettingsTile(
           title: 'About This App',
-          leading: Icon(Icons.info_outline),
-          trailing: SizedBox.shrink(),
+          leading: const Icon(Icons.info_outline),
+          trailing: const SizedBox.shrink(),
           onPressed: _showAboutPage,
         ),
       ],
@@ -285,7 +287,7 @@ class _SettingsPageState extends State<SettingsPage> {
             padding: const EdgeInsets.only(top: 22, bottom: 8),
             child: Text(
               _version,
-              style: TextStyle(color: Color(0xFF777777)),
+              style: const TextStyle(color: Color(0xFF777777)),
             ),
           ),
         ],
@@ -298,17 +300,17 @@ class _SettingsPageState extends State<SettingsPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Clear Tracking Data'),
+          title: const Text('Clear Tracking Data'),
           content:
-              Text('Claer all materials currently being tracked from the app?'),
+              const Text('Claer all materials currently being tracked from the app?'),
           actions: [
             TextButton(
               onPressed: () => Get.back(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _clearTrackingData,
-              child: Text('Clear'),
+              child: const Text('Clear'),
             ),
           ],
         );
@@ -335,9 +337,9 @@ class _SettingsPageState extends State<SettingsPage> {
   void _clearCache() async {
     var tmp = await getTemporaryDirectory();
     var files = tmp.listSync();
-    files.forEach((file) async {
+    for (var file in files) {
       await file.delete(recursive: true);
-    });
+    }
     Util.showSnackbarQuick(context, 'Cache Cleared');
     _refresh();
   }
@@ -358,7 +360,7 @@ class _SettingsPageState extends State<SettingsPage> {
         });
       }
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
 
     return {'fileNum': fileNum, 'size': totalSize};
@@ -367,7 +369,7 @@ class _SettingsPageState extends State<SettingsPage> {
   void _showAboutPage(BuildContext context) {
     showAboutPage(
       context: context,
-      title: Text('About this app'),
+      title: const Text('About this app'),
       values: {
         'version': _versionStr,
         'year': DateTime.now().year.toString(),
@@ -378,35 +380,35 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
       children: <Widget>[
         ListTile(
-          leading: Icon(Icons.source_outlined),
-          trailing: SizedBox.shrink(),
-          title: Text('View Source Code'),
+          leading: const Icon(Icons.source_outlined),
+          trailing: const SizedBox.shrink(),
+          title: const Text('View Source Code'),
           onTap: () => Util.launchWebPage(
             'https://gitlab.com/itachi1706/gi-weekly-material-tracker',
           ),
         ),
         ListTile(
-          leading: Icon(Icons.bug_report),
-          trailing: SizedBox.shrink(),
-          title: Text('Report a Bug'),
+          leading: const Icon(Icons.bug_report),
+          trailing: const SizedBox.shrink(),
+          title: const Text('Report a Bug'),
           onTap: () => Util.launchWebPage(
             'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Bug%20Report',
           ),
         ),
         ListTile(
-          leading: Icon(Icons.lightbulb),
-          trailing: SizedBox.shrink(),
-          title: Text('Suggest a new Feature'),
+          leading: const Icon(Icons.lightbulb),
+          trailing: const SizedBox.shrink(),
+          title: const Text('Suggest a new Feature'),
           onTap: () => Util.launchWebPage(
             'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Feature%20Request',
           ),
         ),
-        MarkdownPageListTile(
+        const MarkdownPageListTile(
           icon: Icon(Icons.list),
-          title: const Text('Changelog'),
+          title: Text('Changelog'),
           filename: 'CHANGELOG.md',
         ),
-        LicensesPageListTile(
+        const LicensesPageListTile(
           title: Text('Open Source Licenses'),
           icon: Icon(Icons.favorite),
         ),
@@ -423,6 +425,8 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 class RegionSettingsPage extends StatefulWidget {
+  const RegionSettingsPage({Key? key}) : super(key: key);
+
   @override
   _RegionSettingsPageState createState() => _RegionSettingsPageState();
 }
@@ -445,7 +449,7 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Game Server Location')),
+      appBar: AppBar(title: const Text('Game Server Location')),
       body: _buildBody(),
     );
   }
@@ -493,7 +497,7 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
       autofocus: false,
       value: region,
       onChanged: (dynamic ig) {
-        print('Set to $_regionKey');
+        debugPrint('Set to $_regionKey');
       },
       groupValue: _regionKey,
     );
@@ -508,6 +512,8 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
 }
 
 class BuildGuideSelectorPage extends StatefulWidget {
+  const BuildGuideSelectorPage({Key? key}) : super(key: key);
+
   @override
   _BuildGuideSelectorPageState createState() => _BuildGuideSelectorPageState();
 }
@@ -530,7 +536,7 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Build Guide Source')),
+      appBar: AppBar(title: const Text('Build Guide Source')),
       body: _buildBody(),
     );
   }
@@ -572,7 +578,7 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
       autofocus: false,
       value: buildGuideSource,
       onChanged: (dynamic ig) {
-        print('Set to $_buildGuideKey');
+        debugPrint('Set to $_buildGuideKey');
       },
       groupValue: _buildGuideKey,
     );
@@ -587,19 +593,21 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
 }
 
 class NotificationDebugPage extends StatelessWidget {
+  const NotificationDebugPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var notifyManager = NotificationManager.getInstance();
 
     return Scaffold(
-      appBar: AppBar(title: Text('Notification Debug')),
+      appBar: AppBar(title: const Text('Notification Debug')),
       body: SettingsList(
         sections: [
           SettingsSection(
             tiles: [
               SettingsTile(
                 title: 'Daily Forum Reminder',
-                trailing: SizedBox.shrink(),
+                trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.showNotification(
                     notifyManager.getDailyCheckInMessages(),
@@ -610,7 +618,7 @@ class NotificationDebugPage extends StatelessWidget {
               ),
               SettingsTile(
                 title: 'Parametric Transformer Reminder',
-                trailing: SizedBox.shrink(),
+                trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.showNotification(
                     notifyManager.getParametricTransformerMesssages(),
@@ -621,7 +629,7 @@ class NotificationDebugPage extends StatelessWidget {
               ),
               SettingsTile(
                 title: 'Scheduled Reminders List',
-                trailing: SizedBox.shrink(),
+                trailing: const SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager!.getScheduledReminders();
                   await _showDialog(context, msg);
@@ -629,7 +637,7 @@ class NotificationDebugPage extends StatelessWidget {
               ),
               SettingsTile(
                 title: 'Delete Scheduled Notification Channel',
-                trailing: SizedBox.shrink(),
+                trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.removeNotificationChannel('scheduled_notify');
                 },
@@ -646,12 +654,12 @@ class NotificationDebugPage extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Upcoming Reminders'),
+          title: const Text('Upcoming Reminders'),
           content: Text(msg),
           actions: [
             TextButton(
               onPressed: () => Get.back(),
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );

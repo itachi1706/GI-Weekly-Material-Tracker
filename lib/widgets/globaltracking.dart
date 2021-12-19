@@ -15,18 +15,20 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class GlobalTrackingPage extends StatelessWidget {
   final List<Tab> _tabs = [
-    Tab(text: 'Boss'),
-    Tab(text: 'Domains'),
-    Tab(text: 'Monster'),
-    Tab(text: 'Local Speciality'),
+    const Tab(text: 'Boss'),
+    const Tab(text: 'Domains'),
+    const Tab(text: 'Monster'),
+    const Tab(text: 'Local Speciality'),
   ];
 
   final List<Widget> _children = [
-    GlobalTracker(path: 'boss_drops'),
-    GlobalTracker(path: 'domain_material'),
-    GlobalTracker(path: 'mob_drops'),
-    GlobalTracker(path: 'local_speciality'),
+    const GlobalTracker(path: 'boss_drops'),
+    const GlobalTracker(path: 'domain_material'),
+    const GlobalTracker(path: 'mob_drops'),
+    const GlobalTracker(path: 'local_speciality'),
   ];
+
+  GlobalTrackingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class GlobalTrackingPage extends StatelessWidget {
       length: _tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Consolidated Material List'),
+          title: const Text('Consolidated Material List'),
           bottom: TabBar(
             tabs: _tabs,
           ),
@@ -50,7 +52,7 @@ class GlobalTrackingPage extends StatelessWidget {
 class GlobalTracker extends StatefulWidget {
   final String path;
 
-  GlobalTracker({Key? key, required this.path}) : super(key: key);
+  const GlobalTracker({Key? key, required this.path}) : super(key: key);
 
   @override
   _GlobalTrackerState createState() => _GlobalTrackerState();
@@ -82,7 +84,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
       stream: ref.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting ||
@@ -96,7 +98,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         if (_collectionLen > 0) {
           // Consolidate stuff together
           var _conData = <String?, CommonTracking>{};
-          data.docs.forEach((snap) {
+          for (var snap in data.docs) {
             var _tmp = TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
             if (_conData.containsKey(_tmp.name)) {
               // Append
@@ -114,11 +116,11 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                 ),
               );
             }
-          });
+          }
 
           return _getGlobalTrackingList(_conData);
         } else {
-          return Center(
+          return const Center(
             child: Text('No items being tracked for this material category'),
           );
         }
@@ -132,7 +134,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
       itemBuilder: (context, index) {
         var key = _conData.keys.elementAt(index);
         var _data = _conData[key]!;
-        print(_data);
+        debugPrint(_data.toString());
         var _material = _materialData![_data.name!]!;
 
         return Card(
@@ -149,7 +151,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                     height: 48,
                   ),
                   _getMaterialInfo(_material),
-                  Spacer(),
+                  const Spacer(),
                   Column(
                     children: [
                       Text(
@@ -174,7 +176,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
   }
 
   Widget _getMaterialInfo(MaterialDataCommon _material) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -182,7 +184,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         children: [
           Text(
             _material.name!,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.white,
             ),
@@ -195,14 +197,14 @@ class _GlobalTrackerState extends State<GlobalTracker> {
             initialRating: double.tryParse(
               _material.rarity.toString(),
             )!,
-            itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber),
+            itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
             onRatingUpdate: (rating) {
-              print(rating);
+              debugPrint(rating.toString());
             },
           ),
           Text(
             _material.obtained!.replaceAll('\\n', '\n'),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 11,
               color: Colors.white,
             ),
@@ -214,6 +216,8 @@ class _GlobalTrackerState extends State<GlobalTracker> {
 }
 
 class GlobalMaterialPage extends StatefulWidget {
+  const GlobalMaterialPage({Key? key}) : super(key: key);
+
   @override
   _GlobalMaterialPageState createState() => _GlobalMaterialPageState();
 }
@@ -234,14 +238,14 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
   @override
   void initState() {
     super.initState();
-    print(Get.parameters);
+    debugPrint(Get.parameters.toString());
     _materialKey = Get.parameters['materialKey'];
     _getStaticData();
     _flatButtonStyle = TextButton.styleFrom(
       primary: (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black,
-      minimumSize: Size(0, 0),
+      minimumSize: const Size(0, 0),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(2.0)),
       ),
@@ -263,7 +267,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           child: Column(
             children: [
               _materialHeader(),
-              Divider(),
+              const Divider(),
               ...GridData.generateInfoLine(
                 _material!.obtained!.replaceAll('- ', ''),
                 Icons.location_pin,
@@ -275,7 +279,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
-                  children: [
+                  children: const [
                     Text(
                       'Tracking For',
                       style: TextStyle(fontSize: 24),
@@ -301,12 +305,12 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _material!.type!,
                 textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
             ),
             RatingBar.builder(
@@ -315,9 +319,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               itemSize: 30,
               initialRating: double.tryParse(_material!.rarity.toString())!,
               itemBuilder: (context, _) =>
-                  Icon(Icons.star, color: Colors.amber),
+                  const Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
-                print(rating);
+                debugPrint(rating.toString());
               },
             ),
           ],
@@ -353,8 +357,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             _weaponData == null ||
             (snapshot.connectionState == ConnectionState.waiting &&
                 !_firstLoad)) {
-          return Padding(
-            padding: const EdgeInsets.only(top: 16),
+          return const Padding(
+            padding: EdgeInsets.only(top: 16),
             child: CircularProgressIndicator(),
           );
         }
@@ -363,12 +367,12 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
         var qs = snapshot.data!;
         var _trackerData = <String, TrackingUserData>{};
-        qs.docs.forEach((data) => {
-              _trackerData.putIfAbsent(
-                data.id,
-                () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
-              ),
-            });
+        for (var data in qs.docs) {
+          _trackerData.putIfAbsent(
+            data.id,
+            () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
+          );
+        }
 
         return _getCharacterDataList(_trackerData);
       },
@@ -388,10 +392,10 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         String? extraTypeRef;
         var name = _material!.name;
         var override = false;
-        print(key);
+        debugPrint(key);
         var _splitKey = key.split('_');
         var _ascendTier = _splitKey[_splitKey.length - 1];
-        print(_ascendTier);
+        debugPrint(_ascendTier);
         if (_data.addData != null) {
           // Grab image ref of extra data based on addedBy
           if (_data.addedBy == 'character') {
@@ -420,7 +424,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           }
         }
 
-        Widget typeWidget = SizedBox.shrink();
+        Widget typeWidget = const SizedBox.shrink();
         if (extraTypeRef != null) {
           typeWidget = Image.asset(
             GridData.getElementImageRef(extraTypeRef)!,
@@ -447,7 +451,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     int extraAscensionRef,
     Widget typeWidget,
   ) {
-    return Container(
+    return SizedBox(
       height: 64,
       width: 64,
       child: Stack(
@@ -490,7 +494,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 _data.type,
                 _data.current!,
               ),
-              child: Icon(Icons.remove),
+              child: const Icon(Icons.remove),
             ),
             TextButton(
               style: _flatButtonStyle,
@@ -500,7 +504,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 _data.current!,
                 _data.max!,
               ),
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             ),
           ],
         ),
@@ -517,52 +521,50 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     TrackingUserData _data,
     String name,
   ) {
-    return Container(
-      child: Card(
-        child: InkWell(
-          onLongPress: () =>
-              UpdateMultiTracking(context, _material).itemClickedAction(
-            _data,
-            key,
-            {
-              'img': imageRef,
-              'asc': extraAscensionRef,
-              'type': extraTypeRef,
-            },
-            true,
-          ),
-          onTap: () {
-            _tapCount++;
-            if (_tapCount > 5) {
-              Util.showSnackbarQuick(
-                context,
-                'Long press to bulk update tracked materials',
-              );
-            }
+    return Card(
+      child: InkWell(
+        onLongPress: () =>
+            UpdateMultiTracking(context, _material).itemClickedAction(
+          _data,
+          key,
+          {
+            'img': imageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
           },
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _getCharacterDataImage(imageRef, extraAscensionRef, typeWidget),
-                Container(
-                  width: MediaQuery.of(context).size.width - 200,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        name,
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
+          true,
+        ),
+        onTap: () {
+          _tapCount++;
+          if (_tapCount > 5) {
+            Util.showSnackbarQuick(
+              context,
+              'Long press to bulk update tracked materials',
+            );
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _getCharacterDataImage(imageRef, extraAscensionRef, typeWidget),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 200,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ],
                 ),
-                Spacer(),
-                _getCharacterDataControls(key, _data),
-              ],
-            ),
+              ),
+              const Spacer(),
+              _getCharacterDataControls(key, _data),
+            ],
           ),
         ),
       ),
