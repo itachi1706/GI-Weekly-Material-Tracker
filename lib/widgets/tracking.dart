@@ -417,7 +417,7 @@ class _PlannerPageState extends State<PlannerPage> {
 
         var _finalDomainMaterials = <String>[];
         // Tabulate the materials and remove completed ones
-        _uniqueMaterials.forEach((element) {
+        for (var element in _uniqueMaterials) {
           var _cur = 0, _max = 0;
           data.docs
               .where((element2) => element2.data()['name'] == element)
@@ -429,22 +429,22 @@ class _PlannerPageState extends State<PlannerPage> {
           if (_cur < _max) {
             _finalDomainMaterials.add(element);
           }
-        });
+        }
 
         var _mappedData = <int, Set<String>>{};
         for (var i = 1; i <= 7; i++) {
           _mappedData.putIfAbsent(i, () => {});
         }
-        _finalDomainMaterials.forEach((domainMaterial) {
-          if (!(_matData![domainMaterial] is MaterialDataDomains)) return;
+        for (var domainMaterial in _finalDomainMaterials) {
+          if (!(_matData![domainMaterial] is MaterialDataDomains)) continue;
 
           var _daysForMaterial =
               (_matData![domainMaterial] as MaterialDataDomains).days!;
 
-          _daysForMaterial.forEach((day) {
+          for (var day in _daysForMaterial) {
             _mappedData[day]!.add(domainMaterial);
-          });
-        });
+          }
+        }
 
         return _buildWeeklyMaterials(_mappedData);
       },

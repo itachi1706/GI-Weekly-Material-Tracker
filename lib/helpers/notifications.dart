@@ -121,10 +121,10 @@ class NotificationManager {
     if (pendingRequests.isEmpty) {
       result = 'No Pending Notifications';
     } else {
-      pendingRequests.forEach((element) {
+      for (var element in pendingRequests) {
         result +=
             '${element.id}|${element.title}|${element.body}|${element.payload}\n';
-      });
+      }
     }
 
     return result;

@@ -96,7 +96,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         if (_collectionLen > 0) {
           // Consolidate stuff together
           var _conData = <String?, CommonTracking>{};
-          data.docs.forEach((snap) {
+          for (var snap in data.docs) {
             var _tmp = TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
             if (_conData.containsKey(_tmp.name)) {
               // Append
@@ -114,7 +114,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
                 ),
               );
             }
-          });
+          }
 
           return _getGlobalTrackingList(_conData);
         } else {
@@ -363,12 +363,12 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
         var qs = snapshot.data!;
         var _trackerData = <String, TrackingUserData>{};
-        qs.docs.forEach((data) => {
-              _trackerData.putIfAbsent(
-                data.id,
-                () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
-              ),
-            });
+        for (var data in qs.docs) {
+          _trackerData.putIfAbsent(
+            data.id,
+            () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
+          );
+        }
 
         return _getCharacterDataList(_trackerData);
       },

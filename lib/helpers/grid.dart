@@ -84,14 +84,14 @@ class GridData {
 
   static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
     var data = <QueryDocumentSnapshot>[];
-    snapshot.forEach((element) {
+    for (var element in snapshot) {
       var dt = element.data() as Map<String, dynamic>;
       if (dt['released']) {
         data.add(element);
       } else {
         debugPrint("Skipping ${dt['name']}");
       }
-    });
+    }
 
     return data;
   }
@@ -111,14 +111,14 @@ class GridData {
     //   }
     // });
 
-    _snapData.forEach((element) {
+    for (var element in _snapData) {
         var dt = element.data() as Map<String, dynamic>;
         if (dt['released']) {
           data.putIfAbsent(element.id, () => dt);
         } else {
           debugPrint("Skipping ${dt['name']}");
         }
-      });
+      }
     switch (type) {
       case 'characters':
         _staticData[type] = CharacterData.getList(data);

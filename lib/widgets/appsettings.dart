@@ -335,9 +335,9 @@ class _SettingsPageState extends State<SettingsPage> {
   void _clearCache() async {
     var tmp = await getTemporaryDirectory();
     var files = tmp.listSync();
-    files.forEach((file) async {
+    for (var file in files) {
       await file.delete(recursive: true);
-    });
+    }
     Util.showSnackbarQuick(context, 'Cache Cleared');
     _refresh();
   }

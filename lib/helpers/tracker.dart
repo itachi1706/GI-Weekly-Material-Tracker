@@ -222,12 +222,12 @@ class TrackingData {
         .collection(materialType)
         .get();
     var data = <String, TrackingUserData>{};
-    snaps.docs.forEach((element) {
+    for (var element in snaps.docs) {
       data.putIfAbsent(
         element.id,
         () => TrackingUserData.fromJson(element.data()),
       );
-    });
+    }
 
     return data;
   }

@@ -421,9 +421,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
-      widget.info!.ascension!.keys.forEach((key) {
+      for (var key in widget.info!.ascension!.keys) {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
-      });
+      }
       setState(() {
         _isBeingTracked = _tmpTracker;
       });
@@ -434,7 +434,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       debugPrint(_dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
-      _tracker!.keys.forEach((key) {
+      for (var key in _tracker!.keys) {
         var _isTracked = TrackingData.isBeingTrackedLocal(
           _dataList,
           '${widget.infoId}_$key',
@@ -454,7 +454,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         }
         _tracker![key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
-      });
+      }
 
       _tracker = await _processTrackingStatus(datasets, _tracker!);
 
@@ -476,8 +476,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       collectionList[ds] = await TrackingData.getCollectionList(ds!);
     }
     // Run through tracking status and check if its fully tracked
-    _tracker.keys.forEach((key) {
-      if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+    for (var key in _tracker.keys) {
+      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
       var fullTrack = true;
       var data = widget.info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -515,7 +515,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _tracker[key] = (fullTrack)
           ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
           : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
-    });
+    }
 
     return _tracker;
   }
@@ -920,11 +920,11 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
-      widget.info!.talent!.attack!.keys.forEach((key) {
-        widget.info!.talent!.ascension!.keys.forEach((k2) {
+      for (var key in widget.info!.talent!.attack!.keys) {
+        for (var k2 in widget.info!.talent!.ascension!.keys) {
           _tmpTracker['${key}_$k2'] = TrackingStatus.UNKNOWN;
-        });
-      });
+        }
+      }
       setState(() {
         _isBeingTracked = _tmpTracker;
       });
@@ -935,7 +935,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       debugPrint(_dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
-      _tracker!.keys.forEach((key) {
+      for (var key in _tracker!.keys) {
         var _isTracked = TrackingData.isBeingTrackedLocal(
           _dataList,
           '${widget.infoId}_$key',
@@ -956,7 +956,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         }
         _tracker![key] =
             (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
-      });
+      }
 
       _tracker = await _processTracker(_tracker!, datasets);
 
@@ -978,8 +978,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       collectionList[ds] = await TrackingData.getCollectionList(ds!);
     }
     // Run through tracking status and check if its fully tracked
-    _tracker.keys.forEach((key) {
-      if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+    for (var key in _tracker.keys) {
+      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
       var fullTrack = true;
       var splitKey = key.split('_');
       var data = widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
@@ -1018,7 +1018,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       _tracker[key] = (fullTrack)
           ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
           : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
-    });
+    }
 
     return _tracker;
   }

@@ -59,12 +59,12 @@ class _MyAppState extends State<MyApp> {
       unknownRoute: GetPage(name: '/splash', page: () => SplashPage()),
       getPages: [
         GetPage(name: '/splash', page: () => SplashPage()),
-        GetPage(name: '/', page: () => LoginPage()),
+        GetPage(name: '/', page: () => const LoginPage()),
         GetPage(name: '/placeholder', page: () => PlaceholderPage()),
         GetPage(name: '/menu', page: () => TransitionPage()),
         GetPage(
           name: '/tracking',
-          page: () => TrackingPage(
+          page: () => const TrackingPage(
             title: 'GI Materials Tracker',
           ),
           transition: Transition.noTransition,

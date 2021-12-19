@@ -18,7 +18,7 @@ class WeaponTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  WeaponTabController({Key? key, required this.tabController, this.notifier})
+  const WeaponTabController({Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class WeaponListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  WeaponListGrid({Key? key, this.filter, this.notifier});
+  const WeaponListGrid({Key? key, this.filter, this.notifier});
 
   @override
   _WeaponListGridState createState() => _WeaponListGridState();
@@ -267,9 +267,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (_materialData == null) return; // No data
     if (_isBeingTracked == null) {
       var _tmpTracker = <String, TrackingStatus>{};
-      _info!.ascension!.keys.forEach((key) {
+      for (var key in _info!.ascension!.keys) {
         _tmpTracker[key] = TrackingStatus.UNKNOWN;
-      });
+      }
       setState(() {
         if (!mounted) return;
         _isBeingTracked = _tmpTracker;
@@ -287,7 +287,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     debugPrint(_dataList.toString());
     var datasets = <String?>{};
     // Check tracking status and get material list
-    _isBeingTracked!.keys.forEach((key) {
+    for (var key in _isBeingTracked!.keys) {
       var _isTracked =
           TrackingData.isBeingTrackedLocal(_dataList, '${_infoId}_$key');
       var data = _info!.ascension![key]!;
@@ -302,7 +302,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       }
       _tracker[key] =
           (_isTracked) ? TrackingStatus.CHECKING : TrackingStatus.NOT_TRACKED;
-    });
+    }
 
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
@@ -318,8 +318,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     Map<String, TrackingStatus> _tracker,
   ) async {
     // Run through tracking status and check if its fully tracked
-    _tracker.keys.forEach((key) {
-      if (_tracker[key] != TrackingStatus.CHECKING) return; // Skip untracked
+    for (var key in _tracker.keys) {
+      if (_tracker[key] != TrackingStatus.CHECKING) continue; // Skip untracked
       var fullTrack = true;
       var data = _info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -349,7 +349,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _tracker[key] = (fullTrack)
           ? TrackingStatus.TRACKED_COMPLETE_MATERIAL
           : TrackingStatus.TRACKED_INCOMPLETE_MATERIAL;
-    });
+    }
 
     return _tracker;
   }
@@ -444,7 +444,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Text(key == null ? '' : _materialData![key]!.name!),
+      Flexible(child: Text(key == null ? '' : _materialData![key]!.name!)),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
