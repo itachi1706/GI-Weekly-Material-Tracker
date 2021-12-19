@@ -17,7 +17,7 @@ class NotificationManager {
 
   NotificationManager() {
     _plugin = null;
-    print('Notification Manager Created');
+    debugPrint('Notification Manager Created');
   }
 
   static NotificationManager? getInstance() {
@@ -59,7 +59,7 @@ class NotificationManager {
     tz.initializeTimeZones();
     tz.setLocalLocation(tz.getLocation('Asia/Singapore'));
 
-    print('Initializing Notification Manager');
+    debugPrint('Initializing Notification Manager');
   }
 
   Future onDidReceiveLocalNotification(
@@ -72,13 +72,13 @@ class NotificationManager {
   }
 
   Future rescheduleAllScheduledReminders() async {
-    print('Rescheduling all scheduled reminders');
+    debugPrint('Rescheduling all scheduled reminders');
     var pref = await SharedPreferences.getInstance();
     await scheduleDailyForumReminder(pref.getBool('daily_login') ?? false);
     await scheduleParametricReminder(
       pref.getBool('parametric_notification') ?? false,
     );
-    print('Scheduled Reminders rescheduled');
+    debugPrint('Scheduled Reminders rescheduled');
   }
 
   Future selectNotification(String? payload) async {
@@ -110,7 +110,7 @@ class NotificationManager {
       if (!silent) {
         Util.showSnackbarQuick(Get.context!, 'Notification Channel deleted');
       } else {
-        print('Notification Channel $channelId deleted');
+        debugPrint('Notification Channel $channelId deleted');
       }
     }
   }
@@ -175,7 +175,7 @@ class NotificationManager {
   }) async {
     var data = getParametricTransformerMesssages();
     await _plugin!.cancel(data[0], tag: 'weekly_parametric');
-    print('Deleted Parametric Transformer Reminder');
+    debugPrint('Deleted Parametric Transformer Reminder');
 
     if (resetNotificationChannel) {
       await resetScheduledIfNotInUse();
@@ -189,17 +189,17 @@ class NotificationManager {
     }
 
     var currentTime = tz.TZDateTime.now(tz.local).millisecondsSinceEpoch;
-    print('Now (ms): $currentTime | Reset (ms): $resetTime');
+    debugPrint('Now (ms): $currentTime | Reset (ms): $resetTime');
 
     // Prevent creating reminder if reminder time is before current time (aka its over)
     if (toEnable && resetTime > 0) {
-      print('Parametric Reminder Enabled. Calculating reminder time');
+      debugPrint('Parametric Reminder Enabled. Calculating reminder time');
       var remindTime =
           tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, resetTime)
-              .add(Duration(days: 6, hours: 22));
-      print('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
+              .add(const Duration(days: 6, hours: 22));
+      debugPrint('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
       if (remindTime.millisecondsSinceEpoch > currentTime) {
-        print('Scheduling Parametric Transformer Reminder');
+        debugPrint('Scheduling Parametric Transformer Reminder');
         await _plugin!.zonedSchedule(
           data[0],
           data[1],
@@ -212,7 +212,7 @@ class NotificationManager {
           androidAllowWhileIdle: true,
         );
       } else {
-        print(
+        debugPrint(
           'Reminder Time is before current time. Aborting scheduling of reminder',
         );
       }
@@ -225,14 +225,14 @@ class NotificationManager {
   }) async {
     var data = getDailyCheckInMessages();
     await _plugin!.cancel(data[0], tag: 'daily_forum');
-    print('Deleted Daily Forum Reminder');
+    debugPrint('Deleted Daily Forum Reminder');
 
     if (resetNotificationChannel) {
       await resetScheduledIfNotInUse();
     }
 
     if (toEnable) {
-      print('Scheduling Daily Forum Reminder');
+      debugPrint('Scheduling Daily Forum Reminder');
       await _plugin!.zonedSchedule(
         data[0],
         data[1],
@@ -314,7 +314,7 @@ class NotificationManager {
     if (scheduledDate.isBefore(now)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
-    print('Now: $now | Scheduled: $scheduledDate');
+    debugPrint('Now: $now | Scheduled: $scheduledDate');
 
     return scheduledDate;
   }

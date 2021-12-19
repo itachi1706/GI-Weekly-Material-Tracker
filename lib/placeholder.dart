@@ -10,10 +10,10 @@ class PlaceholderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Placeholder Page'),
+        title: const Text('Placeholder Page'),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: _signOut,
           ),
         ],
@@ -21,7 +21,7 @@ class PlaceholderPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Text('Page Coming Soon'),
           ],
         ),
@@ -38,7 +38,7 @@ class PlaceholderPage extends StatelessWidget {
 class PlaceholderWidgetContainer extends StatelessWidget {
   final Color color;
 
-  PlaceholderWidgetContainer(this.color);
+  const PlaceholderWidgetContainer(this.color);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class PlaceholderWidgetContainer extends StatelessWidget {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Text(
               'Coming Soon!',
               style: TextStyle(color: Colors.white, fontSize: 24),

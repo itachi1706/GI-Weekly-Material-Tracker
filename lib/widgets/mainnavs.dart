@@ -12,7 +12,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class TrackingPage extends StatefulWidget {
   final String? title;
 
-  TrackingPage({Key? key, this.title}) : super(key: key);
+  const TrackingPage({Key? key, this.title}) : super(key: key);
 
   @override
   _TrackingPageState createState() => _TrackingPageState();
@@ -21,11 +21,11 @@ class TrackingPage extends StatefulWidget {
 class _TrackingPageState extends State<TrackingPage>
     with TickerProviderStateMixin {
   final List<Tab> _tabs = [
-    Tab(text: 'Boss'),
-    Tab(text: 'Domains'),
-    Tab(text: 'Monster'),
-    Tab(text: 'Local Speciality'),
-    Tab(text: 'Week Planner'),
+    const Tab(text: 'Boss'),
+    const Tab(text: 'Domains'),
+    const Tab(text: 'Monster'),
+    const Tab(text: 'Local Speciality'),
+    const Tab(text: 'Week Planner'),
   ];
 
   TabController? _tabController;
@@ -44,7 +44,7 @@ class _TrackingPageState extends State<TrackingPage>
         bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           IconButton(
-            icon: Icon(MdiIcons.fileDocument),
+            icon: const Icon(MdiIcons.fileDocument),
             tooltip: 'View Consolidated Material List',
             onPressed: () => Get.toNamed('/globalTracking'),
           ),
@@ -77,7 +77,7 @@ class _DictionaryPageState extends State<DictionaryPage>
 
   final Map<int, List<Tab>> _tabs = {
     0: [
-      Tab(text: 'All'),
+      const Tab(text: 'All'),
       Tab(
         icon: Image.asset(
           GridData.getElementImageRef('Anemo')!,
@@ -116,19 +116,19 @@ class _DictionaryPageState extends State<DictionaryPage>
       ),
     ],
     1: [
-      Tab(text: 'All'),
-      Tab(text: 'Bow'),
-      Tab(text: 'Catalyst'),
-      Tab(text: 'Claymore'),
-      Tab(text: 'Polearm'),
-      Tab(text: 'Sword'),
+      const Tab(text: 'All'),
+      const Tab(text: 'Bow'),
+      const Tab(text: 'Catalyst'),
+      const Tab(text: 'Claymore'),
+      const Tab(text: 'Polearm'),
+      const Tab(text: 'Sword'),
     ],
     2: [
-      Tab(text: 'All'),
-      Tab(text: 'Boss'),
-      Tab(text: 'Domains'),
-      Tab(text: 'Monster'),
-      Tab(text: 'Local Speciality'),
+      const Tab(text: 'All'),
+      const Tab(text: 'Boss'),
+      const Tab(text: 'Domains'),
+      const Tab(text: 'Monster'),
+      const Tab(text: 'Local Speciality'),
     ],
   };
   late Map<int, TabController> _tabControllers;
@@ -166,7 +166,7 @@ class _DictionaryPageState extends State<DictionaryPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dictionary'),
+        title: const Text('Dictionary'),
         bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           _showSortWidget(),
@@ -179,7 +179,7 @@ class _DictionaryPageState extends State<DictionaryPage>
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Characters',
@@ -212,7 +212,7 @@ class _DictionaryPageState extends State<DictionaryPage>
     if (_notifier!.getSortKey() == sorter) {
       descending = !_notifier!.isDescending();
     }
-    print(
+    debugPrint(
       'Sorting by $sorter in ${(descending) ? 'Descending' : 'Ascending'} order',
     );
     _notifier!.updateSortKey(sorter, descending);
@@ -220,7 +220,7 @@ class _DictionaryPageState extends State<DictionaryPage>
 
   Widget _showSortWidget() {
     return PopupMenuButton(
-      icon: Icon(Icons.sort),
+      icon: const Icon(Icons.sort),
       elevation: 2.0,
       onSelected: _sortBy,
       itemBuilder: (context) => _sortList.getSortList(_currentIndex),

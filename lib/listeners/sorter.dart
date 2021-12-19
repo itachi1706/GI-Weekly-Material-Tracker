@@ -61,7 +61,7 @@ class SortBy {
       child: Row(
         children: [
           Text(title),
-          Spacer(),
+          const Spacer(),
           Icon(
             _getSortingData(isNumber, type),
             color: _matchColor(type),
@@ -93,7 +93,7 @@ class SortBy {
         textStyle: TextStyle(color: _matchColor(null)),
         value: '',
         child: Row(
-          children: [Text('Default'), Spacer()],
+          children: const [Text('Default'), Spacer()],
         ),
       ),
       _getSorterMenuWidget('rarity', 'Rarity', true),

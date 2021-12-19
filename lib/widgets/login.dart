@@ -12,7 +12,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           }
         }
         // Signed out
-        print('Signed out');
+        debugPrint('Signed out');
 
         return _loginScreen();
       },
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
 
   List<Widget> _signInButtons() {
     var wid = <Widget>[
-      Text('Genshin Impact Weekly Material Tracker'),
+      const Text('Genshin Impact Weekly Material Tracker'),
       SignInButton(Buttons.Google, onPressed: _signInGoogle),
     ];
     if (!kReleaseMode) {
@@ -76,11 +76,11 @@ class _LoginPageState extends State<LoginPage> {
       }
     }
     if (_loggingIn) {
-      wid.add(Padding(
+      wid.add(const Padding(
         padding: EdgeInsets.all(16.0),
         child: CircularProgressIndicator(),
       ));
-      wid.add(Text('Logging In'));
+      wid.add(const Text('Logging In'));
     }
 
     return wid;
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginScreen() {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
       ),
       body: Center(
         child: Column(
@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _signIn() async {
-    print('Signing In with Test Account');
+    debugPrint('Signing In with Test Account');
     _loggingInState();
     try {
       await _auth.signInWithEmailAndPassword(
@@ -116,15 +116,15 @@ class _LoginPageState extends State<LoginPage> {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found');
+        debugPrint('No user found');
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user');
+        debugPrint('Wrong password provided for that user');
       }
     }
   }
 
   Future<UserCredential> _signInGoogle() async {
-    print('Signing In with Google');
+    debugPrint('Signing In with Google');
     _loggingInState();
     if (kIsWeb) {
       var googleProvider = GoogleAuthProvider();
@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
 
       // Once signed in, return the UserCredential
       await _auth.signInWithRedirect(googleProvider);
-      print('Getting redirect info');
+      debugPrint('Getting redirect info');
 
       return _auth.getRedirectResult();
     } else {

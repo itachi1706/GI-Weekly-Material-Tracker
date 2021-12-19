@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData(
         primarySwatch: Colors.deepOrange,
         toggleableActiveColor: Colors.deepOrangeAccent,
-        colorScheme: ColorScheme.dark().copyWith(
+        colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.deepOrange,
           secondary: Colors.deepOrange,
         ),
@@ -88,12 +88,12 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/settings', page: () => SettingsPage()),
         GetPage(
           name: '/parametric',
-          page: () => ParametricPage(),
+          page: () => const ParametricPage(),
           transition: Transition.noTransition,
         ),
         GetPage(
           name: '/promos',
-          page: () => PromoCodePage(),
+          page: () => const PromoCodePage(),
           transition: Transition.noTransition,
         ),
       ],

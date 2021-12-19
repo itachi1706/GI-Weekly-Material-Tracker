@@ -20,7 +20,7 @@ class CharacterTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  CharacterTabController({Key? key, required this.tabController, this.notifier})
+  const CharacterTabController({Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -47,7 +47,7 @@ class CharacterListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  CharacterListGrid({Key? key, this.filter, this.notifier});
+  const CharacterListGrid({Key? key, this.filter, this.notifier});
 
   @override
   _CharacterListGridState createState() => _CharacterListGridState();
@@ -91,7 +91,7 @@ class _CharacterListGridState extends State<CharacterListGrid> {
           (queryRef == null) ? characterRef.snapshots() : queryRef.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text('Error occurred getting snapshot');
+          return const Text('Error occurred getting snapshot');
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -154,19 +154,19 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
         appBar: AppBar(
           title: Text(_info!.name!),
           backgroundColor: _rarityColor,
-          bottom: TabBar(tabs: [
+          bottom: const TabBar(tabs: [
             Tab(text: 'General'),
             Tab(text: 'Talents'),
             Tab(text: 'Constellations'),
           ]),
           actions: [
             IconButton(
-              icon: Icon(Icons.info_outline),
+              icon: const Icon(Icons.info_outline),
               onPressed: () => GridData.launchWikiUrl(context, _info!),
               tooltip: 'View Wiki',
             ),
             IconButton(
-              icon: Icon(MdiIcons.swordCross),
+              icon: const Icon(MdiIcons.swordCross),
               onPressed: _openCharBuildGuide,
               tooltip: 'Build Guide ($_bgSource)',
             ),
@@ -237,7 +237,7 @@ class CharacterInfoPage extends StatefulWidget {
   final String? infoId;
   final Map<String, MaterialDataCommon>? materialData;
 
-  CharacterInfoPage({
+  const CharacterInfoPage({
     Key? key,
     required this.info,
     required this.infoId,
@@ -269,7 +269,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         child: Column(
           children: [
             _getCharacterHeader(),
-            Divider(),
+            const Divider(),
             ..._getCharacterFullNameWidget(widget.info!),
             ...GridData.generateInfoLine(
               widget.info!.affiliation!,
@@ -285,9 +285,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             ),
             ...GridData.generateInfoLine(widget.info!.introduction!, Icons.book),
             _getConstellationWeaponWidget(),
-            Divider(),
+            const Divider(),
             _getGenderBirthdayWidget(),
-            Divider(),
+            const Divider(),
             ...TrackingData.getAscensionHeader(),
             _generateAscensionData(),
           ],
@@ -297,7 +297,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   List<Widget> _getCharacterFullNameWidget(CharacterData info) {
-    var finalWidget = <Widget>[SizedBox.shrink()];
+    var finalWidget = <Widget>[const SizedBox.shrink()];
     if (info.fullName != null) {
       finalWidget = GridData.generateInfoLine(
         info.fullName!,
@@ -324,13 +324,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               ],
             ),
           ),
-          Spacer(),
-          VerticalDivider(),
+          const Spacer(),
+          const VerticalDivider(),
           Padding(
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(Icons.cake),
+                const Icon(Icons.cake),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: Text(widget.info!.birthday!),
@@ -338,7 +338,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );
@@ -352,7 +352,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(MdiIcons.weatherNight),
+                const Icon(MdiIcons.weatherNight),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.constellation!),
@@ -360,13 +360,13 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               ],
             ),
           ),
-          Spacer(),
-          VerticalDivider(),
+          const Spacer(),
+          const VerticalDivider(),
           Padding(
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(MdiIcons.swordCross),
+                const Icon(MdiIcons.swordCross),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: Text(widget.info!.weapon!),
@@ -374,7 +374,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );
@@ -395,7 +395,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               child: Text(
                 widget.info!.caption!,
                 textAlign: TextAlign.start,
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
             ),
             RatingBar.builder(
@@ -404,14 +404,14 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               itemSize: 30,
               initialRating: double.tryParse(widget.info!.rarity.toString())!,
               itemBuilder: (context, _) =>
-                  Icon(Icons.star, color: Colors.amber),
+                  const Icon(Icons.star, color: Colors.amber),
               onRatingUpdate: (rating) {
-                print(rating);
+                debugPrint(rating.toString());
               },
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Image.asset(GridData.getElementImageRef(widget.info!.element!)!),
       ],
     );
@@ -431,7 +431,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
     var _tracker = _isBeingTracked;
     TrackingData.getTrackingCategory('character').then((_dataList) async {
-      print(_dataList);
+      debugPrint(_dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
       _tracker!.keys.forEach((key) {
@@ -527,7 +527,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _trackCharacterAction() {
-    print('Selected: $_selectedTier');
+    debugPrint('Selected: $_selectedTier');
     var _ascendTier = widget.info!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -583,7 +583,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   void _untrackCharacterAction() {
-    print('Selected: $_selectedTier');
+    debugPrint('Selected: $_selectedTier');
     var _ascendTier = widget.info!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -670,7 +670,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   widget.info!.image,
                   height: 64,
                 ),
-                Text(
+                const Text(
                   'This will remove the following materials being tracked for this character from the tracker:',
                 ),
                 Row(
@@ -703,11 +703,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _untrackCharacterAction,
-              child: Text('Untrack'),
+              child: const Text('Untrack'),
             ),
           ],
         );
@@ -730,7 +730,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
                   widget.info!.image,
                   height: 64,
                 ),
-                Text('Items being added to tracker:'),
+                const Text('Items being added to tracker:'),
                 Row(
                   children: _getAscensionTierMaterialRowChild(
                     curData.material2,
@@ -761,11 +761,11 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _trackCharacterAction,
-              child: Text('Track'),
+              child: const Text('Track'),
             ),
           ],
         );
@@ -775,8 +775,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Widget _generateAscensionData() {
     if (widget.materialData == null) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 16),
+      return const Padding(
+        padding: EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
       );
     }
@@ -808,18 +808,18 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               children: [
                 Text(
                   GridData.getRomanNumberArray(index),
-                  style: TextStyle(fontSize: 24),
+                  style: const TextStyle(fontSize: 24),
                 ),
-                Spacer(),
-                Icon(Icons.show_chart),
+                const Spacer(),
+                const Icon(Icons.show_chart),
                 Text(curData.level.toString()),
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/images/items/Icon_Mora.png',
                   height: 16,
                 ),
                 Text(curData.mora.toString()),
-                Spacer(),
+                const Spacer(),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material2Qty,
                   curData.material2,
@@ -861,7 +861,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     }
 
     if (name.startsWith('Traveler')) {
-      return Icon(MdiIcons.genderMaleFemale);
+      return const Icon(MdiIcons.genderMaleFemale);
     }
 
     return Icon(icon, color: color);
@@ -873,7 +873,7 @@ class CharacterTalentPage extends StatefulWidget {
   final String? infoId;
   final Map<String, MaterialDataCommon>? materialData;
 
-  CharacterTalentPage({
+  const CharacterTalentPage({
     Key? key,
     required this.info,
     required this.infoId,
@@ -906,9 +906,9 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Attack Talents', style: TextStyle(fontSize: 18)),
+            const Text('Attack Talents', style: TextStyle(fontSize: 18)),
             ..._attackTalentWidgets(),
-            Text('Passive Talents', style: TextStyle(fontSize: 18)),
+            const Text('Passive Talents', style: TextStyle(fontSize: 18)),
             ..._passiveTalentWidgets(),
           ],
         ),
@@ -932,7 +932,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
     var _tracker = _isBeingTracked;
     TrackingData.getTrackingCategory('talents').then((_dataList) async {
-      print(_dataList);
+      debugPrint(_dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
       _tracker!.keys.forEach((key) {
@@ -1024,7 +1024,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   }
 
   void _trackTalentAction() {
-    print('Selected: $_selectedTalent : $_selectedTier');
+    debugPrint('Selected: $_selectedTalent : $_selectedTier');
     var _ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -1082,7 +1082,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   }
 
   void _untrackTalentAction() {
-    print('Selected: $_selectedTalent : $_selectedTier');
+    debugPrint('Selected: $_selectedTalent : $_selectedTier');
     var _ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
     var _ascensionTierSel = _selectedTier;
 
@@ -1131,7 +1131,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   }
 
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
-    if (key == null) return [SizedBox.shrink()];
+    if (key == null) return [const SizedBox.shrink()];
 
     return [
       GridData.getAscensionImage(key, widget.materialData),
@@ -1182,7 +1182,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                Text(
+                const Text(
                   'This will remove the following materials being tracked for this talent from the tracker:',
                 ),
                 Row(
@@ -1215,11 +1215,11 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _untrackTalentAction,
-              child: Text('Untrack'),
+              child: const Text('Untrack'),
             ),
           ],
         );
@@ -1242,7 +1242,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                Text('Items being added to tracker:'),
+                const Text('Items being added to tracker:'),
                 Row(
                   children: _getAscensionTierMaterialRowChild(
                     curData.material3,
@@ -1273,11 +1273,11 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: _trackTalentAction,
-              child: Text('Track'),
+              child: const Text('Track'),
             ),
           ],
         );
@@ -1290,8 +1290,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     Map<String, CharacterAscension>? ascendInfo,
   ) {
     if (widget.materialData == null) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 16),
+      return const Padding(
+        padding: EdgeInsets.only(top: 16),
         child: CircularProgressIndicator(),
       );
     }
@@ -1304,7 +1304,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       itemCount: data.length,
       itemBuilder: (context, index) {
         var curData = data[index];
-        //print('${talent}_${index+2}');
+        //debugPrint('${talent}_${index+2}');
 
         return _generateTalentAscensionMaterialWidget(talent, index, curData);
       },
@@ -1330,9 +1330,9 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
               children: [
                 Text(
                   GridData.getRomanNumberArray(index + 1),
-                  style: TextStyle(fontSize: 24),
+                  style: const TextStyle(fontSize: 24),
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/images/items/Icon_Mora.png',
                   height: 16,
@@ -1341,7 +1341,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                   padding: const EdgeInsets.only(left: 4),
                   child: Text(curData.mora.toString()),
                 ),
-                Spacer(),
+                const Spacer(),
                 ...GridData.getAscensionMaterialDataWidgets(
                   curData.material3Qty,
                   curData.material3,
@@ -1387,7 +1387,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );
@@ -1397,7 +1397,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
   Widget _shouldShowTalentDescription(TalentInfo _talInfo, bool show) {
     return (!show)
-        ? SizedBox.shrink()
+        ? const SizedBox.shrink()
         : Padding(
             padding: const EdgeInsets.only(top: 4),
             child: GridData.generateElementalColoredLine(_talInfo.effect!),
@@ -1426,7 +1426,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                         child: Text(
                           _talInfo.name!,
                           textAlign: TextAlign.start,
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
                       ),
                       Text(_talInfo.type!),
@@ -1455,7 +1455,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       var _ascendInfo = widget.info!.talent!.ascension;
       _wid.add(_generateTalentWidget(value, false));
       _wid.add(_generateAscensionData(key, _ascendInfo));
-      _wid.add(Divider());
+      _wid.add(const Divider());
     });
 
     return _wid;
@@ -1465,7 +1465,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     var _wid = <Widget>[];
     _sortTalent(widget.info!.talent!.passive!).forEach((key, value) {
       _wid.add(_generateTalentWidget(value, true));
-      _wid.add(Divider());
+      _wid.add(const Divider());
     });
 
     return _wid;
@@ -1475,7 +1475,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 class CharacterConstellationPage extends StatelessWidget {
   final CharacterData? info;
 
-  CharacterConstellationPage({Key? key, required this.info}) : super(key: key);
+  const CharacterConstellationPage({Key? key, required this.info}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -1496,7 +1496,7 @@ class CharacterConstellationPage extends StatelessWidget {
     var _wid = <Widget>[];
     info!.constellations!.forEach((key, value) {
       _wid.add(_generateConstellationWidget(key, value, context));
-      _wid.add(Divider());
+      _wid.add(const Divider());
     });
 
     return _wid;
@@ -1524,7 +1524,7 @@ class CharacterConstellationPage extends StatelessWidget {
                       alignment: FractionalOffset.bottomLeft,
                       child: Text(
                         GridData.getRomanNumberArray(index - 1).toString(),
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         textAlign: TextAlign.end,
                       ),
                     ),
@@ -1535,7 +1535,7 @@ class CharacterConstellationPage extends StatelessWidget {
                   child: Text(
                     constellation.name!,
                     textAlign: TextAlign.start,
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ),
               ],

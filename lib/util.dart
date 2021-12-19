@@ -7,14 +7,14 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/themeNotifier.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-final String _firebaseStorageUrl =
+const String _firebaseStorageUrl =
     'gs://gi-weekly-material-tracker.appspot.com/';
 final FirebaseStorage _storage = FirebaseStorage.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class Util {
-  static final String genshinGGUrl = 'https://genshin.gg/';
-  static final String paimonMoeUrl = 'https://paimon.moe/';
+  static const String genshinGGUrl = 'https://genshin.gg/';
+  static const String paimonMoeUrl = 'https://paimon.moe/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
   static String? currentRoute;
 
@@ -23,20 +23,20 @@ class Util {
   static void showSnackbarQuick(BuildContext context, String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), duration: Duration(seconds: 2)),
+      SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
     );
   }
 
   static Widget loadingScreen() => Scaffold(
         appBar: AppBar(
-          title: Text('Loading...'),
+          title: const Text('Loading...'),
         ),
         body: Util.centerLoadingCircle('Getting Data'),
       );
 
   static Widget loadingScreenWithDrawer(Widget drawer) => Scaffold(
         appBar: AppBar(
-          title: Text('Loading...'),
+          title: const Text('Loading...'),
         ),
         drawer: drawer,
         body: Util.centerLoadingCircle('Getting Data'),
@@ -46,8 +46,8 @@ class Util {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 10),
+            const CircularProgressIndicator(),
+            const SizedBox(height: 10),
             Text(loadText),
           ],
         ),
@@ -144,7 +144,7 @@ class Util {
 
   static Future<bool> _launchWebPageWeb(String url) async {
     // Launch through Web
-    print('Launching $url');
+    debugPrint('Launching $url');
     if (await canLaunch(url)) {
       await launch(url, forceSafariVC: false);
 

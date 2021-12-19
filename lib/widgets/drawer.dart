@@ -55,7 +55,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   title: 'Promo Codes',
                   route: '/promos',
                 ),
-                Divider(),
+                const Divider(),
                 _drawerItem(
                   icon: MdiIcons.alarm,
                   title: 'Daily Forum Login',
@@ -81,7 +81,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   offPrev: false,
                 ),
                 ..._addWebComponent(),
-                Divider(),
+                const Divider(),
                 _drawerItem(
                   icon: Icons.settings,
                   title: 'Settings',
@@ -109,9 +109,9 @@ class _DrawerComponentState extends State<DrawerComponent> {
         var apps = await DeviceApps.getInstalledApplications(
           onlyAppsWithLaunchIntent: true,
         );
-        print(apps);
+        debugPrint(apps.toString());
         var isInstalled = await DeviceApps.isAppInstalled(androidId);
-        print('App Installed: $isInstalled');
+        debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
           await DeviceApps.openApp(androidId);
 
@@ -137,7 +137,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
   List<Widget> _addWebComponent() {
     return (kIsWeb)
         ? [
-            Divider(),
+            const Divider(),
             _drawerItem(
               icon: MdiIcons.refresh,
               title: 'Reload Page',
@@ -184,7 +184,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
               Util.currentRoute = route;
             });
             Future.delayed(
-              Duration(milliseconds: 10),
+              const Duration(milliseconds: 10),
               () => Get.offAndToNamed(route),
             );
           }
@@ -224,7 +224,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
           left: 16.0,
           child: Text(
             name,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
               fontWeight: FontWeight.w500,
@@ -236,7 +236,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
           left: 16.0,
           child: Text(
             email,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 14.0,
             ),
@@ -253,7 +253,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
 
   Widget _getUserPhoto(String? photo, bool isPhotoMode) {
     if (!isPhotoMode) {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
 
     return CircleAvatar(
