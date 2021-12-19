@@ -630,15 +630,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       itemBuilder: (context, index) {
         var curData = data[index];
 
-        return Container(
-          child: Card(
-            color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
-            child: InkWell(
-              onTap: () => _addOrRemoveMaterial(index + 1, curData),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: _getAscensionRowItem(curData, index),
-              ),
+        return Card(
+          color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
+          child: InkWell(
+            onTap: () => _addOrRemoveMaterial(index + 1, curData),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: _getAscensionRowItem(curData, index),
             ),
           ),
         );

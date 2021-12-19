@@ -176,7 +176,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
   }
 
   Widget _getMaterialInfo(MaterialDataCommon _material) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -305,7 +305,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _material!.type!,
@@ -451,7 +451,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     int extraAscensionRef,
     Widget typeWidget,
   ) {
-    return Container(
+    return SizedBox(
       height: 64,
       width: 64,
       child: Stack(
@@ -521,52 +521,50 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     TrackingUserData _data,
     String name,
   ) {
-    return Container(
-      child: Card(
-        child: InkWell(
-          onLongPress: () =>
-              UpdateMultiTracking(context, _material).itemClickedAction(
-            _data,
-            key,
-            {
-              'img': imageRef,
-              'asc': extraAscensionRef,
-              'type': extraTypeRef,
-            },
-            true,
-          ),
-          onTap: () {
-            _tapCount++;
-            if (_tapCount > 5) {
-              Util.showSnackbarQuick(
-                context,
-                'Long press to bulk update tracked materials',
-              );
-            }
+    return Card(
+      child: InkWell(
+        onLongPress: () =>
+            UpdateMultiTracking(context, _material).itemClickedAction(
+          _data,
+          key,
+          {
+            'img': imageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
           },
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _getCharacterDataImage(imageRef, extraAscensionRef, typeWidget),
-                Container(
-                  width: MediaQuery.of(context).size.width - 200,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        name,
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
+          true,
+        ),
+        onTap: () {
+          _tapCount++;
+          if (_tapCount > 5) {
+            Util.showSnackbarQuick(
+              context,
+              'Long press to bulk update tracked materials',
+            );
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _getCharacterDataImage(imageRef, extraAscensionRef, typeWidget),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 200,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ],
                 ),
-                const Spacer(),
-                _getCharacterDataControls(key, _data),
-              ],
-            ),
+              ),
+              const Spacer(),
+              _getCharacterDataControls(key, _data),
+            ],
           ),
         ),
       ),

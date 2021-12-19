@@ -237,7 +237,7 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   Widget _trackerInfo(MaterialDataCommon _material) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

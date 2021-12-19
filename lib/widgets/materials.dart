@@ -193,7 +193,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _info!.type!,

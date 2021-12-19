@@ -392,7 +392,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: 200,
               child: Text(
                 widget.info!.caption!,
@@ -799,51 +799,49 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   Widget _getAscensionTierWidget(CharacterAscension curData, int index) {
-    return Container(
-      child: Card(
-        color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
-        child: InkWell(
-          onTap: () => _addOrRemoveMaterial(index + 1, curData),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                Text(
-                  GridData.getRomanNumberArray(index),
-                  style: const TextStyle(fontSize: 24),
-                ),
-                const Spacer(),
-                const Icon(Icons.show_chart),
-                Text(curData.level.toString()),
-                const Spacer(),
-                Image.asset(
-                  'assets/images/items/Icon_Mora.png',
-                  height: 16,
-                ),
-                Text(curData.mora.toString()),
-                const Spacer(),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material2Qty,
-                  curData.material2,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material1Qty,
-                  curData.material1,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material3Qty,
-                  curData.material3,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material4Qty,
-                  curData.material4,
-                  widget.materialData,
-                ),
-              ],
-            ),
+    return Card(
+      color: TrackingUtils.getTrackingColor(index + 1, _isBeingTracked!),
+      child: InkWell(
+        onTap: () => _addOrRemoveMaterial(index + 1, curData),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              Text(
+                GridData.getRomanNumberArray(index),
+                style: const TextStyle(fontSize: 24),
+              ),
+              const Spacer(),
+              const Icon(Icons.show_chart),
+              Text(curData.level.toString()),
+              const Spacer(),
+              Image.asset(
+                'assets/images/items/Icon_Mora.png',
+                height: 16,
+              ),
+              Text(curData.mora.toString()),
+              const Spacer(),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material2Qty,
+                curData.material2,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material1Qty,
+                curData.material1,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material3Qty,
+                curData.material3,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material4Qty,
+                curData.material4,
+                widget.materialData,
+              ),
+            ],
           ),
         ),
       ),
@@ -1318,54 +1316,52 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     int index,
     CharacterAscension curData,
   ) {
-    return Container(
-      child: Card(
-        color: TrackingUtils.getTrackingColorString(
-          '${talent}_${index + 2}',
-          _isBeingTracked!,
-        ),
-        child: InkWell(
-          onTap: () => _addOrRemoveMaterial(talent, index + 2, curData),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                Text(
-                  GridData.getRomanNumberArray(index + 1),
-                  style: const TextStyle(fontSize: 24),
-                ),
-                const Spacer(),
-                Image.asset(
-                  'assets/images/items/Icon_Mora.png',
-                  height: 16,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: Text(curData.mora.toString()),
-                ),
-                const Spacer(),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material3Qty,
-                  curData.material3,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material4Qty,
-                  curData.material4,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material2Qty,
-                  curData.material2,
-                  widget.materialData,
-                ),
-                ...GridData.getAscensionMaterialDataWidgets(
-                  curData.material1Qty,
-                  curData.material1,
-                  widget.materialData,
-                ),
-              ],
-            ),
+    return Card(
+      color: TrackingUtils.getTrackingColorString(
+        '${talent}_${index + 2}',
+        _isBeingTracked!,
+      ),
+      child: InkWell(
+        onTap: () => _addOrRemoveMaterial(talent, index + 2, curData),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              Text(
+                GridData.getRomanNumberArray(index + 1),
+                style: const TextStyle(fontSize: 24),
+              ),
+              const Spacer(),
+              Image.asset(
+                'assets/images/items/Icon_Mora.png',
+                height: 16,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 4),
+                child: Text(curData.mora.toString()),
+              ),
+              const Spacer(),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material3Qty,
+                curData.material3,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material4Qty,
+                curData.material4,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material2Qty,
+                curData.material2,
+                widget.materialData,
+              ),
+              ...GridData.getAscensionMaterialDataWidgets(
+                curData.material1Qty,
+                curData.material1,
+                widget.materialData,
+              ),
+            ],
           ),
         ),
       ),
@@ -1423,7 +1419,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width - 80,
                         child: Text(
                           _talInfo.name!,
@@ -1532,7 +1528,7 @@ class CharacterConstellationPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
+                SizedBox(
                   width: MediaQuery.of(context).size.width - 80,
                   child: Text(
                     constellation.name!,

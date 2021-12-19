@@ -61,31 +61,29 @@ class _SplashPageState extends State<SplashPage> {
             children: <Widget>[
               Expanded(
                 flex: 2,
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        radius: _photoSize,
-                        child: Hero(
-                          tag: 'splashscreenImage',
-                          child: Container(child: _image),
-                        ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: _photoSize,
+                      child: Hero(
+                        tag: 'splashscreenImage',
+                        child: Container(child: _image),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10.0),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10.0),
+                    ),
+                    Text(
+                      'Genshin Impact Weekly Material Tracker',
+                      style: TextStyle(
+                        color: _textColor,
+                        fontSize: 20.0,
+                        fontFamily: 'Product-Sans-Bold',
                       ),
-                      Text(
-                        'Genshin Impact Weekly Material Tracker',
-                        style: TextStyle(
-                          color: _textColor,
-                          fontSize: 20.0,
-                          fontFamily: 'Product-Sans-Bold',
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
