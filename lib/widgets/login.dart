@@ -138,15 +138,15 @@ class _LoginPageState extends State<LoginPage> {
       return _auth.getRedirectResult();
     } else {
       // Trigger the authentication flow
-      final googleUser = await (GoogleSignIn().signIn() as FutureOr<GoogleSignInAccount>);
+      final googleUser = await GoogleSignIn().signIn();
 
       // Obtain the auth details from the request
-      final googleAuth = await googleUser.authentication;
+      final googleAuth = await googleUser?.authentication;
 
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
       ) as GoogleAuthCredential;
 
       // Once signed in, return the UserCredential
