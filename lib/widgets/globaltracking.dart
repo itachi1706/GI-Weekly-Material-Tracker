@@ -28,6 +28,8 @@ class GlobalTrackingPage extends StatelessWidget {
     const GlobalTracker(path: 'local_speciality'),
   ];
 
+  GlobalTrackingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -214,6 +216,8 @@ class _GlobalTrackerState extends State<GlobalTracker> {
 }
 
 class GlobalMaterialPage extends StatefulWidget {
+  const GlobalMaterialPage({Key? key}) : super(key: key);
+
   @override
   _GlobalMaterialPageState createState() => _GlobalMaterialPageState();
 }

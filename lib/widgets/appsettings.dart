@@ -16,6 +16,8 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -182,7 +184,7 @@ class _SettingsPageState extends State<SettingsPage> {
         leading: const Icon(Icons.bug_report),
         trailing: const SizedBox.shrink(),
         onPressed: (context) {
-          Get.to(() => NotificationDebugPage());
+          Get.to(() => const NotificationDebugPage());
         },
       ));
     }
@@ -231,7 +233,7 @@ class _SettingsPageState extends State<SettingsPage> {
           subtitle: _buildSource,
           leading: const Icon(MdiIcons.swordCross),
           onPressed: (context) {
-            Get.to(() => BuildGuideSelectorPage())!.then((value) => _refresh());
+            Get.to(() => const BuildGuideSelectorPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
@@ -240,7 +242,7 @@ class _SettingsPageState extends State<SettingsPage> {
           leading: const Icon(MdiIcons.server),
           trailing: const SizedBox.shrink(),
           onPressed: (context) {
-            Get.to(() => RegionSettingsPage())!.then((value) => _refresh());
+            Get.to(() => const RegionSettingsPage())!.then((value) => _refresh());
           },
         ),
         SettingsTile(
@@ -423,6 +425,8 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 class RegionSettingsPage extends StatefulWidget {
+  const RegionSettingsPage({Key? key}) : super(key: key);
+
   @override
   _RegionSettingsPageState createState() => _RegionSettingsPageState();
 }
@@ -508,6 +512,8 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
 }
 
 class BuildGuideSelectorPage extends StatefulWidget {
+  const BuildGuideSelectorPage({Key? key}) : super(key: key);
+
   @override
   _BuildGuideSelectorPageState createState() => _BuildGuideSelectorPageState();
 }
@@ -587,6 +593,8 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
 }
 
 class NotificationDebugPage extends StatelessWidget {
+  const NotificationDebugPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var notifyManager = NotificationManager.getInstance();

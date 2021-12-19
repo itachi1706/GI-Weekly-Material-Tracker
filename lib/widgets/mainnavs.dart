@@ -50,7 +50,7 @@ class _TrackingPageState extends State<TrackingPage>
           ),
         ],
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: TrackingTabController(tabController: _tabController),
     );
   }
@@ -65,6 +65,8 @@ class _TrackingPageState extends State<TrackingPage>
 }
 
 class DictionaryPage extends StatefulWidget {
+  const DictionaryPage({Key? key}) : super(key: key);
+
   @override
   _DictionaryPageState createState() => _DictionaryPageState();
 }
@@ -172,7 +174,7 @@ class _DictionaryPageState extends State<DictionaryPage>
           _showSortWidget(),
         ],
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.deepOrange,

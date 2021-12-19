@@ -47,7 +47,7 @@ class CharacterListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const CharacterListGrid({Key? key, this.filter, this.notifier});
+  const CharacterListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
 
   @override
   _CharacterListGridState createState() => _CharacterListGridState();
@@ -124,6 +124,8 @@ class _CharacterListGridState extends State<CharacterListGrid> {
 }
 
 class CharacterInfoMainPage extends StatefulWidget {
+  const CharacterInfoMainPage({Key? key}) : super(key: key);
+
   @override
   _CharacterInfoMainPageState createState() => _CharacterInfoMainPageState();
 }

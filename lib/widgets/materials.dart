@@ -38,7 +38,7 @@ class MaterialListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const MaterialListGrid({Key? key, this.filter, this.notifier});
+  const MaterialListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
 
   @override
   _MaterialListGridState createState() => _MaterialListGridState();
@@ -113,6 +113,8 @@ class _MaterialListGridState extends State<MaterialListGrid> {
 }
 
 class MaterialInfoPage extends StatefulWidget {
+  const MaterialInfoPage({Key? key}) : super(key: key);
+
   @override
   _MaterialInfoPageState createState() => _MaterialInfoPageState();
 }

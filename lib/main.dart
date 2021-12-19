@@ -15,10 +15,12 @@ import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -56,12 +58,12 @@ class _MyAppState extends State<MyApp> {
       ),
       themeMode: _theme,
       initialRoute: '/splash',
-      unknownRoute: GetPage(name: '/splash', page: () => SplashPage()),
+      unknownRoute: GetPage(name: '/splash', page: () => const SplashPage()),
       getPages: [
-        GetPage(name: '/splash', page: () => SplashPage()),
+        GetPage(name: '/splash', page: () => const SplashPage()),
         GetPage(name: '/', page: () => const LoginPage()),
-        GetPage(name: '/placeholder', page: () => PlaceholderPage()),
-        GetPage(name: '/menu', page: () => TransitionPage()),
+        GetPage(name: '/placeholder', page: () => const PlaceholderPage()),
+        GetPage(name: '/menu', page: () => const TransitionPage()),
         GetPage(
           name: '/tracking',
           page: () => const TrackingPage(
@@ -71,21 +73,21 @@ class _MyAppState extends State<MyApp> {
         ),
         GetPage(
           name: '/dictionary',
-          page: () => DictionaryPage(),
+          page: () => const DictionaryPage(),
           transition: Transition.noTransition,
         ),
-        GetPage(name: '/materials/:material', page: () => MaterialInfoPage()),
+        GetPage(name: '/materials/:material', page: () => const MaterialInfoPage()),
         GetPage(
           name: '/characters/:character',
-          page: () => CharacterInfoMainPage(),
+          page: () => const CharacterInfoMainPage(),
         ),
-        GetPage(name: '/weapons/:weapon', page: () => WeaponInfoPage()),
+        GetPage(name: '/weapons/:weapon', page: () => const WeaponInfoPage()),
         GetPage(name: '/globalTracking', page: () => GlobalTrackingPage()),
         GetPage(
           name: '/globalMaterial/:materialKey',
-          page: () => GlobalMaterialPage(),
+          page: () => const GlobalMaterialPage(),
         ),
-        GetPage(name: '/settings', page: () => SettingsPage()),
+        GetPage(name: '/settings', page: () => const SettingsPage()),
         GetPage(
           name: '/parametric',
           page: () => const ParametricPage(),
@@ -102,6 +104,8 @@ class _MyAppState extends State<MyApp> {
 }
 
 class TransitionPage extends StatelessWidget {
+  const TransitionPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(

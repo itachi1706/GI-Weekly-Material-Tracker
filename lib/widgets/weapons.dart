@@ -43,7 +43,7 @@ class WeaponListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const WeaponListGrid({Key? key, this.filter, this.notifier});
+  const WeaponListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
 
   @override
   _WeaponListGridState createState() => _WeaponListGridState();
@@ -115,6 +115,8 @@ class _WeaponListGridState extends State<WeaponListGrid> {
 }
 
 class WeaponInfoPage extends StatefulWidget {
+  const WeaponInfoPage({Key? key}) : super(key: key);
+
   @override
   _WeaponInfoPageState createState() => _WeaponInfoPageState();
 }

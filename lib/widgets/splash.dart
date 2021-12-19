@@ -13,6 +13,8 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import '../firebase_options.dart';
 
 class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
+
   @override
   _SplashPageState createState() => _SplashPageState();
 }

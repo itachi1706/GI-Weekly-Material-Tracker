@@ -40,7 +40,7 @@ class _ParametricPageState extends State<ParametricPage> {
       appBar: AppBar(
         title: const Text('Parametric Transformer'),
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: Center(
         child: Column(
           children: [

@@ -34,7 +34,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
   @override
   Widget build(BuildContext context) {
     if (_location == null) {
-      return Util.loadingScreenWithDrawer(DrawerComponent());
+      return Util.loadingScreenWithDrawer(const DrawerComponent());
     }
     final query = db.ref('codes');
 
@@ -49,7 +49,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
           ),
         ],
       ),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: SingleChildScrollView(
         child: Column(
           children: [

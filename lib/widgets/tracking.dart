@@ -32,7 +32,7 @@ class _TrackingTabControllerState extends State<TrackingTabController> {
     const TrackerPage(path: 'domain_material'),
     const TrackerPage(path: 'mob_drops'),
     const TrackerPage(path: 'local_speciality'),
-    PlannerPage(),
+    const PlannerPage(),
   ];
 
   @override
@@ -349,6 +349,8 @@ class _TrackerPageState extends State<TrackerPage> {
 }
 
 class PlannerPage extends StatefulWidget {
+  const PlannerPage({Key? key}) : super(key: key);
+
   @override
   _PlannerPageState createState() => _PlannerPageState();
 }

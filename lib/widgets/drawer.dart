@@ -13,6 +13,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class DrawerComponent extends StatefulWidget {
+  const DrawerComponent({Key? key}) : super(key: key);
+
   @override
   _DrawerComponentState createState() => _DrawerComponentState();
 }
