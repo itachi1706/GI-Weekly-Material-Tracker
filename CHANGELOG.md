@@ -1,3 +1,7 @@
+# 2.1.6
+- (HOTFIX) Fixed Google Sign In
+- (HOTFIX) Fixed color in dark mode for tab bars
+
 # 2.1.5
 - Added promo code support for Web
 - Built with Flutter 2.8
