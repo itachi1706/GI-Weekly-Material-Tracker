@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:filesize_ns/filesize_ns.dart';
+import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
