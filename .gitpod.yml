@@ -4,10 +4,8 @@ image:
 tasks:
   - before: >
       source ~/.bashrc
-    init: >
-      flutter upgrade && 
-      flutter update-packages --force-upgrade &&
-      flutter run -d web-server --no-resident &&
+    init: |
+      flutter run -d web-server --no-resident
       flutter doctor -v
     #command: >
     #  flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0 &&

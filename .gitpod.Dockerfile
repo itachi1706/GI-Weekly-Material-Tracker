@@ -23,7 +23,6 @@ RUN cd /home/gitpod && \
   wget -qO flutter_sdk.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz && \
   tar -xvf flutter_sdk.tar.xz && rm flutter_sdk.tar.xz
 
-# Web is available on master channel
 RUN $FLUTTER_HOME/bin/flutter channel stable && $FLUTTER_HOME/bin/flutter upgrade && $FLUTTER_HOME/bin/flutter config --enable-web
 
 # Change the PUB_CACHE to /workspace so dependencies are preserved.
