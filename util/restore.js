@@ -1,11 +1,13 @@
-const firestore = require('firestore-export-import');
+const {initializeApp, restore} = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
-const admin = require('firebase-admin');
+const {initializeApp: adminInitializeApp } = require('firebase-admin/app');
+const {getFirestore} = require('firebase-admin/firestore');
 const fs = require('fs');
 const path = require('path');
 
-firestore.initializeApp(serviceAccount);
-const firestoreAdmin = admin.firestore();
+initializeApp(serviceAccount);
+adminInitializeApp();
+const firestoreAdmin = getFirestore();
 
 async function deleteCollection(db, collectionPath, batchSize) {
     const query = db.collection(collectionPath).orderBy('__name__').limit(batchSize);
@@ -45,7 +47,7 @@ async function restoreData() {
         console.log(fn);
 
         console.log(`>>> Restoring ${fn}...`);
-        await firestore.restore(`import/${file}`);
+        await restore(`import/${file}`);
         console.log(`>>> ${fn} restore completed!`);
     }
     console.log(">>> Data Update Complete!");

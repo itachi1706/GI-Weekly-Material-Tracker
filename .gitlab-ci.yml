@@ -66,13 +66,18 @@ Update Google Cloud Storage Data:
 Update Firestore Public Data:
   image: node:alpine
   stage: deploy
+  variables:
+    GOOGLE_APPLICATION_CREDENTIALS: /tmp/sak.json
   before_script:
     - mkdir util/import
     - cp public/data/*.json util/import
     - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
+    - cat $FIREBASE_SERVICE_ACCOUNT > /tmp/sak.json # For SAK
     - cd util
     - npm i
   script: npm run updateFirestoreData
+  after_script:
+    - rm /tmp/sak.json # Ensure cleanup
   dependencies:
     - Build and Test Admin Util
   rules:
