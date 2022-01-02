@@ -1,1657 +1,1657 @@
 {
-    "characters": {
-        "Jean": {
-            "image": "Characters/Anemo/Jean.png",
-            "gender": "Female",
-            "birthday": "14/3",
-            "caption": "Dandelion Knight",
-            "name": "Jean",
-            "fullName": "Jean Gunnhildr",
-            "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius of Mondstadt.",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Knights of Favonius, Four Winds",
-            "constellation": "Leo Minor",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Freedom",
-                        "material3qty": 3,
-                        "material4": "Damaged_Mask",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 2,
-                        "material4": "Stained_Mask",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 4,
-                        "material4": "Stained_Mask",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 6,
-                        "material4": "Stained_Mask",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 9,
-                        "material4": "Stained_Mask",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Plume",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 4,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Plume",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 6,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Plume",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 12,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Dvalin_Plume",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 16,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Wind_Companion": {
-                        "name": "Wind Companion",
-                        "effect": "Hits by Jean's Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean's ATK for all party members.",
-                        "image": "Talents/Passive/Talent_Wind_Companion.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Let_the_Wind_Lead": {
-                        "name": "Let the Wind Lead",
-                        "effect": "Using Dandelion Breeze will regenerate 20% of its Energy.",
-                        "image": "Talents/Passive/Talent_Let_the_Wind_Lead.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Guiding_Breeze": {
-                        "name": "Guiding Breeze",
-                        "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Jean has a 12% chance to obtain double the product.",
-                        "image": "Talents/Passive/Talent_Guiding_Breeze.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Favonius_Bladework": {
-                        "name": "Favonius Bladework",
-                        "effect": "Normal Attack: Performs up to 5 consecutive strikes.\nCharged Attack: Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Favonius_Bladework.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Gale_Blade": {
-                        "name": "Gale Blade",
-                        "effect": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching opponents in the direction she aims at, dealing massive Anemo DMG.\nHold: At the cost of continued stamina consumption, Jean can command the whirlwind to pull surrounding opponents and objects towards her front.\nDirection can be adjusted.\nCharacter is immobile during skill duration.",
-                        "image": "Talents/Skill/Talent_Gale_Blade.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Dandelion_Breeze": {
-                        "name": "Dandelion Breeze",
-                        "effect": "Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and causing Anemo DMG. At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.\nDandelion Field:\nContinuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.\nDeals Anemo DMG to opponents entering or exiting the Dandelion Field.",
-                        "image": "Talents/Burst/Talent_Dandelion_Breeze.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Spiraling Tempest",
-                    "effect": "Increases the pulling speed of Gale Blade after holding for more than 1s, and increases the DMG dealt by 40%.",
-                    "image": "Constellation/Spiraling_Tempest.png"
-                },
-                "2": {
-                    "name": "People's Aegis",
-                    "effect": "When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.",
-                    "image": "Constellation/Peoples_Aegis.png"
-                },
-                "3": {
-                    "name": "When the West Wind Arises",
-                    "effect": "Increases the level of Dandelion Breeze by 3. The maximum upgrade level is 15.",
-                    "image": "Constellation/When_the_West_Wind_Arises.png"
-                },
-                "4": {
-                    "name": "Lands of Dandelion",
-                    "effect": "Within the Field created by Dandelion Breeze, all opponents have their Anemo RES decreased by 40%.",
-                    "image": "Constellation/Lands_of_Dandelion.png"
-                },
-                "5": {
-                    "name": "Outbursting Gust",
-                    "effect": "Increases the level of Gale Blade by 3. The maximum upgrade level is 15.",
-                    "image": "Constellation/Outbursting_Gust.png"
-                },
-                "6": {
-                    "name": "Lion's Fang, Fair Protector of Mondstadt",
-                    "effect": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.",
-                    "image": "Constellation/Lions_Fang_Fair_Protector_of_Mondstadt.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Dandelion_Seed"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Hurricane_Seed",
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Dandelion_Seed"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Hurricane_Seed",
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Dandelion_Seed"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Hurricane_Seed",
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Dandelion_Seed"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Hurricane_Seed",
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Dandelion_Seed"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Hurricane_Seed",
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Dandelion_Seed"
-                }
-            },
-            "introduction": "As the Acting Grand Master of the Knights, Jean has always been devoted to her duties and maintaining peace in Mondstadt. She had taken precautions long before the onset of Stormterror's assault, and she will guard Mondstadt with her life as always.",
-            "paimonmoepath": "characters/jean",
-            "genshinggpath": "characters/Jean",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Jean",
-            "subCollection": {}
+  "characters": {
+    "Jean": {
+      "image": "Characters/Anemo/Jean.png",
+      "gender": "Female",
+      "birthday": "14/3",
+      "caption": "Dandelion Knight",
+      "name": "Jean",
+      "fullName": "Jean Gunnhildr",
+      "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius of Mondstadt.",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Four Winds",
+      "constellation": "Leo Minor",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Freedom",
+            "material3qty": 3,
+            "material4": "Damaged_Mask",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 2,
+            "material4": "Stained_Mask",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 4,
+            "material4": "Stained_Mask",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 6,
+            "material4": "Stained_Mask",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 9,
+            "material4": "Stained_Mask",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Plume",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 4,
+            "material4": "Ominous_Mask",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Plume",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 6,
+            "material4": "Ominous_Mask",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Plume",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 12,
+            "material4": "Ominous_Mask",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dvalin_Plume",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 16,
+            "material4": "Ominous_Mask",
+            "material4qty": 12
+          }
         },
-        "Kaedehara_Kazuha": {
-            "image": "Characters/Anemo/Kazuha.png",
-            "gender": "Male",
-            "birthday": "29/10",
-            "caption": "Scarlet Leaves Pursue Wild Waves",
-            "name": "Kaedehara Kazuha",
-            "fullName": "Kazuha",
-            "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
-            "nation": "Inazuma",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "The Crux",
-            "constellation": "Acer Palmatum",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Diligence",
-                        "material3qty": 3,
-                        "material4": "Treasure_Hoarder_Insignia",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 2,
-                        "material4": "Silver_Raven_Insignia",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 4,
-                        "material4": "Silver_Raven_Insignia",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 6,
-                        "material4": "Silver_Raven_Insignia",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 9,
-                        "material4": "Silver_Raven_Insignia",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
-                        "material3qty": 4,
-                        "material4": "Golden_Raven_Insignia",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Diligence",
-                        "material3qty": 6,
-                        "material4": "Golden_Raven_Insignia",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
-                        "material3qty": 12,
-                        "material4": "Golden_Raven_Insignia",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
-                        "material3qty": 16,
-                        "material4": "Golden_Raven_Insignia",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Poetics_of_Fuubutsu": {
-                        "name": "Poetics of Fuubutsu",
-                        "effect": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant teammates a 0.04% Elemental DMG Bonus to their corresponding Element for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist.",
-                        "image": "Talents/Passive/Talent_Poetics_of_Fuubutsu.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Soumon_Swordmanship": {
-                        "name": "Soumon Swordmanship",
-                        "effect": "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro when cast, Chihayaburu will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.\nElemental Absorption may only occur once per use of Chihayaburu.",
-                        "image": "Talents/Passive/Talent_Soumon_Swordsmanship.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Cloud_Strider": {
-                        "name": "Cloud Strider",
-                        "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-                        "image": "Talents/Passive/Talent_Cloud_Strider.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Garyuu_Bladework": {
-                        "name": "Garyuu Bladework",
-                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.\nPlunging Attack: Midare Ranzan: When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
-                        "image": "Talents/Normal/Talent_Garyuu_Bladework.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Chihayaburu": {
-                        "name": "Chihayaburu",
-                        "effect": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing Anemo DMG and lifting Kazuha into the air on a rushing gust of wind.\nPress: Can be used in mid-air.\nHold: Charges up before unleashing greater Anemo DMG over a larger AoE than Press Mode.\nPlunging Attack: Midare Ranzan: Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.\nWhen a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents. Midare Ranzan's DMG is considered Plunging Attack DMG.",
-                        "image": "Talents/Skill/Talent_Chihayaburu.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Kazuha_Slash": {
-                        "name": "Kazuha Slash",
-                        "effect": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing AoE Anemo DMG. The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals AoE Anemo DMG to opponents within its range.\nElemental Absorption: If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
-                        "image": "Talents/Burst/Talent_Kazuha_Slash.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Scarlet Hills",
-                    "effect": "Decreases Chihayaburu's CD by 10%.\nUsing Kazuha Slash resets the CD of Chihayaburu.",
-                    "image": "Constellation/Scarlet_Hills.png"
-                },
-                "2": {
-                    "name": "Yamaarashi Tailwind",
-                    "effect": "The Autumn Whirlwind field created by Kazuha Slash has the following effects:\n- Increases Kaedehara Kazuha's own Elemental Mastery by 200.\n- Increases the Elemental Mastery of characters within the field by 200.\nThe Elemental Mastery-increasing effects of this Constellation do not stack.",
-                    "image": "Constellation/Yamaarashi_Tailwind.png"
-                },
-                "3": {
-                    "name": "Maple Monogatari",
-                    "effect": "Increases the Level of Chihayaburu by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Maple_Monogatari.png"
-                },
-                "4": {
-                    "name": "Oozora Genpou",
-                    "effect": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n- Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.\n- When gliding, Kaedehara Kazuha regenerates 2 Energy per second.",
-                    "image": "Constellation/Oozora_Genpou.png"
-                },
-                "5": {
-                    "name": "Wisdom of Bansei",
-                    "effect": "Increases the Level of Kazuha Slash by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Wisdom_of_Bansei.png"
-                },
-                "6": {
-                    "name": "Crimson Momiji",
-                    "effect": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%.",
-                    "image": "Constellation/Crimson_Momiji.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Treasure_Hoarder_Insignia",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Sea_Ganoderma"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Marionette_Core",
-                    "level": 40,
-                    "material4": "Treasure_Hoarder_Insignia",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Sea_Ganoderma"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Marionette_Core",
-                    "level": 50,
-                    "material4": "Silver_Raven_Insignia",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Sea_Ganoderma"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Marionette_Core",
-                    "level": 60,
-                    "material4": "Silver_Raven_Insignia",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Sea_Ganoderma"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Marionette_Core",
-                    "level": 70,
-                    "material4": "Golden_Raven_Insignia",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Sea_Ganoderma"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Marionette_Core",
-                    "level": 80,
-                    "material4": "Golden_Raven_Insignia",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Sea_Ganoderma"
-                }
-            },
-            "introduction": "A wandering samurai from Inazuma with a modest and gentle personality.\nBeneath a youthful and carefree demeanor lies a heart that hides a great many burdens from the past. Seemingly easygoing, Kazuha has his own code of conduct.",
-            "paimonmoepath": "characters/kaedehara_kazuha",
-            "genshinggpath": "characters/Kazuha",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Kazuha",
-            "subCollection": {}
+        "passives": {
+          "Wind_Companion": {
+            "name": "Wind Companion",
+            "effect": "Hits by Jean's Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean's ATK for all party members.",
+            "image": "Talents/Passive/Talent_Wind_Companion.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Let_the_Wind_Lead": {
+            "name": "Let the Wind Lead",
+            "effect": "Using Dandelion Breeze will regenerate 20% of its Energy.",
+            "image": "Talents/Passive/Talent_Let_the_Wind_Lead.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Guiding_Breeze": {
+            "name": "Guiding Breeze",
+            "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Jean has a 12% chance to obtain double the product.",
+            "image": "Talents/Passive/Talent_Guiding_Breeze.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
         },
-        "Sayu": {
-            "image": "Characters/Anemo/Sayu.png",
-            "gender": "Female",
-            "birthday": "19/10",
-            "caption": "Mujina Ninja",
-            "name": "Sayu",
-            "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
-            "nation": "Inazuma",
-            "weapon": "Claymore",
-            "rarity": 4,
-            "affiliation": "Shuumatsuban",
-            "constellation": "Nyctereutes Minor",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Light",
-                        "material3qty": 3,
-                        "material4": "Whopperflower_Nectar",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Light",
-                        "material3qty": 2,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Light",
-                        "material3qty": 4,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Light",
-                        "material3qty": 6,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Light",
-                        "material3qty": 9,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 4,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 6,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 12,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Gilded_Scale",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 16,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Someone_More_Capable": {
-                        "name": "Someone More Capable",
-                        "effect": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
-                        "image": "Talents/Passive/Talent_Someone_More_Capable.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "No_Work_Today": {
-                        "name": "No Work Today!",
-                        "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:\nWhen healing a character, it will also heal characters near that healed character for 20% the amount of HP.\nIncreases the AoE of its attack against opponents.",
-                        "image": "Talents/Passive/Talent_No_Work_Today.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Yoohoo_Art_Silencers_Secret": {
-                        "name": "Yoohoo Art: Silencer's Secret",
-                        "effect": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
-                        "image": "Talents/Passive/Talent_Yoohoo_Art_Silencers_Secret.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Shuumatsuban_Ninja_Blade": {
-                        "name": "Shuumatsuban Ninja Blade",
-                        "effect": "Normal Attack: Performs up to 4 consecutive strikes.\n\nCharged Attack: Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\n\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Shuumatsuban_Ninja_Blade.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Yoohoo_Art_Fuuin_Dash": {
-                        "name": "Yoohoo Art: Fuuin Dash",
-                        "effect": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG.\nWhen the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.\nPress: Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.\nHold: Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.\nElemental Absorption: If Sayu comes into contact with Hydro, Pyro, Cryo and Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
-                        "image": "Talents/Skill/Talent_Yoohoo_Art_Fuuin_Dash.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Yoohoo_Art_Mujina_Flurry": {
-                        "name": "Yoohoo Art: Mujina Flurry",
-                        "effect": "The other super special technique of the Yoohoo Ninja Arts!\nIt summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.\nMuji-Muji Daruma: At specific intervals, the Daruma will take one of several actions based on the situation around it:\n\nIf the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.\nIf there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left.\nIf there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more.",
-                        "image": "Talents/Burst/Talent_Yoohoo_Art_Mujina_Flurry.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Multi-Task no Jutsu",
-                    "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
-                    "image": "Constellation/Multi-Task_no_Jutsu.png"
-                },
-                "2": {
-                    "name": "Egress Prep",
-                    "effect": "Yoohoo Art: Fuuin Dash gains the following effects:\nDMG of Fuufuu Whirlwind Kick in Tapping (mobile)/Press (PC & PlayStation) Mode increased by 3.3%.\nEvery 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.",
-                    "image": "Constellation/Egress_Prep.png"
-                },
-                "3": {
-                    "name": "Eh, the Bunshin Can Handle It",
-                    "effect": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Eh_the_Bunshin_Can_Handle_It.png"
-                },
-                "4": {
-                    "name": "Skiving: New and Improved",
-                    "effect": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
-                    "image": "Constellation/Skiving_New_and_Improved.png"
-                },
-                "5": {
-                    "name": "Speed Comes First",
-                    "effect": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Speed_Comes_First.png"
-                },
-                "6": {
-                    "name": "Sleep O'Clock",
-                    "effect": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\nIncreases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.\nIncreases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner.",
-                    "image": "Constellation/Sleep_OClock.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Crystal_Marrow"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Marionette_Core",
-                    "level": 40,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Crystal_Marrow"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Marionette_Core",
-                    "level": 50,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Crystal_Marrow"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Marionette_Core",
-                    "level": 60,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Crystal_Marrow"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Marionette_Core",
-                    "level": 70,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Crystal_Marrow"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Marionette_Core",
-                    "level": 80,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Crystal_Marrow"
-                }
-            },
-            "introduction": "Sayu, Shuumatsuban's resident ninja, is obsessed with sleeping and growing taller.\nShe has mastered all kinds of ninjutsu to run away and hide in pursuit of opportunities to laze around and sleep.\nSuch an extraordinary skillset may have very unexpected uses.",
-            "paimonmoepath": "characters/sayu",
-            "genshinggpath": "characters/Sayu",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Sayu",
-            "subCollection": {}
-        },
-        "Sucrose": {
-            "image": "Characters/Anemo/Sucrose.png",
-            "gender": "Female",
-            "birthday": "26/11",
-            "caption": "Harmless Sweetie",
-            "name": "Sucrose",
-            "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
-            "nation": "Mondstadt",
-            "weapon": "Catalyst",
-            "rarity": 4,
-            "affiliation": "Knights of Favonius",
-            "constellation": "Ampulla",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Freedom",
-                        "material3qty": 3,
-                        "material4": "Whopperflower_Nectar",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 2,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 4,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 6,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 9,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Spirit_Locket_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 4,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Spirit_Locket_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 6,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Spirit_Locket_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 12,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Spirit_Locket_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 16,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Catalyst_Conversion": {
-                        "name": "Catalyst Conversion",
-                        "effect": "When Sucrose triggers a Swirl effect, all characters in the party with the matching element (excluding Sucrose) have their Elemental Mastery increased by 50 for 8s.",
-                        "image": "Talents/Passive/Talent_Catalyst_Conversion.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Mollis_Favonius": {
-                        "name": "Mollis Favonius",
-                        "effect": "When Astable Anemohypostasis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an opponent, increases all party members' (excluding Sucrose) Elemental Mastery based on 20% of Sucrose's Elemental Mastery for 8s.",
-                        "image": "Talents/Passive/Talent_Mollis_Favonius.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Astable_Invention": {
-                        "name": "Astable Invention",
-                        "effect": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product.",
-                        "image": "Talents/Passive/Talent_Astable_Invention.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Wind_Spirit_Creation": {
-                        "name": "Wind Spirit Creation",
-                        "effect": "Normal Attack: Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.\nCharged Attack: Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.\nPlunging Attack: Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
-                        "image": "Talents/Normal/Talent_Wind_Spirit_Creation.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Astable_Anemohypostasis Creation_6308": {
-                        "name": "Astable Anemohypostasis Creation - 6308",
-                        "effect": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals Anemo DMG\nGenerate 4 elemental particles when it hit at least 1 target.",
-                        "image": "Talents/Skill/Talent_Astable_Anemohypostasis_Creation_-_6308.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Forbidden_Creation_Isomer_75_Type_II": {
-                        "name": "Forbidden Creation - Isomer 75 / Type II",
-                        "effect": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby opponents, and deal Anemo DMG.\nElemental Absorption: If the Wind Spirit comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
-                        "image": "Talents/Burst/Talent_Forbidden_Creation_-_Isomer_75_Type_II.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Clustered Vacuum Field",
-                    "effect": "Astable Anemohypostasis Creation - 6308 gains 1 additional charge.",
-                    "image": "Constellation/Clustered_Vacuum_Field.png"
-                },
-                "2": {
-                    "name": "Beth: Unbound Form",
-                    "effect": "The duration of Forbidden Creation - Isomer 75 / Type II is increased by 2s.",
-                    "image": "Constellation/Beth_Unbound_Form.png"
-                },
-                "3": {
-                    "name": "Flawless Alchemistress",
-                    "effect": "Increases the Level of Astable Anemohypostasis Creation - 6308 by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Flawless_Alchemistress.png"
-                },
-                "4": {
-                    "name": "Alchemania",
-                    "effect": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1~7s.",
-                    "image": "Constellation/Alchemania.png"
-                },
-                "5": {
-                    "name": "Caution: Standard Flask",
-                    "effect": "Increases the Level of Forbidden Creation - Isomer 75 / Type II by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Caution_Standard_Flask.png"
-                },
-                "6": {
-                    "name": "Chaotic Entropy",
-                    "effect": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
-                    "image": "Constellation/Chaotic_Entropy.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Windwheel_Aster"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Hurricane_Seed",
-                    "level": 40,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Windwheel_Aster"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Hurricane_Seed",
-                    "level": 50,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Windwheel_Aster"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Hurricane_Seed",
-                    "level": 60,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Windwheel_Aster"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Hurricane_Seed",
-                    "level": 70,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Windwheel_Aster"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Hurricane_Seed",
-                    "level": 80,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Windwheel_Aster"
-                }
-            },
-            "introduction": "An alchemist with an insatiable curiosity towards the world and everything in it. Attached to the Knights of Favonius as an assistant to Albedo, her area of focus is \"bio-alchemy.\" She strives to enrich the world by transforming living things with the power of alchemy. Granted, the products of her research sometimes prove to be more weird than wonderful — but on the whole, she has made monumental contributions to the field of bio-alchemy.",
-            "paimonmoepath": "characters/sucrose",
-            "genshinggpath": "characters/Sucrose",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Sucrose",
-            "subCollection": {}
-        },
-        "Venti": {
-            "image": "Characters/Anemo/Venti.png",
-            "gender": "Male",
-            "birthday": "16/6",
-            "caption": "Windborne Bard",
-            "name": "Venti",
-            "fullName": "Barbatos",
-            "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
-            "nation": "Mondstadt",
-            "weapon": "Bow",
-            "rarity": 5,
-            "affiliation": "Archons",
-            "constellation": "Carmen Dei",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Ballad",
-                        "material3qty": 3,
-                        "material4": "Slime_Condensate",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
-                        "material3qty": 2,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
-                        "material3qty": 4,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
-                        "material3qty": 6,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
-                        "material3qty": 9,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 4,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 6,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 12,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 16,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Embrace_of_Winds": {
-                        "name": "Embrace of Winds",
-                        "effect": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
-                        "image": "Talents/Passive/Talent_Embrace_of_Winds.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Stormeye": {
-                        "name": "Stormeye",
-                        "effect": "Regenerates 15 Energy for Venti after the effects of Wind's Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
-                        "image": "Talents/Passive/Talent_Stormeye.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Windrider": {
-                        "name": "Windrider",
-                        "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-                        "image": "Talents/Passive/Talent_Windrider.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Divine_Marksmanship": {
-                        "name": "Divine Marksmanship",
-                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Divine_Marksmanship.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Skyward_Sonnet": {
-                        "name": "Skyward Sonnet",
-                        "effect": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!\nPress: Summons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.\nHold: Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air.\nOpponents hit by Skyward Sonnet will fall to the ground slowly.\nGenerate 3/4 elemental particles for press/hold when it hit at least 1 target.",
-                        "image": "Talents/Skill/Talent_Skyward_Sonnet.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Winds_Grand_Ode": {
-                        "name": "Wind's Grand Ode",
-                        "effect": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times Anemo DMG in 8 seconds.\nElemental Absorption: If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
-                        "image": "Talents/Burst/Talent_Wind_Grand_Ode.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Splitting Gales",
-                    "effect": "Fires 2 additional split arrows per Aimed Shot, each dealing 33% of the original arrow's DMG.\nNote: The additional arrows are fired in a 30° horizontal cone (each 15° to left and right), possibly hitting and damaging the same target in close range. Each arrow has its own critical.",
-                    "image": "Constellation/Splitting_Gales.png"
-                },
-                "2": {
-                    "name": "Breeze of Reminiscence",
-                    "effect": "Skyward Sonnet decreases opponents' Anemo RES and Physical RES by 12% for 10s. Opponents launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
-                    "image": "Constellation/Breeze_of_Reminiscence.png"
-                },
-                "3": {
-                    "name": "Ode to Thousand Winds",
-                    "effect": "Increases the level of Wind's Grand Ode by 3. The maximum upgrade level is 15.",
-                    "image": "Constellation/Ode_to_Thousand_Winds.png"
-                },
-                "4": {
-                    "name": "Hurricane of Freedom",
-                    "effect": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
-                    "image": "Constellation/Hurricane_of_Freedom.png"
-                },
-                "5": {
-                    "name": "Concerto dal Cielo",
-                    "effect": "Increases the level of Skyward Sonnet by 3. The maximum upgrade level is 15.",
-                    "image": "Constellation/Concerto_dal_Cielo.png"
-                },
-                "6": {
-                    "name": "Storm of Defiance",
-                    "effect": "Targets who take DMG from Wind's Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, their RES towards the corresponding Element is also decreased by 20%.",
-                    "image": "Constellation/Storm_of_Defiance.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Slime_Condensate",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Cecilia"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Hurricane_Seed",
-                    "level": 40,
-                    "material4": "Slime_Condensate",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Cecilia"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Hurricane_Seed",
-                    "level": 50,
-                    "material4": "Slime_Secretions",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Cecilia"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Hurricane_Seed",
-                    "level": 60,
-                    "material4": "Slime_Secretions",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Cecilia"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Hurricane_Seed",
-                    "level": 70,
-                    "material4": "Slime_Concentrate",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Cecilia"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Hurricane_Seed",
-                    "level": 80,
-                    "material4": "Slime_Concentrate",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Cecilia"
-                }
-            },
-            "introduction": "A bard that seems to have arrived on some unknown wind - sometimes sings songs as old as the hills, and other times sings poems fresh and new. Likes apples and lively places but is not a fan of cheese or anything sticky. When using his Anemo power to control the wind, it often appears as feathers, as he's fond of that which appears light and breezy.",
-            "paimonmoepath": "characters/venti",
-            "genshinggpath": "characters/Venti",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Venti",
-            "subCollection": {}
-        },
-        "Xiao": {
-            "image": "Characters/Anemo/Xiao.png",
-            "gender": "Male",
-            "birthday": "17/4",
-            "caption": "Vigilant Yaksha",
-            "name": "Xiao",
-            "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Guardian Yaksha.\"",
-            "nation": "Liyue",
-            "weapon": "Polearm",
-            "rarity": 5,
-            "affiliation": "Liyue Adeptus",
-            "constellation": "Alatus Nemeseos",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Prosperity",
-                        "material3qty": 3,
-                        "material4": "Slime_Condensate",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
-                        "material3qty": 2,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
-                        "material3qty": 4,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
-                        "material3qty": 6,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
-                        "material3qty": 9,
-                        "material4": "Slime_Secretions",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shadow_of_the_Warrior",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Prosperity",
-                        "material3qty": 4,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shadow_of_the_Warrior",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Prosperity",
-                        "material3qty": 6,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shadow_of_the_Warrior",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Prosperity",
-                        "material3qty": 12,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Shadow_of_the_Warrior",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Prosperity",
-                        "material3qty": 16,
-                        "material4": "Slime_Concentrate",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Evil_Conqueror_Tamer_of_Demons": {
-                        "name": "Evil Conqueror - Tamer of Demons",
-                        "effect": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.",
-                        "image": "Talents/Passive/Talent_Evil_Conqueror_-_Tamer_of_Demons.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Dissolution_Eon_Heaven_Fall": {
-                        "name": "Dissolution Eon - Heaven Fall",
-                        "effect": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
-                        "image": "Talents/Passive/Talent_Dissolution_Eon_-_Heaven_Fall.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Transcension_Gravity_Defier": {
-                        "name": "Transcension - Gravity Defier",
-                        "effect": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-                        "image": "Talents/Passive/Talent_Transcension_-_Gravity_Defier.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Whirlwind_Thrust": {
-                        "name": "Whirlwind Thrust",
-                        "effect": "Normal Attack: Performs up to 6 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward thrust.\nPlunging Attack: Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
-                        "image": "Talents/Normal/Talent_Whirlwind_Thrust.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Lemniscatic_Wind_Cycling": {
-                        "name": "Lemniscatic Wind Cycling",
-                        "effect": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
-                        "image": "Talents/Skill/Talent_Lemniscatic_Wind_Cycling.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Bane_of_All_Evil": {
-                        "name": "Bane of All Evil",
-                        "effect": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.\nYaksha's Mask:\n\nGreatly increases Xiao's jumping ability.\nIncreases his attack AoE and attack DMG.\nConverts attack DMG into Anemo DMG, which cannot be overriden by any other elemental infusion.\nIn this state, Xiao will continuously lose HP.\nThe effects of this skill end when Xiao leaves the field.",
-                        "image": "Talents/Burst/Talent_Bane_of_All_Evil.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Dissolution Eon: Destroyer of Worlds",
-                    "effect": "Increases Lemniscatic Wind Cycling's charges by 1.",
-                    "image": "Constellation/Dissolution_Eon_-_Destroyer_of_Worlds.png"
-                },
-                "2": {
-                    "name": "Annihilation Eon: Blossom of Kaleidos",
-                    "effect": "When in party but not on the field, Xiao's Energy Recharge is increased by 25%.",
-                    "image": "Constellation/Annihilation_Eon_-_Blossom_of_Kaleidos.png"
-                },
-                "3": {
-                    "name": "Conqueror of Evil: Wrath Deity",
-                    "effect": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Conqueror_of_Evil_-_Wrath_Deity.png"
-                },
-                "4": {
-                    "name": "Transcension: Extinction of Suffering",
-                    "effect": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
-                    "image": "Constellation/Transcension_-_Extinction_of_Suffering.png"
-                },
-                "5": {
-                    "name": "Evolution Eon: Origin of Ignorance",
-                    "effect": "Increases the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Evolution_Eon_-_Origin_of_Ignorance.png"
-                },
-                "6": {
-                    "name": "Conqueror of Evil: Guardian Yaksha",
-                    "effect": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
-                    "image": "Constellation/Conqueror_of_Evil_-_Guardian_Yaksha.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Vayuda_Turquoise_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Slime_Condensate",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Qingxin"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Juvenile_Jade",
-                    "level": 40,
-                    "material4": "Slime_Condensate",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Qingxin"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Vayuda_Turquoise_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Juvenile_Jade",
-                    "level": 50,
-                    "material4": "Slime_Secretions",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Qingxin"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Juvenile_Jade",
-                    "level": 60,
-                    "material4": "Slime_Secretions",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Qingxin"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Vayuda_Turquoise_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Juvenile_Jade",
-                    "level": 70,
-                    "material4": "Slime_Concentrate",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Qingxin"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Vayuda_Turquoise_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Juvenile_Jade",
-                    "level": 80,
-                    "material4": "Slime_Concentrate",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Qingxin"
-                }
-            },
-            "introduction": "One of the \"Mighty and Illuminated Adepti\" guarding Liyue, also heralded as the \"Guardian Yaksha.\"\nDespite his appearance as a young man, occasional legends about him have been documented in ancient books.\nHe is especially fond of Wangshu Inn's Almond Tofu. The reason is that the dish tastes just like the \"dreams\" he used to devour.",
-            "paimonmoepath": "characters/xiao",
-            "genshinggpath": "characters/Xiao",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Xiao",
-            "subCollection": {}
+        "attack": {
+          "Favonius_Bladework": {
+            "name": "Favonius Bladework",
+            "effect": "Normal Attack: Performs up to 5 consecutive strikes.\nCharged Attack: Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Favonius_Bladework.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Gale_Blade": {
+            "name": "Gale Blade",
+            "effect": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching opponents in the direction she aims at, dealing massive Anemo DMG.\nHold: At the cost of continued stamina consumption, Jean can command the whirlwind to pull surrounding opponents and objects towards her front.\nDirection can be adjusted.\nCharacter is immobile during skill duration.",
+            "image": "Talents/Skill/Talent_Gale_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Dandelion_Breeze": {
+            "name": "Dandelion Breeze",
+            "effect": "Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and causing Anemo DMG. At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.\nDandelion Field:\nContinuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.\nDeals Anemo DMG to opponents entering or exiting the Dandelion Field.",
+            "image": "Talents/Burst/Talent_Dandelion_Breeze.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
         }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spiraling Tempest",
+          "effect": "Increases the pulling speed of Gale Blade after holding for more than 1s, and increases the DMG dealt by 40%.",
+          "image": "Constellation/Spiraling_Tempest.png"
+        },
+        "2": {
+          "name": "People's Aegis",
+          "effect": "When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.",
+          "image": "Constellation/Peoples_Aegis.png"
+        },
+        "3": {
+          "name": "When the West Wind Arises",
+          "effect": "Increases the level of Dandelion Breeze by 3. The maximum upgrade level is 15.",
+          "image": "Constellation/When_the_West_Wind_Arises.png"
+        },
+        "4": {
+          "name": "Lands of Dandelion",
+          "effect": "Within the Field created by Dandelion Breeze, all opponents have their Anemo RES decreased by 40%.",
+          "image": "Constellation/Lands_of_Dandelion.png"
+        },
+        "5": {
+          "name": "Outbursting Gust",
+          "effect": "Increases the level of Gale Blade by 3. The maximum upgrade level is 15.",
+          "image": "Constellation/Outbursting_Gust.png"
+        },
+        "6": {
+          "name": "Lion's Fang, Fair Protector of Mondstadt",
+          "effect": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.",
+          "image": "Constellation/Lions_Fang_Fair_Protector_of_Mondstadt.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Dandelion_Seed"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Hurricane_Seed",
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Dandelion_Seed"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Hurricane_Seed",
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Dandelion_Seed"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Hurricane_Seed",
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Dandelion_Seed"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Hurricane_Seed",
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Dandelion_Seed"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Hurricane_Seed",
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Dandelion_Seed"
+        }
+      },
+      "introduction": "As the Acting Grand Master of the Knights, Jean has always been devoted to her duties and maintaining peace in Mondstadt. She had taken precautions long before the onset of Stormterror's assault, and she will guard Mondstadt with her life as always.",
+      "paimonmoepath": "characters/jean",
+      "genshinggpath": "characters/Jean",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Jean",
+      "subCollection": {}
+    },
+    "Kaedehara_Kazuha": {
+      "image": "Characters/Anemo/Kazuha.png",
+      "gender": "Male",
+      "birthday": "29/10",
+      "caption": "Scarlet Leaves Pursue Wild Waves",
+      "name": "Kaedehara Kazuha",
+      "fullName": "Kazuha",
+      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+      "nation": "Inazuma",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "The Crux",
+      "constellation": "Acer Palmatum",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Diligence",
+            "material3qty": 3,
+            "material4": "Treasure_Hoarder_Insignia",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 2,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 4,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 6,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 9,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 4,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 6,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 12,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 16,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Poetics_of_Fuubutsu": {
+            "name": "Poetics of Fuubutsu",
+            "effect": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant teammates a 0.04% Elemental DMG Bonus to their corresponding Element for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist.",
+            "image": "Talents/Passive/Talent_Poetics_of_Fuubutsu.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Soumon_Swordmanship": {
+            "name": "Soumon Swordmanship",
+            "effect": "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro when cast, Chihayaburu will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.\nElemental Absorption may only occur once per use of Chihayaburu.",
+            "image": "Talents/Passive/Talent_Soumon_Swordsmanship.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Cloud_Strider": {
+            "name": "Cloud Strider",
+            "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Cloud_Strider.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Garyuu_Bladework": {
+            "name": "Garyuu Bladework",
+            "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.\nPlunging Attack: Midare Ranzan: When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
+            "image": "Talents/Normal/Talent_Garyuu_Bladework.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Chihayaburu": {
+            "name": "Chihayaburu",
+            "effect": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing Anemo DMG and lifting Kazuha into the air on a rushing gust of wind.\nPress: Can be used in mid-air.\nHold: Charges up before unleashing greater Anemo DMG over a larger AoE than Press Mode.\nPlunging Attack: Midare Ranzan: Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.\nWhen a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents. Midare Ranzan's DMG is considered Plunging Attack DMG.",
+            "image": "Talents/Skill/Talent_Chihayaburu.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Kazuha_Slash": {
+            "name": "Kazuha Slash",
+            "effect": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing AoE Anemo DMG. The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals AoE Anemo DMG to opponents within its range.\nElemental Absorption: If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+            "image": "Talents/Burst/Talent_Kazuha_Slash.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Scarlet Hills",
+          "effect": "Decreases Chihayaburu's CD by 10%.\nUsing Kazuha Slash resets the CD of Chihayaburu.",
+          "image": "Constellation/Scarlet_Hills.png"
+        },
+        "2": {
+          "name": "Yamaarashi Tailwind",
+          "effect": "The Autumn Whirlwind field created by Kazuha Slash has the following effects:\n- Increases Kaedehara Kazuha's own Elemental Mastery by 200.\n- Increases the Elemental Mastery of characters within the field by 200.\nThe Elemental Mastery-increasing effects of this Constellation do not stack.",
+          "image": "Constellation/Yamaarashi_Tailwind.png"
+        },
+        "3": {
+          "name": "Maple Monogatari",
+          "effect": "Increases the Level of Chihayaburu by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Maple_Monogatari.png"
+        },
+        "4": {
+          "name": "Oozora Genpou",
+          "effect": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n- Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.\n- When gliding, Kaedehara Kazuha regenerates 2 Energy per second.",
+          "image": "Constellation/Oozora_Genpou.png"
+        },
+        "5": {
+          "name": "Wisdom of Bansei",
+          "effect": "Increases the Level of Kazuha Slash by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Wisdom_of_Bansei.png"
+        },
+        "6": {
+          "name": "Crimson Momiji",
+          "effect": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%.",
+          "image": "Constellation/Crimson_Momiji.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Treasure_Hoarder_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Sea_Ganoderma"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Marionette_Core",
+          "level": 40,
+          "material4": "Treasure_Hoarder_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Sea_Ganoderma"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Marionette_Core",
+          "level": 50,
+          "material4": "Silver_Raven_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Sea_Ganoderma"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Marionette_Core",
+          "level": 60,
+          "material4": "Silver_Raven_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Sea_Ganoderma"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Marionette_Core",
+          "level": 70,
+          "material4": "Golden_Raven_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Sea_Ganoderma"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Marionette_Core",
+          "level": 80,
+          "material4": "Golden_Raven_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Sea_Ganoderma"
+        }
+      },
+      "introduction": "A wandering samurai from Inazuma with a modest and gentle personality.\nBeneath a youthful and carefree demeanor lies a heart that hides a great many burdens from the past. Seemingly easygoing, Kazuha has his own code of conduct.",
+      "paimonmoepath": "characters/kaedehara_kazuha",
+      "genshinggpath": "characters/Kazuha",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kazuha",
+      "subCollection": {}
+    },
+    "Sayu": {
+      "image": "Characters/Anemo/Sayu.png",
+      "gender": "Female",
+      "birthday": "19/10",
+      "caption": "Mujina Ninja",
+      "name": "Sayu",
+      "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+      "nation": "Inazuma",
+      "weapon": "Claymore",
+      "rarity": 4,
+      "affiliation": "Shuumatsuban",
+      "constellation": "Nyctereutes Minor",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Light",
+            "material3qty": 3,
+            "material4": "Whopperflower_Nectar",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 2,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 6,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 9,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Energy_Nectar",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 6,
+            "material4": "Energy_Nectar",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 12,
+            "material4": "Energy_Nectar",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Energy_Nectar",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Someone_More_Capable": {
+            "name": "Someone More Capable",
+            "effect": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+            "image": "Talents/Passive/Talent_Someone_More_Capable.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "No_Work_Today": {
+            "name": "No Work Today!",
+            "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:\nWhen healing a character, it will also heal characters near that healed character for 20% the amount of HP.\nIncreases the AoE of its attack against opponents.",
+            "image": "Talents/Passive/Talent_No_Work_Today.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Yoohoo_Art_Silencers_Secret": {
+            "name": "Yoohoo Art: Silencer's Secret",
+            "effect": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+            "image": "Talents/Passive/Talent_Yoohoo_Art_Silencers_Secret.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Shuumatsuban_Ninja_Blade": {
+            "name": "Shuumatsuban Ninja Blade",
+            "effect": "Normal Attack: Performs up to 4 consecutive strikes.\n\nCharged Attack: Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\n\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Shuumatsuban_Ninja_Blade.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Yoohoo_Art_Fuuin_Dash": {
+            "name": "Yoohoo Art: Fuuin Dash",
+            "effect": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG.\nWhen the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.\nPress: Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.\nHold: Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.\nElemental Absorption: If Sayu comes into contact with Hydro, Pyro, Cryo and Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+            "image": "Talents/Skill/Talent_Yoohoo_Art_Fuuin_Dash.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Yoohoo_Art_Mujina_Flurry": {
+            "name": "Yoohoo Art: Mujina Flurry",
+            "effect": "The other super special technique of the Yoohoo Ninja Arts!\nIt summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.\nMuji-Muji Daruma: At specific intervals, the Daruma will take one of several actions based on the situation around it:\n\nIf the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.\nIf there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left.\nIf there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more.",
+            "image": "Talents/Burst/Talent_Yoohoo_Art_Mujina_Flurry.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Multi-Task no Jutsu",
+          "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+          "image": "Constellation/Multi-Task_no_Jutsu.png"
+        },
+        "2": {
+          "name": "Egress Prep",
+          "effect": "Yoohoo Art: Fuuin Dash gains the following effects:\nDMG of Fuufuu Whirlwind Kick in Tapping (mobile)/Press (PC & PlayStation) Mode increased by 3.3%.\nEvery 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.",
+          "image": "Constellation/Egress_Prep.png"
+        },
+        "3": {
+          "name": "Eh, the Bunshin Can Handle It",
+          "effect": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Eh_the_Bunshin_Can_Handle_It.png"
+        },
+        "4": {
+          "name": "Skiving: New and Improved",
+          "effect": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+          "image": "Constellation/Skiving_New_and_Improved.png"
+        },
+        "5": {
+          "name": "Speed Comes First",
+          "effect": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Speed_Comes_First.png"
+        },
+        "6": {
+          "name": "Sleep O'Clock",
+          "effect": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\nIncreases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.\nIncreases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner.",
+          "image": "Constellation/Sleep_OClock.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Crystal_Marrow"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Marionette_Core",
+          "level": 40,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Crystal_Marrow"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Marionette_Core",
+          "level": 50,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Crystal_Marrow"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Marionette_Core",
+          "level": 60,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Crystal_Marrow"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Marionette_Core",
+          "level": 70,
+          "material4": "Energy_Nectar",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Crystal_Marrow"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Marionette_Core",
+          "level": 80,
+          "material4": "Energy_Nectar",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Crystal_Marrow"
+        }
+      },
+      "introduction": "Sayu, Shuumatsuban's resident ninja, is obsessed with sleeping and growing taller.\nShe has mastered all kinds of ninjutsu to run away and hide in pursuit of opportunities to laze around and sleep.\nSuch an extraordinary skillset may have very unexpected uses.",
+      "paimonmoepath": "characters/sayu",
+      "genshinggpath": "characters/Sayu",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sayu",
+      "subCollection": {}
+    },
+    "Sucrose": {
+      "image": "Characters/Anemo/Sucrose.png",
+      "gender": "Female",
+      "birthday": "26/11",
+      "caption": "Harmless Sweetie",
+      "name": "Sucrose",
+      "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+      "nation": "Mondstadt",
+      "weapon": "Catalyst",
+      "rarity": 4,
+      "affiliation": "Knights of Favonius",
+      "constellation": "Ampulla",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Freedom",
+            "material3qty": 3,
+            "material4": "Whopperflower_Nectar",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 2,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 4,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 6,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 9,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spirit_Locket_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 4,
+            "material4": "Energy_Nectar",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spirit_Locket_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 6,
+            "material4": "Energy_Nectar",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spirit_Locket_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 12,
+            "material4": "Energy_Nectar",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Spirit_Locket_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 16,
+            "material4": "Energy_Nectar",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Catalyst_Conversion": {
+            "name": "Catalyst Conversion",
+            "effect": "When Sucrose triggers a Swirl effect, all characters in the party with the matching element (excluding Sucrose) have their Elemental Mastery increased by 50 for 8s.",
+            "image": "Talents/Passive/Talent_Catalyst_Conversion.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Mollis_Favonius": {
+            "name": "Mollis Favonius",
+            "effect": "When Astable Anemohypostasis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an opponent, increases all party members' (excluding Sucrose) Elemental Mastery based on 20% of Sucrose's Elemental Mastery for 8s.",
+            "image": "Talents/Passive/Talent_Mollis_Favonius.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Astable_Invention": {
+            "name": "Astable Invention",
+            "effect": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product.",
+            "image": "Talents/Passive/Talent_Astable_Invention.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Wind_Spirit_Creation": {
+            "name": "Wind Spirit Creation",
+            "effect": "Normal Attack: Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.\nCharged Attack: Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.\nPlunging Attack: Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Talent_Wind_Spirit_Creation.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Astable_Anemohypostasis Creation_6308": {
+            "name": "Astable Anemohypostasis Creation - 6308",
+            "effect": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals Anemo DMG\nGenerate 4 elemental particles when it hit at least 1 target.",
+            "image": "Talents/Skill/Talent_Astable_Anemohypostasis_Creation_-_6308.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Forbidden_Creation_Isomer_75_Type_II": {
+            "name": "Forbidden Creation - Isomer 75 / Type II",
+            "effect": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby opponents, and deal Anemo DMG.\nElemental Absorption: If the Wind Spirit comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+            "image": "Talents/Burst/Talent_Forbidden_Creation_-_Isomer_75_Type_II.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Clustered Vacuum Field",
+          "effect": "Astable Anemohypostasis Creation - 6308 gains 1 additional charge.",
+          "image": "Constellation/Clustered_Vacuum_Field.png"
+        },
+        "2": {
+          "name": "Beth: Unbound Form",
+          "effect": "The duration of Forbidden Creation - Isomer 75 / Type II is increased by 2s.",
+          "image": "Constellation/Beth_Unbound_Form.png"
+        },
+        "3": {
+          "name": "Flawless Alchemistress",
+          "effect": "Increases the Level of Astable Anemohypostasis Creation - 6308 by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Flawless_Alchemistress.png"
+        },
+        "4": {
+          "name": "Alchemania",
+          "effect": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1~7s.",
+          "image": "Constellation/Alchemania.png"
+        },
+        "5": {
+          "name": "Caution: Standard Flask",
+          "effect": "Increases the Level of Forbidden Creation - Isomer 75 / Type II by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Caution_Standard_Flask.png"
+        },
+        "6": {
+          "name": "Chaotic Entropy",
+          "effect": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
+          "image": "Constellation/Chaotic_Entropy.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Hurricane_Seed",
+          "level": 40,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Hurricane_Seed",
+          "level": 50,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Hurricane_Seed",
+          "level": 60,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Hurricane_Seed",
+          "level": 70,
+          "material4": "Energy_Nectar",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Hurricane_Seed",
+          "level": 80,
+          "material4": "Energy_Nectar",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "An alchemist with an insatiable curiosity towards the world and everything in it. Attached to the Knights of Favonius as an assistant to Albedo, her area of focus is \"bio-alchemy.\" She strives to enrich the world by transforming living things with the power of alchemy. Granted, the products of her research sometimes prove to be more weird than wonderful — but on the whole, she has made monumental contributions to the field of bio-alchemy.",
+      "paimonmoepath": "characters/sucrose",
+      "genshinggpath": "characters/Sucrose",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sucrose",
+      "subCollection": {}
+    },
+    "Venti": {
+      "image": "Characters/Anemo/Venti.png",
+      "gender": "Male",
+      "birthday": "16/6",
+      "caption": "Windborne Bard",
+      "name": "Venti",
+      "fullName": "Barbatos",
+      "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
+      "nation": "Mondstadt",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Archons",
+      "constellation": "Carmen Dei",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Ballad",
+            "material3qty": 3,
+            "material4": "Slime_Condensate",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 2,
+            "material4": "Slime_Secretions",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 4,
+            "material4": "Slime_Secretions",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 6,
+            "material4": "Slime_Secretions",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 9,
+            "material4": "Slime_Secretions",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 4,
+            "material4": "Slime_Concentrate",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 6,
+            "material4": "Slime_Concentrate",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 12,
+            "material4": "Slime_Concentrate",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 16,
+            "material4": "Slime_Concentrate",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Embrace_of_Winds": {
+            "name": "Embrace of Winds",
+            "effect": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+            "image": "Talents/Passive/Talent_Embrace_of_Winds.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Stormeye": {
+            "name": "Stormeye",
+            "effect": "Regenerates 15 Energy for Venti after the effects of Wind's Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+            "image": "Talents/Passive/Talent_Stormeye.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Windrider": {
+            "name": "Windrider",
+            "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Windrider.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Divine_Marksmanship": {
+            "name": "Divine Marksmanship",
+            "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Divine_Marksmanship.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skyward_Sonnet": {
+            "name": "Skyward Sonnet",
+            "effect": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!\nPress: Summons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.\nHold: Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air.\nOpponents hit by Skyward Sonnet will fall to the ground slowly.\nGenerate 3/4 elemental particles for press/hold when it hit at least 1 target.",
+            "image": "Talents/Skill/Talent_Skyward_Sonnet.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Winds_Grand_Ode": {
+            "name": "Wind's Grand Ode",
+            "effect": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times Anemo DMG in 8 seconds.\nElemental Absorption: If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+            "image": "Talents/Burst/Talent_Wind_Grand_Ode.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Splitting Gales",
+          "effect": "Fires 2 additional split arrows per Aimed Shot, each dealing 33% of the original arrow's DMG.\nNote: The additional arrows are fired in a 30° horizontal cone (each 15° to left and right), possibly hitting and damaging the same target in close range. Each arrow has its own critical.",
+          "image": "Constellation/Splitting_Gales.png"
+        },
+        "2": {
+          "name": "Breeze of Reminiscence",
+          "effect": "Skyward Sonnet decreases opponents' Anemo RES and Physical RES by 12% for 10s. Opponents launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "image": "Constellation/Breeze_of_Reminiscence.png"
+        },
+        "3": {
+          "name": "Ode to Thousand Winds",
+          "effect": "Increases the level of Wind's Grand Ode by 3. The maximum upgrade level is 15.",
+          "image": "Constellation/Ode_to_Thousand_Winds.png"
+        },
+        "4": {
+          "name": "Hurricane of Freedom",
+          "effect": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "image": "Constellation/Hurricane_of_Freedom.png"
+        },
+        "5": {
+          "name": "Concerto dal Cielo",
+          "effect": "Increases the level of Skyward Sonnet by 3. The maximum upgrade level is 15.",
+          "image": "Constellation/Concerto_dal_Cielo.png"
+        },
+        "6": {
+          "name": "Storm of Defiance",
+          "effect": "Targets who take DMG from Wind's Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, their RES towards the corresponding Element is also decreased by 20%.",
+          "image": "Constellation/Storm_of_Defiance.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Slime_Condensate",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Cecilia"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Hurricane_Seed",
+          "level": 40,
+          "material4": "Slime_Condensate",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Cecilia"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Hurricane_Seed",
+          "level": 50,
+          "material4": "Slime_Secretions",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Cecilia"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Hurricane_Seed",
+          "level": 60,
+          "material4": "Slime_Secretions",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Cecilia"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Hurricane_Seed",
+          "level": 70,
+          "material4": "Slime_Concentrate",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Cecilia"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Hurricane_Seed",
+          "level": 80,
+          "material4": "Slime_Concentrate",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Cecilia"
+        }
+      },
+      "introduction": "A bard that seems to have arrived on some unknown wind - sometimes sings songs as old as the hills, and other times sings poems fresh and new. Likes apples and lively places but is not a fan of cheese or anything sticky. When using his Anemo power to control the wind, it often appears as feathers, as he's fond of that which appears light and breezy.",
+      "paimonmoepath": "characters/venti",
+      "genshinggpath": "characters/Venti",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Venti",
+      "subCollection": {}
+    },
+    "Xiao": {
+      "image": "Characters/Anemo/Xiao.png",
+      "gender": "Male",
+      "birthday": "17/4",
+      "caption": "Vigilant Yaksha",
+      "name": "Xiao",
+      "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Guardian Yaksha.\"",
+      "nation": "Liyue",
+      "weapon": "Polearm",
+      "rarity": 5,
+      "affiliation": "Liyue Adeptus",
+      "constellation": "Alatus Nemeseos",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Prosperity",
+            "material3qty": 3,
+            "material4": "Slime_Condensate",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 2,
+            "material4": "Slime_Secretions",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 4,
+            "material4": "Slime_Secretions",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 6,
+            "material4": "Slime_Secretions",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 9,
+            "material4": "Slime_Secretions",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shadow_of_the_Warrior",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 4,
+            "material4": "Slime_Concentrate",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shadow_of_the_Warrior",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 6,
+            "material4": "Slime_Concentrate",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shadow_of_the_Warrior",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 12,
+            "material4": "Slime_Concentrate",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Shadow_of_the_Warrior",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 16,
+            "material4": "Slime_Concentrate",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Evil_Conqueror_Tamer_of_Demons": {
+            "name": "Evil Conqueror - Tamer of Demons",
+            "effect": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.",
+            "image": "Talents/Passive/Talent_Evil_Conqueror_-_Tamer_of_Demons.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Dissolution_Eon_Heaven_Fall": {
+            "name": "Dissolution Eon - Heaven Fall",
+            "effect": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
+            "image": "Talents/Passive/Talent_Dissolution_Eon_-_Heaven_Fall.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Transcension_Gravity_Defier": {
+            "name": "Transcension - Gravity Defier",
+            "effect": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Transcension_-_Gravity_Defier.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Whirlwind_Thrust": {
+            "name": "Whirlwind Thrust",
+            "effect": "Normal Attack: Performs up to 6 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward thrust.\nPlunging Attack: Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+            "image": "Talents/Normal/Talent_Whirlwind_Thrust.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lemniscatic_Wind_Cycling": {
+            "name": "Lemniscatic Wind Cycling",
+            "effect": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+            "image": "Talents/Skill/Talent_Lemniscatic_Wind_Cycling.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bane_of_All_Evil": {
+            "name": "Bane of All Evil",
+            "effect": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.\nYaksha's Mask:\n\nGreatly increases Xiao's jumping ability.\nIncreases his attack AoE and attack DMG.\nConverts attack DMG into Anemo DMG, which cannot be overriden by any other elemental infusion.\nIn this state, Xiao will continuously lose HP.\nThe effects of this skill end when Xiao leaves the field.",
+            "image": "Talents/Burst/Talent_Bane_of_All_Evil.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Dissolution Eon: Destroyer of Worlds",
+          "effect": "Increases Lemniscatic Wind Cycling's charges by 1.",
+          "image": "Constellation/Dissolution_Eon_-_Destroyer_of_Worlds.png"
+        },
+        "2": {
+          "name": "Annihilation Eon: Blossom of Kaleidos",
+          "effect": "When in party but not on the field, Xiao's Energy Recharge is increased by 25%.",
+          "image": "Constellation/Annihilation_Eon_-_Blossom_of_Kaleidos.png"
+        },
+        "3": {
+          "name": "Conqueror of Evil: Wrath Deity",
+          "effect": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Conqueror_of_Evil_-_Wrath_Deity.png"
+        },
+        "4": {
+          "name": "Transcension: Extinction of Suffering",
+          "effect": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
+          "image": "Constellation/Transcension_-_Extinction_of_Suffering.png"
+        },
+        "5": {
+          "name": "Evolution Eon: Origin of Ignorance",
+          "effect": "Increases the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Evolution_Eon_-_Origin_of_Ignorance.png"
+        },
+        "6": {
+          "name": "Conqueror of Evil: Guardian Yaksha",
+          "effect": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
+          "image": "Constellation/Conqueror_of_Evil_-_Guardian_Yaksha.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Slime_Condensate",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Qingxin"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Juvenile_Jade",
+          "level": 40,
+          "material4": "Slime_Condensate",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Qingxin"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Juvenile_Jade",
+          "level": 50,
+          "material4": "Slime_Secretions",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Qingxin"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Juvenile_Jade",
+          "level": 60,
+          "material4": "Slime_Secretions",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Qingxin"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Juvenile_Jade",
+          "level": 70,
+          "material4": "Slime_Concentrate",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Qingxin"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Juvenile_Jade",
+          "level": 80,
+          "material4": "Slime_Concentrate",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Qingxin"
+        }
+      },
+      "introduction": "One of the \"Mighty and Illuminated Adepti\" guarding Liyue, also heralded as the \"Guardian Yaksha.\"\nDespite his appearance as a young man, occasional legends about him have been documented in ancient books.\nHe is especially fond of Wangshu Inn's Almond Tofu. The reason is that the dish tastes just like the \"dreams\" he used to devour.",
+      "paimonmoepath": "characters/xiao",
+      "genshinggpath": "characters/Xiao",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Xiao",
+      "subCollection": {}
     }
+  }
 }
