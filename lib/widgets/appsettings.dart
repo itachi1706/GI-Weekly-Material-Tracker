@@ -406,7 +406,7 @@ class _SettingsPageState extends State<SettingsPage> {
         const MarkdownPageListTile(
           icon: Icon(Icons.list),
           title: Text('Changelog'),
-          filename: './CHANGELOG.md',
+          filename: 'CHANGELOG.md',
         ),
         const LicensesPageListTile(
           title: Text('Open Source Licenses'),
