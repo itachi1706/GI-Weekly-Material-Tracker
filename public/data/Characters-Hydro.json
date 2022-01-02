@@ -1,1397 +1,1397 @@
 {
-    "characters": {
-        "Barbara": {
-            "image": "Characters/Hydro/Barbara.png",
-            "gender": "Female",
-            "birthday": "5/7",
-            "caption": "Shining Idol",
-            "name": "Barbara",
-            "fullName": "Barbara Pegg",
-            "description": "Every citizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
-            "nation": "Mondstadt",
-            "weapon": "Catalyst",
-            "rarity": 4,
-            "affiliation": "Church of Favonius",
-            "constellation": "Crater",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Freedom",
-                        "material3qty": 3,
-                        "material4": "Divining_Scroll",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 2,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 4,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 6,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 9,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 4,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 6,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 12,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 16,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Glorious_Season": {
-                        "name": "Glorious Season",
-                        "effect": "The Stamina Consumption of characters within Let the Show Begin's Melody Loop is reduced by 12%.",
-                        "image": "Talents/Passive/Talent_Glorious_Season.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Encore": {
-                        "name": "Encore",
-                        "effect": "When your active character gains an Elemental Orb/Particle, the duration of Let the Show Begin's Melody Loop is extended by 1s. The maximum extension is 5s.",
-                        "image": "Talents/Passive/Talent_Encore.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "With_My_Whole_Heart": {
-                        "name": "With My Whole Heart♪",
-                        "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.",
-                        "image": "Talents/Passive/Talent_With_My_Whole_Heart.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Whisper_of_Water": {
-                        "name": "Whisper of Water",
-                        "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
-                        "image": "Talents/Normal/Talent_Whisper_of_Water.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Let_the_Show_Begin": {
-                        "name": "Let the Show Begin♪",
-                        "effect": "Summons water droplets resembling musical notes that form a Melody Loop, dealing Hydro DMG to surrounding opponents and afflicting them with the Wet status.\nMelody Loop:\n\nBarbara's Normal Attacks heal your characters in the party and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.\nHer Charged Attack generates 4 times the amount of healing.\nRegenerates a certain amount of HP at regular intervals for your active character.\nApplies the Wet status to the character and opponents who come in contact with them.",
-                        "image": "Talents/Skill/Talent_Let_the_Show_Begin.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Shining_Miracle": {
-                        "name": "Shining Miracle♪",
-                        "effect": "Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.",
-                        "image": "Talents/Burst/Talent_Shining_Miracle.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Gleeful Songs",
-                    "effect": "Barbara regenerates 1 Energy every 10s.",
-                    "image": "Constellation/Gleeful_Songs.png"
-                },
-                "2": {
-                    "name": "Vitality Burst",
-                    "effect": "Decreases the CD of Let the Show Begin by 15%. During the ability's duration, your active character gains 15% Hydro DMG Bonus.",
-                    "image": "Constellation/Vitality_Burst.png"
-                },
-                "3": {
-                    "name": "Star of Tomorrow",
-                    "effect": "Increases the level of Shining Miracle by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Star_of_Tomorrow.png"
-                },
-                "4": {
-                    "name": "Attentiveness be My Power",
-                    "effect": "Every opponent Barbara hits with her Charged Attack regenerates 1 Energy for her. A maximum of 5 energy can be regenerated in this manner with any one Charged Attack.",
-                    "image": "Constellation/Attentiveness_be_My_Power.png"
-                },
-                "5": {
-                    "name": "The Purest Companionship",
-                    "effect": "Increases the level of Let the Show Begin by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/The_Purest_Companionship.png"
-                },
-                "6": {
-                    "name": "Dedicating Everything to You",
-                    "effect": "When Barbara is not on the field, and one of your characters in the party falls:\nAutomatically revives this character.\nFully regenerates this character's HP to 100%.\nThis effect can only occur once every 15 mins.",
-                    "image": "Constellation/Dedicating_Everything_to_You.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Varunada_Lazurite_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Divining_Scroll",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Cleansing_Heart",
-                    "level": 40,
-                    "material4": "Divining_Scroll",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Cleansing_Heart",
-                    "level": 50,
-                    "material4": "Sealed_Scroll",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Cleansing_Heart",
-                    "level": 60,
-                    "material4": "Sealed_Scroll",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Cleansing_Heart",
-                    "level": 70,
-                    "material4": "Forbidden_Curse_Scroll",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Varunada_Lazurite_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Cleansing_Heart",
-                    "level": 80,
-                    "material4": "Forbidden_Curse_Scroll",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Philanemo_Mushroom"
-                }
-            },
-            "introduction": "The Deaconess of the Favonius Church and a shining starlet adored by all. Although the concept of a starlet is rather novel in a city of bards, the people of Mondstadt love Barbara nonetheless. \"I owe everything to the city's spirit of freedom\" — Barbara, regarding her popularity.",
-            "paimonmoepath": "characters/barbara",
-            "genshinggpath": "characters/Barbara",
-            "element": "Hydro",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
-            "subCollection": {}
+  "characters": {
+    "Barbara": {
+      "image": "Characters/Hydro/Barbara.png",
+      "gender": "Female",
+      "birthday": "5/7",
+      "caption": "Shining Idol",
+      "name": "Barbara",
+      "fullName": "Barbara Pegg",
+      "description": "Every citizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
+      "nation": "Mondstadt",
+      "weapon": "Catalyst",
+      "rarity": 4,
+      "affiliation": "Church of Favonius",
+      "constellation": "Crater",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Freedom",
+            "material3qty": 3,
+            "material4": "Divining_Scroll",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 2,
+            "material4": "Sealed_Scroll",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 4,
+            "material4": "Sealed_Scroll",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 6,
+            "material4": "Sealed_Scroll",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 9,
+            "material4": "Sealed_Scroll",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 4,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 6,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 12,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 16,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 12
+          }
         },
-        "Mona": {
-            "image": "Characters/Hydro/Mona.png",
-            "gender": "Female",
-            "birthday": "31/8",
-            "caption": "Astral Reflection",
-            "name": "Mona",
-            "fullName": "Mona Megistus",
-            "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
-            "nation": "Mondstadt",
-            "weapon": "Catalyst",
-            "rarity": 5,
-            "affiliation": "Hexenzirkel",
-            "constellation": "Astrolabos",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Resistance",
-                        "material3qty": 3,
-                        "material4": "Whopperflower_Nectar",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 2,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 4,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 6,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 9,
-                        "material4": "Shimmering_Nectar",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Resistance",
-                        "material3qty": 4,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Resistance",
-                        "material3qty": 6,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Resistance",
-                        "material3qty": 12,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Ring_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Resistance",
-                        "material3qty": 16,
-                        "material4": "Energy_Nectar",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Come_n_Get_Me_Hag": {
-                        "name": "Come 'n' Get Me, Hag!",
-                        "effect": "After she has used Illusory Torrent for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.\nA Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
-                        "image": "Talents/Passive/Talent_Come_n_Get_Me_Hag.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Waterborne_Destiny": {
-                        "name": "Waterborne Destiny",
-                        "effect": "Increases Mona's Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
-                        "image": "Talents/Passive/Talent_Waterborne_Destiny.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Principium_of_Astrology": {
-                        "name": "Principium of Astrology",
-                        "effect": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.",
-                        "image": "Talents/Passive/Talent_Principium_of_Astrology.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    },
-                    "Illusory_Torrent": {
-                        "name": "Illusory Torrent",
-                        "effect": "Alternate Sprint: Mona cloaks herself within the water's flow, consuming stamina to move rapidly.\nWhen under the effect of Illusory Torrent, Mona can move at high speed on water.\nApplies the Wet status to nearby opponents when she reappears.",
-                        "image": "Talents/Passive/Talent_Illusory_Torrent.png",
-                        "order": 3,
-                        "type": "Alternate Sprint"
-                    }
-                },
-                "attack": {
-                    "Ripple_of_Fate": {
-                        "name": "Ripple of Fate",
-                        "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
-                        "image": "Talents/Normal/Talent_Ripple_of_Fate.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Mirror_Reflection_of_Doom": {
-                        "name": "Mirror Reflection of Doom",
-                        "effect": "Creates an illusory Phantom of fate from coalesced waterspouts.\nThe Phantom has the following special properties:\n\nContinuously taunts nearby opponents, attracting their fire.\nEach second, 4 times, deals AoE Hydro DMG.\nWhen its duration expires, the Phantom explodes, dealing AoE Hydro DMG.\nHold: Utilizes water currents to move backwards swiftly before conjuring a Phantom\nOnly one Phantom created by Mirror Reflection of Doom can exist at any time.\nWhen the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.",
-                        "image": "Talents/Skill/Talent_Mirror_Reflection_of_Doom.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Stellaris_Phantasm": {
-                        "name": "Stellaris Phantasm",
-                        "effect": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.\nIllusory Bubble: Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:\n\nApplies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.\nRemoves the Illusory Bubble, dealing Hydro DMG in the process.\nOmen: During its duration, increases DMG taken by opponents.",
-                        "image": "Talents/Burst/Talent_Stellaris_Phantasm.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Prophecy of Submersion",
-                    "effect": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after any of your characters in the party hit an opponent affected by an Omen:\nElectro-Charged DMG is increased by 15%.\nVaporize DMG is increased by 15%.\nHydro Swirl DMG is increased by 15%.\nThe duration for which enemies are Frozen is increased by 15%.",
-                    "image": "Constellation/Prophecy_of_Submersion.png"
-                },
-                "2": {
-                    "name": "Lunar Chain",
-                    "effect": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. This effect can only occur once every 5s.",
-                    "image": "Constellation/Lunar_Chain.png"
-                },
-                "3": {
-                    "name": "Restless Revolution",
-                    "effect": "Increases the Level of Stellaris Phantasm by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Restless_Revolution.png"
-                },
-                "4": {
-                    "name": "Prophecy of Oblivion",
-                    "effect": "When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.",
-                    "image": "Constellation/Prophecy_of_Oblivion.png"
-                },
-                "5": {
-                    "name": "Mockery of Fortuna",
-                    "effect": "Increase the Level of Mirror Reflection of Doom by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Mockery_of_Fortuna.png"
-                },
-                "6": {
-                    "name": "Rhetorics of Calamitas",
-                    "effect": "Upon entering Illusory Torrent, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
-                    "image": "Constellation/Rhetorics_of_Calamitas.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Varunada_Lazurite_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Cleansing_Heart",
-                    "level": 40,
-                    "material4": "Whopperflower_Nectar",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Cleansing_Heart",
-                    "level": 50,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Cleansing_Heart",
-                    "level": 60,
-                    "material4": "Shimmering_Nectar",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Cleansing_Heart",
-                    "level": 70,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Philanemo_Mushroom"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Varunada_Lazurite_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Cleansing_Heart",
-                    "level": 80,
-                    "material4": "Energy_Nectar",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Philanemo_Mushroom"
-                }
-            },
-            "introduction": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful. Though she is often strapped for cash and lives a life of thrift, she is resolved to never use astrology for profit... It is this very resolution that has caused her to constantly fret about money.",
-            "paimonmoepath": "characters/mona",
-            "genshinggpath": "characters/Mona",
-            "element": "Hydro",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Mona",
-            "subCollection": {}
+        "passives": {
+          "Glorious_Season": {
+            "name": "Glorious Season",
+            "effect": "The Stamina Consumption of characters within Let the Show Begin's Melody Loop is reduced by 12%.",
+            "image": "Talents/Passive/Talent_Glorious_Season.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Encore": {
+            "name": "Encore",
+            "effect": "When your active character gains an Elemental Orb/Particle, the duration of Let the Show Begin's Melody Loop is extended by 1s. The maximum extension is 5s.",
+            "image": "Talents/Passive/Talent_Encore.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "With_My_Whole_Heart": {
+            "name": "With My Whole Heart♪",
+            "effect": "When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.",
+            "image": "Talents/Passive/Talent_With_My_Whole_Heart.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
         },
-        "Sangonomiya_Kokomi": {
-            "image": "Characters/Hydro/Sangonomiya_Kokomi.png",
-            "gender": "Female",
-            "birthday": "22/2",
-            "caption": "Pearl of Wisdom",
-            "name": "Sangonomiya Kokomi",
-            "fullName": "Kokomi",
-            "description": "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips.",
-            "nation": "Inazuma",
-            "weapon": "Catalyst",
-            "rarity": 5,
-            "affiliation": "Watatsumi Island, Sangonomiya Clan, Sangonomiya Resistance",
-            "constellation": "Dracaena Somnolenta",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Transience",
-                        "material3qty": 3,
-                        "material4": "Spectral_Husk",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Transience",
-                        "material3qty": 2,
-                        "material4": "Spectral_Heart",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Transience",
-                        "material3qty": 4,
-                        "material4": "Spectral_Heart",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Transience",
-                        "material3qty": 6,
-                        "material4": "Spectral_Heart",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Transience",
-                        "material3qty": 9,
-                        "material4": "Spectral_Heart",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Hellfire_Butterfly",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Transience",
-                        "material3qty": 4,
-                        "material4": "Spectral_Nucleus",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Hellfire_Butterfly",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Transience",
-                        "material3qty": 6,
-                        "material4": "Spectral_Nucleus",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Hellfire_Butterfly",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Transience",
-                        "material3qty": 12,
-                        "material4": "Spectral_Nucleus",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Hellfire_Butterfly",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Transience",
-                        "material3qty": 16,
-                        "material4": "Spectral_Nucleus",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Tamanooyas_Casket": {
-                        "name": "Tamanooya's Casket",
-                        "effect": "If Sangonomiya Kokomi's own Bake-Kurage are on the field when she uses Nereid's Ascension, the Bake-Kurage's duration will be refreshed.",
-                        "image": "Talents/Passive/Talent_Tamanooyas_Casket.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Song_of_Pearls": {
-                        "name": "Song of Pearls",
-                        "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus.",
-                        "image": "Talents/Passive/Talent_Song_of_Pearls.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Princess_of_Watatsumi": {
-                        "name": "Princess of Watatsumi",
-                        "effect": "Decreases swimming Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-                        "image": "Talents/Passive/Talent_Princess_of_Watatsumi.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    },
-                    "Flawless_Strategy": {
-                        "name": "Flawless Strategy",
-                        "effect": "Sangonomiya Kokomi has a 25% Healing Bonus, but a 100% decrease in CRIT Rate.",
-                        "image": "Talents/Passive/Talent_Flawless_Strategy.png",
-                        "order": 2,
-                        "type": "Passive 4"
-                    }
-                },
-                "attack": {
-                    "The_Shape_of_Water": {
-                        "name": "The Shape of Water",
-                        "effect": "Normal Attack: Performs up to 3 consecutive attacks that take the form of swimming fish, dealing Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Kokomi plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
-                        "image": "Talents/Normal/Talent_The_Shape_of_Water.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Kurages_Oath": {
-                        "name": "Kurage's Oath",
-                        "effect": "Summons a \"Bake-Kurage\" created from water that can heal her allies.\nUsing this skill will apply the Wet status to Sangonomiya Kokomi.\nBake-Kurage:\nDeals Hydro DMG to surrounding opponents and heal nearby active characters at fixed intervals. This healing is based on Kokomi's Max HP.",
-                        "image": "Talents/Skill/Talent_Kurages_Oath.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Nereids_Ascension": {
-                        "name": "Nereid's Ascension",
-                        "effect": "The might of Watatsumi descends, dealing Hydro DMG to surrounding opponents, before robing Kokomi in a Ceremonial Garment made from the flowing waters of Sangonomiya.\nCeremonial Garment\n\nSangonomiya Kokomi's Normal Attack, Charged Attack and Bake-Kurage DMG are increased based on her Max HP.\nWhen her Normal and Charged Attacks hit opponents, Kokomi will restore HP for all nearby party members, and the amount restored is based on her Max HP.\nIncreases Sangonomiya Kokomi's resistance to interruption and allows her to move on the water's surface.\nThese effects will be cleared once Sangonomiya Kokomi leaves the field.",
-                        "image": "Talents/Burst/Talent_Nereids_Ascension.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "At Water's Edge",
-                    "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
-                    "image": "Constellation/At_Waters_Edge.png"
-                },
-                "2": {
-                    "name": "The Clouds Like Waves Rippling",
-                    "effect": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:\nKurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.\nNereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP.",
-                    "image": "Constellation/The_Clouds_Like_Waves_Rippling.png"
-                },
-                "3": {
-                    "name": "The Moon, A Ship O'er the Seas",
-                    "effect": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/The_Moon_A_Ship_Oer_the_Seas.png"
-                },
-                "4": {
-                    "name": "The Moon Overlooks the Waters",
-                    "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
-                    "image": "Constellation/The_Moon_Overlooks_the_Waters.png"
-                },
-                "5": {
-                    "name": "All Streams Flow to the Sea",
-                    "effect": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/All_Streams_Flow_to_the_Sea.png"
-                },
-                "6": {
-                    "name": "Sango Isshin",
-                    "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% Hydro DMG Bonus for 4s after her Normal and Charged Attacks heal a character with 80% or more HP.",
-                    "image": "Constellation/Sango_Isshin.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Varunada_Lazurite_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Spectral_Husk",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Sango_Pearl"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Dew_of_Repudiation",
-                    "level": 40,
-                    "material4": "Spectral_Husk",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Sango_Pearl"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Dew_of_Repudiation",
-                    "level": 50,
-                    "material4": "Spectral_Heart",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Sango_Pearl"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Dew_of_Repudiation",
-                    "level": 60,
-                    "material4": "Spectral_Heart",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Sango_Pearl"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Dew_of_Repudiation",
-                    "level": 70,
-                    "material4": "Spectral_Nucleus",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Sango_Pearl"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Varunada_Lazurite_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Dew_of_Repudiation",
-                    "level": 80,
-                    "material4": "Spectral_Nucleus",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Sango_Pearl"
-                }
-            },
-            "introduction": "Kokomi is the Divine Priestess of Watatsumi Island, and also serves as its supreme leader.\nShe is well-versed in the art of war, is good at strategizing, and has keen insights into military affairs. She is also adept at handling domestic affairs, diplomacy, and other matters.\nStill, this unfathomable leader has a mysterious side to her...",
-            "paimonmoepath": "characters/sangonomiya_kokomi",
-            "genshinggpath": "characters/Kokomi",
-            "element": "Hydro",
-            "released": true,
-          "wiki": "https://genshin-impact.fandom.com/wiki/Sangonomiya_Kokomi",
-            "subCollection": {}
-        },
-        "Tartaglia": {
-            "image": "Characters/Hydro/Tartaglia.png",
-            "gender": "Male",
-            "birthday": "20/7",
-            "caption": "Childe",
-            "name": "Tartaglia",
-            "fullName": "Ajax",
-            "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
-            "nation": "Snezhnaya",
-            "weapon": "Bow",
-            "rarity": 5,
-            "affiliation": "Fatui",
-            "constellation": "Monoceros Caeli",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Freedom",
-                        "material3qty": 3,
-                        "material4": "Recruit_Insignia",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 2,
-                        "material4": "Sergeant_Insignia",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 4,
-                        "material4": "Sergeant_Insignia",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 6,
-                        "material4": "Sergeant_Insignia",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 9,
-                        "material4": "Sergeant_Insignia",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 4,
-                        "material4": "Lieutenant_Insignia",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 6,
-                        "material4": "Lieutenant_Insignia",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Shard_of_a_Foul_Legacy",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 12,
-                        "material4": "Lieutenant_Insignia",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Shard_of_a_Foul_Legacy",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 16,
-                        "material4": "Lieutenant_Insignia",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Never_Ending": {
-                        "name": "Never Ending",
-                        "effect": "Extends Riptide duration by 8s.",
-                        "image": "Talents/Passive/Talent_Never_Ending.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Sword_of_Torrents": {
-                        "name": "Sword of Torrents",
-                        "effect": "When Tartaglia is in Foul Legacy: Raging Tide's Melee stance, on dealing a CRIT hit, Normal and Charged Attacks apply the Riptide status effects to opponents.",
-                        "image": "Talents/Passive/Talent_Sword_of_Torrents.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Master_of_Weaponry": {
-                        "name": "Master of Weaponry",
-                        "effect": "Increases your own party members' Normal Attack Level by 1.",
-                        "image": "Talents/Passive/Talent_Master_of_Weaponry.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Cutting_Torrent": {
-                        "name": "Cutting Torrent",
-                        "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply the Riptide status.\nRiptide: Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack dmg.\n\nRiptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.\nRiptide Burst: Defeating an opponent affected by Riptide creates a Hydro burst that inflicts the Riptide status on nearby opponents hit.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\nWhen Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, he cannot perform a plunging attack.",
-                        "image": "Talents/Normal/Talent_Cutting_Torrent.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Foul_Legacy_Raging_Tide": {
-                        "name": "Foul Legacy: Raging Tide",
-                        "effect": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering Melee Stance.\nIn this Stance, Tartaglia's Normal and Charged Attacks are converted to Hydro DMG that cannot be overridden by any other elemental infusion and change as follows:\nNormal Attack: Perform up to 6 consecutive Hydro strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.\nRiptide Slash: Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s.\nAfter 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
-                        "image": "Talents/Skill/Talent_Foul_Legacy_Raging_Tide.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Havoc_Obliteration": {
-                        "name": "Havoc: Obliteration",
-                        "effect": "Performs different attacks based on what stance Tartaglia is in when casting.\nRanged Stance: Flash of Havoc: Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.\nMelee Stance: Light of Obliteration: Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.\nRiptide Blast: When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
-                        "image": "Talents/Burst/Talent_Havoc_Obliteration.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Foul Legacy: Tide Withholder",
-                    "effect": "Decrease the CD of Foul Legacy: Raging Tide by 20%",
-                    "image": "Constellation/Foul_Legacy_Tide_Withholder.png"
-                },
-                "2": {
-                    "name": "Foul Legacy: Understream",
-                    "effect": "When opponents affected by Riptide are defeated. Tartaglia regenerates 4 Elemental Energy.",
-                    "image": "Constellation/Foul_Legacy_Understream.png"
-                },
-                "3": {
-                    "name": "Abyssal Mayhem: Vortex of Turmoil",
-                    "effect": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Abyssal_Mayhem_Vortex_of_Turmoil.png"
-                },
-                "4": {
-                    "name": "Abyssal Mayhem: Hydrosprout",
-                    "effect": "If Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash.\nRiptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effects on those time intervals.",
-                    "image": "Constellation/Abyssal_Mayhem_Hydrosprout.png"
-                },
-                "5": {
-                    "name": "Havoc: Formless Blade",
-                    "effect": "Increases the level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Havoc_Formless_Blade.png"
-                },
-                "6": {
-                    "name": "Havoc: Annihilation",
-                    "effect": "When Havoc: Obliteration is cast in Melee stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
-                    "image": "Constellation/Havoc_Annihilation.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Varunada_Lazurite_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Recruit_Insignia",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Starconch"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Cleansing_Heart",
-                    "level": 40,
-                    "material4": "Recruit_Insignia",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Starconch"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Cleansing_Heart",
-                    "level": 50,
-                    "material4": "Sergeant_Insignia",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Starconch"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Cleansing_Heart",
-                    "level": 60,
-                    "material4": "Sergeant_Insignia",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Starconch"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Cleansing_Heart",
-                    "level": 70,
-                    "material4": "Lieutenant_Insignia",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Starconch"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Varunada_Lazurite_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Cleansing_Heart",
-                    "level": 80,
-                    "material4": "Lieutenant_Insignia",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Starconch"
-                }
-            },
-            "introduction": "Meet Tartaglia — the cunning Snezhnayan whose unpredictable personality keeps people guessing his every move.\nDon't be under any illusion as to what he might be thinking or what his intentions are. Just remember this: Behind that innocent, childlike exterior lies a finely honed instrument of war.",
-            "paimonmoepath": "characters/tartaglia",
-            "genshinggpath": "characters/Tartaglia",
-            "element": "Hydro",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Tartaglia",
-            "subCollection": {}
-        },
-        "Xingqiu": {
-            "image": "Characters/Hydro/Xingqiu.png",
-            "gender": "Male",
-            "birthday": "9/10",
-            "caption": "Juvenile Galant",
-            "name": "Xingqiu",
-            "description": "A young man carrying a longsword who is frequently seen at book booths. He has a heart of gold and yearns for justice and fairness for all.",
-            "nation": "Liyue",
-            "weapon": "Sword",
-            "rarity": 4,
-            "affiliation": "Feiyun Commerce Guild",
-            "constellation": "Fabulae Textile",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Gold",
-                        "material3qty": 3,
-                        "material4": "Damaged_Mask",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Gold",
-                        "material3qty": 2,
-                        "material4": "Stained_Mask",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Gold",
-                        "material3qty": 4,
-                        "material4": "Stained_Mask",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Gold",
-                        "material3qty": 6,
-                        "material4": "Stained_Mask",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Gold",
-                        "material3qty": 9,
-                        "material4": "Stained_Mask",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 4,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 6,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 12,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 16,
-                        "material4": "Ominous_Mask",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Hydropathic": {
-                        "name": "Hydropathic",
-                        "effect": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP.",
-                        "image": "Talents/Passive/Talent_Hydropathic.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Blades_Amidst_Raindrops": {
-                        "name": "Blades Amidst Raindrops",
-                        "effect": "Xingqiu gains a 20% Hydro DMG Bonus.",
-                        "image": "Talents/Passive/Talent_Blades_Amidst_Raindrops.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    },
-                    "Flash_of_Genius": {
-                        "name": "Flash of Genius",
-                        "effect": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund one count of one material out of all the crafting materials used.",
-                        "image": "Talents/Passive/Talent_Flash_of_Genius.png",
-                        "order": 2,
-                        "type": "Passive 3"
-                    }
-                },
-                "attack": {
-                    "Guhua_Style": {
-                        "name": "Guhua Style",
-                        "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Guhua_Style.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Guhua_Sword_Fatal_Rainscreen": {
-                        "name": "Guhua Sword: Fatal Rainscreen",
-                        "effect": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, his ability creates the maximum number of Rain Swords, which will orbit your active character.\nThe Rain Swords have the following properties:\nWhen a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.\nIncrease the character's resistance to interruption.\n20% of Xingqiu's Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%.\nThe initial maximum number of Rain Swords is 3.\nUsing this ability applies the Wet status onto the character.\nThe twin strikes generate 5 elemental particles when it hit at least 1 target.",
-                        "image": "Talents/Skill/Talent_Guhua_Sword_-_Fatal_Rainscreen.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Guhua_Sword_Raincutter": {
-                        "name": "Guhua Sword: Raincutter",
-                        "effect": "Rainbow Bladework:\nYour active character's Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.\nRain Swords will remain at the maximum number throughout the ability's duration.\nThese effects carry over to other characters.",
-                        "image": "Talents/Burst/Talent_Guhua_Sword_-_Raincutter.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "The Scent Remained",
-                    "effect": "Increases the maximum number of Rain Swords by 1.",
-                    "image": "Constellation/The_Scent_Remained.png"
-                },
-                "2": {
-                    "name": "Rainbow Upon the Azure Sky",
-                    "effect": "Extends the duration of Guhua Sword: Raincutter by 3s. Decreases the Hydro RES of opponents hit by sword rain by 15% for 4s.",
-                    "image": "Constellation/Rainbow_Upon_the_Azure_Sky.png"
-                },
-                "3": {
-                    "name": "Weaver of Verses",
-                    "effect": "Increases the level of Guhua Sword: Raincutter by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Weaver_of_Verses.png"
-                },
-                "4": {
-                    "name": "Evilsoother",
-                    "effect": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
-                    "image": "Constellation/Evilsoother.png"
-                },
-                "5": {
-                    "name": "Embrace of Rain",
-                    "effect": "Increases the level of Guhua Sword: Fatal Rainscreen by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Embrace_of_Rain.png"
-                },
-                "6": {
-                    "name": "Hence, Call Them My Own Verses",
-                    "effect": "Activating 2 of Guhua Sword: Raincutter's sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit opponents.",
-                    "image": "Constellation/Hence_Call_Them_My_Own_Verses.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Varunada_Lazurite_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Silk_Flower"
-                },
-                "2": {
-                    "material2qty": 2,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": "Cleansing_Heart",
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Silk_Flower"
-                },
-                "3": {
-                    "material2qty": 4,
-                    "material1": "Varunada_Lazurite_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": "Cleansing_Heart",
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Silk_Flower"
-                },
-                "4": {
-                    "material2qty": 8,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": "Cleansing_Heart",
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Silk_Flower"
-                },
-                "5": {
-                    "material2qty": 12,
-                    "material1": "Varunada_Lazurite_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": "Cleansing_Heart",
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Silk_Flower"
-                },
-                "6": {
-                    "material2qty": 20,
-                    "material1": "Varunada_Lazurite_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": "Cleansing_Heart",
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Silk_Flower"
-                }
-            },
-            "introduction": "The second son of the Feiyun Commerce Guild, Xingqiu has had a reputation for being studious and polite ever since he was a young child. But there is another side to the mild-mannered Xingqiu everyone knows. A daring, adventurous and much more mischievous side...",
-            "paimonmoepath": "characters/xingqiu",
-            "genshinggpath": "characters/Xingqiu",
-            "element": "Hydro",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
-            "subCollection": {}
+        "attack": {
+          "Whisper_of_Water": {
+            "name": "Whisper of Water",
+            "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Talent_Whisper_of_Water.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Let_the_Show_Begin": {
+            "name": "Let the Show Begin♪",
+            "effect": "Summons water droplets resembling musical notes that form a Melody Loop, dealing Hydro DMG to surrounding opponents and afflicting them with the Wet status.\nMelody Loop:\n\nBarbara's Normal Attacks heal your characters in the party and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.\nHer Charged Attack generates 4 times the amount of healing.\nRegenerates a certain amount of HP at regular intervals for your active character.\nApplies the Wet status to the character and opponents who come in contact with them.",
+            "image": "Talents/Skill/Talent_Let_the_Show_Begin.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Shining_Miracle": {
+            "name": "Shining Miracle♪",
+            "effect": "Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.",
+            "image": "Talents/Burst/Talent_Shining_Miracle.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
         }
+      },
+      "constellations": {
+        "1": {
+          "name": "Gleeful Songs",
+          "effect": "Barbara regenerates 1 Energy every 10s.",
+          "image": "Constellation/Gleeful_Songs.png"
+        },
+        "2": {
+          "name": "Vitality Burst",
+          "effect": "Decreases the CD of Let the Show Begin by 15%. During the ability's duration, your active character gains 15% Hydro DMG Bonus.",
+          "image": "Constellation/Vitality_Burst.png"
+        },
+        "3": {
+          "name": "Star of Tomorrow",
+          "effect": "Increases the level of Shining Miracle by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Star_of_Tomorrow.png"
+        },
+        "4": {
+          "name": "Attentiveness be My Power",
+          "effect": "Every opponent Barbara hits with her Charged Attack regenerates 1 Energy for her. A maximum of 5 energy can be regenerated in this manner with any one Charged Attack.",
+          "image": "Constellation/Attentiveness_be_My_Power.png"
+        },
+        "5": {
+          "name": "The Purest Companionship",
+          "effect": "Increases the level of Let the Show Begin by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/The_Purest_Companionship.png"
+        },
+        "6": {
+          "name": "Dedicating Everything to You",
+          "effect": "When Barbara is not on the field, and one of your characters in the party falls:\nAutomatically revives this character.\nFully regenerates this character's HP to 100%.\nThis effect can only occur once every 15 mins.",
+          "image": "Constellation/Dedicating_Everything_to_You.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Divining_Scroll",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Philanemo_Mushroom"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cleansing_Heart",
+          "level": 40,
+          "material4": "Divining_Scroll",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Philanemo_Mushroom"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cleansing_Heart",
+          "level": 50,
+          "material4": "Sealed_Scroll",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Philanemo_Mushroom"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cleansing_Heart",
+          "level": 60,
+          "material4": "Sealed_Scroll",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Philanemo_Mushroom"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cleansing_Heart",
+          "level": 70,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Philanemo_Mushroom"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cleansing_Heart",
+          "level": 80,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Philanemo_Mushroom"
+        }
+      },
+      "introduction": "The Deaconess of the Favonius Church and a shining starlet adored by all. Although the concept of a starlet is rather novel in a city of bards, the people of Mondstadt love Barbara nonetheless. \"I owe everything to the city's spirit of freedom\" — Barbara, regarding her popularity.",
+      "paimonmoepath": "characters/barbara",
+      "genshinggpath": "characters/Barbara",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
+      "subCollection": {}
+    },
+    "Mona": {
+      "image": "Characters/Hydro/Mona.png",
+      "gender": "Female",
+      "birthday": "31/8",
+      "caption": "Astral Reflection",
+      "name": "Mona",
+      "fullName": "Mona Megistus",
+      "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
+      "nation": "Mondstadt",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Hexenzirkel",
+      "constellation": "Astrolabos",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Resistance",
+            "material3qty": 3,
+            "material4": "Whopperflower_Nectar",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 2,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 4,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 6,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 9,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 4,
+            "material4": "Energy_Nectar",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 6,
+            "material4": "Energy_Nectar",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 12,
+            "material4": "Energy_Nectar",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Ring_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 16,
+            "material4": "Energy_Nectar",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Come_n_Get_Me_Hag": {
+            "name": "Come 'n' Get Me, Hag!",
+            "effect": "After she has used Illusory Torrent for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.\nA Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+            "image": "Talents/Passive/Talent_Come_n_Get_Me_Hag.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Waterborne_Destiny": {
+            "name": "Waterborne Destiny",
+            "effect": "Increases Mona's Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+            "image": "Talents/Passive/Talent_Waterborne_Destiny.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Principium_of_Astrology": {
+            "name": "Principium of Astrology",
+            "effect": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.",
+            "image": "Talents/Passive/Talent_Principium_of_Astrology.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "Illusory_Torrent": {
+            "name": "Illusory Torrent",
+            "effect": "Alternate Sprint: Mona cloaks herself within the water's flow, consuming stamina to move rapidly.\nWhen under the effect of Illusory Torrent, Mona can move at high speed on water.\nApplies the Wet status to nearby opponents when she reappears.",
+            "image": "Talents/Passive/Talent_Illusory_Torrent.png",
+            "order": 3,
+            "type": "Alternate Sprint"
+          }
+        },
+        "attack": {
+          "Ripple_of_Fate": {
+            "name": "Ripple of Fate",
+            "effect": "Normal Attack: Perform up to 4 water splash attacks that deal Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Talent_Ripple_of_Fate.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Mirror_Reflection_of_Doom": {
+            "name": "Mirror Reflection of Doom",
+            "effect": "Creates an illusory Phantom of fate from coalesced waterspouts.\nThe Phantom has the following special properties:\n\nContinuously taunts nearby opponents, attracting their fire.\nEach second, 4 times, deals AoE Hydro DMG.\nWhen its duration expires, the Phantom explodes, dealing AoE Hydro DMG.\nHold: Utilizes water currents to move backwards swiftly before conjuring a Phantom\nOnly one Phantom created by Mirror Reflection of Doom can exist at any time.\nWhen the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.",
+            "image": "Talents/Skill/Talent_Mirror_Reflection_of_Doom.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Stellaris_Phantasm": {
+            "name": "Stellaris Phantasm",
+            "effect": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.\nIllusory Bubble: Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:\n\nApplies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.\nRemoves the Illusory Bubble, dealing Hydro DMG in the process.\nOmen: During its duration, increases DMG taken by opponents.",
+            "image": "Talents/Burst/Talent_Stellaris_Phantasm.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Prophecy of Submersion",
+          "effect": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after any of your characters in the party hit an opponent affected by an Omen:\nElectro-Charged DMG is increased by 15%.\nVaporize DMG is increased by 15%.\nHydro Swirl DMG is increased by 15%.\nThe duration for which enemies are Frozen is increased by 15%.",
+          "image": "Constellation/Prophecy_of_Submersion.png"
+        },
+        "2": {
+          "name": "Lunar Chain",
+          "effect": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. This effect can only occur once every 5s.",
+          "image": "Constellation/Lunar_Chain.png"
+        },
+        "3": {
+          "name": "Restless Revolution",
+          "effect": "Increases the Level of Stellaris Phantasm by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Restless_Revolution.png"
+        },
+        "4": {
+          "name": "Prophecy of Oblivion",
+          "effect": "When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.",
+          "image": "Constellation/Prophecy_of_Oblivion.png"
+        },
+        "5": {
+          "name": "Mockery of Fortuna",
+          "effect": "Increase the Level of Mirror Reflection of Doom by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Mockery_of_Fortuna.png"
+        },
+        "6": {
+          "name": "Rhetorics of Calamitas",
+          "effect": "Upon entering Illusory Torrent, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+          "image": "Constellation/Rhetorics_of_Calamitas.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Philanemo_Mushroom"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cleansing_Heart",
+          "level": 40,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Philanemo_Mushroom"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cleansing_Heart",
+          "level": 50,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Philanemo_Mushroom"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cleansing_Heart",
+          "level": 60,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Philanemo_Mushroom"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cleansing_Heart",
+          "level": 70,
+          "material4": "Energy_Nectar",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Philanemo_Mushroom"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cleansing_Heart",
+          "level": 80,
+          "material4": "Energy_Nectar",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Philanemo_Mushroom"
+        }
+      },
+      "introduction": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful. Though she is often strapped for cash and lives a life of thrift, she is resolved to never use astrology for profit... It is this very resolution that has caused her to constantly fret about money.",
+      "paimonmoepath": "characters/mona",
+      "genshinggpath": "characters/Mona",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mona",
+      "subCollection": {}
+    },
+    "Sangonomiya_Kokomi": {
+      "image": "Characters/Hydro/Sangonomiya_Kokomi.png",
+      "gender": "Female",
+      "birthday": "22/2",
+      "caption": "Pearl of Wisdom",
+      "name": "Sangonomiya Kokomi",
+      "fullName": "Kokomi",
+      "description": "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips.",
+      "nation": "Inazuma",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Watatsumi Island, Sangonomiya Clan, Sangonomiya Resistance",
+      "constellation": "Dracaena Somnolenta",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Spectral_Husk",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 2,
+            "material4": "Spectral_Heart",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 4,
+            "material4": "Spectral_Heart",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Spectral_Heart",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 9,
+            "material4": "Spectral_Heart",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Hellfire_Butterfly",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 4,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Hellfire_Butterfly",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Hellfire_Butterfly",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 12,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Hellfire_Butterfly",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 16,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Tamanooyas_Casket": {
+            "name": "Tamanooya's Casket",
+            "effect": "If Sangonomiya Kokomi's own Bake-Kurage are on the field when she uses Nereid's Ascension, the Bake-Kurage's duration will be refreshed.",
+            "image": "Talents/Passive/Talent_Tamanooyas_Casket.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Song_of_Pearls": {
+            "name": "Song of Pearls",
+            "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus.",
+            "image": "Talents/Passive/Talent_Song_of_Pearls.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Princess_of_Watatsumi": {
+            "name": "Princess of Watatsumi",
+            "effect": "Decreases swimming Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Princess_of_Watatsumi.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "Flawless_Strategy": {
+            "name": "Flawless Strategy",
+            "effect": "Sangonomiya Kokomi has a 25% Healing Bonus, but a 100% decrease in CRIT Rate.",
+            "image": "Talents/Passive/Talent_Flawless_Strategy.png",
+            "order": 2,
+            "type": "Passive 4"
+          }
+        },
+        "attack": {
+          "The_Shape_of_Water": {
+            "name": "The Shape of Water",
+            "effect": "Normal Attack: Performs up to 3 consecutive attacks that take the form of swimming fish, dealing Hydro DMG.\nCharged Attack: Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nPlunging Attack: Gathering the might of Hydro, Kokomi plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Talent_The_Shape_of_Water.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Kurages_Oath": {
+            "name": "Kurage's Oath",
+            "effect": "Summons a \"Bake-Kurage\" created from water that can heal her allies.\nUsing this skill will apply the Wet status to Sangonomiya Kokomi.\nBake-Kurage:\nDeals Hydro DMG to surrounding opponents and heal nearby active characters at fixed intervals. This healing is based on Kokomi's Max HP.",
+            "image": "Talents/Skill/Talent_Kurages_Oath.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Nereids_Ascension": {
+            "name": "Nereid's Ascension",
+            "effect": "The might of Watatsumi descends, dealing Hydro DMG to surrounding opponents, before robing Kokomi in a Ceremonial Garment made from the flowing waters of Sangonomiya.\nCeremonial Garment\n\nSangonomiya Kokomi's Normal Attack, Charged Attack and Bake-Kurage DMG are increased based on her Max HP.\nWhen her Normal and Charged Attacks hit opponents, Kokomi will restore HP for all nearby party members, and the amount restored is based on her Max HP.\nIncreases Sangonomiya Kokomi's resistance to interruption and allows her to move on the water's surface.\nThese effects will be cleared once Sangonomiya Kokomi leaves the field.",
+            "image": "Talents/Burst/Talent_Nereids_Ascension.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "At Water's Edge",
+          "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
+          "image": "Constellation/At_Waters_Edge.png"
+        },
+        "2": {
+          "name": "The Clouds Like Waves Rippling",
+          "effect": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:\nKurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.\nNereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP.",
+          "image": "Constellation/The_Clouds_Like_Waves_Rippling.png"
+        },
+        "3": {
+          "name": "The Moon, A Ship O'er the Seas",
+          "effect": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/The_Moon_A_Ship_Oer_the_Seas.png"
+        },
+        "4": {
+          "name": "The Moon Overlooks the Waters",
+          "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
+          "image": "Constellation/The_Moon_Overlooks_the_Waters.png"
+        },
+        "5": {
+          "name": "All Streams Flow to the Sea",
+          "effect": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/All_Streams_Flow_to_the_Sea.png"
+        },
+        "6": {
+          "name": "Sango Isshin",
+          "effect": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% Hydro DMG Bonus for 4s after her Normal and Charged Attacks heal a character with 80% or more HP.",
+          "image": "Constellation/Sango_Isshin.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Spectral_Husk",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Sango_Pearl"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Dew_of_Repudiation",
+          "level": 40,
+          "material4": "Spectral_Husk",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Sango_Pearl"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Dew_of_Repudiation",
+          "level": 50,
+          "material4": "Spectral_Heart",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Sango_Pearl"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Dew_of_Repudiation",
+          "level": 60,
+          "material4": "Spectral_Heart",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Sango_Pearl"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Dew_of_Repudiation",
+          "level": 70,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Sango_Pearl"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Dew_of_Repudiation",
+          "level": 80,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Sango_Pearl"
+        }
+      },
+      "introduction": "Kokomi is the Divine Priestess of Watatsumi Island, and also serves as its supreme leader.\nShe is well-versed in the art of war, is good at strategizing, and has keen insights into military affairs. She is also adept at handling domestic affairs, diplomacy, and other matters.\nStill, this unfathomable leader has a mysterious side to her...",
+      "paimonmoepath": "characters/sangonomiya_kokomi",
+      "genshinggpath": "characters/Kokomi",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sangonomiya_Kokomi",
+      "subCollection": {}
+    },
+    "Tartaglia": {
+      "image": "Characters/Hydro/Tartaglia.png",
+      "gender": "Male",
+      "birthday": "20/7",
+      "caption": "Childe",
+      "name": "Tartaglia",
+      "fullName": "Ajax",
+      "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
+      "nation": "Snezhnaya",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Fatui",
+      "constellation": "Monoceros Caeli",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Freedom",
+            "material3qty": 3,
+            "material4": "Recruit_Insignia",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 2,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 4,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 6,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 9,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shard_of_a_Foul_Legacy",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 4,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shard_of_a_Foul_Legacy",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 6,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Shard_of_a_Foul_Legacy",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 12,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Shard_of_a_Foul_Legacy",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 16,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Never_Ending": {
+            "name": "Never Ending",
+            "effect": "Extends Riptide duration by 8s.",
+            "image": "Talents/Passive/Talent_Never_Ending.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Sword_of_Torrents": {
+            "name": "Sword of Torrents",
+            "effect": "When Tartaglia is in Foul Legacy: Raging Tide's Melee stance, on dealing a CRIT hit, Normal and Charged Attacks apply the Riptide status effects to opponents.",
+            "image": "Talents/Passive/Talent_Sword_of_Torrents.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Master_of_Weaponry": {
+            "name": "Master of Weaponry",
+            "effect": "Increases your own party members' Normal Attack Level by 1.",
+            "image": "Talents/Passive/Talent_Master_of_Weaponry.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Cutting_Torrent": {
+            "name": "Cutting Torrent",
+            "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply the Riptide status.\nRiptide: Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack dmg.\n\nRiptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.\nRiptide Burst: Defeating an opponent affected by Riptide creates a Hydro burst that inflicts the Riptide status on nearby opponents hit.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\nWhen Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, he cannot perform a plunging attack.",
+            "image": "Talents/Normal/Talent_Cutting_Torrent.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Foul_Legacy_Raging_Tide": {
+            "name": "Foul Legacy: Raging Tide",
+            "effect": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering Melee Stance.\nIn this Stance, Tartaglia's Normal and Charged Attacks are converted to Hydro DMG that cannot be overridden by any other elemental infusion and change as follows:\nNormal Attack: Perform up to 6 consecutive Hydro strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.\nRiptide Slash: Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s.\nAfter 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+            "image": "Talents/Skill/Talent_Foul_Legacy_Raging_Tide.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Havoc_Obliteration": {
+            "name": "Havoc: Obliteration",
+            "effect": "Performs different attacks based on what stance Tartaglia is in when casting.\nRanged Stance: Flash of Havoc: Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.\nMelee Stance: Light of Obliteration: Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.\nRiptide Blast: When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+            "image": "Talents/Burst/Talent_Havoc_Obliteration.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Foul Legacy: Tide Withholder",
+          "effect": "Decrease the CD of Foul Legacy: Raging Tide by 20%",
+          "image": "Constellation/Foul_Legacy_Tide_Withholder.png"
+        },
+        "2": {
+          "name": "Foul Legacy: Understream",
+          "effect": "When opponents affected by Riptide are defeated. Tartaglia regenerates 4 Elemental Energy.",
+          "image": "Constellation/Foul_Legacy_Understream.png"
+        },
+        "3": {
+          "name": "Abyssal Mayhem: Vortex of Turmoil",
+          "effect": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Abyssal_Mayhem_Vortex_of_Turmoil.png"
+        },
+        "4": {
+          "name": "Abyssal Mayhem: Hydrosprout",
+          "effect": "If Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash.\nRiptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effects on those time intervals.",
+          "image": "Constellation/Abyssal_Mayhem_Hydrosprout.png"
+        },
+        "5": {
+          "name": "Havoc: Formless Blade",
+          "effect": "Increases the level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Havoc_Formless_Blade.png"
+        },
+        "6": {
+          "name": "Havoc: Annihilation",
+          "effect": "When Havoc: Obliteration is cast in Melee stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
+          "image": "Constellation/Havoc_Annihilation.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Recruit_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Starconch"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cleansing_Heart",
+          "level": 40,
+          "material4": "Recruit_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Starconch"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cleansing_Heart",
+          "level": 50,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Starconch"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cleansing_Heart",
+          "level": 60,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Starconch"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cleansing_Heart",
+          "level": 70,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Starconch"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cleansing_Heart",
+          "level": 80,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Starconch"
+        }
+      },
+      "introduction": "Meet Tartaglia — the cunning Snezhnayan whose unpredictable personality keeps people guessing his every move.\nDon't be under any illusion as to what he might be thinking or what his intentions are. Just remember this: Behind that innocent, childlike exterior lies a finely honed instrument of war.",
+      "paimonmoepath": "characters/tartaglia",
+      "genshinggpath": "characters/Tartaglia",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Tartaglia",
+      "subCollection": {}
+    },
+    "Xingqiu": {
+      "image": "Characters/Hydro/Xingqiu.png",
+      "gender": "Male",
+      "birthday": "9/10",
+      "caption": "Juvenile Galant",
+      "name": "Xingqiu",
+      "description": "A young man carrying a longsword who is frequently seen at book booths. He has a heart of gold and yearns for justice and fairness for all.",
+      "nation": "Liyue",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": "Feiyun Commerce Guild",
+      "constellation": "Fabulae Textile",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Gold",
+            "material3qty": 3,
+            "material4": "Damaged_Mask",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 2,
+            "material4": "Stained_Mask",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 4,
+            "material4": "Stained_Mask",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 6,
+            "material4": "Stained_Mask",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 9,
+            "material4": "Stained_Mask",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 4,
+            "material4": "Ominous_Mask",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 6,
+            "material4": "Ominous_Mask",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 12,
+            "material4": "Ominous_Mask",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 16,
+            "material4": "Ominous_Mask",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Hydropathic": {
+            "name": "Hydropathic",
+            "effect": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP.",
+            "image": "Talents/Passive/Talent_Hydropathic.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Blades_Amidst_Raindrops": {
+            "name": "Blades Amidst Raindrops",
+            "effect": "Xingqiu gains a 20% Hydro DMG Bonus.",
+            "image": "Talents/Passive/Talent_Blades_Amidst_Raindrops.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Flash_of_Genius": {
+            "name": "Flash of Genius",
+            "effect": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund one count of one material out of all the crafting materials used.",
+            "image": "Talents/Passive/Talent_Flash_of_Genius.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Guhua_Style": {
+            "name": "Guhua Style",
+            "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Guhua_Style.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Guhua_Sword_Fatal_Rainscreen": {
+            "name": "Guhua Sword: Fatal Rainscreen",
+            "effect": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, his ability creates the maximum number of Rain Swords, which will orbit your active character.\nThe Rain Swords have the following properties:\nWhen a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.\nIncrease the character's resistance to interruption.\n20% of Xingqiu's Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%.\nThe initial maximum number of Rain Swords is 3.\nUsing this ability applies the Wet status onto the character.\nThe twin strikes generate 5 elemental particles when it hit at least 1 target.",
+            "image": "Talents/Skill/Talent_Guhua_Sword_-_Fatal_Rainscreen.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Guhua_Sword_Raincutter": {
+            "name": "Guhua Sword: Raincutter",
+            "effect": "Rainbow Bladework:\nYour active character's Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.\nRain Swords will remain at the maximum number throughout the ability's duration.\nThese effects carry over to other characters.",
+            "image": "Talents/Burst/Talent_Guhua_Sword_-_Raincutter.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "The Scent Remained",
+          "effect": "Increases the maximum number of Rain Swords by 1.",
+          "image": "Constellation/The_Scent_Remained.png"
+        },
+        "2": {
+          "name": "Rainbow Upon the Azure Sky",
+          "effect": "Extends the duration of Guhua Sword: Raincutter by 3s. Decreases the Hydro RES of opponents hit by sword rain by 15% for 4s.",
+          "image": "Constellation/Rainbow_Upon_the_Azure_Sky.png"
+        },
+        "3": {
+          "name": "Weaver of Verses",
+          "effect": "Increases the level of Guhua Sword: Raincutter by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Weaver_of_Verses.png"
+        },
+        "4": {
+          "name": "Evilsoother",
+          "effect": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+          "image": "Constellation/Evilsoother.png"
+        },
+        "5": {
+          "name": "Embrace of Rain",
+          "effect": "Increases the level of Guhua Sword: Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Embrace_of_Rain.png"
+        },
+        "6": {
+          "name": "Hence, Call Them My Own Verses",
+          "effect": "Activating 2 of Guhua Sword: Raincutter's sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit opponents.",
+          "image": "Constellation/Hence_Call_Them_My_Own_Verses.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Silk_Flower"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cleansing_Heart",
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Silk_Flower"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cleansing_Heart",
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Silk_Flower"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cleansing_Heart",
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Silk_Flower"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cleansing_Heart",
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Silk_Flower"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cleansing_Heart",
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Silk_Flower"
+        }
+      },
+      "introduction": "The second son of the Feiyun Commerce Guild, Xingqiu has had a reputation for being studious and polite ever since he was a young child. But there is another side to the mild-mannered Xingqiu everyone knows. A daring, adventurous and much more mischievous side...",
+      "paimonmoepath": "characters/xingqiu",
+      "genshinggpath": "characters/Xingqiu",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
+      "subCollection": {}
     }
+  }
 }

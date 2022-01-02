@@ -1,811 +1,1887 @@
 {
-    "characters": {
-        "TravelerAnemo": {
-            "image": "Characters/Anemo/Traveler.png",
-            "gender": "Male/Female",
-            "birthday": "Up to Player",
-            "caption": "Outlander",
-            "name": "Traveler (Anemo)",
-            "fullName": "Aether/Lumine",
-            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Knights of Favonius, Adventurers' Guild",
-            "constellation": "Viator/Viatrix",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Freedom",
-                        "material3qty": 3,
-                        "material4": "Divining_Scroll",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 2,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Ballad",
-                        "material3qty": 4,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Freedom",
-                        "material3qty": 6,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Resistance",
-                        "material3qty": 9,
-                        "material4": "Sealed_Scroll",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Sigh",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 4,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Sigh",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Freedom",
-                        "material3qty": 6,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dvalin_Sigh",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Resistance",
-                        "material3qty": 12,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Dvalin_Sigh",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Ballad",
-                        "material3qty": 16,
-                        "material4": "Forbidden_Curse_Scroll",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Slitting_Wind": {
-                        "name": "Slitting Wind",
-                        "effect": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
-                        "image": "Talents/Passive/Talent_Slitting_Wind.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Second_Wind": {
-                        "name": "Second Wind",
-                        "effect": "Palm Vortex kills regenerate 2% HP for 5s. This effect can only occur once every 5s.",
-                        "image": "Talents/Passive/Talent_Second_Wind.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    }
-                },
-                "attack": {
-                    "Foreign_Ironwind": {
-                        "name": "Foreign Ironwind",
-                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Foreign_Ironwind.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Palm_Vortex": {
-                        "name": "Palm Vortex",
-                        "effect": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing Anemo DMG 6 times in 1.5 seconds to opponents in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.\nHold: DMG and AoE will gradually increase.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 23% additional elemental DMG of that type. Elemental Absorption may only occur once per use.\nGenerate 2 elemental particles when press and 3.5 when hold, if it hit at least 1 target.",
-                        "image": "Talents/Skill/Talent_Palm_Vortex.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Gust_Surge": {
-                        "name": "Gust Surge",
-                        "effect": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing Anemo DMG each 0.5 seconds, 9 times.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 30.7% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
-                        "image": "Talents/Burst/Talent_Gust_Surge.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Raging Vortex",
-                    "effect": "Palm Vortex pulls in enemies within a 5m radius.",
-                    "image": "Constellation/Raging_Vortex.png"
-                },
-                "2": {
-                    "name": "Uprising Whirlwind",
-                    "effect": "Increases Energy Recharge by 16%.",
-                    "image": "Constellation/Uprising_Whirlwind.png"
-                },
-                "3": {
-                    "name": "Sweeping Gust",
-                    "effect": "Increases the level of Gust Surge by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Sweeping_Gust.png"
-                },
-                "4": {
-                    "name": "Cherishing Breezes",
-                    "effect": "Reduces DMG taken while casting Palm Vortex by 10%.",
-                    "image": "Constellation/Cherishing_Breezes.png"
-                },
-                "5": {
-                    "name": "Vortex Stellaris",
-                    "effect": "Increases the level of Palm Vortex by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Vortex_Stellaris.png"
-                },
-                "6": {
-                    "name": "Intertwined Winds",
-                    "effect": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%.\nIf an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
-                    "image": "Constellation/Interwinded_Winds.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Windwheel_Aster"
-                },
-                "2": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": null,
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Windwheel_Aster"
-                },
-                "3": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": null,
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Windwheel_Aster"
-                },
-                "4": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": null,
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Windwheel_Aster"
-                },
-                "5": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": null,
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Windwheel_Aster"
-                },
-                "6": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": null,
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Windwheel_Aster"
-                }
-            },
-            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-            "paimonmoepath": "characters/traveler_anemo",
-            "genshinggpath": "characters/Traveler(Anemo)",
-            "element": "Anemo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
-            "subCollection": {}
+  "characters": {
+    "TravelerAnemo": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Anemo)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Freedom",
+            "material3qty": 3,
+            "material4": "Divining_Scroll",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 2,
+            "material4": "Sealed_Scroll",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 4,
+            "material4": "Sealed_Scroll",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Freedom",
+            "material3qty": 6,
+            "material4": "Sealed_Scroll",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 9,
+            "material4": "Sealed_Scroll",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Sigh",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 4,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Sigh",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Freedom",
+            "material3qty": 6,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dvalin_Sigh",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 12,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dvalin_Sigh",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 16,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 12
+          }
         },
-        "TravelerGeo": {
-            "image": "Characters/Anemo/Traveler.png",
-            "gender": "Male/Female",
-            "birthday": "Up to Player",
-            "caption": "Outlander",
-            "name": "Traveler (Geo)",
-            "fullName": "Aether/Lumine",
-            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Knights of Favonius, Adventurers' Guild",
-            "constellation": "Viator/Viatrix",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Prosperity",
-                        "material3qty": 3,
-                        "material4": "Firm_Arrowhead",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 2,
-                        "material4": "Sharp_Arrowhead",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Gold",
-                        "material3qty": 4,
-                        "material4": "Sharp_Arrowhead",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Prosperity",
-                        "material3qty": 6,
-                        "material4": "Sharp_Arrowhead",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Diligence",
-                        "material3qty": 9,
-                        "material4": "Sharp_Arrowhead",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 4,
-                        "material4": "Weathered_Arrowhead",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Prosperity",
-                        "material3qty": 6,
-                        "material4": "Weathered_Arrowhead",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Diligence",
-                        "material3qty": 12,
-                        "material4": "Weathered_Arrowhead",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Tail_of_Boreas",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Gold",
-                        "material3qty": 16,
-                        "material4": "Weathered_Arrowhead",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Shattered_Darkrock": {
-                        "name": "Shattered Darkrock",
-                        "effect": "Reduces Starfell Sword's CD by 2s.",
-                        "image": "Talents/Passive/Talent_Shattered_Darkrock.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Frenzied_Rockslide": {
-                        "name": "Frenzied Rockslide",
-                        "effect": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
-                        "image": "Talents/Passive/Talent_Frenzied_Rockslide.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    }
-                },
-                "attack": {
-                    "Foreign_Rockblade": {
-                        "name": "Foreign Rockblade",
-                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Foreign_Rockblade.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Starfell_Sword": {
-                        "name": "Starfell Sword",
-                        "effect": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.\nHold: This skill's positioning may be adjusted.",
-                        "image": "Talents/Skill/Talent_Starfell_Sword.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Wake_of_Earth": {
-                        "name": "Wake of Earth",
-                        "effect": "Energizing the Geo elements deep underground, you set off expanding shockwaves.\nLaunches surrounding opponents back and deals AoE Geo DMG.\nA stone wall is erected at the edges of the shockwave.\nThe stone wall is considered a Geo Construct, and may be used to block attacks.",
-                        "image": "Talents/Burst/Talent_Wake_of_Earth.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Invincible Stonewall",
-                    "effect": "Party members within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
-                    "image": "Constellation/Invincible_Stonewall.png"
-                },
-                "2": {
-                    "name": "Rockcore Meltdown",
-                    "effect": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
-                    "image": "Constellation/Rockcore_Meltdown.png"
-                },
-                "3": {
-                    "name": "Will of the Rock",
-                    "effect": "Increases the level of Wake of Earth by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Will_of_the_Rock.png"
-                },
-                "4": {
-                    "name": "Reaction Force",
-                    "effect": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner.",
-                    "image": "Constellation/Reaction_Force.png"
-                },
-                "5": {
-                    "name": "Meteorite Impact",
-                    "effect": "Increases the level of Starfell Sword by 3. Maximum upgrade level is 15.",
-                    "image": "Constellation/Meteorite_Impact.png"
-                },
-                "6": {
-                    "name": "Everlasting Boulder",
-                    "effect": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
-                    "image": "Constellation/Everlasting_Boulder.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Windwheel_Aster"
-                },
-                "2": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": null,
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Windwheel_Aster"
-                },
-                "3": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": null,
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Windwheel_Aster"
-                },
-                "4": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": null,
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Windwheel_Aster"
-                },
-                "5": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": null,
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Windwheel_Aster"
-                },
-                "6": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": null,
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Windwheel_Aster"
-                }
-            },
-            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-            "paimonmoepath": "characters/traveler_geo",
-            "genshinggpath": "characters/Traveler(Geo)",
-            "element": "Geo",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
-            "subCollection": {}
+        "passives": {
+          "Slitting_Wind": {
+            "name": "Slitting Wind",
+            "effect": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+            "image": "Talents/Passive/Talent_Slitting_Wind.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Second_Wind": {
+            "name": "Second Wind",
+            "effect": "Palm Vortex kills regenerate 2% HP for 5s. This effect can only occur once every 5s.",
+            "image": "Talents/Passive/Talent_Second_Wind.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
         },
-        "TravelerElectro": {
-            "image": "Characters/Anemo/Traveler.png",
-            "gender": "Male/Female",
-            "birthday": "Up to Player",
-            "caption": "Outlander",
-            "name": "Traveler (Electro)",
-            "fullName": "Aether/Lumine",
-            "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
-            "nation": "Mondstadt",
-            "weapon": "Sword",
-            "rarity": 5,
-            "affiliation": "Knights of Favonius, Adventurers' Guild",
-            "constellation": "Viator/Viatrix",
-            "talents": {
-                "ascension": {
-                    "2": {
-                        "mora": 12500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Teachings_of_Transience",
-                        "material3qty": 3,
-                        "material4": "Old_Handguard",
-                        "material4qty": 6
-                    },
-                    "3": {
-                        "mora": 17500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Elegance",
-                        "material3qty": 2,
-                        "material4": "Kageuchi_Handguard",
-                        "material4qty": 3
-                    },
-                    "4": {
-                        "mora": 25000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Light",
-                        "material3qty": 4,
-                        "material4": "Kageuchi_Handguard",
-                        "material4qty": 4
-                    },
-                    "5": {
-                        "mora": 30000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Transience",
-                        "material3qty": 6,
-                        "material4": "Kageuchi_Handguard",
-                        "material4qty": 6
-                    },
-                    "6": {
-                        "mora": 37500,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": null,
-                        "material2qty": 0,
-                        "material3": "Guide_to_Elegance",
-                        "material3qty": 9,
-                        "material4": "Kageuchi_Handguard",
-                        "material4qty": 9
-                    },
-                    "7": {
-                        "mora": 120000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dragon_Lords_Crown",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 4,
-                        "material4": "Famed_Handguard",
-                        "material4qty": 4
-                    },
-                    "8": {
-                        "mora": 260000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dragon_Lords_Crown",
-                        "material2qty": 1,
-                        "material3": "Philosophies_of_Transience",
-                        "material3qty": 6,
-                        "material4": "Famed_Handguard",
-                        "material4qty": 6
-                    },
-                    "9": {
-                        "mora": 450000,
-                        "material1": null,
-                        "material1qty": 0,
-                        "material2": "Dragon_Lords_Crown",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Elegance",
-                        "material3qty": 12,
-                        "material4": "Famed_Handguard",
-                        "material4qty": 9
-                    },
-                    "10": {
-                        "mora": 700000,
-                        "material1": "Crown_of_Insight",
-                        "material1qty": 1,
-                        "material2": "Dragon_Lords_Crown",
-                        "material2qty": 2,
-                        "material3": "Philosophies_of_Light",
-                        "material3qty": 16,
-                        "material4": "Famed_Handguard",
-                        "material4qty": 12
-                    }
-                },
-                "passives": {
-                    "Thunderflash": {
-                        "name": "Thunderflash",
-                        "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
-                        "image": "Talents/Passive/Talent_Thunderflash.png",
-                        "order": 0,
-                        "type": "Passive 1"
-                    },
-                    "Resounding_Roar": {
-                        "name": "Resounding Roar",
-                        "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
-                        "image": "Talents/Passive/Talent_Resounding_Roar.png",
-                        "order": 1,
-                        "type": "Passive 2"
-                    }
-                },
-                "attack": {
-                    "Foreign_Thundershock": {
-                        "name": "Foreign Thundershock",
-                        "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-                        "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
-                        "order": 0,
-                        "type": "Normal/Charged Attack"
-                    },
-                    "Lightning_Blade": {
-                        "name": "Lightning Blade",
-                        "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
-                        "image": "Talents/Skill/Talent_Lightning_Blade.png",
-                        "order": 1,
-                        "type": "Elemental Skill"
-                    },
-                    "Bellowing_Thunder": {
-                        "name": "Bellowing Thunder",
-                        "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
-                        "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
-                        "order": 2,
-                        "type": "Elemental Burst"
-                    }
-                }
-            },
-            "constellations": {
-                "1": {
-                    "name": "Spring Thunder of Fertility",
-                    "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
-                    "image": "Constellation/Spring_Thunder_of_Fertility.png"
-                },
-                "2": {
-                    "name": "Violet Vehemence",
-                    "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
-                    "image": "Constellation/Violet_Vehemence.png"
-                },
-                "3": {
-                    "name": "Distant Crackling",
-                    "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Distant_Crackling.png"
-                },
-                "4": {
-                    "name": "Fickle Cloudstrike",
-                    "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
-                    "image": "Constellation/Fickle_Cloudstrike.png"
-                },
-                "5": {
-                    "name": "Clamor in the Wilds",
-                    "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
-                    "image": "Constellation/Clamor_in_the_Wilds.png"
-                },
-                "6": {
-                    "name": "World-Shaker",
-                    "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
-                    "image": "Constellation/World-Shaker.png"
-                }
-            },
-            "ascension": {
-                "1": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Silver",
-                    "material1qty": 1,
-                    "mora": 20000,
-                    "material2": null,
-                    "level": 20,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 3,
-                    "material3qty": 3,
-                    "material3": "Windwheel_Aster"
-                },
-                "2": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 3,
-                    "mora": 40000,
-                    "material2": null,
-                    "level": 40,
-                    "material4": "Damaged_Mask",
-                    "material4qty": 15,
-                    "material3qty": 10,
-                    "material3": "Windwheel_Aster"
-                },
-                "3": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Fragment",
-                    "material1qty": 6,
-                    "mora": 60000,
-                    "material2": null,
-                    "level": 50,
-                    "material4": "Stained_Mask",
-                    "material4qty": 12,
-                    "material3qty": 20,
-                    "material3": "Windwheel_Aster"
-                },
-                "4": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 3,
-                    "mora": 80000,
-                    "material2": null,
-                    "level": 60,
-                    "material4": "Stained_Mask",
-                    "material4qty": 18,
-                    "material3qty": 30,
-                    "material3": "Windwheel_Aster"
-                },
-                "5": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Chunk",
-                    "material1qty": 6,
-                    "mora": 100000,
-                    "material2": null,
-                    "level": 70,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 12,
-                    "material3qty": 45,
-                    "material3": "Windwheel_Aster"
-                },
-                "6": {
-                    "material2qty": 0,
-                    "material1": "Brilliant_Diamond_Gemstone",
-                    "material1qty": 6,
-                    "mora": 120000,
-                    "material2": null,
-                    "level": 80,
-                    "material4": "Ominous_Mask",
-                    "material4qty": 24,
-                    "material3qty": 60,
-                    "material3": "Windwheel_Aster"
-                }
-            },
-            "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
-            "paimonmoepath": "characters/traveler_electro",
-            "genshinggpath": "characters/Traveler(Electro)",
-            "element": "Electro",
-            "released": true,
-            "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
-            "subCollection": {}
+        "attack": {
+          "Foreign_Ironwind": {
+            "name": "Foreign Ironwind",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Ironwind.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Palm_Vortex": {
+            "name": "Palm Vortex",
+            "effect": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing Anemo DMG 6 times in 1.5 seconds to opponents in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.\nHold: DMG and AoE will gradually increase.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 23% additional elemental DMG of that type. Elemental Absorption may only occur once per use.\nGenerate 2 elemental particles when press and 3.5 when hold, if it hit at least 1 target.",
+            "image": "Talents/Skill/Talent_Palm_Vortex.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Gust_Surge": {
+            "name": "Gust Surge",
+            "effect": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing Anemo DMG each 0.5 seconds, 9 times.\nElemental Absorption: If the vortex comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 30.7% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+            "image": "Talents/Burst/Talent_Gust_Surge.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
         }
+      },
+      "constellations": {
+        "1": {
+          "name": "Raging Vortex",
+          "effect": "Palm Vortex pulls in enemies within a 5m radius.",
+          "image": "Constellation/Raging_Vortex.png"
+        },
+        "2": {
+          "name": "Uprising Whirlwind",
+          "effect": "Increases Energy Recharge by 16%.",
+          "image": "Constellation/Uprising_Whirlwind.png"
+        },
+        "3": {
+          "name": "Sweeping Gust",
+          "effect": "Increases the level of Gust Surge by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Sweeping_Gust.png"
+        },
+        "4": {
+          "name": "Cherishing Breezes",
+          "effect": "Reduces DMG taken while casting Palm Vortex by 10%.",
+          "image": "Constellation/Cherishing_Breezes.png"
+        },
+        "5": {
+          "name": "Vortex Stellaris",
+          "effect": "Increases the level of Palm Vortex by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Vortex_Stellaris.png"
+        },
+        "6": {
+          "name": "Intertwined Winds",
+          "effect": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%.\nIf an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "image": "Constellation/Interwinded_Winds.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_anemo",
+      "genshinggpath": "characters/Traveler(Anemo)",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerGeo": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Geo)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Prosperity",
+            "material3qty": 3,
+            "material4": "Firm_Arrowhead",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 2,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 4,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 6,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 9,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 4,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 6,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 12,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Tail_of_Boreas",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 16,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Shattered_Darkrock": {
+            "name": "Shattered Darkrock",
+            "effect": "Reduces Starfell Sword's CD by 2s.",
+            "image": "Talents/Passive/Talent_Shattered_Darkrock.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Frenzied_Rockslide": {
+            "name": "Frenzied Rockslide",
+            "effect": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+            "image": "Talents/Passive/Talent_Frenzied_Rockslide.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Rockblade": {
+            "name": "Foreign Rockblade",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Rockblade.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Starfell_Sword": {
+            "name": "Starfell Sword",
+            "effect": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.\nHold: This skill's positioning may be adjusted.",
+            "image": "Talents/Skill/Talent_Starfell_Sword.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Wake_of_Earth": {
+            "name": "Wake of Earth",
+            "effect": "Energizing the Geo elements deep underground, you set off expanding shockwaves.\nLaunches surrounding opponents back and deals AoE Geo DMG.\nA stone wall is erected at the edges of the shockwave.\nThe stone wall is considered a Geo Construct, and may be used to block attacks.",
+            "image": "Talents/Burst/Talent_Wake_of_Earth.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Invincible Stonewall",
+          "effect": "Party members within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
+          "image": "Constellation/Invincible_Stonewall.png"
+        },
+        "2": {
+          "name": "Rockcore Meltdown",
+          "effect": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
+          "image": "Constellation/Rockcore_Meltdown.png"
+        },
+        "3": {
+          "name": "Will of the Rock",
+          "effect": "Increases the level of Wake of Earth by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Will_of_the_Rock.png"
+        },
+        "4": {
+          "name": "Reaction Force",
+          "effect": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner.",
+          "image": "Constellation/Reaction_Force.png"
+        },
+        "5": {
+          "name": "Meteorite Impact",
+          "effect": "Increases the level of Starfell Sword by 3. Maximum upgrade level is 15.",
+          "image": "Constellation/Meteorite_Impact.png"
+        },
+        "6": {
+          "name": "Everlasting Boulder",
+          "effect": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
+          "image": "Constellation/Everlasting_Boulder.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_geo",
+      "genshinggpath": "characters/Traveler(Geo)",
+      "element": "Geo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerElectro": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Electro)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Thunderflash": {
+            "name": "Thunderflash",
+            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+            "image": "Talents/Passive/Talent_Thunderflash.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Resounding_Roar": {
+            "name": "Resounding Roar",
+            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Thundershock": {
+            "name": "Foreign Thundershock",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lightning_Blade": {
+            "name": "Lightning Blade",
+            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bellowing_Thunder": {
+            "name": "Bellowing Thunder",
+            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spring Thunder of Fertility",
+          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+        },
+        "2": {
+          "name": "Violet Vehemence",
+          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "image": "Constellation/Violet_Vehemence.png"
+        },
+        "3": {
+          "name": "Distant Crackling",
+          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Distant_Crackling.png"
+        },
+        "4": {
+          "name": "Fickle Cloudstrike",
+          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "image": "Constellation/Fickle_Cloudstrike.png"
+        },
+        "5": {
+          "name": "Clamor in the Wilds",
+          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Clamor_in_the_Wilds.png"
+        },
+        "6": {
+          "name": "World-Shaker",
+          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
+          "image": "Constellation/World-Shaker.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_electro",
+      "genshinggpath": "characters/Traveler(Electro)",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerDendro": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Dendro)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Thunderflash": {
+            "name": "Thunderflash",
+            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+            "image": "Talents/Passive/Talent_Thunderflash.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Resounding_Roar": {
+            "name": "Resounding Roar",
+            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Thundershock": {
+            "name": "Foreign Thundershock",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lightning_Blade": {
+            "name": "Lightning Blade",
+            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bellowing_Thunder": {
+            "name": "Bellowing Thunder",
+            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spring Thunder of Fertility",
+          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+        },
+        "2": {
+          "name": "Violet Vehemence",
+          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "image": "Constellation/Violet_Vehemence.png"
+        },
+        "3": {
+          "name": "Distant Crackling",
+          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Distant_Crackling.png"
+        },
+        "4": {
+          "name": "Fickle Cloudstrike",
+          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "image": "Constellation/Fickle_Cloudstrike.png"
+        },
+        "5": {
+          "name": "Clamor in the Wilds",
+          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Clamor_in_the_Wilds.png"
+        },
+        "6": {
+          "name": "World-Shaker",
+          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
+          "image": "Constellation/World-Shaker.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_dendro",
+      "genshinggpath": "characters/Traveler(Dendro)",
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerHydro": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Hydro)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Thunderflash": {
+            "name": "Thunderflash",
+            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+            "image": "Talents/Passive/Talent_Thunderflash.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Resounding_Roar": {
+            "name": "Resounding Roar",
+            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Thundershock": {
+            "name": "Foreign Thundershock",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lightning_Blade": {
+            "name": "Lightning Blade",
+            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bellowing_Thunder": {
+            "name": "Bellowing Thunder",
+            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spring Thunder of Fertility",
+          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+        },
+        "2": {
+          "name": "Violet Vehemence",
+          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "image": "Constellation/Violet_Vehemence.png"
+        },
+        "3": {
+          "name": "Distant Crackling",
+          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Distant_Crackling.png"
+        },
+        "4": {
+          "name": "Fickle Cloudstrike",
+          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "image": "Constellation/Fickle_Cloudstrike.png"
+        },
+        "5": {
+          "name": "Clamor in the Wilds",
+          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Clamor_in_the_Wilds.png"
+        },
+        "6": {
+          "name": "World-Shaker",
+          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
+          "image": "Constellation/World-Shaker.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_hydro",
+      "genshinggpath": "characters/Traveler(Hydro)",
+      "element": "Hydro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerPyro": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Pyro)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Thunderflash": {
+            "name": "Thunderflash",
+            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+            "image": "Talents/Passive/Talent_Thunderflash.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Resounding_Roar": {
+            "name": "Resounding Roar",
+            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Thundershock": {
+            "name": "Foreign Thundershock",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lightning_Blade": {
+            "name": "Lightning Blade",
+            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bellowing_Thunder": {
+            "name": "Bellowing Thunder",
+            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spring Thunder of Fertility",
+          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+        },
+        "2": {
+          "name": "Violet Vehemence",
+          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "image": "Constellation/Violet_Vehemence.png"
+        },
+        "3": {
+          "name": "Distant Crackling",
+          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Distant_Crackling.png"
+        },
+        "4": {
+          "name": "Fickle Cloudstrike",
+          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "image": "Constellation/Fickle_Cloudstrike.png"
+        },
+        "5": {
+          "name": "Clamor in the Wilds",
+          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Clamor_in_the_Wilds.png"
+        },
+        "6": {
+          "name": "World-Shaker",
+          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
+          "image": "Constellation/World-Shaker.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_pyro",
+      "genshinggpath": "characters/Traveler(Pyro)",
+      "element": "Pyro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
+    },
+    "TravelerCryo": {
+      "image": "Characters/Anemo/Traveler.png",
+      "gender": "Male/Female",
+      "birthday": "Up to Player",
+      "caption": "Outlander",
+      "name": "Traveler (Cryo)",
+      "fullName": "Aether/Lumine",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.\nNote: Default Element is Anemo but you can use the Statue of the Seven of each respective nation to change elements",
+      "nation": "Mondstadt",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Viator/Viatrix",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dragon_Lords_Crown",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Thunderflash": {
+            "name": "Thunderflash",
+            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+            "image": "Talents/Passive/Talent_Thunderflash.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Resounding_Roar": {
+            "name": "Resounding Roar",
+            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+            "order": 1,
+            "type": "Passive 2"
+          }
+        },
+        "attack": {
+          "Foreign_Thundershock": {
+            "name": "Foreign Thundershock",
+            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lightning_Blade": {
+            "name": "Lightning Blade",
+            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
+            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Bellowing_Thunder": {
+            "name": "Bellowing Thunder",
+            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Spring Thunder of Fertility",
+          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+        },
+        "2": {
+          "name": "Violet Vehemence",
+          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "image": "Constellation/Violet_Vehemence.png"
+        },
+        "3": {
+          "name": "Distant Crackling",
+          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Distant_Crackling.png"
+        },
+        "4": {
+          "name": "Fickle Cloudstrike",
+          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "image": "Constellation/Fickle_Cloudstrike.png"
+        },
+        "5": {
+          "name": "Clamor in the Wilds",
+          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Clamor_in_the_Wilds.png"
+        },
+        "6": {
+          "name": "World-Shaker",
+          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
+          "image": "Constellation/World-Shaker.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Damaged_Mask",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Windwheel_Aster"
+        },
+        "2": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": null,
+          "level": 40,
+          "material4": "Damaged_Mask",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Windwheel_Aster"
+        },
+        "3": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": null,
+          "level": 50,
+          "material4": "Stained_Mask",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Windwheel_Aster"
+        },
+        "4": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": null,
+          "level": 60,
+          "material4": "Stained_Mask",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Windwheel_Aster"
+        },
+        "5": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": null,
+          "level": 70,
+          "material4": "Ominous_Mask",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Windwheel_Aster"
+        },
+        "6": {
+          "material2qty": 0,
+          "material1": "Brilliant_Diamond_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": null,
+          "level": 80,
+          "material4": "Ominous_Mask",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Windwheel_Aster"
+        }
+      },
+      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "paimonmoepath": "characters/traveler_cryo",
+      "genshinggpath": "characters/Traveler(Cryo)",
+      "element": "Cryo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "subCollection": {}
     }
+  }
 }
