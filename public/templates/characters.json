@@ -1,0 +1,3314 @@
+{
+    "Anemo_5": {
+        "image": "Characters/Anemo/Kazuha.png",
+        "gender": "Male",
+        "birthday": "29/10",
+        "caption": "Scarlet Leaves Pursue Wild Waves",
+        "name": "Kaedehara Kazuha",
+        "fullName": "Kazuha",
+        "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+        "nation": "Inazuma",
+        "weapon": "Sword",
+        "rarity": 5,
+        "affiliation": "The Crux",
+        "constellation": "Acer Palmatum",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Diligence",
+                    "material3qty": 3,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 2,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 4,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 6,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 9,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 4,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 6,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 12,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 16,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Poetics_of_Fuubutsu": {
+                    "name": "Poetics of Fuubutsu",
+                    "effect": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant teammates a 0.04% Elemental DMG Bonus to their corresponding Element for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist.",
+                    "image": "Talents/Passive/Talent_Poetics_of_Fuubutsu.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Soumon_Swordmanship": {
+                    "name": "Soumon Swordmanship",
+                    "effect": "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro when cast, Chihayaburu will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.\nElemental Absorption may only occur once per use of Chihayaburu.",
+                    "image": "Talents/Passive/Talent_Soumon_Swordsmanship.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Cloud_Strider": {
+                    "name": "Cloud Strider",
+                    "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                    "image": "Talents/Passive/Talent_Cloud_Strider.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Garyuu_Bladework": {
+                    "name": "Garyuu Bladework",
+                    "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.\nPlunging Attack: Midare Ranzan: When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
+                    "image": "Talents/Normal/Talent_Garyuu_Bladework.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Chihayaburu": {
+                    "name": "Chihayaburu",
+                    "effect": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing Anemo DMG and lifting Kazuha into the air on a rushing gust of wind.\nPress: Can be used in mid-air.\nHold: Charges up before unleashing greater Anemo DMG over a larger AoE than Press Mode.\nPlunging Attack: Midare Ranzan: Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.\nWhen a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents. Midare Ranzan's DMG is considered Plunging Attack DMG.",
+                    "image": "Talents/Skill/Talent_Chihayaburu.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Kazuha_Slash": {
+                    "name": "Kazuha Slash",
+                    "effect": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing AoE Anemo DMG. The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals AoE Anemo DMG to opponents within its range.\nElemental Absorption: If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+                    "image": "Talents/Burst/Talent_Kazuha_Slash.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Scarlet Hills",
+                "effect": "Decreases Chihayaburu's CD by 10%.\nUsing Kazuha Slash resets the CD of Chihayaburu.",
+                "image": "Constellation/Scarlet_Hills.png"
+            },
+            "2": {
+                "name": "Yamaarashi Tailwind",
+                "effect": "The Autumn Whirlwind field created by Kazuha Slash has the following effects:\n- Increases Kaedehara Kazuha's own Elemental Mastery by 200.\n- Increases the Elemental Mastery of characters within the field by 200.\nThe Elemental Mastery-increasing effects of this Constellation do not stack.",
+                "image": "Constellation/Yamaarashi_Tailwind.png"
+            },
+            "3": {
+                "name": "Maple Monogatari",
+                "effect": "Increases the Level of Chihayaburu by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Maple_Monogatari.png"
+            },
+            "4": {
+                "name": "Oozora Genpou",
+                "effect": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n- Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.\n- When gliding, Kaedehara Kazuha regenerates 2 Energy per second.",
+                "image": "Constellation/Oozora_Genpou.png"
+            },
+            "5": {
+                "name": "Wisdom of Bansei",
+                "effect": "Increases the Level of Kazuha Slash by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Wisdom_of_Bansei.png"
+            },
+            "6": {
+                "name": "Crimson Momiji",
+                "effect": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%.",
+                "image": "Constellation/Crimson_Momiji.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Vayuda_Turquoise_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Sea_Ganoderma"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Vayuda_Turquoise_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Marionette_Core",
+                "level": 40,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Sea_Ganoderma"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Vayuda_Turquoise_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Marionette_Core",
+                "level": 50,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Sea_Ganoderma"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Vayuda_Turquoise_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Marionette_Core",
+                "level": 60,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Sea_Ganoderma"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Vayuda_Turquoise_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Marionette_Core",
+                "level": 70,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Sea_Ganoderma"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Vayuda_Turquoise_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Marionette_Core",
+                "level": 80,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Sea_Ganoderma"
+            }
+        },
+        "introduction": "A wandering samurai from Inazuma with a modest and gentle personality.\nBeneath a youthful and carefree demeanor lies a heart that hides a great many burdens from the past. Seemingly easygoing, Kazuha has his own code of conduct.",
+        "paimonmoepath": "characters/kaedehara_kazuha",
+        "genshinggpath": "characters/Kazuha",
+        "element": "Anemo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Kazuha",
+        "subCollection": {}
+    },
+    "Anemo_4": {
+        "image": "Characters/Anemo/Sayu.png",
+        "gender": "Female",
+        "birthday": "19/10",
+        "caption": "Mujina Ninja",
+        "name": "Sayu",
+        "fullName": "Kazuha",
+        "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+        "nation": "Inazuma",
+        "weapon": "Claymore",
+        "rarity": 4,
+        "affiliation": "Shuumatsuban",
+        "constellation": "Nyctereutes Minor",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Light",
+                    "material3qty": 3,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 2,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 4,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 6,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 9,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 4,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 6,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 12,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Gilded_Scale",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 16,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Someone_More_Capable": {
+                    "name": "Someone More Capable",
+                    "effect": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+                    "image": "Talents/Passive/Talent_Someone_More_Capable.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "No_Work_Today": {
+                    "name": "No Work Today!",
+                    "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:\nWhen healing a character, it will also heal characters near that healed character for 20% the amount of HP.\nIncreases the AoE of its attack against opponents.",
+                    "image": "Talents/Passive/Talent_No_Work_Today.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Yoohoo_Art_Silencers_Secret": {
+                    "name": "Yoohoo Art: Silencer's Secret",
+                    "effect": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+                    "image": "Talents/Passive/Talent_Yoohoo_Art_Silencers_Secret.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Shuumatsuban_Ninja_Blade": {
+                    "name": "Shuumatsuban Ninja Blade",
+                    "effect": "Normal Attack: Performs up to 4 consecutive strikes.\n\nCharged Attack: Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\n\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Shuumatsuban_Ninja_Blade.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Yoohoo_Art_Fuuin_Dash": {
+                    "name": "Yoohoo Art: Fuuin Dash",
+                    "effect": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG.\nWhen the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.\nPress: Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.\nHold: Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.\nElemental Absorption: If Sayu comes into contact with Hydro, Pyro, Cryo and Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+                    "image": "Talents/Skill/Talent_Yoohoo_Art_Fuuin_Dash.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Yoohoo_Art_Mujina_Flurry": {
+                    "name": "Yoohoo Art: Mujina Flurry",
+                    "effect": "The other super special technique of the Yoohoo Ninja Arts!\nIt summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.\nMuji-Muji Daruma: At specific intervals, the Daruma will take one of several actions based on the situation around it:\n\nIf the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.\nIf there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left.\nIf there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more.",
+                    "image": "Talents/Burst/Talent_Yoohoo_Art_Mujina_Flurry.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Multi-Task no Jutsu",
+                "effect": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+                "image": "Constellation/Multi-Task_no_Jutsu.png"
+            },
+            "2": {
+                "name": "Egress Prep",
+                "effect": "Yoohoo Art: Fuuin Dash gains the following effects:\nDMG of Fuufuu Whirlwind Kick in Tapping (mobile)/Press (PC & PlayStation) Mode increased by 3.3%.\nEvery 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.",
+                "image": "Constellation/Egress_Prep.png"
+            },
+            "3": {
+                "name": "Eh, the Bunshin Can Handle It",
+                "effect": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Eh_the_Bunshin_Can_Handle_It.png"
+            },
+            "4": {
+                "name": "Skiving: New and Improved",
+                "effect": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+                "image": "Constellation/Skiving_New_and_Improved.png"
+            },
+            "5": {
+                "name": "Speed Comes First",
+                "effect": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Speed_Comes_First.png"
+            },
+            "6": {
+                "name": "Sleep O'Clock",
+                "effect": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\nIncreases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.\nIncreases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner.",
+                "image": "Constellation/Sleep_OClock.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Vayuda_Turquoise_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Whopperflower_Nectar",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Crystal_Marrow"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Vayuda_Turquoise_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Marionette_Core",
+                "level": 40,
+                "material4": "Whopperflower_Nectar",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Crystal_Marrow"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Vayuda_Turquoise_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Marionette_Core",
+                "level": 50,
+                "material4": "Shimmering_Nectar",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Crystal_Marrow"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Vayuda_Turquoise_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Marionette_Core",
+                "level": 60,
+                "material4": "Shimmering_Nectar",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Crystal_Marrow"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Vayuda_Turquoise_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Marionette_Core",
+                "level": 70,
+                "material4": "Energy_Nectar",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Crystal_Marrow"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Vayuda_Turquoise_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Marionette_Core",
+                "level": 80,
+                "material4": "Energy_Nectar",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Crystal_Marrow"
+            }
+        },
+        "introduction": "Sayu, Shuumatsuban's resident ninja, is obsessed with sleeping and growing taller.\nShe has mastered all kinds of ninjutsu to run away and hide in pursuit of opportunities to laze around and sleep.\nSuch an extraordinary skillset may have very unexpected uses.",
+        "paimonmoepath": "characters/sayu",
+        "genshinggpath": "characters/Sayu",
+        "element": "Anemo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Sayu",
+        "subCollection": {}
+    },
+    "Cryo_5": {
+        "image": "Characters/Cryo/Ganyu.png",
+        "gender": "Female",
+        "birthday": "2/12",
+        "caption": "Plenilune Gaze",
+        "name": "Ganyu",
+        "fullName": "Kazuha",
+        "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+        "nation": "Liyue",
+        "weapon": "Bow",
+        "rarity": 5,
+        "affiliation": "Yuehai Pavilion, Liyue Qixing, Adepti",
+        "constellation": "Sinae Unicornis",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Diligence",
+                    "material3qty": 3,
+                    "material4": "Whopperflower_Nectar",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 2,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 4,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 6,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Diligence",
+                    "material3qty": 9,
+                    "material4": "Shimmering_Nectar",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 4,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 6,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 12,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Shadow_of_the_Warrior",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Diligence",
+                    "material3qty": 16,
+                    "material4": "Energy_Nectar",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Undivided_Heart": {
+                    "name": "Undivided Heart",
+                    "effect": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
+                    "image": "Talents/Passive/Talent_Undivided_Heart.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Harmony_between_Heaven_and_Earth": {
+                    "name": "Harmony between Heaven and Earth",
+                    "effect": "Celestial Shower grants a 20% Cryo DMG Bonus to active members in the AoE.",
+                    "image": "Talents/Passive/Talent_Harmony_between_Heaven_and_Earth.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Preserved_for_the_Hunt": {
+                    "name": "Preserved for the Hunt",
+                    "effect": "Refunds 15% of the ores used when crafting Bow-type weapons.",
+                    "image": "Talents/Passive/Talent_Preserved_for_the_Hunt.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Liutian_Archery": {
+                    "name": "Liutian Archery",
+                    "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, an icy aura will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Fires off an icy arrow that deals Cryo DMG.\nCharge Level 2: Fires off a Frostflake Arrow that deals Cryo DMG.\nThe Frostflake Arrow blooms after hitting its target, dealing AoE Cryo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Liutian_Archery.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Trail_of_the_Qilin": {
+                    "name": "Trail of the Qilin",
+                    "effect": "Leaving a single Ice Lotus behind, Ganyu dashes backward, shunning all impurity and dealing AoE Cryo DMG.\nIce Lotus:\n\nContinuously taunts surrounding opponents, attracting them to attack it.\nEndurance scales based on Ganyu's Max HP.\nBlooms profusely when destroyed or once its duration ends, dealing AoE Cryo DMG.\nGenerates 2 elemental particles when the creation hits at least 1 target, and 2 elemental particles when the explosion hits at least 1 target",
+                    "image": "Talents/Skill/Talent_Trail_of_the_Qilin.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Celestial_Shower": {
+                    "name": "Celestial Shower",
+                    "effect": "Coalesces atmospheric frost and snow to summon a Sacred Cryo Pearl that exorcises evil.\nDuring its ability duration, the Sacred Cryo Pearl will continuously rain down shards of ice, striking opponents within an AoE and dealing Cryo DMG.",
+                    "image": "Talents/Burst/Talent_Celestial_Shower.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Dew-Drinker",
+                "effect": "Taking DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom decreases opponents' Cryo RES by 15% for 6s.\nA hit regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hit the target.",
+                "image": "Constellation/Dew-Drinker.png"
+            },
+            "2": {
+                "name": "The Auspicious",
+                "effect": "Trail of the Qilin gains 1 additional charge.",
+                "image": "Constellation/The_Auspicious.png"
+            },
+            "3": {
+                "name": "Cloud-Strider",
+                "effect": "Increases the Level of Celestial Shower by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Cloud-Strider.png"
+            },
+            "4": {
+                "name": "Westward Sojourn",
+                "effect": "Opponents standing within the AoE of Celestial Shower take increased DMG. This effect strengthens over time. Increased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\nThe effect lingers for 3s after the opponent leaves the AoE.",
+                "image": "Constellation/Westward_Sojourn.png"
+            },
+            "5": {
+                "name": "The Merciful",
+                "effect": "Increases the Level of Trail of the Qilin by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/The_Merciful.png"
+            },
+            "6": {
+                "name": "The Clement",
+                "effect": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.",
+                "image": "Constellation/The_Clement.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Shivada_Jade_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Whopperflower_Nectar",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Qingxin"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Hoarfrost_Core",
+                "level": 40,
+                "material4": "Whopperflower_Nectar",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Qingxin"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Hoarfrost_Core",
+                "level": 50,
+                "material4": "Shimmering_Nectar",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Qingxin"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Hoarfrost_Core",
+                "level": 60,
+                "material4": "Shimmering_Nectar",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Qingxin"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Hoarfrost_Core",
+                "level": 70,
+                "material4": "Energy_Nectar",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Qingxin"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Shivada_Jade_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Hoarfrost_Core",
+                "level": 80,
+                "material4": "Energy_Nectar",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Qingxin"
+            }
+        },
+        "introduction": "The secretary to the Liyue Qixing. The blood of both human and illuminated beast flows within her veins.\n\nGraceful and quiet by nature, yet the gentle disposition of qilin sees not even the slightest conflict with even the most arduous of workloads.\n\nAfter all, Ganyu firmly believes that all the work she does is in honor of her contract with Rex Lapis, seeking the well-being of all living things within Liyue.",
+        "paimonmoepath": "characters/ganyu",
+        "genshinggpath": "characters/Ganyu",
+        "element": "Cryo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Ganyu",
+        "subCollection": {}
+    },
+    "Cryo_4": {
+        "image": "Characters/Cryo/Kaeya.png",
+        "gender": "Male",
+        "birthday": "30/11",
+        "caption": "Frostwind Swordsman",
+        "name": "Kaeya",
+        "fullName": "Kaeya Alberich",
+        "description": "A thinker in the Knights of Favonius with a somewhat exotic appearance.",
+        "nation": "Mondstadt",
+        "weapon": "Sword",
+        "rarity": 4,
+        "affiliation": "Knights of Favonius, Khaenri'ah (Former)",
+        "constellation": "Pavo Ocellus",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Ballad",
+                    "material3qty": 3,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 2,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 4,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 6,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Ballad",
+                    "material3qty": 9,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Spirit_Locket_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 4,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Spirit_Locket_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 6,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Spirit_Locket_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 12,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Spirit_Locket_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Ballad",
+                    "material3qty": 16,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Cold_Blooded_Strike": {
+                    "name": "Cold-Blooded Strike",
+                    "effect": "Every hit with Frostgnaw regenerates HP for Kaeya equal to 15% of his ATK.",
+                    "image": "Talents/Passive/Talent_Cold-Blooded_Strike.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Glacial_Heart": {
+                    "name": "Glacial Heart",
+                    "effect": "Opponents Frozen by Frostgnaw will drop additional Elemental Particles. Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use.",
+                    "image": "Talents/Passive/Talent_Glacial_Heart.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Hidden_Strength": {
+                    "name": "Hidden Strength",
+                    "effect": "Decreases sprinting Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                    "image": "Talents/Passive/Talent_Hidden_Strength.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Ceremonial_Bladework": {
+                    "name": "Ceremonial Bladework",
+                    "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Ceremonial_Bladework.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Frostgnaw": {
+                    "name": "Frostgnaw",
+                    "effect": "Unleashes a frigid blast, dealing Cryo DMG to opponents in front of Kaeya.\nGenerates 2.5 elemental particles when it hits at least 1 target.",
+                    "image": "Talents/Skill/Talent_Frostgnaw.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Glacial_Waltz": {
+                    "name": "Glacial Waltz",
+                    "effect": "Coalescing the frost in the air, Kaeya summons 3 icicles that revolve 4 times around him for 8 seconds.\nThese icicles will follow the character around and deal Cryo DMG to opponents in their path for so long as they persist.",
+                    "image": "Talents/Burst/Talent_Glacial_Waltz.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Excellent Blood",
+                "effect": "The CRIT Rate of Kaeya's Normal Attack and Charge Attacks against opponents affected by the Cryo is increased by 15%.",
+                "image": "Constellation/Excellent_Blood.png"
+            },
+            "2": {
+                "name": "Never-Ending Performance",
+                "effect": "Every time Glacial Waltz defeats an opponent, its duration is increased by 2.5s, up to a maximum of 15s.\n*The description is incorrect, duration extension takes effect on any enemy defeat, not just enemies defeated by Glacial Waltz.",
+                "image": "Constellation/Never-Ending_Performance.png"
+            },
+            "3": {
+                "name": "Dance of Frost",
+                "effect": "Increases the Level of Frostgnaw by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Dance_of_Frost.png"
+            },
+            "4": {
+                "name": "Frozen Kiss",
+                "effect": "Triggers automatically when Kaeya's HP falls below 20%:\nCreates a shield that absorbs damage equal to 30% of Kaeya's Max HP. Lasts for 20s.\nThis shield absorbs Cryo DMG with 250% efficiency.\nCan only occur once every 60s.",
+                "image": "Constellation/Frozen_Kiss.png"
+            },
+            "5": {
+                "name": "Frostbiting Embrace",
+                "effect": "Increases the level of Glacial Waltz by 3. Max upgrade level is 15.",
+                "image": "Constellation/Frostbiting_Embrace.png"
+            },
+            "6": {
+                "name": "Glacial Whirlwind",
+                "effect": "Glacial Waltz will generate 1 additional icicle, and will regenerate 15 Energy when cast.",
+                "image": "Constellation/Glacial_Whirlwind.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Shivada_Jade_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Calla_Lily"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Hoarfrost_Core",
+                "level": 40,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Calla_Lily"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Shivada_Jade_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Hoarfrost_Core",
+                "level": 50,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Calla_Lily"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Hoarfrost_Core",
+                "level": 60,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Calla_Lily"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Shivada_Jade_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Hoarfrost_Core",
+                "level": 70,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Calla_Lily"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Shivada_Jade_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Hoarfrost_Core",
+                "level": 80,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Calla_Lily"
+            }
+        },
+        "introduction": "In the Knights of Favonius, Kaeya is the most trusted aide for the Acting Grand Master Jean. You can always count on him to solve any intractable problems. Everyone in Mondstadt loves Kaeya, but no one knows what secrets this witty, charming knight has...",
+        "paimonmoepath": "characters/kaeya",
+        "genshinggpath": "characters/Kaeya",
+        "element": "Cryo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Kaeya",
+        "subCollection": {}
+    },
+    "Electro_5": {
+        "image": "Characters/Electro/Raiden_Shogun.png",
+        "gender": "Female",
+        "birthday": "26/6",
+        "caption": "Plane of Euthymia",
+        "name": "Raiden Shogun",
+        "fullName": "\"Baal\", Beelzebub/Beelzebul, Raiden Ei",
+        "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
+        "nation": "Inazuma",
+        "weapon": "Polearm",
+        "rarity": 5,
+        "affiliation": "Archons, Inazuma Bakufu",
+        "constellation": "Imperatrix Umbrosa",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Light",
+                    "material3qty": 3,
+                    "material4": "Old_Handguard",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 2,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 4,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 6,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 9,
+                    "material4": "Kageuchi_Handguard",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 4,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 6,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 12,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Molten_Moment",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 16,
+                    "material4": "Famed_Handguard",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Wishes_Unnumbered": {
+                    "name": "Wishes Unnumbered",
+                    "effect": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+                    "image": "Talents/Passive/Talent_Wishes_Unnumbered.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Enlightened_One": {
+                    "name": "Enlightened One",
+                    "effect": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:\n0.6% greater Energy restoration from Musou Isshin\n0.4% Electro DMG Bonus",
+                    "image": "Talents/Passive/Talent_Enlightened_One.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "All-Preserver": {
+                    "name": "All-Preserver",
+                    "effect": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+                    "image": "Talents/Passive/Talent_All-Preserver.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Origin": {
+                    "name": "Origin",
+                    "effect": "Normal Attack: Performs up to 5 consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to perform an upward slash.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Origin.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Transcendence_Baleful_Omen": {
+                    "name": "Transcendence: Baleful Omen",
+                    "effect": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.\nEye of Stormy Judgment\n\nWhen characters with this buff attack and deal DMG to opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nCharacters who gain the Eye of Stormy Judgment will have their Elemental Burst DMG increased based on the Energy Cost of the Elemental Burst during the Eye's duration.\nThe Eye can initiate one coordinated attack every 0.9s per party.\nCoordinated attacks generated by characters not controlled by you deal 20% of the normal DMG.",
+                    "image": "Talents/Skill/Talent_Transcendence_Baleful_Omen.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Secret_Art_Musou_Shinsetsu": {
+                    "name": "Secret Art: Musou Shinsetsu",
+                    "effect": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks will be increased based on the number of Chakra Desiderata's Resolve stacks consumed when this skill is used.\nMusou Isshin\nWhile in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.\nWhile Musou Isshin is active, the Raiden Shogun's Normal, Charged, and Plunging Attack DMG will be considered Elemental Burst DMG.\nThe effects of Musou Isshin will be cleared when the Raiden Shogun leaves the field.\nChakra Desiderata\nWhen nearby party members (excluding the Raiden Shogun herself) use their Elemental Bursts, the Raiden Shogun will build up Resolve stacks based on the Energy Cost of these Elemental Bursts.\nThe maximum number of Resolve stacks is 60. The Resolve gained by Chakra Desiderata will be cleared 300s after the Raiden Shogun leaves the field.",
+                    "image": "Talents/Burst/Talent_Secret_Art_Musou_Shinsetsu.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Ominous Inscription",
+                "effect": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+                "image": "Constellation/Ominous_Inscription.png"
+            },
+            "2": {
+                "name": "Steelbreaker",
+                "effect": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+                "image": "Constellation/Steelbreaker.png"
+            },
+            "3": {
+                "name": "Shinkage Bygones",
+                "effect": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Shinkage_Bygones.png"
+            },
+            "4": {
+                "name": "Pledge of Propriety",
+                "effect": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+                "image": "Constellation/Pledge_of_Propriety.png"
+            },
+            "5": {
+                "name": "Shogun's Descent",
+                "effect": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Shoguns_Descent.png"
+            },
+            "6": {
+                "name": "Wishbearer",
+                "effect": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, attacks by the Raiden Shogun that are considered part of her Elemental Burst will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+                "image": "Constellation/Wishbearer.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Vajrada_Amethyst_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Old_Handguard",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Amakumo_Fruit"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Vajrada_Amethyst_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Storm_Beads",
+                "level": 40,
+                "material4": "Old_Handguard",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Amakumo_Fruit"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Vajrada_Amethyst_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Storm_Beads",
+                "level": 50,
+                "material4": "Kageuchi_Handguard",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Amakumo_Fruit"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Vajrada_Amethyst_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Storm_Beads",
+                "level": 60,
+                "material4": "Kageuchi_Handguard",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Amakumo_Fruit"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Vajrada_Amethyst_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Storm_Beads",
+                "level": 70,
+                "material4": "Famed_Handguard",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Amakumo_Fruit"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Vajrada_Amethyst_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Storm_Beads",
+                "level": 80,
+                "material4": "Famed_Handguard",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Amakumo_Fruit"
+            }
+        },
+        "introduction": "The Raiden Shogun is the awesome and terrible power of thunder incarnate, the exalted ruler of the Inazuma Shogunate.\nWith the might of lightning at her disposal, she commits herself to the solitary pursuit of eternity.",
+        "paimonmoepath": "characters/raiden_shogun",
+        "genshinggpath": "characters/Raiden",
+        "element": "Electro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Raiden_Shogun",
+        "subCollection": {}
+    },
+    "Electro_4": {
+        "image": "Characters/Electro/Razor.png",
+        "gender": "Male",
+        "birthday": "9/9",
+        "caption": "Wolf Boy",
+        "name": "Razor",
+        "fullName": "Kazuha",
+        "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+        "nation": "Mondstadt",
+        "weapon": "Claymore",
+        "rarity": 4,
+        "affiliation": "Wolvendom, Andrius",
+        "constellation": "Lupus Minor",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Resistance",
+                    "material3qty": 3,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 2,
+                    "material4": "Stained_Mask",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 4,
+                    "material4": "Stained_Mask",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 6,
+                    "material4": "Stained_Mask",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Resistance",
+                    "material3qty": 9,
+                    "material4": "Stained_Mask",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dvalin_Claw",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 4,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dvalin_Claw",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 6,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Dvalin_Claw",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 12,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Dvalin_Claw",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Resistance",
+                    "material3qty": 16,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Awakening": {
+                    "name": "Awakening",
+                    "effect": "Decreases Claw and Thunder's CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+                    "image": "Talents/Passive/Talent_Awakening.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Hunger": {
+                    "name": "Hunger",
+                    "effect": "When Razor's Energy is below 50%, increases Energy Recharge by 30%.",
+                    "image": "Talents/Passive/Talent_Hunger.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Wolvensprint": {
+                    "name": "Wolvensprint",
+                    "effect": "Decreases sprinting Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+                    "image": "Talents/Passive/Talent_Wolvensprint.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Steel_Fang": {
+                    "name": "Steel Fang",
+                    "effect": "Normal Attack: Perform up to 4 consecutive strikes.\nCharged Attack: Drains Stamina over time to perform continuous swirling attacks against all nearby opponents. At end of the sequence, perform a more powerful slash.\nPlunging Aattack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Steel_Fang.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Claw_and_Thunder": {
+                    "name": "Claw and Thunder",
+                    "effect": "Hunts his prey using the techniques taught to him by his master and his Lupical.\nPress: Swings the Thunder Wolf Claw, dealing Electro DMG to opponents in front of Razor.\nUpon striking an opponent, Razor gains an Electro Sigil, which increases his Energy Recharge rate.\nRazor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.\nHold: Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor's Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.\nGenerate 3 elemental particles when press and 4 when hold, if it hit at least 1 target.",
+                    "image": "Talents/Skill/Talent_Claw_and_Thunder.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Lightning_Fang": {
+                    "name": "Lightning Fang",
+                    "effect": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into elemental energy for him.\nThe Wolf Within will fight alongside Razor for the skill's duration.\nThe Wolf Within:\nStrikes alongside Razor's normal attacks, dealing Electro DMG.\nRaises Razor's ATK SPD and Electro RES.\nCauses Razor to be immune to DMG inflicted by the Electro-Charged status.\nDisables Razor's Charged Attacks.\nIncreases Razor's resistance to interruption",
+                    "image": "Talents/Burst/Talent_Lightning_Fang.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Wolf's Instinct",
+                "effect": "Picking up an Elemental Orb or Particle increases Razor's DMG by 10% for 8s.",
+                "image": "Constellation/Wolf_Instinct.png"
+            },
+            "2": {
+                "name": "Suppression",
+                "effect": "Increases CRIT Rate against opponents with less than 30% HP by 10%.",
+                "image": "Constellation/Suppression.png"
+            },
+            "3": {
+                "name": "Soul Companion",
+                "effect": "Increases the level of Lightning Fang by 3. Maximum level is 15.",
+                "image": "Constellation/Soul_Companion.png"
+            },
+            "4": {
+                "name": "Bite",
+                "effect": "When casting Claw and Thunder (Press), opponents hit will have their DEF decreased by 15% for 7s.",
+                "image": "Constellation/Bite.png"
+            },
+            "5": {
+                "name": "Sharpened Claws",
+                "effect": "Increases the level of Claw and Thunder by 3. Maximum level is 15.",
+                "image": "Constellation/Sharpened_Claws.png"
+            },
+            "6": {
+                "name": "Lupus Fulguris",
+                "effect": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an opponent will grant Razor an Electro Sigil for Claw and Thunder",
+                "image": "Constellation/Lupus_Fulguris.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Vajrada_Amethyst_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Damaged_Mask",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Wolfhook"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Vajrada_Amethyst_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Lightning_Prism",
+                "level": 40,
+                "material4": "Damaged_Mask",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Wolfhook"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Vajrada_Amethyst_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Lightning_Prism",
+                "level": 50,
+                "material4": "Stained_Mask",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Wolfhook"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Vajrada_Amethyst_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Lightning_Prism",
+                "level": 60,
+                "material4": "Stained_Mask",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Wolfhook"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Vajrada_Amethyst_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Lightning_Prism",
+                "level": 70,
+                "material4": "Ominous_Mask",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Wolfhook"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Vajrada_Amethyst_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Lightning_Prism",
+                "level": 80,
+                "material4": "Ominous_Mask",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Wolfhook"
+            }
+        },
+        "introduction": "Some say he is an orphan raised by wolves. Others say he is a wolf spirit in human form. He is most at home in the wild, fighting with claw and thunder. To this day the wolf boy can be found prowling the forest, where he and his wolf pack hunt to survive using nothing more than their animal instincts.",
+        "paimonmoepath": "characters/razor",
+        "genshinggpath": "characters/Razor",
+        "element": "Electro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Razor",
+        "subCollection": {}
+    },
+    "Geo_5": {
+        "image": "Characters/Geo/Arataki_Itto.png",
+        "gender": "Male",
+        "birthday": "1/6",
+        "caption": "Hanamizaka Heroics",
+        "name": "Arataki Itto",
+        "fullName": "Itto",
+        "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+        "nation": "Inazuma",
+        "weapon": "Claymore",
+        "rarity": 5,
+        "affiliation": "Arataki Gang, Oni",
+        "constellation": "Taurus Iracundus",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Elegance",
+                    "material3qty": 3,
+                    "material4": "Slime_Condensate",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Elegance",
+                    "material3qty": 2,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Elegance",
+                    "material3qty": 4,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Elegance",
+                    "material3qty": 6,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Elegance",
+                    "material3qty": 9,
+                    "material4": "Slime_Secretions",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ashen_Heart",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Elegance",
+                    "material3qty": 4,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ashen_Heart",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 6,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ashen_Heart",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Elegance",
+                    "material3qty": 12,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Ashen_Heart",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Elegance",
+                    "material3qty": 16,
+                    "material4": "Slime_Concentrate",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Arataki_Ichiban": {
+                    "name": "Arataki Ichiban",
+                    "effect": "When Arataki Itto uses consecutive Arataki Kesagiri, he obtains the following effects:\nEach slash increases the ATK SPD of the next slash by 10%. Max ATK SPD increase is 30%.\nIncreases his resistance to interruption.\n\nThese effects will be cleared once he stops performing consecutive slashes.",
+                    "image": "Talents/Passive/Talent_Arataki_Ichiban.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Bloodline_of_the_Crimson_Oni": {
+                    "name": "Bloodline of the Crimson Oni",
+                    "effect": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF.",
+                    "image": "Talents/Passive/Talent_Bloodline_of_the_Crimson_Oni.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Woodchuck_Chucked": {
+                    "name": "Woodchuck Chucked",
+                    "effect": "When a party member uses attacks to obtain wood from a tree, they have a 25% chance to obtain an additional log of wood.",
+                    "image": "Talents/Passive/Talent_Woodchuck_Chucked.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Fight_Club_Legend": {
+                    "name": "Fight Club Legend",
+                    "effect": "Normal Attack\nPerform up to 4 consecutive strikes.\nWhen the 2nd and 4th strikes hit opponents, Itto will gain 1 or 2 stacks of Superlative Superstrength, respectively. Max 5 stacks.\nTriggering this effect will refresh the current duration of any existing stacks.\n\nAdditionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, \"Masatsu Zetsugi: Akaushi Burst!\"\n\nCharged Attack\nWhen holding to perform a Charged Attack, Itto unleashes a series of Arataki Kesagiri slashes without consuming Stamina. Instead, each Arataki Kesagiri slash consumes 1 stack of Superlative Superstrength. When the final stack is consumed, Itto delivers a powerful final slash.\nIf no stacks of Superlative Superstrength are available, Itto will perform a single Saichimonji Slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Fight_Club_Legend.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Masatsu_Zetsugi_Akaushi_Burst": {
+                    "name": "Masatsu Zetsugi: Akaushi Burst!",
+                    "effect": "Hurls Ushi, the young akaushi bull and auxiliary member of the Arataki Gang, dealing Geo DMG to opponents on hit.\nWhen Ushi hits opponents, Arataki Itto gains 1 stack of Superlative Superstrength.\n\nUshi will remain on the field and provide support in the following ways:\nTaunts surrounding opponents and draws their attacks.\nInherits HP based on a percentage of Arataki Itto's Max HP.\nWhen Ushi takes DMG, Arataki Itto gains 1 stack of Superlative Superstrength. Only 1 stack can be gained in this way every 2s.\nUshi will flee when its HP reaches 0 or its duration ends. It will grant Arataki Itto 1 stack of Superlative Superstrength when it leaves.\n\nHold\nAdjust throwing angle.\n\nUshi is considered a Geo Construct. Arataki Itto can only deploy 1 Ushi on the field at any one time.",
+                    "image": "Talents/Skill/Talent_Masatsu_Zetsugi_Akaushi_Burst.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Royal_Descent_Behold_Itto_the_Evil": {
+                    "name": "Royal Descent: Behold, Itto the Evil!",
+                    "effect": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\nThis state has the following special properties:\nConverts Itto's Normal, Charged, and Plunging Attacks to Geo DMG. This cannot be overridden.\nIncreases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.\nOn hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.\nDecreases Itto's Elemental and Physical RES by 20%.\nThe Raging Oni King state will be cleared when Itto leaves the field.",
+                    "image": "Talents/Burst/Talent_Royal_Descent_Behold_Itto_the_Evil.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Stay a While and Listen Up",
+                "effect": "After using Royal Descent: Behold, Itto the Evil!, Arataki Itto gains 2 stacks of Superlative Superstrength. After 1s, Itto will gain 1 stack of Superlative Superstrength every 0.5s for 1.5s.",
+                "image": "Constellation/Stay_a_While_and_Listen_Up.png"
+            },
+            "2": {
+                "name": "Gather 'Round, It's a Brawl!",
+                "effect": "After using Royal Descent: Behold, Itto the Evil!, each party member whose Element is Geo will decrease that skill's CD by 1.5s and restore 6 Energy to Arataki Itto.\nCD can be decreased by up to 4.5s in this manner. Max 18 Energy can be restored in this manner.",
+                "image": "Constellation/Gather_Round_Its_a_Brawl.png"
+            },
+            "3": {
+                "name": "Horns Lowered, Coming Through",
+                "effect": "Increases the Level of Masatsu Zetsugi: Akaushi Burst! by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Horns_Lowered_Coming_Through.png"
+            },
+            "4": {
+                "name": "Jailhouse Bread and Butter",
+                "effect": "When the Raging Oni King state caused by Royal Descent: Behold, Itto the Evil! ends, all nearby party members gain 20% DEF and 20% ATK for 10s.",
+                "image": "Constellation/Jailhouse_Bread_and_Butter.png"
+            },
+            "5": {
+                "name": "10 Years of Hanamizaka Fame",
+                "effect": "Increases the Level of Royal Descent: Behold, Itto the Evil! by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/10_Years_of_Hanamizaka_Fame.png"
+            },
+            "6": {
+                "name": "Arataki Itto, Present!",
+                "effect": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength.",
+                "image": "Constellation/Arataki_Itto_Present.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Prithiva_Topaz_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Slime_Condensate",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Onikabuto"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Prithiva_Topaz_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Riftborn_Regalia",
+                "level": 40,
+                "material4": "Slime_Condensate",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Onikabuto"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Prithiva_Topaz_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Riftborn_Regalia",
+                "level": 50,
+                "material4": "Slime_Secretions",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Onikabuto"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Prithiva_Topaz_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Riftborn_Regalia",
+                "level": 60,
+                "material4": "Slime_Secretions",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Onikabuto"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Prithiva_Topaz_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Riftborn_Regalia",
+                "level": 70,
+                "material4": "Slime_Concentrate",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Onikabuto"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Prithiva_Topaz_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Riftborn_Regalia",
+                "level": 80,
+                "material4": "Slime_Concentrate",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Onikabuto"
+            }
+        },
+        "introduction": "Descendant of the oni, of intrepid spirit and noble heart.\nFast as the wind and mighty as thunder.",
+        "paimonmoepath": "characters/arataki_itto",
+        "genshinggpath": "characters/Itto",
+        "element": "Geo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
+        "subCollection": {}
+    },
+    "Geo_4": {
+        "image": "Characters/Geo/Gorou.png",
+        "gender": "Male",
+        "birthday": "18/5",
+        "caption": "Canine Warrior",
+        "name": "Gorou",
+        "fullName": "Kazuha",
+        "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+        "nation": "Inazuma",
+        "weapon": "Bow",
+        "rarity": 4,
+        "affiliation": "Watatsumi Army",
+        "constellation": "Canis Bellatoris",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Light",
+                    "material3qty": 3,
+                    "material4": "Spectral_Husk",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 2,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 4,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 6,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Light",
+                    "material3qty": 9,
+                    "material4": "Spectral_Heart",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 4,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 6,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Molten_Moment",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 12,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Molten_Moment",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Light",
+                    "material3qty": 16,
+                    "material4": "Spectral_Nucleus",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Heedless_of_the_Wind_and_Weather": {
+                    "name": "Heedless of the Wind and Weather",
+                    "effect": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s.",
+                    "image": "Talents/Passive/Talent_Heedless_of_the_Wind_and_Weather.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "A_Favor_Repaid": {
+                    "name": "A Favor Repaid",
+                    "effect": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\nInuzaka All-Round Defense: Skill DMG increased by 156% of DEF\nJuuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF",
+                    "image": "Talents/Passive/Talent_A_Favor_Repaid.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Seeker_of_Shinies": {
+                    "name": "Seeker of Shinies",
+                    "effect": "Displays the location of nearby resources unique to Inazuma on the mini-map.",
+                    "image": "Talents/Passive/Talent_Seeker_of_Shinies.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Ripping_Fang_Fletching": {
+                    "name": "Ripping Fang Fletching",
+                    "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Ripping_Fang_Fletching.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Inuzaka_All-Round_Defense": {
+                    "name": "Inuzaka All-Round Defense",
+                    "effect": "Deals AoE Geo DMG and sets up a General's War Banner.\n\nGeneral's War Banner\nProvides up to 3 buffs to active characters within the skill's AoE based on the number of Geo characters in the party at the time of casting:\n1 Geo character: Adds \"Standing Firm\" - DEF Bonus.\n2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.\n3 Geo characters: Adds \"Crunch\" - Geo DMG Bonus.\nGorou can deploy only 1 General's War Banner on the field at any one time.\nCharacters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s.\n\nHold\nAdjust the location of the skill.",
+                    "image": "Talents/Skill/Talent_Inuzaka_All-Round_Defense.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Juuga_Forward_Unto_Victory": {
+                    "name": "Juuga: Forward Unto Victory",
+                    "effect": "Displaying his valor as a general, Gorou deals Aoe Geo DMG and creates a field known as General's Glory to embolden his comrades.\n\nGeneral's Glory\nThis field has the following properties:\nLike the General's War Banner created by Inazuka All-Round Defense, provides buffs to active characters within the skill's AoE based on the number of Geo characters in the party. Also moves together with your active character.\nGenerates 1 Crystal Collapse every 1.5s that deals AoE Geo DMG to 1 opponent within the skill's AoE.\nPulls 1 elemental shard in the skill's AoE to your active character's position every 1.5s (elemental shards are created by Crystallize reactions).\nIf a General's War banner created by Gorou currently exists on the field when his ability is used, it will be destroyed. In addition, for the duration of General's Glory, Gorou's Elemental Skill \"Inazuka All-Round Defense\" will not create the General's War Banner.\nIf Gorou falls, the effects of General's Glory will be cleared.",
+                    "image": "Talents/Burst/Talent_Juuga_Forward_Unto_Victory.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Rushing Hound: Swift as the Wind",
+                "effect": "When characters (other than Gorou) within the AoE of Gorou's General's War Banner or General's Glory deal Geo DMG to opponents, the CD of Gorou's Inuzaka All-Round Defense is decreased by 2s. This effect can occur once every 10s.",
+                "image": "Constellation/Rushing_Hound_Swift_as_the_Wind.png"
+            },
+            "2": {
+                "name": "Sitting Hound: Steady as a Clock",
+                "effect": "While General's Glory is in effect, its duration is extended by 1s when a nearby active character obtains an Elemental Shard from a Crystallize reaction. This effect can occur once every 0.1s. Max extension is 3s.",
+                "image": "Constellation/Sitting_Hound_Steady_as_a_Clock.png"
+            },
+            "3": {
+                "name": "Mauling Hound: Fierce as Fire",
+                "effect": "Increases the Level of Inuzaka All-Round Defense by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Mauling_Hound_Fierce_as_Fire.png"
+            },
+            "4": {
+                "name": "Lapping Hound: Warm as Water",
+                "effect": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s.",
+                "image": "Constellation/Lapping_Hound_Warm_as_Water.png"
+            },
+            "5": {
+                "name": "Striking Hound: Thunderous Force",
+                "effect": "Increases the Level of Juuga: Forward Unto Victory by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Striking_Hound_Thunderous_Force.png"
+            },
+            "6": {
+                "name": "Valiant Hound: Mountainous Fealty",
+                "effect": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' Geo DMG based on the buff level of the skill's field at the time of use:\n\"Standing Firm\": +10%\n\"Impregnable\": +20%\n\"Crunch\": +40%\nThis effect cannot stack and will take reference from the last instance of the effect that is triggered.",
+                "image": "Constellation/Valiant_Hound_Mountainous_Fealty.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Prithiva_Topaz_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Spectral_Husk",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Sango_Pearl"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Prithiva_Topaz_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Perpetual_Heart",
+                "level": 40,
+                "material4": "Spectral_Husk",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Sango_Pearl"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Prithiva_Topaz_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Perpetual_Heart",
+                "level": 50,
+                "material4": "Spectral_Heart",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Sango_Pearl"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Prithiva_Topaz_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Perpetual_Heart",
+                "level": 60,
+                "material4": "Spectral_Heart",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Sango_Pearl"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Prithiva_Topaz_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Perpetual_Heart",
+                "level": 70,
+                "material4": "Spectral_Nucleus",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Sango_Pearl"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Prithiva_Topaz_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Perpetual_Heart",
+                "level": 80,
+                "material4": "Spectral_Nucleus",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Sango_Pearl"
+            }
+        },
+        "introduction": "The great general of Watatsumi Island's forces. He has gained respect and prestige, but always shows himself to be a humble leader.\nHe is deeply trusted by his subordinates and is someone with whom you can share your feelings without shame.",
+        "paimonmoepath": "characters/gorou",
+        "genshinggpath": "characters/Gorou",
+        "element": "Geo",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Gorou",
+        "subCollection": {}
+    },
+    "Hydro_5": {
+        "image": "Characters/Hydro/Tartaglia.png",
+        "gender": "Male",
+        "birthday": "20/7",
+        "caption": "Childe",
+        "name": "Tartaglia",
+        "fullName": "Ajax",
+        "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
+        "nation": "Snezhnaya",
+        "weapon": "Bow",
+        "rarity": 5,
+        "affiliation": "Fatui",
+        "constellation": "Monoceros Caeli",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Freedom",
+                    "material3qty": 3,
+                    "material4": "Recruit_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 2,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 4,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 6,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 9,
+                    "material4": "Sergeant_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shard_of_a_Foul_Legacy",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 4,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shard_of_a_Foul_Legacy",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 6,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Shard_of_a_Foul_Legacy",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 12,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Shard_of_a_Foul_Legacy",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 16,
+                    "material4": "Lieutenant_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Never_Ending": {
+                    "name": "Never Ending",
+                    "effect": "Extends Riptide duration by 8s.",
+                    "image": "Talents/Passive/Talent_Never_Ending.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Sword_of_Torrents": {
+                    "name": "Sword of Torrents",
+                    "effect": "When Tartaglia is in Foul Legacy: Raging Tide's Melee stance, on dealing a CRIT hit, Normal and Charged Attacks apply the Riptide status effects to opponents.",
+                    "image": "Talents/Passive/Talent_Sword_of_Torrents.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Master_of_Weaponry": {
+                    "name": "Master of Weaponry",
+                    "effect": "Increases your own party members' Normal Attack Level by 1.",
+                    "image": "Talents/Passive/Talent_Master_of_Weaponry.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Cutting_Torrent": {
+                    "name": "Cutting Torrent",
+                    "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply the Riptide status.\nRiptide: Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack dmg.\n\nRiptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.\nRiptide Burst: Defeating an opponent affected by Riptide creates a Hydro burst that inflicts the Riptide status on nearby opponents hit.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\nWhen Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, he cannot perform a plunging attack.",
+                    "image": "Talents/Normal/Talent_Cutting_Torrent.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Foul_Legacy_Raging_Tide": {
+                    "name": "Foul Legacy: Raging Tide",
+                    "effect": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering Melee Stance.\nIn this Stance, Tartaglia's Normal and Charged Attacks are converted to Hydro DMG that cannot be overridden by any other elemental infusion and change as follows:\nNormal Attack: Perform up to 6 consecutive Hydro strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.\nRiptide Slash: Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s.\nAfter 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+                    "image": "Talents/Skill/Talent_Foul_Legacy_Raging_Tide.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Havoc_Obliteration": {
+                    "name": "Havoc: Obliteration",
+                    "effect": "Performs different attacks based on what stance Tartaglia is in when casting.\nRanged Stance: Flash of Havoc: Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.\nMelee Stance: Light of Obliteration: Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.\nRiptide Blast: When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+                    "image": "Talents/Burst/Talent_Havoc_Obliteration.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Foul Legacy: Tide Withholder",
+                "effect": "Decrease the CD of Foul Legacy: Raging Tide by 20%",
+                "image": "Constellation/Foul_Legacy_Tide_Withholder.png"
+            },
+            "2": {
+                "name": "Foul Legacy: Understream",
+                "effect": "When opponents affected by Riptide are defeated. Tartaglia regenerates 4 Elemental Energy.",
+                "image": "Constellation/Foul_Legacy_Understream.png"
+            },
+            "3": {
+                "name": "Abyssal Mayhem: Vortex of Turmoil",
+                "effect": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Abyssal_Mayhem_Vortex_of_Turmoil.png"
+            },
+            "4": {
+                "name": "Abyssal Mayhem: Hydrosprout",
+                "effect": "If Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash.\nRiptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effects on those time intervals.",
+                "image": "Constellation/Abyssal_Mayhem_Hydrosprout.png"
+            },
+            "5": {
+                "name": "Havoc: Formless Blade",
+                "effect": "Increases the level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Havoc_Formless_Blade.png"
+            },
+            "6": {
+                "name": "Havoc: Annihilation",
+                "effect": "When Havoc: Obliteration is cast in Melee stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
+                "image": "Constellation/Havoc_Annihilation.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Varunada_Lazurite_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Recruit_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Starconch"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Varunada_Lazurite_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Cleansing_Heart",
+                "level": 40,
+                "material4": "Recruit_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Starconch"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Varunada_Lazurite_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Cleansing_Heart",
+                "level": 50,
+                "material4": "Sergeant_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Starconch"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Varunada_Lazurite_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Cleansing_Heart",
+                "level": 60,
+                "material4": "Sergeant_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Starconch"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Varunada_Lazurite_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Cleansing_Heart",
+                "level": 70,
+                "material4": "Lieutenant_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Starconch"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Varunada_Lazurite_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Cleansing_Heart",
+                "level": 80,
+                "material4": "Lieutenant_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Starconch"
+            }
+        },
+        "introduction": "Meet Tartaglia — the cunning Snezhnayan whose unpredictable personality keeps people guessing his every move.\nDon't be under any illusion as to what he might be thinking or what his intentions are. Just remember this: Behind that innocent, childlike exterior lies a finely honed instrument of war.",
+        "paimonmoepath": "characters/tartaglia",
+        "genshinggpath": "characters/Tartaglia",
+        "element": "Hydro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Tartaglia",
+        "subCollection": {}
+    },
+    "Hydro_4": {
+        "image": "Characters/Hydro/Xingqiu.png",
+        "gender": "Male",
+        "birthday": "9/10",
+        "caption": "Juvenile Galant",
+        "name": "Xingqiu",
+        "fullName": "Kazuha",
+        "description": "A young man carrying a longsword who is frequently seen at book booths. He has a heart of gold and yearns for justice and fairness for all.",
+        "nation": "Liyue",
+        "weapon": "Sword",
+        "rarity": 4,
+        "affiliation": "Feiyun Commerce Guild",
+        "constellation": "Fabulae Textile",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Gold",
+                    "material3qty": 3,
+                    "material4": "Damaged_Mask",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 2,
+                    "material4": "Stained_Mask",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 4,
+                    "material4": "Stained_Mask",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 6,
+                    "material4": "Stained_Mask",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Gold",
+                    "material3qty": 9,
+                    "material4": "Stained_Mask",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 4,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 6,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 12,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Tail_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Gold",
+                    "material3qty": 16,
+                    "material4": "Ominous_Mask",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Hydropathic": {
+                    "name": "Hydropathic",
+                    "effect": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP.",
+                    "image": "Talents/Passive/Talent_Hydropathic.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Blades_Amidst_Raindrops": {
+                    "name": "Blades Amidst Raindrops",
+                    "effect": "Xingqiu gains a 20% Hydro DMG Bonus.",
+                    "image": "Talents/Passive/Talent_Blades_Amidst_Raindrops.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Flash_of_Genius": {
+                    "name": "Flash of Genius",
+                    "effect": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund one count of one material out of all the crafting materials used.",
+                    "image": "Talents/Passive/Talent_Flash_of_Genius.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Guhua_Style": {
+                    "name": "Guhua Style",
+                    "effect": "Normal Attack: Perform up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Guhua_Style.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Guhua_Sword_Fatal_Rainscreen": {
+                    "name": "Guhua Sword: Fatal Rainscreen",
+                    "effect": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, his ability creates the maximum number of Rain Swords, which will orbit your active character.\nThe Rain Swords have the following properties:\nWhen a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.\nIncrease the character's resistance to interruption.\n20% of Xingqiu's Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%.\nThe initial maximum number of Rain Swords is 3.\nUsing this ability applies the Wet status onto the character.\nThe twin strikes generate 5 elemental particles when it hit at least 1 target.",
+                    "image": "Talents/Skill/Talent_Guhua_Sword_-_Fatal_Rainscreen.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Guhua_Sword_Raincutter": {
+                    "name": "Guhua Sword: Raincutter",
+                    "effect": "Rainbow Bladework:\nYour active character's Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.\nRain Swords will remain at the maximum number throughout the ability's duration.\nThese effects carry over to other characters.",
+                    "image": "Talents/Burst/Talent_Guhua_Sword_-_Raincutter.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "The Scent Remained",
+                "effect": "Increases the maximum number of Rain Swords by 1.",
+                "image": "Constellation/The_Scent_Remained.png"
+            },
+            "2": {
+                "name": "Rainbow Upon the Azure Sky",
+                "effect": "Extends the duration of Guhua Sword: Raincutter by 3s. Decreases the Hydro RES of opponents hit by sword rain by 15% for 4s.",
+                "image": "Constellation/Rainbow_Upon_the_Azure_Sky.png"
+            },
+            "3": {
+                "name": "Weaver of Verses",
+                "effect": "Increases the level of Guhua Sword: Raincutter by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Weaver_of_Verses.png"
+            },
+            "4": {
+                "name": "Evilsoother",
+                "effect": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+                "image": "Constellation/Evilsoother.png"
+            },
+            "5": {
+                "name": "Embrace of Rain",
+                "effect": "Increases the level of Guhua Sword: Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+                "image": "Constellation/Embrace_of_Rain.png"
+            },
+            "6": {
+                "name": "Hence, Call Them My Own Verses",
+                "effect": "Activating 2 of Guhua Sword: Raincutter's sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit opponents.",
+                "image": "Constellation/Hence_Call_Them_My_Own_Verses.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Varunada_Lazurite_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Damaged_Mask",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Silk_Flower"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Varunada_Lazurite_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Cleansing_Heart",
+                "level": 40,
+                "material4": "Damaged_Mask",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Silk_Flower"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Varunada_Lazurite_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Cleansing_Heart",
+                "level": 50,
+                "material4": "Stained_Mask",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Silk_Flower"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Varunada_Lazurite_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Cleansing_Heart",
+                "level": 60,
+                "material4": "Stained_Mask",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Silk_Flower"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Varunada_Lazurite_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Cleansing_Heart",
+                "level": 70,
+                "material4": "Ominous_Mask",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Silk_Flower"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Varunada_Lazurite_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Cleansing_Heart",
+                "level": 80,
+                "material4": "Ominous_Mask",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Silk_Flower"
+            }
+        },
+        "introduction": "The second son of the Feiyun Commerce Guild, Xingqiu has had a reputation for being studious and polite ever since he was a young child. But there is another side to the mild-mannered Xingqiu everyone knows. A daring, adventurous and much more mischievous side...",
+        "paimonmoepath": "characters/xingqiu",
+        "genshinggpath": "characters/Xingqiu",
+        "element": "Hydro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
+        "subCollection": {}
+    },
+    "Klee": {
+        "image": "Characters/Pyro/Klee.png",
+        "gender": "Female",
+        "birthday": "27/7",
+        "caption": "Fleeing Sunlight",
+        "name": "Klee",
+        "fullName": "Kazuha",
+        "description": "An explosives expert and a regular at the Knights of Favonius' confinement room. Also known as Fleeing Sunlight.",
+        "nation": "Mondstadt",
+        "weapon": "Catalyst",
+        "rarity": 5,
+        "affiliation": "Knights of Favonius",
+        "constellation": "Trifolium",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Freedom",
+                    "material3qty": 3,
+                    "material4": "Divining_Scroll",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 2,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 4,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 6,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Freedom",
+                    "material3qty": 9,
+                    "material4": "Sealed_Scroll",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ring_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 4,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ring_of_Boreas",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 6,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Ring_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 12,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Ring_of_Boreas",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Freedom",
+                    "material3qty": 16,
+                    "material4": "Forbidden_Curse_Scroll",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Pounding_Surprise": {
+                    "name": "Pounding Surprise",
+                    "effect": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+                    "image": "Talents/Passive/Talent_Pounding_Surprise.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Sparkling_Burst": {
+                    "name": "Sparkling Burst",
+                    "effect": "When Klee's Charged Attack results in a CRIT, all party members gain 2 Elemental Energy.",
+                    "image": "Talents/Passive/Talent_Sparkling_Burst.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "All_Of_My_Treasures": {
+                    "name": "All Of My Treasures!",
+                    "effect": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+                    "image": "Talents/Passive/Talent_All_Of_My_Treasures.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Kaboom": {
+                    "name": "Kaboom!",
+                    "effect": "Normal Attack: Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.\nCharged Attack: Consumes a certain amount of Stamina and deals AoE Pyro DMG to opponents after a short casting time.\nPlunging Attack: Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+                    "image": "Talents/Normal/Talent_Kaboom.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Jumpy_Dumpty": {
+                    "name": "Jumpy Dumpty",
+                    "effect": "Jumpy Dumpty is tons of boom-bang-fun!\nWhen thrown, Jumpy Dumpty bounces thrice, igniting and dealing AoE Pyro DMG with every bounce.\nOn the third bounce, the bomb splits into 8 mines. The mines will explode upon contact with opponents, or after a short period of time, dealing AoE Pyro DMG.\nStarts with 2 charges.",
+                    "image": "Talents/Skill/Talent_Jumpy_Dumpty.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Sparks_n_Splash": {
+                    "name": "Sparks 'n' Splash",
+                    "effect": "Klee's Blazing Delight! For 10 seconds, summons 5 times 4 Sparks 'n' Splash to attack nearby opponents, dealing AoE Pyro DMG.",
+                    "image": "Talents/Burst/Talent_Sparks_n_Splash.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Chained Reactions",
+                "effect": "Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.",
+                "image": "Constellation/Chained_Reactions.png"
+            },
+            "2": {
+                "name": "Explosive Frags",
+                "effect": "Being hit by Jumpy Dumpty's mines decreases opponents' DEF by 23% for 10s.",
+                "image": "Constellation/Explosive_Frags.png"
+            },
+            "3": {
+                "name": "Exquisite Compound",
+                "effect": "Increases the level of Jumpy Dumpty by 3. Maximum level is 15.",
+                "image": "Constellation/Exquisite_Compound.png"
+            },
+            "4": {
+                "name": "Sparkly Explosion",
+                "effect": "If Klee leaves the field during the duration of Sparks 'n' Splash, her departure triggers an explosion that deals 555% of her ATK as AoE Pyro DMG.",
+                "image": "Constellation/Sparkly_Explosion.png"
+            },
+            "5": {
+                "name": "Nova Burst",
+                "effect": "Increases the level of Sparks 'n' Splash by 3. Maximum level is 15.",
+                "image": "Constellation/Nova_Burst.png"
+            },
+            "6": {
+                "name": "Blazing Delight",
+                "effect": "While under the effects of Sparks 'n' Splash, other members of the party will continuously regenerate Energy.\nWhen Sparks 'n' Splash is used, all party members will gain a 10% Pyro DMG Bonus for 25s.",
+                "image": "Constellation/Blazing_Delight.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Agnidus_Agate_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Divining_Scroll",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Philanemo_Mushroom"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Everflame_Seed",
+                "level": 40,
+                "material4": "Divining_Scroll",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Philanemo_Mushroom"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Everflame_Seed",
+                "level": 50,
+                "material4": "Sealed_Scroll",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Philanemo_Mushroom"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Everflame_Seed",
+                "level": 60,
+                "material4": "Sealed_Scroll",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Philanemo_Mushroom"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Everflame_Seed",
+                "level": 70,
+                "material4": "Forbidden_Curse_Scroll",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Philanemo_Mushroom"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Agnidus_Agate_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Everflame_Seed",
+                "level": 80,
+                "material4": "Forbidden_Curse_Scroll",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Philanemo_Mushroom"
+            }
+        },
+        "introduction": "Knights of Favonius Spark Knight! Forever with a bang and a flash! —And then disappearing from the stern gaze of Acting Grand Master Jean. Sure, time in solitary confinement gives lots of time to think about new gunpowder formulas...But it'd still be better to not be in solitary in the first place.",
+        "paimonmoepath": "characters/klee",
+        "genshinggpath": "characters/Klee",
+        "element": "Pyro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Klee",
+        "subCollection": {}
+    },
+    "Tohma": {
+        "image": "Characters/Pyro/Thoma.png",
+        "gender": "Male",
+        "birthday": "9/1",
+        "caption": "Protector From Afar",
+        "name": "Thoma",
+        "fullName": "Kazuha",
+        "description": "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma.",
+        "nation": "Inazuma",
+        "weapon": "Polearm",
+        "rarity": 4,
+        "affiliation": "Yashiro Commission, Kamisato Clan",
+        "constellation": "Rubeum Scutum",
+        "talents": {
+            "ascension": {
+                "2": {
+                    "mora": 12500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Teachings_of_Transience",
+                    "material3qty": 3,
+                    "material4": "Treasure_Hoarder_Insignia",
+                    "material4qty": 6
+                },
+                "3": {
+                    "mora": 17500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Transience",
+                    "material3qty": 2,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 3
+                },
+                "4": {
+                    "mora": 25000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Transience",
+                    "material3qty": 4,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "5": {
+                    "mora": 30000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Transience",
+                    "material3qty": 6,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "6": {
+                    "mora": 37500,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": null,
+                    "material2qty": 0,
+                    "material3": "Guide_to_Transience",
+                    "material3qty": 9,
+                    "material4": "Silver_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "7": {
+                    "mora": 120000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Hellfire_Butterfly",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Transience",
+                    "material3qty": 4,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 4
+                },
+                "8": {
+                    "mora": 260000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Hellfire_Butterfly",
+                    "material2qty": 1,
+                    "material3": "Philosophies_of_Transience",
+                    "material3qty": 6,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 6
+                },
+                "9": {
+                    "mora": 450000,
+                    "material1": null,
+                    "material1qty": 0,
+                    "material2": "Hellfire_Butterfly",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Transience",
+                    "material3qty": 12,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 9
+                },
+                "10": {
+                    "mora": 700000,
+                    "material1": "Crown_of_Insight",
+                    "material1qty": 1,
+                    "material2": "Hellfire_Butterfly",
+                    "material2qty": 2,
+                    "material3": "Philosophies_of_Transience",
+                    "material3qty": 16,
+                    "material4": "Golden_Raven_Insignia",
+                    "material4qty": 12
+                }
+            },
+            "passives": {
+                "Imbricated_Armor": {
+                    "name": "Imbricated Armor",
+                    "effect": "When your current active character obtains or refreshes a Blazing Barrier, this character's Shield Strength will increase by 5% for 6s.\nThis effect can be triggered once every 0.3 seconds. Max 5 stacks.",
+                    "image": "Talents/Passive/Talent_Imbricated_Armor.png",
+                    "order": 0,
+                    "type": "Passive 1"
+                },
+                "Flaming_Assault": {
+                    "name": "Flaming Assault",
+                    "effect": "DMG dealt by Crimson Ooyoroi's Fiery Collapse is increased by 2.2% of Thoma's Max HP.",
+                    "image": "Talents/Passive/Talent_Flaming_Assault.png",
+                    "order": 1,
+                    "type": "Passive 2"
+                },
+                "Snap_and_Swing": {
+                    "name": "Snap and Swing",
+                    "effect": "When you fish successfully in Inazuma, Thoma's help grants a 20% chance of scoring a double catch.",
+                    "image": "Talents/Passive/Talent_Snap_and_Swing.png",
+                    "order": 2,
+                    "type": "Passive 3"
+                }
+            },
+            "attack": {
+                "Swiftshatter_Spear": {
+                    "name": "Swiftshatter Spear",
+                    "effect": "Normal Attack: Performs up to four consecutive spear strikes.\nCharged Attack: Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                    "image": "Talents/Normal/Talent_Swiftshatter_Spear.png",
+                    "order": 0,
+                    "type": "Normal/Charged Attack"
+                },
+                "Blazing_Blessing": {
+                    "name": "Blazing Blessing",
+                    "effect": "Thoma vaults forward with his polearm and delivers a flame-filled flying kick that deals AoE Pyro DMG, while also summoning a defensive Blazing Barrier.\nAt the moment of casting, Thoma's Elemental Skill applies Pyro to himself.\nThe DMG Absorption of the Blazing Barrier scales off Thoma's Max HP.\nThe Blazing Barrier has the following traits:\nAbsorbs Pyro DMG 250% more effectively.\nWhen a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.\nThe maximum DMG Absoprtion of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
+                    "image": "Talents/Skill/Talent_Blazing_Blessing.png",
+                    "order": 1,
+                    "type": "Elemental Skill"
+                },
+                "Crimson_Ooyoroi": {
+                    "name": "Crimson Ooyoroi",
+                    "effect": "Thoma spins his polearm, slicing at his foes with roaring flames that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\nScorching Ooyoroi\nWhile Scorching Ooyoroi is in effect, the active character's Normal Attacks will trigger Fiery Collapse, dealing AoE Pyro DMG and summoning a Blazing Barrier.\nFiery Collapse can be triggered once every 1s.\n\nExcept for the amount of DMG they can absorb, the Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing:\n\nAbsorbs Pyro DMG 250% more effectively.\nWhen a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.\nThe maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.\n\nIf Thoma falls, the effects of Scorching Ooyoroi will be cleared.",
+                    "image": "Talents/Burst/Talent_Crimson_Ooyoroi.png",
+                    "order": 2,
+                    "type": "Elemental Burst"
+                }
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "A Comrade's Duty",
+                "effect": "When a character protected by Thoma's own Blazing Barrier (Thoma excluded) is attacked, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\nThis effect can be triggered once every 20s.",
+                "image": "Constellation/A_Comrades_Duty.png"
+            },
+            "2": {
+                "name": "A Subordinate's Skills",
+                "effect": "Crimson Ooyoroi's duration is increased by 3s.",
+                "image": "Constellation/A_Subordinates_Skills.png"
+            },
+            "3": {
+                "name": "Fortified Resolve",
+                "effect": "Increases the Level of Blazing Blessing by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Fortified_Resolve.png"
+            },
+            "4": {
+                "name": "Long-Term Planning",
+                "effect": "After using Crimson Ooyoroi, 15 Energy will be restored to Thoma.",
+                "image": "Constellation/Long-Term_Planning.png"
+            },
+            "5": {
+                "name": "Raging Wildfire",
+                "effect": "Increases the Level of Crimson Ooyoroi by 3.\nMaximum upgrade level is 15.",
+                "image": "Constellation/Raging_Wildfire.png"
+            },
+            "6": {
+                "name": "Burning Heart",
+                "effect": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s.",
+                "image": "Constellation/Burning_Heart.png"
+            }
+        },
+        "ascension": {
+            "1": {
+                "material2qty": 0,
+                "material1": "Agnidus_Agate_Silver",
+                "material1qty": 1,
+                "mora": 20000,
+                "material2": null,
+                "level": 20,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 3,
+                "material3qty": 3,
+                "material3": "Fluorescent_Fungus"
+            },
+            "2": {
+                "material2qty": 2,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 3,
+                "mora": 40000,
+                "material2": "Smoldering_Pearl",
+                "level": 40,
+                "material4": "Treasure_Hoarder_Insignia",
+                "material4qty": 15,
+                "material3qty": 10,
+                "material3": "Fluorescent_Fungus"
+            },
+            "3": {
+                "material2qty": 4,
+                "material1": "Agnidus_Agate_Fragment",
+                "material1qty": 6,
+                "mora": 60000,
+                "material2": "Smoldering_Pearl",
+                "level": 50,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 20,
+                "material3": "Fluorescent_Fungus"
+            },
+            "4": {
+                "material2qty": 8,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 3,
+                "mora": 80000,
+                "material2": "Smoldering_Pearl",
+                "level": 60,
+                "material4": "Silver_Raven_Insignia",
+                "material4qty": 18,
+                "material3qty": 30,
+                "material3": "Fluorescent_Fungus"
+            },
+            "5": {
+                "material2qty": 12,
+                "material1": "Agnidus_Agate_Chunk",
+                "material1qty": 6,
+                "mora": 100000,
+                "material2": "Smoldering_Pearl",
+                "level": 70,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 12,
+                "material3qty": 45,
+                "material3": "Fluorescent_Fungus"
+            },
+            "6": {
+                "material2qty": 20,
+                "material1": "Agnidus_Agate_Gemstone",
+                "material1qty": 6,
+                "mora": 120000,
+                "material2": "Smoldering_Pearl",
+                "level": 80,
+                "material4": "Golden_Raven_Insignia",
+                "material4qty": 24,
+                "material3qty": 60,
+                "material3": "Fluorescent_Fungus"
+            }
+        },
+        "introduction": "The housekeeper of the Yashiro Commission's Kamisato Clan, and a well-known \"fixer\" in Inazuma.\nFriendly and approachable, Thoma fits in with the crowd easily wherever he is.\nAt first glance, he seems to be a very easygoing person, but he is in fact very responsible. He has an extraordinarily serious side, be it in his work or his interpersonal communications.",
+        "paimonmoepath": "characters/thoma",
+        "genshinggpath": "characters/Thoma",
+        "element": "Pyro",
+        "released": true,
+        "wiki": "https://genshin-impact.fandom.com/wiki/Thoma",
+        "subCollection": {}
+    }
+}
