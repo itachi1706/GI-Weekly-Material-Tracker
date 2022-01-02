@@ -7,6 +7,7 @@ tasks:
     init: |
       flutter run -d web-server --no-resident
       flutter doctor -v
+      cat $FIREBASE_SERVICE_ACCOUNT_KEY > util/serviceAccountKey.json
     #command: >
     #  flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0 &&
     #  echo Ready!
