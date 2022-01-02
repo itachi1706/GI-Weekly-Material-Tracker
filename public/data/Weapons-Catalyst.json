@@ -1,5 +1,86 @@
 {
   "weapons": {
+    "Amber_Catalyst": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
+      "name": "Amber Catalyst",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 1,
+          "material1": "Grain_of_Aerosiderite",
+          "material2qty": 2,
+          "material1qty": 2,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Fragile_Bone_Shard",
+          "material3qty": 5,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 10000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Piece_of_Aerosiderite",
+          "material2qty": 4,
+          "material1qty": 4,
+          "mora": 15000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Sturdy_Bone_Shard",
+          "material3qty": 6,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 8,
+          "material1qty": 2,
+          "mora": 20000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 4,
+          "material1": "Bit_of_Aerosiderite",
+          "material2qty": 6,
+          "material1qty": 4,
+          "mora": 25000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Fossilized_Bone_Shard",
+          "material3qty": 8,
+          "material1": "Chunk_of_Aerosiderite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        }
+      },
+      "image": "Weapons/Catalyst/Amber_Catalyst.png",
+      "secondary_stat": "16",
+      "rarity": 3,
+      "type": "Catalyst",
+      "max_secondary_stat": null,
+      "max_base_atk": 448,
+      "base_atk": 40,
+      "obtained": "Chests",
+      "effectName": "Elemental Mastery",
+      "effect": "Normal Attack hits increase all Elemental DMG by 6~12% for 6s. Max 2 stacks.",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Amber_Catalyst",
+      "subCollection": {}
+    },
     "Apprentice_Notes": {
       "secondary_stat_type": "None",
       "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
