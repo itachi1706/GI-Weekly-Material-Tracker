@@ -552,6 +552,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  flutter_settings_ui:
+    dependency: "direct main"
+    description:
+      name: flutter_settings_ui
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   flutter_signin_button:
     dependency: "direct main"
     description:
@@ -912,15 +919,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.3"
-  settings_ui:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: master
-      resolved-ref: "98070379a075c8c5823a569bcee8d02d82bcb118"
-      url: "https://github.com/beerstorm-net/flutter-settings-ui.git"
-    source: git
-    version: "1.0.1"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -1215,4 +1213,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.15.0 <3.0.0"
-  flutter: ">=2.8.0"
+  flutter: ">=2.5.0"
