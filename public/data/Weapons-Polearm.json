@@ -225,9 +225,8 @@
     },
     "Calamity_Queller": {
       "secondary_stat_type": "ATK",
-      "description": null,
+      "description": "A keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past.",
       "name": "Calamity Queller",
-      "series": null,
       "ascension": {
         "1": {
           "material3": "Whopperflower_Nectar",
@@ -290,17 +289,17 @@
           "mora": 65000
         }
       },
-      "image": "Weapons/Polearm/",
-      "secondary_stat": null,
+      "image": "Weapons/Polearm/Calamity_Queller.png",
+      "secondary_stat": "3.6%",
       "rarity": 5,
       "type": "Polearm",
       "max_secondary_stat": "16.5%",
       "max_base_atk": 741,
-      "base_atk": null,
+      "base_atk": 49,
       "obtained": "Gacha",
       "effectName": "Extinguishing Precept",
-      "effect": null,
-      "released": false,
+      "effect": "Gain 12~24% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by 3.2~6.4% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Calamity_Queller",
       "subCollection": {}
     },
