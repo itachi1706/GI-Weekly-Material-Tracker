@@ -20,9 +20,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -31,9 +31,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -42,9 +42,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -53,9 +53,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -64,9 +64,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -75,9 +75,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -86,9 +86,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -97,9 +97,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -108,28 +108,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Poetics_of_Fuubutsu": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Soumon_Swordmanship": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Cloud_Strider": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -138,21 +138,21 @@
         }
       },
       "attack": {
-        "Garyuu_Bladework": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Chihayaburu": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Kazuha_Slash": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -201,7 +201,7 @@
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
@@ -213,7 +213,7 @@
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
@@ -225,7 +225,7 @@
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
@@ -237,7 +237,7 @@
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
@@ -249,7 +249,7 @@
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
@@ -261,7 +261,7 @@
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -296,9 +296,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -307,9 +307,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -318,9 +318,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -329,9 +329,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -340,9 +340,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -351,9 +351,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -362,9 +362,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -373,9 +373,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -384,28 +384,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Someone_More_Capable": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "No_Work_Today": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Yoohoo_Art_Silencers_Secret": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -414,21 +414,21 @@
         }
       },
       "attack": {
-        "Shuumatsuban_Ninja_Blade": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Yoohoo_Art_Fuuin_Dash": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Yoohoo_Art_Mujina_Flurry": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -477,7 +477,7 @@
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
@@ -489,7 +489,7 @@
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
@@ -501,7 +501,7 @@
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
@@ -513,7 +513,7 @@
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
@@ -525,7 +525,7 @@
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
@@ -537,7 +537,7 @@
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -572,9 +572,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -583,9 +583,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -594,9 +594,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -605,9 +605,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -616,9 +616,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -627,9 +627,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -638,9 +638,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -649,9 +649,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -660,28 +660,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Undivided_Heart": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Harmony_between_Heaven_and_Earth": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Preserved_for_the_Hunt": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -690,21 +690,21 @@
         }
       },
       "attack": {
-        "Liutian_Archery": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Trail_of_the_Qilin": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Celestial_Shower": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -748,72 +748,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Shivada_Jade_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Shivada_Jade_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Shivada_Jade_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Shivada_Jade_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Shivada_Jade_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Shivada_Jade_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -848,9 +848,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -859,9 +859,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -870,9 +870,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -881,9 +881,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -892,9 +892,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -903,9 +903,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -914,9 +914,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -925,9 +925,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -936,28 +936,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Cold_Blooded_Strike": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Glacial_Heart": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Hidden_Strength": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -966,21 +966,21 @@
         }
       },
       "attack": {
-        "Ceremonial_Bladework": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Frostgnaw": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Glacial_Waltz": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -1024,72 +1024,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Shivada_Jade_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Shivada_Jade_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Shivada_Jade_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Shivada_Jade_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Shivada_Jade_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Shivada_Jade_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -1124,9 +1124,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -1135,9 +1135,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -1146,9 +1146,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -1157,9 +1157,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -1168,9 +1168,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -1179,9 +1179,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -1190,9 +1190,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -1201,9 +1201,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -1212,28 +1212,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Wishes_Unnumbered": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Enlightened_One": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "All-Preserver": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -1242,21 +1242,21 @@
         }
       },
       "attack": {
-        "Origin": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Transcendence_Baleful_Omen": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Secret_Art_Musou_Shinsetsu": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -1300,72 +1300,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Vajrada_Amethyst_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Vajrada_Amethyst_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Vajrada_Amethyst_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Vajrada_Amethyst_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Vajrada_Amethyst_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Vajrada_Amethyst_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -1400,9 +1400,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -1411,9 +1411,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -1422,9 +1422,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -1433,9 +1433,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -1444,9 +1444,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -1455,9 +1455,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -1466,9 +1466,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -1477,9 +1477,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -1488,28 +1488,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Awakening": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Hunger": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Wolvensprint": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -1518,21 +1518,21 @@
         }
       },
       "attack": {
-        "Steel_Fang": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Claw_and_Thunder": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Lightning_Fang": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -1576,72 +1576,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Vajrada_Amethyst_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Vajrada_Amethyst_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Vajrada_Amethyst_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Vajrada_Amethyst_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Vajrada_Amethyst_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Vajrada_Amethyst_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -1676,9 +1676,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -1687,9 +1687,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -1698,9 +1698,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -1709,9 +1709,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -1720,9 +1720,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -1731,9 +1731,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -1742,9 +1742,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -1753,9 +1753,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -1764,28 +1764,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Arataki_Ichiban": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Bloodline_of_the_Crimson_Oni": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Woodchuck_Chucked": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -1794,21 +1794,21 @@
         }
       },
       "attack": {
-        "Fight_Club_Legend": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Masatsu_Zetsugi_Akaushi_Burst": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Royal_Descent_Behold_Itto_the_Evil": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -1852,72 +1852,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Prithiva_Topaz_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Prithiva_Topaz_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Prithiva_Topaz_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Prithiva_Topaz_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Prithiva_Topaz_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Prithiva_Topaz_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -1952,9 +1952,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -1963,9 +1963,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -1974,9 +1974,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -1985,9 +1985,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -1996,9 +1996,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -2007,9 +2007,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -2018,9 +2018,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -2029,9 +2029,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -2040,28 +2040,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Heedless_of_the_Wind_and_Weather": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "A_Favor_Repaid": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Seeker_of_Shinies": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -2070,21 +2070,21 @@
         }
       },
       "attack": {
-        "Ripping_Fang_Fletching": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Inuzaka_All-Round_Defense": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Juuga_Forward_Unto_Victory": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -2128,72 +2128,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Prithiva_Topaz_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Prithiva_Topaz_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Prithiva_Topaz_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Prithiva_Topaz_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Prithiva_Topaz_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Prithiva_Topaz_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -2228,9 +2228,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -2239,9 +2239,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -2250,9 +2250,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -2261,9 +2261,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -2272,9 +2272,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -2283,9 +2283,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -2294,9 +2294,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -2305,9 +2305,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -2316,28 +2316,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Never_Ending": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Sword_of_Torrents": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Master_of_Weaponry": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -2346,21 +2346,21 @@
         }
       },
       "attack": {
-        "Cutting_Torrent": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Foul_Legacy_Raging_Tide": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Havoc_Obliteration": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -2404,72 +2404,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Varunada_Lazurite_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Varunada_Lazurite_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Varunada_Lazurite_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Varunada_Lazurite_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Varunada_Lazurite_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Varunada_Lazurite_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -2504,9 +2504,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -2515,9 +2515,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -2526,9 +2526,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -2537,9 +2537,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -2548,9 +2548,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -2559,9 +2559,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -2570,9 +2570,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -2581,9 +2581,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -2592,28 +2592,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Hydropathic": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Blades_Amidst_Raindrops": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Flash_of_Genius": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -2622,21 +2622,21 @@
         }
       },
       "attack": {
-        "Guhua_Style": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Guhua_Sword_Fatal_Rainscreen": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Guhua_Sword_Raincutter": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -2680,72 +2680,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Varunada_Lazurite_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Varunada_Lazurite_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Varunada_Lazurite_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Varunada_Lazurite_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Varunada_Lazurite_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Varunada_Lazurite_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -2759,7 +2759,7 @@
     "wiki": null,
     "subCollection": {}
   },
-  "Klee": {
+  "Pyro_5": {
     "image": "Characters/Pyro/",
     "gender": null,
     "birthday": null,
@@ -2780,9 +2780,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -2791,9 +2791,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -2802,9 +2802,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -2813,9 +2813,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -2824,9 +2824,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -2835,9 +2835,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -2846,9 +2846,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -2857,9 +2857,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -2868,28 +2868,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Pounding_Surprise": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Sparkling_Burst": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "All_Of_My_Treasures": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -2898,21 +2898,21 @@
         }
       },
       "attack": {
-        "Kaboom": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Jumpy_Dumpty": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Sparks_n_Splash": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -2956,72 +2956,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Agnidus_Agate_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Agnidus_Agate_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Agnidus_Agate_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Agnidus_Agate_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Agnidus_Agate_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Agnidus_Agate_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"
@@ -3035,7 +3035,7 @@
     "wiki": null,
     "subCollection": {}
   },
-  "Tohma": {
+  "Pyro_4": {
     "image": "Characters/Pyro/",
     "gender": null,
     "birthday": null,
@@ -3056,9 +3056,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_1",
           "material3qty": 3,
-          "material4": "Common",
+          "material4": "Common_1",
           "material4qty": 6
         },
         "3": {
@@ -3067,9 +3067,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 2,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 3
         },
         "4": {
@@ -3078,9 +3078,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 4
         },
         "5": {
@@ -3089,9 +3089,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 6
         },
         "6": {
@@ -3100,9 +3100,9 @@
           "material1qty": 0,
           "material2": null,
           "material2qty": 0,
-          "material3": "Mastery",
+          "material3": "Mastery_2",
           "material3qty": 9,
-          "material4": "Common",
+          "material4": "Common_2",
           "material4qty": 9
         },
         "7": {
@@ -3111,9 +3111,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 4,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 4
         },
         "8": {
@@ -3122,9 +3122,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 1,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 6,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 6
         },
         "9": {
@@ -3133,9 +3133,9 @@
           "material1qty": 0,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 12,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 9
         },
         "10": {
@@ -3144,28 +3144,28 @@
           "material1qty": 1,
           "material2": "WeeklyBossDrop",
           "material2qty": 2,
-          "material3": "Mastery",
+          "material3": "Mastery_3",
           "material3qty": 16,
-          "material4": "Common",
+          "material4": "Common_3",
           "material4qty": 12
         }
       },
       "passives": {
-        "Imbricated_Armor": {
+        "Passive_1": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 0,
           "type": "Passive 1"
         },
-        "Flaming_Assault": {
+        "Passive_2": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
           "order": 1,
           "type": "Passive 2"
         },
-        "Snap_and_Swing": {
+        "Passive_3": {
           "name": null,
           "effect": null,
           "image": "Talents/Passive/",
@@ -3174,21 +3174,21 @@
         }
       },
       "attack": {
-        "Swiftshatter_Spear": {
+        "Normal": {
           "name": null,
           "effect": null,
           "image": "Talents/Normal/",
           "order": 0,
           "type": "Normal/Charged Attack"
         },
-        "Blazing_Blessing": {
+        "Skill": {
           "name": null,
           "effect": null,
           "image": "Talents/Skill/",
           "order": 1,
           "type": "Elemental Skill"
         },
-        "Crimson_Ooyoroi": {
+        "Burst": {
           "name": null,
           "effect": null,
           "image": "Talents/Burst/",
@@ -3232,72 +3232,72 @@
     "ascension": {
       "1": {
         "material2qty": 0,
-        "material1": "Agnidus_Agate_Silver",
+        "material1": "Vayuda_Turquoise_Silver",
         "material1qty": 1,
         "mora": 20000,
         "material2": null,
         "level": 20,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
         "material3": "LocalSpeciality"
       },
       "2": {
         "material2qty": 2,
-        "material1": "Agnidus_Agate_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 3,
         "mora": 40000,
         "material2": "BossDrop",
         "level": 40,
-        "material4": "Common",
+        "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
         "material3": "LocalSpeciality"
       },
       "3": {
         "material2qty": 4,
-        "material1": "Agnidus_Agate_Fragment",
+        "material1": "Vayuda_Turquoise_Fragment",
         "material1qty": 6,
         "mora": 60000,
         "material2": "BossDrop",
         "level": 50,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
         "material3": "LocalSpeciality"
       },
       "4": {
         "material2qty": 8,
-        "material1": "Agnidus_Agate_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 3,
         "mora": 80000,
         "material2": "BossDrop",
         "level": 60,
-        "material4": "Common",
+        "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
         "material3": "LocalSpeciality"
       },
       "5": {
         "material2qty": 12,
-        "material1": "Agnidus_Agate_Chunk",
+        "material1": "Vayuda_Turquoise_Chunk",
         "material1qty": 6,
         "mora": 100000,
         "material2": "BossDrop",
         "level": 70,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
         "material3": "LocalSpeciality"
       },
       "6": {
         "material2qty": 20,
-        "material1": "Agnidus_Agate_Gemstone",
+        "material1": "Vayuda_Turquoise_Gemstone",
         "material1qty": 6,
         "mora": 120000,
         "material2": "BossDrop",
         "level": 80,
-        "material4": "Common",
+        "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
         "material3": "LocalSpeciality"

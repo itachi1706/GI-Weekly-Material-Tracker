@@ -223,6 +223,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Blackcliff_Pole",
       "subCollection": {}
     },
+    "Calamity_Queller": {
+      "secondary_stat_type": "ATK",
+      "description": "A keenly honed weapon forged from some strange crystal. Its faint blue light seems to whisper of countless matters now past.",
+      "name": "Calamity Queller",
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 3,
+          "material1": "Mist_Veiled_Lead_Elixir",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 12,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Mercury_Elixir",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 14,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 9,
+          "material1": "Mist_Veiled_Gold_Elixir",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 18,
+          "material1": "Mist_Veiled_Primo_Elixir",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Polearm/Calamity_Queller.png",
+      "secondary_stat": "3.6%",
+      "rarity": 5,
+      "type": "Polearm",
+      "max_secondary_stat": "16.5%",
+      "max_base_atk": 741,
+      "base_atk": 49,
+      "obtained": "Gacha",
+      "effectName": "Extinguishing Precept",
+      "effect": "Gain 12~24% All Elemental DMG Bonus. Obtain Consummation for 20s after using an Elemental Skill, causing ATK to increase by 3.2~6.4% per second. This ATK increase has a maximum of 6 stacks. When the character equipped with this weapon is not on the field, Consummation's ATK increase is doubled.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Calamity_Queller",
+      "subCollection": {}
+    },
     "Crescent_Pike": {
       "secondary_stat_type": "Physical DMG Bonus",
       "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",

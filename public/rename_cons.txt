@@ -1,0 +1,1 @@
+for file in Constellation_*; do mv "$file" "${file#Constellation_}";done;
