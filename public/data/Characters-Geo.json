@@ -1377,12 +1377,11 @@
       "subCollection": {}
     },
     "Yun_Jin": {
-      "image": "Characters/Geo/",
+      "image": "Characters/Geo/Yun_Jin.png",
       "gender": "Female",
       "birthday": "21/5",
       "caption": "Stage Lucida",
       "name": "Yun Jin",
-      "fullName": null,
       "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
       "nation": "Liyue",
       "weapon": "Polearm",
@@ -1494,22 +1493,22 @@
         "passives": {
           "Breaking_Conventions": {
             "name": "Breaking Conventions",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "The Normal Attack DMG Bonus granted by Flying Cloud Flag Formation is further increased by 2.5%/5%/7.5%/11.5% of Yun Jin's DEF when the party contains characters of 1/2/3/4 Elemental Types, respectively.",
+            "image": "Talents/Passive/Talent_Breaking_Conventions.png",
             "order": 0,
             "type": "Passive 1"
           },
           "True_to_Oneself": {
             "name": "True to Oneself",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "Using Opening Flourish at the precise moment when Yun Jin is attacked will unleash its Level 2 Charged (Hold) form.",
+            "image": "Talents/Passive/Talent_True_to_Oneself.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Light_Nourishment": {
+            "name": "Light Nourishment",
+            "effect": "When Perfect Cooking is achieved on Food with Adventure-related effects, there is a 12% chance to obtain double the product.",
+            "image": "Talents/Passive/Talent_Light_Nourishment.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -1517,22 +1516,22 @@
         "attack": {
           "Cloud-Grazing_Strike": {
             "name": "Cloud-Grazing Strike",
-            "effect": null,
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerforms up to five consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Cloud-Grazing_Strike.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Opening_Flourish": {
             "name": "Opening Flourish",
-            "effect": null,
-            "image": "Talents/Skill/",
+            "effect": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.\n\nPress\nFlourishes her polearm in a cloud-grasping stance, dealing Geo DMG.\n\nHold\nTakes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all Elemental DMG and Physical DMG. The shield lasts until she finishes unleashing her Elemental Skill.\nWhen the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing Geo DMG.\nBased on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.",
+            "image": "Talents/Skill/Talent_Opening_Flourish.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Cliffbreakers_Banner": {
             "name": "Cliffbreaker's Banner",
-            "effect": null,
-            "image": "Talents/Burst/",
+            "effect": "Deals AoE Geo DMG and grants all nearby party members a Flying Cloud Flag Formation.\n\nFlying Cloud Flag Formation\nWhen Normal Attack DMG is dealt to opponents, Bonus DMG will be dealt based on Yun Jin's current DEF.\nThe effects of this skill will be cleared after a set duration or after being triggered a specific number of times.\nWhen one Normal Attack hits multiple opponents, the effect is triggered multiple times according to the number of opponents hit. The number of times that the effect is triggered is counted independently for each member of the party with Flying Cloud Flag Formation.",
+            "image": "Talents/Burst/Talent_Cliffbreakers_Banner.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -1540,34 +1539,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Thespian Gallop",
+          "effect": "Opening Flourish's CD is decreased by 18%.",
+          "image": "Constellation/Thespian_Gallop.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Myriad Mise-En-Scène",
+          "effect": "After Cliffbreaker's Banner is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s.",
+          "image": "Constellation/Myriad_Mise-En-Scene.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Seafaring General",
+          "effect": "Increases the Level of Cliffbreaker's Banner by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Seafaring_General.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Flower and a Fighter",
+          "effect": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s.",
+          "image": "Constellation/Flower_and_a_Fighter.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Famed Throughout the Land",
+          "effect": "Increases the Level of Opening Flourish by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Famed_Throughout_the_Land.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Decorous Harmony",
+          "effect": "Characters under the effects of the Flying Cloud Flag Formation have their Normal ATK SPD increased by 12%.",
+          "image": "Constellation/Decorous_Harmony.png"
         }
       },
       "ascension": {
@@ -1644,11 +1643,11 @@
           "material3": "Glaze_Lily"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "introduction": "The current director of the Yun-Han Opera Troupe, a renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
+      "paimonmoepath": "characters/yun_jin",
+      "genshinggpath": "characters/YunJin",
       "element": "Geo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Yun_Jin",
       "subCollection": {}
     },
