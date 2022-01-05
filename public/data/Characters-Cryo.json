@@ -2487,12 +2487,11 @@
       "subCollection": {}
     },
     "Shenhe": {
-      "image": "Characters/Cryo/",
+      "image": "Characters/Cryo/Shenhe.png",
       "gender": "Female",
       "birthday": "3/10",
       "caption": "Lonesome Transcendence",
       "name": "Shenhe",
-      "fullName": null,
       "description": "An adepti disciple with a most unusual air about her. Having spent much time cultivating in isolation in Liyue's mountains, she has become every bit as cool and distant as the adepti themselves.",
       "nation": "Liyue",
       "weapon": "Polearm",
@@ -2604,22 +2603,22 @@
         "passives": {
           "Deific_Embrace": {
             "name": "Deific Embrace",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "An active character within the field created by Divine Maiden's Deliverance gains 15% Cryo DMG Bonus.",
+            "image": "Talents/Passive/Talent_Deific_Embrace.png",
             "order": 0,
             "type": "Passive 1"
           },
           "Spirit_Communion_Seal": {
             "name": "Spirit Communion Seal",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\nPress: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.\nHold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.",
+            "image": "Talents/Passive/Talent_Spirit_Communion_Seal.png",
             "order": 1,
             "type": "Passive 2"
           },
           "Precise_Comings_and_Goings": {
             "name": "Precise Comings and Goings",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_Precise_Comings_and_Goings.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -2627,22 +2626,22 @@
         "attack": {
           "Dawnstar_Piercer": {
             "name": "Dawnstar Piercer",
-            "effect": null,
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerforms up to five consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Dawnstar_Piercer.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Spring_Spirit_Summoning": {
             "name": "Spring Spirit Summoning",
-            "effect": null,
-            "image": "Talents/Skill/",
+            "effect": "The frosted dew, silvery and dense, shall exorcise all demons.\nGrants all nearby party members the Icy Quill effect and deals Cryo DMG in different ways based on whether it is pressed or held.\n\nPress\nRushes forward together with a Talisman Spirit, dealing Cryo DMG to opponents along the path.\n\nHold\nCommands the Talisman Spirit to deal AoE Cryo DMG.\n\nIcy Quill\nWhen Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal Cryo DMG to opponents, the DMG dealt is increased based on Shenhe's current ATK.\nThe Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times. When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.\nWhen one Cryo DMG instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+            "image": "Talents/Skill/Talent_Spring_Spirit_Summoning.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Divine_Maidens_Deliverance": {
             "name": "Divine Maiden's Deliverance",
-            "effect": null,
-            "image": "Talents/Burst/",
+            "effect": "Unleashes the power of the Talisman Spirit, allowing it to roam free in this plane, dealing AoE Cryo DMG.\n\nThe Talisman Spirit then creates a field that decreases the Cryo RES and Physical RES of opponents within it. It also deals periodic Cryo DMG to opponents within the field.",
+            "image": "Talents/Burst/Talent_Divine_Maidens_Deliverance.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -2650,34 +2649,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Clarity of Heart",
+          "effect": "Spring Spirit Summoning can be used 1 more time.",
+          "image": "Constellation/Clarity_of_Heart.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Centered Spirit",
+          "effect": "Divine Maiden's Deliverance lasts for 6 seconds longer. Active characters within the skill's field deals 15% increased Cryo CRIT DMG.",
+          "image": "Constellation/Centered_Spirit.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Seclusion",
+          "effect": "Increases Level of Spring Spirit Summoning by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Seclusion.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Insight",
+          "effect": "When characters under the effect of Icy Quill applied by Shenhe triggers its DMG Bonus effects, Shenhe will gain a Skyfrost Mantra stack:\nWhen Shenhe uses Spring Spirit Summoning, she will consume all stacks of Skyfrost Mantra, increasing the DMG of that Spring Spirit Summoning by 5% for each stack consumed.\nMax 50 stacks. Stacks last for 60s.",
+          "image": "Constellation/Insight.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Divine Attainment",
+          "effect": "Increases the Level of Divine Maiden's Deliverance by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Divine_Attainment.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Mystical Abandon",
+          "effect": "When characters trigger Icy Quill's effects using Normal and Charged Attack DMG, it does not count toward the Trigger Quota.",
+          "image": "Constellation/Mystical_Abandon.png"
         }
       },
       "ascension": {
@@ -2754,11 +2753,11 @@
           "material3": "Qingxin"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "introduction": "Even though she was born in the human world, she ended up being an adepti disciple. She grew up in the mountains far away from Liyue Harbor, her soul bound with red ropes, training both her body and mind.\nDespite having the elegant temperament of an adeptus, she seems to be shrouded in mystery.",
+      "paimonmoepath": "characters/shenhe",
+      "genshinggpath": "characters/Shenhe",
       "element": "Cryo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Shenhe",
       "subCollection": {}
     }
