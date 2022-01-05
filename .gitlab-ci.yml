@@ -71,6 +71,7 @@ Update Firestore Public Data:
   before_script:
     - mkdir util/import
     - cp public/data/*.json util/import
+    - rm util/import/EventBanners.json
     - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
     - cat $FIREBASE_SERVICE_ACCOUNT > /tmp/sak.json # For SAK
     - cd util
