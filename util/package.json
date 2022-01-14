@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node index.js",
     "updateFirestoreData": "node restore.js",
+    "updateBanners": "node banner.js",
     "updatePromoCode": "node promocrawler.js",
     "trackingBackup": "node backupTracker.js",
     "userdataBackup": "node backupUserData.js",
