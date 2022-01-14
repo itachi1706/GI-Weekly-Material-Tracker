@@ -116,7 +116,7 @@ Update Realtime DB Game Banners:
         - public/data/EventBanners.json
         - util/**/*
       when: always
-    - when: never
+    - when: always
   needs: ["Build and Test Admin Util"]
 
 Code Quality Check:
