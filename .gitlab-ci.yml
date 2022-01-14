@@ -92,6 +92,33 @@ Update Firestore Public Data:
     - when: never
   needs: ["Build and Test Admin Util"]
 
+Update Realtime DB Game Banners:
+  image: node:alpine
+  stage: deploy
+  variables:
+    GOOGLE_APPLICATION_CREDENTIALS: /tmp/sak.json
+  before_script:
+    - cp public/data/EventBanners.json util
+    - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
+    - cat $FIREBASE_SERVICE_ACCOUNT > /tmp/sak.json # For SAK
+    - cd util
+    - npm i
+  script: npm run updateBanners
+  after_script:
+    - rm /tmp/sak.json # Ensure cleanup
+  dependencies:
+    - Build and Test Admin Util
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      changes:
+        - public/data/EventBanners.json
+        - util/**/*
+      when: always
+    - when: never
+  needs: ["Build and Test Admin Util"]
+
 Code Quality Check:
   image: itachi1706/flutter-alpine-android:web
   stage: test
