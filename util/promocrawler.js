@@ -21,28 +21,24 @@ fetch('https://www.gensh.in/events/promotion-codes')
 .then(res => res.text())
 .then(async text => {
     // Debug
-    //console.log(text);
+    // console.log(text);
 
     const root = parser.parse(text);
-    let table = root.querySelector(".ce-table-bordered");
-    let tableBody = table.querySelector("tbody");
-    let td = tableBody.querySelectorAll("td");
-    console.log(`Cell Count: ${td.length}`);
-
-    console.log(">>> Cleaning crawled codes");
-    td = td.map(s => s.removeWhitespace());
-
-    console.log(">>> Saving codes crawled to array");
+    let table = root.querySelectorAll(".promocode-row");
+    console.log(`Cell Count: ${table.length}`);
+    
     let codes = [];
-    for (let i = 0; i < td.length; i+=6) {
-        let code = { dateString: td[i].text.trim(), reward: td[i+1].text.trim(), expired: td[i+2].text.trim(), eu: td[i+3].text.trim(), na: td[i+4].text.trim(), asia: td[i+5].text.trim(), type: 'code' };
-        if (code.expired.toLowerCase().startsWith('yes')) {
-            code.expired = true;
-            code.notify = false;
-        } else {
-            code.expired = false;
-            code.notify = true;
-        }
+    console.log(">>> Saving codes crawled to array");
+    for (let row of table) {
+        let child = row.childNodes;
+        let dt = child[0].text.replace(".", "").trim();
+        let reward = child[1].text.trim().split('  ').join(', ');
+        let eu = child[2].text.trim();
+        let na = child[3].text.trim();
+        let asia = child[4].text.trim();
+
+        // TODO: Try and get another source. Until we get said source, we would presume all code is expired
+        let code = { dateString: dt, reward: reward, expired: true, eu: eu, na: na, asia: asia, type: 'code', notify: false };
         codes.push(code);
     }
 
