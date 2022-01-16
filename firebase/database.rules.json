@@ -3,7 +3,8 @@
     ".read": false,
     ".write": false,
     "codes": {
-      ".read": "auth.uid != null"
+      ".read": "auth.uid != null",
+      ".indexOn": "date"
     }
   }
 }

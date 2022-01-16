@@ -36,7 +36,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
     if (_location == null) {
       return Util.loadingScreenWithDrawer(const DrawerComponent());
     }
-    final query = db.ref('codes');
+    final query = db.ref('codes').orderByChild("date");
 
     return Scaffold(
       appBar: AppBar(
@@ -56,14 +56,15 @@ class _PromoCodePageState extends State<PromoCodePage> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Text(
-                'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.',
+                'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.\nNote: Some codes may have expired',
                 style: const TextStyle(fontSize: 12),
                 textAlign: TextAlign.center,
               ),
             ),
             FirebaseDatabaseListView(
               query: query,
-              pageSize: 20,
+              pageSize: 100,
+              reverse: true,
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, snapshot) {
@@ -77,31 +78,37 @@ class _PromoCodePageState extends State<PromoCodePage> {
                     subtitle += ', Expires: ${promoCode.expiryString}';
                   }
 
-                  return ListTile(
-                    tileColor: _getExpiredColor(promoCode.expired),
-                    title: Text(promoCode.reward),
-                    subtitle: Text(subtitle),
-                    isThreeLine: true,
-                    onTap: () => Util.launchWebPage(promoCode.url),
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    child: ListTile(
+                      // tileColor: _getExpiredColor(promoCode.expired),
+                      title: Text(promoCode.reward),
+                      subtitle: Text(subtitle),
+                      isThreeLine: true,
+                      onTap: () => Util.launchWebPage(promoCode.url),
+                    ),
                   );
                 }
 
                 var promoCodeRegion = _getCode(promoCode);
 
-                return ListTile(
-                  title: Text(promoCode.reward),
-                  tileColor: _getExpiredColor(promoCode.expired),
-                  subtitle: Text(
-                    'Code: $promoCodeRegion\nTime: ${promoCode.date}, Expired: ${promoCode.expired}',
+                return Card(
+                  margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  child: ListTile(
+                    title: Text(promoCode.reward),
+                    // tileColor: _getExpiredColor(promoCode.expired),
+                    subtitle: Text(
+                      'Code: $promoCodeRegion\nTime: ${promoCode.date}, Expired: ${promoCode.expired}',
+                    ),
+                    isThreeLine: true,
+                    onTap: () {
+                      Clipboard.setData(ClipboardData(text: promoCodeRegion));
+                      Util.showSnackbarQuick(
+                        context,
+                        'Code ($promoCodeRegion) copied to clipboard',
+                      );
+                    },
                   ),
-                  isThreeLine: true,
-                  onTap: () {
-                    Clipboard.setData(ClipboardData(text: promoCodeRegion));
-                    Util.showSnackbarQuick(
-                      context,
-                      'Code ($promoCodeRegion) copied to clipboard',
-                    );
-                  },
                 );
               },
             ),
@@ -126,13 +133,15 @@ class _PromoCodePageState extends State<PromoCodePage> {
     }
   }
 
-  Color _getExpiredColor(bool expired) {
-    return expired
-        ? (Util.themeNotifier.isDarkMode())
-            ? Colors.red
-            : Colors.deepOrangeAccent
-        : (Util.themeNotifier.isDarkMode())
-            ? Colors.green
-            : Colors.lightGreen;
-  }
+  // Disabled until further notice
+  // We no longer know whether the code is expired or not
+  // Color _getExpiredColor(bool expired) {
+  //   return expired
+  //       ? (Util.themeNotifier.isDarkMode())
+  //           ? Colors.red
+  //           : Colors.deepOrangeAccent
+  //       : (Util.themeNotifier.isDarkMode())
+  //           ? Colors.green
+  //           : Colors.lightGreen;
+  // }
 }
