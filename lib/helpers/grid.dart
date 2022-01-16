@@ -82,7 +82,8 @@ class GridData {
     return null;
   }
 
-  static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
+  static List<QueryDocumentSnapshot> getDataListFilteredRelease(
+      List<QueryDocumentSnapshot> snapshot) {
     var data = <QueryDocumentSnapshot>[];
     for (var element in snapshot) {
       var dt = element.data() as Map<String, dynamic>;
@@ -112,13 +113,13 @@ class GridData {
     // });
 
     for (var element in _snapData) {
-        var dt = element.data() as Map<String, dynamic>;
-        if (dt['released']) {
-          data.putIfAbsent(element.id, () => dt);
-        } else {
-          debugPrint("Skipping ${dt['name']}");
-        }
+      var dt = element.data() as Map<String, dynamic>;
+      if (dt['released']) {
+        data.putIfAbsent(element.id, () => dt);
+      } else {
+        debugPrint("Skipping ${dt['name']}");
       }
+    }
     switch (type) {
       case 'characters':
         _staticData[type] = CharacterData.getList(data);
@@ -140,8 +141,10 @@ class GridData {
   static Future<Map<String, WeaponData>?> retrieveWeaponsMapData() async =>
       (await _retrieveStaticData('weapons')) as Map<String, WeaponData>?;
 
-  static Future<Map<String, CharacterData>?> retrieveCharactersMapData() async =>
-      (await _retrieveStaticData('characters')) as Map<String, CharacterData>?;
+  static Future<Map<String, CharacterData>?>
+      retrieveCharactersMapData() async =>
+          (await _retrieveStaticData('characters'))
+              as Map<String, CharacterData>?;
 
   static String getDayString(int day) {
     switch (day) {
@@ -195,9 +198,14 @@ class GridData {
     }
   }
 
-  static Widget getImageAssetFromFirebase(imageRef, {double? height}) {
+  static Widget getImageAssetFromFirebase(
+    imageRef, {
+    double? height,
+    double? width,
+    double padding = 8.0,
+  }) {
     if (imageRef == null) return Image.memory(kTransparentImage);
-    var width = height;
+    width = width ?? height;
 
     return FutureBuilder(
       future: Util.getFirebaseStorageUrl(imageRef),
@@ -205,7 +213,7 @@ class GridData {
         if (snapshot.hasData) {
           return Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(padding),
               child: SizedBox(
                 height: height,
                 width: width,
@@ -215,8 +223,10 @@ class GridData {
                     width: width,
                     child: const CircularProgressIndicator(),
                   ),
-                  errorBuilder: (context, obj, trace) => const Icon(Icons.error),
+                  errorBuilder: (context, obj, trace) =>
+                      const Icon(Icons.error),
                   image: _getFirebaseImage(snapshot.data.toString()),
+                  fit: BoxFit.fitWidth,
                   placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
               ),
@@ -444,6 +454,7 @@ class GridData {
   }
 
   static ImageProvider _getFirebaseImage(String? url) {
-    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!)) as ImageProvider<Object>;
+    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
+        as ImageProvider<Object>;
   }
 }
