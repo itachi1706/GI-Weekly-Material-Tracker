@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
@@ -12,7 +13,6 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -168,8 +168,8 @@ class _SettingsPageState extends State<SettingsPage> {
     if (kIsWeb) {
       // Return no op
       return [
-        const SettingsTile(
-          trailing: SizedBox.shrink(),
+        SettingsTile(
+          trailing: const SizedBox.shrink(),
           title: 'Notifications not supported on web',
           enabled: false,
         ),
