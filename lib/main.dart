@@ -12,6 +12,7 @@ import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
 import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
+import 'package:gi_weekly_material_tracker/widgets/wishbanners.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -76,7 +77,10 @@ class _MyAppState extends State<MyApp> {
           page: () => const DictionaryPage(),
           transition: Transition.noTransition,
         ),
-        GetPage(name: '/materials/:material', page: () => const MaterialInfoPage()),
+        GetPage(
+          name: '/materials/:material',
+          page: () => const MaterialInfoPage(),
+        ),
         GetPage(
           name: '/characters/:character',
           page: () => const CharacterInfoMainPage(),
@@ -96,6 +100,11 @@ class _MyAppState extends State<MyApp> {
         GetPage(
           name: '/promos',
           page: () => const PromoCodePage(),
+          transition: Transition.noTransition,
+        ),
+        GetPage(
+          name: '/bannerinfo',
+          page: () => const WishListPage(),
           transition: Transition.noTransition,
         ),
       ],

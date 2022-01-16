@@ -38,46 +38,51 @@ class _DrawerComponentState extends State<DrawerComponent> {
               padding: EdgeInsets.zero,
               children: [
                 _drawerItem(
-                  icon: Icons.home,
+                  iconData: Icons.home,
                   title: 'Tracking',
                   route: '/tracking',
                 ),
                 _drawerItem(
-                  icon: Icons.menu_book_outlined,
+                  iconData: Icons.menu_book_outlined,
                   title: 'Dictionary',
                   route: '/dictionary',
                 ),
                 _drawerItem(
-                  icon: MdiIcons.compass,
+                  iconData: MdiIcons.compass,
                   title: 'Parametric Transformer',
                   route: '/parametric',
                 ),
                 _drawerItem(
-                  icon: MdiIcons.ticket,
+                  iconData: MdiIcons.ticket,
                   title: 'Promo Codes',
                   route: '/promos',
                 ),
+                _drawerItem(
+                  iconAsset: 'assets/images/items/Item_Primogem.png',
+                  title: 'Wish Banners',
+                  route: '/bannerinfo',
+                ),
                 const Divider(),
                 _drawerItem(
-                  icon: MdiIcons.alarm,
+                  iconData: MdiIcons.alarm,
                   title: 'Daily Forum Login',
                   onTap: _dailyLogin,
                   offPrev: false,
                 ),
                 _drawerItem(
-                  icon: Icons.forum,
+                  iconData: Icons.forum,
                   title: 'HoYoLabs Forum',
                   onTap: _launchHoyoLabs,
                   offPrev: false,
                 ),
                 _drawerItem(
-                  icon: MdiIcons.swordCross,
+                  iconData: MdiIcons.swordCross,
                   title: 'Battle Chronicles',
                   onTap: _launchBattleChronicle,
                   offPrev: false,
                 ),
                 _drawerItem(
-                  icon: Icons.map,
+                  iconData: Icons.map,
                   title: 'Game Map',
                   onTap: _launchMap,
                   offPrev: false,
@@ -85,13 +90,13 @@ class _DrawerComponentState extends State<DrawerComponent> {
                 ..._addWebComponent(),
                 const Divider(),
                 _drawerItem(
-                  icon: Icons.settings,
+                  iconData: Icons.settings,
                   title: 'Settings',
                   route: '/settings',
                   offPrev: false,
                 ),
                 _drawerItem(
-                  icon: Icons.logout,
+                  iconData: Icons.logout,
                   title: 'Logout',
                   onTap: _signOut,
                 ),
@@ -141,7 +146,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
         ? [
             const Divider(),
             _drawerItem(
-              icon: MdiIcons.refresh,
+              iconData: MdiIcons.refresh,
               title: 'Reload Page',
               route: '/splash',
             ),
@@ -159,17 +164,22 @@ class _DrawerComponentState extends State<DrawerComponent> {
   }
 
   Widget _drawerItem({
-    IconData? icon,
+    IconData? iconData,
+    String? iconAsset,
     String? title,
     GestureTapCallback? onTap,
     String? route,
     bool offPrev = true,
   }) {
+    Widget icon = Icon(iconData);
+    if (iconAsset != null) {
+      icon = ImageIcon(AssetImage(iconAsset));
+    }
     if (route != null) {
       return ListTile(
         title: Row(
           children: [
-            Icon(icon),
+            icon,
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: Text(title!),
@@ -197,7 +207,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
     return ListTile(
       title: Row(
         children: [
-          Icon(icon),
+          icon,
           Padding(
             padding: const EdgeInsets.only(left: 8),
             child: Text(title!),
