@@ -83,6 +83,13 @@ class _LoginPageState extends State<LoginPage> {
       wid.add(const Text('Logging In'));
     }
 
+    if (kIsWeb) {
+      // Add footnote for login
+      wid.insert(0, const Spacer());
+      wid.add(const Spacer());
+      wid.add(const Text("Note: If you have just logged in, please wait a while on this page for the login to complete"));
+  }
+
     return wid;
   }
 
