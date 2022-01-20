@@ -1,7 +1,10 @@
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
+
 class BannerData {
   String name;
-  String start;
-  String end;
+  DateTime start;
+  DateTime end;
   String description;
   String type;
   List<String> characters;
@@ -12,6 +15,8 @@ class BannerData {
   int hardPity;
   String? wiki;
   String? image;
+
+  BannerStatus status = BannerStatus.unknown;
 
   BannerData({
     required this.name,
@@ -25,6 +30,7 @@ class BannerData {
     required this.rateUpWeapons,
     required this.softPity,
     required this.hardPity,
+    required this.status,
     this.wiki,
     this.image,
   });
@@ -51,10 +57,25 @@ class BannerData {
             .cast<String>() ??
         [];
 
+    var start = DateTime.parse(parsedJson['start']);
+    var end = DateTime.parse(parsedJson['end']);
+    var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
+    BannerStatus status = BannerStatus.unknown;
+    if (curDt.isBefore(start)) {
+      // Upcoming as current time is before start time
+      status = BannerStatus.upcoming;
+    } else if (curDt.isAfter(end)) {
+      // Expired as current time is after start time and end time
+      status = BannerStatus.ended;
+    } else {
+      // Present as current time is after start time and before end time
+      status = BannerStatus.current;
+    }
+
     return BannerData(
       name: parsedJson['name'],
-      start: parsedJson['start'],
-      end: parsedJson['end'],
+      start: DateTime.parse(parsedJson['start']),
+      end: DateTime.parse(parsedJson['end']),
       description: parsedJson['description'],
       type: parsedJson['type'],
       characters: char,
@@ -65,6 +86,14 @@ class BannerData {
       hardPity: parsedJson['hardpity'],
       wiki: parsedJson['wiki'],
       image: parsedJson['image'],
+      status: status,
     );
   }
+}
+
+enum BannerStatus {
+  upcoming,
+  current,
+  ended,
+  unknown,
 }

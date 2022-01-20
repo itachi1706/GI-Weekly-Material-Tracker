@@ -1,6 +1,9 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_countdown_timer/current_remaining_time.dart';
+import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:flutterfire_ui/database.dart';
+import 'package:gi_weekly_material_tracker/extensions/string_extensions.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/bannerdata.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
@@ -8,8 +11,8 @@ import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz;
-import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseDatabase db = FirebaseDatabase.instance;
 
@@ -133,13 +136,12 @@ class WishPageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var start = DateTime.parse(data.start);
-    var end = DateTime.parse(data.end);
-    var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
-
-    // TODO: Check if expired
-    // TODO: Check if upcoming
-
+    Color color = Colors.red;
+    if (data.status == BannerStatus.upcoming) {
+      color = Colors.grey;
+    } else if (data.status == BannerStatus.current) {
+      color = Colors.green;
+    }
 
     return Card(
       clipBehavior: Clip.antiAlias,
@@ -152,7 +154,20 @@ class WishPageCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                GridData.getImageAssetFromFirebase(data.image),
+                Stack(
+                  children: [
+                    GridData.getImageAssetFromFirebase(data.image),
+                    Align(
+                      alignment: FractionalOffset.topRight,
+                      child: Container(
+                        margin: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(4),
+                        color: color.withOpacity(0.75),
+                        child: Text(data.status.name.capitalized()),
+                      ),
+                    ),
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8),
                   child: Column(
@@ -163,7 +178,10 @@ class WishPageCard extends StatelessWidget {
                         data.name,
                         style: const TextStyle(fontSize: 18),
                       ),
-                      Text('${start.toLocal().toString()} - ${end.toLocal().toString()}'),
+                      Text(
+                        '${data.start.toLocal().toString()} - ${data.end.toLocal().toString()}',
+                      ),
+                      ..._getCountdown(),
                       ..._getRateUps(),
                     ],
                   ),
@@ -174,6 +192,72 @@ class WishPageCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<Widget> _getCountdown() {
+    if (data.type.toLowerCase() == "standard") {
+      return <Widget>[const Text('Permenant Banner')];
+    }
+
+    var list = <Widget>[];
+    switch (data.status) {
+      case BannerStatus.upcoming:
+        list.add(CountdownTimer(
+          endTime: data.start.millisecondsSinceEpoch,
+          endWidget: const Text('The banner is now available!'),
+          widgetBuilder: (_, CurrentRemainingTime? time) {
+            if (time == null) {
+              return const Text('Unknown Time');
+            }
+
+            return Text(
+              '${_getRemainingTimeString(time)} to release',
+            );
+          },
+        ));
+        break;
+      case BannerStatus.current:
+        list.add(CountdownTimer(
+          endTime: data.end.millisecondsSinceEpoch,
+          endWidget: const Text('The banner is now over!'),
+          widgetBuilder: (_, CurrentRemainingTime? time) {
+            if (time == null) {
+              return const Text('Unknown Time');
+            }
+
+            return Text(
+              '${_getRemainingTimeString(time)} remaining',
+            );
+          },
+        ));
+        break;
+      case BannerStatus.ended:
+        list.add(const Text('The banner has ended'));
+        break;
+      default:
+        list.add(const Text('Unknown Banner Status'));
+        break;
+    }
+
+    return list;
+  }
+
+  String _getRemainingTimeString(CurrentRemainingTime time) {
+    String craft = '';
+    if (time.days != null && time.days! > 0) {
+      craft += '${time.days} days, ';
+    }
+    if (time.hours != null && time.hours! > 0) {
+      craft += '${time.hours} hours, ';
+    }
+    if (time.min != null && time.min! > 0) {
+      craft += '${time.min} mins, ';
+    }
+    if (time.sec != null) {
+      craft += '${time.sec! > 0 ? time.sec : 0} secs';
+    }
+
+    return craft;
   }
 
   List<Widget> _getRateUps() {
@@ -190,19 +274,13 @@ class WishPageCard extends StatelessWidget {
     List<Widget> rowChild = [];
     if (data.rateUpCharacters.isNotEmpty) {
       for (var character in data.rateUpCharacters) {
-        rowChild.add(GridData.getImageAssetFromFirebase(
-          characterInfo[character]?.image,
-          height: 32,
-        ));
+        rowChild.add(_getRateUpStack(characterInfo[character]?.image));
       }
     }
 
     if (data.rateUpWeapons.isNotEmpty) {
       for (var weapon in data.rateUpWeapons) {
-        rowChild.add(GridData.getImageAssetFromFirebase(
-          weaponInfo[weapon]?.image,
-          height: 32,
-        ));
+        rowChild.add(_getRateUpStack(weaponInfo[weapon]?.image));
       }
     }
 
@@ -211,5 +289,18 @@ class WishPageCard extends StatelessWidget {
     ));
 
     return finalWidgets;
+  }
+
+  Widget _getRateUpStack(String? imageUrl) {
+    return Stack(
+      alignment: Alignment.bottomRight,
+      children: [
+        GridData.getImageAssetFromFirebase(
+          imageUrl,
+          height: 32,
+        ),
+        const Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20,),
+      ],
+    );
   }
 }
