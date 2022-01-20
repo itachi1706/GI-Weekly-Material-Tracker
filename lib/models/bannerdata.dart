@@ -15,6 +15,7 @@ class BannerData {
   int hardPity;
   String? wiki;
   String? image;
+  String key;
 
   BannerStatus status = BannerStatus.unknown;
 
@@ -31,11 +32,12 @@ class BannerData {
     required this.softPity,
     required this.hardPity,
     required this.status,
+    required this.key,
     this.wiki,
     this.image,
   });
 
-  factory BannerData.fromJson(Map<dynamic, dynamic> parsedJson) {
+  factory BannerData.fromJson(Map<dynamic, dynamic> parsedJson, String key) {
     List<String> char = parsedJson['characters']
             ?.map((s) => s.toString())
             .toList()
@@ -86,6 +88,7 @@ class BannerData {
       hardPity: parsedJson['hardpity'],
       wiki: parsedJson['wiki'],
       image: parsedJson['image'],
+      key: key,
       status: status,
     );
   }

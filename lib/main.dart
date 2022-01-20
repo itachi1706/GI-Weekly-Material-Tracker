@@ -107,6 +107,10 @@ class _MyAppState extends State<MyApp> {
           page: () => const WishListPage(),
           transition: Transition.noTransition,
         ),
+        GetPage(
+          name: '/bannerinfo/:type/:index',
+          page: () => const BannerInfoPage(),
+        ),
       ],
     );
   }

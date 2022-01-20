@@ -1,8 +1,10 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/current_remaining_time.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:flutterfire_ui/database.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/extensions/string_extensions.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/bannerdata.dart';
@@ -104,7 +106,7 @@ class _WishListPageContentState extends State<WishListPageContent> {
       },
       itemBuilder: (context, snapshot) {
         var bannerRaw = snapshot.value as Map<dynamic, dynamic>;
-        var banner = BannerData.fromJson(bannerRaw);
+        var banner = BannerData.fromJson(bannerRaw, snapshot.key!);
 
         return WishPageCard(banner, _characterData!, _weaponData!);
       },
@@ -284,6 +286,10 @@ class WishPageCard extends StatelessWidget {
       children: rowChild,
     ));
 
+    if (kDebugMode) {
+      finalWidgets.add(Text('Debug Index: ${data.type}/${data.key}'));
+    }
+
     return finalWidgets;
   }
 
@@ -343,8 +349,9 @@ class _CurrentWishListPageContentState
 
         var data = <BannerData>[];
         for (var element in snapshot.docs) {
-          data.addAll((element.value as List<dynamic>)
-              .map((e) => BannerData.fromJson(e))
+          data.addAll((element.value as List<dynamic>).asMap()
+              .map((i, e) => MapEntry(i, BannerData.fromJson(e, i.toString())))
+              .values
               .where((v) => v.status == BannerStatus.current)
               .toList());
         }
@@ -377,6 +384,57 @@ class _CurrentWishListPageContentState
           },
         );
       },
+    );
+  }
+
+  void _getStaticData() async {
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    setState(() {
+      _characterData = characterData;
+      _weaponData = weaponData;
+    });
+  }
+}
+
+class BannerInfoPage extends StatefulWidget {
+  const BannerInfoPage({Key? key}) : super(key: key);
+
+  @override
+  _BannerInfoPageState createState() => _BannerInfoPageState();
+}
+
+class _BannerInfoPageState extends State<BannerInfoPage> {
+  Map<String, WeaponData>? _weaponData;
+  Map<String, CharacterData>? _characterData;
+
+  String? _type, _index;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _getStaticData();
+    _type = Get.parameters["type"];
+    _index = Get.parameters["index"];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_type == null || _index == null) {
+      return _unknownBanner();
+    }
+
+    // TODO: implement build
+    return PlaceholderPage();
+  }
+
+  Widget _unknownBanner() {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Unknown Banner'),
+      ),
+      body: const Center(child: Text('Cannot find banner information')),
     );
   }
 
