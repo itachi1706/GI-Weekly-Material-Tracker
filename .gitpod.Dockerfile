@@ -10,7 +10,7 @@ USER root
 
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     apt-get update && \
-    apt-get -y install libpulse0 build-essential libkrb5-dev gcc make android-sdk && \
+    apt-get -y install libpulse0 build-essential libkrb5-dev gcc make && \
     apt-get clean && \
     apt-get -y autoremove && \
     apt-get -y clean && \
@@ -27,17 +27,18 @@ RUN $FLUTTER_HOME/bin/flutter channel stable && $FLUTTER_HOME/bin/flutter upgrad
 
 # Change the PUB_CACHE to /workspace so dependencies are preserved.
 ENV PUB_CACHE=/workspace/.pub_cache
-ENV ANDROID_HOME=/usr/lib/android-sdk
+ENV ANDROID_HOME=/home/gitpod/android-sdk
 
 # Install Android SDK necessary files
-RUN wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip && \
+RUN mkdir /home/gitpod/android-sdk && \
+wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip && \
 unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools && \
 sudo mv cmdline-tools $ANDROID_HOME/ && \
 rm commandlinetools-linux-6609375_latest.zip
 
-RUN yes | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
-RUN echo y | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager "platform-tools" >/dev/null
-RUN echo y | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager "cmdline-tools;latest" >/dev/null
+RUN yes | /home/gitpod/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
+RUN echo y | /home/gitpod/android-sdk/cmdline-tools/tools/bin/sdkmanager "platform-tools" >/dev/null
+RUN echo y | /home/gitpod/android-sdk/cmdline-tools/tools/bin/sdkmanager "cmdline-tools;latest" >/dev/null
 
 # add executables to PATH
 RUN echo 'export PATH=${ANDROID_HOME}/cmdline-tools/tools/bin:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin:${PUB_CACHE}/bin:${FLUTTER_HOME}/.pub-cache/bin:$PATH' >>~/.bashrc
