@@ -5,9 +5,9 @@ tasks:
   - before: >
       source ~/.bashrc
     init: |
-      echo $FIREBASE_SERVICE_ACCOUNT_KEY > util/serviceAccountKey.json
       flutter run -d web-server --no-resident
       flutter doctor -v
+    command: echo $FIREBASE_SERVICE_ACCOUNT_KEY > util/serviceAccountKey.json
     #command: >
     #  flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0 &&
     #  echo Ready!
