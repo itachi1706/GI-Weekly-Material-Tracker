@@ -26,6 +26,7 @@ class WishListPage extends StatefulWidget {
 class _WishListPageState extends State<WishListPage>
     with TickerProviderStateMixin {
   final List<Tab> _tabs = [
+    const Tab(text: 'Current'),
     const Tab(text: 'Character'),
     const Tab(text: 'Weapon'),
     const Tab(text: 'Standard'),
@@ -34,6 +35,7 @@ class _WishListPageState extends State<WishListPage>
   TabController? _tabController;
 
   final List<Widget> _children = [
+    const CurrentWishListPageContent(),
     const WishListPageContent(wishType: 'character'),
     const WishListPageContent(wishType: 'weapon'),
     const WishListPageContent(wishType: 'standard'),
@@ -68,9 +70,8 @@ class _WishListPageState extends State<WishListPage>
 
 class WishListPageContent extends StatefulWidget {
   final String wishType;
-  final Color? color; // TODO: To remove when placeholder completes
 
-  const WishListPageContent({Key? key, required this.wishType, this.color})
+  const WishListPageContent({Key? key, required this.wishType})
       : super(key: key);
 
   @override
@@ -90,11 +91,6 @@ class _WishListPageContentState extends State<WishListPageContent> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: To remove when placeholder completes
-    if (widget.color != null) {
-      return PlaceholderWidgetContainer(widget.color!);
-    }
-
     if (_characterData == null || _weaponData == null) {
       return Util.centerLoadingCircle("Getting Banners...");
     }
@@ -299,8 +295,97 @@ class WishPageCard extends StatelessWidget {
           imageUrl,
           height: 32,
         ),
-        const Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20,),
+        const Icon(
+          MdiIcons.arrowUpBold,
+          color: Colors.green,
+          size: 20,
+        ),
       ],
     );
+  }
+}
+
+class CurrentWishListPageContent extends StatefulWidget {
+  const CurrentWishListPageContent({Key? key}) : super(key: key);
+
+  @override
+  _CurrentWishListPageContentState createState() =>
+      _CurrentWishListPageContentState();
+}
+
+class _CurrentWishListPageContentState
+    extends State<CurrentWishListPageContent> {
+  Map<String, WeaponData>? _weaponData;
+  Map<String, CharacterData>? _characterData;
+
+  @override
+  void initState() {
+    super.initState();
+    _getStaticData();
+    tz.initializeTimeZones();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_characterData == null || _weaponData == null) {
+      return Util.centerLoadingCircle("Getting Banners...");
+    }
+    final query = db.ref('banners');
+
+    return FirebaseDatabaseQueryBuilder(
+      query: query,
+      builder: (context, snapshot, _) {
+        if (snapshot.isFetching) {
+          return Util.centerLoadingCircle('Getting current banners...');
+        } else if (snapshot.hasError) {
+          return Text('Error getting banners ${snapshot.error}');
+        }
+
+        var data = <BannerData>[];
+        for (var element in snapshot.docs) {
+          data.addAll((element.value as List<dynamic>)
+              .map((e) => BannerData.fromJson(e))
+              .where((v) => v.status == BannerStatus.current)
+              .toList());
+        }
+
+        // Sort permanent banner to the back
+        data.sort((a, b) {
+          if (a.type.toLowerCase() == "standard" &&
+              b.type.toLowerCase() != "standard") {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        if (data.isEmpty) {
+          return const Center(
+            child: Text(
+              'No banners currently active',
+              style: TextStyle(fontSize: 24),
+            ),
+          );
+        }
+
+        return ListView.builder(
+          itemCount: data.length,
+          itemBuilder: (context, i) {
+            var banner = data[i];
+
+            return WishPageCard(banner, _characterData!, _weaponData!);
+          },
+        );
+      },
+    );
+  }
+
+  void _getStaticData() async {
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    setState(() {
+      _characterData = characterData;
+      _weaponData = weaponData;
+    });
   }
 }
