@@ -32,7 +32,9 @@ ENV ANDROID_HOME=/usr/lib/android-sdk
 # Install Android SDK necessary files
 RUN wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip && \
 unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools && \
-sudo mv cmdline-tools $ANDROID_HOME/
+sudo mv cmdline-tools $ANDROID_HOME/ && \
+rm commandlinetools-linux-6609375_latest.zip
+
 RUN yes | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager --licenses
 RUN echo y | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager "platform-tools" >/dev/null
 RUN echo y | /usr/lib/android-sdk/cmdline-tools/tools/bin/sdkmanager "cmdline-tools;latest" >/dev/null
