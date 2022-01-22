@@ -1,3 +1,4 @@
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,8 @@ import 'package:gi_weekly_material_tracker/extensions/string_extensions.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/bannerdata.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -145,7 +146,7 @@ class WishPageCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
-        onTap: () => PlaceholderUtil.showUnimplementedSnackbar(context),
+        onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
         child: Column(
           children: <Widget>[
             Column(
@@ -349,7 +350,8 @@ class _CurrentWishListPageContentState
 
         var data = <BannerData>[];
         for (var element in snapshot.docs) {
-          data.addAll((element.value as List<dynamic>).asMap()
+          data.addAll((element.value as List<dynamic>)
+              .asMap()
               .map((i, e) => MapEntry(i, BannerData.fromJson(e, i.toString())))
               .values
               .where((v) => v.status == BannerStatus.current)
@@ -410,13 +412,14 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
 
   String? _type, _index;
 
+  BannerData? _bannerInfo;
 
   @override
   void initState() {
     super.initState();
-    _getStaticData();
     _type = Get.parameters["type"];
     _index = Get.parameters["index"];
+    _getStaticData();
   }
 
   @override
@@ -425,8 +428,141 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
       return _unknownBanner();
     }
 
-    // TODO: implement build
-    return PlaceholderPage();
+    if (_bannerInfo == null) {
+      return Util.loadingScreen();
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_bannerInfo!.name),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GridData.getImageAssetFromFirebase(_bannerInfo!.image),
+            ...GridData.generateInfoLine(
+              '${_bannerInfo!.start.toLocal().toString()} - ${_bannerInfo!.end.toLocal().toString()}',
+              Icons.timer,
+            ),
+            ..._getCountdown(),
+            ...GridData.generateInfoLine(
+              _bannerInfo!.description,
+              Icons.format_list_bulleted,
+            ),
+            ..._generateLists(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _generateLists() {
+    var finalWidgets = <Widget>[];
+
+    finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    if (_bannerInfo!.rateUpCharacters.isNotEmpty) {
+      finalWidgets.add(
+        const Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: Text(
+            "Rate Up Characters",
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+      );
+      finalWidgets.add(_getGrid(_bannerInfo!.rateUpCharacters, 'characters'));
+      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    }
+
+    if (_bannerInfo!.rateUpWeapons.isNotEmpty) {
+      finalWidgets.add(
+        const Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: Text(
+            "Rate Up Weapons",
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+      );
+      finalWidgets.add(_getGrid(_bannerInfo!.rateUpWeapons, 'weapons'));
+      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    }
+
+    if (_bannerInfo!.characters.isNotEmpty) {
+      finalWidgets.add(
+        const Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: Text(
+            "Characters",
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+      );
+      finalWidgets.add(_getGrid(_bannerInfo!.characters, 'characters'));
+      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    }
+
+    if (_bannerInfo!.weapons.isNotEmpty) {
+      finalWidgets.add(
+        const Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: Text(
+            "Weapons",
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+      );
+      finalWidgets.add(_getGrid(_bannerInfo!.weapons, 'weapons'));
+      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    }
+
+    finalWidgets.removeLast(); // Remove padding at the end
+
+    return finalWidgets;
+  }
+
+  Widget _getGrid(List<String> names, String type) {
+    List<MapEntry<String, CommonData?>> gridEntries = [];
+    gridEntries = type == 'characters'
+        ? names.map((e) => MapEntry(e, _characterData![e])).toList()
+        : names.map((e) => MapEntry(e, _weaponData![e])).toList();
+
+    var oldCnt = gridEntries.length;
+    gridEntries.removeWhere(
+      (element) => element.value == null,
+    ); // Remove null characters
+    var newCnt = gridEntries.length;
+
+    if (oldCnt != newCnt) {
+      FirebaseCrashlytics.instance.printError(
+        info:
+            "ERR: Mismatched length for ${_bannerInfo!.name}. Please check list here: $gridEntries",
+      );
+    }
+
+    debugPrint("GridLen: ${gridEntries.length}");
+
+    // return SizedBox.shrink();
+
+    return Flexible(
+      child: GridView.count(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        crossAxisCount:
+            (MediaQuery.of(context).orientation == Orientation.portrait)
+                ? 3
+                : 6,
+        children: gridEntries.map((entry) {
+          return GestureDetector(
+            onTap: () => Get.toNamed('/$type/${entry.key}'),
+            child: GridData.getGridData(entry.value!),
+          );
+        }).toList(),
+      ),
+    );
   }
 
   Widget _unknownBanner() {
@@ -438,12 +574,114 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
     );
   }
 
+  List<Widget> _getCountdown() {
+    if (_bannerInfo!.type.toLowerCase() == "standard") {
+      return GridData.generateInfoLine(
+        'Permanent Banner',
+        Icons.hourglass_bottom,
+      );
+    }
+
+    var list = <Widget>[];
+    switch (_bannerInfo!.status) {
+      case BannerStatus.upcoming:
+        list.add(CountdownTimer(
+          endTime: _bannerInfo!.start.millisecondsSinceEpoch,
+          endWidget: const Text('The banner is now available!'),
+          widgetBuilder: (_, CurrentRemainingTime? time) {
+            if (time == null) {
+              return const Text('Unknown Time');
+            }
+
+            return _getTimeStringWidget(
+              '${_getRemainingTimeString(time)} to release',
+            );
+          },
+        ));
+        break;
+      case BannerStatus.current:
+        list.add(CountdownTimer(
+          endTime: _bannerInfo!.end.millisecondsSinceEpoch,
+          endWidget: const Text('The banner is now over!'),
+          widgetBuilder: (_, CurrentRemainingTime? time) {
+            if (time == null) {
+              return const Text('Unknown Time');
+            }
+
+            return _getTimeStringWidget(
+              '${_getRemainingTimeString(time)} remaining',
+            );
+          },
+        ));
+        break;
+      case BannerStatus.ended:
+        list.addAll(GridData.generateInfoLine(
+          'The banner has ended',
+          Icons.hourglass_bottom,
+        ));
+        break;
+      default:
+        list.addAll(GridData.generateInfoLine(
+          'Unknown Banner Status',
+          Icons.hourglass_bottom,
+        ));
+        break;
+    }
+
+    return list;
+  }
+
+  Widget _getTimeStringWidget(String text) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Row(
+        children: [
+          const Icon(Icons.hourglass_bottom),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Text(text),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _getRemainingTimeString(CurrentRemainingTime time) {
+    String craft = '';
+    if (time.days != null && time.days! > 0) {
+      craft += '${time.days} days, ';
+    }
+    if (time.hours != null && time.hours! > 0) {
+      craft += '${time.hours} hours, ';
+    }
+    if (time.min != null && time.min! > 0) {
+      craft += '${time.min} mins, ';
+    }
+    if (time.sec != null) {
+      craft += '${time.sec! > 0 ? time.sec : 0} secs';
+    }
+
+    return craft;
+  }
+
   void _getStaticData() async {
     var characterData = await GridData.retrieveCharactersMapData();
     var weaponData = await GridData.retrieveWeaponsMapData();
+
+    final bannerQuery = db.ref('banners').child(_type!).child(_index!);
+    BannerData? ban;
+    var evt = await bannerQuery.once();
+    if (evt.snapshot.exists) {
+      var tmp = evt.snapshot.value as Map<dynamic, dynamic>;
+      ban = BannerData.fromJson(tmp, evt.snapshot.key!);
+    }
+
     setState(() {
       _characterData = characterData;
       _weaponData = weaponData;
+      _bannerInfo = ban;
     });
   }
 }
