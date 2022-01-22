@@ -584,7 +584,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     return Row(
       children: [
         Text(
-          GridData.getRomanNumberArray(index),
+          GridUtils.getRomanNumberArray(index),
           style: const TextStyle(fontSize: 24),
         ),
         const Spacer(),
@@ -650,7 +650,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     setState(() {
       _info = infoData![_infoId!];
       if (_info == null) Get.offAndToNamed('/splash');
-      _rarityColor = GridData.getRarityColor(_info!.rarity);
+      _rarityColor = GridUtils.getRarityColor(_info!.rarity);
       _materialData = materialData;
     });
     _refreshTrackingStatus();

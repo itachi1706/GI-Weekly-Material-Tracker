@@ -138,7 +138,7 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         var _material = _materialData![_data.name!]!;
 
         return Card(
-          color: GridData.getRarityColor(_material.rarity),
+          color: GridUtils.getRarityColor(_material.rarity),
           child: InkWell(
             onTap: () => Get.toNamed('/globalMaterial/${_data.name}'),
             child: Padding(
@@ -339,7 +339,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
       _weaponData = weaponData;
       _material = materialData![_materialKey!];
       if (_material == null) Get.offAndToNamed('/splash');
-      _rarityColor = GridData.getRarityColor(_material!.rarity);
+      _rarityColor = GridUtils.getRarityColor(_material!.rarity);
     });
   }
 
@@ -415,19 +415,19 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
             imageRef = _characterData![_cData[0]]!.talent!.attack![_cData[1]]!.image;
             extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
             name =
-                "${_characterData![_cData[0]]!.name}'s ${_characterData![_cData[0]]!.talent!.attack![_cData[1]]!.name} ${GridData.getRomanNumberArray(extraAscensionRef - 1)}";
+                "${_characterData![_cData[0]]!.name}'s ${_characterData![_cData[0]]!.talent!.attack![_cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";
             override = true;
           }
           if (!override) {
             name =
-                '$name (Tier ${GridData.getRomanNumberArray(extraAscensionRef - 1)})';
+                '$name (Tier ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)})';
           }
         }
 
         Widget typeWidget = const SizedBox.shrink();
         if (extraTypeRef != null) {
           typeWidget = Image.asset(
-            GridData.getElementImageRef(extraTypeRef)!,
+            GridUtils.getElementImageRef(extraTypeRef)!,
             height: 20,
             width: 20,
           );
@@ -462,7 +462,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           ),
           Align(
             alignment: FractionalOffset.bottomLeft,
-            child: Text(GridData.getRomanNumberArray(
+            child: Text(GridUtils.getRomanNumberArray(
               extraAscensionRef - 1,
             ).toString()),
           ),

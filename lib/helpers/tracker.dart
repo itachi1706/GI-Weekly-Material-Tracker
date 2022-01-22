@@ -251,7 +251,7 @@ class TrackingData {
     Widget typeWidget = const SizedBox.shrink();
     if (type != null) {
       typeWidget = Image.asset(
-        GridData.getElementImageRef(type)!,
+        GridUtils.getElementImageRef(type)!,
         height: 20,
         width: 20,
       );
@@ -266,7 +266,7 @@ class TrackingData {
           Align(
             alignment: FractionalOffset.bottomLeft,
             child: Text(
-              GridData.getRomanNumberArray(ascension! - 1).toString(),
+              GridUtils.getRomanNumberArray(ascension! - 1).toString(),
               style: const TextStyle(color: Colors.white),
               textAlign: TextAlign.end,
             ),
