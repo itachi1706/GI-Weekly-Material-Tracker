@@ -448,13 +448,60 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
               Icons.timer,
             ),
             ..._getCountdown(),
+            const Divider(),
             ...GridData.generateInfoLine(
               _bannerInfo!.description,
               Icons.format_list_bulleted,
             ),
+            _get5PityWidget(),
+            const Divider(),
+            _get4PityWidget(),
+            const Divider(),
             ..._generateLists(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _get4PityWidget() {
+    return IntrinsicHeight(
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+            child: Row(
+              children: const [
+                Text('4* RATES', style: TextStyle(fontWeight: FontWeight.bold),),
+                Padding(
+                  padding: EdgeInsets.only(left: 8),
+                  child: Text("- 0.6% for 0-9 rolls\n- 100% at roll 10"),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _get5PityWidget() {
+    return IntrinsicHeight(
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+            child: Row(
+              children: [
+                const Text('5* RATES', style: TextStyle(fontWeight: FontWeight.bold),),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text("- 0.6% for 0-${_bannerInfo!.softPity-1} rolls\n- Rates increased from roll 75 (Soft Pity)\n- 100% at roll ${_bannerInfo!.hardPity} (Hard Pity)"),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
