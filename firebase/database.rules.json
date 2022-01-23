@@ -2,6 +2,9 @@
   "rules": {
     ".read": false,
     ".write": false,
+    "banners": {
+      ".read": "auth.uid != null"
+    },
     "codes": {
       ".read": "auth.uid != null",
       ".indexOn": "date"

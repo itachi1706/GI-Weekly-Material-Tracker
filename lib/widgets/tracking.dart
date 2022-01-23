@@ -183,7 +183,7 @@ class _TrackerPageState extends State<TrackerPage> {
     MaterialDataCommon _material,
   ) {
     return Card(
-      color: GridData.getRarityColor(_material.rarity),
+      color: GridUtils.getRarityColor(_material.rarity),
       child: InkWell(
         onTap: () => UpdateMultiTracking(
           context,
@@ -510,7 +510,7 @@ class _PlannerPageState extends State<PlannerPage> {
 
               return ListTile(
                 tileColor: _getTileColorIfCurrentDay(key),
-                leading: Text(GridData.getDayString(key)),
+                leading: Text(GridUtils.getDayString(key)),
                 title: _getGridMaterials(_curData, gridCnt),
               );
             },

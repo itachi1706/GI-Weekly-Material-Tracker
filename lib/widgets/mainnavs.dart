@@ -83,37 +83,37 @@ class _DictionaryPageState extends State<DictionaryPage>
       const Tab(text: 'All'),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Anemo')!,
+          GridUtils.getElementImageRef('Anemo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Cryo')!,
+          GridUtils.getElementImageRef('Cryo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Electro')!,
+          GridUtils.getElementImageRef('Electro')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Geo')!,
+          GridUtils.getElementImageRef('Geo')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Hydro')!,
+          GridUtils.getElementImageRef('Hydro')!,
           height: 20,
         ),
       ),
       Tab(
         icon: Image.asset(
-          GridData.getElementImageRef('Pyro')!,
+          GridUtils.getElementImageRef('Pyro')!,
           height: 20,
         ),
       ),

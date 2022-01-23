@@ -203,7 +203,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       _materialData = materialData;
       _bgSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
       _rarityColor =
-          GridData.getRarityColor(_info!.rarity, crossover: _info!.crossover);
+          GridUtils.getRarityColor(_info!.rarity, crossover: _info!.crossover);
     });
   }
 
@@ -414,7 +414,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           ],
         ),
         const Spacer(),
-        Image.asset(GridData.getElementImageRef(widget.info!.element!)!),
+        Image.asset(GridUtils.getElementImageRef(widget.info!.element!)!),
       ],
     );
   }
@@ -808,7 +808,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           child: Row(
             children: [
               Text(
-                GridData.getRomanNumberArray(index),
+                GridUtils.getRomanNumberArray(index),
                 style: const TextStyle(fontSize: 24),
               ),
               const Spacer(),
@@ -1328,7 +1328,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           child: Row(
             children: [
               Text(
-                GridData.getRomanNumberArray(index + 1),
+                GridUtils.getRomanNumberArray(index + 1),
                 style: const TextStyle(fontSize: 24),
               ),
               const Spacer(),
@@ -1521,7 +1521,7 @@ class CharacterConstellationPage extends StatelessWidget {
                     Align(
                       alignment: FractionalOffset.bottomLeft,
                       child: Text(
-                        GridData.getRomanNumberArray(index - 1).toString(),
+                        GridUtils.getRomanNumberArray(index - 1).toString(),
                         style: const TextStyle(color: Colors.white),
                         textAlign: TextAlign.end,
                       ),

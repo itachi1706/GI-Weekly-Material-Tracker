@@ -17,26 +17,6 @@ class GridData {
   static final Map<String, Map<String, CommonData>> _staticData = {};
   static final Map<String, bool> _downloading = {};
 
-  static Color getRarityColor(int? rarity, {crossover = false}) {
-    if (crossover) {
-      return const Color(0xFFb73b47);
-    }
-    switch (rarity) {
-      case 1:
-        return const Color(0xFF72778b);
-      case 2:
-        return const Color(0xFF2a9072);
-      case 3:
-        return const Color(0xFF5180cc);
-      case 4:
-        return const Color(0xFFa256e1);
-      case 5:
-        return const Color(0xFFbd6932);
-      default:
-        return Colors.black;
-    }
-  }
-
   static Widget getAscensionImage(
     String? itemKey,
     Map<String, MaterialDataCommon>? data,
@@ -61,28 +41,9 @@ class GridData {
     return (current! >= max!) ? Colors.greenAccent : Colors.white;
   }
 
-  static String? getElementImageRef(String element) {
-    switch (element.toLowerCase()) {
-      case 'geo':
-        return 'assets/images/elements/Element_Geo.png';
-      case 'anemo':
-        return 'assets/images/elements/Element_Anemo.png';
-      case 'cryo':
-        return 'assets/images/elements/Element_Cryo.png';
-      case 'dendro':
-        return 'assets/images/elements/Element_Dendro.png';
-      case 'electro':
-        return 'assets/images/elements/Element_Electro.png';
-      case 'hydro':
-        return 'assets/images/elements/Element_Hydro.png';
-      case 'pyro':
-        return 'assets/images/elements/Element_Pyro.png';
-    }
-
-    return null;
-  }
-
-  static List<QueryDocumentSnapshot> getDataListFilteredRelease(List<QueryDocumentSnapshot> snapshot) {
+  static List<QueryDocumentSnapshot> getDataListFilteredRelease(
+    List<QueryDocumentSnapshot> snapshot,
+  ) {
     var data = <QueryDocumentSnapshot>[];
     for (var element in snapshot) {
       var dt = element.data() as Map<String, dynamic>;
@@ -100,25 +61,16 @@ class GridData {
     if (snapshot == null) return;
     debugPrint('Updating $type static data in memory');
     var _snapData = getDataListFilteredRelease(snapshot.docs);
-    // var data = getDataListFilteredRelease(snapshot);
     var data = <String, dynamic>{};
-    // snapshot.docs.forEach((element) {
-    //   Map<String, dynamic> dt = element.data();
-    //   if (dt['released']) {
-    //     data.putIfAbsent(element.id, () => dt);
-    //   } else {
-    //     debugPrint("Skipping ${dt['name']}");
-    //   }
-    // });
 
     for (var element in _snapData) {
-        var dt = element.data() as Map<String, dynamic>;
-        if (dt['released']) {
-          data.putIfAbsent(element.id, () => dt);
-        } else {
-          debugPrint("Skipping ${dt['name']}");
-        }
+      var dt = element.data() as Map<String, dynamic>;
+      if (dt['released']) {
+        data.putIfAbsent(element.id, () => dt);
+      } else {
+        debugPrint("Skipping ${dt['name']}");
       }
+    }
     switch (type) {
       case 'characters':
         _staticData[type] = CharacterData.getList(data);
@@ -140,64 +92,19 @@ class GridData {
   static Future<Map<String, WeaponData>?> retrieveWeaponsMapData() async =>
       (await _retrieveStaticData('weapons')) as Map<String, WeaponData>?;
 
-  static Future<Map<String, CharacterData>?> retrieveCharactersMapData() async =>
-      (await _retrieveStaticData('characters')) as Map<String, CharacterData>?;
+  static Future<Map<String, CharacterData>?>
+      retrieveCharactersMapData() async =>
+          (await _retrieveStaticData('characters'))
+              as Map<String, CharacterData>?;
 
-  static String getDayString(int day) {
-    switch (day) {
-      case 1:
-        return 'Mon';
-      case 2:
-        return 'Tue';
-      case 3:
-        return 'Wed';
-      case 4:
-        return 'Thu';
-      case 5:
-        return 'Fri';
-      case 6:
-        return 'Sat';
-      case 7:
-        return 'Sun';
-    }
-
-    return 'Unknown';
-  }
-
-  static String getRomanNumberArray(int number) {
-    switch (number) {
-      case 0:
-        return 'I';
-      case 1:
-        return 'II';
-      case 2:
-        return 'III';
-      case 3:
-        return 'IV';
-      case 4:
-        return 'V';
-      case 5:
-        return 'VI';
-      case 6:
-        return 'VII';
-      case 7:
-        return 'VIII';
-      case 8:
-        return 'IX';
-      case 9:
-        return 'X';
-      case 10:
-        return 'XI';
-      case -1:
-        return ''; // Disabled
-      default:
-        return (number + 1).toString();
-    }
-  }
-
-  static Widget getImageAssetFromFirebase(imageRef, {double? height}) {
+  static Widget getImageAssetFromFirebase(
+    imageRef, {
+    double? height,
+    double? width,
+    double padding = 8.0,
+  }) {
     if (imageRef == null) return Image.memory(kTransparentImage);
-    var width = height;
+    width = width ?? height;
 
     return FutureBuilder(
       future: Util.getFirebaseStorageUrl(imageRef),
@@ -205,7 +112,7 @@ class GridData {
         if (snapshot.hasData) {
           return Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(padding),
               child: SizedBox(
                 height: height,
                 width: width,
@@ -215,8 +122,10 @@ class GridData {
                     width: width,
                     child: const CircularProgressIndicator(),
                   ),
-                  errorBuilder: (context, obj, trace) => const Icon(Icons.error),
+                  errorBuilder: (context, obj, trace) =>
+                      const Icon(Icons.error),
                   image: _getFirebaseImage(snapshot.data.toString()),
+                  fit: BoxFit.fitWidth,
                   placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
               ),
@@ -251,7 +160,7 @@ class GridData {
 
   static Widget getGridData(CommonData data) {
     return Card(
-      color: getRarityColor(data.rarity, crossover: data.crossover),
+      color: GridUtils.getRarityColor(data.rarity, crossover: data.crossover),
       child: GridTile(
         footer: Padding(
           padding: const EdgeInsets.all(2),
@@ -281,7 +190,7 @@ class GridData {
     if (!await Util.launchWebPage(
       data.wiki,
       rarityColor:
-          GridData.getRarityColor(data.rarity, crossover: data.crossover),
+          GridUtils.getRarityColor(data.rarity, crossover: data.crossover),
     )) {
       Util.showSnackbarQuick(
         context,
@@ -367,7 +276,7 @@ class GridData {
           textElements.add(TextSpan(
             text: txt.substring(1).replaceAll('\\n', '\n'),
             style: TextStyle(
-              color: getElementalColor(effect),
+              color: GridUtils.getElementalColor(effect),
               fontFamily: 'Product-Sans-Bold',
             ),
           ));
@@ -376,38 +285,6 @@ class GridData {
     }
 
     return Text.rich(TextSpan(children: textElements));
-  }
-
-  static Color getElementalColor(String colorChar) {
-    var color = Colors.white;
-    switch (colorChar.toLowerCase()) {
-      case 'a':
-        color = const Color(0xFF26A684);
-        break;
-      case 'c':
-        color = const Color(0xFF4878a8);
-        break;
-      case 'd':
-        color = const Color(0xFF51810e);
-        break;
-      case 'e':
-        color = const Color(0xFF9336b0);
-        break;
-      case 'g':
-        color = const Color(0xFFb67607);
-        break;
-      case 'h':
-        color = const Color(0xFF0b4dda);
-        break;
-      case 'p':
-        color = const Color(0xFFbf2818);
-        break;
-      default:
-        color = (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
-        break;
-    }
-
-    return color;
   }
 
   static List<Widget> getAscensionMaterialDataWidgets(
@@ -444,6 +321,134 @@ class GridData {
   }
 
   static ImageProvider _getFirebaseImage(String? url) {
-    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!)) as ImageProvider<Object>;
+    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
+        as ImageProvider<Object>;
+  }
+}
+
+class GridUtils {
+  static Color getRarityColor(int? rarity, {crossover = false}) {
+    if (crossover) {
+      return const Color(0xFFb73b47);
+    }
+    switch (rarity) {
+      case 1:
+        return const Color(0xFF72778b);
+      case 2:
+        return const Color(0xFF2a9072);
+      case 3:
+        return const Color(0xFF5180cc);
+      case 4:
+        return const Color(0xFFa256e1);
+      case 5:
+        return const Color(0xFFbd6932);
+      default:
+        return Colors.black;
+    }
+  }
+
+  static String? getElementImageRef(String element) {
+    switch (element.toLowerCase()) {
+      case 'geo':
+        return 'assets/images/elements/Element_Geo.png';
+      case 'anemo':
+        return 'assets/images/elements/Element_Anemo.png';
+      case 'cryo':
+        return 'assets/images/elements/Element_Cryo.png';
+      case 'dendro':
+        return 'assets/images/elements/Element_Dendro.png';
+      case 'electro':
+        return 'assets/images/elements/Element_Electro.png';
+      case 'hydro':
+        return 'assets/images/elements/Element_Hydro.png';
+      case 'pyro':
+        return 'assets/images/elements/Element_Pyro.png';
+    }
+
+    return null;
+  }
+
+  static String getDayString(int day) {
+    switch (day) {
+      case 1:
+        return 'Mon';
+      case 2:
+        return 'Tue';
+      case 3:
+        return 'Wed';
+      case 4:
+        return 'Thu';
+      case 5:
+        return 'Fri';
+      case 6:
+        return 'Sat';
+      case 7:
+        return 'Sun';
+    }
+
+    return 'Unknown';
+  }
+
+  static String getRomanNumberArray(int number) {
+    switch (number) {
+      case 0:
+        return 'I';
+      case 1:
+        return 'II';
+      case 2:
+        return 'III';
+      case 3:
+        return 'IV';
+      case 4:
+        return 'V';
+      case 5:
+        return 'VI';
+      case 6:
+        return 'VII';
+      case 7:
+        return 'VIII';
+      case 8:
+        return 'IX';
+      case 9:
+        return 'X';
+      case 10:
+        return 'XI';
+      case -1:
+        return ''; // Disabled
+      default:
+        return (number + 1).toString();
+    }
+  }
+
+  static Color getElementalColor(String colorChar) {
+    var color = Colors.white;
+    switch (colorChar.toLowerCase()) {
+      case 'a':
+        color = const Color(0xFF26A684);
+        break;
+      case 'c':
+        color = const Color(0xFF4878a8);
+        break;
+      case 'd':
+        color = const Color(0xFF51810e);
+        break;
+      case 'e':
+        color = const Color(0xFF9336b0);
+        break;
+      case 'g':
+        color = const Color(0xFFb67607);
+        break;
+      case 'h':
+        color = const Color(0xFF0b4dda);
+        break;
+      case 'p':
+        color = const Color(0xFFbf2818);
+        break;
+      default:
+        color = (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+        break;
+    }
+
+    return color;
   }
 }
