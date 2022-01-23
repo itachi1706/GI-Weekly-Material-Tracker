@@ -1,3 +1,13 @@
+# 2.2.0
+- Fixed accent color being wrong
+- Temporarily disabled ability to tell if promo code has expired due to update in data source
+- Added ability to view wish banners and information
+- Added ability to view characters in a wish banner and the pity rates for each banner
+- (Web) Added a note to wait a bit when logging in
+- (Web) Fixed inability to view changelogs
+- Dependencies update
+- Refactored some code and squashed some bugs
+
 # 2.1.6
 - (HOTFIX) Fixed Google Sign In
 - (HOTFIX) Fixed color in dark mode for tab bars

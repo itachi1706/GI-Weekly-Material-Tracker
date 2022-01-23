@@ -1,8 +1,9 @@
-- (HOTFIX) Fixed Google Sign In
-- (HOTFIX) Fixed color in dark mode for tab bars
-- Added promo code support for Web
-- Built with Flutter 2.8
-- Revamped promo code page to support auto-refresh
-- Updated many dependencies, replacing discontinued dependencies
-- Resolved deprecated code
-- Optimized codebase to make it less buggy
+- Fixed accent color being wrong
+- Temporarily disabled ability to tell if promo code has expired due to update in data source
+- Added ability to view wish banners and information
+- Added ability to view characters in a wish banner and the pity rates for each banner
+- (Web) Added a note to wait a bit when logging in
+- (Web) Fixed inability to view changelogs
+- Dependencies update
+- Refactored some code and squashed some bugs
+
