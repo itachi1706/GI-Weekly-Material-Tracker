@@ -1932,16 +1932,16 @@
     "Yae_Miko": {
       "image": "Characters/Electro/Yae_Miko.png",
       "gender": "Female",
-      "birthday": null,
-      "caption": "Guuji",
+      "birthday": "27/6",
+      "caption": "Astute Amusement",
       "name": "Yae Miko",
       "fullName": null,
       "description": null,
       "nation": "Inazuma",
-      "weapon": null,
+      "weapon": "Catalyst",
       "rarity": 5,
-      "affiliation": "Grand Narukami Shrine",
-      "constellation": null,
+      "affiliation": "Grand Narukami Shrine, Yae Publishing House",
+      "constellation": "Divina Vulpes",
       "talents": {
         "ascension": {
           "2": {
@@ -1950,9 +1950,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Teachings_of_Prosperity",
+            "material3": "Teachings_of_Light",
             "material3qty": 3,
-            "material4": "Whopperflower_Nectar",
+            "material4": "Old_Handguard",
             "material4qty": 6
           },
           "3": {
@@ -1961,9 +1961,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Guide_to_Prosperity",
+            "material3": "Guide_to_Light",
             "material3qty": 2,
-            "material4": "Shimmering_Nectar",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 3
           },
           "4": {
@@ -1972,9 +1972,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Guide_to_Prosperity",
+            "material3": "Guide_to_Light",
             "material3qty": 4,
-            "material4": "Shimmering_Nectar",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 4
           },
           "5": {
@@ -1983,9 +1983,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Guide_to_Prosperity",
+            "material3": "Guide_to_Light",
             "material3qty": 6,
-            "material4": "Shimmering_Nectar",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 6
           },
           "6": {
@@ -1994,97 +1994,97 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Guide_to_Prosperity",
+            "material3": "Guide_to_Light",
             "material3qty": 9,
-            "material4": "Shimmering_Nectar",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Ring_of_Boreas",
+            "material2": "Raiden_Drop",
             "material2qty": 1,
-            "material3": "Philosophies_of_Prosperity",
+            "material3": "Philosophies_of_Light",
             "material3qty": 4,
-            "material4": "Energy_Nectar",
+            "material4": "Famed_Handguard",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Ring_of_Boreas",
+            "material2": "Raiden_Drop",
             "material2qty": 1,
-            "material3": "Philosophies_of_Prosperity",
+            "material3": "Philosophies_of_Light",
             "material3qty": 6,
-            "material4": "Energy_Nectar",
+            "material4": "Famed_Handguard",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Ring_of_Boreas",
+            "material2": "Raiden_Drop",
             "material2qty": 2,
-            "material3": "Philosophies_of_Prosperity",
+            "material3": "Philosophies_of_Light",
             "material3qty": 12,
-            "material4": "Energy_Nectar",
+            "material4": "Famed_Handguard",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Ring_of_Boreas",
+            "material2": "Raiden_Drop",
             "material2qty": 2,
-            "material3": "Philosophies_of_Prosperity",
+            "material3": "Philosophies_of_Light",
             "material3qty": 16,
-            "material4": "Energy_Nectar",
+            "material4": "Famed_Handguard",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
+          "Enlightened_Blessing": {
+            "name": "Enlightened Blessing",
+            "effect": "Yae Miko's Elemental Mastery will increase the DMG dealt by the Sesshou Sakura.",
             "image": null,
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
+          "The_Shrines_Sacred_Shade": {
+            "name": "The Shrine's Sacred Shade",
+            "effect": "When Yae Miko uses her Elemental Burst, each Sesshou Sakura destroyed resets the cooldown for one charge of her Elemental Skill.",
             "image": null,
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
+          "Meditations_of_a_Yako": {
+            "name": "Meditations of a Yako",
+            "effect": "When she crafts Character Talent Material she has a set chance to create an extra Talent Material from the same region of a random type. The rarity of this material will be the same materials consumed during crafting.",
             "image": null,
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "AA": {
-            "name": null,
-            "effect": null,
+          "Spiritfox_Sin-Eater": {
+            "name": "Spiritfox Sin-Eater",
+            "effect": "Normal Attack\nSummons forth kitsune spirits, initiating a maximum of 3 attacks that deal Electro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to deal Electro DMG after a short casting time.\n\nPlunging Attack\nGathering the might of Electro, Yae Miko plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Electro DMG upon impact with the ground.",
             "image": null,
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
+          "Yakan_Evocation_Sesshou_Sakura": {
+            "name": "Yakan Evocation: Sesshou Sakura",
+            "effect": "Moves swiftly, leaving a Sesshou Sakura behind.\n\nSesshou Sakura\nPeriodically strikes one nearby opponent with lightning, dealing Electro DMG.\nWhen there are other Sesshou Sakura nearby, their level will increase, boosting the DMG dealt by these lightning strikes.\nThis skill has three charges. A maximum of 3 Sesshou Sakura can exist simultaneously. The initial level of each Sesshou Sakura is 1, and the initial highest level each sakura can reach is 3. If a new Sesshou Sakura is created too close to an existing one, the existing one will be destroyed.",
             "image": null,
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
+          "Great_Secret_Art_Tenko_Kenshin": {
+            "name": "Great Secret Art: Tenko Kenshin",
+            "effect": "Summons a lightning strike, dealing AoE Electro DMG.\nWhen she uses this skill, Yae Miko will unseal nearby Sesshou Sakura, destroying their outer forms and transforming them into Tenko Thunderbolts that descend from the skies, dealing AoE Electro DMG. Each Sesshou Sakura destroyed in this way will create one Tenko Thunderbolt.",
             "image": null,
             "order": 2,
             "type": "Elemental Burst"
@@ -2131,70 +2131,70 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Whopperflower_Nectar",
+          "material4": "Old_Handguard",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         },
         "2": {
           "material2qty": 2,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "Lightning_Prism",
+          "material2": "Dragonheir_False_Fin",
           "level": 40,
-          "material4": "Whopperflower_Nectar",
+          "material4": "Old_Handguard",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         },
         "3": {
           "material2qty": 4,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "Lightning_Prism",
+          "material2": "Dragonheir_False_Fin",
           "level": 50,
-          "material4": "Shimmering_Nectar",
+          "material4": "Kageuchi_Handguard",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         },
         "4": {
           "material2qty": 8,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "Lightning_Prism",
+          "material2": "Dragonheir_False_Fin",
           "level": 60,
-          "material4": "Shimmering_Nectar",
+          "material4": "Kageuchi_Handguard",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         },
         "5": {
           "material2qty": 12,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "Lightning_Prism",
+          "material2": "Dragonheir_False_Fin",
           "level": 70,
-          "material4": "Energy_Nectar",
+          "material4": "Famed_Handguard",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         },
         "6": {
           "material2qty": 20,
           "material1": "Vajrada_Amethyst_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "Lightning_Prism",
+          "material2": "Dragonheir_False_Fin",
           "level": 80,
-          "material4": "Energy_Nectar",
+          "material4": "Famed_Handguard",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Cor_Lapis"
+          "material3": "Sea_Ganoderma"
         }
       },
       "introduction": null,
