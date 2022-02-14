@@ -786,6 +786,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Hakushin_Ring",
       "subCollection": {}
     },
+    "Kaguras_Verity": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it.",
+      "name": "Kagura's Verity",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Concealed_Claw",
+          "material3qty": 3,
+          "material1": "Mask_of_the_Wicked_Lieutenant",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Concealed_Claw",
+          "material3qty": 12,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Concealed_Unguis",
+          "material3qty": 9,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Concealed_Unguis",
+          "material3qty": 14,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Concealed_Talon",
+          "material3qty": 9,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Concealed_Talon",
+          "material3qty": 18,
+          "material1": "Mask_of_the_Kijin",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Kaguras_Verity.png",
+      "secondary_stat": "14.4%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "66.2%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Kagura Dance of the Sacred Sakura",
+      "effect": "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by 12~'% for 16s. Max 3 stacks. This character will gain 12~'% All Elemental DMG Bonus when they possess 3 stacks.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kagura%27s_Verity",
+      "subCollection": {}
+    },
     "Lost_Prayer_to_the_Sacred_Winds": {
       "secondary_stat_type": "CRIT Rate",
       "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
@@ -1107,6 +1188,87 @@
       "effect": "Increases Shield Strength by 20~40%. Scoring hits on opponents increases ATK by 4~8% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Memory_of_Dust",
+      "subCollection": {}
+    },
+    "Oathsworn_Eye": {
+      "secondary_stat_type": "ATK",
+      "description": "A national treasure of Byakuyakoku stored in the Dainichi Mikoshi. With the coming of the Serpent God, this item was used to notarize great oaths and wishes.",
+      "name": "Oathsworn Eye",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Concealed_Claw",
+          "material3qty": 2,
+          "material1": "Coral_Branch_of_a_Distant_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Concealed_Claw",
+          "material3qty": 8,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Concealed_Unguis",
+          "material3qty": 6,
+          "material1": "Jeweled_Branch_of_a_Distant_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Concealed_Unguis",
+          "material3qty": 9,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Concealed_Talon",
+          "material3qty": 6,
+          "material1": "Jade_Branch_of_a_Distant_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Concealed_Talon",
+          "material3qty": 12,
+          "material1": "Golden_Branch_of_a_Distant_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Oathsworn_Eye.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Three Realms Gateway Offering Event",
+      "effectName": "People of the Faltering Light",
+      "effect": "Increases Energy Recharge by 12~'% for 10s after using an Elemental Skill.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Oathsworn_Eye",
       "subCollection": {}
     },
     "Otherworldly_Story": {
