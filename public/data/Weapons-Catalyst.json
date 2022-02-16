@@ -790,7 +790,6 @@
       "secondary_stat_type": "CRIT DMG",
       "description": "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it.",
       "name": "Kagura's Verity",
-      "series": null,
       "ascension": {
         "1": {
           "material3": "Spectral_Husk",
@@ -862,7 +861,7 @@
       "base_atk": 46,
       "obtained": "Gacha",
       "effectName": "Kagura Dance of the Sacred Sakura",
-      "effect": "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by 12~'% for 16s. Max 3 stacks. This character will gain 12~'% All Elemental DMG Bonus when they possess 3 stacks.",
+      "effect": "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by 12~24% for 16s. Max 3 stacks. This character will gain 12~24% All Elemental DMG Bonus when they possess 3 stacks.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Kagura%27s_Verity",
       "subCollection": {}
@@ -1267,7 +1266,7 @@
       "obtained": "Three Realms Gateway Offering Event",
       "effectName": "People of the Faltering Light",
       "effect": "Increases Energy Recharge by 12~'% for 10s after using an Elemental Skill.",
-      "released": true,
+      "released": false,
       "wiki": "https://genshin-impact.fandom.com/wiki/Oathsworn_Eye",
       "subCollection": {}
     },
