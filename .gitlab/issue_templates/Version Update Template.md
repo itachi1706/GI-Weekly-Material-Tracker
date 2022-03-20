@@ -15,6 +15,16 @@ Version Name: <Replace>
 **Materials**
 - [Material 1](<replace>)
 
+**Wishes** <Update link and titles>
+- Phase 1
+    - [Character I](https://genshin-impact.fandom.com/wiki/) (Charcter)
+    - [Character II](https://genshin-impact.fandom.com/wiki/) (Character)
+    - [Epitome Invocation ](https://genshin-impact.fandom.com/wiki/) (Weapon)
+- Phase 2
+    - [Character I](https://genshin-impact.fandom.com/wiki/) (Charcter)
+    - [Character II](https://genshin-impact.fandom.com/wiki/) (Character)
+    - [Epitome Invocation ](https://genshin-impact.fandom.com/wiki/) (Weapon)
+
 [Version Ref](https://genshin-impact.fandom.com/wiki/Version/x) <Replace x with version number>
 
 
