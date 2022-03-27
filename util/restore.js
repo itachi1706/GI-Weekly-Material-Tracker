@@ -1,12 +1,10 @@
-const {initializeApp, restore} = require('firestore-export-import');
+const {initializeFirebaseApp, restore} = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
-const {initializeApp: adminInitializeApp } = require('firebase-admin/app');
 const {getFirestore} = require('firebase-admin/firestore');
 const fs = require('fs');
 const path = require('path');
 
-initializeApp(serviceAccount);
-adminInitializeApp();
+initializeFirebaseApp(serviceAccount);
 const firestoreAdmin = getFirestore();
 
 async function deleteCollection(db, collectionPath, batchSize) {
