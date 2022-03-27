@@ -276,6 +276,282 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
       "subCollection": {}
     },
+    "Kamisato_Ayato": {
+      "image": "Characters/Hydro/Kamisato_Ayato.png",
+      "gender": "Male",
+      "birthday": "26/3",
+      "caption": "Pillar of Fortitude",
+      "name": "Kamisato Ayato",
+      "fullName": "Ayato",
+      "description": null,
+      "nation": "Inazuma",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Yashiro Commission, Kamisato Clan, Shuumatsuban",
+      "constellation": "Cypressus Custos",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Elegance",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mudra_of_the_Malefic_General",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mudra_of_the_Malefic_General",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mudra_of_the_Malefic_General",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Mudra_of_the_Malefic_General",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Kamisato_Art_Michiyuku_Hagetsu": {
+            "name": "Kamisato Art: Michiyuku Hagetsu",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Kamisato_Art_Mine_Wo_Matoishi_Kiyotaki": {
+            "name": "Kamisato Art: Mine Wo Matoishi Kiyotaki",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Kamisato_Art_Daily_Cooking": {
+            "name": "Kamisato Art: Daily Cooking",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Kamisato_Art_Marobashi": {
+            "name": "Kamisato Art: Marobashi",
+            "effect": "Normal Attack\nPerform up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of dash forward and perform an iai.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Kamisato_Art_Kyouka": {
+            "name": "Kamisato Art: Kyouka",
+            "effect": "Kamisato Ayato shifts positions and enters the Takimeguri Kanka state. After this shift, he will leave a watery illusion at his original location. After it is formed, the watery illusion will explode if opponents are nearby or after its duration ends, dealing AoE Hydro DMG.\n\nTakimeguri Kanka\nIn this state, Kamisato Ayato uses his Shunsuiken to engage in blindingly fast attacks, causing DMG from his Normal Attacks to be converted into AoE Hydro DMG. This cannot be overridden.\n\nIt also has the following properties:\nAfter a Shunsuiken attack hits an opponent, it will grant Ayato the Namisen effect, increasing the DMG dealt by Shunsuiken based on Ayato's current Max HP. The initial maximum number of Namisen stacks is 4, and 1 stack can be gained through Shunsuiken every 0.1s. This effect will be dispelled when Takimeguri Kanka ends.\nKamisato Ayato's resistance to interruption is increased.\nUnable to use Charged or Plunging Attacks.\nTakimeguri Kanka will be cleared when Ayato leaves the field. Using Kamisato Art: Kyouka again while in the Takimeguri Kanka state will reset and replace the pre-existing state.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Kamisato_Art_Suiyuu": {
+            "name": "Kamisato Art: Suiyuu",
+            "effect": "Unveils a garden of purity that silences the cacophony within. While this space exists, Bloomwater Blades will constantly rain down and attack opponents within its AoE, dealing Hydro DMG and increasing the Normal Attack DMG of characters within.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Old_Handguard",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Sakura_Bloom"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Dew_of_Repudiation",
+          "level": 40,
+          "material4": "Old_Handguard",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Sakura_Bloom"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Dew_of_Repudiation",
+          "level": 50,
+          "material4": "Kageuchi_Handguard",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Sakura_Bloom"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Dew_of_Repudiation",
+          "level": 60,
+          "material4": "Kageuchi_Handguard",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Sakura_Bloom"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Dew_of_Repudiation",
+          "level": 70,
+          "material4": "Famed_Handguard",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Sakura_Bloom"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Dew_of_Repudiation",
+          "level": 80,
+          "material4": "Famed_Handguard",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Sakura_Bloom"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Hydro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayato",
+      "subCollection": {}
+    },
     "Mona": {
       "image": "Characters/Hydro/Mona.png",
       "gender": "Female",
