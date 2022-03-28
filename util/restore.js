@@ -45,8 +45,13 @@ async function restoreData() {
         console.log(fn);
 
         console.log(`>>> Restoring ${fn}...`);
-        await restore(`import/${file}`);
-        console.log(`>>> ${fn} restore completed!`);
+        try {
+            await restore(`import/${file}`);
+            console.log(`>>> ${fn} restore completed!`);
+        } catch (err) {
+            console.log(err);
+            console.log(`>>> ${fn} restore failed!`);
+        }
     }
     console.log(">>> Data Update Complete!");
 }
