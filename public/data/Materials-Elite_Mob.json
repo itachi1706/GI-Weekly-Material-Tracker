@@ -358,37 +358,37 @@
     "type": "Common Ascension Material (Elite)",
     "innerType": "mob_drops",
     "description": null,
-    "enemies": [""],
-    "obtained": null,
+    "enemies": ["Abyss Herald", "Abyss Lector"],
+    "obtained": "- Dropped by Abyss Heralds and Abyss Lectors",
     "name": "Gloomy Statuette",
     "released": false,
     "wiki": "https://genshin-impact.fandom.com/wiki/Gloomy_Statuette",
     "subCollection": {}
   },
-  "Elite_2": {
+  "Dark_Statuette": {
     "image": "Materials/Elite_Mob/",
     "rarity": 3,
     "type": "Common Ascension Material (Elite)",
     "innerType": "mob_drops",
     "description": null,
-    "enemies": [""],
-    "obtained": null,
-    "name": null,
+    "enemies": ["Abyss Herald", "Abyss Lector"],
+    "obtained": "- Alchemy (3x Gloomy Statuette)\n- Dropped by Abyss Heralds and Abyss Lectors",
+    "name": "Dark Statuette",
     "released": false,
-    "wiki": null,
+    "wiki": "https://genshin-impact.fandom.com/wiki/Dark_Statuette",
     "subCollection": {}
   },
-  "Elite_3": {
+  "Deathly_Statuette": {
     "image": "Materials/Elite_Mob/",
     "rarity": 4,
     "type": "Common Ascension Material (Elite)",
     "innerType": "mob_drops",
     "description": null,
-    "enemies": [""],
-    "obtained": null,
-    "name": null,
+    "enemies": ["Abyss Herald", "Abyss Lector"],
+    "obtained": "- Alchemy (3x Dark Statuette)\n- Dropped by Abyss Heralds and Abyss Lectors",
+    "name": "Deathly Statuette",
     "released": false,
-    "wiki": null,
+    "wiki": "https://genshin-impact.fandom.com/wiki/Deathly_Statuette",
     "subCollection": {}
   }
 }
