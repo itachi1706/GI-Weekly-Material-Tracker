@@ -19,6 +19,7 @@ jobs:
       - name: Pre-Setup
         run: |
           export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
+          export CI_COMMIT_SHORT_SHA=$GITHUB_SHA
           echo $GIT_COMMIT_COUNT
           cat $GOOGLE_SVC_DART > lib/firebase_options.dart
           chmod +x ./ciscripts/get_version.sh
