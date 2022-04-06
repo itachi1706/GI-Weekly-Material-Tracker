@@ -1,4 +1,5 @@
 version: 2
+enable-beta-ecosystems: true
 updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
@@ -10,3 +11,8 @@ updates:
     directory: "/util"
     schedule:
       interval: "daily"
+  # Maintain dependencies for dart (BETA)
+  - package-ecosystem: "pub"
+    directory: "/"
+    schedule:
+      interval: "weekly"
