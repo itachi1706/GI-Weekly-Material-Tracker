@@ -19,7 +19,7 @@ jobs:
       - name: Retrieve Google Service decode it to a file
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        run: echo $GOOGLE_SVC_DART | base64 --decode > lib/firebase_options.dart
+        run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - name: Pre-Setup
         run: |
           export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
