@@ -1,0 +1,29 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Generate Flutter app
+
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: itachi1706/flutter-alpine-android:web
+    steps:
+      - uses: actions/checkout@v3
+      - name: Pre-Setup
+        run: |
+          export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
+          cat $GOOGLE_SVC_DART > lib/firebase_options.dart
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          GOOGLE_SVC_DART: ${{ env.GOOGLE_SVC_DART }}
+      - name: Build Flutter App
+        run: flutter build web
+          
