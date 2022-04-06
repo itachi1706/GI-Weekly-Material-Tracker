@@ -16,11 +16,11 @@ jobs:
     container: itachi1706/flutter-alpine-android:web
     steps:
       - uses: actions/checkout@v3
-      - name: Retrieve Google Service decode it to a file
+      - name: Retrieve Firebase Options Dart File and decode it to a file
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
         run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
-      - name: Pre-Setup
+      - name: Pre-Setup and obtain version information
         run: |
           export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
           export CI_COMMIT_SHORT_SHA=$GITHUB_SHA
@@ -31,8 +31,6 @@ jobs:
           CI_PIPELINE_IID: 1337
           APP_BUILD_VER: github
           APP_TYPE: Web
-      - name: Test
-        run: cat lib/firebase_options.dart
       - name: Build Flutter App
         run: flutter build web
           
