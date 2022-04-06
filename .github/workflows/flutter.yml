@@ -19,10 +19,13 @@ jobs:
       - name: Pre-Setup
         run: |
           export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
+          echo $GIT_COMMIT_COUNT
           cat $GOOGLE_SVC_DART > lib/firebase_options.dart
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
         env:
+          CI_PIPELINE_IID: 1337
+          APP_BUILD_VER: github
           GOOGLE_SVC_DART: ${{ env.GOOGLE_SVC_DART }}
       - name: Build Flutter App
         run: flutter build web
