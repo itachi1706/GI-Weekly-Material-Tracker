@@ -27,7 +27,10 @@ jobs:
         env:
           CI_PIPELINE_IID: 1337
           APP_BUILD_VER: github
+          APP_TYPE: Web
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+      - name: Test
+        run: cat lib/firebase_options.dart
       - name: Build Flutter App
         run: flutter build web
           
