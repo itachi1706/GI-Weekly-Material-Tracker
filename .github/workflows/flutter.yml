@@ -27,7 +27,7 @@ jobs:
         env:
           CI_PIPELINE_IID: 1337
           APP_BUILD_VER: github
-          GOOGLE_SVC_DART: ${{ env.GOOGLE_SVC_DART }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
       - name: Build Flutter App
         run: flutter build web
           
