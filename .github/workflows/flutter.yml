@@ -24,6 +24,7 @@ jobs:
         run: |
           export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
           export CI_COMMIT_SHORT_SHA=$GITHUB_SHA
+          export CI_COMMIT_REF_NAME=$GITHUB_REF_NAME
           echo $GIT_COMMIT_COUNT
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
