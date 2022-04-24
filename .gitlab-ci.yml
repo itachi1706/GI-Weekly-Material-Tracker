@@ -64,7 +64,7 @@ Update Google Cloud Storage Data:
   needs: []
 
 Update Firestore Public Data:
-  image: node:alpine
+  image: node:16-alpine
   stage: deploy
   variables:
     GOOGLE_APPLICATION_CREDENTIALS: /tmp/sak.json
@@ -93,7 +93,7 @@ Update Firestore Public Data:
   needs: ["Build and Test Admin Util"]
 
 Update Realtime DB Game Banners:
-  image: node:alpine
+  image: node:16-alpine
   stage: deploy
   variables:
     GOOGLE_APPLICATION_CREDENTIALS: /tmp/sak.json
@@ -427,7 +427,7 @@ Deploy to Firebase Hosting Staging:
     - when: never
 
 Check Firebase Hosting Branch:
-  image: node:alpine
+  image: node:16-alpine
   stage: build
   before_script:
     - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
@@ -584,7 +584,7 @@ Deploy Artifact:
 
 # Admin Util
 Install Admin Util Dependencies:
-  image: node:alpine
+  image: node:16-alpine
   stage: build
   before_script: 
     - cd util
@@ -596,7 +596,7 @@ Install Admin Util Dependencies:
   needs: []
 
 Build and Test Admin Util:
-  image: node:alpine
+  image: node:16-alpine
   stage: test
   before_script:
     - cd util
@@ -609,7 +609,7 @@ Build and Test Admin Util:
 
 
 Crawl for Promo Codes Cron:
-  image: node:alpine
+  image: node:16-alpine
   stage: cron
   before_script:
     - cat $FIREBASE_SERVICE_ACCOUNT > util/serviceAccountKey.json
