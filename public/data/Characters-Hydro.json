@@ -1668,6 +1668,281 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Xingqiu",
       "subCollection": {}
+    },
+    "Yelan": {
+      "image": "Characters/Hydro/Yelan.png",
+      "gender": "Female",
+      "birthday": "4/20",
+      "caption": "Valley Orchid",
+      "name": "Yelan",
+      "description": null,
+      "nation": "Liyue",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Yanshang Teahouse, Ministry of Civil Affairs",
+      "constellation": "Umbrabilis Orchis",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Prosperity",
+            "material3qty": 3,
+            "material4": "Recruit_Insignia",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 2,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 4,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 6,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 9,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 4,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 6,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 12,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Gilded_Scale",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 16,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "Stealthy_Bowshot": {
+          "Normal": {
+            "name": "Stealthy Bowshot",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG. While aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal Hydro DMG.\n\nBreakthrough\nYelan will enter a \"Breakthrough\" state after spending 5s out of combat, which will cause her next Charged Aimed Shot to have 80% decreased charge time, and once charged, she can fire a \"Breakthrough Barb\" that will deal AoE Hydro DMG based on Yelan's Max HP.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Lingering_Lifeline": {
+            "name": "Lingering Lifeline",
+            "effect": "Fires off a Lifeline that allows her to move rapidly, entangling and marking opponents along its path.\nWhen this rapid movement ends, the Lifeline will explode, dealing Hydro DMG to the marked opponents based on Yelan's Max HP.\n\nPress\nMoves a certain distance forward swiftly.\n\nHold\nEngages in continuous, swift movement, during which Yelan's resistance to interruption is increased.\nDuring this time, Yelan can control this rapid movement and end it by using this Skill again. Additionally, each opponent marked by the \"Lifeline\" when it explodes grants Yelan a 34% chance to reset her \"Breakthrough\" state.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Depth-Clarion_Dice": {
+            "name": "Depth-Clarion Dice",
+            "effect": "Deals AoE Hydro DMG and creates an \"Exquisite Throw\", which aids her in battle.\n\nExquisite Throw\nThis follows the character around and will initiate a coordinated attack under the following circumstances, dealing Hydro DMG based on Yelan's Max HP:\nThis can occur once every second when your active character uses a Normal Attack.\nWill occur each time Yelan's Lifeline explodes and hits opponents.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Recruit_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Starconch"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Runic_Fang",
+          "level": 40,
+          "material4": "Recruit_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Starconch"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Runic_Fang",
+          "level": 50,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Starconch"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Runic_Fang",
+          "level": 60,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Starconch"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Runic_Fang",
+          "level": 70,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Starconch"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Runic_Fang",
+          "level": 80,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Starconch"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Hydro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Yelan",
+      "subCollection": {}
     }
   }
 }
