@@ -161,6 +161,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Amos%27_Bow",
       "subCollection": {}
     },
+    "Aqua_Simulacra": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "This longbow's color is unpredictable. Under the light, it takes on a lustrous, watery blue.",
+      "name": "Aqua Simulacra",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 3,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 12,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Dark_Statuette",
+          "material3qty": 9,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Dark_Statuette",
+          "material3qty": 14,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Deathly_Statuette",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Deathly_Statuette",
+          "material3qty": 18,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/Aqua_Simulacra.png",
+      "secondary_stat": "19.2%",
+      "rarity": 5,
+      "type": "Bow",
+      "max_secondary_stat": "88.2%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "The Cleansing Form",
+      "effect": "HP is increased by 16%. When there are opponents nearby, the DMG dealt by the wielder of this weapon is increased by 20%. This will take effect whether the character is on-field or not.",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Aqua_Simulacra",
+      "subCollection": {}
+    },
     "Blackcliff_Warbow": {
       "secondary_stat_type": "CRIT DMG",
       "description": "A bow made of blackstone that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
