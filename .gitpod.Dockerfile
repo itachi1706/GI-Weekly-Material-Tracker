@@ -3,14 +3,14 @@ FROM gitpod/workspace-full
 LABEL maintainer="dockerimages@itachi1706.com"
 
 ENV FLUTTER_HOME=/home/gitpod/flutter \
-    FLUTTER_VERSION=2.2.2-stable
+    FLUTTER_VERSION=3.0.3-stable
 
 # Install dart
 USER root
 
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     apt-get update && \
-    apt-get -y install libpulse0 build-essential libkrb5-dev gcc make && \
+    apt-get -y install libpulse0 build-essential libkrb5-dev gcc make libgtk-3-dev && \
     apt-get clean && \
     apt-get -y autoremove && \
     apt-get -y clean && \
