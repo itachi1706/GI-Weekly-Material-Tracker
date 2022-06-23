@@ -1102,6 +1102,281 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Kujou_Sara",
       "subCollection": {}
     },
+    "Kuki_Shinobu": {
+      "image": "Characters/Electro/Kuki_Shinobu.png",
+      "gender": "Female",
+      "birthday": "27/7",
+      "caption": "Mender of Tribulations",
+      "name": "Kuki Shinobu",
+      "description": "The capable and reliable deputy leader of the \"Arataki Gang\". Please note: capable and reliable are not appellations for the \"Arataki Gang\", but for their deputy leader in specific.",
+      "nation": "Inazuma",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": "Arataki Gang",
+      "constellation": "Tribulatio Demptio",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Elegance",
+            "material3qty": 3,
+            "material4": "Spectral_Husk",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 2,
+            "material4": "Spectral_Heart",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 4,
+            "material4": "Spectral_Heart",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 6,
+            "material4": "Spectral_Heart",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Elegance",
+            "material3qty": 9,
+            "material4": "Spectral_Heart",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spectral_Nucleus",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 4,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spectral_Nucleus",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 6,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Spectral_Nucleus",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 12,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Spectral_Nucleus",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Elegance",
+            "material3qty": 16,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Breaking_Free": {
+            "name": "Breaking Free",
+            "effect": "When Shinobu's HP is not higher than 50%, her Healing Bonus is increased by 15%.",
+            "image": "Talents/Passive/Talent_Breaking_Free.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Hearts_Repose": {
+            "name": "Heart's Repose",
+            "effect": "Sanctifying Ring's abilities will be boosted based on Shinobu's Elemental Mastery:\n\n· Healing amount will be increased by 75% of Elemental Mastery.\n· DMG dealt is increased by 25% of Elemental Mastery.",
+            "image": "Talents/Passive/Talent_Hearts_Repose.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Protracted_Prayers": {
+            "name": "Protracted Prayers",
+            "effect": "Gains 25% more rewards when dispatched on an Inazuma Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_Protracted_Prayers.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Shinobus_Shadowsword": {
+            "name": "Shinobu's Shadowsword",
+            "effect": "Normal Attack\nPerform up to 4 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Shinobus_Shadowsword.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Sanctifying_Ring": {
+            "name": "Sanctifying Ring",
+            "effect": "Creates a Grass Ring of Sanctification at the cost of part of her HP, dealing Electro DMG to nearby opponents.\n\nGrass Ring of Sanctification\nFollows your current active character around. Deals Electro DMG to nearby opponents every 1.5s and restores HP for the active character(s) within the ring's AoE based on Kuki Shinobu's Max HP.\n\nThe HP consumption from using this skill can only bring her to 20% HP.",
+            "image": "Talents/Skill/Talent_Sanctifying_Ring.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Gyoei_Narukami_Kariyama_Rite": {
+            "name": "Gyoei Narukami Kariyama Rite",
+            "effect": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous Electro DMG to opponents within its AoE based on Shinobu's Max HP.\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.",
+            "image": "Talents/Burst/Talent_Gyoei_Narukami_Kariyama_Rite.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "To Cloister Compassion",
+          "effect": "Gyoei Narukami Kariyama Rite's AoE is increased by 50%.",
+          "image": "Constellation/To_Cloister_Compassion.png"
+        },
+        "2": {
+          "name": "To Forsake Fortune",
+          "effect": "Grass Ring of Sanctification's duration is increased by 3s.",
+          "image": "Constellation/To_Forsake_Fortune.png"
+        },
+        "3": {
+          "name": "To Sequester Sorrow",
+          "effect": "Increases the Level of Sanctifying Ring by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/To_Sequester_Sorrow.png"
+        },
+        "4": {
+          "name": "To Sever Sealing",
+          "effect": "When the Normal, Charged, or Plunging Attacks of the character affected by Shinobu's Grass Ring of Sanctification hit opponents, a Thundergrass Mark will land on the opponent's position and deal AoE Electro DMG based on 9.7% of Shinobu's Max HP.\nThis effect can occur once every 5s.",
+          "image": "Constellation/To_Sever_Sealing.png"
+        },
+        "5": {
+          "name": "To Cease Courtesies",
+          "effect": "Increases the Level of Gyoei Narukami Kariyama Rite by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/To_Cease_Courtesies.png"
+        },
+        "6": {
+          "name": "To Ward Weakness",
+          "effect": "When Kuki Shinobu takes lethal DMG, this instance of DMG will not take her down. This effect will automatically trigger when her HP reaches 1 and will trigger once every 60s.\nWhen Shinobu's HP drops below 25%, she will gain 150 Elemental Mastery for 15s. This effect will trigger once every 60s.",
+          "image": "Constellation/To_Ward_Weakness.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Spectral_Husk",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Naku_Weed"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Runic_Fang",
+          "level": 40,
+          "material4": "Spectral_Husk",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Naku_Weed"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Runic_Fang",
+          "level": 50,
+          "material4": "Spectral_Heart",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Naku_Weed"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Runic_Fang",
+          "level": 60,
+          "material4": "Spectral_Heart",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Naku_Weed"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Runic_Fang",
+          "level": 70,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Naku_Weed"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Runic_Fang",
+          "level": 80,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Naku_Weed"
+        }
+      },
+      "introduction": "The deputy leader of the Arataki Gang. She wears a unique mask and is rather stoic.\nFew people know why a talent of this caliber would run away to join a street gang. Even fewer people know what she hides under her mask.",
+      "paimonmoepath": "characters/kuki_shinobu",
+      "genshinggpath": "characters/HuTao",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kuki_Shinobu",
+      "subCollection": {}
+    },
     "Lisa": {
       "image": "Characters/Electro/Lisa.png",
       "gender": "Female",
