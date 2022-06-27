@@ -323,6 +323,19 @@ Generate Release Flutter AppBundle Android:
       when: always
     - when: never
 
+Check Google Play Release Notes:
+  stage: test
+  before_script:
+    - chmod +x ./ciscripts/check_length.sh
+  script: ./ciscripts/check_length.sh
+  needs: []
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
+    - if: $CI_COMMIT_TAG
+      when: manual
+    - when: never
+
 Deploy to Google Play Alpha:
   image: itachi1706/flutter-alpine-android:fastlane-cli
   stage: deploy
@@ -338,7 +351,8 @@ Deploy to Google Play Alpha:
     - fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true --version_name "$CI_PIPELINE_IID ($APP_VERSION)"
   dependencies:
     - Generate Release Flutter AppBundle Android
-  needs: ["Generate Release Flutter AppBundle Android"]
+    - Check Google Play Release Notes
+  needs: ["Generate Release Flutter AppBundle Android", "Check Google Play Release Notes"]
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: never
