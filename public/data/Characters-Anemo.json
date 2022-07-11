@@ -827,6 +827,282 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Sayu",
       "subCollection": {}
     },
+    "Shikanoin_Heizou": {
+      "image": "Characters/Anemo/Shikanoin_Heizou.png",
+      "gender": "Male",
+      "birthday": null,
+      "caption": "Analytical Harmony",
+      "name": "Shikanoin Heizou",
+      "fullName": "Heizou",
+      "description": null,
+      "nation": "Inazuma",
+      "weapon": "Catalyst",
+      "rarity": 4,
+      "affiliation": "Tenryou Commission",
+      "constellation": "Cervus Minor",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Treasure_Hoarder_Insignia",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 2,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 4,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 9,
+            "material4": "Silver_Raven_Insignia",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 4,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 12,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 16,
+            "material4": "Golden_Raven_Insignia",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Pre-Existing_Guilt": {
+            "name": "Pre-Existing Guilt",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Fudou_Style_Martial_Arts": {
+            "name": "Fudou Style Martial Arts",
+            "effect": "Normal Attack\nPerforms up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\n\nCharged Attack\nConsumes a set amount of Stamina to perform a sweeping kick, dealing Anemo DMG.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Heartstopper_Strike": {
+            "name": "Heartstopper Strike",
+            "effect": "Press\nWields the swift winds to launch a Heartstopper Strike that deals Anemo DMG.\n\nHold\nCharges energy to unleash an even stronger blow. He will obtain the Declension effect while charging, which will increase the power of the Heartstopper Strike. When the skill button is released or the skill duration ends, he will strike forward, dealing Anemo DMG.\n\nDeclension\nIncreases the power of the next Heartstopper Strike. Max 4 stacks. When you possess 4 Declension stacks, the Conviction effect will be produced, which will cause the next Heartstopper Strike to be even stronger and have a larger AoE.",
+            "image": "Talents/Skill/Talent_Heartstopper_Strike.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Windmuster_Kick": {
+            "name": "Windmuster Kick",
+            "effect": "Leaps into the air and uses the Fudou Style Vacuum Slugger and kicks his opponent. The Vacuum Slugger will explode upon hit and create an Arresting Windtunnel that pulls in nearby objects and opponents, dealing AoE Anemo DMG.\n\nWhen Fudou Style Vacuum Slugger hits enemies affected by Hydro, Pyro, Cryo or Electro, it afflicts them with Windmuster Iris. Moments later, Windmuster Iris explodes and dissipates, dealing AoE DMG of the corresponding elemental type.\n\nFudou Style Vacuum Slugger can afflict a maximum of four enemies with the Windmuster Iris. A single enemy cannot be afflicted by Irises of different elemental types at the same time.",
+            "image": "Talents/Burst/Talent_Windmuster_Kick.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Treasure_Hoarder_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Onikabuto"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Runic_Fang",
+          "level": 40,
+          "material4": "Treasure_Hoarder_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Onikabuto"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Runic_Fang",
+          "level": 50,
+          "material4": "Silver_Raven_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Onikabuto"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Runic_Fang",
+          "level": 60,
+          "material4": "Silver_Raven_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Onikabuto"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Runic_Fang",
+          "level": 70,
+          "material4": "Golden_Raven_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Onikabuto"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Runic_Fang",
+          "level": 80,
+          "material4": "Golden_Raven_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Onikabuto"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Anemo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Shikanoin_Heizou",
+      "subCollection": {}
+    },
     "Sucrose": {
       "image": "Characters/Anemo/Sucrose.png",
       "gender": "Female",
