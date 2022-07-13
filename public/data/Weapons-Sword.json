@@ -1107,6 +1107,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Iron_Sting",
       "subCollection": {}
     },
+    "Kagotsurube_Isshin": {
+      "secondary_stat_type": "ATK",
+      "description": "This famed blade was born in a nation to the far north. But in the name of \"Isshin\", it was stained with many a dark deed on its home-bound journey.\n\nPreviously known as Cursed Blade",
+      "name": "Kagotsurube Isshin",
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 2,
+          "material1": "Mask_of_the_Wicked_Lieutenant",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 8,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Dark_Statuette",
+          "material3qty": 6,
+          "material1": "Mask_of_the_Tigers_Bite",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Dark_Statuette",
+          "material3qty": 9,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Deathly_Statuette",
+          "material3qty": 6,
+          "material1": "Mask_of_the_One-Horned",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Deathly_Statuette",
+          "material3qty": 12,
+          "material1": "Mask_of_the_Kijin",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Kagotsurube_Isshin.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "41.3%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Ere the End, a Glance Back Quest",
+      "effectName": "Isshin Art Clarity",
+      "effect": "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kagotsurube_Isshin",
+      "subCollection": {}
+    },
     "Lion_Roar": {
       "secondary_stat_type": "ATK",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
