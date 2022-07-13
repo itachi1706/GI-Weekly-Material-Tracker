@@ -830,11 +830,11 @@
     "Shikanoin_Heizou": {
       "image": "Characters/Anemo/Shikanoin_Heizou.png",
       "gender": "Male",
-      "birthday": null,
+      "birthday": "24/7",
       "caption": "Analytical Harmony",
       "name": "Shikanoin Heizou",
       "fullName": "Heizou",
-      "description": null,
+      "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
       "nation": "Inazuma",
       "weapon": "Catalyst",
       "rarity": 4,
@@ -943,24 +943,24 @@
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Paradoxical_Practice": {
+            "name": "Paradoxical Practice",
+            "effect": "When Shikanoin Heizou activates a Swirl reaction while on the field, he will gain 1 Declension stack for Heartstopper Strike. This effect can be triggered every 0.1s.",
+            "image": "Talents/Passive/Talent_Paradoxical_Practice.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Penetrative_Reasoning": {
+            "name": "Penetrative Reasoning",
+            "effect": "After Shikanoin Heizou‘s Heartstopper Strike hits an opponent, increases all party members' (excluding Shikanoin Heizou) Elemental Mastery by 80 for 10s.",
+            "image": "Talents/Passive/Talent_Penetrative_Reasoning.png",
             "order": 1,
             "type": "Passive 2"
           },
           "Pre-Existing_Guilt": {
             "name": "Pre-Existing Guilt",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Cloud_Strider.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -968,7 +968,7 @@
         "attack": {
           "Fudou_Style_Martial_Arts": {
             "name": "Fudou Style Martial Arts",
-            "effect": "Normal Attack\nPerforms up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\n\nCharged Attack\nConsumes a set amount of Stamina to perform a sweeping kick, dealing Anemo DMG.",
+            "effect": "Normal Attack\nPerforms up to 5 fisticuffs empowered by a mighty wind, dealing Anemo DMG.\n\nCharged Attack\nConsumes a set amount of Stamina to perform a sweeping kick, dealing Anemo DMG.\n\nPlunging Attack\nCalling upon the surging wind, Heizou plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Anemo DMG upon impact with the ground.",
             "image": "Talents/Normal/Catalyst_Anemo.png",
             "order": 0,
             "type": "Normal/Charged Attack"
@@ -991,34 +991,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Named Juvenile Casebook",
+          "effect": "For 5s after Shikanoin Heizou takes the field, his Normal Attack SPD is increased by 15%. He also gains 1 Declension stack for Heartstopper Strike. This effect can be triggered once every 10s.",
+          "image": "Constellation/Named_Juvenile_Casebook.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Investigative Collection",
+          "effect": "The pull effect of the Arresting Windtunnel created by Windmuster Kick is enhanced, and its duration is increased to 1s.",
+          "image": "Constellation/Investigative_Collection.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Esoteric Puzzle Book",
+          "effect": "Increases the Level of Heartstopper Strike by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Esoteric_Puzzle_Book.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Tome of Lies",
+          "effect": "The first Windmuster Iris explosion in each Windmuster Kick will regenerate 9 Elemental Energy for Shikanoin Heizou. Every subsequent explosion in that Windmuster Kick will each regenerate an additional 1.5 Energy for Heizou.\nOne Windmuster Kick can regenerate a total of 13.5 Energy for Heizou in this manner.",
+          "image": "Constellation/Tome_of_Lies.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Secret Archive",
+          "effect": "Increases the Level of Windmuster Kick by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Secret_Archive.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Curious Casefiles",
+          "effect": "Each Declension stack will increase the CRIT Rate of the Heartstopper Strike unleashed by 4%. When Heizou possesses Conviction, this Heartstopper Strike's CRIT DMG is increased by 32%.",
+          "image": "Constellation/Curious_Casefiles.png"
         }
       },
       "ascension": {
@@ -1095,11 +1095,11 @@
           "material3": "Onikabuto"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are ingenious. No matter what unsolved case he's facing, he can get to the truth in unexpected ways.",
+      "paimonmoepath": "characters/shikanoin_heizou",
       "genshinggpath": null,
       "element": "Anemo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Shikanoin_Heizou",
       "subCollection": {}
     },
