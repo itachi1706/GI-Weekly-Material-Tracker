@@ -22,8 +22,7 @@ jobs:
       - name: Retrieve Firebase Options Web Dart File and decode it to a file
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        # run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
-        run: cat $GOOGLE_SVC_DART > lib/firebase_options.dart
+        run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - name: Pre-Setup and obtain version information
         run: |
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
@@ -66,15 +65,15 @@ jobs:
           GOOGLE_SVC_ANDROID: ${{ secrets.GOOGLE_SVC_ANDROID }}
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
         run: |
-          cat $GOOGLE_SVC_ANDROID > android/app/google-services.json
-          cat $GOOGLE_SVC_DART > lib/firebase_options.dart
+          echo $GOOGLE_SVC_ANDROID | base64 -d > android/app/google-services.json
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - name: Obtain Debug Keystore from Secrets
         env:
           FLUTTER_KEYSTORE: ${{ secrets.FLUTTER_KEYSTORE }}
           KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
-          cat $KEY_PROPERTIES > android/key.properties
+          echo $KEY_PROPERTIES | base64 -d > android/key.properties
       - name: Pre-Setup and obtain version information
         run: |
           mkdir release
