@@ -10,11 +10,18 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
+  CI_COMMIT_REF_NAME: ${{ github.ref_name }}
+
 jobs:
   webapp:
     name: Build Web App # From "Build Web App" in GitLab CI
     runs-on: ubuntu-latest
     container: itachi1706/flutter-alpine-android:web
+    env:
+      APP_BUILD_VER: web
+      APP_TYPE: Web
     steps:
       - uses: actions/checkout@v3
         with:
@@ -27,6 +34,10 @@ jobs:
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
         run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+      - uses: benjlevesque/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 8
       - name: Pre-Setup and obtain version information
         run: |
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
@@ -35,11 +46,7 @@ jobs:
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
         env:
-          CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
-          CI_COMMIT_SHORT_SHA: ${{ github.sha }}
-          CI_COMMIT_REF_NAME: ${{ github.ref_name }}
-          APP_BUILD_VER: web
-          APP_TYPE: Web
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Flutter App
         run: flutter build web
       - name: Package Artifact
@@ -58,6 +65,10 @@ jobs:
     name: Generate Flutter App (Android) # From "Generate Flutter App" in GitLab CI
     runs-on: ubuntu-latest
     container: itachi1706/flutter-alpine-android:stable
+    env:
+      ANDROID_HOME: "/usr/local/android-sdk"
+      APP_BUILD_VER: dogfood
+      APP_TYPE: Android
     steps:
       - uses: actions/checkout@v3
         with:
@@ -65,9 +76,7 @@ jobs:
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
-        run: flutter doctor -v
-        env:
-          ANDROID_HOME: "/usr/local/android-sdk"
+        run: flutter doctor -v  
       - name: Retrieve Firebase Options Dart files and decode to file
         env:
           GOOGLE_SVC_ANDROID: ${{ secrets.GOOGLE_SVC_ANDROID }}
@@ -82,6 +91,10 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
+      - uses: benjlevesque/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 8
       - name: Pre-Setup and obtain version information
         run: |
           mkdir release
@@ -91,21 +104,13 @@ jobs:
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
         env:
-          CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
-          CI_COMMIT_SHORT_SHA: ${{ github.sha }}
-          CI_COMMIT_REF_NAME: ${{ github.ref_name }}
-          APP_BUILD_VER: dogfood
-          APP_TYPE: Android
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Android Split APK
-        env:
-          ANDROID_HOME: "/usr/local/android-sdk"
         run: |
           flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
       - name: Move Split APKs to Release folder
         run: mv ./build/app/outputs/apk/release/*.apk ./release
       - name: Build Android Multi-Arch Fat APK
-        env:
-          ANDROID_HOME: "/usr/local/android-sdk"
         run: flutter build apk
       - name: Move Fat APK to Release Folder
         run: |
