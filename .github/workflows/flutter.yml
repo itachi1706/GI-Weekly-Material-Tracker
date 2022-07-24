@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Generate Flutter app
+name: Generate Flutter Apps (Non-Release)
 
 on: 
   push:
@@ -11,27 +11,102 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  webapp:
+    name: Build Web App # From "Build Web App" in GitLab CI
     runs-on: ubuntu-latest
     container: itachi1706/flutter-alpine-android:web
     steps:
       - uses: actions/checkout@v3
-      - name: Retrieve Firebase Options Dart File and decode it to a file
+      - name: Test Flutter Doctor
+        run: flutter doctor -v
+      - name: Retrieve Firebase Options Web Dart File and decode it to a file
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+        # run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+        run: cat $GOOGLE_SVC_DART > lib/firebase_options.dart
       - name: Pre-Setup and obtain version information
         run: |
-          export GIT_COMMIT_COUNT=$GITHUB_RUN_ID
-          export CI_COMMIT_SHORT_SHA=$GITHUB_SHA
-          export CI_COMMIT_REF_NAME=$GITHUB_REF_NAME
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
           echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
         env:
-          CI_PIPELINE_IID: 1337
-          APP_BUILD_VER: github
+          CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
+          CI_COMMIT_SHORT_SHA: ${{ github.sha }}
+          CI_COMMIT_REF_NAME: ${{ github.ref_name }}
+          APP_BUILD_VER: web
           APP_TYPE: Web
       - name: Build Flutter App
         run: flutter build web
-          
+      - name: Package Artifact
+        run: |
+          apk add --no-cache zip
+          mkdir -p firebase/public
+          mv build/web/* ./firebase/public
+          zip -r webapp.zip ./firebase/public
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-web-artifact
+          path: |
+            firebase/
+            webapp.zip
+  android:
+    name: Generate Flutter App (Android) # From "Generate Flutter App" in GitLab CI
+    runs-on: ubuntu-latest
+    container: itachi1706/flutter-alpine-android:stable
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test Flutter Doctor
+        run: flutter doctor -v
+        env:
+          ANDROID_HOME: "/usr/local/android-sdk"
+      - name: Retrieve Firebase Options Dart files and decode to file
+        env:
+          GOOGLE_SVC_ANDROID: ${{ secrets.GOOGLE_SVC_ANDROID }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+        run: |
+          cat $GOOGLE_SVC_ANDROID > android/app/google-services.json
+          cat $GOOGLE_SVC_DART > lib/firebase_options.dart
+      - name: Obtain Debug Keystore from Secrets
+        env:
+          FLUTTER_KEYSTORE: ${{ secrets.FLUTTER_KEYSTORE }}
+          KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
+        run: |
+          echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
+          cat $KEY_PROPERTIES > android/key.properties
+      - name: Pre-Setup and obtain version information
+        run: |
+          mkdir release
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+          echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
+          CI_COMMIT_SHORT_SHA: ${{ github.sha }}
+          CI_COMMIT_REF_NAME: ${{ github.ref_name }}
+          APP_BUILD_VER: dogfood
+          APP_TYPE: Android
+      - name: Build Android Split APK
+        env:
+          ANDROID_HOME: "/usr/local/android-sdk"
+        run: |
+          flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+      - name: Move Split APKs to Release folder
+        run: mv ./build/app/outputs/apk/release/*.apk ./release
+      - name: Build Android Multi-Arch Fat APK
+        env:
+          ANDROID_HOME: "/usr/local/android-sdk"
+        run: flutter build apk
+      - name: Move Fat APK to Release Folder
+        run: |
+          cp build/app/outputs/apk/release/app-release.apk ./release
+          cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-android-artifact
+          path: |
+            release/
+            app-fatapk.apk
