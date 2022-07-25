@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Generate Flutter Apps (Non-Release)
+name: Generate Debug Flutter Apps (Non-Release)
 
 on: 
   push:
@@ -16,7 +16,7 @@ env:
 
 jobs:
   webapp:
-    name: Build Web App # From "Build Web App" in GitLab CI
+    name: Web App # From "Build Web App" in GitLab CI
     runs-on: ubuntu-latest
     env:
       APP_BUILD_VER: web
@@ -64,7 +64,7 @@ jobs:
             firebase/
             webapp.zip
   android:
-    name: Generate Flutter App (Android) # From "Generate Flutter App" in GitLab CI
+    name: Android Apps # From "Generate Flutter App" in GitLab CI
     runs-on: ubuntu-latest
     env:
       APP_BUILD_VER: dogfood
