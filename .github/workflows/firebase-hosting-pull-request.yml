@@ -7,7 +7,37 @@ jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Flutter Stable
+        uses: subosito/flutter-action@v2.4.0
+        with:
+          channel: 'stable'
+          cache: true
+      - name: Trust GitHub Workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - uses: benjlevesque/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 8
+      - name: Pre-Setup and obtain version information
+        run: |
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+          echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+      - name: Build Flutter App
+        run: flutter build web
+      - name: Prep public folder
+        run: | 
+          mkdir -p firebase/public
+          mv build/web/* ./firebase/public
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - "master"
-      - "379-duplicate-gitlab-ci-to-github-actions"
 
 jobs:
   build_and_preview:
@@ -30,18 +29,13 @@ jobs:
           cache: true
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - name: Test Flutter Doctor
-        run: flutter doctor -v
-      - name: Retrieve Firebase Options Web Dart File and decode it to a file
-        env:
-          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - uses: benjlevesque/short-sha@v1.2
         id: short-sha
         with:
           length: 8
       - name: Pre-Setup and obtain version information
         run: |
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
           echo $GIT_COMMIT_COUNT
           echo $GIT_COMMIT_SHORT_SHA
@@ -49,6 +43,7 @@ jobs:
           ./ciscripts/get_version.sh
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
       - name: Build Flutter App
         run: flutter build web
       - name: Prep public folder
