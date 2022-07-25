@@ -133,3 +133,64 @@ jobs:
           path: |
             release/
             app-fatapk.apk
+  ios:
+    name: iOS Unsigned IPA
+    runs-on: macos-latest
+    env:
+      APP_BUILD_VER: dogfood
+      APP_TYPE: iOS
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Flutter Stable
+        uses: subosito/flutter-action@v2.4.0
+        with:
+          channel: 'stable'
+      - name: Trust GitHub Workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Test Flutter Doctor
+        run: flutter doctor -v  
+      - name: Retrieve Firebase Options Dart files and decode to file
+        env:
+          GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+        run: |
+          echo $GOOGLE_SVC_IOS | base64 -d > ios/Runner/GoogleService-Info.plist
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+      - uses: benjlevesque/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 8
+      - name: Pre-Setup and obtain version information
+        run: |
+          mkdir release
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+          echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+      - name: Build iOS Package
+        run: flutter build ios --no-codesign
+        # run: flutter build ios --release --no-codesign
+      - name: Move Package to Release folder
+        run: mv ./build/ios/iphoneos/Runner.app ./release
+      - name: Generate IPA File
+        run: |
+          cd release
+          mkdir Payload
+          cp -r ./Runner.app Payload
+          zip -r app.ipa Payload
+          cd ..
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-ios-raw-artifact
+          path: |
+            release/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-unsigned-ipa-artifact
+          path: |
+            release/app.ipa
