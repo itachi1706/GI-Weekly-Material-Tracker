@@ -1,0 +1,18 @@
+name: Scheduled Tasks
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" 
+
+jobs:
+  wip:
+    runs-on: ubuntu-latest
+    name: WIP
+    steps:
+      - run: echo WIP. Run scheduled tasks
+  crawlpromocode:
+    runs-on: ubuntu-latest
+    name: Crawl for Promo Codes Cron
+    steps:
+      - run: echo WIP
+  

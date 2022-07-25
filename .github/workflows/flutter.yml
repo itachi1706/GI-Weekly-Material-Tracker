@@ -218,3 +218,9 @@ jobs:
           name: flutter-unsigned-ipa-artifact
           path: |
             release/app.ipa
+  dogfood:
+    runs-on: ubuntu-latest
+    name: Deploy Dogfood to Firebase
+    needs: android
+    steps:
+      - run: echo WIP

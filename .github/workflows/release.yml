@@ -11,3 +11,40 @@ jobs:
     name: WIP
     steps:
       - run: echo WIP. Run all Upload Artifact, generate release notes, generate release apks, and deploy to gplay, firebase and github releases
+  hostingprod:
+    runs-on: ubuntu-latest
+    name: Deploy to Firebase Hosting Prod
+    steps:
+      - run: echo WIP
+  uploadartifact:
+    runs-on: ubuntu-latest
+    name: Upload Artifact + Deploy Artifact
+    steps:
+      - run: echo WIP
+  gplayalpha:
+    runs-on: ubuntu-latest
+    name: Deploy to Google Play Alpha
+    steps:
+      - run: echo WIP
+  gplayreleasenotes:
+    runs-on: ubuntu-latest
+    name: Check Google Play Release Notes
+    steps:
+      - run: echo WIP
+  releaseapk:
+    runs-on: ubuntu-latest
+    name: Generate Release Flutter App
+    steps:
+      - run: echo WIP
+  releaseaab:
+    runs-on: ubuntu-latest
+    name: Generate Release Flutter AppBundle Android
+    steps:
+      - run: echo WIP
+
+
+  releaseipa:
+    runs-on: macos-latest
+    name: Generate Release Flutter Unsigned IPA
+    steps:
+      - run: echo WIP
