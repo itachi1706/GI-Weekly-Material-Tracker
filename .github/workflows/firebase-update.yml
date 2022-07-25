@@ -91,17 +91,6 @@ jobs:
       csd: ${{ steps.csd_out.outputs.any_changed }}
       fsi: ${{ steps.fsi_out.outputs.any_changed }}
       fbsr: ${{ steps.fbsr_out.outputs.any_changed }}
-  test:
-    runs-on: ubuntu-latest
-    needs: changedfiles
-    steps:
-      - name: Test
-        run: |
-          echo RTDB Banner - ${{needs.changedfiles.outputs.rtdbbanner}}
-          echo FSPJ - ${{needs.changedfiles.outputs.fspj}}
-          echo CSD - ${{needs.changedfiles.outputs.csd}}
-          echo FSI - ${{needs.changedfiles.outputs.fsi}}
-          echo FBSR - ${{needs.changedfiles.outputs.fbsr}}
   update-rtdb:
     name: Update Realtime DB Game Banners # From "Update Realtime DB Game Banners" in GitLab CI
     runs-on: ubuntu-latest
