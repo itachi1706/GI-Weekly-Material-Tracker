@@ -106,7 +106,7 @@ jobs:
     name: Update Realtime DB Game Banners # From "Update Realtime DB Game Banners" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changedfiles]
-    if: needs.changedfiles.outputs.rtdbbanner && needs.changedfiles.outputs.rtdbbanner == 'true'
+    if: needs.changedfiles.outputs.rtdbbanner
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16
@@ -132,7 +132,7 @@ jobs:
     name: Update Firestore Public Data # From "Update Firestore Public Data" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changedfiles]
-    if: needs.changedfiles.outputs.fspj && needs.changedfiles.outputs.fspj == 'true'
+    if: needs.changedfiles.outputs.fspj
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16
@@ -161,7 +161,7 @@ jobs:
     name: Update Google Cloud Storage Data # From "Update Google Cloud Storage Data" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changedfiles]
-    if: needs.changedfiles.outputs.csd && needs.changedfiles.outputs.csd == 'true'
+    if: needs.changedfiles.outputs.csd
     steps:
       - uses: actions/checkout@v3
       - name: Extract GCP Service Account
@@ -188,7 +188,7 @@ jobs:
     name: Deploy Firebase Firestore Indexes # From "Deploy Firebase Firestore Indexes" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changedfiles]
-    if: needs.changedfiles.outputs.fsi && needs.changedfiles.outputs.fsi == 'true'
+    if: needs.changedfiles.outputs.fsi
     steps:
       - uses: actions/checkout@v3
       - name: Update Indexes
@@ -202,7 +202,7 @@ jobs:
     name: Deploy Firebase Security Rules # From "Deploy Firebase Security Rules" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changedfiles]
-    if: needs.changedfiles.outputs.fbsr && needs.changedfiles.outputs.fbsr == 'true'
+    if: needs.changedfiles.outputs.fbsr
     steps:
       - uses: actions/checkout@v3
       - name: Update Storage Security Rules
