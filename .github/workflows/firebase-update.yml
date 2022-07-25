@@ -153,11 +153,6 @@ jobs:
     if: needs.changedfiles.outputs.csd
     steps:
       - uses: actions/checkout@v3
-      # - name: Extract GCP Service Account
-      #   env:
-      #     GCP_SVC_USER: ${{ secrets.GCP_SVC_USER }}
-      #   run: |
-      #     echo $GCP_SVC_USER | base64 -d > gcloud-key.json
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
