@@ -54,7 +54,6 @@ jobs:
         run: flutter build web
       - name: Package Artifact
         run: |
-          apk add --no-cache zip
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
@@ -68,7 +67,6 @@ jobs:
     name: Generate Flutter App (Android) # From "Generate Flutter App" in GitLab CI
     runs-on: ubuntu-latest
     env:
-      ANDROID_HOME: "/usr/local/android-sdk"
       APP_BUILD_VER: dogfood
       APP_TYPE: Android
     steps:
@@ -79,6 +77,13 @@ jobs:
         uses: subosito/flutter-action@v2.4.0
         with:
           channel: 'stable'
+      - name: Install JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
