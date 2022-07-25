@@ -5,10 +5,10 @@ on:
     branches:
       - "master"
       - "379-duplicate-gitlab-ci-to-github-actions"
-    paths:
-      - "firebase/**/*"
-      - "util/**/*"
-      - "public/data/**/*"
+    # paths:
+    #   - "firebase/**/*"
+    #   - "util/**/*"
+    #   - "public/data/**/*"
   workflow_dispatch:
 
 jobs:
