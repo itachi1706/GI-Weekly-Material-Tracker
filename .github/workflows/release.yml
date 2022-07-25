@@ -1,0 +1,13 @@
+name: Deploy and Release Flutter Application
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  wip:
+    runs-on: ubuntu-latest
+    name: WIP
+    steps:
+      - run: echo WIP. Run all Upload Artifact, generate release notes, generate release apks, and deploy to gplay, firebase and github releases
