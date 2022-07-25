@@ -5,10 +5,10 @@ on:
     branches:
       - "master"
       - "379-duplicate-gitlab-ci-to-github-actions"
-    # paths:
-    #   - "firebase/**/*"
-    #   - "util/**/*"
-    #   - "public/data/**/*"
+    paths:
+      - "firebase/**/*"
+      - "util/**/*"
+      - "public/data/**/*"
   workflow_dispatch:
 
 jobs:
@@ -182,12 +182,11 @@ jobs:
     name: Deploy Firebase Firestore Indexes # From "Deploy Firebase Firestore Indexes" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changed-files]
-    # if: needs.changed-files.outputs.fsi && needs.changed-files.outputs.fsi == true
+    if: needs.changed-files.outputs.fsi && needs.changed-files.outputs.fsi == 'true'
     steps:
       - uses: actions/checkout@v3
       - name: Update Indexes
         uses: w9jds/firebase-action@v2.2.2
-        # working-directory: firebase
         with:
           args: deploy --only firestore:indexes --force
         env:
@@ -197,12 +196,11 @@ jobs:
     name: Deploy Firebase Security Rules # From "Deploy Firebase Security Rules" in GitLab CI
     runs-on: ubuntu-latest
     needs: [build-utility, changed-files]
-    # if: needs.changed-files.outputs.fbsr && needs.changed-files.outputs.fbsr == 'true'
+    if: needs.changed-files.outputs.fbsr && needs.changed-files.outputs.fbsr == 'true'
     steps:
       - uses: actions/checkout@v3
       - name: Update Storage Security Rules
         uses: w9jds/firebase-action@v2.2.2
-        # working-directory: firebase
         with:
           args: deploy --only storage
         env:
@@ -210,7 +208,6 @@ jobs:
           PROJECT_PATH: firebase
       - name: Update Firestore Security Rules
         uses: w9jds/firebase-action@v2.2.2
-        # working-directory: firebase
         with:
           args: deploy --only firestore:rules
         env:
@@ -218,7 +215,6 @@ jobs:
           PROJECT_PATH: firebase
       - name: Update Realtime DB Security Rules
         uses: w9jds/firebase-action@v2.2.2
-        # working-directory: firebase
         with:
           args: deploy --only database
         env:
