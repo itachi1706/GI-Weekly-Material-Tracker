@@ -1,6 +1,10 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    match /test {
+      allow read: if false;
+      allow write: if false;
+    }
     match /{allPaths=**} {
       allow read: if true; // All can read
       allow write: if false; // Nobody can write

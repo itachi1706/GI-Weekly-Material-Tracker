@@ -341,6 +341,20 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "weapons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "secondary_stat_type",
+          "order": "DESCENDING"
+        }
+      ]
     }
   ],
   "fieldOverrides": []
