@@ -8,7 +8,7 @@ on:
     paths:
       - "firebase/**/*"
       - "util/**/*"
-      - "public/data/**/*"
+      - "public/**/*"
   workflow_dispatch:
 
 jobs:
