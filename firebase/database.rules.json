@@ -8,10 +8,6 @@
     "codes": {
       ".read": "auth.uid != null",
       ".indexOn": "date"
-    },
-    "test": {
-      ".read": false,
-      ".write": false
     }
   }
 }

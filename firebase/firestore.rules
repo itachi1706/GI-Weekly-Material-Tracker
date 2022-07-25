@@ -34,9 +34,5 @@ service cloud.firestore {
             allow read, write: if request.auth != null && request.auth.uid == userId; // Only user can update
             allow create: if request.auth != null; // All users can create their own collection data
         }
-
-        match /test {
-            allow read, write: if false;
-        }
     }
 }
