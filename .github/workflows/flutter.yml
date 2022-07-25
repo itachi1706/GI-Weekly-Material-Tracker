@@ -178,6 +178,12 @@ jobs:
       - name: Build iOS Package
         run: flutter build ios --no-codesign
         # run: flutter build ios --release --no-codesign
+      - name: Debug 1
+        run: |
+          echo iPhone OS
+          ls -lh ./build/ios/iphoneos
+          echo Runner App
+          ls -lh ./build/ios/iphoneos/Runner.app
       - name: Move Package to Release folder
         run: mv ./build/ios/iphoneos/Runner.app ./release
       - name: Generate IPA File
@@ -186,6 +192,14 @@ jobs:
           mkdir Payload
           cp -r ./Runner.app Payload
           zip -r app.ipa Payload
+          cd ..
+      - name: Debug 2
+        run: |
+          cd release
+          echo iPhone OS
+          ls -lh .
+          echo Runner App
+          ls -lh ./Runner.app
           cd ..
       - uses: actions/upload-artifact@v3
         with:
