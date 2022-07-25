@@ -175,6 +175,13 @@ jobs:
           ./ciscripts/get_version.sh
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+      - name: Install Flutter dependencies
+        run: flutter pub get
+      - name: Install CocoaPods Dependencies
+        working-directory: ios
+        run: |
+          pod repo update
+          pod install
       - name: Build iOS Package
         run: flutter build ios --no-codesign
         # run: flutter build ios --release --no-codesign
