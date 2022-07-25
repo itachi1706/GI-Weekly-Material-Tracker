@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - "master"
-      - "379-duplicate-gitlab-ci-to-github-actions"
     paths:
       - "firebase/**/*"
       - "util/**/*"
