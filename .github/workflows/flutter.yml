@@ -135,6 +135,7 @@ jobs:
           path: |
             release/
             app-fatapk.apk
+            LATEST
   # TODO: Revisit in the future
   # ios:
   #   name: iOS Unsigned IPA
@@ -224,12 +225,70 @@ jobs:
   #         name: flutter-unsigned-ipa-artifact
   #         path: |
   #           release/app.ipa
+  changedfiles:
+    name: Check which files are changed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Check if files changed for Dogfood release
+        id: dfoodapk
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            android/**/*
+            assets/**/*
+            VERSION
+            fonts/**/*
+            integration_test/**/*
+            ios/**/*
+            lib/**/*
+            data/**/*
+            web/**/*
+            pubspec.*
+      - name: Set output for Dogfood release
+        id: dfoodapk_out
+        if: steps.dfoodapk.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+    outputs:
+      dfoodapk: ${{ steps.dfoodapk_out.outputs.any_changed }}
   dogfood:
     runs-on: ubuntu-latest
-    name: Deploy Dogfood to Firebase
-    needs: android
+    name: Deploy Dogfood to Firebase # From "Deploy Dogfood to Firebase" in GitLab CI
+    needs: [android, changedfiles]
+    if: needs.changedfiles.outputs.rtdbbanner && github.ref == 'refs/heads/master' && github.event_name == 'push'
+    env:
+      APP_TYPE: Android
     steps:
-      - run: echo WIP
-      # - uses: actions/download-artifact@v3
-      #   with:
-      #     name: flutter-android-artifact
+      - uses: actions/download-artifact@v3
+        with:
+          name: flutter-android-artifact
+      - name: Git Commit Data
+        uses: rlespinasse/git-commit-data-action@1.3.0
+      - uses: benjlevesque/short-sha@v1.2
+        id: short-sha
+        with:
+          length: 8
+      - name: Prep Release Notes
+        env:
+          CI_COMMIT_MESSAGE: ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+        run: |
+          echo $CI_COMMIT_MESSAGE > release-dogfood.txt
+          builddate="$(date +"%A, %d %B %Y %T %Z")"
+          printf "\nRelease Notes\n" >> release-dogfood.txt
+          cat LATEST >> release-dogfood.txt
+          printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-dogfood.txt
+      - name: Verify Release Notes
+        run: cat release-dogfood.txt
+      - name: Prep APK
+        run: cp ./release/app-arm64-v8a-release.apk app.apk
+      - name: Deploy APK to Firebase App Distribution
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
+          FIREBASE_APPID: ${{ secrets.FIREBASE_APPID }}
