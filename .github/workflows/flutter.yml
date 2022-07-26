@@ -159,6 +159,12 @@ jobs:
             release/
             app-fatapk.apk
             LATEST
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-firebase-release-artifact
+          path: |
+            LATEST
+            firebase/
   # TODO: Revisit in the future
   # ios:
   #   name: iOS Unsigned IPA
@@ -288,6 +294,9 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: flutter-android-artifact
+      - uses: action/download-artifact@v3
+        with:
+          name: flutter-firebase-release-artifact
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@1.3.0
       - uses: benjlevesque/short-sha@v1.2
