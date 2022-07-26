@@ -42,9 +42,9 @@ jobs:
     steps:
       - run: echo WIP
 
-
-  releaseipa:
-    runs-on: macos-latest
-    name: Generate Release Flutter Unsigned IPA
-    steps:
-      - run: echo WIP
+  # TODO: Revisit in the future
+  # releaseipa:
+  #   runs-on: macos-latest
+  #   name: Generate Release Flutter Unsigned IPA
+  #   steps:
+  #     - run: echo WIP
