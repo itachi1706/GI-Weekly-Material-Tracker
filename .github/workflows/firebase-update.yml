@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
+          cache-dependency-path: util/package-lock.json
       - run: npm ci
         working-directory: util
       - run: npm run build --if-present
@@ -103,6 +104,7 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
+          cache-dependency-path: util/package-lock.json
       - name: Extract Service Account Key
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
@@ -130,6 +132,7 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
+          cache-dependency-path: util/package-lock.json
       - name: Extract Service Account Key
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}

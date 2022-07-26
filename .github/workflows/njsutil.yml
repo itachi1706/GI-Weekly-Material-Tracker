@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
+          cache-dependency-path: util/package-lock.json
       - run: npm ci
         working-directory: util
       - run: npm run build --if-present
