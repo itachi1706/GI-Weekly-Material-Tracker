@@ -261,7 +261,8 @@ jobs:
     name: Deploy to Firebase Hosting Prod # From "Deploy to Firebase Hosting Prod" in GitLab CI
     environment:
       name: Production-Web
-      url: ${{ steps.prod-deploy.outputs.details_url }}
+      # url: ${{ steps.prod-deploy.outputs.details_url }}
+      url: https://gi-weekly-material-tracker.web.app/
     steps:
       - uses: actions/download-artifact@v3
         with:
