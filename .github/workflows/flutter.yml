@@ -294,7 +294,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: flutter-android-artifact
-      - uses: action/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: flutter-firebase-release-artifact
       - name: Git Commit Data
