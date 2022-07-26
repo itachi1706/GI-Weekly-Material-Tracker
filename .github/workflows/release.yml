@@ -286,7 +286,7 @@ jobs:
     environment: GPlay-Alpha-Android
     name: Deploy to Google Play Alpha # From "Deploy to Google Play Alpha" in GitLab CI
     env:
-      CI_PIPELINE_IID: needs.releaseaab.outputs.relid
+      CI_PIPELINE_IID: ${{ needs.releaseaab.outputs.relid }}
     steps:
       - uses: actions/download-artifact@v3
         with:
@@ -294,7 +294,7 @@ jobs:
       - name: Get Google Play Service Account Data
         env:
           GPLAY_SVC_ACCT: ${{ secrets.GPLAY_SVC_ACCT }}
-        run: echo $GPLAY_SVC_ACCT | android/gplayserviceaccount.json
+        run: echo $GPLAY_SVC_ACCT | base64 -d > android/gplayserviceaccount.json
       - name: Download existing data from Play Store
         working-directory: android
         run: |
