@@ -35,6 +35,7 @@ jobs:
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
+            ${{ env.PUB_CACHE }}
             **/.packages
             **/.flutter-plugins
             **/.flutter-plugin-dependencies
@@ -95,6 +96,7 @@ jobs:
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
+            ${{ env.PUB_CACHE }}
             **/.packages
             **/.flutter-plugins
             **/.flutter-plugin-dependencies
@@ -102,7 +104,7 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Install JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '11'
@@ -316,7 +318,9 @@ jobs:
       - name: Verify Release Notes
         run: cat release-dogfood.txt
       - name: Prep APK
-        run: cp ./release/app-arm64-v8a-release.apk ./firebase/app.apk
+        run: |
+          cp ./release/app-arm64-v8a-release.apk ./firebase/app.apk
+          cp release-dogfood.txt ./firebase
       - name: Deploy APK to Firebase App Distribution
         uses: w9jds/firebase-action@v2.2.2
         with:
