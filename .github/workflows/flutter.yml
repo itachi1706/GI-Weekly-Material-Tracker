@@ -278,7 +278,6 @@ jobs:
             data/**/*
             web/**/*
             pubspec.*
-            .github/workflows/**/*
       - name: Set output for Dogfood release
         id: dfoodapk_out
         if: steps.dfoodapk.outputs.any_changed == 'true'
@@ -289,7 +288,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Dogfood to Firebase # From "Deploy Dogfood to Firebase" in GitLab CI
     needs: [android, changedfiles]
-    if: needs.changedfiles.outputs.dfoodapk && github.event_name == 'push' #&& github.ref == 'refs/heads/master' 
+    if: needs.changedfiles.outputs.dfoodapk && github.event_name == 'push' && github.ref == 'refs/heads/master' 
     env:
       APP_TYPE: Android
     steps:
