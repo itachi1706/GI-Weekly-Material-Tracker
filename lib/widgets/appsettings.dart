@@ -384,7 +384,7 @@ class _SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           title: const Text('View Source Code'),
           onTap: () => Util.launchWebPage(
-            'https://gitlab.com/itachi1706/gi-weekly-material-tracker',
+            'https://github.com/itachi1706/GI-Weekly-Material-Tracker',
           ),
         ),
         ListTile(
@@ -392,7 +392,7 @@ class _SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           title: const Text('Report a Bug'),
           onTap: () => Util.launchWebPage(
-            'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Bug%20Report',
+            'https://github.com/itachi1706/GI-Weekly-Material-Tracker/issues/new?assignees=&labels=bug%2C+status%3A%3Ato+triage&template=bug-report.md&title=',
           ),
         ),
         ListTile(
@@ -400,7 +400,7 @@ class _SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           title: const Text('Suggest a new Feature'),
           onTap: () => Util.launchWebPage(
-            'https://gitlab.com/itachi1706/gi-weekly-material-tracker/-/issues/new?issuable_template=Feature%20Request',
+            'https://github.com/itachi1706/GI-Weekly-Material-Tracker/issues/new?assignees=&labels=status%3A%3Ato+triage%2C+suggestion&template=feature-request.md&title=',
           ),
         ),
         const MarkdownPageListTile(
