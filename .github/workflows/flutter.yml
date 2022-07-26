@@ -316,7 +316,7 @@ jobs:
       - name: Verify Release Notes
         run: cat release-dogfood.txt
       - name: Prep APK
-        run: cp ./release/app-arm64-v8a-release.apk app.apk
+        run: cp ./release/app-arm64-v8a-release.apk ./firebase/app.apk
       - name: Deploy APK to Firebase App Distribution
         uses: w9jds/firebase-action@v2.2.2
         with:
