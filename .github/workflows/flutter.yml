@@ -160,7 +160,6 @@ jobs:
           path: |
             release/
             app-fatapk.apk
-            LATEST
       - uses: actions/upload-artifact@v3
         with:
           name: flutter-firebase-release-artifact
