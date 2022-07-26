@@ -183,6 +183,8 @@ jobs:
             release/
             android/
             appbundle-signed.aab
+            LATEST
+            VERSION
     outputs:
       relid: ${{ steps.versioninfo.outputs.pipeline_id }}
   releaseweb:
