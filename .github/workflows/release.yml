@@ -343,7 +343,7 @@ jobs:
           mv ./release/app-arm64-v8a-release.apk apks/gi-material-tracker-arm64-$APP_VERSION.apk
           mv ./release/app-x86_64-release.apk apks/gi-material-tracker-x64-$APP_VERSION.apk
           mv ./release/app-armeabi-v7a-release.apk apks/gi-material-tracker-arm-$APP_VERSION.apk
-          mv ./release/app-fatapk.apk apks/gi-material-tracker-multiarch-$APP_VERSION.apk
+          mv ./app-fatapk.apk apks/gi-material-tracker-multiarch-$APP_VERSION.apk
       - uses: olegtarasov/get-tag@v2.1
         id: tagName
       - name: Generating Releases to deploy tagged version of app
