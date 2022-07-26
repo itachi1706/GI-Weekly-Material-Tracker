@@ -250,7 +250,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check Google Play Release Notes # From "Check Google Play Release Notes" in GitLab CI
     steps:
-      - run: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Set Script Executable
         run: chmod +x ./ciscripts/check_length.sh
       - name: Run Script
