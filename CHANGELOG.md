@@ -1,3 +1,7 @@
+# 2.2.1
+- Dependencies update
+- Updated all app references from GitLab to GitHub
+
 # 2.2.0
 - Fixed accent color being wrong
 - Temporarily disabled ability to tell if promo code has expired due to update in data source
