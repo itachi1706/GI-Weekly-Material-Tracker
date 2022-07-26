@@ -96,14 +96,6 @@ jobs:
             **/.dart_tool/package_config.json
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
-      - uses: actions/cache@v3
-        name: Cache gradle dependencies
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: ${{ runner.os }}-gradle-
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.4.0
         with:
@@ -114,6 +106,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+          cache: 'gradle'
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
       - name: Trust GitHub Workspace
