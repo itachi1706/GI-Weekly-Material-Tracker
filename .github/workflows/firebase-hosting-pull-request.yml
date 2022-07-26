@@ -10,6 +10,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Install Flutter Stable
+        uses: subosito/flutter-action@v2.4.0
+        with:
+          channel: 'stable'
+          cache: true
       - name: Cache pubspec dependencies
         uses: actions/cache@v2
         with:
@@ -21,11 +26,6 @@ jobs:
             **/.dart_tool/package_config.json
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
-      - name: Install Flutter Stable
-        uses: subosito/flutter-action@v2.4.0
-        with:
-          channel: 'stable'
-          cache: true
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - uses: benjlevesque/short-sha@v1.2
