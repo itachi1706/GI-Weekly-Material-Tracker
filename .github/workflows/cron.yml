@@ -1,0 +1,52 @@
+name: Scheduled Tasks
+
+on:
+  push:
+    branches:
+      - "master"
+  schedule:
+    - cron: "0 */6 * * *" 
+
+jobs:
+  build-utility:
+    name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - run: npm ci
+        working-directory: util
+      - run: npm run build --if-present
+        working-directory: util
+      - run: npm run test --if-present
+        working-directory: util
+        env:
+          CI: true
+  crawlpromocode:
+    runs-on: ubuntu-latest
+    name: Crawl for Promo Codes Cron
+    needs: build-utility
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - name: Extract Service Account Key
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json
+      - run: npm i
+        working-directory: util
+      - name: Crawl Promo Codes
+        run: npm run updatePromoCode --if-present
+        working-directory: util
+  

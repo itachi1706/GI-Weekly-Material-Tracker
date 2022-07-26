@@ -1,0 +1,219 @@
+name: Update Firebase Data
+
+on: 
+  push:
+    branches:
+      - "master"
+    paths:
+      - "firebase/**/*"
+      - "util/**/*"
+      - "public/**/*"
+  workflow_dispatch:
+
+jobs:
+  build-utility:
+    name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - run: npm ci
+        working-directory: util
+      - run: npm run build --if-present
+        working-directory: util
+      - run: npm run test --if-present
+        working-directory: util
+        env:
+          CI: true
+  changedfiles:
+    name: Check which files are changed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Check if files changed for Realtime DB Banner
+        id: rtdb-banner
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            public/data/EventBanners.json
+            util/**/*
+      - name: Check if files changed for Firestore Public JSONs
+        id: fspj
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            public/data/**/*
+            util/**/*
+      - name: Check if files changed for Cloud Storage Data
+        id: csd
+        uses: tj-actions/changed-files@v24
+        with:
+          files: public/images/**/*
+      - name: Check if files changed for Firestore Indexes
+        id: fsi
+        uses: tj-actions/changed-files@v24
+        with:
+          files: firebase/firestore.indexes.json
+      - name: Check if files changed for Firebase Security Rules
+        id: fbsr
+        uses: tj-actions/changed-files@v24
+        with:
+          files: firebase/**/*
+      - name: Set output for Realtime DB Banner
+        id: rtdb-banner_out
+        if: steps.rtdb-banner.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+      - name: Set output for Firestore Public JSONs
+        id: fspj_out
+        if: steps.fspj.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+      - name: Set output for Cloud Storage Data
+        id: csd_out
+        if: steps.csd.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+      - name: Set output for Firestore Indexes
+        id: fsi_out
+        if: steps.fsi.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+      - name: Set output for Firebase Security Rules
+        id: fbsr_out
+        if: steps.fbsr.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
+    outputs:
+      rtdbbanner: ${{ steps.rtdb-banner_out.outputs.any_changed }}
+      fspj: ${{ steps.fspj_out.outputs.any_changed }}
+      csd: ${{ steps.csd_out.outputs.any_changed }}
+      fsi: ${{ steps.fsi_out.outputs.any_changed }}
+      fbsr: ${{ steps.fbsr_out.outputs.any_changed }}
+  update-rtdb:
+    name: Update Realtime DB Game Banners # From "Update Realtime DB Game Banners" in GitLab CI
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.rtdbbanner
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - name: Extract Service Account Key
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > /tmp/sak.json
+      - name: Copy Event Banner JSON to Folder
+        run: cp public/data/EventBanners.json util
+      - run: npm i
+        working-directory: util
+      - name: Update Firebase Realtime DB Banner Data
+        run: npm run updateBanners
+        working-directory: util
+      - name: Delete SAK
+        run: rm /tmp/sak.json
+  update-fsd:
+    name: Update Firestore Public Data # From "Update Firestore Public Data" in GitLab CI
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.fspj
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - name: Extract Service Account Key
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > /tmp/sak.json
+      - name: Copy JSONs to Import Folder
+        run: |
+          mkdir util/import
+          cp public/data/*.json util/import
+          rm util/import/EventBanners.json
+      - run: npm i
+        working-directory: util
+      - name: Update Firestore Public Data
+        run: npm run updateFirestoreData
+        working-directory: util
+      - name: Delete SAK
+        run: rm /tmp/sak.json
+  update-csd:
+    name: Update Google Cloud Storage Data # From "Update Google Cloud Storage Data" in GitLab CI
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.csd
+    steps:
+      - uses: actions/checkout@v3
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: ${{ secrets.GCP_SVC_USER_JSON }}
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      - name: 'Ensure GCloud Working'
+        run: gcloud info
+      - name: 'Update Cloud Storage Data'
+        run: gsutil -m rsync -d -r . gs://$GCS_BUCKET/
+        env:
+          GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+        working-directory: public/images
+  deploy-fsi:
+    name: Deploy Firebase Firestore Indexes # From "Deploy Firebase Firestore Indexes" in GitLab CI
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.fsi
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update Indexes
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --only firestore:indexes --force
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
+  deploy-fbsr:
+    name: Deploy Firebase Security Rules # From "Deploy Firebase Security Rules" in GitLab CI
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.fbsr
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update Storage Security Rules
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --only storage
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
+      - name: Update Firestore Security Rules
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --only firestore:rules
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
+      - name: Update Realtime DB Security Rules
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --only database
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
+        
+    

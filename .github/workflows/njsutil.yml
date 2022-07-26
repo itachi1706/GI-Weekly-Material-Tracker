@@ -22,10 +22,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: Use Node.js 12
+      - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
       - run: npm ci
         working-directory: util
       - run: npm run build --if-present
