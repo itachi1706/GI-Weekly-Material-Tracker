@@ -263,7 +263,7 @@ jobs:
       name: Production-Web
       url: ${{ steps.prod-deploy.outputs.details_url }}
     steps:
-      - run: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: flutter-web-artifact-rel
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -287,7 +287,7 @@ jobs:
     env:
       CI_PIPELINE_IID: needs.releaseaab.outputs.relid
     steps:
-      - run: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: flutter-android-aab-artifact-rel
       - name: Get Google Play Service Account Data
@@ -314,7 +314,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - run: actions/download-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: flutter-android-artifact-rel
       - name: Git Commit Data
