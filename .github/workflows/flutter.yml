@@ -159,13 +159,6 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
         run: flutter doctor -v  
-      - name: Retrieve Firebase Options Dart files and decode to file
-        env:
-          GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
-          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        run: |
-          echo $GOOGLE_SVC_IOS | base64 -d > ios/Runner/GoogleService-Info.plist
-          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - uses: benjlevesque/short-sha@v1.2
         id: short-sha
         with:
@@ -187,8 +180,15 @@ jobs:
         run: |
           pod repo update
           pod install
+      - name: Retrieve Firebase Options Dart files and decode to file
+        env:
+          GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+        run: |
+          echo $GOOGLE_SVC_IOS | base64 -d > ios/Runner/GoogleService-Info.plist
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
       - name: Build iOS Package
-        run: flutter build ios --verbose --no-codesign
+        run: flutter build ios --no-codesign
         # run: flutter build ios --release --no-codesign
       - name: Debug 1
         run: |
