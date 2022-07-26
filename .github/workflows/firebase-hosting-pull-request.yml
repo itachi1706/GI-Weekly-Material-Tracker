@@ -2,10 +2,13 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on PR
-'on': pull_request
+on: pull_request
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
+    env:
+      CI_PIPELINE_IID: ${{ github.run_number }}
+      CI_COMMIT_REF_NAME: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v3
         with:
