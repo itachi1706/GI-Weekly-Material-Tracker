@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
@@ -13,6 +12,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -48,7 +48,7 @@ class _SettingsPageState extends State<SettingsPage> {
           _userDataSettings(),
           _appDataSettings(),
           SettingsSection(
-            title: 'Notifications',
+            title: const Text('Notifications'),
             tiles: _showNotificationTestMenu(),
           ),
           _infoSettings(),
@@ -95,17 +95,17 @@ class _SettingsPageState extends State<SettingsPage> {
 
   SettingsSection _userDataSettings() {
     return SettingsSection(
-      title: 'User Data',
-      titlePadding: const EdgeInsets.all(16),
+      title: const Text('User Data'),
+      margin: const EdgeInsetsDirectional.all(16),
       tiles: [
         SettingsTile(
-          title: 'Currently Logged in as',
+          title: const Text('Currently Logged in as'),
           trailing: const SizedBox.shrink(),
-          subtitle: Util.getUserEmail(),
+          description: Text(Util.getUserEmail() ?? 'Not logged in'),
           leading: const Icon(Icons.face),
         ),
         SettingsTile(
-          title: 'Clear tracking data',
+          title: const Text('Clear tracking data'),
           trailing: const SizedBox.shrink(),
           leading: const Icon(Icons.delete_forever),
           onPressed: _clearTrackingDataPrompt,
@@ -117,7 +117,7 @@ class _SettingsPageState extends State<SettingsPage> {
   List<SettingsTile> _getNotificationTiles() {
     return [
       SettingsTile.switchTile(
-        title: 'Daily Forum Reminders',
+        title: const Text('Daily Forum Reminders'),
         leading: const Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('daily_login', value).then((s) async {
@@ -135,13 +135,14 @@ class _SettingsPageState extends State<SettingsPage> {
             _dailylogin = value;
           });
         },
-        switchValue: _dailylogin,
+        initialValue: _dailylogin,
       ),
       SettingsTile.switchTile(
-        title: 'Parametric Transformer',
-        subtitle:
-            'Make sure to set the time on the Parametric Transformer page',
-        subtitleMaxLines: 2,
+        title: const Text('Parametric Transformer'),
+        description: const Text(
+          'Make sure to set the time on the Parametric Transformer page',
+          maxLines: 2,
+        ),
         leading: const Icon(Icons.alarm),
         onToggle: (bool value) {
           _prefs.setBool('parametric_notification', value).then((s) async {
@@ -159,7 +160,7 @@ class _SettingsPageState extends State<SettingsPage> {
             _weeklyParametric = value;
           });
         },
-        switchValue: _weeklyParametric,
+        initialValue: _weeklyParametric,
       ),
     ];
   }
@@ -170,7 +171,7 @@ class _SettingsPageState extends State<SettingsPage> {
       return [
         SettingsTile(
           trailing: const SizedBox.shrink(),
-          title: 'Notifications not supported on web',
+          title: const Text('Notifications not supported on web'),
           enabled: false,
         ),
       ];
@@ -180,7 +181,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
     if (kDebugMode) {
       tiles.add(SettingsTile(
-        title: 'Notification Test Menu',
+        title: const Text('Notification Test Menu'),
         leading: const Icon(Icons.bug_report),
         trailing: const SizedBox.shrink(),
         onPressed: (context) {
@@ -213,47 +214,49 @@ class _SettingsPageState extends State<SettingsPage> {
 
   SettingsSection _appDataSettings() {
     return SettingsSection(
-      title: 'Settings',
+      title: const Text('Settings'),
       tiles: [
         SettingsTile.switchTile(
-          title: 'Dark Mode',
+          title: const Text('Dark Mode'),
           leading: const Icon(Icons.wb_sunny_outlined),
           onToggle: _toggleDarkMode,
-          switchValue: _darkMode,
+          initialValue: _darkMode,
         ),
         SettingsTile.switchTile(
-          title: 'Move completed to bottom',
-          subtitle: 'Only for the tracking page',
+          title: const Text('Move completed to bottom'),
+          description: const Text('Only for the tracking page'),
           leading: const Icon(Icons.checklist),
           onToggle: _toggleMoveCompletedToBottom,
-          switchValue: _moveBot,
+          initialValue: _moveBot,
         ),
         SettingsTile(
-          title: 'Build Guide Source',
-          subtitle: _buildSource,
+          title: const Text('Build Guide Source'),
+          description: Text(_buildSource),
           leading: const Icon(MdiIcons.swordCross),
           onPressed: (context) {
-            Get.to(() => const BuildGuideSelectorPage())!.then((value) => _refresh());
+            Get.to(() => const BuildGuideSelectorPage())!
+                .then((value) => _refresh());
           },
         ),
         SettingsTile(
-          title: 'Game Server Location',
-          subtitle: _location,
+          title: const Text('Game Server Location'),
+          description: Text(_location),
           leading: const Icon(MdiIcons.server),
           trailing: const SizedBox.shrink(),
           onPressed: (context) {
-            Get.to(() => const RegionSettingsPage())!.then((value) => _refresh());
+            Get.to(() => const RegionSettingsPage())!
+                .then((value) => _refresh());
           },
         ),
         SettingsTile(
-          title: 'Cache',
-          subtitle: 'Currently using $_cacheSize ($_cacheFiles files)',
+          title: const Text('Cache'),
+          description: Text('Currently using $_cacheSize ($_cacheFiles files)'),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           leading: const Icon(Icons.cached_rounded),
         ),
         SettingsTile(
-          title: 'Clear Cache',
+          title: const Text('Clear Cache'),
           leading: const Icon(MdiIcons.trashCanOutline),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
@@ -267,10 +270,10 @@ class _SettingsPageState extends State<SettingsPage> {
 
   SettingsSection _infoSettings() {
     return SettingsSection(
-      title: 'More Info',
+      title: const Text('More Info'),
       tiles: [
         SettingsTile(
-          title: 'About This App',
+          title: const Text('About This App'),
           leading: const Icon(Icons.info_outline),
           trailing: const SizedBox.shrink(),
           onPressed: _showAboutPage,
@@ -279,8 +282,8 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  CustomSection _endSettings() {
-    return CustomSection(
+  CustomSettingsSection _endSettings() {
+    return CustomSettingsSection(
       child: Column(
         children: [
           Padding(
@@ -301,8 +304,8 @@ class _SettingsPageState extends State<SettingsPage> {
       builder: (context) {
         return AlertDialog(
           title: const Text('Clear Tracking Data'),
-          content:
-              const Text('Claer all materials currently being tracked from the app?'),
+          content: const Text(
+              'Claer all materials currently being tracked from the app?'),
           actions: [
             TextButton(
               onPressed: () => Get.back(),
@@ -462,24 +465,24 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
         SettingsSection(
           tiles: [
             SettingsTile(
-              title: 'Asia',
-              subtitle: 'GMT+8',
+              title: const Text('Asia'),
+              description: const Text('GMT+8'),
               trailing: _trailingWidget('Asia'),
               onPressed: (context) {
                 _changeRegion('Asia');
               },
             ),
             SettingsTile(
-              title: 'America',
-              subtitle: 'GMT-5',
+              title: const Text('America'),
+              description: const Text('GMT-5'),
               trailing: _trailingWidget('NA'),
               onPressed: (context) {
                 _changeRegion('NA');
               },
             ),
             SettingsTile(
-              title: 'Europe',
-              subtitle: 'GMT+1',
+              title: const Text('Europe'),
+              description: const Text('GMT+1'),
               trailing: _trailingWidget('EU'),
               onPressed: (context) {
                 _changeRegion('EU');
@@ -551,16 +554,16 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
         SettingsSection(
           tiles: [
             SettingsTile(
-              title: 'Genshin.GG Wiki Database',
-              subtitle: 'genshin.gg',
+              title: const Text('Genshin.GG Wiki Database'),
+              description: const Text('genshin.gg'),
               trailing: _trailingWidget('genshin.gg'),
               onPressed: (context) {
                 _changeBuildGuide('genshin.gg');
               },
             ),
             SettingsTile(
-              title: 'Paimon.moe',
-              subtitle: 'paimon.moe',
+              title: const Text('Paimon.moe'),
+              description: const Text('paimon.moe'),
               trailing: _trailingWidget('paimon.moe'),
               onPressed: (context) {
                 _changeBuildGuide('paimon.moe');
@@ -606,7 +609,7 @@ class NotificationDebugPage extends StatelessWidget {
           SettingsSection(
             tiles: [
               SettingsTile(
-                title: 'Daily Forum Reminder',
+                title: const Text('Daily Forum Reminder'),
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.showNotification(
@@ -617,7 +620,7 @@ class NotificationDebugPage extends StatelessWidget {
                 },
               ),
               SettingsTile(
-                title: 'Parametric Transformer Reminder',
+                title: const Text('Parametric Transformer Reminder'),
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.showNotification(
@@ -628,7 +631,7 @@ class NotificationDebugPage extends StatelessWidget {
                 },
               ),
               SettingsTile(
-                title: 'Scheduled Reminders List',
+                title: const Text('Scheduled Reminders List'),
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager!.getScheduledReminders();
@@ -636,7 +639,7 @@ class NotificationDebugPage extends StatelessWidget {
                 },
               ),
               SettingsTile(
-                title: 'Delete Scheduled Notification Channel',
+                title: const Text('Delete Scheduled Notification Channel'),
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.removeNotificationChannel('scheduled_notify');
