@@ -234,7 +234,16 @@ jobs:
     if: needs.changedfiles.outputs.fbcf
     steps:
       - uses: actions/checkout@v3
-      - name: Update Storage Security Rules
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: firebase/functions/package-lock.json
+      - name: Install Dependencies
+        run: npm i
+        working-directory: firebase/functions
+      - name: Update Firebase Cloud Function
         uses: w9jds/firebase-action@v2.2.2
         with:
           args: deploy --only functions
