@@ -330,12 +330,13 @@ jobs:
         env:
           CI_COMMIT_MESSAGE: ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+          APP_BUILD_VER: beta
         run: |
           echo $CI_COMMIT_MESSAGE > release-beta.txt
           builddate="$(date +"%A, %d %B %Y %T %Z")"
           printf "\nRelease Notes\n" >> release-beta.txt
           cat LATEST >> release-beta.txt
-          printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_TYPE" >> release-beta.txt
+          printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_BUILD_VER" >> release-beta.txt
       - name: Verify Release Notes
         run: cat release-beta.txt
       - name: Manage APK files
