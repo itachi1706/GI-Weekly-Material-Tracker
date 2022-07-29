@@ -66,6 +66,13 @@ jobs:
         uses: tj-actions/changed-files@v24
         with:
           files: firebase/**/*
+      - name: Check if files changed for Firestore Cloud Function
+        id: fbcf
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            firebase/functions/**/*
+            firebase/firebase.json
       - name: Set output for Realtime DB Banner
         id: rtdb-banner_out
         if: steps.rtdb-banner.outputs.any_changed == 'true'
@@ -86,12 +93,17 @@ jobs:
         id: fbsr_out
         if: steps.fbsr.outputs.any_changed == 'true'
         run: echo "::set-output name=any_changed::true"
+      - name: Set output for Firebase Cloud Function
+        id: fbcf_out
+        if: steps.fbcf.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
     outputs:
       rtdbbanner: ${{ steps.rtdb-banner_out.outputs.any_changed }}
       fspj: ${{ steps.fspj_out.outputs.any_changed }}
       csd: ${{ steps.csd_out.outputs.any_changed }}
       fsi: ${{ steps.fsi_out.outputs.any_changed }}
       fbsr: ${{ steps.fbsr_out.outputs.any_changed }}
+      fbcf: ${{ steps.fbcf_out.outputs.any_changed }}
   update-rtdb:
     name: Update Realtime DB Game Banners # From "Update Realtime DB Game Banners" in GitLab CI
     runs-on: ubuntu-latest
@@ -215,5 +227,17 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_PATH: firebase
-        
-    
+  deploy-fbcf:
+    name: Deploy Firebase Cloud Function
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.fbcf
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update Storage Security Rules
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --only functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: firebase
