@@ -1,3 +1,8 @@
+# 2.2.2
+- (HOTFIX) Updated Firebase dependencies to fix crash on app exit
+- Updated Settings UI Dependency
+- Dependencies update
+
 # 2.2.1
 - Dependencies update
 - Updated all app references from GitLab to GitHub
