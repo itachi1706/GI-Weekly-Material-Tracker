@@ -3,7 +3,7 @@ const firestore = require('@google-cloud/firestore');
 const client = new firestore.v1.FirestoreAdminClient();
 
 // Replace BUCKET_NAME
-const bucket = 'gs://BUCKET_NAME';
+const bucket = 'gs://gi-weekly-material-tracker-firestore-prod-backups';
 
 exports.scheduledFirestoreExport = functions.pubsub
                                             .schedule('every 24 hours')
@@ -24,6 +24,7 @@ exports.scheduledFirestoreExport = functions.pubsub
   .then(responses => {
     const response = responses[0];
     console.log(`Operation Name: ${response['name']}`);
+    return;
   })
   .catch(err => {
     console.error(err);
