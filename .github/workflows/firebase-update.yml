@@ -5,6 +5,7 @@ on:
     branches:
       - "master"
     paths:
+      - ".github/workflows/firebase-update.yml"
       - "firebase/**/*"
       - "util/**/*"
       - "public/**/*"
@@ -73,6 +74,7 @@ jobs:
           files: |
             firebase/functions/**/*
             firebase/firebase.json
+            .github/workflows/firebase-update.yml
       - name: Set output for Realtime DB Banner
         id: rtdb-banner_out
         if: steps.rtdb-banner.outputs.any_changed == 'true'
