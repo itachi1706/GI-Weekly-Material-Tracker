@@ -2,7 +2,7 @@
 name: Version Update Template
 about: Template for new Genshin Version Updates
 title: Version x Update
-labels: platform::firebase, status::to triage, sub platform::firestore
+labels: 'Platform: Firebase, Status: To Triage, Sub Platform: Firestore'
 assignees: ''
 
 ---

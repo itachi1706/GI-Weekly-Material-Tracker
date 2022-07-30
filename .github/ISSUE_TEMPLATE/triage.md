@@ -2,7 +2,7 @@
 name: Triage
 about: Issues for Triaging Purposes
 title: ''
-labels: status::to triage
+labels: 'Status: To Triage'
 assignees: ''
 
 ---
