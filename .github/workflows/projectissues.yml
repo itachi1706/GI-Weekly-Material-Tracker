@@ -1,0 +1,56 @@
+name: Project Issues
+
+on:
+  issues:
+    types: [labeled]
+jobs:
+  triage-issues:
+    runs-on: ubuntu-latest
+    name: Triage Issues
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GH_PAT_TOKEN }}"
+        project-url: "https://github.com/users/itachi1706/projects/1"
+        column-name: "Triage"
+        label-name: "Status: To Triage"
+  todo-issues:
+    runs-on: ubuntu-latest
+    name: To Do Issues
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GH_PAT_TOKEN }}"
+        project-url: "https://github.com/users/itachi1706/projects/1"
+        column-name: "Todo"
+        label-name: "Status: To Do"
+  inprogress-issues:
+    runs-on: ubuntu-latest
+    name: In Progress Issues
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GH_PAT_TOKEN }}"
+        project-url: "https://github.com/users/itachi1706/projects/1"
+        column-name: "In Progress"
+        label-name: "Status: In Progress :warning:"
+  review-issues:
+    runs-on: ubuntu-latest
+    name: Reviewing Issues
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GH_PAT_TOKEN }}"
+        project-url: "https://github.com/users/itachi1706/projects/1"
+        column-name: "Review"
+        label-name: "Status: Reviewing :mag:"
+  done-issues:
+    runs-on: ubuntu-latest
+    name: Done Issues
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GH_PAT_TOKEN }}"
+        project-url: "https://github.com/users/itachi1706/projects/1"
+        column-name: "Done"
+        label-name: "Status: Done :white_check_mark:"
