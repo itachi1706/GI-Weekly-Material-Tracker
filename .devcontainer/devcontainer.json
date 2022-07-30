@@ -24,7 +24,7 @@
 		"echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart"
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": [
+	"postStartCommand": [
 		"source ~/.bashrc",
 		"flutter run -d web-server --no-resident",
 		"flutter doctor -v",
