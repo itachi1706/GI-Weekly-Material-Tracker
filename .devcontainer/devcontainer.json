@@ -19,17 +19,9 @@
 	},
 
 	
-	"onCreateCommand": [
-		"echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json",
-		"echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart"
-	],
+	"onCreateCommand": "echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json && echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart",
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postStartCommand": [
-		"source ~/.bashrc",
-		"flutter run -d web-server --no-resident",
-		"flutter doctor -v",
-		"cd util && npm i && cd .."
-	],
+	"postStartCommand": "source ~/.bashrc && flutter run -d web-server --no-resident && cd util && npm i && cd .. && flutter doctor -v",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
