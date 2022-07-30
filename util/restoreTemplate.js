@@ -43,7 +43,6 @@ async function restoreData() {
     for (const file of jsonFiles) {
         let content = fs.readFileSync(`./templates/${file}`, 'utf8');
         let json = JSON.parse(content);
-        // console.log(json);
         for (let prop in json) {
             console.log(`>>> Adding ${prop} to list`);
             finalData.templates[prop] = json[prop];
@@ -58,19 +57,6 @@ async function restoreData() {
         console.log(err);
         console.log('Template restore failed!');
     }
-    // for (const file of jsonFiles) {
-    //     let fn = file.replace(".json", "");
-    //     console.log(fn);
-
-    //     console.log(`>>> Restoring ${fn}...`);
-    //     try {
-    //         await restore(`import/${file}`);
-    //         console.log(`>>> ${fn} restore completed!`);
-    //     } catch (err) {
-    //         console.log(err);
-    //         console.log(`>>> ${fn} restore failed!`);
-    //     }
-    // }
     console.log(">>> Data Update Complete!");
 }
 
