@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 LABEL maintainer="dockerimages@itachi1706.com"
 
-ENV FLUTTER_HOME=/home/gitpod/flutter \
+ENV FLUTTER_HOME=/home/vscode/flutter \
     FLUTTER_VERSION=3.0.3-stable
 
 # [Optional] Uncomment this section to install additional OS packages.
@@ -26,10 +26,10 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - &
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*;
 
-USER codespace
+USER vscode
 
 # Install Flutter sdk
-RUN cd /home/gitpod && \
+RUN cd /home/vscode && \
   wget -qO flutter_sdk.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz && \
   tar -xvf flutter_sdk.tar.xz && rm flutter_sdk.tar.xz
 
