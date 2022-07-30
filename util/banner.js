@@ -10,7 +10,7 @@ admin.initializeApp({
 
 const db = admin.database();
 
-var ref = db.ref("banners");
+const ref = db.ref("banners");
 
 // Get file
 let file;
@@ -22,7 +22,6 @@ try {
 }
 
 let fileContent = file.toString();
-//console.log(fileContent);
 
 let parsedJson;
 try {
@@ -31,24 +30,19 @@ try {
     console.error("Error parsing JSON file");
     process.exit(2);
 }
-// console.log(parsedJson);
 
 async function updateFiles(list, name, key) {
     console.log(`>>> Updating ${name} Banners`);
     ref.child(key).remove();
     await ref.child(key).set(list);
-    // for (let banner of list) {
-    //     console.log(`>> Updating ${banner.name}`);
-    //     await ref.child(key).push(banner);
-    // }
 
     console.log(`>>> Updated ${name} Banners!`);
 }
 
-async function processJson(parsedJson) {
-    let standard = parsedJson.banners.standard;
-    let eventWeapon = parsedJson.banners.weapon;
-    let eventChars = parsedJson.banners.character;
+async function processJson(jsonParsed) {
+    let standard = jsonParsed.banners.standard;
+    let eventWeapon = jsonParsed.banners.weapon;
+    let eventChars = jsonParsed.banners.character;
 
     await updateFiles(standard, "Standard", "standard");
     await updateFiles(eventWeapon, "Weapon Event", "weapon");
