@@ -35,7 +35,7 @@ RUN cd /home/vscode && \
 
 RUN $FLUTTER_HOME/bin/flutter channel stable && $FLUTTER_HOME/bin/flutter upgrade && $FLUTTER_HOME/bin/flutter config --enable-web
 
-# Change the PUB_CACHE to /workspace so dependencies are preserved.
-ENV PUB_CACHE=/workspace/.pub_cache
+# Change the PUB_CACHE to /workspaces so dependencies are preserved.
+ENV PUB_CACHE=/workspaces/.pub_cache
 
 RUN echo 'export PATH=${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin:${PUB_CACHE}/bin:${FLUTTER_HOME}/.pub-cache/bin:$PATH' >>~/.bashrc
