@@ -9,32 +9,36 @@ initializeFirebaseApp(serviceAccount);
 const firestoreAdmin = getFirestore();
 
 async function deleteCollections(fireStoreAdm) {
-    console.log(">>> Deleting Existing public weapon, characters and materials data");
-    await deleteCollection(fireStoreAdm, 'weapons', 50);
-    await deleteCollection(fireStoreAdm, 'characters', 50);
-    await deleteCollection(fireStoreAdm, 'materials', 50);
-    console.log(">>> Existing public data deleted successfully!")
+    console.log(">>> Deleting Existing templates");
+    await deleteCollection(fireStoreAdm, 'templates', 50);
+    console.log(">>> Existing template data deleted successfully!")
 }
 
 async function restoreData() {
-    let files = fs.readdirSync('./import');
+    let files = fs.readdirSync('./templates');
 
     const EXTENSION = ".json";
     let jsonFiles = files.filter((file) => {return path.extname(file).toLowerCase() === EXTENSION});
 
-    console.log(">>> Updating data...");
-    for (const file of jsonFiles) {
-        let fn = file.replace(".json", "");
-        console.log(fn);
+    let finalData = {templates: {}};
 
-        console.log(`>>> Restoring ${fn}...`);
-        try {
-            await restore(`import/${file}`);
-            console.log(`>>> ${fn} restore completed!`);
-        } catch (err) {
-            console.log(err);
-            console.log(`>>> ${fn} restore failed!`);
+    console.log(">>> Retrieving Files and adding to data");
+    for (const file of jsonFiles) {
+        let content = fs.readFileSync(`./templates/${file}`, 'utf8');
+        let json = JSON.parse(content);
+        for (let prop in json) {
+            console.log(`>>> Adding ${prop} to list`);
+            finalData.templates[prop] = json[prop];
         }
+    }
+
+    console.log(">>> Updating data...");
+    try {
+        await restore(finalData);
+        console.log("Template restore completed!");
+    } catch (err) {
+        console.log(err);
+        console.log('Template restore failed!');
     }
     console.log(">>> Data Update Complete!");
 }

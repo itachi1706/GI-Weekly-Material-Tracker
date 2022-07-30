@@ -74,7 +74,13 @@ jobs:
           files: |
             firebase/functions/**/*
             firebase/firebase.json
-            .github/workflows/firebase-update.yml
+      - name: Check if files changed for Firestore Templates JSONs
+        id: fstj
+        uses: tj-actions/changed-files@v24
+        with:
+          files: |
+            public/templates/**/*
+            util/**/*
       - name: Set output for Realtime DB Banner
         id: rtdb-banner_out
         if: steps.rtdb-banner.outputs.any_changed == 'true'
@@ -99,6 +105,10 @@ jobs:
         id: fbcf_out
         if: steps.fbcf.outputs.any_changed == 'true'
         run: echo "::set-output name=any_changed::true"
+      - name: Set output for Firestore Templates JSONs
+        id: fstj_out
+        if: steps.fstj.outputs.any_changed == 'true'
+        run: echo "::set-output name=any_changed::true"
     outputs:
       rtdbbanner: ${{ steps.rtdb-banner_out.outputs.any_changed }}
       fspj: ${{ steps.fspj_out.outputs.any_changed }}
@@ -106,6 +116,7 @@ jobs:
       fsi: ${{ steps.fsi_out.outputs.any_changed }}
       fbsr: ${{ steps.fbsr_out.outputs.any_changed }}
       fbcf: ${{ steps.fbcf_out.outputs.any_changed }}
+      fstj: ${{ steps.fstj_out.outputs.any_changed }}
   update-rtdb:
     name: Update Realtime DB Game Banners # From "Update Realtime DB Game Banners" in GitLab CI
     runs-on: ubuntu-latest
@@ -252,3 +263,33 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_PATH: firebase
+  update-fstj:
+    name: Update Firestore Template Data
+    runs-on: ubuntu-latest
+    needs: [build-utility, changedfiles]
+    if: needs.changedfiles.outputs.fstj
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: util/package-lock.json
+      - name: Extract Service Account Key
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json
+          echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > /tmp/sak.json
+      - name: Copy JSONs to Import Folder
+        run: |
+          mkdir util/templates
+          cp public/templates/*.json util/templates
+      - run: npm i
+        working-directory: util
+      - name: Update Firestore Template Data
+        run: npm run updateFirestoreTemplates
+        working-directory: util
+      - name: Delete SAK
+        run: rm /tmp/sak.json

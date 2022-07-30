@@ -12,7 +12,8 @@
     "trackingBackup": "node backupTracker.js",
     "userdataBackup": "node backupUserData.js",
     "addCode": "node addcode.js",
-    "gitlabutil": "node hosting-branch.js"
+    "gitlabutil": "node hosting-branch.js",
+    "updateFirestoreTemplates": "node restoreTemplate.js"
   },
   "keywords": [],
   "author": "",
