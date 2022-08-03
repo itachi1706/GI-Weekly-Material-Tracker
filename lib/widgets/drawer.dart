@@ -16,14 +16,102 @@ class DrawerComponent extends StatefulWidget {
   const DrawerComponent({Key? key}) : super(key: key);
 
   @override
-  DrawerComponentState createState() => DrawerComponentState();
+  _DrawerComponentState createState() => _DrawerComponentState();
 }
 
-class DrawerComponentState extends State<DrawerComponent> {
+class _DrawerComponentState extends State<DrawerComponent> {
   @override
   void initState() {
     super.initState();
     Util.currentRoute ??= '/tracking';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _drawerHeader(context),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                _drawerItem(
+                  iconData: Icons.home,
+                  title: 'Tracking',
+                  route: '/tracking',
+                ),
+                _drawerItem(
+                  iconData: Icons.menu_book_outlined,
+                  title: 'Dictionary',
+                  route: '/dictionary',
+                ),
+                _drawerItem(
+                  iconData: MdiIcons.compass,
+                  title: 'Parametric Transformer',
+                  route: '/parametric',
+                ),
+                _drawerItem(
+                  iconData: MdiIcons.ticket,
+                  title: 'Promo Codes',
+                  route: '/promos',
+                ),
+                _drawerItem(
+                  iconAsset: 'assets/images/items/Item_Primogem.png',
+                  title: 'Wish Banners',
+                  route: '/bannerinfo',
+                ),
+                const Divider(),
+                _drawerItem(
+                  iconData: MdiIcons.alarm,
+                  title: 'Daily Forum Login',
+                  onTap: _dailyLogin,
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  iconData: Icons.forum,
+                  title: 'HoYoLabs Forum',
+                  onTap: _launchHoyoLabs,
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  iconData: MdiIcons.swordCross,
+                  title: 'Battle Chronicles',
+                  onTap: _launchBattleChronicle,
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  iconData: Icons.map,
+                  title: 'Game Map',
+                  onTap: _launchMap,
+                  offPrev: false,
+                ),
+                ..._addWebComponent(),
+                const Divider(),
+                _drawerItem(
+                  iconData: Icons.settings,
+                  title: 'Settings',
+                  route: '/settings',
+                  offPrev: false,
+                ),
+                _drawerItem(
+                  iconData: Icons.logout,
+                  title: 'Logout',
+                  onTap: _signOut,
+                ),
+                _drawerItem(
+                  iconData: Icons.bug_report,
+                  title: 'Debug',
+                  route: '/test',
+                  offPrev: false,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   void _launchHoyoLabs() async {
@@ -188,88 +276,6 @@ class DrawerComponentState extends State<DrawerComponent> {
 
     return CircleAvatar(
       backgroundImage: CachedNetworkImageProvider(photo!),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _drawerHeader(context),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                _drawerItem(
-                  iconData: Icons.home,
-                  title: 'Tracking',
-                  route: '/tracking',
-                ),
-                _drawerItem(
-                  iconData: Icons.menu_book_outlined,
-                  title: 'Dictionary',
-                  route: '/dictionary',
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.compass,
-                  title: 'Parametric Transformer',
-                  route: '/parametric',
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.ticket,
-                  title: 'Promo Codes',
-                  route: '/promos',
-                ),
-                _drawerItem(
-                  iconAsset: 'assets/images/items/Item_Primogem.png',
-                  title: 'Wish Banners',
-                  route: '/bannerinfo',
-                ),
-                const Divider(),
-                _drawerItem(
-                  iconData: MdiIcons.alarm,
-                  title: 'Daily Forum Login',
-                  onTap: _dailyLogin,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.forum,
-                  title: 'HoYoLabs Forum',
-                  onTap: _launchHoyoLabs,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.swordCross,
-                  title: 'Battle Chronicles',
-                  onTap: _launchBattleChronicle,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.map,
-                  title: 'Game Map',
-                  onTap: _launchMap,
-                  offPrev: false,
-                ),
-                ..._addWebComponent(),
-                const Divider(),
-                _drawerItem(
-                  iconData: Icons.settings,
-                  title: 'Settings',
-                  route: '/settings',
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.logout,
-                  title: 'Logout',
-                  onTap: _signOut,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
