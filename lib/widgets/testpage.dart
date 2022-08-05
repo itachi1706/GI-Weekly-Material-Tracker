@@ -79,7 +79,7 @@ class TestPage extends StatelessWidget {
     CostumeData(name: "Yae Miko", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Yae%20Miko.glb"),
     CostumeData(name: "Yelan", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Yelan.glb"),
     CostumeData(name: "Yoimiya", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Yoimiya.glb"),
-    CostumeData(name: "Yun_Jin", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Yun_Jin.glb"),
+    CostumeData(name: "Yun Jin", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Yun_Jin.glb"),
     CostumeData(name: "Zhongli", gsUrl: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/Zhongli.glb"),
   ];
 
@@ -147,7 +147,8 @@ class ThreeDViewerPageState extends State<ThreeDViewerPage> {
         cameraControls: true,
         enablePan: true,
         ar: true,
-        environmentImage: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/music_hall_01_1k.pic",
+        // environmentImage: "https://modelviewer.dev/shared-assets/environments/music_hall_01_1k.hdr",
+        environmentImage: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/music_hall_01_1k.hdr",
         shadowIntensity: 1,
         exposure: 1,
       );
