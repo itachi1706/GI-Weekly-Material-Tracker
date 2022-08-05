@@ -62,6 +62,12 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   title: 'Wish Banners',
                   route: '/bannerinfo',
                 ),
+                _drawerItem(
+                  iconData: MdiIcons.tshirtCrew,
+                  title: 'Character Costumes (ALPHA)',
+                  route: '/test',
+                  offPrev: false,
+                ),
                 const Divider(),
                 _drawerItem(
                   iconData: MdiIcons.alarm,
@@ -99,12 +105,6 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   iconData: Icons.logout,
                   title: 'Logout',
                   onTap: _signOut,
-                ),
-                _drawerItem(
-                  iconData: Icons.bug_report,
-                  title: 'Debug',
-                  route: '/test',
-                  offPrev: false,
                 ),
               ],
             ),

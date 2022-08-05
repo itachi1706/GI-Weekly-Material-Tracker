@@ -65,6 +65,7 @@ class MyAppState extends State<MyApp> {
         GetPage(name: '/splash', page: () => const SplashPage()),
         GetPage(name: '/', page: () => const LoginPage()),
         GetPage(name: '/test', page: () => TestPage()),
+        GetPage(name: '/test3d/:costume', page: () => const ThreeDViewerPage()),
         GetPage(name: '/placeholder', page: () => const PlaceholderPage()),
         GetPage(name: '/menu', page: () => const TransitionPage()),
         GetPage(
