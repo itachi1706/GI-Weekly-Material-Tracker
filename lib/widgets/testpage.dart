@@ -143,11 +143,12 @@ class ThreeDViewerPageState extends State<ThreeDViewerPage> {
     } else {
       return ModelViewer(
         src: _costumeData!.gsUrl,
+        alt: _costumeData!.name,
         autoRotate: true,
         cameraControls: true,
         enablePan: true,
         ar: true,
-        // environmentImage: "https://modelviewer.dev/shared-assets/environments/music_hall_01_1k.hdr",
+        arModes: ['scene-viewer', 'webxr', 'quick-look'],
         environmentImage: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/music_hall_01_1k.hdr",
         shadowIntensity: 1,
         exposure: 1,
