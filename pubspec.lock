@@ -36,13 +36,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
-  app_installer:
-    dependency: "direct main"
-    description:
-      name: app_installer
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
   archive:
     dependency: transitive
     description:
@@ -1062,6 +1055,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  store_redirect:
+    dependency: "direct main"
+    description:
+      name: store_redirect
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   stream_channel:
     dependency: transitive
     description:

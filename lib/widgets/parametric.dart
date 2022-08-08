@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:app_installer/app_installer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:device_apps/device_apps.dart';
@@ -12,6 +11,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:store_redirect/store_redirect.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -56,7 +56,10 @@ class _ParametricPageState extends State<ParametricPage> {
                 const Spacer(
                   flex: 20,
                 ),
-                TextButton(onPressed: _resetTime, child: const Text('Reset Time')),
+                TextButton(
+                  onPressed: _resetTime,
+                  child: const Text('Reset Time'),
+                ),
                 const Spacer(),
                 TextButton(
                   onPressed: _showLastUseDialog,
@@ -170,11 +173,20 @@ class _ParametricPageState extends State<ParametricPage> {
 
           return;
         }
+      } else if (Platform.isLinux ||
+          Platform.isFuchsia ||
+          Platform.isWindows ||
+          Platform.isMacOS) {
+        // Not Supported
+        Util.showSnackbarQuick(context, "Not Supported on this Platform");
+
+        return;
       }
       // If not installed or iOS, launch app store
-      await AppInstaller.goStore(
-        androidId,
-        '1517783697',
+      debugPrint('Launching App Store');
+      await StoreRedirect.redirect(
+        androidAppId: androidId,
+        iOSAppId: '1517783697',
       );
     }
   }
