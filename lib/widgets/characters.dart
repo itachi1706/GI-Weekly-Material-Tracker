@@ -20,7 +20,8 @@ class CharacterTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const CharacterTabController({Key? key, required this.tabController, this.notifier})
+  const CharacterTabController(
+      {Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -39,6 +40,7 @@ class _CharacterTabControllerWidgetState extends State<CharacterTabController> {
       CharacterListGrid(filter: 'Geo', notifier: widget.notifier),
       CharacterListGrid(filter: 'Hydro', notifier: widget.notifier),
       CharacterListGrid(filter: 'Pyro', notifier: widget.notifier),
+      CharacterListGrid(filter: 'Dendro', notifier: widget.notifier),
     ]);
   }
 }
@@ -47,7 +49,8 @@ class CharacterListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const CharacterListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
+  const CharacterListGrid({Key? key, this.filter, this.notifier})
+      : super(key: key);
 
   @override
   _CharacterListGridState createState() => _CharacterListGridState();
@@ -103,6 +106,12 @@ class _CharacterListGridState extends State<CharacterListGrid> {
         }
 
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
+
+        if (dt.isEmpty) {
+          return Center(
+            child: Text('No ${widget.filter ?? ""} characters available'),
+          );
+        }
 
         return GridView.count(
           crossAxisCount:
@@ -285,7 +294,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               widget.info!.description!,
               Icons.format_list_bulleted,
             ),
-            ...GridData.generateInfoLine(widget.info!.introduction!, Icons.book),
+            ...GridData.generateInfoLine(
+                widget.info!.introduction!, Icons.book),
             _getConstellationWeaponWidget(),
             const Divider(),
             _getGenderBirthdayWidget(),
@@ -941,7 +951,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           '${widget.infoId}_$key',
         );
         var splitKey = key.split('_');
-        var data = widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
+        var data =
+            widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
         if (data.material1 != null) {
           datasets.add(widget.materialData![data.material1!]!.innerType);
         }
@@ -982,7 +993,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var splitKey = key.split('_');
-      var data = widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
+      var data =
+          widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
       if (data.material1 != null && fullTrack) {
         fullTrack = TrackingData.isMaterialFull(
           widget.materialData![data.material1!]!.innerType,
@@ -1473,7 +1485,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 class CharacterConstellationPage extends StatelessWidget {
   final CharacterData? info;
 
-  const CharacterConstellationPage({Key? key, required this.info}) : super(key: key);
+  const CharacterConstellationPage({Key? key, required this.info})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

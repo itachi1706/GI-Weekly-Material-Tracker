@@ -117,6 +117,12 @@ class _DictionaryPageState extends State<DictionaryPage>
           height: 20,
         ),
       ),
+      Tab(
+        icon: Image.asset(
+          GridUtils.getElementImageRef('Dendro')!,
+          height: 20,
+        ),
+      ),
     ],
     1: [
       const Tab(text: 'All'),
