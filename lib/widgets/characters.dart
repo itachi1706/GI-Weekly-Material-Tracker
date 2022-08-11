@@ -20,9 +20,11 @@ class CharacterTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const CharacterTabController(
-      {Key? key, required this.tabController, this.notifier})
-      : super(key: key);
+  const CharacterTabController({
+    Key? key,
+    required this.tabController,
+    this.notifier,
+  }) : super(key: key);
 
   @override
   _CharacterTabControllerWidgetState createState() =>
@@ -295,7 +297,9 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
               Icons.format_list_bulleted,
             ),
             ...GridData.generateInfoLine(
-                widget.info!.introduction!, Icons.book),
+              widget.info!.introduction!,
+              Icons.book,
+            ),
             _getConstellationWeaponWidget(),
             const Divider(),
             _getGenderBirthdayWidget(),
