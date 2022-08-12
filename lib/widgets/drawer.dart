@@ -132,7 +132,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
   }
 
   void _launchBattleChronicle() async => await Util.launchWebPage(
-        'https://www.hoyolab.com/genshin/accountCenter/gameRecord',
+        'https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys',
       );
 
   void _launchMap() async => await Util.launchWebPage(
