@@ -1,3 +1,14 @@
+# 2.2.3
+- Changed package to remove REQUEST_INSTALL_PACKAGES permission (we were not using it anyway)
+- Added Dendro Element to Dictionary
+- Improved element icons image quality
+- Fixed hardcoded banner Soft Pity number
+- Updated Battle Chronicles Link
+- Copies version number to clipboard when tapping it in Settings
+- Fixed transparent image causing issues with Flutter 3
+- Minor Bug Fixes caused by Flutter 3
+- Dependencies Update
+
 # 2.2.2
 - (HOTFIX) Updated Firebase dependencies to fix crash on app exit
 - Updated Settings UI Dependency
