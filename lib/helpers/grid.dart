@@ -9,7 +9,6 @@ import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -21,7 +20,7 @@ class GridData {
     String? itemKey,
     Map<String, MaterialDataCommon>? data,
   ) {
-    if (itemKey == null) return Image.memory(kTransparentImage, height: 16);
+    if (itemKey == null) return Image.memory(Util.kTransparentImage, height: 16);
 
     return getImageAssetFromFirebase(
       data![itemKey]!.image,
@@ -103,7 +102,7 @@ class GridData {
     double? width,
     double padding = 8.0,
   }) {
-    if (imageRef == null) return Image.memory(kTransparentImage);
+    if (imageRef == null) return Image.memory(Util.kTransparentImage);
     width = width ?? height;
 
     return FutureBuilder(
@@ -148,7 +147,7 @@ class GridData {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Image.memory(
-                kTransparentImage,
+                Util.kTransparentImage,
                 height: height,
               ),
             ),

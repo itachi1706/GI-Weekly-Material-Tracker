@@ -10,7 +10,6 @@ import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -572,7 +571,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   Widget _getAscensionImage(String? itemKey) {
-    if (itemKey == null) return Image.memory(kTransparentImage);
+    if (itemKey == null) return Image.memory(Util.kTransparentImage);
 
     return GridData.getImageAssetFromFirebase(
       _materialData![itemKey]!.image,
