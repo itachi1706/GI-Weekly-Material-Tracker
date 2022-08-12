@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
@@ -288,9 +289,18 @@ class _SettingsPageState extends State<SettingsPage> {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 22, bottom: 8),
-            child: Text(
-              _version,
-              style: const TextStyle(color: Color(0xFF777777)),
+            child: InkWell(
+              onTap: () {
+                Clipboard.setData(ClipboardData(text: _version))
+                    .then((value) => Util.showSnackbarQuick(
+                          context,
+                          "Version copied to clipboard",
+                        ));
+              },
+              child: Text(
+                _version,
+                style: const TextStyle(color: Color(0xFF777777)),
+              ),
             ),
           ),
         ],
@@ -304,7 +314,9 @@ class _SettingsPageState extends State<SettingsPage> {
       builder: (context) {
         return AlertDialog(
           title: const Text('Clear Tracking Data'),
-          content: const Text('Claer all materials currently being tracked from the app?'),
+          content: const Text(
+            'Clear all materials currently being tracked from the app?',
+          ),
           actions: [
             TextButton(
               onPressed: () => Get.back(),
