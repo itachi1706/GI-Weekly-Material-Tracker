@@ -11,6 +11,8 @@ assignees: ''
 
 
 ## What is the current version this bug is found at? Replace as needed
+> Note: You can copy this by tapping on the version number found in the app settings page
+
 Version <version number> build <build number>
 
 
