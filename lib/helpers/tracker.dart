@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
@@ -250,8 +251,9 @@ class TrackingData {
     if (image == null) return Container();
     Widget typeWidget = const SizedBox.shrink();
     if (type != null) {
-      typeWidget = Image.asset(
+      typeWidget = SvgPicture.asset(
         GridUtils.getElementImageRef(type)!,
+        semanticsLabel: 'Element Image',
         height: 20,
         width: 20,
       );

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
@@ -426,8 +427,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
 
         Widget typeWidget = const SizedBox.shrink();
         if (extraTypeRef != null) {
-          typeWidget = Image.asset(
+          typeWidget = SvgPicture.asset(
             GridUtils.getElementImageRef(extraTypeRef)!,
+            semanticsLabel: 'Element Image',
             height: 20,
             width: 20,
           );

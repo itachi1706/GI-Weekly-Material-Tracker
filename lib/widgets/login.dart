@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
           final user = snapshot.data as User?;
           Util.updateFirebaseUid();
           if (user != null) {
-            SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
               Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
               Get.offAllNamed('/menu');
             });

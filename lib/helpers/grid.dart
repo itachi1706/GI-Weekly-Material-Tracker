@@ -349,19 +349,19 @@ class GridUtils {
   static String? getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case 'geo':
-        return 'assets/images/elements/Element_Geo.png';
+        return 'assets/images/elements/Element_Geo.svg';
       case 'anemo':
-        return 'assets/images/elements/Element_Anemo.png';
+        return 'assets/images/elements/Element_Anemo.svg';
       case 'cryo':
-        return 'assets/images/elements/Element_Cryo.png';
+        return 'assets/images/elements/Element_Cryo.svg';
       case 'dendro':
-        return 'assets/images/elements/Element_Dendro.png';
+        return 'assets/images/elements/Element_Dendro.svg';
       case 'electro':
-        return 'assets/images/elements/Element_Electro.png';
+        return 'assets/images/elements/Element_Electro.svg';
       case 'hydro':
-        return 'assets/images/elements/Element_Hydro.png';
+        return 'assets/images/elements/Element_Hydro.svg';
       case 'pyro':
-        return 'assets/images/elements/Element_Pyro.png';
+        return 'assets/images/elements/Element_Pyro.svg';
     }
 
     return null;

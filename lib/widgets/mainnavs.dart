@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
@@ -82,44 +83,51 @@ class _DictionaryPageState extends State<DictionaryPage>
     0: [
       const Tab(text: 'All'),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Anemo')!,
-          height: 20,
+          semanticsLabel: 'Anemo Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Cryo')!,
-          height: 20,
+          semanticsLabel: 'Cryo Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Electro')!,
-          height: 20,
+          semanticsLabel: 'Electro Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Geo')!,
-          height: 20,
+          semanticsLabel: 'Geo Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Hydro')!,
-          height: 20,
+          semanticsLabel: 'Hydro Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Pyro')!,
-          height: 20,
+          semanticsLabel: 'Pyro Element',
+          height: 24,
         ),
       ),
       Tab(
-        icon: Image.asset(
+        icon: SvgPicture.asset(
           GridUtils.getElementImageRef('Dendro')!,
+          semanticsLabel: 'Dendro Element',
           height: 20,
         ),
       ),

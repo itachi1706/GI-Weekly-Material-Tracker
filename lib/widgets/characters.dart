@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
@@ -428,7 +429,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           ],
         ),
         const Spacer(),
-        Image.asset(GridUtils.getElementImageRef(widget.info!.element!)!),
+        SvgPicture.asset(
+          GridUtils.getElementImageRef(widget.info!.element!)!,
+          semanticsLabel: "Element Image",
+          height: 64,
+          width: 64,
+        ),
       ],
     );
   }
