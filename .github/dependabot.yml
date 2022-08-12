@@ -11,14 +11,9 @@ updates:
     directory: "/util"
     schedule:
       interval: "daily"
-  # Maintain dependencies for Gradle Android
-  - package-ecosystem: "gradle"
-    directory: "/android"
-    schedule:
-      interval: "daily"
   # Maintain dependencies for Gradle Android App
   - package-ecosystem: "gradle"
-    directory: "/android/app"
+    directory: "/android"
     schedule:
       interval: "daily"
   # Maintain dependencies for dart (BETA)
