@@ -830,7 +830,7 @@
             "material2qty": 0,
             "material3": "Teachings_of_Transience",
             "material3qty": 3,
-            "material4": "Old_Handguard",
+            "material4": "Fungal_Spores",
             "material4qty": 6
           },
           "3": {
@@ -841,7 +841,7 @@
             "material2qty": 0,
             "material3": "Guide_to_Elegance",
             "material3qty": 2,
-            "material4": "Kageuchi_Handguard",
+            "material4": "Luminescent_Pollen",
             "material4qty": 3
           },
           "4": {
@@ -852,7 +852,7 @@
             "material2qty": 0,
             "material3": "Guide_to_Light",
             "material3qty": 4,
-            "material4": "Kageuchi_Handguard",
+            "material4": "Luminescent_Pollen",
             "material4qty": 4
           },
           "5": {
@@ -863,7 +863,7 @@
             "material2qty": 0,
             "material3": "Guide_to_Transience",
             "material3qty": 6,
-            "material4": "Kageuchi_Handguard",
+            "material4": "Luminescent_Pollen",
             "material4qty": 6
           },
           "6": {
@@ -874,89 +874,89 @@
             "material2qty": 0,
             "material3": "Guide_to_Elegance",
             "material3qty": 9,
-            "material4": "Kageuchi_Handguard",
+            "material4": "Luminescent_Pollen",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Dragon_Lords_Crown",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
             "material3": "Philosophies_of_Light",
             "material3qty": 4,
-            "material4": "Famed_Handguard",
+            "material4": "Crystalline_Cyst_Dust",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Dragon_Lords_Crown",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
             "material3": "Philosophies_of_Transience",
             "material3qty": 6,
-            "material4": "Famed_Handguard",
+            "material4": "Crystalline_Cyst_Dust",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Dragon_Lords_Crown",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
             "material3": "Philosophies_of_Elegance",
             "material3qty": 12,
-            "material4": "Famed_Handguard",
+            "material4": "Crystalline_Cyst_Dust",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Dragon_Lords_Crown",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
             "material3": "Philosophies_of_Light",
             "material3qty": 16,
-            "material4": "Famed_Handguard",
+            "material4": "Crystalline_Cyst_Dust",
             "material4qty": 12
           }
         },
         "passives": {
-          "Thunderflash": {
-            "name": "Thunderflash",
-            "effect": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
-            "image": "Talents/Passive/Talent_Thunderflash.png",
+          "Verdant_Overgrowth": {
+            "name": "Verdant Overgrowth",
+            "effect": "Lea Lotus Lamp will obtain one level of Overflowing Lotuslight every second it is on the field, increasing the Elemental Mastery of active character(s) within its AoE by 6. Overflowing Lotuslight has a maximum of 10 stacks.",
+            "image": "Talents/Passive/Talent_Verdant_Overgrowth.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Resounding_Roar": {
-            "name": "Resounding Roar",
-            "effect": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
-            "image": "Talents/Passive/Talent_Resounding_Roar.png",
+          "Verdant_Luxury": {
+            "name": "Verdant Luxury",
+            "effect": "Every point of Elemental Mastery the Traveler possesses increases the DMG dealt by Razorgrass Blade by 0.15% and the DMG dealt by Surgent Manifestation by 0.1%.",
+            "image": "Talents/Passive/Talent_Verdant_Luxury.png",
             "order": 1,
             "type": "Passive 2"
           }
         },
         "attack": {
-          "Foreign_Thundershock": {
-            "name": "Foreign Thundershock",
-            "effect": "Normal Attack: Performs up to 5 rapid strikes.\nCharged Attack: Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.\nPlunging Attack: Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/Talent_Foreign_Thundershock.png",
+          "Foreign_Fieldcleaver": {
+            "name": "Foreign Fieldcleaver",
+            "effect": "Normal Attack\nPerform up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Talent_Foreign_Fieldcleaver.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Lightning_Blade": {
-            "name": "Lightning Blade",
-            "effect": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.\nAbundance Amulets\nWhen a character is near an Abundance Amulet, they will absorb it and obtain the following effects:\n\nRestores Elemental Energy\nIncreases Energy Recharge during the Abundance Amulet's duration.",
-            "image": "Talents/Skill/Talent_Lightning_Blade.png",
+          "Razorgrass_Blade": {
+            "name": "Razorgrass Blade",
+            "effect": "With a flourish of your blade, you unleash a spray of razor-sharp leaves that go before you and deal Dendro DMG.",
+            "image": "Talents/Skill/Talent_Razorgrass_Blade.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Bellowing_Thunder": {
-            "name": "Bellowing Thunder",
-            "effect": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.\nLightning Shroud\nWhen your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
-            "image": "Talents/Burst/Talent_Bellowing_Thunder.png",
+          "Surgent_Manifestation": {
+            "name": "Surgent Manifestation",
+            "effect": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp. This Lamp will deal continuous Dendro DMG to opponents within its AoE.\n\nLotuslight Transfiguration\nThe Lea Lotus Lamp will undergo the following changes after it comes into contact with Hydro/Electro/Pyro:\n·Hydro: the Lamp's AoE and the AoE of its attacks are increased.\n·Electro: the Lamp's ATK SPD is increased.\n·Pyro: the Lamp will explode after a short delay and then disappear, dealing AoE Dendro DMG.\nThe Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.\n\nOnly one Lamp created by the Traveler can exist at any one time.",
+            "image": "Talents/Burst/Talent_Surgent_Manifestation.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -964,34 +964,34 @@
       },
       "constellations": {
         "1": {
-          "name": "Spring Thunder of Fertility",
-          "effect": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
-          "image": "Constellation/Spring_Thunder_of_Fertility.png"
+          "name": "Symbiotic Creeper",
+          "effect": "After Razorgrass Blade hits an opponent, it will regenerate 3.5 Energy for the Traveler.",
+          "image": "Constellation/"
         },
         "2": {
-          "name": "Violet Vehemence",
-          "effect": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
-          "image": "Constellation/Violet_Vehemence.png"
+          "name": "Green Resilience",
+          "effect": "Lea Lotus Lamp‘s duration is increased by 3s.",
+          "image": "Constellation/"
         },
         "3": {
-          "name": "Distant Crackling",
-          "effect": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/Distant_Crackling.png"
+          "name": "Whirling Weeds",
+          "effect": "Increases the Level of Razorgrass Blade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
         },
         "4": {
-          "name": "Fickle Cloudstrike",
-          "effect": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
-          "image": "Constellation/Fickle_Cloudstrike.png"
+          "name": "Treacle Grass",
+          "effect": "After the Lea Lotus Lamp triggers a Lotuslight Transfiguration, it will obtain 5 stacks of the Overflowing Lotuslight effect from the Passive Talent \"Verdant Overgrowth\".\nYou must have unlocked this Passive Talent first.",
+          "image": "Constellation/"
         },
         "5": {
-          "name": "Clamor in the Wilds",
-          "effect": "Increases the Level of Lightning Blade by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/Clamor_in_the_Wilds.png"
+          "name": "Viridian Transience",
+          "effect": "Increases the Level of Surgent Manifestation by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
         },
         "6": {
-          "name": "World-Shaker",
-          "effect": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 200%, and will restore an additional 1 Energy to the current character.",
-          "image": "Constellation/World-Shaker.png"
+          "name": "Withering Aggregation",
+          "effect": "The Dendro DMG Bonus of the character under the effect of Overflowing Lotuslight as created by the Lea Lotus Lamp is increased by 12%. If the Lamp has experienced a Lotuslight Transfiguration previously, the character will also gain 12% DMG Bonus for the corresponding element.",
+          "image": "Constellation/"
         }
       },
       "ascension": {

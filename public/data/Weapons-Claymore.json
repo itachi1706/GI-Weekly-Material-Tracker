@@ -483,6 +483,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Ferrous_Shadow",
       "subCollection": {}
     },
+    "Forest_Regalia": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": null,
+      "name": "Forest Regalia",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Chaos_Storage",
+          "material3qty": 2,
+          "material1": "Forgery_1",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Chaos_Storage",
+          "material3qty": 8,
+          "material1": "Forgery_2",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Chaos_Module",
+          "material3qty": 6,
+          "material1": "Forgery_2",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Chaos_Module",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Chaos_Bolt",
+          "material3qty": 6,
+          "material1": "Forgery_3",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Chaos_Bolt",
+          "material3qty": 12,
+          "material1": "Forgery_4",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Forest_Regalia.png",
+      "secondary_stat": "6.67%",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "30.63%",
+      "max_base_atk": 565,
+      "base_atk": 43,
+      "obtained": "Gacha",
+      "effectName": "Forest Sanctuary",
+      "effect": "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character 60~120 Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness' effect cannot stack.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Katsuragikiri_Nagamasa": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
@@ -1750,7 +1831,7 @@
       "max_base_atk": 741,
       "base_atk": 49,
       "obtained": "Gacha",
-      "effectName": "Rebel’s Banner Hymn",
+      "effectName": "Rebel's Banner Hymn",
       "effect": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by 16~32%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s.\n\nWhen you possess four Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by 12~24% and increases ATK by 20~40%.\n\nOnce this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement\", buffs of the same type will not stack.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Song_of_Broken_Pines",

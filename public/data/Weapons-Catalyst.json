@@ -705,6 +705,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Frostbearer",
       "subCollection": {}
     },
+    "Fruit_of_Fulfillment": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": null,
+      "name": "Fruit of Fulfillment",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 2,
+          "material1": "Forgery_1",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Gloomy_Statuette",
+          "material3qty": 8,
+          "material1": "Forgery_2",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Dark_Statuette",
+          "material3qty": 6,
+          "material1": "Forgery_2",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Dark_Statuette",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Deathly_Statuette",
+          "material3qty": 6,
+          "material1": "Forgery_3",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Deathly_Statuette",
+          "material3qty": 12,
+          "material1": "Forgery_4",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Fruit_of_Fulfillment.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "45.9%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effectName": "Full Circle",
+      "effect": "Obtain the \"Wax and Wane\" effect after an Elemental Reaction is triggered, gaining 24~36 Elemental Mastery while losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks. For every 6s that go by without an Elemental Reaction being triggered, 1 stack will be lost. This effect can be triggered even when the character is off-field.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Hakushin_Ring": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",

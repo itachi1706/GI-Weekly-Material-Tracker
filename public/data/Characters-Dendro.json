@@ -1,0 +1,1108 @@
+{
+  "characters": {
+    "Alhaitham": {
+      "image": "Characters/Dendro/Alhaitham.png",
+      "gender": "Male",
+      "birthday": null,
+      "caption": null,
+      "name": "Alhaitham (5*?)",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Sumeru Akademiya, Haravatat",
+      "constellation": null,
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Alhaitham",
+      "subCollection": {}
+    },
+    "Collei": {
+      "image": "Characters/Dendro/Collei.png",
+      "gender": "Female",
+      "birthday": "8/5",
+      "caption": "Sprout of Rebirth",
+      "name": "Collei",
+      "fullName": null,
+      "description": "A trainee ranger active in Avidya Forest. Behind her enthusiastic words and actions hides a slightly introverted personality.",
+      "nation": "Sumeru",
+      "weapon": "Bow",
+      "rarity": 4,
+      "affiliation": "Gandharva Ville",
+      "constellation": "Leptailurus Cervarius",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Firm_Arrowhead",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Gliding_Champion_of_Sumeru": {
+            "name": "Gliding Champion of Sumeru",
+            "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Floral_Sidewinder": {
+            "name": "Floral Sidewinder",
+            "effect": "If one of your party members has triggered Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions before the Floral Ring returns, it will grant the character the Sprout effect upon return, which will continuously deal Dendro DMG equivalent to 40% of Collei's ATK to nearby opponents for 3s.\nIf another Sprout effect is triggered during its initial duration, the initial effect will be removed. DMG dealt by Sprout is considered Elemental Skill DMG.",
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "The_Languid_Wood": {
+            "name": "The Languid Wood",
+            "effect": "When a character within the Cuilein-Anbar Zone triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Zone's duration will be increased by 1s.\nA single Trump-Card Kitty can be extended by up to 3s.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Supplicants_Bowmanship": {
+            "name": "Supplicant's Bowmanship",
+            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, Dendro energy will accumulate on the arrowhead. A fully charged arrow will deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Floral_Brush": {
+            "name": "Floral Brush",
+            "effect": "Throws out a Floral Ring that deals 1 instance of Dendro DMG to targets it comes into contact with.\nThe Floral Ring will return after a set time, dealing Dendro DMG once again.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Trump-Card_Kitty": {
+            "name": "Trump-Card Kitty",
+            "effect": "Trusty Cuilein-Anbar comes to save the day!\nThrows the doll named Cuilein-Anbar, causing an explosion that deals AoE Dendro DMG, creating a Cuilein-Anbar Zone. Cuilein-Anbar will bounce around within this zone, dealing AoE Dendro DMG.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Deepwood Patrol",
+          "effect": "When in the party and not on the field, Collei's Energy Recharge is increased by 20%.",
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Through Hill and Copse",
+          "effect": "The Passive Talent Floral Sidewinder is changed to this:\nThe Floral Ring will grant the character the Sprout effect from Floral Sidewinder upon return, dealing 40% of Collei's ATK as Dendro DMG to nearby opponents for 3s.\nFrom the moment of using Floral Brush to the moment when this instance of Sprout effect ends, if any of your party members triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Sprout effect will be extended by 3s.\nThe Sprout effect can only be extended this way once. If another Sprout effect is triggered during its initial duration, the initial effect will be removed.\nRequires you to have unlocked the Floral Sidewinder Passive Talent.",
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "Scent of Summer",
+          "effect": "Increases the Level of Floral Brush by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Gift of the Woods",
+          "effect": "Using Trump-Card Kitty will increase all nearby characters' Elemental Mastery by 60 for 12s (not including Collei herself).",
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "All Embers",
+          "effect": "Increases the Level of Trump-Card Kitty by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Forest of Falling Arrows",
+          "effect": "When the Floral Ring hits, it will create a miniature Cuilein-Anbar that will deal 200% of Collei's ATK as Dendro DMG.\nEach Floral Brush can only create one such miniature Cuilein-Anbar.",
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Firm_Arrowhead",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Rukkhashava_Mushrooms"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 40,
+          "material4": "Firm_Arrowhead",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Rukkhashava_Mushrooms"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 50,
+          "material4": "Sharp_Arrowhead",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Rukkhashava_Mushrooms"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 60,
+          "material4": "Sharp_Arrowhead",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Rukkhashava_Mushrooms"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 70,
+          "material4": "Weathered_Arrowhead",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Rukkhashava_Mushrooms"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 80,
+          "material4": "Weathered_Arrowhead",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Rukkhashava_Mushrooms"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Collei",
+      "subCollection": {}
+    },
+    "Nahida": {
+      "image": "Characters/Dendro/",
+      "gender": "Female",
+      "birthday": null,
+      "caption": "Lesser Lord Kusanali (?)",
+      "name": "Nahida (5*?)",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": null,
+      "rarity": 5,
+      "affiliation": "Archons",
+      "constellation": null,
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Nahida",
+      "subCollection": {}
+    },
+    "Tighnari": {
+      "image": "Characters/Dendro/Tighnari.png",
+      "gender": "Male",
+      "birthday": "29/12",
+      "caption": "Verdant Strider",
+      "name": "Tighnari",
+      "fullName": null,
+      "description": "A young researcher well-versed in botany who currently serves as a Forest Watcher in Avidya Forest. He is a straight shooter with a warm heart — and a dab hand at guiding even the dullest of pupils.",
+      "nation": "Sumeru",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Gandharva Ville",
+      "constellation": "Vulpes Zerda",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Fungal_Spores",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "The_Meaning_of_Aeons",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Keen_Sight": {
+            "name": "Keen Sight",
+            "effect": "After Tighnari fires a Wreath Arrow, his Elemental Mastery is increased by 50 for 4s.",
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Scholarly_Blade": {
+            "name": "Scholarly Blade",
+            "effect": "For every point of Elemental Mastery Tighnari possesses, his Charged Attack and Fashioner's Tanglevine Shaft DMG are increased by 0.06%.\nThe maximum DMG Bonus obtainable this way is 60%.",
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Encyclopedic_Knowledge": {
+            "name": "Encyclopedic Knowledge",
+            "effect": "Displays the location of nearby resources unique to Sumeru on the mini-map.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Khanda_Barrier-Buster": {
+            "name": "Khanda Barrier-Buster",
+            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Dendro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\n·Charge Level 1: Fires off an arrow carrying the power of flora that deals Dendro DMG.\n·Charge Level 2: Fires off a Wreath Arrow that deals Dendro DMG. Upon hit, the Wreath Arrow will create 4 Clusterbloom Arrows that will track nearby opponents automatically and deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Vijnana-Phala_Mine": {
+            "name": "Vijnana-Phala Mine",
+            "effect": "Tighnari throws a Vijnana Stormheart ahead that deals AoE Dendro DMG, creating a Vijnana-Khanda Field that creates mysterious illusions that taunt opponents and draw their fire.\nAdditionally, Tighnari gains the Vijnana Penetrator effect, which will decrease the Wreath Arrow's charging time by 2.4s. This effect will dissipate once the skill duration ends or after Tighnari has fired 3 Wreath Arrows.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Fashioners_Tanglevine_Shaft": {
+            "name": "Fashioner's Tanglevine Shaft",
+            "effect": "Combines the power of all seeds to fire 6 Tanglevine Shafts that can track opponents and deal Dendro DMG.\nAfter they hit, the Tanglevine Shafts will create a secondary wave of Tanglevine Shafts that can also track opponents and deal Dendro DMG on hit.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Beginnings Determined at the Roots",
+          "effect": "Tighnari's Charged Attack CRIT Rate is increased by 15%.",
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Origins Known From the Stem",
+          "effect": "When there are opponents within the Vijnana-Khanda Field created by Vijnana-Phala Mine, Tighnari gains 20% Dendro DMG Bonus.\nThe effect will last up to 6s if the field's duration ends or if it no longer has opponents within it.",
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "Fortunes Read Amongst the Branches",
+          "effect": "Increases the Level of Fashioner's Tanglevine Shaft by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Withering Glimpsed in the Leaves",
+          "effect": "When Fashioner's Tanglevine Shaft is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner's Tanglevine Shaft triggers a Burning, Bloom, Aggravate, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state's duration.",
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "Comprehension Amidst the Flowers",
+          "effect": "Increases the Level of Vijnana-Phala Mine by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Karma Adjudged From the Leaden Fruit",
+          "effect": "Wreath Arrow's charging time is decreased by 0.9s, and will produce 1 additional Clusterbloom Arrow upon hit. This arrow deals 150% of Tighnari's ATK as DMG.",
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Fungal_Spores",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Nilotpala_Lotus"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 40,
+          "material4": "Fungal_Spores",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Nilotpala_Lotus"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 50,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Nilotpala_Lotus"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 60,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Nilotpala_Lotus"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 70,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Nilotpala_Lotus"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Majestic_Hooked_Beak",
+          "level": 80,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Nilotpala_Lotus"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Tighnari",
+      "subCollection": {}
+    }
+  }
+}

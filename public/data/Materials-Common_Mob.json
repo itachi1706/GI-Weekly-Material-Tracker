@@ -350,6 +350,84 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Spectral_Nucleus",
       "subCollection": {}
+    },
+    "Faded_Red_Satin": {
+      "image": "Materials/Common_Mob/Item_Faded_Red_Satin.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A piece of red satin used to cover the eyes. The fabric is slightly torn.\nMany Eremites tend to cover their eyes with textiles, but the original intention of this practice has long been lost to the sands of time.",
+      "enemies": ["Eremites"],
+      "obtained": "- Dropped by The Eremites",
+      "name": "Faded Red Satin",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Trimmed_Red_Silk": {
+      "image": "Materials/Common_Mob/Item_Trimmed_Red_Silk.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A piece of red silk trimmed with simple decorations.\nA seasoned warrior can detect weaknesses from their foe's eyes and thus take advantage. The Eremites have long since lost a master to serve, and now they have no one to trust but themselves. Word has it that they are more than convinced that all things betray, even their own eyes.",
+      "enemies": ["Eremites"],
+      "obtained": "- Alchemy (3x Faded Red Satin)\n- Dropped by Lv. 40+ Eremites",
+      "name": "Trimmed Red Silk",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Rich_Red_Brocade": {
+      "image": "Materials/Common_Mob/Item_Rich_Red_Brocade.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A piece of red brocade woven in golden silks.\nThe remnants born in the gilded desert under the sun occasionally sing a song, of which the meaning has been forgotten. They would praise the scorching sun that illuminates the earth as equally as ever and bewail the afterglow at the end of the dusk. Some unfamiliar words recur at the end of the song, which are said to be the names of ancient gods. Legend has it that when the King of the Desert was still alive, his people chose to cover their eyes as they dared not look upon him, whose brilliance was beyond that of the sun.",
+      "enemies": ["Eremites"],
+      "obtained": "- Alchemy (3x Trimmed Red Silk)\n- Dropped by Lv. 60+ Eremites",
+      "name": "Rich Red Brocade",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Fungal_Spores": {
+      "image": "Materials/Common_Mob/Item_Fungal_Spores.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A small amount of glittering spore powder left behind by Floating Fungi. Seems that a sneeze is all it takes for this powder to vanish without a trace.",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Dropped by Floating Fungi\n- Dropped uncommonly by Fungi (activated)\n- Dropped uncommonly by Fungi (scorched)",
+      "name": "Fungal Spores",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Luminescent_Pollen": {
+      "image": "Materials/Common_Mob/Item_Luminescent_Pollen.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A small parcel of luminescent Fungal Spore powder, a common medical ingredient in the land of rainforests. Merchants usually sell them in paper packets.",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Alchemy (3x Fungal Spores)\n- Dropped by Lv. 40+ Fungi\n- Dropped uncommonly by Lv. 40+ Fungi (activated)\n- Dropped uncommonly by Lv. 40+ Fungi (scorched)",
+      "name": "Luminescent Pollen",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Crystalline_Cyst_Dust": {
+      "image": "Materials/Common_Mob/Item_Crystalline_Cyst_Dust.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A huge lump of spore powder collected from a structurally complete spore cyst. Put it in an appropriate environment, and the area might be filled with a thriving aggregation of Floating Fungi later…",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Alchemy (3x Luminescent Pollen)\n- Dropped by Lv. 60+ Fungi\n- Dropped uncommonly by Lv. 60+ Fungi (activated)\n- Dropped uncommonly by Lv. 60+ Fungi (scorched)",
+      "name": "Crystalline Cyst Dust",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
     }
   }
 }
