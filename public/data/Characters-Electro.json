@@ -275,6 +275,282 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Beidou",
       "subCollection": {}
     },
+    "Dori": {
+      "image": "Characters/Electro/Dori.png",
+      "gender": "Female",
+      "birthday": "21/12",
+      "caption": "Treasure of Dream Garden",
+      "name": "Dori",
+      "fullName": null,
+      "description": "An elusive merchant who has a fondness for glittering Mora.",
+      "nation": "Sumeru",
+      "weapon": "Claymore",
+      "rarity": 4,
+      "affiliation": "The Palace of Alcazarzaray",
+      "constellation": "Magicae Lucerna",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Faded_Red_Satin",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Bloodjade_Branch",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Bloodjade_Branch",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Bloodjade_Branch",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Bloodjade_Branch",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "An_Eye_for_Gold": {
+            "name": "An Eye for Gold",
+            "effect": "After a character connected to the Jinni triggers an Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl or Crystallize reaction, the CD of Spirit-Warding Lamp: Troubleshooter Cannon is decreased by 1s.\nThis effect can be triggered once every 3s.",
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Compound_Interest": {
+            "name": "Compound Interest",
+            "effect": "When Troubleshooter Shots from Spirit-Warding Lamp: Troubleshooter Cannon hit opponents, Dori will restore 5 Elemental Energy for every 100% Energy Recharge possessed.\nA maximum of 15 Energy can be restored this way per Spirit-Warding Lamp: Troubleshooter Cannon.",
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Unexpected_Order": {
+            "name": "Unexpected Order",
+            "effect": "Has a 25% chance to recover some of the materials used when crafting Character and Weapon Materials.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Marvelous_Sword-Dance_Modified": {
+            "name": "Marvelous Sword-Dance (Modified)",
+            "effect": "Normal Attack\nPerform up to 3 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Spirit-Warding_Lamp_Troubleshooter_Cannon": {
+            "name": "Spirit-Warding Lamp: Troubleshooter Cannon",
+            "effect": "Directs a Spirit-Warding Lamp to fire off a Troubleshooter Shot at opponents, dealing Electro DMG.\nAfter the Troubleshooter Shot hits, it will create 2 After-Sales Service Rounds that will automatically track opponents and deal Electro DMG.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Alcazarzarays_Exactitude": {
+            "name": "Alcazarzaray's Exactitude",
+            "effect": "Summons forth the Jinni within the lamp to give the client various kinds of aid.\n\nJinni\nConnects to a nearby character. The connected character will:\n· Continuously restore HP based on Dori's Max HP\n· Continuously regenerate Energy.\n· Be affected by Electro.\nWhen the connector between the Jinni and the character touches opponents, it will deal one instance of Electro DMG to them every 0.4s.\n\nOnly one Jinni can exist at one time.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Additional Investment",
+          "effect": "The number of After-Sales Service Rounds created by Troubleshooter Shots is increased by 1.",
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Special Franchise",
+          "effect": "When you are in combat and the Jinni heals the character it is connected to, it will fire a Jinni Toop from that character's position that deals 50% of Troubleshooter Shot's DMG.",
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "Wonders Never Cease",
+          "effect": "Increases the Level of Alcazarzaray's Exactitude by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Discretionary Supplement",
+          "effect": "The character connected to the Jinni will obtain the following buffs based on their current HP and Energy:\n·When their HP is lower than 50%, they gain 50% Incoming Healing Bonus.\n·When their Energy is less than 50%, they gain 30% Energy Recharge.",
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "Value for Mora",
+          "effect": "Increases the Level of Spirit-Warding Lamp: Troubleshooter Cannon by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Sprinkling Weight",
+          "effect": "Dori gains the following effects for 3s after using Spirit-Warding Lamp: Troubleshooter Cannon:\n·Electro Infusion.\n·When Normal Attacks hit opponents, all nearby party members will heal HP equivalent to 4% of Dori's Max HP. This type of healing can occur once every 0.1s.",
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Kalpalata_Lotus"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Kalpalata_Lotus"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Kalpalata_Lotus"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Kalpalata_Lotus"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Kalpalata_Lotus"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Kalpalata_Lotus"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Electro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Dori",
+      "subCollection": {}
+    },
     "Fischl": {
       "image": "Characters/Electro/Fischl.png",
       "gender": "Female",
