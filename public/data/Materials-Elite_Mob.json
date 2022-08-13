@@ -389,6 +389,85 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Deathly_Statuette",
       "subCollection": {}
+    },
+    "Chaos_Storage": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Storage.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-inactive ancient Ruin Drake.\nRuin Drakes can absorb Elemental Energy from the outside and store it in this component inside their \"neck\".",
+      "enemies": ["Ruin Drake"],
+      "obtained": "- Dropped by Ruin Drakes",
+      "name": "Chaos Storage",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Chaos_Module": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Module.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-inactive ancient Ruin Drake.\nThe dragons were once the most primitive and ancient bodily form of the supreme elements until they were defeated, conquered, or assimilated.",
+      "enemies": ["Ruin Drake"],
+      "obtained": "- Alchemy (3x Chaos Storage)\n- Dropped by Lv. 40+ Ruin Drakes",
+      "name": "Chaos Module",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Chaos_Bolt": {
+      "image": "Materials/Elite_Mob/Item_Chaos_Bolt.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-inactive ancient Ruin Drake.\nAmong the lost ancient kingdoms, there was a group of people who were obsessed with the idea of mimesis. Be it the Hypostases’ pure ordered elements or the ancient primitive power of the dragons, these people believed that they might all be replicated and modified to the point where they had surpassed their natural counterparts.\nBy this means, a superior and unsullied bodily form could replace the continuously decaying and shattering order.",
+      "enemies": ["Ruin Drake"],
+      "obtained": "- Alchemy (3x Chaos Module)\n- Dropped by Lv. 60+ Ruin Drakes",
+      "name": "Chaos Bolt",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+
+    "Inactivated_Fungal_Nucleus": {
+      "image": "Materials/Elite_Mob/Item_Inactivated_Fungal_Nucleus.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nIts soothing texture makes it shockingly good for stress relief. However, frequent usage can also easily lead to the Fungi multiplying, and thus is not suitable for any commercial use.",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Dropped by Fungi (activated)\n- Dropped by Fungi (scorched)",
+      "name": "Inactivated Fungal Nucleus",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Dormant_Fungal_Nucleus": {
+      "image": "Materials/Elite_Mob/Item_Dormant_Fungal_Nucleus.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nThere was once a protracted debate among Amurta researchers on whether the Fungi should be categorized as plants or animals. In the end, they reached an agreement and closed the case for good — the Fungi shall be its own category, neither plant nor animal.",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Alchemy (3x Inactivated Fungal Nucleus)\n- Dropped by Lv. 40+ Fungi (activated)\n- Dropped by Lv. 40+ Fungi (scorched)",
+      "name": "Dormant Fungal Nucleus",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Robust_Fungal_Nucleus": {
+      "image": "Materials/Elite_Mob/Item_Robust_Fungal_Nucleus.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Body tissue left behind by a Fungus that has been exposed to intense elemental stimulation.\nIt is generally believed that the Fungi evolved into more mobile forms to better disperse their spores.\nA poet once depicted a shared dream of the Fungi in which their spores covered every inch of the mountains and oceans. The world had never been more tranquil. Then the Fungi turned into fish, birds, beasts, men, and gods, relying on rainfall, land, and their own kind who had returned to the earth.",
+      "enemies": ["Fungi", "Shroomite"],
+      "obtained": "- Alchemy (3x Dormant Fungal Nucleus)\n- Dropped by Lv. 60+ Fungi (activated)\n- Dropped by Lv. 60+ Fungi (scorched)",
+      "name": "Robust Fungal Nucleus",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
     }
   }
 }
