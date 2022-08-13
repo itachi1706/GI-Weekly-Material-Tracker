@@ -868,6 +868,168 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Hunter%27s_Bow",
       "subCollection": {}
     },
+    "Hunters_Path": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": null,
+      "name": "Hunter's Path",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 3,
+          "material1": "Forgery_1",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Forgery_2",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Forgery_2",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 14,
+          "material1": "Forgery_3",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 18,
+          "material1": "Forgery_4",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/Hunters_Path.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Bow",
+      "max_secondary_stat": "44.1%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "At the End of the Beast-Paths",
+      "effect": "Gain 12~24% All Elemental DMG Bonus. Obtain the Tireless Hunt effect after hitting an opponent with a Charged Attack. This effect increases Charged Attack DMG by 160~320% of Elemental Mastery. This effect will be removed after 12 Charged Attacks or 10s. Only 1 instance of Tireless Hunt can be gained every 12s.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
+    "Kings_Squire": {
+      "secondary_stat_type": "ATK",
+      "description": null,
+      "name": "King's Squire",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 2,
+          "material1": "Forgery_1",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 8,
+          "material1": "Forgery_2",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Forgery_2",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Forgery_3",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Forgery_4",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Kings_Squire.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effectName": "Labyrinth Lord’s Instruction",
+      "effect": "Obtain the Teachings of the Forest effect when unleashing Elemental Skills and Bursts, increasing Elemental Mastery by 60~140 for 12s. This effect will be removed when switching characters. When the Teachings of the Forest effect ends or is removed, it will deal 100~180% of ATK as DMG to 1 nearby opponent. The Teachings of the Forest effect can be triggered once every 20s.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Messenger": {
       "secondary_stat_type": "CRIT DMG",
       "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
@@ -2296,6 +2458,87 @@
       "effect": "Increases ATK by 20~40% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by 12/24/40~24/48/80%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Thundering_Pulse",
+      "subCollection": {}
+    },
+    "Trawler": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": null,
+      "name": "Trawler",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 2,
+          "material1": "Forgery_1",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 8,
+          "material1": "Forgery_2",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Forgery_2",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Forgery_3",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Forgery_4",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Trawler.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "45.9%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effectName": "Net Snapper",
+      "effect": "Triggers the Flowrider effect after using an Elemental Skill, dealing 80~160% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
+      "released": false,
+      "wiki": null,
       "subCollection": {}
     },
     "Windblume_Ode": {
