@@ -21,6 +21,7 @@ class GridData {
     Map<String, MaterialDataCommon>? data,
   ) {
     if (itemKey == null) return Image.memory(Util.kTransparentImage, height: 16);
+    // debugPrint('getAscensionImage: $itemKey');
 
     return getImageAssetFromFirebase(
       data![itemKey]?.image ?? '',

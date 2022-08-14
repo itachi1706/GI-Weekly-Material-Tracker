@@ -42,7 +42,7 @@ class WeaponData extends CommonData {
     return WeaponData(
       image: parsedJson['image'],
       name: parsedJson['name'],
-      description: parsedJson['description'],
+      description: parsedJson['description'] ?? 'Unknown Description',
       secondaryStatType: parsedJson['secondary_stat_type'],
       secondaryStat: parsedJson['secondary_stat'],
       type: parsedJson['type'],
