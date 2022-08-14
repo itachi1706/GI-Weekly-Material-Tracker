@@ -21,9 +21,10 @@ class GridData {
     Map<String, MaterialDataCommon>? data,
   ) {
     if (itemKey == null) return Image.memory(Util.kTransparentImage, height: 16);
+    // debugPrint('getAscensionImage: $itemKey');
 
     return getImageAssetFromFirebase(
-      data![itemKey]!.image,
+      data![itemKey]?.image ?? '',
       height: 16,
     );
   }
@@ -164,7 +165,7 @@ class GridData {
         footer: Padding(
           padding: const EdgeInsets.all(2),
           child: Text(
-            data.name!,
+            data.name ?? 'Unknown',
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 12,
@@ -193,7 +194,7 @@ class GridData {
     )) {
       Util.showSnackbarQuick(
         context,
-        'Wiki Page not available for ${data.name}',
+        'Wiki Page not available for ${data.name ?? 'Unknown'}',
       );
     }
   }
@@ -253,6 +254,12 @@ class GridData {
       ),
       const Divider(),
     ];
+  }
+
+  static List<Widget> unreleasedCheck(bool released, String type) {
+    if (released) return [const SizedBox.shrink()];
+
+    return GridData.generateInfoLine('This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change', Icons.warning_amber);
   }
 
   static Widget generateElementalColoredLine(String textData) {

@@ -142,7 +142,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_info!.name!),
+        title: Text(_info!.name ?? 'Unknown Weapon'),
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
@@ -159,6 +159,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               _generateWeaponHeader(),
               const Divider(),
+              ...GridData.unreleasedCheck(_info!.released, 'Weapon'),
               ..._getSeriesIfExists(_info!),
               ...GridData.generateInfoLine(
                 _info!.obtained!.replaceAll('- ', ''),
@@ -293,13 +294,13 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           TrackingData.isBeingTrackedLocal(_dataList, '${_infoId}_$key');
       var data = _info!.ascension![key]!;
       if (data.material1 != null) {
-        datasets.add(_materialData![data.material1!]!.innerType);
+        datasets.add(_materialData![data.material1!]?.innerType);
       }
       if (data.material2 != null) {
-        datasets.add(_materialData![data.material2!]!.innerType);
+        datasets.add(_materialData![data.material2!]?.innerType);
       }
       if (data.material3 != null) {
-        datasets.add(_materialData![data.material3!]!.innerType);
+        datasets.add(_materialData![data.material3!]?.innerType);
       }
       _tracker[key] =
           (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
@@ -308,7 +309,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
     for (var ds in datasets.toList()) {
-      collectionList[ds] = await TrackingData.getCollectionList(ds!);
+      if (ds == null) continue;
+      collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
 
     return _processStatusList(collectionList, _tracker);
@@ -445,7 +447,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Flexible(child: Text(key == null ? '' : _materialData![key]!.name!)),
+      Flexible(child: Text(key == null ? '' : _materialData![key]?.name ?? 'Unknown Item')),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -456,6 +458,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (isTracked == TrackingStatus.unknown ||
         isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
+
+      return;
+    }
+
+    if (_info == null || !_info!.released) {
+      Util.showSnackbarQuick(context, 'Unable to track unreleased weapons');
 
       return;
     }
@@ -574,7 +582,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (itemKey == null) return Image.memory(Util.kTransparentImage);
 
     return GridData.getImageAssetFromFirebase(
-      _materialData![itemKey]!.image,
+      _materialData![itemKey]?.image ?? '',
       height: 16,
     );
   }

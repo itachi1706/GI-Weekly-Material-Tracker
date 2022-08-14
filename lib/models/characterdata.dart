@@ -39,6 +39,7 @@ class CharacterData extends CommonData {
     this.fullName,
     crossover,
     wiki,
+    released,
   }) : super(
           image: image,
           name: name,
@@ -46,21 +47,22 @@ class CharacterData extends CommonData {
           description: description,
           wiki: wiki,
           crossover: crossover,
+          released: released,
         );
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(
       image: parsedJson['image'],
-      gender: parsedJson['gender'],
-      birthday: parsedJson['birthday'],
+      gender: parsedJson['gender'] ?? 'Unknown Gender',
+      birthday: parsedJson['birthday'] ?? 'Unknown',
       name: parsedJson['name'],
-      description: parsedJson['description'],
-      nation: parsedJson['nation'],
-      weapon: parsedJson['weapon'],
+      description: parsedJson['description'] ?? 'Unknown Description',
+      nation: parsedJson['nation'] ?? 'Somewhere on Teyvat',
+      weapon: parsedJson['weapon'] ?? 'Unknown Weapon',
       rarity: parsedJson['rarity'],
-      affiliation: parsedJson['affiliation'],
-      constellation: parsedJson['constellation'],
-      introduction: parsedJson['introduction'],
+      affiliation: parsedJson['affiliation'] ?? 'Unknown Affiliation',
+      constellation: parsedJson['constellation'] ?? 'Unknown Constellation',
+      introduction: parsedJson['introduction'] ?? 'Unknown Introduction',
       genshinGGPath: parsedJson['genshinggpath'],
       paimonMoePath: parsedJson['paimonmoepath'],
       element: parsedJson['element'],
@@ -72,9 +74,10 @@ class CharacterData extends CommonData {
       constellations: CharacterConstellations.getFromMap(
         parsedJson['constellations'],
       ),
-      caption: parsedJson['caption'],
+      caption: parsedJson['caption'] ?? 'Unknown Caption',
       fullName: parsedJson['fullName'],
       crossover: parsedJson['crossover'] ?? false,
+      released: parsedJson['released'],
     );
   }
 
@@ -221,8 +224,8 @@ class TalentInfo {
 
   factory TalentInfo.fromJson(Map<String, dynamic> parsedJson) {
     return TalentInfo(
-      name: parsedJson['name'],
-      effect: parsedJson['effect'],
+      name: parsedJson['name'] ?? 'Unknown Talent Name',
+      effect: parsedJson['effect'] ?? 'Unknown Talent Effect',
       image: parsedJson['image'],
       type: parsedJson['type'],
       order: parsedJson['order'],
@@ -247,9 +250,9 @@ class CharacterConstellations {
 
   factory CharacterConstellations.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterConstellations(
-      name: parsedJson['name'],
+      name: parsedJson['name'] ?? 'Unknown Constellation',
       image: parsedJson['image'],
-      effect: parsedJson['effect'],
+      effect: parsedJson['effect'] ?? 'Unknown Effect',
     );
   }
 
