@@ -159,6 +159,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             children: [
               _generateWeaponHeader(),
               const Divider(),
+              ...GridData.unreleasedCheck(_info!.released, 'Weapon'),
               ..._getSeriesIfExists(_info!),
               ...GridData.generateInfoLine(
                 _info!.obtained!.replaceAll('- ', ''),

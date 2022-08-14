@@ -172,6 +172,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           children: [
             _getMaterialHeader(),
             const Divider(),
+            ...GridData.unreleasedCheck(_info!.released, 'Material'),
             ...GridData.generateInfoLine(
               _info!.obtained!.replaceAll('- ', ''),
               Icons.location_pin,

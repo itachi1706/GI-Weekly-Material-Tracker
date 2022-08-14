@@ -256,6 +256,12 @@ class GridData {
     ];
   }
 
+  static List<Widget> unreleasedCheck(bool released, String type) {
+    if (released) return [const SizedBox.shrink()];
+
+    return GridData.generateInfoLine('This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change', Icons.warning_amber);
+  }
+
   static Widget generateElementalColoredLine(String textData) {
     debugPrint(textData);
     var textSplit = textData.split('§');

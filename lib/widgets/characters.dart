@@ -284,6 +284,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           children: [
             _getCharacterHeader(),
             const Divider(),
+            ...GridData.unreleasedCheck(widget.info!.released, 'Character'),
             ..._getCharacterFullNameWidget(widget.info!),
             ...GridData.generateInfoLine(
               widget.info!.affiliation!,
