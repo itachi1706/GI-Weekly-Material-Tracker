@@ -1,5 +1,281 @@
 {
   "characters": {
+    "Dendro_5": {
+      "image": "Characters/Dendro/",
+      "gender": null,
+      "birthday": null,
+      "caption": null,
+      "name": null,
+      "fullName": null,
+      "description": null,
+      "nation": null,
+      "weapon": null,
+      "rarity": 5,
+      "affiliation": null,
+      "constellation": null,
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "WeeklyBossDrop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": true,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Alhaitham": {
       "image": "Characters/Dendro/Alhaitham.png",
       "gender": "Male",
