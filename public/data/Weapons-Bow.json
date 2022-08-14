@@ -1,5 +1,86 @@
 {
   "weapons": {
+    "Bow_5": {
+      "secondary_stat_type": null,
+      "description": null,
+      "name": null,
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Common_Mob_1",
+          "level": 20,
+          "material2": "Elite_Mob_1",
+          "material3qty": 3,
+          "material1": "Forgery_1",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Common_Mob_1",
+          "level": 40,
+          "material2": "Elite_Mob_1",
+          "material3qty": 12,
+          "material1": "Forgery_2",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Common_Mob_2",
+          "level": 50,
+          "material2": "Elite_Mob_2",
+          "material3qty": 9,
+          "material1": "Forgery_2",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Common_Mob_2",
+          "level": 60,
+          "material2": "Elite_Mob_2",
+          "material3qty": 14,
+          "material1": "Forgery_3",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Common_Mob_3",
+          "level": 70,
+          "material2": "Elite_Mob_3",
+          "material3qty": 9,
+          "material1": "Forgery_3",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Common_Mob_3",
+          "level": 80,
+          "material2": "Elite_Mob_3",
+          "material3qty": 18,
+          "material1": "Forgery_4",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Bow/",
+      "secondary_stat": null,
+      "rarity": 5,
+      "type": "Bow",
+      "max_secondary_stat": null,
+      "max_base_atk": null,
+      "base_atk": null,
+      "obtained": "Gacha",
+      "effectName": null,
+      "effect": null,
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Alley_Hunter": {
       "secondary_stat_type": "ATK",
       "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
