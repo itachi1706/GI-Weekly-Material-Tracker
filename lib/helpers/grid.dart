@@ -23,7 +23,7 @@ class GridData {
     if (itemKey == null) return Image.memory(Util.kTransparentImage, height: 16);
 
     return getImageAssetFromFirebase(
-      data![itemKey]!.image,
+      data![itemKey]?.image ?? '',
       height: 16,
     );
   }
@@ -164,7 +164,7 @@ class GridData {
         footer: Padding(
           padding: const EdgeInsets.all(2),
           child: Text(
-            data.name!,
+            data.name ?? 'Unknown',
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 12,

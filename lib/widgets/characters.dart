@@ -166,7 +166,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(_info!.name!),
+          title: Text(_info!.name ?? 'Unknown'),
           backgroundColor: _rarityColor,
           bottom: const TabBar(tabs: [
             Tab(text: 'General'),
@@ -333,7 +333,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                _getGenderIcon(widget.info!.gender!, widget.info!.name!),
+                _getGenderIcon(widget.info!.gender!, widget.info!.name ?? 'Unknown'),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.gender!),
@@ -463,16 +463,16 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         );
         var data = widget.info!.ascension![key]!;
         if (data.material1 != null) {
-          datasets.add(widget.materialData![data.material1!]!.innerType);
+          datasets.add(widget.materialData![data.material1!]?.innerType);
         }
         if (data.material2 != null) {
-          datasets.add(widget.materialData![data.material2!]!.innerType);
+          datasets.add(widget.materialData![data.material2!]?.innerType);
         }
         if (data.material3 != null) {
-          datasets.add(widget.materialData![data.material3!]!.innerType);
+          datasets.add(widget.materialData![data.material3!]?.innerType);
         }
         if (data.material4 != null) {
-          datasets.add(widget.materialData![data.material4!]!.innerType);
+          datasets.add(widget.materialData![data.material4!]?.innerType);
         }
         _tracker![key] =
             (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
@@ -495,7 +495,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
     for (var ds in datasets.toList()) {
-      collectionList[ds] = await TrackingData.getCollectionList(ds!);
+      if (ds == null) continue;
+      collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
     // Run through tracking status and check if its fully tracked
     for (var key in _tracker.keys) {
@@ -650,7 +651,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(key == null ? '' : widget.materialData![key]!.name!),
+      Text(key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item'),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -964,16 +965,16 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         var data =
             widget.info!.talent!.ascension![splitKey[splitKey.length - 1]]!;
         if (data.material1 != null) {
-          datasets.add(widget.materialData![data.material1!]!.innerType);
+          datasets.add(widget.materialData![data.material1!]?.innerType);
         }
         if (data.material2 != null) {
-          datasets.add(widget.materialData![data.material2!]!.innerType);
+          datasets.add(widget.materialData![data.material2!]?.innerType);
         }
         if (data.material3 != null) {
-          datasets.add(widget.materialData![data.material3!]!.innerType);
+          datasets.add(widget.materialData![data.material3!]?.innerType);
         }
         if (data.material4 != null) {
-          datasets.add(widget.materialData![data.material4!]!.innerType);
+          datasets.add(widget.materialData![data.material4!]?.innerType);
         }
         _tracker![key] =
             (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
@@ -996,7 +997,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
     for (var ds in datasets.toList()) {
-      collectionList[ds] = await TrackingData.getCollectionList(ds!);
+      if (ds == null) continue;
+      collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
     // Run through tracking status and check if its fully tracked
     for (var key in _tracker.keys) {
@@ -1157,7 +1159,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(widget.materialData![key]!.name!),
+      Text(widget.materialData![key]?.name ?? 'Unknown Item'),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -1515,7 +1517,7 @@ class CharacterConstellationPage extends StatelessWidget {
 
   List<Widget> _constellationWidgets(BuildContext context) {
     var _wid = <Widget>[];
-    info!.constellations!.forEach((key, value) {
+    info!.constellations?.forEach((key, value) {
       _wid.add(_generateConstellationWidget(key, value, context));
       _wid.add(const Divider());
     });
