@@ -194,7 +194,7 @@ class GridData {
     )) {
       Util.showSnackbarQuick(
         context,
-        'Wiki Page not available for ${data.name}',
+        'Wiki Page not available for ${data.name ?? 'Unknown'}',
       );
     }
   }

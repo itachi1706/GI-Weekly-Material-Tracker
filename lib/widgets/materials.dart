@@ -151,7 +151,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_info!.name!),
+        title: Text(_info!.name ?? 'Unknown Material'),
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
@@ -177,7 +177,7 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
               Icons.location_pin,
             ),
             ...GridData.generateInfoLine(
-              _info!.description!,
+              _info!.description ?? 'Unknown Description',
               Icons.format_list_bulleted,
             ),
           ],
@@ -268,6 +268,12 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
   void _addOrRemoveMaterial() async {
     if (!_addCheckObtained) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
+
+      return;
+    }
+
+    if (_info == null || !_info!.released) {
+      Util.showSnackbarQuick(context, 'Unable to track unreleased materials');
 
       return;
     }

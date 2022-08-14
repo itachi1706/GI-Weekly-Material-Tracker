@@ -142,7 +142,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_info!.name!),
+        title: Text(_info!.name ?? 'Unknown Weapon'),
         backgroundColor: _rarityColor,
         actions: [
           IconButton(
@@ -457,6 +457,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     if (isTracked == TrackingStatus.unknown ||
         isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
+
+      return;
+    }
+
+    if (_info == null || !_info!.released) {
+      Util.showSnackbarQuick(context, 'Unable to track unreleased weapons');
 
       return;
     }

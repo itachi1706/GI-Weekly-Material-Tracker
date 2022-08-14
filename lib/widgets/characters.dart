@@ -166,7 +166,7 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(_info!.name ?? 'Unknown'),
+          title: Text(_info!.name ?? 'Unknown Character'),
           backgroundColor: _rarityColor,
           bottom: const TabBar(tabs: [
             Tab(text: 'General'),
@@ -662,6 +662,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
     if (isTracked == TrackingStatus.unknown ||
         isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
+
+      return;
+    }
+
+    if (widget.info == null || !widget.info!.released) {
+      Util.showSnackbarQuick(context, 'Unable to track unreleased characters');
 
       return;
     }
@@ -1174,6 +1180,13 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     if (isTracked == TrackingStatus.unknown ||
         isTracked == TrackingStatus.checking) {
       Util.showSnackbarQuick(context, 'Checking tracking status');
+
+      return;
+    }
+
+
+    if (widget.info == null || !widget.info!.released) {
+      Util.showSnackbarQuick(context, 'Unable to track unreleased characters');
 
       return;
     }

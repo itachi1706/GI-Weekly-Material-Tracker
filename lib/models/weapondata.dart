@@ -30,12 +30,14 @@ class WeaponData extends CommonData {
     this.maxSecondaryStat,
     this.ascension,
     this.series,
+    released,
   }) : super(
           image: image,
           name: name,
           rarity: rarity,
           description: description,
           wiki: wiki,
+          released: released,
         );
 
   factory WeaponData.fromJson(Map<String, dynamic> parsedJson) {
@@ -48,7 +50,7 @@ class WeaponData extends CommonData {
       type: parsedJson['type'],
       baseAtk: parsedJson['base_atk'],
       obtained: parsedJson['obtained'],
-      effect: parsedJson['effect'],
+      effect: parsedJson['effect'] ?? 'Unknown Effect',
       rarity: parsedJson['rarity'],
       wiki: parsedJson['wiki'],
       maxBaseAtk: parsedJson['max_base_atk'],
@@ -56,6 +58,7 @@ class WeaponData extends CommonData {
       ascension: WeaponAscension.getFromMap(parsedJson['ascension']),
       effectName: parsedJson['effectName'],
       series: parsedJson['series'],
+      released: parsedJson['released'],
     );
   }
 

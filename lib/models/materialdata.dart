@@ -14,12 +14,14 @@ class MaterialDataCommon extends CommonData {
     description,
     wiki,
     this.obtained,
+    released,
   }) : super(
           name: name,
           rarity: rarity,
           image: image,
           description: description,
           wiki: wiki,
+          released: released,
         );
 
   factory MaterialDataCommon.fromJson(Map<String, dynamic> parsedJson) {
@@ -32,6 +34,7 @@ class MaterialDataCommon extends CommonData {
       description: parsedJson['description'],
       wiki: parsedJson['wiki'],
       obtained: parsedJson['obtained'],
+      released: parsedJson['released'],
     );
   }
 
@@ -70,6 +73,7 @@ class MaterialDataMob extends MaterialDataCommon {
     obtained,
     wiki,
     this.enemies,
+    released,
   }) : super(
           image: image,
           rarity: rarity,
@@ -79,6 +83,7 @@ class MaterialDataMob extends MaterialDataCommon {
           description: description,
           wiki: wiki,
           obtained: obtained,
+          released: released,
         );
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
@@ -95,6 +100,7 @@ class MaterialDataMob extends MaterialDataCommon {
           .map((e) => e.toString())
           .toSet()
           .toList(),
+      released: parsedJson['released'],
     );
   }
 }
@@ -112,6 +118,7 @@ class MaterialDataDomains extends MaterialDataCommon {
     obtained,
     wiki,
     this.days,
+    released,
   }) : super(
           image: image,
           rarity: rarity,
@@ -121,6 +128,7 @@ class MaterialDataDomains extends MaterialDataCommon {
           description: description,
           wiki: wiki,
           obtained: obtained,
+          released: released,
         );
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
@@ -137,6 +145,7 @@ class MaterialDataDomains extends MaterialDataCommon {
           .map((e) => int.tryParse(e.toString()) ?? 0)
           .toSet()
           .toList(),
+      released: parsedJson['released'],
     );
   }
 }
