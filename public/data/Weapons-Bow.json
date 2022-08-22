@@ -565,6 +565,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Elegy_for_the_End",
       "subCollection": {}
     },
+    "End_of_the_Line": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "This seems to be a now-extinct fish. Its body is sufficiently elastic that a string may be attached to it to let it serve as a bow.",
+      "name": "End of the Line",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 2,
+          "material1": "Echo_of_Scorching_Might",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 8,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Olden_Days_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Trawler.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "45.9%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Fishing",
+      "effectName": "Net Snapper",
+      "effect": "Triggers the Flowrider effect after using an Elemental Skill, dealing 80~160% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Fading_Twilight": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A precious bow made of platinum, inlaid with an orb that shimmers with the light of eventide.",
@@ -870,7 +951,7 @@
     },
     "Hunters_Path": {
       "secondary_stat_type": "CRIT Rate",
-      "description": null,
+      "description": "This gilded bow was made using precious white branches. It has felled countless wicked beasts attempting to infiltrate the woods.",
       "name": "Hunter's Path",
       "series": null,
       "ascension": {
@@ -879,7 +960,7 @@
           "level": 20,
           "material2": "Inactivated_Fungal_Nucleus",
           "material3qty": 3,
-          "material1": "Forgery_1",
+          "material1": "Echo_of_Scorching_Might",
           "material2qty": 5,
           "material1qty": 5,
           "mora": 10000
@@ -889,7 +970,7 @@
           "level": 40,
           "material2": "Inactivated_Fungal_Nucleus",
           "material3qty": 12,
-          "material1": "Forgery_2",
+          "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 5,
           "mora": 20000
@@ -899,7 +980,7 @@
           "level": 50,
           "material2": "Dormant_Fungal_Nucleus",
           "material3qty": 9,
-          "material1": "Forgery_2",
+          "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 9,
           "material1qty": 9,
           "mora": 30000
@@ -909,7 +990,7 @@
           "level": 60,
           "material2": "Dormant_Fungal_Nucleus",
           "material3qty": 14,
-          "material1": "Forgery_3",
+          "material1": "Dream_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 5,
           "mora": 45000
@@ -919,7 +1000,7 @@
           "level": 70,
           "material2": "Robust_Fungal_Nucleus",
           "material3qty": 9,
-          "material1": "Forgery_3",
+          "material1": "Dream_of_Scorching_Might",
           "material2qty": 14,
           "material1qty": 9,
           "mora": 55000
@@ -929,7 +1010,7 @@
           "level": 80,
           "material2": "Robust_Fungal_Nucleus",
           "material3qty": 18,
-          "material1": "Forgery_4",
+          "material1": "Olden_Days_of_Scorching_Might",
           "material2qty": 27,
           "material1qty": 6,
           "mora": 65000
@@ -951,7 +1032,7 @@
     },
     "Kings_Squire": {
       "secondary_stat_type": "ATK",
-      "description": null,
+      "description": "A weapon you obtained from an Aranara tale. It has taken on the shape of a bow that can shoot the enemies of the forest down.",
       "name": "King's Squire",
       "series": null,
       "ascension": {
@@ -960,7 +1041,7 @@
           "level": 20,
           "material2": "Inactivated_Fungal_Nucleus",
           "material3qty": 2,
-          "material1": "Forgery_1",
+          "material1": "Echo_of_Scorching_Might",
           "material2qty": 3,
           "material1qty": 3,
           "mora": 5000
@@ -970,7 +1051,7 @@
           "level": 40,
           "material2": "Inactivated_Fungal_Nucleus",
           "material3qty": 8,
-          "material1": "Forgery_2",
+          "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 12,
           "material1qty": 3,
           "mora": 15000
@@ -980,7 +1061,7 @@
           "level": 50,
           "material2": "Dormant_Fungal_Nucleus",
           "material3qty": 6,
-          "material1": "Forgery_2",
+          "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 6,
           "material1qty": 6,
           "mora": 20000
@@ -990,7 +1071,7 @@
           "level": 60,
           "material2": "Dormant_Fungal_Nucleus",
           "material3qty": 9,
-          "material1": "Forgery_3",
+          "material1": "Dream_of_Scorching_Might",
           "material2qty": 12,
           "material1qty": 3,
           "mora": 30000
@@ -1000,7 +1081,7 @@
           "level": 70,
           "material2": "Robust_Fungal_Nucleus",
           "material3qty": 6,
-          "material1": "Forgery_3",
+          "material1": "Dream_of_Scorching_Might",
           "material2qty": 9,
           "material1qty": 6,
           "mora": 35000
@@ -1010,7 +1091,7 @@
           "level": 80,
           "material2": "Robust_Fungal_Nucleus",
           "material3qty": 12,
-          "material1": "Forgery_4",
+          "material1": "Olden_Days_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 4,
           "mora": 45000
@@ -2458,87 +2539,6 @@
       "effect": "Increases ATK by 20~40% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by 12/24/40~24/48/80%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Thundering_Pulse",
-      "subCollection": {}
-    },
-    "Trawler": {
-      "secondary_stat_type": "Energy Recharge",
-      "description": null,
-      "name": "Trawler",
-      "series": null,
-      "ascension": {
-        "1": {
-          "material3": "Fungal_Spores",
-          "level": 20,
-          "material2": "Inactivated_Fungal_Nucleus",
-          "material3qty": 2,
-          "material1": "Forgery_1",
-          "material2qty": 3,
-          "material1qty": 3,
-          "mora": 5000
-        },
-        "2": {
-          "material3": "Fungal_Spores",
-          "level": 40,
-          "material2": "Inactivated_Fungal_Nucleus",
-          "material3qty": 8,
-          "material1": "Forgery_2",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 15000
-        },
-        "3": {
-          "material3": "Luminescent_Pollen",
-          "level": 50,
-          "material2": "Dormant_Fungal_Nucleus",
-          "material3qty": 6,
-          "material1": "Forgery_2",
-          "material2qty": 6,
-          "material1qty": 6,
-          "mora": 20000
-        },
-        "4": {
-          "material3": "Luminescent_Pollen",
-          "level": 60,
-          "material2": "Dormant_Fungal_Nucleus",
-          "material3qty": 9,
-          "material1": "Forgery_3",
-          "material2qty": 12,
-          "material1qty": 3,
-          "mora": 30000
-        },
-        "5": {
-          "material3": "Crystalline_Cyst_Dust",
-          "level": 70,
-          "material2": "Robust_Fungal_Nucleus",
-          "material3qty": 6,
-          "material1": "Forgery_3",
-          "material2qty": 9,
-          "material1qty": 6,
-          "mora": 35000
-        },
-        "6": {
-          "material3": "Crystalline_Cyst_Dust",
-          "level": 80,
-          "material2": "Robust_Fungal_Nucleus",
-          "material3qty": 12,
-          "material1": "Forgery_4",
-          "material2qty": 18,
-          "material1qty": 4,
-          "mora": 45000
-        }
-      },
-      "image": "Weapons/Bow/Trawler.png",
-      "secondary_stat": "10%",
-      "rarity": 4,
-      "type": "Bow",
-      "max_secondary_stat": "45.9%",
-      "max_base_atk": 510,
-      "base_atk": 42,
-      "obtained": "Gacha",
-      "effectName": "Net Snapper",
-      "effect": "Triggers the Flowrider effect after using an Elemental Skill, dealing 80~160% ATK as AoE DMG upon hitting an opponent with an attack. Flowrider will be removed after 15s or after causing 3 instances of AoE DMG. Only 1 instance of AoE DMG can be caused every 2s in this way. Flowrider can be triggered once every 12s.",
-      "released": false,
-      "wiki": null,
       "subCollection": {}
     },
     "Windblume_Ode": {
