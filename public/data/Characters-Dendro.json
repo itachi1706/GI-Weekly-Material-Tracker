@@ -834,12 +834,11 @@
       "birthday": "29/12",
       "caption": "Verdant Strider",
       "name": "Tighnari",
-      "fullName": null,
       "description": "A young researcher well-versed in botany who currently serves as a Forest Watcher in Avidya Forest. He is a straight shooter with a warm heart — and a dab hand at guiding even the dullest of pupils.",
       "nation": "Sumeru",
       "weapon": "Bow",
       "rarity": 5,
-      "affiliation": "Gandharva Ville",
+      "affiliation": "Gandharva Ville, Sumeru Akademiya, Amurta",
       "constellation": "Vulpes Zerda",
       "talents": {
         "ascension": {
@@ -947,21 +946,21 @@
           "Keen_Sight": {
             "name": "Keen Sight",
             "effect": "After Tighnari fires a Wreath Arrow, his Elemental Mastery is increased by 50 for 4s.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Keen_Sight.png",
             "order": 0,
             "type": "Passive 1"
           },
           "Scholarly_Blade": {
             "name": "Scholarly Blade",
             "effect": "For every point of Elemental Mastery Tighnari possesses, his Charged Attack and Fashioner's Tanglevine Shaft DMG are increased by 0.06%.\nThe maximum DMG Bonus obtainable this way is 60%.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Scholarly_Blade.png",
             "order": 1,
             "type": "Passive 2"
           },
           "Encyclopedic_Knowledge": {
             "name": "Encyclopedic Knowledge",
             "effect": "Displays the location of nearby resources unique to Sumeru on the mini-map.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Encyclopedic_Knowledge.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -969,22 +968,22 @@
         "attack": {
           "Khanda_Barrier-Buster": {
             "name": "Khanda Barrier-Buster",
-            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Dendro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\n·Charge Level 1: Fires off an arrow carrying the power of flora that deals Dendro DMG.\n·Charge Level 2: Fires off a Wreath Arrow that deals Dendro DMG. Upon hit, the Wreath Arrow will create 4 Clusterbloom Arrows that will track nearby opponents automatically and deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Dendro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Tighnari fires a Dendro-infused arrow that deals Dendro DMG.\nCharge Level 2: Tighnari fires a Wreath Arrow that deals Dendro DMG. Upon hit, the Wreath Arrow will create 4 Clusterbloom Arrows that will track nearby opponents automatically and deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG on impact.",
+            "image": "Talents/Normal/Bow_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Vijnana-Phala_Mine": {
             "name": "Vijnana-Phala Mine",
-            "effect": "Tighnari throws a Vijnana Stormheart ahead that deals AoE Dendro DMG, creating a Vijnana-Khanda Field that creates mysterious illusions that taunt opponents and draw their fire.\nAdditionally, Tighnari gains the Vijnana Penetrator effect, which will decrease the Wreath Arrow's charging time by 2.4s. This effect will dissipate once the skill duration ends or after Tighnari has fired 3 Wreath Arrows.",
-            "image": "Talents/Skill/",
+            "effect": "Tighnari throws a Vijnana Stormheart ahead of him that deals AoE Dendro DMG and creates a Vijnana-Khanda Field, which summons strange illusions to taunt enemies and draw their fire.\n\nAdditionally, Tighnari gains the Vijnana Suffusion effect, which will decrease the Wreath Arrow's charging time by 2.4s. This effect will dissipate once the skill duration ends or after Tighnari has fired 3 Wreath Arrows.",
+            "image": "Talents/Skill/Talent_Vijnana-Phala_Mine.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Fashioners_Tanglevine_Shaft": {
             "name": "Fashioner's Tanglevine Shaft",
-            "effect": "Combines the power of all seeds to fire 6 Tanglevine Shafts that can track opponents and deal Dendro DMG.\nAfter they hit, the Tanglevine Shafts will create a secondary wave of Tanglevine Shafts that can also track opponents and deal Dendro DMG on hit.",
-            "image": "Talents/Burst/",
+            "effect": "Combines the power of all seeds to fire 6 Tanglevine Shafts that can track opponents and deal Dendro DMG.\n\nAfter they hit, the Tanglevine Shafts will create a secondary wave of Tanglevine Shafts that can also track opponents and deal Dendro DMG on hit.",
+            "image": "Talents/Burst/Talent_Fashioners_Tanglevine_Shaft.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -994,32 +993,32 @@
         "1": {
           "name": "Beginnings Determined at the Roots",
           "effect": "Tighnari's Charged Attack CRIT Rate is increased by 15%.",
-          "image": "Constellation/"
+          "image": "Constellation/Beginnings_Determined_at_the_Roots.png"
         },
         "2": {
           "name": "Origins Known From the Stem",
           "effect": "When there are opponents within the Vijnana-Khanda Field created by Vijnana-Phala Mine, Tighnari gains 20% Dendro DMG Bonus.\nThe effect will last up to 6s if the field's duration ends or if it no longer has opponents within it.",
-          "image": "Constellation/"
+          "image": "Constellation/Origins_Known_From_the_Stem.png"
         },
         "3": {
           "name": "Fortunes Read Amongst the Branches",
           "effect": "Increases the Level of Fashioner's Tanglevine Shaft by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Fortunes_Read_Amongst_the_Branches.png"
         },
         "4": {
           "name": "Withering Glimpsed in the Leaves",
-          "effect": "When Fashioner's Tanglevine Shaft is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner's Tanglevine Shaft triggers a Burning, Bloom, Aggravate, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state's duration.",
-          "image": "Constellation/"
+          "effect": "When Fashioner's Tanglevine Shaft is unleashed, all nearby party members gain 60 Elemental Mastery for 8s. If the Fashioner's Tanglevine Shaft triggers a Burning, Bloom, Quicken, or Spread reaction, their Elemental Mastery will be further increased by 60. This latter case will also refresh the buff state's duration.",
+          "image": "Constellation/Withering_Glimpsed_in_the_Leaves.png"
         },
         "5": {
           "name": "Comprehension Amidst the Flowers",
           "effect": "Increases the Level of Vijnana-Phala Mine by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Comprehension_Amidst_the_Flowers.png"
         },
         "6": {
           "name": "Karma Adjudged From the Leaden Fruit",
           "effect": "Wreath Arrow's charging time is decreased by 0.9s, and will produce 1 additional Clusterbloom Arrow upon hit. This arrow deals 150% of Tighnari's ATK as DMG.",
-          "image": "Constellation/"
+          "image": "Constellation/Karma_Adjudged_From_the_Leaden_Fruit.png"
         }
       },
       "ascension": {
@@ -1096,11 +1095,11 @@
           "material3": "Nilotpala_Lotus"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "An Avidya Forest Watcher and botanical scholar who graduated from Amurta. He leads a fruitful life of patrolling the rainforest, protecting the ecology, and lecturing fools every day.",
+      "paimonmoepath": "characters/tighnari",
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Tighnari",
       "subCollection": {}
     }
