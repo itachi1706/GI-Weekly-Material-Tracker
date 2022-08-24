@@ -941,8 +941,8 @@
         "attack": {
           "Foreign_Fieldcleaver": {
             "name": "Foreign Fieldcleaver",
-            "effect": "Normal Attack\nPerform up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/Talent_Foreign_Fieldcleaver.png",
+            "effect": "Normal Attack\nPerforms up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
@@ -955,7 +955,7 @@
           },
           "Surgent_Manifestation": {
             "name": "Surgent Manifestation",
-            "effect": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp. This Lamp will deal continuous Dendro DMG to opponents within its AoE.\n\nLotuslight Transfiguration\nThe Lea Lotus Lamp will undergo the following changes after it comes into contact with Hydro/Electro/Pyro:\n·Hydro: the Lamp's AoE and the AoE of its attacks are increased.\n·Electro: the Lamp's ATK SPD is increased.\n·Pyro: the Lamp will explode after a short delay and then disappear, dealing AoE Dendro DMG.\nThe Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.\n\nOnly one Lamp created by the Traveler can exist at any one time.",
+            "effect": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp. This Lamp will deal continuous Dendro DMG to opponents within its AoE.\n\nLotuslight Transfiguration\nThe Lea Lotus Lamp will undergo the following changes after it comes into contact with Hydro/Electro/Pyro:\nHydro: the Lamp's AoE and the AoE of its attacks are increased.\nElectro: the Lamp's ATK SPD is increased.\nPyro: the Lamp will explode after a short delay and then disappear, dealing AoE Dendro DMG.\nThe Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.\n\nOnly one Lamp created by the Traveler can exist at any one time.",
             "image": "Talents/Burst/Talent_Surgent_Manifestation.png",
             "order": 2,
             "type": "Elemental Burst"
@@ -966,32 +966,32 @@
         "1": {
           "name": "Symbiotic Creeper",
           "effect": "After Razorgrass Blade hits an opponent, it will regenerate 3.5 Energy for the Traveler.",
-          "image": "Constellation/"
+          "image": "Constellation/Symbiotic_Creeper.png"
         },
         "2": {
           "name": "Green Resilience",
-          "effect": "Lea Lotus Lamp‘s duration is increased by 3s.",
-          "image": "Constellation/"
+          "effect": "Lea Lotus Lamp's duration is increased by 3s.",
+          "image": "Constellation/Green_Resilience.png"
         },
         "3": {
           "name": "Whirling Weeds",
           "effect": "Increases the Level of Razorgrass Blade by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Whirling_Weeds.png"
         },
         "4": {
           "name": "Treacle Grass",
           "effect": "After the Lea Lotus Lamp triggers a Lotuslight Transfiguration, it will obtain 5 stacks of the Overflowing Lotuslight effect from the Passive Talent \"Verdant Overgrowth\".\nYou must have unlocked this Passive Talent first.",
-          "image": "Constellation/"
+          "image": "Constellation/Treacle_Grass.png"
         },
         "5": {
           "name": "Viridian Transience",
           "effect": "Increases the Level of Surgent Manifestation by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Viridian_Transience.png"
         },
         "6": {
           "name": "Withering Aggregation",
           "effect": "The Dendro DMG Bonus of the character under the effect of Overflowing Lotuslight as created by the Lea Lotus Lamp is increased by 12%. If the Lamp has experienced a Lotuslight Transfiguration previously, the character will also gain 12% DMG Bonus for the corresponding element.",
-          "image": "Constellation/"
+          "image": "Constellation/Withering_Aggregation.png"
         }
       },
       "ascension": {
@@ -1070,10 +1070,11 @@
       },
       "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_dendro",
-      "genshinggpath": "characters/Traveler(Dendro)",
+      "genshinggpath": null,
+      "toupdate": "talent_ascension",
       "element": "Dendro",
-      "released": false,
-      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Traveler_(Dendro)",
       "subCollection": {}
     },
     "TravelerHydro": {
