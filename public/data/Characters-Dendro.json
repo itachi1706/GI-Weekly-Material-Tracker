@@ -282,12 +282,11 @@
       "birthday": "8/5",
       "caption": "Sprout of Rebirth",
       "name": "Collei",
-      "fullName": null,
       "description": "A trainee ranger active in Avidya Forest. Behind her enthusiastic words and actions hides a slightly introverted personality.",
       "nation": "Sumeru",
       "weapon": "Bow",
       "rarity": 4,
-      "affiliation": "Gandharva Ville",
+      "affiliation": "Fatui, Gandharva Ville",
       "constellation": "Leptailurus Cervarius",
       "talents": {
         "ascension": {
@@ -392,24 +391,24 @@
           }
         },
         "passives": {
-          "Gliding_Champion_of_Sumeru": {
-            "name": "Gliding Champion of Sumeru",
-            "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-            "image": "Talents/Passive/",
-            "order": 0,
-            "type": "Passive 1"
-          },
           "Floral_Sidewinder": {
             "name": "Floral Sidewinder",
             "effect": "If one of your party members has triggered Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions before the Floral Ring returns, it will grant the character the Sprout effect upon return, which will continuously deal Dendro DMG equivalent to 40% of Collei's ATK to nearby opponents for 3s.\nIf another Sprout effect is triggered during its initial duration, the initial effect will be removed. DMG dealt by Sprout is considered Elemental Skill DMG.",
-            "image": "Talents/Passive/",
-            "order": 1,
-            "type": "Passive 2"
+            "image": "Talents/Passive/Talent_Floral_Sidewinder.png",
+            "order": 0,
+            "type": "Passive 1"
           },
           "The_Languid_Wood": {
             "name": "The Languid Wood",
             "effect": "When a character within the Cuilein-Anbar Zone triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Zone's duration will be increased by 1s.\nA single Trump-Card Kitty can be extended by up to 3s.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_The_Languid_Wood.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Gliding_Champion_of_Sumeru": {
+            "name": "Gliding Champion of Sumeru",
+            "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Gliding_Champion_of_Sumeru.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -417,22 +416,22 @@
         "attack": {
           "Supplicants_Bowmanship": {
             "name": "Supplicant's Bowmanship",
-            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerform a more precise Aimed Shot with increased DMG.\nWhile aiming, Dendro energy will accumulate on the arrowhead. A fully charged arrow will deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, Dendro energy will accumulate on the arrowhead. A fully charged arrow will deal Dendro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Floral_Brush": {
             "name": "Floral Brush",
             "effect": "Throws out a Floral Ring that deals 1 instance of Dendro DMG to targets it comes into contact with.\nThe Floral Ring will return after a set time, dealing Dendro DMG once again.",
-            "image": "Talents/Skill/",
+            "image": "Talents/Skill/Talent_Floral_Brush.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Trump-Card_Kitty": {
             "name": "Trump-Card Kitty",
             "effect": "Trusty Cuilein-Anbar comes to save the day!\nThrows the doll named Cuilein-Anbar, causing an explosion that deals AoE Dendro DMG, creating a Cuilein-Anbar Zone. Cuilein-Anbar will bounce around within this zone, dealing AoE Dendro DMG.",
-            "image": "Talents/Burst/",
+            "image": "Talents/Burst/Talent_Trump-Card_Kitty.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -442,32 +441,32 @@
         "1": {
           "name": "Deepwood Patrol",
           "effect": "When in the party and not on the field, Collei's Energy Recharge is increased by 20%.",
-          "image": "Constellation/"
+          "image": "Constellation/Deepwood_Patrol.png"
         },
         "2": {
           "name": "Through Hill and Copse",
           "effect": "The Passive Talent Floral Sidewinder is changed to this:\nThe Floral Ring will grant the character the Sprout effect from Floral Sidewinder upon return, dealing 40% of Collei's ATK as Dendro DMG to nearby opponents for 3s.\nFrom the moment of using Floral Brush to the moment when this instance of Sprout effect ends, if any of your party members triggers Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon reactions, the Sprout effect will be extended by 3s.\nThe Sprout effect can only be extended this way once. If another Sprout effect is triggered during its initial duration, the initial effect will be removed.\nRequires you to have unlocked the Floral Sidewinder Passive Talent.",
-          "image": "Constellation/"
+          "image": "Constellation/Through_Hill_and_Copse.png"
         },
         "3": {
           "name": "Scent of Summer",
           "effect": "Increases the Level of Floral Brush by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Scent_of_Summer.png"
         },
         "4": {
           "name": "Gift of the Woods",
           "effect": "Using Trump-Card Kitty will increase all nearby characters' Elemental Mastery by 60 for 12s (not including Collei herself).",
-          "image": "Constellation/"
+          "image": "Constellation/Gift_of_the_Woods.png"
         },
         "5": {
           "name": "All Embers",
           "effect": "Increases the Level of Trump-Card Kitty by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/All_Embers.png"
         },
         "6": {
           "name": "Forest of Falling Arrows",
           "effect": "When the Floral Ring hits, it will create a miniature Cuilein-Anbar that will deal 200% of Collei's ATK as Dendro DMG.\nEach Floral Brush can only create one such miniature Cuilein-Anbar.",
-          "image": "Constellation/"
+          "image": "Constellation/Forest_of_Falling_Arrows.png"
         }
       },
       "ascension": {
@@ -544,11 +543,11 @@
           "material3": "Rukkhashava_Mushrooms"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "A Trainee Forest Ranger who is under the tutelage of Tighnari. She started her academic career a little later than her peers, so she is currently working hard to catch up.\nShe hides the other side of her personality deep under the surface of optimism and kindness.",
+      "paimonmoepath": "characters/collei",
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Collei",
       "subCollection": {}
     },
