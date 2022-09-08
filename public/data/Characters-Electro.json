@@ -683,8 +683,8 @@
           },
           "Unexpected_Order": {
             "name": "Unexpected Order",
-            "effect": "Has a 25% chance to recover some of the materials used when crafting Character and Weapon Materials.",
-            "image": "Talents/Passive/",
+            "effect": "When Dori crafts Character and Weapon Enhancement Materials, she has a chance to refund a portion of the crafting materials used.",
+            "image": "Talents/Passive/Talent_Unexpected_Order.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -692,22 +692,22 @@
         "attack": {
           "Marvelous_Sword-Dance_Modified": {
             "name": "Marvelous Sword-Dance (Modified)",
-            "effect": "Normal Attack\nPerform up to 3 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerform up to 3 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents. At the end of the sequence, performs a more powerful slash",
+            "image": "Talents/Normal/Claymore_Electro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Spirit-Warding_Lamp_Troubleshooter_Cannon": {
             "name": "Spirit-Warding Lamp: Troubleshooter Cannon",
-            "effect": "Directs a Spirit-Warding Lamp to fire off a Troubleshooter Shot at opponents, dealing Electro DMG.\nAfter the Troubleshooter Shot hits, it will create 2 After-Sales Service Rounds that will automatically track opponents and deal Electro DMG.",
-            "image": "Talents/Skill/",
+            "effect": "Directs a Spirit-Warding Lamp to fire off Troubleshooter Shots at opponents, dealing Electro DMG.\nWhen Troubleshooter Shots hit opponents, they will create 2 After-Sales Service Rounds that will automatically track opponents and deal Electro DMG.",
+            "image": "Talents/Skill/Talent_Spirit-Warding_Lamp_Troubleshooter_Cannon.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Alcazarzarays_Exactitude": {
             "name": "Alcazarzaray's Exactitude",
-            "effect": "Summons forth the Jinni within the lamp to give the client various kinds of aid.\n\nJinni\nConnects to a nearby character. The connected character will:\n· Continuously restore HP based on Dori's Max HP\n· Continuously regenerate Energy.\n· Be affected by Electro.\nWhen the connector between the Jinni and the character touches opponents, it will deal one instance of Electro DMG to them every 0.4s.\n\nOnly one Jinni can exist at one time.",
-            "image": "Talents/Burst/",
+            "effect": "Summons forth the Jinni within the lamp to give the client various kinds of aid.\n\nJinni\nConnects to a nearby character. The connected character will:\nContinuously restore HP based on Dori's Max HP.\nContinuously regenerate Energy.\nBe affected by Electro.\nWhen the connector between the Jinni and the character touches opponents, it will deal one instance of Electro DMG to them every 0.4s.\nOnly one Jinni can exist at one time.",
+            "image": "Talents/Burst/Talent_Alcazarzarays_Exactitude.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -763,7 +763,7 @@
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 40,
           "material4": "Faded_Red_Satin",
           "material4qty": 15,
@@ -775,7 +775,7 @@
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 50,
           "material4": "Trimmed_Red_Silk",
           "material4qty": 12,
@@ -787,7 +787,7 @@
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 60,
           "material4": "Trimmed_Red_Silk",
           "material4qty": 18,
@@ -799,7 +799,7 @@
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 70,
           "material4": "Rich_Red_Brocade",
           "material4qty": 12,
@@ -811,7 +811,7 @@
           "material1": "Vajrada_Amethyst_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 80,
           "material4": "Rich_Red_Brocade",
           "material4qty": 24,
@@ -822,8 +822,9 @@
       "introduction": null,
       "paimonmoepath": null,
       "genshinggpath": null,
+      "toupdate": "talent, materials, pictures, cons",
       "element": "Electro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Dori",
       "subCollection": {}
     },
