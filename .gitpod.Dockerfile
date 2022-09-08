@@ -3,7 +3,7 @@ FROM gitpod/workspace-full
 LABEL maintainer="dockerimages@itachi1706.com"
 
 ENV FLUTTER_HOME=/home/gitpod/flutter \
-    FLUTTER_VERSION=3.0.3-stable
+    FLUTTER_VERSION=3.3.1-stable
 
 # Install dart
 USER root
