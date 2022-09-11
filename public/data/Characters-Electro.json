@@ -557,7 +557,6 @@
       "birthday": "21/12",
       "caption": "Treasure of Dream Garden",
       "name": "Dori",
-      "fullName": null,
       "description": "An elusive merchant who has a fondness for glittering Mora.",
       "nation": "Sumeru",
       "weapon": "Claymore",
@@ -670,14 +669,14 @@
           "An_Eye_for_Gold": {
             "name": "An Eye for Gold",
             "effect": "After a character connected to the Jinni triggers an Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl or Crystallize reaction, the CD of Spirit-Warding Lamp: Troubleshooter Cannon is decreased by 1s.\nThis effect can be triggered once every 3s.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_An_Eye_for_Gold.png",
             "order": 0,
             "type": "Passive 1"
           },
           "Compound_Interest": {
             "name": "Compound Interest",
-            "effect": "When Troubleshooter Shots from Spirit-Warding Lamp: Troubleshooter Cannon hit opponents, Dori will restore 5 Elemental Energy for every 100% Energy Recharge possessed.\nA maximum of 15 Energy can be restored this way per Spirit-Warding Lamp: Troubleshooter Cannon.",
-            "image": "Talents/Passive/",
+            "effect": "When the Troubleshooter Shots or After-Sales Service Rounds from Spirit-Warding Lamp: Troubleshooter Cannon hit opponents, Dori will restore 5 Elemental Energy for every 100% Energy Recharge possessed.\nPer Spirit-Warding Lamp: Troubleshooter Cannon, only one instance of Energy restoration can be triggered and a maximum of 15 Energy can be restored this way.",
+            "image": "Talents/Passive/Talent_Compound_Interest.png",
             "order": 1,
             "type": "Passive 2"
           },
@@ -692,7 +691,7 @@
         "attack": {
           "Marvelous_Sword-Dance_Modified": {
             "name": "Marvelous Sword-Dance (Modified)",
-            "effect": "Normal Attack\nPerform up to 3 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents. At the end of the sequence, performs a more powerful slash",
+            "effect": "Normal Attack\nPerform up to 3 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents. At the end of the sequence, performs a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
             "image": "Talents/Normal/Claymore_Electro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
@@ -717,32 +716,32 @@
         "1": {
           "name": "Additional Investment",
           "effect": "The number of After-Sales Service Rounds created by Troubleshooter Shots is increased by 1.",
-          "image": "Constellation/"
+          "image": "Constellation/Additional_Investment.png"
         },
         "2": {
           "name": "Special Franchise",
-          "effect": "When you are in combat and the Jinni heals the character it is connected to, it will fire a Jinni Toop from that character's position that deals 50% of Troubleshooter Shot's DMG.",
-          "image": "Constellation/"
+          "effect": "When you are in combat and the Jinni heals the character it is connected to, it will fire a Jinni Toop from that character's position that deals 50% of Dori's ATK DMG.",
+          "image": "Constellation/Special_Franchise.png"
         },
         "3": {
           "name": "Wonders Never Cease",
           "effect": "Increases the Level of Alcazarzaray's Exactitude by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Wonders_Never_Cease.png"
         },
         "4": {
           "name": "Discretionary Supplement",
-          "effect": "The character connected to the Jinni will obtain the following buffs based on their current HP and Energy:\n·When their HP is lower than 50%, they gain 50% Incoming Healing Bonus.\n·When their Energy is less than 50%, they gain 30% Energy Recharge.",
-          "image": "Constellation/"
+          "effect": "The character connected to the Jinni will obtain the following buffs based on their current HP and Energy:\nWhen their HP is lower than 50%, they gain 50% Incoming Healing Bonus.\nWhen their Energy is less than 50%, they gain 30% Energy Recharge.",
+          "image": "Constellation/Discretionary_Supplement.png"
         },
         "5": {
           "name": "Value for Mora",
           "effect": "Increases the Level of Spirit-Warding Lamp: Troubleshooter Cannon by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Value_for_Mora.png"
         },
         "6": {
           "name": "Sprinkling Weight",
-          "effect": "Dori gains the following effects for 3s after using Spirit-Warding Lamp: Troubleshooter Cannon:\n·Electro Infusion.\n·When Normal Attacks hit opponents, all nearby party members will heal HP equivalent to 4% of Dori's Max HP. This type of healing can occur once every 0.1s.",
-          "image": "Constellation/"
+          "effect": "Dori gains the following effects for 3s after using Spirit-Warding Lamp: Troubleshooter Cannon:\nElectro Infusion.\nWhen Normal Attacks hit opponents, all nearby party members will heal HP equivalent to 4% of Dori's Max HP. This type of healing can occur once every 0.1s.",
+          "image": "Constellation/Sprinkling_Weight.png"
         }
       },
       "ascension": {
@@ -819,10 +818,9 @@
           "material3": "Kalpalata_Lotus"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
-      "genshinggpath": null,
-      "toupdate": "talent, materials, pictures, cons",
+      "introduction": "Dori is a merchant in Sumeru who has a fondness for glittering Mora.\nWith her persuasive eloquence, she is able to sell various strange and mysterious products for a very high price.",
+      "paimonmoepath": "characters/dori",
+      "genshinggpath": "characters/dori",
       "element": "Electro",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Dori",
