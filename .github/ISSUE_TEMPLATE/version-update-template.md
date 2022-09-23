@@ -35,9 +35,3 @@ Version Name: <Replace>
     - [Epitome Invocation ](https://genshin-impact.fandom.com/wiki/) (Weapon)
 
 [Version Ref](https://genshin-impact.fandom.com/wiki/Version/x) <Replace x with version number>
-
-
-
-/label ~"Status::To Triage" ~"Platform::Firebase" ~"Sub Platform::Firestore"
-/estimate 1d
-/weight 2
