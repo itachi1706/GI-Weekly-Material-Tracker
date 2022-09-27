@@ -276,6 +276,282 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Barbara",
       "subCollection": {}
     },
+    "Candace": {
+      "image": "Characters/Hydro/Candace.png",
+      "gender": "Female",
+      "birthday": null,
+      "caption": "Golden Vow",
+      "name": "Candace",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": null,
+      "rarity": 4,
+      "affiliation": null,
+      "constellation": "Sagitta Scutum",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Admonition",
+            "material3qty": 3,
+            "material4": "Faded_Red_Satin",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Admonition",
+            "material3qty": 2,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Admonition",
+            "material3qty": 4,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Admonition",
+            "material3qty": 6,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Admonition",
+            "material3qty": 9,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Admonition",
+            "material3qty": 4,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Admonition",
+            "material3qty": 6,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Admonition",
+            "material3qty": 12,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Tears_of_the_Calamitous_God",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Admonition",
+            "material3qty": 16,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Aegis_of_Crossed_Arrows": {
+            "name": "Aegis of Crossed Arrows",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "To_Dawns_First_Light": {
+            "name": "To Dawn's First Light",
+            "effect": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Gleaming_Spear_Guardian_Stance": {
+            "name": "Gleaming Spear: Guardian Stance",
+            "effect": "Normal Attack\nPerforms up to four consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Sacred_Rite_Herons_Sanctum": {
+            "name": "Sacred Rite: Heron's Sanctum",
+            "effect": "Tap\nRushes forward with her shield, dealing Hydro DMG to opponents in front of her.\n\nHold\nRaises her shield to block incoming attacks from nearby opponents, forming a barrier that absorbs DMG based on her Max HP and absorbs Hydro DMG 250% more effectively. This barrier lasts until the Elemental Skill is unleashed.\nAfter holding for a certain period of time, Candace will finish charging, and when the skill button is released, the skill duration expires, or when the barrier is broken, she will perform a leaping strike that deals Hydro DMG to opponents in front of her.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Sacred_Rite_Wagtails_Tide": {
+            "name": "Sacred Rite: Wagtail's Tide",
+            "effect": "Raising her weapon high, Candace calls upon a divine blessing that deals AoE Hydro DMG based on her Max HP and continuously confers the Prayer of the Crimson Crown on your active character.\n\nPrayer of the Crimson Crown\nThis effect has the following properties:\nCharacters deal increased Elemental DMG with their Normal Attacks.\nWhenever a character takes the field, they will unleash a rippling wave of water that deals Hydro DMG to nearby opponents. There is a limited number of waves that can be triggered in the duration of this skill.\nSword, Claymore, and Polearm-wielding characters under this effect will obtain a Hydro Infusion.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Redcrest"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Redcrest"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Redcrest"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Redcrest"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Redcrest"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Redcrest"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Hydro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Candace",
+      "subCollection": {}
+    },
     "Kamisato_Ayato": {
       "image": "Characters/Hydro/Kamisato_Ayato.png",
       "gender": "Male",
