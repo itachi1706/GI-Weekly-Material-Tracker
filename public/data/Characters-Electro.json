@@ -278,16 +278,16 @@
     "Cyno": {
       "image": "Characters/Electro/Cyno.png",
       "gender": "Male",
-      "birthday": null,
-      "caption": "General Mahamatra",
+      "birthday": "23/6",
+      "caption": "Judicator of Secrets",
       "name": "Cyno (5*?)",
-      "fullName": null,
+      "fullName": "General Mahamatra Cyno",
       "description": null,
       "nation": "Sumeru",
       "weapon": "Polearm",
       "rarity": 5,
-      "affiliation": "Sumeru Akademiya",
-      "constellation": null,
+      "affiliation": "Temple of Silence, Sumeru Akademiya",
+      "constellation": "Lupus Aureus",
       "talents": {
         "ascension": {
           "2": {
@@ -296,9 +296,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Admonition",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Divining_Scroll",
             "material4qty": 6
           },
           "3": {
@@ -307,9 +307,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 3
           },
           "4": {
@@ -318,9 +318,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 4
           },
           "5": {
@@ -329,9 +329,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 6
           },
           "6": {
@@ -340,60 +340,60 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
+          "Featherfall_Judgment": {
+            "name": "Featherfall Judgment",
+            "effect": "When Cyno is in the Pactsworn Pathclearer state activated by Sacred Rite: Wolf's Swiftness, Cyno will enter the Endseer stance at intervals. If he activates Secret Rite: Chasmic Soulfarer while affected by this stance, he will activate the Judication effect, increasing the DMG of this Secret Rite: Chasmic Soulfarer by 35%, and firing off 3 Duststalker Bolts that deal 100% of Cyno's ATK as Electro DMG.\n\nDuststalker Bolt DMG is considered Elemental Skill DMG.",
             "image": "Talents/Passive/",
             "order": 0,
             "type": "Passive 1"
@@ -405,32 +405,32 @@
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
+          "The_Gift_of_Silence": {
+            "name": "The Gift of Silence",
+            "effect": "Gains 25% more rewards when dispatched on a Sumeru Expedition for 20 hours.",
             "image": "Talents/Passive/",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
+          "Invokers_Spear": {
+            "name": "Invoker's Spear",
+            "effect": "Normal Attack\nPerforms up to four consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
             "image": "Talents/Normal/",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
+          "Secret_Rite_Chasmic_Soulfarer": {
+            "name": "Secret Rite: Chasmic Soulfarer",
+            "effect": "Performs a swift thrust, dealing Electro DMG to opponents along the path.\nWhen Cyno is under the Pathsworn Pathclearer state triggered by the Elemental Burst \"Sacred Rite: Wolf's Swiftness\", he will instead unleash a Mortuary Rite that deals thunderous AoE Electro DMG and extends the duration of Pathsworn Pathclearer.",
             "image": "Talents/Skill/",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
+          "Sacred_Rite_Wolfs_Swiftness": {
+            "name": "Sacred Rite: Wolf's Swiftness",
+            "effect": "Calls upon a divine spirit to indwell him, morphing into the Pactsworn Pathclearer.\n\nPactsworn Pathclearer\nCyno's Normal, Charged, and Plunging Attacks will be converted to Electro DMG that cannot be overridden. Cyno's Elemental Mastery and resistance to interruption will increase, and he gains immunity to Electro-Charged DMG. This effect will be canceled when Cyno leaves the field and lasts a maximum of 18s.",
             "image": "Talents/Burst/",
             "order": 2,
             "type": "Elemental Burst"
@@ -477,70 +477,70 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Divining_Scroll",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "2": {
           "material2qty": 2,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Divining_Scroll",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "3": {
           "material2qty": 4,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Sealed_Scroll",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "4": {
           "material2qty": 8,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Sealed_Scroll",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "5": {
           "material2qty": 12,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Forbidden_Curse_Scroll",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "6": {
           "material2qty": 20,
           "material1": "Vajrada_Amethyst_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Forbidden_Curse_Scroll",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         }
       },
       "introduction": null,
