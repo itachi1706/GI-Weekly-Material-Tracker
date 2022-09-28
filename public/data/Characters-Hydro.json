@@ -279,15 +279,15 @@
     "Candace": {
       "image": "Characters/Hydro/Candace.png",
       "gender": "Female",
-      "birthday": null,
+      "birthday": "3/5",
       "caption": "Golden Vow",
       "name": "Candace",
-      "fullName": null,
-      "description": null,
+      "fullName": "Candace Al-Ahmar",
+      "description": "A descendant of King Deshret with an amber left eye. The defender of Aaru Village.",
       "nation": "Sumeru",
-      "weapon": null,
+      "weapon": "Polearm",
       "rarity": 4,
-      "affiliation": null,
+      "affiliation": "Aaru Village",
       "constellation": "Sagitta Scutum",
       "talents": {
         "ascension": {
@@ -394,22 +394,22 @@
         "passives": {
           "Aegis_of_Crossed_Arrows": {
             "name": "Aegis of Crossed Arrows",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "If Candace is hit by an attack in the Hold duration of Sacred Rite: Heron's Sanctum, that skill will finish charging instantly.",
+            "image": "Talents/Passive/Talent_Aegis_of_Crossed_Arrows.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Celestial_Dome_of_Sand": {
+            "name": "Celestial Dome of Sand",
+            "effect": "Characters affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail's Tide will deal 0.5% increased DMG to opponents for every 1,000 points of Candace's Max HP when they deal Elemental DMG with their Normal Attacks.",
+            "image": "Talents/Passive/Talent_Celestial_Dome_of_Sand.png",
             "order": 1,
             "type": "Passive 2"
           },
           "To_Dawns_First_Light": {
             "name": "To Dawn's First Light",
             "effect": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_To_Dawns_First_Light.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -417,22 +417,22 @@
         "attack": {
           "Gleaming_Spear_Guardian_Stance": {
             "name": "Gleaming Spear: Guardian Stance",
-            "effect": "Normal Attack\nPerforms up to four consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerforms up to four consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Hydro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Sacred_Rite_Herons_Sanctum": {
             "name": "Sacred Rite: Heron's Sanctum",
             "effect": "Tap\nRushes forward with her shield, dealing Hydro DMG to opponents in front of her.\n\nHold\nRaises her shield to block incoming attacks from nearby opponents, forming a barrier that absorbs DMG based on her Max HP and absorbs Hydro DMG 250% more effectively. This barrier lasts until the Elemental Skill is unleashed.\nAfter holding for a certain period of time, Candace will finish charging, and when the skill button is released, the skill duration expires, or when the barrier is broken, she will perform a leaping strike that deals Hydro DMG to opponents in front of her.",
-            "image": "Talents/Skill/",
+            "image": "Talents/Skill/Talent_Sacred_Rite_Herons_Sanctum.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Sacred_Rite_Wagtails_Tide": {
             "name": "Sacred Rite: Wagtail's Tide",
             "effect": "Raising her weapon high, Candace calls upon a divine blessing that deals AoE Hydro DMG based on her Max HP and continuously confers the Prayer of the Crimson Crown on your active character.\n\nPrayer of the Crimson Crown\nThis effect has the following properties:\nCharacters deal increased Elemental DMG with their Normal Attacks.\nWhenever a character takes the field, they will unleash a rippling wave of water that deals Hydro DMG to nearby opponents. There is a limited number of waves that can be triggered in the duration of this skill.\nSword, Claymore, and Polearm-wielding characters under this effect will obtain a Hydro Infusion.",
-            "image": "Talents/Burst/",
+            "image": "Talents/Burst/Talent_Sacred_Rite_Wagtails_Tide.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -440,34 +440,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Returning Heiress of the Scarlet Sands",
+          "effect": "The duration of Prayer of the Crimson Crown effect triggered by Sacred Rite: Wagtail's Tide is increased by 3s.",
+          "image": "Constellation/Returning_Heiress_of_the_Scarlet_Sands.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Moon-Piercing Brilliance",
+          "effect": "When Sacred Rite: Heron's Sanctum hits opponents, Candace's Max HP will be increased by 20% for 15s.",
+          "image": "Constellation/Moon-Piercing_Brilliance.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Hunter's Supplication",
+          "effect": "Increases the Level of Sacred Rite: Wagtail's Tide by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Hunters_Supplication.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Sentinel Oath",
+          "effect": "Shortens the Hold CD of Sacred Rite: Heron's Sanctum to be the same as that of the Tapping CD.",
+          "image": "Constellation/Sentinel_Oath.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Heterochromatic Gaze",
+          "effect": "Increases the Level of Sacred Rite: Heron's Sanctum by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Heterochromatic_Gaze.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "The Overflow",
+          "effect": "When characters (excluding Candace herself) affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail's Tide deal Elemental DMG to opponents using Normal Attacks, an attack wave will be unleashed that deals AoE Hydro DMG equal to 15% of Candace's Max HP.\nThis effect can trigger once every 2.3s and is considered Elemental Burst DMG.",
+          "image": "Constellation/The_Overflow.png"
         }
       },
       "ascension": {
@@ -544,11 +544,11 @@
           "material3": "Redcrest"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "The guardian of Aaru Village who is gentle and benevolent. She will not allow anyone to harm Aaru Village under her watch.",
+      "paimonmoepath": "characters/candace",
       "genshinggpath": null,
       "element": "Hydro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Candace",
       "subCollection": {}
     },
