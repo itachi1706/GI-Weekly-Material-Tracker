@@ -35,3 +35,5 @@ Version Name: <Replace>
     - [Epitome Invocation ](https://genshin-impact.fandom.com/wiki/) (Weapon)
 
 [Version Ref](https://genshin-impact.fandom.com/wiki/Version/x) <Replace x with version number>
+    
+[Official Models](https://docs.google.com/spreadsheets/d/1lrE5EGtuDsrwRJNSHIEN9hsGggxzLHmDV5rwuHkmndQ/edit#gid=0)
