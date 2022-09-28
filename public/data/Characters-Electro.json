@@ -278,16 +278,16 @@
     "Cyno": {
       "image": "Characters/Electro/Cyno.png",
       "gender": "Male",
-      "birthday": null,
-      "caption": "General Mahamatra",
-      "name": "Cyno (5*?)",
-      "fullName": null,
-      "description": null,
+      "birthday": "23/6",
+      "caption": "Judicator of Secrets",
+      "name": "Cyno",
+      "fullName": "General Mahamatra Cyno",
+      "description": "The General Mahamatra in charge of supervising the researchers of the Akademiya. It is said that when he gets down to work, the General Mahamatra is even more efficient than the \"Great Vayuvyastra\" made by the Kshahrewar.",
       "nation": "Sumeru",
       "weapon": "Polearm",
       "rarity": 5,
-      "affiliation": "Sumeru Akademiya",
-      "constellation": null,
+      "affiliation": "Temple of Silence, Sumeru Akademiya",
+      "constellation": "Lupus Aureus",
       "talents": {
         "ascension": {
           "2": {
@@ -296,9 +296,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Admonition",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Divining_Scroll",
             "material4qty": 6
           },
           "3": {
@@ -307,9 +307,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 3
           },
           "4": {
@@ -318,9 +318,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 4
           },
           "5": {
@@ -329,9 +329,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 6
           },
           "6": {
@@ -340,98 +340,98 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Sealed_Scroll",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mudra_of_the_Malefic_General",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Forbidden_Curse_Scroll",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Featherfall_Judgment": {
+            "name": "Featherfall Judgment",
+            "effect": "When Cyno is in the Pactsworn Pathclearer state activated by Sacred Rite: Wolf's Swiftness, Cyno will enter the Endseer stance at intervals. If he activates Secret Rite: Chasmic Soulfarer while affected by this stance, he will activate the Judication effect, increasing the DMG of this Secret Rite: Chasmic Soulfarer by 35%, and firing off 3 Duststalker Bolts that deal 100% of Cyno's ATK as Electro DMG.\n\nDuststalker Bolt DMG is considered Elemental Skill DMG.",
+            "image": "Talents/Passive/Talent_Featherfall_Judgment.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Authority_Over_the_Nine_Bows": {
+            "name": "Authority Over the Nine Bows",
+            "effect": "Cyno's DMG values will be increased based on his Elemental Mastery as follows:\nPactsworn Pathclearer's Normal Attack DMG is increased by 125% of his Elemental Mastery.\nDuststalker Bolt DMG from his Passive Talent Featherfall Judgment is increased by 250% of his Elemental Mastery.",
+            "image": "Talents/Passive/Talent_Authority_Over_the_Nine_Bows.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "The_Gift_of_Silence": {
+            "name": "The Gift of Silence",
+            "effect": "Gains 25% more rewards when dispatched on a Sumeru Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_The_Gift_of_Silence.png",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Normal/",
+          "Invokers_Spear": {
+            "name": "Invoker's Spear",
+            "effect": "Normal Attack\nPerforms up to four consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+            "image": "Talents/Normal/Polearm_Electro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Skill/",
+          "Secret_Rite_Chasmic_Soulfarer": {
+            "name": "Secret Rite: Chasmic Soulfarer",
+            "effect": "Performs a swift thrust, dealing Electro DMG to opponents along the path.\nWhen Cyno is under the Pathsworn Pathclearer state triggered by the Elemental Burst \"Sacred Rite: Wolf's Swiftness\", he will instead unleash a Mortuary Rite that deals thunderous AoE Electro DMG and extends the duration of Pathsworn Pathclearer.",
+            "image": "Talents/Skill/Talent_Secret_Rite_Chasmic_Soulfarer.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Burst/",
+          "Sacred_Rite_Wolfs_Swiftness": {
+            "name": "Sacred Rite: Wolf's Swiftness",
+            "effect": "Calls upon a divine spirit to indwell him, morphing into the Pactsworn Pathclearer.\n\nPactsworn Pathclearer\nCyno's Normal, Charged, and Plunging Attacks will be converted to Electro DMG that cannot be overridden. Cyno's Elemental Mastery and resistance to interruption will increase, and he gains immunity to Electro-Charged DMG. This effect will be canceled when Cyno leaves the field and lasts a maximum of 18s.",
+            "image": "Talents/Burst/Talent_Sacred_Rite_Wolfs_Swiftness.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -439,34 +439,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Ordinance: Unceasing Vigil",
+          "effect": "After using Sacred Rite: Wolf's Swiftness, Cyno's Normal Attack SPD will be increased by 20% for 10s. If the Judication effect of his Passive Talent Featherfall Judgment is triggered during Secret Rite: Chasmic Soulfarer, the duration of this increase will be refreshed.\nYou need to unlock the Passive Talent \"Featherfall Judgement\".",
+          "image": "Constellation/Ordinance_Unceasing_Vigil.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Ceremony: Homecoming of Spirits",
+          "effect": "When Cyno's Normal Attacks hit opponents, his Electro DMG Bonus will increase by 10% for 4s. This effect can be triggered once every 0.1s. Max 5 stacks.",
+          "image": "Constellation/Ceremony_Homecoming_of_Spirits.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Precept: Lawful Enforcer",
+          "effect": "Increases the Level of Sacred Rite: Wolf's Swiftness by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Precept_Lawful_Enforcer.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Austerity: Forbidding Guard",
+          "effect": "When Cyno is in the Pactsworn Pathclearer state triggered by Sacred Rite: Wolf's Swiftness, after he triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or an Electro Swirl reaction, he will restore 3 Elemental Energy for all nearby party members (except himself.)\nThis effect can occur 5 times within one use of Sacred Rite: Wolf’s Swiftness.",
+          "image": "Constellation/Austerity_Forbidding_Guard.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Funerary Rite: The Passing of Starlight",
+          "effect": "Increases the Level of Secret Rite: Chasmic Soulfarer by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Funerary_Rite_The_Passing_of_Starlight.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Raiment: Just Scales",
+          "effect": "After using Sacred Rite: Wolf's Swiftness or triggering the Judication effect of the Passive Talent \"Featherfall Judgment\", Cyno will gain 4 stacks of the \"Day of the Jackal\" effect. When he hits opponents with Normal Attacks, he will consume 1 stack of \"Day of the Jackal\" to fire off one Duststalker Bolt.\n\"Day of the Jackal\" lasts for 8s. Max 8 stacks. It will be canceled once Pactsworn Pathclearer ends.\nA maximum of 1 Duststalker Bolt can be unleashed this way every 0.4s.\nYou must first unlock the Passive Talent \"Featherfall Judgment\".",
+          "image": "Constellation/Raiment_Just_Scales.png"
         }
       },
       "ascension": {
@@ -477,77 +477,77 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Divining_Scroll",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "2": {
           "material2qty": 2,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Divining_Scroll",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "3": {
           "material2qty": 4,
           "material1": "Vajrada_Amethyst_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Sealed_Scroll",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "4": {
           "material2qty": 8,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Sealed_Scroll",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "5": {
           "material2qty": 12,
           "material1": "Vajrada_Amethyst_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Forbidden_Curse_Scroll",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         },
         "6": {
           "material2qty": 20,
           "material1": "Vajrada_Amethyst_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Thunderclap_Fruitcore",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Forbidden_Curse_Scroll",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Scarab"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "The General Mahamatra of the Akademiya, leader of all the Matras. He has a unique sense of humor that never fails to leave a deep impression.",
+      "paimonmoepath": "characters/cyno",
       "genshinggpath": null,
       "element": "Electro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Cyno",
       "subCollection": {}
     },
