@@ -467,6 +467,45 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Robust_Fungal_Nucleus",
       "subCollection": {}
+    },
+    "Damaged_Prism": {
+      "image": "Materials/Elite_Mob/",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A damaged component obtained from defeating a Primal Construct.\nThese uniquely-shaped machines are the eternal sentinels of the desert ruins, and they possess the power to pierce the mountains and reshape rocks. The same principles that power many mysterious devices above and beneath the earth also power these machines.",
+      "enemies": ["Primal Construct: Reshaper"],
+      "obtained": "- Dropped by Primal Construct: Reshaper",
+      "name": "Damaged Prism",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Damaged_Prism",
+      "subCollection": {}
+    },
+    "Turbid_Prism": {
+      "image": "Materials/Elite_Mob/",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An old component obtained from defeating a Primal Construct.\n>It is said that these machines are different from those ruin machines that come from deep within the desert, for they were not made as heralds of destruction or conquest.",
+      "enemies": ["Primal Construct: Reshaper"],
+      "obtained": "- Alchemy (3x Damaged Prism)\n- Dropped by Lv.40+ Primal Construct: Reshaper",
+      "name": "Turbid Prism",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Turbid_Prism",
+      "subCollection": {}
+    },
+    "Radiant_Prism": {
+      "image": "Materials/Elite_Mob/",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An exquisite component obtained from defeating a Primal Construct.\nThe lord of the barren desert once had a dream, and once made a great many promises.\nThe legends of the desert say that these machines were originally vehicles for these unknown promises, which now live on only within their mechanical memory banks.",
+      "enemies": ["Primal Construct: Reshaper"],
+      "obtained": "- Alchemy (3x Turbid Prism)\n- Dropped by Lv.60+ Primal Construct: Reshaper",
+      "name": "Radiant Prism",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Radiant_Prism",
+      "subCollection": {}
     }
   }
 }
