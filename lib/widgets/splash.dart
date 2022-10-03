@@ -1,5 +1,6 @@
 import 'dart:isolate';
 
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -134,6 +135,9 @@ class _SplashPageState extends State<SplashPage> {
     try {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
+      );
+      await FirebaseAppCheck.instance.activate(
+        webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',  // Replace this with your actual site key
       );
       if (!kIsWeb) {
         var _crashHandler = FirebaseCrashlytics.instance;
