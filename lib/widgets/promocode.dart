@@ -56,7 +56,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Text(
-                'Click to copy code to clipboard. Page auto updates\nCurrently viewing promo codes for $_location.\nNote: Some codes may have expired',
+                'Click to launch page with code pre-filled\nLong-click to copy code to clipboard\nCurrently viewing promo codes for $_location.\nNote: Some codes may have expired',
                 style: const TextStyle(fontSize: 12),
                 textAlign: TextAlign.center,
               ),
@@ -101,7 +101,8 @@ class _PromoCodePageState extends State<PromoCodePage> {
                       'Code: $promoCodeRegion\nTime: ${promoCode.date}, Expired: ${promoCode.expired}',
                     ),
                     isThreeLine: true,
-                    onTap: () {
+                    onTap: () => _launchRedemptionSiteWithCode(promoCodeRegion!),
+                    onLongPress: () {
                       Clipboard.setData(ClipboardData(text: promoCodeRegion));
                       Util.showSnackbarQuick(
                         context,
@@ -119,7 +120,11 @@ class _PromoCodePageState extends State<PromoCodePage> {
   }
 
   void _launchRedemptionSite() {
-    Util.launchWebPage('https://genshin.mihoyo.com/en/gift');
+    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift');
+  }
+
+  void _launchRedemptionSiteWithCode(String code) {
+    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift?code=$code');
   }
 
   String? _getCode(PromoCode code) {
