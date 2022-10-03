@@ -36,7 +36,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion 31
-    ndkVersion "23.1.7779620"
+    ndkVersion "25.1.8937393"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,7 +45,7 @@ android {
     defaultConfig {
         applicationId "com.itachi1706.gi_weekly_material_tracker"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
