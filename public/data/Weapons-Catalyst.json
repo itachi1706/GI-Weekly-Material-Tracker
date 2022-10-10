@@ -1,5 +1,86 @@
 {
   "weapons": {
+    "A_Thousand_Floating_Dreams": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": null,
+      "name": "A Thousand Floating Dreams",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Damaged_Prism",
+          "material3qty": 3,
+          "material1": "Oasis_Gardens_Reminiscence",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Damaged_Prism",
+          "material3qty": 12,
+          "material1": "Oasis_Gardens_Kindness",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Turbid_Prism",
+          "material3qty": 9,
+          "material1": "Oasis_Gardens_Kindness",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Turbid_Prism",
+          "material3qty": 14,
+          "material1": "Oasis_Gardens_Mourning",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Radiant_Prism",
+          "material3qty": 9,
+          "material1": "Oasis_Gardens_Mourning",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Radiant_Prism",
+          "material3qty": 18,
+          "material1": "Oasis_Gardens_Truth",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/",
+      "secondary_stat": "58",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "265",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "A Thousand Nights' Dawnsong",
+      "effect": "Party members other than the equipping character will provide the equipping character with buffs based on whether their Elemental Type is the same as the latter or not. If their Elemental Types are the same, increase Elemental Mastery by 32~64. If not, increase the equipping character's DMG Bonus from their Elemental Type by 10~26%. The aforementioned effects can have 3 stacks. Additionally, all nearby party members other than the equipping character will have their Elemental Mastery increased by 40~48. Multiple such effects from multiple such weapons can stack.",
+      "released": false,
+      "wiki": null,
+      "subCollection": {}
+    },
     "Amber_Catalyst": {
       "secondary_stat_type": "Elemental Mastery",
       "description": "A catalyst carved out of amber that gains a warm halo under the sun.",

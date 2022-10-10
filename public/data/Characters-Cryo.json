@@ -1936,6 +1936,282 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Kamisato_Ayaka",
       "subCollection": {}
     },
+    "Layla": {
+      "image": "Characters/Cryo/Layla.png",
+      "gender": "Female",
+      "birthday": null,
+      "caption": null,
+      "name": "Layla",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": null,
+      "constellation": "Luscinia",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Ingenuity",
+            "material3qty": 3,
+            "material4": "Divining_Scroll",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ingenuity",
+            "material3qty": 2,
+            "material4": "Sealed_Scroll",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ingenuity",
+            "material3qty": 4,
+            "material4": "Sealed_Scroll",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ingenuity",
+            "material3qty": 6,
+            "material4": "Sealed_Scroll",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ingenuity",
+            "material3qty": 9,
+            "material4": "Sealed_Scroll",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_32",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ingenuity",
+            "material3qty": 4,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_32",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ingenuity",
+            "material3qty": 6,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_32",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ingenuity",
+            "material3qty": 12,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_32",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ingenuity",
+            "material3qty": 16,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Like_Nascent_Light": {
+            "name": "Like Nascent Light",
+            "effect": "While the Curtain of Slumber is active, the Deep Sleep effect will activate each time the Curtain gains 1 Night Star:\n·The Shield Strength of a character under the effect of the Curtain of Slumber increases by 6%.\n·This effect can have a maximum of 4 stacks and persists until the Curtain of Slumber disappears.",
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Sweet_Slumber_Undisturbed": {
+            "name": "Sweet Slumber Undisturbed",
+            "effect": "The DMG dealt by the Shooting Stars fired by Nights of Formal Focus is increased by 1.5% of Layla's Max HP.",
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Shadowy_Dream-Signs": {
+            "name": "Shadowy Dream-Signs",
+            "effect": "When Layla crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Sword_of_the_Radiant_Path": {
+            "name": "Sword of the Radiant Path",
+            "effect": "Normal Attack\nPerforms up to 3 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Nights_of_Formal_Focus": {
+            "name": "Nights of Formal Focus",
+            "effect": "Puts forth a shield known as the Curtain of Slumber, dealing AoE Cryo DMG. The Curtain of Slumber's DMG Absorption is based on Layla's Max HP and absorbs Cryo DMG with 250% effectiveness. When the shield is deployed, Layla will have Cryo applied to her briefly.\n\nNight Stars and Shooting Stars\nWhile the Curtain of Slumber is active, it will create 1 Night Star that will be attached to it every 1.5s. When a character protected by this shield uses an Elemental Skill, 2 Night Stars will be created. Night Stars can be created once every 0.3s in this way. A maximum of 4 Night Stars can be accumulated at any one time.\nOnce the Curtain of Slumber has accumulated 4 Night Stars and there are opponents nearby, these Night Stars will transform into homing Shooting Stars that will be fired off in sequence, dealing Cryo DMG to any opponents hit.\nIf the Curtain of Slumber's duration ends or it is destroyed, the Night Stars will disappear. If they are already being fired off as Shooting Stars, these Shooting Stars will last until this wave of shots ends.\n\nNew Night Stars cannot be created until the previous wave of Shooting Stars has been fired completely.",
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Dream_of_the_Star-Stream_Shaker": {
+            "name": "Dream of the Star-Stream Shaker",
+            "effect": "Unleashes a Celestial Dreamsphere that constantly fires Starlight Slugs at opponents within its AoE, dealing Cryo DMG.\nWhen a Starlight Slug hits, it will generate 1 Night Star for nearby Curtains of Slumber. Each Curtain of Slumber can gain 1 Night Star this way every 0.5s.",
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Fortress of Fantasy",
+          "effect": "The Shield Absorption of the Curtain of Slumber generated by Nights of Formal Focus is increased by 20%.\nAdditionally, when unleashing Nights of Formal Focus, she will generate a shield for any nearby party members who are not being protected by a Curtain of Slumber. This shield will have 35% of the absorption of a Curtain of Slumber, will last for 12s, and will absorb Cryo DMG with 250% effectiveness.",
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Light's Remit",
+          "effect": "When Shooting Stars from Nights of Formal Focus strike opponents, they will each restore 1 Energy to Layla. Each Shooting Star can restore Energy to her in this manner once.",
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "Secrets of the Night",
+          "effect": "Increases the Level of Nights of Formal Focus by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Starry Illumination",
+          "effect": "When Nights of Formal Focus starts to fire off Shooting Stars, it will grant all nearby party members the Dawn Star effect, causing their Normal and Charged Attack DMG to increase based on 5% of Layla's Max HP.\nDawn Star can last up to 3s and will be removed 0.05s after dealing Normal or Charged Attack DMG.",
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "Stream of Consciousness",
+          "effect": "Increases the Level of Dream of the Star-Stream Shaker by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Radiant Soulfire",
+          "effect": "Shooting Stars from Nights of Formal Focus deal 40% increased DMG, and Starlight Slugs from Dream of the Star-Stream Shaker deal 40% increased DMG.\nAdditionally, the interval between the creation of Night Stars via Nights of Formal Focus is decreased by 20%.",
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Divining_Scroll",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Nilotpala_Lotus"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Perpetual_Caliber",
+          "level": 40,
+          "material4": "Divining_Scroll",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Nilotpala_Lotus"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Perpetual_Caliber",
+          "level": 50,
+          "material4": "Sealed_Scroll",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Nilotpala_Lotus"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Perpetual_Caliber",
+          "level": 60,
+          "material4": "Sealed_Scroll",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Nilotpala_Lotus"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Perpetual_Caliber",
+          "level": 70,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Nilotpala_Lotus"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Perpetual_Caliber",
+          "level": 80,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Nilotpala_Lotus"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Cryo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Layla",
+      "subCollection": {}
+    },
     "Qiqi": {
       "image": "Characters/Cryo/Qiqi.png",
       "gender": "Female",
