@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/theme_notifier.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String _firebaseStorageUrl =
@@ -19,6 +20,8 @@ class Util {
   static const String paimonMoeUrl = 'https://paimon.moe/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
   static String? currentRoute;
+
+  static DateFormat defaultDateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
 
   static Uint8List kTransparentImage = Uint8List.fromList([
     0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0x00, 0x00, 0x00, 0x0D, 0x49,

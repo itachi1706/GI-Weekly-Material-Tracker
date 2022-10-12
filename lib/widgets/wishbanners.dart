@@ -14,6 +14,7 @@ import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
+import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -142,6 +143,8 @@ class WishPageCard extends StatelessWidget {
       color = Colors.green;
     }
 
+    var df = Util.defaultDateFormat;
+
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -178,7 +181,7 @@ class WishPageCard extends StatelessWidget {
                         style: const TextStyle(fontSize: 18),
                       ),
                       Text(
-                        '${data.start.toLocal().toString()} - ${data.end.toLocal().toString()}',
+                        '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
                       ),
                       ..._getCountdown(),
                       ..._getRateUps(),
@@ -195,7 +198,7 @@ class WishPageCard extends StatelessWidget {
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
-      return <Widget>[const Text('Permenant Banner')];
+      return <Widget>[const Text('Permanent Banner')];
     }
 
     var list = <Widget>[];
@@ -432,6 +435,8 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
       return Util.loadingScreen();
     }
 
+    var df = Util.defaultDateFormat;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(_bannerInfo!.name),
@@ -444,11 +449,10 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
           children: [
             GridData.getImageAssetFromFirebase(_bannerInfo!.image),
             ...GridData.generateInfoLine(
-              '${_bannerInfo!.start.toLocal().toString()} - ${_bannerInfo!.end.toLocal().toString()}',
+              '${df.format(_bannerInfo!.start.toLocal())} - ${df.format(_bannerInfo!.end.toLocal())}',
               Icons.timer,
             ),
             ..._getCountdown(),
-            const Divider(),
             ...GridData.generateInfoLine(
               _bannerInfo!.description,
               Icons.format_list_bulleted,
@@ -645,6 +649,7 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
             );
           },
         ));
+        list.add(const Divider());
         break;
       case BannerStatus.current:
         list.add(CountdownTimer(
@@ -660,6 +665,7 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
             );
           },
         ));
+        list.add(const Divider());
         break;
       case BannerStatus.ended:
         list.addAll(GridData.generateInfoLine(
