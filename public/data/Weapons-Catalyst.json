@@ -2218,6 +2218,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Twin_Nephrite",
       "subCollection": {}
     },
+    "Wandering_Evenstar": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "This was originally a device used by researchers to observe and perform calculations on celestial phenomena. It serves as a conduit and catalyst.",
+      "name": "Wandering Evenstar",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 2,
+          "material1": "Oasis_Gardens_Reminiscence",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 8,
+          "material1": "Oasis_Gardens_Kindness",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Oasis_Gardens_Kindness",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Oasis_Gardens_Mourning",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 6,
+          "material1": "Oasis_Gardens_Mourning",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Oasis_Gardens_Truth",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Wandering_Evenstar.png",
+      "secondary_stat": "36",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "165",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effectName": "Wildling Nightstar",
+      "effect": "The following effect will trigger every 10s: The equipping character will gain 24~48% of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wandering_Evenstar",
+      "subCollection": {}
+    },
     "Wine_and_Song": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",

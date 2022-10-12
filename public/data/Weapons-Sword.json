@@ -1187,6 +1187,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Kagotsurube_Isshin",
       "subCollection": {}
     },
+    "Key_of_Khaj-Nisut": {
+      "secondary_stat_type": "HP",
+      "description": "One of a paired set of scepters fashioned from obsidian. They say that this can be used as a key to open the gate to a paradise that lies at the end of the ocean of sand.",
+      "name": "Key of Khaj-Nisut",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Damaged_Prism",
+          "material3qty": 3,
+          "material1": "Copper_Talisman_of_the_Forest_Dew",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Damaged_Prism",
+          "material3qty": 12,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Turbid_Prism",
+          "material3qty": 9,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Turbid_Prism",
+          "material3qty": 14,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Radiant_Prism",
+          "material3qty": 9,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Radiant_Prism",
+          "material3qty": 18,
+          "material1": "Golden_Talisman_of_the_Forest_Dew",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Sword/Key_of_Khaj-Nisut.png",
+      "secondary_stat": "14.4%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "66.2%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Sunken Song of the Sands",
+      "effect": "HP increased by 20~40%. When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s. This effect increases the equipping character's Elemental Mastery by 0.12~0.24% of their Max HP. This effect can trigger once every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack's duration is refreshed, the Elemental Mastery of all nearby party members will be increased by 0.2~0.4% of the equipping character's max HP for 20s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Key_of_Khaj-Nisut",
+      "subCollection": {}
+    },
     "Lion_Roar": {
       "secondary_stat_type": "ATK",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
@@ -2459,6 +2540,87 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Traveler%27s_Handy_Sword",
       "subCollection": {}
-    }
+    },
+    "Xiphos_Moonlight": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "This ancient double-edged sword glimmers with moonlight. It is said that a now-silent Jinni dwells within it.",
+      "name": "Xiphos' Moonlight",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Damaged_Prism",
+          "material3qty": 2,
+          "material1": "Copper_Talisman_of_the_Forest_Dew",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Damaged_Prism",
+          "material3qty": 8,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Turbid_Prism",
+          "material3qty": 6,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Turbid_Prism",
+          "material3qty": 9,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Radiant_Prism",
+          "material3qty": 6,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Radiant_Prism",
+          "material3qty": 12,
+          "material1": "Golden_Talisman_of_the_Forest_Dew",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Xiphos_Moonlight.png",
+      "secondary_stat": "36",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "165",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Gacha",
+      "effectName": "Jinni's Whisper",
+      "effect": "The following effect will trigger every 10s: The equipping character will gain 0.036~0.072% Energy Recharge for each point of Elemental Mastery they possess for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Xiphos%27_Moonlight",
+      "subCollection": {}
+    },
   }
 }
