@@ -195,7 +195,7 @@ class WishPageCard extends StatelessWidget {
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
-      return <Widget>[const Text('Permenant Banner')];
+      return <Widget>[const Text('Permanent Banner')];
     }
 
     var list = <Widget>[];
@@ -448,7 +448,6 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
               Icons.timer,
             ),
             ..._getCountdown(),
-            const Divider(),
             ...GridData.generateInfoLine(
               _bannerInfo!.description,
               Icons.format_list_bulleted,
@@ -645,6 +644,7 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
             );
           },
         ));
+        list.add(const Divider());
         break;
       case BannerStatus.current:
         list.add(CountdownTimer(
@@ -660,6 +660,7 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
             );
           },
         ));
+        list.add(const Divider());
         break;
       case BannerStatus.ended:
         list.addAll(GridData.generateInfoLine(
