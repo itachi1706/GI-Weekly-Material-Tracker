@@ -11,6 +11,11 @@ updates:
     directory: "/util"
     schedule:
       interval: "daily"
+  # Maintain dependencies for Firebase Cloud Functions
+  - package-ecosystem: "npm"
+    directory: "/firebase/functions"
+    schedule:
+      interval: "daily"
   # Maintain dependencies for Gradle Android App
   - package-ecosystem: "gradle"
     directory: "/android"
