@@ -1115,7 +1115,7 @@
       "image": "Characters/Hydro/Nilou.png",
       "gender": "Female",
       "birthday": "3/12",
-      "caption": null,
+      "caption": "Dance of Lotuslight",
       "name": "Nilou",
       "description": "The star of the Zubayr Theater. She is full of warmth and innocence, and her dances are lively and elegant",
       "nation": "Sumeru",
@@ -1233,9 +1233,9 @@
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
+          "Dreamy_Dance_of_Aeons": {
+            "name": "Dreamy Dance of Aeons",
+            "effect": "Every 1,000 points of Nilou's Max HP above 30,000 will cause the DMG dealt by Bountiful Cores created by characters affected by Golden Chalice's Bounty to increase by 9%. The maximum increase in Bountiful Core DMG that can be achieved this way is 400%.",
             "image": "Talents/Passive/",
             "order": 1,
             "type": "Passive 2"
@@ -1378,11 +1378,11 @@
           "material3": "Padisarah"
         }
       },
-      "introduction": null,
+      "introduction": "Star of the Zubayr Theater. Her dance is as graceful as a water lily in first bloom, pure and pristine.\nBut she is by no means a haughty and cold person. Even the most hurried traveler will not forget her innocent and radiant smile.",
       "paimonmoepath": null,
       "genshinggpath": null,
       "element": "Hydro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Nilou",
       "subCollection": {}
     },
