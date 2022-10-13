@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Flutter Stable
-        uses: subosito/flutter-action@v2.7.1
+        uses: subosito/flutter-action@v2.8.0
         with:
           channel: 'stable'
           cache: true
@@ -87,7 +87,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Flutter Stable
-        uses: subosito/flutter-action@v2.7.1
+        uses: subosito/flutter-action@v2.8.0
         with:
           channel: 'stable'
           cache: true
@@ -183,7 +183,7 @@ jobs:
   #         p12-file-base64: ${{ secrets.APPLE_DEVCERT }}
   #         p12-password: ${{ secrets.APPLE_DEVCERT_PASSWORD }}
   #     - name: Install Flutter Stable
-  #       uses: subosito/flutter-action@v2.7.1
+  #       uses: subosito/flutter-action@v2.8.0
   #       with:
   #         channel: 'stable'
   #         cache: true
