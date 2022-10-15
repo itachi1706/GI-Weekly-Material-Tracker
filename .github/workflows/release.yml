@@ -169,7 +169,7 @@ jobs:
           echo $CI_PIPELINE_IID
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
-          echo "::set-output name=pipeline_id::$CI_PIPELINE_IID"
+          echo "pipeline_id=$CI_PIPELINE_IID" >> $GITHUB_OUTPUT
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Android AppBundle
