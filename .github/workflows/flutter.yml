@@ -280,7 +280,7 @@ jobs:
       - name: Set output for Dogfood release
         id: dfoodapk_out
         if: steps.dfoodapk.outputs.any_changed == 'true'
-        run: echo "::set-output name=any_changed::true"
+        run: echo "any_changed=true" >> $GITHUB_OUTPUT
     outputs:
       dfoodapk: ${{ steps.dfoodapk_out.outputs.any_changed }}
   dogfood:
