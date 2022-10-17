@@ -50,7 +50,7 @@ jobs:
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
         run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
-      - uses: benjlevesque/short-sha@v1.2
+      - uses: benjlevesque/short-sha@v2.0
         id: short-sha
         with:
           length: 8
@@ -129,7 +129,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@v1.2
+      - uses: benjlevesque/short-sha@v2.0
         id: short-sha
         with:
           length: 8
@@ -191,7 +191,7 @@ jobs:
   #       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
   #     - name: Test Flutter Doctor
   #       run: flutter doctor -v  
-  #     - uses: benjlevesque/short-sha@v1.2
+  #     - uses: benjlevesque/short-sha@v2.0
   #       id: short-sha
   #       with:
   #         length: 8
@@ -299,7 +299,7 @@ jobs:
           name: flutter-firebase-release-artifact
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@v1.4.0
-      - uses: benjlevesque/short-sha@v1.2
+      - uses: benjlevesque/short-sha@v2.0
         id: short-sha
         with:
           length: 8
