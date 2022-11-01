@@ -36,6 +36,10 @@ fetch('https://www.gensh.in/events/promotion-codes')
         let eu = child[2].text.trim();
         let na = child[3].text.trim();
         let asia = child[4].text.trim();
+        
+        if (dt == null || dt == "") {
+            dt = "28 Sep 2020"; // Start of game
+        }
 
         // TODO: Try and get another source. Until we get said source, we would presume all code is expired
         let code = { dateString: dt, reward: reward, expired: true, eu: eu, na: na, asia: asia, type: 'code', notify: false };
