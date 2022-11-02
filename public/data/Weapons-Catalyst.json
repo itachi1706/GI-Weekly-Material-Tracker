@@ -2,7 +2,7 @@
   "weapons": {
     "A_Thousand_Floating_Dreams": {
       "secondary_stat_type": "Elemental Mastery",
-      "description": null,
+      "description": "This lamp illuminates the dreams that float up over a thousand nights, and in its emerald-green light flows a song of ancient days.",
       "name": "A Thousand Floating Dreams",
       "series": null,
       "ascension": {
@@ -67,7 +67,7 @@
           "mora": 65000
         }
       },
-      "image": "Weapons/Catalyst/",
+      "image": "Weapons/Catalyst/A_Thousand_Floating_Dreams.png",
       "secondary_stat": "58",
       "rarity": 5,
       "type": "Catalyst",
@@ -76,9 +76,9 @@
       "base_atk": 44,
       "obtained": "Gacha",
       "effectName": "A Thousand Nights' Dawnsong",
-      "effect": "Party members other than the equipping character will provide the equipping character with buffs based on whether their Elemental Type is the same as the latter or not. If their Elemental Types are the same, increase Elemental Mastery by 32~64. If not, increase the equipping character's DMG Bonus from their Elemental Type by 10~26%. The aforementioned effects can have 3 stacks. Additionally, all nearby party members other than the equipping character will have their Elemental Mastery increased by 40~48. Multiple such effects from multiple such weapons can stack.",
-      "released": false,
-      "wiki": null,
+      "effect": "Party members other than the equipping character will provide the equipping character with buffs based on whether their Elemental Type is the same as the latter or not. If their Elemental Types are the same, increase Elemental Mastery by 32~64. If not, increase the equipping character's DMG Bonus from their Elemental Type by 10~26%. Each of the aforementioned effects can have up to 3 stacks. Additionally, all nearby party members other than the equipping character will have their Elemental Mastery increased by 40~48. Multiple such effects from multiple such weapons can stack.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/A_Thousand_Floating_Dreams",
       "subCollection": {}
     },
     "Amber_Catalyst": {
