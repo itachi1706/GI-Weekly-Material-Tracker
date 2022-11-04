@@ -4,25 +4,43 @@ updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
+    commit-message:
+      prefix: "chore(dependency-ci)"
+      include: "scope"
     schedule:
       interval: "daily"
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/util"
+    commit-message:
+      prefix: "build(dependency-util)"
+      prefix-development: "chore(dependency-dev-util)"
+      include: "scope"
     schedule:
       interval: "daily"
   # Maintain dependencies for Firebase Cloud Functions
   - package-ecosystem: "npm"
     directory: "/firebase/functions"
+    commit-message:
+      prefix: "build(dependency-cf)"
+      prefix-development: "chore(dependency-dev-cf)"
+      include: "scope"
     schedule:
       interval: "daily"
   # Maintain dependencies for Gradle Android App
   - package-ecosystem: "gradle"
     directory: "/android"
+    commit-message:
+      prefix: "build(dependency-android)"
+      include: "scope"
     schedule:
       interval: "daily"
   # Maintain dependencies for dart (BETA)
   - package-ecosystem: "pub"
     directory: "/"
+    commit-message:
+      prefix: "build(dependency-flutter)"
+      prefix-development: "chore(dependency-dev-flutter)"
+      include: "scope"
     schedule:
       interval: "daily"
