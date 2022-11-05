@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     commit-message:
-      prefix: "chore(dependency-ci)"
+      prefix: "chore(deps-ci)"
       include: "scope"
     schedule:
       interval: "daily"
@@ -13,8 +13,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/util"
     commit-message:
-      prefix: "build(dependency-util)"
-      prefix-development: "chore(dependency-dev-util)"
+      prefix: "build(deps-utl)"
+      prefix-development: "chore(deps-utl)"
       include: "scope"
     schedule:
       interval: "daily"
@@ -22,8 +22,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/firebase/functions"
     commit-message:
-      prefix: "build(dependency-cf)"
-      prefix-development: "chore(dependency-dev-cf)"
+      prefix: "build(deps-cf)"
+      prefix-development: "chore(deps-cf)"
       include: "scope"
     schedule:
       interval: "daily"
@@ -31,7 +31,7 @@ updates:
   - package-ecosystem: "gradle"
     directory: "/android"
     commit-message:
-      prefix: "build(dependency-android)"
+      prefix: "build(deps-and)"
       include: "scope"
     schedule:
       interval: "daily"
@@ -39,8 +39,8 @@ updates:
   - package-ecosystem: "pub"
     directory: "/"
     commit-message:
-      prefix: "build(dependency-flutter)"
-      prefix-development: "chore(dependency-dev-flutter)"
+      prefix: "build(deps-flt)"
+      prefix-development: "chore(deps-flt)"
       include: "scope"
     schedule:
       interval: "daily"
