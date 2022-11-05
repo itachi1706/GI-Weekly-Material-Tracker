@@ -1,9 +1,10 @@
-- Changed package to remove REQUEST_INSTALL_PACKAGES permission (we were not using it anyway)
-- Added Dendro Element to Dictionary
-- Improved element icons image quality
-- Fixed hardcoded banner Soft Pity number
-- Updated Battle Chronicles Link
-- Copies version number to clipboard when tapping it in Settings
-- Fixed transparent image causing issues with Flutter 3
-- Minor Bug Fixes caused by Flutter 3
-- Dependencies Update
+- Fixed crashes caused by null data
+- Update code page where clicking a code launches the page with pre-filled code
+- Long pressing a code retains copying to clipboard functionailty
+- Update NDK version
+- Targeting Android 12 (SDK 31)
+- Added Firebase App Check
+- Dates no longer show milliseconds
+- Android compiles with Java 11 now
+- Fixed duplicate empty section for permenant banners
+- Update dependencies
