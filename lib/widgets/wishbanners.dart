@@ -1,10 +1,10 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_ui_database/firebase_ui_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/current_remaining_time.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
-import 'package:flutterfire_ui/database.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/extensions/string_extensions.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
@@ -14,7 +14,6 @@ import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
-import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -24,10 +23,10 @@ class WishListPage extends StatefulWidget {
   const WishListPage({Key? key}) : super(key: key);
 
   @override
-  _WishListPageState createState() => _WishListPageState();
+  WishListPageState createState() => WishListPageState();
 }
 
-class _WishListPageState extends State<WishListPage>
+class WishListPageState extends State<WishListPage>
     with TickerProviderStateMixin {
   final List<Tab> _tabs = [
     const Tab(text: 'Current'),
@@ -79,10 +78,10 @@ class WishListPageContent extends StatefulWidget {
       : super(key: key);
 
   @override
-  _WishListPageContentState createState() => _WishListPageContentState();
+  WishListPageContentState createState() => WishListPageContentState();
 }
 
-class _WishListPageContentState extends State<WishListPageContent> {
+class WishListPageContentState extends State<WishListPageContent> {
   Map<String, WeaponData>? _weaponData;
   Map<String, CharacterData>? _characterData;
 
@@ -91,6 +90,15 @@ class _WishListPageContentState extends State<WishListPageContent> {
     super.initState();
     _getStaticData();
     tz.initializeTimeZones();
+  }
+
+  void _getStaticData() async {
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    setState(() {
+      _characterData = characterData;
+      _weaponData = weaponData;
+    });
   }
 
   @override
@@ -114,15 +122,6 @@ class _WishListPageContentState extends State<WishListPageContent> {
       },
     );
   }
-
-  void _getStaticData() async {
-    var characterData = await GridData.retrieveCharactersMapData();
-    var weaponData = await GridData.retrieveWeaponsMapData();
-    setState(() {
-      _characterData = characterData;
-      _weaponData = weaponData;
-    });
-  }
 }
 
 class WishPageCard extends StatelessWidget {
@@ -133,68 +132,6 @@ class WishPageCard extends StatelessWidget {
 
   const WishPageCard(this.data, this.characterInfo, this.weaponInfo, {Key? key})
       : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    Color color = Colors.red;
-    if (data.status == BannerStatus.upcoming) {
-      color = Colors.grey;
-    } else if (data.status == BannerStatus.current) {
-      color = Colors.green;
-    }
-
-    var df = Util.defaultDateFormat;
-
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: InkWell(
-        onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
-        child: Column(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Stack(
-                  children: [
-                    GridData.getImageAssetFromFirebase(data.image),
-                    Align(
-                      alignment: FractionalOffset.topRight,
-                      child: Container(
-                        margin: const EdgeInsets.all(16),
-                        padding: const EdgeInsets.all(4),
-                        color: color.withOpacity(0.75),
-                        child: Text(data.status.name.capitalized()),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        data.name,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
-                      ),
-                      ..._getCountdown(),
-                      ..._getRateUps(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
@@ -313,17 +250,79 @@ class WishPageCard extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    Color color = Colors.red;
+    if (data.status == BannerStatus.upcoming) {
+      color = Colors.grey;
+    } else if (data.status == BannerStatus.current) {
+      color = Colors.green;
+    }
+
+    var df = Util.defaultDateFormat;
+
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: InkWell(
+        onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
+        child: Column(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Stack(
+                  children: [
+                    GridData.getImageAssetFromFirebase(data.image),
+                    Align(
+                      alignment: FractionalOffset.topRight,
+                      child: Container(
+                        margin: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(4),
+                        color: color.withOpacity(0.75),
+                        child: Text(data.status.name.capitalized()),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        data.name,
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      Text(
+                        '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
+                      ),
+                      ..._getCountdown(),
+                      ..._getRateUps(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class CurrentWishListPageContent extends StatefulWidget {
   const CurrentWishListPageContent({Key? key}) : super(key: key);
 
   @override
-  _CurrentWishListPageContentState createState() =>
-      _CurrentWishListPageContentState();
+  CurrentWishListPageContentState createState() =>
+      CurrentWishListPageContentState();
 }
 
-class _CurrentWishListPageContentState
+class CurrentWishListPageContentState
     extends State<CurrentWishListPageContent> {
   Map<String, WeaponData>? _weaponData;
   Map<String, CharacterData>? _characterData;
@@ -333,6 +332,15 @@ class _CurrentWishListPageContentState
     super.initState();
     _getStaticData();
     tz.initializeTimeZones();
+  }
+
+  void _getStaticData() async {
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    setState(() {
+      _characterData = characterData;
+      _weaponData = weaponData;
+    });
   }
 
   @override
@@ -391,25 +399,16 @@ class _CurrentWishListPageContentState
       },
     );
   }
-
-  void _getStaticData() async {
-    var characterData = await GridData.retrieveCharactersMapData();
-    var weaponData = await GridData.retrieveWeaponsMapData();
-    setState(() {
-      _characterData = characterData;
-      _weaponData = weaponData;
-    });
-  }
 }
 
 class BannerInfoPage extends StatefulWidget {
   const BannerInfoPage({Key? key}) : super(key: key);
 
   @override
-  _BannerInfoPageState createState() => _BannerInfoPageState();
+  BannerInfoPageState createState() => BannerInfoPageState();
 }
 
-class _BannerInfoPageState extends State<BannerInfoPage> {
+class BannerInfoPageState extends State<BannerInfoPage> {
   Map<String, WeaponData>? _weaponData;
   Map<String, CharacterData>? _characterData;
 
@@ -423,49 +422,6 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
     _type = Get.parameters["type"];
     _index = Get.parameters["index"];
     _getStaticData();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (_type == null || _index == null) {
-      return _unknownBanner();
-    }
-
-    if (_bannerInfo == null) {
-      return Util.loadingScreen();
-    }
-
-    var df = Util.defaultDateFormat;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_bannerInfo!.name),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            GridData.getImageAssetFromFirebase(_bannerInfo!.image),
-            ...GridData.generateInfoLine(
-              '${df.format(_bannerInfo!.start.toLocal())} - ${df.format(_bannerInfo!.end.toLocal())}',
-              Icons.timer,
-            ),
-            ..._getCountdown(),
-            ...GridData.generateInfoLine(
-              _bannerInfo!.description,
-              Icons.format_list_bulleted,
-            ),
-            _get5PityWidget(),
-            const Divider(),
-            _get4PityWidget(),
-            const Divider(),
-            ..._generateLists(),
-          ],
-        ),
-      ),
-    );
   }
 
   Widget _get4PityWidget() {
@@ -736,5 +692,48 @@ class _BannerInfoPageState extends State<BannerInfoPage> {
       _weaponData = weaponData;
       _bannerInfo = ban;
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_type == null || _index == null) {
+      return _unknownBanner();
+    }
+
+    if (_bannerInfo == null) {
+      return Util.loadingScreen();
+    }
+
+    var df = Util.defaultDateFormat;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_bannerInfo!.name),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GridData.getImageAssetFromFirebase(_bannerInfo!.image),
+            ...GridData.generateInfoLine(
+              '${df.format(_bannerInfo!.start.toLocal())} - ${df.format(_bannerInfo!.end.toLocal())}',
+              Icons.timer,
+            ),
+            ..._getCountdown(),
+            ...GridData.generateInfoLine(
+              _bannerInfo!.description,
+              Icons.format_list_bulleted,
+            ),
+            _get5PityWidget(),
+            const Divider(),
+            _get4PityWidget(),
+            const Divider(),
+            ..._generateLists(),
+          ],
+        ),
+      ),
+    );
   }
 }
