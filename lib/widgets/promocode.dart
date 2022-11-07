@@ -15,10 +15,10 @@ class PromoCodePage extends StatefulWidget {
   const PromoCodePage({Key? key}) : super(key: key);
 
   @override
-  _PromoCodePageState createState() => _PromoCodePageState();
+  PromoCodePageState createState() => PromoCodePageState();
 }
 
-class _PromoCodePageState extends State<PromoCodePage> {
+class PromoCodePageState extends State<PromoCodePage> {
   String? _location;
 
   @override
@@ -29,6 +29,25 @@ class _PromoCodePageState extends State<PromoCodePage> {
         _location = value.getString('location') ?? 'Asia';
       });
     });
+  }
+
+  void _launchRedemptionSite() {
+    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift');
+  }
+
+  void _launchRedemptionSiteWithCode(String code) {
+    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift?code=$code');
+  }
+
+  String? _getCode(PromoCode code) {
+    switch (_location) {
+      case 'EU':
+        return code.euCode;
+      case 'NA':
+        return code.naCode;
+      default:
+        return code.asiaCode;
+    }
   }
 
   @override
@@ -117,25 +136,6 @@ class _PromoCodePageState extends State<PromoCodePage> {
         ),
       ),
     );
-  }
-
-  void _launchRedemptionSite() {
-    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift');
-  }
-
-  void _launchRedemptionSiteWithCode(String code) {
-    Util.launchWebPage('https://genshin.hoyoverse.com/en/gift?code=$code');
-  }
-
-  String? _getCode(PromoCode code) {
-    switch (_location) {
-      case 'EU':
-        return code.euCode;
-      case 'NA':
-        return code.naCode;
-      default:
-        return code.asiaCode;
-    }
   }
 
   // Disabled until further notice
