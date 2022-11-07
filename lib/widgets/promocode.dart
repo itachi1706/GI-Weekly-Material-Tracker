@@ -1,9 +1,9 @@
 import 'dart:core';
 
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_ui_database/firebase_ui_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterfire_ui/database.dart';
 import 'package:gi_weekly_material_tracker/models/promocodedata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
