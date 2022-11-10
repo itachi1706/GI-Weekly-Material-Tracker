@@ -6,11 +6,42 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops.",
-      "enemies": ["Slimes"],
+      "enemies": [
+        "Slimes"
+      ],
       "obtained": "- Dropped by slimes",
       "name": "Slime Condensate",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Slime_Condensate",
+      "usage": {
+        "characters": [
+          "Arataki_Itto"
+        ],
+        "weapons": [
+          "Alley_Hunter",
+          "Amos_Bow",
+          "Favonius_Lance",
+          "Harbinger_of_Dawn",
+          "Lost_Prayer_to_the_Sacred_Winds",
+          "Luxurious_Sea-Lord",
+          "Magic_Guide",
+          "Mappa_Mare",
+          "Missive_Windspear",
+          "Old_Merc_Pal",
+          "Royal_Bow",
+          "Royal_Greatsword",
+          "Sacrificial_Bow",
+          "Sharpshooter_Oath",
+          "Skyward_Blade",
+          "Skyward_Pride",
+          "Snow-Tombed_Starsilver",
+          "Staff_Of_Homa",
+          "The_Black_Sword",
+          "The_Flute",
+          "Waster_Greatsword",
+          "White_Iron_Greatsword"
+        ]
+      },
       "subCollection": {}
     },
     "Slime_Secretions": {
@@ -19,11 +50,42 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure.",
-      "enemies": ["Slimes"],
+      "enemies": [
+        "Slimes"
+      ],
       "obtained": "- Alchemy (3x Slime Condensate)\n- Dropped by Lv.40+ slimes",
       "name": "Slime Secretions",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Slime_Secretions",
+      "usage": {
+        "characters": [
+          "Arataki_Itto"
+        ],
+        "weapons": [
+          "Alley_Hunter",
+          "Amos_Bow",
+          "Favonius_Lance",
+          "Harbinger_of_Dawn",
+          "Lost_Prayer_to_the_Sacred_Winds",
+          "Luxurious_Sea-Lord",
+          "Magic_Guide",
+          "Mappa_Mare",
+          "Missive_Windspear",
+          "Old_Merc_Pal",
+          "Royal_Bow",
+          "Royal_Greatsword",
+          "Sacrificial_Bow",
+          "Sharpshooter_Oath",
+          "Skyward_Blade",
+          "Skyward_Pride",
+          "Snow-Tombed_Starsilver",
+          "Staff_Of_Homa",
+          "The_Black_Sword",
+          "The_Flute",
+          "Waster_Greatsword",
+          "White_Iron_Greatsword"
+        ]
+      },
       "subCollection": {}
     },
     "Slime_Concentrate": {
@@ -32,11 +94,40 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "Concentrated slime essence. When left on its own, it will begin to move on its own.",
-      "enemies": ["Slimes"],
+      "enemies": [
+        "Slimes"
+      ],
       "obtained": "- Alchemy (3x Slime Secretions)\n- Dropped by Lv.60+ slimes",
       "name": "Slime Concentrate",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Slime_Concentrate",
+      "usage": {
+        "characters": [
+          "Arataki_Itto"
+        ],
+        "weapons": [
+          "Alley_Hunter",
+          "Amos_Bow",
+          "Favonius_Lance",
+          "Harbinger_of_Dawn",
+          "Lost_Prayer_to_the_Sacred_Winds",
+          "Luxurious_Sea-Lord",
+          "Magic_Guide",
+          "Mappa_Mare",
+          "Missive_Windspear",
+          "Royal_Bow",
+          "Royal_Greatsword",
+          "Sacrificial_Bow",
+          "Sharpshooter_Oath",
+          "Skyward_Blade",
+          "Skyward_Pride",
+          "Snow-Tombed_Starsilver",
+          "Staff_Of_Homa",
+          "The_Black_Sword",
+          "The_Flute",
+          "White_Iron_Greatsword"
+        ]
+      },
       "subCollection": {}
     },
     "Damaged_Mask": {
@@ -45,11 +136,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function.",
-      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "enemies": [
+        "Hilichurls",
+        "Samachurls",
+        "Mitachurls",
+        "Lawachurls"
+      ],
       "obtained": "- Dropped by hilichurls\n- Dropped by some ranged hilichurls\n- Dropped by some samachurls\n- Dropped by some mitachurls",
       "name": "Damaged Mask",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Damaged_Mask",
+      "usage": {
+        "characters": [
+          "Chongyun"
+        ],
+        "weapons": [
+          "Apprentice_Notes",
+          "Cinnabar_Spindle",
+          "Dark_Iron_Sword",
+          "Debate_Club",
+          "Dodoco_Tales",
+          "Eye_of_Perception",
+          "Memory_of_Dust",
+          "Otherworldly_Story",
+          "Pocket_Grimoire",
+          "Prototype_Aminus",
+          "Prototype_Grudge",
+          "Rust",
+          "Slingshot",
+          "Song_of_Broken_Pines",
+          "Summit_Shaper",
+          "The_Widsith"
+        ]
+      },
       "subCollection": {}
     },
     "Stained_Mask": {
@@ -58,11 +177,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A bone mask covered in unidentifiable stains and a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless.",
-      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "enemies": [
+        "Hilichurls",
+        "Samachurls",
+        "Mitachurls",
+        "Lawachurls"
+      ],
       "obtained": "- Alchemy (3x Damaged Mask)\n- Dropped by Lv.40+ hilichurls\n- Dropped by some Lv.40+ ranged hilichurls\n- Dropped by some Lv.40+ samachurls\n- Dropped by some Lv.40+ mitachurls",
       "name": "Stained Mask",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Stained_Mask",
+      "usage": {
+        "characters": [
+          "Chongyun"
+        ],
+        "weapons": [
+          "Apprentice_Notes",
+          "Cinnabar_Spindle",
+          "Dark_Iron_Sword",
+          "Debate_Club",
+          "Dodoco_Tales",
+          "Eye_of_Perception",
+          "Memory_of_Dust",
+          "Otherworldly_Story",
+          "Pocket_Grimoire",
+          "Prototype_Aminus",
+          "Prototype_Grudge",
+          "Rust",
+          "Slingshot",
+          "Song_of_Broken_Pines",
+          "Summit_Shaper",
+          "The_Widsith"
+        ]
+      },
       "subCollection": {}
     },
     "Ominous_Mask": {
@@ -71,11 +218,37 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say it's because they don't want to see their own reflections in the water.",
-      "enemies": ["Hilichurls", "Samachurls", "Mitachurls", "Lawachurls"],
+      "enemies": [
+        "Hilichurls",
+        "Samachurls",
+        "Mitachurls",
+        "Lawachurls"
+      ],
       "obtained": "- Alchemy (3x Stained Mask)\n- Dropped by Lv.60+ hilichurls\n- Dropped by some Lv.60+ ranged hilichurls\n- Dropped by some Lv.60+ samachurls\n- Dropped by some Lv.60+ mitachurls",
       "name": "Ominous Mask",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Ominous_Mask",
+      "usage": {
+        "characters": [
+          "Chongyun"
+        ],
+        "weapons": [
+          "Cinnabar_Spindle",
+          "Dark_Iron_Sword",
+          "Debate_Club",
+          "Dodoco_Tales",
+          "Eye_of_Perception",
+          "Memory_of_Dust",
+          "Otherworldly_Story",
+          "Prototype_Aminus",
+          "Prototype_Grudge",
+          "Rust",
+          "Slingshot",
+          "Song_of_Broken_Pines",
+          "Summit_Shaper",
+          "The_Widsith"
+        ]
+      },
       "subCollection": {}
     },
     "Firm_Arrowhead": {
@@ -84,11 +257,42 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear.",
-      "enemies": ["Hilichurl Shooters"],
+      "enemies": [
+        "Hilichurl Shooters"
+      ],
       "obtained": "- Dropped by Ranged Hilichurls",
       "name": "Firm Arrowhead",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Firm_Arrowhead",
+      "usage": {
+        "characters": [
+          "Amber"
+        ],
+        "weapons": [
+          "Aquila_Favonia",
+          "Black_Tassel",
+          "Blackcliff_Longsword",
+          "Bloodtainted_Greatsword",
+          "Cool_Steel",
+          "Dull_Blade",
+          "Favonius_Sword",
+          "Hamayumi",
+          "Kings_Squire",
+          "Lithic_Blade",
+          "Lithic_Spear",
+          "Predator",
+          "Prototype_Malice",
+          "Raven_Bow",
+          "Royal_Longsword",
+          "Sacrificial_Greatsword",
+          "Silver_Sword",
+          "Skyward_Atlas",
+          "Skyward_Harp",
+          "The_Stringless",
+          "The_Viridescent_Hunt",
+          "Thundering_Pulse"
+        ]
+      },
       "subCollection": {}
     },
     "Sharp_Arrowhead": {
@@ -97,11 +301,42 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water.",
-      "enemies": ["Hilichurl Shooters"],
+      "enemies": [
+        "Hilichurl Shooters"
+      ],
       "obtained": "- Alchemy (3x Firm Arrowhead)\n- Dropped by Lv.40+ Ranged Hilichurls",
       "name": "Sharp Arrowhead",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sharp_Arrowhead",
+      "usage": {
+        "characters": [
+          "Amber"
+        ],
+        "weapons": [
+          "Aquila_Favonia",
+          "Black_Tassel",
+          "Blackcliff_Longsword",
+          "Bloodtainted_Greatsword",
+          "Cool_Steel",
+          "Dull_Blade",
+          "Favonius_Sword",
+          "Hamayumi",
+          "Kings_Squire",
+          "Lithic_Blade",
+          "Lithic_Spear",
+          "Predator",
+          "Prototype_Malice",
+          "Raven_Bow",
+          "Royal_Longsword",
+          "Sacrificial_Greatsword",
+          "Silver_Sword",
+          "Skyward_Atlas",
+          "Skyward_Harp",
+          "The_Stringless",
+          "The_Viridescent_Hunt",
+          "Thundering_Pulse"
+        ]
+      },
       "subCollection": {}
     },
     "Weathered_Arrowhead": {
@@ -110,11 +345,40 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.∂\nHowever it represents the pride of a hunter and acts as both an amulet and a medal.",
-      "enemies": ["Hilichurl Shooters"],
+      "enemies": [
+        "Hilichurl Shooters"
+      ],
       "obtained": "- Alchemy (3x Sharp Arrowhead)\n- Dropped by Lv.60+ Ranged Hilichurls",
       "name": "Weathered Arrowhead",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Weathered_Arrowhead",
+      "usage": {
+        "characters": [
+          "Amber"
+        ],
+        "weapons": [
+          "Aquila_Favonia",
+          "Black_Tassel",
+          "Blackcliff_Longsword",
+          "Bloodtainted_Greatsword",
+          "Cool_Steel",
+          "Favonius_Sword",
+          "Hamayumi",
+          "Kings_Squire",
+          "Lithic_Blade",
+          "Lithic_Spear",
+          "Predator",
+          "Prototype_Malice",
+          "Raven_Bow",
+          "Royal_Longsword",
+          "Sacrificial_Greatsword",
+          "Skyward_Atlas",
+          "Skyward_Harp",
+          "The_Stringless",
+          "The_Viridescent_Hunt",
+          "Thundering_Pulse"
+        ]
+      },
       "subCollection": {}
     },
     "Divining_Scroll": {
@@ -123,11 +387,37 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth.",
-      "enemies": ["Samachurls"],
+      "enemies": [
+        "Samachurls"
+      ],
       "obtained": "- Dropped by samachurls",
       "name": "Divining Scroll",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Divining_Scroll",
+      "usage": {
+        "characters": [
+          "Albedo"
+        ],
+        "weapons": [
+          "Beginner_Protector",
+          "Blackcliff_Amulet",
+          "Dragon_Bane",
+          "Fading_Twilight",
+          "Favonius_Codex",
+          "Freedom-Sworn",
+          "Hakushin_Ring",
+          "Iron_Point",
+          "Quartz",
+          "Rainslasher",
+          "Recurve_Bow",
+          "Sacrificial_Sword",
+          "Skyward_Spine",
+          "The_Alley_Flash",
+          "Thrilling_Tales_of_Dragon_Slayers",
+          "Traveler_Handy_Sword",
+          "Wolf_Gravestone"
+        ]
+      },
       "subCollection": {}
     },
     "Sealed_Scroll": {
@@ -136,11 +426,37 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic.",
-      "enemies": ["Samachurls"],
+      "enemies": [
+        "Samachurls"
+      ],
       "obtained": "- Alchemy (3x Divining Scroll)\n- Dropped by Lv.40+ samachurls",
       "name": "Sealed Scroll",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sealed_Scroll",
+      "usage": {
+        "characters": [
+          "Albedo"
+        ],
+        "weapons": [
+          "Beginner_Protector",
+          "Blackcliff_Amulet",
+          "Dragon_Bane",
+          "Fading_Twilight",
+          "Favonius_Codex",
+          "Freedom-Sworn",
+          "Hakushin_Ring",
+          "Iron_Point",
+          "Quartz",
+          "Rainslasher",
+          "Recurve_Bow",
+          "Sacrificial_Sword",
+          "Skyward_Spine",
+          "The_Alley_Flash",
+          "Thrilling_Tales_of_Dragon_Slayers",
+          "Traveler_Handy_Sword",
+          "Wolf_Gravestone"
+        ]
+      },
       "subCollection": {}
     },
     "Forbidden_Curse_Scroll": {
@@ -149,11 +465,35 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad.",
-      "enemies": ["Samachurls"],
+      "enemies": [
+        "Samachurls"
+      ],
       "obtained": "- Alchemy (3x Sealed Scroll)\n- Dropped by Lv.60+ samachurls",
       "name": "Forbidden Curse Scroll",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Forbidden_Curse_Scroll",
+      "usage": {
+        "characters": [
+          "Albedo"
+        ],
+        "weapons": [
+          "Blackcliff_Amulet",
+          "Dragon_Bane",
+          "Fading_Twilight",
+          "Favonius_Codex",
+          "Freedom-Sworn",
+          "Hakushin_Ring",
+          "Quartz",
+          "Rainslasher",
+          "Recurve_Bow",
+          "Sacrificial_Sword",
+          "Skyward_Spine",
+          "The_Alley_Flash",
+          "Thrilling_Tales_of_Dragon_Slayers",
+          "Traveler_Handy_Sword",
+          "Wolf_Gravestone"
+        ]
+      },
       "subCollection": {}
     },
     "Treasure_Hoarder_Insignia": {
@@ -162,11 +502,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A signet that proudly represents it's owner's position as a member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... is being a thief something to be proud of?",
-      "enemies": ["Treasure Hoarders"],
+      "enemies": [
+        "Treasure Hoarders"
+      ],
       "obtained": "- Dropped by Treasure Hoarders",
       "name": "Treasure Hoarder Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Treasure_Hoarder_Insignia",
+      "usage": {
+        "characters": [
+          "Beidou"
+        ],
+        "weapons": [
+          "Crescent_Pike",
+          "Emerald_Orb",
+          "Fillet_Blade",
+          "Hunter_Bow",
+          "Kitain_Cross_Spear",
+          "Lion_Roar",
+          "Makhaira_Aquamarine",
+          "Messenger",
+          "Mitternachts_Waltz",
+          "Primordial_Jade_Cutter",
+          "Prototype_Crescent",
+          "Sacrificial_Fragments",
+          "Seasoned_Hunter_Bow",
+          "Skyrider_Greatsword",
+          "Sword_of_Descension",
+          "The_Unforged",
+          "Vortex_Vanquisher",
+          "Whiteblind",
+          "Wine_and_Song"
+        ]
+      },
       "subCollection": {}
     },
     "Silver_Raven_Insignia": {
@@ -175,11 +543,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member.",
-      "enemies": ["Treasure Hoarders"],
+      "enemies": [
+        "Treasure Hoarders"
+      ],
       "obtained": "- Alchemy (3x Treasure Hoarder Insignia)\n- Dropped by Lv.40+ Treasure Hoarders",
       "name": "Silver Raven Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Silver_Raven_Insignia",
+      "usage": {
+        "characters": [
+          "Beidou"
+        ],
+        "weapons": [
+          "Crescent_Pike",
+          "Emerald_Orb",
+          "Fillet_Blade",
+          "Hunter_Bow",
+          "Kitain_Cross_Spear",
+          "Lion_Roar",
+          "Makhaira_Aquamarine",
+          "Messenger",
+          "Mitternachts_Waltz",
+          "Primordial_Jade_Cutter",
+          "Prototype_Crescent",
+          "Sacrificial_Fragments",
+          "Seasoned_Hunter_Bow",
+          "Skyrider_Greatsword",
+          "Sword_of_Descension",
+          "The_Unforged",
+          "Vortex_Vanquisher",
+          "Whiteblind",
+          "Wine_and_Song"
+        ]
+      },
       "subCollection": {}
     },
     "Golden_Raven_Insignia": {
@@ -188,11 +584,37 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die.",
-      "enemies": ["Treasure Hoarders"],
+      "enemies": [
+        "Treasure Hoarders"
+      ],
       "obtained": "- Alchemy (3x Silver Raven Insignia)\n- Dropped by Lv.60+ Treasure Hoarders",
       "name": "Golden Raven Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Golden_Raven_Insignia",
+      "usage": {
+        "characters": [
+          "Beidou"
+        ],
+        "weapons": [
+          "Crescent_Pike",
+          "Emerald_Orb",
+          "Fillet_Blade",
+          "Kitain_Cross_Spear",
+          "Lion_Roar",
+          "Makhaira_Aquamarine",
+          "Messenger",
+          "Mitternachts_Waltz",
+          "Primordial_Jade_Cutter",
+          "Prototype_Crescent",
+          "Sacrificial_Fragments",
+          "Skyrider_Greatsword",
+          "Sword_of_Descension",
+          "The_Unforged",
+          "Vortex_Vanquisher",
+          "Whiteblind",
+          "Wine_and_Song"
+        ]
+      },
       "subCollection": {}
     },
     "Recruit_Insignia": {
@@ -201,11 +623,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking.",
-      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "enemies": [
+        "Fatui Skirmishers",
+        "Fatui Cicin Mage",
+        "Fatui Agent"
+      ],
       "obtained": "- Dropped by Skirmishers\n- Dropped by some Agents\n- Dropped by some Electro Cicin Mages",
       "name": "Recruit's Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Recruit%27s_Insignia",
+      "usage": {
+        "characters": [
+          "Diluc"
+        ],
+        "weapons": [
+          "Blackcliff_Pole",
+          "Blackcliff_Slasher",
+          "Compound_Bow",
+          "Dragonspine_Spear",
+          "Ebony_Bow",
+          "Elegy_for_the_End",
+          "Favonius_Greatsword",
+          "Festering_Desire",
+          "Moonpiercer",
+          "Primordial_Jade_Greatsword",
+          "Primordial_Jade_Winged-Spear",
+          "Prototype_Rancour",
+          "Royal_Grimoire",
+          "Royal_Spear",
+          "Skyrider_Sword",
+          "Twin_Nephrite",
+          "White_Tassel"
+        ]
+      },
       "subCollection": {}
     },
     "Sergeant_Insignia": {
@@ -214,11 +664,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An insignia with a different shape to tell the sergeants from new recruits. Perhaps there are complicated emotions behind it.",
-      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "enemies": [
+        "Fatui Skirmishers",
+        "Fatui Cicin Mage",
+        "Fatui Agent"
+      ],
       "obtained": "- Alchemy (3x Recruit's Insignia)\n- Dropped by Lv.40+ Skirmishers\n- Dropped by some Lv.40+ Agents\n- Dropped by some Lv.40+ Electro Cicin Mages",
       "name": "Sergeant's Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sergeant%27s_Insignia",
+      "usage": {
+        "characters": [
+          "Diluc"
+        ],
+        "weapons": [
+          "Blackcliff_Pole",
+          "Blackcliff_Slasher",
+          "Compound_Bow",
+          "Dragonspine_Spear",
+          "Ebony_Bow",
+          "Elegy_for_the_End",
+          "Favonius_Greatsword",
+          "Festering_Desire",
+          "Moonpiercer",
+          "Primordial_Jade_Greatsword",
+          "Primordial_Jade_Winged-Spear",
+          "Prototype_Rancour",
+          "Royal_Grimoire",
+          "Royal_Spear",
+          "Skyrider_Sword",
+          "Twin_Nephrite",
+          "White_Tassel"
+        ]
+      },
       "subCollection": {}
     },
     "Lieutenant_Insignia": {
@@ -227,11 +705,39 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group.",
-      "enemies": ["Fatui Skirmishers", "Fatui Cicin Mage", "Fatui Agent"],
+      "enemies": [
+        "Fatui Skirmishers",
+        "Fatui Cicin Mage",
+        "Fatui Agent"
+      ],
       "obtained": "- Alchemy (3x Sergeant's Insignia)\n- Dropped by Lv.60+ Skirmishers\n- Dropped by some Lv.60+ Agents\n- Dropped by some Lv.60+ Electro Cicin Mages",
       "name": "Lieutenant's Insignia",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Lieutenant%27s_Insignia",
+      "usage": {
+        "characters": [
+          "Diluc"
+        ],
+        "weapons": [
+          "Blackcliff_Pole",
+          "Blackcliff_Slasher",
+          "Compound_Bow",
+          "Dragonspine_Spear",
+          "Ebony_Bow",
+          "Elegy_for_the_End",
+          "Favonius_Greatsword",
+          "Festering_Desire",
+          "Moonpiercer",
+          "Primordial_Jade_Greatsword",
+          "Primordial_Jade_Winged-Spear",
+          "Prototype_Rancour",
+          "Royal_Grimoire",
+          "Royal_Spear",
+          "Skyrider_Sword",
+          "Twin_Nephrite",
+          "White_Tassel"
+        ]
+      },
       "subCollection": {}
     },
     "Whopperflower_Nectar": {
@@ -240,11 +746,33 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elements. The taste of the nectar has a hint of Sweet Flower in it.",
-      "enemies": ["Whopperflowers"],
+      "enemies": [
+        "Whopperflowers"
+      ],
       "obtained": "- Dropped by Whopperflower",
       "name": "Whopperflower Nectar",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Whopperflower_Nectar",
+      "usage": {
+        "characters": [
+          "Ganyu"
+        ],
+        "weapons": [
+          "Amber_Catalyst",
+          "Blackcliff_Warbow",
+          "Calamity_Queller",
+          "Deathmatch",
+          "Favonius_Warbow",
+          "Ferrous_Shadow",
+          "Frostbearer",
+          "Halberd",
+          "Iron_Sting",
+          "Serpent_Spine",
+          "Solar_Pearl",
+          "The_Bell",
+          "Windblume_Ode"
+        ]
+      },
       "subCollection": {}
     },
     "Shimmering_Nectar": {
@@ -253,11 +781,33 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "Nectar that is full of pure elements.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits.",
-      "enemies": ["Whopperflowers"],
+      "enemies": [
+        "Whopperflowers"
+      ],
       "obtained": "- Alchemy (3x Whopperflower Nectar)\n- Dropped by Lv.40+ Whopperflower",
       "name": "Shimmering Nectar",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Shimmering_Nectar",
+      "usage": {
+        "characters": [
+          "Ganyu"
+        ],
+        "weapons": [
+          "Amber_Catalyst",
+          "Blackcliff_Warbow",
+          "Calamity_Queller",
+          "Deathmatch",
+          "Favonius_Warbow",
+          "Ferrous_Shadow",
+          "Frostbearer",
+          "Halberd",
+          "Iron_Sting",
+          "Serpent_Spine",
+          "Solar_Pearl",
+          "The_Bell",
+          "Windblume_Ode"
+        ]
+      },
       "subCollection": {}
     },
     "Energy_Nectar": {
@@ -266,11 +816,33 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A thick and sticky honey that is full of energy. The Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form.",
-      "enemies": ["Whopperflowers"],
+      "enemies": [
+        "Whopperflowers"
+      ],
       "obtained": "- Alchemy (3x Shimmering Nectar)\n- Dropped by Lv.60+ Whopperflower",
       "name": "Energy Nectar",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Energy_Nectar",
+      "usage": {
+        "characters": [
+          "Ganyu"
+        ],
+        "weapons": [
+          "Amber_Catalyst",
+          "Blackcliff_Warbow",
+          "Calamity_Queller",
+          "Deathmatch",
+          "Favonius_Warbow",
+          "Ferrous_Shadow",
+          "Frostbearer",
+          "Halberd",
+          "Iron_Sting",
+          "Serpent_Spine",
+          "Solar_Pearl",
+          "The_Bell",
+          "Windblume_Ode"
+        ]
+      },
       "subCollection": {}
     },
     "Old_Handguard": {
@@ -279,11 +851,28 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A battle-worn handguard that was once mounted on an Inazuman blade.\nFor those adept in the art of the sword, the tsuba is a defense from the edge of an opponent's blade. For beginners, it is a defense made for their own right hand, to protect it from itself.",
-      "enemies": ["Nobushi"],
+      "enemies": [
+        "Nobushi"
+      ],
       "obtained": "- Dropped by Nobushi",
       "name": "Old Handguard",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Old_Handguard",
+      "usage": {
+        "characters": [
+          "Kamisato_Ayaka"
+        ],
+        "weapons": [
+          "Akuoumaru",
+          "Amenoma_Kageuchi",
+          "Engulfing_Lightning",
+          "Haran_Geppaku_Futsu",
+          "Katsuragikiri_Nagamasa",
+          "Mistsplitter_Reforged",
+          "Redhorn_Stonethresher",
+          "Wavebreaker_Fin"
+        ]
+      },
       "subCollection": {}
     },
     "Kageuchi_Handguard": {
@@ -292,11 +881,29 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A handguard mounded upon a sword of some distinction.\nInazuma has a long tradition of sword-making. When making swords, smiths will often make several different weapons at once, before choosing from among them the \"shinuchi,\" or the best weapon, while the others are known as \"kageuchi.\"",
-      "enemies": ["Nobushi", "Kairagi"],
+      "enemies": [
+        "Nobushi",
+        "Kairagi"
+      ],
       "obtained": "- Alchemy (3x Old Handguard)\n- Dropped by Lv.40+ Nobushi\n- Dropped by Lv. 40+ Kairagi",
       "name": "Kageuchi Handguard",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Kageuchi_Handguard",
+      "usage": {
+        "characters": [
+          "Kamisato_Ayaka"
+        ],
+        "weapons": [
+          "Akuoumaru",
+          "Amenoma_Kageuchi",
+          "Engulfing_Lightning",
+          "Haran_Geppaku_Futsu",
+          "Katsuragikiri_Nagamasa",
+          "Mistsplitter_Reforged",
+          "Redhorn_Stonethresher",
+          "Wavebreaker_Fin"
+        ]
+      },
       "subCollection": {}
     },
     "Famed_Handguard": {
@@ -305,11 +912,28 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An intricately-made handguard that was mounted upon a famed weapon.\nSome believe that swords have souls and lives of their own, and thus deserve their own names. Those who love their blades will be acknowledged by them in turn. But those who see their swords as friends or even lovers should be warned that this relationship is built on death and bloodshed. The passions of those who dance with their blade amid crimson showers must surely be cooled someday by fickle steel.",
-      "enemies": ["Nobushi"],
+      "enemies": [
+        "Nobushi"
+      ],
       "obtained": "- Alchemy (3x Kageuchi Handguard)\n- Dropped by Lv.60+ Nobushi",
       "name": "Famed Handguard",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Famed_Handguard",
+      "usage": {
+        "characters": [
+          "Kamisato_Ayaka"
+        ],
+        "weapons": [
+          "Akuoumaru",
+          "Amenoma_Kageuchi",
+          "Engulfing_Lightning",
+          "Haran_Geppaku_Futsu",
+          "Katsuragikiri_Nagamasa",
+          "Mistsplitter_Reforged",
+          "Redhorn_Stonethresher",
+          "Wavebreaker_Fin"
+        ]
+      },
       "subCollection": {}
     },
     "Spectral_Husk": {
@@ -318,11 +942,28 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed.",
-      "enemies": ["Specters"],
+      "enemies": [
+        "Specters"
+      ],
       "obtained": "- Dropped by Specters",
       "name": "Spectral Husk",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Spectral_Husk",
+      "usage": {
+        "characters": [
+          "Aloy"
+        ],
+        "weapons": [
+          "Aqua_Simulacra",
+          "Everlasting_Moonglow",
+          "Kagotsurube_Isshin",
+          "Kaguras_Verity",
+          "Mouun_Moon",
+          "Oathsworn_Eye",
+          "Polar_Star",
+          "The_Catch"
+        ]
+      },
       "subCollection": {}
     },
     "Spectral_Heart": {
@@ -331,11 +972,28 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing.",
-      "enemies": ["Specters"],
+      "enemies": [
+        "Specters"
+      ],
       "obtained": "- Alchemy (3x Spectral Husk)\n- Dropped by Lv. 40+ Specters",
       "name": "Spectral Heart",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Spectral_Heart",
+      "usage": {
+        "characters": [
+          "Aloy"
+        ],
+        "weapons": [
+          "Aqua_Simulacra",
+          "Everlasting_Moonglow",
+          "Kagotsurube_Isshin",
+          "Kaguras_Verity",
+          "Mouun_Moon",
+          "Oathsworn_Eye",
+          "Polar_Star",
+          "The_Catch"
+        ]
+      },
       "subCollection": {}
     },
     "Spectral_Nucleus": {
@@ -344,11 +1002,28 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?",
-      "enemies": ["Specters"],
+      "enemies": [
+        "Specters"
+      ],
       "obtained": "- Alchemy (3x Spectral Heart)\n- Dropped by Lv.60+ Specters",
       "name": "Spectral Nucleus",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Spectral_Nucleus",
+      "usage": {
+        "characters": [
+          "Aloy"
+        ],
+        "weapons": [
+          "Aqua_Simulacra",
+          "Everlasting_Moonglow",
+          "Kagotsurube_Isshin",
+          "Kaguras_Verity",
+          "Mouun_Moon",
+          "Oathsworn_Eye",
+          "Polar_Star",
+          "The_Catch"
+        ]
+      },
       "subCollection": {}
     },
     "Faded_Red_Satin": {
@@ -357,11 +1032,25 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A piece of red satin used to cover the eyes. The fabric is slightly torn.\nMany Eremites tend to cover their eyes with textiles, but the original intention of this practice has long been lost to the sands of time.",
-      "enemies": ["Eremites"],
+      "enemies": [
+        "Eremites"
+      ],
       "obtained": "- Dropped by The Eremites",
       "name": "Faded Red Satin",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Faded_Red_Satin",
+      "usage": {
+        "characters": [
+          "Candace"
+        ],
+        "weapons": [
+          "Forest_Regalia",
+          "Hunters_Path",
+          "Key_of_Khaj-Nisut",
+          "Sapwood_Blade",
+          "Xiphos_Moonlight"
+        ]
+      },
       "subCollection": {}
     },
     "Trimmed_Red_Silk": {
@@ -370,11 +1059,25 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A piece of red silk trimmed with simple decorations.\nA seasoned warrior can detect weaknesses from their foe's eyes and thus take advantage. The Eremites have long since lost a master to serve, and now they have no one to trust but themselves. Word has it that they are more than convinced that all things betray, even their own eyes.",
-      "enemies": ["Eremites"],
+      "enemies": [
+        "Eremites"
+      ],
       "obtained": "- Alchemy (3x Faded Red Satin)\n- Dropped by Lv. 40+ Eremites",
       "name": "Trimmed Red Silk",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Trimmed_Red_Silk",
+      "usage": {
+        "characters": [
+          "Candace"
+        ],
+        "weapons": [
+          "Forest_Regalia",
+          "Hunters_Path",
+          "Key_of_Khaj-Nisut",
+          "Sapwood_Blade",
+          "Xiphos_Moonlight"
+        ]
+      },
       "subCollection": {}
     },
     "Rich_Red_Brocade": {
@@ -383,11 +1086,25 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A piece of red brocade woven with golden thread.\nThose born in the gilded desert under the sun occasionally sing a song, of which the meaning has been forgotten. They would praise the scorching sun that illuminates the earth as equally as ever and bewail the afterglow at the end of the dusk. Some unfamiliar words recur at the end of the song, which are said to be the names of ancient gods. Legend has it that when the King of the Desert was still alive, his people chose to cover their eyes as they dared not look upon him, whose brilliance was beyond that of the sun.",
-      "enemies": ["Eremites"],
+      "enemies": [
+        "Eremites"
+      ],
       "obtained": "- Alchemy (3x Trimmed Red Silk)\n- Dropped by Lv. 60+ Eremites",
       "name": "Rich Red Brocade",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Rich_Red_Brocade",
+      "usage": {
+        "characters": [
+          "Candace"
+        ],
+        "weapons": [
+          "Forest_Regalia",
+          "Hunters_Path",
+          "Key_of_Khaj-Nisut",
+          "Sapwood_Blade",
+          "Xiphos_Moonlight"
+        ]
+      },
       "subCollection": {}
     },
     "Fungal_Spores": {
@@ -396,11 +1113,26 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A small amount of glittering spore powder left behind by Floating Fungi. Seems that a sneeze is all it takes for this powder to vanish without a trace.",
-      "enemies": ["Fungi", "Shroomite"],
+      "enemies": [
+        "Fungi",
+        "Shroomite"
+      ],
       "obtained": "- Dropped by Floating Fungi",
       "name": "Fungal Spores",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Fungal_Spores",
+      "usage": {
+        "characters": [
+          "Nahida"
+        ],
+        "weapons": [
+          "A_Thousand_Floating_Dreams",
+          "End_of_the_Line",
+          "Fruit_of_Fulfillment",
+          "Staff_of_the_Scarlet_Sands",
+          "Wandering_Evenstar"
+        ]
+      },
       "subCollection": {}
     },
     "Luminescent_Pollen": {
@@ -409,11 +1141,26 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A small parcel of luminescent Fungal Spore powder, a common medical ingredient in the land of rainforests. Merchants usually sell them in paper packets.",
-      "enemies": ["Fungi", "Shroomite"],
+      "enemies": [
+        "Fungi",
+        "Shroomite"
+      ],
       "obtained": "- Alchemy (3x Fungal Spores)\n- Dropped by Lv. 40+ Floating Fungi",
       "name": "Luminescent Pollen",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Luminescent_Pollen",
+      "usage": {
+        "characters": [
+          "Nahida"
+        ],
+        "weapons": [
+          "A_Thousand_Floating_Dreams",
+          "End_of_the_Line",
+          "Fruit_of_Fulfillment",
+          "Staff_of_the_Scarlet_Sands",
+          "Wandering_Evenstar"
+        ]
+      },
       "subCollection": {}
     },
     "Crystalline_Cyst_Dust": {
@@ -422,11 +1169,26 @@
       "type": "Common Ascension Material (Normal)",
       "innerType": "mob_drops",
       "description": "A huge lump of spore powder collected from a structurally complete spore cyst. Put it in an appropriate environment, and the area might be filled with a thriving aggregation of Floating Fungi later...",
-      "enemies": ["Fungi", "Shroomite"],
+      "enemies": [
+        "Fungi",
+        "Shroomite"
+      ],
       "obtained": "- Alchemy (3x Luminescent Pollen)\n- Dropped by Lv. 60+ Floating Fungi",
       "name": "Crystalline Cyst Dust",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Crystalline_Cyst_Dust",
+      "usage": {
+        "characters": [
+          "Nahida"
+        ],
+        "weapons": [
+          "A_Thousand_Floating_Dreams",
+          "End_of_the_Line",
+          "Fruit_of_Fulfillment",
+          "Staff_of_the_Scarlet_Sands",
+          "Wandering_Evenstar"
+        ]
+      },
       "subCollection": {}
     }
   }
