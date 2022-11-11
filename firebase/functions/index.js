@@ -4,8 +4,10 @@ const client = new firestore.v1.FirestoreAdminClient();
 
 const {initializeApp} = require('firebase-admin/app');
 const {getFirestore} = require('firebase-admin/firestore');
+const {getDatabase} = require('firebase-admin/database');
 
 const bucket = 'gs://gi-weekly-material-tracker-firestore-prod-backups';
+initializeApp();
 
 exports.scheduledFirestoreExport = functions.pubsub.schedule('every 24 hours').onRun((context) => {
   const projectId = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT;
@@ -41,7 +43,6 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
 
     const bannerData = snapshot.after.val();
     // Get firestore data
-    initializeApp();
     const firestoreDb = getFirestore();
 
     var finalUpdates = {};
@@ -78,6 +79,7 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
         weaponData.banners_since_last_appearance = since;
         weaponData.date_since_last_appearance = time;
       }
+      weaponData.bsla = Date.now();
       finalUpdates[doc.id] = weaponData;
     });
 
@@ -103,7 +105,6 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
 
     const bannerData = snapshot.after.val();
     // Get firestore data
-    initializeApp();
     const firestoreDb = getFirestore();
 
     var finalUpdates = {};
@@ -140,6 +141,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
         characterData.banners_since_last_appearance = since;
         characterData.date_since_last_appearance = time;
       }
+      characterData.bsla = Date.now();
       finalUpdates[doc.id] = characterData;
     });
 
@@ -154,3 +156,117 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
     console.log("Update complete");
     return null;
   });
+
+exports.updateCharacterLastSeen = functions.firestore.document('characters/{charKey}').onWrite(async (change, context) => {
+  var key = context.params.charKey;
+  if (!change.after.exists) {
+    // Do not operate
+    console.log("Character", key, "deleted. We do not update it");
+    return null;
+  }
+  const charData = change.after.data();
+  // We need to prevent repeat updates by checking banners_since_last_appearance
+  if (change.before.exists && "bsla" in change.before.data() && "bsla" in charData && change.before.data().bsla !== charData.bsla) {
+    console.log("Already ran. ignore");
+    return null;
+  }
+
+  let since = 0;
+  let time = null;
+
+  // Get list of all banners in RTDB and process it
+  const rtDb = getDatabase();
+  const firestoreDb = getFirestore();
+  const data = await rtDb.ref('banners/character').once('value');
+  const banners = data.val();
+
+  // Get rateupcharacters array from each banner data ite,
+  for (var item of banners) {
+    // console.log('[DBG] Checking Banner:', item.name);
+    let special = item.rateupcharacters;
+    if (special.includes(key)) {
+      // Its this one
+      time = item.end;
+      console.log('Found', key, 'in', item.name, '#', since, 'ended at', item.end);
+      break;
+    }
+    since++;
+  }
+
+  if (time === null) {
+    console.log('Unable to find a rate up appearance for', key);
+    // Cannot find character, unset banners_since_last_appearance and date_since_last_appearance
+    if (!("banners_since_last_appearance" in charData)) {
+      delete charData.banners_since_last_appearance;
+    }
+    if (!("date_since_last_appearance" in charData)) {
+      delete charData.date_since_last_appearance;
+    }
+  } else {
+    charData.banners_since_last_appearance = since;
+    charData.date_since_last_appearance = time;
+  }
+  charData.bsla = Date.now();
+
+  console.log("Updating Firestore Database for", key);
+  await firestoreDb.collection('characters').doc(key).set(charData);
+  console.log("Updated", key, "in Firestore Database");
+  return null;
+});
+
+exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').onWrite(async (change, context) => {
+  var key = context.params.wepKey;
+  if (!change.after.exists) {
+    // Do not operate
+    console.log("Weapon", key, "deleted. We do not update it");
+    return null;
+  }
+  const wepData = change.after.data();
+  // We need to prevent repeat updates by checking banners_since_last_appearance
+  if (change.before.exists && "bsla" in change.before.data() && "bsla" in wepData && change.before.data().bsla !== wepData.bsla) {
+    console.log("Already ran. ignore");
+    return null;
+  }
+
+  let since = 0;
+  let time = null;
+
+  // Get list of all banners in RTDB and process it
+  const rtDb = getDatabase();
+  const firestoreDb = getFirestore();
+  const data = await rtDb.ref('banners/weapon').once('value');
+  const banners = data.val();
+
+  // Get rateupweapon array from each banner data ite,
+  for (var item of banners) {
+    // console.log('[DBG] Checking Banner:', item.name);
+    let special = item.rateupweapon;
+    if (special.includes(key)) {
+      // Its this one
+      time = item.end;
+      console.log('Found', key, 'in', item.name, '#', since, 'ended at', item.end);
+      break;
+    }
+    since++;
+  }
+
+  if (time === null) {
+    console.log('Unable to find a rate up appearance for', key);
+    // Cannot find weapon, unset banners_since_last_appearance and date_since_last_appearance
+    if (!("banners_since_last_appearance" in wepData)) {
+      delete wepData.banners_since_last_appearance;
+    }
+    if (!("date_since_last_appearance" in wepData)) {
+      delete wepData.date_since_last_appearance;
+    }
+  } else {
+    wepData.banners_since_last_appearance = since;
+    wepData.date_since_last_appearance = time;
+  }
+  wepData.bsla = Date.now();
+
+  console.log("Updating Firestore Database for", key);
+  await firestoreDb.collection('weapons').doc(key).set(wepData);
+  console.log("Updated", key, "in Firestore Database");
+  return null;
+});
