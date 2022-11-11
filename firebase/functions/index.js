@@ -54,12 +54,12 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
       let time = null;
       // Get rateupweapon array from each banner data ite,
       for (var item of bannerData) {
-        console.log('Checking Banner:', item.name);
+        // console.log('[DBG] Checking Banner:', item.name);
         let special = item.rateupweapon;
         if (special.includes(doc.id)) {
           // Its this one
           time = item.end;
-          console.log('Found on', since, 'ended at', item.end);
+          console.log('Found', doc.id, 'in', item.name, '#', since, 'ended at', item.end);
           break;
         }
         since++;
@@ -116,12 +116,12 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
       let time = null;
       // Get rateupcharacters array from each banner data ite,
       for (var item of bannerData) {
-        console.log('Checking Banner:', item.name);
+        // console.log('[DBG] Checking Banner:', item.name);
         let special = item.rateupcharacters;
         if (special.includes(doc.id)) {
           // Its this one
           time = item.end;
-          console.log('Found on', since, 'ended at', item.end);
+          console.log('Found', doc.id, 'in', item.name, '#', since, 'ended at', item.end);
           break;
         }
         since++;
