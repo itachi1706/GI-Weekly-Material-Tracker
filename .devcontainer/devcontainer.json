@@ -28,6 +28,9 @@
 	"features": {
 		"git": "os-provided",
 		"github-cli": "latest",
-		"node": "lts"
+		"node": "lts",
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		}
 	}
 }
