@@ -854,6 +854,10 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     return Icon(icon, color: color);
   }
 
+  String _getTitles(List<String> titles) {
+    return titles.length > 1 ? titles.map((e) => "• $e").join('\n') : titles.join('\n');
+  }
+
   @override
   Widget build(BuildContext context) {
     if (widget.info == null) return Util.loadingScreen();
@@ -882,6 +886,10 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             ...GridData.generateInfoLine(
               widget.info!.introduction!,
               Icons.book,
+            ),
+            ...GridData.generateInfoLine(
+              _getTitles(widget.info!.titles!),
+              Icons.celebration,
             ),
             _getConstellationWeaponWidget(),
             const Divider(),
