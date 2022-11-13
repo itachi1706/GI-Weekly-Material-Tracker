@@ -1,17 +1,299 @@
 {
   "characters": {
+    "Faruzan": {
+      "image": "Characters/Anemo/Faruzan.png",
+      "gender": "Female",
+      "birthday": null,
+      "caption": "Enigmatic Machinist",
+      "titles": [
+        "Haravatat Household Name"
+      ],
+      "name": "Faruzan",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": null,
+      "rarity": 4,
+      "affiliation": "Sumeru Akademiya, Haravatat",
+      "constellation": "Flosculi Implexi",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Anemo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Faruzan",
+      "subCollection": {}
+    },
     "Jean": {
       "image": "Characters/Anemo/Jean.png",
       "gender": "Female",
       "birthday": "14/3",
       "caption": "Dandelion Knight",
+      "titles": [
+        "Acting Grand Master of the Knights of Favonius"
+      ],
       "name": "Jean",
       "fullName": "Jean Gunnhildr",
       "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius of Mondstadt.",
       "nation": "Mondstadt",
       "weapon": "Sword",
       "rarity": 5,
-      "affiliation": "Knights of Favonius, Four Winds",
+      "affiliation": "Knights of Favonius, Four Winds, Gunnhildr Clan",
       "constellation": "Leo Minor",
       "talents": {
         "ascension": {
@@ -281,6 +563,10 @@
       "gender": "Male",
       "birthday": "29/10",
       "caption": "Scarlet Leaves Pursue Wild Waves",
+      "titles": [
+        "Wandering Samurai",
+        "Temporary Crew of the Crux"
+      ],
       "name": "Kaedehara Kazuha",
       "fullName": "Kazuha",
       "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
@@ -557,6 +843,9 @@
       "gender": "Female",
       "birthday": "19/10",
       "caption": "Mujina Ninja",
+      "titles": [
+        "Shuumatsuban's Resident Ninja"
+      ],
       "name": "Sayu",
       "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
       "nation": "Inazuma",
@@ -832,6 +1121,9 @@
       "gender": "Male",
       "birthday": "24/7",
       "caption": "Analytical Harmony",
+      "titles": [
+        "Detective of the Tenryou Commission"
+      ],
       "name": "Shikanoin Heizou",
       "fullName": "Heizou",
       "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
@@ -1108,6 +1400,9 @@
       "gender": "Female",
       "birthday": "26/11",
       "caption": "Harmless Sweetie",
+      "titles": [
+        "Knights of Favonius Alchemist"
+      ],
       "name": "Sucrose",
       "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
       "nation": "Mondstadt",
@@ -1383,13 +1678,19 @@
       "gender": "Male",
       "birthday": "16/6",
       "caption": "Windborne Bard",
+      "titles": [
+        "Singer of Skyward Sonnets",
+        "The God of Anemo",
+        "God of Freedom",
+        "The Anemo Archon"
+      ],
       "name": "Venti",
       "fullName": "Barbatos",
       "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
       "nation": "Mondstadt",
       "weapon": "Bow",
       "rarity": 5,
-      "affiliation": "Archons",
+      "affiliation": "The City of Mondstadt, Archons, The Seven",
       "constellation": "Carmen Dei",
       "talents": {
         "ascension": {
@@ -1654,17 +1955,303 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Venti",
       "subCollection": {}
     },
+    "Wanderer": {
+      "image": "Characters/Anemo/Wanderer.png",
+      "gender": "Male",
+      "birthday": null,
+      "caption": "Eons Adrift",
+      "titles": [
+        "Tribulations Uncounted, Trials Unknowable",
+        "The Sixth of the Eleven Fatui Harbingers",
+        "Kunikuzushi",
+        "The Wanderer",
+        "The Balladeer"
+      ],
+      "name": "Wanderer",
+      "fullName": "Kunikuzushi, Scaramouche",
+      "description": null,
+      "nation": "Sumeru, Inazuma, Snezhnaya",
+      "weapon": null,
+      "rarity": 5,
+      "affiliation": "Former Fatui, Former Eleven Fatui Harbingers",
+      "constellation": "Peregrinus",
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Anemo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wanderer",
+      "subCollection": {}
+    },
     "Xiao": {
       "image": "Characters/Anemo/Xiao.png",
       "gender": "Male",
       "birthday": "17/4",
       "caption": "Vigilant Yaksha",
+      "titles": [
+        "Bane of All Evil"
+      ],
       "name": "Xiao",
       "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Guardian Yaksha.\"",
       "nation": "Liyue",
       "weapon": "Polearm",
       "rarity": 5,
-      "affiliation": "Liyue Adeptus",
+      "affiliation": "Liyue Adeptus, Yakshas",
       "constellation": "Alatus Nemeseos",
       "talents": {
         "ascension": {
