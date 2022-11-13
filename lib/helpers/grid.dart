@@ -471,6 +471,9 @@ class GridUtils {
     textData = textData.replaceAll('Burning', '§pBurning§r');
     textData = textData.replaceAll('Frozen', '§cFrozen§r');
     textData = textData.replaceAll('Bloom', '§dBloom§r');
+    textData = textData.replaceAll('Superconduct', '§eSuperconduct§r');
+    textData = textData.replaceAll('Aggravate', '§eAggravate§r');
+    textData = textData.replaceAll('Hyperbloom', '§eHyperbloom§r');
     textData = textData.replaceAll('Super-conduct', '§eSuper-conduct§r');
     textData = textData.replaceAll('Quicken', '§dQuicken§r');
     textData = textData.replaceAll('Swirl', '§aSwirl§r');

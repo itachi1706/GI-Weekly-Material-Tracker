@@ -16,6 +16,7 @@ class CharacterData extends CommonData {
   Map<String, CharacterAscension>? ascension;
   Map<int, CharacterConstellations>? constellations;
   CharacterTalent? talent;
+  List<String>? titles;
 
   CharacterData({
     this.affiliation,
@@ -37,6 +38,7 @@ class CharacterData extends CommonData {
     this.talent,
     this.constellations,
     this.fullName,
+    this.titles,
     crossover,
     wiki,
     released,
@@ -78,6 +80,7 @@ class CharacterData extends CommonData {
       fullName: parsedJson['fullName'],
       crossover: parsedJson['crossover'] ?? false,
       released: parsedJson['released'],
+      titles: parsedJson['titles'] != null ? List<String>.from(parsedJson['titles']) : null,
     );
   }
 
