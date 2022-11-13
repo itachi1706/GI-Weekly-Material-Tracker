@@ -28,11 +28,11 @@ class CharacterTabController extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CharacterTabControllerWidgetState createState() =>
-      _CharacterTabControllerWidgetState();
+  CharacterTabControllerWidgetState createState() =>
+      CharacterTabControllerWidgetState();
 }
 
-class _CharacterTabControllerWidgetState extends State<CharacterTabController> {
+class CharacterTabControllerWidgetState extends State<CharacterTabController> {
   @override
   Widget build(BuildContext context) {
     return TabBarView(controller: widget.tabController, children: [
@@ -56,10 +56,10 @@ class CharacterListGrid extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CharacterListGridState createState() => _CharacterListGridState();
+  CharacterListGridState createState() => CharacterListGridState();
 }
 
-class _CharacterListGridState extends State<CharacterListGrid> {
+class CharacterListGridState extends State<CharacterListGrid> {
   String? _sorter;
   bool _isDescending = false;
 
@@ -139,10 +139,10 @@ class CharacterInfoMainPage extends StatefulWidget {
   const CharacterInfoMainPage({Key? key}) : super(key: key);
 
   @override
-  _CharacterInfoMainPageState createState() => _CharacterInfoMainPageState();
+  CharacterInfoMainPageState createState() => CharacterInfoMainPageState();
 }
 
-class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
+class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   CharacterData? _info;
   String? _infoId;
   Color? _rarityColor;
@@ -156,6 +156,46 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
     super.initState();
     _infoId = Get.parameters['character'];
     _getStaticData();
+  }
+
+  void _getStaticData() async {
+    var infoData = await GridData.retrieveCharactersMapData();
+    var materialData = await GridData.retrieveMaterialsMapData();
+    _prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _info = infoData![_infoId!];
+      if (_info == null) Get.offAndToNamed('/splash');
+      _materialData = materialData;
+      _bgSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
+      _rarityColor =
+          GridUtils.getRarityColor(_info!.rarity, crossover: _info!.crossover);
+    });
+  }
+
+  void _openCharBuildGuide() async {
+    var source = Util.genshinGGUrl;
+    var sourcePath = _info!.genshinGGPath;
+    if (_bgSource == 'paimon.moe') {
+      source = Util.paimonMoeUrl;
+      sourcePath = _info!.paimonMoePath;
+    }
+
+    if (sourcePath == null) {
+      Util.showSnackbarQuick(
+        context,
+        'Build Guide not available for ${_info!.name} on $_bgSource',
+      );
+
+      return;
+    }
+
+    var fullUrl = source + sourcePath;
+    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
+      Util.showSnackbarQuick(
+        context,
+        'Failed to launch build guide for ${_info!.name} on $_bgSource',
+      );
+    }
   }
 
   @override
@@ -204,46 +244,6 @@ class _CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       ),
     );
   }
-
-  void _getStaticData() async {
-    var infoData = await GridData.retrieveCharactersMapData();
-    var materialData = await GridData.retrieveMaterialsMapData();
-    _prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _info = infoData![_infoId!];
-      if (_info == null) Get.offAndToNamed('/splash');
-      _materialData = materialData;
-      _bgSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
-      _rarityColor =
-          GridUtils.getRarityColor(_info!.rarity, crossover: _info!.crossover);
-    });
-  }
-
-  void _openCharBuildGuide() async {
-    var source = Util.genshinGGUrl;
-    var sourcePath = _info!.genshinGGPath;
-    if (_bgSource == 'paimon.moe') {
-      source = Util.paimonMoeUrl;
-      sourcePath = _info!.paimonMoePath;
-    }
-
-    if (sourcePath == null) {
-      Util.showSnackbarQuick(
-        context,
-        'Build Guide not available for ${_info!.name} on $_bgSource',
-      );
-
-      return;
-    }
-
-    var fullUrl = source + sourcePath;
-    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
-      Util.showSnackbarQuick(
-        context,
-        'Failed to launch build guide for ${_info!.name} on $_bgSource',
-      );
-    }
-  }
 }
 
 class CharacterInfoPage extends StatefulWidget {
@@ -259,10 +259,10 @@ class CharacterInfoPage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CharacterInfoPageState createState() => _CharacterInfoPageState();
+  CharacterInfoPageState createState() => CharacterInfoPageState();
 }
 
-class _CharacterInfoPageState extends State<CharacterInfoPage> {
+class CharacterInfoPageState extends State<CharacterInfoPage> {
   Map<String, TrackingStatus>? _isBeingTracked;
 
   String? _selectedTier;
@@ -271,47 +271,6 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   void initState() {
     super.initState();
     _refreshTrackingStatus();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (widget.info == null) return Util.loadingScreen();
-
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            _getCharacterHeader(),
-            const Divider(),
-            ...GridData.unreleasedCheck(widget.info!.released, 'Character'),
-            ..._getCharacterFullNameWidget(widget.info!),
-            ...GridData.generateInfoLine(
-              widget.info!.affiliation!,
-              Icons.flag,
-            ),
-            ...GridData.generateInfoLine(
-              widget.info!.nation!,
-              Icons.location_pin,
-            ),
-            ...GridData.generateInfoLine(
-              widget.info!.description!,
-              Icons.format_list_bulleted,
-            ),
-            ...GridData.generateInfoLine(
-              widget.info!.introduction!,
-              Icons.book,
-            ),
-            _getConstellationWeaponWidget(),
-            const Divider(),
-            _getGenderBirthdayWidget(),
-            const Divider(),
-            ...TrackingData.getAscensionHeader(),
-            _generateAscensionData(),
-          ],
-        ),
-      ),
-    );
   }
 
   List<Widget> _getCharacterFullNameWidget(CharacterData info) {
@@ -443,23 +402,23 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
   void _refreshTrackingStatus() {
     if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
-      var _tmpTracker = <String, TrackingStatus>{};
+      var tmpTracker = <String, TrackingStatus>{};
       for (var key in widget.info!.ascension!.keys) {
-        _tmpTracker[key] = TrackingStatus.unknown;
+        tmpTracker[key] = TrackingStatus.unknown;
       }
       setState(() {
-        _isBeingTracked = _tmpTracker;
+        _isBeingTracked = tmpTracker;
       });
     }
 
-    var _tracker = _isBeingTracked;
-    TrackingData.getTrackingCategory('character').then((_dataList) async {
-      debugPrint(_dataList.toString());
+    var tracker = _isBeingTracked;
+    TrackingData.getTrackingCategory('character').then((dataList) async {
+      debugPrint(dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
-      for (var key in _tracker!.keys) {
-        var _isTracked = TrackingData.isBeingTrackedLocal(
-          _dataList,
+      for (var key in tracker!.keys) {
+        var isTracked = TrackingData.isBeingTrackedLocal(
+          dataList,
           '${widget.infoId}_$key',
         );
         var data = widget.info!.ascension![key]!;
@@ -475,15 +434,15 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
         if (data.material4 != null) {
           datasets.add(widget.materialData![data.material4!]?.innerType);
         }
-        _tracker![key] =
-            (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+        tracker![key] =
+            (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
       }
 
-      _tracker = await _processTrackingStatus(datasets, _tracker!);
+      tracker = await _processTrackingStatus(datasets, tracker!);
 
       if (mounted) {
         setState(() {
-          _isBeingTracked = _tracker;
+          _isBeingTracked = tracker;
         });
       }
     });
@@ -491,7 +450,7 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   Future<Map<String, TrackingStatus>> _processTrackingStatus(
     Set<String?> datasets,
-    Map<String, TrackingStatus> _tracker,
+    Map<String, TrackingStatus> tracker,
   ) async {
     // Get all datasets into a map to check if completed
     var collectionList = <String?, Map<String, TrackingUserData>>{};
@@ -500,8 +459,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
     // Run through tracking status and check if its fully tracked
-    for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
+    for (var key in tracker.keys) {
+      if (tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var data = widget.info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -536,12 +495,12 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
           'Character_${widget.infoId}_${data.material4}_$key',
         );
       }
-      _tracker[key] = (fullTrack)
+      tracker[key] = (fullTrack)
           ? TrackingStatus.trackedCompleteMaterial
           : TrackingStatus.trackedIncompleteMaterial;
     }
 
-    return _tracker;
+    return tracker;
   }
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
@@ -552,53 +511,53 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _trackCharacterAction() {
     debugPrint('Selected: $_selectedTier');
-    var _ascendTier = widget.info!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = widget.info!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord('character', '${widget.infoId}_$_selectedTier')
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        '${widget.info!.name} Ascension Tier $_ascensionTierSel added to tracker!',
+        '${widget.info!.name} Ascension Tier $ascensionTierSel added to tracker!',
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
-        'Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier',
-        _ascendTier.material1,
-        _ascendTier.material1Qty,
-        widget.materialData![_ascendTier.material1!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material1}_$_selectedTier',
+        ascendTier.material1,
+        ascendTier.material1Qty,
+        widget.materialData![ascendTier.material1!]!.innerType,
         'character',
         widget.infoId,
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.addToCollection(
-        'Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier',
-        _ascendTier.material2,
-        _ascendTier.material2Qty,
-        widget.materialData![_ascendTier.material2!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material2}_$_selectedTier',
+        ascendTier.material2,
+        ascendTier.material2Qty,
+        widget.materialData![ascendTier.material2!]!.innerType,
         'character',
         widget.infoId,
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.addToCollection(
-        'Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier',
-        _ascendTier.material3,
-        _ascendTier.material3Qty,
-        widget.materialData![_ascendTier.material3!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material3}_$_selectedTier',
+        ascendTier.material3,
+        ascendTier.material3Qty,
+        widget.materialData![ascendTier.material3!]!.innerType,
         'character',
         widget.infoId,
       );
     }
-    if (_ascendTier.material4 != null) {
+    if (ascendTier.material4 != null) {
       TrackingData.addToCollection(
-        'Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier',
-        _ascendTier.material4,
-        _ascendTier.material4Qty,
-        widget.materialData![_ascendTier.material4!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material4}_$_selectedTier',
+        ascendTier.material4,
+        ascendTier.material4Qty,
+        widget.materialData![ascendTier.material4!]!.innerType,
         'character',
         widget.infoId,
       );
@@ -608,8 +567,8 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
   void _untrackCharacterAction() {
     debugPrint('Selected: $_selectedTier');
-    var _ascendTier = widget.info!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = widget.info!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord(
       'character',
@@ -618,31 +577,31 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        '${widget.info!.name} Ascension Tier $_ascensionTierSel removed from tracker!',
+        '${widget.info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
-        'Character_${widget.infoId}_${_ascendTier.material1}_$_selectedTier',
-        widget.materialData![_ascendTier.material1!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material1}_$_selectedTier',
+        widget.materialData![ascendTier.material1!]!.innerType,
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.removeFromCollection(
-        'Character_${widget.infoId}_${_ascendTier.material2}_$_selectedTier',
-        widget.materialData![_ascendTier.material2!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material2}_$_selectedTier',
+        widget.materialData![ascendTier.material2!]!.innerType,
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.removeFromCollection(
-        'Character_${widget.infoId}_${_ascendTier.material3}_$_selectedTier',
-        widget.materialData![_ascendTier.material3!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material3}_$_selectedTier',
+        widget.materialData![ascendTier.material3!]!.innerType,
       );
     }
-    if (_ascendTier.material4 != null) {
+    if (ascendTier.material4 != null) {
       TrackingData.removeFromCollection(
-        'Character_${widget.infoId}_${_ascendTier.material4}_$_selectedTier',
-        widget.materialData![_ascendTier.material4!]!.innerType,
+        'Character_${widget.infoId}_${ascendTier.material4}_$_selectedTier',
+        widget.materialData![ascendTier.material4!]!.innerType,
       );
     }
 
@@ -894,6 +853,47 @@ class _CharacterInfoPageState extends State<CharacterInfoPage> {
 
     return Icon(icon, color: color);
   }
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.info == null) return Util.loadingScreen();
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            _getCharacterHeader(),
+            const Divider(),
+            ...GridData.unreleasedCheck(widget.info!.released, 'Character'),
+            ..._getCharacterFullNameWidget(widget.info!),
+            ...GridData.generateInfoLine(
+              widget.info!.affiliation!,
+              Icons.flag,
+            ),
+            ...GridData.generateInfoLine(
+              widget.info!.nation!,
+              Icons.location_pin,
+            ),
+            ...GridData.generateInfoLine(
+              widget.info!.description!,
+              Icons.format_list_bulleted,
+            ),
+            ...GridData.generateInfoLine(
+              widget.info!.introduction!,
+              Icons.book,
+            ),
+            _getConstellationWeaponWidget(),
+            const Divider(),
+            _getGenderBirthdayWidget(),
+            const Divider(),
+            ...TrackingData.getAscensionHeader(),
+            _generateAscensionData(),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class CharacterTalentPage extends StatefulWidget {
@@ -909,10 +909,10 @@ class CharacterTalentPage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CharacterTalentPageState createState() => _CharacterTalentPageState();
+  CharacterTalentPageState createState() => CharacterTalentPageState();
 }
 
-class _CharacterTalentPageState extends State<CharacterTalentPage> {
+class CharacterTalentPageState extends State<CharacterTalentPage> {
   Map<String, TrackingStatus>? _isBeingTracked;
 
   String? _selectedTier;
@@ -924,48 +924,28 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     _refreshTrackingStatus();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    if (widget.info == null) return Util.loadingScreen();
-
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Attack Talents', style: TextStyle(fontSize: 18)),
-            ..._attackTalentWidgets(),
-            const Text('Passive Talents', style: TextStyle(fontSize: 18)),
-            ..._passiveTalentWidgets(),
-          ],
-        ),
-      ),
-    );
-  }
-
   void _refreshTrackingStatus() {
     if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
-      var _tmpTracker = <String, TrackingStatus>{};
+      var tmpTracker = <String, TrackingStatus>{};
       for (var key in widget.info!.talent!.attack!.keys) {
         for (var k2 in widget.info!.talent!.ascension!.keys) {
-          _tmpTracker['${key}_$k2'] = TrackingStatus.unknown;
+          tmpTracker['${key}_$k2'] = TrackingStatus.unknown;
         }
       }
       setState(() {
-        _isBeingTracked = _tmpTracker;
+        _isBeingTracked = tmpTracker;
       });
     }
 
-    var _tracker = _isBeingTracked;
-    TrackingData.getTrackingCategory('talents').then((_dataList) async {
-      debugPrint(_dataList.toString());
+    var tracker = _isBeingTracked;
+    TrackingData.getTrackingCategory('talents').then((dataList) async {
+      debugPrint(dataList.toString());
       var datasets = <String?>{};
       // Check tracking status and get material list
-      for (var key in _tracker!.keys) {
-        var _isTracked = TrackingData.isBeingTrackedLocal(
-          _dataList,
+      for (var key in tracker!.keys) {
+        var isTracked = TrackingData.isBeingTrackedLocal(
+          dataList,
           '${widget.infoId}_$key',
         );
         var splitKey = key.split('_');
@@ -983,22 +963,22 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
         if (data.material4 != null) {
           datasets.add(widget.materialData![data.material4!]?.innerType);
         }
-        _tracker![key] =
-            (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+        tracker![key] =
+            (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
       }
 
-      _tracker = await _processTracker(_tracker!, datasets);
+      tracker = await _processTracker(tracker!, datasets);
 
       if (mounted) {
         setState(() {
-          _isBeingTracked = _tracker;
+          _isBeingTracked = tracker;
         });
       }
     });
   }
 
   Future<Map<String, TrackingStatus>> _processTracker(
-    Map<String, TrackingStatus> _tracker,
+    Map<String, TrackingStatus> tracker,
     Set<String?> datasets,
   ) async {
     // Get all datasets into a map to check if completed
@@ -1008,8 +988,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
     // Run through tracking status and check if its fully tracked
-    for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
+    for (var key in tracker.keys) {
+      if (tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var splitKey = key.split('_');
       var data =
@@ -1046,18 +1026,18 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
           'Talent_${widget.infoId}_${data.material4}_$key',
         );
       }
-      _tracker[key] = (fullTrack)
+      tracker[key] = (fullTrack)
           ? TrackingStatus.trackedCompleteMaterial
           : TrackingStatus.trackedIncompleteMaterial;
     }
 
-    return _tracker;
+    return tracker;
   }
 
   void _trackTalentAction() {
     debugPrint('Selected: $_selectedTalent : $_selectedTier');
-    var _ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord(
       'talents',
@@ -1066,47 +1046,47 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        "Tracking Tier $_ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
+        "Tracking Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier',
-        _ascendTier.material1,
-        _ascendTier.material1Qty,
-        widget.materialData![_ascendTier.material1!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material1}_${_selectedTalent}_$_selectedTier',
+        ascendTier.material1,
+        ascendTier.material1Qty,
+        widget.materialData![ascendTier.material1!]!.innerType,
         'talent',
-        widget.infoId! + '|' + _selectedTalent!,
+        '${widget.infoId!}|${_selectedTalent!}',
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.addToCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier',
-        _ascendTier.material2,
-        _ascendTier.material2Qty,
-        widget.materialData![_ascendTier.material2!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material2}_${_selectedTalent}_$_selectedTier',
+        ascendTier.material2,
+        ascendTier.material2Qty,
+        widget.materialData![ascendTier.material2!]!.innerType,
         'talent',
-        widget.infoId! + '|' + _selectedTalent!,
+        '${widget.infoId!}|${_selectedTalent!}',
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.addToCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier',
-        _ascendTier.material3,
-        _ascendTier.material3Qty,
-        widget.materialData![_ascendTier.material3!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material3}_${_selectedTalent}_$_selectedTier',
+        ascendTier.material3,
+        ascendTier.material3Qty,
+        widget.materialData![ascendTier.material3!]!.innerType,
         'talent',
-        widget.infoId! + '|' + _selectedTalent!,
+        '${widget.infoId!}|${_selectedTalent!}',
       );
     }
-    if (_ascendTier.material4 != null) {
+    if (ascendTier.material4 != null) {
       TrackingData.addToCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier',
-        _ascendTier.material4,
-        _ascendTier.material4Qty,
-        widget.materialData![_ascendTier.material4!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material4}_${_selectedTalent}_$_selectedTier',
+        ascendTier.material4,
+        ascendTier.material4Qty,
+        widget.materialData![ascendTier.material4!]!.innerType,
         'talent',
-        widget.infoId! + '|' + _selectedTalent!,
+        '${widget.infoId!}|${_selectedTalent!}',
       );
     }
     Navigator.of(context).pop();
@@ -1114,8 +1094,8 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
 
   void _untrackTalentAction() {
     debugPrint('Selected: $_selectedTalent : $_selectedTier');
-    var _ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = widget.info!.talent!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord(
       'talents',
@@ -1124,31 +1104,31 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        "Untracked Tier $_ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
+        "Untracked Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material1}_${_selectedTalent}_$_selectedTier',
-        widget.materialData![_ascendTier.material1!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material1}_${_selectedTalent}_$_selectedTier',
+        widget.materialData![ascendTier.material1!]!.innerType,
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.removeFromCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material2}_${_selectedTalent}_$_selectedTier',
-        widget.materialData![_ascendTier.material2!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material2}_${_selectedTalent}_$_selectedTier',
+        widget.materialData![ascendTier.material2!]!.innerType,
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.removeFromCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material3}_${_selectedTalent}_$_selectedTier',
-        widget.materialData![_ascendTier.material3!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material3}_${_selectedTalent}_$_selectedTier',
+        widget.materialData![ascendTier.material3!]!.innerType,
       );
     }
-    if (_ascendTier.material4 != null) {
+    if (ascendTier.material4 != null) {
       TrackingData.removeFromCollection(
-        'Talent_${widget.infoId}_${_ascendTier.material4}_${_selectedTalent}_$_selectedTier',
-        widget.materialData![_ascendTier.material4!]!.innerType,
+        'Talent_${widget.infoId}_${ascendTier.material4}_${_selectedTalent}_$_selectedTier',
+        widget.materialData![ascendTier.material4!]!.innerType,
       );
     }
 
@@ -1406,19 +1386,19 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     );
   }
 
-  void _showDescription(TalentInfo _talInfo) {
+  void _showDescription(TalentInfo talInfo) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Row(
             children: [
-              GridData.getImageAssetFromFirebase(_talInfo.image, height: 32),
-              Expanded(child: Text(_talInfo.name!)),
+              GridData.getImageAssetFromFirebase(talInfo.image, height: 32),
+              Expanded(child: Text(talInfo.name!)),
             ],
           ),
           content: SingleChildScrollView(
-            child: GridData.generateElementalColoredLine(_talInfo.effect!),
+            child: GridData.generateElementalColoredLine(talInfo.effect!),
           ),
           actions: [
             TextButton(
@@ -1431,18 +1411,18 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
     );
   }
 
-  Widget _shouldShowTalentDescription(TalentInfo _talInfo, bool show) {
+  Widget _shouldShowTalentDescription(TalentInfo talInfo, bool show) {
     return (!show)
         ? const SizedBox.shrink()
         : Padding(
             padding: const EdgeInsets.only(top: 4),
-            child: GridData.generateElementalColoredLine(_talInfo.effect!),
+            child: GridData.generateElementalColoredLine(talInfo.effect!),
           );
   }
 
-  Widget _generateTalentWidget(TalentInfo _talInfo, bool _isPassive) {
+  Widget _generateTalentWidget(TalentInfo talInfo, bool isPassive) {
     return InkWell(
-      onTap: () => _showDescription(_talInfo),
+      onTap: () => _showDescription(talInfo),
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
@@ -1451,7 +1431,7 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
               child: Row(
                 children: [
                   GridData.getImageAssetFromFirebase(
-                    _talInfo.image,
+                    talInfo.image,
                     height: 32,
                   ),
                   Column(
@@ -1460,18 +1440,18 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width - 80,
                         child: Text(
-                          _talInfo.name!,
+                          talInfo.name!,
                           textAlign: TextAlign.start,
                           style: const TextStyle(fontSize: 18),
                         ),
                       ),
-                      Text(_talInfo.type!),
+                      Text(talInfo.type!),
                     ],
                   ),
                 ],
               ),
             ),
-            _shouldShowTalentDescription(_talInfo, _isPassive),
+            _shouldShowTalentDescription(talInfo, isPassive),
           ],
         ),
       ),
@@ -1486,25 +1466,45 @@ class _CharacterTalentPageState extends State<CharacterTalentPage> {
   }
 
   List<Widget> _attackTalentWidgets() {
-    var _wid = <Widget>[];
+    var wid = <Widget>[];
     _sortTalent(widget.info!.talent!.attack!).forEach((key, value) {
-      var _ascendInfo = widget.info!.talent!.ascension;
-      _wid.add(_generateTalentWidget(value, false));
-      _wid.add(_generateAscensionData(key, _ascendInfo));
-      _wid.add(const Divider());
+      var ascendInfo = widget.info!.talent!.ascension;
+      wid.add(_generateTalentWidget(value, false));
+      wid.add(_generateAscensionData(key, ascendInfo));
+      wid.add(const Divider());
     });
 
-    return _wid;
+    return wid;
   }
 
   List<Widget> _passiveTalentWidgets() {
-    var _wid = <Widget>[];
+    var wid = <Widget>[];
     _sortTalent(widget.info!.talent!.passive!).forEach((key, value) {
-      _wid.add(_generateTalentWidget(value, true));
-      _wid.add(const Divider());
+      wid.add(_generateTalentWidget(value, true));
+      wid.add(const Divider());
     });
 
-    return _wid;
+    return wid;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.info == null) return Util.loadingScreen();
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Attack Talents', style: TextStyle(fontSize: 18)),
+            ..._attackTalentWidgets(),
+            const Text('Passive Talents', style: TextStyle(fontSize: 18)),
+            ..._passiveTalentWidgets(),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -1514,29 +1514,14 @@ class CharacterConstellationPage extends StatelessWidget {
   const CharacterConstellationPage({Key? key, required this.info})
       : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    if (info == null) return Util.loadingScreen();
-
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: _constellationWidgets(context),
-        ),
-      ),
-    );
-  }
-
   List<Widget> _constellationWidgets(BuildContext context) {
-    var _wid = <Widget>[];
+    var wid = <Widget>[];
     info!.constellations?.forEach((key, value) {
-      _wid.add(_generateConstellationWidget(key, value, context));
-      _wid.add(const Divider());
+      wid.add(_generateConstellationWidget(key, value, context));
+      wid.add(const Divider());
     });
 
-    return _wid;
+    return wid;
   }
 
   Widget _generateConstellationWidget(
@@ -1583,6 +1568,21 @@ class CharacterConstellationPage extends StatelessWidget {
             child: GridData.generateElementalColoredLine(constellation.effect!),
           ),
         ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (info == null) return Util.loadingScreen();
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: _constellationWidgets(context),
+        ),
       ),
     );
   }

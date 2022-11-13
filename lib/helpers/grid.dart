@@ -60,10 +60,10 @@ class GridData {
   static void setStaticData(String type, QuerySnapshot? snapshot) {
     if (snapshot == null) return;
     debugPrint('Updating $type static data in memory');
-    var _snapData = getDataListFilteredRelease(snapshot.docs);
+    var snapData = getDataListFilteredRelease(snapshot.docs);
     var data = <String, dynamic>{};
 
-    for (var element in _snapData) {
+    for (var element in snapData) {
       var dt = element.data() as Map<String, dynamic>;
       if (dt['released']) {
         data.putIfAbsent(element.id, () => dt);
@@ -224,7 +224,7 @@ class GridData {
                         fontSize: 16,
                       ),
                     ),
-                    Text(description.replaceAll('\\n', '\n')),
+                    GridData.generateElementalColoredLine(description..replaceAll('\\n', '\n')),
                   ],
                 ),
               ),
@@ -263,7 +263,11 @@ class GridData {
   }
 
   static Widget generateElementalColoredLine(String textData) {
-    debugPrint(textData);
+    debugPrint("Before: $textData");
+    // Do the replacement here so that we know exactly how we are going to replace it with
+    textData = GridUtils.replaceToElementColor(textData);
+    debugPrint("After: $textData");
+
     var textSplit = textData.split('§');
     var textElements = <TextSpan>[];
 
@@ -428,33 +432,80 @@ class GridUtils {
 
   static Color getElementalColor(String colorChar) {
     var color = Colors.white;
+    var isDarkMode = Util.themeNotifier.isDarkMode();
     switch (colorChar.toLowerCase()) {
       case 'a':
-        color = const Color(0xFF26A684);
+        color = (isDarkMode) ? const Color(0xFF6addbe) : const Color(0xFF26A684);
         break;
       case 'c':
-        color = const Color(0xFF4878a8);
+        color = (isDarkMode) ? const Color(0xFF8eaece) : const Color(0xFF4878a8);
         break;
       case 'd':
-        color = const Color(0xFF51810e);
+        color = (isDarkMode) ? const Color(0xFFa0e938) : const Color(0xFF51810e);
         break;
       case 'e':
-        color = const Color(0xFF9336b0);
+        color = (isDarkMode) ? const Color(0xFFc27ed8) : const Color(0xFF9336b0);
         break;
       case 'g':
-        color = const Color(0xFFb67607);
+        color = (isDarkMode) ? const Color(0xFFf8b746) : const Color(0xFFb67607);
         break;
       case 'h':
-        color = const Color(0xFF0b4dda);
+        color = (isDarkMode) ? const Color(0xFF5e8ff7) : const Color(0xFF0b4dda);
         break;
       case 'p':
-        color = const Color(0xFFbf2818);
+        color = (isDarkMode) ? const Color(0xFFeb6f62) : const Color(0xFFbf2818);
         break;
       default:
-        color = (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+        color = (isDarkMode) ? Colors.white : Colors.black;
         break;
     }
 
     return color;
+  }
+
+  static String replaceToElementColor(String textData) {
+    // Effects
+    textData = textData.replaceAll('Vaporize', '§pVaporize§r');
+    textData = textData.replaceAll('Overloaded', '§pOverloaded§r');
+    textData = textData.replaceAll('Melt', '§pMelt§r');
+    textData = textData.replaceAll('Burning', '§pBurning§r');
+    textData = textData.replaceAll('Frozen', '§cFrozen§r');
+    textData = textData.replaceAll('Bloom', '§dBloom§r');
+    textData = textData.replaceAll('Super-conduct', '§eSuper-conduct§r');
+    textData = textData.replaceAll('Quicken', '§dQuicken§r');
+    textData = textData.replaceAll('Swirl', '§aSwirl§r');
+    textData = textData.replaceAll('Crystallize', '§gCrystallize§r');
+
+    // Elements
+    textData = textData.replaceAll('Anemo', '§aAnemo§r');
+    textData = textData.replaceAll('Cryo', '§cCryo§r');
+    textData = textData.replaceAll('Dendro', '§dDendro§r');
+    textData = textData.replaceAll('Electro', '§eElectro§r');
+    textData = textData.replaceAll('Geo', '§gGeo§r');
+    textData = textData.replaceAll('Hydro', '§hHydro§r');
+    textData = textData.replaceAll('Pyro', '§pPyro§r');
+
+    // Specials
+    textData = textData.replaceAll('§hHydro§r-infused', '§hHydro-infused§r');
+    textData = textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
+
+    // DMG
+    textData = textData.replaceAll('§aAnemo§r DMG', '§aAnemo DMG§r');
+    textData = textData.replaceAll('§cCryo§r DMG', '§cCryo DMG§r');
+    textData = textData.replaceAll('§dDendro§r DMG', '§dDendro DMG§r');
+    textData = textData.replaceAll('§eElectro§r DMG', '§eElectro DMG§r');
+    textData = textData.replaceAll('§gGeo§r DMG', '§gGeo DMG§r');
+    textData = textData.replaceAll('§hHydro§r DMG', '§hHydro DMG§r');
+    textData = textData.replaceAll('§pPyro§r DMG', '§pPyro DMG§r');
+
+    textData = textData.replaceAll('AoE §aAnemo DMG§r', '§aAoE Anemo DMG§r');
+    textData = textData.replaceAll('AoE §cCryo DMG§r', '§cAoE Cryo DMG§r');
+    textData = textData.replaceAll('AoE §dDendro DMG§r', '§dAoE Dendro DMG§r');
+    textData = textData.replaceAll('AoE §eElectro DMG§r', '§eAoE Electro DMG§r');
+    textData = textData.replaceAll('AoE §gGeo DMG§r', '§gAoE Geo DMG§r');
+    textData = textData.replaceAll('AoE §hHydro DMG§r', '§hAoE Hydro DMG§r');
+    textData = textData.replaceAll('AoE §pPyro DMG§r', '§pAoE Pyro DMG§r');
+
+    return textData;
   }
 }
