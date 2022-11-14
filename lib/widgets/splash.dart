@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 import '../firebase_options.dart';
 
@@ -17,10 +18,10 @@ class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashPageState createState() => _SplashPageState();
+  SplashPageState createState() => SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class SplashPageState extends State<SplashPage> {
   bool _darkMode = true;
   final double _photoSize = 100.0;
   late VoidCallback _listener;
@@ -39,14 +40,94 @@ class _SplashPageState extends State<SplashPage> {
     Util.themeNotifier.addListener(_listener);
   }
 
+  void _complete(String value) {
+    Util.themeNotifier.removeListener(_listener);
+    Get.offNamed(value);
+  }
+
+  Future<void> _miscInit() async {
+    tz.initializeTimeZones();
+  }
+
+  Future<void> _setupNotifications() async {
+    if (kIsWeb) return; // Return straight away for web as it is not supported
+    var manager = NotificationManager.getInstance()!;
+    await manager.initialize();
+    debugPrint('Initialized Notifications');
+    await manager.processNotificationAppLaunch();
+    await manager.rescheduleAllScheduledReminders();
+  }
+
+  Future<bool> _initFirebase() async {
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      await FirebaseAppCheck.instance.activate(
+        webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',  // Replace this with your actual site key
+        androidProvider: (kDebugMode) ? AndroidProvider.debug : AndroidProvider.safetyNet,
+      );
+      if (!kIsWeb) {
+        var crashHandler = FirebaseCrashlytics.instance;
+        var perfHandler = FirebasePerformance.instance;
+        if (kDebugMode) {
+          await crashHandler.setCrashlyticsCollectionEnabled(false);
+          await perfHandler.setPerformanceCollectionEnabled(false);
+        } else {
+          if (!crashHandler.isCrashlyticsCollectionEnabled) {
+            await crashHandler.setCrashlyticsCollectionEnabled(true);
+          }
+          if (!(await perfHandler.isPerformanceCollectionEnabled())) {
+            await perfHandler.setPerformanceCollectionEnabled(true);
+          }
+          FlutterError.onError = crashHandler.recordFlutterError;
+          Isolate.current.addErrorListener(RawReceivePort((pair) async {
+            final List<dynamic> errorAndStacktrace = pair;
+            await crashHandler.recordError(
+              errorAndStacktrace.first,
+              errorAndStacktrace.last,
+            );
+          }).sendPort);
+        }
+        debugPrint(
+          'Firebase Crashlytics: ${crashHandler.isCrashlyticsCollectionEnabled}',
+        );
+        debugPrint(
+          'Firebase Performance: ${await perfHandler.isPerformanceCollectionEnabled()}',
+        );
+      } else {
+        debugPrint('Web Mode, Crashlytics and Performance disabled');
+      }
+      var auth = FirebaseAuth.instance;
+      if (auth.currentUser != null) return true;
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+
+    return false;
+  }
+
+  Future<String> _login() async {
+    var res = await Future.wait(
+      [
+        _initFirebase(),
+        _setupNotifications(),
+        _miscInit(),
+        Future.delayed(const Duration(seconds: 2)),
+      ],
+    );
+
+    return (res[0]) ? '/menu' : '/';
+  }
+
   @override
   Widget build(BuildContext context) {
     debugPrint('Dark Mode: $_darkMode');
-    var _image = _darkMode
+    var image = _darkMode
         ? Image.asset('assets/icons/splash/splash_dark.png')
         : Image.asset('assets/icons/splash/splash.png');
-    var _backgroundColor = _darkMode ? Colors.black : Colors.white;
-    var _textColor = _darkMode ? Colors.white : Colors.black;
+    var backgroundColor = _darkMode ? Colors.black : Colors.white;
+    var textColor = _darkMode ? Colors.white : Colors.black;
 
     return Scaffold(
       body: Stack(
@@ -54,7 +135,7 @@ class _SplashPageState extends State<SplashPage> {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: _backgroundColor,
+              color: backgroundColor,
             ),
           ),
           Column(
@@ -70,7 +151,7 @@ class _SplashPageState extends State<SplashPage> {
                       radius: _photoSize,
                       child: Hero(
                         tag: 'splashscreenImage',
-                        child: Container(child: _image),
+                        child: Container(child: image),
                       ),
                     ),
                     const Padding(
@@ -79,7 +160,7 @@ class _SplashPageState extends State<SplashPage> {
                     Text(
                       'Genshin Impact Weekly Material Tracker',
                       style: TextStyle(
-                        color: _textColor,
+                        color: textColor,
                         fontSize: 20.0,
                         fontFamily: 'Product-Sans-Bold',
                       ),
@@ -104,7 +185,7 @@ class _SplashPageState extends State<SplashPage> {
                       padding: const EdgeInsets.only(top: 10.0),
                       child: Text(
                         'Initializing App',
-                        style: TextStyle(color: _textColor),
+                        style: TextStyle(color: textColor),
                       ),
                     ),
                   ],
@@ -115,79 +196,5 @@ class _SplashPageState extends State<SplashPage> {
         ],
       ),
     );
-  }
-
-  void _complete(String value) {
-    Util.themeNotifier.removeListener(_listener);
-    Get.offNamed(value);
-  }
-
-  Future<void> _setupNotifications() async {
-    if (kIsWeb) return; // Return straight away for web as it is not supported
-    var manager = NotificationManager.getInstance()!;
-    await manager.initialize();
-    debugPrint('Initialized Notifications');
-    await manager.processNotificationAppLaunch();
-    await manager.rescheduleAllScheduledReminders();
-  }
-
-  Future<bool> _initFirebase() async {
-    try {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      await FirebaseAppCheck.instance.activate(
-        webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',  // Replace this with your actual site key
-      );
-      if (!kIsWeb) {
-        var _crashHandler = FirebaseCrashlytics.instance;
-        var _perfHandler = FirebasePerformance.instance;
-        if (kDebugMode) {
-          await _crashHandler.setCrashlyticsCollectionEnabled(false);
-          await _perfHandler.setPerformanceCollectionEnabled(false);
-        } else {
-          if (!_crashHandler.isCrashlyticsCollectionEnabled) {
-            await _crashHandler.setCrashlyticsCollectionEnabled(true);
-          }
-          if (!(await _perfHandler.isPerformanceCollectionEnabled())) {
-            await _perfHandler.setPerformanceCollectionEnabled(true);
-          }
-          FlutterError.onError = _crashHandler.recordFlutterError;
-          Isolate.current.addErrorListener(RawReceivePort((pair) async {
-            final List<dynamic> errorAndStacktrace = pair;
-            await _crashHandler.recordError(
-              errorAndStacktrace.first,
-              errorAndStacktrace.last,
-            );
-          }).sendPort);
-        }
-        debugPrint(
-          'Firebase Crashlytics: ${_crashHandler.isCrashlyticsCollectionEnabled}',
-        );
-        debugPrint(
-          'Firebase Performance: ${await _perfHandler.isPerformanceCollectionEnabled()}',
-        );
-      } else {
-        debugPrint('Web Mode, Crashlytics and Performance disabled');
-      }
-      var _auth = FirebaseAuth.instance;
-      if (_auth.currentUser != null) return true;
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-
-    return false;
-  }
-
-  Future<String> _login() async {
-    var res = await Future.wait(
-      [
-        _initFirebase(),
-        _setupNotifications(),
-        Future.delayed(const Duration(seconds: 2)),
-      ],
-    );
-
-    return (res[0]) ? '/menu' : '/';
   }
 }
