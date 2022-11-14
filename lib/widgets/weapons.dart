@@ -10,6 +10,7 @@ import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -136,6 +137,33 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     _getStaticData();
   }
 
+  List<Widget> _getLastBanner() {
+    if (_info == null || _info!.lastBannerCount == null || _info!.lastBannerEnd == null) {
+      // No banners
+      debugPrint('No banners for character');
+
+      return [const SizedBox.shrink()];
+    }
+
+    var df = Util.defaultDateFormat;
+    var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
+    var endState = 'Ended';
+    if (curDt.isBefore(_info!.lastBannerEnd!)) {
+      endState = 'Ending';
+    }
+    var bannerGrammar = _info!.lastBannerCount == 1 ? 'banner' : 'banners';
+    var bt = '${_info!.lastBannerCount} $bannerGrammar ago';
+    if (_info!.lastBannerCount! < 1) {
+      bt = 'Current banner';
+    }
+    // Craft the message
+    var message = '$bt in ${_info!.lastBannerName}\n'
+        '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
+
+
+    return GridData.generateInfoLine(message, Icons.calendar_month);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_info == null) return Util.loadingScreen();
@@ -172,6 +200,7 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
               ..._generateEffectName(),
               ..._getWeaponStats(),
               const Divider(),
+              ..._getLastBanner(),
               ...TrackingData.getAscensionHeader(),
               _generateAscensionData(),
             ],

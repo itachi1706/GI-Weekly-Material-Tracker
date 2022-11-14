@@ -13,6 +13,11 @@ class WeaponData extends CommonData {
   String? series;
   Map<String, WeaponAscension>? ascension;
 
+  // Time since last banner
+  int? lastBannerCount;
+  DateTime? lastBannerEnd;
+  String? lastBannerName;
+
   WeaponData({
     this.secondaryStat,
     this.secondaryStatType,
@@ -30,6 +35,9 @@ class WeaponData extends CommonData {
     this.maxSecondaryStat,
     this.ascension,
     this.series,
+    this.lastBannerCount,
+    this.lastBannerEnd,
+    this.lastBannerName,
     released,
   }) : super(
           image: image,
@@ -59,6 +67,9 @@ class WeaponData extends CommonData {
       effectName: parsedJson['effectName'],
       series: parsedJson['series'],
       released: parsedJson['released'],
+      lastBannerCount: parsedJson['banners_since_last_appearance'],
+      lastBannerEnd: parsedJson['date_since_last_appearance'] != null ? DateTime.parse(parsedJson['date_since_last_appearance']) : null,
+      lastBannerName: parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
     );
   }
 
