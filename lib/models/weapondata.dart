@@ -74,12 +74,12 @@ class WeaponData extends CommonData {
   }
 
   static Map<String, WeaponData> getList(Map<String, dynamic> listString) {
-    var _fin = <String, WeaponData>{};
+    var fin = <String, WeaponData>{};
     listString.forEach((key, value) {
-      _fin.putIfAbsent(key, () => WeaponData.fromJson(value));
+      fin.putIfAbsent(key, () => WeaponData.fromJson(value));
     });
 
-    return _fin;
+    return fin;
   }
 }
 
@@ -118,26 +118,26 @@ class WeaponAscension extends CommonAscension {
   }
 
   static Map<String, WeaponAscension> getFromMap(Map<String, dynamic> ascend) {
-    var _fin = <String, WeaponAscension>{};
+    var fin = <String, WeaponAscension>{};
     if (ascend.containsKey('1')) {
-      _fin.putIfAbsent('1', () => WeaponAscension.fromJson(ascend['1']));
+      fin.putIfAbsent('1', () => WeaponAscension.fromJson(ascend['1']));
     }
     if (ascend.containsKey('2')) {
-      _fin.putIfAbsent('2', () => WeaponAscension.fromJson(ascend['2']));
+      fin.putIfAbsent('2', () => WeaponAscension.fromJson(ascend['2']));
     }
     if (ascend.containsKey('3')) {
-      _fin.putIfAbsent('3', () => WeaponAscension.fromJson(ascend['3']));
+      fin.putIfAbsent('3', () => WeaponAscension.fromJson(ascend['3']));
     }
     if (ascend.containsKey('4')) {
-      _fin.putIfAbsent('4', () => WeaponAscension.fromJson(ascend['4']));
+      fin.putIfAbsent('4', () => WeaponAscension.fromJson(ascend['4']));
     }
     if (ascend.containsKey('5')) {
-      _fin.putIfAbsent('5', () => WeaponAscension.fromJson(ascend['5']));
+      fin.putIfAbsent('5', () => WeaponAscension.fromJson(ascend['5']));
     }
     if (ascend.containsKey('6')) {
-      _fin.putIfAbsent('6', () => WeaponAscension.fromJson(ascend['6']));
+      fin.putIfAbsent('6', () => WeaponAscension.fromJson(ascend['6']));
     }
 
-    return _fin;
+    return fin;
   }
 }
