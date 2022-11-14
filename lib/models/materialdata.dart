@@ -41,22 +41,22 @@ class MaterialDataCommon extends CommonData {
   static Map<String, MaterialDataCommon> getList(
     Map<String, dynamic> listString,
   ) {
-    var _fin = <String, MaterialDataCommon>{};
+    var fin = <String, MaterialDataCommon>{};
     listString.forEach((key, value) {
       switch (value['innerType']) {
         case 'mob_drops':
-          _fin.putIfAbsent(key, () => MaterialDataMob.fromJson(value));
+          fin.putIfAbsent(key, () => MaterialDataMob.fromJson(value));
           break;
         case 'domain_material':
-          _fin.putIfAbsent(key, () => MaterialDataDomains.fromJson(value));
+          fin.putIfAbsent(key, () => MaterialDataDomains.fromJson(value));
           break;
         default:
-          _fin.putIfAbsent(key, () => MaterialDataCommon.fromJson(value));
+          fin.putIfAbsent(key, () => MaterialDataCommon.fromJson(value));
           break;
       }
     });
 
-    return _fin;
+    return fin;
   }
 }
 

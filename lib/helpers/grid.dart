@@ -20,7 +20,9 @@ class GridData {
     String? itemKey,
     Map<String, MaterialDataCommon>? data,
   ) {
-    if (itemKey == null) return Image.memory(Util.kTransparentImage, height: 16);
+    if (itemKey == null) {
+      return Image.memory(Util.kTransparentImage, height: 16);
+    }
     // debugPrint('getAscensionImage: $itemKey');
 
     return getImageAssetFromFirebase(
@@ -224,7 +226,9 @@ class GridData {
                         fontSize: 16,
                       ),
                     ),
-                    GridData.generateElementalColoredLine(description..replaceAll('\\n', '\n')),
+                    GridData.generateElementalColoredLine(
+                      description..replaceAll('\\n', '\n'),
+                    ),
                   ],
                 ),
               ),
@@ -259,7 +263,10 @@ class GridData {
   static List<Widget> unreleasedCheck(bool released, String type) {
     if (released) return [const SizedBox.shrink()];
 
-    return GridData.generateInfoLine('This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change', Icons.warning_amber);
+    return GridData.generateInfoLine(
+      'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+      Icons.warning_amber,
+    );
   }
 
   static Widget generateElementalColoredLine(String textData) {
@@ -435,25 +442,32 @@ class GridUtils {
     var isDarkMode = Util.themeNotifier.isDarkMode();
     switch (colorChar.toLowerCase()) {
       case 'a':
-        color = (isDarkMode) ? const Color(0xFF6addbe) : const Color(0xFF26A684);
+        color =
+            (isDarkMode) ? const Color(0xFF6addbe) : const Color(0xFF26A684);
         break;
       case 'c':
-        color = (isDarkMode) ? const Color(0xFF8eaece) : const Color(0xFF4878a8);
+        color =
+            (isDarkMode) ? const Color(0xFF8eaece) : const Color(0xFF4878a8);
         break;
       case 'd':
-        color = (isDarkMode) ? const Color(0xFFa0e938) : const Color(0xFF51810e);
+        color =
+            (isDarkMode) ? const Color(0xFFa0e938) : const Color(0xFF51810e);
         break;
       case 'e':
-        color = (isDarkMode) ? const Color(0xFFc27ed8) : const Color(0xFF9336b0);
+        color =
+            (isDarkMode) ? const Color(0xFFc27ed8) : const Color(0xFF9336b0);
         break;
       case 'g':
-        color = (isDarkMode) ? const Color(0xFFf8b746) : const Color(0xFFb67607);
+        color =
+            (isDarkMode) ? const Color(0xFFf8b746) : const Color(0xFFb67607);
         break;
       case 'h':
-        color = (isDarkMode) ? const Color(0xFF5e8ff7) : const Color(0xFF0b4dda);
+        color =
+            (isDarkMode) ? const Color(0xFF5e8ff7) : const Color(0xFF0b4dda);
         break;
       case 'p':
-        color = (isDarkMode) ? const Color(0xFFeb6f62) : const Color(0xFFbf2818);
+        color =
+            (isDarkMode) ? const Color(0xFFeb6f62) : const Color(0xFFbf2818);
         break;
       default:
         color = (isDarkMode) ? Colors.white : Colors.black;
@@ -490,7 +504,8 @@ class GridUtils {
 
     // Specials
     textData = textData.replaceAll('§hHydro§r-infused', '§hHydro-infused§r');
-    textData = textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
+    textData =
+        textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
 
     // DMG
     textData = textData.replaceAll('§aAnemo§r DMG', '§aAnemo DMG§r');
@@ -504,7 +519,8 @@ class GridUtils {
     textData = textData.replaceAll('AoE §aAnemo DMG§r', '§aAoE Anemo DMG§r');
     textData = textData.replaceAll('AoE §cCryo DMG§r', '§cAoE Cryo DMG§r');
     textData = textData.replaceAll('AoE §dDendro DMG§r', '§dAoE Dendro DMG§r');
-    textData = textData.replaceAll('AoE §eElectro DMG§r', '§eAoE Electro DMG§r');
+    textData =
+        textData.replaceAll('AoE §eElectro DMG§r', '§eAoE Electro DMG§r');
     textData = textData.replaceAll('AoE §gGeo DMG§r', '§gAoE Geo DMG§r');
     textData = textData.replaceAll('AoE §hHydro DMG§r', '§hAoE Hydro DMG§r');
     textData = textData.replaceAll('AoE §pPyro DMG§r', '§pAoE Pyro DMG§r');

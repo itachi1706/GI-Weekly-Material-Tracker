@@ -20,19 +20,19 @@ enum TrackingStatus {
 class TrackingUtils {
   static Color getTrackingColor(
     int index,
-    Map<String, TrackingStatus> _isBeingTracked,
+    Map<String, TrackingStatus> isBeingTracked,
   ) {
-    return getTrackingColorString(index.toString(), _isBeingTracked);
+    return getTrackingColorString(index.toString(), isBeingTracked);
   }
 
   static Color getTrackingColorString(
     String index,
-    Map<String, TrackingStatus> _isBeingTracked,
+    Map<String, TrackingStatus> isBeingTracked,
   ) {
-    if (!_isBeingTracked.keys.contains(index.toString())) {
+    if (!isBeingTracked.keys.contains(index.toString())) {
       return Colors.yellow;
     } // No such key (loading)
-    switch (_isBeingTracked[index.toString()]) {
+    switch (isBeingTracked[index.toString()]) {
       case TrackingStatus.unknown:
       case TrackingStatus.checking:
       case TrackingStatus.notTracked:
@@ -45,7 +45,8 @@ class TrackingUtils {
         return (Util.themeNotifier.isDarkMode())
             ? Colors.indigo
             : Colors.lightBlue;
-      default: return Colors.yellow; // Error
+      default:
+        return Colors.yellow; // Error
     }
   }
 }
@@ -72,13 +73,13 @@ class TrackingData {
   }
 
   static Future<bool> isBeingTracked(String key, String? item) async {
-    var _data = await getTrackingCategory(key);
+    var data = await getTrackingCategory(key);
 
-    return (_data == null) ? false : _data.contains(item);
+    return (data == null) ? false : data.contains(item);
   }
 
-  static bool isBeingTrackedLocal(List<dynamic>? _data, String item) {
-    return (_data == null) ? false : _data.contains(item);
+  static bool isBeingTrackedLocal(List<dynamic>? data, String item) {
+    return (data == null) ? false : data.contains(item);
   }
 
   static Future<void> addToRecord(String key, String? item) async {
@@ -97,7 +98,12 @@ class TrackingData {
     }
   }
 
-  static void setCount(String? key, String? type, int curCnt, int maxCnt) async {
+  static void setCount(
+    String? key,
+    String? type,
+    int curCnt,
+    int maxCnt,
+  ) async {
     if (maxCnt < 0) maxCnt = 0;
     if (curCnt >= maxCnt) {
       curCnt = maxCnt;
@@ -247,7 +253,11 @@ class TrackingData {
     return data.current! >= data.max!;
   }
 
-  static Widget getSupportingWidget(String? image, int? ascension, String? type) {
+  static Widget getSupportingWidget(
+    String? image,
+    int? ascension,
+    String? type,
+  ) {
     if (image == null) return Container();
     Widget typeWidget = const SizedBox.shrink();
     if (type != null) {
@@ -378,7 +388,11 @@ class UpdateMultiTracking {
     ];
   }
 
-  void _displayDialogMat(String navigateTo, String? key, TrackingUserData data) {
+  void _displayDialogMat(
+    String navigateTo,
+    String? key,
+    TrackingUserData data,
+  ) {
     _cntCurrent = data.current.toString();
     _cntTotal = data.max.toString();
     _textCurrentController.text = _cntCurrent!;
@@ -393,7 +407,10 @@ class UpdateMultiTracking {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(_material!.image, height: 48),
+                GridData.getImageAssetFromFirebase(
+                  _material!.image,
+                  height: 48,
+                ),
                 TextField(
                   onChanged: (newValue) {
                     _cntCurrent = newValue;

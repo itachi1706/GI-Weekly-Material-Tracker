@@ -88,10 +88,15 @@ class CharacterData extends CommonData {
       fullName: parsedJson['fullName'],
       crossover: parsedJson['crossover'] ?? false,
       released: parsedJson['released'],
-      titles: parsedJson['titles'] != null ? List<String>.from(parsedJson['titles']) : null,
+      titles: parsedJson['titles'] != null
+          ? List<String>.from(parsedJson['titles'])
+          : null,
       lastBannerCount: parsedJson['banners_since_last_appearance'],
-      lastBannerEnd: parsedJson['date_since_last_appearance'] != null ? DateTime.parse(parsedJson['date_since_last_appearance']) : null,
-      lastBannerName: parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
+      lastBannerEnd: parsedJson['date_since_last_appearance'] != null
+          ? DateTime.parse(parsedJson['date_since_last_appearance'])
+          : null,
+      lastBannerName:
+          parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
     );
   }
 
@@ -149,27 +154,27 @@ class CharacterAscension extends CommonAscension {
   static Map<String, CharacterAscension> getFromMap(
     Map<String, dynamic> ascend,
   ) {
-    var _fin = <String, CharacterAscension>{};
+    var fin = <String, CharacterAscension>{};
     if (ascend.containsKey('1')) {
-      _fin.putIfAbsent('1', () => CharacterAscension.fromJson(ascend['1']));
+      fin.putIfAbsent('1', () => CharacterAscension.fromJson(ascend['1']));
     }
     if (ascend.containsKey('2')) {
-      _fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
+      fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
     }
     if (ascend.containsKey('3')) {
-      _fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
+      fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
     }
     if (ascend.containsKey('4')) {
-      _fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
+      fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
     }
     if (ascend.containsKey('5')) {
-      _fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
+      fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
     }
     if (ascend.containsKey('6')) {
-      _fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
+      fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
     }
 
-    return _fin;
+    return fin;
   }
 }
 
@@ -191,39 +196,39 @@ class CharacterTalent {
   static Map<String, CharacterAscension> getAscensionFromMap(
     Map<String, dynamic> ascend,
   ) {
-    var _fin = <String, CharacterAscension>{};
+    var fin = <String, CharacterAscension>{};
     if (ascend.containsKey('2')) {
-      _fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
+      fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
     }
     if (ascend.containsKey('3')) {
-      _fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
+      fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
     }
     if (ascend.containsKey('4')) {
-      _fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
+      fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
     }
     if (ascend.containsKey('5')) {
-      _fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
+      fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
     }
     if (ascend.containsKey('6')) {
-      _fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
+      fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
     }
     if (ascend.containsKey('7')) {
-      _fin.putIfAbsent('7', () => CharacterAscension.fromJson(ascend['7']));
+      fin.putIfAbsent('7', () => CharacterAscension.fromJson(ascend['7']));
     }
     if (ascend.containsKey('8')) {
-      _fin.putIfAbsent('8', () => CharacterAscension.fromJson(ascend['8']));
+      fin.putIfAbsent('8', () => CharacterAscension.fromJson(ascend['8']));
     }
     if (ascend.containsKey('9')) {
-      _fin.putIfAbsent('9', () => CharacterAscension.fromJson(ascend['9']));
+      fin.putIfAbsent('9', () => CharacterAscension.fromJson(ascend['9']));
     }
     if (ascend.containsKey('10')) {
-      _fin.putIfAbsent(
+      fin.putIfAbsent(
         '10',
         () => CharacterAscension.fromJson(ascend['10']),
       );
     }
 
-    return _fin;
+    return fin;
   }
 }
 
@@ -247,11 +252,12 @@ class TalentInfo {
   }
 
   static Map<String, TalentInfo> getFromMap(Map<String, dynamic> data) {
-    var _fin = <String, TalentInfo>{};
-    data.forEach((key, value) =>
-        _fin.putIfAbsent(key, () => TalentInfo.fromJson(value)));
+    var fin = <String, TalentInfo>{};
+    data.forEach(
+      (key, value) => fin.putIfAbsent(key, () => TalentInfo.fromJson(value)),
+    );
 
-    return _fin;
+    return fin;
   }
 }
 
@@ -273,14 +279,14 @@ class CharacterConstellations {
   static Map<int, CharacterConstellations> getFromMap(
     Map<String, dynamic> data,
   ) {
-    var _fin = <int, CharacterConstellations>{};
+    var fin = <int, CharacterConstellations>{};
     data.forEach((key, value) {
-      _fin.putIfAbsent(
+      fin.putIfAbsent(
         int.tryParse(key) ?? 0,
         () => CharacterConstellations.fromJson(value),
       );
     });
 
-    return _fin;
+    return fin;
   }
 }

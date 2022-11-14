@@ -8,6 +8,11 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 class PlaceholderPage extends StatelessWidget {
   const PlaceholderPage({Key? key}) : super(key: key);
 
+  void _signOut() async {
+    await _auth.signOut();
+    await Get.offAllNamed('/');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +34,6 @@ class PlaceholderPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _signOut() async {
-    await _auth.signOut();
-    await Get.offAllNamed('/');
   }
 }
 

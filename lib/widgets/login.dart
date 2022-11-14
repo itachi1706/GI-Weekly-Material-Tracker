@@ -15,36 +15,11 @@ class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  LoginPageState createState() => LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class LoginPageState extends State<LoginPage> {
   bool _loggingIn = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: _auth.authStateChanges(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          final user = snapshot.data as User?;
-          Util.updateFirebaseUid();
-          if (user != null) {
-            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-              Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
-              Get.offAllNamed('/menu');
-            });
-
-            return _loginScreen();
-          }
-        }
-        // Signed out
-        debugPrint('Signed out');
-
-        return _loginScreen();
-      },
-    );
-  }
 
   List<Widget> _signInButtons() {
     var wid = <Widget>[
@@ -87,8 +62,12 @@ class _LoginPageState extends State<LoginPage> {
       // Add footnote for login
       wid.insert(0, const Spacer());
       wid.add(const Spacer());
-      wid.add(const Text("Note: If you have just logged in, please wait a while on this page for the login to complete"));
-  }
+      wid.add(
+        const Text(
+          "Note: If you have just logged in, please wait a while on this page for the login to complete",
+        ),
+      );
+    }
 
     return wid;
   }
@@ -159,5 +138,30 @@ class _LoginPageState extends State<LoginPage> {
       // Once signed in, return the UserCredential
       return await _auth.signInWithCredential(credential);
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: _auth.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final user = snapshot.data as User?;
+          Util.updateFirebaseUid();
+          if (user != null) {
+            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+              Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
+              Get.offAllNamed('/menu');
+            });
+
+            return _loginScreen();
+          }
+        }
+        // Signed out
+        debugPrint('Signed out');
+
+        return _loginScreen();
+      },
+    );
   }
 }

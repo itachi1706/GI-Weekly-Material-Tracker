@@ -23,10 +23,10 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   ThemeMode _theme = Util.themeNotifier.currentTheme();
 
   @override
@@ -119,6 +119,13 @@ class _MyAppState extends State<MyApp> {
 class TransitionPage extends StatelessWidget {
   const TransitionPage({Key? key}) : super(key: key);
 
+  Future<void> _skip() async {
+    Util.currentRoute = '/tracking';
+    Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
+
+    return;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -127,12 +134,5 @@ class TransitionPage extends StatelessWidget {
         return Util.loadingScreen();
       },
     );
-  }
-
-  Future<void> _skip() async {
-    Util.currentRoute = '/tracking';
-    Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
-
-    return;
   }
 }

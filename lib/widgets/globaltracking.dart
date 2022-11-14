@@ -56,10 +56,10 @@ class GlobalTracker extends StatefulWidget {
   const GlobalTracker({Key? key, required this.path}) : super(key: key);
 
   @override
-  _GlobalTrackerState createState() => _GlobalTrackerState();
+  GlobalTrackerState createState() => GlobalTrackerState();
 }
 
-class _GlobalTrackerState extends State<GlobalTracker> {
+class GlobalTrackerState extends State<GlobalTracker> {
   Map<String, MaterialDataCommon>? _materialData;
 
   @override
@@ -72,6 +72,93 @@ class _GlobalTrackerState extends State<GlobalTracker> {
             _materialData = value;
           }),
         });
+  }
+
+  Widget _getGlobalTrackingList(Map<String?, CommonTracking> conData) {
+    return ListView.builder(
+      itemCount: conData.length,
+      itemBuilder: (context, index) {
+        var key = conData.keys.elementAt(index);
+        var data = conData[key]!;
+        debugPrint(data.toString());
+        var material = _materialData![data.name!]!;
+
+        return Card(
+          color: GridUtils.getRarityColor(material.rarity),
+          child: InkWell(
+            onTap: () => Get.toNamed('/globalMaterial/${data.name}'),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  GridData.getImageAssetFromFirebase(
+                    material.image,
+                    height: 48,
+                  ),
+                  _getMaterialInfo(material),
+                  const Spacer(),
+                  Column(
+                    children: [
+                      Text(
+                        '${data.current}/${data.max}',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: GridData.getCountColor(
+                            data.current,
+                            data.max,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _getMaterialInfo(MaterialDataCommon material) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width - 180,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            material.name!,
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+          RatingBar.builder(
+            ignoreGestures: true,
+            itemCount: 5,
+            itemSize: 12,
+            unratedColor: Colors.transparent,
+            initialRating: double.tryParse(
+              material.rarity.toString(),
+            )!,
+            itemBuilder: (context, _) =>
+                const Icon(Icons.star, color: Colors.amber),
+            onRatingUpdate: (rating) {
+              debugPrint(rating.toString());
+            },
+          ),
+          Text(
+            material.obtained!.replaceAll('\\n', '\n'),
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -94,32 +181,33 @@ class _GlobalTrackerState extends State<GlobalTracker> {
         }
 
         var data = snapshot.data!;
-        final _collectionLen = data.docs.length;
+        final collectionLen = data.docs.length;
 
-        if (_collectionLen > 0) {
+        if (collectionLen > 0) {
           // Consolidate stuff together
-          var _conData = <String?, CommonTracking>{};
+          var conData = <String?, CommonTracking>{};
           for (var snap in data.docs) {
-            var _tmp = TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
-            if (_conData.containsKey(_tmp.name)) {
+            var tmp =
+                TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
+            if (conData.containsKey(tmp.name)) {
               // Append
-              _conData[_tmp.name]!.current =
-                  _conData[_tmp.name]!.current! + _tmp.current!;
-              _conData[_tmp.name]!.max = _conData[_tmp.name]!.max! + _tmp.max!;
+              conData[tmp.name]!.current =
+                  conData[tmp.name]!.current! + tmp.current!;
+              conData[tmp.name]!.max = conData[tmp.name]!.max! + tmp.max!;
             } else {
-              _conData.putIfAbsent(
-                _tmp.name,
+              conData.putIfAbsent(
+                tmp.name,
                 () => CommonTracking(
-                  current: _tmp.current,
-                  max: _tmp.max,
-                  name: _tmp.name,
-                  type: _tmp.type,
+                  current: tmp.current,
+                  max: tmp.max,
+                  name: tmp.name,
+                  type: tmp.type,
                 ),
               );
             }
           }
 
-          return _getGlobalTrackingList(_conData);
+          return _getGlobalTrackingList(conData);
         } else {
           return const Center(
             child: Text('No items being tracked for this material category'),
@@ -128,102 +216,16 @@ class _GlobalTrackerState extends State<GlobalTracker> {
       },
     );
   }
-
-  Widget _getGlobalTrackingList(Map<String?, CommonTracking> _conData) {
-    return ListView.builder(
-      itemCount: _conData.length,
-      itemBuilder: (context, index) {
-        var key = _conData.keys.elementAt(index);
-        var _data = _conData[key]!;
-        debugPrint(_data.toString());
-        var _material = _materialData![_data.name!]!;
-
-        return Card(
-          color: GridUtils.getRarityColor(_material.rarity),
-          child: InkWell(
-            onTap: () => Get.toNamed('/globalMaterial/${_data.name}'),
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GridData.getImageAssetFromFirebase(
-                    _material.image,
-                    height: 48,
-                  ),
-                  _getMaterialInfo(_material),
-                  const Spacer(),
-                  Column(
-                    children: [
-                      Text(
-                        '${_data.current}/${_data.max}',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: GridData.getCountColor(
-                            _data.current,
-                            _data.max,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _getMaterialInfo(MaterialDataCommon _material) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width - 180,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            _material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-          RatingBar.builder(
-            ignoreGestures: true,
-            itemCount: 5,
-            itemSize: 12,
-            unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              _material.rarity.toString(),
-            )!,
-            itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
-            onRatingUpdate: (rating) {
-              debugPrint(rating.toString());
-            },
-          ),
-          Text(
-            _material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
 
 class GlobalMaterialPage extends StatefulWidget {
   const GlobalMaterialPage({Key? key}) : super(key: key);
 
   @override
-  _GlobalMaterialPageState createState() => _GlobalMaterialPageState();
+  GlobalMaterialPageState createState() => GlobalMaterialPageState();
 }
 
-class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
+class GlobalMaterialPageState extends State<GlobalMaterialPage> {
   String? _materialKey;
   MaterialDataCommon? _material;
   Map<String, WeaponData>? _weaponData;
@@ -249,49 +251,6 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(2.0)),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (_material == null) return Util.loadingScreen();
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_material!.name!),
-        backgroundColor: _rarityColor,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              _materialHeader(),
-              const Divider(),
-              ...GridData.generateInfoLine(
-                _material!.obtained!.replaceAll('- ', ''),
-                Icons.location_pin,
-              ),
-              ...GridData.generateInfoLine(
-                _material!.description!,
-                Icons.format_list_bulleted,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  children: const [
-                    Text(
-                      'Tracking For',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                  ],
-                ),
-              ),
-              _getCharacterData(),
-            ],
-          ),
-        ),
       ),
     );
   }
@@ -367,56 +326,58 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
         _firstLoad = true;
 
         var qs = snapshot.data!;
-        var _trackerData = <String, TrackingUserData>{};
+        var trackerData = <String, TrackingUserData>{};
         for (var data in qs.docs) {
-          _trackerData.putIfAbsent(
+          trackerData.putIfAbsent(
             data.id,
-            () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
+            () =>
+                TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
           );
         }
 
-        return _getCharacterDataList(_trackerData);
+        return _getCharacterDataList(trackerData);
       },
     );
   }
 
-  Widget _getCharacterDataList(Map<String, TrackingUserData> _trackerData) {
+  Widget _getCharacterDataList(Map<String, TrackingUserData> trackerData) {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: _trackerData.length,
+      itemCount: trackerData.length,
       itemBuilder: (context, index) {
-        var key = _trackerData.keys.elementAt(index);
-        var _data = _trackerData[key]!;
+        var key = trackerData.keys.elementAt(index);
+        var data = trackerData[key]!;
         var imageRef = _material!.image;
         var extraAscensionRef = 0;
         String? extraTypeRef;
         var name = _material!.name;
         var override = false;
         debugPrint(key);
-        var _splitKey = key.split('_');
-        var _ascendTier = _splitKey[_splitKey.length - 1];
-        debugPrint(_ascendTier);
-        if (_data.addData != null) {
+        var splitKey = key.split('_');
+        var ascendTier = splitKey[splitKey.length - 1];
+        debugPrint(ascendTier);
+        if (data.addData != null) {
           // Grab image ref of extra data based on addedBy
-          if (_data.addedBy == 'character') {
+          if (data.addedBy == 'character') {
             // Grab from character
-            name = _characterData![_data.addData!]!.name;
-            imageRef = _characterData![_data.addData!]!.image;
-            extraTypeRef = _characterData![_data.addData!]!.element;
-            extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-          } else if (_data.addedBy == 'weapon') {
+            name = _characterData![data.addData!]!.name;
+            imageRef = _characterData![data.addData!]!.image;
+            extraTypeRef = _characterData![data.addData!]!.element;
+            extraAscensionRef = int.tryParse(ascendTier) ?? 0;
+          } else if (data.addedBy == 'weapon') {
             // Grab from weapon
-            imageRef = _weaponData![_data.addData!]!.image;
-            name = _weaponData![_data.addData!]!.name;
-            extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-          } else if (_data.addedBy == 'talent') {
+            imageRef = _weaponData![data.addData!]!.image;
+            name = _weaponData![data.addData!]!.name;
+            extraAscensionRef = int.tryParse(ascendTier) ?? 0;
+          } else if (data.addedBy == 'talent') {
             // Grab from character talent
-            var _cData = _data.addData!.split('|');
-            imageRef = _characterData![_cData[0]]!.talent!.attack![_cData[1]]!.image;
-            extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
+            var cData = data.addData!.split('|');
+            imageRef =
+                _characterData![cData[0]]!.talent!.attack![cData[1]]!.image;
+            extraAscensionRef = int.tryParse(ascendTier) ?? 0;
             name =
-                "${_characterData![_cData[0]]!.name}'s ${_characterData![_cData[0]]!.talent!.attack![_cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";
+                "${_characterData![cData[0]]!.name}'s ${_characterData![cData[0]]!.talent!.attack![cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";
             override = true;
           }
           if (!override) {
@@ -441,7 +402,7 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
           extraTypeRef,
           typeWidget,
           key,
-          _data,
+          data,
           name!,
         );
       },
@@ -477,14 +438,14 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     );
   }
 
-  Widget _getCharacterDataControls(String key, TrackingUserData _data) {
+  Widget _getCharacterDataControls(String key, TrackingUserData data) {
     return Column(
       children: [
         Text(
-          '${_data.current}/${_data.max}',
+          '${data.current}/${data.max}',
           style: TextStyle(
             fontSize: 18,
-            color: GridData.getCountColor(_data.current, _data.max, bw: true),
+            color: GridData.getCountColor(data.current, data.max, bw: true),
           ),
         ),
         Row(
@@ -493,8 +454,8 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               style: _flatButtonStyle,
               onPressed: () => TrackingData.decrementCount(
                 key,
-                _data.type,
-                _data.current!,
+                data.type,
+                data.current!,
               ),
               child: const Icon(Icons.remove),
             ),
@@ -502,9 +463,9 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
               style: _flatButtonStyle,
               onPressed: () => TrackingData.incrementCount(
                 key,
-                _data.type,
-                _data.current!,
-                _data.max!,
+                data.type,
+                data.current!,
+                data.max!,
               ),
               child: const Icon(Icons.add),
             ),
@@ -520,14 +481,14 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
     String? extraTypeRef,
     Widget typeWidget,
     String key,
-    TrackingUserData _data,
+    TrackingUserData data,
     String name,
   ) {
     return Card(
       child: InkWell(
         onLongPress: () =>
             UpdateMultiTracking(context, _material).itemClickedAction(
-          _data,
+          data,
           key,
           {
             'img': imageRef,
@@ -565,7 +526,50 @@ class _GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 ),
               ),
               const Spacer(),
-              _getCharacterDataControls(key, _data),
+              _getCharacterDataControls(key, data),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_material == null) return Util.loadingScreen();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_material!.name!),
+        backgroundColor: _rarityColor,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _materialHeader(),
+              const Divider(),
+              ...GridData.generateInfoLine(
+                _material!.obtained!.replaceAll('- ', ''),
+                Icons.location_pin,
+              ),
+              ...GridData.generateInfoLine(
+                _material!.description!,
+                Icons.format_list_bulleted,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: const [
+                    Text(
+                      'Tracking For',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ],
+                ),
+              ),
+              _getCharacterData(),
             ],
           ),
         ),

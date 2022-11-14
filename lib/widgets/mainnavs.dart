@@ -16,10 +16,10 @@ class TrackingPage extends StatefulWidget {
   const TrackingPage({Key? key, this.title}) : super(key: key);
 
   @override
-  _TrackingPageState createState() => _TrackingPageState();
+  TrackingPageState createState() => TrackingPageState();
 }
 
-class _TrackingPageState extends State<TrackingPage>
+class TrackingPageState extends State<TrackingPage>
     with TickerProviderStateMixin {
   final List<Tab> _tabs = [
     const Tab(text: 'Boss'),
@@ -35,6 +35,15 @@ class _TrackingPageState extends State<TrackingPage>
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: _tabs.length);
+  }
+
+  Widget _showAppBar() {
+    return TabBar(
+      controller: _tabController,
+      indicatorColor: Theme.of(context).colorScheme.secondary,
+      tabs: _tabs,
+      isScrollable: true,
+    );
   }
 
   @override
@@ -55,25 +64,16 @@ class _TrackingPageState extends State<TrackingPage>
       body: TrackingTabController(tabController: _tabController),
     );
   }
-
-  Widget _showAppBar() {
-    return TabBar(
-      controller: _tabController,
-      indicatorColor: Theme.of(context).colorScheme.secondary,
-      tabs: _tabs,
-      isScrollable: true,
-    );
-  }
 }
 
 class DictionaryPage extends StatefulWidget {
   const DictionaryPage({Key? key}) : super(key: key);
 
   @override
-  _DictionaryPageState createState() => _DictionaryPageState();
+  DictionaryPageState createState() => DictionaryPageState();
 }
 
-class _DictionaryPageState extends State<DictionaryPage>
+class DictionaryPageState extends State<DictionaryPage>
     with TickerProviderStateMixin {
   int _currentIndex = 0;
 
@@ -179,41 +179,6 @@ class _DictionaryPageState extends State<DictionaryPage>
     _sortList = SortBy(_notifier);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dictionary'),
-        bottom: _showAppBar() as PreferredSizeWidget?,
-        actions: [
-          _showSortWidget(),
-        ],
-      ),
-      drawer: const DrawerComponent(),
-      body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.deepOrange,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentIndex,
-        onTap: _onTabTapped,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Characters',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(MdiIcons.sword),
-            label: 'Weapons',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(MdiIcons.diamondStone),
-            label: 'Materials',
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget? _showAppBar() {
     if (!_tabs.containsKey(_currentIndex)) return null;
 
@@ -249,5 +214,40 @@ class _DictionaryPageState extends State<DictionaryPage>
     setState(() {
       _currentIndex = index;
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Dictionary'),
+        bottom: _showAppBar() as PreferredSizeWidget?,
+        actions: [
+          _showSortWidget(),
+        ],
+      ),
+      drawer: const DrawerComponent(),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.deepOrange,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _currentIndex,
+        onTap: _onTabTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Characters',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.sword),
+            label: 'Weapons',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.diamondStone),
+            label: 'Materials',
+          ),
+        ],
+      ),
+    );
   }
 }

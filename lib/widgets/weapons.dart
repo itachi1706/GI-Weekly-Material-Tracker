@@ -18,14 +18,17 @@ class WeaponTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const WeaponTabController({Key? key, required this.tabController, this.notifier})
-      : super(key: key);
+  const WeaponTabController({
+    Key? key,
+    required this.tabController,
+    this.notifier,
+  }) : super(key: key);
 
   @override
-  _WeaponTabControllerState createState() => _WeaponTabControllerState();
+  WeaponTabControllerState createState() => WeaponTabControllerState();
 }
 
-class _WeaponTabControllerState extends State<WeaponTabController> {
+class WeaponTabControllerState extends State<WeaponTabController> {
   @override
   Widget build(BuildContext context) {
     return TabBarView(controller: widget.tabController, children: [
@@ -43,13 +46,14 @@ class WeaponListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const WeaponListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
+  const WeaponListGrid({Key? key, this.filter, this.notifier})
+      : super(key: key);
 
   @override
-  _WeaponListGridState createState() => _WeaponListGridState();
+  WeaponListGridState createState() => WeaponListGridState();
 }
 
-class _WeaponListGridState extends State<WeaponListGrid> {
+class WeaponListGridState extends State<WeaponListGrid> {
   String? _sorter;
   bool _isDescending = false;
 
@@ -105,7 +109,9 @@ class _WeaponListGridState extends State<WeaponListGrid> {
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/weapons/${document.id}'),
-              child: GridData.getGridData(WeaponData.fromJson(document.data() as Map<String, dynamic>)),
+              child: GridData.getGridData(
+                WeaponData.fromJson(document.data() as Map<String, dynamic>),
+              ),
             );
           }).toList(),
         );
@@ -118,10 +124,10 @@ class WeaponInfoPage extends StatefulWidget {
   const WeaponInfoPage({Key? key}) : super(key: key);
 
   @override
-  _WeaponInfoPageState createState() => _WeaponInfoPageState();
+  WeaponInfoPageState createState() => WeaponInfoPageState();
 }
 
-class _WeaponInfoPageState extends State<WeaponInfoPage> {
+class WeaponInfoPageState extends State<WeaponInfoPage> {
   String? _infoId;
   Color? _rarityColor;
   String? _selectedTier;
@@ -138,7 +144,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _getLastBanner() {
-    if (_info == null || _info!.lastBannerCount == null || _info!.lastBannerEnd == null) {
+    if (_info == null ||
+        _info!.lastBannerCount == null ||
+        _info!.lastBannerEnd == null) {
       // No banners
       debugPrint('No banners for character');
 
@@ -160,60 +168,14 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
     var message = '$bt in ${_info!.lastBannerName}\n'
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
-
     return GridData.generateInfoLine(message, Icons.calendar_month);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (_info == null) return Util.loadingScreen();
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_info!.name ?? 'Unknown Weapon'),
-        backgroundColor: _rarityColor,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info!),
-            tooltip: 'View Wiki',
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              _generateWeaponHeader(),
-              const Divider(),
-              ...GridData.unreleasedCheck(_info!.released, 'Weapon'),
-              ..._getSeriesIfExists(_info!),
-              ...GridData.generateInfoLine(
-                _info!.obtained!.replaceAll('- ', ''),
-                Icons.location_pin,
-              ),
-              ...GridData.generateInfoLine(
-                _info!.description!,
-                Icons.format_list_bulleted,
-              ),
-              ..._generateEffectName(),
-              ..._getWeaponStats(),
-              const Divider(),
-              ..._getLastBanner(),
-              ...TrackingData.getAscensionHeader(),
-              _generateAscensionData(),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {
     var finalWidgets = <Widget>[const SizedBox.shrink()];
     if (info.series != null) {
-      finalWidgets = GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
+      finalWidgets =
+          GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
     }
 
     return finalWidgets;
@@ -283,7 +245,9 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: (_info!.maxSecondaryStat == null)
-                  ? Text('${_info!.secondaryStat} (${_info!.secondaryStatType})')
+                  ? Text(
+                      '${_info!.secondaryStat} (${_info!.secondaryStatType})',
+                    )
                   : Text(
                       '${_info!.secondaryStat} -> ${_info!.maxSecondaryStat} (${_info!.secondaryStatType})',
                     ),
@@ -297,30 +261,30 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   void _refreshTrackingStatus() {
     if (_materialData == null) return; // No data
     if (_isBeingTracked == null) {
-      var _tmpTracker = <String, TrackingStatus>{};
+      var tmpTracker = <String, TrackingStatus>{};
       for (var key in _info!.ascension!.keys) {
-        _tmpTracker[key] = TrackingStatus.unknown;
+        tmpTracker[key] = TrackingStatus.unknown;
       }
       setState(() {
         if (!mounted) return;
-        _isBeingTracked = _tmpTracker;
+        _isBeingTracked = tmpTracker;
       });
     }
 
-    _checkStatusAndMaterialList().then((_tracker) => setState(() {
-          _isBeingTracked = _tracker;
+    _checkStatusAndMaterialList().then((tracker) => setState(() {
+          _isBeingTracked = tracker;
         }));
   }
 
   Future<Map<String, TrackingStatus>> _checkStatusAndMaterialList() async {
-    var _tracker = _isBeingTracked!;
-    var _dataList = await TrackingData.getTrackingCategory('weapon');
-    debugPrint(_dataList.toString());
+    var tracker = _isBeingTracked!;
+    var dataList = await TrackingData.getTrackingCategory('weapon');
+    debugPrint(dataList.toString());
     var datasets = <String?>{};
     // Check tracking status and get material list
     for (var key in _isBeingTracked!.keys) {
-      var _isTracked =
-          TrackingData.isBeingTrackedLocal(_dataList, '${_infoId}_$key');
+      var isTracked =
+          TrackingData.isBeingTrackedLocal(dataList, '${_infoId}_$key');
       var data = _info!.ascension![key]!;
       if (data.material1 != null) {
         datasets.add(_materialData![data.material1!]?.innerType);
@@ -331,8 +295,8 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       if (data.material3 != null) {
         datasets.add(_materialData![data.material3!]?.innerType);
       }
-      _tracker[key] =
-          (_isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+      tracker[key] =
+          (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
     }
 
     // Get all datasets into a map to check if completed
@@ -342,16 +306,16 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       collectionList[ds] = await TrackingData.getCollectionList(ds);
     }
 
-    return _processStatusList(collectionList, _tracker);
+    return _processStatusList(collectionList, tracker);
   }
 
   Future<Map<String, TrackingStatus>> _processStatusList(
     Map<String?, Map<String, TrackingUserData>> collectionList,
-    Map<String, TrackingStatus> _tracker,
+    Map<String, TrackingStatus> tracker,
   ) async {
     // Run through tracking status and check if its fully tracked
-    for (var key in _tracker.keys) {
-      if (_tracker[key] != TrackingStatus.checking) continue; // Skip untracked
+    for (var key in tracker.keys) {
+      if (tracker[key] != TrackingStatus.checking) continue; // Skip untracked
       var fullTrack = true;
       var data = _info!.ascension![key]!;
       if (data.material1 != null && fullTrack) {
@@ -378,12 +342,12 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
           'Weapon_${_infoId}_${data.material3}_$key',
         );
       }
-      _tracker[key] = (fullTrack)
+      tracker[key] = (fullTrack)
           ? TrackingStatus.trackedCompleteMaterial
           : TrackingStatus.trackedIncompleteMaterial;
     }
 
-    return _tracker;
+    return tracker;
   }
 
   TrackingStatus? _isBeingTrackedStatus(String key) {
@@ -394,43 +358,43 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   void _trackWeaponAction() {
     debugPrint('Selected: $_selectedTier');
-    var _ascendTier = _info!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = _info!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.addToRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        '${_info!.name} Ascension Tier $_ascensionTierSel added to tracker!',
+        '${_info!.name} Ascension Tier $ascensionTierSel added to tracker!',
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
-        'Weapon_${_infoId}_${_ascendTier.material1}_$_selectedTier',
-        _ascendTier.material1,
-        _ascendTier.material1Qty,
-        _materialData![_ascendTier.material1!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material1}_$_selectedTier',
+        ascendTier.material1,
+        ascendTier.material1Qty,
+        _materialData![ascendTier.material1!]!.innerType,
         'weapon',
         _infoId,
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.addToCollection(
-        'Weapon_${_infoId}_${_ascendTier.material2}_$_selectedTier',
-        _ascendTier.material2,
-        _ascendTier.material2Qty,
-        _materialData![_ascendTier.material2!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material2}_$_selectedTier',
+        ascendTier.material2,
+        ascendTier.material2Qty,
+        _materialData![ascendTier.material2!]!.innerType,
         'weapon',
         _infoId,
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.addToCollection(
-        'Weapon_${_infoId}_${_ascendTier.material3}_$_selectedTier',
-        _ascendTier.material3,
-        _ascendTier.material3Qty,
-        _materialData![_ascendTier.material3!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material3}_$_selectedTier',
+        ascendTier.material3,
+        ascendTier.material3Qty,
+        _materialData![ascendTier.material3!]!.innerType,
         'weapon',
         _infoId,
       );
@@ -440,33 +404,33 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
 
   void _untrackWeaponAction() {
     debugPrint('Selected: $_selectedTier');
-    var _ascendTier = _info!.ascension![_selectedTier!]!;
-    var _ascensionTierSel = _selectedTier;
+    var ascendTier = _info!.ascension![_selectedTier!]!;
+    var ascensionTierSel = _selectedTier;
 
     TrackingData.removeFromRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
       _refreshTrackingStatus();
       Util.showSnackbarQuick(
         context,
-        '${_info!.name} Ascension Tier $_ascensionTierSel removed from tracker!',
+        '${_info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
       );
     });
-    if (_ascendTier.material1 != null) {
+    if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
-        'Weapon_${_infoId}_${_ascendTier.material1}_$_selectedTier',
-        _materialData![_ascendTier.material1!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material1}_$_selectedTier',
+        _materialData![ascendTier.material1!]!.innerType,
       );
     }
-    if (_ascendTier.material2 != null) {
+    if (ascendTier.material2 != null) {
       TrackingData.removeFromCollection(
-        'Weapon_${_infoId}_${_ascendTier.material2}_$_selectedTier',
-        _materialData![_ascendTier.material2!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material2}_$_selectedTier',
+        _materialData![ascendTier.material2!]!.innerType,
       );
     }
-    if (_ascendTier.material3 != null) {
+    if (ascendTier.material3 != null) {
       TrackingData.removeFromCollection(
-        'Weapon_${_infoId}_${_ascendTier.material3}_$_selectedTier',
-        _materialData![_ascendTier.material3!]!.innerType,
+        'Weapon_${_infoId}_${ascendTier.material3}_$_selectedTier',
+        _materialData![ascendTier.material3!]!.innerType,
       );
     }
 
@@ -476,7 +440,11 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Flexible(child: Text(key == null ? '' : _materialData![key]?.name ?? 'Unknown Item')),
+      Flexible(
+        child: Text(
+          key == null ? '' : _materialData![key]?.name ?? 'Unknown Item',
+        ),
+      ),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -690,5 +658,51 @@ class _WeaponInfoPageState extends State<WeaponInfoPage> {
       _materialData = materialData;
     });
     _refreshTrackingStatus();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_info == null) return Util.loadingScreen();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_info!.name ?? 'Unknown Weapon'),
+        backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info!),
+            tooltip: 'View Wiki',
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _generateWeaponHeader(),
+              const Divider(),
+              ...GridData.unreleasedCheck(_info!.released, 'Weapon'),
+              ..._getSeriesIfExists(_info!),
+              ...GridData.generateInfoLine(
+                _info!.obtained!.replaceAll('- ', ''),
+                Icons.location_pin,
+              ),
+              ...GridData.generateInfoLine(
+                _info!.description!,
+                Icons.format_list_bulleted,
+              ),
+              ..._generateEffectName(),
+              ..._getWeaponStats(),
+              const Divider(),
+              ..._getLastBanner(),
+              ...TrackingData.getAscensionHeader(),
+              _generateAscensionData(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

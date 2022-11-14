@@ -61,12 +61,12 @@ class TrackingUserData extends CommonTracking {
   }
 
   static Map<String, TrackingUserData> getList(Map<String, dynamic> list) {
-    var _fin = <String, TrackingUserData>{};
+    var fin = <String, TrackingUserData>{};
     list.forEach((key, value) {
-      _fin.putIfAbsent(key, () => TrackingUserData.fromJson(value));
+      fin.putIfAbsent(key, () => TrackingUserData.fromJson(value));
     });
 
-    return _fin;
+    return fin;
   }
 
   @override

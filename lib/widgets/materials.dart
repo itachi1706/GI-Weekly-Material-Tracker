@@ -14,14 +14,17 @@ class MaterialTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const MaterialTabController({Key? key, required this.tabController, this.notifier})
-      : super(key: key);
+  const MaterialTabController({
+    Key? key,
+    required this.tabController,
+    this.notifier,
+  }) : super(key: key);
 
   @override
-  _MaterialTabControllerState createState() => _MaterialTabControllerState();
+  MaterialTabControllerState createState() => MaterialTabControllerState();
 }
 
-class _MaterialTabControllerState extends State<MaterialTabController> {
+class MaterialTabControllerState extends State<MaterialTabController> {
   @override
   Widget build(BuildContext context) {
     return TabBarView(controller: widget.tabController, children: [
@@ -38,13 +41,14 @@ class MaterialListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const MaterialListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
+  const MaterialListGrid({Key? key, this.filter, this.notifier})
+      : super(key: key);
 
   @override
-  _MaterialListGridState createState() => _MaterialListGridState();
+  MaterialListGridState createState() => MaterialListGridState();
 }
 
-class _MaterialListGridState extends State<MaterialListGrid> {
+class MaterialListGridState extends State<MaterialListGrid> {
   String? _sorter;
   bool _isDescending = false;
 
@@ -102,7 +106,9 @@ class _MaterialListGridState extends State<MaterialListGrid> {
             return GestureDetector(
               onTap: () => Get.toNamed('/materials/${document.id}'),
               child: GridData.getGridData(
-                MaterialDataCommon.fromJson(document.data() as Map<String, dynamic>),
+                MaterialDataCommon.fromJson(
+                  document.data() as Map<String, dynamic>,
+                ),
               ),
             );
           }).toList(),
@@ -116,10 +122,10 @@ class MaterialInfoPage extends StatefulWidget {
   const MaterialInfoPage({Key? key}) : super(key: key);
 
   @override
-  _MaterialInfoPageState createState() => _MaterialInfoPageState();
+  MaterialInfoPageState createState() => MaterialInfoPageState();
 }
 
-class _MaterialInfoPageState extends State<MaterialInfoPage> {
+class MaterialInfoPageState extends State<MaterialInfoPage> {
   MaterialDataCommon? _info;
   String? _infoId;
 
@@ -143,48 +149,6 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
       });
       _refreshTrackingStatus();
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (_info == null) return Util.loadingScreen();
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_info!.name ?? 'Unknown Material'),
-        backgroundColor: _rarityColor,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info!),
-            tooltip: 'View Wiki',
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: _rarityColor,
-        onPressed: _addOrRemoveMaterial,
-        child: _getFabWidget(),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            _getMaterialHeader(),
-            const Divider(),
-            ...GridData.unreleasedCheck(_info!.released, 'Material'),
-            ...GridData.generateInfoLine(
-              _info!.obtained!.replaceAll('- ', ''),
-              Icons.location_pin,
-            ),
-            ...GridData.generateInfoLine(
-              _info!.description ?? 'Unknown Description',
-              Icons.format_list_bulleted,
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   Widget _getMaterialHeader() {
@@ -303,7 +267,8 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
                     });
                   },
                   controller: _textEditingController,
-                  decoration: const InputDecoration(labelText: 'Quantity to track'),
+                  decoration:
+                      const InputDecoration(labelText: 'Quantity to track'),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -352,6 +317,48 @@ class _MaterialInfoPageState extends State<MaterialInfoPage> {
           ],
         );
       },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_info == null) return Util.loadingScreen();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_info!.name ?? 'Unknown Material'),
+        backgroundColor: _rarityColor,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () => GridData.launchWikiUrl(context, _info!),
+            tooltip: 'View Wiki',
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: _rarityColor,
+        onPressed: _addOrRemoveMaterial,
+        child: _getFabWidget(),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            _getMaterialHeader(),
+            const Divider(),
+            ...GridData.unreleasedCheck(_info!.released, 'Material'),
+            ...GridData.generateInfoLine(
+              _info!.obtained!.replaceAll('- ', ''),
+              Icons.location_pin,
+            ),
+            ...GridData.generateInfoLine(
+              _info!.description ?? 'Unknown Description',
+              Icons.format_list_bulleted,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

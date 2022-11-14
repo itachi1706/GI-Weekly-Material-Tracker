@@ -432,7 +432,10 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: const [
-                Text('4* RATES', style: TextStyle(fontWeight: FontWeight.bold),),
+                Text(
+                  '4* RATES',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("- 0.6% for 0-9 rolls\n- 100% at roll 10"),
@@ -453,10 +456,15 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: [
-                const Text('5* RATES', style: TextStyle(fontWeight: FontWeight.bold),),
+                const Text(
+                  '5* RATES',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: Text("- 0.6% for 0-${_bannerInfo!.softPity-1} rolls\n- Rates increased from roll ${_bannerInfo!.softPity} (Soft Pity)\n- 100% at roll ${_bannerInfo!.hardPity} (Hard Pity)"),
+                  child: Text(
+                    "- 0.6% for 0-${_bannerInfo!.softPity - 1} rolls\n- Rates increased from roll ${_bannerInfo!.softPity} (Soft Pity)\n- 100% at roll ${_bannerInfo!.hardPity} (Hard Pity)",
+                  ),
                 ),
               ],
             ),
