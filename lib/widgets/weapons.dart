@@ -18,7 +18,8 @@ class WeaponTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const WeaponTabController({Key? key, required this.tabController, this.notifier})
+  const WeaponTabController(
+      {Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -43,7 +44,8 @@ class WeaponListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const WeaponListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
+  const WeaponListGrid({Key? key, this.filter, this.notifier})
+      : super(key: key);
 
   @override
   WeaponListGridState createState() => WeaponListGridState();
@@ -105,7 +107,8 @@ class WeaponListGridState extends State<WeaponListGrid> {
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/weapons/${document.id}'),
-              child: GridData.getGridData(WeaponData.fromJson(document.data() as Map<String, dynamic>)),
+              child: GridData.getGridData(
+                  WeaponData.fromJson(document.data() as Map<String, dynamic>)),
             );
           }).toList(),
         );
@@ -138,7 +141,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _getLastBanner() {
-    if (_info == null || _info!.lastBannerCount == null || _info!.lastBannerEnd == null) {
+    if (_info == null ||
+        _info!.lastBannerCount == null ||
+        _info!.lastBannerEnd == null) {
       // No banners
       debugPrint('No banners for character');
 
@@ -160,14 +165,14 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var message = '$bt in ${_info!.lastBannerName}\n'
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
-
     return GridData.generateInfoLine(message, Icons.calendar_month);
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {
     var finalWidgets = <Widget>[const SizedBox.shrink()];
     if (info.series != null) {
-      finalWidgets = GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
+      finalWidgets =
+          GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
     }
 
     return finalWidgets;
@@ -237,7 +242,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: (_info!.maxSecondaryStat == null)
-                  ? Text('${_info!.secondaryStat} (${_info!.secondaryStatType})')
+                  ? Text(
+                      '${_info!.secondaryStat} (${_info!.secondaryStatType})')
                   : Text(
                       '${_info!.secondaryStat} -> ${_info!.maxSecondaryStat} (${_info!.secondaryStatType})',
                     ),
@@ -430,7 +436,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Flexible(child: Text(key == null ? '' : _materialData![key]?.name ?? 'Unknown Item')),
+      Flexible(
+          child: Text(
+              key == null ? '' : _materialData![key]?.name ?? 'Unknown Item')),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }

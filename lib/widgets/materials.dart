@@ -14,7 +14,8 @@ class MaterialTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const MaterialTabController({Key? key, required this.tabController, this.notifier})
+  const MaterialTabController(
+      {Key? key, required this.tabController, this.notifier})
       : super(key: key);
 
   @override
@@ -38,7 +39,8 @@ class MaterialListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const MaterialListGrid({Key? key, this.filter, this.notifier}) : super(key: key);
+  const MaterialListGrid({Key? key, this.filter, this.notifier})
+      : super(key: key);
 
   @override
   MaterialListGridState createState() => MaterialListGridState();
@@ -102,7 +104,8 @@ class MaterialListGridState extends State<MaterialListGrid> {
             return GestureDetector(
               onTap: () => Get.toNamed('/materials/${document.id}'),
               child: GridData.getGridData(
-                MaterialDataCommon.fromJson(document.data() as Map<String, dynamic>),
+                MaterialDataCommon.fromJson(
+                    document.data() as Map<String, dynamic>),
               ),
             );
           }).toList(),
@@ -261,7 +264,8 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
                     });
                   },
                   controller: _textEditingController,
-                  decoration: const InputDecoration(labelText: 'Quantity to track'),
+                  decoration:
+                      const InputDecoration(labelText: 'Quantity to track'),
                   keyboardType: TextInputType.number,
                 ),
               ],

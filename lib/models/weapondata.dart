@@ -68,8 +68,11 @@ class WeaponData extends CommonData {
       series: parsedJson['series'],
       released: parsedJson['released'],
       lastBannerCount: parsedJson['banners_since_last_appearance'],
-      lastBannerEnd: parsedJson['date_since_last_appearance'] != null ? DateTime.parse(parsedJson['date_since_last_appearance']) : null,
-      lastBannerName: parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
+      lastBannerEnd: parsedJson['date_since_last_appearance'] != null
+          ? DateTime.parse(parsedJson['date_since_last_appearance'])
+          : null,
+      lastBannerName:
+          parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
     );
   }
 

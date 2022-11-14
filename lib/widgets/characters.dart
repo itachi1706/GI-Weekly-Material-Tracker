@@ -294,7 +294,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                _getGenderIcon(widget.info!.gender!, widget.info!.name ?? 'Unknown'),
+                _getGenderIcon(
+                    widget.info!.gender!, widget.info!.name ?? 'Unknown'),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.gender!),
@@ -612,7 +613,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item'),
+      Text(
+          key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item'),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
@@ -856,7 +858,9 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   String _getTitles(List<String> titles) {
-    return titles.length > 1 ? titles.map((e) => "• $e").join('\n') : titles.join('\n');
+    return titles.length > 1
+        ? titles.map((e) => "• $e").join('\n')
+        : titles.join('\n');
   }
 
   List<Widget> _getLastBanner(CharacterData info) {
@@ -881,7 +885,6 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     // Craft the message
     var message = '$bt in ${info.lastBannerName}\n'
         '$endState: ${df.format(info.lastBannerEnd!.toLocal())}';
-
 
     return GridData.generateInfoLine(message, Icons.calendar_month);
   }
@@ -1201,7 +1204,6 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
 
       return;
     }
-
 
     if (widget.info == null || !widget.info!.released) {
       Util.showSnackbarQuick(context, 'Unable to track unreleased characters');

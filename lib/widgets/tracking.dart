@@ -543,9 +543,9 @@ class PlannerPageState extends State<PlannerPage> {
     return StreamBuilder(
       stream: ref.snapshots(),
       builder: (
-          context,
-          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
-          ) {
+        context,
+        AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
+      ) {
         if (snapshot.hasError) {
           return const Text('Error occurred getting snapshot');
         }
@@ -585,7 +585,7 @@ class PlannerPageState extends State<PlannerPage> {
           if (_matData![domainMaterial] is! MaterialDataDomains) continue;
 
           var daysForMaterial =
-          (_matData![domainMaterial] as MaterialDataDomains).days!;
+              (_matData![domainMaterial] as MaterialDataDomains).days!;
 
           for (var day in daysForMaterial) {
             mappedData[day]!.add(domainMaterial);

@@ -143,7 +143,8 @@ class GlobalTrackerState extends State<GlobalTracker> {
             initialRating: double.tryParse(
               material.rarity.toString(),
             )!,
-            itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+            itemBuilder: (context, _) =>
+                const Icon(Icons.star, color: Colors.amber),
             onRatingUpdate: (rating) {
               debugPrint(rating.toString());
             },
@@ -186,7 +187,8 @@ class GlobalTrackerState extends State<GlobalTracker> {
           // Consolidate stuff together
           var conData = <String?, CommonTracking>{};
           for (var snap in data.docs) {
-            var tmp = TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
+            var tmp =
+                TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
             if (conData.containsKey(tmp.name)) {
               // Append
               conData[tmp.name]!.current =
@@ -195,7 +197,7 @@ class GlobalTrackerState extends State<GlobalTracker> {
             } else {
               conData.putIfAbsent(
                 tmp.name,
-                    () => CommonTracking(
+                () => CommonTracking(
                   current: tmp.current,
                   max: tmp.max,
                   name: tmp.name,
@@ -328,7 +330,8 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
         for (var data in qs.docs) {
           trackerData.putIfAbsent(
             data.id,
-            () => TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
+            () =>
+                TrackingUserData.fromJson(data.data() as Map<String, dynamic>),
           );
         }
 
@@ -370,7 +373,8 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
           } else if (data.addedBy == 'talent') {
             // Grab from character talent
             var cData = data.addData!.split('|');
-            imageRef = _characterData![cData[0]]!.talent!.attack![cData[1]]!.image;
+            imageRef =
+                _characterData![cData[0]]!.talent!.attack![cData[1]]!.image;
             extraAscensionRef = int.tryParse(ascendTier) ?? 0;
             name =
                 "${_characterData![cData[0]]!.name}'s ${_characterData![cData[0]]!.talent!.attack![cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";

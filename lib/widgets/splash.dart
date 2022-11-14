@@ -64,8 +64,10 @@ class SplashPageState extends State<SplashPage> {
         options: DefaultFirebaseOptions.currentPlatform,
       );
       await FirebaseAppCheck.instance.activate(
-        webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',  // Replace this with your actual site key
-        androidProvider: (kDebugMode) ? AndroidProvider.debug : AndroidProvider.safetyNet,
+        webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',
+        // Replace this with your actual site key
+        androidProvider:
+            (kDebugMode) ? AndroidProvider.debug : AndroidProvider.safetyNet,
       );
       if (!kIsWeb) {
         var crashHandler = FirebaseCrashlytics.instance;

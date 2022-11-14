@@ -45,7 +45,8 @@ class TrackingUtils {
         return (Util.themeNotifier.isDarkMode())
             ? Colors.indigo
             : Colors.lightBlue;
-      default: return Colors.yellow; // Error
+      default:
+        return Colors.yellow; // Error
     }
   }
 }
@@ -97,7 +98,8 @@ class TrackingData {
     }
   }
 
-  static void setCount(String? key, String? type, int curCnt, int maxCnt) async {
+  static void setCount(
+      String? key, String? type, int curCnt, int maxCnt) async {
     if (maxCnt < 0) maxCnt = 0;
     if (curCnt >= maxCnt) {
       curCnt = maxCnt;
@@ -247,7 +249,8 @@ class TrackingData {
     return data.current! >= data.max!;
   }
 
-  static Widget getSupportingWidget(String? image, int? ascension, String? type) {
+  static Widget getSupportingWidget(
+      String? image, int? ascension, String? type) {
     if (image == null) return Container();
     Widget typeWidget = const SizedBox.shrink();
     if (type != null) {
@@ -378,7 +381,8 @@ class UpdateMultiTracking {
     ];
   }
 
-  void _displayDialogMat(String navigateTo, String? key, TrackingUserData data) {
+  void _displayDialogMat(
+      String navigateTo, String? key, TrackingUserData data) {
     _cntCurrent = data.current.toString();
     _cntTotal = data.max.toString();
     _textCurrentController.text = _cntCurrent!;
@@ -393,7 +397,8 @@ class UpdateMultiTracking {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(_material!.image, height: 48),
+                GridData.getImageAssetFromFirebase(_material!.image,
+                    height: 48),
                 TextField(
                   onChanged: (newValue) {
                     _cntCurrent = newValue;
