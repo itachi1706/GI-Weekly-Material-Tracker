@@ -23,10 +23,10 @@ class TrackingTabController extends StatefulWidget {
       : super(key: key);
 
   @override
-  _TrackingTabControllerState createState() => _TrackingTabControllerState();
+  TrackingTabControllerState createState() => TrackingTabControllerState();
 }
 
-class _TrackingTabControllerState extends State<TrackingTabController> {
+class TrackingTabControllerState extends State<TrackingTabController> {
   final List<Widget> _children = [
     const TrackerPage(path: 'boss_drops'),
     const TrackerPage(path: 'domain_material'),
@@ -47,10 +47,10 @@ class TrackerPage extends StatefulWidget {
   const TrackerPage({Key? key, required this.path}) : super(key: key);
 
   @override
-  _TrackerPageState createState() => _TrackerPageState();
+  TrackerPageState createState() => TrackerPageState();
 }
 
-class _TrackerPageState extends State<TrackerPage> {
+class TrackerPageState extends State<TrackerPage> {
   Map<String, MaterialDataCommon>? _materialData;
   Map<String, WeaponData>? _weaponData;
   Map<String, CharacterData>? _characterData;
@@ -71,6 +71,243 @@ class _TrackerPageState extends State<TrackerPage> {
   void initState() {
     super.initState();
     _retrieveData();
+  }
+
+  Widget _process(int collectionLen, QuerySnapshot data) {
+    var dt = data.docs;
+    if (_prefs.getBool('move_completed_bottom') ?? false) {
+      dt.sort((a, b) {
+        var aD = TrackingUserData.fromJson(a.data() as Map<String, dynamic>);
+        var bD = TrackingUserData.fromJson(b.data() as Map<String, dynamic>);
+
+        var aDD = (aD.max! - aD.current!) <= 0 ? 1 : 0;
+        var bDD = (bD.max! - bD.current!) <= 0 ? 1 : 0;
+
+        debugPrint('${bD.max! - bD.current!} - ${aD.max! - aD.current!}');
+
+        return aDD.compareTo(bDD);
+      });
+    }
+
+    return collectionLen > 0
+        ? ListView.builder(
+            itemCount: collectionLen,
+            itemBuilder: (context, index) {
+              var data = TrackingUserData.fromJson(
+                dt[index].data() as Map<String, dynamic>,
+              );
+              var dataId = dt[index].id;
+              debugPrint(data.toString());
+              var material = _materialData![data.name!]!;
+              String? extraImageRef;
+              var extraAscensionRef = 0;
+              String? extraTypeRef;
+              var splitKey = dataId.split('_');
+              var ascendTier = splitKey[splitKey.length - 1];
+              if (data.addData != null) {
+                if (data.addedBy == 'character') {
+                  extraImageRef = _characterData![data.addData!]!.image;
+                  extraAscensionRef = int.tryParse(ascendTier) ?? 0;
+                  extraTypeRef = _characterData![data.addData!]!.element;
+                } else if (data.addedBy == 'weapon') {
+                  extraImageRef = _weaponData![data.addData!]!.image;
+                  extraAscensionRef = int.tryParse(ascendTier) ?? 0;
+                } else if (data.addedBy == 'talent') {
+                  var cData = data.addData!.split('|');
+                  extraImageRef = _characterData![cData[0]]!
+                      .talent!
+                      .attack![cData[1]]!
+                      .image;
+                  extraAscensionRef = int.tryParse(ascendTier) ?? 0;
+                }
+              }
+
+              return _getCardData(
+                data,
+                dataId,
+                extraImageRef,
+                extraAscensionRef,
+                extraTypeRef,
+                material,
+              );
+            },
+          )
+        : const Center(
+            child: Text('No items being tracked for this material category'),
+          );
+  }
+
+  Widget _getCardData(
+    TrackingUserData data,
+    String dataId,
+    String? extraImageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+    MaterialDataCommon material,
+  ) {
+    return Card(
+      color: GridUtils.getRarityColor(material.rarity),
+      child: InkWell(
+        onTap: () => UpdateMultiTracking(
+          context,
+          _materialData![data.name!],
+        ).itemClickedAction(
+          data,
+          dataId,
+          {
+            'img': extraImageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
+          },
+          false,
+        ),
+        onLongPress: () => UpdateMultiTracking(
+          context,
+          _materialData![data.name!],
+        ).itemClickedAction(
+          data,
+          dataId,
+          {
+            'img': extraImageRef,
+            'asc': extraAscensionRef,
+            'type': extraTypeRef,
+          },
+          true,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GridData.getImageAssetFromFirebase(
+                material.image,
+                height: 48,
+              ),
+              _trackerInfo(material),
+              const Spacer(),
+              _trackerControls(
+                data,
+                dataId,
+                extraImageRef,
+                extraAscensionRef,
+                extraTypeRef,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _trackerInfo(MaterialDataCommon material) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width - 180,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            material.name!,
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+          RatingBar.builder(
+            ignoreGestures: true,
+            itemCount: 5,
+            itemSize: 12,
+            unratedColor: Colors.transparent,
+            initialRating: double.tryParse(
+              material.rarity.toString(),
+            )!,
+            itemBuilder: (context, _) => const Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) {
+              debugPrint(rating.toString());
+            },
+          ),
+          Text(
+            material.obtained!.replaceAll('\\n', '\n'),
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _trackerControls(
+    TrackingUserData data,
+    String dataId,
+    String? extraImageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+  ) {
+    return Column(
+      children: [
+        Text(
+          '${data.current}/${data.max}',
+          style: TextStyle(
+            fontSize: 18,
+            color: GridData.getCountColor(
+              data.current,
+              data.max,
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            TextButton(
+              style: _flatButtonStyle,
+              onPressed: () => TrackingData.decrementCount(
+                dataId,
+                data.type,
+                data.current!,
+              ),
+              child: const Icon(
+                Icons.remove,
+                color: Colors.white,
+              ),
+            ),
+            TextButton(
+              style: _flatButtonStyle,
+              onPressed: () => TrackingData.incrementCount(
+                dataId,
+                data.type,
+                data.current!,
+                data.max!,
+              ),
+              child: const Icon(Icons.add, color: Colors.white),
+            ),
+          ],
+        ),
+        TrackingData.getSupportingWidget(
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+        ),
+      ],
+    );
+  }
+
+  void _retrieveData() async {
+    var prefs = await SharedPreferences.getInstance();
+    var m = await GridData.retrieveMaterialsMapData();
+    var c = await GridData.retrieveCharactersMapData();
+    var w = await GridData.retrieveWeaponsMapData();
+    if (mounted) {
+      setState(() {
+        _materialData = m;
+        _characterData = c;
+        _weaponData = w;
+        _prefs = prefs;
+      });
+    }
   }
 
   @override
@@ -103,248 +340,11 @@ class _TrackerPageState extends State<TrackerPage> {
         }
 
         var data = snapshot.data!;
-        final _collectionLen = data.docs.length;
+        final collectionLen = data.docs.length;
 
-        return _process(_collectionLen, data);
+        return _process(collectionLen, data);
       },
     );
-  }
-
-  Widget _process(int _collectionLen, QuerySnapshot data) {
-    var dt = data.docs;
-    if (_prefs.getBool('move_completed_bottom') ?? false) {
-      dt.sort((a, b) {
-        var aD = TrackingUserData.fromJson(a.data() as Map<String, dynamic>);
-        var bD = TrackingUserData.fromJson(b.data() as Map<String, dynamic>);
-
-        var aDD = (aD.max! - aD.current!) <= 0 ? 1 : 0;
-        var bDD = (bD.max! - bD.current!) <= 0 ? 1 : 0;
-
-        debugPrint('${bD.max! - bD.current!} - ${aD.max! - aD.current!}');
-
-        return aDD.compareTo(bDD);
-      });
-    }
-
-    return _collectionLen > 0
-        ? ListView.builder(
-            itemCount: _collectionLen,
-            itemBuilder: (context, index) {
-              var _data = TrackingUserData.fromJson(
-                dt[index].data() as Map<String, dynamic>,
-              );
-              var _dataId = dt[index].id;
-              debugPrint(_data.toString());
-              var _material = _materialData![_data.name!]!;
-              String? extraImageRef;
-              var extraAscensionRef = 0;
-              String? extraTypeRef;
-              var _splitKey = _dataId.split('_');
-              var _ascendTier = _splitKey[_splitKey.length - 1];
-              if (_data.addData != null) {
-                if (_data.addedBy == 'character') {
-                  extraImageRef = _characterData![_data.addData!]!.image;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                  extraTypeRef = _characterData![_data.addData!]!.element;
-                } else if (_data.addedBy == 'weapon') {
-                  extraImageRef = _weaponData![_data.addData!]!.image;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                } else if (_data.addedBy == 'talent') {
-                  var _cData = _data.addData!.split('|');
-                  extraImageRef = _characterData![_cData[0]]!
-                      .talent!
-                      .attack![_cData[1]]!
-                      .image;
-                  extraAscensionRef = int.tryParse(_ascendTier) ?? 0;
-                }
-              }
-
-              return _getCardData(
-                _data,
-                _dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-                _material,
-              );
-            },
-          )
-        : const Center(
-            child: Text('No items being tracked for this material category'),
-          );
-  }
-
-  Widget _getCardData(
-    TrackingUserData _data,
-    String _dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    MaterialDataCommon _material,
-  ) {
-    return Card(
-      color: GridUtils.getRarityColor(_material.rarity),
-      child: InkWell(
-        onTap: () => UpdateMultiTracking(
-          context,
-          _materialData![_data.name!],
-        ).itemClickedAction(
-          _data,
-          _dataId,
-          {
-            'img': extraImageRef,
-            'asc': extraAscensionRef,
-            'type': extraTypeRef,
-          },
-          false,
-        ),
-        onLongPress: () => UpdateMultiTracking(
-          context,
-          _materialData![_data.name!],
-        ).itemClickedAction(
-          _data,
-          _dataId,
-          {
-            'img': extraImageRef,
-            'asc': extraAscensionRef,
-            'type': extraTypeRef,
-          },
-          true,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GridData.getImageAssetFromFirebase(
-                _material.image,
-                height: 48,
-              ),
-              _trackerInfo(_material),
-              const Spacer(),
-              _trackerControls(
-                _data,
-                _dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _trackerInfo(MaterialDataCommon _material) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width - 180,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            _material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-          RatingBar.builder(
-            ignoreGestures: true,
-            itemCount: 5,
-            itemSize: 12,
-            unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              _material.rarity.toString(),
-            )!,
-            itemBuilder: (context, _) => const Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-            onRatingUpdate: (rating) {
-              debugPrint(rating.toString());
-            },
-          ),
-          Text(
-            _material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _trackerControls(
-    TrackingUserData _data,
-    String _dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-  ) {
-    return Column(
-      children: [
-        Text(
-          '${_data.current}/${_data.max}',
-          style: TextStyle(
-            fontSize: 18,
-            color: GridData.getCountColor(
-              _data.current,
-              _data.max,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.decrementCount(
-                _dataId,
-                _data.type,
-                _data.current!,
-              ),
-              child: const Icon(
-                Icons.remove,
-                color: Colors.white,
-              ),
-            ),
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.incrementCount(
-                _dataId,
-                _data.type,
-                _data.current!,
-                _data.max!,
-              ),
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
-          ],
-        ),
-        TrackingData.getSupportingWidget(
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-        ),
-      ],
-    );
-  }
-
-  void _retrieveData() async {
-    var prefs = await SharedPreferences.getInstance();
-    var m = await GridData.retrieveMaterialsMapData();
-    var c = await GridData.retrieveCharactersMapData();
-    var w = await GridData.retrieveWeaponsMapData();
-    if (mounted) {
-      setState(() {
-        _materialData = m;
-        _characterData = c;
-        _weaponData = w;
-        _prefs = prefs;
-      });
-    }
   }
 }
 
@@ -352,10 +352,10 @@ class PlannerPage extends StatefulWidget {
   const PlannerPage({Key? key}) : super(key: key);
 
   @override
-  _PlannerPageState createState() => _PlannerPageState();
+  PlannerPageState createState() => PlannerPageState();
 }
 
-class _PlannerPageState extends State<PlannerPage> {
+class PlannerPageState extends State<PlannerPage> {
   Map<String, MaterialDataCommon>? _matData;
 
   tz.TZDateTime? _cDT, _beforeDT, _afterDT, _coffDT, _dbDT;
@@ -375,82 +375,6 @@ class _PlannerPageState extends State<PlannerPage> {
       _location = value.getString('location') ?? 'Asia';
     });
     tz.initializeTimeZones();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var loc = tz.getLocation(_getLoc());
-    _cDT = tz.TZDateTime.now(loc);
-    // This day at 12am
-    _beforeDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
-    _dbDT = _cDT!.subtract(const Duration(days: 1));
-    // Next day at 12am
-    _afterDT = _beforeDT!.add(const Duration(days: 1));
-    // This day at 4am
-    _coffDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
-
-    var ref = _db
-        .collection('tracking')
-        .doc(Util.getFirebaseUid())
-        .collection('domain_material');
-
-    return StreamBuilder(
-      stream: ref.snapshots(),
-      builder: (
-        context,
-        AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
-      ) {
-        if (snapshot.hasError) {
-          return const Text('Error occurred getting snapshot');
-        }
-
-        if (snapshot.connectionState == ConnectionState.waiting ||
-            _matData == null) {
-          return Util.centerLoadingCircle('');
-        }
-
-        var data = snapshot.data!;
-        var _uniqueMaterials = data.docs
-            .map((snapshot) => snapshot.data()['name'].toString())
-            .toSet()
-            .toList();
-
-        var _finalDomainMaterials = <String>[];
-        // Tabulate the materials and remove completed ones
-        for (var element in _uniqueMaterials) {
-          var _cur = 0, _max = 0;
-          data.docs
-              .where((element2) => element2.data()['name'] == element)
-              .forEach((element) {
-            _cur += element.data()['current'] as int;
-            _max += element.data()['max'] as int;
-          });
-
-          if (_cur < _max) {
-            _finalDomainMaterials.add(element);
-          }
-        }
-
-        var _mappedData = <int, Set<String>>{};
-        for (var i = 1; i <= 7; i++) {
-          _mappedData.putIfAbsent(i, () => {});
-        }
-        for (var domainMaterial in _finalDomainMaterials) {
-          if (_matData![domainMaterial] is! MaterialDataDomains) continue;
-
-          var _daysForMaterial =
-              (_matData![domainMaterial] as MaterialDataDomains).days!;
-
-          for (var day in _daysForMaterial) {
-            _mappedData[day]!.add(domainMaterial);
-          }
-        }
-
-        return _buildWeeklyMaterials(_mappedData);
-      },
-    );
   }
 
   String _getLoc() {
@@ -475,7 +399,7 @@ class _PlannerPageState extends State<PlannerPage> {
     }
   }
 
-  Widget _buildWeeklyMaterials(Map<int, Set<String>> _mappedData) {
+  Widget _buildWeeklyMaterials(Map<int, Set<String>> mappedData) {
     // Assume each 180px, divide and round up to get how many per grid (min 3)
     var webWidth = MediaQuery.of(context).size.width;
     var gridCnt = (webWidth / 180).round();
@@ -503,15 +427,15 @@ class _PlannerPageState extends State<PlannerPage> {
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: _mappedData.length,
+            itemCount: mappedData.length,
             itemBuilder: (context, index) {
-              var key = _mappedData.keys.elementAt(index);
-              var _curData = _mappedData[key]!.toList();
+              var key = mappedData.keys.elementAt(index);
+              var curData = mappedData[key]!.toList();
 
               return ListTile(
                 tileColor: _getTileColorIfCurrentDay(key),
                 leading: Text(GridUtils.getDayString(key)),
-                title: _getGridMaterials(_curData, gridCnt),
+                title: _getGridMaterials(curData, gridCnt),
               );
             },
             separatorBuilder: (context, index) => const Divider(height: 1),
@@ -552,12 +476,12 @@ class _PlannerPageState extends State<PlannerPage> {
   }
 
   int _getResetTime() {
-    var _actualCDT = _coffDT;
+    var actualCDT = _coffDT;
     if (_cDT!.isAfter(_coffDT!)) {
-      _actualCDT = _coffDT!.add(const Duration(days: 1));
+      actualCDT = _coffDT!.add(const Duration(days: 1));
     }
 
-    return _actualCDT!.millisecondsSinceEpoch;
+    return actualCDT!.millisecondsSinceEpoch;
   }
 
   Color _getTileColorIfCurrentDay(int key) {
@@ -579,8 +503,8 @@ class _PlannerPageState extends State<PlannerPage> {
         : Colors.transparent;
   }
 
-  Widget _getGridMaterials(List<String> _curData, int gridCnt) {
-    if (_curData.isEmpty) {
+  Widget _getGridMaterials(List<String> curData, int gridCnt) {
+    if (curData.isEmpty) {
       return const Text('Not tracking any domain materials for this day');
     }
 
@@ -588,12 +512,88 @@ class _PlannerPageState extends State<PlannerPage> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: gridCnt,
-      children: _curData.map((materialId) {
+      children: curData.map((materialId) {
         return GestureDetector(
           onTap: () => Get.toNamed('/materials/$materialId'),
           child: GridData.getGridData(_matData![materialId]!),
         );
       }).toList(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var loc = tz.getLocation(_getLoc());
+    _cDT = tz.TZDateTime.now(loc);
+    // This day at 12am
+    _beforeDT =
+        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
+    _dbDT = _cDT!.subtract(const Duration(days: 1));
+    // Next day at 12am
+    _afterDT = _beforeDT!.add(const Duration(days: 1));
+    // This day at 4am
+    _coffDT =
+        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
+
+    var ref = _db
+        .collection('tracking')
+        .doc(Util.getFirebaseUid())
+        .collection('domain_material');
+
+    return StreamBuilder(
+      stream: ref.snapshots(),
+      builder: (
+          context,
+          AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
+          ) {
+        if (snapshot.hasError) {
+          return const Text('Error occurred getting snapshot');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting ||
+            _matData == null) {
+          return Util.centerLoadingCircle('');
+        }
+
+        var data = snapshot.data!;
+        var uniqueMaterials = data.docs
+            .map((snapshot) => snapshot.data()['name'].toString())
+            .toSet()
+            .toList();
+
+        var finalDomainMaterials = <String>[];
+        // Tabulate the materials and remove completed ones
+        for (var element in uniqueMaterials) {
+          var cur = 0, max = 0;
+          data.docs
+              .where((element2) => element2.data()['name'] == element)
+              .forEach((element) {
+            cur += element.data()['current'] as int;
+            max += element.data()['max'] as int;
+          });
+
+          if (cur < max) {
+            finalDomainMaterials.add(element);
+          }
+        }
+
+        var mappedData = <int, Set<String>>{};
+        for (var i = 1; i <= 7; i++) {
+          mappedData.putIfAbsent(i, () => {});
+        }
+        for (var domainMaterial in finalDomainMaterials) {
+          if (_matData![domainMaterial] is! MaterialDataDomains) continue;
+
+          var daysForMaterial =
+          (_matData![domainMaterial] as MaterialDataDomains).days!;
+
+          for (var day in daysForMaterial) {
+            mappedData[day]!.add(domainMaterial);
+          }
+        }
+
+        return _buildWeeklyMaterials(mappedData);
+      },
     );
   }
 }

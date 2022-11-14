@@ -20,19 +20,19 @@ enum TrackingStatus {
 class TrackingUtils {
   static Color getTrackingColor(
     int index,
-    Map<String, TrackingStatus> _isBeingTracked,
+    Map<String, TrackingStatus> isBeingTracked,
   ) {
-    return getTrackingColorString(index.toString(), _isBeingTracked);
+    return getTrackingColorString(index.toString(), isBeingTracked);
   }
 
   static Color getTrackingColorString(
     String index,
-    Map<String, TrackingStatus> _isBeingTracked,
+    Map<String, TrackingStatus> isBeingTracked,
   ) {
-    if (!_isBeingTracked.keys.contains(index.toString())) {
+    if (!isBeingTracked.keys.contains(index.toString())) {
       return Colors.yellow;
     } // No such key (loading)
-    switch (_isBeingTracked[index.toString()]) {
+    switch (isBeingTracked[index.toString()]) {
       case TrackingStatus.unknown:
       case TrackingStatus.checking:
       case TrackingStatus.notTracked:
@@ -72,13 +72,13 @@ class TrackingData {
   }
 
   static Future<bool> isBeingTracked(String key, String? item) async {
-    var _data = await getTrackingCategory(key);
+    var data = await getTrackingCategory(key);
 
-    return (_data == null) ? false : _data.contains(item);
+    return (data == null) ? false : data.contains(item);
   }
 
-  static bool isBeingTrackedLocal(List<dynamic>? _data, String item) {
-    return (_data == null) ? false : _data.contains(item);
+  static bool isBeingTrackedLocal(List<dynamic>? data, String item) {
+    return (data == null) ? false : data.contains(item);
   }
 
   static Future<void> addToRecord(String key, String? item) async {

@@ -15,36 +15,11 @@ class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  LoginPageState createState() => LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class LoginPageState extends State<LoginPage> {
   bool _loggingIn = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: _auth.authStateChanges(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          final user = snapshot.data as User?;
-          Util.updateFirebaseUid();
-          if (user != null) {
-            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-              Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
-              Get.offAllNamed('/menu');
-            });
-
-            return _loginScreen();
-          }
-        }
-        // Signed out
-        debugPrint('Signed out');
-
-        return _loginScreen();
-      },
-    );
-  }
 
   List<Widget> _signInButtons() {
     var wid = <Widget>[
@@ -159,5 +134,30 @@ class _LoginPageState extends State<LoginPage> {
       // Once signed in, return the UserCredential
       return await _auth.signInWithCredential(credential);
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: _auth.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final user = snapshot.data as User?;
+          Util.updateFirebaseUid();
+          if (user != null) {
+            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+              Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
+              Get.offAllNamed('/menu');
+            });
+
+            return _loginScreen();
+          }
+        }
+        // Signed out
+        debugPrint('Signed out');
+
+        return _loginScreen();
+      },
+    );
   }
 }

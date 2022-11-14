@@ -20,10 +20,10 @@ class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  SettingsPageState createState() => SettingsPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   String _versionStr = 'Unknown', _buildSource = 'Loading';
   bool _darkMode = false,
@@ -40,36 +40,17 @@ class _SettingsPageState extends State<SettingsPage> {
     _refresh();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
-      body: SettingsList(
-        sections: [
-          _userDataSettings(),
-          _appDataSettings(),
-          SettingsSection(
-            title: const Text('Notifications'),
-            tiles: _showNotificationTestMenu(),
-          ),
-          _infoSettings(),
-          _endSettings(),
-        ],
-      ),
-    );
-  }
-
   void _refresh() async {
     var pref = await SharedPreferences.getInstance();
-    var _files = <String, int>{'fileNum': 0, 'size': 0};
+    var files = <String, int>{'fileNum': 0, 'size': 0};
 
     var pkgInfo = await PackageInfo.fromPlatform();
     var version = pkgInfo.version;
     var build = pkgInfo.buildNumber;
     if (!kIsWeb) {
       var dir = await getTemporaryDirectory();
-      var _cacheDir = dir;
-      _files = _dirStatSync(_cacheDir.path);
+      var cacheDir = dir;
+      files = _dirStatSync(cacheDir.path);
     }
     var type = (kIsWeb)
         ? 'Web'
@@ -86,8 +67,8 @@ class _SettingsPageState extends State<SettingsPage> {
       _darkMode = _prefs.getBool('dark_mode') ?? false;
       _moveBot = _prefs.getBool('move_completed_bottom') ?? false;
       _dailylogin = _prefs.getBool('daily_login') ?? false;
-      _cacheFiles = _files['fileNum'];
-      _cacheSize = filesize(_files['size']);
+      _cacheFiles = files['fileNum'];
+      _cacheSize = filesize(files['size']);
       _version = 'Version: $version build $build ($type)';
       _versionStr = version;
       _weeklyParametric = _prefs.getBool('parametric_notification') ?? false;
@@ -127,10 +108,12 @@ class _SettingsPageState extends State<SettingsPage> {
               value,
               resetNotificationChannel: true,
             );
-            Util.showSnackbarQuick(
-              context,
-              '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
-            );
+            if (mounted) {
+              Util.showSnackbarQuick(
+                context,
+                '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+              );
+            }
           });
           setState(() {
             _dailylogin = value;
@@ -152,10 +135,12 @@ class _SettingsPageState extends State<SettingsPage> {
               value,
               resetNotificationChannel: true,
             );
-            Util.showSnackbarQuick(
-              context,
-              '${(value) ? "Enabled" : "Disabled"} parametric transformer reminders',
-            );
+            if (mounted) {
+              Util.showSnackbarQuick(
+                context,
+                '${(value) ? "Enabled" : "Disabled"} parametric transformer reminders',
+              );
+            }
           });
           setState(() {
             _weeklyParametric = value;
@@ -334,18 +319,20 @@ class _SettingsPageState extends State<SettingsPage> {
 
   void _clearTrackingData() async {
     // Clear tracking data by deleting the document
-    var _uid = Util.getFirebaseUid();
+    var uid = Util.getFirebaseUid();
     Get.back();
-    if (_uid == null) return;
-    var _db = FirebaseFirestore.instance;
+    if (uid == null) return;
+    var db = FirebaseFirestore.instance;
     // Deleting all subcollections
-    var ref = _db.collection('tracking').doc(_uid);
+    var ref = db.collection('tracking').doc(uid);
     await TrackingData.clearCollection('boss_drops');
     await TrackingData.clearCollection('domain_material');
     await TrackingData.clearCollection('local_speciality');
     await TrackingData.clearCollection('mob_drops');
     await ref.delete(); // Delete fields
-    Util.showSnackbarQuick(context, 'Cleared all tracking information');
+    if (mounted) {
+      Util.showSnackbarQuick(context, 'Cleared all tracking information');
+    }
   }
 
   void _clearCache() async {
@@ -354,7 +341,9 @@ class _SettingsPageState extends State<SettingsPage> {
     for (var file in files) {
       await file.delete(recursive: true);
     }
-    Util.showSnackbarQuick(context, 'Cache Cleared');
+    if (mounted) {
+      Util.showSnackbarQuick(context, 'Cache Cleared');
+    }
     _refresh();
   }
 
@@ -436,16 +425,35 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Settings')),
+      body: SettingsList(
+        sections: [
+          _userDataSettings(),
+          _appDataSettings(),
+          SettingsSection(
+            title: const Text('Notifications'),
+            tiles: _showNotificationTestMenu(),
+          ),
+          _infoSettings(),
+          _endSettings(),
+        ],
+      ),
+    );
+  }
 }
 
 class RegionSettingsPage extends StatefulWidget {
   const RegionSettingsPage({Key? key}) : super(key: key);
 
   @override
-  _RegionSettingsPageState createState() => _RegionSettingsPageState();
+  RegionSettingsPageState createState() => RegionSettingsPageState();
 }
 
-class _RegionSettingsPageState extends State<RegionSettingsPage> {
+class RegionSettingsPageState extends State<RegionSettingsPage> {
   String? _regionKey;
   late SharedPreferences _prefs;
 
@@ -458,14 +466,6 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
         _regionKey = value.getString('location') ?? 'Asia';
       });
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Game Server Location')),
-      body: _buildBody(),
-    );
   }
 
   Widget _buildBody() {
@@ -523,16 +523,24 @@ class _RegionSettingsPageState extends State<RegionSettingsPage> {
       _regionKey = region;
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Game Server Location')),
+      body: _buildBody(),
+    );
+  }
 }
 
 class BuildGuideSelectorPage extends StatefulWidget {
   const BuildGuideSelectorPage({Key? key}) : super(key: key);
 
   @override
-  _BuildGuideSelectorPageState createState() => _BuildGuideSelectorPageState();
+  BuildGuideSelectorPageState createState() => BuildGuideSelectorPageState();
 }
 
-class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
+class BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
   String? _buildGuideKey;
   late SharedPreferences _prefs;
 
@@ -545,14 +553,6 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
         _buildGuideKey = value.getString('build_guide_source') ?? 'genshin.gg';
       });
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Build Guide Source')),
-      body: _buildBody(),
-    );
   }
 
   Widget _buildBody() {
@@ -604,14 +604,41 @@ class _BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
       _buildGuideKey = buildGuideSource;
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Build Guide Source')),
+      body: _buildBody(),
+    );
+  }
 }
 
 class NotificationDebugPage extends StatelessWidget {
   const NotificationDebugPage({Key? key}) : super(key: key);
 
+  Future<void> _showDialog(BuildContext context, String msg) async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Upcoming Reminders'),
+          content: Text(msg),
+          actions: [
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var notifyManager = NotificationManager.getInstance();
+    var mounted = true; // Stateless Widgets always mounted
 
     return Scaffold(
       appBar: AppBar(title: const Text('Notification Debug')),
@@ -646,7 +673,9 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager!.getScheduledReminders();
-                  await _showDialog(context, msg);
+                  if (mounted) {
+                    await _showDialog(context, msg);
+                  }
                 },
               ),
               SettingsTile(
@@ -660,24 +689,6 @@ class NotificationDebugPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Future<void> _showDialog(BuildContext context, String msg) async {
-    await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Upcoming Reminders'),
-          content: Text(msg),
-          actions: [
-            TextButton(
-              onPressed: () => Get.back(),
-              child: const Text('Close'),
-            ),
-          ],
-        );
-      },
     );
   }
 }
