@@ -53,6 +53,7 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
       let weaponData = doc.data();
       let since = 0;
       let time = null;
+      let bannerName = null;
       // Get rateupweapon array from each banner data ite,
       for (var item of bannerData) {
         // console.log('[DBG] Checking Banner:', item.name);
@@ -60,6 +61,7 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
         if (special.includes(doc.id)) {
           // Its this one
           time = item.end;
+          bannerName = item.name;
           console.log('Found', doc.id, 'in', item.name, '#', since, 'ended at', item.end);
           break;
         }
@@ -75,9 +77,13 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
         if (!("date_since_last_appearance" in weaponData)) {
           delete weaponData.date_since_last_appearance;
         }
+        if (!("banners_since_last_appearance_name" in weaponData)) {
+          delete weaponData.banners_since_last_appearance_name;
+        }
       } else {
         weaponData.banners_since_last_appearance = since;
         weaponData.date_since_last_appearance = time;
+        weaponData.banners_since_last_appearance_name = bannerName;
       }
       weaponData.bsla = Date.now();
       finalUpdates[doc.id] = weaponData;
@@ -115,6 +121,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
       let characterData = doc.data();
       let since = 0;
       let time = null;
+      let bannerName = null;
       // Get rateupcharacters array from each banner data ite,
       for (var item of bannerData) {
         // console.log('[DBG] Checking Banner:', item.name);
@@ -122,6 +129,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
         if (special.includes(doc.id)) {
           // Its this one
           time = item.end;
+          bannerName = item.name;
           console.log('Found', doc.id, 'in', item.name, '#', since, 'ended at', item.end);
           break;
         }
@@ -137,9 +145,13 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
         if (!("date_since_last_appearance" in characterData)) {
           delete characterData.date_since_last_appearance;
         }
+        if (!("banners_since_last_appearance_name" in characterData)) {
+          delete characterData.banners_since_last_appearance_name;
+        }
       } else {
         characterData.banners_since_last_appearance = since;
         characterData.date_since_last_appearance = time;
+        characterData.banners_since_last_appearance_name = bannerName;
       }
       characterData.bsla = Date.now();
       finalUpdates[doc.id] = characterData;
@@ -173,6 +185,7 @@ exports.updateCharacterLastSeen = functions.firestore.document('characters/{char
 
   let since = 0;
   let time = null;
+  let bannerName = null;
 
   // Get list of all banners in RTDB and process it
   const rtDb = getDatabase();
@@ -187,6 +200,7 @@ exports.updateCharacterLastSeen = functions.firestore.document('characters/{char
     if (special.includes(key)) {
       // Its this one
       time = item.end;
+      bannerName = item.name;
       console.log('Found', key, 'in', item.name, '#', since, 'ended at', item.end);
       break;
     }
@@ -202,9 +216,13 @@ exports.updateCharacterLastSeen = functions.firestore.document('characters/{char
     if (!("date_since_last_appearance" in charData)) {
       delete charData.date_since_last_appearance;
     }
+    if (!("banners_since_last_appearance_name" in charData)) {
+      delete charData.banners_since_last_appearance_name;
+    }
   } else {
     charData.banners_since_last_appearance = since;
     charData.date_since_last_appearance = time;
+    charData.banners_since_last_appearance_name = bannerName;
   }
   charData.bsla = Date.now();
 
@@ -230,6 +248,7 @@ exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').
 
   let since = 0;
   let time = null;
+  let bannerName = null;
 
   // Get list of all banners in RTDB and process it
   const rtDb = getDatabase();
@@ -244,6 +263,7 @@ exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').
     if (special.includes(key)) {
       // Its this one
       time = item.end;
+      bannerName = item.name;
       console.log('Found', key, 'in', item.name, '#', since, 'ended at', item.end);
       break;
     }
@@ -259,9 +279,13 @@ exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').
     if (!("date_since_last_appearance" in wepData)) {
       delete wepData.date_since_last_appearance;
     }
+    if (!("banners_since_last_appearance_name" in wepData)) {
+      delete wepData.banners_since_last_appearance_name;
+    }
   } else {
     wepData.banners_since_last_appearance = since;
     wepData.date_since_last_appearance = time;
+    wepData.banners_since_last_appearance_name = bannerName;
   }
   wepData.bsla = Date.now();
 
