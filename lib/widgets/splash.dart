@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 import '../firebase_options.dart';
 
@@ -42,6 +43,10 @@ class SplashPageState extends State<SplashPage> {
   void _complete(String value) {
     Util.themeNotifier.removeListener(_listener);
     Get.offNamed(value);
+  }
+
+  Future<void> _miscInit() async {
+    tz.initializeTimeZones();
   }
 
   Future<void> _setupNotifications() async {
@@ -107,6 +112,7 @@ class SplashPageState extends State<SplashPage> {
       [
         _initFirebase(),
         _setupNotifications(),
+        _miscInit(),
         Future.delayed(const Duration(seconds: 2)),
       ],
     );
