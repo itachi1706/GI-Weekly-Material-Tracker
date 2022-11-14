@@ -295,7 +295,9 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             child: Row(
               children: [
                 _getGenderIcon(
-                    widget.info!.gender!, widget.info!.name ?? 'Unknown'),
+                  widget.info!.gender!,
+                  widget.info!.name ?? 'Unknown',
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.gender!),
@@ -614,7 +616,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     return [
       GridData.getAscensionImage(key, widget.materialData),
       Text(
-          key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item'),
+        key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item',
+      ),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }

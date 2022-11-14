@@ -14,9 +14,11 @@ class MaterialTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const MaterialTabController(
-      {Key? key, required this.tabController, this.notifier})
-      : super(key: key);
+  const MaterialTabController({
+    Key? key,
+    required this.tabController,
+    this.notifier,
+  }) : super(key: key);
 
   @override
   MaterialTabControllerState createState() => MaterialTabControllerState();
@@ -105,7 +107,8 @@ class MaterialListGridState extends State<MaterialListGrid> {
               onTap: () => Get.toNamed('/materials/${document.id}'),
               child: GridData.getGridData(
                 MaterialDataCommon.fromJson(
-                    document.data() as Map<String, dynamic>),
+                  document.data() as Map<String, dynamic>,
+                ),
               ),
             );
           }).toList(),

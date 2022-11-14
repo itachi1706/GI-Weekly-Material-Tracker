@@ -20,8 +20,9 @@ class GridData {
     String? itemKey,
     Map<String, MaterialDataCommon>? data,
   ) {
-    if (itemKey == null)
+    if (itemKey == null) {
       return Image.memory(Util.kTransparentImage, height: 16);
+    }
     // debugPrint('getAscensionImage: $itemKey');
 
     return getImageAssetFromFirebase(
@@ -226,7 +227,8 @@ class GridData {
                       ),
                     ),
                     GridData.generateElementalColoredLine(
-                        description..replaceAll('\\n', '\n')),
+                      description..replaceAll('\\n', '\n'),
+                    ),
                   ],
                 ),
               ),
@@ -262,8 +264,9 @@ class GridData {
     if (released) return [const SizedBox.shrink()];
 
     return GridData.generateInfoLine(
-        'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
-        Icons.warning_amber);
+      'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+      Icons.warning_amber,
+    );
   }
 
   static Widget generateElementalColoredLine(String textData) {

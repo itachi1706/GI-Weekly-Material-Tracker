@@ -18,9 +18,11 @@ class WeaponTabController extends StatefulWidget {
   final TabController? tabController;
   final SortNotifier? notifier;
 
-  const WeaponTabController(
-      {Key? key, required this.tabController, this.notifier})
-      : super(key: key);
+  const WeaponTabController({
+    Key? key,
+    required this.tabController,
+    this.notifier,
+  }) : super(key: key);
 
   @override
   WeaponTabControllerState createState() => WeaponTabControllerState();
@@ -108,7 +110,8 @@ class WeaponListGridState extends State<WeaponListGrid> {
             return GestureDetector(
               onTap: () => Get.toNamed('/weapons/${document.id}'),
               child: GridData.getGridData(
-                  WeaponData.fromJson(document.data() as Map<String, dynamic>)),
+                WeaponData.fromJson(document.data() as Map<String, dynamic>),
+              ),
             );
           }).toList(),
         );
@@ -243,7 +246,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: (_info!.maxSecondaryStat == null)
                   ? Text(
-                      '${_info!.secondaryStat} (${_info!.secondaryStatType})')
+                      '${_info!.secondaryStat} (${_info!.secondaryStatType})',
+                    )
                   : Text(
                       '${_info!.secondaryStat} -> ${_info!.maxSecondaryStat} (${_info!.secondaryStatType})',
                     ),
@@ -437,8 +441,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     return [
       _getAscensionImage(key),
       Flexible(
-          child: Text(
-              key == null ? '' : _materialData![key]?.name ?? 'Unknown Item')),
+        child: Text(
+          key == null ? '' : _materialData![key]?.name ?? 'Unknown Item',
+        ),
+      ),
       Text((qty == 0) ? '' : ' x$qty'),
     ];
   }

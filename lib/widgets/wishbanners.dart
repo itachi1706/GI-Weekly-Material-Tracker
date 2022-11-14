@@ -463,7 +463,8 @@ class BannerInfoPageState extends State<BannerInfoPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(
-                      "- 0.6% for 0-${_bannerInfo!.softPity - 1} rolls\n- Rates increased from roll ${_bannerInfo!.softPity} (Soft Pity)\n- 100% at roll ${_bannerInfo!.hardPity} (Hard Pity)"),
+                    "- 0.6% for 0-${_bannerInfo!.softPity - 1} rolls\n- Rates increased from roll ${_bannerInfo!.softPity} (Soft Pity)\n- 100% at roll ${_bannerInfo!.hardPity} (Hard Pity)",
+                  ),
                 ),
               ],
             ),

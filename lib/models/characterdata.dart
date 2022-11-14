@@ -254,7 +254,8 @@ class TalentInfo {
   static Map<String, TalentInfo> getFromMap(Map<String, dynamic> data) {
     var fin = <String, TalentInfo>{};
     data.forEach(
-        (key, value) => fin.putIfAbsent(key, () => TalentInfo.fromJson(value)));
+      (key, value) => fin.putIfAbsent(key, () => TalentInfo.fromJson(value)),
+    );
 
     return fin;
   }

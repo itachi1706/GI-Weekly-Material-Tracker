@@ -119,6 +119,13 @@ class MyAppState extends State<MyApp> {
 class TransitionPage extends StatelessWidget {
   const TransitionPage({Key? key}) : super(key: key);
 
+  Future<void> _skip() async {
+    Util.currentRoute = '/tracking';
+    Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
+
+    return;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -127,12 +134,5 @@ class TransitionPage extends StatelessWidget {
         return Util.loadingScreen();
       },
     );
-  }
-
-  Future<void> _skip() async {
-    Util.currentRoute = '/tracking';
-    Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
-
-    return;
   }
 }

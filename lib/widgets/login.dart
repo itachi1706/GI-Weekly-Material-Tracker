@@ -62,8 +62,11 @@ class LoginPageState extends State<LoginPage> {
       // Add footnote for login
       wid.insert(0, const Spacer());
       wid.add(const Spacer());
-      wid.add(const Text(
-          "Note: If you have just logged in, please wait a while on this page for the login to complete"));
+      wid.add(
+        const Text(
+          "Note: If you have just logged in, please wait a while on this page for the login to complete",
+        ),
+      );
     }
 
     return wid;
