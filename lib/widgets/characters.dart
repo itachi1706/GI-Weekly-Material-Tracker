@@ -14,6 +14,7 @@ import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -858,6 +859,33 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     return titles.length > 1 ? titles.map((e) => "• $e").join('\n') : titles.join('\n');
   }
 
+  List<Widget> _getLastBanner(CharacterData info) {
+    if (info.lastBannerCount == null || info.lastBannerEnd == null) {
+      // No banners
+      debugPrint('No banners for character');
+
+      return [const SizedBox.shrink()];
+    }
+
+    var df = Util.defaultDateFormat;
+    var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
+    var endState = 'Ended';
+    if (curDt.isBefore(info.lastBannerEnd!)) {
+      endState = 'Ending';
+    }
+    var bannerGrammar = info.lastBannerCount == 1 ? 'banner' : 'banners';
+    var bt = '${info.lastBannerCount} $bannerGrammar ago';
+    if (info.lastBannerCount! < 1) {
+      bt = 'Current banner';
+    }
+    // Craft the message
+    var message = '$bt in ${info.lastBannerName}\n'
+        '$endState: ${df.format(info.lastBannerEnd!.toLocal())}';
+
+
+    return GridData.generateInfoLine(message, Icons.calendar_month);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (widget.info == null) return Util.loadingScreen();
@@ -887,6 +915,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
               widget.info!.introduction!,
               Icons.book,
             ),
+            ..._getLastBanner(widget.info!),
             ...GridData.generateInfoLine(
               _getTitles(widget.info!.titles!),
               Icons.celebration,

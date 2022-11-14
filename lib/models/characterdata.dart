@@ -18,6 +18,11 @@ class CharacterData extends CommonData {
   CharacterTalent? talent;
   List<String>? titles;
 
+  // Time since last banner
+  int? lastBannerCount;
+  DateTime? lastBannerEnd;
+  String? lastBannerName;
+
   CharacterData({
     this.affiliation,
     this.birthday,
@@ -39,6 +44,9 @@ class CharacterData extends CommonData {
     this.constellations,
     this.fullName,
     this.titles,
+    this.lastBannerCount,
+    this.lastBannerEnd,
+    this.lastBannerName,
     crossover,
     wiki,
     released,
@@ -81,16 +89,19 @@ class CharacterData extends CommonData {
       crossover: parsedJson['crossover'] ?? false,
       released: parsedJson['released'],
       titles: parsedJson['titles'] != null ? List<String>.from(parsedJson['titles']) : null,
+      lastBannerCount: parsedJson['banners_since_last_appearance'],
+      lastBannerEnd: parsedJson['date_since_last_appearance'] != null ? DateTime.parse(parsedJson['date_since_last_appearance']) : null,
+      lastBannerName: parsedJson['banners_since_last_appearance_name'] ?? 'Unknown Banner',
     );
   }
 
   static Map<String, CharacterData> getList(Map<String, dynamic> listString) {
-    var _fin = <String, CharacterData>{};
+    var fin = <String, CharacterData>{};
     listString.forEach((key, value) {
-      _fin.putIfAbsent(key, () => CharacterData.fromJson(value));
+      fin.putIfAbsent(key, () => CharacterData.fromJson(value));
     });
 
-    return _fin;
+    return fin;
   }
 }
 
