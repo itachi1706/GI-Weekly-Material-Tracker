@@ -318,7 +318,40 @@ class GridData {
     ];
   }
 
-  static Widget getCharacterOrWeaponGrid(
+  static List<Widget> generateCoWGridWidgets(
+    String title,
+    List<String>? names,
+    String type,
+    String? name,
+    bool isPortrait,
+  ) {
+    var widgets = <Widget>[];
+    widgets.add(
+      Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Text(
+          title.toString(),
+          style: const TextStyle(fontSize: 20),
+        ),
+      ),
+    );
+    var wid = GridData._getCharacterOrWeaponGrid(
+      names,
+      type,
+      name,
+      isPortrait,
+    );
+    if (wid == null) {
+      widgets.removeLast(); // Remove title and skip
+    } else {
+      widgets.add(wid);
+      widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    }
+
+    return widgets;
+  }
+
+  static Widget? _getCharacterOrWeaponGrid(
     List<String>? names,
     String type,
     String? name,
@@ -328,8 +361,8 @@ class GridData {
       return const SizedBox.shrink();
     }
 
-    var characterData = _retrieveStaticDataQuick('characters');
-    var weaponData = _retrieveStaticDataQuick('weapons');
+    var characterData = _retrieveStaticDataQuick('characters') as Map<String, CharacterData>?;
+    var weaponData = _retrieveStaticDataQuick('weapons') as Map<String, WeaponData>?;
 
     List<MapEntry<String, CommonData?>> gridEntries = [];
     gridEntries = type == 'characters'
@@ -353,6 +386,11 @@ class GridData {
 
     debugPrint("GridLen: ${gridEntries.length}");
 
+    if (gridEntries.isEmpty) {
+      // Nothing, return nothing
+      return null;
+    }
+
     return Flexible(
       child: GridView.count(
         physics: const NeverScrollableScrollPhysics(),
@@ -366,34 +404,6 @@ class GridData {
         }).toList(),
       ),
     );
-  }
-
-  static List<Widget> generateCoWGridWidgets(
-    String title,
-    List<String>? names,
-    String type,
-    String? name,
-    bool isPortrait,
-  ) {
-    var widgets = <Widget>[];
-    widgets.add(
-      Padding(
-        padding: const EdgeInsets.only(left: 8),
-        child: Text(
-          title.toString(),
-          style: const TextStyle(fontSize: 20),
-        ),
-      ),
-    );
-    widgets.add(GridData.getCharacterOrWeaponGrid(
-      names,
-      'characters',
-      name,
-      isPortrait,
-    ));
-    widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
-
-    return widgets;
   }
 
   static Future<Map<String, CommonData>?> _retrieveStaticData(
