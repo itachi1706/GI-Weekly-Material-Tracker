@@ -361,8 +361,8 @@ class GridData {
       return const SizedBox.shrink();
     }
 
-    var characterData = _retrieveStaticDataQuick('characters');
-    var weaponData = _retrieveStaticDataQuick('weapons');
+    var characterData = _retrieveStaticDataQuick('characters') as Map<String, CharacterData>?;
+    var weaponData = _retrieveStaticDataQuick('weapons') as Map<String, WeaponData>?;
 
     List<MapEntry<String, CommonData?>> gridEntries = [];
     gridEntries = type == 'characters'
