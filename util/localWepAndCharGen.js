@@ -1,10 +1,10 @@
-let fs = require('fs');
+const fs = require('fs');
 
-var characters = {characters: {}};
-var weapons = {weapons: {}};
+let characters = {characters: {}};
+let weapons = {weapons: {}};
 
-var charTmp = [];
-var wepTmp = [];
+let charTmp = [];
+let wepTmp = [];
 
 // For each file in local folder, read and write to object
 const files = fs.readdirSync("local");
@@ -13,14 +13,14 @@ for (const file of files) {
     const fD = JSON.parse(fileData);
 
     if ("characters" in fD) {
-        for (var c in fD.characters) {
+        for (const c in fD.characters) {
             charTmp.push([c, fD.characters[c]]);
         }
     }
 
     if ("weapons" in fD) {
-       for (var c in fD.weapons) {
-            wepTmp.push([c, fD.weapons[c]]);
+       for (const w in fD.weapons) {
+            wepTmp.push([w, fD.weapons[w]]);
         }
     }
 }
