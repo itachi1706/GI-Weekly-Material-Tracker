@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
+import 'package:gi_weekly_material_tracker/models/characterdata.dart';
+import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -127,6 +131,8 @@ class MaterialInfoPage extends StatefulWidget {
 
 class MaterialInfoPageState extends State<MaterialInfoPage> {
   MaterialDataCommon? _info;
+  Map<String, WeaponData>? _weaponData;
+  Map<String, CharacterData>? _characterData;
   String? _infoId;
 
   Color? _rarityColor;
@@ -141,14 +147,22 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
   void initState() {
     super.initState();
     _infoId = Get.parameters['material'];
-    GridData.retrieveMaterialsMapData().then((value) {
-      setState(() {
-        _info = value![_infoId!];
-        if (_info == null) Get.offAndToNamed('/splash');
-        _rarityColor = GridUtils.getRarityColor(_info!.rarity);
-      });
-      _refreshTrackingStatus();
+    _getStaticData();
+  }
+
+  void _getStaticData() async {
+    var characterData = await GridData.retrieveCharactersMapData();
+    var weaponData = await GridData.retrieveWeaponsMapData();
+    var value = await GridData.retrieveMaterialsMapData();
+
+    setState(() {
+      _info = value![_infoId!];
+      if (_info == null) Get.offAndToNamed('/splash');
+      _rarityColor = GridUtils.getRarityColor(_info!.rarity);
+      _characterData = characterData;
+      _weaponData = weaponData;
     });
+    _refreshTrackingStatus();
   }
 
   Widget _getMaterialHeader() {
@@ -320,6 +334,50 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
     );
   }
 
+  List<Widget> _generateUsageList() {
+    var widgets = <Widget>[];
+
+    if (_info?.usage == null) return widgets;
+
+    widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    widgets.add(
+      const Padding(
+        padding: EdgeInsets.only(left: 8),
+        child: Text(
+          "Used By",
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
+    );
+    widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
+    if (_info?.usage!.characters?.isNotEmpty ?? false) {
+      widgets.addAll(GridData.generateCoWGridWidgets(
+        'Characters',
+        _info?.usage!.characters,
+        'characters',
+        _info?.name,
+        isPortrait,
+      ));
+    }
+
+    if (_info?.usage!.weapons?.isNotEmpty ?? false) {
+      widgets.addAll(GridData.generateCoWGridWidgets(
+        'Weapons',
+        _info?.usage!.weapons,
+        'weapons',
+        _info?.name,
+        isPortrait,
+      ));
+    }
+
+    widgets.removeLast(); // Remove padding at the end
+
+    return widgets;
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_info == null) return Util.loadingScreen();
@@ -343,20 +401,27 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            _getMaterialHeader(),
-            const Divider(),
-            ...GridData.unreleasedCheck(_info!.released, 'Material'),
-            ...GridData.generateInfoLine(
-              _info!.obtained!.replaceAll('- ', ''),
-              Icons.location_pin,
-            ),
-            ...GridData.generateInfoLine(
-              _info!.description ?? 'Unknown Description',
-              Icons.format_list_bulleted,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _getMaterialHeader(),
+              const Divider(),
+              ...GridData.unreleasedCheck(_info!.released, 'Material'),
+              ...GridData.generateInfoLine(
+                _info!.obtained!.replaceAll('- ', ''),
+                Icons.location_pin,
+              ),
+              ...GridData.generateInfoLine(
+                _info!.description ?? 'Unknown Description',
+                Icons.format_list_bulleted,
+              ),
+              const Divider(),
+              ..._generateUsageList(),
+            ],
+          ),
         ),
       ),
     );

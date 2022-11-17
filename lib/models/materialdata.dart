@@ -5,6 +5,8 @@ class MaterialDataCommon extends CommonData {
   String? innerType;
   String? obtained;
 
+  MaterialDataUsage? usage;
+
   MaterialDataCommon({
     image,
     rarity,
@@ -14,6 +16,7 @@ class MaterialDataCommon extends CommonData {
     description,
     wiki,
     this.obtained,
+    this.usage,
     released,
   }) : super(
           name: name,
@@ -35,6 +38,9 @@ class MaterialDataCommon extends CommonData {
       wiki: parsedJson['wiki'],
       obtained: parsedJson['obtained'],
       released: parsedJson['released'],
+      usage: parsedJson['usage'] != null
+          ? MaterialDataUsage.fromJson(parsedJson['usage'])
+          : null,
     );
   }
 
@@ -73,6 +79,7 @@ class MaterialDataMob extends MaterialDataCommon {
     obtained,
     wiki,
     this.enemies,
+    usage,
     released,
   }) : super(
           image: image,
@@ -84,6 +91,7 @@ class MaterialDataMob extends MaterialDataCommon {
           wiki: wiki,
           obtained: obtained,
           released: released,
+          usage: usage,
         );
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
@@ -101,6 +109,9 @@ class MaterialDataMob extends MaterialDataCommon {
           .toSet()
           .toList(),
       released: parsedJson['released'],
+      usage: parsedJson['usage'] != null
+          ? MaterialDataUsage.fromJson(parsedJson['usage'])
+          : null,
     );
   }
 }
@@ -118,6 +129,7 @@ class MaterialDataDomains extends MaterialDataCommon {
     obtained,
     wiki,
     this.days,
+    usage,
     released,
   }) : super(
           image: image,
@@ -129,6 +141,7 @@ class MaterialDataDomains extends MaterialDataCommon {
           wiki: wiki,
           obtained: obtained,
           released: released,
+          usage: usage,
         );
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
@@ -146,6 +159,32 @@ class MaterialDataDomains extends MaterialDataCommon {
           .toSet()
           .toList(),
       released: parsedJson['released'],
+      usage: parsedJson['usage'] != null
+          ? MaterialDataUsage.fromJson(parsedJson['usage'])
+          : null,
+    );
+  }
+}
+
+class MaterialDataUsage {
+  List<String>? characters;
+  List<String>? weapons;
+
+  MaterialDataUsage({
+    this.characters,
+    this.weapons,
+  });
+
+  factory MaterialDataUsage.fromJson(Map<String, dynamic> parsedJson) {
+    return MaterialDataUsage(
+      characters: (parsedJson['characters'] as List<dynamic>)
+          .map((e) => e.toString())
+          .toSet()
+          .toList(),
+      weapons: (parsedJson['weapons'] as List<dynamic>)
+          .map((e) => e.toString())
+          .toSet()
+          .toList(),
     );
   }
 }

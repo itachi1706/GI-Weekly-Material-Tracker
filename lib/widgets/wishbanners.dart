@@ -478,106 +478,51 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     var finalWidgets = <Widget>[];
 
     finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+
     if (_bannerInfo!.rateUpCharacters.isNotEmpty) {
-      finalWidgets.add(
-        const Padding(
-          padding: EdgeInsets.only(left: 8),
-          child: Text(
-            "Rate Up Characters",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      );
-      finalWidgets.add(_getGrid(_bannerInfo!.rateUpCharacters, 'characters'));
-      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+      finalWidgets.addAll(GridData.generateCoWGridWidgets(
+        'Rate Up Characters',
+        _bannerInfo!.rateUpCharacters,
+        'characters',
+        _bannerInfo?.name,
+        isPortrait,
+      ));
     }
 
     if (_bannerInfo!.rateUpWeapons.isNotEmpty) {
-      finalWidgets.add(
-        const Padding(
-          padding: EdgeInsets.only(left: 8),
-          child: Text(
-            "Rate Up Weapons",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      );
-      finalWidgets.add(_getGrid(_bannerInfo!.rateUpWeapons, 'weapons'));
-      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+      finalWidgets.addAll(GridData.generateCoWGridWidgets(
+        'Rate Up Weapons',
+        _bannerInfo!.rateUpWeapons,
+        'weapons',
+        _bannerInfo?.name,
+        isPortrait,
+      ));
     }
 
     if (_bannerInfo!.characters.isNotEmpty) {
-      finalWidgets.add(
-        const Padding(
-          padding: EdgeInsets.only(left: 8),
-          child: Text(
-            "Characters",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      );
-      finalWidgets.add(_getGrid(_bannerInfo!.characters, 'characters'));
-      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+      finalWidgets.addAll(GridData.generateCoWGridWidgets(
+        'Characters',
+        _bannerInfo!.characters,
+        'characters',
+        _bannerInfo?.name,
+        isPortrait,
+      ));
     }
 
     if (_bannerInfo!.weapons.isNotEmpty) {
-      finalWidgets.add(
-        const Padding(
-          padding: EdgeInsets.only(left: 8),
-          child: Text(
-            "Weapons",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      );
-      finalWidgets.add(_getGrid(_bannerInfo!.weapons, 'weapons'));
-      finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+      finalWidgets.addAll(GridData.generateCoWGridWidgets(
+        'Weapons',
+        _bannerInfo!.weapons,
+        'weapons',
+        _bannerInfo?.name,
+        isPortrait,
+      ));
     }
 
     finalWidgets.removeLast(); // Remove padding at the end
 
     return finalWidgets;
-  }
-
-  Widget _getGrid(List<String> names, String type) {
-    List<MapEntry<String, CommonData?>> gridEntries = [];
-    gridEntries = type == 'characters'
-        ? names.map((e) => MapEntry(e, _characterData![e])).toList()
-        : names.map((e) => MapEntry(e, _weaponData![e])).toList();
-
-    var oldCnt = gridEntries.length;
-    gridEntries.removeWhere(
-      (element) => element.value == null,
-    ); // Remove null characters
-    var newCnt = gridEntries.length;
-
-    if (oldCnt != newCnt) {
-      FirebaseCrashlytics.instance.printError(
-        info:
-            "ERR: Mismatched length for ${_bannerInfo!.name}. Please check list here: $gridEntries",
-      );
-    }
-
-    debugPrint("GridLen: ${gridEntries.length}");
-
-    // return SizedBox.shrink();
-
-    return Flexible(
-      child: GridView.count(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        crossAxisCount:
-            (MediaQuery.of(context).orientation == Orientation.portrait)
-                ? 3
-                : 6,
-        children: gridEntries.map((entry) {
-          return GestureDetector(
-            onTap: () => Get.toNamed('/$type/${entry.key}'),
-            child: GridData.getGridData(entry.value!),
-          );
-        }).toList(),
-      ),
-    );
   }
 
   Widget _unknownBanner() {

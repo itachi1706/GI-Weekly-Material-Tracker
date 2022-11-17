@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
@@ -316,6 +318,84 @@ class GridData {
     ];
   }
 
+  static Widget getCharacterOrWeaponGrid(
+    List<String>? names,
+    String type,
+    String? name,
+    bool isPortrait,
+  ) {
+    if (names == null || names.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
+    var characterData = _retrieveStaticDataQuick('characters');
+    var weaponData = _retrieveStaticDataQuick('weapons');
+
+    List<MapEntry<String, CommonData?>> gridEntries = [];
+    gridEntries = type == 'characters'
+        ? names.map((e) => MapEntry(e, characterData![e])).toList()
+        : names.map((e) => MapEntry(e, weaponData![e])).toList();
+
+    var oldCnt = gridEntries.length;
+    gridEntries.removeWhere(
+      (element) => element.value == null,
+    ); // Remove null characters
+    var newCnt = gridEntries.length;
+
+    debugPrint('Removed ${oldCnt - newCnt} null entries');
+
+    if (oldCnt != newCnt) {
+      FirebaseCrashlytics.instance.printError(
+        info:
+            "ERR: Mismatched length for $name. Please check list here: $gridEntries",
+      );
+    }
+
+    debugPrint("GridLen: ${gridEntries.length}");
+
+    return Flexible(
+      child: GridView.count(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        crossAxisCount: (isPortrait) ? 3 : 6,
+        children: gridEntries.map((entry) {
+          return GestureDetector(
+            onTap: () => Get.toNamed('/$type/${entry.key}'),
+            child: GridData.getGridData(entry.value!),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  static List<Widget> generateCoWGridWidgets(
+    String title,
+    List<String>? names,
+    String type,
+    String? name,
+    bool isPortrait,
+  ) {
+    var widgets = <Widget>[];
+    widgets.add(
+      Padding(
+        padding: const EdgeInsets.only(left: 8),
+        child: Text(
+          title.toString(),
+          style: const TextStyle(fontSize: 20),
+        ),
+      ),
+    );
+    widgets.add(GridData.getCharacterOrWeaponGrid(
+      names,
+      'characters',
+      name,
+      isPortrait,
+    ));
+    widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
+
+    return widgets;
+  }
+
   static Future<Map<String, CommonData>?> _retrieveStaticData(
     String type,
   ) async {
@@ -334,6 +414,10 @@ class GridData {
       setStaticData(type, snapshot);
     }
 
+    return _staticData[type];
+  }
+
+  static Map<String, CommonData>? _retrieveStaticDataQuick(String type) {
     return _staticData[type];
   }
 
