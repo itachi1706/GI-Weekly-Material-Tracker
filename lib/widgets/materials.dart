@@ -418,7 +418,6 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
                 _info!.description ?? 'Unknown Description',
                 Icons.format_list_bulleted,
               ),
-              const Divider(),
               ..._generateUsageList(),
             ],
           ),
