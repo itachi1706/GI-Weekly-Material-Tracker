@@ -171,6 +171,17 @@ jobs:
           rm util/import/EventBanners.json
       - run: npm i
         working-directory: util
+      # PRE-PROCESSING
+      - name: Update Material Usages
+        run: |
+          mkdir local
+          cp import/Weapons-*.json local
+          cp import/Characters-*.json local
+          npm run preProcessUsageLocal
+          cp import/Materials-*.json process
+          npm run processUsage
+          cp output/Materials-*.json import
+        working-directory: util
       - name: Update Firestore Public Data
         run: npm run updateFirestoreData
         working-directory: util
