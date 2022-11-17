@@ -10,6 +10,7 @@
     "updateBanners": "node banner.js",
     "processUsage": "node usage.js",
     "preProcessUsage": "node backupWepAndChar.js",
+    "preProcessUsageLocal": "node localWepAndCharGen.js",
     "updatePromoCode": "node promocrawler.js",
     "trackingBackup": "node backupTracker.js",
     "userdataBackup": "node backupUserData.js",

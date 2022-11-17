@@ -5,6 +5,14 @@
  * Create a folder called process and move the Materials.json files into it
  * Create a folder called output
  * npm run processUsage
+ *
+ * CI
+ * Create folder local
+ * Copy Weapons-*.json and Characters-*.json into local
+ * npm run preProcessUsageLocal
+ * Move Materials.json files into process folder
+ * npm run processUsage
+ * Copy output files back into import folder
  */
 
 const fs = require('fs')
@@ -25,6 +33,12 @@ for (const file of files) {
     for (const matKey in mats.materials) {
         console.log("Processing", matKey)
         let mat = mats.materials[matKey];
+
+        // If material usage json exists, reset it
+        mat.usage = {
+            characters: [],
+            weapons: []
+        };
 
         // Checking character
         for (const characterKey in characters.characters) {
