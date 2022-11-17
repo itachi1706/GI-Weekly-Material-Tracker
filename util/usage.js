@@ -23,6 +23,13 @@ const characters = JSON.parse(fs.readFileSync("temp/characters.json", "utf8"));
 // Read temp/weapons.json
 const weapons = JSON.parse(fs.readFileSync("temp/weapons.json", "utf8"));
 
+function debugLog(message) {
+    const debug = false; // Enable if we want debug logs
+    if (debug) {
+        console.log(message);
+    }
+}
+
 // For each file in process folder, read and write to file
 const files = fs.readdirSync("process");
 for (const file of files) {
@@ -42,9 +49,9 @@ for (const file of files) {
 
         // Checking character
         for (const characterKey in characters.characters) {
-//            console.log(">>> DBG: Checking Character", characterKey)
+            debugLog(">>> DBG: Checking Character", characterKey)
             let char = characters.characters[characterKey];
-//            console.log(">>>> DBG: Check Ascension Materials");
+            debugLog(">>>> DBG: Check Ascension Materials");
             let found =false;
             for (const ascensionKey in char.ascension) {
                 let ascend = char.ascension[ascensionKey];
@@ -62,7 +69,7 @@ for (const file of files) {
             }
 
             // Check Talent Ascension
-//            console.log(">>>> DBG: Check Talent Ascension Materials");
+            debugLog(">>>> DBG: Check Talent Ascension Materials");
             for (const talentKey in char.talents.ascension) {
                 let ascend = char.talents.ascension[talentKey];
                 if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey || ascend.material4 == matKey) {
@@ -76,9 +83,9 @@ for (const file of files) {
 
         // Checking weapons
         for (const weaponKey in weapons.weapons) {
-//            console.log(">>> DBG: Checking Weapon", weaponKey)
+            debugLog(">>> DBG: Checking Weapon", weaponKey)
             let wep = weapons.weapons[weaponKey];
-//            console.log(">>>> DBG: Check Ascension Materials");
+            debugLog(">>>> DBG: Check Ascension Materials");
             for (const ascensionKey in wep.ascension) {
                 let ascend = wep.ascension[ascensionKey];
                 if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey) {
