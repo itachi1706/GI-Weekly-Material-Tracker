@@ -23,10 +23,10 @@ const characters = JSON.parse(fs.readFileSync("temp/characters.json", "utf8"));
 // Read temp/weapons.json
 const weapons = JSON.parse(fs.readFileSync("temp/weapons.json", "utf8"));
 
-function debugLog(message) {
+function debugLog(message, ...optionalParams) {
     const debug = false; // Enable if we want debug logs
     if (debug) {
-        console.log(message);
+        console.log(message, optionalParams);
     }
 }
 
