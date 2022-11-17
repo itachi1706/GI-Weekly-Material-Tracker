@@ -31,7 +31,7 @@ for (const file of files) {
 
     // For each material, add to usage/characters if found in character
     for (const matKey in mats.materials) {
-        console.log("Processing", matKey)
+        console.log("> Processing", matKey)
         let mat = mats.materials[matKey];
 
         // If material usage json exists, reset it
@@ -42,14 +42,15 @@ for (const file of files) {
 
         // Checking character
         for (const characterKey in characters.characters) {
-            console.log("Checking Character", characterKey)
+//            console.log(">>> DBG: Checking Character", characterKey)
             let char = characters.characters[characterKey];
-            console.log("Check Ascension Materials");
+//            console.log(">>>> DBG: Check Ascension Materials");
             let found =false;
             for (const ascensionKey in char.ascension) {
                 let ascend = char.ascension[ascensionKey];
                 if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey || ascend.material4 == matKey) {
                     // Add to material's usage
+                    console.log(">> Found Character", characterKey);
                     mat.usage.characters.push(characterKey);
                     found = true
                     break; // We don't need process further once we found a match
@@ -57,15 +58,16 @@ for (const file of files) {
             }
 
             if (found) {
-                break;
+                continue;
             }
 
             // Check Talent Ascension
-            console.log("Check Talent Ascension Materials");
+//            console.log(">>>> DBG: Check Talent Ascension Materials");
             for (const talentKey in char.talents.ascension) {
                 let ascend = char.talents.ascension[talentKey];
                 if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey || ascend.material4 == matKey) {
                     // Add to material's usage
+                    console.log(">> Found Character", characterKey);
                     mat.usage.characters.push(characterKey);
                     break; // We don't need process further once we found a match
                 }
@@ -74,13 +76,14 @@ for (const file of files) {
 
         // Checking weapons
         for (const weaponKey in weapons.weapons) {
-            console.log("Checking Weapon", weaponKey)
+//            console.log(">>> DBG: Checking Weapon", weaponKey)
             let wep = weapons.weapons[weaponKey];
-            console.log("Check Ascension Materials");
+//            console.log(">>>> DBG: Check Ascension Materials");
             for (const ascensionKey in wep.ascension) {
                 let ascend = wep.ascension[ascensionKey];
                 if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey) {
                     // Add to material's usage
+                    console.log(">> Found Weapon", weaponKey);
                     mat.usage.weapons.push(weaponKey);
                     break; // We don't need process further once we found a match
                 }
@@ -90,7 +93,6 @@ for (const file of files) {
     }
 
     const newData = JSON.stringify(mats);
-
 
     fs.writeFileSync(`output/${file}`, newData);
 }
