@@ -337,7 +337,7 @@ class GridData {
     );
     var wid = GridData._getCharacterOrWeaponGrid(
       names,
-      'characters',
+      type,
       name,
       isPortrait,
     );
