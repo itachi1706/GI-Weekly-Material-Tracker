@@ -1969,11 +1969,11 @@
       ],
       "name": "Layla",
       "fullName": null,
-      "description": "A Rtawahist student who specializes in Theoratical Astrology. Heavily prone to somnambulism and locked in a grinding war with sleep deprivation, the problem of restful slumber is a most troubling one to her.",
+      "description": "A Rtawahist student who specializes in Theoretical Astrology. Heavily prone to somnabulism and locked in a grinding war with sleep deprivation, the problem of restful slumber is a most troubling one to her.",
       "nation": "Sumeru",
       "weapon": "Sword",
       "rarity": 4,
-      "affiliation": "Rtawahist",
+      "affiliation": "Rtawahist, Sumeru Akademiya",
       "constellation": "Luscinia",
       "talents": {
         "ascension": {
@@ -2080,22 +2080,22 @@
         "passives": {
           "Like_Nascent_Light": {
             "name": "Like Nascent Light",
-            "effect": "While the Curtain of Slumber is active, the Deep Sleep effect will activate each time the Curtain gains 1 Night Star:\n·The Shield Strength of a character under the effect of the Curtain of Slumber increases by 6%.\n·This effect can have a maximum of 4 stacks and persists until the Curtain of Slumber disappears.",
-            "image": "Talents/Passive/",
+            "effect": "While the Curtain of Slumber is active, the Deep Sleep effect will activate each time the Curtain gains 1 Night Star:\nThe Shield Strength of a character under the effect of the Curtain of Slumber increases by 6%.\nThis effect can have a maximum of 4 stacks and persists until the Curtain of Slumber disappears.",
+            "image": "Talents/Passive/Talent_Like_Nascent_Light.png",
             "order": 0,
             "type": "Passive 1"
           },
           "Sweet_Slumber_Undisturbed": {
             "name": "Sweet Slumber Undisturbed",
             "effect": "The DMG dealt by the Shooting Stars fired by Nights of Formal Focus is increased by 1.5% of Layla's Max HP.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Sweet_Slumber_Undisturbed.png",
             "order": 1,
             "type": "Passive 2"
           },
           "Shadowy_Dream-Signs": {
             "name": "Shadowy Dream-Signs",
             "effect": "When Layla crafts Character Talent Materials, she has a 10% chance to receive double the product.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Shadowy_Dream-Signs.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -2104,21 +2104,21 @@
           "Sword_of_the_Radiant_Path": {
             "name": "Sword of the Radiant Path",
             "effect": "Normal Attack\nPerforms up to 3 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
-            "image": "Talents/Normal/",
+            "image": "Talents/Normal/Sword_Cryo.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Nights_of_Formal_Focus": {
             "name": "Nights of Formal Focus",
-            "effect": "Puts forth a shield known as the Curtain of Slumber, dealing AoE Cryo DMG. The Curtain of Slumber's DMG Absorption is based on Layla's Max HP and absorbs Cryo DMG with 250% effectiveness. When the shield is deployed, Layla will have Cryo applied to her briefly.\n\nNight Stars and Shooting Stars\nWhile the Curtain of Slumber is active, it will create 1 Night Star that will be attached to it every 1.5s. When a character protected by this shield uses an Elemental Skill, 2 Night Stars will be created. Night Stars can be created once every 0.3s in this way. A maximum of 4 Night Stars can be accumulated at any one time.\nOnce the Curtain of Slumber has accumulated 4 Night Stars and there are opponents nearby, these Night Stars will transform into homing Shooting Stars that will be fired off in sequence, dealing Cryo DMG to any opponents hit.\nIf the Curtain of Slumber's duration ends or it is destroyed, the Night Stars will disappear. If they are already being fired off as Shooting Stars, these Shooting Stars will last until this wave of shots ends.\n\nNew Night Stars cannot be created until the previous wave of Shooting Stars has been fired completely.",
-            "image": "Talents/Skill/",
+            "effect": "Puts forth a shield known as the Curtain of Slumber, dealing AoE Cryo DMG.\nThe Curtain of Slumber's DMG Absorption is based on Layla's Max HP and absorbs Cryo DMG with 250% effectiveness. When the shield is deployed, Layla will have Cryo applied to her briefly.\n\nNight Stars and Shooting Stars\nWhile the Curtain of Slumber is active, it will create 1 Night Star that will be attached to it every 1.5s. When a character protected by this shield uses an Elemental Skill, 2 Night Stars will be created. Night Stars can be created once every 0.3s in this way. A maximum of 4 Night Stars can be accumulated at any one time.\nOnce the Curtain of Slumber has accumulated 4 Night Stars and there are opponents nearby, these Night Stars will transform into homing Shooting Stars that will be fired off in sequence, dealing Cryo DMG to any opponents hit.\nIf the Curtain of Slumber's duration ends or it is destroyed, the Night Stars will disappear. If they are already being fired off as Shooting Stars, these Shooting Stars will last until this wave of shots ends.\n\nNew Night Stars cannot be created until the previous wave of Shooting Stars has been fired completely.",
+            "image": "Talents/Skill/Talent_Nights_of_Formal_Focus.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Dream_of_the_Star-Stream_Shaker": {
             "name": "Dream of the Star-Stream Shaker",
             "effect": "Unleashes a Celestial Dreamsphere that constantly fires Starlight Slugs at opponents within its AoE, dealing Cryo DMG.\nWhen a Starlight Slug hits, it will generate 1 Night Star for nearby Curtains of Slumber. Each Curtain of Slumber can gain 1 Night Star this way every 0.5s.",
-            "image": "Talents/Burst/",
+            "image": "Talents/Burst/Talent_Dream_of_the_Star-Stream_Shaker.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -2128,32 +2128,32 @@
         "1": {
           "name": "Fortress of Fantasy",
           "effect": "The Shield Absorption of the Curtain of Slumber generated by Nights of Formal Focus is increased by 20%.\nAdditionally, when unleashing Nights of Formal Focus, she will generate a shield for any nearby party members who are not being protected by a Curtain of Slumber. This shield will have 35% of the absorption of a Curtain of Slumber, will last for 12s, and will absorb Cryo DMG with 250% effectiveness.",
-          "image": "Constellation/"
+          "image": "Constellation/Fortress_of_Fantasy.png"
         },
         "2": {
           "name": "Light's Remit",
           "effect": "When Shooting Stars from Nights of Formal Focus strike opponents, they will each restore 1 Energy to Layla. Each Shooting Star can restore Energy to her in this manner once.",
-          "image": "Constellation/"
+          "image": "Constellation/Lights_Remit.png"
         },
         "3": {
           "name": "Secrets of the Night",
           "effect": "Increases the Level of Nights of Formal Focus by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Secrets_of_the_Night.png"
         },
         "4": {
           "name": "Starry Illumination",
           "effect": "When Nights of Formal Focus starts to fire off Shooting Stars, it will grant all nearby party members the Dawn Star effect, causing their Normal and Charged Attack DMG to increase based on 5% of Layla's Max HP.\nDawn Star can last up to 3s and will be removed 0.05s after dealing Normal or Charged Attack DMG.",
-          "image": "Constellation/"
+          "image": "Constellation/Starry_Illumination.png"
         },
         "5": {
           "name": "Stream of Consciousness",
           "effect": "Increases the Level of Dream of the Star-Stream Shaker by 3.\nMaximum upgrade level is 15.",
-          "image": "Constellation/"
+          "image": "Constellation/Stream_of_Consciousness.png"
         },
         "6": {
           "name": "Radiant Soulfire",
           "effect": "Shooting Stars from Nights of Formal Focus deal 40% increased DMG, and Starlight Slugs from Dream of the Star-Stream Shaker deal 40% increased DMG.\nAdditionally, the interval between the creation of Night Stars via Nights of Formal Focus is decreased by 20%.",
-          "image": "Constellation/"
+          "image": "Constellation/Radiant_Soulfire.png"
         }
       },
       "ascension": {
@@ -2230,9 +2230,9 @@
           "material3": "Nilotpala_Lotus"
         }
       },
-      "introduction": "WIP",
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "introduction": "A Rtawahist student who always looks sleep-deprived. Her dark eye circles have been worsening due to academic stress.\nYet no matter how difficult the work at hand, she always manages to make the most brilliant deductions. Could she be writing her thesis in her dreams?",
+      "paimonmoepath": "characters/layla",
+      "genshinggpath": "characters/layla",
       "element": "Cryo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Layla",
