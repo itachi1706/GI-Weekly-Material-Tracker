@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -332,10 +333,18 @@ class SettingsPageState extends State<SettingsPage> {
       var data = jsonDecode(fileContent) as Map<String, dynamic>;
 
       var tracking = data.containsKey('tracking') ? data['tracking'] : null;
-      var bd = data.containsKey('item_boss_drops') ? data['item_boss_drops'] as Map<String, dynamic> : null;
-      var dm = data.containsKey('item_domain_material') ? data['item_domain_material'] as Map<String, dynamic> : null;
-      var ls = data.containsKey('item_local_speciality') ? data['item_local_speciality'] as Map<String, dynamic> : null;
-      var mb = data.containsKey('item_mob_drops') ? data['item_mob_drops'] as Map<String, dynamic> : null;
+      var bd = data.containsKey('item_boss_drops')
+          ? data['item_boss_drops'] as Map<String, dynamic>
+          : null;
+      var dm = data.containsKey('item_domain_material')
+          ? data['item_domain_material'] as Map<String, dynamic>
+          : null;
+      var ls = data.containsKey('item_local_speciality')
+          ? data['item_local_speciality'] as Map<String, dynamic>
+          : null;
+      var mb = data.containsKey('item_mob_drops')
+          ? data['item_mob_drops'] as Map<String, dynamic>
+          : null;
       var ud = data.containsKey('userdata') ? data['userdata'] : null;
 
       var batch = firestore.batch();
@@ -457,18 +466,21 @@ class SettingsPageState extends State<SettingsPage> {
   }
 
   Future<String?> _loadFile() async {
-    var mimeType = ["application/json"];
-    var params = OpenFileDialogParams(
-      mimeTypesFilter: mimeType,
-    );
+    var filePath = await FilePicker.platform.pickFiles();
+    if (filePath != null) {
+      if (kIsWeb) {
+        var bytes = filePath.files.first.bytes;
+        if (bytes != null) {
+          return utf8.decode(bytes);
+        }
+      } else {
+        var file = File(filePath.files.single.path!);
 
-    var result = await FlutterFileDialog.pickFile(params: params);
-    if (result == null) {
-      return null;
+        return file.readAsString();
+      }
     }
-    var file = File(result);
 
-    return file.readAsString();
+    return null;
   }
 
   Future<bool> _saveFile(String uid, String json) async {
@@ -477,7 +489,8 @@ class SettingsPageState extends State<SettingsPage> {
     var mimeType = ["application/json"];
 
     if (kIsWeb) {
-      await launchUrl(Uri.parse("data:application/octet-stream;base64,${base64Encode(fileData)}"));
+      await launchUrl(Uri.parse(
+          "data:application/octet-stream;base64,${base64Encode(fileData)}"));
 
       return true;
     }
