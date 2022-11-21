@@ -490,7 +490,8 @@ class SettingsPageState extends State<SettingsPage> {
 
     if (kIsWeb) {
       await launchUrl(Uri.parse(
-          "data:application/octet-stream;base64,${base64Encode(fileData)}"));
+        "data:application/octet-stream;base64,${base64Encode(fileData)}",
+      ));
 
       return true;
     }
