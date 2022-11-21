@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:about/about.dart';
@@ -6,9 +7,11 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
+import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -85,6 +88,18 @@ class SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           description: Text(Util.getUserEmail() ?? 'Not logged in'),
           leading: const Icon(Icons.face),
+        ),
+        SettingsTile(
+          title: const Text('Import User Data'),
+          trailing: const SizedBox.shrink(),
+          leading: const Icon(Icons.file_upload),
+          onPressed: _importData,
+        ),
+        SettingsTile(
+          title: const Text('Export User Data'),
+          trailing: const SizedBox.shrink(),
+          leading: const Icon(Icons.file_download),
+          onPressed: _exportData,
         ),
         SettingsTile(
           title: const Text('Clear tracking data'),
@@ -291,6 +306,107 @@ class SettingsPageState extends State<SettingsPage> {
         ],
       ),
     );
+  }
+
+  void _importData(BuildContext context) async {
+    // TODO: Implement import
+    PlaceholderUtil.showUnimplementedSnackbar(context);
+  }
+
+  void _exportData(BuildContext context) async {
+    Util.showSnackbarQuick(context, 'Preparing export...');
+    var firestore = FirebaseFirestore.instance;
+    var uid = Util.getFirebaseUid();
+    if (uid == null) {
+      Util.showSnackbarQuick(context, 'Please login first');
+
+      return;
+    }
+
+    var obj = <String, dynamic>{};
+    obj['version'] = 1; // V1 data
+
+    // Get data from tracking document
+    var trackingRef = firestore.collection('tracking').doc(uid);
+    var trackingData = await trackingRef.get();
+    if (trackingData.exists) {
+      obj['tracking'] = trackingData.data();
+
+      // Get all sub-collections in tracking document hardcoded as not available on Flutter
+      await trackingRef.collection('boss_drops').get().then((value) {
+        if (value.docs.isNotEmpty) {
+          obj['item_boss_drops'] = value.docs.map((e) => e.data()).toList();
+        }
+      });
+      await trackingRef.collection('domain_material').get().then((value) {
+        if (value.docs.isNotEmpty) {
+          obj['item_domain_material'] =
+              value.docs.map((e) => e.data()).toList();
+        }
+      });
+      await trackingRef.collection('local_speciality').get().then((value) {
+        if (value.docs.isNotEmpty) {
+          obj['item_local_speciality'] =
+              value.docs.map((e) => e.data()).toList();
+        }
+      });
+      await trackingRef.collection('mob_drops').get().then((value) {
+        if (value.docs.isNotEmpty) {
+          obj['item_mob_drops'] = value.docs.map((e) => e.data()).toList();
+        }
+      });
+    }
+
+    // Get data from userdata document
+    var userData = await firestore.collection('userdata').doc(uid).get();
+    if (userData.exists) {
+      obj['userdata'] = userData.data();
+    }
+
+    // Convert to JSON
+    var json = jsonEncode(obj);
+    debugPrint("JSON: $json");
+
+    // Save to JSON file
+    var result = await _saveFile(uid, json);
+    if (!result) {
+      _safeNotification('Failed to save file');
+
+      return;
+    }
+
+    _safeNotification('Data exported successfully');
+
+    return;
+  }
+
+  void _safeNotification(String text) {
+    if (mounted) {
+      Util.showSnackbarQuick(context, text);
+    } else {
+      debugPrint(text);
+    }
+  }
+
+  Future<bool> _saveFile(String uid, String json) async {
+    if (kIsWeb) {
+      _safeNotification("Not supported");
+
+      return true; // TODO: Implement web export
+    }
+
+    var fileName = "userdata-$uid.json";
+    var fileData = Uint8List.fromList(json.codeUnits);
+    var mimeType = ["application/json"];
+
+    var params = SaveFileDialogParams(
+      data: fileData,
+      fileName: fileName,
+      mimeTypesFilter: mimeType,
+    );
+    var path = await FlutterFileDialog.saveFile(params: params);
+
+    return path != null;
   }
 
   void _clearTrackingDataPrompt(BuildContext context) {
