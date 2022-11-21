@@ -18,6 +18,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -389,15 +390,15 @@ class SettingsPageState extends State<SettingsPage> {
   }
 
   Future<bool> _saveFile(String uid, String json) async {
-    if (kIsWeb) {
-      _safeNotification("Not supported");
-
-      return true; // TODO: Implement web export
-    }
-
     var fileName = "userdata-$uid.json";
     var fileData = Uint8List.fromList(json.codeUnits);
     var mimeType = ["application/json"];
+
+    if (kIsWeb) {
+      await launchUrl(Uri.parse("data:application/octet-stream;base64,${base64Encode(fileData)}"));
+
+      return true;
+    }
 
     var params = SaveFileDialogParams(
       data: fileData,
