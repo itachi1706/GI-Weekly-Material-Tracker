@@ -11,7 +11,6 @@ import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -92,6 +91,7 @@ class SettingsPageState extends State<SettingsPage> {
         ),
         SettingsTile(
           title: const Text('Import User Data'),
+          description: const Text('Will overwrite current data!'),
           trailing: const SizedBox.shrink(),
           leading: const Icon(Icons.file_upload),
           onPressed: _importData,
@@ -310,8 +310,65 @@ class SettingsPageState extends State<SettingsPage> {
   }
 
   void _importData(BuildContext context) async {
-    // TODO: Implement import
-    PlaceholderUtil.showUnimplementedSnackbar(context);
+    var firestore = FirebaseFirestore.instance;
+    var uid = Util.getFirebaseUid();
+    if (uid == null) {
+      Util.showSnackbarQuick(context, 'Please login first');
+
+      return;
+    }
+
+    var fileContent = await _loadFile();
+    if (fileContent == null) {
+      _safeNotification('No file detected');
+
+      return;
+    }
+
+    _safeNotification("Importing data...");
+
+    try {
+      debugPrint(fileContent);
+      var data = jsonDecode(fileContent) as Map<String, dynamic>;
+
+      var tracking = data.containsKey('tracking') ? data['tracking'] : null;
+      var bd = data.containsKey('item_boss_drops') ? data['item_boss_drops'] as Map<String, dynamic> : null;
+      var dm = data.containsKey('item_domain_material') ? data['item_domain_material'] as Map<String, dynamic> : null;
+      var ls = data.containsKey('item_local_speciality') ? data['item_local_speciality'] as Map<String, dynamic> : null;
+      var mb = data.containsKey('item_mob_drops') ? data['item_mob_drops'] as Map<String, dynamic> : null;
+      var ud = data.containsKey('userdata') ? data['userdata'] : null;
+
+      var batch = firestore.batch();
+      var ref = firestore.collection('tracking').doc(uid);
+      if (tracking != null || ud != null) {
+        await _clearTrackingData(false, false); // Wipe existing data first
+      }
+      if (tracking != null) {
+        batch.set(ref, tracking);
+        bd?.forEach((key, value) {
+          batch.set(ref.collection('boss_drops').doc(key), value);
+        });
+        dm?.forEach((key, value) {
+          batch.set(ref.collection('domain_material').doc(key), value);
+        });
+        ls?.forEach((key, value) {
+          batch.set(ref.collection('local_speciality').doc(key), value);
+        });
+        mb?.forEach((key, value) {
+          batch.set(ref.collection('mob_drops').doc(key), value);
+        });
+      }
+      if (ud != null) {
+        batch.set(firestore.collection('userdata').doc(uid), ud);
+      }
+      await batch.commit();
+      _safeNotification('Data imported successfully!');
+    } catch (e) {
+      _safeNotification('Invalid file detected');
+      e.printError();
+
+      return;
+    }
   }
 
   void _exportData(BuildContext context) async {
@@ -336,24 +393,34 @@ class SettingsPageState extends State<SettingsPage> {
       // Get all sub-collections in tracking document hardcoded as not available on Flutter
       await trackingRef.collection('boss_drops').get().then((value) {
         if (value.docs.isNotEmpty) {
-          obj['item_boss_drops'] = value.docs.map((e) => e.data()).toList();
+          obj['item_boss_drops'] = <String, dynamic>{};
+          for (var element in value.docs) {
+            obj['item_boss_drops'][element.id] = element.data();
+          }
         }
       });
       await trackingRef.collection('domain_material').get().then((value) {
         if (value.docs.isNotEmpty) {
-          obj['item_domain_material'] =
-              value.docs.map((e) => e.data()).toList();
+          obj['item_domain_material'] = <String, dynamic>{};
+          for (var element in value.docs) {
+            obj['item_domain_material'][element.id] = element.data();
+          }
         }
       });
       await trackingRef.collection('local_speciality').get().then((value) {
         if (value.docs.isNotEmpty) {
-          obj['item_local_speciality'] =
-              value.docs.map((e) => e.data()).toList();
+          obj['item_local_speciality'] = <String, dynamic>{};
+          for (var element in value.docs) {
+            obj['item_local_speciality'][element.id] = element.data();
+          }
         }
       });
       await trackingRef.collection('mob_drops').get().then((value) {
         if (value.docs.isNotEmpty) {
-          obj['item_mob_drops'] = value.docs.map((e) => e.data()).toList();
+          obj['item_mob_drops'] = <String, dynamic>{};
+          for (var element in value.docs) {
+            obj['item_mob_drops'][element.id] = element.data();
+          }
         }
       });
     }
@@ -387,6 +454,21 @@ class SettingsPageState extends State<SettingsPage> {
     } else {
       debugPrint(text);
     }
+  }
+
+  Future<String?> _loadFile() async {
+    var mimeType = ["application/json"];
+    var params = OpenFileDialogParams(
+      mimeTypesFilter: mimeType,
+    );
+
+    var result = await FlutterFileDialog.pickFile(params: params);
+    if (result == null) {
+      return null;
+    }
+    var file = File(result);
+
+    return file.readAsString();
   }
 
   Future<bool> _saveFile(String uid, String json) async {
@@ -425,7 +507,7 @@ class SettingsPageState extends State<SettingsPage> {
               child: const Text('Cancel'),
             ),
             TextButton(
-              onPressed: _clearTrackingData,
+              onPressed: _clearTrackingDataPh,
               child: const Text('Clear'),
             ),
           ],
@@ -434,10 +516,16 @@ class SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  void _clearTrackingData() async {
+  void _clearTrackingDataPh() async {
+    await _clearTrackingData(true, true);
+  }
+
+  Future<void> _clearTrackingData(bool alert, bool goBack) async {
     // Clear tracking data by deleting the document
     var uid = Util.getFirebaseUid();
-    Get.back();
+    if (goBack) {
+      Get.back();
+    }
     if (uid == null) return;
     var db = FirebaseFirestore.instance;
     // Deleting all subcollections
@@ -447,7 +535,7 @@ class SettingsPageState extends State<SettingsPage> {
     await TrackingData.clearCollection('local_speciality');
     await TrackingData.clearCollection('mob_drops');
     await ref.delete(); // Delete fields
-    if (mounted) {
+    if (mounted && alert) {
       Util.showSnackbarQuick(context, 'Cleared all tracking information');
     }
   }
