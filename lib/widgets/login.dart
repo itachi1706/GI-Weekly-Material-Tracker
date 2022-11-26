@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/app_secrets.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -19,149 +20,80 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-  bool _loggingIn = false;
+  StreamSubscription<User?>? _listener;
 
-  List<Widget> _signInButtons() {
-    var wid = <Widget>[
-      const Text('Genshin Impact Weekly Material Tracker'),
-      SignInButton(Buttons.Google, onPressed: _signInGoogle),
-    ];
-    if (!kReleaseMode) {
-      if (kIsWeb) {
-        wid.insert(
-          1,
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8, top: 8),
-            child: SignInButton(
-              Buttons.Email,
-              onPressed: _signIn,
-              text: 'Sign in with Test Account',
-            ),
-          ),
-        );
-      } else {
-        wid.insert(
-          1,
-          SignInButton(
-            Buttons.Email,
-            onPressed: _signIn,
-            text: 'Sign in with Test Account',
-          ),
-        );
+  @override
+  void initState() {
+    super.initState();
+    _listener = _auth.userChanges().listen((event) {
+      if (event != null) {
+        _finishLoggedInFlow(context, event);
       }
-    }
-    if (_loggingIn) {
-      wid.add(const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: CircularProgressIndicator(),
-      ));
-      wid.add(const Text('Logging In'));
-    }
-
-    if (kIsWeb) {
-      // Add footnote for login
-      wid.insert(0, const Spacer());
-      wid.add(const Spacer());
-      wid.add(
-        const Text(
-          "Note: If you have just logged in, please wait a while on this page for the login to complete",
-        ),
-      );
-    }
-
-    return wid;
-  }
-
-  Widget _loginScreen() {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: _signInButtons(),
-        ),
-      ),
-    );
-  }
-
-  void _loggingInState() {
-    setState(() {
-      _loggingIn = true;
     });
   }
 
-  void _signIn() async {
-    debugPrint('Signing In with Test Account');
-    _loggingInState();
+  void _signInWithTest() async {
+    Util.showSnackbarQuick(context, 'Signing in with test account...');
     try {
-      await _auth.signInWithEmailAndPassword(
+      var credentials = await _auth.signInWithEmailAndPassword(
         email: 'test@itachi1706.com',
         password: 'testP@ssw0rd',
       );
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        debugPrint('No user found');
-      } else if (e.code == 'wrong-password') {
-        debugPrint('Wrong password provided for that user');
+
+      if (mounted) {
+        _finishLoggedInFlow(context, credentials.user);
       }
+    } on FirebaseAuthException catch (_, e) {
+      Util.showSnackbarQuick(context, 'Error signing in with test account');
+      debugPrint('Error signing in with test account: $e');
     }
   }
 
-  Future<UserCredential> _signInGoogle() async {
-    debugPrint('Signing In with Google');
-    _loggingInState();
-    if (kIsWeb) {
-      var googleProvider = GoogleAuthProvider();
+  void _finishLoggedInFlow(BuildContext context, User? user) {
+    Util.updateFirebaseUid();
+    Util.showSnackbarQuick(context, 'Logged in as ${user?.email}');
+    Get.offAllNamed('/menu');
+  }
 
-      googleProvider.setCustomParameters({'login_hint': 'user@gmail.com'});
-
-      // Once signed in, return the UserCredential
-      await _auth.signInWithRedirect(googleProvider);
-      debugPrint('Getting redirect info');
-
-      return _auth.getRedirectResult();
-    } else {
-      // Trigger the authentication flow
-      final googleUser = await GoogleSignIn().signIn();
-
-      // Obtain the auth details from the request
-      final googleAuth = await googleUser?.authentication;
-
-      // Create a new credential
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      ) as GoogleAuthCredential;
-
-      // Once signed in, return the UserCredential
-      return await _auth.signInWithCredential(credential);
+  Widget _buildFooter(BuildContext context, AuthAction action) {
+    if (!kReleaseMode) {
+      return SignInButton(
+        Buttons.Email,
+        onPressed: _signInWithTest,
+        text: 'Sign in with Test Account',
+      );
     }
+
+    return const SizedBox.shrink();
+  }
+
+  @override
+  void deactivate() {
+    _listener?.cancel();
+    _listener = null;
+    super.deactivate();
   }
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: _auth.authStateChanges(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          final user = snapshot.data as User?;
-          Util.updateFirebaseUid();
-          if (user != null) {
-            SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-              Util.showSnackbarQuick(context, 'Logged in as ${user.email}');
-              Get.offAllNamed('/menu');
-            });
-
-            return _loginScreen();
-          }
-        }
-        // Signed out
-        debugPrint('Signed out');
-
-        return _loginScreen();
+    return SignInScreen(
+      providers: [
+        GoogleProvider(clientId: googleClientId),
+      ],
+      actions: [
+        AuthStateChangeAction<SignedIn>((context, state) {
+          _finishLoggedInFlow(context, state.user);
+        }),
+      ],
+      showAuthActionSwitch: false,
+      email: 'test@itachi1706.com',
+      subtitleBuilder: (context, action) {
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 8.0),
+          child: Text('to Genshin Impact Weekly Material Tracker'),
+        );
       },
+      footerBuilder: _buildFooter,
     );
   }
 }
