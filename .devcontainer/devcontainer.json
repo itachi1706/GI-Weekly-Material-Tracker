@@ -19,7 +19,7 @@
 	},
 
 	
-	"onCreateCommand": "echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json && echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart",
+	"onCreateCommand": "echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json && echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart && echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart",
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postStartCommand": "flutter run -d web-server --no-resident && cd util && npm i && cd .. && flutter doctor -v",
 

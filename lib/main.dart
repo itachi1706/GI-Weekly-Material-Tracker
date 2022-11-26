@@ -63,6 +63,7 @@ class MyAppState extends State<MyApp> {
       getPages: [
         GetPage(name: '/splash', page: () => const SplashPage()),
         GetPage(name: '/', page: () => const LoginPage()),
+        GetPage(name: '/loginnew', page: () => const FbUiLoginPage()),
         GetPage(name: '/placeholder', page: () => const PlaceholderPage()),
         GetPage(name: '/menu', page: () => const TransitionPage()),
         GetPage(

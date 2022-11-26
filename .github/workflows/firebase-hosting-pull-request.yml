@@ -44,6 +44,7 @@ jobs:
       - name: Pre-Setup and obtain version information
         run: |
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo PUB_SEC_DART | base64 -d > lib/app_secrets.dart
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
           echo $GIT_COMMIT_COUNT
           echo $GIT_COMMIT_SHORT_SHA
@@ -52,6 +53,7 @@ jobs:
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
       - name: Build Flutter App
         run: flutter build web
       - name: Prep public folder

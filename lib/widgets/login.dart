@@ -1,11 +1,14 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/app_secrets.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -68,6 +71,15 @@ class LoginPageState extends State<LoginPage> {
         ),
       );
     }
+
+    wid.insert(
+      1,
+      SignInButton(
+        Buttons.Email,
+        onPressed: () => Get.toNamed('/loginnew'),
+        text: 'Test New Login Page',
+      ),
+    );
 
     return wid;
   }
@@ -164,4 +176,60 @@ class LoginPageState extends State<LoginPage> {
       },
     );
   }
+}
+
+class FbUiLoginPage extends StatefulWidget {
+  const FbUiLoginPage({Key? key}) : super(key: key);
+
+  @override
+  FbUiLoginPageState createState() => FbUiLoginPageState();
+}
+
+class FbUiLoginPageState extends State<FbUiLoginPage> {
+
+  void _signInWithTest() async {
+    Util.showSnackbarQuick(context, 'Signing in with test account...');
+    await _auth.signInWithEmailAndPassword(
+      email: 'test@itachi1706.com',
+      password: 'testP@ssw0rd',
+    );
+  }
+
+  Widget _buildFooter(BuildContext context, AuthAction action) {
+    if (!kReleaseMode) {
+      return SignInButton(
+        Buttons.Email,
+        onPressed: _signInWithTest,
+        text: 'Sign in with Test Account',
+      );
+    }
+
+    return const SizedBox.shrink();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SignInScreen(
+      providers: [
+        GoogleProvider(clientId: googleClientId),
+      ],
+      actions: [
+        AuthStateChangeAction<SignedIn>((context, state) {
+          Util.updateFirebaseUid();
+          Util.showSnackbarQuick(context, 'Logged in as ${state.user?.email}');
+          Get.offAllNamed('/menu');
+        }),
+      ],
+      showAuthActionSwitch: false,
+      email: 'test@itachi1706.com',
+      subtitleBuilder: (context, action) {
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 8.0),
+          child: Text('to Genshin Impact Weekly Material Tracker'),
+        );
+      },
+      footerBuilder: _buildFooter,
+    );
+  }
+
 }

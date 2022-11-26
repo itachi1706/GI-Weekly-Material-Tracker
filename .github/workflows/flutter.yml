@@ -49,7 +49,10 @@ jobs:
       - name: Retrieve Firebase Options Web Dart File and decode it to a file
         env:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-        run: echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
+        run: |
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
       - uses: benjlevesque/short-sha@v2.1
         id: short-sha
         with:
@@ -119,9 +122,11 @@ jobs:
         env:
           GOOGLE_SVC_ANDROID: ${{ secrets.GOOGLE_SVC_ANDROID }}
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
         run: |
           echo $GOOGLE_SVC_ANDROID | base64 -d > android/app/google-services.json
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
       - name: Obtain Debug Keystore from Secrets
         env:
           FLUTTER_KEYSTORE: ${{ secrets.FLUTTER_KEYSTORE }}
@@ -216,9 +221,11 @@ jobs:
   #       env:
   #         GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
   #         GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+  #         PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
   #       run: |
   #         echo $GOOGLE_SVC_IOS | base64 -d > ios/Runner/GoogleService-Info.plist
   #         echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+  #         echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
   #     - name: Build iOS Package
   #       run: flutter build ios --no-codesign
   #       # run: flutter build ios --release --no-codesign
