@@ -5,6 +5,7 @@ import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:filesize/filesize.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -108,6 +109,18 @@ class SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           leading: const Icon(Icons.delete_forever),
           onPressed: _clearTrackingDataPrompt,
+        ),
+        SettingsTile(
+          title: const Text(
+            'Delete Account',
+            style: TextStyle(color: Colors.red),
+          ),
+          trailing: const SizedBox.shrink(),
+          leading: const Icon(
+            Icons.close,
+            color: Colors.red,
+          ),
+          onPressed: _deletePrompt,
         ),
       ],
     );
@@ -528,6 +541,39 @@ class SettingsPageState extends State<SettingsPage> {
         );
       },
     );
+  }
+
+  void _deletePrompt(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Delete Account'),
+          content: const Text(
+            '!!!THIS IS NOT REVERSIBLE!!!\n\nClicking delete will cause you to delete your account!\n\nThis will remove all data from the app. You will need to create a new account to use the app again.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: _deleteAccount,
+              child: const Text('Delete'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _deleteAccount() async {
+    var auth = FirebaseAuth.instance;
+    await auth.currentUser?.delete();
+    if (mounted) {
+      Util.showSnackbarQuick(context, 'Account deleted');
+    }
+    await Get.offAllNamed('/');
   }
 
   void _clearTrackingDataPh() async {
