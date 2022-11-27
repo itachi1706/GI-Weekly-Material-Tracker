@@ -1,3 +1,16 @@
+# 2.2.4
+- New Login Page
+- New Import/Export/Delete userdata
+- Android 12, Java 11 and NDK updates
+- Added some security features (AppCheck)
+- Added ability to view what materials can be used for
+- Added time since last banner for characters/weapons
+- Color-coded Elements in descriptions
+- Code page now launches browser with code pre-filled, long press copies to clipboard
+- Dependency updates
+- Fixed crashes, duplicate sections on permanent banners and dates showing milliseconds
+
+
 # 2.2.3
 - Changed package to remove REQUEST_INSTALL_PACKAGES permission (we were not using it anyway)
 - Added Dendro Element to Dictionary
