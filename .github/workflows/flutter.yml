@@ -331,6 +331,6 @@ jobs:
         with:
           args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt"
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
           FIREBASE_APPID: ${{ secrets.FIREBASE_APPID }}
