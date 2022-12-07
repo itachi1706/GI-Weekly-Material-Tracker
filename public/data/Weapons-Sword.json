@@ -2461,6 +2461,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/The_Flute",
       "subCollection": {}
     },
+    "Toukabou_Shigure": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A rather special oil-paper umbrella. While long wanderings may make one used to the wind and the rain, there might be some fun in admiring a rainy scene beneath this parasol.",
+      "name": "Toukabou Shigure",
+      "ascension": {
+        "1": {
+          "material3": "Old_Handguard",
+          "level": 20,
+          "material2": "Damaged_Prism",
+          "material3qty": 2,
+          "material1": "Narukamis_Wisdom",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Old_Handguard",
+          "level": 40,
+          "material2": "Damaged_Prism",
+          "material3qty": 8,
+          "material1": "Narukamis_Joy",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Kageuchi_Handguard",
+          "level": 50,
+          "material2": "Turbid_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Joy",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Kageuchi_Handguard",
+          "level": 60,
+          "material2": "Turbid_Prism",
+          "material3qty": 9,
+          "material1": "Narukamis_Affection",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Famed_Handguard",
+          "level": 70,
+          "material2": "Radiant_Prism",
+          "material3qty": 6,
+          "material1": "Narukamis_Affection",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Famed_Handguard",
+          "level": 80,
+          "material2": "Radiant_Prism",
+          "material3qty": 12,
+          "material1": "Narukamis_Valor",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Toukabou_Shigure.png",
+      "secondary_stat": "36",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "165",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Akitsu Kimodameshi Event",
+      "effectName": "Kaidan: Rainfall Earthbinder",
+      "effect": "After an attack hits opponents, it will inflict an instance of Cursed Parasol upon one of them for 10s. This effect can be triggered once every 15s. If this opponent is taken out during Cursed Parasol's duration, Cursed Parasol's CD will be refreshed immediately. The character wielding this weapon will deal 16~32% more DMG to the opponent affected by Cursed Parasol.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Toukabou_Shigure",
+      "subCollection": {}
+    },
     "Traveler_Handy_Sword": {
       "secondary_stat_type": "DEF",
       "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",

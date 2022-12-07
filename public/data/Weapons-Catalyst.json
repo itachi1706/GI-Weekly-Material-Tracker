@@ -2138,6 +2138,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Thrilling_Tales_of_Dragon_Slayers",
       "subCollection": {}
     },
+    "Tulaytullahs_Remembrance": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A bell crafted of deep sapphire and sterling silver. Its echoes are as crisp as they are distant.",
+      "name": "Tulaytullah's Remembrance",
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 3,
+          "material1": "Echo_of_Scorching_Might",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "Inactivated_Fungal_Nucleus",
+          "material3qty": 12,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Dormant_Fungal_Nucleus",
+          "material3qty": 14,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 9,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Robust_Fungal_Nucleus",
+          "material3qty": 18,
+          "material1": "Olden_Days_of_Scorching_Might",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Tulaytullahs_Remembrance.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "44.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "Bygone Azure Teardrop",
+      "effect": "Normal Attack SPD is increased by 10~20%. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by 4.8~9.6% every second for 14s. After this character hits an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by 9.6~19.2%. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is 48~96%. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Tulaytullah%27s_Remembrance",
+      "subCollection": {}
+    },
     "Twin_Nephrite": {
       "secondary_stat_type": "CRIT Rate",
       "description": "A jade pendant formed by piecing together two jade stones.",
