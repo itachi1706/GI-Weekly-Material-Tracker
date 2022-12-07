@@ -14,12 +14,12 @@ Version Name: <Replace>
 
 | Name | Rarity | Element | Weapon | Released | Completed | Remarks |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Character](<replace>) | ?* | <Element> | <Weapon> | ? Half | :x: |  |
+| [Character](<replace>) | ?* | <Element> | <Weapon> | ? Half | ❌ |  |
 
 **Weapons**
 | Name | Rarity | Weapon Type | Released | Completed | Remarks |
 | --- | --- | --- | --- | --- | --- |
-| [Weapon](<replace>) | ?* | <WeaponType> | ? Half | :x: |  |
+| [Weapon](<replace>) | ?* | <WeaponType> | ? Half | ❌ |  |
 
 **Materials**
 - [Material 1](<replace>)
