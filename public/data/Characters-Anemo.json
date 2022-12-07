@@ -3,16 +3,15 @@
     "Faruzan": {
       "image": "Characters/Anemo/Faruzan.png",
       "gender": "Female",
-      "birthday": null,
+      "birthday": "20/8",
       "caption": "Enigmatic Machinist",
       "titles": [
         "Haravatat Household Name"
       ],
       "name": "Faruzan",
-      "fullName": null,
-      "description": null,
+      "description": "A researcher from \"one hundred years ago\". She enjoys self-identifying as everyone's senior, and has significant knowledge of ancient scripts and machines of all kinds.",
       "nation": "Sumeru",
-      "weapon": null,
+      "weapon": "Bow",
       "rarity": 4,
       "affiliation": "Sumeru Akademiya, Haravatat",
       "constellation": "Flosculi Implexi",
@@ -24,9 +23,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Admonition",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Faded_Red_Satin",
             "material4qty": 6
           },
           "3": {
@@ -35,9 +34,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 3
           },
           "4": {
@@ -46,9 +45,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 4
           },
           "5": {
@@ -57,9 +56,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 6
           },
           "6": {
@@ -68,98 +67,98 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Admonition",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Puppet_Strings",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Puppet_Strings",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Puppet_Strings",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Puppet_Strings",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Admonition",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Impetuous_Flow": {
+            "name": "Impetuous Flow",
+            "effect": "When Faruzan is in the Manifest Gale state created by Wind Realm of Nasamjnin, the amount of time taken to charge a shot is decreased by 60%, and she can apply The Wind's Secret Ways' Perfidious Wind's Bale to opponents who are hit by the vortex created by Pressurized Collapse.",
+            "image": "Talents/Passive/Talent_Impetuous_Flow.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Lost_Wisdom_of_the_Seven_Caverns": {
+            "name": "Lost Wisdom of the Seven Caverns",
+            "effect": "When characters affected by The Wind's Secret Ways' Prayerful Wind's Gift deal Anemo DMG using Normal, Charged, Plunging Attacks, Elemental Skills, or Elemental Bursts to opponents, they will gain the Hurricane Guard effect: This DMG will be increased based on 32% of Faruzan's Base ATK. 1 instance of Hurricane Guard can occur once every 0.8s. This DMG Bonus will be cleared after Prayerful Wind's Benefit expires or after the effect is triggered once.",
+            "image": "Talents/Passive/Talent_Lost_Wisdom_of_the_Seven_Caverns.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Tomes_Light_the_Path": {
+            "name": "Tomes Light the Path",
+            "effect": "Gains 25% more rewards when dispatched on a Sumeru Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_Tomes_Light_the_Path.png",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Normal/",
+          "Parthian_Shot": {
+            "name": "Parthian Shot",
+            "effect": "Normal Attack\nPerform up to 4 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG. While aiming, mighty winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, hitting opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Anemo.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Skill/",
+          "Wind_Realm_of_Nasamjnin": {
+            "name": "Wind Realm of Nasamjnin",
+            "effect": "Faruzan deploys a polyhedron that deals AoE Anemo DMG to nearby opponents. She will also enter the Manifest Gale state.\nWhile in the Manifest Gale state, Faruzan's next fully charged shot will consume this state and will become a Hurricane Arrow that contains high-pressure currents. This arrow deals Anemo DMG based on the DMG of a fully charged Aimed Shot from \"Normal Attack: Parthian Shot\".\n\nPressurized Collapse\nThe Hurricane Arrow will apply a Pressurized Collapse effect to the opponent or character hit. This effect will be removed after a short delay, creating a vortex that deals AoE Anemo DMG and pulls nearby objects and opponents in. If the Hurricane Arrow does not hit any opponent or character, it will create a Pressurized Collapse effect at its point of impact.\nThe vortex DMG is considered Elemental Skill DMG.",
+            "image": "Talents/Skill/Talent_Wind_Realm_of_Nasamjnin.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Burst/",
+          "The_Winds_Secret_Ways": {
+            "name": "The Wind's Secret Ways",
+            "effect": "Faruzan deploys a Dazzling Polyhedron that unleashes a Whirlwind Pulse and deals AoE Anemo DMG.\nWhile the Dazzling Polyhedron persists, it will continuously move along a triangular path. Once it reaches each corner of that triangular path, it will unleash 1 more Whirlwind Pulse.\n\nWhirlwind Pulse\nWhen the Whirlwind Pulse is unleashed, it will apply Perfidious Wind's Bale to nearby opponents, decreasing their Anemo RES.\nThe Whirlwind Pulse will also apply Prayerful Wind's Benefit to all nearby party members when it is unleashed, granting them an Anemo DMG Bonus.",
+            "image": "Talents/Burst/Talent_The_Winds_Secret_Ways.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -167,34 +166,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Truth by Any Means",
+          "effect": "Faruzan can fire off a maximum of 2 Hurricane Arrows using fully charged Aimed Shots while under a single Wind Realm of Nasamjnin effect.",
+          "image": "Constellation/Truth_by_Any_Means.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Overzealous Intellect",
+          "effect": "The duration of the Dazzling Polyhedron created by The Wind's Secret Ways is increased by 6s.",
+          "image": "Constellation/Overzealous_Intellect.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Spirit-Orchard Stroll",
+          "effect": "Increases the Level of Wind Realm of Nasamjnin by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Spirit-Orchard_Stroll.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Divine Comprehension",
+          "effect": "The vortex created by Pressurized Collapses will restore Energy to Faruzan based on the number of opponents hit: If it hits 1 opponent, it will restore 2 Energy for Faruzan. Each additional opponent hit will restore 0.5 more Energy for Faruzan.\nA maximum of 4 Energy can be restored to her per vortex.",
+          "image": "Constellation/Divine_Comprehension.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Wonderland of Rumination",
+          "effect": "Increases the Level of The Wind's Secret Ways by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Wonderland_of_Rumination.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "The Wondrous Path of Truth",
+          "effect": "Characters affected by The Wind's Secret Ways' Prayerful Wind's Benefit have 40% increased CRIT DMG when they deal Anemo DMG. When the active character deals DMG while affected by Prayerful Wind's Benefit, they will apply Pressurized Collapse to the opponent damaged. This effect can be triggered once every 3s. This CD is shared between all party members.",
+          "image": "Constellation/The_Wondrous_Path_of_Truth.png"
         }
       },
       "ascension": {
@@ -205,77 +204,77 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         },
         "2": {
           "material2qty": 2,
           "material1": "Vayuda_Turquoise_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Light_Guiding_Tetrahedron",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         },
         "3": {
           "material2qty": 4,
           "material1": "Vayuda_Turquoise_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Light_Guiding_Tetrahedron",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         },
         "4": {
           "material2qty": 8,
           "material1": "Vayuda_Turquoise_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Light_Guiding_Tetrahedron",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         },
         "5": {
           "material2qty": 12,
           "material1": "Vayuda_Turquoise_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Light_Guiding_Tetrahedron",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         },
         "6": {
           "material2qty": 20,
           "material1": "Vayuda_Turquoise_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Light_Guiding_Tetrahedron",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Henna_Berry"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "introduction": "A distinguished Akademiya scholar from \"a century ago\" and one of the founders of Ancient Mechanics as a field of study. Although she hailed from Haravatat, she was renowned for her talents in machinery throughout Sumeru... Even though these honors have been forgotten in the river of time, much as she has.",
+      "paimonmoepath": "characters/faruzan",
+      "genshinggpath": "characters/faruzan",
       "element": "Anemo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Faruzan",
       "subCollection": {}
     },
@@ -1958,20 +1957,21 @@
     "Wanderer": {
       "image": "Characters/Anemo/Wanderer.png",
       "gender": "Male",
-      "birthday": null,
+      "birthday": "3/1",
       "caption": "Eons Adrift",
       "titles": [
         "Tribulations Uncounted, Trials Unknowable",
         "The Sixth of the Eleven Fatui Harbingers",
         "Kunikuzushi",
         "The Wanderer",
-        "The Balladeer"
+        "The Balladeer",
+        "The Kabukimono"
       ],
       "name": "Wanderer",
       "fullName": "Kunikuzushi, Scaramouche",
-      "description": null,
+      "description": "A wayfaring figure whose identity is a mystery. He dresses like a mountain ascetic, but he certainly does not act the part.",
       "nation": "Sumeru, Inazuma, Snezhnaya",
-      "weapon": null,
+      "weapon": "Catalyst",
       "rarity": 5,
       "affiliation": "Former Fatui, Former Eleven Fatui Harbingers",
       "constellation": "Peregrinus",
@@ -1983,9 +1983,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Praxis",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Old_Handguard",
             "material4qty": 6
           },
           "3": {
@@ -1994,9 +1994,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Praxis",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 3
           },
           "4": {
@@ -2005,9 +2005,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Praxis",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 4
           },
           "5": {
@@ -2016,9 +2016,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Praxis",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 6
           },
           "6": {
@@ -2027,98 +2027,98 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Praxis",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Kageuchi_Handguard",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Dakas_Bell",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Praxis",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Famed_Handguard",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Dakas_Bell",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Praxis",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Famed_Handguard",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Dakas_Bell",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Praxis",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Famed_Handguard",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Dakas_Bell",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Praxis",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Famed_Handguard",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Jade-Claimed_Flower": {
+            "name": "Jade-Claimed Flower",
+            "effect": "If Hanega: Song of the Wind comes into contact with Hydro/Pyro/Cryo/Electro when it is unleashed, this instance of the Windfavored state will obtain buffs according to the contacted element(s):\nHydro: Kuugoryoku Point cap increases by 20.\nPyro: ATK increases by 30%.\nCryo: CRIT Rate increases by 20%.\nElectro: When Normal and Charged Attacks hit an opponent, 0.8 Energy will be restored. Energy can be restored this way every 0.2s.\nYou can have up to 2 different kinds of these buffs simultaneously.",
+            "image": "Talents/Passive/Talent_Jade-Claimed_Flower.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Gales_of_Reverie": {
+            "name": "Gales of Reverie",
+            "effect": "When the Wanderer hits opponents with Kuugo: Fushoudan or Kuugo: Toufukai in his Windfavored state, he has a 16% chance to obtain the Descent effect: The next time the Wanderer accelerates in mid-air while in this instance of the Windfavored state, this effect will be removed, this acceleration instance will not consume any Kuugoryoku Points, and he will fire off 4 wind arrows that deal 35% of his ATK as Anemo DMG each.\nFor each Kuugo: Fushoudan and Kuugo: Toufukai that does not produce this effect, the next attack of those types will have a 12% increased chance of producing it. The calculation of the effect production is done once every 0.1s.",
+            "image": "Talents/Passive/Talent_Gales_of_Reverie.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Strum_the_Swirling_Winds": {
+            "name": "Strum the Swirling Winds",
+            "effect": "Mora expended when ascending Bows and Catalysts is decreased by 50%.",
+            "image": "Talents/Passive/Talent_Strum_the_Swirling_Winds.png",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Normal/",
+          "Yuuban_Meigen": {
+            "name": "Yuuban Meigen",
+            "effect": "Normal Attack\nPerforms up to 3 attacks using wind blades, dealing Anemo DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina, gathers a build up of high wind pressure, and deals AoE Anemo DMG after a short casting time.\n\nPlunging Attack\nCalling upon the power of Anemo, the Wanderer plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Skill/",
+          "Hanega_Song_of_the_Wind": {
+            "name": "Hanega: Song of the Wind",
+            "effect": "Concentrates the power of the winds to break free from the shackles of the earth, dealing AoE Anemo DMG before leaping into the air and entering the Windfavored state.\n\nWindfavored\nThe Wanderer cannot perform Plunging Attacks in this state. When he uses Normal and Charged Attacks, they will be converted into Kuugo: Fushoudan and Kuugo: Toufukai respectively; the DMG they deal and their AoE will be increased, and their DMG will be considered Normal and Charged Attack DMG respectively. Kuugo: Toufukai will not consume Stamina.\nThe Wanderer will hover persistently during this time. While this state is active, the Wanderer's movements gain the following properties:\nPersistently consumes Kuugoryoku Points to maintain this hovering state.\nWhen sprinting, additional Kuugoryoku Points will be consumed for the Wanderer to accelerate mid-air. Holding sprint will cause persistent Kuugoryoku Point consumption to maintain speed. This effect will replace his default sprint.\nJumping expends extra Kuugoryoku Points to increase hovering height. Holding jump will cause persistent Kuugoryoku Point consumption to keep increasing hovering height.\nRunning out of Kuugoryoku Points will end the Windfavored state.\nA second cast during the duration of Windfavored will also end it.",
+            "image": "Talents/Skill/Talent_Hanega_Song_of_the_Wind.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Burst/",
+          "Kyougen_Five_Ceremonial_Plays": {
+            "name": "Kyougen: Five Ceremonial Plays",
+            "effect": "Compresses the atmosphere into a singlular vacuum that grinds all troubles away, dealing multiple instances of AoE Anemo DMG. If the character is in the Windfavored state due to the skill \"Hanega: Song of the Wind\", Windfavored state will end after casting.",
+            "image": "Talents/Burst/Talent_Kyougen_Five_Ceremonial_Plays.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -2126,34 +2126,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Shoban: Ostentatious Plumage",
+          "effect": "When in the Windfavored state, the Attack SPD of the Wanderer's Kuugo: Fushoudan and Kuugo: Toufukai is increased by 10%.\nAdditionally, the wind arrows fired by the Passive Talent \"Gales of Reverie\" will deal an additional 25% of his ATK as DMG. You must unlock the Passive Talent \"Gales of Reverie\" first.",
+          "image": "Constellation/Shoban_Ostentatious_Plumage.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Niban: Moonlit Isle Amidst White Waves",
+          "effect": "When in the Windfavored state, Kyougen: Five Ceremonial Plays will see its DMG increased by 4% per point of difference between the max amount of Kuugoryoku Points contrasted with Kuugoryoku's present capacity when using this skill.\nThrough this method, you can increase Kyougen: Five Ceremonial Plays's DMG by a maximum of 200%.",
+          "image": "Constellation/Niban_Moonlit_Isle_Amidst_White_Waves.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Sanban: Moonflower Kusemai",
+          "effect": "Increases the Level of Kyougen: Five Ceremonial Plays by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Sanban_Moonflower_Kusemai.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Yonban: Set Adrift into Spring",
+          "effect": "When casting Hanega: Song of the Wind, should the Passive Talent \"Jade-Claimed Flower\" be triggered, the character will gain buffs in correspondence to the contacted Elemental Type(s), and also obtain a random untriggered buff. A maximum of 3 such corresponding elemental buffs can exist simultaneously.\nYou must unlock the Passive Talent \"Jade-Claimed Flower\" first.",
+          "image": "Constellation/Yonban_Set_Adrift_into_Spring.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Matsuban: Ancient Illuminator From Abroad",
+          "effect": "Increases the Level of Hanega: Song of the Wind by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Matsuban_Ancient_Illuminator_From_Abroad.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Shugen: The Curtains' Melancholic Sway",
+          "effect": "When the Wanderer actively hits an opponent with Kuugo: Fushoudan while in the Windfavored state, the following effects will occur:\nDeals an additional instance of Kuugo: Fushoudan at the position hit, dealing 40% of the attack's original DMG. This DMG will be considered Normal Attack DMG.\nWhen the Wanderer falls below 40 Kuugoryoku Points, restores 4 Points to him. Kuugoryoku Points can be restored in this manner once every 0.2s. This restoration can occur up to 5 times within one Windfavored duration.",
+          "image": "Constellation/Shugen_The_Curtains_Melancholic_Sway.png"
         }
       },
       "ascension": {
@@ -2164,77 +2164,77 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Old_Handguard",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         },
         "2": {
           "material2qty": 2,
           "material1": "Vayuda_Turquoise_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Perpetual_Caliber",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Old_Handguard",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         },
         "3": {
           "material2qty": 4,
           "material1": "Vayuda_Turquoise_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Perpetual_Caliber",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Kageuchi_Handguard",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         },
         "4": {
           "material2qty": 8,
           "material1": "Vayuda_Turquoise_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Perpetual_Caliber",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Kageuchi_Handguard",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         },
         "5": {
           "material2qty": 12,
           "material1": "Vayuda_Turquoise_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Perpetual_Caliber",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Famed_Handguard",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         },
         "6": {
           "material2qty": 20,
           "material1": "Vayuda_Turquoise_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Perpetual_Caliber",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Famed_Handguard",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Rukkhashava_Mushrooms"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "introduction": "If the measure of humanity is having a heart, then he cannot be deemed as such.\nIf one without a heart experiences joy and sorrow, then he shall be a puppet most alike to humanity.",
+      "paimonmoepath": "characters/wanderer",
+      "genshinggpath": "characters/wanderer",
       "element": "Anemo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Wanderer",
       "subCollection": {}
     },
