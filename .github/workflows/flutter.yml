@@ -192,6 +192,10 @@ jobs:
         with:
           channel: 'stable'
           cache: true
+      - name: Use latest stable version of XCode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
       - name: Cache pubspec dependencies
         uses: actions/cache@v3
         with:
