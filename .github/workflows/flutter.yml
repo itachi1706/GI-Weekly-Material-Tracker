@@ -174,7 +174,7 @@ jobs:
   # TODO: Revisit in the future
   ios:
     name: iOS Unsigned IPA
-    runs-on: macos-latest
+    runs-on: macos-12 # Use macOS 12 for Xcode 13
     env:
       APP_BUILD_VER: dogfood
       APP_TYPE: iOS
