@@ -171,7 +171,6 @@ jobs:
           path: |
             LATEST
             firebase/
-  # TODO: Revisit in the future
   ios:
     name: iOS Unsigned IPA
     runs-on: macos-12 # Use macOS 12 for Xcode 13
@@ -249,14 +248,7 @@ jobs:
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
       - name: Build iOS Package
-        # run: flutter build ios --no-codesign
-        run: flutter build ios --release --no-codesign
-      - name: Debug 1
-        run: |
-          echo iPhone OS
-          ls -lh ./build/ios/iphoneos
-          echo Runner App
-          ls -lh ./build/ios/iphoneos/Runner.app
+        run: flutter build ios --no-codesign
       - name: Move Package to Release folder
         run: mv ./build/ios/iphoneos/Runner.app ./release
       - name: Generate IPA File
@@ -266,13 +258,10 @@ jobs:
           cp -r ./Runner.app Payload
           zip -r app.ipa Payload
           cd ..
-      - name: Debug 2
+      - name: Ensure IPA file generated properly
         run: |
           cd release
-          echo iPhone OS
           ls -lh .
-          echo Runner App
-          ls -lh ./Runner.app
           cd ..
       - uses: actions/upload-artifact@v3
         with:
