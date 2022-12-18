@@ -205,12 +205,11 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Cache Cocoapods
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+          restore-keys: ${{ runner.os }}-pods-
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
