@@ -319,7 +319,9 @@ jobs:
   generaterelease:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
-    needs: releaseapk
+    needs: 
+      - releaseapk
+      - releaseipa
     name: Upload Artifact + Deploy Artifact
     permissions:
       contents: write
@@ -327,6 +329,9 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: flutter-android-artifact-rel
+      - uses: actions/download-artifact@v3
+        with:
+          name: flutter-unsigned-ipa-artifact-rel
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@v1.4.0
       - uses: benjlevesque/short-sha@v2.1
@@ -354,6 +359,7 @@ jobs:
           mv ./release/app-x86_64-release.apk apks/gi-material-tracker-x64-$APP_VERSION.apk
           mv ./release/app-armeabi-v7a-release.apk apks/gi-material-tracker-arm-$APP_VERSION.apk
           mv ./app-fatapk.apk apks/gi-material-tracker-multiarch-$APP_VERSION.apk
+          mv ./release/app.ipa apks/gi-material-tracker-ios-$APP_VERSION.ipa
       - uses: olegtarasov/get-tag@v2.1
         id: tagName
       - name: Generating Releases to deploy tagged version of app
@@ -366,11 +372,101 @@ jobs:
           prerelease: false
           files: |
             apks/*.apk
-
-
-  # TODO: Revisit in the future
-  # releaseipa:
-  #   runs-on: macos-latest
-  #   name: Generate Release Flutter Unsigned IPA
-  #   steps:
-  #     - run: echo WIP
+            apks/*.ipa
+  releaseipa:
+    runs-on: macos-12 # Use macOS 12 for Xcode 13
+    name: Generate Release Flutter Unsigned IPA
+    env:
+      APP_BUILD_VER: beta
+      APP_TYPE: iOS
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # - uses: apple-actions/import-codesign-certs@v1
+      #   name: Import Apple Certificate
+      #   with: 
+      #     p12-file-base64: ${{ secrets.APPLE_DEVCERT }}
+      #     p12-password: ${{ secrets.APPLE_DEVCERT_PASSWORD }}
+      - name: Install Flutter Stable
+        uses: subosito/flutter-action@v2.8.0
+        with:
+          channel: 'stable'
+          cache: true
+      - name: Use latest stable version of XCode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Cache pubspec dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ env.FLUTTER_HOME }}/.pub-cache
+            ${{ env.PUB_CACHE }}
+            **/.packages
+            **/.flutter-plugins
+            **/.flutter-plugin-dependencies
+            **/.dart_tool/package_config.json
+          key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: build-pubspec-
+      - name: Cache Cocoapods
+        uses: actions/cache@v3
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
+          restore-keys: ${{ runner.os }}-pods-
+      - name: Trust GitHub Workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Test Flutter Doctor
+        run: flutter doctor -v  
+      - uses: benjlevesque/short-sha@v2.1
+        id: short-sha
+        with:
+          length: 8
+      - name: Pre-Setup and obtain version information
+        run: |
+          mkdir release
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+          echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+      - name: Install Flutter dependencies
+        run: flutter pub get
+      - name: Install CocoaPods Dependencies
+        working-directory: ios
+        run: |
+          pod repo update
+          pod install
+      - name: Retrieve Firebase Options Dart files and decode to file
+        env:
+          GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
+        run: |
+          echo $GOOGLE_SVC_IOS | base64 -d > ios/Runner/GoogleService-Info.plist
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
+      - name: Build iOS Package
+        run: flutter build ios --release --no-codesign
+      - name: Move Package to Release folder
+        run: mv ./build/ios/iphoneos/Runner.app ./release
+      - name: Generate IPA File
+        run: |
+          cd release
+          mkdir Payload
+          cp -r ./Runner.app Payload
+          zip -r app.ipa Payload
+          cd ..
+      - name: Ensure IPA file generated properly
+        run: |
+          cd release
+          ls -lh .
+          cd ..
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-unsigned-ipa-artifact-rel
+          path: |
+            release/app.ipa
