@@ -192,6 +192,25 @@ jobs:
         with:
           channel: 'stable'
           cache: true
+      - name: Cache pubspec dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ env.FLUTTER_HOME }}/.pub-cache
+            ${{ env.PUB_CACHE }}
+            **/.packages
+            **/.flutter-plugins
+            **/.flutter-plugin-dependencies
+            **/.dart_tool/package_config.json
+          key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: build-pubspec-
+      - name: Cache Cocoapods
+        uses: actions/cache@v1
+        with:
+          path: ios/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
@@ -227,8 +246,8 @@ jobs:
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
       - name: Build iOS Package
-        run: flutter build ios --no-codesign
-        # run: flutter build ios --release --no-codesign
+        # run: flutter build ios --no-codesign
+        run: flutter build ios --release --no-codesign
       - name: Debug 1
         run: |
           echo iPhone OS
