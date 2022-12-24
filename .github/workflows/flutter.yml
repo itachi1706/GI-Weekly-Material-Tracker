@@ -230,7 +230,6 @@ jobs:
           echo $GIT_COMMIT_SHORT_SHA
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
-          rm ios/Podfile.lock
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Install Flutter dependencies
