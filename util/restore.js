@@ -13,6 +13,7 @@ async function deleteCollections(fireStoreAdm) {
     await deleteCollection(fireStoreAdm, 'weapons', 50);
     await deleteCollection(fireStoreAdm, 'characters', 50);
     await deleteCollection(fireStoreAdm, 'materials', 50);
+    await deleteCollection(fireStoreAdm, 'outfits', 50);
     console.log(">>> Existing public data deleted successfully!")
 }
 
