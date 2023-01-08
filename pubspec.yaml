@@ -29,28 +29,28 @@ dependencies:
     sdk: flutter
   about: ^2.1.1
   cached_network_image: ^3.2.2
-  cloud_firestore: ^4.2.0
+  cloud_firestore: ^4.3.1
   cupertino_icons: ^1.0.5 # To prevent build errors
   date_time_picker: ^2.1.0
   device_apps: ^2.1.1
   filesize: ^2.0.1
   file_picker: ^5.2.4
-  firebase_analytics: ^10.0.0
-  firebase_app_check: ^0.1.1+5
-  firebase_auth: ^4.0.0
-  firebase_core: ^2.1.1
-  firebase_crashlytics: ^3.0.6
-  firebase_database: ^10.0.6
+  firebase_analytics: ^10.1.0
+  firebase_app_check: ^0.1.1+8
+  firebase_auth: ^4.2.5
+  firebase_core: ^2.4.1
+  firebase_crashlytics: ^3.0.9
+  firebase_database: ^10.0.9
 #  firebase_image: ^1.1.1
   firebase_image:
     git: # We are retrieving it from a Git Repository for now. We will evaluate in the future if we want to take over and maintain ourselves
       url: https://github.com/imsamgarg/firebase_image.git
       ref: flutter_3.0_fix
-  firebase_performance: ^0.9.0
-  firebase_storage: ^11.0.8
-  firebase_ui_auth: ^1.1.0
-  firebase_ui_database: ^1.0.6
-  firebase_ui_oauth_google: 1.0.5 # 1.0.6 crashes ios, 1.0.7 thrown unknown error then crash on ios
+  firebase_performance: ^0.9.0+9
+  firebase_storage: ^11.0.10
+  firebase_ui_auth: ^1.1.7
+  firebase_ui_database: ^1.0.10
+  firebase_ui_oauth_google: ^1.0.14
   flutter_countdown_timer: ^4.1.0
   flutter_file_dialog: ^2.3.2
   flutter_inappwebview: ^5.4.4+3
