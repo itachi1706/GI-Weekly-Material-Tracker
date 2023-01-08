@@ -310,6 +310,9 @@ jobs:
     name: Deploy Dogfood to Firebase # From "Deploy Dogfood to Firebase" in GitLab CI
     needs: [android, changedfiles]
     if: needs.changedfiles.outputs.dfoodapk && github.event_name == 'push' && github.ref == 'refs/heads/master' 
+    concurrency:
+      group: deploy-debug-dogfood-${{ github.ref }}
+      cancel-in-progress: true
     env:
       APP_TYPE: Android
     steps:
