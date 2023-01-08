@@ -178,6 +178,9 @@ jobs:
     env:
       APP_BUILD_VER: dogfood
       APP_TYPE: iOS
+    concurrency:
+      group: ios-debug-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v3
         with:
