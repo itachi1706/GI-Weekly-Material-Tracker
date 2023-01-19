@@ -3,18 +3,18 @@
     "Alhaitham": {
       "image": "Characters/Dendro/Alhaitham.png",
       "gender": "Male",
-      "birthday": null,
-      "caption": null,
-      "titles": [],
-      "name": "Alhaitham (5*?)",
+      "birthday": "11/2",
+      "caption": "Admonishing Instruction",
+      "titles": ["Sumeru Akademiya Scribe"],
+      "name": "Alhaitham",
       "fullName": null,
-      "description": null,
+      "description": "The current scribe of the Sumeru Akademiya, a man endowed with extraodinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
       "nation": "Sumeru",
       "weapon": "Sword",
       "rarity": 5,
       "affiliation": "Sumeru Akademiya, Haravatat",
-      "constellation": null,
-      "outfits": [],
+      "constellation": "Vultur Volans",
+      "outfits": ["The_Rational"],
       "talents": {
         "ascension": {
           "2": {
@@ -23,9 +23,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Faded_Red_Satin",
             "material4qty": 6
           },
           "3": {
@@ -34,9 +34,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 3
           },
           "4": {
@@ -45,9 +45,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 4
           },
           "5": {
@@ -56,9 +56,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 6
           },
           "6": {
@@ -67,98 +67,98 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Four-Causal_Correction": {
+            "name": "Four-Causal Correction",
+            "effect": "When Alhaitham's Charged or Plunging Attacks hit opponents, they will generate 1 Chisel-Light Mirror. This effect can be triggered once every 12s.",
+            "image": "Talents/Passive/Talent_Four-Causal_Correction.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Mysteries_Laid_Bare": {
+            "name": "Mysteries Laid Bare",
+            "effect": "Each point of Alhaitham's Elemental Mastery will increase the DMG dealt by Projection Attacks and Particular Field: Fetters of Phenomena by 0.1%.\nThe maximum DMG increase this way for both these abilities is 100%.",
+            "image": "Talents/Passive/Talent_Mysteries_Laid_Bare.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Law_of_Reductive_Overdetermination": {
+            "name": "Law of Reductive Overdetermination",
+            "effect": "When Alhaitham crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
+            "image": "Talents/Passive/Talent_Law_of_Reductive_Overdetermination.png",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Normal/",
+          "Abductive_Reasoning": {
+            "name": "Abductive Reasoning",
+            "effect": "Normal Attack\nPerforms up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Skill/",
+          "Universality_An_Elaboration_on_Form": {
+            "name": "Universality: An Elaboration on Form",
+            "effect": "Rushes forward, dealing Dendro DMG to nearby opponents when the rush ends, causing a Chisel-Light Mirror to form.\nHolding this skill will cause it to behave differently.\n\nHold\nEnters Aiming Mode to adjust the direction of Alhaitham's rush attack.\n\nChisel-Light Mirror\nWhen this skill is unleashed, Alhaitham will generate 1 Chisel-Light Mirror. If there are no Mirrors at this time, he will generate 1 additional Mirror. Chisel-Light Mirrors will have the following properties:\nWhen he possesses Chisel-Light Mirrors, Alhaitham's Normal, Charged, and Plunging Attacks will be converted to Dendro DMG. This cannot be overridden.\nWhen attacks of the aforementioned kinds hit opponents, the Chisel-Light Mirrors will unleash a Projection Attack that deals AoE Dendro DMG based on the number of Mirrors on the field.\nA total of 3 Chisel-Light Mirrors can exist at once.\nThe Chisel-Light Mirrors will disappear one after the other over time, and will all disappear when Alhaitham leaves the field.",
+            "image": "Talents/Skill/Talent_Universality_An_Elaboration_on_Form.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Burst/",
+          "Particular_Field_Fetters_of_Phenomena": {
+            "name": "Particular Field: Fetters of Phenomena",
+            "effect": "Creates a Particular Binding Field and deals multiple instances of AoE Dendro DMG.\nIf Chisel-Light Mirrors exist when this ability is unleashed, all such Mirrors will be consumed and increase the number of DMG instances dealt.\n2s after this ability is unleashed, if 0/1/2/3 Mirrors were consumed, Alhaitham will generate 3/2/1/0 new Mirrors in turn.",
+            "image": "Talents/Burst/Talent_Particular_Field_Fetters_of_Phenomena.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -166,34 +166,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Intuition",
+          "effect": "When a Projection Attack hits an opponent, Universality: An Elaboration on Form's CD is decreased by 1.2s. This effect can be triggered once every 1s.",
+          "image": "Constellation/Intuition.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Debate",
+          "effect": "When Alhaitham generates a Chisel-Light Mirror, his Elemental Mastery will be increased by 50 for 8 seconds, max 4 stacks. Each stack's duration is counted independently. This effect can be triggered even when the maximum number of Chisel-Light Mirrors has been reached.",
+          "image": "Constellation/Debate.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Negation",
+          "effect": "Increases the Level of Universality: An Elaboration on Form by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Negation.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Elucidation",
+          "effect": "When Particular Field: Fetters of Phenomena is unleashed, the following effects will become active based on the number of Chisel-Light Mirrors consumed and created this time around:\nEach Mirror consumed will increase the Elemental Mastery of all other nearby party members by 30 for 15s.\nEach Mirror generated will grant Alhaitham a 10% Dendro DMG Bonus for 15s.\n\nThe pre-existing duration of the aforementioned effects will be cleared if you use Particular Field: Fetters of Phenomena again while they are in effect.",
+          "image": "Constellation/Elucidation.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Sagacity",
+          "effect": "Increases the Level of Particular Field: Fetters of Phenomena by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Sagacity.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Structuration",
+          "effect": "Alhaitham gains the following effects:\n2 seconds after Particular Field: Fetters of Phenomena is unleashed, he will generate 3 Chisel-Light Mirrors regardless of the number of mirrors consumed.\nIf Alhaitham generates Chisel-Light Mirrors when their numbers have already maxed out, his CRIT Rate and CRIT DMG will increase by 10% and 70% respectively for 6s.\nIf this effect is triggered again during its initial duration, the duration remaining will be increased by 6s.",
+          "image": "Constellation/Structuration.png"
         }
       },
       "ascension": {
@@ -204,77 +204,77 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "2": {
           "material2qty": 2,
           "material1": "Nagadus_Emerald_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "3": {
           "material2qty": 4,
           "material1": "Nagadus_Emerald_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "4": {
           "material2qty": 8,
           "material1": "Nagadus_Emerald_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "5": {
           "material2qty": 12,
           "material1": "Nagadus_Emerald_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "6": {
           "material2qty": 20,
           "material1": "Nagadus_Emerald_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "The current scribe of the Sumeru Akademiya, a man endowed with extraordinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
+      "paimonmoepath": "characters/alhaitham",
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Alhaitham",
       "subCollection": {}
     },
