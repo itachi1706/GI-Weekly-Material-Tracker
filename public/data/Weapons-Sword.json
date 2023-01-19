@@ -1268,6 +1268,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Key_of_Khaj-Nisut",
       "subCollection": {}
     },
+    "Light_of_Foliar_Incision": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "This gilded blade was made using precious white branches. It was once used to destroy countless poisons that infested the forest.",
+      "name": "Light of Foliar Incision",
+      "series": "Sumeru Series",
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Desiccated_Shell",
+          "material3qty": 3,
+          "material1": "Copper_Talisman_of_the_Forest_Dew",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Desiccated_Shell",
+          "material3qty": 12,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Sturdy_Shell",
+          "material3qty": 9,
+          "material1": "Iron_Talisman_of_the_Forest_Dew",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Sturdy_Shell",
+          "material3qty": 14,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Marked_Shell",
+          "material3qty": 9,
+          "material1": "Silver_Talisman_of_the_Forest_Dew",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Marked_Shell",
+          "material3qty": 18,
+          "material1": "Golden_Talisman_of_the_Forest_Dew",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Light_of_Foliar_Incision.png",
+      "secondary_stat": "19.2%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "88.2%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Whitemoon Bristle",
+      "effect": "CRIT Rate is increased by 4~8%. After Normal Attacks deal Elemental DMG, the Foliar Incision effect will be obtained, increasing DMG dealt by Normal Attacks and Elemental Skills by 120~240% of Elemental Mastery. This effect will disappear after 28 DMG instances or 12s. You can obtain Foliar Incision once every 12s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Light_of_Foliar_Incision",
+      "subCollection": {}
+    },
     "Lion_Roar": {
       "secondary_stat_type": "ATK",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",

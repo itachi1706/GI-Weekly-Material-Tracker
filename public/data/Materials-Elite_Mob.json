@@ -662,6 +662,57 @@
         "weapons": []
       },
       "subCollection": {}
+    },
+    "Desiccated_Shell": {
+      "image": "Materials/Elite_Mob/Item_Desiccated_Shell.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "The ruined shell of a Consecrated Beast.\nA tangible effigy to the grand calamity that devoured the lands of yore, usually only discovered in places few dare tread.",
+      "enemies": ["Consecrated Beasts"],
+      "obtained": "- Dropped by Consecrated Beasts",
+      "name": "Desiccated Shell",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Desiccated_Shell",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Sturdy_Shell": {
+      "image": "Materials/Elite_Mob/Item_Sturdy_Shell.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A sturdy shell of a Consecrated Beast.\nThe remains of a ruinous beast that once gnawed at the flesh of great, fallen beings. Even should the beasts sup a sliver of power from the gods of yesteryear, they too will greet the same and as said gods.",
+      "enemies": ["Consecrated Beasts"],
+      "obtained": "- Alchemy (3x Desiccated Shell)\n- Dropped by Consecrated Beasts",
+      "name": "Sturdy Shell",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sturdy_Shell",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Marked_Shell": {
+      "image": "Materials/Elite_Mob/Item_Marked_Shell.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "The marked shell of a Consecrated Beast inscribed with ancient script.On the pallid contours of the shell, the regrets of a time long past have been inlaid. One day, the bones of the beast will scatter like dust in the wind, and then, finally, may the exalted deceased greet their final rest…",
+      "enemies": ["Consecrated Beasts"],
+      "obtained": "- Alchemy (3x Sturdy Shell)\n- Dropped by Consecrated Beasts",
+      "name": "Marked Shell",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Marked_Shell",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
     }
   }
 }

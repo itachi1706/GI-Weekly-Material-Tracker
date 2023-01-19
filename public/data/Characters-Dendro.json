@@ -3,18 +3,18 @@
     "Alhaitham": {
       "image": "Characters/Dendro/Alhaitham.png",
       "gender": "Male",
-      "birthday": null,
-      "caption": null,
-      "titles": [],
-      "name": "Alhaitham (5*?)",
+      "birthday": "11/2",
+      "caption": "Admonishing Instruction",
+      "titles": ["Sumeru Akademiya Scribe"],
+      "name": "Alhaitham",
       "fullName": null,
-      "description": null,
+      "description": "The current scribe of the Sumeru Akademiya, a man endowed with extraodinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
       "nation": "Sumeru",
       "weapon": "Sword",
       "rarity": 5,
       "affiliation": "Sumeru Akademiya, Haravatat",
-      "constellation": null,
-      "outfits": [],
+      "constellation": "Vultur Volans",
+      "outfits": ["The_Rational"],
       "talents": {
         "ascension": {
           "2": {
@@ -23,9 +23,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
-            "material4": "Common_1",
+            "material4": "Faded_Red_Satin",
             "material4qty": 6
           },
           "3": {
@@ -34,9 +34,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 3
           },
           "4": {
@@ -45,9 +45,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 4
           },
           "5": {
@@ -56,9 +56,9 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 6
           },
           "6": {
@@ -67,98 +67,98 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
-            "material4": "Common_2",
+            "material4": "Trimmed_Red_Silk",
             "material4qty": 9
           },
           "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 4
           },
           "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 6
           },
           "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 9
           },
           "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "WeeklyBossDrop",
+            "material2": "Mirror_of_Mushin",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
-            "material4": "Common_3",
+            "material4": "Rich_Red_Brocade",
             "material4qty": 12
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Four-Causal_Correction": {
+            "name": "Four-Causal Correction",
+            "effect": "When Alhaitham's Charged or Plunging Attacks hit opponents, they will generate 1 Chisel-Light Mirror. This effect can be triggered once every 12s.",
+            "image": "Talents/Passive/Talent_Four-Causal_Correction.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Mysteries_Laid_Bare": {
+            "name": "Mysteries Laid Bare",
+            "effect": "Each point of Alhaitham's Elemental Mastery will increase the DMG dealt by Projection Attacks and Particular Field: Fetters of Phenomena by 0.1%.\nThe maximum DMG increase this way for both these abilities is 100%.",
+            "image": "Talents/Passive/Talent_Mysteries_Laid_Bare.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Law_of_Reductive_Overdetermination": {
+            "name": "Law of Reductive Overdetermination",
+            "effect": "When Alhaitham crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
+            "image": "Talents/Passive/Talent_Law_of_Reductive_Overdetermination.png",
             "order": 2,
             "type": "Passive 3"
           }
         },
         "attack": {
-          "Normal": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Normal/",
+          "Abductive_Reasoning": {
+            "name": "Abductive Reasoning",
+            "effect": "Normal Attack\nPerforms up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
-          "Skill": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Skill/",
+          "Universality_An_Elaboration_on_Form": {
+            "name": "Universality: An Elaboration on Form",
+            "effect": "Rushes forward, dealing Dendro DMG to nearby opponents when the rush ends, causing a Chisel-Light Mirror to form.\nHolding this skill will cause it to behave differently.\n\nHold\nEnters Aiming Mode to adjust the direction of Alhaitham's rush attack.\n\nChisel-Light Mirror\nWhen this skill is unleashed, Alhaitham will generate 1 Chisel-Light Mirror. If there are no Mirrors at this time, he will generate 1 additional Mirror. Chisel-Light Mirrors will have the following properties:\nWhen he possesses Chisel-Light Mirrors, Alhaitham's Normal, Charged, and Plunging Attacks will be converted to Dendro DMG. This cannot be overridden.\nWhen attacks of the aforementioned kinds hit opponents, the Chisel-Light Mirrors will unleash a Projection Attack that deals AoE Dendro DMG based on the number of Mirrors on the field.\nA total of 3 Chisel-Light Mirrors can exist at once.\nThe Chisel-Light Mirrors will disappear one after the other over time, and will all disappear when Alhaitham leaves the field.",
+            "image": "Talents/Skill/Talent_Universality_An_Elaboration_on_Form.png",
             "order": 1,
             "type": "Elemental Skill"
           },
-          "Burst": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Burst/",
+          "Particular_Field_Fetters_of_Phenomena": {
+            "name": "Particular Field: Fetters of Phenomena",
+            "effect": "Creates a Particular Binding Field and deals multiple instances of AoE Dendro DMG.\nIf Chisel-Light Mirrors exist when this ability is unleashed, all such Mirrors will be consumed and increase the number of DMG instances dealt.\n2s after this ability is unleashed, if 0/1/2/3 Mirrors were consumed, Alhaitham will generate 3/2/1/0 new Mirrors in turn.",
+            "image": "Talents/Burst/Talent_Particular_Field_Fetters_of_Phenomena.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -166,34 +166,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Intuition",
+          "effect": "When a Projection Attack hits an opponent, Universality: An Elaboration on Form's CD is decreased by 1.2s. This effect can be triggered once every 1s.",
+          "image": "Constellation/Intuition.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Debate",
+          "effect": "When Alhaitham generates a Chisel-Light Mirror, his Elemental Mastery will be increased by 50 for 8 seconds, max 4 stacks. Each stack's duration is counted independently. This effect can be triggered even when the maximum number of Chisel-Light Mirrors has been reached.",
+          "image": "Constellation/Debate.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Negation",
+          "effect": "Increases the Level of Universality: An Elaboration on Form by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Negation.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Elucidation",
+          "effect": "When Particular Field: Fetters of Phenomena is unleashed, the following effects will become active based on the number of Chisel-Light Mirrors consumed and created this time around:\nEach Mirror consumed will increase the Elemental Mastery of all other nearby party members by 30 for 15s.\nEach Mirror generated will grant Alhaitham a 10% Dendro DMG Bonus for 15s.\n\nThe pre-existing duration of the aforementioned effects will be cleared if you use Particular Field: Fetters of Phenomena again while they are in effect.",
+          "image": "Constellation/Elucidation.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Sagacity",
+          "effect": "Increases the Level of Particular Field: Fetters of Phenomena by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Sagacity.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "Structuration",
+          "effect": "Alhaitham gains the following effects:\n2 seconds after Particular Field: Fetters of Phenomena is unleashed, he will generate 3 Chisel-Light Mirrors regardless of the number of mirrors consumed.\nIf Alhaitham generates Chisel-Light Mirrors when their numbers have already maxed out, his CRIT Rate and CRIT DMG will increase by 10% and 70% respectively for 6s.\nIf this effect is triggered again during its initial duration, the duration remaining will be increased by 6s.",
+          "image": "Constellation/Structuration.png"
         }
       },
       "ascension": {
@@ -204,77 +204,77 @@
           "mora": 20000,
           "material2": null,
           "level": 20,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "2": {
           "material2qty": 2,
           "material1": "Nagadus_Emerald_Fragment",
           "material1qty": 3,
           "mora": 40000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 40,
-          "material4": "Common_1",
+          "material4": "Faded_Red_Satin",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "3": {
           "material2qty": 4,
           "material1": "Nagadus_Emerald_Fragment",
           "material1qty": 6,
           "mora": 60000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 50,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "4": {
           "material2qty": 8,
           "material1": "Nagadus_Emerald_Chunk",
           "material1qty": 3,
           "mora": 80000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 60,
-          "material4": "Common_2",
+          "material4": "Trimmed_Red_Silk",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "5": {
           "material2qty": 12,
           "material1": "Nagadus_Emerald_Chunk",
           "material1qty": 6,
           "mora": 100000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 70,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         },
         "6": {
           "material2qty": 20,
           "material1": "Nagadus_Emerald_Gemstone",
           "material1qty": 6,
           "mora": 120000,
-          "material2": "BossDrop",
+          "material2": "Pseudo-Stamens",
           "level": 80,
-          "material4": "Common_3",
+          "material4": "Rich_Red_Brocade",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "LocalSpeciality"
+          "material3": "Sand_Grease_Pupa"
         }
       },
-      "introduction": null,
-      "paimonmoepath": null,
+      "introduction": "The current scribe of the Sumeru Akademiya, a man endowed with extraordinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
+      "paimonmoepath": "characters/alhaitham",
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Alhaitham",
       "subCollection": {}
     },
@@ -1119,6 +1119,284 @@
       "element": "Dendro",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Tighnari",
+      "subCollection": {}
+    },
+    "Yaoyao": {
+      "image": "Characters/Dendro/Yaoyao.png",
+      "gender": "Female",
+      "birthday": "6/3",
+      "caption": "Burgeoning Grace",
+      "titles": ["Disciple of Streetward Rambler"],
+      "name": "Yaoyao",
+      "fullName": null,
+      "description": "Streetward Rambler's youngest disciple. A gentle and caring \"little adult\".",
+      "nation": "Liyue",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Streetward Rambler's Abode",
+      "constellation": "Osmanthus",
+      "outfits": ["Cherubic_Osmanthus"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Diligence",
+            "material3qty": 3,
+            "material4": "Slime_Condensate",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 2,
+            "material4": "Slime_Secretions",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 4,
+            "material4": "Slime_Secretions",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 6,
+            "material4": "Slime_Secretions",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 9,
+            "material4": "Slime_Secretions",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 4,
+            "material4": "Slime_Concentrate",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 6,
+            "material4": "Slime_Concentrate",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 12,
+            "material4": "Slime_Concentrate",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dakas_Bell",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 16,
+            "material4": "Slime_Concentrate",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Starscatter": {
+            "name": "Starscatter",
+            "effect": "While affected by the Adeptal Legacy state caused by Moonjade Descent, Yaoyao will constantly throw White Jade Radishes at nearby opponents when she is sprinting, jumping, or running. She can throw 1 White Jade Radish this way once every 0.6s.",
+            "image": "Talents/Passive/Talent_Starscatter.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "In_Others_Shoes": {
+            "name": "In Others' Shoes",
+            "effect": "When White Jade Radishes explode, active characters within their AoE will regain HP every 1s based on 0.8% of Yaoyao's Max HP. This effect lasts 5s.",
+            "image": "Talents/Passive/Talent_In_Others_Shoes.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Tailing_on_Tiptoes": {
+            "name": "Tailing on Tiptoes",
+            "effect": "When Yaoyao is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+            "image": "Talents/Passive/Talent_Tailing_on_Tiptoes.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Toss_N_Turn_Spear": {
+            "name": "Toss 'N' Turn Spear",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Dendro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Raphanus_Sky_Cluster": {
+            "name": "Raphanus Sky Cluster",
+            "effect": "Calls upon \"Yuegui: Throwing Mode\", a special device created by a certain adeptus to help Yaoyao solve her problems.\nThis skill will be used differently in Holding Mode.\n\nHold\nEnters Aiming Mode to adjust the throw direction.\n\nYuegui: Throwing Mode\nThrows out White Jade Radishes that will explode upon hitting characters or opponents, dealing Dendro DMG to opponents within a certain AoE, and healing characters within that same AoE based on Yaoyao's Max HP. If a radish does not hit either an opponent or a character, the radish will remain where it is and explode on contact with a character or opponent, or will explode after its duration expires.\nYuegui: Throwing Mode will choose its radish-throw targets.\nIf all nearby characters have more than 70% HP remaining, then it will throw the radish at a nearby opponent.\nIf nearby characters have 70% or less HP remaining, it will throw a radish at the character with the lowest HP percentage remaining. If no opponents exist nearby, Yuegui will throw White Jade Radishes at characters even if they all have more than 70% HP remaining.\n\nA maximum of 2 instances Yuegui: Throwing Mode can exist at any one time.",
+            "image": "Talents/Skill/Talent_Raphanus_Sky_Cluster.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Moonjade_Descent": {
+            "name": "Moonjade Descent",
+            "effect": "At the enjoinment of a certain adeptus, Yuegui's full potential can be unleashed in an emergency, dealing Dendro DMG to nearby opponents and entering an (in some sense) unsurpassed Adeptal Legacy state.\n\nAdeptal Legacy\nWhite Jade Radishes generated will be changed to heal and deal DMG according to this skill. Explosions will heal all nearby party members, and the Dendro DMG that they deal will be viewed as Elemental Burst DMG instead.\nSummons \"Yuegui: Jumping Mode\" at intervals until their limit has been reached. The behavior of this version of Yuegui is the same as that of \"Yuegui: Throwing Mode\" in the Elemental Skill, Raphanus Sky Cluster. A maximum of 3 Yuegui: Jumping Mode can exist at any one time.\nYaoyao's Movement SPD is increased by 15%.\nYaoyao's Dendro RES will be increased.\n\nThe Adeptal Legacy state will end once Yaoyao is off-field, and all remaining Yuegui: Jumping Mode will be cleared once this state ends.",
+            "image": "Talents/Burst/Talent_Moonjade_Descent.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Adeptus' Tutelage",
+          "effect": "When White Jade Radishes explode, active characters within their AoE will gain 15% Dendro DMG Bonus for 8s and have 15 Stamina restored to them. This form of Stamina Restoration can only be triggered every 5s.",
+          "image": "Constellation/Adeptus_Tutelage.png"
+        },
+        "2": {
+          "name": "Innocent",
+          "effect": "While affected by the Adeptal Legacy state caused by Moonjade Descent, if White Jade Radish explosions damage opponents, 3 Energy will be restored to Yaoyao. This form of Energy regeneration can occur once every 0.8s.",
+          "image": "Constellation/Innocent.png"
+        },
+        "3": {
+          "name": "Loyal and Kind",
+          "effect": "Increases the Level of Raphanus Sky Cluster by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Loyal_and_Kind.png"
+        },
+        "4": {
+          "name": "Winsome",
+          "effect": "After using Raphanus Sky Cluster or Moonjade Descent, Yaoyao's Elemental Mastery will be increased based on 0.3% of her Max HP for 8s. The maximum Elemental Mastery she can gain this way is 120.",
+          "image": "Constellation/Winsome.png"
+        },
+        "5": {
+          "name": "Compassionate",
+          "effect": "Increases the Level of Moonjade Descent by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Compassionate.png"
+        },
+        "6": {
+          "name": "Beneficent",
+          "effect": "For every 2 White Jade Radishes Yuegui: Throwing Mode throws out, it will also throw a Mega Radish that will have a larger AoE than the standard White Jade Radish and have the following effects upon exploding:\nDeals AoE Dendro DMG based on 75% of Yaoyao's ATK.\nRestores HP for the active character based on 7.5% of Yaoyao's Max HP.\n\nEvery Yuegei: Throwing Mode can throw out a maximum of 2 Mega Radishes.",
+          "image": "Constellation/Beneficent.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Slime_Condensate",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Jueyun_Chili"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Quelled_Creeper",
+          "level": 40,
+          "material4": "Slime_Condensate",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Jueyun_Chili"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Quelled_Creeper",
+          "level": 50,
+          "material4": "Slime_Secretions",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Jueyun_Chili"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Quelled_Creeper",
+          "level": 60,
+          "material4": "Slime_Secretions",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Jueyun_Chili"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Quelled_Creeper",
+          "level": 70,
+          "material4": "Slime_Concentrate",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Jueyun_Chili"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Quelled_Creeper",
+          "level": 80,
+          "material4": "Slime_Concentrate",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Jueyun_Chili"
+        }
+      },
+      "introduction": "A young adepti disciple who is generous and sincere. She is used to taking care of everyone around her. She trains under her master at Liyue Harbor and regularly travels between the mountains and the city. Although she does not say it outright, she prefers bustling city markets to the tranquil mountains.",
+      "paimonmoepath": "characters/yaoyao",
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Yaoyao",
       "subCollection": {}
     }
   }
