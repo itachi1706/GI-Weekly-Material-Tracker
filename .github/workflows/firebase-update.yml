@@ -40,43 +40,43 @@ jobs:
           fetch-depth: 0
       - name: Check if files changed for Realtime DB Banner
         id: rtdb-banner
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: |
             public/data/EventBanners.json
             util/**/*
       - name: Check if files changed for Firestore Public JSONs
         id: fspj
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: |
             public/data/**/*
             util/**/*
       - name: Check if files changed for Cloud Storage Data
         id: csd
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: public/images/**/*
       - name: Check if files changed for Firestore Indexes
         id: fsi
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: firebase/firestore.indexes.json
       - name: Check if files changed for Firebase Security Rules
         id: fbsr
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: firebase/**/*
       - name: Check if files changed for Firestore Cloud Function
         id: fbcf
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: |
             firebase/functions/**/*
             firebase/firebase.json
       - name: Check if files changed for Firestore Templates JSONs
         id: fstj
-        uses: tj-actions/changed-files@v35.5.0
+        uses: tj-actions/changed-files@v35.5.2
         with:
           files: |
             public/templates/**/*
