@@ -80,6 +80,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Akuoumaru",
       "subCollection": {}
     },
+    "Beacon_of_the_Reed_Sea": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A large, flat-tipped sword designed in to fit as the weapon of an ancient king or some ceremonial instrument.",
+      "name": "Beacon of the Reed Sea",
+      "series": "Deshret Series",
+      "ascension": {
+        "1": {
+          "material3": "Faded_Red_Satin",
+          "level": 20,
+          "material2": "Desiccated_Shell",
+          "material3qty": 3,
+          "material1": "Echo_of_Scorching_Might",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Faded_Red_Satin",
+          "level": 40,
+          "material2": "Desiccated_Shell",
+          "material3qty": 12,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 50,
+          "material2": "Sturdy_Shell",
+          "material3qty": 9,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Trimmed_Red_Silk",
+          "level": 60,
+          "material2": "Sturdy_Shell",
+          "material3qty": 14,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Rich_Red_Brocade",
+          "level": 70,
+          "material2": "Marked_Shell",
+          "material3qty": 9,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Rich_Red_Brocade",
+          "level": 80,
+          "material2": "Marked_Shell",
+          "material3qty": 18,
+          "material1": "Olden_Days_of_Scorching_Might",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Claymore/Beacon_of_the_Reed_Sea.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Claymore",
+      "max_secondary_stat": "33.1%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Desert Watch",
+      "effect": "After the character's Elemental Skill hits an opponent, their ATK will be increased by 20~40% for 8s. After the character takes DMG, their ATK will be increased by 20~40% for 8s. The 2 aforementioned effects can be triggered even when the character is not on the field. Additionally, when not protected by a shield, the character's Max HP will be increased by 32~64%.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Beacon_of_the_Reed_Sea",
+      "subCollection": {}
+    },
     "Blackcliff_Slasher": {
       "secondary_stat_type": "CRIT DMG",
       "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to the pommel.",
@@ -804,6 +885,87 @@
       "effect": "Increases Elemental Burst DMG by 12~24%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals 100~200% ATK as AoE DMG. This effect can occur once every 15s.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Luxurious_Sea-Lord",
+      "subCollection": {}
+    },
+    "Mailed_Flower": {
+      "secondary_stat_type": "Elemental Mastery",
+      "description": "A graceful and elegant greatsword that is decorated with flowers and ribbons.",
+      "name": "Mailed Flower",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Spectral_Husk",
+          "level": 20,
+          "material2": "Desiccated_Shell",
+          "material3qty": 2,
+          "material1": "Fetters_of_the_Dandelion_Gladiator",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Spectral_Husk",
+          "level": 40,
+          "material2": "Desiccated_Shell",
+          "material3qty": 8,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Spectral_Heart",
+          "level": 50,
+          "material2": "Sturdy_Shell",
+          "material3qty": 6,
+          "material1": "Chains_of_the_Dandelion_Gladiator",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Spectral_Heart",
+          "level": 60,
+          "material2": "Sturdy_Shell",
+          "material3qty": 9,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Spectral_Nucleus",
+          "level": 70,
+          "material2": "Marked_Shell",
+          "material3qty": 6,
+          "material1": "Shackles_of_the_Dandelion_Gladiator",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Spectral_Nucleus",
+          "level": 80,
+          "material2": "Marked_Shell",
+          "material3qty": 12,
+          "material1": "Dream_of_the_Dandelion_Gladiator",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Mailed_Flower.png",
+      "secondary_stat": "24",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "110",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Windblume's Breath Event",
+      "effectName": "Whispers of Wind and Flower",
+      "effect": "Within 8s after the character's Elemental Skill hits an opponent or the character triggers an Elemental Reaction, their ATK and Elemental Mastery will be increased by 12~?% and 48~? respectively.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mailed_Flower",
       "subCollection": {}
     },
     "Makhaira_Aquamarine": {
