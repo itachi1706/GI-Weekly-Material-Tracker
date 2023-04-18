@@ -349,6 +349,20 @@ jobs:
           printf "\nRelease Notes\n" >> release-beta.txt
           cat LATEST >> release-beta.txt
           printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_BUILD_VER" >> release-beta.txt
+      - name: Prep Changelog
+        id: changelog
+        uses: requarks/changelog-action@v1
+        with:
+          token: ${{ github.token }}
+          tag: ${{ github.ref_name }}
+          excludeTypes: docs,other,style
+          writeToFile: false
+      - name: Secondary Release
+        env:
+          CC_OUT: ${{ steps.changelog.outputs.changes }}
+        run: |
+          printf "\n\n# Conventional Commits Changed\n---\n" >> release-beta.txt
+          echo $CC_OUT >> release-beta.txt
       - name: Verify Release Notes
         run: cat release-beta.txt
       - name: Manage APK files
