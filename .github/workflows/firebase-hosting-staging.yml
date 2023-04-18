@@ -41,7 +41,7 @@ jobs:
           restore-keys: build-pubspec-
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - uses: benjlevesque/short-sha@v2.1
+      - uses: benjlevesque/short-sha@v2.2
         id: short-sha
         with:
           length: 8
