@@ -278,6 +278,284 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Alhaitham",
       "subCollection": {}
     },
+    "Baizhu": {
+      "image": "Characters/Dendro/",
+      "gender": "Male",
+      "birthday": "25/4",
+      "caption": "Beyond Mortality",
+      "titles": ["Owner of Bubu Pharmacy"],
+      "name": "Baizhu",
+      "fullName": null,
+      "description": null,
+      "nation": "Liyue",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Bubu Pharmacy",
+      "constellation": "Lagenaria",
+      "outfits": [],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Fungal_Spores",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Five_Fortunes_Forever": {
+            "name": "Five Fortunes Forever",
+            "effect": "Baizhu gains different effects according to the current HP of your current active character:\n* When their HP is less than 50%, Baizhu gains 20% Healing Bonus.\n* When their HP is equal to or more than 50%, Baizhu gains 25% Dendro DMG Bonus.",
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "All_Things_Are_of_the_Earth": {
+            "name": "All Things Are of the Earth",
+            "effect": "Characters who are healed by Seamless Shields will gain the Year of Verdant Favor effect: Each 1,000 Max HP that Baizhu possesses that does not exceed 50,000 will increase the Burning, Bloom, Hyperbloom, and Burgeon reaction DMG dealt by these characters by 2%, while the Aggravate and Spread reaction DMG dealt by these characters will be increased by 0.8%. This effect lasts 6s.",
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Herbal_Norishment": {
+            "name": "Herbal Norishment",
+            "effect": "When Baizhu is in the party, interacting with certain harvestable items will heal your current active character for 2.5% of Baizhu's Max HP.",
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "The_Classics_of_Acupuncture": {
+            "name": "The Classics of Acupuncture",
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Universal_Diagnosis": {
+            "name": "Universal Diagnosis",
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Holistic_Revivification": {
+            "name": "Holistic Revivification",
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Attentive Observation",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Incisive Discernment",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "All Aspects Stabilized",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Ancient Art of Perception",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "The Hidden Ebb and Flow",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Elimination of Malicious Qi",
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Fungal_Spores",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Violetgrass"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Evergloom_Ring",
+          "level": 40,
+          "material4": "Fungal_Spores",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Violetgrass"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Evergloom_Ring",
+          "level": 50,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Violetgrass"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Evergloom_Ring",
+          "level": 60,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Violetgrass"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Evergloom_Ring",
+          "level": 70,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Violetgrass"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Evergloom_Ring",
+          "level": 80,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Violetgrass"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Baizhu",
+      "subCollection": {}
+    },
     "Collei": {
       "image": "Characters/Dendro/Collei.png",
       "gender": "Female",
@@ -555,6 +833,284 @@
       "element": "Dendro",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Collei",
+      "subCollection": {}
+    },
+    "Kaveh": {
+      "image": "Characters/Dendro/",
+      "gender": "Male",
+      "birthday": "9/7",
+      "caption": "Empyrean Reflection",
+      "titles": ["Renowned Sumeru Architect"],
+      "name": "Kaveh",
+      "fullName": null,
+      "description": null,
+      "nation": "Sumeru",
+      "weapon": "Claymore",
+      "rarity": 4,
+      "affiliation": "Kshahrewar",
+      "constellation": "Paradisaea",
+      "outfits": [],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Fungal_Spores",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Luminescent_Pollen",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Crystalline_Cyst_Dust",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "An_Architects_Undertaking": {
+            "name": "An Architect's Undertaking",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "A_Craftmans_Curious_Conceptions": {
+            "name": "A Craftman's Curious Conceptions",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "The_Art_of_Budgeting": {
+            "name": "The Art of Budgeting",
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Schematic_Setup": {
+            "name": "Schematic Setup",
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Artistic_Ingenuity": {
+            "name": "Artistic Ingenuity",
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Painted_Dome": {
+            "name": "Painted Dome",
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Sublime Salutations",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": "Grace of Royal Roads",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": "Profferings of Dur Untash",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": "Feast of Apadana",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": "Treasures of Bonkhanak",
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": "Pairidaeza's Dreams",
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Fungal_Spores",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Mourning_Flower"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Quelled_Creeper",
+          "level": 40,
+          "material4": "Fungal_Spores",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Mourning_Flower"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Quelled_Creeper",
+          "level": 50,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Mourning_Flower"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Quelled_Creeper",
+          "level": 60,
+          "material4": "Luminescent_Pollen",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Mourning_Flower"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Quelled_Creeper",
+          "level": 70,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Mourning_Flower"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Quelled_Creeper",
+          "level": 80,
+          "material4": "Crystalline_Cyst_Dust",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Mourning_Flower"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kaveh",
       "subCollection": {}
     },
     "Nahida": {
