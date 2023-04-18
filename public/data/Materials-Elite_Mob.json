@@ -713,6 +713,57 @@
         "weapons": []
       },
       "subCollection": {}
+    },
+    "A_Flower_Yet_to_Bloom": {
+      "image": "Materials/Elite_Mob/Item_A_Flower_Yet_to_Bloom.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A wild flower that a Hilichurl Rogue treasured. It was plucked before it could bloom.\nThe hilichurl takes nothing with it in its sojourn across the wilderness save this flower.",
+      "enemies": ["Hilichurl Rogues"],
+      "obtained": "Dropped by Hilichurl Rogues",
+      "name": "A Flower Yet to Bloom",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/A_Flower_Yet_to_Bloom",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Treasured_Flower": {
+      "image": "Materials/Elite_Mob/Item_Treasured_Flower.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A wild flower that a Hilichurl Rogue treasured, bereft of any special qualities.\nFlowers can be used as gifts or offerings to express one's feelings in many cultures.",
+      "enemies": ["Hilichurl Rogues"],
+      "obtained": "- Alchemy (3x A Flower Yet to Bloom)\n- Dropped by Lv. 40+ Hilichurl Rogues",
+      "name": "Treasured Flower",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Treasured_Flower",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Wanderers_Blooming_Flower": {
+      "image": "Materials/Elite_Mob/Item_Wanderers_Blooming_Flower.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A blooming wild flower that a Hilichurl Rogue treasured, bereft of any special qualities.\nThe eternal outlander asks not for reward, but only to see their deeds come to fruition...",
+      "enemies": ["Hilichurl Rogues"],
+      "obtained": "- Alchemy (3x Treasured Flower)\n- Dropped by Lv. 60+ Hilichurl Rogues",
+      "name": "Wanderer's Blooming Flower",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wanderer%27s_Blooming_Flower",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
     }
   }
 }
