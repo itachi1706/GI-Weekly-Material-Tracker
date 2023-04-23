@@ -1,3 +1,7 @@
+# 2.2.5
+- Dependency Updates
+- Flutter Engine Updates
+
 # 2.2.4
 - New Login Page
 - New Import/Export/Delete userdata
