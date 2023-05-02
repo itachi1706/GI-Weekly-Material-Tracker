@@ -279,20 +279,19 @@
       "subCollection": {}
     },
     "Baizhu": {
-      "image": "Characters/Dendro/",
+      "image": "Characters/Dendro/Baizhu.png",
       "gender": "Male",
       "birthday": "25/4",
       "caption": "Beyond Mortality",
       "titles": ["Owner of Bubu Pharmacy"],
       "name": "Baizhu",
-      "fullName": null,
-      "description": null,
+      "description": "The owner of Bubu Pharmacy, who is rarely seen without the white snake named Changsheng. His medicinal knowledge is encyclopedic, and his personal intrigues subtle.",
       "nation": "Liyue",
       "weapon": "Catalyst",
       "rarity": 5,
       "affiliation": "Bubu Pharmacy",
       "constellation": "Lagenaria",
-      "outfits": [],
+      "outfits": ["The_Applications_of_Medicine"],
       "talents": {
         "ascension": {
           "2": {
@@ -301,7 +300,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Gold",
             "material3qty": 3,
             "material4": "Fungal_Spores",
             "material4qty": 6
@@ -312,7 +311,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Gold",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
             "material4qty": 3
@@ -323,7 +322,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Gold",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
             "material4qty": 4
@@ -334,7 +333,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Gold",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
             "material4qty": 6
@@ -345,7 +344,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Gold",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
             "material4qty": 9
@@ -354,9 +353,9 @@
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Worldspan_Fern",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Gold",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 4
@@ -365,9 +364,9 @@
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Worldspan_Fern",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Gold",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 6
@@ -376,9 +375,9 @@
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Worldspan_Fern",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Gold",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 9
@@ -387,9 +386,9 @@
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Worldspan_Fern",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Gold",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 12
@@ -398,22 +397,22 @@
         "passives": {
           "Five_Fortunes_Forever": {
             "name": "Five Fortunes Forever",
-            "effect": "Baizhu gains different effects according to the current HP of your current active character:\n* When their HP is less than 50%, Baizhu gains 20% Healing Bonus.\n* When their HP is equal to or more than 50%, Baizhu gains 25% Dendro DMG Bonus.",
-            "image": "Talents/Passive/",
+            "effect": "Baizhu gains different effects according to the current HP of your current active character:\nWhen their HP is less than 50%, Baizhu gains 20% Healing Bonus.\nWhen their HP is equal to or more than 50%, Baizhu gains 25% Dendro DMG Bonus.",
+            "image": "Talents/Passive/Talent_Five_Fortunes_Forever.png",
             "order": 0,
             "type": "Passive 1"
           },
           "All_Things_Are_of_the_Earth": {
             "name": "All Things Are of the Earth",
             "effect": "Characters who are healed by Seamless Shields will gain the Year of Verdant Favor effect: Each 1,000 Max HP that Baizhu possesses that does not exceed 50,000 will increase the Burning, Bloom, Hyperbloom, and Burgeon reaction DMG dealt by these characters by 2%, while the Aggravate and Spread reaction DMG dealt by these characters will be increased by 0.8%. This effect lasts 6s.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_All_Things_Are_of_the_Earth.png",
             "order": 1,
             "type": "Passive 2"
           },
           "Herbal_Norishment": {
             "name": "Herbal Norishment",
             "effect": "When Baizhu is in the party, interacting with certain harvestable items will heal your current active character for 2.5% of Baizhu's Max HP.",
-            "image": "Talents/Passive/",
+            "image": "Talents/Passive/Talent_Herbal_Nourishment.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -421,22 +420,22 @@
         "attack": {
           "The_Classics_of_Acupuncture": {
             "name": "The Classics of Acupuncture",
-            "effect": null,
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nPerforms up to 4 attacks that deal Dendro DMG to opponents in front of him.\n\nCharged Attack\nConsumes a certain amount of Stamina to deal AoE Dendro DMG to opponents in front of him after a short casting time.\n\nPlunging Attack\nCalling upon the might of Dendro, Baizhu plunges towards the ground from mid-air, damaging all opponents in his path. Deals AoE Dendro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Universal_Diagnosis": {
             "name": "Universal Diagnosis",
-            "effect": null,
-            "image": "Talents/Skill/",
+            "effect": "Controls a Gossamer Sprite that cruises and attacks nearby opponents, dealing Dendro DMG.\nAfter it performs 3 attacks or if there are no opponents nearby, the Sprite will return, healing all nearby party members based on Baizhu's Max HP.",
+            "image": "Talents/Skill/Talent_Universal_Diagnosis.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Holistic_Revivification": {
             "name": "Holistic Revivification",
-            "effect": null,
-            "image": "Talents/Burst/",
+            "effect": "Enters the Pulsing Clarity state, creating a Seamless Shield that absorbs Dendro DMG with 250% effectiveness.\nWhile in this state, Baizhu will generate a new Seamless Shield every 2.5s.\n\nThe Seamless Shield will heal your own active character based on Baizhu's Max HP and attack opponents by unleashing Spiritveins, dealing Dendro DMG under the following circumstances:\nWhen a character is under the protection of a Seamless Shield and a new Seamless Shield is generated.\nWhen the Seamless Shield's effects expire, or when it is shattered.",
+            "image": "Talents/Burst/Talent_Holistic_Revivification.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -445,33 +444,33 @@
       "constellations": {
         "1": {
           "name": "Attentive Observation",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Universal Diagnosis gains 1 additional charge.",
+          "image": "Constellation/Attentive_Observation.png"
         },
         "2": {
           "name": "Incisive Discernment",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "When your own active character hits a nearby opponent with their attacks, Baizhu will unleash a Gossamer Sprite: Splice.\nGossamer Sprite: Splice will initiate 1 attack before returning, dealing 250% of Baizhu's ATK as Dendro DMG and healing for 20% of Universal Diagnosis's Gossamer Sprite's normal healing.\nDMG dealt this way is considered Elemental Skill DMG.\nThis effect can be triggered once every 5s.",
+          "image": "Constellation/Incisive_Discernment.png"
         },
         "3": {
           "name": "All Aspects Stabilized",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Increases the Level of Holistic Revivification by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/All_Aspects_Stabilized.png"
         },
         "4": {
           "name": "Ancient Art of Perception",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "For 15s after Holistic Revivification is used, Baizhu will increase all nearby party members' Elemental Mastery by 80.",
+          "image": "Constellation/Ancient_Art_of_Perception.png"
         },
         "5": {
           "name": "The Hidden Ebb and Flow",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Increases the Level of Universal Diagnosis by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/The_Hidden_Ebb_and_Flow.png"
         },
         "6": {
           "name": "Elimination of Malicious Qi",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Increases the DMG dealt by Holistic Revivification's Spiritveins by 8% of Baizhu's Max HP.\nAdditionally, when a Gossamer Sprite or Gossamer Sprite: Splice hits opponents, there is a 100% chance of generating one of Holistic Revivification's Seamless Shields. This effect can only be triggered once by each Gossamer Sprite or Gossamer Sprite: Splice.",
+          "image": "Constellation/Elimination_of_Malicious_Qi.png"
         }
       },
       "ascension": {
@@ -548,11 +547,11 @@
           "material3": "Violetgrass"
         }
       },
-      "introduction": null,
+      "introduction": "The owner of Bubu Pharmacy, the finest pharmacy in all of Liyue. He is rarely seen without a white snake named Changsheng coiled around his shoulders. His prescriptions are varied and diverse, and his medical prowess and compassion are known throughout Teyvat.",
       "paimonmoepath": null,
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Baizhu",
       "subCollection": {}
     },
@@ -849,7 +848,7 @@
       "rarity": 4,
       "affiliation": "Kshahrewar",
       "constellation": "Paradisaea",
-      "outfits": [],
+      "outfits": ["Gold_Pinions_in_Flames_Bathed"],
       "talents": {
         "ascension": {
           "2": {
