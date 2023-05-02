@@ -948,6 +948,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Hakushin_Ring",
       "subCollection": {}
     },
+    "Jadefalls_Splendor": {
+      "secondary_stat_type": "HP",
+      "description": "A ritual vessel carved from jade that reflects the luster of the skies and the clear waters.",
+      "name": "Jadefall's Splendor",
+      "series": "Primordial Jade Series",
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 3,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 12,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Treasured_Flower",
+          "material3qty": 9,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Treasured_Flower",
+          "material3qty": 14,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 18,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Jadefalls_Splendor.png",
+      "secondary_stat": "10.8%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "49.6%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Gacha",
+      "effectName": "Primordial Jade Regalia",
+      "effect": "For 3s after using an Elemental Burst or creating a shield, the equipping character can gan the Primordial Jade Regalia effect: Restore 4.5~6.5 Energy every 2.5s, and gain 0.3~1.1% Elemental DMG Bonus for their corresponding Elemental Type for every 1,000 Max HP they possess, up to 12~44%. Primordial Jade Regalia will still take effect even if the equipping character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Jadefall%27s_Splendor",
+      "subCollection": {}
+    },
     "Kaguras_Verity": {
       "secondary_stat_type": "CRIT DMG",
       "description": "The bells used when performing the Kagura Dance, blessed by the Guuji herself. The scent of the Sacred Sakura tree lingers on it.",
