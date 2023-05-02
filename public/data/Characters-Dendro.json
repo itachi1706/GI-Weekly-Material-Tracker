@@ -835,18 +835,17 @@
       "subCollection": {}
     },
     "Kaveh": {
-      "image": "Characters/Dendro/",
+      "image": "Characters/Dendro/Kaveh.png",
       "gender": "Male",
       "birthday": "9/7",
       "caption": "Empyrean Reflection",
       "titles": ["Renowned Sumeru Architect"],
       "name": "Kaveh",
-      "fullName": null,
-      "description": null,
+      "description": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
       "nation": "Sumeru",
       "weapon": "Claymore",
       "rarity": 4,
-      "affiliation": "Kshahrewar",
+      "affiliation": "Kshahrewar, Independent Design Studio",
       "constellation": "Paradisaea",
       "outfits": ["Gold_Pinions_in_Flames_Bathed"],
       "talents": {
@@ -857,7 +856,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_1",
+            "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
             "material4": "Fungal_Spores",
             "material4qty": 6
@@ -868,7 +867,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
             "material4qty": 3
@@ -879,7 +878,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
             "material4qty": 4
@@ -890,7 +889,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
             "material4qty": 6
@@ -901,7 +900,7 @@
             "material1qty": 0,
             "material2": null,
             "material2qty": 0,
-            "material3": "Mastery_2",
+            "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
             "material4qty": 9
@@ -910,9 +909,9 @@
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Primordial_Greenbloom",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 4
@@ -921,9 +920,9 @@
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Primordial_Greenbloom",
             "material2qty": 1,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 6
@@ -932,9 +931,9 @@
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Primordial_Greenbloom",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 9
@@ -943,9 +942,9 @@
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Primordial_Greenbloom",
             "material2qty": 2,
-            "material3": "Mastery_3",
+            "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
             "material4qty": 12
@@ -954,22 +953,22 @@
         "passives": {
           "An_Architects_Undertaking": {
             "name": "An Architect's Undertaking",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "When DMG dealt by a Dendro Core (including DMG from Burgeon and Hyperbloom) hits Kaveh, Kaveh will regain HP equal to 300% of his Elemental Mastery. This effect can be triggered once every 0.5s.",
+            "image": "Talents/Passive/Talent_An_Architects_Undertaking.png",
             "order": 0,
             "type": "Passive 1"
           },
           "A_Craftmans_Curious_Conceptions": {
             "name": "A Craftman's Curious Conceptions",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "During Painted Dome, after Kaveh's Normal, Charged, or Plunging Attacks hit opponents, his Elemental Mastery will increase by 25. This effect can be triggered once every 0.1s. Max 4 stacks.\nThis effect will be canceled when Painted Dome's effects end.",
+            "image": "Talents/Passive/Talent_A_Craftsmans_Curious_Conceptions.png",
             "order": 1,
             "type": "Passive 2"
           },
           "The_Art_of_Budgeting": {
             "name": "The Art of Budgeting",
-            "effect": null,
-            "image": "Talents/Passive/",
+            "effect": "When Kaveh crafts Landscape, Building, and Courtyard-type Furnishings, he has a 100% chance to refund a portion of the materials used.",
+            "image": "Talents/Passive/Talent_The_Art_of_Budgeting.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -977,22 +976,22 @@
         "attack": {
           "Schematic_Setup": {
             "name": "Schematic Setup",
-            "effect": null,
-            "image": "Talents/Normal/",
+            "effect": "Normal Attack\nUses Mehrak to perform up to 4 consecutive attacks.\n\nCharged Attack\nDrains Stamina over time to perform continuous slashes.\nAt the end of the sequence, performs a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Claymore_Dendro.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Artistic_Ingenuity": {
             "name": "Artistic Ingenuity",
-            "effect": null,
-            "image": "Talents/Skill/",
+            "effect": "Uses Mehrak's mapping ability for offensive purposes, initiating a radial scan that deals AoE Dendro DMG. It will also scan all Dendro Cores in its AoE and cause them to immediately burst.",
+            "image": "Talents/Skill/Talent_Artistic_Ingenuity.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Painted_Dome": {
             "name": "Painted Dome",
-            "effect": null,
-            "image": "Talents/Burst/",
+            "effect": "Completely unleashes Mehrak's energy and creates a cubic scanned space, dealing AoE Dendro DMG to all opponents within it, causing all Dendro Cores in its AoE to immediately burst, and granting Kaveh the following enhanced combat abilities for a specific duration:\nIncreases Kaveh's Normal, Charged, and Plunging Attack AoE, and converts his attack DMG to Dendro DMG that cannot be overridden.\nAll Dendro Cores created by all your own party members through Bloom reactions will deal additional DMG when they burst.\nIncreases Kaveh's resistance to interruption\nThese effects will be canceled once Kaveh leaves the field.",
+            "image": "Talents/Burst/Talent_Painted_Dome.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -1001,33 +1000,33 @@
       "constellations": {
         "1": {
           "name": "Sublime Salutations",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Within 3s after using Artistic Ingenuity, Kaveh's Dendro RES and Incoming Healing Bonus will be increased by 50% and 25% respectively.",
+          "image": "Constellation/Sublime_Salutations.png"
         },
         "2": {
           "name": "Grace of Royal Roads",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Kaveh's Normal Attack SPD increases by 15% during Painted Dome.",
+          "image": "Constellation/Grace_of_Royal_Roads.png"
         },
         "3": {
           "name": "Profferings of Dur Untash",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Increases the Level of Painted Dome by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Profferings_of_Dur_Untash.png"
         },
         "4": {
           "name": "Feast of Apadana",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Dendro Cores created from Bloom reactions Kaveh triggers will deal 60% more DMG when they burst.",
+          "image": "Constellation/Feast_of_Apadana.png"
         },
         "5": {
           "name": "Treasures of Bonkhanak",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "Increases the Level of Artistic Ingenuity by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Treasures_of_Bonkhanak.png"
         },
         "6": {
           "name": "Pairidaeza's Dreams",
-          "effect": null,
-          "image": "Constellation/"
+          "effect": "When Kaveh's Normal, Charged, or Plunging Attacks hit opponents during Painted Dome, they will unleash Pairidaeza's Light upon the opponent's position, dealing 61.8% of Kaveh's ATK as AoE Dendro DMG and causing all Dendro Cores within that AoE to burst. This effect can be triggered once every 3s.",
+          "image": "Constellation/Pairidaezas_Dreams.png"
         }
       },
       "ascension": {
@@ -1104,11 +1103,11 @@
           "material3": "Mourning_Flower"
         }
       },
-      "introduction": null,
+      "introduction": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
       "paimonmoepath": null,
       "genshinggpath": null,
       "element": "Dendro",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Kaveh",
       "subCollection": {}
     },
