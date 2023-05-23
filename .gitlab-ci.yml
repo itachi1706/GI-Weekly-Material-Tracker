@@ -399,7 +399,7 @@ Build Web App:
     - cat $GOOGLE_SVC_DART > lib/firebase_options.dart
     - chmod +x ./ciscripts/get_version.sh
     - ./ciscripts/get_version.sh
-  script: flutter build web
+  script: flutter build web --no-tree-shake-icons # TODO: Temporary until we replace material_design_icons_flutter
   after_script:
     - apk add --no-cache zip
     - mkdir -p firebase/public
