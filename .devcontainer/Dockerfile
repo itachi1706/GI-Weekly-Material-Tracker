@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 LABEL maintainer="dockerimages@itachi1706.com"
 
 ENV FLUTTER_HOME=/home/vscode/flutter \
-    FLUTTER_VERSION=3.0.3-stable
+    FLUTTER_VERSION=3.10.1-stable
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
