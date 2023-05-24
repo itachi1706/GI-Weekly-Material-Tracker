@@ -548,8 +548,8 @@
         }
       },
       "introduction": "The owner of Bubu Pharmacy, the finest pharmacy in all of Liyue. He is rarely seen without a white snake named Changsheng coiled around his shoulders. His prescriptions are varied and diverse, and his medical prowess and compassion are known throughout Teyvat.",
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "paimonmoepath": "characters/baizhu",
+      "genshinggpath": "characters/baizhu",
       "element": "Dendro",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Baizhu",
@@ -1104,11 +1104,289 @@
         }
       },
       "introduction": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
-      "paimonmoepath": null,
-      "genshinggpath": null,
+      "paimonmoepath": "characters/kaveh",
+      "genshinggpath": "characters/kaveh",
       "element": "Dendro",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Kaveh",
+      "subCollection": {}
+    },
+    "Kirara": {
+      "image": "Characters/Dendro/Kirara.png",
+      "gender": "Female",
+      "birthday": "22/1",
+      "caption": "Cat Upon the Eaves",
+      "titles": ["Gold Level Courier of the Komaniya Express"],
+      "name": "Kirara",
+      "fullName": null,
+      "description": "A courier for Komaniya Express, a delivery company in Inazuma. A nekomata who loves her job and human society.",
+      "nation": "Inazuma",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": "Komaniya Express, Youkai",
+      "constellation": "Arcella",
+      "outfits": ["Whirling_Bloom"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Spectral_Husk",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 2,
+            "material4": "Spectral_Heart",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 4,
+            "material4": "Spectral_Heart",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Spectral_Heart",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 9,
+            "material4": "Spectral_Heart",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 4,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 12,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 16,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Bewitching_Betwitching_Tails": {
+            "name": "Bewitching, Betwitching Tails",
+            "effect": "When Kirara is in the Urgent Neko Parcel state of Meow-teor Kick, each impact against an opponent will grant her a stack of Reinforced Packaging. This effect can be triggered once for each opponent hit every 0.5s. Max 3 stacks. When the Urgent Neko Parcel state ends, each stack of Reinforced Packaging will create 1 Shield of Safe Transport for Kirara. The shields that are created this way will have 20% of the DMG absorption that the Shield of Safe Transport produced by Meow-teor Kick would have. If Kirara is already protected by a Shield of Safe Transport created by Meow-teor Kick, its DMG absorption will stack with these shields and its duration will reset.",
+            "image": "Talents/Passive/Talent_Bewitching_Betwitching_Tails.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Pupillary_Variance": {
+            "name": "Pupillary Variance",
+            "effect": "Every 1,000 Max HP Kirara possesses will increase the DMG dealt by Meow-teor Kick by 0.4%, and the DMG dealt by Secret Art: Surprise Dispatch by 0.3%.",
+            "image": "Talents/Passive/Talent_Pupillary_Variance.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Cats_Creeping_Carriage": {
+            "name": "Cat's Creeping Carriage",
+            "effect": "When Kirara is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+            "image": "Talents/Passive/Talent_Cats_Creeping_Carriage.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Boxcutter": {
+            "name": "Boxcutter",
+            "effect": "Normal Attack\nPerforms up to 4 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 3 rapid claw strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Dendro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Meow-teor_Kick": {
+            "name": "Meow-teor Kick",
+            "effect": "Press\nLeaps into the air with all the agility of a cat passing through the bushes, and thwacks her foes with a flying kick that deals AoE Dendro DMG while creating a Shield of Safe Transport. This will also briefly apply Dendro to Kirara.\nThe shield will absorb Dendro DMG with 250% effectiveness. The shield's DMG absorption will be based on Kirara's Max HP and will not exceed a certain percentage of that Max HP. The remaining DMG absorption on a Shield of Safe Transport will stack on a new one when it is created, and its duration will reset.\n\nHold\nOut of her desire to \"deliver within half a day\", Kirara deploys a Shield of Safe Transport identical to the one that can be created by pressing the skill. She will also curl up into a special express delivery box, entering the Urgent Neko Parcel state in order to move and fight more swiftly.\n\nUrgent Neko Parcel\nDeals Dendro DMG to opponents she crashes into. This effect can be triggered once on each opponent every 0.5s.\nWhen in this state, Kirara's movement speed, climbing speed, and jumping power are all increased, and her Stamina Consumption from climbing is increased.\nWhen the duration ends or the skill is used again, a Flipclaw Strike more powerful than the attack in the Mode will be unleashed, dealing AoE Dendro DMG.\nThe Urgent Neko Parcel state lasts a maximum of 10s. When the state ends, the skill will enter CD. The longer Kirara spends in this state, the longer the CD will be.\nSprinting or actively canceling climbing will end this state early.",
+            "image": "Talents/Skill/Talent_Meow-teor_Kick.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Secret_Art_Surprise_Dispatch": {
+            "name": "Secret Art: Surprise Dispatch",
+            "effect": "Smash opponents with a Special Delivery Package used for punishing parcel thieves, dealing AoE Dendro DMG. After the Special Delivery Package explodes, it will split up into many Cat Grass Cardamoms that will explode either upon contact with opponents or after a period of time, dealing AoE Dendro DMG.",
+            "image": "Talents/Burst/Talent_Secret_Art_Surprise_Dispatch.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Material Circulation",
+          "effect": "Every 8,000 Max HP Kirara possesses will cause her to create 1 extra Cat Grass Cardamom when she uses Secret Art: Surprise Dispatch. A maximum of 4 extra can be created this way.",
+          "image": "Constellation/Material_Circulation.png"
+        },
+        "2": {
+          "name": "Perfectly Packaged",
+          "effect": "When Kirara is in the Urgent Neko Parcel state of Meow-teor Kick, she will grant other party members she crashes into Critical Transport Shields.\nThe DMG absorption of Critical Transport Shield is 40% of the maximum absorption Meow-teor Kick's normal Shields of Safe Transport are capable of, and will absorb Dendro DMG with 250% effectiveness.\nCritical Transport Shields last 12s and can be triggered once on each character every 10s.",
+          "image": "Constellation/Perfectly_Packaged.png"
+        },
+        "3": {
+          "name": "Universal Recognition",
+          "effect": "Increases the Level of Meow-teor Kick by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Universal_Recognition.png"
+        },
+        "4": {
+          "name": "Steed of Skanda",
+          "effect": "After active character(s) protected by Shields of Safe Transport or Critical Transport Shields hit opponents with Normal, Charged, or Plunging Attacks, Kirara will perform a coordinated attack with them using Small Cat Grass Cardamoms, dealing 200% of her ATK as Dendro DMG. DMG dealt this way is considered Elemental Burst DMG. This effect can be triggered once every 3.8s. This CD is shared between all party members.",
+          "image": "Constellation/Steed_of_Skanda.png"
+        },
+        "5": {
+          "name": "A Thousand Miles in a Day",
+          "effect": "Increases the Level of Secret Art: Surprise Dispatch by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/A_Thousand_Miles_in_a_Day.png"
+        },
+        "6": {
+          "name": "Countless Sights to See",
+          "effect": "All nearby party members will gain 12% All Elemental DMG Bonus within 15s after Kirara uses her Elemental Skill or Burst.",
+          "image": "Constellation/Countless_Sights_to_See.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Spectral_Husk",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Amakumo_Fruit"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Evergloom_Ring",
+          "level": 40,
+          "material4": "Spectral_Husk",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Amakumo_Fruit"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Evergloom_Ring",
+          "level": 50,
+          "material4": "Spectral_Heart",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Amakumo_Fruit"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Evergloom_Ring",
+          "level": 60,
+          "material4": "Spectral_Heart",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Amakumo_Fruit"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Evergloom_Ring",
+          "level": 70,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Amakumo_Fruit"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Evergloom_Ring",
+          "level": 80,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Amakumo_Fruit"
+        }
+      },
+      "introduction": "A courier who works for Komaniya Express, a delivery company in Inazuma. She has twin restless tails and is a nekomata who loves human society.",
+      "paimonmoepath": "characters/kirara",
+      "genshinggpath": null,
+      "element": "Dendro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kirara",
       "subCollection": {}
     },
     "Nahida": {
