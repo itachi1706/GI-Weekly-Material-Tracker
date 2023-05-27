@@ -12,6 +12,7 @@ import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -191,11 +192,14 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
     }
 
     var fullUrl = source + sourcePath;
-    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
-      Util.showSnackbarQuick(
-        context,
-        'Failed to launch build guide for ${_info!.name} on $_bgSource',
-      );
+    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor) &&
+        mounted) {
+      if (mounted) {
+        Util.showSnackbarQuick(
+          context,
+          'Failed to launch build guide for ${_info!.name} on $_bgSource',
+        );
+      }
     }
   }
 
@@ -204,16 +208,20 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
     if (_info == null) return Util.loadingScreen();
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: Text(_info!.name ?? 'Unknown Character'),
           backgroundColor: _rarityColor,
-          bottom: const TabBar(tabs: [
-            Tab(text: 'General'),
-            Tab(text: 'Talents'),
-            Tab(text: 'Constellations'),
-          ]),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'General'),
+              Tab(text: 'Talents'),
+              Tab(text: 'Constellations'),
+              Tab(text: 'Outfits'),
+            ],
+            isScrollable: true,
+          ),
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
@@ -240,6 +248,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
               materialData: _materialData,
             ),
             CharacterConstellationPage(info: _info),
+            OutfitListGrid(character: _infoId),
           ],
         ),
       ),
