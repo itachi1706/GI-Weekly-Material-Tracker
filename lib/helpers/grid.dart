@@ -249,7 +249,9 @@ class GridData {
     ];
   }
 
-  static List<Widget> generateInfoLine(String textData, IconData icon) {
+  static List<Widget> generateInfoLine(String? textData, IconData icon) {
+    if (textData == null) return const [];
+
     return [
       Padding(
         padding: const EdgeInsets.all(8),
@@ -269,11 +271,19 @@ class GridData {
     ];
   }
 
-  static List<Widget> unreleasedCheck(bool released, String type) {
+  static List<Widget> unreleasedCheck(bool released, String type,
+      {bool hasTracking = false}) {
     if (released) return [const SizedBox.shrink()];
 
+    if (hasTracking) {
+      return GridData.generateInfoLine(
+        'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+        Icons.warning_amber,
+      );
+    }
+
     return GridData.generateInfoLine(
-      'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+      'This is an unreleased $type. Data is incomplete and subjected to change',
       Icons.warning_amber,
     );
   }

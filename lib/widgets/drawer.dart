@@ -68,6 +68,12 @@ class _DrawerComponentState extends State<DrawerComponent> {
                   route: '/test',
                   offPrev: false,
                 ),
+                _drawerItem(
+                  iconData: MdiIcons.tshirtCrew,
+                  title: 'Outfits (ALPHA)',
+                  route: '/outfits',
+                  offPrev: false,
+                ),
                 const Divider(),
                 _drawerItem(
                   iconData: MdiIcons.alarm,

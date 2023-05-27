@@ -8,6 +8,7 @@ import 'package:gi_weekly_material_tracker/widgets/globaltracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/login.dart';
 import 'package:gi_weekly_material_tracker/widgets/mainnavs.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
+import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
 import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
 import 'package:gi_weekly_material_tracker/widgets/splash.dart';
@@ -65,6 +66,7 @@ class MyAppState extends State<MyApp> {
         GetPage(name: '/splash', page: () => const SplashPage()),
         GetPage(name: '/', page: () => const LoginPage()),
         GetPage(name: '/test', page: () => TestPage()),
+        GetPage(name: '/outfits', page: () => const AllOutfitsPage()),
         GetPage(name: '/test3d/:costume', page: () => const ThreeDViewerPage()),
         GetPage(name: '/placeholder', page: () => const PlaceholderPage()),
         GetPage(name: '/menu', page: () => const TransitionPage()),
@@ -87,6 +89,14 @@ class MyAppState extends State<MyApp> {
         GetPage(
           name: '/characters/:character',
           page: () => const CharacterInfoMainPage(),
+        ),
+        GetPage(
+          name: '/outfits/:outfit',
+          page: () => const OutfitInfoMainPage(),
+        ),
+        GetPage(
+          name: '/outfits/:outfit/model',
+          page: () => const OutfitModelViewerPage(),
         ),
         GetPage(name: '/weapons/:weapon', page: () => const WeaponInfoPage()),
         GetPage(name: '/globalTracking', page: () => GlobalTrackingPage()),

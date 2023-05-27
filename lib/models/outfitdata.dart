@@ -5,7 +5,7 @@ import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class OutfitData extends CommonData {
   String? character;
-  String? thumbnail;
+  String? gameImage;
   String? wishImage;
   String? model3D;
   String? obtained;
@@ -21,7 +21,7 @@ class OutfitData extends CommonData {
 
   OutfitData({
     this.character,
-    this.thumbnail,
+    this.gameImage,
     this.wishImage,
     this.model3D,
     this.obtained,
@@ -53,7 +53,7 @@ class OutfitData extends CommonData {
   factory OutfitData.fromJson(Map<String, dynamic> json) {
       return OutfitData(
         character: json['character'],
-        thumbnail: json['thumbnail'],
+        gameImage: json['image'],
         wishImage: json['wishimage'],
         model3D: json['3dmodel'],
         obtained: json['obtained'],
@@ -67,7 +67,7 @@ class OutfitData extends CommonData {
         eventGiveFreeTill: json['event_give_free_till'],
         name: json['name'],
         rarity: json['rarity'],
-        image: json['image'],
+        image: json['thumbnail'],
         description: json['description'],
         wiki: json['wiki'],
         released: json['released'],

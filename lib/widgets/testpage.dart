@@ -13,7 +13,7 @@ class TestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Outfits (ALPHA)'),
+        title: const Text('3D Model Outfits (ALPHA)'),
       ),
       body: FutureBuilder(
         future: GridData.retrieveOutfitsMapData(),
@@ -31,7 +31,11 @@ class TestPage extends StatelessWidget {
 
             debugPrint("outfitsMap Size: ${outfitsMap.length}");
 
-            // Filter out all values without model3d
+            // Filter out all values without model3d and put in another variable
+            debugPrint("Filter out no 3D Models");
+
+            outfitsMap = Map.from(outfitsMap);
+
             outfitsMap.removeWhere((key, value) => value.model3D == null || value.model3D!.isEmpty);
 
             debugPrint("outfitsMap trimmed Size: ${outfitsMap.length}");
@@ -40,7 +44,7 @@ class TestPage extends StatelessWidget {
               shrinkWrap: true,
               itemCount: outfitsMap.length,
               itemBuilder: (context, index) {
-                var key = outfitsMap.keys.elementAt(index);
+                var key = outfitsMap!.keys.elementAt(index);
                 var value = outfitsMap[key];
 
                 return ListTile(
