@@ -245,7 +245,8 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
     _materialKey = Get.parameters['materialKey'];
     _getStaticData();
     _flatButtonStyle = TextButton.styleFrom(
-      primary: (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black,
+      foregroundColor:
+          (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black,
       minimumSize: const Size(0, 0),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
@@ -558,10 +559,10 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 _material!.description!,
                 Icons.format_list_bulleted,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8),
+              const Padding(
+                padding: EdgeInsets.all(8),
                 child: Row(
-                  children: const [
+                  children: [
                     Text(
                       'Tracking For',
                       style: TextStyle(fontSize: 24),

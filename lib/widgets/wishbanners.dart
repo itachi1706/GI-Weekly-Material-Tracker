@@ -1,4 +1,3 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_ui_database/firebase_ui_database.dart';
 import 'package:flutter/foundation.dart';
@@ -10,7 +9,6 @@ import 'package:gi_weekly_material_tracker/extensions/string_extensions.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/bannerdata.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
-import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
@@ -409,9 +407,6 @@ class BannerInfoPage extends StatefulWidget {
 }
 
 class BannerInfoPageState extends State<BannerInfoPage> {
-  Map<String, WeaponData>? _weaponData;
-  Map<String, CharacterData>? _characterData;
-
   String? _type, _index;
 
   BannerData? _bannerInfo;
@@ -425,13 +420,13 @@ class BannerInfoPageState extends State<BannerInfoPage> {
   }
 
   Widget _get4PityWidget() {
-    return IntrinsicHeight(
+    return const IntrinsicHeight(
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+            padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
-              children: const [
+              children: [
                 Text(
                   '4* RATES',
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -629,9 +624,6 @@ class BannerInfoPageState extends State<BannerInfoPage> {
   }
 
   void _getStaticData() async {
-    var characterData = await GridData.retrieveCharactersMapData();
-    var weaponData = await GridData.retrieveWeaponsMapData();
-
     final bannerQuery = db.ref('banners').child(_type!).child(_index!);
     BannerData? ban;
     var evt = await bannerQuery.once();
@@ -641,8 +633,6 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     }
 
     setState(() {
-      _characterData = characterData;
-      _weaponData = weaponData;
       _bannerInfo = ban;
     });
   }

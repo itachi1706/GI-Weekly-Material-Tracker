@@ -16,7 +16,8 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 class Util {
   static const String genshinGGUrl = 'https://genshin.gg/';
   static const String paimonMoeUrl = 'https://paimon.moe/';
-  static const String costumeGsUrl = 'https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/';
+  static const String costumeGsUrl =
+      'https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
   static String? currentRoute;
 
@@ -256,7 +257,7 @@ class Util {
           android: AndroidChromeCustomTabsOptions(
             toolbarBackgroundColor: rarityColor,
             showTitle: true,
-            addDefaultShareMenuItem: true,
+            shareState: CustomTabsShareState.SHARE_STATE_DEFAULT,
             enableUrlBarHiding: true,
           ),
           ios: IOSSafariOptions(
@@ -278,8 +279,9 @@ class Util {
   static Future<bool> _launchWebPageWeb(String url) async {
     // Launch through Web
     debugPrint('Launching $url');
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: false);
+    var uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
 
       return true;
     } else {

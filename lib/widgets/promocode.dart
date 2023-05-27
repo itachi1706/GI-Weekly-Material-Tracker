@@ -125,7 +125,9 @@ class PromoCodePageState extends State<PromoCodePage> {
                     onTap: () =>
                         _launchRedemptionSiteWithCode(promoCodeRegion!),
                     onLongPress: () {
-                      Clipboard.setData(ClipboardData(text: promoCodeRegion ?? '-'));
+                      Clipboard.setData(
+                        ClipboardData(text: promoCodeRegion ?? '-'),
+                      );
                       Util.showSnackbarQuick(
                         context,
                         'Code ($promoCodeRegion) copied to clipboard',

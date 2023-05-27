@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/foundation.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class OutfitData extends CommonData {
@@ -51,28 +48,28 @@ class OutfitData extends CommonData {
         );
 
   factory OutfitData.fromJson(Map<String, dynamic> json) {
-      return OutfitData(
-        character: json['character'],
-        gameImage: json['image'],
-        wishImage: json['wishimage'],
-        model3D: json['3dmodel'],
-        obtained: json['obtained'],
-        lore: json['lore'],
-        type: json['type'],
-        shop: json['shop'],
-        shopCost: json['shop_cost'],
-        shopCostDiscounted: json['shop_cost_discounted'],
-        shopCostDiscountedTill: json['shop_cost_discounted_till'],
-        eventGiveFree: json['event_give_free'],
-        eventGiveFreeTill: json['event_give_free_till'],
-        name: json['name'],
-        rarity: json['rarity'],
-        image: json['thumbnail'],
-        description: json['description'],
-        wiki: json['wiki'],
-        released: json['released'],
-        releasedVersion: double.parse(json['released_version'].toString()),
-      );
+    return OutfitData(
+      character: json['character'],
+      gameImage: json['image'],
+      wishImage: json['wishimage'],
+      model3D: json['3dmodel'],
+      obtained: json['obtained'],
+      lore: json['lore'],
+      type: json['type'],
+      shop: json['shop'],
+      shopCost: json['shop_cost'],
+      shopCostDiscounted: json['shop_cost_discounted'],
+      shopCostDiscountedTill: json['shop_cost_discounted_till'],
+      eventGiveFree: json['event_give_free'],
+      eventGiveFreeTill: json['event_give_free_till'],
+      name: json['name'],
+      rarity: json['rarity'],
+      image: json['thumbnail'],
+      description: json['description'],
+      wiki: json['wiki'],
+      released: json['released'],
+      releasedVersion: double.parse(json['released_version'].toString()),
+    );
   }
 
   static Map<String, OutfitData> getList(Map<String, dynamic> listString) {

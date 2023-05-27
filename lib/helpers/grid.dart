@@ -110,7 +110,7 @@ class GridData {
 
   static ImageProvider getFirebaseImage(String? url) {
     return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
-    as ImageProvider<Object>;
+        as ImageProvider<Object>;
   }
 
   static Widget getImageAssetFromFirebase(
@@ -208,10 +208,12 @@ class GridData {
       rarityColor:
           GridUtils.getRarityColor(data.rarity, crossover: data.crossover),
     )) {
-      Util.showSnackbarQuick(
-        context,
-        'Wiki Page not available for ${data.name ?? 'Unknown'}',
-      );
+      if (context.mounted) {
+        Util.showSnackbarQuick(
+          context,
+          'Wiki Page not available for ${data.name ?? 'Unknown'}',
+        );
+      }
     }
   }
 
@@ -276,8 +278,11 @@ class GridData {
     ];
   }
 
-  static List<Widget> unreleasedCheck(bool released, String type,
-      {bool hasTracking = false}) {
+  static List<Widget> unreleasedCheck(
+    bool released,
+    String type, {
+    bool hasTracking = false,
+  }) {
     if (released) return [const SizedBox.shrink()];
 
     if (hasTracking) {

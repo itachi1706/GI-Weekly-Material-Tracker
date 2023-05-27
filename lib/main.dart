@@ -51,7 +51,6 @@ class MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         primarySwatch: Colors.deepOrange,
-        toggleableActiveColor: Colors.deepOrangeAccent,
         colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.deepOrange,
           secondary: Colors.deepOrange,

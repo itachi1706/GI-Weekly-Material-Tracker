@@ -48,7 +48,7 @@ class SortBy {
 
   Color? _matchColor(String? key) {
     if (key != _internalSorter!.getSortKey()) {
-      return Get.theme.textTheme.bodyText1!.color;
+      return Get.theme.textTheme.bodyLarge!.color;
     }
 
     return Get.theme.colorScheme.secondary;
@@ -92,8 +92,8 @@ class SortBy {
       PopupMenuItem(
         textStyle: TextStyle(color: _matchColor(null)),
         value: '',
-        child: Row(
-          children: const [Text('Default'), Spacer()],
+        child: const Row(
+          children: [Text('Default'), Spacer()],
         ),
       ),
       _getSorterMenuWidget('rarity', 'Rarity', true),
