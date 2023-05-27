@@ -57,7 +57,7 @@ class OutfitListGridState extends State<OutfitListGrid> {
           return Util.centerLoadingCircle('Getting Outfits...');
         }
 
-        if (widget.character != null) {
+        if (widget.character == null) {
           GridData.setStaticData('outfits', snapshot.data);
         }
 
