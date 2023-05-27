@@ -12,7 +12,6 @@ import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
 import 'package:gi_weekly_material_tracker/widgets/parametric.dart';
 import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
 import 'package:gi_weekly_material_tracker/widgets/splash.dart';
-import 'package:gi_weekly_material_tracker/widgets/testpage.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:gi_weekly_material_tracker/widgets/wishbanners.dart';
 
@@ -65,9 +64,7 @@ class MyAppState extends State<MyApp> {
       getPages: [
         GetPage(name: '/splash', page: () => const SplashPage()),
         GetPage(name: '/', page: () => const LoginPage()),
-        GetPage(name: '/test', page: () => TestPage()),
         GetPage(name: '/outfits', page: () => const AllOutfitsPage()),
-        GetPage(name: '/test3d/:costume', page: () => const ThreeDViewerPage()),
         GetPage(name: '/placeholder', page: () => const PlaceholderPage()),
         GetPage(name: '/menu', page: () => const TransitionPage()),
         GetPage(

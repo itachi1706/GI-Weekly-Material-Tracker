@@ -108,6 +108,11 @@ class GridData {
   static Future<Map<String, OutfitData>?> retrieveOutfitsMapData() async =>
       (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
 
+  static ImageProvider getFirebaseImage(String? url) {
+    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
+    as ImageProvider<Object>;
+  }
+
   static Widget getImageAssetFromFirebase(
     imageRef, {
     double? height,
@@ -135,7 +140,7 @@ class GridData {
                   ),
                   errorBuilder: (context, obj, trace) =>
                       const Icon(Icons.error),
-                  image: _getFirebaseImage(snapshot.data.toString()),
+                  image: getFirebaseImage(snapshot.data.toString()),
                   fit: BoxFit.fitWidth,
                   placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
@@ -448,11 +453,6 @@ class GridData {
 
   static Map<String, CommonData>? _retrieveStaticDataQuick(String type) {
     return _staticData[type];
-  }
-
-  static ImageProvider _getFirebaseImage(String? url) {
-    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
-        as ImageProvider<Object>;
   }
 }
 

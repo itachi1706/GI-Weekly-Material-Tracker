@@ -4,7 +4,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
@@ -128,7 +127,8 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
 
     return FloatingActionButton(
       onPressed: () => Get.toNamed("/outfits/$_infoId/model"),
-      tooltip: 'View 3D Model',
+      tooltip: 'View 3D Model (ALPHA)',
+      backgroundColor: _rarityColor,
       child: const Icon(MdiIcons.tshirtCrew),
     );
   }
@@ -159,8 +159,8 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
         body: TabBarView(
           children: [
             OutfitInfoGeneralPage(info: _info),
-            PlaceholderWidgetContainer(Colors.green),
-            PlaceholderWidgetContainer(Colors.blue),
+            OutfitInfoImagePage(imagePath: _info!.wishImage),
+            OutfitInfoImagePage(imagePath: _info!.gameImage),
           ],
         ),
         floatingActionButton: _showFab(),
@@ -279,14 +279,19 @@ class OutfitInfoGeneralPage extends StatelessWidget {
           children: [
             _getOutfitHeader(context),
             const Divider(),
-            ...GridData.unreleasedCheck(info!.released, 'Outfit',
-                hasTracking: false),
+            ...GridData.unreleasedCheck(
+              info!.released,
+              'Outfit',
+              hasTracking: false,
+            ),
             ...GridData.generateInfoLine(
               "Version ${info!.releasedVersion.toString()}",
               Icons.new_releases,
             ),
             ...GridData.generateInfoLine(
-                info!.description, Icons.format_list_bulleted),
+              info!.description,
+              Icons.format_list_bulleted,
+            ),
             ...GridData.generateInfoLine(
               info!.obtained!.replaceAll('- ', ''),
               Icons.location_pin,
@@ -298,6 +303,23 @@ class OutfitInfoGeneralPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class OutfitInfoImagePage extends StatelessWidget {
+  final String? imagePath;
+
+  const OutfitInfoImagePage({Key? key, required this.imagePath})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (imagePath == null) return const Center(child: Text('No image found'));
+
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: GridData.getImageAssetFromFirebase(imagePath),
     );
   }
 }
@@ -377,14 +399,16 @@ class OutfitModelViewerPageState extends State<OutfitModelViewerPage> {
   Widget build(BuildContext context) {
     var outfitName = "";
     if (_outfitData != null) outfitName = _outfitData?.name ?? "Unknown";
+    var rarityColor = GridUtils.getRarityColor(_outfitData?.rarity ?? 1);
     debugPrint("Processing: ${_outfitData?.model3D}");
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("3D - $outfitName (ALPHA)"),
+        title: Text("3D - $outfitName"),
+        backgroundColor: rarityColor,
         actions: [
           IconButton(
-            icon: const Icon(Icons.info_outline),
+            icon: const Icon(Icons.new_releases_outlined),
             onPressed: () => _showAlphaAlert(),
           ),
         ],
