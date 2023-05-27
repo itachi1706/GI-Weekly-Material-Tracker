@@ -150,7 +150,7 @@ class ThreeDViewerPageState extends State<ThreeDViewerPage> {
         alt: _costumeData!.name,
         autoRotate: true,
         cameraControls: true,
-        enablePan: true,
+        disablePan: false,
         ar: true,
         arModes: ['scene-viewer', 'webxr', 'quick-look'],
         environmentImage: "https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/music_hall_01_1k.hdr",
