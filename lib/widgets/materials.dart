@@ -1,15 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
-import 'package:gi_weekly_material_tracker/models/characterdata.dart';
-import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
-import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -131,8 +127,6 @@ class MaterialInfoPage extends StatefulWidget {
 
 class MaterialInfoPageState extends State<MaterialInfoPage> {
   MaterialDataCommon? _info;
-  Map<String, WeaponData>? _weaponData;
-  Map<String, CharacterData>? _characterData;
   String? _infoId;
 
   Color? _rarityColor;
@@ -151,16 +145,12 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
   }
 
   void _getStaticData() async {
-    var characterData = await GridData.retrieveCharactersMapData();
-    var weaponData = await GridData.retrieveWeaponsMapData();
     var value = await GridData.retrieveMaterialsMapData();
 
     setState(() {
       _info = value![_infoId!];
       if (_info == null) Get.offAndToNamed('/splash');
       _rarityColor = GridUtils.getRarityColor(_info!.rarity);
-      _characterData = characterData;
-      _weaponData = weaponData;
     });
     _refreshTrackingStatus();
   }

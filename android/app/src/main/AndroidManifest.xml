@@ -6,6 +6,7 @@
     </queries>
    <application
         android:label="GI Weekly Material Tracker"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher_custom">
         <activity
             android:name=".MainActivity"

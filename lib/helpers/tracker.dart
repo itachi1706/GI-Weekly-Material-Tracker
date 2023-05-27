@@ -294,10 +294,10 @@ class TrackingData {
 
   static List<Widget> getAscensionHeader() {
     return [
-      Padding(
-        padding: const EdgeInsets.all(8),
+      const Padding(
+        padding: EdgeInsets.all(8),
         child: Row(
-          children: const [
+          children: [
             Text(
               'Ascension Materials',
               style: TextStyle(fontSize: 24),
@@ -305,10 +305,10 @@ class TrackingData {
           ],
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.only(left: 8, right: 8),
+      const Padding(
+        padding: EdgeInsets.only(left: 8, right: 8),
         child: Row(
-          children: const [
+          children: [
             Text(
               'Select a tier to toggle tracking\nBlue - Getting materials | Green - Enough materials',
             ),

@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
@@ -85,6 +86,9 @@ class GridData {
       case 'materials':
         _staticData[type] = MaterialDataCommon.getList(data);
         break;
+      case 'outfits':
+        _staticData[type] = OutfitData.getList(data);
+        break;
     }
   }
 
@@ -100,6 +104,14 @@ class GridData {
       retrieveCharactersMapData() async =>
           (await _retrieveStaticData('characters'))
               as Map<String, CharacterData>?;
+
+  static Future<Map<String, OutfitData>?> retrieveOutfitsMapData() async =>
+      (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
+
+  static ImageProvider getFirebaseImage(String? url) {
+    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
+        as ImageProvider<Object>;
+  }
 
   static Widget getImageAssetFromFirebase(
     imageRef, {
@@ -128,7 +140,7 @@ class GridData {
                   ),
                   errorBuilder: (context, obj, trace) =>
                       const Icon(Icons.error),
-                  image: _getFirebaseImage(snapshot.data.toString()),
+                  image: getFirebaseImage(snapshot.data.toString()),
                   fit: BoxFit.fitWidth,
                   placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
@@ -196,10 +208,12 @@ class GridData {
       rarityColor:
           GridUtils.getRarityColor(data.rarity, crossover: data.crossover),
     )) {
-      Util.showSnackbarQuick(
-        context,
-        'Wiki Page not available for ${data.name ?? 'Unknown'}',
-      );
+      if (context.mounted) {
+        Util.showSnackbarQuick(
+          context,
+          'Wiki Page not available for ${data.name ?? 'Unknown'}',
+        );
+      }
     }
   }
 
@@ -242,7 +256,9 @@ class GridData {
     ];
   }
 
-  static List<Widget> generateInfoLine(String textData, IconData icon) {
+  static List<Widget> generateInfoLine(String? textData, IconData icon) {
+    if (textData == null) return const [];
+
     return [
       Padding(
         padding: const EdgeInsets.all(8),
@@ -262,11 +278,22 @@ class GridData {
     ];
   }
 
-  static List<Widget> unreleasedCheck(bool released, String type) {
+  static List<Widget> unreleasedCheck(
+    bool released,
+    String type, {
+    bool hasTracking = false,
+  }) {
     if (released) return [const SizedBox.shrink()];
 
+    if (hasTracking) {
+      return GridData.generateInfoLine(
+        'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+        Icons.warning_amber,
+      );
+    }
+
     return GridData.generateInfoLine(
-      'This is an unreleased $type. Tracking is disabled and data is incomplete and subjected to change',
+      'This is an unreleased $type. Data is incomplete and subjected to change',
       Icons.warning_amber,
     );
   }
@@ -431,11 +458,6 @@ class GridData {
 
   static Map<String, CommonData>? _retrieveStaticDataQuick(String type) {
     return _staticData[type];
-  }
-
-  static ImageProvider _getFirebaseImage(String? url) {
-    return ((kIsWeb) ? CachedNetworkImageProvider(url!) : FirebaseImage(url!))
-        as ImageProvider<Object>;
   }
 }
 

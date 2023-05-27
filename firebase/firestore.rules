@@ -16,6 +16,9 @@ service cloud.firestore {
         match /weapons/{weapons} {
             allow read: if true;
         }
+        match /outfits/{outfit} {
+            allow read: if true;
+        }
 
         // Private user data for tracking
         match /tracking/{userId} {

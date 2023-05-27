@@ -227,6 +227,12 @@ class DrawerComponentState extends State<DrawerComponent> {
                   title: 'Wish Banners',
                   route: '/bannerinfo',
                 ),
+                _drawerItem(
+                  iconData: MdiIcons.tshirtCrew,
+                  title: 'View All Outfits',
+                  route: '/outfits',
+                  offPrev: false,
+                ),
                 const Divider(),
                 _drawerItem(
                   iconData: MdiIcons.alarm,

@@ -17,6 +17,7 @@ class CharacterData extends CommonData {
   Map<int, CharacterConstellations>? constellations;
   CharacterTalent? talent;
   List<String>? titles;
+  List<String>? outfits;
 
   // Time since last banner
   int? lastBannerCount;
@@ -44,6 +45,7 @@ class CharacterData extends CommonData {
     this.constellations,
     this.fullName,
     this.titles,
+    this.outfits,
     this.lastBannerCount,
     this.lastBannerEnd,
     this.lastBannerName,
@@ -90,6 +92,9 @@ class CharacterData extends CommonData {
       released: parsedJson['released'],
       titles: parsedJson['titles'] != null
           ? List<String>.from(parsedJson['titles'])
+          : null,
+      outfits: parsedJson['outfits'] != null
+          ? List<String>.from(parsedJson['outfits'])
           : null,
       lastBannerCount: parsedJson['banners_since_last_appearance'],
       lastBannerEnd: parsedJson['date_since_last_appearance'] != null
