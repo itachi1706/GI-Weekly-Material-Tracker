@@ -184,7 +184,7 @@ class OutfitInfoGeneralPage extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
-                info!.type!,
+                "${info!.type!} Outfit",
                 textAlign: TextAlign.start,
                 style: const TextStyle(fontSize: 20),
               ),
