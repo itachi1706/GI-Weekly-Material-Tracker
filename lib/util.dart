@@ -16,6 +16,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 class Util {
   static const String genshinGGUrl = 'https://genshin.gg/';
   static const String paimonMoeUrl = 'https://paimon.moe/';
+  static const String costumeGsUrl = 'https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
   static String? currentRoute;
 

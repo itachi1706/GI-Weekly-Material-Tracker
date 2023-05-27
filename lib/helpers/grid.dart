@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
+import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
@@ -85,6 +86,9 @@ class GridData {
       case 'materials':
         _staticData[type] = MaterialDataCommon.getList(data);
         break;
+      case 'outfits':
+        _staticData[type] = OutfitData.getList(data);
+        break;
     }
   }
 
@@ -100,6 +104,9 @@ class GridData {
       retrieveCharactersMapData() async =>
           (await _retrieveStaticData('characters'))
               as Map<String, CharacterData>?;
+
+  static Future<Map<String, OutfitData>?> retrieveOutfitsMapData() async =>
+      (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
 
   static Widget getImageAssetFromFirebase(
     imageRef, {
