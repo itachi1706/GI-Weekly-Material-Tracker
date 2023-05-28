@@ -192,8 +192,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
     }
 
     var fullUrl = source + sourcePath;
-    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor) &&
-        mounted) {
+    if (!await Util.launchWebPage(fullUrl, rarityColor: _rarityColor)) {
       if (mounted) {
         Util.showSnackbarQuick(
           context,
