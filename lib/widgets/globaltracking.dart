@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -476,6 +478,25 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
     );
   }
 
+  void _updateMultiTracking(
+    String? imageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+    String key,
+    TrackingUserData data,
+  ) {
+    UpdateMultiTracking(context, _material).itemClickedAction(
+      data,
+      key,
+      {
+        'img': imageRef,
+        'asc': extraAscensionRef,
+        'type': extraTypeRef,
+      },
+      true,
+    );
+  }
+
   Widget _getCharacterDataContainer(
     String? imageRef,
     int extraAscensionRef,
@@ -487,16 +508,26 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
   ) {
     return Card(
       child: InkWell(
-        onLongPress: () =>
-            UpdateMultiTracking(context, _material).itemClickedAction(
-          data,
+        onSecondaryTapDown: (details) async {
+          if (kIsWeb) {
+            await BrowserContextMenu.disableContextMenu();
+            await Future.delayed(const Duration(seconds: 0));
+            BrowserContextMenu.enableContextMenu();
+          }
+        },
+        onSecondaryTap: () => _updateMultiTracking(
+          imageRef,
+          extraAscensionRef,
+          extraTypeRef,
           key,
-          {
-            'img': imageRef,
-            'asc': extraAscensionRef,
-            'type': extraTypeRef,
-          },
-          true,
+          data,
+        ),
+        onLongPress: () => _updateMultiTracking(
+          imageRef,
+          extraAscensionRef,
+          extraTypeRef,
+          key,
+          data,
         ),
         onTap: () {
           _tapCount++;
