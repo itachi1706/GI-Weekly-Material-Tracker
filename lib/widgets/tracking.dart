@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -137,6 +139,30 @@ class TrackerPageState extends State<TrackerPage> {
           );
   }
 
+  void _updateMultiTracking(
+    TrackingUserData data,
+    String dataId,
+    String? extraImageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+    MaterialDataCommon material,
+    bool dialog,
+  ) {
+    UpdateMultiTracking(
+      context,
+      _materialData![data.name!],
+    ).itemClickedAction(
+      data,
+      dataId,
+      {
+        'img': extraImageRef,
+        'asc': extraAscensionRef,
+        'type': extraTypeRef,
+      },
+      dialog,
+    );
+  }
+
   Widget _getCardData(
     TrackingUserData data,
     String dataId,
@@ -148,30 +174,38 @@ class TrackerPageState extends State<TrackerPage> {
     return Card(
       color: GridUtils.getRarityColor(material.rarity),
       child: InkWell(
-        onTap: () => UpdateMultiTracking(
-          context,
-          _materialData![data.name!],
-        ).itemClickedAction(
+        onTap: () => _updateMultiTracking(
           data,
           dataId,
-          {
-            'img': extraImageRef,
-            'asc': extraAscensionRef,
-            'type': extraTypeRef,
-          },
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+          material,
           false,
         ),
-        onLongPress: () => UpdateMultiTracking(
-          context,
-          _materialData![data.name!],
-        ).itemClickedAction(
+        onSecondaryTapDown: (details) async {
+          if (kIsWeb) {
+            await BrowserContextMenu.disableContextMenu();
+            await Future.delayed(const Duration(seconds: 0));
+            BrowserContextMenu.enableContextMenu();
+          }
+        },
+        onSecondaryTap: () => _updateMultiTracking(
           data,
           dataId,
-          {
-            'img': extraImageRef,
-            'asc': extraAscensionRef,
-            'type': extraTypeRef,
-          },
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+          material,
+          true,
+        ),
+        onLongPress: () => _updateMultiTracking(
+          data,
+          dataId,
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+          material,
           true,
         ),
         child: Padding(
