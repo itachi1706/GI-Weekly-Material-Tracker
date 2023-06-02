@@ -126,29 +126,64 @@ class SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  void _toggleForumReminders(bool value) {
+    _prefs.setBool('daily_login', value).then((s) async {
+      var notifyManager = NotificationManager.getInstance()!;
+      var result = await notifyManager.scheduleDailyForumReminder(
+        value,
+        resetNotificationChannel: true,
+      );
+      if (mounted) {
+        if (!result) {
+          Util.showSnackbarQuick(
+            context,
+            'Failed to schedule reminder. Make sure permission to post notification is enabled',
+          );
+        } else {
+          Util.showSnackbarQuick(
+            context,
+            '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
+          );
+        }
+      }
+    });
+    setState(() {
+      _dailylogin = value;
+    });
+  }
+
+  void _toggleParametricReminders(bool value) {
+    _prefs.setBool('parametric_notification', value).then((s) async {
+      var notifyManager = NotificationManager.getInstance()!;
+      var result = await notifyManager.scheduleParametricReminder(
+        value,
+        resetNotificationChannel: true,
+      );
+      if (mounted) {
+        if (!result) {
+          Util.showSnackbarQuick(
+            context,
+            'Failed to schedule reminder. Make sure permission to post notification is enabled',
+          );
+        } else {
+          Util.showSnackbarQuick(
+            context,
+            '${(value) ? "Enabled" : "Disabled"} parametric transformer reminders',
+          );
+        }
+      }
+    });
+    setState(() {
+      _weeklyParametric = value;
+    });
+  }
+
   List<SettingsTile> _getNotificationTiles() {
     return [
       SettingsTile.switchTile(
         title: const Text('Daily Forum Reminders'),
         leading: const Icon(Icons.alarm),
-        onToggle: (bool value) {
-          _prefs.setBool('daily_login', value).then((s) async {
-            var notifyManager = NotificationManager.getInstance()!;
-            await notifyManager.scheduleDailyForumReminder(
-              value,
-              resetNotificationChannel: true,
-            );
-            if (mounted) {
-              Util.showSnackbarQuick(
-                context,
-                '${(value) ? "Enabled" : "Disabled"} daily forum reminders at 12AM GMT+8',
-              );
-            }
-          });
-          setState(() {
-            _dailylogin = value;
-          });
-        },
+        onToggle: _toggleForumReminders,
         initialValue: _dailylogin,
       ),
       SettingsTile.switchTile(
@@ -158,24 +193,7 @@ class SettingsPageState extends State<SettingsPage> {
           maxLines: 2,
         ),
         leading: const Icon(Icons.alarm),
-        onToggle: (bool value) {
-          _prefs.setBool('parametric_notification', value).then((s) async {
-            var notifyManager = NotificationManager.getInstance()!;
-            await notifyManager.scheduleParametricReminder(
-              value,
-              resetNotificationChannel: true,
-            );
-            if (mounted) {
-              Util.showSnackbarQuick(
-                context,
-                '${(value) ? "Enabled" : "Disabled"} parametric transformer reminders',
-              );
-            }
-          });
-          setState(() {
-            _weeklyParametric = value;
-          });
-        },
+        onToggle: _toggleParametricReminders,
         initialValue: _weeklyParametric,
       ),
     ];
