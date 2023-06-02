@@ -1,3 +1,13 @@
+# 3.0.0
+- Targeting Android 13 (SDK 33)
+- Added outfits to characters
+- Added support for 3D Models on supported outfits
+- Changed date time picker for Parametric Transformer
+- Updated notifications. Android 13 will now request for notification permission
+- Fixed iOS issue where app setting values are showing under the setting
+- Dependency Updates
+- Bug Fixes
+
 # 2.2.5
 - Dependency Updates
 - Flutter Engine Updates
