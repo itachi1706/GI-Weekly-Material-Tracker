@@ -357,6 +357,7 @@ jobs:
           tag: ${{ github.ref_name }}
           excludeTypes: docs,other,style
           writeToFile: false
+          includeRefIssues: false
       - name: Secondary Release
         env:
           CC_OUT: ${{ steps.changelog.outputs.changes }}
