@@ -86,9 +86,8 @@ class SettingsPageState extends State<SettingsPage> {
       margin: const EdgeInsetsDirectional.all(16),
       tiles: [
         SettingsTile(
-          title: const Text('Currently Logged in as'),
-          trailing: const SizedBox.shrink(),
-          description: Text(Util.getUserEmail() ?? 'Not logged in'),
+          title: const Text('Logged in as'),
+          value: Text(Util.getUserEmail() ?? 'Not logged in'),
           leading: const Icon(Icons.face),
         ),
         SettingsTile(
@@ -265,7 +264,7 @@ class SettingsPageState extends State<SettingsPage> {
         ),
         SettingsTile(
           title: const Text('Build Guide Source'),
-          description: Text(_buildSource),
+          value: Text(_buildSource),
           leading: const Icon(MdiIcons.swordCross),
           onPressed: (context) {
             Get.to(() => const BuildGuideSelectorPage())!
@@ -274,9 +273,8 @@ class SettingsPageState extends State<SettingsPage> {
         ),
         SettingsTile(
           title: const Text('Game Server Location'),
-          description: Text(_location),
+          value: Text(_location),
           leading: const Icon(MdiIcons.server),
-          trailing: const SizedBox.shrink(),
           onPressed: (context) {
             Get.to(() => const RegionSettingsPage())!
                 .then((value) => _refresh());
