@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:date_time_picker/date_time_picker.dart';
 import 'package:device_apps/device_apps.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:intl/intl.dart';
+import 'package:omni_datetime_picker/omni_datetime_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:store_redirect/store_redirect.dart';
 
@@ -178,40 +178,30 @@ class ParametricPageState extends State<ParametricPage> {
     _updateNewEndTime(_newDateTime);
     await _updateOnlineData(_newDateTime!);
     await _updateNotification();
-    if (mounted) {
-      Navigator.of(context).pop();
-    }
   }
 
   void _showLastUseDialog() async {
-    await showDialog(
+    DateTime dt;
+    try {
+      dt = DateTime.parse(_resetTimeString ?? '');
+    } catch (e) {
+      // Format exception. Default to current datetime
+      dt = DateTime.now();
+    }
+
+    var newDt = await showOmniDateTimePicker(
       context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Update Last Use Time of Parametric Transformer'),
-          content: DateTimePicker(
-            type: DateTimePickerType.dateTimeSeparate,
-            initialValue: _resetTimeString,
-            firstDate: DateTime(2020),
-            lastDate: DateTime(2100),
-            onChanged: (val) {
-              debugPrint('onChanged: $val');
-              _newDateTime = val;
-            },
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: _updateLastUseTime,
-              child: const Text('Update'),
-            ),
-          ],
-        );
-      },
+      initialDate: dt,
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2100),
+      isShowSeconds: false,
     );
+
+    debugPrint("newDt: $newDt");
+    if (newDt != null) {
+      _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(newDt);
+      _updateLastUseTime();
+    }
   }
 
   @override
