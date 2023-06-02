@@ -5,6 +5,7 @@ import 'package:device_apps/device_apps.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
@@ -73,7 +74,11 @@ class DrawerComponentState extends State<DrawerComponent> {
   }
 
   void _dailyLogin() async {
-    await NotificationManager.getInstance()!.selectNotification('forum-login');
+    var resp = const NotificationResponse(
+      notificationResponseType: NotificationResponseType.selectedNotification,
+      payload: 'forum-login',
+    );
+    await NotificationManager.getInstance()!.selectNotification(resp);
   }
 
   void _signOut() async {

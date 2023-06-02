@@ -32,7 +32,7 @@ class NotificationManager {
     var appLaunchDetails = await _plugin!.getNotificationAppLaunchDetails();
     if (appLaunchDetails == null) return; // macOS 10.14 and before
     if (appLaunchDetails.didNotificationLaunchApp) {
-      await selectNotification(appLaunchDetails.payload);
+      await selectNotification(appLaunchDetails.notificationResponse);
     }
   }
 
@@ -41,7 +41,7 @@ class NotificationManager {
 
     const initializationSettingsAndroid =
         AndroidInitializationSettings('splash');
-    final initializationSettingsIOS = IOSInitializationSettings(
+    final initializationSettingsIOS = DarwinInitializationSettings(
       onDidReceiveLocalNotification: onDidReceiveLocalNotification,
       requestSoundPermission: true,
       requestBadgePermission: true,
@@ -53,7 +53,7 @@ class NotificationManager {
     );
     await _plugin!.initialize(
       initializationSettings,
-      onSelectNotification: selectNotification,
+      onDidReceiveNotificationResponse: selectNotification,
     );
 
     tz.initializeTimeZones();
@@ -81,10 +81,10 @@ class NotificationManager {
     debugPrint('Scheduled Reminders rescheduled');
   }
 
-  Future selectNotification(String? payload) async {
-    if (payload != null) {
-      debugPrint('notification payload: $payload');
-      switch (payload) {
+  Future selectNotification(NotificationResponse? response) async {
+    if (response != null) {
+      debugPrint('notification payload: $response');
+      switch (response.payload) {
         case 'parametric-weekly':
           await Get.toNamed('/parametric');
           break;
@@ -169,7 +169,7 @@ class NotificationManager {
     removeNotificationChannel('scheduled_notify', silent: true);
   }
 
-  Future<void> scheduleParametricReminder(
+  Future<bool> scheduleParametricReminder(
     bool toEnable, {
     bool resetNotificationChannel = false,
   }) async {
@@ -200,6 +200,18 @@ class NotificationManager {
       debugPrint('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
       if (remindTime.millisecondsSinceEpoch > currentTime) {
         debugPrint('Scheduling Parametric Transformer Reminder');
+
+        if (GetPlatform.isAndroid && !(await _hasNotificationPermission())) {
+          debugPrint('No permission. Aborting');
+          // Show alert
+          Util.showSnackbarQuick(
+            Get.context!,
+            'Please enable notifications for this app in your phone settings',
+          );
+
+          return false;
+        }
+
         await _plugin!.zonedSchedule(
           data[0],
           data[1],
@@ -209,7 +221,7 @@ class NotificationManager {
           uiLocalNotificationDateInterpretation:
               UILocalNotificationDateInterpretation.absoluteTime,
           payload: 'parametric-weekly',
-          androidAllowWhileIdle: true,
+          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         );
       } else {
         debugPrint(
@@ -217,9 +229,11 @@ class NotificationManager {
         );
       }
     }
+
+    return true;
   }
 
-  Future<void> scheduleDailyForumReminder(
+  Future<bool> scheduleDailyForumReminder(
     bool toEnable, {
     bool resetNotificationChannel = false,
   }) async {
@@ -233,6 +247,18 @@ class NotificationManager {
 
     if (toEnable) {
       debugPrint('Scheduling Daily Forum Reminder');
+
+      if (GetPlatform.isAndroid && !(await _hasNotificationPermission())) {
+        debugPrint('No permission. Aborting');
+        // Show alert
+        Util.showSnackbarQuick(
+          Get.context!,
+          'Please enable notifications for this app in your phone settings',
+        );
+
+        return false;
+      }
+
       await _plugin!.zonedSchedule(
         data[0],
         data[1],
@@ -243,9 +269,11 @@ class NotificationManager {
             UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.time,
         payload: 'forum-login',
-        androidAllowWhileIdle: true,
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       );
     }
+
+    return true;
   }
 
   NotificationDetails craftParametricTransformerReminder() {
@@ -305,6 +333,33 @@ class NotificationManager {
       notificationDetails,
       payload: (payload != null) ? payload : null,
     );
+  }
+
+  Future<bool> _hasNotificationPermission() async {
+    debugPrint('Ensuring we have permissions');
+    if (_plugin == null) return false;
+
+    var notifEnabled = await _plugin!
+            .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>()
+            ?.areNotificationsEnabled() ??
+        false;
+    if (!notifEnabled) {
+      debugPrint('Requesting Notification Permission');
+      await _plugin!
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          ?.requestPermission();
+    }
+
+    debugPrint('Notifications Enabled: $notifEnabled');
+
+    // Check again
+    return await _plugin!
+            .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>()
+            ?.areNotificationsEnabled() ??
+        false;
   }
 
   tz.TZDateTime _nextInstanceOfMidnight() {
