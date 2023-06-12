@@ -333,7 +333,7 @@ jobs:
         with:
           name: flutter-unsigned-ipa-artifact-rel
       - name: Git Commit Data
-        uses: rlespinasse/git-commit-data-action@v1.4.0
+        uses: rlespinasse/git-commit-data-action@v1.5.0
       - uses: benjlevesque/short-sha@v2.2
         id: short-sha
         with:
