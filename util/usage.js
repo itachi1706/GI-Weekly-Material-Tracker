@@ -15,7 +15,7 @@
  * Copy output files back into import folder
  */
 
-const fs = require('fs')
+const fs = require('fs');
 
 // Read temp/characters.json
 const characters = JSON.parse(fs.readFileSync("temp/characters.json", "utf8"));
