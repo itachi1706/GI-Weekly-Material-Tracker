@@ -1,5 +1,8 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gi_weekly_material_tracker/firebase_options.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/appsettings.dart';
@@ -14,9 +17,13 @@ import 'package:gi_weekly_material_tracker/widgets/promocode.dart';
 import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:gi_weekly_material_tracker/widgets/wishbanners.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -39,6 +46,27 @@ class MyAppState extends State<MyApp> {
         _theme = Util.themeNotifier.currentTheme();
       });
     });
+
+    debugPrint('[APP-CHECK] Adding App Check listener');
+    FirebaseAppCheck.instance.onTokenChange.listen(
+          (token) async {
+        debugPrint('[APP-CHECK] App Check Token Updated to: $token');
+        var prefs = await SharedPreferences.getInstance();
+        await prefs.setString("app_check_token", token ?? "-");
+        if (prefs.containsKey("app_check_token_err")) {
+          await prefs.remove("app_check_token_err");
+        }
+      },
+      onError: (error) async {
+        debugPrint('[APP-CHECK] App Check Error: $error');
+        var prefs = await SharedPreferences.getInstance();
+        await prefs.setString("app_check_token_err", error);
+      },
+      onDone: () {
+        debugPrint('[APP-CHECK] App Check Done');
+      },
+      cancelOnError: true,
+    );
   }
 
   @override
