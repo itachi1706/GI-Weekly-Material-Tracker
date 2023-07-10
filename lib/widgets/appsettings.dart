@@ -31,6 +31,7 @@ class SettingsPage extends StatefulWidget {
 class SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   String _versionStr = 'Unknown', _buildSource = 'Loading';
+  String _appCheckToken = 'Loading', _appCheckError = 'Loading';
   bool _darkMode = false,
       _dailylogin = false,
       _weeklyParametric = false,
@@ -67,6 +68,8 @@ class SettingsPageState extends State<SettingsPage> {
 
     setState(() {
       _prefs = pref;
+      _appCheckToken = _prefs.getString('app_check_token') ?? 'NA';
+      _appCheckError = _prefs.getString('app_check_token_err') ?? 'No Errors';
       _location = _prefs.getString('location') ?? 'Asia';
       _buildSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
@@ -696,6 +699,12 @@ class SettingsPageState extends State<SettingsPage> {
           title: Text('Open Source Licenses'),
           icon: Icon(Icons.favorite),
         ),
+        ListTile(
+          leading: const Icon(Icons.bug_report),
+          trailing: const SizedBox.shrink(),
+          title: const Text('Debug Info'),
+          onTap: () => _showDebugInfo(context),
+        ),
       ],
       applicationIcon: SizedBox(
         width: 100,
@@ -703,6 +712,32 @@ class SettingsPageState extends State<SettingsPage> {
         child: Image.asset(Util.themeNotifier.isDarkMode()
             ? 'assets/icons/splash/splash_dark.png'
             : 'assets/icons/splash/splash.png'),
+      ),
+    );
+  }
+
+  void _showDebugInfo(BuildContext context) async {
+    // Alert Dialog
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Debug Info'),
+        content: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Version: $_versionStr'),
+              Text('App Check Token: $_appCheckToken'),
+              Text('App Check Error: $_appCheckError'),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('Close'),
+          ),
+        ],
       ),
     );
   }
