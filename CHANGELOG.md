@@ -1,3 +1,6 @@
+# 3.0.2
+- (HOTFIX) Fix web crash from AppCheck
+
 # 3.0.1
 - Add some checks for AppCheck token not present
 - Dependency Updates
