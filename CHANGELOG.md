@@ -1,3 +1,7 @@
+# 3.0.1
+- Add some checks for AppCheck token not present
+- Dependency Updates
+
 # 3.0.0
 - Targeting Android 13 (SDK 33)
 - Added outfits to characters
