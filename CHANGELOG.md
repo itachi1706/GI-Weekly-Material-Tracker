@@ -1,3 +1,6 @@
+# 3.0.3
+- (HOTFIX) Fixed iOS and Android app not starting
+
 # 3.0.2
 - (HOTFIX) Fix web crash from AppCheck
 
