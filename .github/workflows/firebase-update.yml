@@ -44,19 +44,19 @@ jobs:
         with:
           files: |
             public/data/EventBanners.json
-            util/**/*
+            util/**
       - name: Check if files changed for Firestore Public JSONs
         id: fspj
         uses: tj-actions/changed-files@v37.1.0
         with:
           files: |
-            public/data/**/*
-            util/**/*
+            public/data/**
+            util/**
       - name: Check if files changed for Cloud Storage Data
         id: csd
         uses: tj-actions/changed-files@v37.1.0
         with:
-          files: public/images/**/*
+          files: public/images/**
       - name: Check if files changed for Firestore Indexes
         id: fsi
         uses: tj-actions/changed-files@v37.1.0
@@ -66,21 +66,21 @@ jobs:
         id: fbsr
         uses: tj-actions/changed-files@v37.1.0
         with:
-          files: firebase/**/*
+          files: firebase/**
       - name: Check if files changed for Firestore Cloud Function
         id: fbcf
         uses: tj-actions/changed-files@v37.1.0
         with:
           files: |
-            firebase/functions/**/*
+            firebase/functions/**
             firebase/firebase.json
       - name: Check if files changed for Firestore Templates JSONs
         id: fstj
         uses: tj-actions/changed-files@v37.1.0
         with:
           files: |
-            public/templates/**/*
-            util/**/*
+            public/templates/**
+            util/**
       - name: Set output for Realtime DB Banner
         id: rtdb-banner_out
         if: steps.rtdb-banner.outputs.any_changed == 'true'
