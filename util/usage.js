@@ -5,7 +5,7 @@
  * Create a folder called process and move the Materials.json files into it
  * Create a folder called output
  * npm run processUsage
- *
+ * 
  * CI
  * Create folder local
  * Copy Weapons-*.json and Characters-*.json into local
