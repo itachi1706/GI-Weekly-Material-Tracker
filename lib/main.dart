@@ -1,5 +1,6 @@
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/firebase_options.dart';
@@ -47,7 +48,17 @@ class MyAppState extends State<MyApp> {
       });
     });
 
+    _initFirebaseAppCheck();
+  }
+
+  void _initFirebaseAppCheck() async {
     debugPrint('[APP-CHECK] Adding App Check listener');
+    await FirebaseAppCheck.instance.activate(
+      // Replace this with your actual site key
+      webRecaptchaSiteKey: '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',
+      androidProvider:
+      (kDebugMode) ? AndroidProvider.debug : AndroidProvider.playIntegrity,
+    );
     FirebaseAppCheck.instance.onTokenChange.listen(
           (token) async {
         debugPrint('[APP-CHECK] App Check Token Updated to: $token');
