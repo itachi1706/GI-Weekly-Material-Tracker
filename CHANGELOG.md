@@ -1,3 +1,9 @@
+# 3.0.5
+- (HOTFIX) Fixed iOS and Android app not starting due to duplicate firebase install
+
+# 3.0.4
+- (HOTFIX) Fixed iOS and Android app not starting due to outdated firebase config
+
 # 3.0.3
 - (HOTFIX) Fixed iOS and Android app not starting
 
