@@ -85,6 +85,13 @@ jobs:
         with:
           channel: 'stable'
           cache: true
+      - name: Retrieve Firebase Options Web Dart File and decode it to a file
+        env:
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
+        run: |
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
       - name: Dart Analyze
         run: flutter analyze --write dart_analyze.txt || true
       - name: Dart Analyze to SARIF
@@ -93,6 +100,6 @@ jobs:
           input: dart_analyze.txt
           output: dart_analyze.sarif
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: dart_analyze.sarif
