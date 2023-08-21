@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const {deleteCollection} = require('./firebaseutil');
 
-initializeFirebaseApp(serviceAccount);
+const firestoreDb = initializeFirebaseApp(serviceAccount);
 const firestoreAdmin = getFirestore();
 
 async function deleteCollections(fireStoreAdm) {
@@ -30,7 +30,7 @@ async function restoreData() {
 
         console.log(`>>> Restoring ${fn}...`);
         try {
-            await restore(`import/${file}`);
+            await restore(firestoreDb, `import/${file}`);
             console.log(`>>> ${fn} restore completed!`);
         } catch (err) {
             console.log(err);
