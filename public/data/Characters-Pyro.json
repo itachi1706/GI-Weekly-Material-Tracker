@@ -1676,6 +1676,283 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Klee",
       "subCollection": {}
     },
+    "Lyney": {
+      "image": "Characters/Pyro/Lyney.png",
+      "gender": "Male",
+      "birthday": "2/2",
+      "caption": "Spectacle of Phantasmagoria",
+      "titles": ["Celebrated Magician of the Court of Fontaine"],
+      "name": "Lyney",
+      "description": "A famed Fontainian magician who possesses great stage presence as well as gift of the gab. Audiences are enthralled by his exquisite skills, and they hang on to his every clever word.",
+      "nation": "Fontaine",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Hotel Bouffes d'ete, House of the Hearth",
+      "constellation": "Felis Fuscus",
+      "outfits": ["Fantasticat"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Equity",
+            "material3qty": 3,
+            "material4": "Recruit_Insignia",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 2,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 4,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 6,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 9,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 4,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 6,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 12,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 16,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Perilous_Performance": {
+            "name": "Perilous Performance",
+            "effect": "If Lyney consumes HP when firing off a Prop Arrow, the Grin-Malkin hat summoned by the arrow will, upon hitting an opponent, restore 3 Energy to Lyney and increase DMG dealt by 80% of his ATK.",
+            "image": "Talents/Passive/Talent_Perilous_Performance.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Conclusive_Ovation": {
+            "name": "Conclusive Ovation",
+            "effect": "The DMG Lyney deals to opponents affected by Pyro will receive the following buffs:\nIncreases the DMG dealt by 60%.\nEach Pyro party member other than Lyney will cause the DMG dealt to increase by an additional 20%.\nLyney can deal up to 100% increased DMG to opponents affected by Pyro in this way.",
+            "image": "Talents/Passive/Talent_Conclusive_Ovation.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Trivial_Observations": {
+            "name": "Trivial Observations",
+            "effect": "Displays the location of nearby resources unique to Fontaine on the mini-map.",
+            "image": "Talents/Passive/Talent_Trivial_Observations.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Card_Force_Translocation": {
+            "name": "Card Force Translocation",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive shots with a bow.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will run across the arrowhead before being fired. Different effects will occur based on the time spent charging.\nCharge Level 1: Fires off a Pyro-infused arrow, dealing Pyro DMG.\nCharge Level 2: Fires off a Prop Arrow that deals Pyro DMG, and upon hit, it will summon a Grin-Malkin Hat.\nWhen firing the Prop Arrow, and when Lyney has more than 60% HP, he will consume a portion of his HP to obtain 1 Prop Surplus stack. Max 5 stacks. The effect will be removed after the character spends 30s out of combat.\nThe lowest Lyney can drop to through this method is 60% of his Max HP.\n\nGrin-Malkin Hat\nCan taunt nearby opponents and attract their attacks. Each opponent can only be taunted by the Hat once every 5s.\nThe Hat will inherit a percentage of Lyney's Max HP.\nIf destroyed, or if its duration expires, it will fire off a Pyrotechnic Strike at 1 nearby opponent, dealing Pyro DMG.\nOnly 1 Hat can exist at any given time.\n\nArkhe: Pneuma\nAt certain intervals, the Prop Arrow will cause a Spiritbreath Thorn to descend upon its hit location, dealing Pneuma-aligned Pyro DMG.",
+            "image": "Talents/Normal/Bow_Pyro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Bewildering_Lights": {
+            "name": "Bewildering Lights",
+            "effect": "Lyney does a flourish with his hat, unleashing a firework surprise!\nWhen used, he will clear all current Prop Surplus stacks and deal AoE Pyro DMG to opponents in front of him. DMG will be increased according to the stacks cleared, and this will also regenerate Lyney's HP based on his Max HP.\n\nWhen a Grin-Malkin Hat created by Lyney is on the field, the fireworks will cause it to explode, dealing AoE Pyro DMG equal to that of a Pyrotechnic Strike.\nThe DMG dealt through the Grin-Malkin Hat in this way is considered Charged Attack DMG.",
+            "image": "Talents/Skill/Talent_Bewildering_Lights.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Wondrous_Trick_Miracle_Parade": {
+            "name": "Wondrous Trick: Miracle Parade",
+            "effect": "Unleashing his magic, Lyney turns himself into a Grin-Malkin Cat that can move around quickly. (Not to be mistaken for the Grin-Malkin Hat. They're two different props!)\nWhen the Grin-Malkin Cat gets close to opponents, it will send flames falling down on them, dealing at most 1 instance of Pyro DMG to each opponent. When the duration ends, he will dismiss the Grin-Malkin Cat and ignite fireworks that deal AoE Pyro DMG, summon 1 Grin-Malkin Hat, and grant himself 1 Prop Surplus stack.\n\nGrin-Malkin Cat can be actively canceled.",
+            "image": "Talents/Burst/Talent_Wondrous_Trick_Miracle_Parade.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Whimsical Wonders",
+          "effect": "Lyney can have 2 Grin-Malkin Hats present at once.\nAdditionally, Prop Arrows will summon 2 Grin-Malkin Hats and grant Lyney 1 extra stack of Prop Surplus. This effect can occur once every 15s.",
+          "image": "Constellation/Whimsical_Wonders.png"
+        },
+        "2": {
+          "name": "Loquacious Cajoling",
+          "effect": "When Lyney is on the field, he will gain a stack of Crisp Focus every 2s. This will increase his CRIT DMG by 20%. Max 3 stacks. This effect will be canceled when Lyney leaves the field.",
+          "image": "Constellation/Loquacious_Cajoling.png"
+        },
+        "3": {
+          "name": "Prestidigitation",
+          "effect": "Increases the Level of Normal Attack: Card Force Translocation by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Prestidigitation.png"
+        },
+        "4": {
+          "name": "Well-Versed, Well-Rehearsed",
+          "effect": "After an opponent is hit by Lyney's Pyro Charged Attack, this opponent's Pyro RES will be decreased by 20% for 6s.",
+          "image": "Constellation/Well-Versed_Well-Rehearsed.png"
+        },
+        "5": {
+          "name": "To Pierce Enigmas",
+          "effect": "Increases the Level of Wondrous Trick: Miracle Parade by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/To_Pierce_Enigmas.png"
+        },
+        "6": {
+          "name": "Guarded Smile",
+          "effect": "When Lyney fires a Prop Arrow, he will fire a Pyrotechnic Strike: Reprised that will deal 80% of a Pyrotechnic Strike's DMG. This DMG is considered Charged Attack DMG.",
+          "image": "Constellation/Guarded_Smile.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Agnidus_Agate_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Recruit_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Rainbow_Rose"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Emperors_Resolution",
+          "level": 40,
+          "material4": "Recruit_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Rainbow_Rose"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Emperors_Resolution",
+          "level": 50,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Rainbow_Rose"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Emperors_Resolution",
+          "level": 60,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Rainbow_Rose"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Emperors_Resolution",
+          "level": 70,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Rainbow_Rose"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Agnidus_Agate_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Emperors_Resolution",
+          "level": 80,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Rainbow_Rose"
+        }
+      },
+      "introduction": "A genius of a magician famed throughout Fontaine. He moves his audience with a combination of sleight of hand and the gift of the gab. Eloquent, ingenious, and with a mind as hard to fathom as a cat.",
+      "paimonmoepath": "characters/lyney",
+      "genshinggpath": "characters/lyney",
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lyney",
+      "subCollection": {}
+    },
     "Thoma": {
       "image": "Characters/Pyro/Thoma.png",
       "gender": "Male",
