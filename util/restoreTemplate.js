@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const {deleteCollection} = require('./firebaseutil');
 
-initializeFirebaseApp(serviceAccount);
+const firestoreDb = initializeFirebaseApp(serviceAccount);
 const firestoreAdmin = getFirestore();
 
 async function deleteCollections(fireStoreAdm) {
@@ -34,7 +34,7 @@ async function restoreData() {
 
     console.log(">>> Updating data...");
     try {
-        await restore(finalData);
+        await restore(firestoreDb, finalData);
         console.log("Template restore completed!");
     } catch (err) {
         console.log(err);
