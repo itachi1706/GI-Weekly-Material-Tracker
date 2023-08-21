@@ -840,6 +840,283 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Kazuha",
       "subCollection": {}
     },
+    "Lynette": {
+      "image": "Characters/Anemo/Lynette.png",
+      "gender": "Female",
+      "birthday": "2/2",
+      "caption": "Elegance in the Shadows",
+      "titles": ["\"Multi-Function Magic Assistant\""],
+      "name": "Lynette",
+      "description": "A magic assistant of few words, her emotions are as inscrutable as any cat's.",
+      "nation": "Fontaine",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": "Hotel Bouffes d'ete, House of the Hearth",
+      "constellation": "Felis Alba",
+      "outfits": ["Phantomeow"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Order",
+            "material3qty": 3,
+            "material4": "Meshing_Gear",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 2,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 4,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 6,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 9,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 4,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 6,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 12,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 16,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Sophisticated_Synergy": {
+            "name": "Sophisticated Synergy",
+            "effect": "Within 10s after using Magic Trick: Astonishing Shift, when there are 1/2/3/4 Elemental Types in the party, all party members' ATK will be increased by 8%/12%/16%/20% respectively.",
+            "image": "Talents/Passive/Talent_Sophisticated_Synergy.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Props_Positively_Prepped": {
+            "name": "Props Positively Prepped",
+            "effect": "After the Bogglecat Box summoned by Magic Trick: Astonishing Shift performs Elemental Coversion, Lynette's Elemental Burst will deal 15% more DMG. This effect will persist until the Bogglecat Box's duration ends.",
+            "image": "Talents/Passive/Talent_Props_Positively_Prepped.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Loci-Based_Mnemonics": {
+            "name": "Loci-Based Mnemonics",
+            "effect": "Shows the location of nearby Recovery Orbs on the minimap. The Aquatic Stamina and HP gained from touching Orbs will be increased by 25%.",
+            "image": "Talents/Passive/Talent_Loci-Based_Mnemonics.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Rapid_Ritesword": {
+            "name": "Rapid Ritesword",
+            "effect": "Normal Attack\nPerforms up to 4 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Enigmatic_Feint": {
+            "name": "Enigmatic Feint",
+            "effect": "Flicks her mantle and executes an Enigma Thrust, dealing Anemo DMG.\nWhen the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.\nBased on whether you press or hold this ability, she will use Enigma Thrust differently.\n\nPress\nShe swiftly uses an Enigma Thrust.\n\nHold\nLynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent. You can control her movement direction during this state, and you can end it prematurely by using this skill again.\nWhen this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.\n\nA maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.\n\nArkhe: Ousia\nAt specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned Anemo DMG.",
+            "image": "Talents/Skill/Talent_Enigmatic_Feint.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Magic_Trick-Astonishing_Shift": {
+            "name": "Magic Trick: Astonishing Shift",
+            "effect": "Lynette raises her mantle high, dealing AoE Anemo DMG, using skillful sleight of hand to make a giant Bogglecat Box appear!\n\nBogglecat Box\nTaunts nearby opponents, attracting their attacks.\nDeals Anemo DMG to nearby opponents at intervals.\nWhen the Bogglecat Box comes into contact with Hydro/Pyro/Cryo/Electro, it will gain the corresponding element and additionally fire Vivid Shots that will deal DMG from that element at intervals.\nElemental Absorption of this kind will only occur once during this ability's duration.",
+            "image": "Talents/Burst/Talent_Magic_Trick_Astonishing_Shift.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "A Cold Blade Like a Shadow",
+          "effect": "When Enigmatic Feint's Enigma Thrust hits an opponent with Shadowsign, a vortex will be created at that opponent's position that will pull nearby opponents in.",
+          "image": "Constellation/A_Cold_Blade_Like_a_Shadow.png"
+        },
+        "2": {
+          "name": "Endless Mysteries",
+          "effect": "Whenever the Bogglecat Box summoned by Magic Trick: Astonishing Shift fires a Vivid Shot, it will fire an extra Vivid Shot.",
+          "image": "Constellation/Endless_Mysteries.png"
+        },
+        "3": {
+          "name": "Cognition-Inverting Gaze",
+          "effect": "Increases the Level of Magic Trick: Astonishing Shift by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Cognition-Inverting_Gaze.png"
+        },
+        "4": {
+          "name": "Tacit Coordination",
+          "effect": "Increases Enigmatic Feint's charges by 1.",
+          "image": "Constellation/Tacit_Coordination.png"
+        },
+        "5": {
+          "name": "Obscuring Ambiguity",
+          "effect": "Increases the Level of Enigmatic Feint by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Obscuring_Ambiguity.png"
+        },
+        "6": {
+          "name": "Watchful Eye",
+          "effect": "When Lynette uses Enigmatic Feint's Enigma Thrust, she will gain an Anemo Infusion and 20% Anemo DMG Bonus for 6s.",
+          "image": "Constellation/Watchful_Eye.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Meshing_Gear",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Lumidouce_Bell"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 40,
+          "material4": "Meshing_Gear",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Lumidouce_Bell"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 50,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Lumidouce_Bell"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 60,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Lumidouce_Bell"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 70,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Lumidouce_Bell"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 80,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Lumidouce_Bell"
+        }
+      },
+      "introduction": "A magician's assistant hidden in the shadows who refers to herself as a \"Multi-Function Magic Assistant.\" Poker-faced, reticent to speak, and as unpredictable in her movements as a cat.",
+      "paimonmoepath": "characters/lynette",
+      "genshinggpath": "characters/lynette",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lynette",
+      "subCollection": {}
+    },
     "Sayu": {
       "image": "Characters/Anemo/Sayu.png",
       "gender": "Female",

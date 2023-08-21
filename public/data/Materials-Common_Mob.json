@@ -560,6 +560,108 @@
         "weapons": []
       },
       "subCollection": {}
+    },
+    "Transoceanic_Pearl": {
+      "image": "Materials/Common_Mob/Item_Transoceanic_Pearl.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A small crystal obtained from a defeated Fontemer Aberrant.\nFontemer Aberrants arise from Fontaine's sea. They are believed to be a unique life form born from the mysterious energy in the water.",
+      "enemies": ["Fontemer Aberrants"],
+      "obtained": "Dropped by Fontemer Aberrants",
+      "name": "Transoceanic Pearl",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Transoceanic_Pearl",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Transoceanic_Chunk": {
+      "image": "Materials/Common_Mob/Item_Transoceanic_Chunk.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A crystal obtained from a defeated Fontemer Aberrant.\nIt gives off a somewhat mysterious energy.\nAlthough many legends speak of great life forms residing in remote seas beyond human reach, ordinary oceans can hardly compare to the vibrant seas of Fontaine.",
+      "enemies": ["Fontemer Aberrants"],
+      "obtained": "- Alchemy (3x Transoceanic Pearl)\n- Dropped by Lv.40+ Fontemer Aberrants",
+      "name": "Transoceanic Chunk",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Transoceanic_Chunk",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Xenochromatic_Crystal": {
+      "image": "Materials/Common_Mob/Item_Xenochromatic_Crystal.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A large crystal obtained from a defeated Fontemer Aberrant.\nIt contains a mysterious energy.\nAll rivers and seas originate in Fontaine, but the water loses all its unique properties once it flows outside Fontaine's borders.",
+      "enemies": ["Fontemer Aberrants"],
+      "obtained": "- Alchemy (3x Transoceanic Chunk)\n- Dropped by Lv.60+ Fontemer Aberrants",
+      "name": "Xenochromatic Crystal",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Xenochromatic_Crystal",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Meshing_Gear": {
+      "image": "Materials/Common_Mob/Item_Meshing_Gear.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Clockwork meka's gear.\nIt is a crucial part of the meka's transmission structure. The whole system will malfunction if this gear is absent.",
+      "enemies": ["Clockwork Meka"],
+      "obtained": "- Dropped by Clockwork Meka\n- Stardust Exchange",
+      "name": "Meshing Gear",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Meshing_Gear",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Mechanical_Spur_Gear": {
+      "image": "Materials/Common_Mob/Item_Mechanical_Spur_Gear.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Clockwork meka's gear.\nAlthough many breakthroughs have been made in the kinematics of clockwork meka, its dynamics research has not seen any major advancements beyond the framework laid down by Alain Guillotin four hundred years ago.\nHow to Obtain",
+      "enemies": ["Clockwork Meka"],
+      "obtained": "- Alchemy (3x Meshing Gear)\n- Dropped by Lv.40+ Clockwork Meka\n- Stardust Exchange",
+      "name": "Mechanical Spur Gear",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mechanical_Spur_Gear",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Artificed_Dynamic_Gear": {
+      "image": "Materials/Common_Mob/Item_Artificed_Dynamic_Gear.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "Clockwork meka's gear.\nPrecision processing and advancement of material science are the keys to clockwork meka development in Fontaine. With the help of advanced equipment, any engineer is capable of making a meka that outshines \"Lord-Artificer\" Alain Guillotin's creation.",
+      "enemies": ["Clockwork Meka"],
+      "obtained": "- Alchemy (3x Mechanical Spur Gear)\n- Dropped by Lv. 60+ Clockwork Meka\n- Stardust Exchange",
+      "name": "Artificed Dynamic Gear",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Artificed_Dynamic_Gear",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
     }
   }
 }
