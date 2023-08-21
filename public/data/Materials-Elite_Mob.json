@@ -764,6 +764,108 @@
         "weapons": []
       },
       "subCollection": {}
+    },
+    "Drop_of_Tainted_Water": {
+      "image": "Materials/Elite_Mob/Item_Drop_of_Tainted_Water.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A small drop of water obtained from a defeated Tainted Hydro Phantasm.\nThe life force in it has yet to ebb away.",
+      "enemies": ["Tainted Hydro Phantasms"],
+      "obtained": "- Dropped by Tainted Hydro Phantasms\n- Stardust Exchange",
+      "name": "Drop of Tainted Water",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Drop_of_Tainted_Water",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Scoop_of_Tainted_Water": {
+      "image": "Materials/Elite_Mob/Item_Scoop_of_Tainted_Water.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Water obtained from a defeated Tainted Hydro Phantasm.\nThe life force in it has yet to ebb away.\nToday, with the Oceanids extirpated from Fontaine, strange elemental life forms that are far from elegant have appeared in the waters.",
+      "enemies": ["Tainted Hydro Phantasms"],
+      "obtained": "- Alchemy (3x Drop of Tainted Water)\n- Dropped by Lv. 40+ Tainted Hydro Phantasms\n- Stardust Exchange",
+      "name": "Scoop of Tainted Water",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Scoop_of_Tainted_Water",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Newborn_Tainted_Hydro_Phantasm": {
+      "image": "Materials/Elite_Mob/Item_Newborn_Tainted_Hydro_Phantasm.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A new lifeform that arose from the dispersed Tainted Hydro Phantasm Tainted Hydro Phantasm.\nIt is trapped inside a bottle.\nThe life contained within the waters is formless, and formless life is born of water and gains water's shape.",
+      "enemies": ["Tainted Hydro Phantasms"],
+      "obtained": "- Alchemy (3x Scoop of Tainted Water)\n- Dropped by Lv. 60+ Tainted Hydro Phantasms",
+      "name": "Newborn Tainted Hydro Phantasm",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Newborn_Tainted_Hydro_Phantasm",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Rift_Core": {
+      "image": "Materials/Elite_Mob/Item_Rift_Core.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A shard left by Breacher Primus.\nIt bears no resemblance to any other known form of life in the world.",
+      "enemies": ["Breacher Primuses"],
+      "obtained": "- Dropped by Breacher Primuses\n- Stardust Exchange",
+      "name": "Rift Core",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Rift_Core",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Foreign_Synapse": {
+      "image": "Materials/Elite_Mob/Item_Foreign_Synapse.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A shard left by Breacher Primus.\nThis strange life form originates in Elynas and inhabits the area.",
+      "enemies": ["Breacher Primuses"],
+      "obtained": "- Alchemy (3x Rift Core)\n- Dropped by Lv. 40+ Breacher Primuses\n- Stardust Exchange",
+      "name": "Foreign Synapse",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Foreign_Synapse",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Alien_Life_Core": {
+      "image": "Materials/Elite_Mob/Item_Alien_Life_Core.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Breacher Primus's Core.\nTher is no way to exterminate this life form. One reduced to nothing but its core will resurrect the next day or in decades. Luckily, it is neither aggressive nor intelligent, so Fontainians can just keep their distance.",
+      "enemies": ["Breacher Primuses"],
+      "obtained": "- Alchemy (3x Foreign Synapse)\n- Dropped by Lv. 60+ Breacher Primuses",
+      "name": "Alien Life Core",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Alien_Life_Core",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
     }
   }
 }
