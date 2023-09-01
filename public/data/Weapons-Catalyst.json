@@ -705,6 +705,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Favonius_Codex",
       "subCollection": {}
     },
+    "Flowing_Purity": {
+      "secondary_stat_type": "ATK",
+      "description": "A strangely-shaped anthology of scripts. All the scripts written by Coppelius are recorded within.",
+      "name": "Flowing Purity",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Transoceanic_Pearl",
+          "level": 20,
+          "material2": "Rift_Core",
+          "material3qty": 2,
+          "material1": "Dross_of_Pure_Sacred_Dewdrop",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Transoceanic_Pearl",
+          "level": 40,
+          "material2": "Rift_Core",
+          "material3qty": 8,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Transoceanic_Chunk",
+          "level": 50,
+          "material2": "Foreign_Synapse",
+          "material3qty": 6,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Transoceanic_Chunk",
+          "level": 60,
+          "material2": "Foreign_Synapse",
+          "material3qty": 9,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 70,
+          "material2": "Alien_Life_Core",
+          "material3qty": 6,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 80,
+          "material2": "Alien_Life_Core",
+          "material3qty": 12,
+          "material1": "Essence_of_Pure_Sacred_Dewdrop",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Forging (1x Midlander Catalyst Billet, 50x Condessence Crystal, 50x White Iron Chunk, 500x Mora)",
+      "effectName": "Unfinished Masterpiece",
+      "effect": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by 8~16% for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond Of Life is cleared, every 1,000 HP cleared in the process will provide 2~4% All Elemental DMG Bonus, up to a maximum of 12~24%. This effect lasts 15s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Flowing_Purity",
+      "subCollection": {}
+    },
     "Frostbearer": {
       "secondary_stat_type": "ATK",
       "description": "A fruit that possesses a strange frosty will. A faint sense of agony emanates from it.",
@@ -1895,6 +1976,87 @@
       "effect": "After dealing damage to an opponent with an Elemental Skill, the skill has a 40~80% chance to end its own CD. Can only occur once every 30~16s.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sacrificial_Fragments",
+      "subCollection": {}
+    },
+    "Sacrificial_Jade": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "An ancient jade pendant that gleams like clear water. It seems to have been used in ancient ceremonies.",
+      "name": "Sacrificial Jade",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Divining_Scroll",
+          "level": 20,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 2,
+          "material1": "Luminous_Sands_from_Guyun",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Divining_Scroll",
+          "level": 40,
+          "material2": "Mist_Grass_Pollen",
+          "material3qty": 8,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sealed_Scroll",
+          "level": 50,
+          "material2": "Mist_Grass",
+          "material3qty": 6,
+          "material1": "Lustrous_Stone_from_Guyun",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sealed_Scroll",
+          "level": 60,
+          "material2": "Mist_Grass",
+          "material3qty": 9,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 70,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 6,
+          "material1": "Relic_from_Guyun",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Forbidden_Curse_Scroll",
+          "level": 80,
+          "material2": "Mist_Grass_Wick",
+          "material3qty": 12,
+          "material1": "Divine_Body_from_Guyun",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Catalyst/Weapon_Sacrificial_Jade.png",
+      "secondary_stat": "8%",
+      "rarity": 4,
+      "type": "Catalyst",
+      "max_secondary_stat": "36.8%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Battle Pass",
+      "effectName": "Jade Circulation",
+      "effect": "When not on the field for more than 5s, Max HP will be increased by 32~64% and Elemental Mastery will be increased by 40~80. These effects will be canceled after the wielder has been on the field for 10s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sacrificial_Jade",
       "subCollection": {}
     },
     "Skyward_Atlas": {

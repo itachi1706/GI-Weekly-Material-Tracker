@@ -785,6 +785,168 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Fillet_Blade",
       "subCollection": {}
     },
+    "Finale_of_the_Deep": {
+      "secondary_stat_type": "ATK",
+      "description": "This longsword is as silent as the mysterious ocean depths. It is even more ancient than its stylings might imply.",
+      "name": "Finale of the Deep",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Old_Handguard",
+          "level": 20,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 2,
+          "material1": "Dross_of_Pure_Sacred_Dewdrop",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Old_Handguard",
+          "level": 40,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 8,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Kageuchi_Handguard",
+          "level": 50,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 6,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Kageuchi_Handguard",
+          "level": 60,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 9,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Famed_Handguard",
+          "level": 70,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 6,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Famed_Handguard",
+          "level": 80,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 12,
+          "material1": "Essence_of_Pure_Sacred_Dewdrop",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Finale_of_the_Deep.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Forging (1x Midlander Sword Billet, 50x Condessence Crystal, 50x White Iron Chunk, 500x Mora)",
+      "effectName": "An End Sublime",
+      "effect": "When using an Elemental Skill, ATK will be increased by 12~24% for 15s, and a Bond of Life worth 25% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, a maximum of 150~300 ATK will be gained based on 2.4~4.8% Of the total amount of the Life Bond cleared, lasting for 15s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Finale_of_the_Deep",
+      "subCollection": {}
+    },
+    "Fleuve_Cendre_Ferryman": {
+      "secondary_stat_type": "Energy Recharge",
+      "description": "A handy length of abandoned copper pipe that was once used as a weapon. It was famous — or infamous. depending — in some circles.",
+      "name": "Fleuve Cendre Ferryman",
+      "series": "Fishing Association Series",
+      "ascension": {
+        "1": {
+          "material3": "Transoceanic_Pearl",
+          "level": 20,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 2,
+          "material1": "Fragment_of_an_Ancient_Chord",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Transoceanic_Pearl",
+          "level": 40,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 8,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Transoceanic_Chunk",
+          "level": 50,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 6,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Transoceanic_Chunk",
+          "level": 60,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 9,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 70,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 6,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 80,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 12,
+          "material1": "Echo_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Fleuve_Cendre_Ferryman.png",
+      "secondary_stat": "10%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "45.9%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Fontaine Fishing Association (Sold by Delaroche)",
+      "effectName": "Ironbone",
+      "effect": "Increases Elemental Skill CRIT Rate by 8~16%. Additionally, increases Energy Recharge by 16~32% for 5s after using an Elemental Skill.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Fleuve_Cendre_Ferryman",
+      "subCollection": {}
+    },
     "Freedom-Sworn": {
       "secondary_stat_type": "Elemental Mastery",
       "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
@@ -2700,6 +2862,87 @@
       "effect": "Each Elemental Orb or Particle collected restores 1~2% HP.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Traveler%27s_Handy_Sword",
+      "subCollection": {}
+    },
+    "Wolf-Fang": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "Legend has it that this longsword was once used by a wandering knight in the distant past.",
+      "name": "Wolf-Fang",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Damaged_Mask",
+          "level": 20,
+          "material2": "Chaos_Device",
+          "material3qty": 2,
+          "material1": "Tile_of_Decarabian_Tower",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Damaged_Mask",
+          "level": 40,
+          "material2": "Chaos_Device",
+          "material3qty": 8,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Stained_Mask",
+          "level": 50,
+          "material2": "Chaos_Circuit",
+          "material3qty": 6,
+          "material1": "Debris_of_Decarabian_City",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Stained_Mask",
+          "level": 60,
+          "material2": "Chaos_Circuit",
+          "material3qty": 9,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Ominous_Mask",
+          "level": 70,
+          "material2": "Chaos_Core",
+          "material3qty": 6,
+          "material1": "Fragment_of_Decarabian_Epic",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Ominous_Mask",
+          "level": 80,
+          "material2": "Chaos_Core",
+          "material3qty": 12,
+          "material1": "Scattered_Piece_of_Decarabian_Dream",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Wolf-Fang.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Battle Pass",
+      "effectName": "Northwind Wolf",
+      "effect": "DMG dealt by Elemental Skill and Elemental Burst is increased by 16~32%. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by 2~4%. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by 2~4%. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wolf-Fang",
       "subCollection": {}
     },
     "Xiphos_Moonlight": {

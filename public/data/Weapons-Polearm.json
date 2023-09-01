@@ -1,5 +1,86 @@
 {
   "weapons": {
+    "Ballad_of_the_Fjords": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A polearm used by those seeking to catch fish in the tundra. It lets none escape.",
+      "name": "Ballad of the Fjords",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Whopperflower_Nectar",
+          "level": 20,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 2,
+          "material1": "Broken_Goblet_of_the_Pristine_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Whopperflower_Nectar",
+          "level": 40,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 8,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Shimmering_Nectar",
+          "level": 50,
+          "material2": "Treasured_Flower",
+          "material3qty": 6,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Shimmering_Nectar",
+          "level": 60,
+          "material2": "Treasured_Flower",
+          "material3qty": 9,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Energy_Nectar",
+          "level": 70,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 6,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Energy_Nectar",
+          "level": 80,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 12,
+          "material1": "Golden_Goblet_of_the_Pristine_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Polearm/Weapon_Ballad_of_the_Fjords.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Polearm",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Battle Pass",
+      "effectName": "Tales of the Tundra",
+      "effect": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by 120~240.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ballad_of_the_Fjords",
+      "subCollection": {}
+    },
     "Beginner_Protector": {
       "secondary_stat_type": "None",
       "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
@@ -1412,6 +1493,87 @@
       "effect": "After using an Elemental Skill, increases Normal and Charged Attack DMG by 8~16% for 12s. Max 2 stacks.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Prototype_Starglitter",
+      "subCollection": {}
+    },
+    "Rightful_Reward": {
+      "secondary_stat_type": "HP",
+      "description": "A sharp spear. Only its tip remains freshly bloodstained.",
+      "name": "Rightful Reward",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Meshing_Gear",
+          "level": 20,
+          "material2": "Rift_Core",
+          "material3qty": 2,
+          "material1": "Broken_Goblet_of_the_Pristine_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Meshing_Gear",
+          "level": 40,
+          "material2": "Rift_Core",
+          "material3qty": 8,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 50,
+          "material2": "Foreign_Synapse",
+          "material3qty": 6,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 60,
+          "material2": "Foreign_Synapse",
+          "material3qty": 9,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 70,
+          "material2": "Alien_Life_Core",
+          "material3qty": 6,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 80,
+          "material2": "Alien_Life_Core",
+          "material3qty": 12,
+          "material1": "Golden_Goblet_of_the_Pristine_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Polearm/Weapon_Rightful_Reward.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Polearm",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Forging (1x Midlander Polearm Billet, 50x Condessence Crystal, 50x White Iron Chunk, 500x Mora)",
+      "effectName": "Tip of the Spear",
+      "effect": "When the wielder is healed, restore 8~16 Energy. This effect can triggered once every 10s, and can occur even when the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Rightful_Reward",
       "subCollection": {}
     },
     "Royal_Spear": {
