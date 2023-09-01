@@ -2077,6 +2077,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Sacrificial_Bow",
       "subCollection": {}
     },
+    "Scion_of_the_Blazing_Sun": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "An ancient longbow that is a remnant of King Deshret's ancient era. An indecipherable ancient text and solemn patterns have been carved into it.",
+      "name": "Scion of the Blazing Sun",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Fungal_Spores",
+          "level": 20,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 2,
+          "material1": "Echo_of_Scorching_Might",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Fungal_Spores",
+          "level": 40,
+          "material2": "A_Flower_Yet_to_Bloom",
+          "material3qty": 8,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Luminescent_Pollen",
+          "level": 50,
+          "material2": "Treasured_Flower",
+          "material3qty": 6,
+          "material1": "Remnant_Glow_of_Scorching_Might",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Luminescent_Pollen",
+          "level": 60,
+          "material2": "Treasured_Flower",
+          "material3qty": 9,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 70,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 6,
+          "material1": "Dream_of_Scorching_Might",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Crystalline_Cyst_Dust",
+          "level": 80,
+          "material2": "Wanderers_Blooming_Flower",
+          "material3qty": 12,
+          "material1": "Olden_Days_of_Scorching_Might",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Weapon_Scion_of_the_Blazing_Sun.png",
+      "secondary_stat": "4%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "18.4%",
+      "max_base_atk": 565,
+      "base_atk": 44,
+      "obtained": "Battle Pass",
+      "effectName": "The Way of Sunfire",
+      "effect": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing 60~120% ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take 28~56% more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Scion_of_the_Blazing_Sun",
+      "subCollection": {}
+    },
     "Seasoned_Hunter_Bow": {
       "secondary_stat_type": "None",
       "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
@@ -2377,6 +2458,87 @@
       "effect": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by 36~60%. Otherwise, decreases DMG by 10%.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Slingshot",
+      "subCollection": {}
+    },
+    "Song_of_Stillness": {
+      "secondary_stat_type": "ATK",
+      "description": "A strange longbow that resembles a sea creature. Its string makes no sound at all.",
+      "name": "Song of Stillness",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Firm_Arrowhead",
+          "level": 20,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 2,
+          "material1": "Fragment_of_an_Ancient_Chord",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Firm_Arrowhead",
+          "level": 40,
+          "material2": "Drop_of_Tainted_Water",
+          "material3qty": 8,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Sharp_Arrowhead",
+          "level": 50,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 6,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Sharp_Arrowhead",
+          "level": 60,
+          "material2": "Scoop_of_Tainted_Water",
+          "material3qty": 9,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Weathered_Arrowhead",
+          "level": 70,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 6,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Weathered_Arrowhead",
+          "level": 80,
+          "material2": "Newborn_Tainted_Hydro_Phantasm",
+          "material3qty": 12,
+          "material1": "Echo_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Bow/Weapon_Song_of_Stillness.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Bow",
+      "max_secondary_stat": "41.3%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Forging (1x Midlander Bow Billet, 50x Condessence Crystal, 50x White Iron Chunk, 500x Mora)",
+      "effectName": "Benthic Pulse",
+      "effect": "After the wielder is healed, they will deal 16~32% more DMG for 8s. This can be triggered even when the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Song_of_Stillness",
       "subCollection": {}
     },
     "The_First_Great_Magic": {
