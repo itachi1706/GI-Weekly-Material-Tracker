@@ -1120,6 +1120,284 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Eula",
       "subCollection": {}
     },
+    "Freminet": {
+      "image": "Characters/Cryo/Freminet.png",
+      "gender": "Male",
+      "birthday": "24/9",
+      "caption": "Yearning for Unseen Depths",
+      "titles": ["Renowned Diver of the Court of Fontaine"],
+      "name": "Freminet",
+      "fullName": null,
+      "description": "A reserved young man who is well-versed in diving. Beneath his distant, icy demeanor lies a pure heart bereft of all flaws.",
+      "nation": "Fontaine",
+      "weapon": "Claymore",
+      "rarity": 4,
+      "affiliation": "Hotel Bouffes d'ete, House of the Hearth",
+      "constellation": "Automaton",
+      "outfits": ["Icy_Skin"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Justice",
+            "material3qty": 3,
+            "material4": "Transoceanic_Pearl",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 2,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 4,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 6,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 9,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Worldspan_Fern",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 4,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Worldspan_Fern",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 6,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Worldspan_Fern",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 12,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Worldspan_Fern",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 16,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "Saturation_Deep_Dive": {
+            "name": "Saturation Deep Dive",
+            "effect": "When Freminet unleashes Pressurized Floe: Shattering Pressure, if Pers Timer has yet to reach Pressure Level 4, the CD of Pressurized Floe will be decreased by 1s.",
+            "image": "Talents/Passive/Talent_Saturation_Deep_Dive.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Parallel_Condensers": {
+            "name": "Parallel Condensers",
+            "effect": "When Freminet triggers Shatter against opponents, the DMG dealt by Pressurized Floe: Shattering Pressure will be increased by 40% for 5s.",
+            "image": "Talents/Passive/Talent_Parallel_Condensers.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Deepwater_Navigation": {
+            "name": "Deepwater Navigation",
+            "effect": "Decreases Aquatic Stamina consumption for your own party members by 35%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Deepwater_Navigation.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Flowing_Eddies": {
+            "name": "Flowing Eddies",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, performs a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Claymore_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Pressurized_Floe": {
+            "name": "Pressurized Floe",
+            "effect": "Performs an upward thrust that deals Cryo DMG and causes Freminet to enter Pers Timer for 10s.\nWhile Pers Timer is active, his Elemental Skill will turn into Shattering Pressure.\n\nShattering Pressure\nExecutes different sorts of attacks based on the Pressure Level of Pers Timer, and then cancels Pers Timer.\nLevel 0: Unleashes a vertical cut, dealing Cryo DMG.\nLevels 1 to 3: Unleashes a vertical cut alongside Pers, dealing Cryo DMG and Physical DMG. DMG dealt scales based on Pressure Level.\nLevel 4: Borrows the power of a fully-pressurized Pers to deal Physical DMG. Meanwhile, Normal Attack: Flowing Eddies will be replaced by Shattering Pressure.\n\nPers Timer\nWhen Freminet uses Normal Attacks, he will also unleash waves of frost that deal Cryo DMG and increase Pers's Pressure Level.\nThe accompanying Cryo DMG dealt this way is considered Elemental Skill DMG.\n\nArkhe: Pneuma\nAt certain intervals, after using the upward thrust, a Spiritbreath Thorn in the form of another upward thrust will be created, dealing Pneuma-aligned Cryo DMG.",
+            "image": "Talents/Skill/Talent_Pressurized_Floe.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Shadowhunters_Ambush": {
+            "name": "Shadowhunter's Ambush",
+            "effect": "Unleashes a wave of untouchable cold, dealing AoE Cryo DMG, resetting the CD of the Elemental Skill \"Pressurized Floe\", and causing Freminet to enter the Subnautical Hunter mode for 10s.\n\nWhile in Subnautical Hunter mode, Freminet's resistance to interruption will increase, and his Elemental Skill \"Pressurized Floe\" will obtain the following buffs:\nCD is decreased by 70%.\nNormal Attacks will increase the Pers Timer by 1 additional Pressure Level, and the frost released by his Normal Attacks deal 200% of their original DMG.\n\nThese effects will be canceled when Freminet leaves the field.",
+            "image": "Talents/Burst/Talent_Shadowhunters_Ambush.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Dreams of the Foamy Deep",
+          "effect": "The CRIT Rate of Pressurized Floe: Shattering Pressure will be increased by 15%.",
+          "image": "Constellation/Dreams_of_the_Foamy_Deep.png"
+        },
+        "2": {
+          "name": "Penguins and the Land of Plenty",
+          "effect": "Unleashing Pressurized Floe: Shattering Pressure will restore 2 Energy to Freminet. If a Pressure Level 4 Shattering Pressure is unleashed, this will restore 3 Energy.",
+          "image": "Constellation/Penguins_and_the_Land_of_Plenty.png"
+        },
+        "3": {
+          "name": "Song of the Eddies and Bleached Sands",
+          "effect": "Increases the Level of Normal Attack: Flowing Eddies by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Song_of_the_Eddies_and_Bleached_Sands.png"
+        },
+        "4": {
+          "name": "Dance of the Snowy Moon and Flute",
+          "effect": "After Freminet triggers Frozen, Shatter, or Superconduct against opponents, his ATK will be increased by 9% for 6s. Max 2 stacks. This can be triggered once every 0.3s.",
+          "image": "Constellation/Dance_of_the_Snowy_Moon_and_Flute.png"
+        },
+        "5": {
+          "name": "Nights of Hearth and Happiness",
+          "effect": "Increases the Level of Pressurized Floe by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Nights_of_Hearth_and_Happiness.png"
+        },
+        "6": {
+          "name": "Moment of Waking and Resolve",
+          "effect": "After Freminet triggers Frozen, Shatter, or Superconduct against opponents, his CRIT DMG will be increased by 12% for 6s. Max 3 stacks. This can be triggered once every 0.3s.",
+          "image": "Constellation/Moment_of_Waking_and_Resolve.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Romaritime_Flower"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 40,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Romaritime_Flower"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 50,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Romaritime_Flower"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 60,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Romaritime_Flower"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 70,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Romaritime_Flower"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 80,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Romaritime_Flower"
+        }
+      },
+      "introduction": "A taciturn young man and an expert diver, his heart remains as innocent as the fairytales that never cease to absorb him.",
+      "paimonmoepath": "characters/freminet",
+      "genshinggpath": "characters/freminet",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Freminet",
+      "subCollection": {}
+    },
     "Ganyu": {
       "image": "Characters/Cryo/Ganyu.png",
       "gender": "Female",
