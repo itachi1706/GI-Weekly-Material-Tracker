@@ -1109,6 +1109,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Old_Merc%27s_Pal",
       "subCollection": {}
     },
+    "Portable_Power_Saw": {
+      "secondary_stat_type": "HP",
+      "description": "An old-school power saw that you can rarely find nowadays. It was once a cutting tool trusted by workers all around.",
+      "name": "Portable Power Saw",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Meshing_Gear",
+          "level": 20,
+          "material2": "Rift_Core",
+          "material3qty": 2,
+          "material1": "Broken_Goblet_of_the_Pristine_Sea",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Meshing_Gear",
+          "level": 40,
+          "material2": "Rift_Core",
+          "material3qty": 8,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 50,
+          "material2": "Foreign_Synapse",
+          "material3qty": 6,
+          "material1": "Wine_Goblet_of_the_Pristine_Sea",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 60,
+          "material2": "Foreign_Synapse",
+          "material3qty": 9,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 70,
+          "material2": "Alien_Life_Core",
+          "material3qty": 6,
+          "material1": "Silver_Goblet_of_the_Pristine_Sea",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 80,
+          "material2": "Alien_Life_Core",
+          "material3qty": 12,
+          "material1": "Golden_Goblet_of_the_Pristine_Sea",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Claymore/Weapon_Portable_Power_Saw.png",
+      "secondary_stat": "12%",
+      "rarity": 4,
+      "type": "Claymore",
+      "max_secondary_stat": "55.1%",
+      "max_base_atk": 454,
+      "base_atk": 41,
+      "obtained": "Gacha",
+      "effectName": "Sea Shanty",
+      "effect": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed. gain 40~80 Elemental Mastery. and 2s after the effect occurs, 2~4 Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Portable_Power_Saw",
+      "subCollection": {}
+    },
     "Primordial_Jade_Greatsword": {
       "secondary_stat_type": null,
       "description": "A jade greatsword that once belonged to an Archon, and cast into the depths of the ocean to calm a monstrous storm.",

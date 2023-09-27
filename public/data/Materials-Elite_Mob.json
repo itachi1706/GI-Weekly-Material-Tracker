@@ -866,6 +866,57 @@
         "weapons": []
       },
       "subCollection": {}
+    },
+    "Old_Operatives_Pocket_Watch": {
+      "image": "Materials/Elite_Mob/Item_Old_Operatives_Pocket_Watch.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A standard-issue pocket watch given to Fatui Operatives.\nThe erosion and oxidation on the casing serve as a loyal record of its owners' days spent as an instrument, enforcing the Fatui's will.",
+      "enemies": ["Wind Operatives", "Frost Operatives"],
+      "obtained": "- Dropped by Wind Operatives and Frost Operatives\n- Stardust Exchange",
+      "name": "Old Operative's Pocket Watch",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Old_Operative%27s_Pocket_Watch",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Operatives_Standard_Pocket_Watch": {
+      "image": "Materials/Elite_Mob/Item_Operatives_Standard_Pocket_Watch.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A standard-issue pocket watch given to Fatui Operatives.\nThe head of the watch is not well-designed, as the outer casing has way too many sharp angles, which can cause excessive wear and tear on clothes. As such, there will always be those who will stuff this watch into a more practical, less distinctive casing for use.",
+      "enemies": ["Wind Operatives", "Frost Operatives"],
+      "obtained": "- Alchemy (3x Old Operative's Pocket Watch)\n- Dropped by Lv. 40+ Wind Operatives and Frost Operatives\n- Stardust Exchange",
+      "name": "Operative's Standard Pocket Watch",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Operative%27s_Standard_Pocket_Watch",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Operatives_Constancy": {
+      "image": "Materials/Elite_Mob/Item_Operatives_Constancy.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An accessory with a Delusion mounted on it. This is source of the Fatui Operative's power.\nThat said, taking it off would not detract from the fact that said Operative has physical abilities far beyond that of ordinary humans, forged through long years of training and combat experience. As for them, they are well-aware that they have sacrificed their past, present, and future upon the altar of the Fatui's ideal paradise, such that the damage they cause themselves on account of using a Delusion's power matters not at all.",
+      "enemies": ["Wind Operatives", "Frost Operatives"],
+      "obtained": "- Alchemy (3x Operative's Standard Pocket Watch)\n- Dropped by Lv. 60+ Wind Operatives and Frost Operatives",
+      "name": "Operative's Constancy",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Operative%27s_Constancy",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
     }
   }
 }

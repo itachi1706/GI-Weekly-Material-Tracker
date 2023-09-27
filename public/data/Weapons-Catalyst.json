@@ -2381,6 +2381,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Thrilling_Tales_of_Dragon_Slayers",
       "subCollection": {}
     },
+    "Tome_of_the_Eternal_Flow": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A manual that was once passed down from generation to generation within an underwater priory. Today, none know of its existence.",
+      "name": "Tome of the Eternal Flow",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Meshing_Gear",
+          "level": 20,
+          "material2": "Rift_Core",
+          "material3qty": 3,
+          "material1": "Dross_of_Pure_Sacred_Dewdrop",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000
+        },
+        "2": {
+          "material3": "Meshing_Gear",
+          "level": 40,
+          "material2": "Rift_Core",
+          "material3qty": 12,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000
+        },
+        "3": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 50,
+          "material2": "Foreign_Synapse",
+          "material3qty": 9,
+          "material1": "Sublimation_of_Pure_Sacred_Dewdrop",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000
+        },
+        "4": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 60,
+          "material2": "Foreign_Synapse",
+          "material3qty": 14,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000
+        },
+        "5": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 70,
+          "material2": "Alien_Life_Core",
+          "material3qty": 9,
+          "material1": "Spring_of_Pure_Sacred_Dewdrop",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000
+        },
+        "6": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 80,
+          "material2": "Alien_Life_Core",
+          "material3qty": 18,
+          "material1": "Essence_of_Pure_Sacred_Dewdrop",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000
+        }
+      },
+      "image": "Weapons/Catalyst/Weapon_Tome_of_the_Eternal_Flow.png",
+      "secondary_stat": "19.2%",
+      "rarity": 5,
+      "type": "Catalyst",
+      "max_secondary_stat": "88.2%",
+      "max_base_atk": 542,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Aeon Wave",
+      "effect": "HP is increased by 16~32%. When current HP increases or decreases, Charged Attack DMG will be increased by 14~30% for 4s. Max 3 stacks, can be triggered once every 0.3s. When you have 3 stacks or refresh a third stack's duration, 8~12 Energy will be restored. This Energy restoration effect can be triggered once every 12s.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Tome_of_the_Eternal_Flow",
+      "subCollection": {}
+    },
     "Tulaytullahs_Remembrance": {
       "secondary_stat_type": "CRIT DMG",
       "description": "A bell crafted of deep sapphire and sterling silver. Its echoes are as crisp as they are distant.",
