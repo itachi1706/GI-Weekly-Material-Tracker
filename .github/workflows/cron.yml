@@ -12,7 +12,7 @@ jobs:
     name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
@@ -32,7 +32,7 @@ jobs:
     name: Crawl for Promo Codes Cron
     needs: build-utility
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:

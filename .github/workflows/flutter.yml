@@ -22,7 +22,7 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Install Flutter Stable
@@ -86,7 +86,7 @@ jobs:
       APP_BUILD_VER: dogfood
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Install Flutter Stable
@@ -182,7 +182,7 @@ jobs:
       group: ios-debug-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       # - uses: apple-actions/import-codesign-certs@v1
@@ -281,7 +281,7 @@ jobs:
     name: Check which files are changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Check if files changed for Dogfood release
