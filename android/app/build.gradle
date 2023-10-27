@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace 'com.itachi1706.gi_weekly_material_tracker'
-    compileSdkVersion 33
+    compileSdkVersion 34
     ndkVersion "26.1.10909125"
 
     sourceSets {
@@ -43,7 +43,7 @@ android {
     defaultConfig {
         applicationId "com.itachi1706.gi_weekly_material_tracker"
         minSdkVersion 23
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
