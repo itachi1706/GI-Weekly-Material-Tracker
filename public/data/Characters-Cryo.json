@@ -3642,6 +3642,284 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Shenhe",
       "subCollection": {}
+    },
+    "Wriothesley": {
+      "image": "Characters/Cryo/Wriothesley.png",
+      "gender": "Male",
+      "birthday": "23/11",
+      "caption": "Emissary of Solitary Iniquity",
+      "titles": ["Lord of the Fortress of Meropide"],
+      "name": "Wriothesley",
+      "fullName": null,
+      "description": "Duke of the Fortress of Meropide, Lord Incognito of the murky depths.",
+      "nation": "Fontaine",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Fortress of Meropide",
+      "constellation": "Cerberus",
+      "outfits": ["Nights_Chilling_Howl"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Order",
+            "material3qty": 3,
+            "material4": "Meshing_Gear",
+            "material4qty": 6
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 2,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 3
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 4,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 4
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 6,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 6
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 9,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 9
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 4,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 4
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 6,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 6
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 12,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 9
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Primordial_Greenbloom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 16,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 12
+          }
+        },
+        "passives": {
+          "There_Shall_Be_a_Plea_for_Justice": {
+            "name": "There Shall Be a Plea for Justice",
+            "effect": "When Wriothesley's HP is less than 60%, he will obtain a Gracious Rebuke. The next Charged Attack of his Normal Attack: Forceful Fists of Frost will be enhanced to become Rebuke: Vaulting Fist. It will not consume Stamina, will deal 50% increased DMG, and after hitting will restore HP for Wriothesley equal to 30% of his Max HP.\nYou can gain a Gracious Rebuke this way once every 5s.",
+            "image": "Talents/Passive/Talent_There_Shall_Be_a_Plea_for_Justice.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "There_Shall_Be_a_Reckoning_for_Sin": {
+            "name": "There Shall Be a Reckoning for Sin",
+            "effect": "When Wriothesley's current HP increases or decreases, if he is in the Chilling Penalty state conferred by Icefang Rush, Chilling Penalty will gain one stack of Prosecution Edict. Max 5 stacks. Each stack will increase Wriothesley's ATK by 6%.",
+            "image": "Talents/Passive/Talent_There_Shall_Be_a_Reckoning_for_Sin.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "The_Dukes_Grace": {
+            "name": "The Duke's Grace",
+            "effect": "When Wriothesley crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.",
+            "image": "Talents/Passive/Talent_The_Dukes_Grace.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Forceful_Fists_of_Frost": {
+            "name": "Forceful Fists of Frost",
+            "effect": "Normal Attack\nCoalescing frost about his fist, Wriothesley will unleash powerful Repelling Fists, performing up to 5 rapid attacks that deal Cryo DMG.\nApart from this, Normal Attack combo count will not reset for a short time after using Icefang Rush or sprinting.\n\nCharged Attack\nConsumes a fixed amount of Stamina to leap and unleash a Vaulting Fist, dealing AoE Cryo DMG.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE Cryo DMG upon impact.",
+            "image": "Talents/Normal/Catalyst_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Icefang_Rush": {
+            "name": "Icefang Rush",
+            "effect": "Adjusting his breathing, rhythm, and pace, Wriothesley sprints forward a short distance, entering the Chilling Penalty state and unleashing more powerful attacks than before.\n\nChilling Penalty\nIncreases Wriothesley's interruption resistance\nWhen his HP is above 50%, it will enhance the Repelling Fists of Normal Attack: Forceful Fists of Frost and increase its DMG. When such an attack hits, it will consume a fixed amount of Wriothesley's HP. HP can be lost this way once every 0.1s.\nThis effect will be canceled should Wriothesley leave the field.",
+            "image": "Talents/Skill/Talent_Icefang_Rush.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Darkgold_Wolfbite": {
+            "name": "Darkgold Wolfbite",
+            "effect": "Activating his boxing gloves, Wriothesley strikes out with an icy straight, then uses Icicle Impact to cause multiple instances of AoE Cryo DMG in a frontal area.\n\nArkhe: Ousia\nAfter Icicle Impact ends, a Surging Blade will descend upon the opponent's position, dealing Ousia-aligned Cryo DMG.",
+            "image": "Talents/Burst/Talent_Darkgold_Wolfbite.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Terror for the Evildoers",
+          "effect": "The Gracious Rebuke from the Passive Talent \"There Shall Be a Plea for Justice\" is changed to this:\nWhen Wriothesley's HP is less than 60% or while he is in the Chilling Penalty state caused by Icefang Rush, when the fifth attack of Repelling Fists hits, it will create a Gracious Rebuke. 1 Gracious Rebuke effect can be obtained every 2.5s.\n\nAdditionally, Rebuke: Vaulting Fist will obtain the following enhancement:\nThe DMG Bonus gained will be further increased to 200%.\nWhen it hits while Wriothesley is in the Chilling Penalty state, that state's duration is extended by 4s. 1 such extension can occur per 1 Chilling Penalty duration.\n\nYou must first unlock the Passive Talent \"There Shall Be a Plea for Justice\".",
+          "image": "Constellation/Terror_for_the_Evildoers.png"
+        },
+        "2": {
+          "name": "Shackles for the Arrogant",
+          "effect": "When using Darkgold Wolfbite, each Prosecution Edict stack from the Passive Talent \"There Shall Be a Reckoning for Sin\" will increase said ability's DMG dealt by 40%.\nYou must first unlock the Passive Talent \"There Shall Be a Reckoning for Sin\".",
+          "image": "Constellation/Shackles_for_the_Arrogant.png"
+        },
+        "3": {
+          "name": "Punishment for the Frauds",
+          "effect": "Increases the Level of Normal Attack: Forceful Fists of Frost by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Punishment_for_the_Frauds.png"
+        },
+        "4": {
+          "name": "Redemption for the Suffering",
+          "effect": "The HP restored to Wriothesley through Rebuke: Vaulting Fist will be increased to 50% of his Max HP. You must first unlock the Passive Talent \"There Shall Be a Plea for Justice\".\nAdditionally, when Wriothesley is healed, if the amount of healing overflows, the following effects will occur depending on whether he is on the field or not. If he is on the field, his ATK SPD will be increased by 20% for 4s. If he is off-field, all of your own party members' ATK SPD will be increased by 10% for 6s. These two methods of increasing ATK SPD cannot stack.",
+          "image": "Constellation/Redemption_for_the_Suffering.png"
+        },
+        "5": {
+          "name": "Mercy for the Wronged",
+          "effect": "Increases the Level of Darkgold Wolfbite by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Mercy_for_the_Wronged.png"
+        },
+        "6": {
+          "name": "Esteem for the Innocent",
+          "effect": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's Base DMG as Cryo DMG. DMG dealt this way is regarded as Charged Attack DMG.\nYou must first unlock the Passive Talent \"There Shall Be a Plea for Justice\".",
+          "image": "Constellation/Esteem_for_the_Innocent.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Meshing_Gear",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Subdetection_Unit"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Tourbillon_Device",
+          "level": 40,
+          "material4": "Meshing_Gear",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Subdetection_Unit"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Tourbillon_Device",
+          "level": 50,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Subdetection_Unit"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Tourbillon_Device",
+          "level": 60,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Subdetection_Unit"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Tourbillon_Device",
+          "level": 70,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Subdetection_Unit"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Tourbillon_Device",
+          "level": 80,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Subdetection_Unit"
+        }
+      },
+      "introduction": "Administrator of the Fortress of Meropide, he was given Fontaine's highest honorary title of \"Duke\". Both low-profile and dependable.",
+      "paimonmoepath": "characters/wriothesley",
+      "genshinggpath": "characters/wriothesley",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wriothesley",
+      "subCollection": {}
     }
   }
 }
