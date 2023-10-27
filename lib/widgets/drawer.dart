@@ -29,7 +29,7 @@ class DrawerComponentState extends State<DrawerComponent> {
   void _launchHoyoLabs() async {
     if (!kIsWeb && Platform.isAndroid) {
       var androidId = 'com.mihoyo.hoyolab';
-      // TODO(#1207): Replace Device Apps package due to un-maintained
+      // TODO(#1207): Replace device_apps package due to un-maintained
       // if (Platform.isAndroid) {
       //   // Returns a list of only those apps that have launch intent
       //   var apps = await DeviceApps.getInstalledApplications(

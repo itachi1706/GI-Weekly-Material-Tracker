@@ -10,7 +10,6 @@ import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:intl/intl.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:store_redirect/store_redirect.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -105,7 +104,7 @@ class ParametricPageState extends State<ParametricPage> {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
         // Returns a list of only those apps that have launch intent
-        // TODO(#1207): Replace Device Apps package due to un-maintained
+        // TODO(#1207): Replace device_apps package due to un-maintained
         // var apps = await DeviceApps.getInstalledApplications(
         //   onlyAppsWithLaunchIntent: true,
         // );
@@ -128,10 +127,12 @@ class ParametricPageState extends State<ParametricPage> {
       }
       // If not installed or iOS, launch app store
       debugPrint('Launching App Store');
-      await StoreRedirect.redirect(
-        androidAppId: androidId,
-        iOSAppId: '1517783697',
-      );
+      // TODO(#1207): Replace store_redirect package due to un-maintained
+      Util.showSnackbarQuick(context, "Currently disabled");
+      // await StoreRedirect.redirect(
+      //   androidAppId: androidId,
+      //   iOSAppId: '1517783697',
+      // );
     }
   }
 
