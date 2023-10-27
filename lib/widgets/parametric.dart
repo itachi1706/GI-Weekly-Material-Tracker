@@ -106,17 +106,18 @@ class ParametricPageState extends State<ParametricPage> {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
         // Returns a list of only those apps that have launch intent
-        var apps = await DeviceApps.getInstalledApplications(
-          onlyAppsWithLaunchIntent: true,
-        );
-        debugPrint(apps.toString());
-        var isInstalled = await DeviceApps.isAppInstalled(androidId);
-        debugPrint('App Installed: $isInstalled');
-        if (isInstalled) {
-          await DeviceApps.openApp(androidId);
-
-          return;
-        }
+        // TODO(#1207): Replace Device Apps package due to un-maintained
+        // var apps = await DeviceApps.getInstalledApplications(
+        //   onlyAppsWithLaunchIntent: true,
+        // );
+        // debugPrint(apps.toString());
+        // var isInstalled = await DeviceApps.isAppInstalled(androidId);
+        // debugPrint('App Installed: $isInstalled');
+        // if (isInstalled) {
+        //   await DeviceApps.openApp(androidId);
+        //
+        //   return;
+        // }
       } else if (Platform.isLinux ||
           Platform.isFuchsia ||
           Platform.isWindows ||
