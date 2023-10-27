@@ -1414,6 +1414,87 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Winged-Spear",
       "subCollection": {}
     },
+    "Prospectors_Drill": {
+      "secondary_stat_type": "ATK",
+      "description": "A long-handled drill that you can rarely find nowadays. It was often used in delving and in carving stones.",
+      "name": "Prospector's Drill",
+      "series": "Construction Series",
+      "ascension": {
+        "1": {
+          "material3": "Meshing_Gear",
+          "level": 20,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 2,
+          "material1": "Fragment_of_an_Ancient_Chord",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Meshing_Gear",
+          "level": 40,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 8,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 50,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 6,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 60,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 9,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 70,
+          "material2": "Operatives_Constancy",
+          "material3qty": 6,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 80,
+          "material2": "Operatives_Constancy",
+          "material3qty": 12,
+          "material1": "Echo_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Polearm/Weapon_Prospectors_Drill.png",
+      "secondary_stat": "6%",
+      "rarity": 4,
+      "type": "Polearm",
+      "max_secondary_stat": "27.6%",
+      "max_base_atk": 545,
+      "base_atk": 44,
+      "obtained": "Gacha",
+      "effectName": "Masons' Ditty",
+      "effect": "When the wielder is healed or heals others, they will gain a Unity's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Struggle effect will be granted for 10s. For each Symbol consumed, gain 3~7% ATK and 7~13% All Elemental DMG Bonus. The Struggle effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Prospector%27s_Drill",
+      "subCollection": {}
+    },
     "Prototype_Grudge": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
