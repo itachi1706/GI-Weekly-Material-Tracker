@@ -389,7 +389,7 @@ jobs:
             apks/*.apk
             apks/*.ipa
   releaseipa:
-    runs-on: macos-12 # Use macOS 12 for Xcode 13
+    runs-on: macos-latest
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta
