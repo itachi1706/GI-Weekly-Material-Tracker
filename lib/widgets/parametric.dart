@@ -106,6 +106,7 @@ class ParametricPageState extends State<ParametricPage> {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
         // Returns a list of only those apps that have launch intent
+        // TODO(#1207): Replace device_apps package due to un-maintained
         var apps = await DeviceApps.getInstalledApplications(
           onlyAppsWithLaunchIntent: true,
         );
@@ -128,6 +129,7 @@ class ParametricPageState extends State<ParametricPage> {
       }
       // If not installed or iOS, launch app store
       debugPrint('Launching App Store');
+      // TODO(#1207): Replace store_redirect package due to un-maintained
       await StoreRedirect.redirect(
         androidAppId: androidId,
         iOSAppId: '1517783697',

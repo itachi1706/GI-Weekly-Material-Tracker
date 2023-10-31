@@ -37,11 +37,11 @@ jobs:
             **/.dart_tool/package_config.json
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
-      - name: Install JDK 11
+      - name: Install JDK 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
@@ -129,11 +129,11 @@ jobs:
             **/.dart_tool/package_config.json
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
-      - name: Install JDK 11
+      - name: Install JDK 17
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
@@ -389,7 +389,7 @@ jobs:
             apks/*.apk
             apks/*.ipa
   releaseipa:
-    runs-on: macos-12 # Use macOS 12 for Xcode 13
+    runs-on: macos-13 # For XCode 14.3.1
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta

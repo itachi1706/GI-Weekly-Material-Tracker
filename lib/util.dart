@@ -229,44 +229,39 @@ class Util {
     if (kIsWeb) {
       return await _launchWebPageWeb(url);
     } else if (GetPlatform.isAndroid || GetPlatform.isIOS) {
+      var webUri = WebUri(url);
       if (webView) {
         // Use WebView instead
         var browser = InAppBrowser();
-        var options = InAppBrowserClassOptions(
-          crossPlatform: InAppBrowserOptions(
+        var settings = InAppBrowserClassSettings(
+          browserSettings: InAppBrowserSettings(
             hideToolbarTop: hideTopBars,
             hideUrlBar: !iOSUrlBar,
             toolbarTopBackgroundColor: rarityColor,
-          ),
-          ios: IOSInAppBrowserOptions(
             hideToolbarBottom: !iOSBottomBar,
           ),
-          inAppWebViewGroupOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(javaScriptEnabled: true),
+          webViewSettings: InAppWebViewSettings(
+            javaScriptEnabled: true,
           ),
         );
 
         await browser.openUrlRequest(
-          urlRequest: URLRequest(url: Uri.parse(url)),
-          options: options,
+          urlRequest: URLRequest(url: webUri),
+          settings: settings,
         );
       } else {
         // Native call for mobile app mode
         var browser = ChromeSafariBrowser();
-        var options = ChromeSafariBrowserClassOptions(
-          android: AndroidChromeCustomTabsOptions(
-            toolbarBackgroundColor: rarityColor,
-            showTitle: true,
-            shareState: CustomTabsShareState.SHARE_STATE_DEFAULT,
-            enableUrlBarHiding: true,
-          ),
-          ios: IOSSafariOptions(
-            barCollapsingEnabled: true,
-            dismissButtonStyle: IOSSafariDismissButtonStyle.CLOSE,
-          ),
+        var settings = ChromeSafariBrowserSettings(
+          toolbarBackgroundColor: rarityColor,
+          showTitle: true,
+          shareState: CustomTabsShareState.SHARE_STATE_DEFAULT,
+          enableUrlBarHiding: true,
+          barCollapsingEnabled: true,
+          dismissButtonStyle: DismissButtonStyle.CLOSE,
         );
 
-        await browser.open(url: Uri.parse(url), options: options);
+        await browser.open(url: webUri, settings: settings);
       }
 
       return true;
