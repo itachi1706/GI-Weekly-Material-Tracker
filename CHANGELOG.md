@@ -1,3 +1,8 @@
+# 3.0.6
+- Targeting Android 14 (SDK 34)
+- Dependency Updates
+- Bug Fixes
+
 # 3.0.5
 - (HOTFIX) Fixed iOS and Android app not starting due to duplicate firebase install
 
