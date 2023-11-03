@@ -59,7 +59,7 @@ jobs:
           GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
           PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
       - name: Build Flutter App
-        run: flutter build web --no-tree-shake-icons # TODO: Temporary until we replace material_design_icons_flutter
+        run: flutter build web
       - name: Prep public folder
         run: | 
           mkdir -p firebase/public
