@@ -240,7 +240,7 @@ class WishPageCard extends StatelessWidget {
           imageUrl,
           height: 32,
         ),
-        const Icon(
+        Icon(
           MdiIcons.arrowUpBold,
           color: Colors.green,
           size: 20,
