@@ -113,7 +113,7 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v3
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
