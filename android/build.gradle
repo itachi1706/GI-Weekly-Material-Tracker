@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.8.22' // Note: Hold off 1.9 until AGP 8 (Ref: https://developer.android.com/build/kotlin-support)
+    ext.kotlin_version = '1.9.20' // Note: Hold off 1.9 until AGP 8 (Ref: https://developer.android.com/build/kotlin-support)
     repositories {
         google()
         mavenCentral()
