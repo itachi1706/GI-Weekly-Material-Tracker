@@ -268,7 +268,7 @@ class SettingsPageState extends State<SettingsPage> {
         SettingsTile(
           title: const Text('Build Guide Source'),
           value: Text(_buildSource),
-          leading: const Icon(MdiIcons.swordCross),
+          leading: Icon(MdiIcons.swordCross),
           onPressed: (context) {
             Get.to(() => const BuildGuideSelectorPage())!
                 .then((value) => _refresh());
@@ -277,7 +277,7 @@ class SettingsPageState extends State<SettingsPage> {
         SettingsTile(
           title: const Text('Game Server Location'),
           value: Text(_location),
-          leading: const Icon(MdiIcons.server),
+          leading: Icon(MdiIcons.server),
           onPressed: (context) {
             Get.to(() => const RegionSettingsPage())!
                 .then((value) => _refresh());
@@ -292,7 +292,7 @@ class SettingsPageState extends State<SettingsPage> {
         ),
         SettingsTile(
           title: const Text('Clear Cache'),
-          leading: const Icon(MdiIcons.trashCanOutline),
+          leading: Icon(MdiIcons.trashCanOutline),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {

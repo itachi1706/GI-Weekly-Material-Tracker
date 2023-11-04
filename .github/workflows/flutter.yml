@@ -67,7 +67,7 @@ jobs:
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Flutter App
-        run: flutter build web --no-tree-shake-icons # TODO: Temporary until we replace material_design_icons_flutter
+        run: flutter build web
       - name: Package Artifact
         run: |
           mkdir -p firebase/public

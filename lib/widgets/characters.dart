@@ -228,7 +228,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
               tooltip: 'View Wiki',
             ),
             IconButton(
-              icon: const Icon(MdiIcons.swordCross),
+              icon: Icon(MdiIcons.swordCross),
               onPressed: _openCharBuildGuide,
               tooltip: 'Build Guide ($_bgSource)',
             ),
@@ -341,7 +341,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                const Icon(MdiIcons.weatherNight),
+                Icon(MdiIcons.weatherNight),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.constellation!),
@@ -355,7 +355,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                const Icon(MdiIcons.swordCross),
+                Icon(MdiIcons.swordCross),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: Text(widget.info!.weapon!),
@@ -862,7 +862,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     }
 
     if (name.startsWith('Traveler')) {
-      return const Icon(MdiIcons.genderMaleFemale);
+      return Icon(MdiIcons.genderMaleFemale);
     }
 
     return Icon(icon, color: color);

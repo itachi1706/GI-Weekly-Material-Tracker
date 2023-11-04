@@ -54,7 +54,7 @@ class TrackingPageState extends State<TrackingPage>
         bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           IconButton(
-            icon: const Icon(MdiIcons.fileDocument),
+            icon: Icon(MdiIcons.fileDocument),
             tooltip: 'View Consolidated Material List',
             onPressed: () => Get.toNamed('/globalTracking'),
           ),
@@ -233,8 +233,8 @@ class DictionaryPageState extends State<DictionaryPage>
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         onTap: _onTabTapped,
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),

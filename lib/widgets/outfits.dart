@@ -129,7 +129,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
       onPressed: () => Get.toNamed("/outfits/$_infoId/model"),
       tooltip: 'View 3D Model (ALPHA)',
       backgroundColor: _rarityColor,
-      child: const Icon(MdiIcons.tshirtCrew),
+      child: Icon(MdiIcons.tshirtCrew),
     );
   }
 
