@@ -209,14 +209,14 @@
       "subCollection": {}
     },
     "Lakelight_Lily": {
-      "image": "Materials/Local_Specialities/",
+      "image": "Materials/Local_Specialities/Item_Lakelight_Lily.png",
       "rarity": 1,
       "type": "Local Speciality (Fontaine)",
       "innerType": "local_speciality",
       "description": "A clear and clean azure flower, it is born where Water Veins come together. It has a simple, cool, and elegant fragrance, pungent and refreshing yet gentle.",
-      "obtained": null,
+      "obtained": "- Found in the wild\n- Found in Erinnyes Forest",
       "name": "Lakelight Lily",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Lakelight_Lily",
       "usage": {
         "characters": [],
@@ -538,6 +538,22 @@
       "name": "Small Lamp Grass",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Small_Lamp_Grass",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "subCollection": {}
+    },
+    "Spring_of_the_First_Dewdrop": {
+      "image": "Materials/Local_Specialities/Item_Spring_of_the_First_Dewdrop.png",
+      "rarity": 1,
+      "type": "Local Speciality (Fontaine)",
+      "innerType": "local_speciality",
+      "description": "A limpid drop of dew floating amidst the waters of Morte Region. It is different from other pure water bodies, as though it is a conglomeration of even more pure and primordial Elemental Energy.",
+      "obtained": "- Found in the wild\n- Found underwater in Morte Region",
+      "name": "Spring of the First Dewdrop",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Spring_of_the_First_Dewdrop",
       "usage": {
         "characters": [],
         "weapons": []
