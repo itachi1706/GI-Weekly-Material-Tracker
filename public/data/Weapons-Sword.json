@@ -2372,12 +2372,12 @@
       "secondary_stat": "19.2%",
       "rarity": 5,
       "type": "Sword",
-      "max_secondary_stat": "88.2^",
+      "max_secondary_stat": "88.2%",
       "max_base_atk": 542,
       "base_atk": 44,
       "obtained": "Gacha",
       "effectName": "Dawn and Dusk by the Lake",
-      "effect": "(TO UPDATE)\nWhen the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by 8% for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by 14% for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field.",
+      "effect": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by 8~16% for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by 14~28% for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Splendor_of_Tranquil_Waters",
       "subCollection": {}
@@ -2541,6 +2541,87 @@
       "effect": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sword_of_Descension",
+      "subCollection": {}
+    },
+    "Sword_of_Narzissenkreuz": {
+      "secondary_stat_type": "ATK",
+      "description": "A sword whose power faded when the story ended. It will now embark upon a new journey with the power that remains within it, which commemorates a certain great dream.",
+      "name": "Sword of Narzissenkreuz",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Transoceanic_Pearl",
+          "level": 20,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 2,
+          "material1": "Fragment_of_an_Ancient_Chord",
+          "material2qty": 3,
+          "material1qty": 3,
+          "mora": 5000
+        },
+        "2": {
+          "material3": "Transoceanic_Pearl",
+          "level": 40,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 8,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 15000
+        },
+        "3": {
+          "material3": "Transoceanic_Chunk",
+          "level": 50,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 6,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 6,
+          "material1qty": 6,
+          "mora": 20000
+        },
+        "4": {
+          "material3": "Transoceanic_Chunk",
+          "level": 60,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 9,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 12,
+          "material1qty": 3,
+          "mora": 30000
+        },
+        "5": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 70,
+          "material2": "Operatives_Constancy",
+          "material3qty": 6,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 9,
+          "material1qty": 6,
+          "mora": 35000
+        },
+        "6": {
+          "material3": "Xenochromatic_Crystal",
+          "level": 80,
+          "material2": "Operatives_Constancy",
+          "material3qty": 12,
+          "material1": "Echo_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 4,
+          "mora": 45000
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Sword_of_Narzissenkreuz_Pneuma.png",
+      "secondary_stat": "9%",
+      "rarity": 4,
+      "type": "Sword",
+      "max_secondary_stat": "41.3%",
+      "max_base_atk": 510,
+      "base_atk": 42,
+      "obtained": "Quest Reward",
+      "effectName": "Hero's Blade",
+      "effect": "When the equipping character does not have an Arkhe: When Normal Attacks, Charged Attacks, or Plunging Attacks strike, a Pneuma or Ousia energy blast will be unleashed, dealing 160~320% of ATK as DMG. This effect can be triggered once every 12s. The energy blast type is determined by the current type of the Sword of Narzissenkreuz.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sword_of_Narzissenkreuz",
       "subCollection": {}
     },
     "The_Alley_Flash": {
