@@ -281,20 +281,20 @@
       "subCollection": {}
     },
     "Charlotte": {
-      "image": "Characters/Cryo/",
+      "image": "Characters/Cryo/Charlotte.png",
       "gender": "Female",
       "birthday": "10/4",
       "caption": "Lens of Verity",
       "titles": ["Reporter of The Steambird"],
       "name": "Charlotte",
       "fullName": null,
-      "description": null,
+      "description": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth.\"",
       "nation": "Fontaine",
       "weapon": "Catalyst",
       "rarity": 4,
       "affiliation": "The Steambird",
       "constellation": "Hualina Veritas",
-      "outfits": [],
+      "outfits": ["All_Is_Overt_Through_My_Lens"],
       "talents": {
         "ascension": {
           "2": {
@@ -356,7 +356,7 @@
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Lightless_Silk_String",
             "material2qty": 1,
             "material3": "Philosophies_of_Justice",
             "material3qty": 4,
@@ -367,7 +367,7 @@
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Lightless_Silk_String",
             "material2qty": 1,
             "material3": "Philosophies_of_Justice",
             "material3qty": 6,
@@ -378,7 +378,7 @@
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Lightless_Silk_String",
             "material2qty": 2,
             "material3": "Philosophies_of_Justice",
             "material3qty": 12,
@@ -389,7 +389,7 @@
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
-            "material2": "Weekly_Boss_Drop",
+            "material2": "Lightless_Silk_String",
             "material2qty": 2,
             "material3": "Philosophies_of_Justice",
             "material3qty": 16,
@@ -398,24 +398,24 @@
           }
         },
         "passives": {
-          "Passive_1": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Moment_of_Impact": {
+            "name": "Moment of Impact",
+            "effect": "When opponents marked by \"Focused Impression\" are defeated, Framing: Freezing Point Composition's CD will be decreased by 2s. This CD decrease can be triggered 4 times every 12s.",
+            "image": "Talents/Passive/Talent_Moment_of_Impact.png",
             "order": 0,
             "type": "Passive 1"
           },
-          "Passive_2": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "Diversified_Investigation": {
+            "name": "Diversified Investigation",
+            "effect": "When the party contains 1/2/3 Fontainians other than herself, Charlotte gains a 5%/10%/15% Healing Bonus. When the party contains 1/2/3 non-Fontainians, Charlotte gains a 5%/10%/15% Cryo DMG Bonus.",
+            "image": "Talents/Passive/Talent_Diversified_Investigation.png",
             "order": 1,
             "type": "Passive 2"
           },
-          "Passive_3": {
-            "name": null,
-            "effect": null,
-            "image": "Talents/Passive/",
+          "First-Person_Shutter": {
+            "name": "First-Person Shutter",
+            "effect": "After activating the Special Analysis Zoom Lens, Charlotte's \"Framing: Freezing Point Composition\" Hold Mode cannot trigger its original effects, but instead enables her to take photos in a rather unique manner...",
+            "image": "Talents/Passive/Talent_First-Person_Shutter.png",
             "order": 2,
             "type": "Passive 3"
           }
@@ -423,22 +423,22 @@
         "attack": {
           "Cool-Color_Capture": {
             "name": "Cool-Color Capture",
-            "effect": "Normal Attack\nTaking aim at targets using Monsieur Verite, her custom Kamera, Charlotte performs up to 3 consecutive attacks, dealing Cryo DMG.\n\nCharged Attack\nConsumes a fixed amount of Stamina, and after a moment's preparation, will deploy Monsieur Verite to deal AoE Cryo DMG.\n\nArkhe: Pneuma\nAt certain intervals, upon using a Charged Attack, Charlotte will cause a Spiritbreath Thorn to descend and pierce opponents, dealing Pneuma-aligned AoE Cryo DMG.",
+            "effect": "Normal Attack\nTaking aim at targets using Monsieur Verite, her custom Kamera, Charlotte performs up to 3 consecutive attacks, dealing Cryo DMG.\n\nCharged Attack\nConsumes a fixed amount of Stamina, and after a moment's preparation, will deploy Monsieur Verite to deal AoE Cryo DMG.\n\nPlunging Attack\nGathering the power of Cryo, Charlotte plunges toward the ground, dealing DMG to all opponents in her path and dealing AoE Cryo DMG upon landing.\n\nArkhe: Pneuma\nAt certain intervals, upon using a Charged Attack, Charlotte will cause a Spiritbreath Thorn to descend and pierce opponents, dealing Pneuma-aligned AoE Cryo DMG.",
             "image": "Talents/Normal/Catalyst_Cryo.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Framing_Freezing_Point_Composition": {
             "name": "Framing: Freezing Point Composition",
-            "effect": null,
-            "image": "Talents/Skill/",
+            "effect": "Using the keen instincts of an ace reporter, Charlotte uses her photography skills to produce different effects based on whether the ability is Tapped or Held.\n\nTap\nTakes a snapshot using Monsieur Verite, dealing AoE Cryo DMG to opponents in front of her and applying Snappy Silhouette to a maximum of 5 opponents. During this effect's duration, it will deal Cryo DMG to affected opponents at intervals.\n\nHold\nPopping Monsieur Verite's viewfinder open, Charlotte enters Composition Mode, and during this time, the viewfinder will expand as you hold until you reach a Finisher Frame state. In this state, Charlotte can move and change direction freely.\nWhen the hold state ends, Monsieur Verite will deal Cryo DMG to all opponents locked on within the viewfinder, and apply the same Snappy Silhouette as Tap Mode does to them. If you unleash this ability only after reaching Finisher Frame, you will instead apply Focused Impression, which lasts longer and deals more DMG, although the Skill CD will be longer.\nComposition Mode lasts a maximum of 15s and allows a maximum of 5 opponents to be selected.",
+            "image": "Talents/Skill/Talent_Framing_Freezing_Point_Composition.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Still_Photo_Comprehensive_Confirmation": {
             "name": "Still Photo: Comprehensive Confirmation",
-            "effect": null,
-            "image": "Talents/Burst/",
+            "effect": "Condensing ice to create The Steambird's signature, Charlotte creates a Newsflash Field that will deal AoE Cryo DMG and restores HP for all nearby party members based on Charlotte's% ATK +.\nNewsflash Field\nWhile the ability is active, Monsieur Verite will deal Cryo DMG at intervals to opponents within its AoE.\nWill continuously restore HP to active character(s) within its AoE based on Charlotte's ATK.",
+            "image": "Talents/Burst/Talent_Still_Photo_Comprehensive_Confirmation.png",
             "order": 2,
             "type": "Elemental Burst"
           }
@@ -446,34 +446,34 @@
       },
       "constellations": {
         "1": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "A Need to Verify Facts",
+          "effect": "After Still Photo: Comprehensive Confirmation heals a character, it will mark them with Verification, which will heal them once every 2s for 80% of Charlotte's ATK. This effect lasts 6s.",
+          "image": "Constellation/A_Need_to_Verify_Facts.png"
         },
         "2": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "A Duty to Pursue Truth",
+          "effect": "When using Framing: Freezing Point Composition, when Monsieur Verite hits 1/2/3 (or more) opponents, Charlotte's own ATK will be increased by 10%/20%/30% for 12s.",
+          "image": "Constellation/A_Duty_to_Pursue_Truth.png"
         },
         "3": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "An Imperative to Independence",
+          "effect": "Increases the Level of Still Photo: Comprehensive Confirmation by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/An_Imperative_to_Independence.png"
         },
         "4": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "A Responsibility to Oversee",
+          "effect": "When Still Photo: Comprehensive Confirmation hits an opponent marked by Snappy Silhouette or Focused Impression, it will deal 10% more DMG and restore 2 Energy to Charlotte. This restoration can be triggered 5 times every 20s.",
+          "image": "Constellation/A_Responsibility_to_Oversee.png"
         },
         "5": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "A Principle of Conscience",
+          "effect": "Increases the Level of Framing: Freezing Point Composition by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/A_Principle_of_Conscience.png"
         },
         "6": {
-          "name": null,
-          "effect": null,
-          "image": "Constellation/"
+          "name": "A Summation of Interest",
+          "effect": "When the active character's Normal and Charged Attacks hit an opponent marked by Framing: Freezing Point Composition's Focused Impression, Monsieur Verite will initiate a coordinated attack that deals 180% of Charlotte's ATK as AoE Cryo DMG and heals active character(s) within the AoE for 42% of Charlotte's ATK. This effect can be triggered once every 6s and both DMG and healing dealt in this way will be considered as having been done by Charlotte's Elemental Burst.",
+          "image": "Constellation/A_Summation_of_Interest.png"
         }
       },
       "ascension": {
@@ -551,10 +551,10 @@
         }
       },
       "introduction": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth\".",
-      "paimonmoepath": null,
+      "paimonmoepath": "characters/charlotte",
       "genshinggpath": null,
       "element": "Cryo",
-      "released": false,
+      "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Charlotte",
       "subCollection": {}
     },
