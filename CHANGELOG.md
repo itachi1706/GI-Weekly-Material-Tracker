@@ -1,3 +1,8 @@
+# 3.0.7
+- Fixed issue with Furina Wish image not appearing
+- (Web) Enabled tree-shaking again
+- Dependency Updates and Fixes
+
 # 3.0.6
 - Targeting Android 14 (SDK 34)
 - Dependency Updates
