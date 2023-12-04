@@ -289,7 +289,7 @@ jobs:
           fetch-depth: 0
       - name: Check if files changed for Dogfood release
         id: dfoodapk
-        uses: tj-actions/changed-files@v40.2.0
+        uses: tj-actions/changed-files@v40.2.1
         with:
           files: |
             android/**/*
