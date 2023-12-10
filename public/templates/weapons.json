@@ -13,7 +13,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 0
+        "mora": 0,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -23,7 +26,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -33,7 +39,10 @@
         "material1": "Forgery_2",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -43,7 +52,21 @@
         "material1": "Forgery_3",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Bow/",
@@ -74,7 +97,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -84,7 +110,10 @@
         "material1": "Forgery_2",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -94,7 +123,10 @@
         "material1": "Forgery_2",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -104,7 +136,21 @@
         "material1": "Forgery_3",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Bow/",
@@ -135,7 +181,10 @@
         "material1": "Forgery_1",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -145,7 +194,10 @@
         "material1": "Forgery_2",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -155,7 +207,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 4,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -165,7 +220,10 @@
         "material1": "Forgery_3",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -175,7 +233,10 @@
         "material1": "Forgery_3",
         "material2qty": 6,
         "material1qty": 4,
-        "mora": 25000
+        "mora": 25000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -185,7 +246,24 @@
         "material1": "Forgery_4",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Bow/",
@@ -216,7 +294,10 @@
         "material1": "Forgery_1",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -226,7 +307,10 @@
         "material1": "Forgery_2",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -236,7 +320,10 @@
         "material1": "Forgery_2",
         "material2qty": 6,
         "material1qty": 6,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -246,7 +333,10 @@
         "material1": "Forgery_3",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -256,7 +346,10 @@
         "material1": "Forgery_3",
         "material2qty": 9,
         "material1qty": 6,
-        "mora": 35000
+        "mora": 35000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -266,7 +359,24 @@
         "material1": "Forgery_4",
         "material2qty": 18,
         "material1qty": 4,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Bow/",
@@ -297,7 +407,10 @@
         "material1": "Forgery_1",
         "material2qty": 5,
         "material1qty": 5,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -307,7 +420,10 @@
         "material1": "Forgery_2",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -317,7 +433,10 @@
         "material1": "Forgery_2",
         "material2qty": 9,
         "material1qty": 9,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -327,7 +446,10 @@
         "material1": "Forgery_3",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -337,7 +459,10 @@
         "material1": "Forgery_3",
         "material2qty": 14,
         "material1qty": 9,
-        "mora": 55000
+        "mora": 55000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -347,7 +472,24 @@
         "material1": "Forgery_4",
         "material2qty": 27,
         "material1qty": 6,
-        "mora": 65000
+        "mora": 65000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Bow/",
@@ -378,7 +520,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 0
+        "mora": 0,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -388,7 +533,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -398,7 +546,10 @@
         "material1": "Forgery_2",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -408,7 +559,21 @@
         "material1": "Forgery_3",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Catalyst/",
@@ -439,7 +604,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -449,7 +617,10 @@
         "material1": "Forgery_2",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -459,7 +630,10 @@
         "material1": "Forgery_2",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -469,7 +643,21 @@
         "material1": "Forgery_3",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Catalyst/",
@@ -500,7 +688,10 @@
         "material1": "Forgery_1",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -510,7 +701,10 @@
         "material1": "Forgery_2",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -520,7 +714,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 4,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -530,7 +727,10 @@
         "material1": "Forgery_3",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -540,7 +740,10 @@
         "material1": "Forgery_3",
         "material2qty": 6,
         "material1qty": 4,
-        "mora": 25000
+        "mora": 25000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -550,7 +753,24 @@
         "material1": "Forgery_4",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Catalyst/",
@@ -581,7 +801,10 @@
         "material1": "Forgery_1",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -591,7 +814,10 @@
         "material1": "Forgery_2",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -601,7 +827,10 @@
         "material1": "Forgery_2",
         "material2qty": 6,
         "material1qty": 6,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -611,7 +840,10 @@
         "material1": "Forgery_3",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -621,7 +853,10 @@
         "material1": "Forgery_3",
         "material2qty": 9,
         "material1qty": 6,
-        "mora": 35000
+        "mora": 35000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -631,7 +866,24 @@
         "material1": "Forgery_4",
         "material2qty": 18,
         "material1qty": 4,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Catalyst/",
@@ -662,7 +914,10 @@
         "material1": "Forgery_1",
         "material2qty": 5,
         "material1qty": 5,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -672,7 +927,10 @@
         "material1": "Forgery_2",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -682,7 +940,10 @@
         "material1": "Forgery_2",
         "material2qty": 9,
         "material1qty": 9,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -692,7 +953,10 @@
         "material1": "Forgery_3",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -702,7 +966,10 @@
         "material1": "Forgery_3",
         "material2qty": 14,
         "material1qty": 9,
-        "mora": 55000
+        "mora": 55000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -712,7 +979,24 @@
         "material1": "Forgery_4",
         "material2qty": 27,
         "material1qty": 6,
-        "mora": 65000
+        "mora": 65000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Catalyst/",
@@ -743,7 +1027,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 0
+        "mora": 0,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -753,7 +1040,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -763,7 +1053,10 @@
         "material1": "Forgery_2",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -773,7 +1066,21 @@
         "material1": "Forgery_3",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Claymore/",
@@ -804,7 +1111,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -814,7 +1124,10 @@
         "material1": "Forgery_2",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -824,7 +1137,10 @@
         "material1": "Forgery_2",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -834,7 +1150,21 @@
         "material1": "Forgery_3",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Claymore/",
@@ -865,7 +1195,10 @@
         "material1": "Forgery_1",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -875,7 +1208,10 @@
         "material1": "Forgery_2",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -885,7 +1221,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 4,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -895,7 +1234,10 @@
         "material1": "Forgery_3",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -905,7 +1247,10 @@
         "material1": "Forgery_3",
         "material2qty": 6,
         "material1qty": 4,
-        "mora": 25000
+        "mora": 25000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -915,7 +1260,24 @@
         "material1": "Forgery_4",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Claymore/",
@@ -946,7 +1308,10 @@
         "material1": "Forgery_1",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -956,7 +1321,10 @@
         "material1": "Forgery_2",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -966,7 +1334,10 @@
         "material1": "Forgery_2",
         "material2qty": 6,
         "material1qty": 6,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -976,7 +1347,10 @@
         "material1": "Forgery_3",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -986,7 +1360,10 @@
         "material1": "Forgery_3",
         "material2qty": 9,
         "material1qty": 6,
-        "mora": 35000
+        "mora": 35000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -996,7 +1373,24 @@
         "material1": "Forgery_4",
         "material2qty": 18,
         "material1qty": 4,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Claymore/",
@@ -1027,7 +1421,10 @@
         "material1": "Forgery_1",
         "material2qty": 5,
         "material1qty": 5,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1037,7 +1434,10 @@
         "material1": "Forgery_2",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1047,7 +1447,10 @@
         "material1": "Forgery_2",
         "material2qty": 9,
         "material1qty": 9,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1057,7 +1460,10 @@
         "material1": "Forgery_3",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1067,7 +1473,10 @@
         "material1": "Forgery_3",
         "material2qty": 14,
         "material1qty": 9,
-        "mora": 55000
+        "mora": 55000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1077,7 +1486,24 @@
         "material1": "Forgery_4",
         "material2qty": 27,
         "material1qty": 6,
-        "mora": 65000
+        "mora": 65000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Claymore/",
@@ -1108,7 +1534,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 0
+        "mora": 0,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1118,7 +1547,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1128,7 +1560,10 @@
         "material1": "Forgery_2",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1138,7 +1573,21 @@
         "material1": "Forgery_3",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Polearm/",
@@ -1169,7 +1618,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1179,7 +1631,10 @@
         "material1": "Forgery_2",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1189,7 +1644,10 @@
         "material1": "Forgery_2",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1199,7 +1657,21 @@
         "material1": "Forgery_3",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Polearm/",
@@ -1230,7 +1702,10 @@
         "material1": "Forgery_1",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1240,7 +1715,10 @@
         "material1": "Forgery_2",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1250,7 +1728,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 4,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1260,7 +1741,10 @@
         "material1": "Forgery_3",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1270,7 +1754,10 @@
         "material1": "Forgery_3",
         "material2qty": 6,
         "material1qty": 4,
-        "mora": 25000
+        "mora": 25000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1280,7 +1767,24 @@
         "material1": "Forgery_4",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Polearm/",
@@ -1311,7 +1815,10 @@
         "material1": "Forgery_1",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1321,7 +1828,10 @@
         "material1": "Forgery_2",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1331,7 +1841,10 @@
         "material1": "Forgery_2",
         "material2qty": 6,
         "material1qty": 6,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1341,7 +1854,10 @@
         "material1": "Forgery_3",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1351,7 +1867,10 @@
         "material1": "Forgery_3",
         "material2qty": 9,
         "material1qty": 6,
-        "mora": 35000
+        "mora": 35000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1361,7 +1880,24 @@
         "material1": "Forgery_4",
         "material2qty": 18,
         "material1qty": 4,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Polearm/",
@@ -1392,7 +1928,10 @@
         "material1": "Forgery_1",
         "material2qty": 5,
         "material1qty": 5,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1402,7 +1941,10 @@
         "material1": "Forgery_2",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1412,7 +1954,10 @@
         "material1": "Forgery_2",
         "material2qty": 9,
         "material1qty": 9,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1422,7 +1967,10 @@
         "material1": "Forgery_3",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1432,7 +1980,10 @@
         "material1": "Forgery_3",
         "material2qty": 14,
         "material1qty": 9,
-        "mora": 55000
+        "mora": 55000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1442,7 +1993,24 @@
         "material1": "Forgery_4",
         "material2qty": 27,
         "material1qty": 6,
-        "mora": 65000
+        "mora": 65000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Polearm/",
@@ -1473,7 +2041,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 0
+        "mora": 0,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1483,7 +2054,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1493,7 +2067,10 @@
         "material1": "Forgery_2",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1503,7 +2080,21 @@
         "material1": "Forgery_3",
         "material2qty": 4,
         "material1qty": 1,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Sword/",
@@ -1534,7 +2125,10 @@
         "material1": "Forgery_1",
         "material2qty": 1,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1544,7 +2138,10 @@
         "material1": "Forgery_2",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1554,7 +2151,10 @@
         "material1": "Forgery_2",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1564,7 +2164,21 @@
         "material1": "Forgery_3",
         "material2qty": 5,
         "material1qty": 1,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2"
       }
     },
     "image": "Weapons/Sword/",
@@ -1595,7 +2209,10 @@
         "material1": "Forgery_1",
         "material2qty": 2,
         "material1qty": 2,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1605,7 +2222,10 @@
         "material1": "Forgery_2",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1615,7 +2235,10 @@
         "material1": "Forgery_2",
         "material2qty": 4,
         "material1qty": 4,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1625,7 +2248,10 @@
         "material1": "Forgery_3",
         "material2qty": 8,
         "material1qty": 2,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1635,7 +2261,10 @@
         "material1": "Forgery_3",
         "material2qty": 6,
         "material1qty": 4,
-        "mora": 25000
+        "mora": 25000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1645,7 +2274,24 @@
         "material1": "Forgery_4",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Sword/",
@@ -1676,7 +2322,10 @@
         "material1": "Forgery_1",
         "material2qty": 3,
         "material1qty": 3,
-        "mora": 5000
+        "mora": 5000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1686,7 +2335,10 @@
         "material1": "Forgery_2",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 15000
+        "mora": 15000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1696,7 +2348,10 @@
         "material1": "Forgery_2",
         "material2qty": 6,
         "material1qty": 6,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1706,7 +2361,10 @@
         "material1": "Forgery_3",
         "material2qty": 12,
         "material1qty": 3,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1716,7 +2374,10 @@
         "material1": "Forgery_3",
         "material2qty": 9,
         "material1qty": 6,
-        "mora": 35000
+        "mora": 35000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1726,7 +2387,24 @@
         "material1": "Forgery_4",
         "material2qty": 18,
         "material1qty": 4,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Sword/",
@@ -1757,7 +2435,10 @@
         "material1": "Forgery_1",
         "material2qty": 5,
         "material1qty": 5,
-        "mora": 10000
+        "mora": 10000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery1"
       },
       "2": {
         "material3": "Common_Mob_1",
@@ -1767,7 +2448,10 @@
         "material1": "Forgery_2",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 20000
+        "mora": 20000,
+        "material1type": "common1",
+        "material2type": "elite1",
+        "material3type": "forgery2"
       },
       "3": {
         "material3": "Common_Mob_2",
@@ -1777,7 +2461,10 @@
         "material1": "Forgery_2",
         "material2qty": 9,
         "material1qty": 9,
-        "mora": 30000
+        "mora": 30000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery2"
       },
       "4": {
         "material3": "Common_Mob_2",
@@ -1787,7 +2474,10 @@
         "material1": "Forgery_3",
         "material2qty": 18,
         "material1qty": 5,
-        "mora": 45000
+        "mora": 45000,
+        "material1type": "common2",
+        "material2type": "elite2",
+        "material3type": "forgery3"
       },
       "5": {
         "material3": "Common_Mob_3",
@@ -1797,7 +2487,10 @@
         "material1": "Forgery_3",
         "material2qty": 14,
         "material1qty": 9,
-        "mora": 55000
+        "mora": 55000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery3"
       },
       "6": {
         "material3": "Common_Mob_3",
@@ -1807,7 +2500,24 @@
         "material1": "Forgery_4",
         "material2qty": 27,
         "material1qty": 6,
-        "mora": 65000
+        "mora": 65000,
+        "material1type": "common3",
+        "material2type": "elite3",
+        "material3type": "forgery4"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_Mob_1",
+        "common2": "Common_Mob_2",
+        "common3": "Common_Mob_3",
+        "forgery1": "Forgery_1",
+        "forgery2": "Forgery_2",
+        "forgery3": "Forgery_3",
+        "forgery4": "Forgery_4",
+        "elite1": "Elite_Mob_1",
+        "elite2": "Elite_Mob_2",
+        "elite3": "Elite_Mob_3"
       }
     },
     "image": "Weapons/Sword/",
