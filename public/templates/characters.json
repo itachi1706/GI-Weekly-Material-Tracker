@@ -25,7 +25,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -36,7 +40,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -47,7 +55,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -58,7 +70,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -69,7 +85,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -80,7 +100,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -91,7 +115,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -102,7 +130,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -113,7 +145,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -206,7 +242,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -218,7 +258,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -230,7 +274,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -242,7 +290,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -254,7 +306,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -266,7 +322,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Vayuda_Turquoise_Silver",
+        "gem2": "Vayuda_Turquoise_Fragment",
+        "gem3": "Vayuda_Turquoise_Chunk",
+        "gem4": "Vayuda_Turquoise_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -303,7 +386,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -314,7 +401,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -325,7 +416,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -336,7 +431,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -347,7 +446,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -358,7 +461,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -369,7 +476,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -380,7 +491,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -391,7 +506,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -484,7 +603,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -496,7 +619,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -508,7 +635,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -520,7 +651,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -532,7 +667,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -544,7 +683,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Vayuda_Turquoise_Silver",
+        "gem2": "Vayuda_Turquoise_Fragment",
+        "gem3": "Vayuda_Turquoise_Chunk",
+        "gem4": "Vayuda_Turquoise_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -581,7 +747,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -592,7 +762,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -603,7 +777,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -614,7 +792,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -625,7 +807,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -636,7 +822,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -647,7 +837,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -658,7 +852,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -669,7 +867,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -762,7 +964,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -774,7 +980,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -786,7 +996,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -798,7 +1012,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -810,7 +1028,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -822,7 +1044,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Shivada_Jade_Silver",
+        "gem2": "Shivada_Jade_Fragment",
+        "gem3": "Shivada_Jade_Chunk",
+        "gem4": "Shivada_Jade_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -859,7 +1108,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -870,7 +1123,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -881,7 +1138,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -892,7 +1153,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -903,7 +1168,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -914,7 +1183,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -925,7 +1198,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -936,7 +1213,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -947,7 +1228,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -1040,7 +1325,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -1052,7 +1341,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -1064,7 +1357,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -1076,7 +1373,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -1088,7 +1389,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -1100,7 +1405,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Shivada_Jade_Silver",
+        "gem2": "Shivada_Jade_Fragment",
+        "gem3": "Shivada_Jade_Chunk",
+        "gem4": "Shivada_Jade_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -1137,7 +1469,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -1148,7 +1484,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -1159,7 +1499,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -1170,7 +1514,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -1181,7 +1529,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -1192,7 +1544,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -1203,7 +1559,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -1214,7 +1574,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -1225,7 +1589,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -1318,7 +1686,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -1330,7 +1702,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -1342,7 +1718,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -1354,7 +1734,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -1366,7 +1750,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -1378,7 +1766,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Vajrada_Amethyst_Silver",
+        "gem2": "Vajrada_Amethyst_Fragment",
+        "gem3": "Vajrada_Amethyst_Chunk",
+        "gem4": "Vajrada_Amethyst_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -1415,7 +1830,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -1426,7 +1845,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -1437,7 +1860,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -1448,7 +1875,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -1459,7 +1890,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -1470,7 +1905,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -1481,7 +1920,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -1492,7 +1935,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -1503,7 +1950,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -1596,7 +2047,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -1608,7 +2063,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -1620,7 +2079,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -1632,7 +2095,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -1644,7 +2111,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -1656,7 +2127,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Vajrada_Amethyst_Silver",
+        "gem2": "Vajrada_Amethyst_Fragment",
+        "gem3": "Vajrada_Amethyst_Chunk",
+        "gem4": "Vajrada_Amethyst_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -1693,7 +2191,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -1704,7 +2206,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -1715,7 +2221,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -1726,7 +2236,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -1737,7 +2251,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -1748,7 +2266,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -1759,7 +2281,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -1770,7 +2296,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -1781,7 +2311,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -1874,7 +2408,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -1886,7 +2424,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -1898,7 +2440,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -1910,7 +2456,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -1922,7 +2472,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -1934,7 +2488,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Prithiva_Topaz_Silver",
+        "gem2": "Prithiva_Topaz_Fragment",
+        "gem3": "Prithiva_Topaz_Chunk",
+        "gem4": "Prithiva_Topaz_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -1971,7 +2552,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -1982,7 +2567,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -1993,7 +2582,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -2004,7 +2597,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -2015,7 +2612,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -2026,7 +2627,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -2037,7 +2642,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -2048,7 +2657,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -2059,7 +2672,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -2152,7 +2769,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -2164,7 +2785,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -2176,7 +2801,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -2188,7 +2817,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -2200,7 +2833,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -2212,7 +2849,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Prithiva_Topaz_Silver",
+        "gem2": "Prithiva_Topaz_Fragment",
+        "gem3": "Prithiva_Topaz_Chunk",
+        "gem4": "Prithiva_Topaz_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -2249,7 +2913,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -2260,7 +2928,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -2271,7 +2943,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -2282,7 +2958,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -2293,7 +2973,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -2304,7 +2988,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -2315,7 +3003,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -2326,7 +3018,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -2337,7 +3033,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -2430,7 +3130,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -2442,7 +3146,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -2454,7 +3162,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -2466,7 +3178,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -2478,7 +3194,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -2490,7 +3210,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Varunada_Lazurite_Silver",
+        "gem2": "Varunada_Lazurite_Fragment",
+        "gem3": "Varunada_Lazurite_Chunk",
+        "gem4": "Varunada_Lazurite_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -2527,7 +3274,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -2538,7 +3289,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -2549,7 +3304,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -2560,7 +3319,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -2571,7 +3334,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -2582,7 +3349,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -2593,7 +3364,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -2604,7 +3379,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -2615,7 +3394,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -2708,7 +3491,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -2720,7 +3507,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -2732,7 +3523,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -2744,7 +3539,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -2756,7 +3555,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -2768,7 +3571,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Varunada_Lazurite_Silver",
+        "gem2": "Varunada_Lazurite_Fragment",
+        "gem3": "Varunada_Lazurite_Chunk",
+        "gem4": "Varunada_Lazurite_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -2805,7 +3635,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -2816,7 +3650,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -2827,7 +3665,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -2838,7 +3680,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -2849,7 +3695,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -2860,7 +3710,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -2871,7 +3725,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -2882,7 +3740,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -2893,7 +3755,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -2986,7 +3852,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -2998,7 +3868,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -3010,7 +3884,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -3022,7 +3900,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -3034,7 +3916,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -3046,7 +3932,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Agnidus_Agate_Silver",
+        "gem2": "Agnidus_Agate_Fragment",
+        "gem3": "Agnidus_Agate_Chunk",
+        "gem4": "Agnidus_Agate_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -3083,7 +3996,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -3094,7 +4011,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -3105,7 +4026,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -3116,7 +4041,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -3127,7 +4056,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -3138,7 +4071,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -3149,7 +4086,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -3160,7 +4101,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -3171,7 +4116,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -3264,7 +4213,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -3276,7 +4229,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -3288,7 +4245,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -3300,7 +4261,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -3312,7 +4277,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -3324,7 +4293,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Agnidus_Agate_Silver",
+        "gem2": "Agnidus_Agate_Fragment",
+        "gem3": "Agnidus_Agate_Chunk",
+        "gem4": "Agnidus_Agate_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -3361,7 +4357,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -3372,7 +4372,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -3383,7 +4387,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -3394,7 +4402,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -3405,7 +4417,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -3416,7 +4432,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -3427,7 +4447,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -3438,7 +4462,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -3449,7 +4477,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -3542,7 +4574,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -3554,7 +4590,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -3566,7 +4606,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -3578,7 +4622,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -3590,7 +4638,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -3602,7 +4654,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Nagadus_Emerald_Silver",
+        "gem2": "Nagadus_Emerald_Fragment",
+        "gem3": "Nagadus_Emerald_Chunk",
+        "gem4": "Nagadus_Emerald_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,
@@ -3639,7 +4718,11 @@
           "material3": "Mastery_1",
           "material3qty": 3,
           "material4": "Common_1",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
         },
         "3": {
           "mora": 17500,
@@ -3650,7 +4733,11 @@
           "material3": "Mastery_2",
           "material3qty": 2,
           "material4": "Common_2",
-          "material4qty": 3
+          "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "4": {
           "mora": 25000,
@@ -3661,7 +4748,11 @@
           "material3": "Mastery_2",
           "material3qty": 4,
           "material4": "Common_2",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "5": {
           "mora": 30000,
@@ -3672,7 +4763,11 @@
           "material3": "Mastery_2",
           "material3qty": 6,
           "material4": "Common_2",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "6": {
           "mora": 37500,
@@ -3683,7 +4778,11 @@
           "material3": "Mastery_2",
           "material3qty": 9,
           "material4": "Common_2",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
         },
         "7": {
           "mora": 120000,
@@ -3694,7 +4793,11 @@
           "material3": "Mastery_3",
           "material3qty": 4,
           "material4": "Common_3",
-          "material4qty": 4
+          "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "8": {
           "mora": 260000,
@@ -3705,7 +4808,11 @@
           "material3": "Mastery_3",
           "material3qty": 6,
           "material4": "Common_3",
-          "material4qty": 6
+          "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "9": {
           "mora": 450000,
@@ -3716,7 +4823,11 @@
           "material3": "Mastery_3",
           "material3qty": 12,
           "material4": "Common_3",
-          "material4qty": 9
+          "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         },
         "10": {
           "mora": 700000,
@@ -3727,7 +4838,11 @@
           "material3": "Mastery_3",
           "material3qty": 16,
           "material4": "Common_3",
-          "material4qty": 12
+          "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
         }
       },
       "passives": {
@@ -3820,7 +4935,11 @@
         "material4": "Common_1",
         "material4qty": 3,
         "material3qty": 3,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "2": {
         "material2qty": 2,
@@ -3832,7 +4951,11 @@
         "material4": "Common_1",
         "material4qty": 15,
         "material3qty": 10,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
       },
       "3": {
         "material2qty": 4,
@@ -3844,7 +4967,11 @@
         "material4": "Common_2",
         "material4qty": 12,
         "material3qty": 20,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "4": {
         "material2qty": 8,
@@ -3856,7 +4983,11 @@
         "material4": "Common_2",
         "material4qty": 18,
         "material3qty": 30,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
       },
       "5": {
         "material2qty": 12,
@@ -3868,7 +4999,11 @@
         "material4": "Common_3",
         "material4qty": 12,
         "material3qty": 45,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
       },
       "6": {
         "material2qty": 20,
@@ -3880,7 +5015,34 @@
         "material4": "Common_3",
         "material4qty": 24,
         "material3qty": 60,
-        "material3": "LocalSpeciality"
+        "material3": "LocalSpeciality",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Nagadus_Emerald_Silver",
+        "gem2": "Nagadus_Emerald_Fragment",
+        "gem3": "Nagadus_Emerald_Chunk",
+        "gem4": "Nagadus_Emerald_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
+      },
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
       }
     },
     "introduction": null,

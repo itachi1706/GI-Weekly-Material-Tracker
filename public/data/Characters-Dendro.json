@@ -5,7 +5,9 @@
       "gender": "Male",
       "birthday": "11/2",
       "caption": "Admonishing Instruction",
-      "titles": ["Sumeru Akademiya Scribe"],
+      "titles": [
+        "Sumeru Akademiya Scribe"
+      ],
       "name": "Alhaitham",
       "fullName": null,
       "description": "The current scribe of the Sumeru Akademiya, a man endowed with extraodinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
@@ -14,7 +16,9 @@
       "rarity": 5,
       "affiliation": "Sumeru Akademiya, Haravatat",
       "constellation": "Vultur Volans",
-      "outfits": ["The_Rational"],
+      "outfits": [
+        "The_Rational"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -26,7 +30,11 @@
             "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
             "material4": "Faded_Red_Satin",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -37,7 +45,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
             "material4": "Trimmed_Red_Silk",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -48,7 +60,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
             "material4": "Trimmed_Red_Silk",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -59,7 +75,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
             "material4": "Trimmed_Red_Silk",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -70,7 +90,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
             "material4": "Trimmed_Red_Silk",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -81,7 +105,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
             "material4": "Rich_Red_Brocade",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -92,7 +120,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
             "material4": "Rich_Red_Brocade",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -103,7 +135,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
             "material4": "Rich_Red_Brocade",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -114,7 +150,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
             "material4": "Rich_Red_Brocade",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -207,7 +247,11 @@
           "material4": "Faded_Red_Satin",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -219,7 +263,11 @@
           "material4": "Faded_Red_Satin",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -231,7 +279,11 @@
           "material4": "Trimmed_Red_Silk",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -243,7 +295,11 @@
           "material4": "Trimmed_Red_Silk",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -255,7 +311,11 @@
           "material4": "Rich_Red_Brocade",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -267,7 +327,34 @@
           "material4": "Rich_Red_Brocade",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Sand_Grease_Pupa"
+          "material3": "Sand_Grease_Pupa",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Pseudo-Stamens",
+          "local_speciality": "Sand_Grease_Pupa"
+        },
+        "talents": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "mastery1": "Teachings_of_Ingenuity",
+          "mastery2": "Guide_to_Ingenuity",
+          "mastery3": "Philosophies_of_Ingenuity",
+          "weekly_boss_drop": "Mirror_of_Mushin",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "The current scribe of the Sumeru Akademiya, a man endowed with extraordinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
@@ -283,7 +370,9 @@
       "gender": "Male",
       "birthday": "25/4",
       "caption": "Beyond Mortality",
-      "titles": ["Owner of Bubu Pharmacy"],
+      "titles": [
+        "Owner of Bubu Pharmacy"
+      ],
       "name": "Baizhu",
       "description": "The owner of Bubu Pharmacy, who is rarely seen without the white snake named Changsheng. His medicinal knowledge is encyclopedic, and his personal intrigues subtle.",
       "nation": "Liyue",
@@ -291,7 +380,9 @@
       "rarity": 5,
       "affiliation": "Bubu Pharmacy",
       "constellation": "Lagenaria",
-      "outfits": ["The_Applications_of_Medicine"],
+      "outfits": [
+        "The_Applications_of_Medicine"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -303,7 +394,11 @@
             "material3": "Teachings_of_Gold",
             "material3qty": 3,
             "material4": "Fungal_Spores",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -314,7 +409,11 @@
             "material3": "Guide_to_Gold",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -325,7 +424,11 @@
             "material3": "Guide_to_Gold",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -336,7 +439,11 @@
             "material3": "Guide_to_Gold",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -347,7 +454,11 @@
             "material3": "Guide_to_Gold",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -358,7 +469,11 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -369,7 +484,11 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -380,7 +499,11 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -391,7 +514,11 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -484,7 +611,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -496,7 +627,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -508,7 +643,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -520,7 +659,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -532,7 +675,11 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -544,7 +691,34 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Violetgrass"
+          "material3": "Violetgrass",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Evergloom_Ring",
+          "local_speciality": "Violetgrass"
+        },
+        "talents": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "mastery1": "Teachings_of_Gold",
+          "mastery2": "Guide_to_Gold",
+          "mastery3": "Philosophies_of_Gold",
+          "weekly_boss_drop": "Worldspan_Fern",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "The owner of Bubu Pharmacy, the finest pharmacy in all of Liyue. He is rarely seen without a white snake named Changsheng coiled around his shoulders. His prescriptions are varied and diverse, and his medical prowess and compassion are known throughout Teyvat.",
@@ -570,7 +744,9 @@
       "rarity": 4,
       "affiliation": "Fatui, Gandharva Ville, Forest Rangers",
       "constellation": "Leptailurus Cervarius",
-      "outfits": ["A_New_Leaf"],
+      "outfits": [
+        "A_New_Leaf"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -582,7 +758,11 @@
             "material3": "Teachings_of_Praxis",
             "material3qty": 3,
             "material4": "Firm_Arrowhead",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -593,7 +773,11 @@
             "material3": "Guide_to_Praxis",
             "material3qty": 2,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -604,7 +788,11 @@
             "material3": "Guide_to_Praxis",
             "material3qty": 4,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -615,7 +803,11 @@
             "material3": "Guide_to_Praxis",
             "material3qty": 6,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -626,7 +818,11 @@
             "material3": "Guide_to_Praxis",
             "material3qty": 9,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -637,7 +833,11 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 4,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -648,7 +848,11 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 6,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -659,7 +863,11 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 12,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -670,7 +878,11 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 16,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -763,7 +975,11 @@
           "material4": "Firm_Arrowhead",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -775,7 +991,11 @@
           "material4": "Firm_Arrowhead",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -787,7 +1007,11 @@
           "material4": "Sharp_Arrowhead",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -799,7 +1023,11 @@
           "material4": "Sharp_Arrowhead",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -811,7 +1039,11 @@
           "material4": "Weathered_Arrowhead",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -823,7 +1055,34 @@
           "material4": "Weathered_Arrowhead",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Rukkhashava_Mushrooms"
+          "material3": "Rukkhashava_Mushrooms",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Majestic_Hooked_Beak",
+          "local_speciality": "Rukkhashava_Mushrooms"
+        },
+        "talents": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "mastery1": "Teachings_of_Praxis",
+          "mastery2": "Guide_to_Praxis",
+          "mastery3": "Philosophies_of_Praxis",
+          "weekly_boss_drop": "Tears_of_the_Calamitous_God",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "A Trainee Forest Ranger who is under the tutelage of Tighnari. She started her academic career a little later than her peers, so she is currently working hard to catch up.\nShe hides the other side of her personality deep under the surface of optimism and kindness.",
@@ -839,7 +1098,9 @@
       "gender": "Male",
       "birthday": "9/7",
       "caption": "Empyrean Reflection",
-      "titles": ["Renowned Sumeru Architect"],
+      "titles": [
+        "Renowned Sumeru Architect"
+      ],
       "name": "Kaveh",
       "description": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
       "nation": "Sumeru",
@@ -847,7 +1108,9 @@
       "rarity": 4,
       "affiliation": "Kshahrewar, Independent Design Studio",
       "constellation": "Paradisaea",
-      "outfits": ["Gold_Pinions_in_Flames_Bathed"],
+      "outfits": [
+        "Gold_Pinions_in_Flames_Bathed"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -859,7 +1122,11 @@
             "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
             "material4": "Fungal_Spores",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -870,7 +1137,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -881,7 +1152,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -892,7 +1167,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -903,7 +1182,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -914,7 +1197,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -925,7 +1212,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -936,7 +1227,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -947,7 +1242,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -1040,7 +1339,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -1052,7 +1355,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -1064,7 +1371,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -1076,7 +1387,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -1088,7 +1403,11 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -1100,7 +1419,34 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Mourning_Flower"
+          "material3": "Mourning_Flower",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Quelled_Creeper",
+          "local_speciality": "Mourning_Flower"
+        },
+        "talents": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "mastery1": "Teachings_of_Ingenuity",
+          "mastery2": "Guide_to_Ingenuity",
+          "mastery3": "Philosophies_of_Ingenuity",
+          "weekly_boss_drop": "Primordial_Greenbloom",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
@@ -1116,7 +1462,9 @@
       "gender": "Female",
       "birthday": "22/1",
       "caption": "Cat Upon the Eaves",
-      "titles": ["Gold Level Courier of the Komaniya Express"],
+      "titles": [
+        "Gold Level Courier of the Komaniya Express"
+      ],
       "name": "Kirara",
       "fullName": null,
       "description": "A courier for Komaniya Express, a delivery company in Inazuma. A nekomata who loves her job and human society.",
@@ -1125,7 +1473,9 @@
       "rarity": 4,
       "affiliation": "Komaniya Express, Youkai",
       "constellation": "Arcella",
-      "outfits": ["Whirling_Bloom"],
+      "outfits": [
+        "Whirling_Bloom"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -1137,7 +1487,11 @@
             "material3": "Teachings_of_Transience",
             "material3qty": 3,
             "material4": "Spectral_Husk",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -1148,7 +1502,11 @@
             "material3": "Guide_to_Transience",
             "material3qty": 2,
             "material4": "Spectral_Heart",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -1159,7 +1517,11 @@
             "material3": "Guide_to_Transience",
             "material3qty": 4,
             "material4": "Spectral_Heart",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -1170,7 +1532,11 @@
             "material3": "Guide_to_Transience",
             "material3qty": 6,
             "material4": "Spectral_Heart",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -1181,7 +1547,11 @@
             "material3": "Guide_to_Transience",
             "material3qty": 9,
             "material4": "Spectral_Heart",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -1192,7 +1562,11 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 4,
             "material4": "Spectral_Nucleus",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -1203,7 +1577,11 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 6,
             "material4": "Spectral_Nucleus",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -1214,7 +1592,11 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 12,
             "material4": "Spectral_Nucleus",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -1225,7 +1607,11 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 16,
             "material4": "Spectral_Nucleus",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -1318,7 +1704,11 @@
           "material4": "Spectral_Husk",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -1330,7 +1720,11 @@
           "material4": "Spectral_Husk",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -1342,7 +1736,11 @@
           "material4": "Spectral_Heart",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -1354,7 +1752,11 @@
           "material4": "Spectral_Heart",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -1366,7 +1768,11 @@
           "material4": "Spectral_Nucleus",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -1378,7 +1784,34 @@
           "material4": "Spectral_Nucleus",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Amakumo_Fruit"
+          "material3": "Amakumo_Fruit",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Spectral_Husk",
+          "common2": "Spectral_Heart",
+          "common3": "Spectral_Nucleus",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Evergloom_Ring",
+          "local_speciality": "Amakumo_Fruit"
+        },
+        "talents": {
+          "common1": "Spectral_Husk",
+          "common2": "Spectral_Heart",
+          "common3": "Spectral_Nucleus",
+          "mastery1": "Teachings_of_Transience",
+          "mastery2": "Guide_to_Transience",
+          "mastery3": "Philosophies_of_Transience",
+          "weekly_boss_drop": "Everamber",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "A courier who works for Komaniya Express, a delivery company in Inazuma. She has twin restless tails and is a nekomata who loves human society.",
@@ -1410,7 +1843,9 @@
       "rarity": 5,
       "affiliation": "Sumeru City, Archons, The Seven",
       "constellation": "Sapientia Oromasdis",
-      "outfits": ["For_All_Knowledge_a_Verse"],
+      "outfits": [
+        "For_All_Knowledge_a_Verse"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -1422,7 +1857,11 @@
             "material3": "Teachings_of_Ingenuity",
             "material3qty": 3,
             "material4": "Fungal_Spores",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -1433,7 +1872,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -1444,7 +1887,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -1455,7 +1902,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -1466,7 +1917,11 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -1477,7 +1932,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -1488,7 +1947,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -1499,7 +1962,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -1510,7 +1977,11 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -1603,7 +2074,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -1615,7 +2090,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -1627,7 +2106,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -1639,7 +2122,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -1651,7 +2138,11 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -1663,7 +2154,34 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Kalpalata_Lotus"
+          "material3": "Kalpalata_Lotus",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Quelled_Creeper",
+          "local_speciality": "Kalpalata_Lotus"
+        },
+        "talents": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "mastery1": "Teachings_of_Ingenuity",
+          "mastery2": "Guide_to_Ingenuity",
+          "mastery3": "Philosophies_of_Ingenuity",
+          "weekly_boss_drop": "Puppet_Strings",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "Lesser Lord Kusanali dwells deep in the Sanctuary of Surasthana, and has never really been in the limelight, nor has she even been mentioned much.\nHer burden is heavy, but though she may experience loneliness, and though darkness is all she sees before her, she will not stop moving forward.",
@@ -1689,7 +2207,9 @@
       "rarity": 5,
       "affiliation": "Gandharva Ville, Forest Rangers, Sumeru Akademiya, Amurta",
       "constellation": "Vulpes Zerda",
-      "outfits": ["Woodland_Song"],
+      "outfits": [
+        "Woodland_Song"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -1701,7 +2221,11 @@
             "material3": "Teachings_of_Admonition",
             "material3qty": 3,
             "material4": "Fungal_Spores",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -1712,7 +2236,11 @@
             "material3": "Guide_to_Admonition",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -1723,7 +2251,11 @@
             "material3": "Guide_to_Admonition",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -1734,7 +2266,11 @@
             "material3": "Guide_to_Admonition",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -1745,7 +2281,11 @@
             "material3": "Guide_to_Admonition",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -1756,7 +2296,11 @@
             "material3": "Philosophies_of_Admonition",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -1767,7 +2311,11 @@
             "material3": "Philosophies_of_Admonition",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -1778,7 +2326,11 @@
             "material3": "Philosophies_of_Admonition",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -1789,7 +2341,11 @@
             "material3": "Philosophies_of_Admonition",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -1882,7 +2438,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -1894,7 +2454,11 @@
           "material4": "Fungal_Spores",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -1906,7 +2470,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -1918,7 +2486,11 @@
           "material4": "Luminescent_Pollen",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -1930,7 +2502,11 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -1942,7 +2518,34 @@
           "material4": "Crystalline_Cyst_Dust",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Nilotpala_Lotus"
+          "material3": "Nilotpala_Lotus",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Majestic_Hooked_Beak",
+          "local_speciality": "Nilotpala_Lotus"
+        },
+        "talents": {
+          "common1": "Fungal_Spores",
+          "common2": "Luminescent_Pollen",
+          "common3": "Crystalline_Cyst_Dust",
+          "mastery1": "Teachings_of_Admonition",
+          "mastery2": "Guide_to_Admonition",
+          "mastery3": "Philosophies_of_Admonition",
+          "weekly_boss_drop": "The_Meaning_of_Aeons",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "An Avidya Forest Watcher and botanical scholar who graduated from Amurta. He leads a fruitful life of patrolling the rainforest, protecting the ecology, and lecturing fools every day.",
@@ -1958,7 +2561,9 @@
       "gender": "Female",
       "birthday": "6/3",
       "caption": "Burgeoning Grace",
-      "titles": ["Disciple of Streetward Rambler"],
+      "titles": [
+        "Disciple of Streetward Rambler"
+      ],
       "name": "Yaoyao",
       "fullName": null,
       "description": "Streetward Rambler's youngest disciple. A gentle and caring \"little adult\".",
@@ -1967,7 +2572,9 @@
       "rarity": 4,
       "affiliation": "Streetward Rambler's Abode",
       "constellation": "Osmanthus",
-      "outfits": ["Cherubic_Osmanthus"],
+      "outfits": [
+        "Cherubic_Osmanthus"
+      ],
       "talents": {
         "ascension": {
           "2": {
@@ -1979,7 +2586,11 @@
             "material3": "Teachings_of_Diligence",
             "material3qty": 3,
             "material4": "Slime_Condensate",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
           },
           "3": {
             "mora": 17500,
@@ -1990,7 +2601,11 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 2,
             "material4": "Slime_Secretions",
-            "material4qty": 3
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "4": {
             "mora": 25000,
@@ -2001,7 +2616,11 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 4,
             "material4": "Slime_Secretions",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "5": {
             "mora": 30000,
@@ -2012,7 +2631,11 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 6,
             "material4": "Slime_Secretions",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "6": {
             "mora": 37500,
@@ -2023,7 +2646,11 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 9,
             "material4": "Slime_Secretions",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
           },
           "7": {
             "mora": 120000,
@@ -2034,7 +2661,11 @@
             "material3": "Philosophies_of_Diligence",
             "material3qty": 4,
             "material4": "Slime_Concentrate",
-            "material4qty": 4
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "8": {
             "mora": 260000,
@@ -2045,7 +2676,11 @@
             "material3": "Philosophies_of_Diligence",
             "material3qty": 6,
             "material4": "Slime_Concentrate",
-            "material4qty": 6
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "9": {
             "mora": 450000,
@@ -2056,7 +2691,11 @@
             "material3": "Philosophies_of_Diligence",
             "material3qty": 12,
             "material4": "Slime_Concentrate",
-            "material4qty": 9
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           },
           "10": {
             "mora": 700000,
@@ -2067,7 +2706,11 @@
             "material3": "Philosophies_of_Diligence",
             "material3qty": 16,
             "material4": "Slime_Concentrate",
-            "material4qty": 12
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
           }
         },
         "passives": {
@@ -2160,7 +2803,11 @@
           "material4": "Slime_Condensate",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "2": {
           "material2qty": 2,
@@ -2172,7 +2819,11 @@
           "material4": "Slime_Condensate",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
         },
         "3": {
           "material2qty": 4,
@@ -2184,7 +2835,11 @@
           "material4": "Slime_Secretions",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "4": {
           "material2qty": 8,
@@ -2196,7 +2851,11 @@
           "material4": "Slime_Secretions",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
         },
         "5": {
           "material2qty": 12,
@@ -2208,7 +2867,11 @@
           "material4": "Slime_Concentrate",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
         },
         "6": {
           "material2qty": 20,
@@ -2220,7 +2883,34 @@
           "material4": "Slime_Concentrate",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Jueyun_Chili"
+          "material3": "Jueyun_Chili",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "gem1": "Nagadus_Emerald_Sliver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Quelled_Creeper",
+          "local_speciality": "Jueyun_Chili"
+        },
+        "talents": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "mastery1": "Teachings_of_Diligence",
+          "mastery2": "Guide_to_Diligence",
+          "mastery3": "Philosophies_of_Diligence",
+          "weekly_boss_drop": "Dakas_Bell",
+          "crown": "Crown of Insight"
         }
       },
       "introduction": "A young adepti disciple who is generous and sincere. She is used to taking care of everyone around her. She trains under her master at Liyue Harbor and regularly travels between the mountains and the city. Although she does not say it outright, she prefers bustling city markets to the tranquil mountains.",

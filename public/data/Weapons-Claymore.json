@@ -13,7 +13,10 @@
           "material1": "Coral_Branch_of_a_Distant_Sea",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Old_Handguard",
@@ -23,7 +26,10 @@
           "material1": "Jeweled_Branch_of_a_Distant_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Kageuchi_Handguard",
@@ -33,7 +39,10 @@
           "material1": "Jeweled_Branch_of_a_Distant_Sea",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Kageuchi_Handguard",
@@ -43,7 +52,10 @@
           "material1": "Jade_Branch_of_a_Distant_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Famed_Handguard",
@@ -53,7 +65,10 @@
           "material1": "Jade_Branch_of_a_Distant_Sea",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Famed_Handguard",
@@ -63,7 +78,24 @@
           "material1": "Golden_Branch_of_a_Distant_Sea",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Old_Handguard",
+          "common2": "Kageuchi_Handguard",
+          "common3": "Famed_Handguard",
+          "forgery1": "Coral_Branch_of_a_Distant_Sea",
+          "forgery2": "Jeweled_Branch_of_a_Distant_Sea",
+          "forgery3": "Jade_Branch_of_a_Distant_Sea",
+          "forgery4": "Golden_Branch_of_a_Distant_Sea",
+          "elite1": "Concealed_Claw",
+          "elite2": "Concealed_Unguis",
+          "elite3": "Concealed_Talon"
         }
       },
       "image": "Weapons/Claymore/Akuoumaru.png",
@@ -94,7 +126,10 @@
           "material1": "Echo_of_Scorching_Might",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Faded_Red_Satin",
@@ -104,7 +139,10 @@
           "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Trimmed_Red_Silk",
@@ -114,7 +152,10 @@
           "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Trimmed_Red_Silk",
@@ -124,7 +165,10 @@
           "material1": "Dream_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Rich_Red_Brocade",
@@ -134,7 +178,10 @@
           "material1": "Dream_of_Scorching_Might",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Rich_Red_Brocade",
@@ -144,7 +191,24 @@
           "material1": "Olden_Days_of_Scorching_Might",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "forgery1": "Echo_of_Scorching_Might",
+          "forgery2": "Remnant_Glow_of_Scorching_Might",
+          "forgery3": "Dream_of_Scorching_Might",
+          "forgery4": "Olden_Days_of_Scorching_Might",
+          "elite1": "Desiccated_Shell",
+          "elite2": "Sturdy_Shell",
+          "elite3": "Marked_Shell"
         }
       },
       "image": "Weapons/Claymore/Beacon_of_the_Reed_Sea.png",
@@ -175,7 +239,10 @@
           "material1": "Mist_Veiled_Lead_Elixir",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Recruit_Insignia",
@@ -185,7 +252,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sergeant_Insignia",
@@ -195,7 +265,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sergeant_Insignia",
@@ -205,7 +278,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Lieutenant_Insignia",
@@ -215,7 +291,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Lieutenant_Insignia",
@@ -225,7 +304,24 @@
           "material1": "Mist_Veiled_Primo_Elixir",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Recruit_Insignia",
+          "common2": "Sergeant_Insignia",
+          "common3": "Lieutenant_Insignia",
+          "forgery1": "Mist_Veiled_Lead_Elixir",
+          "forgery2": "Mist_Veiled_Mercury_Elixir",
+          "forgery3": "Mist_Veiled_Gold_Elixir",
+          "forgery4": "Mist_Veiled_Primo_Elixir",
+          "elite1": "Mist_Grass_Pollen",
+          "elite2": "Mist_Grass",
+          "elite3": "Mist_Grass_Wick"
         }
       },
       "image": "Weapons/Claymore/Blackcliff_Slasher.png",
@@ -256,7 +352,10 @@
           "material1": "Boreal_Wolf_Milk_Tooth",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Firm_Arrowhead",
@@ -266,7 +365,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sharp_Arrowhead",
@@ -276,7 +378,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sharp_Arrowhead",
@@ -286,7 +391,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Weathered_Arrowhead",
@@ -296,7 +404,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Weathered_Arrowhead",
@@ -306,7 +417,24 @@
           "material1": "Boreal_Wolf_Nostalgia",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "forgery1": "Boreal_Wolf_Milk_Tooth",
+          "forgery2": "Boreal_Wolf_Cracked_Tooth",
+          "forgery3": "Boreal_Wolf_Broken_Fang",
+          "forgery4": "Boreal_Wolf_Nostalgia",
+          "elite1": "Dead_Ley_Line_Branch",
+          "elite2": "Dead_Ley_Line_Leaves",
+          "elite3": "Ley_Line_Sprouts"
         }
       },
       "image": "Weapons/Claymore/Bloodtainted_Greatsword.png",
@@ -336,7 +464,10 @@
           "material1": "Mist_Veiled_Lead_Elixir",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Damaged_Mask",
@@ -346,7 +477,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Stained_Mask",
@@ -356,7 +490,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Stained_Mask",
@@ -366,7 +503,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Ominous_Mask",
@@ -376,7 +516,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Ominous_Mask",
@@ -386,7 +529,24 @@
           "material1": "Mist_Veiled_Primo_Elixir",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Damaged_Mask",
+          "common2": "Stained_Mask",
+          "common3": "Ominous_Mask",
+          "forgery1": "Mist_Veiled_Lead_Elixir",
+          "forgery2": "Mist_Veiled_Mercury_Elixir",
+          "forgery3": "Mist_Veiled_Gold_Elixir",
+          "forgery4": "Mist_Veiled_Primo_Elixir",
+          "elite1": "Mist_Grass_Pollen",
+          "elite2": "Mist_Grass",
+          "elite3": "Mist_Grass_Wick"
         }
       },
       "image": "Weapons/Claymore/Debate_Club.png",
@@ -417,7 +577,10 @@
           "material1": "Fetters_of_the_Dandelion_Gladiator",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Recruit_Insignia",
@@ -427,7 +590,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sergeant_Insignia",
@@ -437,7 +603,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sergeant_Insignia",
@@ -447,7 +616,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Lieutenant_Insignia",
@@ -457,7 +629,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Lieutenant_Insignia",
@@ -467,7 +642,24 @@
           "material1": "Dream_of_the_Dandelion_Gladiator",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Recruit_Insignia",
+          "common2": "Sergeant_Insignia",
+          "common3": "Lieutenant_Insignia",
+          "forgery1": "Fetters_of_the_Dandelion_Gladiator",
+          "forgery2": "Chains_of_the_Dandelion_Gladiator",
+          "forgery3": "Shackles_of_the_Dandelion_Gladiator",
+          "forgery4": "Dream_of_the_Dandelion_Gladiator",
+          "elite1": "Chaos_Device",
+          "elite2": "Chaos_Circuit",
+          "elite3": "Chaos_Core"
         }
       },
       "image": "Weapons/Claymore/Favonius_Greatsword.png",
@@ -497,7 +689,10 @@
           "material1": "Tile_of_Decarabian_Tower",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Whopperflower_Nectar",
@@ -507,7 +702,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Shimmering_Nectar",
@@ -517,7 +715,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Shimmering_Nectar",
@@ -527,7 +728,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Energy_Nectar",
@@ -537,7 +741,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Energy_Nectar",
@@ -547,7 +754,24 @@
           "material1": "Scattered_Piece_of_Decarabian_Dream",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Whopperflower_Nectar",
+          "common2": "Shimmering_Nectar",
+          "common3": "Energy_Nectar",
+          "forgery1": "Tile_of_Decarabian_Tower",
+          "forgery2": "Debris_of_Decarabian_City",
+          "forgery3": "Fragment_of_Decarabian_Epic",
+          "forgery4": "Scattered_Piece_of_Decarabian_Dream",
+          "elite1": "Heavy_Horn",
+          "elite2": "Black_Bronze_Horn",
+          "elite3": "Black_Crystal_Horn"
         }
       },
       "image": "Weapons/Claymore/Ferrous_Shadow.png",
@@ -578,7 +802,10 @@
           "material1": "Copper_Talisman_of_the_Forest_Dew",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Faded_Red_Satin",
@@ -588,7 +815,10 @@
           "material1": "Iron_Talisman_of_the_Forest_Dew",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Trimmed_Red_Silk",
@@ -598,7 +828,10 @@
           "material1": "Iron_Talisman_of_the_Forest_Dew",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Trimmed_Red_Silk",
@@ -608,7 +841,10 @@
           "material1": "Silver_Talisman_of_the_Forest_Dew",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Rich_Red_Brocade",
@@ -618,7 +854,10 @@
           "material1": "Silver_Talisman_of_the_Forest_Dew",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Rich_Red_Brocade",
@@ -628,7 +867,24 @@
           "material1": "Golden_Talisman_of_the_Forest_Dew",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "forgery1": "Copper_Talisman_of_the_Forest_Dew",
+          "forgery2": "Iron_Talisman_of_the_Forest_Dew",
+          "forgery3": "Silver_Talisman_of_the_Forest_Dew",
+          "forgery4": "Golden_Talisman_of_the_Forest_Dew",
+          "elite1": "Chaos_Storage",
+          "elite2": "Chaos_Module",
+          "elite3": "Chaos_Bolt"
         }
       },
       "image": "Weapons/Claymore/Forest_Regalia.png",
@@ -659,7 +915,10 @@
           "material1": "Narukamis_Wisdom",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Old_Handguard",
@@ -669,7 +928,10 @@
           "material1": "Narukamis_Joy",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Kageuchi_Handguard",
@@ -679,7 +941,10 @@
           "material1": "Narukamis_Joy",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Kageuchi_Handguard",
@@ -689,7 +954,10 @@
           "material1": "Narukamis_Affection",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Famed_Handguard",
@@ -699,7 +967,10 @@
           "material1": "Narukamis_Affection",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Famed_Handguard",
@@ -709,7 +980,24 @@
           "material1": "Narukamis_Valor",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Old_Handguard",
+          "common2": "Kageuchi_Handguard",
+          "common3": "Famed_Handguard",
+          "forgery1": "Narukamis_Wisdom",
+          "forgery2": "Narukamis_Joy",
+          "forgery3": "Narukamis_Affection",
+          "forgery4": "Narukamis_Valor",
+          "elite1": "Chaos_Gear",
+          "elite2": "Chaos_Axis",
+          "elite3": "Chaos_Oculus"
         }
       },
       "image": "Weapons/Claymore/Katsuragikiri_Nagamasa.png",
@@ -740,7 +1028,10 @@
           "material1": "Luminous_Sands_from_Guyun",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Firm_Arrowhead",
@@ -750,7 +1041,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sharp_Arrowhead",
@@ -760,7 +1054,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sharp_Arrowhead",
@@ -770,7 +1067,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Weathered_Arrowhead",
@@ -780,7 +1080,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Weathered_Arrowhead",
@@ -790,7 +1093,24 @@
           "material1": "Divine_Body_from_Guyun",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "forgery1": "Luminous_Sands_from_Guyun",
+          "forgery2": "Lustrous_Stone_from_Guyun",
+          "forgery3": "Relic_from_Guyun",
+          "forgery4": "Divine_Body_from_Guyun",
+          "elite1": "Hunter_Sacrificial_Knife",
+          "elite2": "Agent_Sacrificial_Knife",
+          "elite3": "Inspector_Sacrificial_Knife"
         }
       },
       "image": "Weapons/Claymore/Lithic_Blade.png",
@@ -820,7 +1140,10 @@
           "material1": "Grain_of_Aerosiderite",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -830,7 +1153,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -840,7 +1166,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -850,7 +1179,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -860,7 +1192,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -870,7 +1205,24 @@
           "material1": "Chunk_of_Aerosiderite",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Grain_of_Aerosiderite",
+          "forgery2": "Piece_of_Aerosiderite",
+          "forgery3": "Bit_of_Aerosiderite",
+          "forgery4": "Chunk_of_Aerosiderite",
+          "elite1": "Fragile_Bone_Shard",
+          "elite2": "Sturdy_Bone_Shard",
+          "elite3": "Fossilized_Bone_Shard"
         }
       },
       "image": "Weapons/Claymore/Luxurious_Sea-Lord.png",
@@ -901,7 +1253,10 @@
           "material1": "Fetters_of_the_Dandelion_Gladiator",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Spectral_Husk",
@@ -911,7 +1266,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Spectral_Heart",
@@ -921,7 +1279,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Spectral_Heart",
@@ -931,7 +1292,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Spectral_Nucleus",
@@ -941,7 +1305,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Spectral_Nucleus",
@@ -951,7 +1318,24 @@
           "material1": "Dream_of_the_Dandelion_Gladiator",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Spectral_Husk",
+          "common2": "Spectral_Heart",
+          "common3": "Spectral_Nucleus",
+          "forgery1": "Fetters_of_the_Dandelion_Gladiator",
+          "forgery2": "Chains_of_the_Dandelion_Gladiator",
+          "forgery3": "Shackles_of_the_Dandelion_Gladiator",
+          "forgery4": "Dream_of_the_Dandelion_Gladiator",
+          "elite1": "Desiccated_Shell",
+          "elite2": "Sturdy_Shell",
+          "elite3": "Marked_Shell"
         }
       },
       "image": "Weapons/Claymore/Mailed_Flower.png",
@@ -981,7 +1365,10 @@
           "material1": "Echo_of_Scorching_Might",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Treasure_Hoarder_Insignia",
@@ -991,7 +1378,10 @@
           "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Silver_Raven_Insignia",
@@ -1001,7 +1391,10 @@
           "material1": "Remnant_Glow_of_Scorching_Might",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Silver_Raven_Insignia",
@@ -1011,7 +1404,10 @@
           "material1": "Dream_of_Scorching_Might",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Golden_Raven_Insignia",
@@ -1021,7 +1417,10 @@
           "material1": "Dream_of_Scorching_Might",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Golden_Raven_Insignia",
@@ -1031,7 +1430,24 @@
           "material1": "Olden_Days_of_Scorching_Might",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Treasure_Hoarder_Insignia",
+          "common2": "Silver_Raven_Insignia",
+          "common3": "Golden_Raven_Insignia",
+          "forgery1": "Echo_of_Scorching_Might",
+          "forgery2": "Remnant_Glow_of_Scorching_Might",
+          "forgery3": "Dream_of_Scorching_Might",
+          "forgery4": "Olden_Days_of_Scorching_Might",
+          "elite1": "Chaos_Storage",
+          "elite2": "Chaos_Module",
+          "elite3": "Chaos_Bolt"
         }
       },
       "image": "Weapons/Claymore/Makhaira_Aquamarine.png",
@@ -1062,7 +1478,10 @@
           "material1": "Boreal_Wolf_Milk_Tooth",
           "material2qty": 1,
           "material1qty": 1,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -1072,7 +1491,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 5,
           "material1qty": 1,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -1082,7 +1504,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -1092,7 +1517,21 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 5,
           "material1qty": 1,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "forgery1": "Boreal_Wolf_Milk_Tooth",
+          "forgery2": "Boreal_Wolf_Cracked_Tooth",
+          "forgery3": "Boreal_Wolf_Broken_Fang",
+          "elite1": "Dead_Ley_Line_Branch",
+          "elite2": "Dead_Ley_Line_Leaves"
         }
       },
       "image": "Weapons/Claymore/Old_Merc_Pal.png",
@@ -1123,7 +1562,10 @@
           "material1": "Broken_Goblet_of_the_Pristine_Sea",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Meshing_Gear",
@@ -1133,7 +1575,10 @@
           "material1": "Wine_Goblet_of_the_Pristine_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Mechanical_Spur_Gear",
@@ -1143,7 +1588,10 @@
           "material1": "Wine_Goblet_of_the_Pristine_Sea",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Mechanical_Spur_Gear",
@@ -1153,7 +1601,10 @@
           "material1": "Silver_Goblet_of_the_Pristine_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Artificed_Dynamic_Gear",
@@ -1163,7 +1614,10 @@
           "material1": "Silver_Goblet_of_the_Pristine_Sea",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Artificed_Dynamic_Gear",
@@ -1173,7 +1627,24 @@
           "material1": "Golden_Goblet_of_the_Pristine_Sea",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "forgery1": "Broken_Goblet_of_the_Pristine_Sea",
+          "forgery2": "Wine_Goblet_of_the_Pristine_Sea",
+          "forgery3": "Silver_Goblet_of_the_Pristine_Sea",
+          "forgery4": "Golden_Goblet_of_the_Pristine_Sea",
+          "elite1": "Rift_Core",
+          "elite2": "Foreign_Synapse",
+          "elite3": "Alien_Life_Core"
         }
       },
       "image": "Weapons/Claymore/Weapon_Portable_Power_Saw.png",
@@ -1204,7 +1675,10 @@
           "material1": "Grain_of_Aerosiderite",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Recruit_Insignia",
@@ -1214,7 +1688,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sergeant_Insignia",
@@ -1224,7 +1701,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sergeant_Insignia",
@@ -1234,7 +1714,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Lieutenant_Insignia",
@@ -1244,7 +1727,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Lieutenant_Insignia",
@@ -1254,7 +1740,24 @@
           "material1": "Chunk_of_Aerosiderite",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Recruit_Insignia",
+          "common2": "Sergeant_Insignia",
+          "common3": "Lieutenant_Insignia",
+          "forgery1": "Grain_of_Aerosiderite",
+          "forgery2": "Piece_of_Aerosiderite",
+          "forgery3": "Bit_of_Aerosiderite",
+          "forgery4": "Chunk_of_Aerosiderite",
+          "elite1": "Fragile_Bone_Shard",
+          "elite2": "Sturdy_Bone_Shard",
+          "elite3": "Fossilized_Bone_Shard"
         }
       },
       "image": null,
@@ -1285,7 +1788,10 @@
           "material1": "Grain_of_Aerosiderite",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Damaged_Mask",
@@ -1295,7 +1801,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Stained_Mask",
@@ -1305,7 +1814,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Stained_Mask",
@@ -1315,7 +1827,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Ominous_Mask",
@@ -1325,7 +1840,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Ominous_Mask",
@@ -1335,7 +1853,24 @@
           "material1": "Chunk_of_Aerosiderite",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Damaged_Mask",
+          "common2": "Stained_Mask",
+          "common3": "Ominous_Mask",
+          "forgery1": "Grain_of_Aerosiderite",
+          "forgery2": "Piece_of_Aerosiderite",
+          "forgery3": "Bit_of_Aerosiderite",
+          "forgery4": "Chunk_of_Aerosiderite",
+          "elite1": "Fragile_Bone_Shard",
+          "elite2": "Sturdy_Bone_Shard",
+          "elite3": "Fossilized_Bone_Shard"
         }
       },
       "image": "Weapons/Claymore/Prototype_Aminus.png",
@@ -1366,7 +1901,10 @@
           "material1": "Luminous_Sands_from_Guyun",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Divining_Scroll",
@@ -1376,7 +1914,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sealed_Scroll",
@@ -1386,7 +1927,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sealed_Scroll",
@@ -1396,7 +1940,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Forbidden_Curse_Scroll",
@@ -1406,7 +1953,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Forbidden_Curse_Scroll",
@@ -1416,7 +1966,24 @@
           "material1": "Divine_Body_from_Guyun",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Divining_Scroll",
+          "common2": "Sealed_Scroll",
+          "common3": "Forbidden_Curse_Scroll",
+          "forgery1": "Luminous_Sands_from_Guyun",
+          "forgery2": "Lustrous_Stone_from_Guyun",
+          "forgery3": "Relic_from_Guyun",
+          "forgery4": "Divine_Body_from_Guyun",
+          "elite1": "Hunter_Sacrificial_Knife",
+          "elite2": "Agent_Sacrificial_Knife",
+          "elite3": "Inspector_Sacrificial_Knife"
         }
       },
       "image": "Weapons/Claymore/Quartz.png",
@@ -1447,7 +2014,10 @@
           "material1": "Mist_Veiled_Lead_Elixir",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Divining_Scroll",
@@ -1457,7 +2027,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sealed_Scroll",
@@ -1467,7 +2040,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sealed_Scroll",
@@ -1477,7 +2053,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Forbidden_Curse_Scroll",
@@ -1487,7 +2066,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Forbidden_Curse_Scroll",
@@ -1497,7 +2079,24 @@
           "material1": "Mist_Veiled_Primo_Elixir",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Divining_Scroll",
+          "common2": "Sealed_Scroll",
+          "common3": "Forbidden_Curse_Scroll",
+          "forgery1": "Mist_Veiled_Lead_Elixir",
+          "forgery2": "Mist_Veiled_Mercury_Elixir",
+          "forgery3": "Mist_Veiled_Gold_Elixir",
+          "forgery4": "Mist_Veiled_Primo_Elixir",
+          "elite1": "Mist_Grass_Pollen",
+          "elite2": "Mist_Grass",
+          "elite3": "Mist_Grass_Wick"
         }
       },
       "image": "Weapons/Claymore/Rainslasher.png",
@@ -1527,7 +2126,10 @@
           "material1": "Narukamis_Wisdom",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Old_Handguard",
@@ -1537,7 +2139,10 @@
           "material1": "Narukamis_Joy",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Kageuchi_Handguard",
@@ -1547,7 +2152,10 @@
           "material1": "Narukamis_Joy",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Kageuchi_Handguard",
@@ -1557,7 +2165,10 @@
           "material1": "Narukamis_Affection",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Famed_Handguard",
@@ -1567,7 +2178,10 @@
           "material1": "Narukamis_Affection",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Famed_Handguard",
@@ -1577,7 +2191,24 @@
           "material1": "Narukamis_Valor",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Old_Handguard",
+          "common2": "Kageuchi_Handguard",
+          "common3": "Famed_Handguard",
+          "forgery1": "Narukamis_Wisdom",
+          "forgery2": "Narukamis_Joy",
+          "forgery3": "Narukamis_Affection",
+          "forgery4": "Narukamis_Valor",
+          "elite1": "Concealed_Claw",
+          "elite2": "Concealed_Unguis",
+          "elite3": "Concealed_Talon"
         }
       },
       "image": "Weapons/Claymore/Redhorn_Stonethresher.png",
@@ -1608,7 +2239,10 @@
           "material1": "Fetters_of_the_Dandelion_Gladiator",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -1618,7 +2252,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -1628,7 +2265,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -1638,7 +2278,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -1648,7 +2291,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -1658,7 +2304,24 @@
           "material1": "Dream_of_the_Dandelion_Gladiator",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Fetters_of_the_Dandelion_Gladiator",
+          "forgery2": "Chains_of_the_Dandelion_Gladiator",
+          "forgery3": "Shackles_of_the_Dandelion_Gladiator",
+          "forgery4": "Dream_of_the_Dandelion_Gladiator",
+          "elite1": "Chaos_Device",
+          "elite2": "Chaos_Circuit",
+          "elite3": "Chaos_Core"
         }
       },
       "image": "Weapons/Claymore/Royal_Greatsword.png",
@@ -1689,7 +2352,10 @@
           "material1": "Boreal_Wolf_Milk_Tooth",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Firm_Arrowhead",
@@ -1699,7 +2365,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sharp_Arrowhead",
@@ -1709,7 +2378,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sharp_Arrowhead",
@@ -1719,7 +2391,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Weathered_Arrowhead",
@@ -1729,7 +2404,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Weathered_Arrowhead",
@@ -1739,7 +2417,24 @@
           "material1": "Boreal_Wolf_Nostalgia",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "forgery1": "Boreal_Wolf_Milk_Tooth",
+          "forgery2": "Boreal_Wolf_Cracked_Tooth",
+          "forgery3": "Boreal_Wolf_Broken_Fang",
+          "forgery4": "Boreal_Wolf_Nostalgia",
+          "elite1": "Dead_Ley_Line_Branch",
+          "elite2": "Dead_Ley_Line_Leaves",
+          "elite3": "Ley_Line_Sprouts"
         }
       },
       "image": "Weapons/Claymore/Sacrificial_Greatsword.png",
@@ -1769,7 +2464,10 @@
           "material1": "Grain_of_Aerosiderite",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Whopperflower_Nectar",
@@ -1779,7 +2477,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Shimmering_Nectar",
@@ -1789,7 +2490,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Shimmering_Nectar",
@@ -1799,7 +2503,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Energy_Nectar",
@@ -1809,7 +2516,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Energy_Nectar",
@@ -1819,7 +2529,24 @@
           "material1": "Chunk_of_Aerosiderite",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Whopperflower_Nectar",
+          "common2": "Shimmering_Nectar",
+          "common3": "Energy_Nectar",
+          "forgery1": "Grain_of_Aerosiderite",
+          "forgery2": "Piece_of_Aerosiderite",
+          "forgery3": "Bit_of_Aerosiderite",
+          "forgery4": "Chunk_of_Aerosiderite",
+          "elite1": "Fragile_Bone_Shard",
+          "elite2": "Sturdy_Bone_Shard",
+          "elite3": "Fossilized_Bone_Shard"
         }
       },
       "image": "Weapons/Claymore/Serpent_Spine.png",
@@ -1850,7 +2577,10 @@
           "material1": "Grain_of_Aerosiderite",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Treasure_Hoarder_Insignia",
@@ -1860,7 +2590,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Silver_Raven_Insignia",
@@ -1870,7 +2603,10 @@
           "material1": "Piece_of_Aerosiderite",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Silver_Raven_Insignia",
@@ -1880,7 +2616,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Golden_Raven_Insignia",
@@ -1890,7 +2629,10 @@
           "material1": "Bit_of_Aerosiderite",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Golden_Raven_Insignia",
@@ -1900,7 +2642,24 @@
           "material1": "Chunk_of_Aerosiderite",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Treasure_Hoarder_Insignia",
+          "common2": "Silver_Raven_Insignia",
+          "common3": "Golden_Raven_Insignia",
+          "forgery1": "Grain_of_Aerosiderite",
+          "forgery2": "Piece_of_Aerosiderite",
+          "forgery3": "Bit_of_Aerosiderite",
+          "forgery4": "Chunk_of_Aerosiderite",
+          "elite1": "Fragile_Bone_Shard",
+          "elite2": "Sturdy_Bone_Shard",
+          "elite3": "Fossilized_Bone_Shard"
         }
       },
       "image": "Weapons/Claymore/Skyrider_Greatsword.png",
@@ -1931,7 +2690,10 @@
           "material1": "Boreal_Wolf_Milk_Tooth",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -1941,7 +2703,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -1951,7 +2716,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -1961,7 +2729,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -1971,7 +2742,10 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -1981,7 +2755,24 @@
           "material1": "Boreal_Wolf_Nostalgia",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Boreal_Wolf_Milk_Tooth",
+          "forgery2": "Boreal_Wolf_Cracked_Tooth",
+          "forgery3": "Boreal_Wolf_Broken_Fang",
+          "forgery4": "Boreal_Wolf_Nostalgia",
+          "elite1": "Dead_Ley_Line_Branch",
+          "elite2": "Dead_Ley_Line_Leaves",
+          "elite3": "Ley_Line_Sprouts"
         }
       },
       "image": "Weapons/Claymore/Skyward_Pride.png",
@@ -2012,7 +2803,10 @@
           "material1": "Tile_of_Decarabian_Tower",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -2022,7 +2816,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -2032,7 +2829,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -2042,7 +2842,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -2052,7 +2855,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -2062,7 +2868,24 @@
           "material1": "Scattered_Piece_of_Decarabian_Dream",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Tile_of_Decarabian_Tower",
+          "forgery2": "Debris_of_Decarabian_City",
+          "forgery3": "Fragment_of_Decarabian_Epic",
+          "forgery4": "Scattered_Piece_of_Decarabian_Dream",
+          "elite1": "Heavy_Horn",
+          "elite2": "Black_Bronze_Horn",
+          "elite3": "Black_Crystal_Horn"
         }
       },
       "image": "Weapons/Claymore/Snow-Tombed_Starsilver.png",
@@ -2093,7 +2916,10 @@
           "material1": "Tile_of_Decarabian_Tower",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Damaged_Mask",
@@ -2103,7 +2929,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Stained_Mask",
@@ -2113,7 +2942,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Stained_Mask",
@@ -2123,7 +2955,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Ominous_Mask",
@@ -2133,7 +2968,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Ominous_Mask",
@@ -2143,7 +2981,24 @@
           "material1": "Scattered_Piece_of_Decarabian_Dream",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Damaged_Mask",
+          "common2": "Stained_Mask",
+          "common3": "Ominous_Mask",
+          "forgery1": "Tile_of_Decarabian_Tower",
+          "forgery2": "Debris_of_Decarabian_City",
+          "forgery3": "Fragment_of_Decarabian_Epic",
+          "forgery4": "Scattered_Piece_of_Decarabian_Dream",
+          "elite1": "Heavy_Horn",
+          "elite2": "Black_Bronze_Horn",
+          "elite3": "Black_Crystal_Horn"
         }
       },
       "image": "Weapons/Claymore/Song_of_Broken_Pines.png",
@@ -2174,7 +3029,10 @@
           "material1": "Oasis_Gardens_Reminiscence",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -2184,7 +3042,10 @@
           "material1": "Oasis_Gardens_Kindness",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -2194,7 +3055,10 @@
           "material1": "Oasis_Gardens_Kindness",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -2204,7 +3068,10 @@
           "material1": "Oasis_Gardens_Mourning",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -2214,7 +3081,10 @@
           "material1": "Oasis_Gardens_Mourning",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -2224,7 +3094,24 @@
           "material1": "Oasis_Gardens_Truth",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Oasis_Gardens_Reminiscence",
+          "forgery2": "Oasis_Gardens_Kindness",
+          "forgery3": "Oasis_Gardens_Mourning",
+          "forgery4": "Oasis_Gardens_Truth",
+          "elite1": "Desiccated_Shell",
+          "elite2": "Sturdy_Shell",
+          "elite3": "Marked_Shell"
         }
       },
       "image": "Weapons/Claymore/Weapon_Talking_Stick.png",
@@ -2255,7 +3142,10 @@
           "material1": "Tile_of_Decarabian_Tower",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Whopperflower_Nectar",
@@ -2265,7 +3155,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Shimmering_Nectar",
@@ -2275,7 +3168,10 @@
           "material1": "Debris_of_Decarabian_City",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Shimmering_Nectar",
@@ -2285,7 +3181,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Energy_Nectar",
@@ -2295,7 +3194,10 @@
           "material1": "Fragment_of_Decarabian_Epic",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Energy_Nectar",
@@ -2305,7 +3207,24 @@
           "material1": "Scattered_Piece_of_Decarabian_Dream",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Whopperflower_Nectar",
+          "common2": "Shimmering_Nectar",
+          "common3": "Energy_Nectar",
+          "forgery1": "Tile_of_Decarabian_Tower",
+          "forgery2": "Debris_of_Decarabian_City",
+          "forgery3": "Fragment_of_Decarabian_Epic",
+          "forgery4": "Scattered_Piece_of_Decarabian_Dream",
+          "elite1": "Heavy_Horn",
+          "elite2": "Black_Bronze_Horn",
+          "elite3": "Black_Crystal_Horn"
         }
       },
       "image": "Weapons/Claymore/The_Bell.png",
@@ -2336,7 +3255,10 @@
           "material1": "Mist_Veiled_Lead_Elixir",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Treasure_Hoarder_Insignia",
@@ -2346,7 +3268,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Silver_Raven_Insignia",
@@ -2356,7 +3281,10 @@
           "material1": "Mist_Veiled_Mercury_Elixir",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Silver_Raven_Insignia",
@@ -2366,7 +3294,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Golden_Raven_Insignia",
@@ -2376,7 +3307,10 @@
           "material1": "Mist_Veiled_Gold_Elixir",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Golden_Raven_Insignia",
@@ -2386,7 +3320,24 @@
           "material1": "Mist_Veiled_Primo_Elixir",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Treasure_Hoarder_Insignia",
+          "common2": "Silver_Raven_Insignia",
+          "common3": "Golden_Raven_Insignia",
+          "forgery1": "Mist_Veiled_Lead_Elixir",
+          "forgery2": "Mist_Veiled_Mercury_Elixir",
+          "forgery3": "Mist_Veiled_Gold_Elixir",
+          "forgery4": "Mist_Veiled_Primo_Elixir",
+          "elite1": "Mist_Grass_Pollen",
+          "elite2": "Mist_Grass",
+          "elite3": "Mist_Grass_Wick"
         }
       },
       "image": "Weapons/Claymore/The_Unforged.png",
@@ -2417,7 +3368,10 @@
           "material1": "Broken_Goblet_of_the_Pristine_Sea",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Meshing_Gear",
@@ -2427,7 +3381,10 @@
           "material1": "Wine_Goblet_of_the_Pristine_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Mechanical_Spur_Gear",
@@ -2437,7 +3394,10 @@
           "material1": "Wine_Goblet_of_the_Pristine_Sea",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Mechanical_Spur_Gear",
@@ -2447,7 +3407,10 @@
           "material1": "Silver_Goblet_of_the_Pristine_Sea",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Artificed_Dynamic_Gear",
@@ -2457,7 +3420,10 @@
           "material1": "Silver_Goblet_of_the_Pristine_Sea",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Artificed_Dynamic_Gear",
@@ -2467,7 +3433,24 @@
           "material1": "Golden_Goblet_of_the_Pristine_Sea",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "forgery1": "Broken_Goblet_of_the_Pristine_Sea",
+          "forgery2": "Wine_Goblet_of_the_Pristine_Sea",
+          "forgery3": "Silver_Goblet_of_the_Pristine_Sea",
+          "forgery4": "Golden_Goblet_of_the_Pristine_Sea",
+          "elite1": "Rift_Core",
+          "elite2": "Foreign_Synapse",
+          "elite3": "Alien_Life_Core"
         }
       },
       "image": "Weapons/Claymore/Weapon_Tidal_Shadow.png",
@@ -2498,7 +3481,10 @@
           "material1": "Boreal_Wolf_Milk_Tooth",
           "material2qty": 1,
           "material1qty": 1,
-          "mora": 0
+          "mora": 0,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -2508,7 +3494,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 4,
           "material1qty": 1,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -2518,7 +3507,10 @@
           "material1": "Boreal_Wolf_Cracked_Tooth",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -2528,7 +3520,21 @@
           "material1": "Boreal_Wolf_Broken_Fang",
           "material2qty": 4,
           "material1qty": 1,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "forgery1": "Boreal_Wolf_Milk_Tooth",
+          "forgery2": "Boreal_Wolf_Cracked_Tooth",
+          "forgery3": "Boreal_Wolf_Broken_Fang",
+          "elite1": "Dead_Ley_Line_Branch",
+          "elite2": "Dead_Ley_Line_Leaves"
         }
       },
       "image": "Weapons/Claymore/Waster_Greatsword.png",
@@ -2558,7 +3564,10 @@
           "material1": "Fetters_of_the_Dandelion_Gladiator",
           "material2qty": 2,
           "material1qty": 2,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Slime_Condensate",
@@ -2568,7 +3577,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Slime_Secretions",
@@ -2578,7 +3590,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 4,
           "material1qty": 4,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Slime_Secretions",
@@ -2588,7 +3603,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 8,
           "material1qty": 2,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Slime_Concentrate",
@@ -2598,7 +3616,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 6,
           "material1qty": 4,
-          "mora": 25000
+          "mora": 25000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Slime_Concentrate",
@@ -2608,7 +3629,24 @@
           "material1": "Dream_of_the_Dandelion_Gladiator",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "forgery1": "Fetters_of_the_Dandelion_Gladiator",
+          "forgery2": "Chains_of_the_Dandelion_Gladiator",
+          "forgery3": "Shackles_of_the_Dandelion_Gladiator",
+          "forgery4": "Dream_of_the_Dandelion_Gladiator",
+          "elite1": "Chaos_Device",
+          "elite2": "Chaos_Circuit",
+          "elite3": "Chaos_Core"
         }
       },
       "image": "Weapons/Claymore/White_Iron_Greatsword.png",
@@ -2639,7 +3677,10 @@
           "material1": "Luminous_Sands_from_Guyun",
           "material2qty": 3,
           "material1qty": 3,
-          "mora": 5000
+          "mora": 5000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Treasure_Hoarder_Insignia",
@@ -2649,7 +3690,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 15000
+          "mora": 15000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Silver_Raven_Insignia",
@@ -2659,7 +3703,10 @@
           "material1": "Lustrous_Stone_from_Guyun",
           "material2qty": 6,
           "material1qty": 6,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Silver_Raven_Insignia",
@@ -2669,7 +3716,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 12,
           "material1qty": 3,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Golden_Raven_Insignia",
@@ -2679,7 +3729,10 @@
           "material1": "Relic_from_Guyun",
           "material2qty": 9,
           "material1qty": 6,
-          "mora": 35000
+          "mora": 35000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Golden_Raven_Insignia",
@@ -2689,7 +3742,24 @@
           "material1": "Divine_Body_from_Guyun",
           "material2qty": 18,
           "material1qty": 4,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Treasure_Hoarder_Insignia",
+          "common2": "Silver_Raven_Insignia",
+          "common3": "Golden_Raven_Insignia",
+          "forgery1": "Luminous_Sands_from_Guyun",
+          "forgery2": "Lustrous_Stone_from_Guyun",
+          "forgery3": "Relic_from_Guyun",
+          "forgery4": "Divine_Body_from_Guyun",
+          "elite1": "Hunter_Sacrificial_Knife",
+          "elite2": "Agent_Sacrificial_Knife",
+          "elite3": "Inspector_Sacrificial_Knife"
         }
       },
       "image": "Weapons/Claymore/Whiteblind.png",
@@ -2719,7 +3789,10 @@
           "material1": "Fetters_of_the_Dandelion_Gladiator",
           "material2qty": 5,
           "material1qty": 5,
-          "mora": 10000
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
         },
         "2": {
           "material3": "Divining_Scroll",
@@ -2729,7 +3802,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 20000
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
         },
         "3": {
           "material3": "Sealed_Scroll",
@@ -2739,7 +3815,10 @@
           "material1": "Chains_of_the_Dandelion_Gladiator",
           "material2qty": 9,
           "material1qty": 9,
-          "mora": 30000
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
         },
         "4": {
           "material3": "Sealed_Scroll",
@@ -2749,7 +3828,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 18,
           "material1qty": 5,
-          "mora": 45000
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
         },
         "5": {
           "material3": "Forbidden_Curse_Scroll",
@@ -2759,7 +3841,10 @@
           "material1": "Shackles_of_the_Dandelion_Gladiator",
           "material2qty": 14,
           "material1qty": 9,
-          "mora": 55000
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
         },
         "6": {
           "material3": "Forbidden_Curse_Scroll",
@@ -2769,7 +3854,24 @@
           "material1": "Dream_of_the_Dandelion_Gladiator",
           "material2qty": 27,
           "material1qty": 6,
-          "mora": 65000
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Divining_Scroll",
+          "common2": "Sealed_Scroll",
+          "common3": "Forbidden_Curse_Scroll",
+          "forgery1": "Fetters_of_the_Dandelion_Gladiator",
+          "forgery2": "Chains_of_the_Dandelion_Gladiator",
+          "forgery3": "Shackles_of_the_Dandelion_Gladiator",
+          "forgery4": "Dream_of_the_Dandelion_Gladiator",
+          "elite1": "Chaos_Device",
+          "elite2": "Chaos_Circuit",
+          "elite3": "Chaos_Core"
         }
       },
       "image": "Weapons/Claymore/Wolf_Gravestone.png",
