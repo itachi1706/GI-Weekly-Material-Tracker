@@ -28,9 +28,13 @@
             "material3": "Teachings_of_Freedom",
             "material3qty": 3,
             "material4": "Divining_Scroll",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -39,9 +43,13 @@
             "material3": "Guide_to_Resistance",
             "material3qty": 2,
             "material4": "Sealed_Scroll",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -50,9 +58,13 @@
             "material3": "Guide_to_Ballad",
             "material3qty": 4,
             "material4": "Sealed_Scroll",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -61,9 +73,13 @@
             "material3": "Guide_to_Freedom",
             "material3qty": 6,
             "material4": "Sealed_Scroll",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -72,9 +88,13 @@
             "material3": "Guide_to_Resistance",
             "material3qty": 9,
             "material4": "Sealed_Scroll",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -83,9 +103,13 @@
             "material3": "Philosophies_of_Ballad",
             "material3qty": 4,
             "material4": "Forbidden_Curse_Scroll",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -94,9 +118,13 @@
             "material3": "Philosophies_of_Freedom",
             "material3qty": 6,
             "material4": "Forbidden_Curse_Scroll",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -105,9 +133,13 @@
             "material3": "Philosophies_of_Resistance",
             "material3qty": 12,
             "material4": "Forbidden_Curse_Scroll",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -116,9 +148,13 @@
             "material3": "Philosophies_of_Ballad",
             "material3qty": 16,
             "material4": "Forbidden_Curse_Scroll",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Slitting_Wind": {
             "name": "Slitting Wind",
@@ -202,10 +238,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -214,10 +254,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -226,10 +270,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -238,10 +286,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -250,10 +302,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -262,10 +318,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_anemo",
       "genshinggpath": "characters/Traveler(Anemo)",
       "element": "Anemo",
@@ -301,9 +384,13 @@
             "material3": "Teachings_of_Prosperity",
             "material3qty": 3,
             "material4": "Firm_Arrowhead",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -312,9 +399,13 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 2,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -323,9 +414,13 @@
             "material3": "Guide_to_Gold",
             "material3qty": 4,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -334,9 +429,13 @@
             "material3": "Guide_to_Prosperity",
             "material3qty": 6,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -345,9 +444,13 @@
             "material3": "Guide_to_Diligence",
             "material3qty": 9,
             "material4": "Sharp_Arrowhead",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -356,9 +459,13 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 4,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -367,9 +474,13 @@
             "material3": "Philosophies_of_Prosperity",
             "material3qty": 6,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -378,9 +489,13 @@
             "material3": "Philosophies_of_Diligence",
             "material3qty": 12,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -389,9 +504,13 @@
             "material3": "Philosophies_of_Gold",
             "material3qty": 16,
             "material4": "Weathered_Arrowhead",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Shattered_Darkrock": {
             "name": "Shattered Darkrock",
@@ -475,10 +594,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -487,10 +610,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -499,10 +626,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -511,10 +642,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -523,10 +658,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -535,10 +674,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_geo",
       "genshinggpath": "characters/Traveler(Geo)",
       "element": "Geo",
@@ -575,9 +741,13 @@
             "material3": "Teachings_of_Transience",
             "material3qty": 3,
             "material4": "Old_Handguard",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -586,9 +756,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 2,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -597,9 +771,13 @@
             "material3": "Guide_to_Light",
             "material3qty": 4,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -608,9 +786,13 @@
             "material3": "Guide_to_Transience",
             "material3qty": 6,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -619,9 +801,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 9,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -630,9 +816,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 4,
             "material4": "Famed_Handguard",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -641,9 +831,13 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 6,
             "material4": "Famed_Handguard",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -652,9 +846,13 @@
             "material3": "Philosophies_of_Elegance",
             "material3qty": 12,
             "material4": "Famed_Handguard",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -663,9 +861,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 16,
             "material4": "Famed_Handguard",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Thunderflash": {
             "name": "Thunderflash",
@@ -749,10 +951,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -761,10 +967,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -773,10 +983,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -785,10 +999,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -797,10 +1015,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -809,10 +1031,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_electro",
       "genshinggpath": "characters/Traveler(Electro)",
       "element": "Electro",
@@ -848,9 +1097,13 @@
             "material3": "Teachings_of_Admonition",
             "material3qty": 3,
             "material4": "Fungal_Spores",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -859,9 +1112,13 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 2,
             "material4": "Luminescent_Pollen",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -870,9 +1127,13 @@
             "material3": "Guide_to_Praxis",
             "material3qty": 4,
             "material4": "Luminescent_Pollen",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -881,9 +1142,13 @@
             "material3": "Guide_to_Admonition",
             "material3qty": 6,
             "material4": "Luminescent_Pollen",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -892,9 +1157,13 @@
             "material3": "Guide_to_Ingenuity",
             "material3qty": 9,
             "material4": "Luminescent_Pollen",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -903,9 +1172,13 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 4,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -914,9 +1187,13 @@
             "material3": "Philosophies_of_Admonition",
             "material3qty": 6,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -925,9 +1202,13 @@
             "material3": "Philosophies_of_Ingenuity",
             "material3qty": 12,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -936,9 +1217,13 @@
             "material3": "Philosophies_of_Praxis",
             "material3qty": 16,
             "material4": "Crystalline_Cyst_Dust",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Verdant_Overgrowth": {
             "name": "Verdant Overgrowth",
@@ -1022,10 +1307,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -1034,10 +1323,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -1046,10 +1339,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -1058,10 +1355,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -1070,10 +1371,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -1082,10 +1387,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_dendro",
       "genshinggpath": "characters/traveler(dendro)",
       "element": "Dendro",
@@ -1119,9 +1451,13 @@
             "material3": "Teachings_of_Equity",
             "material3qty": 3,
             "material4": "Transoceanic_Pearl",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -1130,9 +1466,13 @@
             "material3": "Guide_to_Justice",
             "material3qty": 2,
             "material4": "Transoceanic_Chunk",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -1141,9 +1481,13 @@
             "material3": "Guide_to_Order",
             "material3qty": 4,
             "material4": "Transoceanic_Chunk",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -1152,9 +1496,13 @@
             "material3": "Guide_to_Equity",
             "material3qty": 6,
             "material4": "Transoceanic_Chunk",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -1163,9 +1511,13 @@
             "material3": "Guide_to_Justice",
             "material3qty": 9,
             "material4": "Transoceanic_Chunk",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -1174,9 +1526,13 @@
             "material3": "Philosophies_of_Order",
             "material3qty": 4,
             "material4": "Xenochromatic_Crystal",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -1185,9 +1541,13 @@
             "material3": "Philosophies_of_Equity",
             "material3qty": 6,
             "material4": "Xenochromatic_Crystal",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -1196,9 +1556,13 @@
             "material3": "Philosophies_of_Justice",
             "material3qty": 12,
             "material4": "Xenochromatic_Crystal",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -1207,9 +1571,13 @@
             "material3": "Philosophies_of_Order",
             "material3qty": 16,
             "material4": "Xenochromatic_Crystal",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Spotless_Waters": {
             "name": "Spotless Waters",
@@ -1293,10 +1661,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -1305,10 +1677,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -1317,10 +1693,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -1329,10 +1709,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -1341,10 +1725,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -1353,10 +1741,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_hydro",
       "genshinggpath": "characters/Traveler(Hydro)",
       "element": "Hydro",
@@ -1390,9 +1805,13 @@
             "material3": "Teachings_of_Transience",
             "material3qty": 3,
             "material4": "Old_Handguard",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -1401,9 +1820,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 2,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -1412,9 +1835,13 @@
             "material3": "Guide_to_Light",
             "material3qty": 4,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -1423,9 +1850,13 @@
             "material3": "Guide_to_Transience",
             "material3qty": 6,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -1434,9 +1865,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 9,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -1445,9 +1880,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 4,
             "material4": "Famed_Handguard",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -1456,9 +1895,13 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 6,
             "material4": "Famed_Handguard",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -1467,9 +1910,13 @@
             "material3": "Philosophies_of_Elegance",
             "material3qty": 12,
             "material4": "Famed_Handguard",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -1478,9 +1925,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 16,
             "material4": "Famed_Handguard",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Thunderflash": {
             "name": "Thunderflash",
@@ -1564,10 +2015,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -1576,10 +2031,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -1588,10 +2047,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -1600,10 +2063,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -1612,10 +2079,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -1624,10 +2095,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_pyro",
       "genshinggpath": "characters/Traveler(Pyro)",
       "element": "Pyro",
@@ -1661,9 +2159,13 @@
             "material3": "Teachings_of_Transience",
             "material3qty": 3,
             "material4": "Old_Handguard",
-            "material4qty": 6
-          },
-          "3": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery1",
+          "material4type": "common1"
+        },
+        "3": {
             "mora": 17500,
             "material1": null,
             "material1qty": 0,
@@ -1672,9 +2174,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 2,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 3
-          },
-          "4": {
+            "material4qty": 3,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "4": {
             "mora": 25000,
             "material1": null,
             "material1qty": 0,
@@ -1683,9 +2189,13 @@
             "material3": "Guide_to_Light",
             "material3qty": 4,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 4
-          },
-          "5": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "5": {
             "mora": 30000,
             "material1": null,
             "material1qty": 0,
@@ -1694,9 +2204,13 @@
             "material3": "Guide_to_Transience",
             "material3qty": 6,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 6
-          },
-          "6": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "6": {
             "mora": 37500,
             "material1": null,
             "material1qty": 0,
@@ -1705,9 +2219,13 @@
             "material3": "Guide_to_Elegance",
             "material3qty": 9,
             "material4": "Kageuchi_Handguard",
-            "material4qty": 9
-          },
-          "7": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": null,
+          "material3type": "mastery2",
+          "material4type": "common2"
+        },
+        "7": {
             "mora": 120000,
             "material1": null,
             "material1qty": 0,
@@ -1716,9 +2234,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 4,
             "material4": "Famed_Handguard",
-            "material4qty": 4
-          },
-          "8": {
+            "material4qty": 4,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "8": {
             "mora": 260000,
             "material1": null,
             "material1qty": 0,
@@ -1727,9 +2249,13 @@
             "material3": "Philosophies_of_Transience",
             "material3qty": 6,
             "material4": "Famed_Handguard",
-            "material4qty": 6
-          },
-          "9": {
+            "material4qty": 6,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "9": {
             "mora": 450000,
             "material1": null,
             "material1qty": 0,
@@ -1738,9 +2264,13 @@
             "material3": "Philosophies_of_Elegance",
             "material3qty": 12,
             "material4": "Famed_Handguard",
-            "material4qty": 9
-          },
-          "10": {
+            "material4qty": 9,
+          "material1type": null,
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        },
+        "10": {
             "mora": 700000,
             "material1": "Crown_of_Insight",
             "material1qty": 1,
@@ -1749,9 +2279,13 @@
             "material3": "Philosophies_of_Light",
             "material3qty": 16,
             "material4": "Famed_Handguard",
-            "material4qty": 12
-          }
-        },
+            "material4qty": 12,
+          "material1type": "crown",
+          "material2type": "weeklyboss",
+          "material3type": "mastery3",
+          "material4type": "common3"
+        }
+      },
         "passives": {
           "Thunderflash": {
             "name": "Thunderflash",
@@ -1835,10 +2369,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 3,
           "material3qty": 3,
-          "material3": "Windwheel_Aster"
-        },
-        "2": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem1",
+        "material2type": null,
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "2": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 3,
           "mora": 40000,
@@ -1847,10 +2385,14 @@
           "material4": "Damaged_Mask",
           "material4qty": 15,
           "material3qty": 10,
-          "material3": "Windwheel_Aster"
-        },
-        "3": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common1"
+      },
+      "3": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Fragment",
           "material1qty": 6,
           "mora": 60000,
@@ -1859,10 +2401,14 @@
           "material4": "Stained_Mask",
           "material4qty": 12,
           "material3qty": 20,
-          "material3": "Windwheel_Aster"
-        },
-        "4": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem2",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "4": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 3,
           "mora": 80000,
@@ -1871,10 +2417,14 @@
           "material4": "Stained_Mask",
           "material4qty": 18,
           "material3qty": 30,
-          "material3": "Windwheel_Aster"
-        },
-        "5": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common2"
+      },
+      "5": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Chunk",
           "material1qty": 6,
           "mora": 100000,
@@ -1883,10 +2433,14 @@
           "material4": "Ominous_Mask",
           "material4qty": 12,
           "material3qty": 45,
-          "material3": "Windwheel_Aster"
-        },
-        "6": {
-          "material2qty": 0,
+          "material3": "Windwheel_Aster",
+        "material1type": "gem3",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      },
+      "6": {
+        "material2qty": 0,
           "material1": "Brilliant_Diamond_Gemstone",
           "material1qty": 6,
           "mora": 120000,
@@ -1895,10 +2449,37 @@
           "material4": "Ominous_Mask",
           "material4qty": 24,
           "material3qty": 60,
-          "material3": "Windwheel_Aster"
-        }
+          "material3": "Windwheel_Aster",
+        "material1type": "gem4",
+        "material2type": "boss",
+        "material3type": "speciality",
+        "material4type": "common3"
+      }
+    },
+    "materials": {
+      "ascension": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "gem1": "Brilliant_Diamond_Silver",
+        "gem2": "Brilliant_Diamond_Fragment",
+        "gem3": "Brilliant_Diamond_Chunk",
+        "gem4": "Brilliant_Diamond_Gemstone",
+        "boss_drop": "BossDrop",
+        "local_speciality": "LocalSpeciality"
       },
-      "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
+      "talents": {
+        "common1": "Common_1",
+        "common2": "Common_2",
+        "common3": "Common_3",
+        "mastery1": "Mastery_1",
+        "mastery2": "Mastery_2",
+        "mastery3": "Mastery_3",
+        "weekly_boss_drop": "Weekly_Boss_Drop",
+        "crown": "Crown of Insight"
+      }
+    },
+    "introduction": "The Sustainer is dying, the Creator has yet to return. But the world won't burn again, because you will ascend to the seat of 「God」.",
       "paimonmoepath": "characters/traveler_cryo",
       "genshinggpath": "characters/Traveler(Cryo)",
       "element": "Cryo",
