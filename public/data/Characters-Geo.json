@@ -362,6 +362,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Albedo",
+      "hoyowiki": 47,
       "subCollection": {}
     },
     "Arataki_Itto": {
@@ -727,6 +728,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Arataki_Itto",
+      "hoyowiki": 36,
       "subCollection": {}
     },
     "Gorou": {
@@ -1091,6 +1093,369 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Gorou",
+      "hoyowiki": 5,
+      "subCollection": {}
+    },
+    "Navia": {
+      "image": "Characters/Geo/Navia.png",
+      "gender": "Female",
+      "birthday": "16/8",
+      "caption": "Helm of the Radiant Rose",
+      "titles": ["President, Leader, Boss, Commander-in-Chief of the Spina di Rosula"],
+      "name": "Navia",
+      "fullName": "Navia Caspar",
+      "description": "The current President of Spina di Rosula, who is lovely, dutiful, and a great boss.",
+      "nation": "Fontaine",
+      "weapon": "Claymore",
+      "rarity": 5,
+      "affiliation": "Spina di Rosula",
+      "constellation": "Rosa Multiflora",
+      "outfits": ["Yellow_Velvet_Salon"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Equity",
+            "material3qty": 3,
+            "material4": "Transoceanic_Pearl",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 2,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 4,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 6,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 9,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 4,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 6,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 12,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 16,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Undisclosed_Distribution_Channels": {
+            "name": "Undisclosed Distribution Channels",
+            "effect": "For 4s after using Ceremonial Crystalshot, the DMG dealt by Navia's Normal Attacks, Charged Attacks, and Plunging Attacks will be converted into Geo DMG which cannot be overridden by other Elemental infusions, and the DMG dealt by Navia's Normal Attacks, Charged Attacks, and Plunging Attacks will be increased by 40%.",
+            "image": "Talents/Passive/Talent_Undisclosed_Distribution_Channels.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Mutual_Assistance_Network": {
+            "name": "Mutual Assistance Network",
+            "effect": "For each Pyro/Electro/Cryo/Hydro party member, Navia gains 20% increased ATK. This effect can stack up to 2 times.",
+            "image": "Talents/Passive/Talent_Mutual_Assistance_Network.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Painstaking_Transaction": {
+            "name": "Painstaking Transaction",
+            "effect": "Gains 25% more rewards when dispatched on a Fontaine Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_Painstaking_Transaction.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Blunt_Refusal": {
+            "name": "Blunt Refusal",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, performs a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Claymore_Geo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Ceremonial_Crystalshot": {
+            "name": "Ceremonial Crystalshot",
+            "effect": "When a character in the party obtains an Elemental Shard created from the Crystallize reaction, Navia will gain 1 Crystal Shrapnel stack. Navia can have up to 6 stacks of Crystal Shrapnel at once. Each time Crystal Shrapnel gain is triggered, the duration of the Crystal Shrapnel stacks you already have will be reset.\nWhen she fires, Navia will consume all Crystal Shrapnel stacks and open her elegant yet lethal Gunbrella, firing multiple Rosula Shardshots that can penetrate opponents, dealing Geo DMG to opponents hit.\nWhen 0/1/2/3 or more stacks of Crystal Shrapnel are consumed, 5/7/9/11 Rosula Shardshots will be fired respectively. The more Rosula Shardshots that strike a single opponent, the greater the DMG dealt to them. When all 11 Rosula Shardshots strike, 200% of the original amount of DMG is dealt.\nIn addition, when more than 3 stacks of Crystal Shrapnel are consumed, every stack consumed beyond those 3 will increase the DMG dealt by this Gunbrella attack by an additional 15%.\n\nHold\nEnter Aiming Mode, continually collecting nearby Elemental Shards created by Crystallize reactions. When released, fire Rosula Shardshots with the same effect as when the skill is Tapped.\n\nTwo initial charges.\n\nArkhe: Ousia\nPeriodically, when Navia fires her Gunbrella, a Surging Blade will be summoned, dealing Ousia-aligned Geo DMG.",
+            "image": "Talents/Skill/Talent_Ceremonial_Crystalshot.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "As_the_Sunlit_Skys_Singing_Salute": {
+            "name": "As the Sunlit Sky's Singing Salute",
+            "effect": "On the orders of the President of the Spina di Rosula, call for a magnificent Rosula Dorata Salute. Unleashes a massive cannon bombardment on opponents in front of her, dealing AoE Geo DMG and providing Cannon Fire Support for a duration afterward, periodically dealing Geo DMG to nearby opponents.\nWhen cannon attacks hit opponents, Navia will gain 1 stack of Crystal Shrapnel. This effect can be triggered up to once every 2.4s.",
+            "image": "Talents/Burst/Talent_As_the_Sunlit_Skys_Singing_Salute.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "A Lady's Rules for Keeping a Courteous Distance",
+          "effect": "Each stack of Crystal Shrapnel consumed when Navia uses Ceremonial Crystalshot will restore 3 Energy to her and decrease the CD of As the Sunlit Sky's Singing Salute by 1s. Up to 9 Energy can be gained this way, and the CD of \"As the Sunlit Sky's Singing Salute\" can be decreased by up to 3s.",
+          "image": "Constellation/A_Ladys_Rules_for_Keeping_a_Courteous_Distance.png"
+        },
+        "2": {
+          "name": "The President's Pursuit of Victory",
+          "effect": "Each stack of Crystal Shrapnel consumed will increase the CRIT Rate of this Ceremonial Crystalshot instance by 12%. CRIT Rate can be increased by up to 36% in this way.\nIn addition, when Ceremonial Crystalshot hits an opponent, one Cannon Fire Support shot from As the Sunlit Sky's Singing Salute will strike near the location of the hit. Up to one instance of Cannon Fire Support can be triggered each time Ceremonial Crystalshot is used, and DMG dealt by said Cannon Fire Support this way is considered Elemental Burst DMG.",
+          "image": "Constellation/The_Presidents_Pursuit_of_Victory.png"
+        },
+        "3": {
+          "name": "Businesswoman's Broad Vision",
+          "effect": "Increases the Level of Ceremonial Crystalshot by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Businesswomans_Broad_Vision.png"
+        },
+        "4": {
+          "name": "The Oathsworn Never Capitulate",
+          "effect": "When As the Sunlit Sky's Singing Salute hits an opponent, that opponent's Geo RES will be decreased by 20% for 8s.",
+          "image": "Constellation/The_Oathsworn_Never_Capitulate.png"
+        },
+        "5": {
+          "name": "Negotiator's Resolute Negotiations",
+          "effect": "Increases the Level of As the Sunlit Sky's Singing Salute by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Negotiators_Resolute_Negotiations.png"
+        },
+        "6": {
+          "name": "The Flexible Finesse of the Spina's President",
+          "effect": "If more than 3 stacks of Crystal Shrapnel are consumed when using Ceremonial Crystalshot, each stack consumed beyond the first 3 increases the CRIT DMG of that Ceremonial Crystalshot by 45%, and any stacks consumed beyond the first 3 are returned to Navia.",
+          "image": "Constellation/The_Flexible_Finesse_of_the_Spinas_President.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 40,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 50,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 60,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 70,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "level": 80,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Spring_of_the_First_Dewdrop",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "Artificed_Spare_Clockwork_Component-Coppelius",
+          "local_speciality": "Spring_of_the_First_Dewdrop"
+        },
+        "talents": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "mastery1": "Teachings_of_Equity",
+          "mastery2": "Guide_to_Equity",
+          "mastery3": "Philosophies_of_Equity",
+          "weekly_boss_drop": "Lightless_Silk_String",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "The ever-beaming President of the Spina di Rosula, devoted to helping the people of Fontaine solve all kinds of thorny issues.",
+      "paimonmoepath": "characters/navia",
+      "genshinggpath": "characters/navia",
+      "element": "Geo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Navia",
+      "hoyowiki": 4576,
       "subCollection": {}
     },
     "Ningguang": {
@@ -1457,6 +1822,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Ningguang",
+      "hoyowiki": 8,
       "subCollection": {}
     },
     "Noelle": {
@@ -1821,6 +2187,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Noelle",
+      "hoyowiki": 40,
       "subCollection": {}
     },
     "Yun_Jin": {
@@ -2185,6 +2552,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Yun_Jin",
+      "hoyowiki": 4,
       "subCollection": {}
     },
     "Zhongli": {
@@ -2558,6 +2926,7 @@
       "element": "Geo",
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Zhongli",
+      "hoyowiki": 46,
       "subCollection": {}
     }
   }
