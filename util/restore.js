@@ -1,11 +1,14 @@
-const {initializeFirebaseApp, restore} = require('firestore-export-import');
+const {restore} = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
 const {getFirestore} = require('firebase-admin/firestore');
 const fs = require('fs');
 const path = require('path');
 const {deleteCollection} = require('./firebaseutil');
+const { initializeApp, cert } = require('firebase-admin/app');
 
-const firestoreDb = initializeFirebaseApp(serviceAccount);
+initializeApp({
+    credential: cert(serviceAccount)
+});
 const firestoreAdmin = getFirestore();
 
 async function deleteCollections(fireStoreAdm) {
@@ -30,7 +33,7 @@ async function restoreData() {
 
         console.log(`>>> Restoring ${fn}...`);
         try {
-            await restore(firestoreDb, `import/${file}`);
+            await restore(firestoreAdmin, `import/${file}`);
             console.log(`>>> ${fn} restore completed!`);
         } catch (err) {
             console.log(err);
