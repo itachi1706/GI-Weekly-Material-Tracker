@@ -1,13 +1,19 @@
-const {initializeFirebaseApp, backup} = require('firestore-export-import');
+const {backup} = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
 const fs = require('fs');
+const { initializeApp, cert } = require('firebase-admin/app');
+const {getFirestore} = require('firebase-admin/firestore');
 
-initializeFirebaseApp(serviceAccount);
+initializeApp({
+    credential: cert(serviceAccount)
+});
 
-backup('weapons').then((data) => {
+const firestoreAdmin = getFirestore();
+
+backup(firestoreAdmin, 'weapons').then((data) => {
     fs.writeFileSync('weapons.json', JSON.stringify(data));
 });
 
-backup('characters').then((data) => {
+backup(firestoreAdmin, 'characters').then((data) => {
     fs.writeFileSync('characters.json', JSON.stringify(data));
 });

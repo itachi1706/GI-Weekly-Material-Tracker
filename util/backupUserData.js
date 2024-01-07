@@ -1,10 +1,16 @@
-const {initializeFirebaseApp, backup} = require('firestore-export-import');
+const {backup} = require('firestore-export-import');
 const serviceAccount = require('./serviceAccountKey.json');
 const fs = require('fs');
+const { initializeApp, cert } = require('firebase-admin/app');
+const {getFirestore} = require('firebase-admin/firestore');
 
-initializeFirebaseApp(serviceAccount);
+initializeApp({
+    credential: cert(serviceAccount)
+});
 
-backup('userdata').then((data) => {
+const firestoreAdmin = getFirestore();
+
+backup(firestoreAdmin, 'userdata').then((data) => {
     fs.writeFileSync('userdata.json', JSON.stringify(data));
 });
 
