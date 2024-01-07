@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16
+      - name: Use Node.JS 20
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
       - run: npm ci
@@ -124,10 +124,10 @@ jobs:
     if: needs.changedfiles.outputs.rtdbbanner
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16
+      - name: Use Node.JS 20
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
       - name: Extract Service Account Key
@@ -152,10 +152,10 @@ jobs:
     if: needs.changedfiles.outputs.fspj
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16
+      - name: Use Node.JS 20
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
       - name: Extract Service Account Key
@@ -258,10 +258,10 @@ jobs:
     if: needs.changedfiles.outputs.fbcf
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16
+      - name: Use Node.JS 20
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: firebase/functions/package-lock.json
       - name: Install Dependencies
@@ -281,10 +281,10 @@ jobs:
     if: needs.changedfiles.outputs.fstj
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 16
+      - name: Use Node.JS 20
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
       - name: Extract Service Account Key
