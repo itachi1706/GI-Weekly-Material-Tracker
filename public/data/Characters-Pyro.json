@@ -731,6 +731,368 @@
       "hoyowiki": 26,
       "subCollection": {}
     },
+    "Chevreuse": {
+      "image": "Characters/Pyro/Chevreuse.png",
+      "gender": "Female",
+      "birthday": "10/1",
+      "caption": "Executor of Justice",
+      "titles": ["Special Security and Surveillance Patrol Captain"],
+      "name": "Chevreuse",
+      "fullName": null,
+      "description": "The captain of the Special Security and Surveillance Patrol, who wears justice as an ever-present seal upon her heart. Her musket shall only ever point at the guilty.",
+      "nation": "Fontaine",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Special Security and Surveillance Patrol",
+      "constellation": "Sclopetum Ensiferum",
+      "outfits": [],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Order",
+            "material3qty": 3,
+            "material4": "Meshing_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 2,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 4,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 6,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 9,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 4,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 6,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 12,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 16,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Vanguards_Coordinated_Tactics": {
+            "name": "Vanguard's Coordinated Tactics",
+            "effect": "When all party members are Pyro and Electro characters and there is at least one Pyro and one Electro character each in the party:\nChevreuse grants \"Coordinated Tactics\" to nearby party members: After a character triggers the Overloaded reaction, the Pyro and Electro RES of the opponent(s) affected by this Overloaded reaction will be decreased by 40% for 6s.\nThe \"Coordinated Tactics\" effect will be removed when the Elemental Types of the characters in the party do not meet the basic requirements for the Passive Talent.",
+            "image": "Talents/Passive/Talent_Vanguards_Coordinated_Tactics.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Vertical_Force_Coordination": {
+            "name": "Vertical Force Coordination",
+            "effect": "After Chevreuse fires an Overcharged Ball using Short-Range Rapid Interdiction Fire, nearby Pyro and Electro characters in the party gain 1% increased ATK for every 1,000 Max HP Chevreuse has for 30s. ATK can be increased by up to 40% in this way.",
+            "image": "Talents/Passive/Talent_Vertical_Force_Coordination.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Double_Time_March": {
+            "name": "Double Time March",
+            "effect": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Double_Time_March.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Line_Bayonet_Thrust_EX": {
+            "name": "Line Bayonet Thrust EX",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Pyro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Short-Range_Rapid_Interdiction_Fire": {
+            "name": "Short-Range Rapid Interdiction Fire",
+            "effect": "Chevreuse quickly shoulders her musket and fires at her opponent(s), dealing AoE Pyro DMG.\nFor a short duration after Chevreuse fires a shot, she will continuously restore HP to the active character on the field. The amount healed is based on her Max HP.\nHold to fire in a different fashion.\n\nHold\nEnter Aiming Mode, locking a target in her sights to fire a precise interdiction shot. If Chevreuse has an Overcharged Ball, then she will fire the Overcharged Ball instead, dealing greater Pyro DMG in a larger area.\nChevreuse gains 1 Overcharged Ball every time a nearby character in the party triggers an Overloaded reaction, and can have up to 1 Overcharged Ball at a time.\n\nArkhe: Ousia\nPeriodically, after Chevreuse's Short-Range Rapid Interdiction Fire hits, a Surging Blade will be called forth that deals Ousia-aligned Pyro DMG.",
+            "image": "Talents/Skill/Talent_Short-Range_Rapid_Interdiction_Fire.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Ring_of_Bursting_Grenades": {
+            "name": "Ring of Bursting Grenades",
+            "effect": "Chevreuse fires an explosive grenade at opponents with her musket, dealing AoE Pyro DMG. After the projectile hits, it will split into many secondary explosive shells.\nThe secondary explosive shells will burst after a short interval, dealing Pyro DMG to nearby opponents.",
+            "image": "Talents/Burst/Talent_Ring_of_Bursting_Grenades.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Stable Front Line's Resolve",
+          "effect": "When the active character with the \"Coordinated Tactics\" status (not including Chevreuse herself) triggers the Overloaded reaction, they will recover 6 Energy. This effect can be triggered once every 10s.\nYou must first unlock the Passive Talent \"Vanguard's Coordinated Tactics\".",
+          "image": "Constellation/Stable_Front_Lines_Resolve.png"
+        },
+        "2": {
+          "name": "Sniper Induced Explosion",
+          "effect": "After Holding Short-Range Rapid Interdiction Fire and hitting a target, 2 chain explosions will be triggered near the location where said target is hit. Each explosion deals Pyro DMG equal to 120% of Chevreuse's ATK. This effect can be triggered up to once every 10s, and DMG dealt this way is considered Elemental Skill DMG.",
+          "image": "Constellation/Sniper_Induced_Explosion.png"
+        },
+        "3": {
+          "name": "Practiced Field Stripping Technique",
+          "effect": "Increases the Level of Short-Range Rapid Interdiction Fire by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Practiced_Field_Stripping_Technique.png"
+        },
+        "4": {
+          "name": "The Secret to Rapid-Fire Multishots",
+          "effect": "After using Ring of Bursting Grenades, the Hold mode of Short-Range Rapid Interdiction Fire will not go on cooldown when Chevreuse uses it. This effect is removed after Short-Range Rapid Interdiction Fire has been fired twice using Hold or after 6s.",
+          "image": "Constellation/The_Secret_to_Rapid-Fire_Multishots.png"
+        },
+        "5": {
+          "name": "Enhanced Incendiary Firepower",
+          "effect": "Increases the Level of Ring of Bursting Grenades by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Enhanced_Incendiary_Firepower.png"
+        },
+        "6": {
+          "name": "In Pursuit of Ending Evil",
+          "effect": "After 12s of the healing effect from Short-Range Rapid Interdiction Fire, all nearby party members recover HP equivalent to 10% of Chevreuse's Max HP once.\nAfter a party member is healed by Short-Range Rapid Interdiction Fire, they gain a 20% Pyro DMG Bonus and Electro DMG Bonus for 8s. Max 3 stacks. Each stack's duration is counted independently.",
+          "image": "Constellation/In_Pursuit_of_Ending_Evil.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Agnidus_Agate_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Meshing_Gear",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Fontemer_Unihorn",
+          "level": 40,
+          "material4": "Meshing_Gear",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Fontemer_Unihorn",
+          "level": 50,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Fontemer_Unihorn",
+          "level": 60,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Fontemer_Unihorn",
+          "level": 70,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Agnidus_Agate_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Fontemer_Unihorn",
+          "level": 80,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Lumidouce_Bell",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "gem1": "Agnidus_Agate_Silver",
+          "gem2": "Agnidus_Agate_Fragment",
+          "gem3": "Agnidus_Agate_Chunk",
+          "gem4": "Agnidus_Agate_Gemstone",
+          "boss_drop": "Fontemer_Unihorn",
+          "local_speciality": "Lumidouce_Bell"
+        },
+        "talents": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "mastery1": "Teachings_of_Order",
+          "mastery2": "Guide_to_Order",
+          "mastery3": "Philosophies_of_Order",
+          "weekly_boss_drop": "Lightless_Eye_of_the_Maelstrom",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Chevreuse",
+      "hoyowiki": 4577,
+      "subCollection": {}
+    },
     "Dehya": {
       "image": "Characters/Pyro/Dehya.png",
       "gender": "Female",
