@@ -3301,6 +3301,368 @@
       "hoyowiki": 2968,
       "subCollection": {}
     },
+    "Xianyun": {
+      "image": "Characters/Anemo/Xianyun.png",
+      "gender": "Female",
+      "birthday": "11/4",
+      "caption": "Passerine Herald",
+      "titles": ["New Resident in Liyue Harbor"],
+      "name": "Xianyun",
+      "fullName": "Cloud Retainer",
+      "description": "One of the Mighty and Illuminated Adepti of Jueyun, known as \"Cloud Retainer.\" Expert in all kinds of mechanical contraptions, her heart now turns towards the affairs of the mortal world, through which she walks under the name \"Xianyun.\"",
+      "nation": "Liyue",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Mt. Aocang, Adepti",
+      "constellation": "Grus Serena",
+      "outfits": ["A_Guests_August_Omen"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Gold",
+            "material3qty": 3,
+            "material4": "Divining_Scroll",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 2,
+            "material4": "Sealed_Scroll",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 4,
+            "material4": "Sealed_Scroll",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 6,
+            "material4": "Sealed_Scroll",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Gold",
+            "material3qty": 9,
+            "material4": "Sealed_Scroll",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 4,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 6,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 12,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Gold",
+            "material3qty": 16,
+            "material4": "Forbidden_Curse_Scroll",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Galefeather_Pursuit": {
+            "name": "Galefeather Pursuit",
+            "effect": "Each opponent hit by Driftcloud Waves from White Clouds at Dawn will grant all nearby party members 1 stack of Storm Pinion for 20s. Max 4 stacks. These will cause the characters' Plunging Attack CRIT Rate to increase by 4%/6%/8%/10% respectively.\nEach Storm Pinion created by hitting an opponent has an independent duration.",
+            "image": "Talents/Passive/Talent_Galefeather_Pursuit.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Consider_the_Adeptus_in_Her_Realm": {
+            "name": "Consider, the Adeptus in Her Realm",
+            "effect": "When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 200% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 9,000.\nEach Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s.",
+            "image": "Talents/Passive/Talent_Consider_the_Adeptus_in_Her_Realm.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Crane_Form": {
+            "name": "Crane Form",
+            "effect": "Increases gliding SPD for your own party members by 15%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_Crane_Form.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Word_of_Wind_and_Flower": {
+            "name": "Word of Wind and Flower",
+            "effect": "Normal Attack\nSummons swirling winds to perform up to 4 attacks, dealing Anemo DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina and launches a Breeze Bolt in a straight line that deals Anemo DMG to opponents along its path.\n\nPlunging Attack\nGathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "White_Clouds_at_Dawn": {
+            "name": "White Clouds at Dawn",
+            "effect": "Xianyun enters the Cloud Transmogrification state, in which she will not take Fall DMG, and uses Skyladder once.\nIn this state, her Plunging Attack will be converted into Driftcloud Wave instead, which deals AoE Anemo DMG and ends the Cloud Transmogrification state. This DMG is considered Plunging Attack DMG.\nEach use of Skyladder while in this state increases the DMG and AoE of the next Driftcloud Wave used.\n\nSkyladder\nCan be used while in mid-air. Xianyun leaps forward, dealing Anemo DMG to targets along her path.\nDuring each Cloud Transmogrification state Xianyun enters, Skyladder may be used up to 3 times and only 1 instance of Skyladder DMG can be dealt to any one opponent.\nIf Skyladder is not used again in a short period, the Cloud Transmogrification state will be canceled.\n\nIf Xianyun does not use Driftcloud Wave while in this state, the next CD of White Clouds at Dawn will be decreased by 3s.",
+            "image": "Talents/Skill/Talent_White_Clouds_at_Dawn.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Stars_Gather_at_Dusk": {
+            "name": "Stars Gather at Dusk",
+            "effect": "Brings forth a sacred breeze that deals AoE Anemo DMG and heals all nearby characters based on Xianyun's ATK. It will also summon the \"Starwicker\" mechanism.\n\nStarwicker\nContinuously follows the active character and periodically heals all nearby party members based on Xianyun's ATK.\nStarts with 8 stacks of Adeptal Assistance. While Adeptal Assistance is active, nearby active characters in the party will have their jump height increased.\nWhen the active character completes a Plunging Attack, Starwicker will consume 1 stack of Adeptal Assistance and deal AoE Anemo DMG.\nOnly 1 Starwicker can exist simultaneously.",
+            "image": "Talents/Burst/Talent_Stars_Gather_at_Dusk.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Purifying Wind",
+          "effect": "White Clouds at Dawn gains 1 additional charge.",
+          "image": "Constellation/Purifying_Wind.png"
+        },
+        "2": {
+          "name": "Aloof From the World",
+          "effect": "After using a Skyladder from White Clouds at Dawn, Xianyun's ATK will be increased by 20% for 15s.\nAdditionally, the effects of the Passive Talent \"Consider, the Adeptus in Her Realm\" will be enhanced: When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 400% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 18,000.\nEach Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s.\nYou must first unlock the Passive Talent \"Consider, the Adeptus in Her Realm.\"",
+          "image": "Constellation/Aloof_From_the_World.png"
+        },
+        "3": {
+          "name": "Creations of Star and Moon",
+          "effect": "Increases the Level of Stars Gather at Dusk by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Creations_of_Star_and_Moon.png"
+        },
+        "4": {
+          "name": "Mystery Millet Gourmet",
+          "effect": "After using Skyladder 1/2/3 times during one White Clouds at Dawn Cloud Transmogrification state, when a Driftcloud Wave unleashed during that instance hits an opponent, it will heal all nearby party members for 50%/80%/150% of Xianyun's ATK. This effect can be triggered once every 5s.",
+          "image": "Constellation/Mystery_Millet_Gourmet.png"
+        },
+        "5": {
+          "name": "Astride Rose-Colored Clouds",
+          "effect": "Increases the Level of White Clouds at Dawn by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Astride_Rose-Colored_Clouds.png"
+        },
+        "6": {
+          "name": "They Call Her Cloud Retainer",
+          "effect": "After Xianyun uses 1/2/3 Skyladders within one Cloud Transmogrification caused by White Clouds at Dawn, the CRIT DMG of a Driftcloud Wave created in this instance of Cloud Transmogrification will be increased by 15%/35%/70%.\nWithin 16s after Xianyun has used Stars Gather at Dusk, White Clouds at Dawn will not enter CD. This effect will be canceled once she has used White Clouds at Dawn 8 times.",
+          "image": "Constellation/They_Call_Her_Cloud_Retainer.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Divining_Scroll",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cloudseam_Scale",
+          "level": 40,
+          "material4": "Divining_Scroll",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cloudseam_Scale",
+          "level": 50,
+          "material4": "Sealed_Scroll",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cloudseam_Scale",
+          "level": 60,
+          "material4": "Sealed_Scroll",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cloudseam_Scale",
+          "level": 70,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cloudseam_Scale",
+          "level": 80,
+          "material4": "Forbidden_Curse_Scroll",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Divining_Scroll",
+          "common2": "Sealed_Scroll",
+          "common3": "Forbidden_Curse_Scroll",
+          "gem1": "Vayuda_Turquoise_Silver",
+          "gem2": "Vayuda_Turquoise_Fragment",
+          "gem3": "Vayuda_Turquoise_Chunk",
+          "gem4": "Vayuda_Turquoise_Gemstone",
+          "boss_drop": "Cloudseam_Scale",
+          "local_speciality": "Clearwater_Jade"
+        },
+        "talents": {
+          "common1": "Divining_Scroll",
+          "common2": "Sealed_Scroll",
+          "common3": "Forbidden_Curse_Scroll",
+          "mastery1": "Teachings_of_Gold",
+          "mastery2": "Guide_to_Gold",
+          "mastery3": "Philosophies_of_Gold",
+          "weekly_boss_drop": "Lightless_Eye_of_the_Maelstrom",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "A mysterious woman who has just moved to Liyue Harbor and claims to be reserved, quiet, and socially inept.",
+      "paimonmoepath": "characters/xianyun",
+      "genshinggpath": "characters/xianyun",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Xianyun",
+      "hoyowiki": 4774,
+      "subCollection": {}
+    },
     "Xiao": {
       "image": "Characters/Anemo/Xiao.png",
       "gender": "Male",
