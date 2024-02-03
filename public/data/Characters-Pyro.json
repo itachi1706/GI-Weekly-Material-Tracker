@@ -1825,6 +1825,368 @@
       "hoyowiki": 43,
       "subCollection": {}
     },
+    "Gaming": {
+      "image": "Characters/Pyro/Gaming.png",
+      "gender": "Male",
+      "birthday": "22/12",
+      "caption": "Leonine Vanguard",
+      "titles": ["\"Sword and Strongbox\" Transport Guard"],
+      "name": "Gaming",
+      "fullName": "Yip Gaming",
+      "description": "Guard of the Sword and Strongbox Secure Transport Agency, and the head of the \"Mighty Mythical Beasts\" Wushou troupe.",
+      "nation": "Liyue",
+      "weapon": "Claymore",
+      "rarity": 5,
+      "affiliation": "Sword and Strongbox Secure Transport Agency",
+      "constellation": "Leo Expergiscens",
+      "outfits": ["Ranging_Rainbow"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Prosperity",
+            "material3qty": 3,
+            "material4": "Slime_Condensate",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 2,
+            "material4": "Slime_Secretions",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 4,
+            "material4": "Slime_Secretions",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 6,
+            "material4": "Slime_Secretions",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Prosperity",
+            "material3qty": 9,
+            "material4": "Slime_Secretions",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 4,
+            "material4": "Slime_Concentrate",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 6,
+            "material4": "Slime_Concentrate",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 12,
+            "material4": "Slime_Concentrate",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Mass",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Prosperity",
+            "material3qty": 16,
+            "material4": "Slime_Concentrate",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Dance_of_Amity": {
+            "name": "Dance of Amity",
+            "effect": "After Bestial Ascent's Plunging Attack: Charmed Cloudstrider hits an opponent, Gaming will regain 1.5% of his Max HP once every 0.2s for 0.8s.",
+            "image": "Talents/Passive/Talent_Dance_of_Amity.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Air_of_Prosperity": {
+            "name": "Air of Prosperity",
+            "effect": "When Gaming has less than 50% HP, he will receive a 20% Incoming Healing Bonus. When Gaming has 50% HP or more, Plunging Attack: Charmed Cloudstrider will deal 20% more DMG.",
+            "image": "Talents/Passive/Talent_Air_of_Prosperity.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "The_Striding_Beast": {
+            "name": "The Striding Beast",
+            "effect": "Increases the Movement SPD of your own party members by 10% during the day (6:00 - 18:00).\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_The_Striding_Beast.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Stellar_Rend": {
+            "name": "Stellar Rend",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive strikes.\n\nCharged Attack\nDrains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, performs a more powerful slash.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Claymore_Pyro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Bestial_Ascent": {
+            "name": "Bestial Ascent",
+            "effect": "Pounces forward using the Wushou arts, leaping high into the air after coming into contact with a target or surface.\nAfter Gaming has used Bestial Ascent to rise into the air, he will use the especially powerful Plunging Attack: Charmed Cloudstrider when performing a Plunging Attack.\n\nPlunging Attack: Charmed Cloudstrider\nThe DMG from Plunging Attacks caused by Bestial Ascent is converted to Pyro DMG that cannot be overridden by other elemental infusions. Upon landing, Gaming will consume a fixed amount of HP. Gaming's HP cannot be reduced below 10% by this method.\nCharmed Cloudstrider DMG is considered Plunging Attack DMG.",
+            "image": "Talents/Skill/Talent_Bestial_Ascent.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Suannis_Gilded_Dance": {
+            "name": "Suanni's Gilded Dance",
+            "effect": "Gaming enters Wushou Stance, briefly applying Pyro to him, recovering a fixed amount of HP, and summons his companion, the Suanni Man Chai, to smash into his target, dealing AoE Pyro DMG.\nAfter bashing its target, Man Chai will roll to a nearby location before moving towards Gaming. When it links up with Gaming, Man Chai will leave the field and reset the CD for Gaming's Elemental Skill, Bestial Ascent.\nWhile Wushou Stance is active, his resistance to interruption is increased, and when Gaming lands with Charmed Cloudstrider attack or completes the forward pounce attack from Bestial Ascent with over 50% HP, he will summon Man Chai again.\nEach Gaming can only have 1 Man Chai on the field simultaneously.\nThis effect will be canceled once Gaming leaves the field.",
+            "image": "Talents/Burst/Talent_Suannis_Gilded_Dance.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Bringer of Blessing",
+          "effect": "When the Suanni Man Chai from Suanni's Gilded Dance meets back up with Gaming, it will heal 15% of Gaming's HP.",
+          "image": "Constellation/Bringer_of_Blessing.png"
+        },
+        "2": {
+          "name": "Plum Blossoms Underfoot",
+          "effect": "When Gaming receives healing and this instance of healing overflows, his ATK will be increased by 20% for 5s.",
+          "image": "Constellation/Plum_Blossoms_Underfoot.png"
+        },
+        "3": {
+          "name": "Awakening Spirit",
+          "effect": "Increases the Level of Bestial Ascent by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Awakening_Spirit.png"
+        },
+        "4": {
+          "name": "Soar Across Mountains",
+          "effect": "When Bestial Ascent's Plunging Attack: Charmed Cloudstrider hits an opponent, it will restore 2 Energy to Gaming. This effect can be triggered once every 0.2s.",
+          "image": "Constellation/Soar_Across_Mountains.png"
+        },
+        "5": {
+          "name": "Evil-Daunting Roar",
+          "effect": "Increases the Level of Suanni's Gilded Dance by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Evil-Daunting_Roar.png"
+        },
+        "6": {
+          "name": "To Tame All Beasts",
+          "effect": "Bestial Ascent's Plunging Attack: Charmed Cloudstrider CRIT Rate increased by 20% and CRIT DMG increased by 40%, and its attack radius will be increased.",
+          "image": "Constellation/To_Tame_All_Beasts.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Agnidus_Agate_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Slime_Condensate",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Starconch",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Emperors_Resolution",
+          "level": 40,
+          "material4": "Slime_Condensate",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Starconch",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Emperors_Resolution",
+          "level": 50,
+          "material4": "Slime_Secretions",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Starconch",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Emperors_Resolution",
+          "level": 60,
+          "material4": "Slime_Secretions",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Starconch",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Emperors_Resolution",
+          "level": 70,
+          "material4": "Slime_Concentrate",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Starconch",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Agnidus_Agate_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Emperors_Resolution",
+          "level": 80,
+          "material4": "Slime_Concentrate",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Starconch",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "gem1": "Agnidus_Agate_Silver",
+          "gem2": "Agnidus_Agate_Fragment",
+          "gem3": "Agnidus_Agate_Chunk",
+          "gem4": "Agnidus_Agate_Gemstone",
+          "boss_drop": "Emperors_Resolution",
+          "local_speciality": "Starconch"
+        },
+        "talents": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "mastery1": "Teachings_of_Prosperity",
+          "mastery2": "Guide_to_Prosperity",
+          "mastery3": "Philosophies_of_Prosperity",
+          "weekly_boss_drop": "Lightless_Mass",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "Gold-Standard Guard of the Sword and Strongbox Secure Transport Agency, and the head of the \"Mighty Mythical Beasts\" Wushou troupe. Talkative and full of zeal, he's a classic people person.",
+      "paimonmoepath": "characters/gaming",
+      "genshinggpath": "characters/gaming",
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Gaming",
+      "hoyowiki": 4775,
+      "subCollection": {}
+    },
     "Hu_Tao": {
       "image": "Characters/Pyro/Hu_Tao.png",
       "gender": "Female",
