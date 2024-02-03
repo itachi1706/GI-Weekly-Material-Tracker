@@ -971,6 +971,60 @@
       },
       "hoyowiki": null,
       "subCollection": {}
+    },
+    "Feathery_Fin": {
+      "image": "Materials/Elite_Mob/Item_Feathery_Fin.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A fin fragment taken from a defeated Xuanwen Beast's back.\nEven though Xuanwen Beasts can't fly over long distances, these feather-like fins enable them to swiftly pursue their prey.",
+      "enemies": ["Xuanwen Beasts"],
+      "obtained": "- Dropped by Xuanwen Beasts\n- Stardust Exchange",
+      "name": "Feathery Fin",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Feathery_Fin",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 4948,
+      "subCollection": {}
+    },
+    "Lunar_Fin": {
+      "image": "Materials/Elite_Mob/Item_Lunar_Fin.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A fin taken from a defeated Xuanwen Beast's back.\nThe soft, moonlight-esque glow on the fin gives off a sense of serenity.",
+      "enemies": ["Xuanwen Beasts"],
+      "obtained": "- Alchemy (3x Feathery Fin)\n- Dropped by Xuanwen Beasts\n- Stardust Exchange",
+      "name": "Lunar Fin",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lunar_Fin",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 4949,
+      "subCollection": {}
+    },
+    "Chasmlight_Fin": {
+      "image": "Materials/Elite_Mob/Item_Chasmlight_Fin.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An elegant fin taken from a defeated Xuanwen Beast's back.\nThe faint light it reflects contains traces of adeptal energy. In the still of the night, even the most violent beasts briefly sink into a peaceful slumber, reminiscing on times when dreams belonged not only to humans.",
+      "enemies": ["Xuanwen Beasts"],
+      "obtained": "- Alchemy (3x Lunar Fin)\n- Dropped by Xuanwen Beasts\n- Stardust Exchange",
+      "name": "Chasmlight Fin",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Chasmlight_Fin",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 4950,
+      "subCollection": {}
     }
   }
 }
