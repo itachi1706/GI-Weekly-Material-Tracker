@@ -175,6 +175,10 @@ jobs:
             firebase/
       - name: Check App Size (Android ARM64)
         run: flutter build apk --analyze-size --target-platform android-arm64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-app-size
+          path: ~/.flutter-devtools/apk-code-size-analysis_01.json
   ios:
     name: iOS Unsigned IPA
     runs-on: macos-13 # For XCode 14.3.1
@@ -284,6 +288,10 @@ jobs:
             release/app.ipa
       - name: Check App Size (iOS)
         run: flutter build ios --no-codesign --analyze-size
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-app-size
+          path: ~/.flutter-devtools/ios-code-size-analysis_01.json
   changedfiles:
     name: Check which files are changed
     runs-on: ubuntu-latest
