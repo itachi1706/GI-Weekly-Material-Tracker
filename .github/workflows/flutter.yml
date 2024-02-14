@@ -362,7 +362,7 @@ jobs:
       - name: Deploy APK to Firebase App Distribution
         uses: w9jds/firebase-action@v13.2.1
         with:
-          args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt"
+          args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt" --debug
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
