@@ -30,6 +30,7 @@ class WishListPageState extends State<WishListPage>
     const Tab(text: 'Current'),
     const Tab(text: 'Character'),
     const Tab(text: 'Weapon'),
+    const Tab(text: 'Chronicled'),
     const Tab(text: 'Standard'),
   ];
 
@@ -39,6 +40,7 @@ class WishListPageState extends State<WishListPage>
     const CurrentWishListPageContent(),
     const WishListPageContent(wishType: 'character'),
     const WishListPageContent(wishType: 'weapon'),
+    const WishListPageContent(wishType: 'chronicled'),
     const WishListPageContent(wishType: 'standard'),
   ];
 
@@ -57,7 +59,7 @@ class WishListPageState extends State<WishListPage>
           controller: _tabController,
           indicatorColor: Theme.of(context).colorScheme.secondary,
           tabs: _tabs,
-          isScrollable: false,
+          isScrollable: true,
         ),
       ),
       drawer: const DrawerComponent(),
@@ -640,6 +642,17 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     });
   }
 
+  List<Widget> _checkIfChronicled() {
+    if (_type?.toLowerCase() == "chronicled") {
+      return GridData.generateInfoLine(
+        'This is a unique banner that changes based on your chartered type, your rate up is ONLY for the selected type (so if you chart a character, you will only have rate up characters in the banner. The rate up weapons will not be available).',
+        Icons.warning,
+      );
+    }
+
+    return [];
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_type == null || _index == null) {
@@ -663,6 +676,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             GridData.getImageAssetFromFirebase(_bannerInfo!.image),
+            ..._checkIfChronicled(),
             ...GridData.generateInfoLine(
               '${df.format(_bannerInfo!.start.toLocal())} - ${df.format(_bannerInfo!.end.toLocal())}',
               Icons.timer,
