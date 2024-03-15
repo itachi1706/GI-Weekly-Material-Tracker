@@ -731,6 +731,368 @@
       "hoyowiki": 36,
       "subCollection": {}
     },
+    "Chiori": {
+      "image": "Characters/Geo/Chiori.png",
+      "gender": "Female",
+      "birthday": "17/8",
+      "caption": "The Thundering Seamstress",
+      "titles": ["Boss of the Chioriya Boutique"],
+      "name": "Chiori",
+      "fullName": null,
+      "description": "The owner of Chioriya Boutique. A tailor renowned throughout Fontaine.",
+      "nation": "Inazuma",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Court of Fontaine, Chioriya Boutique",
+      "constellation": "Cisoria",
+      "outfits": ["Plucked_Yamabuki_Splendor"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Light",
+            "material3qty": 3,
+            "material4": "Spectral_Husk",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 2,
+            "material4": "Spectral_Heart",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 4,
+            "material4": "Spectral_Heart",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 6,
+            "material4": "Spectral_Heart",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Light",
+            "material3qty": 9,
+            "material4": "Spectral_Heart",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 4,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 6,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 12,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Light",
+            "material3qty": 16,
+            "material4": "Spectral_Nucleus",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Tailor-Made": {
+            "name": "Tailor-Made",
+            "effect": "Gain different effects depending on the next action you take within a short duration after using Fluttering Hasode's upward sweep. If you (Press/Tap) the Elemental Skill, you will trigger the Tapestry effect. If you (Press/Tap) your Normal Attack, the Tailoring effect will be triggered instead.\n\nTapestry\nSwitches to the next character in your roster.\nGrants all your party members \"Seize the Moment\": When your active party member's Normal Attacks, Charged Attacks, and Plunging Attacks hit a nearby opponent, \"Tamoto\" will execute a coordinated attack, dealing 100% of Fluttering Hasode's upward sweep DMG as AoE Geo DMG at the opponent's location. DMG dealt this way is considered Elemental Skill DMG.\n\"Seize the Moment\" lasts 8s, and 1 of \"Tamoto\"'s coordinated attack can be unleashed every 2s. 2 such coordinated attacks can occur per \"Seize the Moment\" effect duration.\n\nTailoring\nChiori gains Geo infusion for 5s.\n\nWhen on the field, if Chiori does not either (Press/Tap) her Elemental Skill or use a Normal Attack within a short time after using Fluttering Hasode's upward sweep, the Tailoring effect will be triggered by default.",
+            "image": "Talents/Passive/Talent_Tailor-Made.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "The_Finishing_Touch": {
+            "name": "The Finishing Touch",
+            "effect": "When a nearby party member creates a Geo Construct, Chiori will gain 20% Geo DMG Bonus for 20s.",
+            "image": "Talents/Passive/Talent_The_Finishing_Touch.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Brocaded_Collars_Beauteous_Silhouette": {
+            "name": "Brocaded Collar's Beauteous Silhouette",
+            "effect": "When any party member is wearing an outfit apart from their default outfit, or is wearing a wind glider other than the Wings of First Flight, your party members will obtain the Swift Stride effect: Movement SPD is increased by 10%.\nThis effect does not take effect in Domains, Trounce Domains and the Spiral Abyss. Swift Stride does not stack.",
+            "image": "Talents/Passive/Talent_Brocaded_Collars_Beauteous_Silhouette.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Weaving_Blade": {
+            "name": "Weaving Blade",
+            "effect": "Normal Attack\nPerforms up to 4 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Geo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Fluttering_Hasode": {
+            "name": "Fluttering Hasode",
+            "effect": "Dashes nimbly forward with silken steps. Once this dash ends, Chiori will summon the automaton doll \"Tamoto\" beside her and sweep her blade upward, dealing AoE Geo DMG to nearby opponents based on her ATK and DEF.\nHolding the Skill will cause it to behave differently.\n\nHold\nEnter Aiming Mode to adjust the dash direction.\n\nTamoto\nWill slash at nearby opponents at intervals, dealing AoE Geo DMG based on Chiori's ATK and DEF.\nWhile active, if there are nearby Geo Construct(s) or Geo Construct(s) are created nearby, an additional Tamoto will be summoned next to your active character. Only 1 additional Tamoto can be summoned in this manner, and its duration is independently counted.",
+            "image": "Talents/Skill/Talent_Fluttering_Hasode.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Hiyoku_Twin_Blades": {
+            "name": "Hiyoku: Twin Blades",
+            "effect": "Twin blades leave their sheaths as Chiori slices with the clean cuts of a master tailor, dealing AoE Geo DMG based on her ATK and DEF.",
+            "image": "Talents/Burst/Talent_Hiyoku_Twin_Blades.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Six Paths of Sage Silkcraft",
+          "effect": "The AoE of the automaton doll \"Tamoto\" summoned by Fluttering Hasode is increased by 50%.\nAdditionally, if there is a Geo party member other than Chiori, Fluttering Hasode will trigger the following after the dash is completed:\nSummon an additional Tamoto. Only one additional Tamoto can exist at the same time, whether summoned by Chiori this way or through the presence of a Geo Construct.\nTriggers the Passive Talent \"The Finishing Touch.\" This effect requires you to first unlock the Passive Talent \"The Finishing Touch.\"",
+          "image": "Constellation/Six_Paths_of_Sage_Silkcraft.png"
+        },
+        "2": {
+          "name": "In Five Colors Dyed",
+          "effect": "For 10s after using Hiyoku: Twin Blades, a simplified automaton doll, \"Kinu,\" will be summoned next to your active character every 3s. Kinu will attack nearby opponents, dealing AoE Geo DMG equivalent to 170% of Tamoto's DMG. DMG dealt this way is considered Elemental Skill DMG.\nKinu will leave the field after 1 attack or after lasting 3s.",
+          "image": "Constellation/In_Five_Colors_Dyed.png"
+        },
+        "3": {
+          "name": "Four Brocade Embellishments",
+          "effect": "Increases the Level of Fluttering Hasode by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Four_Brocade_Embellishments.png"
+        },
+        "4": {
+          "name": "A Tailor's Three Courtesies",
+          "effect": "For 8s after triggering either follow-up effect of the Passive Talent \"Tailor-Made,\" when your current active character's Normal, Charged, or Plunging Attacks hit a nearby opponent, a simplified automaton doll, \"Kinu,\" will be summoned near this opponent. You can summon 1 Kinu every 1s in this way, and up to 3 Kinu may be summoned this way during each instance of \"Tailor-Made\"'s Seize the Moment or Tailoring effect. The above effect can be triggered up to once every 15s.\nMust unlock the Passive Talent \"Tailor-Made\" first.",
+          "image": "Constellation/A_Tailors_Three_Courtesies.png"
+        },
+        "5": {
+          "name": "Two Silken Plumules",
+          "effect": "Increases the Level of Hiyoku: Twin Blades by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Two_Silken_Plumules.png"
+        },
+        "6": {
+          "name": "Sole Principle Pursuit",
+          "effect": "After triggering a follow-up effect of the Passive Talent \"Tailor-Made,\" Chiori's own Fluttering Hasode's CD is decreased by 12s. Must unlock the Passive \"Tailor-Made\" first.\nIn addition, the DMG dealt by Chiori's own Normal Attacks is increased by an amount equal to 235% of her own DEF.",
+          "image": "Constellation/Sole_Principle_Pursuit.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Spectral_Husk",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Dendrobium",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 40,
+          "material4": "Spectral_Husk",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Dendrobium",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 50,
+          "material4": "Spectral_Heart",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Dendrobium",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 60,
+          "material4": "Spectral_Heart",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Dendrobium",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 70,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Dendrobium",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "level": 80,
+          "material4": "Spectral_Nucleus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Dendrobium",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Spectral_Husk",
+          "common2": "Spectral_Heart",
+          "common3": "Spectral_Nucleus",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "Artificed_Spare_Clockwork_Component-Coppelia",
+          "local_speciality": "Dendrobium"
+        },
+        "talents": {
+          "common1": "Spectral_Husk",
+          "common2": "Spectral_Heart",
+          "common3": "Spectral_Nucleus",
+          "mastery1": "Teachings_of_Light",
+          "mastery2": "Guide_to_Light",
+          "mastery3": "Philosophies_of_Light",
+          "weekly_boss_drop": "Lightless_Silk_String",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "A frank and outspoken fashion designer whose unique sense of style always puts her at the forefront of Fontainian trends.",
+      "paimonmoepath": "characters/chiori",
+      "genshinggpath": null,
+      "element": "Geo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Chiori",
+      "hoyowiki": 4946,
+      "subCollection": {}
+    },
     "Gorou": {
       "image": "Characters/Geo/Gorou.png",
       "gender": "Male",
