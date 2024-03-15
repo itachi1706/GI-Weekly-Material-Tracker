@@ -43,10 +43,12 @@ async function processJson(jsonParsed) {
     let standard = jsonParsed.banners.standard;
     let eventWeapon = jsonParsed.banners.weapon;
     let eventChars = jsonParsed.banners.character;
+    let chronicledWishes = jsonParsed.banners.chronicled;
 
     await updateFiles(standard, "Standard", "standard");
     await updateFiles(eventWeapon, "Weapon Event", "weapon");
     await updateFiles(eventChars, "Character Event", "character");
+    await updateFiles(chronicledWishes, "Chronicled Wish Event", "chronicled");
 }
 
 processJson(parsedJson).finally(() => {
