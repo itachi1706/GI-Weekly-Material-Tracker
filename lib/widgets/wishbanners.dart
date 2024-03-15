@@ -30,6 +30,7 @@ class WishListPageState extends State<WishListPage>
     const Tab(text: 'Current'),
     const Tab(text: 'Character'),
     const Tab(text: 'Weapon'),
+    const Tab(text: 'Chronicled'),
     const Tab(text: 'Standard'),
   ];
 
@@ -39,6 +40,7 @@ class WishListPageState extends State<WishListPage>
     const CurrentWishListPageContent(),
     const WishListPageContent(wishType: 'character'),
     const WishListPageContent(wishType: 'weapon'),
+    const WishListPageContent(wishType: 'chronicled'),
     const WishListPageContent(wishType: 'standard'),
   ];
 
@@ -57,7 +59,7 @@ class WishListPageState extends State<WishListPage>
           controller: _tabController,
           indicatorColor: Theme.of(context).colorScheme.secondary,
           tabs: _tabs,
-          isScrollable: false,
+          isScrollable: true,
         ),
       ),
       drawer: const DrawerComponent(),
@@ -221,7 +223,10 @@ class WishPageCard extends StatelessWidget {
       }
     }
 
-    finalWidgets.add(Row(
+    finalWidgets.add(Wrap(
+      direction: Axis.horizontal,
+      crossAxisAlignment: WrapCrossAlignment.start,
+      alignment: WrapAlignment.start,
       children: rowChild,
     ));
 
@@ -233,19 +238,23 @@ class WishPageCard extends StatelessWidget {
   }
 
   Widget _getRateUpStack(String? imageUrl) {
-    return Stack(
-      alignment: Alignment.bottomRight,
-      children: [
-        GridData.getImageAssetFromFirebase(
-          imageUrl,
-          height: 32,
-        ),
-        Icon(
-          MdiIcons.arrowUpBold,
-          color: Colors.green,
-          size: 20,
-        ),
-      ],
+    return SizedBox(
+      height: 48,
+      width: 48,
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          GridData.getImageAssetFromFirebase(
+            imageUrl,
+            height: 32,
+          ),
+          Icon(
+            MdiIcons.arrowUpBold,
+            color: Colors.green,
+            size: 20,
+          ),
+        ],
+      ),
     );
   }
 
@@ -266,44 +275,40 @@ class WishPageCard extends StatelessWidget {
       child: InkWell(
         onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Stack(
-                  children: [
-                    GridData.getImageAssetFromFirebase(data.image),
-                    Align(
-                      alignment: FractionalOffset.topRight,
-                      child: Container(
-                        margin: const EdgeInsets.all(16),
-                        padding: const EdgeInsets.all(4),
-                        color: color.withOpacity(0.75),
-                        child: Text(data.status.name.capitalized()),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        data.name,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
-                      ),
-                      ..._getCountdown(),
-                      ..._getRateUps(),
-                    ],
+            Stack(
+              children: [
+                GridData.getImageAssetFromFirebase(data.image),
+                Align(
+                  alignment: FractionalOffset.topRight,
+                  child: Container(
+                    margin: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(4),
+                    color: color.withOpacity(0.75),
+                    child: Text(data.status.name.capitalized()),
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data.name,
+                    style: const TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
+                  ),
+                  ..._getCountdown(),
+                  ..._getRateUps(),
+                ],
+              ),
             ),
           ],
         ),
@@ -637,6 +642,17 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     });
   }
 
+  List<Widget> _checkIfChronicled() {
+    if (_type?.toLowerCase() == "chronicled") {
+      return GridData.generateInfoLine(
+        'This is a unique banner that changes based on your chartered type, your rate up is ONLY for the selected type (so if you chart a character, you will only have rate up characters in the banner. The rate up weapons will not be available).',
+        Icons.warning,
+      );
+    }
+
+    return [];
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_type == null || _index == null) {
@@ -660,6 +676,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             GridData.getImageAssetFromFirebase(_bannerInfo!.image),
+            ..._checkIfChronicled(),
             ...GridData.generateInfoLine(
               '${df.format(_bannerInfo!.start.toLocal())} - ${df.format(_bannerInfo!.end.toLocal())}',
               Icons.timer,
