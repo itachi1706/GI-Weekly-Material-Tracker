@@ -1,3 +1,8 @@
+# 3.0.8
+- Added Chronicled Wish Tab page
+- Fixed rate up icons overflowing off screen in banner page
+- Dependency Updates and Fixes
+
 # 3.0.7
 - Fixed issue with Furina Wish image not appearing
 - (Web) Enabled tree-shaking again
