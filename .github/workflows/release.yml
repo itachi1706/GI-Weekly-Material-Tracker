@@ -366,7 +366,7 @@ jobs:
           CC_OUT: ${{ steps.changelog.outputs.changes }}
         run: |
           printf "\n\n# Conventional Commits Changed\n---\n" >> release-beta.txt
-          printf $CC_OUT >> release-beta.txt
+          printf "$CC_OUT" >> release-beta.txt
       - name: Verify Release Notes
         run: cat release-beta.txt
       - name: Manage APK files
