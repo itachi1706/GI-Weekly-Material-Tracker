@@ -60,7 +60,7 @@ class TrackerPageState extends State<TrackerPage> {
   late SharedPreferences _prefs;
 
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
-    primary: Colors.black87,
+    foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),
     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
