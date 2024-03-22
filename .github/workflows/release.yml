@@ -392,7 +392,7 @@ jobs:
             apks/*.apk
             apks/*.ipa
   releaseipa:
-    runs-on: macos-13 # For XCode 14.3.1
+    runs-on: macos-14 # For XCode 14.3.1 and Apple Silicon
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta
