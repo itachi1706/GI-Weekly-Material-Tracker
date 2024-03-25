@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
+  GIT_RUN_NUMBER: ${{ github.run_number }}
   CI_COMMIT_REF_NAME: ${{ github.ref_name }}
 
 jobs:

@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  CI_PIPELINE_IID: ${{ github.run_number }} # Make sure when we actually build release builds it starts from 2009
+  GIT_RUN_NUMBER: ${{ github.run_number }}
   CI_COMMIT_REF_NAME: ${{ github.ref_name }}
 
 jobs:
@@ -70,16 +70,13 @@ jobs:
         id: short-sha
         with:
           length: 8
-      # TODO: Add 2009 to CI_PIPELINE_IID until further notice to prevent build failure
-      # TODO: Replace CI_PIPELINE_IID with GIT_COMMIT_COUNT in the future
       - name: Pre-Setup and obtain version information
         run: |
           mkdir release
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
-          export CI_PIPELINE_IID=$(($CI_PIPELINE_IID + 2009))
           echo $GIT_COMMIT_COUNT
           echo $GIT_COMMIT_SHORT_SHA
-          echo $CI_PIPELINE_IID
+          echo $GIT_RUN_NUMBER
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
         env:
@@ -163,19 +160,16 @@ jobs:
         id: short-sha
         with:
           length: 8
-      # TODO: Add 2009 to CI_PIPELINE_IID until further notice to prevent build failure
-      # TODO: Replace CI_PIPELINE_IID with GIT_COMMIT_COUNT in the future
       - name: Pre-Setup and obtain version information
         id: versioninfo
         run: |
           export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
-          export CI_PIPELINE_IID=$(($CI_PIPELINE_IID + 2009))
           echo $GIT_COMMIT_COUNT
           echo $GIT_COMMIT_SHORT_SHA
-          echo $CI_PIPELINE_IID
+          echo $GIT_RUN_NUMBER
           chmod +x ./ciscripts/get_version.sh
           ./ciscripts/get_version.sh
-          echo "pipeline_id=$CI_PIPELINE_IID" >> $GITHUB_OUTPUT
+          echo "pipeline_id=$GIT_COMMIT_COUNT" >> $GITHUB_OUTPUT
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Android AppBundle
@@ -298,7 +292,7 @@ jobs:
     environment: GPlay-Alpha-Android
     name: Deploy to Google Play Alpha # From "Deploy to Google Play Alpha" in GitLab CI
     env:
-      CI_PIPELINE_IID: ${{ needs.releaseaab.outputs.relid }}
+      GIT_COMMIT_COUNT: ${{ needs.releaseaab.outputs.relid }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -311,14 +305,14 @@ jobs:
         working-directory: android
         run: |
           fastlane run download_from_play_store track:"alpha"
-          cp ../LATEST fastlane/metadata/android/en-US/changelogs/$CI_PIPELINE_IID.txt
+          cp ../LATEST fastlane/metadata/android/en-US/changelogs/$GIT_COMMIT_COUNT.txt
           cp ../appbundle-signed.aab .
           cp ../VERSION .
       - name: Deploying to Alpha Track on Google Play
         working-directory: android
         run: |
           APP_VERSION=$(cat ./VERSION)
-          fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true --version_name "$CI_PIPELINE_IID ($APP_VERSION)"
+          fastlane supply --aab appbundle-signed.aab --track alpha --skip_upload_images true --skip_upload_screenshots true --version_name "$GIT_COMMIT_COUNT ($APP_VERSION)"
   generaterelease:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
