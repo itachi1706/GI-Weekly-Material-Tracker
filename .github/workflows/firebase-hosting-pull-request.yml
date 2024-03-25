@@ -10,7 +10,7 @@ jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     env:
-      CI_PIPELINE_IID: ${{ github.run_number }}
+      GIT_RUN_NUMBER: ${{ github.run_number }}
       CI_COMMIT_REF_NAME: ${{ github.ref_name }}
       APP_BUILD_VER: web
       APP_TYPE: Web
