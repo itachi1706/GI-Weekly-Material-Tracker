@@ -366,6 +366,372 @@
       "hoyowiki": 14,
       "subCollection": {}
     },
+    "Arlecchino": {
+      "image": "Characters/Pyro/Arlecchino.png",
+      "gender": "Female",
+      "birthday": "22/8",
+      "caption": "Dire Balemoon",
+      "titles": [
+        "Head of the House of the Hearth", 
+        "The Knave",
+        "The Fourth of the Eleven Fatui Harbingers"
+      ],
+      "name": "Arlecchino",
+      "fullName": "Peruere",
+      "description": "\"The Knave,\" Fourth of the Fatui Harbingers. A poised, ruthless diplomant. To the children of the House of the Hearth, she is their feared yet dependable \"Father.\"",
+      "nation": "Snezhnaya, Khaenri'ah, Fontaine",
+      "weapon": "Polearm",
+      "rarity": 5,
+      "affiliation": "Fatui, House of the Hearth, Eleven Fatui Harbingers",
+      "constellation": "Ignis Purgatorius",
+      "outfits": ["Moonglare"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Order",
+            "material3qty": 3,
+            "material4": "Recruit_Insignia",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 2,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 4,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 6,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Order",
+            "material3qty": 9,
+            "material4": "Sergeant_Insignia",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 4,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 6,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 12,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Order",
+            "material3qty": 16,
+            "material4": "Lieutenant_Insignia",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Agony_Alone_May_Be_Repaid": {
+            "name": "Agony Alone May Be Repaid",
+            "effect": "Blood-Debt Directives have the following characteristics:\nArlecchino will be granted a Bond of Life worth 130% of her Max HP when an opponent to which she herself applied a Directive is defeated.\n5s after a Directive is applied, it will be upgraded to a Blood-Debt Due. When absorbed, it will instead grant Arlecchino a Bond of Life worth 130%.\nA Bond of Life created in the aforementioned ways cannot exceed the original limit on the value of Bonds of Life obtained through All Is Ash.",
+            "image": "Talents/Passive/Talent_Agony_Alone_May_Be_Repaid.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Strength_Alone_Can_Defend": {
+            "name": "Strength Alone Can Defend",
+            "effect": "Arlecchino gains 1% All Elemental and Physical RES for every 100 ATK she has in excess of 1,000. The maximum RES increase she can gain this way for each is 20%.",
+            "image": "Talents/Passive/Talent_Strength_Alone_Can_Defend.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "The_Balemoon_Alone_May_Know": {
+            "name": "The Balemoon Alone May Know",
+            "effect": "While in combat, Arlecchino gains a 40% Pyro DMG Bonus and can only be healed through Balemoon Rising.",
+            "image": "Talents/Passive/Talent_The_Balemoon_Alone_May_Know.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Invitation_to_a_Beheading": {
+            "name": "Invitation to a Beheading",
+            "effect": "Normal Attack\nPerforms up to 6 consecutive spear strikes.\n\nCharged Attack\nConsumes a fixed amount of Stamina, dashing toward a nearby opponent and cleaving once.\nContinuously holding this button will cause Arlecchino to consume Stamina and engage in up to 5s of high-speed movement.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.\n\nMasque of the Red Death\nWhen Arlecchino has a Bond of Life equal to or greater than 30% of her Max HP, she will enter the \"Masque of the Red Death\" state, where her Normal, Charged, and Plunging Attacks will be converted to deal Pyro DMG. This cannot be overridden.\nWhen in the \"Masque of the Red Death\" state, Arlecchino's Normal Attacks will deal extra DMG to opponents on hit that scales off her ATK multiplied by a certain ratio of her current Bond of Life percentage. This will consume 7.5% of said current Bond of Life. Her Bond of Life can be consumed this way every 0.03s. When her Bond of Life is consumed in this manner, All Is Ash's CD will decrease by 0.8s.",
+            "image": "Talents/Normal/Polearm_Pyro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "All_Is_Ash": {
+            "name": "All Is Ash",
+            "effect": "Summons forth Balemoon Bloodfire, dealing Pyro DMG to multiple nearby opponents and performing a dash-cleave against one of them, dealing AoE Pyro DMG.\nOpponents hit by the aforementioned attack will have a Blood-Debt Directive applied to them.\n\nBlood-Debt Directive\nLasts 30s. Every 5s, it will deal 1 instance of Pyro DMG to the opponent. Max 2 instances. This DMG will be considered Elemental Skill DMG.\nWhen Arlecchino uses a Charged Attack or her Elemental Burst, Balemoon Rising, she will absorb and clear nearby Blood-Debt Directives. Each Directive absorbed grants her a Bond of Life worth 65% of her Max HP.\nThe maximum value of the Bond of Life she can be granted through Blood-Debt Directives within 35s after using her Elemental Skill is 145% of her Max HP. Using the Elemental Skill again during this duration will restart the count on duration and the limit on the value of Bond of Life she may gain from Blood-Debt Directives.",
+            "image": "Talents/Skill/Talent_All_Is_Ash.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Balemoon_Rising": {
+            "name": "Balemoon Rising",
+            "effect": "Arlecchino's great wing of Balemoon Bloodfire beats as she absorbs and clears Blood-Debt Directives around her. She deals AoE Pyro DMG before clearing the CD of All Is Ash and healing herself. The healing is based on her Bond of Life value and ATK.",
+            "image": "Talents/Burst/Talent_Balemoon_Rising.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "\"All Reprisals and Arrears, Mine to Bear...\"",
+          "effect": "Masque of the Red Death is further enhanced, the value of the increase is 100%. Additionally, Arlecchino's interruption resistance is increased when she performs Normal or Charged Attacks while affected by the Masque of the Red Death.",
+          "image": "Constellation/All_Reprisals_and_Arrears_Mine_to_Bear.png"
+        },
+        "2": {
+          "name": "\"All Rewards and Retribution, Mine to Bestow...\"",
+          "effect": "Blood-Debt Directives are now already Blood-Debt Due when first applied.\nWhen Arlecchino absorbs such a Due, she unleashes Balemoon Bloodfire in front of her, dealing 900% of her ATK as AoE Pyro DMG and increasing her All Elemental RES and Physical RES by 20% for 15s. This effect can trigger once every 10s.\nYou must first unlock the Passive Talent \"Agony Alone May Be Repaid.\"",
+          "image": "Constellation/All_Rewards_and_Retribution_Mine_to_Bestow.png"
+        },
+        "3": {
+          "name": "\"You Shall Become a New Member of Our Family...\"",
+          "effect": "Increases the Level of Normal Attack: Invitation to a Beheading by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/You_Shall_Become_a_New_Member_of_Our_Family.png"
+        },
+        "4": {
+          "name": "\"You Shall Love and Protect Each Other Henceforth...\"",
+          "effect": "When Arlecchino successfully absorbs a Blood-Debt Directive, Balemoon Rising's CD will decrease by 2s and 15 Elemental Energy will be restored to her. This effect can occur once every 10s.",
+          "image": "Constellation/You_Shall_Love_and_Protect_Each_Other_Henceforth.png"
+        },
+        "5": {
+          "name": "\"For Alone, We Are as Good as Dead...\"",
+          "effect": "Increases the Level of Balemoon Rising by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/For_Alone_We_Are_as_Good_as_Dead.png"
+        },
+        "6": {
+          "name": "\"From This Day On, We Shall Delight in New Life Together.\"",
+          "effect": "The DMG of Balemoon Rising is increased by Arlecchino's ATK multiplied by 700% of Arlecchino's current Bond of Life percentage.\nFor 20s after Arlecchino uses All Is Ash, both her Normal Attacks and Elemental Burst gain 10% increased CRIT Rate and 70% increased CRIT DMG. This effect can be triggered up to once every 15s.",
+          "image": "Constellation/From_This_Day_On_We_Shall_Delight_in_New_Life_Together.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Agnidus_Agate_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Recruit_Insignia",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Fragment_of_a_Golden_Melody",
+          "level": 40,
+          "material4": "Recruit_Insignia",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Fragment_of_a_Golden_Melody",
+          "level": 50,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Fragment_of_a_Golden_Melody",
+          "level": 60,
+          "material4": "Sergeant_Insignia",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Fragment_of_a_Golden_Melody",
+          "level": 70,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Agnidus_Agate_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Fragment_of_a_Golden_Melody",
+          "level": 80,
+          "material4": "Lieutenant_Insignia",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Rainbow_Rose",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Recruit_Insignia",
+          "common2": "Sergeant_Insignia",
+          "common3": "Lieutenant_Insignia",
+          "gem1": "Agnidus_Agate_Silver",
+          "gem2": "Agnidus_Agate_Fragment",
+          "gem3": "Agnidus_Agate_Chunk",
+          "gem4": "Agnidus_Agate_Gemstone",
+          "boss_drop": "Fragment_of_a_Golden_Melody",
+          "local_speciality": "Rainbow_Rose"
+        },
+        "talents": {
+          "common1": "Recruit_Insignia",
+          "common2": "Sergeant_Insignia",
+          "common3": "Lieutenant_Insignia",
+          "mastery1": "Teachings_of_Order",
+          "mastery2": "Guide_to_Order",
+          "mastery3": "Philosophies_of_Order",
+          "weekly_boss_drop": "Fading_Candle",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "\"The Knave,\" Fourth of the Fatui Harbingers. Revered as \"Father\" by the children of the House of the Hearth.",
+      "paimonmoepath": "characters/arlecchino",
+      "genshinggpath": "characters/arlecchino",
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Arlecchino",
+      "hoyowiki": 5149,
+      "subCollection": {}
+    },
     "Bennett": {
       "image": "Characters/Pyro/Bennett.png",
       "gender": "Male",

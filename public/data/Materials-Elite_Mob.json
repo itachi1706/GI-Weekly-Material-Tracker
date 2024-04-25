@@ -1025,6 +1025,60 @@
       },
       "hoyowiki": 4950,
       "subCollection": {}
+    },
+    "Ruined_Hilt": {
+      "image": "Materials/Elite_Mob/Item_Ruined_Hilt.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A stone hilt obtained from an ancient statue.\nIts luster has long been lost to the depredations of seawater.",
+      "enemies": ["Praetorian Golem"],
+      "obtained": "- Dropped by Praetorian Golem",
+      "name": "Ruined Hilt",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ruined_Hilt",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 5602,
+      "subCollection": {}
+    },
+    "Splintered_Hilt": {
+      "image": "Materials/Elite_Mob/Item_Splintered_Hilt.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A stone hilt obtained from an ancient statue.\nThe chips and grooves speak to the brutal battles its owner once weathered.",
+      "enemies": ["Praetorian Golem"],
+      "obtained": "- Alchemy (3x Ruined Hilt)\n- Dropped by Praetorian Golem",
+      "name": "Splintered Hilt",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Splintered_Hilt",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 5603,
+      "subCollection": {}
+    },
+    "Still-Smoldering_Hilt": {
+      "image": "Materials/Elite_Mob/Item_Still-Smoldering_Hilt.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A stone hilt obtained from an ancient statue.\nOnly the recentness of its separation from its owner may explain the as-yet unextinguished flame within.",
+      "enemies": ["Praetorian Golem"],
+      "obtained": "- Alchemy (3x Splintered Hilt)\n- Dropped by Praetorian Golem",
+      "name": "Still-Smoldering Hilt",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Still-Smoldering_Hilt",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 5604,
+      "subCollection": {}
     }
   }
 }
