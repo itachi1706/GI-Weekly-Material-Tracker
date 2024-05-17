@@ -202,13 +202,7 @@ class NotificationManager {
         debugPrint('Scheduling Parametric Transformer Reminder');
 
         if (GetPlatform.isAndroid && !(await _hasNotificationPermission())) {
-          debugPrint('No permission. Aborting');
-          // Show alert
-          Util.showSnackbarQuick(
-            Get.context!,
-            'Please enable notifications for this app in your phone settings',
-          );
-
+          _showNotificationRequirementRationale();
           return false;
         }
 
@@ -249,12 +243,7 @@ class NotificationManager {
       debugPrint('Scheduling Daily Forum Reminder');
 
       if (GetPlatform.isAndroid && !(await _hasNotificationPermission())) {
-        debugPrint('No permission. Aborting');
-        // Show alert
-        Util.showSnackbarQuick(
-          Get.context!,
-          'Please enable notifications for this app in your phone settings',
-        );
+        _showNotificationRequirementRationale();
 
         return false;
       }
@@ -274,6 +263,15 @@ class NotificationManager {
     }
 
     return true;
+  }
+
+  void _showNotificationRequirementRationale() {
+    debugPrint('No permission. Aborting');
+    // Show alert
+    Util.showSnackbarQuick(
+      Get.context!,
+      'Please enable notifications and exact alarm for this app in your phone settings',
+    );
   }
 
   NotificationDetails craftParametricTransformerReminder() {
@@ -339,26 +337,70 @@ class NotificationManager {
     debugPrint('Ensuring we have permissions');
     if (_plugin == null) return false;
 
-    var notifEnabled = await _plugin!
-            .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
-            ?.areNotificationsEnabled() ??
-        false;
+    var notifEnabled = await _checkIfNotificationEnabled();
     if (!notifEnabled) {
       debugPrint('Requesting Notification Permission');
       await _plugin!
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
-          ?.requestPermission();
+          ?.requestNotificationsPermission();
     }
 
     debugPrint('Notifications Enabled: $notifEnabled');
 
+    // We also need schedule exact alarm
+    if (GetPlatform.isAndroid) {
+      // Check for exact alarm permission
+      var exactAlarmEnabled = await _checkIfExactNotificationEnabled();
+      if (!exactAlarmEnabled) {
+        debugPrint('Requesting Exact Alarm Permission as well');
+        // Show a dialog explaining this beforehand
+        await showDialog(
+            context: Get.context!,
+            builder: (context) => AlertDialog(
+                  title: const Text('Permission Required'),
+                  content: const Text(
+                    'We also require permission to schedule exact alarms for reminders to work',
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () async {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ));
+        await _plugin!
+            .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>()
+            ?.requestExactAlarmsPermission();
+      }
+    }
+
     // Check again
+    return await _checkIfNotificationEnabled() &&
+        await _checkIfExactNotificationEnabled();
+  }
+
+  Future<bool> _checkIfNotificationEnabled() async {
+    if (_plugin == null) return false;
+
     return await _plugin!
             .resolvePlatformSpecificImplementation<
                 AndroidFlutterLocalNotificationsPlugin>()
             ?.areNotificationsEnabled() ??
+        false;
+  }
+
+  Future<bool> _checkIfExactNotificationEnabled() async {
+    if (_plugin == null) return false;
+    if (!GetPlatform.isAndroid) return true;
+
+    return await _plugin!
+            .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>()
+            ?.canScheduleExactNotifications() ??
         false;
   }
 

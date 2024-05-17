@@ -139,7 +139,7 @@ class SettingsPageState extends State<SettingsPage> {
         if (!result) {
           Util.showSnackbarQuick(
             context,
-            'Failed to schedule reminder. Make sure permission to post notification is enabled',
+            'Failed to schedule reminder. Make sure permission to post notification and exact alarm is enabled',
           );
         } else {
           Util.showSnackbarQuick(
@@ -165,7 +165,7 @@ class SettingsPageState extends State<SettingsPage> {
         if (!result) {
           Util.showSnackbarQuick(
             context,
-            'Failed to schedule reminder. Make sure permission to post notification is enabled',
+            'Failed to schedule reminder. Make sure permission to post notification and exact alarm is enabled',
           );
         } else {
           Util.showSnackbarQuick(
