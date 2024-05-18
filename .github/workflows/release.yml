@@ -318,7 +318,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     needs: 
       - releaseapk
-      - releaseipa
+      #- releaseipa # TODO: Reenable when we upgrade Firebase and Flutter to 3.16 at least (with Dart 3)
     name: Upload Artifact + Deploy Artifact
     permissions:
       contents: write
@@ -326,9 +326,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: flutter-android-artifact-rel
-      - uses: actions/download-artifact@v4
-        with:
-          name: flutter-unsigned-ipa-artifact-rel
+        # TODO: Reenable when we upgrade Firebase and Flutter to 3.16 at least (with Dart 3)
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: flutter-unsigned-ipa-artifact-rel
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@v1.5.0
       - uses: benjlevesque/short-sha@v3.0
@@ -371,7 +372,7 @@ jobs:
           mv ./release/app-x86_64-release.apk apks/gi-material-tracker-x64-$APP_VERSION.apk
           mv ./release/app-armeabi-v7a-release.apk apks/gi-material-tracker-arm-$APP_VERSION.apk
           mv ./app-fatapk.apk apks/gi-material-tracker-multiarch-$APP_VERSION.apk
-          mv ./app.ipa apks/gi-material-tracker-ios-$APP_VERSION.ipa
+#          mv ./app.ipa apks/gi-material-tracker-ios-$APP_VERSION.ipa # TODO: Reenable when we upgrade Firebase and Flutter to 3.16 at least (with Dart 3)
       - uses: olegtarasov/get-tag@v2.1
         id: tagName
       - name: Generating Releases to deploy tagged version of app
@@ -388,6 +389,7 @@ jobs:
   releaseipa:
     runs-on: macos-14 # For XCode 14.3.1 and Apple Silicon
     name: Generate Release Flutter Unsigned IPA
+    if: false # TODO: Reenable when we upgrade Firebase and Flutter to 3.16 at least (with Dart 3)
     env:
       APP_BUILD_VER: beta
       APP_TYPE: iOS
