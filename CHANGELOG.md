@@ -1,3 +1,6 @@
+# 3.0.9
+- Removed some permissions requested by libraries that are not needed
+
 # 3.0.8
 - Added Chronicled Wish Tab page
 - Fixed rate up icons overflowing off screen in banner page
