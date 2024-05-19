@@ -70,27 +70,21 @@ class MaterialDataMob extends MaterialDataCommon {
   List<String>? enemies;
 
   MaterialDataMob({
-    image,
-    rarity,
+    super.image,
+    super.rarity,
     type,
     innerType,
-    name,
-    description,
+    super.name,
+    super.description,
     obtained,
-    wiki,
+    super.wiki,
     this.enemies,
     usage,
-    released,
+    super.released,
   }) : super(
-          image: image,
-          rarity: rarity,
           type: type,
           innerType: innerType,
-          name: name,
-          description: description,
-          wiki: wiki,
           obtained: obtained,
-          released: released,
           usage: usage,
         );
 
@@ -120,27 +114,21 @@ class MaterialDataDomains extends MaterialDataCommon {
   List<int>? days;
 
   MaterialDataDomains({
-    image,
-    rarity,
+    super.image,
+    super.rarity,
     type,
     innerType,
-    name,
-    description,
+    super.name,
+    super.description,
     obtained,
-    wiki,
+    super.wiki,
     this.days,
     usage,
-    released,
+    super.released,
   }) : super(
-          image: image,
-          rarity: rarity,
           type: type,
           innerType: innerType,
-          name: name,
-          description: description,
-          wiki: wiki,
           obtained: obtained,
-          released: released,
           usage: usage,
         );
 

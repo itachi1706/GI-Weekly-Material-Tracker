@@ -24,10 +24,10 @@ class CharacterTabController extends StatefulWidget {
   final SortNotifier? notifier;
 
   const CharacterTabController({
-    Key? key,
+    super.key,
     required this.tabController,
     this.notifier,
-  }) : super(key: key);
+  });
 
   @override
   CharacterTabControllerWidgetState createState() =>
@@ -54,8 +54,7 @@ class CharacterListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const CharacterListGrid({Key? key, this.filter, this.notifier})
-      : super(key: key);
+  const CharacterListGrid({super.key, this.filter, this.notifier});
 
   @override
   CharacterListGridState createState() => CharacterListGridState();
@@ -138,7 +137,7 @@ class CharacterListGridState extends State<CharacterListGrid> {
 }
 
 class CharacterInfoMainPage extends StatefulWidget {
-  const CharacterInfoMainPage({Key? key}) : super(key: key);
+  const CharacterInfoMainPage({super.key});
 
   @override
   CharacterInfoMainPageState createState() => CharacterInfoMainPageState();
@@ -261,11 +260,11 @@ class CharacterInfoPage extends StatefulWidget {
   final Map<String, MaterialDataCommon>? materialData;
 
   const CharacterInfoPage({
-    Key? key,
+    super.key,
     required this.info,
     required this.infoId,
     required this.materialData,
-  }) : super(key: key);
+  });
 
   @override
   CharacterInfoPageState createState() => CharacterInfoPageState();
@@ -953,11 +952,11 @@ class CharacterTalentPage extends StatefulWidget {
   final Map<String, MaterialDataCommon>? materialData;
 
   const CharacterTalentPage({
-    Key? key,
+    super.key,
     required this.info,
     required this.infoId,
     required this.materialData,
-  }) : super(key: key);
+  });
 
   @override
   CharacterTalentPageState createState() => CharacterTalentPageState();
@@ -1561,8 +1560,7 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
 class CharacterConstellationPage extends StatelessWidget {
   final CharacterData? info;
 
-  const CharacterConstellationPage({Key? key, required this.info})
-      : super(key: key);
+  const CharacterConstellationPage({super.key, required this.info});
 
   List<Widget> _constellationWidgets(BuildContext context) {
     var wid = <Widget>[];

@@ -15,10 +15,10 @@ class MaterialTabController extends StatefulWidget {
   final SortNotifier? notifier;
 
   const MaterialTabController({
-    Key? key,
+    super.key,
     required this.tabController,
     this.notifier,
-  }) : super(key: key);
+  });
 
   @override
   MaterialTabControllerState createState() => MaterialTabControllerState();
@@ -41,8 +41,7 @@ class MaterialListGrid extends StatefulWidget {
   final String? filter;
   final SortNotifier? notifier;
 
-  const MaterialListGrid({Key? key, this.filter, this.notifier})
-      : super(key: key);
+  const MaterialListGrid({super.key, this.filter, this.notifier});
 
   @override
   MaterialListGridState createState() => MaterialListGridState();
@@ -119,7 +118,7 @@ class MaterialListGridState extends State<MaterialListGrid> {
 }
 
 class MaterialInfoPage extends StatefulWidget {
-  const MaterialInfoPage({Key? key}) : super(key: key);
+  const MaterialInfoPage({super.key});
 
   @override
   MaterialInfoPageState createState() => MaterialInfoPageState();

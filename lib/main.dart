@@ -27,7 +27,7 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   MyAppState createState() => MyAppState();
@@ -171,7 +171,7 @@ class MyAppState extends State<MyApp> {
 }
 
 class TransitionPage extends StatelessWidget {
-  const TransitionPage({Key? key}) : super(key: key);
+  const TransitionPage({super.key});
 
   Future<void> _skip() async {
     Util.currentRoute = '/tracking';

@@ -31,7 +31,7 @@ class GlobalTrackingPage extends StatelessWidget {
     const GlobalTracker(path: 'local_speciality'),
   ];
 
-  GlobalTrackingPage({Key? key}) : super(key: key);
+  GlobalTrackingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class GlobalTrackingPage extends StatelessWidget {
 class GlobalTracker extends StatefulWidget {
   final String path;
 
-  const GlobalTracker({Key? key, required this.path}) : super(key: key);
+  const GlobalTracker({super.key, required this.path});
 
   @override
   GlobalTrackerState createState() => GlobalTrackerState();
@@ -221,7 +221,7 @@ class GlobalTrackerState extends State<GlobalTracker> {
 }
 
 class GlobalMaterialPage extends StatefulWidget {
-  const GlobalMaterialPage({Key? key}) : super(key: key);
+  const GlobalMaterialPage({super.key});
 
   @override
   GlobalMaterialPageState createState() => GlobalMaterialPageState();

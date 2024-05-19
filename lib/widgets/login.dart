@@ -13,7 +13,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   LoginPageState createState() => LoginPageState();

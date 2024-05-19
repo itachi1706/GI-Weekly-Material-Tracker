@@ -18,7 +18,7 @@ import 'package:timezone/data/latest.dart' as tz;
 final FirebaseDatabase db = FirebaseDatabase.instance;
 
 class WishListPage extends StatefulWidget {
-  const WishListPage({Key? key}) : super(key: key);
+  const WishListPage({super.key});
 
   @override
   WishListPageState createState() => WishListPageState();
@@ -74,8 +74,7 @@ class WishListPageState extends State<WishListPage>
 class WishListPageContent extends StatefulWidget {
   final String wishType;
 
-  const WishListPageContent({Key? key, required this.wishType})
-      : super(key: key);
+  const WishListPageContent({super.key, required this.wishType});
 
   @override
   WishListPageContentState createState() => WishListPageContentState();
@@ -130,8 +129,7 @@ class WishPageCard extends StatelessWidget {
   final Map<String, CharacterData> characterInfo;
   final Map<String, WeaponData> weaponInfo;
 
-  const WishPageCard(this.data, this.characterInfo, this.weaponInfo, {Key? key})
-      : super(key: key);
+  const WishPageCard(this.data, this.characterInfo, this.weaponInfo, {super.key});
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
@@ -318,7 +316,7 @@ class WishPageCard extends StatelessWidget {
 }
 
 class CurrentWishListPageContent extends StatefulWidget {
-  const CurrentWishListPageContent({Key? key}) : super(key: key);
+  const CurrentWishListPageContent({super.key});
 
   @override
   CurrentWishListPageContentState createState() =>
@@ -405,7 +403,7 @@ class CurrentWishListPageContentState
 }
 
 class BannerInfoPage extends StatefulWidget {
-  const BannerInfoPage({Key? key}) : super(key: key);
+  const BannerInfoPage({super.key});
 
   @override
   BannerInfoPageState createState() => BannerInfoPageState();

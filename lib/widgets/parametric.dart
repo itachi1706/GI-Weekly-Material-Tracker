@@ -16,7 +16,7 @@ import 'package:store_redirect/store_redirect.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class ParametricPage extends StatefulWidget {
-  const ParametricPage({Key? key}) : super(key: key);
+  const ParametricPage({super.key});
 
   @override
   ParametricPageState createState() => ParametricPageState();

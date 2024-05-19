@@ -6,7 +6,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class PlaceholderPage extends StatelessWidget {
-  const PlaceholderPage({Key? key}) : super(key: key);
+  const PlaceholderPage({super.key});
 
   void _signOut() async {
     await _auth.signOut();
@@ -40,7 +40,7 @@ class PlaceholderPage extends StatelessWidget {
 class PlaceholderWidgetContainer extends StatelessWidget {
   final Color color;
 
-  const PlaceholderWidgetContainer(this.color, {Key? key}) : super(key: key);
+  const PlaceholderWidgetContainer(this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {

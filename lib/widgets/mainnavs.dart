@@ -13,7 +13,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class TrackingPage extends StatefulWidget {
   final String? title;
 
-  const TrackingPage({Key? key, this.title}) : super(key: key);
+  const TrackingPage({super.key, this.title});
 
   @override
   TrackingPageState createState() => TrackingPageState();
@@ -67,7 +67,7 @@ class TrackingPageState extends State<TrackingPage>
 }
 
 class DictionaryPage extends StatefulWidget {
-  const DictionaryPage({Key? key}) : super(key: key);
+  const DictionaryPage({super.key});
 
   @override
   DictionaryPageState createState() => DictionaryPageState();

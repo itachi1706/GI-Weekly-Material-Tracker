@@ -12,7 +12,7 @@ import 'package:timezone/data/latest.dart' as tz;
 
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   SplashPageState createState() => SplashPageState();

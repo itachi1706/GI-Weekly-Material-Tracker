@@ -21,8 +21,7 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 class TrackingTabController extends StatefulWidget {
   final TabController? tabController;
 
-  const TrackingTabController({Key? key, required this.tabController})
-      : super(key: key);
+  const TrackingTabController({super.key, required this.tabController});
 
   @override
   TrackingTabControllerState createState() => TrackingTabControllerState();
@@ -46,7 +45,7 @@ class TrackingTabControllerState extends State<TrackingTabController> {
 class TrackerPage extends StatefulWidget {
   final String path;
 
-  const TrackerPage({Key? key, required this.path}) : super(key: key);
+  const TrackerPage({super.key, required this.path});
 
   @override
   TrackerPageState createState() => TrackerPageState();
@@ -383,7 +382,7 @@ class TrackerPageState extends State<TrackerPage> {
 }
 
 class PlannerPage extends StatefulWidget {
-  const PlannerPage({Key? key}) : super(key: key);
+  const PlannerPage({super.key});
 
   @override
   PlannerPageState createState() => PlannerPageState();

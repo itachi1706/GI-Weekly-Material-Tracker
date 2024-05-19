@@ -22,7 +22,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   SettingsPageState createState() => SettingsPageState();
@@ -763,7 +763,7 @@ class SettingsPageState extends State<SettingsPage> {
 }
 
 class RegionSettingsPage extends StatefulWidget {
-  const RegionSettingsPage({Key? key}) : super(key: key);
+  const RegionSettingsPage({super.key});
 
   @override
   RegionSettingsPageState createState() => RegionSettingsPageState();
@@ -850,7 +850,7 @@ class RegionSettingsPageState extends State<RegionSettingsPage> {
 }
 
 class BuildGuideSelectorPage extends StatefulWidget {
-  const BuildGuideSelectorPage({Key? key}) : super(key: key);
+  const BuildGuideSelectorPage({super.key});
 
   @override
   BuildGuideSelectorPageState createState() => BuildGuideSelectorPageState();
@@ -931,7 +931,7 @@ class BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
 }
 
 class NotificationDebugPage extends StatelessWidget {
-  const NotificationDebugPage({Key? key}) : super(key: key);
+  const NotificationDebugPage({super.key});
 
   Future<void> _showDialog(BuildContext context, String msg) async {
     await showDialog(

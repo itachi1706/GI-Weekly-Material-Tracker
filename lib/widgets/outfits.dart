@@ -11,7 +11,7 @@ import 'package:model_viewer_plus/model_viewer_plus.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
 class AllOutfitsPage extends StatelessWidget {
-  const AllOutfitsPage({Key? key}) : super(key: key);
+  const AllOutfitsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AllOutfitsPage extends StatelessWidget {
 class OutfitListGrid extends StatefulWidget {
   final String? character;
 
-  const OutfitListGrid({Key? key, this.character}) : super(key: key);
+  const OutfitListGrid({super.key, this.character});
 
   @override
   OutfitListGridState createState() => OutfitListGridState();
@@ -91,7 +91,7 @@ class OutfitListGridState extends State<OutfitListGrid> {
 }
 
 class OutfitInfoMainPage extends StatefulWidget {
-  const OutfitInfoMainPage({Key? key}) : super(key: key);
+  const OutfitInfoMainPage({super.key});
 
   @override
   OutfitInfoMainPageState createState() => OutfitInfoMainPageState();
@@ -172,7 +172,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
 class OutfitInfoGeneralPage extends StatelessWidget {
   final OutfitData? info;
 
-  const OutfitInfoGeneralPage({Key? key, required this.info}) : super(key: key);
+  const OutfitInfoGeneralPage({super.key, required this.info});
 
   Widget _getOutfitHeader(BuildContext context) {
     return Row(
@@ -310,8 +310,7 @@ class OutfitInfoGeneralPage extends StatelessWidget {
 class OutfitInfoImagePage extends StatelessWidget {
   final String? imagePath;
 
-  const OutfitInfoImagePage({Key? key, required this.imagePath})
-      : super(key: key);
+  const OutfitInfoImagePage({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -325,7 +324,7 @@ class OutfitInfoImagePage extends StatelessWidget {
 }
 
 class OutfitModelViewerPage extends StatefulWidget {
-  const OutfitModelViewerPage({Key? key}) : super(key: key);
+  const OutfitModelViewerPage({super.key});
 
   @override
   OutfitModelViewerPageState createState() => OutfitModelViewerPageState();
