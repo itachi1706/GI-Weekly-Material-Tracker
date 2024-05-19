@@ -46,8 +46,14 @@ class TrackingUserData extends CommonTracking {
   String? addData;
   String? addedBy;
 
-  TrackingUserData({this.addData, this.addedBy, current, max, name, type})
-      : super(current: current, max: max, name: name, type: type);
+  TrackingUserData(
+      {this.addData,
+      this.addedBy,
+      super.current,
+      super.max,
+      super.name,
+      super.type})
+      : super();
 
   factory TrackingUserData.fromJson(Map<String, dynamic> parsedJson) {
     return TrackingUserData(
