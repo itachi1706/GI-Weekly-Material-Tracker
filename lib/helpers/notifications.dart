@@ -270,7 +270,7 @@ class NotificationManager {
     // Show alert
     Util.showSnackbarQuick(
       Get.context!,
-      'Please enable notifications and exact alarm for this app in your phone settings',
+      'Please enable notifications for this app in your phone settings',
     );
   }
 
@@ -348,39 +348,8 @@ class NotificationManager {
 
     debugPrint('Notifications Enabled: $notifEnabled');
 
-    // We also need schedule exact alarm
-    if (GetPlatform.isAndroid) {
-      // Check for exact alarm permission
-      var exactAlarmEnabled = await _checkIfExactNotificationEnabled();
-      if (!exactAlarmEnabled) {
-        debugPrint('Requesting Exact Alarm Permission as well');
-        // Show a dialog explaining this beforehand
-        await showDialog(
-            context: Get.context!,
-            builder: (context) => AlertDialog(
-                  title: const Text('Permission Required'),
-                  content: const Text(
-                    'We also require permission to schedule exact alarms for reminders to work',
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () async {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('OK'),
-                    ),
-                  ],
-                ));
-        await _plugin!
-            .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
-            ?.requestExactAlarmsPermission();
-      }
-    }
-
     // Check again
-    return await _checkIfNotificationEnabled() &&
-        await _checkIfExactNotificationEnabled();
+    return await _checkIfNotificationEnabled();
   }
 
   Future<bool> _checkIfNotificationEnabled() async {
@@ -390,17 +359,6 @@ class NotificationManager {
             .resolvePlatformSpecificImplementation<
                 AndroidFlutterLocalNotificationsPlugin>()
             ?.areNotificationsEnabled() ??
-        false;
-  }
-
-  Future<bool> _checkIfExactNotificationEnabled() async {
-    if (_plugin == null) return false;
-    if (!GetPlatform.isAndroid) return true;
-
-    return await _plugin!
-            .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
-            ?.canScheduleExactNotifications() ??
         false;
   }
 
