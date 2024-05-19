@@ -138,7 +138,7 @@ class NotificationManager {
     ];
   }
 
-  List<dynamic> getParametricTransformerMesssages() {
+  List<dynamic> getParametricTransformerMessages() {
     return [
       1002,
       'Your Parametric Transformer is Ready!',
@@ -159,8 +159,8 @@ class NotificationManager {
     }
 
     if (pref.containsKey('parametric_notification')) {
-      var paraNotif = pref.getBool('parametric_notification') ?? false;
-      if (!paraNotif) {
+      var paraNotification = pref.getBool('parametric_notification') ?? false;
+      if (!paraNotification) {
         removeNotificationChannel('notify_parametric', silent: true);
       }
     }
@@ -173,7 +173,7 @@ class NotificationManager {
     bool toEnable, {
     bool resetNotificationChannel = false,
   }) async {
-    var data = getParametricTransformerMesssages();
+    var data = getParametricTransformerMessages();
     await _plugin!.cancel(data[0], tag: 'weekly_parametric');
     debugPrint('Deleted Parametric Transformer Reminder');
 
@@ -270,7 +270,7 @@ class NotificationManager {
     // Show alert
     Util.showSnackbarQuick(
       Get.context!,
-      'Please enable notifications and exact alarm for this app in your phone settings',
+      'Please enable notifications for this app in your phone settings',
     );
   }
 
@@ -337,8 +337,8 @@ class NotificationManager {
     debugPrint('Ensuring we have permissions');
     if (_plugin == null) return false;
 
-    var notifEnabled = await _checkIfNotificationEnabled();
-    if (!notifEnabled) {
+    var isEnabled = await _checkIfNotificationEnabled();
+    if (!isEnabled) {
       debugPrint('Requesting Notification Permission');
       await _plugin!
           .resolvePlatformSpecificImplementation<
@@ -346,41 +346,10 @@ class NotificationManager {
           ?.requestNotificationsPermission();
     }
 
-    debugPrint('Notifications Enabled: $notifEnabled');
-
-    // We also need schedule exact alarm
-    if (GetPlatform.isAndroid) {
-      // Check for exact alarm permission
-      var exactAlarmEnabled = await _checkIfExactNotificationEnabled();
-      if (!exactAlarmEnabled) {
-        debugPrint('Requesting Exact Alarm Permission as well');
-        // Show a dialog explaining this beforehand
-        await showDialog(
-            context: Get.context!,
-            builder: (context) => AlertDialog(
-                  title: const Text('Permission Required'),
-                  content: const Text(
-                    'We also require permission to schedule exact alarms for reminders to work',
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () async {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('OK'),
-                    ),
-                  ],
-                ));
-        await _plugin!
-            .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
-            ?.requestExactAlarmsPermission();
-      }
-    }
+    debugPrint('Notifications Enabled: $isEnabled');
 
     // Check again
-    return await _checkIfNotificationEnabled() &&
-        await _checkIfExactNotificationEnabled();
+    return await _checkIfNotificationEnabled();
   }
 
   Future<bool> _checkIfNotificationEnabled() async {
@@ -390,17 +359,6 @@ class NotificationManager {
             .resolvePlatformSpecificImplementation<
                 AndroidFlutterLocalNotificationsPlugin>()
             ?.areNotificationsEnabled() ??
-        false;
-  }
-
-  Future<bool> _checkIfExactNotificationEnabled() async {
-    if (_plugin == null) return false;
-    if (!GetPlatform.isAndroid) return true;
-
-    return await _plugin!
-            .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
-            ?.canScheduleExactNotifications() ??
         false;
   }
 
