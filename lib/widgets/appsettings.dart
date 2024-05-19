@@ -978,7 +978,7 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) {
                   notifyManager!.showNotification(
-                    notifyManager.getParametricTransformerMesssages(),
+                    notifyManager.getParametricTransformerMessages(),
                     notifyManager.craftParametricTransformerReminder(),
                     payload: 'parametric-weekly',
                   );

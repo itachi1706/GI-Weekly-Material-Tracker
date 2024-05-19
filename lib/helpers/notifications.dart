@@ -138,7 +138,7 @@ class NotificationManager {
     ];
   }
 
-  List<dynamic> getParametricTransformerMesssages() {
+  List<dynamic> getParametricTransformerMessages() {
     return [
       1002,
       'Your Parametric Transformer is Ready!',
@@ -159,8 +159,8 @@ class NotificationManager {
     }
 
     if (pref.containsKey('parametric_notification')) {
-      var paraNotif = pref.getBool('parametric_notification') ?? false;
-      if (!paraNotif) {
+      var paraNotification = pref.getBool('parametric_notification') ?? false;
+      if (!paraNotification) {
         removeNotificationChannel('notify_parametric', silent: true);
       }
     }
@@ -173,7 +173,7 @@ class NotificationManager {
     bool toEnable, {
     bool resetNotificationChannel = false,
   }) async {
-    var data = getParametricTransformerMesssages();
+    var data = getParametricTransformerMessages();
     await _plugin!.cancel(data[0], tag: 'weekly_parametric');
     debugPrint('Deleted Parametric Transformer Reminder');
 
@@ -337,8 +337,8 @@ class NotificationManager {
     debugPrint('Ensuring we have permissions');
     if (_plugin == null) return false;
 
-    var notifEnabled = await _checkIfNotificationEnabled();
-    if (!notifEnabled) {
+    var isEnabled = await _checkIfNotificationEnabled();
+    if (!isEnabled) {
       debugPrint('Requesting Notification Permission');
       await _plugin!
           .resolvePlatformSpecificImplementation<
@@ -346,7 +346,7 @@ class NotificationManager {
           ?.requestNotificationsPermission();
     }
 
-    debugPrint('Notifications Enabled: $notifEnabled');
+    debugPrint('Notifications Enabled: $isEnabled');
 
     // Check again
     return await _checkIfNotificationEnabled();
