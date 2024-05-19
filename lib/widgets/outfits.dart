@@ -129,6 +129,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
       onPressed: () => Get.toNamed("/outfits/$_infoId/model"),
       tooltip: 'View 3D Model (ALPHA)',
       backgroundColor: _rarityColor,
+      foregroundColor: GridUtils.getHeaderColor(context),
       child: Icon(MdiIcons.tshirtCrew),
     );
   }
@@ -143,11 +144,17 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
         appBar: AppBar(
           title: Text(_info!.name ?? 'Unknown Outfit'),
           backgroundColor: _rarityColor,
-          bottom: const TabBar(tabs: [
-            Tab(text: 'General'),
-            Tab(text: 'Wish'),
-            Tab(text: 'In-Game'),
-          ]),
+          foregroundColor: GridUtils.getHeaderColor(context),
+          bottom: TabBar(
+            tabs: const [
+              Tab(text: 'General'),
+              Tab(text: 'Wish'),
+              Tab(text: 'In-Game'),
+            ],
+            labelColor: GridUtils.getHeaderColor(context),
+            indicatorColor: GridUtils.getHeaderColor(context),
+            unselectedLabelColor: GridUtils.getHeaderColor(context),
+          ),
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
@@ -405,6 +412,7 @@ class OutfitModelViewerPageState extends State<OutfitModelViewerPage> {
       appBar: AppBar(
         title: Text("3D - $outfitName"),
         backgroundColor: rarityColor,
+        foregroundColor: GridUtils.getHeaderColor(context),
         actions: [
           IconButton(
             icon: const Icon(Icons.new_releases_outlined),

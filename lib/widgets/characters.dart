@@ -211,13 +211,17 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
         appBar: AppBar(
           title: Text(_info!.name ?? 'Unknown Character'),
           backgroundColor: _rarityColor,
-          bottom: const TabBar(
-            tabs: [
+          foregroundColor: GridUtils.getHeaderColor(context),
+          bottom: TabBar(
+            tabs: const [
               Tab(text: 'General'),
               Tab(text: 'Talents'),
               Tab(text: 'Constellations'),
               Tab(text: 'Outfits'),
             ],
+            labelColor: GridUtils.getHeaderColor(context),
+            indicatorColor: GridUtils.getHeaderColor(context),
+            unselectedLabelColor: GridUtils.getHeaderColor(context),
             isScrollable: true,
           ),
           actions: [

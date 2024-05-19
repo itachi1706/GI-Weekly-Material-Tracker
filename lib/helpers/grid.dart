@@ -484,6 +484,14 @@ class GridUtils {
     }
   }
 
+  static Color getHeaderColor(BuildContext context) {
+    if (Util.themeNotifier.isDarkMode()) {
+      return Theme.of(context).colorScheme.onSurface;
+    } else {
+      return Theme.of(context).colorScheme.onPrimary;
+    }
+  }
+
   static String? getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case 'geo':

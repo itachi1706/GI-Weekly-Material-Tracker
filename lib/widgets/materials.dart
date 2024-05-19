@@ -375,6 +375,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       appBar: AppBar(
         title: Text(_info!.name ?? 'Unknown Material'),
         backgroundColor: _rarityColor,
+        foregroundColor: GridUtils.getHeaderColor(context),
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),

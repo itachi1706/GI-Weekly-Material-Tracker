@@ -574,6 +574,7 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
       appBar: AppBar(
         title: Text(_material!.name!),
         backgroundColor: _rarityColor,
+        foregroundColor: GridUtils.getHeaderColor(context),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),

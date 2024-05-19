@@ -91,11 +91,14 @@ class MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        // primarySwatch: Colors.deepOrange,
         fontFamily: 'Product-Sans',
       ),
       darkTheme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        useMaterial3: true,
+        // primarySwatch: Colors.deepOrange,
         colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.deepOrange,
           secondary: Colors.deepOrange,

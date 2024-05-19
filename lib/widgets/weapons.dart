@@ -667,6 +667,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       appBar: AppBar(
         title: Text(_info!.name ?? 'Unknown Weapon'),
         backgroundColor: _rarityColor,
+        foregroundColor: GridUtils.getHeaderColor(context),
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
