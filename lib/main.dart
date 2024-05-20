@@ -59,12 +59,14 @@ class MyAppState extends State<MyApp> {
       debugPrint('[APP-CHECK] Adding App Check listener');
       await FirebaseAppCheck.instance.activate(
         // Replace this with your actual site key
-        webProvider: ReCaptchaV3Provider('6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV'),
-        androidProvider:
-        (kDebugMode) ? AndroidProvider.debug : AndroidProvider.playIntegrity,
+        webProvider:
+            ReCaptchaV3Provider('6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV'),
+        androidProvider: (kDebugMode)
+            ? AndroidProvider.debug
+            : AndroidProvider.playIntegrity,
       );
       FirebaseAppCheck.instance.onTokenChange.listen(
-            (token) async {
+        (token) async {
           debugPrint('[APP-CHECK] App Check Token Updated to: $token');
           var prefs = await SharedPreferences.getInstance();
           await prefs.setString("app_check_token", token ?? "-");
@@ -94,16 +96,13 @@ class MyAppState extends State<MyApp> {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        // primarySwatch: Colors.deepOrange,
         fontFamily: 'Product-Sans',
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
-        // primarySwatch: Colors.deepOrange,
-        colorScheme: const ColorScheme.dark().copyWith(
-          primary: Colors.deepOrange,
-          secondary: Colors.deepOrange,
-          secondaryContainer: Colors.deepOrange,
+        colorScheme: ColorScheme.fromSeed(
+          brightness: Brightness.dark,
+          seedColor: Colors.deepOrange,
         ),
         fontFamily: 'Product-Sans',
       ),
