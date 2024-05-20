@@ -228,21 +228,20 @@ class DictionaryPageState extends State<DictionaryPage>
       ),
       drawer: const DrawerComponent(),
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.deepOrange,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentIndex,
-        onTap: _onTabTapped,
-        items: [
-          const BottomNavigationBarItem(
+      bottomNavigationBar: NavigationBar(
+        indicatorColor: Theme.of(context).colorScheme.secondaryContainer,
+        selectedIndex: _currentIndex,
+        onDestinationSelected: _onTabTapped,
+        destinations: <Widget>[
+          const NavigationDestination(
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(MdiIcons.sword),
             label: 'Weapons',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(MdiIcons.diamondStone),
             label: 'Materials',
           ),

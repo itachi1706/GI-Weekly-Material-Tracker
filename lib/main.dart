@@ -102,6 +102,7 @@ class MyAppState extends State<MyApp> {
         colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.deepOrange,
           secondary: Colors.deepOrange,
+          secondaryContainer: Colors.deepOrange,
         ),
         fontFamily: 'Product-Sans',
       ),
