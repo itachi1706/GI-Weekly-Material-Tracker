@@ -19,7 +19,7 @@ class Util {
   static const String costumeGsUrl =
       'https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
-  static String? currentRoute;
+  static int currentDrawerIndex = 0;
 
   static DateFormat defaultDateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
 

@@ -24,8 +24,10 @@ class DrawerComponentState extends State<DrawerComponent> {
   @override
   void initState() {
     super.initState();
-    Util.currentRoute ??= '/tracking';
+    _initDrawerWidgets();
   }
+
+  var drawerWidgets = <DrawerModel>[];
 
   void _launchHoyoLabs() async {
     if (!kIsWeb && Platform.isAndroid) {
@@ -68,6 +70,17 @@ class DrawerComponentState extends State<DrawerComponent> {
             _drawerItem(
               iconData: MdiIcons.refresh,
               title: 'Reload Page',
+            ),
+          ]
+        : [];
+  }
+
+  List<DrawerModel> _addWebComponentDest() {
+    return (kIsWeb)
+        ? [
+            DrawerModel(
+              iconData: MdiIcons.refresh,
+              title: 'Reload Page',
               route: '/splash',
             ),
           ]
@@ -91,55 +104,12 @@ class DrawerComponentState extends State<DrawerComponent> {
     IconData? iconData,
     String? iconAsset,
     String? title,
-    GestureTapCallback? onTap,
-    String? route,
-    bool offPrev = true,
   }) {
     Widget icon = Icon(iconData);
     if (iconAsset != null) {
       icon = ImageIcon(AssetImage(iconAsset));
     }
-    if (route != null) {
-      return ListTile(
-        title: Row(
-          children: [
-            icon,
-            Padding(
-              padding: const EdgeInsets.only(left: 8),
-              child: Text(title!),
-            ),
-          ],
-        ),
-        selected: Util.currentRoute == route,
-        onTap: () {
-          if (!offPrev) {
-            Get.toNamed(route);
-          } else {
-            Navigator.pop(Get.context!);
-            setState(() {
-              Util.currentRoute = route;
-            });
-            Future.delayed(
-              const Duration(milliseconds: 10),
-              () => Get.offAndToNamed(route),
-            );
-          }
-        },
-      );
-    }
-
-    return ListTile(
-      title: Row(
-        children: [
-          icon,
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: Text(title!),
-          ),
-        ],
-      ),
-      onTap: onTap,
-    );
+    return NavigationDrawerDestination(icon: icon, label: Text(title!));
   }
 
   Widget _drawerHeader(BuildContext context) {
@@ -149,11 +119,8 @@ class DrawerComponentState extends State<DrawerComponent> {
     var photoMode = photo != null;
 
     return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-      ),
+      // margin: EdgeInsets.zero,
+      // padding: EdgeInsets.zero,
       child: Stack(children: <Widget>[
         Positioned(
           bottom: 32.0,
@@ -161,7 +128,7 @@ class DrawerComponentState extends State<DrawerComponent> {
           child: Text(
             name,
             style: const TextStyle(
-              color: Colors.white,
+              // color: Colors.black,
               fontSize: 20.0,
               fontWeight: FontWeight.w500,
             ),
@@ -173,7 +140,7 @@ class DrawerComponentState extends State<DrawerComponent> {
           child: Text(
             email,
             style: const TextStyle(
-              color: Colors.white,
+              // color: Colors.black,
               fontSize: 14.0,
             ),
           ),
@@ -197,91 +164,144 @@ class DrawerComponentState extends State<DrawerComponent> {
     );
   }
 
+  void _onDestinationSelected(int index) {
+    debugPrint("Index: $index");
+
+    var widget = drawerWidgets[index];
+    if (widget.route != null) {
+      setState(() {
+        Util.currentDrawerIndex = index;
+      });
+      var route = widget.route!;
+      if (!widget.offPrev) {
+        Get.toNamed(route);
+      } else {
+        Navigator.pop(Get.context!);
+        Future.delayed(
+          const Duration(milliseconds: 10),
+          () => Get.offAndToNamed(route),
+        );
+      }
+    } else if (widget.onTap != null) {
+      widget.onTap!();
+    }
+  }
+
+  void _initDrawerWidgets() {
+    drawerWidgets = <DrawerModel>[
+      DrawerModel(
+        iconData: Icons.home,
+        title: 'Tracking',
+        route: '/tracking',
+      ),
+      DrawerModel(
+        iconData: Icons.menu_book_outlined,
+        title: 'Dictionary',
+        route: '/dictionary',
+      ),
+      DrawerModel(
+        iconData: MdiIcons.compass,
+        title: 'Parametric Transformer',
+        route: '/parametric',
+      ),
+      DrawerModel(
+        iconData: MdiIcons.ticket,
+        title: 'Promo Codes',
+        route: '/promos',
+      ),
+      DrawerModel(
+        iconAsset: 'assets/images/items/Item_Primogem.png',
+        title: 'Wish Banners',
+        route: '/bannerinfo',
+      ),
+      DrawerModel(
+        iconData: MdiIcons.tshirtCrew,
+        title: 'View All Outfits',
+        route: '/outfits',
+        offPrev: false,
+      ),
+      DrawerModel(
+        iconData: MdiIcons.alarm,
+        title: 'Daily Forum Login',
+        onTap: _dailyLogin,
+        offPrev: false,
+      ),
+      DrawerModel(
+        iconData: Icons.forum,
+        title: 'HoYoLabs Forum',
+        onTap: _launchHoyoLabs,
+        offPrev: false,
+      ),
+      DrawerModel(
+        iconData: MdiIcons.swordCross,
+        title: 'Battle Chronicles',
+        onTap: _launchBattleChronicle,
+        offPrev: false,
+      ),
+      DrawerModel(
+        iconData: Icons.map,
+        title: 'Game Map',
+        onTap: _launchMap,
+        offPrev: false,
+      ),
+      ..._addWebComponentDest(),
+      DrawerModel(
+        iconData: Icons.settings,
+        title: 'Settings',
+        route: '/settings',
+        offPrev: false,
+      ),
+      DrawerModel(
+        iconData: Icons.logout,
+        title: 'Logout',
+        onTap: _signOut,
+      ),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _drawerHeader(context),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                _drawerItem(
-                  iconData: Icons.home,
-                  title: 'Tracking',
-                  route: '/tracking',
-                ),
-                _drawerItem(
-                  iconData: Icons.menu_book_outlined,
-                  title: 'Dictionary',
-                  route: '/dictionary',
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.compass,
-                  title: 'Parametric Transformer',
-                  route: '/parametric',
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.ticket,
-                  title: 'Promo Codes',
-                  route: '/promos',
-                ),
-                _drawerItem(
-                  iconAsset: 'assets/images/items/Item_Primogem.png',
-                  title: 'Wish Banners',
-                  route: '/bannerinfo',
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.tshirtCrew,
-                  title: 'View All Outfits',
-                  route: '/outfits',
-                  offPrev: false,
-                ),
-                const Divider(),
-                _drawerItem(
-                  iconData: MdiIcons.alarm,
-                  title: 'Daily Forum Login',
-                  onTap: _dailyLogin,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.forum,
-                  title: 'HoYoLabs Forum',
-                  onTap: _launchHoyoLabs,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: MdiIcons.swordCross,
-                  title: 'Battle Chronicles',
-                  onTap: _launchBattleChronicle,
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.map,
-                  title: 'Game Map',
-                  onTap: _launchMap,
-                  offPrev: false,
-                ),
-                ..._addWebComponent(),
-                const Divider(),
-                _drawerItem(
-                  iconData: Icons.settings,
-                  title: 'Settings',
-                  route: '/settings',
-                  offPrev: false,
-                ),
-                _drawerItem(
-                  iconData: Icons.logout,
-                  title: 'Logout',
-                  onTap: _signOut,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+    return NavigationDrawer(
+      onDestinationSelected: _onDestinationSelected,
+      selectedIndex: Util.currentDrawerIndex,
+      children: <Widget>[
+        _drawerHeader(context),
+        _drawerItem(iconData: Icons.home, title: 'Tracking'),
+        _drawerItem(iconData: Icons.menu_book_outlined, title: 'Dictionary'),
+        _drawerItem(
+            iconData: MdiIcons.compass, title: 'Parametric Transformer'),
+        _drawerItem(iconData: MdiIcons.ticket, title: 'Promo Codes'),
+        _drawerItem(
+            iconAsset: 'assets/images/items/Item_Primogem.png',
+            title: 'Wish Banners'),
+        _drawerItem(iconData: MdiIcons.tshirtCrew, title: 'View All Outfits'),
+        const Divider(),
+        _drawerItem(iconData: MdiIcons.alarm, title: 'Daily Forum Login'),
+        _drawerItem(iconData: Icons.forum, title: 'HoYoLabs Forum'),
+        _drawerItem(iconData: MdiIcons.swordCross, title: 'Battle Chronicles'),
+        _drawerItem(iconData: Icons.map, title: 'Game Map'),
+        ..._addWebComponent(),
+        const Divider(),
+        _drawerItem(iconData: Icons.settings, title: 'Settings'),
+        _drawerItem(iconData: Icons.logout, title: 'Logout'),
+      ],
     );
   }
+}
+
+class DrawerModel {
+  IconData? iconData;
+  String? iconAsset;
+  String? title;
+  GestureTapCallback? onTap;
+  String? route;
+  bool offPrev;
+
+  DrawerModel(
+      {this.iconData,
+      this.iconAsset,
+      this.onTap,
+      this.route,
+      this.title,
+      this.offPrev = true});
 }

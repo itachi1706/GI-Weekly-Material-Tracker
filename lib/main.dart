@@ -178,7 +178,7 @@ class TransitionPage extends StatelessWidget {
   const TransitionPage({super.key});
 
   Future<void> _skip() async {
-    Util.currentRoute = '/tracking';
+    Util.currentDrawerIndex = 0;
     Future.delayed(Duration.zero, () => Get.offAllNamed('/tracking'));
 
     return;
