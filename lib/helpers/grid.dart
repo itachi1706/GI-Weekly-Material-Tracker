@@ -109,10 +109,7 @@ class GridData {
       (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
 
   static ImageProvider getFirebaseImage(String? url) {
-    return ((kIsWeb)
-            ? CachedNetworkImageProvider(url!)
-            : FirebaseImageProvider(FirebaseUrl(url!), maxSize: 10000 * 10000)) // 10MB
-        as ImageProvider<Object>;
+    return FirebaseImageProvider(FirebaseUrl(url!), maxSize: 10000 * 10000); // 10MB
   }
 
   static Widget getImageAssetFromFirebase(
