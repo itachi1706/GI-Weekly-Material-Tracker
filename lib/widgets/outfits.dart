@@ -146,6 +146,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
           backgroundColor: _rarityColor,
           foregroundColor: GridUtils.getHeaderColor(context),
           bottom: TabBar(
+            tabAlignment: TabAlignment.fill,
             tabs: const [
               Tab(text: 'General'),
               Tab(text: 'Wish'),

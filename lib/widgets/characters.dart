@@ -213,6 +213,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
           backgroundColor: _rarityColor,
           foregroundColor: GridUtils.getHeaderColor(context),
           bottom: TabBar(
+            tabAlignment: TabAlignment.center,
             tabs: const [
               Tab(text: 'General'),
               Tab(text: 'Talents'),

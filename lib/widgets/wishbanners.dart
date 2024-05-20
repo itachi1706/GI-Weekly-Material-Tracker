@@ -56,6 +56,7 @@ class WishListPageState extends State<WishListPage>
       appBar: AppBar(
         title: const Text('Wish Banners Info'),
         bottom: TabBar(
+          tabAlignment: TabAlignment.start,
           controller: _tabController,
           indicatorColor: Theme.of(context).colorScheme.secondary,
           tabs: _tabs,

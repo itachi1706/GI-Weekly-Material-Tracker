@@ -43,6 +43,7 @@ class TrackingPageState extends State<TrackingPage>
       indicatorColor: Theme.of(context).colorScheme.secondary,
       tabs: _tabs,
       isScrollable: true,
+      tabAlignment: TabAlignment.start,
     );
   }
 
@@ -183,6 +184,7 @@ class DictionaryPageState extends State<DictionaryPage>
     if (!_tabs.containsKey(_currentIndex)) return null;
 
     return TabBar(
+      tabAlignment: TabAlignment.start,
       controller: _tabControllers[_currentIndex],
       tabs: _tabs[_currentIndex]!,
       indicatorColor: Theme.of(context).colorScheme.secondary,

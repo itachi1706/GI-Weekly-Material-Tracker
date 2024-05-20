@@ -41,6 +41,7 @@ class GlobalTrackingPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Consolidated Material List'),
           bottom: TabBar(
+            tabAlignment: TabAlignment.center,
             tabs: _tabs,
           ),
         ),

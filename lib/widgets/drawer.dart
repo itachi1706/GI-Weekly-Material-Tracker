@@ -169,14 +169,14 @@ class DrawerComponentState extends State<DrawerComponent> {
 
     var widget = drawerWidgets[index];
     if (widget.route != null) {
-      setState(() {
-        Util.currentDrawerIndex = index;
-      });
       var route = widget.route!;
       if (!widget.offPrev) {
         Get.toNamed(route);
       } else {
         Navigator.pop(Get.context!);
+        setState(() {
+          Util.currentDrawerIndex = index;
+        });
         Future.delayed(
           const Duration(milliseconds: 10),
           () => Get.offAndToNamed(route),
