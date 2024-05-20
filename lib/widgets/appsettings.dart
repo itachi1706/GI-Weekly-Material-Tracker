@@ -962,7 +962,6 @@ class NotificationDebugPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var notifyManager = NotificationManager.getInstance();
-    var mounted = true; // Stateless Widgets always mounted
 
     return Scaffold(
       appBar: AppBar(title: const Text('Notification Debug')),
@@ -997,7 +996,7 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager!.getScheduledReminders();
-                  if (mounted) {
+                  if (context.mounted) {
                     await _showDialog(context, msg);
                   }
                 },

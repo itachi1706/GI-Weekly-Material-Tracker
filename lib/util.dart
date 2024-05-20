@@ -209,11 +209,11 @@ class Util {
   }
 
   static String? getUserName() {
-    return _auth.currentUser == null ? null : _auth.currentUser!.displayName;
+    return _auth.currentUser?.displayName;
   }
 
   static String? getUserPhotoUrl() {
-    return _auth.currentUser == null ? null : _auth.currentUser!.photoURL;
+    return _auth.currentUser?.photoURL;
   }
 
   static Future<bool> launchWebPage(

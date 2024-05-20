@@ -44,7 +44,7 @@ class LoginPageState extends State<LoginPage> {
         _finishLoggedInFlow(context, credentials.user);
       }
     } on FirebaseAuthException catch (_, e) {
-      if (context.mounted) {
+      if (mounted) {
         Util.showSnackbarQuick(context, 'Error signing in with test account');
       }
       debugPrint('Error signing in with test account: $e');
