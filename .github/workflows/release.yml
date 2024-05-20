@@ -23,7 +23,7 @@ jobs:
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.16.0
         with:
-          flutter-version: '3.13.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
+          flutter-version: '3.16.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
@@ -113,7 +113,7 @@ jobs:
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.16.0
         with:
-          flutter-version: '3.13.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
+          flutter-version: '3.16.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
@@ -200,7 +200,7 @@ jobs:
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.16.0
         with:
-          flutter-version: '3.13.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
+          flutter-version: '3.16.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
@@ -405,7 +405,7 @@ jobs:
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.16.0
         with:
-          flutter-version: '3.13.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
+          flutter-version: '3.16.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
           channel: 'stable'
           cache: true
       - name: Use latest stable version of XCode

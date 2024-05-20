@@ -83,7 +83,7 @@ jobs:
       - name: Install Flutter Stable
         uses: subosito/flutter-action@v2.16.0
         with:
-          flutter-version: '3.13.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
+          flutter-version: '3.16.x' # TODO(#813): Remove this line after Flutter 3.16 upgrade
           channel: 'stable'
           cache: true
       - name: Retrieve Firebase Options Web Dart File and decode it to a file
