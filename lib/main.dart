@@ -52,12 +52,10 @@ class MyAppState extends State<MyApp> {
   void _initFirebaseAppCheck() async {
     try {
       debugPrint('[FIREBASE] Initializing');
-      if (Firebase.apps.isEmpty) {
-        await Firebase.initializeApp(
-          options: DefaultFirebaseOptions.currentPlatform,
-        );
-        debugPrint('[FIREBASE] Initialization Complete!');
-      }
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      debugPrint('[FIREBASE] Initialization Complete!');
       debugPrint('[APP-CHECK] Adding App Check listener');
       await FirebaseAppCheck.instance.activate(
         // Replace this with your actual site key
