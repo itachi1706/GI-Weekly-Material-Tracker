@@ -22,7 +22,7 @@ version: 1.0.0+1
 #version: 1.0.0+141
 
 environment:
-  sdk: '>=3.0.0 <4.0.0' # TODO: Below 3.2 for now until we move past Flutter 3.13 (3.16 main goal)
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
