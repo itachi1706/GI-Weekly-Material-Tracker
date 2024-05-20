@@ -94,12 +94,10 @@ class MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: 'GI Weekly Tracker',
       theme: ThemeData(
-        useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         fontFamily: 'Product-Sans',
       ),
       darkTheme: ThemeData(
-        useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
           seedColor: Colors.deepOrange,
