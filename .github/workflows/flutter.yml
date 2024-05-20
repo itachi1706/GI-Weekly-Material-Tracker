@@ -182,8 +182,7 @@ jobs:
   ios:
     name: iOS Unsigned IPA
     runs-on: macos-14 # For XCode 14.3.1 and Apple Silicon
-    if: false # TODO: Reenable when we upgrade Firebase and Flutter to 3.16 at least (with Dart 3)
-#    if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request') || github.event_name == 'workflow_dispatch'  # We only run this on master branch due to the time it takes
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request') || github.event_name == 'workflow_dispatch'  # We only run this on master branch due to the time it takes
     env:
       APP_BUILD_VER: dogfood
       APP_TYPE: iOS
