@@ -292,8 +292,8 @@ class SettingsPageState extends State<SettingsPage> {
           leading: const Icon(Icons.cached_rounded),
         ),
         SettingsTile(
-          title: const Text('Clear Cache'),
-          leading: Icon(MdiIcons.trashCanOutline),
+          title: const Text('Clear Cache', style: TextStyle(color: Colors.red)),
+          leading: Icon(MdiIcons.trashCanOutline, color: Colors.red),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {
