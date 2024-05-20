@@ -22,7 +22,7 @@ version: 1.0.0+1
 #version: 1.0.0+141
 
 environment:
-  sdk: '>=3.0.0 <3.2.0' # TODO: Below 3.2 for now until we move past Flutter 3.13 (3.16 main goal)
+  sdk: '>=3.0.0 <4.0.0' # TODO: Below 3.2 for now until we move past Flutter 3.13 (3.16 main goal)
 
 dependencies:
   flutter:
@@ -40,11 +40,7 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_crashlytics: ^3.4.9
   firebase_database: ^10.4.0
-#  firebase_image: ^1.1.1
-  firebase_image:
-    git: # We are retrieving it from a Git Repository for now. We will evaluate in the future if we want to take over and maintain ourselves
-      url: https://github.com/imsamgarg/firebase_image.git
-      ref: flutter_3.0_fix
+  firebase_cached_image: ^0.6.0
   firebase_performance: ^0.9.3+8
   firebase_storage: ^11.5.6
   firebase_ui_auth: ^1.10.0

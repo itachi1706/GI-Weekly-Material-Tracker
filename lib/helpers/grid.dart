@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_image/firebase_image.dart';
+import 'package:firebase_cached_image/firebase_cached_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -111,7 +111,7 @@ class GridData {
   static ImageProvider getFirebaseImage(String? url) {
     return ((kIsWeb)
             ? CachedNetworkImageProvider(url!)
-            : FirebaseImage(url!, maxSizeBytes: 10000 * 1000)) // 10MB
+            : FirebaseImageProvider(FirebaseUrl(url!), maxSize: 10000 * 10000)) // 10MB
         as ImageProvider<Object>;
   }
 

@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:filesize/filesize.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_cached_image/firebase_cached_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -622,8 +623,15 @@ class SettingsPageState extends State<SettingsPage> {
   void _clearCache() async {
     var tmp = await getTemporaryDirectory();
     var files = tmp.listSync();
+    await FirebaseCacheManager().clearCache();
+    debugPrint('Cleared image cache');
     for (var file in files) {
-      await file.delete(recursive: true);
+      if (file.path.contains('flutter_cached_image')) {
+        debugPrint('Skipping ${file.path}');
+      } else {
+        debugPrint('Deleting ${file.path}');
+        await file.delete(recursive: true);
+      }
     }
     if (mounted) {
       Util.showSnackbarQuick(context, 'Cache Cleared');
