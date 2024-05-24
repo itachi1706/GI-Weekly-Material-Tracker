@@ -12,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final FirebaseDatabase db = FirebaseDatabase.instance;
 
 class PromoCodePage extends StatefulWidget {
-  const PromoCodePage({Key? key}) : super(key: key);
+  const PromoCodePage({super.key});
 
   @override
   PromoCodePageState createState() => PromoCodePageState();

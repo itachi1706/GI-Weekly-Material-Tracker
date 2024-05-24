@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:filesize/filesize.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_cached_image/firebase_cached_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +23,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   SettingsPageState createState() => SettingsPageState();
@@ -291,8 +292,8 @@ class SettingsPageState extends State<SettingsPage> {
           leading: const Icon(Icons.cached_rounded),
         ),
         SettingsTile(
-          title: const Text('Clear Cache'),
-          leading: Icon(MdiIcons.trashCanOutline),
+          title: const Text('Clear Cache', style: TextStyle(color: Colors.red)),
+          leading: Icon(MdiIcons.trashCanOutline, color: Colors.red),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {
@@ -622,8 +623,15 @@ class SettingsPageState extends State<SettingsPage> {
   void _clearCache() async {
     var tmp = await getTemporaryDirectory();
     var files = tmp.listSync();
+    await FirebaseCacheManager().clearCache();
+    debugPrint('Cleared image cache');
     for (var file in files) {
-      await file.delete(recursive: true);
+      if (file.path.contains('flutter_cached_image')) {
+        debugPrint('Skipping ${file.path}');
+      } else {
+        debugPrint('Deleting ${file.path}');
+        await file.delete(recursive: true);
+      }
     }
     if (mounted) {
       Util.showSnackbarQuick(context, 'Cache Cleared');
@@ -763,7 +771,7 @@ class SettingsPageState extends State<SettingsPage> {
 }
 
 class RegionSettingsPage extends StatefulWidget {
-  const RegionSettingsPage({Key? key}) : super(key: key);
+  const RegionSettingsPage({super.key});
 
   @override
   RegionSettingsPageState createState() => RegionSettingsPageState();
@@ -850,7 +858,7 @@ class RegionSettingsPageState extends State<RegionSettingsPage> {
 }
 
 class BuildGuideSelectorPage extends StatefulWidget {
-  const BuildGuideSelectorPage({Key? key}) : super(key: key);
+  const BuildGuideSelectorPage({super.key});
 
   @override
   BuildGuideSelectorPageState createState() => BuildGuideSelectorPageState();
@@ -931,7 +939,7 @@ class BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
 }
 
 class NotificationDebugPage extends StatelessWidget {
-  const NotificationDebugPage({Key? key}) : super(key: key);
+  const NotificationDebugPage({super.key});
 
   Future<void> _showDialog(BuildContext context, String msg) async {
     await showDialog(
@@ -954,7 +962,6 @@ class NotificationDebugPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var notifyManager = NotificationManager.getInstance();
-    var mounted = true; // Stateless Widgets always mounted
 
     return Scaffold(
       appBar: AppBar(title: const Text('Notification Debug')),
@@ -989,7 +996,7 @@ class NotificationDebugPage extends StatelessWidget {
                 trailing: const SizedBox.shrink(),
                 onPressed: (context) async {
                   var msg = await notifyManager!.getScheduledReminders();
-                  if (mounted) {
+                  if (context.mounted) {
                     await _showDialog(context, msg);
                   }
                 },

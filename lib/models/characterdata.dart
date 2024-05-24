@@ -29,16 +29,16 @@ class CharacterData extends CommonData {
     this.birthday,
     this.caption,
     this.constellation,
-    description,
+    super.description,
     this.element,
     this.gender,
     this.genshinGGPath,
     this.paimonMoePath,
-    image,
+    super.image,
     this.introduction,
-    name,
+    super.name,
     this.nation,
-    rarity,
+    super.rarity,
     this.weapon,
     this.ascension,
     this.talent,
@@ -49,18 +49,10 @@ class CharacterData extends CommonData {
     this.lastBannerCount,
     this.lastBannerEnd,
     this.lastBannerName,
-    crossover,
-    wiki,
-    released,
-  }) : super(
-          image: image,
-          name: name,
-          rarity: rarity,
-          description: description,
-          wiki: wiki,
-          crossover: crossover,
-          released: released,
-        );
+    super.crossover,
+    super.wiki,
+    super.released,
+  }) : super();
 
   factory CharacterData.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterData(
@@ -120,26 +112,17 @@ class CharacterAscension extends CommonAscension {
   int? material4Qty;
 
   CharacterAscension({
-    level,
-    material1,
-    material1Qty,
-    material2,
-    material2Qty,
-    material3,
-    material3Qty,
+    super.level,
+    super.material1,
+    super.material1Qty,
+    super.material2,
+    super.material2Qty,
+    super.material3,
+    super.material3Qty,
     this.material4,
     this.material4Qty,
-    mora,
-  }) : super(
-          level: level,
-          mora: mora,
-          material1: material1,
-          material1Qty: material1Qty,
-          material2: material2,
-          material2Qty: material2Qty,
-          material3: material3,
-          material3Qty: material3Qty,
-        );
+    super.mora,
+  }) : super();
 
   factory CharacterAscension.fromJson(Map<String, dynamic> parsedJson) {
     return CharacterAscension(

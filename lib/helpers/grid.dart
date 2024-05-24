@@ -1,7 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_image/firebase_image.dart';
+import 'package:firebase_cached_image/firebase_cached_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -109,10 +108,7 @@ class GridData {
       (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
 
   static ImageProvider getFirebaseImage(String? url) {
-    return ((kIsWeb)
-            ? CachedNetworkImageProvider(url!)
-            : FirebaseImage(url!, maxSizeBytes: 10000 * 1000)) // 10MB
-        as ImageProvider<Object>;
+    return FirebaseImageProvider(FirebaseUrl(url!), maxSize: 10000 * 10000); // 10MB
   }
 
   static Widget getImageAssetFromFirebase(
@@ -484,6 +480,14 @@ class GridUtils {
     }
   }
 
+  static Color getHeaderColor(BuildContext context) {
+    if (Util.themeNotifier.isDarkMode()) {
+      return Theme.of(context).colorScheme.onSurface;
+    } else {
+      return Theme.of(context).colorScheme.onPrimary;
+    }
+  }
+
   static String? getElementImageRef(String element) {
     switch (element.toLowerCase()) {
       case 'geo':
@@ -646,5 +650,9 @@ class GridUtils {
     textData = textData.replaceAll('AoE §pPyro DMG§r', '§pAoE Pyro DMG§r');
 
     return textData;
+  }
+
+  static TabAlignment getTabAlignment() {
+    return kIsWeb ? TabAlignment.center : TabAlignment.start;
   }
 }

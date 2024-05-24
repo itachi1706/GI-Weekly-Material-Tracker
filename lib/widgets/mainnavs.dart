@@ -13,7 +13,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class TrackingPage extends StatefulWidget {
   final String? title;
 
-  const TrackingPage({Key? key, this.title}) : super(key: key);
+  const TrackingPage({super.key, this.title});
 
   @override
   TrackingPageState createState() => TrackingPageState();
@@ -43,6 +43,7 @@ class TrackingPageState extends State<TrackingPage>
       indicatorColor: Theme.of(context).colorScheme.secondary,
       tabs: _tabs,
       isScrollable: true,
+      tabAlignment: GridUtils.getTabAlignment(),
     );
   }
 
@@ -67,7 +68,7 @@ class TrackingPageState extends State<TrackingPage>
 }
 
 class DictionaryPage extends StatefulWidget {
-  const DictionaryPage({Key? key}) : super(key: key);
+  const DictionaryPage({super.key});
 
   @override
   DictionaryPageState createState() => DictionaryPageState();
@@ -183,6 +184,7 @@ class DictionaryPageState extends State<DictionaryPage>
     if (!_tabs.containsKey(_currentIndex)) return null;
 
     return TabBar(
+      tabAlignment: GridUtils.getTabAlignment(),
       controller: _tabControllers[_currentIndex],
       tabs: _tabs[_currentIndex]!,
       indicatorColor: Theme.of(context).colorScheme.secondary,
@@ -228,21 +230,20 @@ class DictionaryPageState extends State<DictionaryPage>
       ),
       drawer: const DrawerComponent(),
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.deepOrange,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentIndex,
-        onTap: _onTabTapped,
-        items: [
-          const BottomNavigationBarItem(
+      bottomNavigationBar: NavigationBar(
+        indicatorColor: Theme.of(context).colorScheme.secondaryContainer,
+        selectedIndex: _currentIndex,
+        onDestinationSelected: _onTabTapped,
+        destinations: <Widget>[
+          const NavigationDestination(
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(MdiIcons.sword),
             label: 'Weapons',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(MdiIcons.diamondStone),
             label: 'Materials',
           ),

@@ -13,7 +13,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   LoginPageState createState() => LoginPageState();
@@ -44,7 +44,9 @@ class LoginPageState extends State<LoginPage> {
         _finishLoggedInFlow(context, credentials.user);
       }
     } on FirebaseAuthException catch (_, e) {
-      Util.showSnackbarQuick(context, 'Error signing in with test account');
+      if (mounted) {
+        Util.showSnackbarQuick(context, 'Error signing in with test account');
+      }
       debugPrint('Error signing in with test account: $e');
     }
   }

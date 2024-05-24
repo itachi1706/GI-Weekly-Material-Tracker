@@ -31,20 +31,14 @@ class OutfitData extends CommonData {
     this.eventGiveFree = false,
     this.eventGiveFreeTill,
     this.releasedVersion = 1.0,
-    name,
-    rarity,
-    image,
-    description,
-    wiki,
-    released,
+    super.name,
+    super.rarity,
+    super.image,
+    super.description,
+    super.wiki,
+    super.released,
   }) : super(
-          name: name,
-          rarity: rarity,
-          image: image,
-          description: description,
-          wiki: wiki,
           crossover: false,
-          released: released,
         );
 
   factory OutfitData.fromJson(Map<String, dynamic> json) {

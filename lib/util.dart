@@ -19,7 +19,7 @@ class Util {
   static const String costumeGsUrl =
       'https://storage.googleapis.com/gi-weekly-material-tracker-glb-models/';
   static ThemeNotifier themeNotifier = ThemeNotifier();
-  static String? currentRoute;
+  static int currentDrawerIndex = 0;
 
   static DateFormat defaultDateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -209,11 +209,11 @@ class Util {
   }
 
   static String? getUserName() {
-    return _auth.currentUser == null ? null : _auth.currentUser!.displayName;
+    return _auth.currentUser?.displayName;
   }
 
   static String? getUserPhotoUrl() {
-    return _auth.currentUser == null ? null : _auth.currentUser!.photoURL;
+    return _auth.currentUser?.photoURL;
   }
 
   static Future<bool> launchWebPage(

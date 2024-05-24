@@ -18,14 +18,14 @@ enum TrackingStatus {
 }
 
 class TrackingUtils {
-  static Color getTrackingColor(
+  static Color? getTrackingColor(
     int index,
     Map<String, TrackingStatus> isBeingTracked,
   ) {
     return getTrackingColorString(index.toString(), isBeingTracked);
   }
 
-  static Color getTrackingColorString(
+  static Color? getTrackingColorString(
     String index,
     Map<String, TrackingStatus> isBeingTracked,
   ) {
@@ -36,7 +36,7 @@ class TrackingUtils {
       case TrackingStatus.unknown:
       case TrackingStatus.checking:
       case TrackingStatus.notTracked:
-        return Get.theme.cardColor;
+        return null;
       case TrackingStatus.trackedCompleteMaterial:
         return (Util.themeNotifier.isDarkMode())
             ? Colors.green

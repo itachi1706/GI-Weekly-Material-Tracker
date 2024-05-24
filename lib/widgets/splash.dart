@@ -12,7 +12,7 @@ import 'package:timezone/data/latest.dart' as tz;
 
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   SplashPageState createState() => SplashPageState();
@@ -48,6 +48,7 @@ class SplashPageState extends State<SplashPage> {
 
   Future<void> _setupNotifications() async {
     if (kIsWeb) return; // Return straight away for web as it is not supported
+    debugPrint('Setting up notifications');
     var manager = NotificationManager.getInstance()!;
     await manager.initialize();
     debugPrint('Initialized Notifications');
@@ -58,18 +59,25 @@ class SplashPageState extends State<SplashPage> {
   Future<bool> _initFirebase() async {
     try {
       if (!kIsWeb) {
+        debugPrint('[FB] Setup Firebase');
         var crashHandler = FirebaseCrashlytics.instance;
+        debugPrint('[FB] Get Crash Instance');
         var perfHandler = FirebasePerformance.instance;
+        debugPrint('[FB] Get Performance Instance');
         if (kDebugMode) {
+          debugPrint('[FB] Debug mode. Set collection to false');
           await crashHandler.setCrashlyticsCollectionEnabled(false);
           await perfHandler.setPerformanceCollectionEnabled(false);
         } else {
           if (!crashHandler.isCrashlyticsCollectionEnabled) {
+            debugPrint('[FB] Enabling Crashlytics');
             await crashHandler.setCrashlyticsCollectionEnabled(true);
           }
           if (!(await perfHandler.isPerformanceCollectionEnabled())) {
+            debugPrint('[FB] Enabling Performance Metrics');
             await perfHandler.setPerformanceCollectionEnabled(true);
           }
+          debugPrint('[FB] Configuring Crash Reporting');
           FlutterError.onError = crashHandler.recordFlutterError;
           Isolate.current.addErrorListener(RawReceivePort((pair) async {
             final List<dynamic> errorAndStacktrace = pair;
@@ -88,7 +96,9 @@ class SplashPageState extends State<SplashPage> {
       } else {
         debugPrint('Web Mode, Crashlytics and Performance disabled');
       }
+      debugPrint('[FB] Getting auth instance');
       var auth = FirebaseAuth.instance;
+      debugPrint('[FB] Obtained Auth Instance');
       if (auth.currentUser != null) return true;
     } catch (e) {
       debugPrint(e.toString());

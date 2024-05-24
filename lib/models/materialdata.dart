@@ -8,24 +8,17 @@ class MaterialDataCommon extends CommonData {
   MaterialDataUsage? usage;
 
   MaterialDataCommon({
-    image,
-    rarity,
+    super.image,
+    super.rarity,
     this.type,
     this.innerType,
-    name,
-    description,
-    wiki,
+    super.name,
+    super.description,
+    super.wiki,
     this.obtained,
     this.usage,
-    released,
-  }) : super(
-          name: name,
-          rarity: rarity,
-          image: image,
-          description: description,
-          wiki: wiki,
-          released: released,
-        );
+    super.released,
+  }) : super();
 
   factory MaterialDataCommon.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataCommon(
@@ -70,29 +63,18 @@ class MaterialDataMob extends MaterialDataCommon {
   List<String>? enemies;
 
   MaterialDataMob({
-    image,
-    rarity,
-    type,
-    innerType,
-    name,
-    description,
-    obtained,
-    wiki,
+    super.image,
+    super.rarity,
+    super.type,
+    super.innerType,
+    super.name,
+    super.description,
+    super.obtained,
+    super.wiki,
     this.enemies,
-    usage,
-    released,
-  }) : super(
-          image: image,
-          rarity: rarity,
-          type: type,
-          innerType: innerType,
-          name: name,
-          description: description,
-          wiki: wiki,
-          obtained: obtained,
-          released: released,
-          usage: usage,
-        );
+    super.usage,
+    super.released,
+  }) : super();
 
   factory MaterialDataMob.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataMob(
@@ -120,29 +102,18 @@ class MaterialDataDomains extends MaterialDataCommon {
   List<int>? days;
 
   MaterialDataDomains({
-    image,
-    rarity,
-    type,
-    innerType,
-    name,
-    description,
-    obtained,
-    wiki,
+    super.image,
+    super.rarity,
+    super.type,
+    super.innerType,
+    super.name,
+    super.description,
+    super.obtained,
+    super.wiki,
     this.days,
-    usage,
-    released,
-  }) : super(
-          image: image,
-          rarity: rarity,
-          type: type,
-          innerType: innerType,
-          name: name,
-          description: description,
-          wiki: wiki,
-          obtained: obtained,
-          released: released,
-          usage: usage,
-        );
+    super.usage,
+    super.released,
+  }) : super();
 
   factory MaterialDataDomains.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataDomains(

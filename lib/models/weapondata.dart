@@ -22,15 +22,15 @@ class WeaponData extends CommonData {
     this.secondaryStat,
     this.secondaryStatType,
     this.type,
-    description,
+    super.description,
     this.baseAtk,
     this.obtained,
     this.effect,
     this.effectName,
-    image,
-    name,
-    rarity,
-    wiki,
+    super.image,
+    super.name,
+    super.rarity,
+    super.wiki,
     this.maxBaseAtk,
     this.maxSecondaryStat,
     this.ascension,
@@ -38,15 +38,8 @@ class WeaponData extends CommonData {
     this.lastBannerCount,
     this.lastBannerEnd,
     this.lastBannerName,
-    released,
-  }) : super(
-          image: image,
-          name: name,
-          rarity: rarity,
-          description: description,
-          wiki: wiki,
-          released: released,
-        );
+    super.released,
+  }) : super();
 
   factory WeaponData.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponData(
@@ -88,24 +81,15 @@ class WeaponData extends CommonData {
 
 class WeaponAscension extends CommonAscension {
   WeaponAscension({
-    level,
-    material1,
-    material1Qty,
-    material2,
-    material2Qty,
-    material3,
-    material3Qty,
-    mora,
-  }) : super(
-          level: level,
-          mora: mora,
-          material1: material1,
-          material1Qty: material1Qty,
-          material2: material2,
-          material2Qty: material2Qty,
-          material3: material3,
-          material3Qty: material3Qty,
-        );
+    super.level,
+    super.material1,
+    super.material1Qty,
+    super.material2,
+    super.material2Qty,
+    super.material3,
+    super.material3Qty,
+    super.mora,
+  }) : super();
 
   factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson) {
     return WeaponAscension(
