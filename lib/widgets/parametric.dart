@@ -105,7 +105,6 @@ class ParametricPageState extends State<ParametricPage> {
     } else {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
-        // Returns a list of only those apps that have launch intent
         var isInstalled = await AppCheck.isAppInstalled(androidId);
         debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
