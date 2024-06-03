@@ -1,7 +1,7 @@
 import 'dart:io';
 
+import 'package:appcheck/appcheck.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:device_apps/device_apps.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,17 +32,11 @@ class DrawerComponentState extends State<DrawerComponent> {
   void _launchHoyoLabs() async {
     if (!kIsWeb && Platform.isAndroid) {
       var androidId = 'com.mihoyo.hoyolab';
-      // TODO(#1207): Replace device_apps package due to un-maintained
       if (Platform.isAndroid) {
-        // Returns a list of only those apps that have launch intent
-        var apps = await DeviceApps.getInstalledApplications(
-          onlyAppsWithLaunchIntent: true,
-        );
-        debugPrint(apps.toString());
-        var isInstalled = await DeviceApps.isAppInstalled(androidId);
+        var isInstalled = await AppCheck.isAppInstalled(androidId);
         debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
-          await DeviceApps.openApp(androidId);
+          await AppCheck.launchApp(androidId);
 
           return;
         }

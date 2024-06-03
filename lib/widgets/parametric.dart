@@ -1,7 +1,7 @@
 import 'dart:io';
 
+import 'package:appcheck/appcheck.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:device_apps/device_apps.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
@@ -106,15 +106,10 @@ class ParametricPageState extends State<ParametricPage> {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
         // Returns a list of only those apps that have launch intent
-        // TODO(#1207): Replace device_apps package due to un-maintained
-        var apps = await DeviceApps.getInstalledApplications(
-          onlyAppsWithLaunchIntent: true,
-        );
-        debugPrint(apps.toString());
-        var isInstalled = await DeviceApps.isAppInstalled(androidId);
+        var isInstalled = await AppCheck.isAppInstalled(androidId);
         debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
-          await DeviceApps.openApp(androidId);
+          await AppCheck.launchApp(androidId);
 
           return;
         }
@@ -129,7 +124,6 @@ class ParametricPageState extends State<ParametricPage> {
       }
       // If not installed or iOS, launch app store
       debugPrint('Launching App Store');
-      // TODO(#1207): Replace store_redirect package due to un-maintained
       await StoreRedirect.redirect(
         androidAppId: androidId,
         iOSAppId: '1517783697',
