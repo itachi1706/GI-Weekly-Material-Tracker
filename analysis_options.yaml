@@ -29,3 +29,13 @@ dart_code_linter:
     - no-object-declaration
     - prefer-intl-name
     - provide-correct-intl-args
+    - avoid-dynamic
+    - avoid-passing-async-when-sync-expected
+    - avoid-redundant-async
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unrelated-type-assertions
+    - avoid-unused-parameters
+    - avoid-nested-conditional-expressions
+    - prefer-moving-to-variable
+    - prefer-match-file-name
