@@ -365,6 +365,370 @@
       "hoyowiki": 11,
       "subCollection": {}
     },
+    "Clorinde": {
+      "image": "Characters/Electro/Clorinde.png",
+      "gender": "Female",
+      "birthday": "20/9",
+      "caption": "Candlebearer, Shadowhunter",
+      "titles": [
+        "Champion Duelist"
+      ],
+      "name": "Clorinde",
+      "fullName": null,
+      "description": "An undefeated Champion Duelist. Sword in hand, she defends justice in the Court of Fontaine.",
+      "nation": "Fontaine",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Trial Court",
+      "constellation": "Rapperia",
+      "outfits": ["Sword_of_Honor"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Justice",
+            "material3qty": 3,
+            "material4": "Transoceanic_Pearl",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 2,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 4,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 6,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 9,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 4,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 6,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 12,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Everamber",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 16,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Dark-Shattering_Flame": {
+            "name": "Dark-Shattering Flame",
+            "effect": "After a nearby party member triggers an Electro-related reaction against an opponent, Electro DMG dealt by Clorinde's Normal Attacks and Last Lightfall will be increased by 20% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. The Maximum DMG increase achievable this way for the above attacks is 1,800.",
+            "image": "Talents/Passive/Talent_Dark-Shattering_Flame.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Lawful_Remuneration": {
+            "name": "Lawful Remuneration",
+            "effect": "If Clorinde's Bond of Life is equal to or greater than 100% of her Max HP, her CRIT Rate will increase by 10% for 15s whenever her Bond of Life value increases or decreases. Max 2 stacks. Each stack is counted independently.\nAdditionally, Hunter's Vigil's Night Vigil state is buffed: While it is active, the percent of healing converted to Bond of Life increases to 100%.",
+            "image": "Talents/Passive/Talent_Lawful_Remuneration.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Night_Vigils_Harvest": {
+            "name": "Night Vigil's Harvest",
+            "effect": "Displays the location of nearby resources unique to Fontaine on the mini-map.",
+            "image": "Talents/Passive/Talent_Night_Vigils_Harvest.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Oath_of_Hunting_Shadows": {
+            "name": "Oath of Hunting Shadows",
+            "effect": "Normal Attack\nPerforms up to 5 rapid strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina and fires Suppressing Shots in a fan pattern with her pistolet.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Hunters_Vigil": {
+            "name": "Hunter's Vigil",
+            "effect": "Preparing her pistolet, she enters the \"Night Vigil\" state, using steel and shot together. In this state, Clorinde's Normal Attacks will be transformed into "Swift Hunt" pistolet attacks, and the DMG dealt is converted into Electro DMG that cannot be overridden by infusions, and she will be unable to use Charged Attacks. Using her Elemental Skill will transform it into \"Impale the Night\": Perform a lunging attack, dealing Electro DMG. The DMG done through the aforementioned method is considered Normal Attack DMG.\n\nSwift Hunt\nWhen her Bond of Life is equal to or greater than 100% of her max HP: Performs a pistolet shot.\nWhen her Bond of Life is less than 100%, firing her pistolet will grant her Bond of Life, with the amount gained based on her max HP. The shots she fires can pierce opponents, and DMG dealt to opponents in their path is increased.\n\nImpale the Night\nThe current percentage value of Clorinde's Bond of Life determines its effect:\nWhen the Bond of Life value is 0%, perform a normal lunging strike;\nWhen the Bond of Life value is less than 100% of her max HP, Clorinde is healed based on the Bond of Life value, and the AoE of the lunging attack and the DMG dealt is increased;\nWhen the value of the Bond of Life is equal to or greater than 100% of her max HP, use Impale the Night: Pact. The healing multiplier is increased, and the AoE and DMG dealt by the lunge is increased even further.\n\nIn addition, when Clorinde is in the Night Vigil state, healing effects other than Impale the Night will not take effect and will instead be converted into a Bond of Life that is a percentage of the healing that would have been received.\n\nClorinde will exit the \"Night Vigil\" state when she leaves the field.\n\nArkhe: Ousia\nPeriodically, when Clorinde's Swift Hunt shots strike opponents, she will summon a Surging Blade at the position hit that deals Ousia-aligned Electro DMG.",
+            "image": "Talents/Skill/Talent_Hunters_Vigil.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Last_Lightfall": {
+            "name": "Last Lightfall",
+            "effect": "Grants herself a Bond of Life based upon her own max HP before swiftly evading and striking with saber and sidearm as one, dealing AoE Electro DMG.",
+            "image": "Talents/Burst/Talent_Last_Lightfall.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "\"From This Day, I Pass the Candle's Shadow-Veil\"",
+          "effect": "While Hunter's Vigil's Night Vigil state is active, when Electro DMG from Clorinde's Normal Attacks hit opponents, they will trigger 2 coordinated attacks from a Nightvigil Shade summoned near the hit opponent, each dealing 30% of Clorinde's ATK as Electro DMG.\nThis effect can occur once every 1.2s. DMG dealt this way is considered Normal Attack DMG.",
+          "image": "Constellation/From_This_Day_I_Pass_the_Candles_Shadow-Veil.png"
+        },
+        "2": {
+          "name": "\"Now, As We Face the Perils of the Long Night\"",
+          "effect": "Enhance the Passive Talent \"Dark-Shattering Flame\": After a nearby party member triggers an Electro-related reaction against an opponent, Electro DMG dealt by Clorinde's Normal Attacks and Last Lightfall will be increased by 30% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. When you have 3 stacks, Clorinde's interruption resistance will be increased. The Maximum DMG increase achievable this way for the above attacks is 2,700.\nYou must first unlock the Passive Talent \"Dark-Shattering Flame.\"",
+          "image": "Constellation/Now_As_We_Face_the_Perils_of_the_Long_Night.png"
+        },
+        "3": {
+          "name": "\"I Pledge to Remember the Oath of Daylight\"",
+          "effect": "Increases the Level of Hunter's Vigil by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/I_Pledge_to_Remember_the_Oath_of_Daylight.png"
+        },
+        "4": {
+          "name": "\"To Enshrine Tears, Life, and Love\"",
+          "effect": "When Last Lightfall deals DMG to opponent(s), DMG dealt is increased based on Clorinde's Bond of Life percentage. Every 1% of her current Bond of Life will increase Last Lightfall DMG by 2%. The maximum Last Lightfall DMG increase achievable this way is 200%.",
+          "image": "Constellation/To_Enshrine_Tears_Life_and_Love.png"
+        },
+        "5": {
+          "name": "\"Holding Dawn's Coming as My Votive\"",
+          "effect": "Increases the Level of Last Lightfall by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Holding_Dawns_Coming_as_My_Votive.png"
+        },
+        "6": {
+          "name": "\"And So Shall I Never Despair\"",
+          "effect": "For 12s after Hunter's Vigil is used, Clorinde's CRIT Rate will be increased by 10%, and her CRIT DMG by 70%.\nAdditionally, while Night Vigil is active, a Glimbright Shade will appear under specific circumstances, executing an attack that deals 200% of Clorinde's ATK as Electro DMG. DMG dealt this way is considered Normal Attack DMG.\nThe Glimbright Shade will appear under the following circumstances:\nWhen Clorinde is about to be hit by an attack.\nWhen Clorinde uses Impale the Night: Pact.\n1 Glimbright Shade can be summoned in the aforementioned ways every 1s. 6 Shades can be summoned per single Night Vigil duration.\nIn addition, while Night Vigil is active, the DMG Clorinde receives is decreased by 80% and her interruption resistance is increased. This effect will disappear after the Night Vigil state ends or 1s after she summons 6 Glimbright Shades.",
+          "image": "Constellation/And_So_Shall_I_Never_Despair.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Lumitoile",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Fontemer_Unihorn",
+          "level": 40,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Lumitoile",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Fontemer_Unihorn",
+          "level": 50,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Lumitoile",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Fontemer_Unihorn",
+          "level": 60,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Lumitoile",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Fontemer_Unihorn",
+          "level": 70,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Lumitoile",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Fontemer_Unihorn",
+          "level": 80,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Lumitoile",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Fontemer_Unihorn",
+          "local_speciality": "Lumitoile"
+        },
+        "talents": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "mastery1": "Teachings_of_Justice",
+          "mastery2": "Guide_to_Justice",
+          "mastery3": "Philosophies_of_Justice",
+          "weekly_boss_drop": "Everamber",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "The mightiest Champion Duelist. Sword in hand, she defends justice in the Court of Fontaine.",
+      "paimonmoepath": "characters/clorinde",
+      "genshinggpath": "characters/clorinde",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Clorinde",
+      "hoyowiki": 5596,
+      "subCollection": {}
+    },
     "Cyno": {
       "image": "Characters/Electro/Cyno.png",
       "gender": "Male",
