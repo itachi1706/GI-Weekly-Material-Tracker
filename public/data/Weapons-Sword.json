@@ -1,5 +1,119 @@
 {
   "weapons": {
+    "Absolution": {
+      "secondary_stat_type": "CRIT DMG",
+      "description": "A rapier once wielded by a deceiver who had forsaken everything. In the past, it was primarily used as a tool when he had to disguise his identity.",
+      "name": "Absolution",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Meshing_Gear",
+          "level": 20,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 3,
+          "material1": "Fragment_of_an_Ancient_Chord",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
+        },
+        "2": {
+          "material3": "Meshing_Gear",
+          "level": 40,
+          "material2": "Old_Operatives_Pocket_Watch",
+          "material3qty": 12,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
+        },
+        "3": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 50,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 9,
+          "material1": "Chapter_of_an_Ancient_Chord",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
+        },
+        "4": {
+          "material3": "Mechanical_Spur_Gear",
+          "level": 60,
+          "material2": "Operatives_Standard_Pocket_Watch",
+          "material3qty": 14,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
+        },
+        "5": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 70,
+          "material2": "Operatives_Constancy",
+          "material3qty": 9,
+          "material1": "Movement_of_an_Ancient_Chord",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
+        },
+        "6": {
+          "material3": "Artificed_Dynamic_Gear",
+          "level": 80,
+          "material2": "Operatives_Constancy",
+          "material3qty": 18,
+          "material1": "Echo_of_an_Ancient_Chord",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "forgery1": "Fragment_of_an_Ancient_Chord",
+          "forgery2": "Chapter_of_an_Ancient_Chord",
+          "forgery3": "Movement_of_an_Ancient_Chord",
+          "forgery4": "Echo_of_an_Ancient_Chord",
+          "elite1": "Old_Operatives_Pocket_Watch",
+          "elite2": "Operatives_Standard_Pocket_Watch",
+          "elite3": "Operatives_Constancy"
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Absolution.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "44.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "Deathly Pact",
+      "effect": "CRIT DMG increased by 20~40%. Increasing the value of a Bond of Life increases the DMG the equipping character deals by 16~32% for 6s. Max 3 stacks.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Absolution",
+      "hoyowiki": 5674,
+      "subCollection": {}
+    },
     "Amenoma_Kageuchi": {
       "secondary_stat_type": "ATK",
       "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
