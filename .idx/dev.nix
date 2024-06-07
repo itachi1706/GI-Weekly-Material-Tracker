@@ -4,6 +4,7 @@
     pkgs.nodePackages.firebase-tools
     pkgs.jdk17
     pkgs.unzip
+    pkgs.htop
   ];
   idx.extensions = [
     
