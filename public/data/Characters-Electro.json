@@ -3663,6 +3663,370 @@
       "hoyowiki": 48,
       "subCollection": {}
     },
+    "Sethos": {
+      "image": "Characters/Electro/Sethos.png",
+      "gender": "Male",
+      "birthday": "31/5",
+      "caption": "Wisdom's Measure",
+      "titles": [
+        "Desert Envoy"
+      ],
+      "name": "Sethos",
+      "fullName": null,
+      "description": "The Temple of Silence's heir. Burdened with secrets, he comes from the sands.",
+      "nation": "Sumeru",
+      "weapon": "Bow",
+      "rarity": 4,
+      "affiliation": "Temple of Silence",
+      "constellation": "Basileos Delta",
+      "outfits": ["Golden_Sandstrider"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Praxis",
+            "material3qty": 3,
+            "material4": "Faded_Red_Satin",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Praxis",
+            "material3qty": 2,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Praxis",
+            "material3qty": 4,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Praxis",
+            "material3qty": 6,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Praxis",
+            "material3qty": 9,
+            "material4": "Trimmed_Red_Silk",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Praxis",
+            "material3qty": 4,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Praxis",
+            "material3qty": 6,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Dakas_Bell",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Praxis",
+            "material3qty": 12,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Dakas_Bell",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Praxis",
+            "material3qty": 16,
+            "material4": "Rich_Red_Brocade",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Black_Kites_Enigma": {
+            "name": "Black Kite's Enigma",
+            "effect": "When Aiming, the charging time is decreased by 0.285s based on each point of Sethos's current Elemental Energy. Charging time can be reduced to a minimum of 0.3s through this method and a maximum of 20 Energy can be tallied. If a Shadowpiercing Shot is fired, consume the tallied amount of Elemental Energy; if it is a Charge Level 1 shot, then consume 50% of the tallied amount of Elemental Energy.",
+            "image": "Talents/Passive/Talent_Black_Kites_Enigma.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "The_Sand_Kings_Boon": {
+            "name": "The Sand King's Boon",
+            "effect": "Sethos gains the \"Scorching Sandshade\" effect, increasing the DMG dealt by Shadowpiercing Shots by 700% of Sethos's Elemental Mastery.\nThe Scorching Sandshade effect will be canceled when any of the following conditions are met:\n5s after a Shadowpiercing Shot first hits an opponent.\nAfter 4 Shadowpiercing Shots strike opponents.\n\nWhen a Shadowpiercing Shot affected by Scorching Sandshade first hits an opponent, Sethos will regain Scorching Sandshade after 15s.",
+            "image": "Talents/Passive/Talent_The_Sand_Kings_Boon.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Thoths_Revelation": {
+            "name": "Thoth's Revelation",
+            "effect": "Displays the location of nearby resources unique to Sumeru on the mini-map.",
+            "image": "Talents/Passive/Talent_Thoths_Revelation.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Royal_Reed_Archery": {
+            "name": "Royal Reed Archery",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Electro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\nCharge Level 1: Fires off an arrow carrying the power of lightning that deals Electro DMG.\nCharge Level 2: Fires off a Shadowpiercing Shot which can pierce enemies, dealing Electro DMG to enemies along its path. After the Shadowpiercing Shot is fully charged, Sethos cannot move around.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Ancient_Rite_The_Thundering_Sands": {
+            "name": "Ancient Rite: The Thundering Sands",
+            "effect": "Gathers the might of thunder, dealing AoE Electro DMG and quickly retreating. If this attack triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, or Electro Swirl reactions, Sethos recovers a certain amount of Elemental Energy.",
+            "image": "Talents/Skill/Talent_Ancient_Rite_The_Thundering_Sands.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Secret_Rite_Twilight_Shadowpiercer": {
+            "name": "Secret Rite: Twilight Shadowpiercer",
+            "effect": "Perform a secret rite, entering the \"Twilight Meditation\" state, during which Sethos's Normal Attacks will be converted into enemy-piercing Dusk Bolts: Deal Electro DMG to opponents in its path, with DMG increased based on Sethos's Elemental Mastery.\nSethos cannot perform Aimed Shots while in this state.\nDMG dealt by Dusk Bolts is considered Charged Attack DMG.\nThis effect will be canceled when Sethos leaves the field.",
+            "image": "Talents/Burst/Talent_Secret_Rite_Twilight_Shadowpiercer.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Sealed Shrine's Spiritsong",
+          "effect": "The CRIT Rate of Shadowpiercing Shot is increased by 15%.",
+          "image": "Constellation/Sealed_Shrines_Spiritsong.png"
+        },
+        "2": {
+          "name": "Papyrus Scripture of Silent Secrets",
+          "effect": "When any of the following conditions are met, Sethos gains a 15% Electro DMG Bonus for 10s that may stack twice, with each stack duration counted independently:\nConsuming Elemental Energy through Aimed Shots; you must first unlock the Passive Talent \"Black Kite's Enigma\" to trigger this condition.\nRegaining Elemental Energy by triggering Elemental Reactions using Ancient Rite: The Thundering Sands.\nUsing Secret Rite: Twilight Shadowpiercer.",
+          "image": "Constellation/Papyrus_Scripture_of_Silent_Secrets.png"
+        },
+        "3": {
+          "name": "Ode to the Moonrise Sage",
+          "effect": "Increases the Level of Normal Attack: Royal Reed Archery by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Ode_to_the_Moonrise_Sage.png"
+        },
+        "4": {
+          "name": "Beneficent Plumage",
+          "effect": "When a Shadowpiercing Shot or Dusk Bolt strikes 2 or more opponents, all nearby party members gain 80 Elemental Mastery for 10s.",
+          "image": "Constellation/Beneficent_Plumage.png"
+        },
+        "5": {
+          "name": "Record of the Desolate God's Burning Sands",
+          "effect": "Increases the Level of Secret Rite: Twilight Shadowpiercer by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Record_of_the_Desolate_Gods_Burning_Sands.png"
+        },
+        "6": {
+          "name": "Pylon of the Sojourning Sun Temple",
+          "effect": "After Shadowpiercing Shot strikes an opponent, the Elemental Energy consumed by the Passive Talent \"Black Kite's Enigma\" will be returned. This effect can be triggered up to once every 15s. You must first unlock the Passive Talent \"Black Kite's Enigma.\"",
+          "image": "Constellation/Pylon_of_the_Sojourning_Sun_Temple.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Trishiraite",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cloudseam_Scale",
+          "level": 40,
+          "material4": "Faded_Red_Satin",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Trishiraite",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cloudseam_Scale",
+          "level": 50,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Trishiraite",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cloudseam_Scale",
+          "level": 60,
+          "material4": "Trimmed_Red_Silk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Trishiraite",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cloudseam_Scale",
+          "level": 70,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Trishiraite",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cloudseam_Scale",
+          "level": 80,
+          "material4": "Rich_Red_Brocade",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Trishiraite",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Cloudseam_Scale",
+          "local_speciality": "Trishiraite"
+        },
+        "talents": {
+          "common1": "Faded_Red_Satin",
+          "common2": "Trimmed_Red_Silk",
+          "common3": "Rich_Red_Brocade",
+          "mastery1": "Teachings_of_Praxis",
+          "mastery2": "Guide_to_Praxis",
+          "mastery3": "Philosophies_of_Praxis",
+          "weekly_boss_drop": "Dakas_Bell",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "A mysterious desert youth with a friendly smile who loves traveling by foot across both rainforest and desert.",
+      "paimonmoepath": "characters/sethos",
+      "genshinggpath": "characters/sethos",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sethos",
+      "hoyowiki": 5598,
+      "subCollection": {}
+    },
     "Yae_Miko": {
       "image": "Characters/Electro/Yae_Miko.png",
       "gender": "Female",
