@@ -247,7 +247,7 @@ jobs:
         working-directory: ios
         run: |
           pod repo update
-          pod install
+          pod install --repo-update
       - name: Retrieve Firebase Options Dart files and decode to file
         env:
           GOOGLE_SVC_IOS: ${{ secrets.GOOGLE_SVC_IOS }}
