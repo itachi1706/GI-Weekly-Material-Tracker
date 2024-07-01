@@ -2945,6 +2945,368 @@
       "hoyowiki": 25,
       "subCollection": {}
     },
+    "Sigewinne": {
+      "image": "Characters/Hydro/Sigewinne.png",
+      "gender": "Female",
+      "birthday": "30/7",
+      "caption": "Wondrous Dragonheir",
+      "titles": ["Melusine Head Nurse"],
+      "name": "Sigewinne",
+      "fullName": null,
+      "description": "A Melusine and the Fortress of Meropide's head nurse. She cares equally for every convict locked in the undersea prison.",
+      "nation": "Fontaine",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Fortress of Meropide",
+      "constellation": "Nereides",
+      "outfits": ["Sweetness_of_the_Sea"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Equity",
+            "material3qty": 3,
+            "material4": "Transoceanic_Pearl",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 2,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 4,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 6,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Equity",
+            "material3qty": 9,
+            "material4": "Transoceanic_Chunk",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 4,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 6,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 12,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Eye_of_the_Maelstrom",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Equity",
+            "material3qty": 16,
+            "material4": "Xenochromatic_Crystal",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Requires_Appropriate_Rest": {
+            "name": "Requires Appropriate Rest",
+            "effect": "Sigewinne grants herself the \"Semi-Strict Bedrest\" effect for 18s after using Rebound Hydrotherapy: Sigewinne gains an 8% Hydro DMG Bonus and 10 stacks of Convalescence. When the Elemental Skills of your nearby off-field party members other than Sigewinne deal DMG, consume 1 stack of Convalescence, and increase the DMG dealt by this instance of Elemental Skill DMG. Every 1,000 Max HP Sigewinne has above 30,000 increases the DMG by 80. The maximum DMG increase for Elemental Skills that can be gained in this way is 2,800.",
+            "image": "Talents/Passive/Talent_Requires_Appropriate_Rest.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Detailed_Diagnosis_Thorough_Treatment": {
+            "name": "Detailed Diagnosis, Thorough Treatment",
+            "effect": "When Sigewinne performs healing, the amount healed for this instance is increased based on the total current value of the Bonds of Life on all party members: For each 1,000 HP worth of Bonds of Life, the outgoing healing is increased by 3%. The amount of healing provided can be increased by up to 30% in this way.",
+            "image": "Talents/Passive/Talent_Detailed_Diagnosis_Thorough_Treatment.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Emergency_Dose": {
+            "name": "Emergency Dose",
+            "effect": "While underwater, heal your active character over 2.5s when their HP falls under 50%. The amount healed is equal to 50% of their Max HP, and their All Elemental and Physical RES will be decreased by 10% for 10s. This effect can be triggered up to once every 20s.",
+            "image": "Talents/Passive/Talent_Emergency_Dose.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Targeted_Treatment": {
+            "name": "Targeted Treatment",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive attacks.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, the power of Hydro will continually accumulate on the arrow. After fully charging, Sigewinne will periodically fire slow-moving Mini-Stration Bubbles toward the target, dealing Hydro DMG. When released, an arrow imbued with torrential energy will deal Hydro DMG to the opponent hit.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Hydro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Rebound_Hydrotherapy": {
+            "name": "Rebound Hydrotherapy",
+            "effect": "Blows a Bolstering Bubblebalm that can stimulate blood flow and help patients drift off to sleep using a bubblegun specially made in the Fortress of Meropide.\nBolstering Bubblebalms will bounce between nearby opponents, dealing Hydro DMG based on Sigewinne's max HP to opponents it hits. When it bounces, it will restore HP to all nearby party members except Sigewinne herself. The amount healed is based on Sigewinne's max HP.\nAfter bouncing 5 times, the Bolstering Bubblebalm will disappear and restore HP to Sigewinne based on her max HP value.\nWhen no opponents are present, the Bolstering Bubblebalm will bounce nearby. Only one Bolstering Bubblebalm created by a Sigewinne may exist at once.\nWhen Held, the Bolstering Bubblebalm can be boosted to an even bigger size.\n\nHold\nEnter Aiming Mode to begin blowing an even bigger, even more breathtaking Bolstering Bubblebalm!\nThe Bolstering Bubblebalm will grow bigger the longer the skill is Held, until it grows up to two tiers in size. Each tier it grows increases its DMG by 5% and healing by 5%. When a Bolstering Bubblebalm bounces, it will drop down a tier in size, until it returns to being a normal Bolstering Bubblebalm.\nAfter weaker opponents are hit by big Bolstering Bubblebalms, they will be imprisoned and will be unable to move.\n\nIn addition, 2 Sourcewater Droplets will be created near Sigewinne when she uses this Skill. Each Sourcewater Droplet Sigewinne collects will grant her a Bond of Life worth 10% of her Max HP.\nWhen Sigewinne's Bond of Life is cleared, she regains 1 Elemental Energy for every 2,000 HP worth of the Bond of Life that was cleared. Sigewinne can regain up to 5 Elemental Energy in this way.\n\nArkhe: Ousia\nBolstering Bubblebalms periodically call down a Surging Blade on the position they hit, dealing Ousia-aligned Hydro DMG based on Sigewinne's max HP.",
+            "image": "Talents/Skill/Talent_Rebound_Hydrotherapy.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Super_Saturated_Syringing": {
+            "name": "Super Saturated Syringing",
+            "effect": "Take out a special Fortress of Meropide-made syringe and assault the area in front with waves of kindness and medicine, dealing AoE Hydro DMG based on Sigewinne's max HP.\nIn addition, Sigewinne absorbs up to 2 nearby Sourcewater Droplets within a certain range right before using the skill.",
+            "image": "Talents/Burst/Talent_Super_Saturated_Syringing.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "\"Can the Happiest of Spirits Understand Anxiety?\"",
+          "effect": "Rebound Hydrotherapy's Bolstering Bubblebalm can bounce 3 extra times, and the first 3 bounces will not cause big Bubblebalms to become smaller.\nThe Passive Talent \"Requires Appropriate Rest\" is enhanced: Each Bubblebalm bounce adds 1 stack to her Convalescence tally, and the values for the Convalescence stacks' DMG bonus will be modified to: Every 1,000 max HP Sigewinne has above 30,000 increases the DMG by 100. The maximum DMG increase for Elemental Skills that can be gained in this way is 3,500. You must first unlock the Passive Talent \"Requires Appropriate Rest.\"",
+          "image": "Constellation/Can_the_Happiest_of_Spirits_Understand_Anxiety.png"
+        },
+        "2": {
+          "name": "\"Can the Most Merciful of Spirits Defeat Its Foes?\"",
+          "effect": "When using Rebound Hydrotherapy and Super Saturated Syringing, Sigewinne can create a Bubbly Shield worth 30% of her Max HP that absorbs Hydro DMG with 250% efficiency. The Bubbly Shield will persist until Sigewinne finishes using relevant skills.\nAdditionally, after Rebound Hydrotherapy's Bolstering Bubblebalm or Super Saturated Syringing hits an opponent, that opponent's Hydro RES will be decreased by 35% for 8s.",
+          "image": "Constellation/Can_the_Most_Merciful_of_Spirits_Defeat_Its_Foes.png"
+        },
+        "3": {
+          "name": "\"Can the Healthiest of Spirits Cure Fevers?\"",
+          "effect": "Increases the Level of Rebound Hydrotherapy by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Can_the_Healthiest_of_Spirits_Cure_Fevers.png"
+        },
+        "4": {
+          "name": "\"Can the Loveliest of Spirits Keep Decay at Bay?\"",
+          "effect": "The duration of Super Saturated Syringing is extended by 3s.",
+          "image": "Constellation/Can_the_Loveliest_of_Spirits_Keep_Decay_at_Bay.png"
+        },
+        "5": {
+          "name": "\"Can the Most Joyful of Spirits Alleviate Agony?\"",
+          "effect": "Increases the Level of Super Saturated Syringing by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Can_the_Most_Joyful_of_Spirits_Alleviate_Agony.png"
+        },
+        "6": {
+          "name": "\"Can the Most Radiant of Spirits Pray For Me?\"",
+          "effect": "When Sigewinne performs healing, she will increase the CRIT Rate and CRIT DMG of her Super Saturated Syringing based on her Max HP. Every 1,000 Max HP she has will increase CRIT Rate by 0.4% and CRIT DMG by 2.2% for 15s. The maximum increase achievable this way is 20% CRIT Rate and 110% CRIT DMG.",
+          "image": "Constellation/Can_the_Most_Radiant_of_Spirits_Pray_For_Me.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Water_That_Failed_To_Transcend",
+          "level": 40,
+          "material4": "Transoceanic_Pearl",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Water_That_Failed_To_Transcend",
+          "level": 50,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Water_That_Failed_To_Transcend",
+          "level": 60,
+          "material4": "Transoceanic_Chunk",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Water_That_Failed_To_Transcend",
+          "level": 70,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Water_That_Failed_To_Transcend",
+          "level": 80,
+          "material4": "Xenochromatic_Crystal",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Romaritime_Flower",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "gem1": "Varunada_Lazurite_Silver",
+          "gem2": "Varunada_Lazurite_Fragment",
+          "gem3": "Varunada_Lazurite_Chunk",
+          "gem4": "Varunada_Lazurite_Gemstone",
+          "boss_drop": "Water_That_Failed_To_Transcend",
+          "local_speciality": "Romaritime_Flower"
+        },
+        "talents": {
+          "common1": "Transoceanic_Pearl",
+          "common2": "Transoceanic_Chunk",
+          "common3": "Xenochromatic_Crystal",
+          "mastery1": "Teachings_of_Equity",
+          "mastery2": "Guide_to_Equity",
+          "mastery3": "Philosophies_of_Equity",
+          "weekly_boss_drop": "Lightless_Eye_of_the_Maelstrom",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "The head nurse of the Fortress of Meropide. As a Melusine, she uses her unique perspective to observe and care for those around her.",
+      "paimonmoepath": "characters/sigewinne",
+      "genshinggpath": "characters/sigewinne",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sigewinne",
+      "hoyowiki": 5597,
+      "subCollection": {}
+    },
     "Tartaglia": {
       "image": "Characters/Hydro/Tartaglia.png",
       "gender": "Male",
