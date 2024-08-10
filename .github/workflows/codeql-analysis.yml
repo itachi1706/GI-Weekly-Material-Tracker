@@ -80,7 +80,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Flutter Stable
+      - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
         uses: subosito/flutter-action@v2.16.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
