@@ -1079,6 +1079,168 @@
       },
       "hoyowiki": 5604,
       "subCollection": {}
+    },
+    "Axis_of_the_Secret_Source": {
+      "image": "Materials/Elite_Mob/Item_Axis_of_the_Secret_Source.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-defunct Secret Source Automaton.\nIt appears to be just a component that was used to connect two mechanisms.",
+      "enemies": ["Secret Source Automaton: Hunter-Seeker"],
+      "obtained": "- Dropped by Secret Source Automaton: Hunter-Seeker",
+      "name": "Axis of the Secret Source",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Axis_of_the_Secret_Source",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6653,
+      "subCollection": {}
+    },
+    "Sheath_of_the_Secret_Source": {
+      "image": "Materials/Elite_Mob/Item_Sheath_of_the_Secret_Source.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-defunct Secret Source Automaton.\nIt appears to be the mechanism by which the Secret Source Automaton was powered, but its core is now empty.",
+      "enemies": ["Secret Source Automaton: Hunter-Seeker"],
+      "obtained": "- Alchemy (3x Axis of the Secret Source)\n- Dropped by 40+ Secret Source Automaton: Hunter-Seeker",
+      "name": "Sheath of the Secret Source",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sheath_of_the_Secret_Source",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6654,
+      "subCollection": {}
+    },
+    "Heart_of_the_Secret_Source": {
+      "image": "Materials/Elite_Mob/Item_Heart_of_the_Secret_Source.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "Comes from a now-defunct Secret Source Automaton.\nIt appears to be an intact core by which the Secret Source Automaton was powered, a strange device that seems to have been produced as a universal component. According to legend, the ingenious thinkers of antiquity drew upon the same wisdom used in the creation of golden patterns to design the blueprints by which these extraordinary machines functioned. Perhaps this core was one of them.",
+      "enemies": ["Secret Source Automaton: Hunter-Seeker"],
+      "obtained": "- Alchemy (3x Sheath of the Secret Source)\n- Dropped by 60+ Secret Source Automaton: Hunter-Seeker",
+      "name": "Heart of the Secret Source",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Heart_of_the_Secret_Source",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6655,
+      "subCollection": {}
+    },
+    "Shard_of_a_Shattered_Will": {
+      "image": "Materials/Elite_Mob/Item_Shard_of_a_Shattered_Will.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A fragment that houses a Wayob Manifestation.\nIt is a broken shard of a shattered stone idol. Its capacity for channeling the Wayob's will and power is also extremely limited.",
+      "enemies": ["Wayob Manifestations"],
+      "obtained": "- Dropped by Wayob Manifestations\n- Stardust Exchange",
+      "name": "Shard of a Shattered Will",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Shard_of_a_Shattered_Will",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6647,
+      "subCollection": {}
+    },
+    "Locus_of_a_Clear_Will": {
+      "image": "Materials/Elite_Mob/Item_Locus_of_a_Clear_Will.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A jade idol that houses a Wayob Manifestation.\nYou can roughly make out the form of an idol figurine. It has a greater capacity for channeling the Wayob's will and power.",
+      "enemies": ["Wayob Manifestations"],
+      "obtained": "- Alchemy (3x Shard of a Shattered Will)\n- Dropped by 40+ Wayob Manifestations\n- Stardust Exchange",
+      "name": "Locus of a Clear Will",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Locus_of_a_Clear_Will",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6648,
+      "subCollection": {}
+    },
+    "Sigil_of_a_Striding_Will": {
+      "image": "Materials/Elite_Mob/Item_Sigil_of_a_Striding_Will.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An obsidian talisman that houses a Wayob Manifestation.\nIt consists of a jade idol figurine encased in obsidian. They say that in the past, people often used such figurines to attempt to communicate directly with the Wayob of the Night Kingdom. Perhaps this also explains why the Wayob can dwell within it and manifest itself in physical form.",
+      "enemies": ["Wayob Manifestations"],
+      "obtained": "- Alchemy (3x Locus of a Clear Will)\n- Dropped by 60+ Wayob Manifestations",
+      "name": "Sigil of a Striding Will",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sigil_of_a_Striding_Will",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6649,
+      "subCollection": {}
+    },
+    "Ignited_Stone": {
+      "image": "Materials/Elite_Mob/Item_Ignited_Stone.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A shard obtained from the body of a defeated Avatar of Lava.\nThough it has been shattered to a great extent, on the inside, it still continues to burn. Perhaps this is a testament to the extraordinary vitality of phlogiston.",
+      "enemies": ["Avatars of Lava"],
+      "obtained": "- Dropped by Avatars of Lava",
+      "name": "Ignited Stone",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ignited_Stone",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6650,
+      "subCollection": {}
+    },
+    "Ignited_Seed_of_Life": {
+      "image": "Materials/Elite_Mob/Item_Ignited_Seed_of_Life.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A condensed pile of burning matter obtained from the body of a defeated Avatar of Lava.\nIt emits a slight heat.\nAttempting to stop a stone pile of this size from incessantly burning away would be a hard task indeed. It is said that this is some primordial form of life.",
+      "enemies": ["Avatars of Lava"],
+      "obtained": "- Alchemy (3x Ignited Stone)\n- Dropped by 40+ Avatars of Lava\n- Stardust Exchange",
+      "name": "Ignited Seed of Life",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ignited_Seed_of_Life",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6651,
+      "subCollection": {}
+    },
+    "Ignited_Seeing_Eye": {
+      "image": "Materials/Elite_Mob/Item_Ignited_Seeing_Eye.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A core retrieved from within the body of a defeated Avatar of Lava.\nIt emits a considerable heat.\nIt is said that once such a core has formed, left to itself, it will develop into a new Avatar of Lava. In ancient times, it was once believed that all forms of life could be traced back to conflagration, and that in the spark of burning matter lay the origins of the soul and sentient wisdom. Perhaps the very existence of Avatar of Lava would bear out such a belief - or perhaps it was the emergence of this theory itself that explains how they came to inhabit the land of Natlan...",
+      "enemies": ["Avatars of Lava"],
+      "obtained": "- Alchemy (3x Ignited Seed of Life)\n- Dropped by 60+ Avatars of Lava",
+      "name": "Ignited Seeing Eye",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ignited_Seeing_Eye",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 6652,
+      "subCollection": {}
     }
   }
 }
