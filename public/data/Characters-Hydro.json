@@ -1840,6 +1840,379 @@
       "hoyowiki": 37,
       "subCollection": {}
     },
+    "Mualani": {
+      "image": "Characters/Hydro/Mualani.png",
+      "gender": "Female",
+      "birthday": "3/8",
+      "caption": "Splish-Splash Wavechaser",
+      "titles": [
+        "Meztli Guide"
+      ],
+      "name": "Mualani",
+      "fullName": "Mualani \"Umoja\"",
+      "description": "A well-known guide in Natlan who owns a watersports shop, and expert in all forms of wave-chasing.",
+      "nation": "Natlan",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Meztli, Leisurely Puffer",
+      "constellation": "Phoca Neomonachus",
+      "outfits": [
+        "Flying_Fish_Heat_Waves_and_Moon_Scallop"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Contention",
+            "material3qty": 3,
+            "material4": "Sentrys_Wooden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 2,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 4,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 6,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 9,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 4,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 6,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Mass",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 12,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Mass",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 16,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Heat-Resistant_Freshwater_Floater": {
+            "name": "Heat-Resistant Freshwater Floater",
+            "effect": "When Sharky's Surging Bite hits an opponent, a Puffer will be generated nearby. Mualani will restore 20 Nightsoul points when she picks up a Puffer. Only 2 such Puffers can be created in this way during a single instance of being in Nightsoul's Blessing.",
+            "image": "Talents/Passive/Talent_Heat-Resistant_Freshwater_Floater.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Natlans_Greatest_Guide": {
+            "name": "Natlan's Greatest Guide",
+            "effect": "When a nearby party member triggers a Nightsoul Burst, Mualani will gain 1 stack of Wavechaser's Exploits, which lasts for 20s. Max 3 stacks. When she uses Boomsharka-laka, Mualani will clear all Wavechaser's Exploits stacks and increase the DMG of this Boomsharka-laka by 15%/30%/45% of her Max HP based on the number of stacks cleared.",
+            "image": "Talents/Passive/Talent_Natlans_Greatest_Guide.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Crests_and_Troughs": {
+            "name": "Crests and Troughs",
+            "effect": "After her Nightsoul points are depleted, Mualani will switch to consuming Phlogiston to maintain her Nightsoul's Blessing.\nWhile in an area with Phlogiston Mechanics within Natlan, she can use Nightsoul Transmission: Mualani. When the active character is currently sprinting, swimming, in a movement mode caused by certain Talents, or at a certain height in the air, the following will trigger when switching to Mualani: Mualani will enter the Nightsoul's Blessing state and gain 40 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own team.\n\nAdditionally, Mualani's Nightsoul point or Phlogiston consumption while moving on water and Liquid Phlogiston during Nightsoul's Blessing is decreased by 75% while in Natlan, and her Nightsoul point consumption is decreased by 35% while doing the same outside Natlan.",
+            "image": "Talents/Passive/Talent_Crests_and_Troughs.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "The_Trick_Is_to_Keep_Smiling": {
+            "name": "The Trick Is to Keep Smiling!",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, 15 Phlogiston will be restored when interacting with some harvestable items. Additionally, the location of nearby resources unique to Natlan will appear on your mini-map.",
+            "image": "Talents/Passive/Talent_The_Trick_Is_to_Keep_Smiling.png",
+            "order": 2,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Cooling_Treatment": {
+            "name": "Cooling Treatment",
+            "effect": "Normal Attack\nPerforms up to 3 attacks that deal Hydro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to smack a Pufferball into the air that deals AoE Hydro DMG upon landing.\n\nPlunging Attack\nGathers the power of Hydro and plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Hydro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Surfshark_Wavebreaker": {
+            "name": "Surfshark Wavebreaker",
+            "effect": "Combining her mastery of speed and the waves and water, Mualani can surf anytime, anywhere.\nAfter using this skill, Mualani will gain 60 Nightsoul points and enter the Nightsoul's Blessing state.\n\nNightsoul's Blessing: Mualani\nContinuously consume Nightsoul points. When they are depleted or when the skill is used again, Mualani's Nightsoul's Blessing will end. The state itself has the following traits:\nMualani mounts her Sharky Surfboard, increasing Mualani's Movement SPD and interruption resistance. Mualani can move on water and liquid Phlogiston while this state is active, and she will take no DMG from the latter.\nNormal Attacks will be converted to Sharky's Bites, dealing Nightsoul-aligned Hydro DMG based on Mualani's Max HP. Sharky's Bites can be used in mid-air. DMG dealt this way is considered Normal Attack DMG.\nWhen she makes contact with opponents in this state, Mualani applies \"Marked as Prey\" to them and gains 1 Wave Momentum stack. Max 3 stacks. 1 stack can be gained from the same opponent every 0.7s.\n\nWave Momentum and Marked as Prey\nWhen Mualani uses Sharky's Bite, her DMG dealt increases based on Wave Momentum stacks. When she has 3 stacks, a Normal Attack will use Sharky's Surging Bite instead, further increasing her DMG and removing all her stacks afterward.\nWhen Sharky's Bites hit opponents Marked as Prey, that mark is removed, and she will fire Shark Missiles at up to 5 nearby opponents Marked as Prey, dealing DMG to them equal to this Sharky's Bite instance and clearing their Marks. If more than 1 opponent is the target of Sharky's Bite and Shark Missiles, the DMG dealt will decrease, with 28% being the maximum decrease when at least 3 opponents are targeted.",
+            "image": "Talents/Skill/Talent_Surfshark_Wavebreaker.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Boomsharka-laka": {
+            "name": "Boomsharka-laka",
+            "effect": "Fires a Super Shark Missile that can track opponents, dealing Nightsoul-aligned AoE Hydro DMG based on Mualani's Max HP.",
+            "image": "Talents/Burst/Talent_Boomsharka-laka.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "The Leisurely \"Meztli\"...",
+          "effect": "The DMG dealt by the first Sharky's Surging Bite after Mualani enters Nightsoul's Blessing and the Shark Missiles it triggers is increased by 66% of Mualani's Max HP. This instance of increased DMG is subject to the diminishing DMG rules of Surfshark Wavebreaker.\nIn addition, while out of combat, Mualani's Nightsoul's Blessing state consumes 30% less Phlogiston and Nightsoul points.",
+          "image": "Constellation/The_Leisurely_Meztli.png"
+        },
+        "2": {
+          "name": "Mualani, Going All Out!",
+          "effect": "Mualani gains 2 of Surfshark Wavebreaker's Wave Momentum stacks when she enters Nightsoul's Blessing. She will gain 1 stack when obtaining a Puffer.\nIn addition, whenever Mualani obtains 2 Puffers within a single instance of the Nightsoul's Blessing state, she will recover an additional 12 Nightsoul points over 2s. This effect requires the Passive Talent \"Heat-Resistant Freshwater Puffer\" to be unlocked first.",
+          "image": "Constellation/Mualani_Going_All_Out.png"
+        },
+        "3": {
+          "name": "Surfing Atop Joyous Seas",
+          "effect": "Increases the Level of Surfshark Wavebreaker by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Surfing_Atop_Joyous_Seas.png"
+        },
+        "4": {
+          "name": "Sharky Eats Puffies",
+          "effect": "Mualani regenerates 8 Energy when obtaining a Puffer. Must first unlock the Passive Talent \"Heat-Resistant Freshwater Puffer.\"\nAdditionally, Boomsharka-laka deals 75% increased DMG.",
+          "image": "Constellation/Sharky_Eats_Puffies.png"
+        },
+        "5": {
+          "name": "Same Style of Surfboard on Sale!",
+          "effect": "Increases the Level of Boomsharka-laka by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Same_Style_of_Surfboard_on_Sale.png"
+        },
+        "6": {
+          "name": "Spirit of the Springs' People",
+          "effect": "The DMG increase from the Constellation \"The Leisurely 'Meztli'...\" is no longer limited to being triggered once every Nightsoul's Blessing.",
+          "image": "Constellation/Spirit_of_the_Springs_People.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 40,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 50,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 60,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 70,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 80,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Sprayfeather_Gill",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "gem1": "Varunada_Lazurite_Silver",
+          "gem2": "Varunada_Lazurite_Fragment",
+          "gem3": "Varunada_Lazurite_Chunk",
+          "gem4": "Varunada_Lazurite_Gemstone",
+          "boss_drop": "Mark_of_the_Binding_Blessing",
+          "local_speciality": "Sprayfeather_Gill"
+        },
+        "talents": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "mastery1": "Teachings_of_Contention",
+          "mastery2": "Guide_to_Contention",
+          "mastery3": "Philosophies_of_Contention",
+          "weekly_boss_drop": "Lightless_Mass",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "One of the shining stars of the People of the Springs' new generation of young guides. If you've come to Natlan for sightseeing, there's no better companion you could choose.",
+      "paimonmoepath": "characters/mualani",
+      "genshinggpath": "characters/mualani",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mualani",
+      "hoyowiki": 6319,
+      "subCollection": {}
+    },
     "Neuvillette": {
       "image": "Characters/Hydro/Neuvillette.png",
       "gender": "Male",
