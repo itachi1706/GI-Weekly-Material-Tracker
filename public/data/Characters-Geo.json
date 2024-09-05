@@ -1458,6 +1458,379 @@
       "hoyowiki": 5,
       "subCollection": {}
     },
+    "Kachina": {
+      "image": "Characters/Geo/Kachina.png",
+      "gender": "Female",
+      "birthday": "22/4",
+      "caption": "Mottled Gold Yet Unsmelted",
+      "titles": [
+        "Nanatzcayan Young Braveheart"
+      ],
+      "name": "Kachina",
+      "fullName": "Kachina \"Uthabiti\"",
+      "description": "A young warrior of the Nanatzcayan, given the Ancient Name of \"Uthabiti\". Kind-hearted and insatiably persistent, she grows stronger and more capable with each setback she faces.",
+      "nation": "Natlan",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Nanatzcayan",
+      "constellation": "Ochotona Princeps",
+      "outfits": [
+        "Tawny_Peaks_Spired_Rock"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Conflict",
+            "material3qty": 3,
+            "material4": "Sentrys_Wooden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 2,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 4,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 6,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 9,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 4,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 6,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 12,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 16,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Mountain_Echoes": {
+            "name": "Mountain Echoes",
+            "effect": "When nearby party members trigger a Nightsoul Burst, Kachina's Geo DMG Bonus increases by 20% for 12s.",
+            "image": "Talents/Passive/Talent_Mountain_Echoes.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "The_Weight_of_Stone": {
+            "name": "The Weight of Stone",
+            "effect": "Turbo Twirly's DMG is increased by 20% of Kachina's DEF.",
+            "image": "Talents/Passive/Talent_The_Weight_of_Stone.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Heart_of_Unity": {
+            "name": "Heart of Unity",
+            "effect": "After her Nightsoul points are depleted, Kachina will switch to consuming Phlogiston to maintain her Nightsoul's Blessing.\nWhile in an area with Phlogiston Mechanics within Natlan, she can use Nightsoul Transmission: Kachina. When the active character is currently sprinting, climbing, in a movement mode caused by certain Talents, or at a certain height in the air, the following will trigger when switching to Kachina: Kachina will enter the Nightsoul's Blessing state and ride Turbo Twirly when taking the field while gaining 30 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own team.\n\nAdditionally, while in Natlan, Kachina will consume 90% less Stamina when climbing while riding Turbo Twirly.",
+            "image": "Talents/Passive/Talent_Heart_of_Unity.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "Boon_of_Crystal_Flame": {
+            "name": "Boon of Crystal Flame",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, 20 Stamina will be restored when interacting with some harvestable items. Additionally, the location of nearby resources unique to Natlan will appear on your mini-map.",
+            "image": "Talents/Passive/Talent_Boon_of_Crystal_Flame.png",
+            "order": 2,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Cragbiter": {
+            "name": "Cragbiter",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Geo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Go_Go_Turbo_Twirly": {
+            "name": "Go, Go Turbo Twirly!",
+            "effect": "Fight alongside the turbo trusty Turbo Twirly!\nSummons Turbo Twirly. When the skill is Held and released, Kachina will summon and ride Turbo Twirly.\nAfter the Skill is used, Kachina will gain 60 Nightsoul points and enter the Nightsoul's Blessing state.\n\nNightsoul's Blessing: Kachina\nTurbo Twirly's various actions consume Kachina's Nightsoul points.\nThe Nightsoul's Blessing state will end when these points have been depleted.\n\nTurbo Twirly\nCan exist independently or be ridden and operated by Kachina. When Turbo Twirly is present, Kachina's Elemental Skill, \"Go, Go Turbo Twirly!\", will change to an option to Mount/Dismount Turbo Twirly.\nWhen present independent of Kachina, it will slam the ground at intervals, dealing Nightsoul-aligned AoE Geo DMG based on Kachina's DEF.\nWhen Kachina is riding Turbo Twirly, she can control it to move and climb swiftly, and use Normal Attacks to slam the ground, dealing Nightsoul-aligned AoE Geo DMG based on Kachina's DEF.\n\nTurbo Twirly will disappear once Kachina's Nightsoul's Blessing state ends, and it is considered a Geo Construct. 1 Turbo Twirly can exist on the field at any one time.",
+            "image": "Talents/Skill/Talent_Go_Go_Turbo_Twirly.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Time_to_Get_Serious": {
+            "name": "Time to Get Serious!",
+            "effect": "Striking the ground, Kachina deals AoE Geo DMG based on her DEF and creates a Turbo Drill Field.\nThe Field increases Turbo Twirly's attack AoE and its movement speed when Kachina is riding it.\n\nIf Kachina's own Turbo Twirly is present when this is used, Turbo Twirly will be summoned to her side.",
+            "image": "Talents/Burst/Talent_Time_to_Get_Serious.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Shards Are Gems Too",
+          "effect": "When Kachina mounts or dismounts Turbo Twirly, she will absorb nearby Elemental Shards created by Crystallize.\nAdditionally, when a party member picks up such a Shard, 3 Energy will be restored to Kachina. Energy can be restored this way once every 5s.",
+          "image": "Constellation/Shards_Are_Gems_Too.png"
+        },
+        "2": {
+          "name": "Never Leave Home Without... Turbo Twirly",
+          "effect": "When Kachina uses \"Time to Get Serious!\", she will regain 20 Nightsoul points. If there is no Turbo Twirly belonging to her on the field, she will enter Nightsoul's Blessing and summon one.",
+          "image": "Constellation/Never_Leave_Home_Without_Turbo_Twirly.png"
+        },
+        "3": {
+          "name": "Improved Stabilizer",
+          "effect": "Increases the Level of Go, Go Turbo Twirly! by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Improved_Stabilizer.png"
+        },
+        "4": {
+          "name": "More Foes, More Caution",
+          "effect": "When there are 1/2/3/4 (or more) opponents within the Turbo Drill Field created by \"Time to Get Serious!\", the active character within the field gains 8%/12%/16%/20% increased DEF.",
+          "image": "Constellation/More_Foes_More_Caution.png"
+        },
+        "5": {
+          "name": "All I've Collected Till Now",
+          "effect": "Increases the Level of Time to Get Serious! by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/All_Ive_Collected_Till_Now.png"
+        },
+        "6": {
+          "name": "This Time, I've Gotta Win",
+          "effect": "When your active character's shield is replaced or destroyed for any reason, Kachina will deal 200% of her DEF as AoE Geo DMG. This effect can be triggered once every 5s.",
+          "image": "Constellation/This_Time_Ive_Gotta_Win.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Overripe_Flamegranate",
+          "level": 40,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Overripe_Flamegranate",
+          "level": 50,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Overripe_Flamegranate",
+          "level": 60,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Overripe_Flamegranate",
+          "level": 70,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Overripe_Flamegranate",
+          "level": 80,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Quenepa_Berry",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "Overripe_Flamegranate",
+          "local_speciality": "Quenepa_Berry"
+        },
+        "talents": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "mastery1": "Teachings_of_Conflict",
+          "mastery2": "Guide_to_Conflict",
+          "mastery3": "Philosophies_of_Conflict",
+          "weekly_boss_drop": "Fading_Candle",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "A young warrior of the Children of Echoes, given the Ancient Name of \"Uthabiti.\" Kind-hearted and insatiably persistent, she grows stronger and more capable with each setback she faces.",
+      "paimonmoepath": "characters/kachina",
+      "genshinggpath": "characters/kachina",
+      "element": "Geo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kachina",
+      "hoyowiki": 6318,
+      "subCollection": {}
+    },
     "Navia": {
       "image": "Characters/Geo/Navia.png",
       "gender": "Female",
