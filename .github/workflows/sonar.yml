@@ -1,0 +1,73 @@
+name: Sonar SAST Scan
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    env:
+      APP_BUILD_VER: web
+      APP_TYPE: Web
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
+        uses: subosito/flutter-action@v2.16.0
+        with:
+          flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
+          channel: 'stable'
+          cache: true
+      - name: Cache pubspec dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.FLUTTER_HOME }}/.pub-cache
+            ${{ env.PUB_CACHE }}
+            **/.packages
+            **/.flutter-plugins
+            **/.flutter-plugin-dependencies
+            **/.dart_tool/package_config.json
+          key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: build-pubspec-
+      - name: Trust GitHub Workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Test Flutter Doctor
+        run: flutter doctor -v
+      - name: Get Flutter Dependencies
+        run: flutter pub get
+      - name: Retrieve Firebase Options Web Dart File and decode it to a file
+        env:
+          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
+          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
+        run: |
+          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
+          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
+      - uses: benjlevesque/short-sha@v3.0
+        id: short-sha
+        with:
+          length: 8
+      - name: Pre-Setup and obtain version information
+        run: |
+          export GIT_COMMIT_COUNT="$(git rev-list --count HEAD)"
+          echo $GIT_COMMIT_COUNT
+          echo $GIT_COMMIT_SHORT_SHA
+          chmod +x ./ciscripts/get_version.sh
+          ./ciscripts/get_version.sh
+        env:
+          CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
+      - name: Build Flutter App for SAST
+        run: flutter build web
+      - name: Remove sensitive files (if possible)
+        run: |
+          rm lib/firebase_options.dart
+          rm lib/app_secrets.dart
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
