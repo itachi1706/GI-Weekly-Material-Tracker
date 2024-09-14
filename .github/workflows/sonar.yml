@@ -40,13 +40,10 @@ jobs:
         run: flutter doctor -v
       - name: Get Flutter Dependencies
         run: flutter pub get
-      - name: Retrieve Firebase Options Web Dart File and decode it to a file
-        env:
-          GOOGLE_SVC_DART: ${{ secrets.GOOGLE_SVC_DART }}
-          PUB_SEC_DART: ${{ secrets.PUB_SEC_DART }}
+      - name: Add Test Secret Files to project (TEST ONLY)
         run: |
-          echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
-          echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
+          echo "Ly8gaWdub3JlX2Zvcl9maWxlOiBsaW5lc19sb25nZXJfdGhhbl84MF9jaGFycywgYXZvaWRfY2xhc3Nlc193aXRoX29ubHlfc3RhdGljX21lbWJlcnMKaW1wb3J0ICdwYWNrYWdlOmZpcmViYXNlX2NvcmUvZmlyZWJhc2VfY29yZS5kYXJ0JyBzaG93IEZpcmViYXNlT3B0aW9uczsKaW1wb3J0ICdwYWNrYWdlOmZsdXR0ZXIvZm91bmRhdGlvbi5kYXJ0JwogICAgc2hvdyBkZWZhdWx0VGFyZ2V0UGxhdGZvcm0sIGtJc1dlYiwgVGFyZ2V0UGxhdGZvcm07CmNsYXNzIERlZmF1bHRGaXJlYmFzZU9wdGlvbnMgewogIHN0YXRpYyBGaXJlYmFzZU9wdGlvbnMgZ2V0IGN1cnJlbnRQbGF0Zm9ybSB7CiAgICBpZiAoa0lzV2ViKSB7CiAgICAgIHJldHVybiB3ZWI7CiAgICB9CiAgICBzd2l0Y2ggKGRlZmF1bHRUYXJnZXRQbGF0Zm9ybSkgewogICAgICBjYXNlIFRhcmdldFBsYXRmb3JtLmFuZHJvaWQ6CiAgICAgICAgcmV0dXJuIGFuZHJvaWQ7CiAgICAgIGNhc2UgVGFyZ2V0UGxhdGZvcm0uaU9TOgogICAgICAgIHJldHVybiBpb3M7CiAgICAgIGNhc2UgVGFyZ2V0UGxhdGZvcm0ubWFjT1M6CiAgICAgICAgdGhyb3cgVW5zdXBwb3J0ZWRFcnJvcigKICAgICAgICAgICdEZWZhdWx0RmlyZWJhc2VPcHRpb25zIGhhdmUgbm90IGJlZW4gY29uZmlndXJlZCBmb3IgbWFjb3MgLSAnCiAgICAgICAgICAneW91IGNhbiByZWNvbmZpZ3VyZSB0aGlzIGJ5IHJ1bm5pbmcgdGhlIEZsdXR0ZXJGaXJlIENMSSBhZ2Fpbi4nLAogICAgICAgICk7CiAgICAgIGNhc2UgVGFyZ2V0UGxhdGZvcm0ud2luZG93czoKICAgICAgICB0aHJvdyBVbnN1cHBvcnRlZEVycm9yKAogICAgICAgICAgJ0RlZmF1bHRGaXJlYmFzZU9wdGlvbnMgaGF2ZSBub3QgYmVlbiBjb25maWd1cmVkIGZvciB3aW5kb3dzIC0gJwogICAgICAgICAgJ3lvdSBjYW4gcmVjb25maWd1cmUgdGhpcyBieSBydW5uaW5nIHRoZSBGbHV0dGVyRmlyZSBDTEkgYWdhaW4uJywKICAgICAgICApOwogICAgICBjYXNlIFRhcmdldFBsYXRmb3JtLmxpbnV4OgogICAgICAgIHRocm93IFVuc3VwcG9ydGVkRXJyb3IoCiAgICAgICAgICAnRGVmYXVsdEZpcmViYXNlT3B0aW9ucyBoYXZlIG5vdCBiZWVuIGNvbmZpZ3VyZWQgZm9yIGxpbnV4IC0gJwogICAgICAgICAgJ3lvdSBjYW4gcmVjb25maWd1cmUgdGhpcyBieSBydW5uaW5nIHRoZSBGbHV0dGVyRmlyZSBDTEkgYWdhaW4uJywKICAgICAgICApOwogICAgICBkZWZhdWx0OgogICAgICAgIHRocm93IFVuc3VwcG9ydGVkRXJyb3IoCiAgICAgICAgICAnRGVmYXVsdEZpcmViYXNlT3B0aW9ucyBhcmUgbm90IHN1cHBvcnRlZCBmb3IgdGhpcyBwbGF0Zm9ybS4nLAogICAgICAgICk7CiAgICB9CiAgfQoKICBzdGF0aWMgY29uc3QgRmlyZWJhc2VPcHRpb25zIHdlYiA9IEZpcmViYXNlT3B0aW9ucygKICAgIGFwaUtleTogJzEyMzEyMycsCiAgICBhcHBJZDogJzE6MTIzMTIzOndlYjoxMjMxMjMnLAogICAgbWVzc2FnaW5nU2VuZGVySWQ6ICcxMjMxMjMnLAogICAgcHJvamVjdElkOiAndGVzdCcsCiAgICBhdXRoRG9tYWluOiAndGVzdC5maXJlYmFzZWFwcC5jb20nLAogICAgZGF0YWJhc2VVUkw6ICdodHRwczovL3Rlc3QuZmlyZWJhc2Vpby5jb20nLAogICAgc3RvcmFnZUJ1Y2tldDogJ3Rlc3QuYXBwc3BvdC5jb20nLAogICAgbWVhc3VyZW1lbnRJZDogJ0ctMTIzMTIzJywKICApOwoKICBzdGF0aWMgY29uc3QgRmlyZWJhc2VPcHRpb25zIGFuZHJvaWQgPSBGaXJlYmFzZU9wdGlvbnMoCiAgICBhcGlLZXk6ICcxMjMxMjMtMTIzMTIzJywKICAgIGFwcElkOiAnMToxMjMxMjM6YW5kcm9pZDoxMjMxMjMnLAogICAgbWVzc2FnaW5nU2VuZGVySWQ6ICcxMjMxMjMnLAogICAgcHJvamVjdElkOiAndGVzdCcsCiAgICBkYXRhYmFzZVVSTDogJ2h0dHBzOi8vdGVzdC5maXJlYmFzZWlvLmNvbScsCiAgICBzdG9yYWdlQnVja2V0OiAndGVzdC5hcHBzcG90LmNvbScsCiAgKTsKCiAgc3RhdGljIGNvbnN0IEZpcmViYXNlT3B0aW9ucyBpb3MgPSBGaXJlYmFzZU9wdGlvbnMoCiAgICBhcGlLZXk6ICcxMjMxMjMnLAogICAgYXBwSWQ6ICcxOjEyMzEyMzppb3M6MTIzMTIzJywKICAgIG1lc3NhZ2luZ1NlbmRlcklkOiAnMTIzMTIzJywKICAgIHByb2plY3RJZDogJ3Rlc3QnLAogICAgZGF0YWJhc2VVUkw6ICdodHRwczovL3Rlc3QuZmlyZWJhc2Vpby5jb20nLAogICAgc3RvcmFnZUJ1Y2tldDogJ3Rlc3QuYXBwc3BvdC5jb20nLAogICAgYW5kcm9pZENsaWVudElkOiAnMTIzMTIzLTEyMzEyMy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbScsCiAgICBpb3NDbGllbnRJZDogJzEyMzEyMy0xMjMxMjMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20nLAogICAgaW9zQnVuZGxlSWQ6ICd0ZXN0JywKICApOwp9Cg==" | base64 -d > lib/firebase_options.dart
+          echo "Y29uc3QgZ29vZ2xlQ2xpZW50SWQgPSAidGVzdGFwcC5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSI7" | base64 -d > lib/app_secrets.dart
       - uses: benjlevesque/short-sha@v3.0
         id: short-sha
         with:
@@ -62,10 +59,6 @@ jobs:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Flutter App for SAST
         run: flutter build web
-      - name: Remove sensitive files (if possible)
-        run: |
-          rm lib/firebase_options.dart
-          rm lib/app_secrets.dart
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
