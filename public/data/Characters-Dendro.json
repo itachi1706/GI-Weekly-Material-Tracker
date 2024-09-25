@@ -1827,6 +1827,379 @@
       "hoyowiki": 3608,
       "subCollection": {}
     },
+    "Dendro_5": {
+      "image": "Characters/Dendro/Kinich.png",
+      "gender": "Male",
+      "birthday": "11/11",
+      "caption": "Turnfire Hunt",
+      "titles": [
+        "Huitztlan Saurian Hunter"
+      ],
+      "name": "Kinich",
+      "fullName": "Kinich \"Malipo\"",
+      "description": "A Huitztlan Saurian Hunter skilled at counting costs.",
+      "nation": "Natlan",
+      "weapon": "Claymore",
+      "rarity": 5,
+      "affiliation": "Huitztlan",
+      "constellation": "Chimaera Alebriius",
+      "outfits": [
+        "Eight-Bit_Artistry"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Kindling",
+            "material3qty": 3,
+            "material4": "Juvenile_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 2,
+            "material4": "Seasoned_Fang",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 4,
+            "material4": "Seasoned_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 6,
+            "material4": "Seasoned_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 9,
+            "material4": "Seasoned_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 4,
+            "material4": "Tyrants_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 6,
+            "material4": "Tyrants_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 12,
+            "material4": "Tyrants_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 16,
+            "material4": "Tyrants_Fang",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weeklyboss",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "The_Price_of_Desolation": {
+            "name": "The Price of Desolation",
+            "effect": "When Kinich is in Nightsoul's Blessing state, opponents hit by his Elemental Skill will enter the Desolation state, and when affected by Burning or Burgeon reaction DMG, they will restore 7 Nightsoul points to him. Nightsoul points can be gained this way once every 0.8s. The Desolation state will persist until this instance of Kinich's Nightsoul's Blessing state ends.",
+            "image": "Talents/Passive/Talent_The_Price_of_Desolation.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Flame_Spirit_Pact": {
+            "name": "Flame Spirit Pact",
+            "effect": "After a nearby party member triggers a Nightsoul Burst, Kinich will gain 1 stack of Hunter's Experience that lasts 15s. Max 2 stacks. When Kinich uses Canopy Hunter: Riding High's Scalespiker Cannon, all stacks of Hunter's Experience will be consumed, with each stack consumed increasing the DMG dealt by this Cannon shot by 320% of Kinich's ATK.",
+            "image": "Talents/Passive/Talent_Canopy_Hunter_Riding_High.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Repaid_in_Full": {
+            "name": "Repaid in Full",
+            "effect": "When Kinich is in the air following Canopy Hunter: Riding High's mid-air swing, he can consume 10 Phlogiston points to perform another mid-air swing.\nWhile in an area with Phlogiston Mechanics within Natlan, he can use Nightsoul Transmission: Kinich. When the current active character is sprinting, in movement states that result from specific Talents, or in the air, when you switch to Kinich: Kinich will perform one of the following actions depending on the conditions met:\nWhen facing a Coilgrass Sigil that can be interacted with: He will fire a grappling hook towards it to move;\nWhen there are nearby opponents and you are in combat: Kinich will use Canopy Hunter: Riding High in the direction of the opponents;\nOtherwise, Kinich will fire a grappling hook and swing, prioritizing valid Coilgrass Sigils as grapple targets.\nNightsoul Transmission can be triggered once every 10s by your own party.\n\nWhen interacting with Coilgrass Sigils and other items that Yumkasaurs can interact with, \"Canopy Hunter: Riding High\" will be converted to \"Yumkasaur Mimesis,\" which causes interactions with such items to follow rules applicable to Yumkasaurs, and which will not put Canopy Hunter: Riding High on CD.",
+            "image": "Talents/Passive/Talent_Repaid_in_Full.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "Swift_Envoy": {
+            "name": "Swift Envoy",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, interacting with some harvestable items will increase your own party members' Movement SPD by 15% for 10s. Additionally, the location of nearby resources unique to Natlan will appear on your mini-map.",
+            "image": "Talents/Passive/Talent_Swift_Envoy.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Nightsun_Style": {
+            "name": "Nightsun Style",
+            "effect": "Normal Attack\nPerforms up to 3 rapid strikes.\nAfter using his Elemental Skill \"Canopy Hunter: Riding High\"'s mid-air swing, he can perform a Normal Attack in mid-air before landing.\n\nCharged Attack\nConsumes a certain amount to spin and throw his Claymore forward to attack opponents.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Claymore_Dendro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Canopy_Hunter-Riding_High": {
+            "name": "Canopy Hunter: Riding High",
+            "effect": "Kinich uses his big-game hunting skills to either move swiftly or attack his opponent.\nWhen there is an opponent or object that can be attacked nearby, he will attach a grappling hook to the target and enter Nightsoul's Blessing with 0 Nightsoul points. If neither is nearby, he fires a grappling hook forward and swings in mid-air, and this Skill's CD is decreased by 60%.\nThis skill can be Held to release. When it is Held, Kinich can aim the grappling hook.\n\nNightsoul's Blessing: Kinich\nKinich's Nightsoul's Blessing lasts 10s and generates 2 Nightsoul points every second.\nIn this state, Kinich will hook onto a nearby opponent and perform a variable attack:\nWhen using a Normal Attack, Kinich will fire Loop Shots as he loops around the grappled target based on his current movement direction, dealing Nightsoul-aligned Dendro DMG and generating 3 Nightsoul points. Loop Shot DMG is considered Elemental Skill DMG.\nWhen Nightsoul points are at max, he can use the Elemental Skill \"Scalespiker Cannon\": Consume all Nightsoul points to deal Nightsoul-aligned Dendro DMG. When \"Scalespiker Cannon\" is Held, Kinich can aim this shot. After firing the Cannon, Kinich will try to grapple to its target.\nWhile in Nightsoul's Blessing, after grappling an opponent or firing \"Scalespiker Cannon,\" a Blind Spot will be generated next to the opponent. When Kinich enters this Blind Spot, it will disappear and he will generate 4 Nightsoul points.\nIf the grapple connection should snap due to exceeding the maximum distance or some other reason, using a Normal Attack will establish a new connection with a nearby opponent before performing Loop Shots.",
+            "image": "Talents/Skill/Talent_Canopy_Hunter_Riding_High.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Hail_to_the_Almighty_Dragonlord": {
+            "name": "Hail to the Almighty Dragonlord",
+            "effect": "Unleashes the power of the Almighty Dragonlord, K'uhul Ajaw (on a limited, conditional, restricted, contractual, partial, temporary basis), dealing Nightsoul-aligned AoE Dendro DMG. Ajaw will unleash his Dragon Breath at intervals, dealing Nightsoul-aligned AoE Dendro DMG.\nIf Kinich is in Nightsoul's Blessing when this is used, this Blessing's duration is extended by 1.7s.",
+            "image": "Talents/Burst/Talent_Hail_to_the_Almighty_Dragonlord.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Parrot's Beak",
+          "effect": "After Kinich lands from Canopy Hunter: Riding High's mid-air swing, his Movement SPD will increase by 30% for 6s.\nAdditionally, Scalespiker Cannon's CRIT DMG is increased by 100%.",
+          "image": "Constellation/Parrots_Beak.png"
+        },
+        "2": {
+          "name": "Tiger Beetle's Palm",
+          "effect": "When Kinich's Elemental Skill hits an opponent, it will decrease their Dendro RES by 30% for 6s.\nAdditionally, the first Scalespiker Cannon Kinich fires after entering Nightsoul's Blessing has increased AoE, and its DMG increases by 100%.",
+          "image": "Constellation/Tiger_Beetles_Palm.png"
+        },
+        "3": {
+          "name": "Protosuchian's Claw",
+          "effect": "Increases the Level of Canopy Hunter: Riding High by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Protosuchians_Claw.png"
+        },
+        "4": {
+          "name": "Hummingbird's Feather",
+          "effect": "When in Nightsoul's Blessing, Kinich will restore 5 Energy after using his Loop Shots or after unleashing the Scalespiker Cannon. Energy can be regenerated this way once every 2.8s.\nAdditionally, Hail to the Almighty Dragonlord deals 70% more DMG.",
+          "image": "Constellation/Hummingbirds_Feather.png"
+        },
+        "5": {
+          "name": "Howler Monkey's Tail",
+          "effect": "Increases the Level of Hail to the Almighty Dragonlord by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Howler_Monkeys_Tail.png"
+        },
+        "6": {
+          "name": "Auspicious Beast's Shape",
+          "effect": "After Scalespiker Cannon hits an opponent, it will bounce between opponents once, dealing 700% of Kinich's ATK as Dendro DMG.\nIf this Scalespiker Cannon triggers the buffs that Passive Talent \"Flame Spirit Pact\" or the Constellation \"Tiger Beetle's Palm\" grant to the Cannon, the bouncing attack will also obtain the relevant buffs.",
+          "image": "Constellation/Auspicious_Beasts_Shape.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Nagadus_Emerald_Sliver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Juvenile_Fang",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Overripe_Flamegranate",
+          "level": 40,
+          "material4": "Juvenile_Fang",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Nagadus_Emerald_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Overripe_Flamegranate",
+          "level": 50,
+          "material4": "Seasoned_Fang",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem2",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Overripe_Flamegranate",
+          "level": 60,
+          "material4": "Seasoned_Fang",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Nagadus_Emerald_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Overripe_Flamegranate",
+          "level": 70,
+          "material4": "Tyrants_Fang",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem3",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Nagadus_Emerald_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Overripe_Flamegranate",
+          "level": 80,
+          "material4": "Tyrants_Fang",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem4",
+          "material2type": "boss",
+          "material3type": "speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "gem1": "Nagadus_Emerald_Silver",
+          "gem2": "Nagadus_Emerald_Fragment",
+          "gem3": "Nagadus_Emerald_Chunk",
+          "gem4": "Nagadus_Emerald_Gemstone",
+          "boss_drop": "Overripe_Flamegranate",
+          "local_speciality": "Saurian_Claw_Succulent"
+        },
+        "talents": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "mastery1": "Teachings_of_Kindling",
+          "mastery2": "Guide_to_Kindling",
+          "mastery3": "Philosophies_of_Kindling",
+          "weekly_boss_drop": "Denial_and_Judgment",
+          "crown": "Crown of Insight"
+        }
+      },
+      "introduction": "A saurian hunter who accompanies the one who calls himself \"Dragonlord\". He often accepts commissions that no one else wants, and is equally skilled at appraising the price.",
+      "paimonmoepath": "characters/kinich",
+      "genshinggpath": "characters/kinich",
+      "element": "Dendro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Kinich",
+      "hoyowiki": 6317,
+      "subCollection": {}
+    },
     "Kirara": {
       "image": "Characters/Dendro/Kirara.png",
       "gender": "Female",
