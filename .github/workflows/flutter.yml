@@ -181,7 +181,7 @@ jobs:
           path: ~/.flutter-devtools/apk-code-size-analysis_01.json
   ios:
     name: iOS Unsigned IPA
-    runs-on: macos-14 # For XCode 14.3.1 and Apple Silicon
+    runs-on: macos-14 # For Apple Silicon
     if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request') || github.event_name == 'workflow_dispatch'  # We only run this on master branch due to the time it takes
     env:
       APP_BUILD_VER: dogfood
@@ -207,7 +207,7 @@ jobs:
       - name: Use latest stable version of XCode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 15.4.0 # latest-stable (Disabled for now as 16 crashes stuff. We will revisit once we properly update to 16)
+          xcode-version: latest-stable
       - name: Cache pubspec dependencies
         uses: actions/cache@v4
         with:

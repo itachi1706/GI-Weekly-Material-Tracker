@@ -386,7 +386,7 @@ jobs:
             apks/*.apk
             apks/*.ipa
   releaseipa:
-    runs-on: macos-14 # For XCode 14.3.1 and Apple Silicon
+    runs-on: macos-14 # For Apple Silicon
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta
@@ -409,7 +409,7 @@ jobs:
       - name: Use latest stable version of XCode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 15.4.0 # latest-stable (Disabled for now as 16 crashes stuff. We will revisit once we properly update to 16)
+          xcode-version: latest-stable
       - name: Cache pubspec dependencies
         uses: actions/cache@v4
         with:
