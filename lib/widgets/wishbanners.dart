@@ -269,6 +269,12 @@ class WishPageCard extends StatelessWidget {
     var df = Util.defaultDateFormat;
     var width = MediaQuery.of(context).size.width;
 
+    var height = width / 1.75;
+    // If height greater than 675, set to 675
+    if (height > 675) {
+      height = 675;
+    }
+
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -281,7 +287,7 @@ class WishPageCard extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(
-                  height: width / 1.75,
+                  height: height,
                   width: width,
                   child: GridData.getImageAssetFromFirebase(data.image),
                 ),
