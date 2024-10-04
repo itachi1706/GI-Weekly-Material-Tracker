@@ -267,6 +267,7 @@ class WishPageCard extends StatelessWidget {
     }
 
     var df = Util.defaultDateFormat;
+    var width = MediaQuery.of(context).size.width;
 
     return Card(
       clipBehavior: Clip.antiAlias,
@@ -279,7 +280,11 @@ class WishPageCard extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: [
-                GridData.getImageAssetFromFirebase(data.image),
+                SizedBox(
+                  height: width / 1.75,
+                  width: width,
+                  child: GridData.getImageAssetFromFirebase(data.image),
+                ),
                 Align(
                   alignment: FractionalOffset.topRight,
                   child: Container(
