@@ -28,6 +28,8 @@ class ParametricPageState extends State<ParametricPage> {
   SharedPreferences? _prefs;
   String? _newDateTime;
 
+  final appChecker = AppCheck();
+
   @override
   void initState() {
     super.initState();
@@ -105,10 +107,10 @@ class ParametricPageState extends State<ParametricPage> {
     } else {
       var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
-        var isInstalled = await AppCheck.isAppInstalled(androidId);
+        var isInstalled = await appChecker.isAppInstalled(androidId);
         debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
-          await AppCheck.launchApp(androidId);
+          await appChecker.launchApp(androidId);
 
           return;
         }

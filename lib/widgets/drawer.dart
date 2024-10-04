@@ -21,6 +21,8 @@ class DrawerComponent extends StatefulWidget {
 }
 
 class DrawerComponentState extends State<DrawerComponent> {
+  final appChecker = AppCheck();
+
   @override
   void initState() {
     super.initState();
@@ -33,10 +35,10 @@ class DrawerComponentState extends State<DrawerComponent> {
     if (!kIsWeb && Platform.isAndroid) {
       var androidId = 'com.mihoyo.hoyolab';
       if (Platform.isAndroid) {
-        var isInstalled = await AppCheck.isAppInstalled(androidId);
+        var isInstalled = await appChecker.isAppInstalled(androidId);
         debugPrint('App Installed: $isInstalled');
         if (isInstalled) {
-          await AppCheck.launchApp(androidId);
+          await appChecker.launchApp(androidId);
 
           return;
         }
