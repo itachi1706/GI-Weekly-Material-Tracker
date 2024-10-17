@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 import 'package:flutter/foundation.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/app_secrets.dart';
+import 'package:gi_weekly_material_tracker/firebase_options.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -69,6 +71,20 @@ class LoginPageState extends State<LoginPage> {
     return const SizedBox.shrink();
   }
 
+  String _getClientId() {
+     var cid = googleClientId;
+
+     if (defaultTargetPlatform == TargetPlatform.android) {
+        cid = DefaultFirebaseOptions.ios.androidClientId ?? googleClientId;
+     } else
+       if (defaultTargetPlatform == TargetPlatform.iOS) {
+        cid = DefaultFirebaseOptions.ios.iosClientId ?? googleClientId;
+     }
+     debugPrint("Using Google Client ID: $cid");
+
+    return cid;
+  }
+
   @override
   void deactivate() {
     _listener?.cancel();
@@ -80,7 +96,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SignInScreen(
       providers: [
-        GoogleProvider(clientId: googleClientId),
+        GoogleProvider(clientId: _getClientId()),
       ],
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
