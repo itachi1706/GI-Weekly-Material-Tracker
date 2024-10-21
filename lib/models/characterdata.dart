@@ -153,9 +153,9 @@ class CharacterAscension extends CommonAscension {
     var fin = <String, CharacterAscension>{};
     for (var key in ascend.keys) {
       fin.putIfAbsent(
-          key,
-          () =>
-              CharacterAscension.fromJson(ascend[key], materials['ascension']));
+        key,
+        () => CharacterAscension.fromJson(ascend[key], materials['ascension']),
+      );
     }
 
     return fin;
@@ -170,7 +170,9 @@ class CharacterTalent {
   CharacterTalent({this.ascension, this.attack, this.passive});
 
   static CharacterTalent getFromMap(
-      Map<String, dynamic> ascend, Map<String, dynamic> materials) {
+    Map<String, dynamic> ascend,
+    Map<String, dynamic> materials,
+  ) {
     return CharacterTalent(
       ascension: getAscensionFromMap(ascend['ascension'], materials),
       attack: TalentInfo.getFromMap(ascend['attack']),
@@ -184,8 +186,10 @@ class CharacterTalent {
   ) {
     var fin = <String, CharacterAscension>{};
     for (var key in ascend.keys) {
-      fin.putIfAbsent(key,
-          () => CharacterAscension.fromJson(ascend[key], materials['talents']));
+      fin.putIfAbsent(
+        key,
+        () => CharacterAscension.fromJson(ascend[key], materials['talents']),
+      );
     }
 
     return fin;
