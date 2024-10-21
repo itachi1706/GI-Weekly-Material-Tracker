@@ -107,7 +107,7 @@
             "material4": "Spectral_Nucleus",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -122,7 +122,7 @@
             "material4": "Spectral_Nucleus",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -137,7 +137,7 @@
             "material4": "Spectral_Nucleus",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -152,7 +152,7 @@
             "material4": "Spectral_Nucleus",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -250,7 +250,7 @@
           "material3": "Crystal_Marrow",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -265,8 +265,8 @@
           "material3qty": 10,
           "material3": "Crystal_Marrow",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -281,8 +281,8 @@
           "material3qty": 20,
           "material3": "Crystal_Marrow",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -297,8 +297,8 @@
           "material3qty": 30,
           "material3": "Crystal_Marrow",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -313,8 +313,8 @@
           "material3qty": 45,
           "material3": "Crystal_Marrow",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -329,8 +329,8 @@
           "material3qty": 60,
           "material3": "Crystal_Marrow",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -354,7 +354,7 @@
           "mastery2": "Guide_to_Freedom",
           "mastery3": "Philosophies_of_Freedom",
           "weekly_boss_drop": "Molten_Moment",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "An agile hunter from the Nora tribe. With bow in hand, she's always ready to protect the innocent.",
@@ -473,7 +473,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -488,7 +488,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -503,7 +503,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -518,7 +518,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -616,7 +616,7 @@
           "material3": "Beryl_Conch",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -631,8 +631,8 @@
           "material3qty": 10,
           "material3": "Beryl_Conch",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -647,8 +647,8 @@
           "material3qty": 20,
           "material3": "Beryl_Conch",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -663,8 +663,8 @@
           "material3qty": 30,
           "material3": "Beryl_Conch",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -679,8 +679,8 @@
           "material3qty": 45,
           "material3": "Beryl_Conch",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -695,8 +695,8 @@
           "material3qty": 60,
           "material3": "Beryl_Conch",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -720,7 +720,7 @@
           "mastery2": "Guide_to_Justice",
           "mastery3": "Philosophies_of_Justice",
           "weekly_boss_drop": "Lightless_Silk_String",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth\".",
@@ -838,7 +838,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -853,7 +853,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -868,7 +868,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -883,7 +883,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -981,7 +981,7 @@
           "material3": "Cor_Lapis",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -996,8 +996,8 @@
           "material3qty": 10,
           "material3": "Cor_Lapis",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -1012,8 +1012,8 @@
           "material3qty": 20,
           "material3": "Cor_Lapis",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -1028,8 +1028,8 @@
           "material3qty": 30,
           "material3": "Cor_Lapis",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -1044,8 +1044,8 @@
           "material3qty": 45,
           "material3": "Cor_Lapis",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -1060,8 +1060,8 @@
           "material3qty": 60,
           "material3": "Cor_Lapis",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -1085,7 +1085,7 @@
           "mastery2": "Guide_to_Diligence",
           "mastery3": "Philosophies_of_Diligence",
           "weekly_boss_drop": "Dvalin_Sigh",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "An exorcist who roams the land with Liyue as his base of operations, evil spirits fleeing wherever he goes. As the heir to a clan of exorcists, he has always possessed abilities superior to most. However, these abilities are not the result of training, but of an inborn trait - congenital positivity.",
@@ -1204,7 +1204,7 @@
             "material4": "Weathered_Arrowhead",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1219,7 +1219,7 @@
             "material4": "Weathered_Arrowhead",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1234,7 +1234,7 @@
             "material4": "Weathered_Arrowhead",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1249,7 +1249,7 @@
             "material4": "Weathered_Arrowhead",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -1347,7 +1347,7 @@
           "material3": "Calla_Lily",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -1362,8 +1362,8 @@
           "material3qty": 10,
           "material3": "Calla_Lily",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -1378,8 +1378,8 @@
           "material3qty": 20,
           "material3": "Calla_Lily",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -1394,8 +1394,8 @@
           "material3qty": 30,
           "material3": "Calla_Lily",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -1410,8 +1410,8 @@
           "material3qty": 45,
           "material3": "Calla_Lily",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -1426,8 +1426,8 @@
           "material3qty": 60,
           "material3": "Calla_Lily",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -1451,7 +1451,7 @@
           "mastery2": "Guide_to_Freedom",
           "mastery3": "Philosophies_of_Freedom",
           "weekly_boss_drop": "Shard_of_a_Foul_Legacy",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "The incredibly popular bartender of the Cat's Tail tavern, rising star of Mondstadt's wine industry, and the greatest challenger to its traditional powerhouses.\nA feisty feline young lady from Springvale, any drink mixed by Diona's hand tastes delicious beyond belief.\nYet given her extreme distaste for alcohol, is her talent a blessing or a curse?",
@@ -1571,7 +1571,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1586,7 +1586,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1601,7 +1601,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1616,7 +1616,7 @@
             "material4": "Ominous_Mask",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -1714,7 +1714,7 @@
           "material3": "Dandelion_Seed",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -1729,8 +1729,8 @@
           "material3qty": 10,
           "material3": "Dandelion_Seed",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -1745,8 +1745,8 @@
           "material3qty": 20,
           "material3": "Dandelion_Seed",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -1761,8 +1761,8 @@
           "material3qty": 30,
           "material3": "Dandelion_Seed",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -1777,8 +1777,8 @@
           "material3qty": 45,
           "material3": "Dandelion_Seed",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -1793,8 +1793,8 @@
           "material3qty": 60,
           "material3": "Dandelion_Seed",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -1818,7 +1818,7 @@
           "mastery2": "Guide_to_Resistance",
           "mastery3": "Philosophies_of_Resistance",
           "weekly_boss_drop": "Dragon_Lords_Crown",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "A rebellious descendant of the old aristocracy who is always out on the battlefield.\nAs one born into the old aristocracy, carrying the bloodline of sinners, Eula has needed a unique approach to the world to navigate the towering walls of prejudice peacefully. Of course, this did not prevent her from severing ties with her clan. As the outstanding Spindrift Knight, she hunts down Mondstadt's enemies in the wild to exact her unique \"vengeance.\"",
@@ -1937,7 +1937,7 @@
             "material4": "Xenochromatic_Crystal",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1952,7 +1952,7 @@
             "material4": "Xenochromatic_Crystal",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1967,7 +1967,7 @@
             "material4": "Xenochromatic_Crystal",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -1982,7 +1982,7 @@
             "material4": "Xenochromatic_Crystal",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -2080,7 +2080,7 @@
           "material3": "Romaritime_Flower",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -2095,8 +2095,8 @@
           "material3qty": 10,
           "material3": "Romaritime_Flower",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -2111,8 +2111,8 @@
           "material3qty": 20,
           "material3": "Romaritime_Flower",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -2127,8 +2127,8 @@
           "material3qty": 30,
           "material3": "Romaritime_Flower",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -2143,8 +2143,8 @@
           "material3qty": 45,
           "material3": "Romaritime_Flower",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -2159,8 +2159,8 @@
           "material3qty": 60,
           "material3": "Romaritime_Flower",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -2184,7 +2184,7 @@
           "mastery2": "Guide_to_Justice",
           "mastery3": "Philosophies_of_Justice",
           "weekly_boss_drop": "Worldspan_Fern",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "A taciturn young man and an expert diver, his heart remains as innocent as the fairytales that never cease to absorb him.",
@@ -2303,7 +2303,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2318,7 +2318,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2333,7 +2333,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2348,7 +2348,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -2446,7 +2446,7 @@
           "material3": "Qingxin",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -2461,8 +2461,8 @@
           "material3qty": 10,
           "material3": "Qingxin",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -2477,8 +2477,8 @@
           "material3qty": 20,
           "material3": "Qingxin",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -2493,8 +2493,8 @@
           "material3qty": 30,
           "material3": "Qingxin",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -2509,8 +2509,8 @@
           "material3qty": 45,
           "material3": "Qingxin",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -2525,8 +2525,8 @@
           "material3qty": 60,
           "material3": "Qingxin",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -2550,7 +2550,7 @@
           "mastery2": "Guide_to_Diligence",
           "mastery3": "Philosophies_of_Diligence",
           "weekly_boss_drop": "Shadow_of_the_Warrior",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "The secretary to the Liyue Qixing. The blood of both human and illuminated beast flows within her veins.\n\nGraceful and quiet by nature, yet the gentle disposition of qilin sees not even the slightest conflict with even the most arduous of workloads.\n\nAfter all, Ganyu firmly believes that all the work she does is in honor of her contract with Rex Lapis, seeking the well-being of all living things within Liyue.",
@@ -2670,7 +2670,7 @@
             "material4": "Golden_Raven_Insignia",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2685,7 +2685,7 @@
             "material4": "Golden_Raven_Insignia",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2700,7 +2700,7 @@
             "material4": "Golden_Raven_Insignia",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -2715,7 +2715,7 @@
             "material4": "Golden_Raven_Insignia",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -2813,7 +2813,7 @@
           "material3": "Calla_Lily",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -2828,8 +2828,8 @@
           "material3qty": 10,
           "material3": "Calla_Lily",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -2844,8 +2844,8 @@
           "material3qty": 20,
           "material3": "Calla_Lily",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -2860,8 +2860,8 @@
           "material3qty": 30,
           "material3": "Calla_Lily",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -2876,8 +2876,8 @@
           "material3qty": 45,
           "material3": "Calla_Lily",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -2892,8 +2892,8 @@
           "material3qty": 60,
           "material3": "Calla_Lily",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -2917,7 +2917,7 @@
           "mastery2": "Guide_to_Ballad",
           "mastery3": "Philosophies_of_Ballad",
           "weekly_boss_drop": "Spirit_Locket_of_Boreas",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "In the Knights of Favonius, Kaeya is the most trusted aide for the Acting Grand Master Jean. You can always count on him to solve any intractable problems. Everyone in Mondstadt loves Kaeya, but no one knows what secrets this witty, charming knight has...",
@@ -3037,7 +3037,7 @@
             "material4": "Famed_Handguard",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3052,7 +3052,7 @@
             "material4": "Famed_Handguard",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3067,7 +3067,7 @@
             "material4": "Famed_Handguard",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3082,7 +3082,7 @@
             "material4": "Famed_Handguard",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -3187,7 +3187,7 @@
           "material3": "Sakura_Bloom",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -3202,8 +3202,8 @@
           "material3qty": 10,
           "material3": "Sakura_Bloom",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -3218,8 +3218,8 @@
           "material3qty": 20,
           "material3": "Sakura_Bloom",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -3234,8 +3234,8 @@
           "material3qty": 30,
           "material3": "Sakura_Bloom",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -3250,8 +3250,8 @@
           "material3qty": 45,
           "material3": "Sakura_Bloom",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -3266,8 +3266,8 @@
           "material3qty": 60,
           "material3": "Sakura_Bloom",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -3291,7 +3291,7 @@
           "mastery2": "Guide_to_Elegance",
           "mastery3": "Philosophies_of_Elegance",
           "weekly_boss_drop": "Bloodjade_Branch",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "Daughter of the Yashiro Commission's Kamisato Clan from Inazuma. Dignified and elegant, wise and determined.\nSincere and pleasant to others. Universally loved by the Inazuma people, she has earned the title of Shirasagi Himegimi.",
@@ -3410,7 +3410,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3425,7 +3425,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3440,7 +3440,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3455,7 +3455,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -3553,7 +3553,7 @@
           "material3": "Nilotpala_Lotus",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -3568,8 +3568,8 @@
           "material3qty": 10,
           "material3": "Nilotpala_Lotus",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -3584,8 +3584,8 @@
           "material3qty": 20,
           "material3": "Nilotpala_Lotus",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -3600,8 +3600,8 @@
           "material3qty": 30,
           "material3": "Nilotpala_Lotus",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -3616,8 +3616,8 @@
           "material3qty": 45,
           "material3": "Nilotpala_Lotus",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -3632,8 +3632,8 @@
           "material3qty": 60,
           "material3": "Nilotpala_Lotus",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -3657,7 +3657,7 @@
           "mastery2": "Guide_to_Ingenuity",
           "mastery3": "Philosophies_of_Ingenuity",
           "weekly_boss_drop": "Mirror_of_Mushin",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "A Rtawahist student who always looks sleep-deprived. Her dark eye circles have been worsening due to academic stress.\nYet no matter how difficult the work at hand, she always manages to make the most brilliant deductions. Could she be writing her thesis in her dreams?",
@@ -3777,7 +3777,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3792,7 +3792,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3807,7 +3807,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -3822,7 +3822,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -3920,7 +3920,7 @@
           "material3": "Wolfhook",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -3935,8 +3935,8 @@
           "material3qty": 10,
           "material3": "Wolfhook",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -3951,8 +3951,8 @@
           "material3qty": 20,
           "material3": "Wolfhook",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -3967,8 +3967,8 @@
           "material3qty": 30,
           "material3": "Wolfhook",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -3983,8 +3983,8 @@
           "material3qty": 45,
           "material3": "Wolfhook",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -3999,8 +3999,8 @@
           "material3qty": 60,
           "material3": "Wolfhook",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -4024,7 +4024,7 @@
           "mastery2": "Guide_to_Ballad",
           "mastery3": "Philosophies_of_Ballad",
           "weekly_boss_drop": "Mirror_of_Mushin",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "A young knight who is a key member of the front-line scouting team. Quiet and unassuming, Mika treats every task seriously, and can cook up a mean serving of field rations. However, he can't seem to hide his bashful and shy personality when meeting strangers.",
@@ -4142,7 +4142,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4157,7 +4157,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4172,7 +4172,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4187,7 +4187,7 @@
             "material4": "Forbidden_Curse_Scroll",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -4285,7 +4285,7 @@
           "material3": "Violetgrass",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -4300,8 +4300,8 @@
           "material3qty": 10,
           "material3": "Violetgrass",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -4316,8 +4316,8 @@
           "material3qty": 20,
           "material3": "Violetgrass",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -4332,8 +4332,8 @@
           "material3qty": 30,
           "material3": "Violetgrass",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -4348,8 +4348,8 @@
           "material3qty": 45,
           "material3": "Violetgrass",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -4364,8 +4364,8 @@
           "material3qty": 60,
           "material3": "Violetgrass",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -4389,7 +4389,7 @@
           "mastery2": "Guide_to_Prosperity",
           "mastery3": "Philosophies_of_Prosperity",
           "weekly_boss_drop": "Tail_of_Boreas",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "An apprentice and herb gatherer at Bubu Pharmacy. \"Blessed\" by the adepti with a body that cannot die, this petite zombie cannot do anything without first giving herself orders to do it. Qiqi's memory is like a sieve. Out of necessity, she always carries around a notebook in which she writes anything important that she is sure to forget later. But on her worst days, she even forgets to look at her notebook...",
@@ -4508,7 +4508,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4523,7 +4523,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4538,7 +4538,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4553,7 +4553,7 @@
             "material4": "Lieutenant_Insignia",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -4651,7 +4651,7 @@
           "material3": "Valberry",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -4666,8 +4666,8 @@
           "material3qty": 10,
           "material3": "Valberry",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -4682,8 +4682,8 @@
           "material3qty": 20,
           "material3": "Valberry",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -4698,8 +4698,8 @@
           "material3qty": 30,
           "material3": "Valberry",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -4714,8 +4714,8 @@
           "material3qty": 45,
           "material3": "Valberry",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -4730,8 +4730,8 @@
           "material3qty": 60,
           "material3": "Valberry",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -4755,7 +4755,7 @@
           "mastery2": "Guide_to_Ballad",
           "mastery3": "Philosophies_of_Ballad",
           "weekly_boss_drop": "Shadow_of_the_Warrior",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "Rosaria, a sister in Mondstadt's Church of Favonius.\nA sister of the church, though you wouldn't know it if it weren't for her attire. An unusual woman with sharp, piercing words and a cold manner.\nHer movements are unpredictable. She often leaves without notifying anyone. She acts with some kind of purpose, but others don't seem to know exactly what she stands for...",
@@ -4875,7 +4875,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4890,7 +4890,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4905,7 +4905,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -4920,7 +4920,7 @@
             "material4": "Energy_Nectar",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -5018,7 +5018,7 @@
           "material3": "Qingxin",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -5033,8 +5033,8 @@
           "material3qty": 10,
           "material3": "Qingxin",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -5049,8 +5049,8 @@
           "material3qty": 20,
           "material3": "Qingxin",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -5065,8 +5065,8 @@
           "material3qty": 30,
           "material3": "Qingxin",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -5081,8 +5081,8 @@
           "material3qty": 45,
           "material3": "Qingxin",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -5097,8 +5097,8 @@
           "material3qty": 60,
           "material3": "Qingxin",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -5122,7 +5122,7 @@
           "mastery2": "Guide_to_Prosperity",
           "mastery3": "Philosophies_of_Prosperity",
           "weekly_boss_drop": "Hellfire_Butterfly",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "Even though she was born in the human world, she ended up being an adepti disciple. She grew up in the mountains far away from Liyue Harbor, her soul bound with red ropes, training both her body and mind.\nDespite having the elegant temperament of an adeptus, she seems to be shrouded in mystery.",
@@ -5241,7 +5241,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 4,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -5256,7 +5256,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 6,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -5271,7 +5271,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 9,
             "material1type": null,
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           },
@@ -5286,7 +5286,7 @@
             "material4": "Artificed_Dynamic_Gear",
             "material4qty": 12,
             "material1type": "crown",
-            "material2type": "weeklyboss",
+            "material2type": "weekly_boss_drop",
             "material3type": "mastery3",
             "material4type": "common3"
           }
@@ -5384,7 +5384,7 @@
           "material3": "Subdetection_Unit",
           "material1type": "gem1",
           "material2type": null,
-          "material3type": "speciality",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "2": {
@@ -5399,8 +5399,8 @@
           "material3qty": 10,
           "material3": "Subdetection_Unit",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common1"
         },
         "3": {
@@ -5415,8 +5415,8 @@
           "material3qty": 20,
           "material3": "Subdetection_Unit",
           "material1type": "gem2",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "4": {
@@ -5431,8 +5431,8 @@
           "material3qty": 30,
           "material3": "Subdetection_Unit",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common2"
         },
         "5": {
@@ -5447,8 +5447,8 @@
           "material3qty": 45,
           "material3": "Subdetection_Unit",
           "material1type": "gem3",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         },
         "6": {
@@ -5463,8 +5463,8 @@
           "material3qty": 60,
           "material3": "Subdetection_Unit",
           "material1type": "gem4",
-          "material2type": "boss",
-          "material3type": "speciality",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
           "material4type": "common3"
         }
       },
@@ -5488,7 +5488,7 @@
           "mastery2": "Guide_to_Order",
           "mastery3": "Philosophies_of_Order",
           "weekly_boss_drop": "Primordial_Greenbloom",
-          "crown": "Crown of Insight"
+          "crown": "Crown_of_Insight"
         }
       },
       "introduction": "Administrator of the Fortress of Meropide, he was given Fontaine's highest honorary title of \"Duke\". Both low-profile and dependable.",

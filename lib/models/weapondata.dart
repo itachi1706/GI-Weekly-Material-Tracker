@@ -56,7 +56,7 @@ class WeaponData extends CommonData {
       wiki: parsedJson['wiki'],
       maxBaseAtk: parsedJson['max_base_atk'],
       maxSecondaryStat: parsedJson['max_secondary_stat'],
-      ascension: WeaponAscension.getFromMap(parsedJson['ascension']),
+      ascension: WeaponAscension.getFromMap(parsedJson['ascension'], parsedJson['materials']),
       effectName: parsedJson['effectName'],
       series: parsedJson['series'],
       released: parsedJson['released'],
@@ -91,38 +91,24 @@ class WeaponAscension extends CommonAscension {
     super.mora,
   }) : super();
 
-  factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson) {
+  factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson, Map<String, dynamic> materialJson) {
     return WeaponAscension(
       material2Qty: parsedJson['material2qty'],
-      material1: parsedJson['material1'],
+      material1: materialJson[parsedJson['material1type']],
       material1Qty: parsedJson['material1qty'],
       mora: parsedJson['mora'],
-      material2: parsedJson['material2'],
+      material2: materialJson[parsedJson['material2type']],
       level: parsedJson['level'],
       material3Qty: parsedJson['material3qty'],
-      material3: parsedJson['material3'],
+      material3: materialJson[parsedJson['material3type']],
     );
   }
 
-  static Map<String, WeaponAscension> getFromMap(Map<String, dynamic> ascend) {
+  static Map<String, WeaponAscension> getFromMap(Map<String, dynamic> ascend, Map<String, dynamic> materials) {
     var fin = <String, WeaponAscension>{};
-    if (ascend.containsKey('1')) {
-      fin.putIfAbsent('1', () => WeaponAscension.fromJson(ascend['1']));
-    }
-    if (ascend.containsKey('2')) {
-      fin.putIfAbsent('2', () => WeaponAscension.fromJson(ascend['2']));
-    }
-    if (ascend.containsKey('3')) {
-      fin.putIfAbsent('3', () => WeaponAscension.fromJson(ascend['3']));
-    }
-    if (ascend.containsKey('4')) {
-      fin.putIfAbsent('4', () => WeaponAscension.fromJson(ascend['4']));
-    }
-    if (ascend.containsKey('5')) {
-      fin.putIfAbsent('5', () => WeaponAscension.fromJson(ascend['5']));
-    }
-    if (ascend.containsKey('6')) {
-      fin.putIfAbsent('6', () => WeaponAscension.fromJson(ascend['6']));
+    // Iterate through all ascend keys
+    for (var key in ascend.keys) {
+      fin.putIfAbsent(key, () => WeaponAscension.fromJson(ascend[key], materials['ascension']));
     }
 
     return fin;
