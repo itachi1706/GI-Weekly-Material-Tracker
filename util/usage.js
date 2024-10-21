@@ -53,9 +53,9 @@ for (const file of files) {
             let char = characters.characters[characterKey];
             debugLog(">>>> DBG: Check Ascension Materials");
             let found =false;
-            for (const ascensionKey in char.ascension) {
-                let ascend = char.ascension[ascensionKey];
-                if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey || ascend.material4 == matKey) {
+            for (const ascensionKey in char.materials.ascension) {
+                let ascend = char.materials.ascension[ascensionKey];
+                if (ascend == matKey) {
                     // Add to material's usage
                     console.log(">> Found Character", characterKey);
                     mat.usage.characters.push(characterKey);
@@ -70,9 +70,9 @@ for (const file of files) {
 
             // Check Talent Ascension
             debugLog(">>>> DBG: Check Talent Ascension Materials");
-            for (const talentKey in char.talents.ascension) {
-                let ascend = char.talents.ascension[talentKey];
-                if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey || ascend.material4 == matKey) {
+            for (const talentKey in char.materials.talents) {
+                let ascend = char.materials.talents[talentKey];
+                if (ascend == matKey) {
                     // Add to material's usage
                     console.log(">> Found Character", characterKey);
                     mat.usage.characters.push(characterKey);
@@ -86,9 +86,9 @@ for (const file of files) {
             debugLog(">>> DBG: Checking Weapon", weaponKey)
             let wep = weapons.weapons[weaponKey];
             debugLog(">>>> DBG: Check Ascension Materials");
-            for (const ascensionKey in wep.ascension) {
-                let ascend = wep.ascension[ascensionKey];
-                if (ascend.material1 == matKey || ascend.material2 == matKey || ascend.material3 == matKey) {
+            for (const ascensionKey in wep.materials.ascension) {
+                let ascend = wep.materials.ascension[ascensionKey];
+                if (ascend == matKey) {
                     // Add to material's usage
                     console.log(">> Found Weapon", weaponKey);
                     mat.usage.weapons.push(weaponKey);

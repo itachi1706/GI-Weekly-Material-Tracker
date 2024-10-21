@@ -71,9 +71,13 @@ class CharacterData extends CommonData {
       paimonMoePath: parsedJson['paimonmoepath'],
       element: parsedJson['element'],
       wiki: parsedJson['wiki'],
-      ascension: CharacterAscension.getFromMap(parsedJson['ascension']),
+      ascension: CharacterAscension.getFromMap(
+        parsedJson['ascension'],
+        parsedJson['materials'],
+      ),
       talent: CharacterTalent.getFromMap(
         parsedJson['talents'],
+        parsedJson['materials'],
       ),
       constellations: CharacterConstellations.getFromMap(
         parsedJson['constellations'],
@@ -124,42 +128,34 @@ class CharacterAscension extends CommonAscension {
     super.mora,
   }) : super();
 
-  factory CharacterAscension.fromJson(Map<String, dynamic> parsedJson) {
+  factory CharacterAscension.fromJson(
+    Map<String, dynamic> parsedJson,
+    Map<String, dynamic> materialJson,
+  ) {
     return CharacterAscension(
       material2Qty: parsedJson['material2qty'],
-      material1: parsedJson['material1'],
+      material1: materialJson[parsedJson['material1type']],
       material1Qty: parsedJson['material1qty'],
       mora: parsedJson['mora'],
-      material2: parsedJson['material2'],
+      material2: materialJson[parsedJson['material2type']],
       level: parsedJson['level'],
-      material4: parsedJson['material4'],
+      material4: materialJson[parsedJson['material4type']],
       material4Qty: parsedJson['material4qty'],
       material3Qty: parsedJson['material3qty'],
-      material3: parsedJson['material3'],
+      material3: materialJson[parsedJson['material3type']],
     );
   }
 
   static Map<String, CharacterAscension> getFromMap(
     Map<String, dynamic> ascend,
+    Map<String, dynamic> materials,
   ) {
     var fin = <String, CharacterAscension>{};
-    if (ascend.containsKey('1')) {
-      fin.putIfAbsent('1', () => CharacterAscension.fromJson(ascend['1']));
-    }
-    if (ascend.containsKey('2')) {
-      fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
-    }
-    if (ascend.containsKey('3')) {
-      fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
-    }
-    if (ascend.containsKey('4')) {
-      fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
-    }
-    if (ascend.containsKey('5')) {
-      fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
-    }
-    if (ascend.containsKey('6')) {
-      fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
+    for (var key in ascend.keys) {
+      fin.putIfAbsent(
+        key,
+        () => CharacterAscension.fromJson(ascend[key], materials['ascension']),
+      );
     }
 
     return fin;
@@ -173,9 +169,12 @@ class CharacterTalent {
 
   CharacterTalent({this.ascension, this.attack, this.passive});
 
-  static CharacterTalent getFromMap(Map<String, dynamic> ascend) {
+  static CharacterTalent getFromMap(
+    Map<String, dynamic> ascend,
+    Map<String, dynamic> materials,
+  ) {
     return CharacterTalent(
-      ascension: getAscensionFromMap(ascend['ascension']),
+      ascension: getAscensionFromMap(ascend['ascension'], materials),
       attack: TalentInfo.getFromMap(ascend['attack']),
       passive: TalentInfo.getFromMap(ascend['passives']),
     );
@@ -183,36 +182,13 @@ class CharacterTalent {
 
   static Map<String, CharacterAscension> getAscensionFromMap(
     Map<String, dynamic> ascend,
+    Map<String, dynamic> materials,
   ) {
     var fin = <String, CharacterAscension>{};
-    if (ascend.containsKey('2')) {
-      fin.putIfAbsent('2', () => CharacterAscension.fromJson(ascend['2']));
-    }
-    if (ascend.containsKey('3')) {
-      fin.putIfAbsent('3', () => CharacterAscension.fromJson(ascend['3']));
-    }
-    if (ascend.containsKey('4')) {
-      fin.putIfAbsent('4', () => CharacterAscension.fromJson(ascend['4']));
-    }
-    if (ascend.containsKey('5')) {
-      fin.putIfAbsent('5', () => CharacterAscension.fromJson(ascend['5']));
-    }
-    if (ascend.containsKey('6')) {
-      fin.putIfAbsent('6', () => CharacterAscension.fromJson(ascend['6']));
-    }
-    if (ascend.containsKey('7')) {
-      fin.putIfAbsent('7', () => CharacterAscension.fromJson(ascend['7']));
-    }
-    if (ascend.containsKey('8')) {
-      fin.putIfAbsent('8', () => CharacterAscension.fromJson(ascend['8']));
-    }
-    if (ascend.containsKey('9')) {
-      fin.putIfAbsent('9', () => CharacterAscension.fromJson(ascend['9']));
-    }
-    if (ascend.containsKey('10')) {
+    for (var key in ascend.keys) {
       fin.putIfAbsent(
-        '10',
-        () => CharacterAscension.fromJson(ascend['10']),
+        key,
+        () => CharacterAscension.fromJson(ascend[key], materials['talents']),
       );
     }
 

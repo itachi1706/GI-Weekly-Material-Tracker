@@ -102,7 +102,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -117,7 +117,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -132,7 +132,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -147,7 +147,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -245,7 +245,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -260,8 +260,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -276,8 +276,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -292,8 +292,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -308,8 +308,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -324,8 +324,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -349,7 +349,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -464,7 +464,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -479,7 +479,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -494,7 +494,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -509,7 +509,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -607,7 +607,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -622,8 +622,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -638,8 +638,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -654,8 +654,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -670,8 +670,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -686,8 +686,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -711,7 +711,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -826,7 +826,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -841,7 +841,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -856,7 +856,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -871,7 +871,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -969,7 +969,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -984,8 +984,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -1000,8 +1000,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -1016,8 +1016,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -1032,8 +1032,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -1048,8 +1048,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -1073,7 +1073,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -1188,7 +1188,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1203,7 +1203,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1218,7 +1218,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1233,7 +1233,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -1331,7 +1331,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -1346,8 +1346,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -1362,8 +1362,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -1378,8 +1378,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -1394,8 +1394,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -1410,8 +1410,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -1435,7 +1435,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -1550,7 +1550,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1565,7 +1565,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1580,7 +1580,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1595,7 +1595,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -1693,7 +1693,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -1708,8 +1708,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -1724,8 +1724,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -1740,8 +1740,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -1756,8 +1756,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -1772,8 +1772,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -1797,7 +1797,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -1912,7 +1912,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1927,7 +1927,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1942,7 +1942,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -1957,7 +1957,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -2055,7 +2055,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -2070,8 +2070,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -2086,8 +2086,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -2102,8 +2102,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -2118,8 +2118,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -2134,8 +2134,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -2159,7 +2159,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -2274,7 +2274,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2289,7 +2289,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2304,7 +2304,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2319,7 +2319,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -2417,7 +2417,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -2432,8 +2432,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -2448,8 +2448,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -2464,8 +2464,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -2480,8 +2480,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -2496,8 +2496,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -2521,7 +2521,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -2636,7 +2636,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2651,7 +2651,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2666,7 +2666,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -2681,7 +2681,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -2779,7 +2779,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -2794,8 +2794,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -2810,8 +2810,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -2826,8 +2826,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -2842,8 +2842,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -2858,8 +2858,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -2883,7 +2883,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -2998,7 +2998,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3013,7 +3013,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3028,7 +3028,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3043,7 +3043,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -3141,7 +3141,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -3156,8 +3156,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -3172,8 +3172,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -3188,8 +3188,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -3204,8 +3204,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -3220,8 +3220,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -3245,7 +3245,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -3360,7 +3360,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3375,7 +3375,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3390,7 +3390,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3405,7 +3405,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -3503,7 +3503,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -3518,8 +3518,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -3534,8 +3534,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -3550,8 +3550,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -3566,8 +3566,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -3582,8 +3582,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -3607,7 +3607,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -3722,7 +3722,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3737,7 +3737,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3752,7 +3752,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -3767,7 +3767,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -3865,7 +3865,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -3880,8 +3880,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -3896,8 +3896,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -3912,8 +3912,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -3928,8 +3928,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -3944,8 +3944,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -3969,7 +3969,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -4084,7 +4084,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4099,7 +4099,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4114,7 +4114,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4129,7 +4129,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -4227,7 +4227,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -4242,8 +4242,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -4258,8 +4258,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -4274,8 +4274,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -4290,8 +4290,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -4306,8 +4306,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -4331,7 +4331,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -4446,7 +4446,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4461,7 +4461,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4476,7 +4476,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4491,7 +4491,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -4589,7 +4589,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -4604,8 +4604,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -4620,8 +4620,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -4636,8 +4636,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -4652,8 +4652,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -4668,8 +4668,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -4693,7 +4693,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
@@ -4808,7 +4808,7 @@
           "material4": "Common_3",
           "material4qty": 4,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4823,7 +4823,7 @@
           "material4": "Common_3",
           "material4qty": 6,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4838,7 +4838,7 @@
           "material4": "Common_3",
           "material4qty": 9,
           "material1type": null,
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         },
@@ -4853,7 +4853,7 @@
           "material4": "Common_3",
           "material4qty": 12,
           "material1type": "crown",
-          "material2type": "weeklyboss",
+          "material2type": "weekly_boss_drop",
           "material3type": "mastery3",
           "material4type": "common3"
         }
@@ -4951,7 +4951,7 @@
         "material3": "LocalSpeciality",
         "material1type": "gem1",
         "material2type": null,
-        "material3type": "speciality",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "2": {
@@ -4966,8 +4966,8 @@
         "material3qty": 10,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common1"
       },
       "3": {
@@ -4982,8 +4982,8 @@
         "material3qty": 20,
         "material3": "LocalSpeciality",
         "material1type": "gem2",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "4": {
@@ -4998,8 +4998,8 @@
         "material3qty": 30,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common2"
       },
       "5": {
@@ -5014,8 +5014,8 @@
         "material3qty": 45,
         "material3": "LocalSpeciality",
         "material1type": "gem3",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       },
       "6": {
@@ -5030,8 +5030,8 @@
         "material3qty": 60,
         "material3": "LocalSpeciality",
         "material1type": "gem4",
-        "material2type": "boss",
-        "material3type": "speciality",
+        "material2type": "boss_drop",
+        "material3type": "local_speciality",
         "material4type": "common3"
       }
     },
@@ -5055,7 +5055,7 @@
         "mastery2": "Mastery_2",
         "mastery3": "Mastery_3",
         "weekly_boss_drop": "Weekly_Boss_Drop",
-        "crown": "Crown of Insight"
+        "crown": "Crown_of_Insight"
       }
     },
     "introduction": null,
