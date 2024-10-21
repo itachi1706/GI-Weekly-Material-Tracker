@@ -84,31 +84,73 @@ jobs:
       - name: Set output for Realtime DB Banner
         id: rtdb-banner_out
         if: steps.rtdb-banner.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.rtdb-banner.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Firestore Public JSONs
         id: fspj_out
         if: steps.fspj.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.fspj.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Cloud Storage Data
         id: csd_out
         if: steps.csd.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.csd.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Firestore Indexes
         id: fsi_out
         if: steps.fsi.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.fsi.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Firebase Security Rules
         id: fbsr_out
         if: steps.fbsr.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.fbsr.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Firebase Cloud Function
         id: fbcf_out
         if: steps.fbcf.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.fbcf.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
       - name: Set output for Firestore Templates JSONs
         id: fstj_out
         if: steps.fstj.outputs.any_changed == 'true'
-        run: echo "any_changed=true" >> $GITHUB_OUTPUT
+        env:
+          ALL_CHANGED_FILES: ${{ steps.fstj.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+          echo "any_changed=true" >> $GITHUB_OUTPUT
     outputs:
       rtdbbanner: ${{ steps.rtdb-banner_out.outputs.any_changed }}
       fspj: ${{ steps.fspj_out.outputs.any_changed }}
