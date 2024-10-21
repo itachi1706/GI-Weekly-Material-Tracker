@@ -1,4 +1,4 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions/v1');
 const firestore = require('@google-cloud/firestore');
 const client = new firestore.v1.FirestoreAdminClient();
 
