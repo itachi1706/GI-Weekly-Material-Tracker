@@ -1,18 +1,16 @@
-import promise from "eslint-plugin-promise";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+const promise = require("eslint-plugin-promise");
+const path = require("node:path");
+const { fileURLToPath } = require("node:url");
+const js = require("@eslint/js");
+const { FlatCompat } = require("@eslint/eslintrc");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
     allConfig: js.configs.all
 });
 
-export default [...compat.extends("eslint:recommended"), {
+module.export = [...compat.extends("eslint:recommended"), {
     plugins: {
         promise,
     },
