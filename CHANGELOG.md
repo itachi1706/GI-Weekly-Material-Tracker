@@ -1,5 +1,5 @@
 # 4.0.1
-- Hotfix: Fixed proguard crashes due to new dependencies
+- (Android) Fixed crash on startup due to changes in dependencies and Proguard
 
 # 4.0.0
 - (Android) Bump Minimum Version to API 24 (Android 7.0 Nougat)
