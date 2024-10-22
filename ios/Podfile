@@ -33,6 +33,8 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
+  # Downgrade FirebaseCoreExtension to 11.3 until latest version releases for 11.4.x (Ref: https://github.com/firebase/flutterfire/issues/13527)
+  pod 'FirebaseCoreExtension', '11.3'
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
