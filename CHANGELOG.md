@@ -1,3 +1,6 @@
+# 4.0.1
+- Hotfix: Fixed proguard crashes due to new dependencies
+
 # 4.0.0
 - (Android) Bump Minimum Version to API 24 (Android 7.0 Nougat)
 - Material 3 Migration
@@ -8,7 +11,6 @@
 - (Web) Fixed alignment in tabs
 - (Android) Removed exact alarm permissions as it is not required
 - Dependency Upgrades and various minor bug fixes
-
 
 # 3.0.9
 - Removed some permissions requested by libraries that are not needed
