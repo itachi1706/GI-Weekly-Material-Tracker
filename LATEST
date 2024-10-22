@@ -1,1 +1,9 @@
-- Removed some permissions requested by libraries that are not needed
+- (Android) Bump Minimum Version to API 24 (Android 7.0 Nougat)
+- Material 3 Migration
+- Switched how we retrieve material data for easier upgrade (based on types)
+- Flutter 3.24 upgrade
+- (iOS) Fixed login authentication
+- Fixed issue where event banners will jump around when scrolling back up
+- (Web) Fixed alignment in tabs
+- (Android) Removed exact alarm permissions as it is not required
+- Dependency Upgrades and various minor bug fixes
