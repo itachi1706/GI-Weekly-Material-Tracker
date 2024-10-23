@@ -59,6 +59,11 @@ jobs:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
       - name: Build Flutter App for SAST
         run: flutter build web
+      - name: Get latest tag
+        id: latesttag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: 1.0.0
       # - name: SonarCloud Scan
       #   uses: SonarSource/sonarcloud-github-action@master
       #   env:
@@ -77,4 +82,5 @@ jobs:
           export SONAR_SCANNER_OPTS="-server"
           sonar-scanner \
             -Dsonar.sources=. \
-            -Dsonar.host.url=https://sonarcloud.io 
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.projectVersion=${{ steps.latesttag.outputs.tag }}
