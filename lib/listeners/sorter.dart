@@ -5,11 +5,13 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class SortNotifier extends ChangeNotifier {
   static String? _sortKey = '';
   static bool _descending = false;
+  static int _type = 0;
 
-  void updateSortKey(String? newKey, bool isDescending) {
+  void updateSortKey(String? newKey, bool isDescending, int type) {
     if (newKey == '') newKey = null;
     _sortKey = newKey;
     _descending = isDescending;
+    _type = type;
     notifyListeners();
   }
 
@@ -19,6 +21,13 @@ class SortNotifier extends ChangeNotifier {
 
   bool isDescending() {
     return _descending;
+  }
+
+  bool checkMatchingType(int type) {
+    if (_type == type) return true;
+    if (_sortKey == 'rarity') return true; // Common factor
+
+    return false; // Not common factor, to reset
   }
 }
 

@@ -54,6 +54,11 @@ class MaterialListGridState extends State<MaterialListGrid> {
   @override
   void initState() {
     super.initState();
+    // Initial sorting information
+    if (widget.notifier?.checkMatchingType(2) ?? false) {
+      _sorter = widget.notifier!.getSortKey();
+      _isDescending = widget.notifier!.isDescending();
+    }
     widget.notifier!.addListener(() {
       if (!mounted) return;
       setState(() {
