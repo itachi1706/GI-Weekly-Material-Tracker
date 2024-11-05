@@ -36,6 +36,7 @@ class SettingsPageState extends State<SettingsPage> {
   bool _darkMode = false,
       _dailylogin = false,
       _weeklyParametric = false,
+      _useDeepLink = false,
       _moveBot = false;
   int? _cacheFiles = 0;
 
@@ -74,6 +75,7 @@ class SettingsPageState extends State<SettingsPage> {
       _location = _prefs.getString('location') ?? 'Asia';
       _buildSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
+      _useDeepLink = _prefs.getBool('deeplinkEnabled') ?? false;
       _moveBot = _prefs.getBool('move_completed_bottom') ?? false;
       _dailylogin = _prefs.getBool('daily_login') ?? false;
       _cacheFiles = files['fileNum'];
@@ -240,6 +242,13 @@ class SettingsPageState extends State<SettingsPage> {
     });
   }
 
+  void _toggleDeepLink(bool value) {
+    _prefs.setBool('deeplinkEnabled', value);
+    setState(() {
+      _useDeepLink = value;
+    });
+  }
+
   void _toggleMoveCompletedToBottom(bool value) {
     _prefs.setBool('move_completed_bottom', value).then((value) {
       Util.showSnackbarQuick(context, 'Will be moved on next reload');
@@ -258,6 +267,12 @@ class SettingsPageState extends State<SettingsPage> {
           leading: const Icon(Icons.wb_sunny_outlined),
           onToggle: _toggleDarkMode,
           initialValue: _darkMode,
+        ),
+        SettingsTile.switchTile(
+          title: const Text('Use Deep Links'),
+          leading: const Icon(Icons.link),
+          onToggle: _toggleDeepLink,
+          initialValue: _useDeepLink,
         ),
         SettingsTile.switchTile(
           title: const Text('Move completed to bottom'),

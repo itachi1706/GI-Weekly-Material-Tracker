@@ -223,6 +223,8 @@ class Util {
     hideTopBars = true,
     iOSBottomBar = false,
     iOSUrlBar = false,
+    String? deepLink = null,
+    bool useDeepLink = false,
   }) async {
     if (url == null) return false;
     // Web Browser for web mode
@@ -230,6 +232,12 @@ class Util {
       return await _launchWebPageWeb(url);
     } else if (GetPlatform.isAndroid || GetPlatform.isIOS) {
       var webUri = WebUri(url);
+      if (deepLink != null && useDeepLink) {
+        debugPrint('Using deep link: $deepLink');
+        webUri = WebUri(deepLink);
+
+        return _launchWebPageWeb(url); // WebView must be disabled
+      }
       if (webView) {
         // Use WebView instead
         var browser = InAppBrowser();
