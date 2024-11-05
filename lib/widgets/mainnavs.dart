@@ -200,7 +200,7 @@ class DictionaryPageState extends State<DictionaryPage>
     debugPrint(
       'Sorting by $sorter in ${(descending) ? 'Descending' : 'Ascending'} order',
     );
-    _notifier!.updateSortKey(sorter, descending);
+    _notifier!.updateSortKey(sorter, descending, _currentIndex);
   }
 
   Widget _showSortWidget() {
