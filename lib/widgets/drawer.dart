@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -44,20 +45,32 @@ class DrawerComponentState extends State<DrawerComponent> {
         }
       }
     }
+    var pref = await SharedPreferences.getInstance();
 
     // Launch the website otherwise
-    await Util.launchWebPage('https://www.hoyolab.com/genshin/');
+    await Util.launchWebPage(
+      'https://www.hoyolab.com/genshin/',
+      useDeepLink: pref.getBool('deeplinkEnabled') ?? false,
+      deepLink:
+          'hoyolab://openURL?url=https%3A%2F%2Fwww.hoyolab.com%2Fhome%3Futm_source%3DMweb%26utm_medium%3DOpenAppGuideModule%26utm_id%3D%26utm_campaign%3D&campaign=HoYoLAB-Web-InterestSelectPage&creative=icon',
+    );
   }
 
   void _launchBattleChronicle() async => await Util.launchWebPage(
         'https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys',
       );
 
-  void _launchMap() async => await Util.launchWebPage(
-        'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html',
-        webView: true,
-        hideTopBars: GetPlatform.isAndroid,
-      );
+  void _launchMap() async {
+    var pref = await SharedPreferences.getInstance();
+    await Util.launchWebPage(
+      'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html',
+      webView: true,
+      hideTopBars: GetPlatform.isAndroid,
+      useDeepLink: pref.getBool('deeplinkEnabled') ?? false,
+      deepLink:
+          'hoyolab://webview?link=https%3A%2F%2Fact.hoyolab.com%2Fys%2Fapp%2Finteractive-map%2Findex.html%3Flang%3Den-us%23%2Fmap%2F2%3Fshown_types%3D410%2C521%26center%3D-86.00%2C-3052.00%26zoom%3D-3.00&campaign=Map&creative=icon',
+    );
+  }
 
   List<Widget> _addWebComponent() {
     return (kIsWeb)
