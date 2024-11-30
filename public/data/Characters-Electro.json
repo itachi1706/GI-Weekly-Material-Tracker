@@ -3291,6 +3291,379 @@
       "hoyowiki": 2,
       "subCollection": {}
     },
+    "Ororon": {
+      "image": "Characters/Electro/Ororon.png",
+      "gender": "Male",
+      "birthday": "14/10",
+      "caption": "Shadow of the Night-Wind",
+      "titles": [
+        "Shrouded Bat of Mictlan"
+      ],
+      "name": "Ororon",
+      "fullName": "Ororon \"Bidii\"",
+      "description": "A young man from the Masters of the Night-Wind who instead lives in the wild alongside all manner of life.",
+      "nation": "Natlan",
+      "weapon": "Bow",
+      "rarity": 4,
+      "affiliation": "Mictlan, Fatui",
+      "constellation": "Vampyrum Spectrum",
+      "outfits": [
+        "Batwing_Iris"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Kindling",
+            "material3qty": 3,
+            "material4": "Juvenile_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 2,
+            "material4": "Seasoned_Fang",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 4,
+            "material4": "Seasoned_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 6,
+            "material4": "Seasoned_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Kindling",
+            "material3qty": 9,
+            "material4": "Seasoned_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 4,
+            "material4": "Tyrants_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 6,
+            "material4": "Tyrants_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 12,
+            "material4": "Tyrants_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Lightless_Silk_String",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Kindling",
+            "material3qty": 16,
+            "material4": "Tyrants_Fang",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Nightshade_Synesthesia": {
+            "name": "Nightshade Synesthesia",
+            "effect": "After a nearby party member triggers Nightsoul Burst, Ororon will gain 40 Nightsoul points. Within 15s after using his Elemental Skill, when other party members' Hydro or Electro attacks hit opponents, Ororon will gain 5 Nightsoul points, an effect that can occur every 0.3s for a maximum of 10 times during this 15s duration.\nOroron can have a maximum of 80 Nightsoul points.\n\nAlso, when nearby opponents take Electro-Charged reaction DMG or Nightsoul-aligned DMG dealt by other nearby characters, Ororon will consume 10 Nightsoul points (provided he has at least that amount), entering the Nightsoul's Blessing state and triggering the Hypersense effect: Deal Nightsoul-aligned Electro DMG based on 160% of Ororon's ATK to at most 4 nearby opponents. The aforementioned effect can trigger once every 1.8s.\n\nNightsoul's Blessing: Ororon\nOroron's Nightsoul's Blessing state lasts 6s.",
+            "image": "Talents/Passive/Talent_Nightshade_Synesthesia.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Aspect_Catalyst": {
+            "name": "Aspect Catalyst",
+            "effect": "After the Elemental Skill Night's Sling's Spirit Orb hits an opponent, Ororon will gain the Aspect Sigil effect for 15s.\n\nAspect Sigil\nWhen a nearby active party member hits an opponent with Normal, Charged, or Plunging Attacks, that character will restore 3 Energy. If Ororon is off-field, Ororon will also restore 3 Energy. This effect can trigger once every 1s, and can trigger 3 times per duration.",
+            "image": "Talents/Passive/Talent_Aspect_Catalyst.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Flowing_Fog_Spritely_Shadows": {
+            "name": "Flowing Fog, Spritely Shadows",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, he can use Nightsoul Transmission: Ororon. When the active character is currently in the air, the following will trigger when switching to Ororon: Ororon will leap up high. Nightsoul Transmission can be triggered once every 10s by your party.\n\nHolding Aiming Mode will cause Ororon to enter the \"Spiritspeaker\" state, which will allow him to interact with \"Nightspirit Graffiti\" and \"Nightspirit Sigils,\" extracting information and power from them. The rules for interacting with these objects follow the same rules as those governing Iktomisaurus interactions.\n\nAdditionally, holding the jump button will cause Ororon to consume 75 Stamina and leap. In areas within Natlan where Phlogiston mechanics are present, Ororon will prioritize consuming 5 Phlogiston to leap to a height higher still.\nWhen in the air, Ororon can Hold his Normal Attack to consume Phlogiston or Stamina and enter Aiming Mode.",
+            "image": "Talents/Passive/Talent_Flowing_Fog_Spritely_Shadows.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "The_Art_of_Skinchanging": {
+            "name": "The Art of Skinchanging",
+            "effect": "Increases gliding SPD for your own party members by 15%.\nNot stackable with Passive Talents that provide the exact same effects.",
+            "image": "Talents/Passive/Talent_The_Art_of_Skinchanging.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Spiritvessel_Snapshot": {
+            "name": "Spiritvessel Snapshot",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, Electro energy will accumulate on the arrowhead. A fully charged arrow will deal immense Electro DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Nights_Sling": {
+            "name": "Night's Sling",
+            "effect": "Ororon manifests an ancient mystical technique from the Masters of the Night-Wind as a Spirit Orb of midnight shade and throws it at his foe, dealing Nightsoul-aligned Electro DMG.\nWhen other opponents are nearby, the Spirit Orb will bounce between them, dealing Nightsoul-aligned Electro DMG. Each time Night's Sling is used, each opponent can only be selected as a target once.\nAfter 3 bounces, or if there are no eligible targets left, the Orb will disappear.",
+            "image": "Talents/Skill/Talent_Nights_Sling.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Dark_Voices_Echo": {
+            "name": "Dark Voices Echo",
+            "effect": "Ororon works an ancient ritual, dealing Nightsoul-aligned AoE Electro DMG, summoning forth a Supersonic Oculus.\n\nSupersonic Oculus\nContinuously taunts nearby opponents and attracts attacks from them.\nContinuously rotates and fires off sonic waves that deal Nightsoul-aligned Electro DMG.",
+            "image": "Talents/Burst/Talent_Dark_Voices_Echo.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Trails Amidst the Forest Fog",
+          "effect": "The Elemental Skill Night's Sling's Spirit Orb can bounce 2 additional times.\nAdditionally, after the Spirit Orb hits an opponent, it will apply the Nighttide effect to them for 12s. Opponents affected by Nighttide take 50% increased DMG from Hypersense triggered by the Passive Talent, \"Nightshade Synesthesia.\" Unlock the aforementioned Passive Talent to trigger this effect.",
+          "image": "Constellation/Trails_Amidst_the_Forest_Fog.png"
+        },
+        "2": {
+          "name": "King Bee of the Hidden Honeyed Wine",
+          "effect": "After using his Elemental Burst, Dark Voices Echo, Ororon will obtain the Spiritual Supersense effect for 9s.\nSpiritual Supersense\nGain 8% Electro DMG Bonus.\nAdditionally, during this time, every additional opponent hit by the Elemental Burst Dark Voices Echo or Supersonic Oculus will grant Ororon a further 8% Electro DMG Bonus. The maximum that can be gained this way is 32% Electro DMG Bonus.",
+          "image": "Constellation/King_Bee_of_the_Hidden_Honeyed_Wine.png"
+        },
+        "3": {
+          "name": "Roosting Bat's Spiritcage",
+          "effect": "Increases the Level of Dark Voices Echo by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Roosting_Bats_Spiritcage.png"
+        },
+        "4": {
+          "name": "As the Mysteries of the Night Wind",
+          "effect": "The Supersonic Oculus summoned by the Elemental Burst Dark Voices Echo rotates 25% faster.\nAdditionally, Ororon will restore 8 Energy to himself after using Dark Voices Echo.",
+          "image": "Constellation/As_the_Mysteries_of_the_Night_Wind.png"
+        },
+        "5": {
+          "name": "A Gift For the Soul",
+          "effect": "Increases the Level of Night's Sling by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/A_Gift_For_the_Soul.png"
+        },
+        "6": {
+          "name": "Ode to Deep Springs",
+          "effect": "After triggering Hypersense through the Passive Talent, Nightshade Synesthesia, your current active character's ATK is increased by 10% for 9s. Max 3 stacks, each stack is counted independently.\nAdditionally, when you use the Elemental Burst Dark Voices Echo, you will trigger one instance of an effect equivalent to Hypersense, dealing 200% of its original DMG.\nYou must unlock the Passive Talent \"Nightshade Synesthesia\" first.",
+          "image": "Constellation/Ode_to_Deep_Springs.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Juvenile_Fang",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 40,
+          "material4": "Juvenile_Fang",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 50,
+          "material4": "Seasoned_Fang",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 60,
+          "material4": "Seasoned_Fang",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 70,
+          "material4": "Tyrants_Fang",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Mark_of_the_Binding_Blessing",
+          "level": 80,
+          "material4": "Tyrants_Fang",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Mark_of_the_Binding_Blessing",
+          "local_speciality": "Glowing_Hornshroom"
+        },
+        "talents": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "mastery1": "Teachings_of_Kindling",
+          "mastery2": "Guide_to_Kindling",
+          "mastery3": "Philosophies_of_Kindling",
+          "weekly_boss_drop": "Lightless_Silk_String",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A young man from the Masters of the Night-Wind, who always seems to be calm and at ease, no matter what the situation. Catching him is no easy feat.",
+      "paimonmoepath": "characters/ororon",
+      "genshinggpath": "characters/ororon",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ororon",
+      "hoyowiki": 7079,
+      "subCollection": {}
+    },
     "Raiden_Shogun": {
       "image": "Characters/Electro/Raiden_Shogun.png",
       "gender": "Female",
