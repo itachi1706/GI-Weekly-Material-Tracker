@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
@@ -91,7 +91,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
@@ -199,7 +199,7 @@ jobs:
       #     p12-file-base64: ${{ secrets.APPLE_DEVCERT }}
       #     p12-password: ${{ secrets.APPLE_DEVCERT_PASSWORD }}
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
