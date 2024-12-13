@@ -229,10 +229,10 @@ class OutfitInfoGeneralPage extends StatelessWidget {
     );
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
 
-    if (info?.characters?.isNotEmpty ?? false) {
+    if (info?.characters.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Characters',
-        info!.characters!,
+        info!.characters,
         'characters',
         info?.name,
         MediaQuery.of(context).orientation == Orientation.portrait,

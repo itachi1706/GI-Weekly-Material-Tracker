@@ -1,7 +1,7 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class OutfitData extends CommonData {
-  List<String>? characters;
+  List<String> characters;
   String? gameImage;
   String? wishImage;
   String? model3D;
@@ -17,7 +17,7 @@ class OutfitData extends CommonData {
   double releasedVersion;
 
   OutfitData({
-    this.characters,
+    required this.characters,
     this.gameImage,
     this.wishImage,
     this.model3D,
