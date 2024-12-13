@@ -1,3 +1,4 @@
+import 'package:appcheck/appcheck.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
@@ -236,7 +237,13 @@ class Util {
         debugPrint('Using deep link: $deepLink');
         webUri = WebUri(deepLink);
 
-        return _launchWebPageWeb(url); // WebView must be disabled
+        if (await canLaunchUrl(webUri)) {
+          await launchUrl(webUri, mode: LaunchMode.platformDefault);
+
+          return true;
+        } else {
+          return _launchWebPageWeb(url); // WebView must be disabled
+        }
       }
       if (webView) {
         // Use WebView instead

@@ -94,7 +94,7 @@ class NotificationManager {
             'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us',
             useDeepLink: pref.getBool('deeplinkEnabled') ?? false,
             deepLink:
-                'hoyolab://webview?link=https%3A%2F%2Fact.hoyolab.com%2Fys%2Fevent%2Fsignin-sea-v3%2Findex.html%3Fact_id%3De202102251931481%26hyl_auth_required%3Dtrue%26hyl_presentation_style%3Dfullscreen',
+                'hoyolab://webview?link=https%3A%2F%2Fact.hoyolab.com%2Fys%2Fevent%2Fsignin-sea-v3%2Findex.html%3Fact_id%3De202102251931481%26hyl_auth_required%3Dtrue%26hyl_presentation_style%3Dfullscreen&adjust_reftag=caSnGrq7Audpt',
           );
           // Open page to forum
           break;
