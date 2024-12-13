@@ -877,7 +877,9 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     return Icon(icon, color: color);
   }
 
-  String _getTitles(List<String> titles) {
+  String? _getTitles(List<String> titles) {
+    if (titles.isEmpty) return null;
+
     return titles.length > 1
         ? titles.map((e) => "• $e").join('\n')
         : titles.join('\n');
