@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -628,7 +630,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       );
     }
 
-    var dataMap = _info!.ascension!;
+    var dataMap = SplayTreeMap<String, WeaponAscension>.from(_info!.ascension!);
     var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(

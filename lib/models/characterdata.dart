@@ -160,6 +160,13 @@ class CharacterAscension extends CommonAscension {
 
     return fin;
   }
+
+  @override
+  String toString() {
+    return 'CharacterAscension: {Level: $level, Material 1: $material1, Material 1 Qty: $material1Qty, '
+        'Material 2: $material2, Material 2 Qty: $material2Qty, Material 3: $material3, '
+        'Material 3 Qty: $material3Qty, Material 4: $material4, Material 4 Qty: $material4Qty, Mora: $mora}';
+  }
 }
 
 class CharacterTalent {

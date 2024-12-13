@@ -793,7 +793,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       );
     }
 
-    var dataMap = widget.info!.ascension!;
+    var dataMap = SplayTreeMap<String, CharacterAscension>.from(widget.info!.ascension!);
     var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(
@@ -1373,7 +1373,8 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       );
     }
 
-    var data = ascendInfo!.entries.map((e) => e.value).toList();
+    var dataMap = SplayTreeMap<String, CharacterAscension>.from(ascendInfo!, (a, b) => int.parse(a).compareTo(int.parse(b)));
+    var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(
       shrinkWrap: true,
