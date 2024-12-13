@@ -1,3 +1,9 @@
+# 4.0.2
+- (iOS) Fixed issue where tracking tiers are improperly displayed in the UI
+- Fixed sorting of items resetting when switching tabs
+- Add option to deep link directly to HoyoLab for some links
+- Dependency Updates
+
 # 4.0.1
 - (Android) Fixed crash on startup due to changes in dependencies and Proguard
 
