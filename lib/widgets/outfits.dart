@@ -43,7 +43,7 @@ class OutfitListGridState extends State<OutfitListGrid> {
     Query? queryRef;
     if (widget.character != null) {
       // Get all outfits
-      queryRef = outfitRef.where('character', isEqualTo: widget.character);
+      queryRef = outfitRef.where('characters', arrayContains: widget.character);
     }
 
     return StreamBuilder(
@@ -229,10 +229,10 @@ class OutfitInfoGeneralPage extends StatelessWidget {
     );
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
 
-    if (info?.character?.isNotEmpty ?? false) {
+    if (info?.characters.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Characters',
-        [info!.character!],
+        info!.characters,
         'characters',
         info?.name,
         MediaQuery.of(context).orientation == Orientation.portrait,

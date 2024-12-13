@@ -1,7 +1,7 @@
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 
 class OutfitData extends CommonData {
-  String? character;
+  List<String> characters;
   String? gameImage;
   String? wishImage;
   String? model3D;
@@ -17,7 +17,7 @@ class OutfitData extends CommonData {
   double releasedVersion;
 
   OutfitData({
-    this.character,
+    required this.characters,
     this.gameImage,
     this.wishImage,
     this.model3D,
@@ -43,7 +43,9 @@ class OutfitData extends CommonData {
 
   factory OutfitData.fromJson(Map<String, dynamic> json) {
     return OutfitData(
-      character: json['character'],
+      characters: (json['characters'] != null)
+          ? List<String>.from(json['characters'])
+          : [],
       gameImage: json['image'],
       wishImage: json['wishimage'],
       model3D: json['3dmodel'],
