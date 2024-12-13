@@ -1,3 +1,7 @@
+# 4.0.3
+- (HOTFIX) Fixed character dictionary not loading until filtered
+- (HOTFIX) Fixed issue where deep links are opening in browser instead of app
+
 # 4.0.2
 - (iOS) Fixed issue where tracking tiers are improperly displayed in the UI
 - Fixed sorting of items resetting when switching tabs
