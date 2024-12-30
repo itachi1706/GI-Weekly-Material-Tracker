@@ -1,5 +1,119 @@
 {
   "weapons": {
+    "A_Thousand_Blazing_Suns": {
+      "secondary_stat_type": "CRIT Rate",
+      "description": "A greatsword that dazzles like the rising sun. It has witnessed the extinguishing and rekindling of innumerable suns.",
+      "name": "A Thousand Blazing Suns",
+      "series": null,
+      "ascension": {
+        "1": {
+          "material3": "Juvenile_Fang",
+          "level": 20,
+          "material2": "Axis_of_the_Secret_Source",
+          "material3qty": 3,
+          "material1": "Blazing_Sacrificial_Hearts_Terror",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery1"
+        },
+        "2": {
+          "material3": "Juvenile_Fang",
+          "level": 40,
+          "material2": "Axis_of_the_Secret_Source",
+          "material3qty": 12,
+          "material1": "Blazing_Sacrificial_Hearts_Hesitance",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000,
+          "material1type": "common1",
+          "material2type": "elite1",
+          "material3type": "forgery2"
+        },
+        "3": {
+          "material3": "Seasoned_Fang",
+          "level": 50,
+          "material2": "Sheath_of_the_Secret_Source",
+          "material3qty": 9,
+          "material1": "Blazing_Sacrificial_Hearts_Hesitance",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery2"
+        },
+        "4": {
+          "material3": "Seasoned_Fang",
+          "level": 60,
+          "material2": "Sheath_of_the_Secret_Source",
+          "material3qty": 14,
+          "material1": "Blazing_Sacrificial_Hearts_Resolve",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000,
+          "material1type": "common2",
+          "material2type": "elite2",
+          "material3type": "forgery3"
+        },
+        "5": {
+          "material3": "Tyrants_Fang",
+          "level": 70,
+          "material2": "Heart_of_the_Secret_Source",
+          "material3qty": 9,
+          "material1": "Blazing_Sacrificial_Hearts_Resolve",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery3"
+        },
+        "6": {
+          "material3": "Tyrants_Fang",
+          "level": 80,
+          "material2": "Heart_of_the_Secret_Source",
+          "material3qty": 18,
+          "material1": "Blazing_Sacrificial_Hearts_Splendor",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000,
+          "material1type": "common3",
+          "material2type": "elite3",
+          "material3type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "forgery1": "Blazing_Sacrificial_Hearts_Terror",
+          "forgery2": "Blazing_Sacrificial_Hearts_Hesitance",
+          "forgery3": "Blazing_Sacrificial_Hearts_Resolve",
+          "forgery4": "Blazing_Sacrificial_Hearts_Splendor",
+          "elite1": "Axis_of_the_Secret_Source",
+          "elite2": "Sheath_of_the_Secret_Source",
+          "elite3": "Heart_of_the_Secret_Source"
+        }
+      },
+      "image": "Weapons/Claymore/Weapon_A_Thousand_Blazing_Suns.png",
+      "secondary_stat": "2.4%",
+      "rarity": 5,
+      "type": "Claymore",
+      "max_secondary_stat": "11.0%",
+      "max_base_atk": 741,
+      "base_atk": 49,
+      "obtained": "Gacha",
+      "effectName": "Sunset Reignites the Dawn",
+      "effect": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by 20~40% and ATK increased by 28~56% for 6s. This effect can trigger once every 10s.\nWhile a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second. and the max duration increase is 6s.\nAdditionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off—field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/A_Thousand_Blazing_Suns",
+      "hoyowiki": 7365,
+      "subCollection": {}
+    },
     "Akuoumaru": {
       "secondary_stat_type": "ATK",
       "description": "The beloved sword of the legendary \"Akuou\". The blade is huge and majestic, but is surprisingly easy to wield.",
