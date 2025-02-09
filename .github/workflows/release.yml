@@ -409,7 +409,8 @@ jobs:
       - name: Use latest stable version of XCode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          # xcode-version: latest-stable
+          xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
       - name: Cache pubspec dependencies
         uses: actions/cache@v4
         with:
