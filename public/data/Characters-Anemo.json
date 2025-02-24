@@ -1473,6 +1473,368 @@
       "hoyowiki": 22,
       "subCollection": {}
     },
+    "Lan_Yan": {
+      "image": "Characters/Anemo/Lan_Yan.png",
+      "gender": "Female",
+      "birthday": "6/1",
+      "caption": "Spring Woven From Jade",
+      "titles": ["Master Rattan Weaver of the Chenyu Vale Artisans Association"],
+      "name": "Lan Yan",
+      "fullName": null,
+      "description": "A rattan weaver from Chenyu Vale. Clear-minded and well-tempered, she is as lively as a mountain spring.",
+      "nation": "Liyue",
+      "weapon": "Catalyst",
+      "rarity": 4,
+      "affiliation": "Chenyu Vale, Chenyu Vale Artisans Association",
+      "constellation": "Hirundo Lazuli",
+      "outfits": ["Argent_Chimes"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Diligence",
+            "material3qty": 3,
+            "material4": "Whopperflower_Nectar",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 2,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 4,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 6,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Diligence",
+            "material3qty": 9,
+            "material4": "Shimmering_Nectar",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 4,
+            "material4": "Energy_Nectar",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 6,
+            "material4": "Energy_Nectar",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 12,
+            "material4": "Energy_Nectar",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Diligence",
+            "material3qty": 16,
+            "material4": "Energy_Nectar",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Four_Sealing_Divination_Charms": {
+            "name": "Four Sealing Divination Charms",
+            "effect": "When the dash from the Elemental Skill Swallow-Wisp Pinion Dance hits a target, if it interacts with Hydro/Pyro/Cryo/Electro, the Swallow-Wisp Shield will undergo Elemental Absorption, with the converted shield absorbing DMG from the corresponding element with 250% efficiency.\nAdditionally, if this use of Swallow-Wisp Pinion Dance causes the Swallow-Wisp Shield to undergo Elemental Absorption, the Feathermoon Rings that Lan Yan throws at her foes additionally deal Elemental DMG equal to 50% of the original in the corresponding Elemental Type. This DMG is considered Elemental Skill DMG.",
+            "image": "Talents/Passive/Talent_Four_Sealing_Divination_Charms.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Skyfeather_Evil-Subduing_Charm": {
+            "name": "Skyfeather Evil-Subduing Charm",
+            "effect": "The Elemental Skill Swallow-Wisp Pinion Dance and the Elemental Burst Lustrous Moonrise deal increased DMG equal to 309% and 774% of Lan Yan's Elemental Mastery respectively.",
+            "image": "Talents/Passive/Talent_Skyfeather_Evil-Subduing_Charm.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Thought_and_Intent_Like_Silken_Scent": {
+            "name": "Thought and Intent, Like Silken Scent",
+            "effect": "When Lan Yan is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+            "image": "Talents/Passive/Talent_Thought_and_Intent_Like_Silken_Scent.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Black_Pheasant_Strides_on_Water": {
+            "name": "Black Pheasant Strides on Water",
+            "effect": "Normal Attack\nWields her Feathermoon Rings to perform up to 4 attacks, dealing Anemo DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to throw out a Feathermoon Ring, dealing Anemo DMG.\n\nPlunging Attack\nGathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Swallow-Wisp_Pinion_Dance": {
+            "name": "Swallow-Wisp Pinion Dance",
+            "effect": "Summoning forth the Swallow-Wisp Shield, a secret art passed down across generations, Lan Yan dashes forward and, upon making contact with her target, will leap back into the air.\nThe Swallow-Wisp Shield's DMG absorption scales based on her ATK, and has a 250% absorption efficiency against Anemo DMG.\nWhile in mid-air due to the effects of her Elemental Skill: Swallow-Wisp Pinion Dance, pressing her Elemental Skill again or pressing Normal Attack will cause Lan Yan to hurl her Feathermoon Rings at an opponent, and they will spin between nearby opponents twice upon hit, dealing Anemo DMG.\nHolding the Skill will cause it to behave differently.\n\nHold\nEnter Aiming Mode to adjust the dash direction.",
+            "image": "Talents/Skill/Talent_Swallow-Wisp_Pinion_Dance.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Lustrous_Moonrise": {
+            "name": "Lustrous Moonrise",
+            "effect": "Lan Yan creates a Feathermoon Swallow Array, pulling in nearby opponents and objects and dealing multiple instances of AoE Anemo DMG.",
+            "image": "Talents/Burst/Talent_Lustrous_Moonrise.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "\"As One Might Stride Betwixt the Clouds\"",
+          "effect": "After triggering the Elemental Absorption from the Passive Talent \"Four Sealing Divination Charms,\" this instance of Lan Yan's Elemental Skill Swallow-Wisp Pinion Dance will produce another Feathermoon Ring when they are thrown at opponents.\nYou must first unlock the Passive Talent \"Four Sealing Divination Charms.\"",
+          "image": "Constellation/As_One_Might_Stride_Betwixt_the_Clouds.png"
+        },
+        "2": {
+          "name": "\"Dance Vestments Billow Like Rainbow Jade\"",
+          "effect": "While the Swallow-Wisp Shield is active, when your active party member's Normal Attacks deal DMG, 40% of the Shield's DMG absorption will be restored, up to its original maximum absorption. This effect can occur once every 2s.",
+          "image": "Constellation/Dance_Vestments_Billow_Like_Rainbow_Jade.png"
+        },
+        "3": {
+          "name": "\"On White Wings Pierce Through Cloud and Fog\"",
+          "effect": "Increases the Level of Swallow-Wisp Pinion Dance by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/On_White_Wings_Pierce_Through_Cloud_and_Fog.png"
+        },
+        "4": {
+          "name": "\"With Drakefalcon's Blood-Pearls Adorned\"",
+          "effect": "After Lan Yan uses her Elemental Burst Lustrous Moonrise, the Elemental Mastery of all nearby party members increases by 60 for 12s.",
+          "image": "Constellation/With_Drakefalcons_Blood-Pearls_Adorned.png"
+        },
+        "5": {
+          "name": "\"Having Met You, My Heart is Gladdened\"",
+          "effect": "Increases the Level of Lustrous Moonrise by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Having_Met_You_My_Heart_is_Gladdened.png"
+        },
+        "6": {
+          "name": "\"Let Us Away on Sylphic Wing, the Silvered Ornaments to Ring\"",
+          "effect": "Swallow-Wisp Pinion Dance gains 1 additional charge.",
+          "image": "Constellation/Let_Us_Away_on_Sylphic_Wing_the_Silvered_Ornaments_to_Ring.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Gold-Inscribed_Secret_Source_Core",
+          "level": 40,
+          "material4": "Whopperflower_Nectar",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Gold-Inscribed_Secret_Source_Core",
+          "level": 50,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Gold-Inscribed_Secret_Source_Core",
+          "level": 60,
+          "material4": "Shimmering_Nectar",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Gold-Inscribed_Secret_Source_Core",
+          "level": 70,
+          "material4": "Energy_Nectar",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Gold-Inscribed_Secret_Source_Core",
+          "level": 80,
+          "material4": "Energy_Nectar",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Clearwater_Jade",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Whopperflower_Nectar",
+          "common2": "Shimmering_Nectar",
+          "common3": "Energy_Nectar",
+          "gem1": "Vayuda_Turquoise_Silver",
+          "gem2": "Vayuda_Turquoise_Fragment",
+          "gem3": "Vayuda_Turquoise_Chunk",
+          "gem4": "Vayuda_Turquoise_Gemstone",
+          "boss_drop": "Gold-Inscribed_Secret_Source_Core",
+          "local_speciality": "Clearwater_Jade"
+        },
+        "talents": {
+          "common1": "Whopperflower_Nectar",
+          "common2": "Shimmering_Nectar",
+          "common3": "Energy_Nectar",
+          "mastery1": "Teachings_of_Diligence",
+          "mastery2": "Guide_to_Diligence",
+          "mastery3": "Philosophies_of_Diligence",
+          "weekly_boss_drop": "Eroded_Sunfire",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A key member of the Chenyu Vale Artisans Association, she is adept at weaving a dazzling array of rattan handicrafts, and her joyful, quick-witted nature is positively infectious.",
+      "paimonmoepath": "characters/lan_yan",
+      "genshinggpath": "characters/lanyan",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lan_Yan",
+      "hoyowiki": 7301,
+      "subCollection": {}
+    },
     "Lynette": {
       "image": "Characters/Anemo/Lynette.png",
       "gender": "Female",
