@@ -4762,6 +4762,368 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Xiao",
       "hoyowiki": 51,
       "subCollection": {}
+    },
+    "Yumemizuki_Mizuki": {
+      "image": "Characters/Anemo/Yumemizuki_Mizuki.png",
+      "gender": "Female",
+      "birthday": "16/3",
+      "caption": "Embrace of Enchanting Dreams",
+      "titles": ["Clinical Psychologist and Major Shareholder of Aisa Bathhouse"],
+      "name": "Yumemizuki Mizuki",
+      "fullName": null,
+      "description": "A shareholder of Aisa Bathhouse, a baku, and a clinical psychologist. Dedicated to the dispersal of nightmares, and to bringing people peace of mind.",
+      "nation": "Inazuma",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Aisa Bathhouse",
+      "constellation": "Tapirus Somniator",
+      "outfits": ["Dawnbreath_Dreambelle"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Transience",
+            "material3qty": 3,
+            "material4": "Old_Handguard",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 2,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 4,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 6,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Transience",
+            "material3qty": 9,
+            "material4": "Kageuchi_Handguard",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 4,
+            "material4": "Famed_Handguard",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 6,
+            "material4": "Famed_Handguard",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 12,
+            "material4": "Famed_Handguard",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Fading_Candle",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Transience",
+            "material3qty": 16,
+            "material4": "Famed_Handguard",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Bright_Moons_Restless_Voice": {
+            "name": "Bright Moon's Restless Voice",
+            "effect": "When Yumemizuki Mizuki triggers Swirl while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state.",
+            "image": "Talents/Passive/Talent_Bright_Moons_Restless_Voice.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Thoughts_by_Day_Bring_Dreams_by_Night": {
+            "name": "Thoughts by Day Bring Dreams by Night",
+            "effect": "While Yumemizuki Mizuki is in the Dreamdrifter state, when other nearby party members hit opponents with Pyro, Hydro, Cryo, or Electro attacks, her Elemental Mastery will increase by 100 for 4s.",
+            "image": "Talents/Passive/Talent_Thoughts_by_Day_Bring_Dreams_by_Night.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "All_Ailments_Banished": {
+            "name": "All Ailments Banished",
+            "effect": "When Yumemizuki Mizuki is in the party, party members have a chance to recover 30% additional HP when using healing foods that do not have reviving properties. The trigger chance for this effect increases with the corresponding character's Friendship Level. (This effect will always trigger if the Traveler is the character consuming healing food.)",
+            "image": "Talents/Passive/Talent_All_Ailments_Banished.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Pure_Heart_Pure_Dreams": {
+            "name": "Pure Heart, Pure Dreams",
+            "effect": "Normal Attack\nPerforms up to 3 attacks, dealing Anemo DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.\n\nPlunging Attack\nCalling upon the power of Anemo, she plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Aisa_Utamakura_Pilgrimage": {
+            "name": "Aisa Utamakura Pilgrimage",
+            "effect": "Weaves memories of lovely dreams, entering a Dreamdrifter state where she floats above the ground, and dealing 1 instance of AoE Anemo DMG to nearby opponents.\n\nDreamdrifter\nWhile in the Dreamdrifter state, Yumemizuki Mizuki will continuously drift forward, dealing AoE Anemo DMG to nearby opponents at regular intervals.\nDuring this time, Yumemizuki Mizuki can control her direction of drift, and the pick-up distance of Yumemi Style Special Snacks from the Elemental Burst Anraku Secret Spring Therapy will be increased.\nIncreases the Swirl DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.\nDreamdrifter will end when Mizuki leaves the field or uses her Elemental Skill again.",
+            "image": "Talents/Skill/Talent_Aisa_Utamakura_Pilgrimage.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Anraku_Secret_Spring_Therapy": {
+            "name": "Anraku Secret Spring Therapy",
+            "effect": "Summons forth countless lovely dreams and nightmares that pull in nearby objects and opponents, dealing AoE Anemo DMG and summoning a Mini Baku.\n\nMini Baku:\nFollows the current active character. At regular intervals, the Mini Baku will create 1 Yumemi Style Special Snack nearby. After a nearby active character picks up a Special Snack, if their HP is higher than 70%, the Snack will explode and unleash a Munen Shockwave, dealing 1 instance of AoE Anemo DMG to nearby opponents. Otherwise, it will heal the one who picked it up based on Yumemizuki Mizuki's Elemental Mastery. When Yumemizuki Mizuki triggers healing by picking up a Yumemi Style Special Snack, the amount of healing is increased by 100%. If some time passes without a Snack being picked up, it will explode and release a Munen Shockwave, dealing 1 instance of AoE Anemo DMG to surrounding opponents.",
+            "image": "Talents/Burst/Talent_Anraku_Secret_Spring_Therapy.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "In Mist-Like Waters",
+          "effect": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled and this Swirl instance has its DMG against this opponent increased by 900% of Mizuki's Elemental Mastery.",
+          "image": "Constellation/In_Mist-Like_Waters.png"
+        },
+        "2": {
+          "name": "Your Echo I Meet in Dreams",
+          "effect": "When Yumemizuki Mizuki enters the Dreamdrifter state, every Elemental Mastery point she has will increase all nearby party members' Pyro, Hydro, Cryo, and Electro DMG Bonuses by 0.04% until the Dreamdrifter state ends.",
+          "image": "Constellation/Your_Echo_I_Meet_in_Dreams.png"
+        },
+        "3": {
+          "name": "Till Dawn's Moon Ends Night",
+          "effect": "Increases the Level of Aisa Utamakura Pilgrimage by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Till_Dawns_Moon_Ends_Night.png"
+        },
+        "4": {
+          "name": "Buds Warm Lucid Springs",
+          "effect": "Picking up a Yumemi Style Special Snack from the Elemental Burst Anraku Secret Spring Therapy will both deal DMG and heal, and will restore 5 Energy to Yumemizuki Mizuki. Energy can be restored this way 4 times per Anraku Secret Spring Therapy duration.",
+          "image": "Constellation/Buds_Warm_Lucid_Springs.png"
+        },
+        "5": {
+          "name": "As Setting Moon Brings Year's End",
+          "effect": "Increases the Level of Anraku Secret Spring Therapy by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/As_Setting_Moon_Brings_Years_End.png"
+        },
+        "6": {
+          "name": "The Heart Lingers Long",
+          "effect": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can Crit, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%.",
+          "image": "Constellation/The_Heart_Lingers_Long.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Old_Handguard",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Talisman_of_the_Enigmatic_Land",
+          "level": 40,
+          "material4": "Old_Handguard",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Talisman_of_the_Enigmatic_Land",
+          "level": 50,
+          "material4": "Kageuchi_Handguard",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Talisman_of_the_Enigmatic_Land",
+          "level": 60,
+          "material4": "Kageuchi_Handguard",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Talisman_of_the_Enigmatic_Land",
+          "level": 70,
+          "material4": "Famed_Handguard",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Talisman_of_the_Enigmatic_Land",
+          "level": 80,
+          "material4": "Famed_Handguard",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Sea_Ganoderma",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Old_Handguard",
+          "common2": "Kageuchi_Handguard",
+          "common3": "Famed_Handguard",
+          "gem1": "Vayuda_Turquoise_Silver",
+          "gem2": "Vayuda_Turquoise_Fragment",
+          "gem3": "Vayuda_Turquoise_Chunk",
+          "gem4": "Vayuda_Turquoise_Gemstone",
+          "boss_drop": "Talisman_of_the_Enigmatic_Land",
+          "local_speciality": "Sea_Ganoderma"
+        },
+        "talents": {
+          "common1": "Old_Handguard",
+          "common2": "Kageuchi_Handguard",
+          "common3": "Famed_Handguard",
+          "mastery1": "Teachings_of_Transience",
+          "mastery2": "Guide_to_Transience",
+          "mastery3": "Philosophies_of_Transience",
+          "weekly_boss_drop": "Fading_Candle",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A yumekui-baku, who also happens to be a clinical psychologist and a major shareholder of Aisa Bathhouse. If you ever find yourself gripped by seemingly insurmountable anxiety, she will surely be able to offer you the help you so need.",
+      "paimonmoepath": "characters/yumemizuki_mizuki",
+      "genshinggpath": "characters/yumemizukimizuki",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Yumemizuki_Mizuki",
+      "hoyowiki": 7420,
+      "subCollection": {}
     }
   }
 }
