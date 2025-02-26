@@ -333,6 +333,12 @@ class TrackerPageState extends State<TrackerPage> {
     var m = await GridData.retrieveMaterialsMapData();
     var c = await GridData.retrieveCharactersMapData();
     var w = await GridData.retrieveWeaponsMapData();
+    var o = await GridData.retrieveOutfitsMapData();
+
+    debugPrint("Found ${c?.length ?? 0} characters, "
+        "${m?.length ?? 0} materials, ${w?.length ?? 0} weapons, "
+        "${o?.length ?? 0} outfits");
+
     if (mounted) {
       setState(() {
         _materialData = m;
