@@ -1,4 +1,3 @@
-import 'package:appcheck/appcheck.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
@@ -224,7 +223,7 @@ class Util {
     hideTopBars = true,
     iOSBottomBar = false,
     iOSUrlBar = false,
-    String? deepLink = null,
+    String? deepLink,
     bool useDeepLink = false,
   }) async {
     if (url == null) return false;
