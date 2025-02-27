@@ -616,6 +616,7 @@ class GridUtils {
     textData = textData.replaceAll('Quicken', '§dQuicken§r');
     textData = textData.replaceAll('Swirl', '§aSwirl§r');
     textData = textData.replaceAll('Crystallize', '§gCrystallize§r');
+    textData = textData.replaceAll('Burgeon', '§pBurgeon§r');
 
     // Elements
     textData = textData.replaceAll('Anemo', '§aAnemo§r');
