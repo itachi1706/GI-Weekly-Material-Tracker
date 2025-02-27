@@ -260,4 +260,9 @@ class CharacterConstellations {
 
     return fin;
   }
+
+  @override
+  String toString() {
+    return 'CharacterConstellations: {Name: $name, Image: $image, Effect: $effect}';
+  }
 }

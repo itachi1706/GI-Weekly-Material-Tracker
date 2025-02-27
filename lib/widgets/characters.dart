@@ -1577,10 +1577,11 @@ class CharacterConstellationPage extends StatelessWidget {
 
   List<Widget> _constellationWidgets(BuildContext context) {
     var wid = <Widget>[];
-    info!.constellations?.forEach((key, value) {
-      wid.add(_generateConstellationWidget(key, value, context));
+    var sortedCons = SplayTreeMap<int, CharacterConstellations>.from(info!.constellations ?? {});
+    for (var data in sortedCons.entries) {
+      wid.add(_generateConstellationWidget(data.key, data.value, context));
       wid.add(const Divider());
-    });
+    }
 
     return wid;
   }
