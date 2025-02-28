@@ -15,6 +15,7 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -793,7 +794,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       );
     }
 
-    var dataMap = SplayTreeMap<String, CharacterAscension>.from(widget.info!.ascension!);
+    var dataMap =
+        SplayTreeMap<String, CharacterAscension>.from(widget.info!.ascension!);
     var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(
@@ -896,8 +898,26 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     var df = Util.defaultDateFormat;
     var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
     var endState = 'Ended';
+    var extraWidgets = <Widget>[];
     if (curDt.isBefore(info.lastBannerEnd!)) {
       endState = 'Ending';
+      extraWidgets = [
+        Row(
+          children: [
+            Text('Time Left: '),
+            _getCounter(info.lastBannerEnd!.toLocal(), false),
+          ],
+        ),
+      ];
+    } else {
+      extraWidgets = [
+        Row(
+          children: [
+            Text('Time Since: '),
+            _getCounter(info.lastBannerEnd!.toLocal(), true),
+          ],
+        ),
+      ];
     }
     var bannerGrammar = info.lastBannerCount == 1 ? 'banner' : 'banners';
     var bt = '${info.lastBannerCount} $bannerGrammar ago';
@@ -908,7 +928,40 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     var message = '$bt in ${info.lastBannerName}\n'
         '$endState: ${df.format(info.lastBannerEnd!.toLocal())}';
 
-    return GridData.generateInfoLine(message, Icons.calendar_month);
+    return GridData.generateInfoLine(
+        message, Icons.calendar_month, extraWidgets);
+  }
+
+  Widget _getCounter(DateTime end, bool isCountUp) {
+    debugPrint('Counter called. End $end');
+
+    var timer = StopWatchTimer(
+      mode: isCountUp ? StopWatchMode.countUp : StopWatchMode.countDown,
+      onEnded: () {
+        debugPrint('Timer Ended');
+      },
+    );
+    var currentTime = DateTime.now().toLocal();
+    var diff =
+        isCountUp ? currentTime.difference(end) : end.difference(currentTime);
+    timer.setPresetTime(mSec: diff.inMilliseconds);
+    timer.onStartTimer();
+
+    return StreamBuilder(
+        stream: timer.rawTime,
+        builder: (context, snapshot) {
+          final value = snapshot.data;
+
+          // Convert to days hours mins secs from millis
+          var text = '';
+          if (value != null) {
+            var duration = Duration(milliseconds: value);
+            text =
+                '${duration.inDays} days ${duration.inHours % 24} hours ${duration.inMinutes % 60} mins ${duration.inSeconds % 60} secs';
+          }
+
+          return Text(text);
+        });
   }
 
   @override
@@ -1375,7 +1428,8 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       );
     }
 
-    var dataMap = SplayTreeMap<String, CharacterAscension>.from(ascendInfo!, (a, b) => int.parse(a).compareTo(int.parse(b)));
+    var dataMap = SplayTreeMap<String, CharacterAscension>.from(
+        ascendInfo!, (a, b) => int.parse(a).compareTo(int.parse(b)));
     var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(
@@ -1577,7 +1631,8 @@ class CharacterConstellationPage extends StatelessWidget {
 
   List<Widget> _constellationWidgets(BuildContext context) {
     var wid = <Widget>[];
-    var sortedCons = SplayTreeMap<int, CharacterConstellations>.from(info!.constellations ?? {});
+    var sortedCons = SplayTreeMap<int, CharacterConstellations>.from(
+        info!.constellations ?? {});
     for (var data in sortedCons.entries) {
       wid.add(_generateConstellationWidget(data.key, data.value, context));
       wid.add(const Divider());

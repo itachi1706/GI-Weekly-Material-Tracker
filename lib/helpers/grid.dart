@@ -254,7 +254,7 @@ class GridData {
     ];
   }
 
-  static List<Widget> generateInfoLine(String? textData, IconData icon) {
+  static List<Widget> generateInfoLine(String? textData, IconData icon, [List<Widget>? extraWidgetsBelow]) {
     if (textData == null) return const [];
 
     return [
@@ -263,15 +263,26 @@ class GridData {
         child: Row(
           children: [
             Icon(icon),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
-                child: Text(textData.replaceAll('\\n', '\n')),
-              ),
-            ),
+                Expanded(
+                  child:
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(textData.replaceAll('\\n', '\n')),
+                            ...extraWidgetsBelow ?? [const SizedBox.shrink()],
+                          ],
+                        ),
+                      ),
+
+                ),
+
           ],
         ),
       ),
+
       const Divider(),
     ];
   }
