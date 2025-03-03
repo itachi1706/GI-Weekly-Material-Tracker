@@ -1163,7 +1163,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.36):
     - BoringSSL-GRPC/Interface (= 0.0.36)
   - BoringSSL-GRPC/Interface (0.0.36)
-  - cloud_firestore (5.6.4):
+  - cloud_firestore (5.6.5):
     - Firebase/Firestore (= 11.8.0)
     - firebase_core
     - Flutter
@@ -1244,7 +1244,7 @@ PODS:
     - Firebase/Auth (= 11.8.0)
     - firebase_core
     - Flutter
-  - firebase_core (3.12.0):
+  - firebase_core (3.12.1):
     - Firebase/CoreOnly (= 11.8.0)
     - Flutter
   - firebase_crashlytics (4.3.3):
@@ -1263,7 +1263,7 @@ PODS:
     - Firebase/Performance (= 11.8.0)
     - firebase_core
     - Flutter
-  - firebase_storage (12.3.7):
+  - firebase_storage (12.4.4):
     - Firebase/Storage (= 11.8.0)
     - firebase_core
     - Flutter
@@ -1731,7 +1731,7 @@ SPEC CHECKSUMS:
   appcheck: f3c430f928f9c69ccd8b5d4df04766ac0e57c9aa
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   BoringSSL-GRPC: ca6a8e5d04812fce8ffd6437810c2d46f925eaeb
-  cloud_firestore: 7a6d7b8111fe44d13a0e49783daad5219ce798ff
+  cloud_firestore: e61acbf808607d2c88ee32b00cd3aec027b38b3c
   desktop_webview_auth: 4cf620136c3d79796496eef85e59508e3a1a003d
   DKImagePickerController: 946cec48c7873164274ecc4624d19e3da4c1ef3c
   DKPhotoGallery: b3834fecb755ee09a593d7c9e389d8b5d6deed60
@@ -1740,12 +1740,12 @@ SPEC CHECKSUMS:
   firebase_analytics: dda4a0f5b2b7311f667eb367eef6aecee86b548f
   firebase_app_check: 41882c6c8bd0d75aa9c0d8457ff106b2564fbbd8
   firebase_auth: 5b67bc214b9244cee89e93d699f12ab623bbfcb5
-  firebase_core: 6cbed78b4f298ed103a9fd034e6dbc846320480f
+  firebase_core: 8d552814f6c01ccde5d88939fced4ec26f2f5510
   firebase_crashlytics: eb5eb0ef5e6910395adfe177b9ca4a62e8a2f1aa
   firebase_database: 6ac03def742a70fd456799167645a119a8c18492
   firebase_dynamic_links: 743ebad7938983e612829960c991de5792fb1642
   firebase_performance: 673af6a8657b08a58c821bebe0e394084c18aeba
-  firebase_storage: 5b1579d195bcebc557ae7bbbdc6b926357115bed
+  firebase_storage: 4ed3dade149f74651bdae3536b68d403c364591c
   FirebaseABTesting: 7d6eee42b9137541eac2610e5fea3568d956707a
   FirebaseAnalytics: 4fd42def128146e24e480e89f310e3d8534ea42b
   FirebaseAppCheck: f6648d6d2b321ecf94cf72f6737fc68d4fddc010

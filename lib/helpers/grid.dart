@@ -11,6 +11,7 @@ import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -254,7 +255,7 @@ class GridData {
     ];
   }
 
-  static List<Widget> generateInfoLine(String? textData, IconData icon) {
+  static List<Widget> generateInfoLine(String? textData, IconData icon, [List<Widget>? extraWidgetsBelow]) {
     if (textData == null) return const [];
 
     return [
@@ -263,15 +264,26 @@ class GridData {
         child: Row(
           children: [
             Icon(icon),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
-                child: Text(textData.replaceAll('\\n', '\n')),
-              ),
-            ),
+                Expanded(
+                  child:
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(textData.replaceAll('\\n', '\n')),
+                            ...extraWidgetsBelow ?? [const SizedBox.shrink()],
+                          ],
+                        ),
+                      ),
+
+                ),
+
           ],
         ),
       ),
+
       const Divider(),
     ];
   }
@@ -655,5 +667,57 @@ class GridUtils {
 
   static TabAlignment getTabAlignment() {
     return kIsWeb ? TabAlignment.center : TabAlignment.start;
+  }
+
+  static Widget getCounter(DateTime end, bool isCountUp) {
+    debugPrint('Counter called. End $end');
+
+    var timer = StopWatchTimer(
+      mode: isCountUp ? StopWatchMode.countUp : StopWatchMode.countDown,
+      onEnded: () {
+        debugPrint('Timer Ended');
+      },
+    );
+    var currentTime = DateTime.now().toLocal();
+    var diff =
+    isCountUp ? currentTime.difference(end) : end.difference(currentTime);
+    timer.setPresetTime(mSec: diff.inMilliseconds);
+    timer.onStartTimer();
+
+    return StreamBuilder(
+        stream: timer.rawTime,
+        builder: (context, snapshot) {
+          final value = snapshot.data;
+
+          // Convert to days hours mins secs from millis
+          var text = '';
+          if (value != null) {
+            var duration = Duration(milliseconds: value);
+
+            var days = duration.inDays;
+            var hours = duration.inHours % 24;
+            var mins = duration.inMinutes % 60;
+            var secs = duration.inSeconds % 60;
+
+            text = '$days days, $hours hours, $mins mins, $secs secs';
+
+            // Do not show mins and secs if days > 30
+            if (days > 30) {
+              var months = days ~/ 30;
+              var daysLeft = days % 30;
+              text = '$months months, $daysLeft days';
+            }
+
+            // Do not show hours, mins and secs if days > 365
+            if (days > 365) {
+              var years = days ~/ 365;
+              var months = (days % 365) ~/ 30;
+              var daysLeft = days % 30;
+              text = '$years years, $months months, $daysLeft days';
+            }
+          }
+
+          return Text(text);
+        });
   }
 }
