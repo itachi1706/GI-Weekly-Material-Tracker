@@ -162,8 +162,26 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var df = Util.defaultDateFormat;
     var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
     var endState = 'Ended';
+    var extraWidgets = <Widget>[];
     if (curDt.isBefore(_info!.lastBannerEnd!)) {
       endState = 'Ending';
+      extraWidgets = [
+        Row(
+          children: [
+            Text('Time Left: '),
+            GridUtils.getCounter(_info!.lastBannerEnd!.toLocal(), false),
+          ],
+        ),
+      ];
+    } else {
+      extraWidgets = [
+        Row(
+          children: [
+            Text('Time Since: '),
+            GridUtils.getCounter(_info!.lastBannerEnd!.toLocal(), true),
+          ],
+        ),
+      ];
     }
     var bannerGrammar = _info!.lastBannerCount == 1 ? 'banner' : 'banners';
     var bt = '${_info!.lastBannerCount} $bannerGrammar ago';
@@ -174,7 +192,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var message = '$bt in ${_info!.lastBannerName}\n'
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
-    return GridData.generateInfoLine(message, Icons.calendar_month);
+    return GridData.generateInfoLine(message, Icons.calendar_month, extraWidgets);
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {

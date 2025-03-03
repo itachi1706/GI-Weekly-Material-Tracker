@@ -15,7 +15,6 @@ import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -905,7 +904,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
         Row(
           children: [
             Text('Time Left: '),
-            _getCounter(info.lastBannerEnd!.toLocal(), false),
+            GridUtils.getCounter(info.lastBannerEnd!.toLocal(), false),
           ],
         ),
       ];
@@ -914,7 +913,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
         Row(
           children: [
             Text('Time Since: '),
-            _getCounter(info.lastBannerEnd!.toLocal(), true),
+            GridUtils.getCounter(info.lastBannerEnd!.toLocal(), true),
           ],
         ),
       ];
@@ -930,38 +929,6 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
 
     return GridData.generateInfoLine(
         message, Icons.calendar_month, extraWidgets);
-  }
-
-  Widget _getCounter(DateTime end, bool isCountUp) {
-    debugPrint('Counter called. End $end');
-
-    var timer = StopWatchTimer(
-      mode: isCountUp ? StopWatchMode.countUp : StopWatchMode.countDown,
-      onEnded: () {
-        debugPrint('Timer Ended');
-      },
-    );
-    var currentTime = DateTime.now().toLocal();
-    var diff =
-        isCountUp ? currentTime.difference(end) : end.difference(currentTime);
-    timer.setPresetTime(mSec: diff.inMilliseconds);
-    timer.onStartTimer();
-
-    return StreamBuilder(
-        stream: timer.rawTime,
-        builder: (context, snapshot) {
-          final value = snapshot.data;
-
-          // Convert to days hours mins secs from millis
-          var text = '';
-          if (value != null) {
-            var duration = Duration(milliseconds: value);
-            text =
-                '${duration.inDays} days ${duration.inHours % 24} hours ${duration.inMinutes % 60} mins ${duration.inSeconds % 60} secs';
-          }
-
-          return Text(text);
-        });
   }
 
   @override
