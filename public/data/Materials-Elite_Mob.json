@@ -1295,6 +1295,60 @@
       },
       "hoyowiki": 7194,
       "subCollection": {}
+    },
+    "Cold-Cracked_Shellshard": {
+      "image": "Materials/Elite_Mob/Item_Cold-Cracked_Shellshard.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A chunk of shell carved from a Furnace Shell Mountain Weasel's back after its defeat.\nWhere it once blazed brightly, this piece has long since gone cold. The fire-like luster it once held is no more.",
+      "enemies": ["Furnace Shell Mountain Weasels"],
+      "obtained": "- Dropped by Furnace Shell Mountain Weasels",
+      "name": "Cold-Cracked Shellshard",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Cold-Cracked_Shellshard",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 7557,
+      "subCollection": {}
+    },
+    "Warm_Back-Shell": {
+      "image": "Materials/Elite_Mob/Item_Warm_Back-Shell.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A portion of shell removed from a Furnace Shell Mountain Weasel's back after its defeat.\nFurnace Shell Mountain Weasels accumulate Phlogiston in their shells from feeding to be used in emergencies. The sight of them blazing fiery trails over the Sacred Mountain has not been seen since ancient times.",
+      "enemies": ["Furnace Shell Mountain Weasels"],
+      "obtained": "- Alchemy (3x Cold-Cracked Shellshard)\n- Dropped by Lv. 40+ Furnace Shell Mountain Weasels",
+      "name": "Warm Back-Shell",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Warm_Back-Shell",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 7558,
+      "subCollection": {}
+    },
+    "Blazing_Prismshell": {
+      "image": "Materials/Elite_Mob/Item_Blazing_Prismshell.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A whole piece of radiant shell liberated from a Furnace Shell Mountain Weasel's back after its defeat.\nIt is said that the more Phlogiston a Furnace Shell Mountain Weasel has stored in its back, the higher its status in the pack. The reasoning for this phenomenon may be quite simple: More dominant Furnace Shell Mountain Weasels likely have less need to call on their Phlogiston reserves than their less prominent peers.",
+      "enemies": ["Furnace Shell Mountain Weasels"],
+      "obtained": "- Alchemy (3x Warm Back-Shell)\n- Dropped by Lv. 60+ Furnace Shell Mountain Weasels",
+      "name": "Blazing Prismshell",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Blazing_Prismshell",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 7559,
+      "subCollection": {}
     }
   }
 }
