@@ -1827,6 +1827,375 @@
       "hoyowiki": 38,
       "subCollection": {}
     },
+    "Iansan": {
+      "image": "Characters/Electro/Iansan.png",
+      "gender": "Female",
+      "birthday": "8/8",
+      "caption": "Tempered in Molten Stone",
+      "titles": ["Gold-Standard Trainer from Teteocan"],
+      "name": "Iansan",
+      "fullName": "Iansan \"Uwezo\"",
+      "description": "Head coach of the fitness club at the Collective of Plenty, and a renowned Natlanese nutritionist.",
+      "nation": "Natlan",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Teteocan",
+      "constellation": "Carnotaurus",
+      "outfits": ["Warriors_Bonegarb"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Contention",
+            "material3qty": 3,
+            "material4": "Sentrys_Wooden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 2,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 4,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 6,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 9,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 4,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 6,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 12,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Denial_and_Judgment",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 16,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Enhanced_Resistance_Training": {
+            "name": "Enhanced Resistance Training",
+            "effect": "After Swift Stormflight hits opponents, Iansan will gain the Precise Movement effect for 15s.\nDuring this time, her ATK is increased by 20%, and whenever she regains Nightsoul points through the Kinetic Energy Scale in her Elemental Burst, The Three Principles of Power, she will gain 1 extra Nightsoul point. Additionally, when your current active party member consumes or restores Nightsoul points, the extra Nightsoul points Iansan gains the next time she restores Nightsoul points via the Scale will be increased to 4. This effect can occur once every 2.8s.\n\"Precise Movement\" will expire when Iansan's Nightsoul's Blessing state ends.",
+            "image": "Talents/Passive/Talent_Enhanced_Resistance_Training.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Kinetic_Energy_Gradient_Test": {
+            "name": "Kinetic Energy Gradient Test",
+            "effect": "When a nearby party member triggers a Nightsoul Burst, Iansan will obtain the Warming Up effect for 10s.\nDuring this time, when Iansan restores at least 1 Nightsoul points, she will heal your current active character for 60% of her ATK. This effect can be triggered once every 2.8s.",
+            "image": "Talents/Passive/Talent_Kinetic_Energy_Gradient_Test.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Hard_Work_and_Drive": {
+            "name": "Hard Work and Drive",
+            "effect": "After Nightsoul points have been fully depleted and Iansan is on the field, she will switch to using Phlogiston to maintain her Nightsoul's Blessing.\nWhile in an area with Phlogiston Mechanics within Natlan, Nightsoul Transmission: Iansan can be used. When the current active character is sprinting or in movement modes caused by certain Talents, or at a certain height in the air, switching to Iansan will trigger the following: Iansan enters the Nightsoul's Blessing state and obtains 25 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own party.\nWhile in an area with Phlogiston Mechanics within Natlan, Iansan will not take fall DMG when using terrain differences to make leaps.",
+            "image": "Talents/Passive/Talent_Hard_Work_and_Drive.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "Caloric_Balancing_Plan": {
+            "name": "Caloric Balancing Plan",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, regain 10 Phlogiston when Phlogiston levels drop below 50%. This can occur once every 10s.",
+            "image": "Talents/Passive/Talent_Caloric_Balancing_Plan.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Weighted_Spike": {
+            "name": "Weighted Spike",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.\n\nNightsoul State: Swift Stormflight\nWhile in the Nightsoul's Blessing state: Iansan's Charged Attack will be transformed into the formidable Swift Stormflight, consuming a certain amount of Stamina to stomp fiercely down, dealing Nightsoul-aligned AoE Electro DMG.",
+            "image": "Talents/Normal/Polearm_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Thunderbolt_Rush": {
+            "name": "Thunderbolt Rush",
+            "effect": "Iansan charges forward a certain distance, dealing Nightsoul-aligned Electro DMG to all opponents in her path.\nAfter this Skill is used, Iansan will regain 54 Nightsoul points and enter the Nightsoul's Blessing state. Within 5s after this is done, using a Normal Attack will trigger 1 quick Swift Stormflight stomp from Iansan that will not consume Stamina.\n\nNightsoul's Blessing: Iansan\nContinuously consumes Nightsoul points. If she runs out, or uses this Skill again, her Nightsoul's Blessing state will end. It has the following properties:\nIncreases Iansan's Movement SPD.\nHolding sprint will switch Iansan to Rushing Thunderbolt mode, greatly increasing her Movement SPD temporarily. In this mode, Iansan can make flying leaps using terrain, or consume additional Nightsoul points to move on water or liquid Phlogiston while being immune to DMG from the latter.",
+            "image": "Talents/Skill/Talent_Thunderbolt_Rush.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "The_Three_Principles_of_Power": {
+            "name": "The Three Principles of Power",
+            "effect": "Iansan's stomping foot shatters the very earth with \"Power,\" dealing Nightsoul-aligned AoE Electro DMG. She then whips out her \"Limited-Edition Kinetic Energy Scale (For Workouts).\"\nWhen this Skill is used, Iansan will gain 15 Nightsoul points and enter the Nightsoul's Blessing state.\nWhen the Kinetic Energy Scale leaves the field, Iansan's Nightsoul's Blessing state will end.\n\nKinetic Energy Scale\nThe Kinetic Energy Scale will follow the character around, boosting the ATK of your current active party member in different ways based on Iansan's Nightsoul points.\nIf Iansan has less than 42 Nightsoul points, the ATK bonus will be based on her Nightsoul points and ATK.\nIf Iansan has at least 42 Nightsoul points, the Kinetic Energy Scale will switch to the \"Ardent Support!\" state, in which the ATK bonus will be stronger and based on her ATK alone.\nAdditionally, the Scale will log the distance your current active character (excluding Iansan) has moved so long as it is active, restoring Nightsoul points to Iansan every second based on the distance moved in the previous second.\nThe Scale will disappear once her Nightsoul's Blessing state ends. It will also disappear after 1 second when you are not in a state of combat. While it is active, Iansan's Nightsoul's Blessing state will not end even if she is not on the field.",
+            "image": "Talents/Burst/Talent_The_Three_Principles_of_Power.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Starting's Never Easy",
+          "effect": "When Iansan is in combat and is in the Nightsoul's Blessing state, she will restore 15 Elemental Energy for every 6 Nightsoul points she consumes. This effect can trigger once every 18s.",
+          "image": "Constellation/Startings_Never_Easy.png"
+        },
+        "2": {
+          "name": "Laziness is the Enemy!",
+          "effect": "When using the Elemental Burst The Three Principles of Power, Iansan will also gain the Precise Movement effect from her Passive Talent \"Enhanced Resistance Training\" for 15s. Additionally, if Iansan is off-field while Precise Movement is active, she will also increase your current active character's ATK by 30%. You must first unlock the Passive Talent \"Enhanced Resistance Training\" to access the above effect.",
+          "image": "Constellation/Laziness_is_the_Enemy.png"
+        },
+        "3": {
+          "name": "Scientific Diet Planning",
+          "effect": "Increases the Level of Thunderbolt Rush by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Scientific_Diet_Planning.png"
+        },
+        "4": {
+          "name": "Slow and Steady Wins the Race",
+          "effect": "When the Kinetic Energy Scale is present, Iansan will gain 2 stacks of Surging Force after your current active character (excluding herself) uses their Elemental Burst. The stacks last until the Scale leaves the field, and Surging Force can be gained once per Scale summoning. Whenever Iansan restores Nightsoul points via the Scale, she will consume 1 Surging Force stack and restore 4 additional Nightsoul points.\nAdditionally, if her Nightsoul restoration from the Scale overflows, Iansan will gain 50% of the overflow the next time she restores Nightsoul points via the Scale.",
+          "image": "Constellation/Slow_and_Steady_Wins_the_Race.png"
+        },
+        "5": {
+          "name": "We Can Push It Further!",
+          "effect": "Increases the Level of The Three Principles of Power by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/We_Can_Push_It_Further.png"
+        },
+        "6": {
+          "name": "Teachings of the Collective of Plenty",
+          "effect": "The Kinetic Energy Scale's duration is increased by 3s.\nAdditionally, when Iansan triggers Nightsoul points restoration, if there is any overflow, she will gain the Extreme Force effect, which increases the DMG dealt by your current active character by 25% for 3s.",
+          "image": "Constellation/Teachings_of_the_Collective_of_Plenty.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Dracolite",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Ensnaring_Gaze",
+          "level": 40,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Dracolite",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Ensnaring_Gaze",
+          "level": 50,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Dracolite",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Ensnaring_Gaze",
+          "level": 60,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Dracolite",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Ensnaring_Gaze",
+          "level": 70,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Dracolite",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Ensnaring_Gaze",
+          "level": 80,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Dracolite",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Ensnaring_Gaze",
+          "local_speciality": "Dracolite"
+        },
+        "talents": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "mastery1": "Teachings_of_Contention",
+          "mastery2": "Guide_to_Contention",
+          "mastery3": "Philosophies_of_Contention",
+          "weekly_boss_drop": "Denial_and_Judgment",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "The head coach of the fitness club at the Collective of Plenty, a renowned Natlanese nutritionist, and the founder of the \"Pilgrimage Victors Academy.\" Overwhelmed by the prospect of training? Unsure of how to improve your strength? In that case, she's the first person you should talk to.",
+      "paimonmoepath": "characters/iansan",
+      "genshinggpath": "characters/iansan",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Iansan",
+      "hoyowiki": 7502,
+      "subCollection": {}
+    },
     "Keqing": {
       "image": "Characters/Electro/Keqing.png",
       "gender": "Female",
@@ -4762,6 +5131,379 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sethos",
       "hoyowiki": 5598,
+      "subCollection": {}
+    },
+    "Varesa": {
+      "image": "Characters/Electro/Varesa.png",
+      "gender": "Female",
+      "birthday": "15/1",
+      "caption": "Strength in Serenity",
+      "titles": [
+        "Stalwart Warrior and Orchard Owner from the Collective of Plenty"
+      ],
+      "name": "Varesa",
+      "fullName": null,
+      "description": "A laid-back orchard manager and warrior of the Collective of Plenty. An aspiring hero who hungers for justice… and lots and lots of food!",
+      "nation": "Natlan",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Teteocan",
+      "constellation": "Mascara Luctatori",
+      "outfits": [
+        "Sugar_Rush"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Conflict",
+            "material3qty": 3,
+            "material4": "Juvenile_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 2,
+            "material4": "Seasoned_Fang",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 4,
+            "material4": "Seasoned_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 6,
+            "material4": "Seasoned_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 9,
+            "material4": "Seasoned_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Scale-Feather",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 4,
+            "material4": "Tyrants_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Scale-Feather",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 6,
+            "material4": "Tyrants_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Scale-Feather",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 12,
+            "material4": "Tyrants_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Eroded_Scale-Feather",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 16,
+            "material4": "Tyrants_Fang",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Tag-Team_Triple_Jump": {
+            "name": "Tag-Team Triple Jump!",
+            "effect": "After using the Elemental Skill Riding the Night-Rainbow, Varesa gains \"Rainbow Crash\" for 5s.\nDuring this time, when Varesa uses a Plunging Attack, the shockwave DMG dealt when she hits the ground is increased by 50% of her ATK. If Varesa is in the Fiery Passion state, this ground impact DMG is increased by 180% of her ATK instead.\n\nThe Rainbow Crash effect will be canceled once a ground impact hits an opponent, or when its duration expires.",
+            "image": "Talents/Passive/Talent_Tag-Team_Triple_Jump.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "The_Hero_Twice-Returned": {
+            "name": "The Hero Twice-Returned!",
+            "effect": "When a nearby party member triggers a Nightsoul Burst, Varesa's ATK increases by 35% for 12s. Max 2 stacks. Each stack's duration is counted independently.",
+            "image": "Talents/Passive/Talent_The_Hero_Twice-Returned.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "A_Torch_That_Incinerates_Evil": {
+            "name": "A Torch That Incinerates Evil",
+            "effect": "After Nightsoul points have been fully depleted, Varesa will switch to using Phlogiston to maintain the Sudden Onrush mode from her Nightsoul's Blessing.\nWhile in an area with Phlogiston Mechanics within Natlan, Nightsoul Transmission: Varesa can be used. When the current active character is sprinting or in movement modes caused by certain Talents, or at a certain height in the air, switching to Varesa will trigger the following: Varesa enters the Nightsoul's Blessing state, switches to Sudden Onrush mode, and obtains 20 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own party.While in an area with Phlogiston Mechanics within Natlan, Varesa will not take fall DMG when using terrain differences to make leaps.",
+            "image": "Talents/Passive/Talent_A_Torch_That_Incinerates_Evil.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "Blazing_Heart_Singular_Advance": {
+            "name": "Blazing Heart, Singular Advance!",
+            "effect": "Varesa's Sprint speed is increased. When she is not in combat, her Sprint Stamina consumption will also increase.\nAdditionally, while in an area with Phlogiston Mechanics within Natlan, your party members will restore 20 Phlogiston when consuming food. This effect can occur once every 10s and does not take effect in Domains, Trounce Domains, or the Spiral Abyss.",
+            "image": "Talents/Passive/Talent_Blazing_Heart_Singular_Advance.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "By_the_Horns": {
+            "name": "By the Horns",
+            "effect": "Normal Attack\nGotta try... to do battle like the greatest champion luchadors do! Varesa launches up to 3 strikes, dealing Electro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to headbutt opponents in front, dealing Nightsoul-aligned Electro DMG and using the momentum to leap into the air.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing Nightsoul-aligned AoE Electro DMG upon impact. If Varesa is in a combat state upon landing, or if the shockwave from her plunging attack hits an opponent, she will gain 25 Nightsoul points. She enters the Fiery Passion state upon reaching maximum Nightsoul points through this method.\n\nFiery Passion\nIn this state, Varesa's Normal, Charged, and Plunging Attacks will gain corresponding buffs:\n\nNormal Attack\nFight like a superstar champion luchador! Launches up to 3 fierce strikes, dealing greater Electro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to slam into her opponents, dealing greater amounts of Nightsoul-aligned Electro DMG and using the momentum to leap into the air.\n\nPlunging Attack\nConsumes all her Nightsoul points and slams down on the ground from mid-air, dealing DMG to opponents in her path and dealing greater amounts of Nightsoul-aligned AoE Electro DMG upon hitting the ground.",
+            "image": "Talents/Normal/Catalyst_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Riding_the_Night-Rainbow": {
+            "name": "Riding the Night-Rainbow",
+            "effect": "With footwork swift as lightning and fierce as thunder, Varesa displays the true spirit of lucha libre, rushing forward a certain distance and dealing Nightsoul-aligned Electro DMG to opponents in her path.\nAfter using this Skill, Varesa gains 20 Nightsoul points and gains the \"Follow-Up Strike\" effect: Varesa has increased interruption resistance during this time, and upon pressing her Normal Attack, she will quickly unleash a Charged Attack that does not consume Stamina. \"Follow-Up Strike\" will be canceled after Varesa uses a Charged Attack.\nShe will use different techniques based on whether the skill is Tapped or Held.\n\nTap\nQuickly rush a certain distance forward.\n\nHold\nVaresa enters the Nightsoul's Blessing state and switches to Sudden Onrush mode.\n\nSudden Onrush\nContinuously consumes Nightsoul points. In this state, Varesa's Movement SPD and interruption resistance are increased. She can use terrain to execute flying leaps or consume additional Nightsoul points to traverse atop water or liquid Phlogiston while remaining immune to DMG from the latter.\n\nNightsoul's Blessing: Varesa\nWhen she runs out of Nightsoul points, her Nightsoul's Blessing state will be canceled. When Varesa is in the Sudden Onrush state or Fiery Passion state, she will always be counted as being in the Nightsoul's Blessing state.\n\nHas 2 charges. When Varesa enters the Fiery Passion state, she will obtain an additional Tap charge of her Elemental Skill and its DMG will be increased.\n\nFiery Passion\nWhile not in the Fiery Passion state, Varesa can use Plunging Attacks to gain Nightsoul points. She will enter Fiery Passion when she reaches maximum Nightsoul points via this method, or when she uses her Elemental Burst Guardian Vent!\nWhile in the Fiery Passion state, her Normal Attacks, Elemental Skill, and Elemental Burst will gain unique buffs. She can also use a special Elemental Burst shortly after using a Plunging Attack.\nThe Fiery Passion state lasts for up to 15s and will end when she runs out of Nightsoul points or after she leaves combat for a period of time.",
+            "image": "Talents/Skill/Talent_Riding_the_Night-Rainbow.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Guardian_Vent": {
+            "name": "Guardian Vent!",
+            "effect": "Leaps into the air before using the momentum of the drop to unleash a powerful flying kick, dealing Nightsoul-aligned AoE Electro DMG to opponents — just like those heroes of justice in woven scrolls for kids!\nAfter using this Skill, Varesa's Nightsoul points will be restored to maximum and she will enter the Fiery Passion state.\n\nIn the Fiery Passion state, Varesa's Elemental Burst will deal a greater amount of Nightsoul-aligned AoE Electro DMG.\n\nAdditionally, she will briefly activate Apex Drive after using a Plunging Attack while in her Fiery Passion state.\n\nApex Drive\nIncreases Varesa's interruption resistance. While affected by Apex Drive, Varesa can ignore her Elemental Burst CD and consume less Energy to use her special Elemental Burst, \"Guardian Vent: Volcano Kablam\": This causes her to use the especially powerful Plunging Attack, the \"Thunderous Tornado Eruption,\" which deals Nightsoul-aligned AoE Electro DMG upon landing before causing her to exit Apex Drive. This DMG is considered Plunging Attack DMG.\nVaresa will exit Apex Drive after using her Elemental Skill.",
+            "image": "Talents/Burst/Talent_Guardian_Vent.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Undying Passion",
+          "effect": "The effects of the Passive Talent \"Tag-Team Triple Jump!\" are enhanced:\nWhen performing the Special Plunging Attack \"Thunderous Tornado Eruption,\" Varesa will also gain \"Rainbow Crash\" for 5s.\nWhen \"Rainbow Crash\" is in effect, Varesa's Plunging Attack ground impact DMG is increased by 180% of her ATK, whether she is in the Fiery Passion state or not. You must first unlock the Passive Talent \"Tag-Team Triple Jump!\" to access the above effect.\n\nAdditionally, when Varesa is in the Sudden Onrush mode of her Nightsoul's Blessing, she consumes 30% less Nightsoul points or Phlogiston.",
+          "image": "Constellation/Undying_Passion.png"
+        },
+        "2": {
+          "name": "Beyond the Edge of Light",
+          "effect": "Varesa will enter Apex Drive after using a Plunging Attack, regardless of whether she is in the Fiery Passion state or not.\nWhen Apex Drive is active, Varesa's interruption resistance will also further increase.\nAdditionally, Varesa will restore 11.5 Energy when her Plunging Attack ground impact hits an opponent.",
+          "image": "Constellation/Beyond_the_Edge_of_Light.png"
+        },
+        "3": {
+          "name": "Unbowed Resolve",
+          "effect": "Increases the Level of Guardian Vent! by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Unbowed_Resolve.png"
+        },
+        "4": {
+          "name": "The Courage to Press On",
+          "effect": "Varesa will receive various buffs based on her state when using her Elemental Burst Guardian Vent! If Varesa:\nHas neither Fiery Passion nor Apex Drive active, she will gain Diligent Refinement for 15s, which will increase her Plunging Attack ground impact DMG by 500% of her ATK, with a maximum increase of 20,000 DMG. This effect will be canceled once the ground impact hits an opponent, or if its duration ends.\nIf she has either Fiery Passion or Apex Drive active, this instance of her Elemental Burst Guardian Vent! deals 100% increased DMG.",
+          "image": "Constellation/The_Courage_to_Press_On.png"
+        },
+        "5": {
+          "name": "Thoughts Floating on the Warm Breeze",
+          "effect": "Increases the Level of Normal Attack: By the Horns by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Thoughts_Floating_on_the_Warm_Breeze.png"
+        },
+        "6": {
+          "name": "A Hero of Justice's Triumph",
+          "effect": "Varesa restores 30 Energy when she enters Apex Drive.\nHer Plunging Attacks and Elemental Burst Guardian Vent! gain 10% CRIT Rate and 100% CRIT DMG.\nAdditionally, when Varesa uses the Hold version of her Elemental Skill Riding the Night-Rainbow, or Taps her Elemental Skill while in the Sudden Onrush mode, she will restore Nightsoul points up to her maximum.",
+          "image": "Constellation/A_Hero_of_Justices_Triumph.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Juvenile_Fang",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 40,
+          "material4": "Juvenile_Fang",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 50,
+          "material4": "Seasoned_Fang",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 60,
+          "material4": "Seasoned_Fang",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 70,
+          "material4": "Tyrants_Fang",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 80,
+          "material4": "Tyrants_Fang",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Sparkless_Statue_Core",
+          "local_speciality": "Skysplit_Gembloom"
+        },
+        "talents": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Tyrants_Fang",
+          "mastery1": "Teachings_of_Conflict",
+          "mastery2": "Guide_to_Conflict",
+          "mastery3": "Philosophies_of_Conflict",
+          "weekly_boss_drop": "Eroded_Scale-Feather",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "An orchard owner who normally leads a laid-back life. However, when her fighting spirit is ignited, she dons a unique mask and exudes the indomitable air of a legendary hero.",
+      "paimonmoepath": "characters/varesa",
+      "genshinggpath": "characters/varesa",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Varesa",
+      "hoyowiki": 7488,
       "subCollection": {}
     },
     "Yae_Miko": {
