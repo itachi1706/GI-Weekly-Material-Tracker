@@ -738,6 +738,379 @@
       "hoyowiki": 2967,
       "subCollection": {}
     },
+    "Ifa": {
+      "image": "Characters/Anemo/Ifa.png",
+      "gender": "Male",
+      "birthday": "23/3",
+      "caption": "In the Wake of Wandering Winds",
+      "titles": [
+        "Tlalocan Vet"
+      ],
+      "name": "Ifa",
+      "fullName": null,
+      "description": "A vet from the Flower-Feather Clan who cherishes the life he leads alongside all manner of living things — people, animals, you name it.",
+      "nation": "Natlan",
+      "weapon": "Catalyst",
+      "rarity": 4,
+      "affiliation": "Tlalocan",
+      "constellation": "Catena Opele",
+      "outfits": [
+        "Whistledart_Wings"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Conflict",
+            "material3qty": 3,
+            "material4": "Juvenile_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 2,
+            "material4": "Seasoned_Fang",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 4,
+            "material4": "Seasoned_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 6,
+            "material4": "Seasoned_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 9,
+            "material4": "Seasoned_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Rook",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 4,
+            "material4": "Seasoned_Fang",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Rook",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 6,
+            "material4": "Seasoned_Fang",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Rook",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 12,
+            "material4": "Seasoned_Fang",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Ascended_Sample_Rook",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 16,
+            "material4": "Seasoned_Fang",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Field_Medics_Vision": {
+            "name": "Field Medic's Vision",
+            "effect": "When Ifa is in the Nightsoul's Blessing state, every 1 Nightsoul point out of the total in his entire party will grant him 1 Rescue Essentials point. Rescue Essentials will increase the Swirl and Electro-Charged DMG dealt by all nearby party members.",
+            "image": "Talents/Passive/Talent_Field_Medics_Vision.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Mutual_Aid_Agreement": {
+            "name": "Mutual Aid Agreement",
+            "effect": "When nearby party members trigger Nightsoul Bursts, Ifa's Elemental Mastery increases by 80 for 10s.",
+            "image": "Talents/Passive/Talent_Mutual_Aid_Agreement.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Focused_Emergency_Rescue": {
+            "name": "Focused Emergency Rescue",
+            "effect": "After his Nightsoul points are exhausted, Ifa will switch to consuming Phlogiston to maintain his Nightsoul's Blessing.\nWhile in an area with Phlogiston Mechanics within Natlan, he can use Nightsoul Transmission: Ifa. When the active character is a certain height in the air, the following will occur when switching to Ifa: Ifa will enter the Nightsoul's Blessing state and gain 32 Nightsoul points. Nightsoul Transmission can be triggered once every 10s by your own team.",
+            "image": "Talents/Passive/Talent_Focused_Emergency_Rescue.png",
+            "order": 2,
+            "type": "Passive 3 (Night Realm's Gift)"
+          },
+          "Tactical_Warm_Compress_Bandaging": {
+            "name": "Tactical Warm Compress Bandaging",
+            "effect": "While in an area with Phlogiston Mechanics within Natlan, when the current active party member or indwelt saurian has less than 40% HP, Ifa will consume 10 Phlogiston and restore 40% of their HP. This effect can trigger once every 10s, and does not take effect in Domains, Trounce Domains, or the Spiral Abyss.",
+            "image": "Talents/Passive/Talent_Tactical_Warm_Compress_Bandaging.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Rite_of_Dispelling_Winds": {
+            "name": "Rite of Dispelling Winds",
+            "effect": "Normal Attack\nPerforms up to 3 attacks, dealing Anemo DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina and fires off a shot, dealing AoE Anemo DMG.\n\nPlunging Attack\nPlunges towards the ground from mid-air, damaging all opponents along the path. Deals AoE Anemo DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Anemo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Airborne_Disease_Prevention": {
+            "name": "Airborne Disease Prevention",
+            "effect": "It's time for the real bash bros to step up! Ifa calls Cacucu in as backup.\nAfter using this skill, Ifa gains 80 Nightsoul points and enters the Nightsoul's Blessing state. In the Nightsoul's Blessing state, Ifa will hover with Cacucu's help. When he uses Normal Attacks in this state, he will use different kinds of Supporting Fire depending on whether you Tap or Hold, firing Tonicshots that are capable of healing all party members.\n\nAdditionally, Holding the Elemental Skill Airborne Disease Prevention while Ifa is in Nightsoul's Blessing will cause him to use a Nightsoul-aligned Plunging Attack. Letting go of the skill button will interrupt this Plunging Attack to maintain his hover. If Ifa lands due to this Plunging Attack, his Nightsoul's Blessing state will end.",
+            "image": "Talents/Skill/Talent_Airborne_Disease_Prevention.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Compound_Sedation_Field": {
+            "name": "Compound Sedation Field",
+            "effect": "Fires a Therapeutic Sedative at a (temporarily aggressive) opponent. The sedative will explode on impact, creating a restraining wind current that pulls nearby objects and opponents in while dealing Nightsoul-aligned AoE Anemo DMG.\nWhen the Therapeutic Sedative hits an opponent affected by Hydro/Pyro/Cryo/Electro, it will apply a Sedation Mark to them.",
+            "image": "Talents/Burst/Talent_Compound_Sedation_Field.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Vitiferous Elixir's Concoction",
+          "effect": "When Supporting Fire hits an opponent, it will restore 6 Energy for Ifa. One such Energy restoration can be triggered once every 8s.",
+          "image": "Constellation/Vitiferous_Elixirs_Concoction.png"
+        },
+        "2": {
+          "name": "Guiding Spirit of Ballistic Prayer",
+          "effect": "When Ifa is in the Nightsoul's Blessing state, every Nightsoul point the party has above a total of 60 will grant Ifa 4 additional Rescue Essentials points.\nAdditionally, Ifa's Rescue Essentials limit is increased by 50.\nYou must first unlock the Passive Talent Field Medic's Vision.",
+          "image": "Constellation/Guiding_Spirit_of_Ballistic_Prayer.png"
+        },
+        "3": {
+          "name": "Rebuttal in Negotiations With the Night",
+          "effect": "Increases the Level of Airborne Disease Prevention by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Rebuttal_in_Negotiations_With_the_Night.png"
+        },
+        "4": {
+          "name": "Decayed Vessel's Permutation",
+          "effect": "The restraining wind current created by the Elemental Burst Compound Sedation Field has its duration extended to 3s.\nAdditionally, Ifa gains 100 Elemental Mastery for 15s after using his Elemental Burst Compound Sedation Field.",
+          "image": "Constellation/Decayed_Vessels_Permutation.png"
+        },
+        "5": {
+          "name": "Vow of Universal Coexistence",
+          "effect": "Increases the Level of Compound Sedation Field by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Vow_of_Universal_Coexistence.png"
+        },
+        "6": {
+          "name": "Oath on a Feathered Knot",
+          "effect": "When Ifa uses the Hold version of his Supporting Fire, there is a 50% chance that he will fire an additional Tonicshot that deals 120% of Ifa's ATK as Anemo DMG. This DMG is considered Normal Attack DMG.\nAdditionally, when he is not in combat, Ifa will consume 20% less Nightsoul points and Phlogiston in his Nightsoul's Blessing state.",
+          "image": "Constellation/Oath_on_a_Feathered_Knot.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vayuda_Turquoise_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Juvenile_Fang",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 40,
+          "material4": "Juvenile_Fang",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vayuda_Turquoise_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 50,
+          "material4": "Seasoned_Fang",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 60,
+          "material4": "Seasoned_Fang",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vayuda_Turquoise_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 70,
+          "material4": "Seasoned_Fang",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vayuda_Turquoise_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Sparkless_Statue_Core",
+          "level": 80,
+          "material4": "Seasoned_Fang",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Saurian_Claw_Succulent",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Seasoned_Fang",
+          "gem1": "Vayuda_Turquoise_Silver",
+          "gem2": "Vayuda_Turquoise_Fragment",
+          "gem3": "Vayuda_Turquoise_Chunk",
+          "gem4": "Vayuda_Turquoise_Gemstone",
+          "boss_drop": "Sparkless_Statue_Core",
+          "local_speciality": "Saurian_Claw_Succulent"
+        },
+        "talents": {
+          "common1": "Juvenile_Fang",
+          "common2": "Seasoned_Fang",
+          "common3": "Seasoned_Fang",
+          "mastery1": "Teachings_of_Conflict",
+          "mastery2": "Guide_to_Conflict",
+          "mastery3": "Philosophies_of_Conflict",
+          "weekly_boss_drop": "Ascended_Sample_Rook",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A vet from the Flower-Feather Clan, beloved by humans and animals alike. The round creature by his side is his assistant.",
+      "paimonmoepath": "characters/ifa",
+      "genshinggpath": "characters/ifa",
+      "element": "Anemo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ifa",
+      "hoyowiki": 7627,
+      "subCollection": {}
+    },
     "Jean": {
       "image": "Characters/Anemo/Jean.png",
       "gender": "Female",

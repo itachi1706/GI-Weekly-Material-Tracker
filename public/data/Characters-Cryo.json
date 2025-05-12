@@ -1836,6 +1836,372 @@
       "hoyowiki": 44,
       "subCollection": {}
     },
+    "Escoffier": {
+      "image": "Characters/Cryo/Escoffier.png",
+      "gender": "Female",
+      "birthday": "8/6",
+      "caption": "Tasteful Excellence",
+      "titles": [
+        "Lead Goose of Precision Gastronomy"
+      ],
+      "name": "Escoffier",
+      "fullName": null,
+      "description": "The ex-head chef of Hotel Debord, renowned throughout Fontaine as the Patisserie Supreme and vanguard of precision gastronomy. Has incomparably strict standard when it comes to cooking.",
+      "nation": "Fontaine",
+      "weapon": "Polearm",
+      "rarity": 5,
+      "affiliation": "Fontaine, Hotel Debord (former head chef)",
+      "constellation": "Dulciaria Structura",
+      "outfits": [
+        "Solemn_Purity"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Justice",
+            "material3qty": 3,
+            "material4": "Meshing_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 2,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 4,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 6,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Justice",
+            "material3qty": 9,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Horn",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 4,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Horn",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 6,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Horn",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 12,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Eroded_Horn",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Justice",
+            "material3qty": 16,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Better_to_Salivate_Than_Medicate": {
+            "name": "Better to Salivate Than Medicate",
+            "effect": "After using the Elemental Burst Scoring Cuts, Escoffier will obtain the Rehab Diet effect for 9s: Restores HP for nearby active characters every 1s based on 138.24% of Escoffier's ATK.",
+            "image": "Talents/Passive/Talent_Better_to_Salivate_Than_Medicate.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Inspiration-Immersed_Seasoning": {
+            "name": "Inspiration-Immersed Seasoning",
+            "effect": "When there are 1/2/3/4 Hydro or Cryo characters in the party, Escoffier will decrease the Hydro RES and Cryo RES of any opponents hit by her Elemental Skill, Low-Temperature Cooking, or her Elemental Burst, Scoring Cuts, by 5%/10%/15%/55% for 12s.",
+            "image": "Talents/Passive/Talent_Inspiration-Immersed_Seasoning.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Constant_Off-the-Cuff_Cookery": {
+            "name": "Constant Off-the-Cuff Cookery",
+            "effect": "When using the Hold form of her Elemental Skill Low-Temperature Cooking, Escoffier will activate her All-Spectrum Multi-Use Cooking Mek in its Off-the-Cuff Cookery mode.\n\nCooking Mek: Off-the-Cuff Cookery Mode\nPlaces the Cooking Mek on the field. The Cooking Mek can absorb elemental attacks. When the absorbed elemental energy hits a certain limit, Escoffier can convert the ingredients placed within it into wonderful food.\nEscoffier needs time to purchase new ingredients, so she can only make a certain number of dishes like this each week. The number of dishes Escoffier can make resets every Monday at 4:00 AM.",
+            "image": "Talents/Passive/Talent_Constant_Off-the-Cuff_Cookery.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Kitchen_Skills": {
+            "name": "Kitchen Skills",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to perform an upward thrust.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Low-Temperature_Cooking": {
+            "name": "Low-Temperature Cooking",
+            "effect": "Behold the true meaning of \"cooking\"! Escoffier will demonstrate different cooking techniques when you Tap or Hold this skill, but rest assured, each of them is Fontaine's pride and joy.\n\nTap\nActivates her All-Spectrum Multi-Use Cooking Mek in its Cold Storage mode and deals AoE Cryo DMG to nearby opponents.\n\nCooking Mek: Cold Storage Mode\nFollows the current active character and fires Frosty Parfaits at nearby opponents at intervals, dealing Cryo DMG.\n\nArkhe: Ousia\nAt intervals, Escoffier will summon a Surging Blade when activating her Cooking Mek in Cold Storage mode, dealing Ousia-aligned AoE Cryo DMG.\n\nHold\nActivates her All-Spectrum Multi-Use Cooking Mek's Off-the-Cuff Cookery Mode",
+            "image": "Talents/Skill/Talent_Low-Temperature_Cooking.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Scoring_Cuts": {
+            "name": "Scoring Cuts",
+            "effect": "Displaying her exceptional knife skills, Escoffier deals AoE Cryo DMG and restores HP to all nearby party members based on her ATK",
+            "image": "Talents/Burst/Talent_Scoring_Cuts.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Pre-Dinner Dance for Your Taste Buds",
+          "effect": "When 4 party members are Hydro or Cryo, all nearby party members will have their Cryo DMG CRIT DMG increased by 60% for 15s after Escoffier uses her Elemental Skill Low-Temperature Cooking or Elemental Burst Scoring Cuts.\nYou must first unlock the Passive Talent \"Inspiration-Immersed Seasoning.\"",
+          "image": "Constellation/Pre-Dinner_Dance_for_Your_Taste_Buds.png"
+        },
+        "2": {
+          "name": "Fresh, Fragrant Stew Is an Art",
+          "effect": "When Escoffier activates her Cooking Mek in its Cold Storage Mode, she will gain the \"Freshly-Prepped Delicacy\" effect for 15s. During this time, Escoffier will gain 5 Cold Dish stacks. When nearby active characters apart from Escoffier deal Cryo DMG with a Normal, Charged, or Plunging Attack, or an Elemental Skill or Elemental Burst, they will expend 1 Cold Dish stack to increase their DMG dealt by 240% of Escoffier's ATK.\nIf you hit multiple opponents with a single instance of Cryo DMG, Cold Dish stacks will be consumed based on the number of opponents hit.",
+          "image": "Constellation/Fresh_Fragrant_Stew_Is_an_Art.png"
+        },
+        "3": {
+          "name": "The Bakery Magic of Caramel Browning",
+          "effect": "Increases the Level of Low-Temperature Cooking by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/The_Bakery_Magic_of_Caramel_Browning.png"
+        },
+        "4": {
+          "name": "Secret Rosemary Recipe",
+          "effect": "Rehab Diet lasts 6 more seconds. While it is active, you have a chance of healing 100% extra HP and restoring 2 Energy to Escoffier when you trigger healing through Rehab Diet. This chance corresponds to Escoffier's CRIT Rate. You can trigger this effect 7 times during any one Rehab Diet's duration.\nYou must first unlock the Passive Talent \"Better to Salivate Than Medicate.\"",
+          "image": "Constellation/Secret_Rosemary_Recipe.png"
+        },
+        "5": {
+          "name": "Symphony of a Thousand Sauces",
+          "effect": "Increases the Level of Scoring Cuts by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Symphony_of_a_Thousand_Sauces.png"
+        },
+        "6": {
+          "name": "Tea Parties Bursting With Color",
+          "effect": "Cooking Mek: Cold Storage Mode is enhanced:\nWhen your party's active character's Normal, Charged, or Plunging Attacks hit opponents, Cooking Mek: Cold Storage Mode will fire off another Special-Grade Frosty Parfait, dealing 500% of Escoffier's ATK as AoE Cryo DMG. This DMG is considered Elemental Skill DMG.\nThis effect can be triggered once every 0.5s, and this effect can be triggered 6 times within the duration of one Cooking Mek: Cold Storage Mode.",
+          "image": "Constellation/Tea_Parties_Bursting_With_Color.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Meshing_Gear",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Beryl_Conch",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 40,
+          "material4": "Meshing_Gear",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Beryl_Conch",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 50,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Beryl_Conch",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 60,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Beryl_Conch",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 70,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Beryl_Conch",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 80,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Beryl_Conch",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "gem1": "Shivada_Jade_Silver",
+          "gem2": "Shivada_Jade_Fragment",
+          "gem3": "Shivada_Jade_Chunk",
+          "gem4": "Shivada_Jade_Gemstone",
+          "boss_drop": "Secret_Source_Airflow_Accumulator",
+          "local_speciality": "Beryl_Conch"
+        },
+        "talents": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "mastery1": "Teachings_of_Justice",
+          "mastery2": "Guide_to_Justice",
+          "mastery3": "Philosophies_of_Justice",
+          "weekly_boss_drop": "Eroded_Horn",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A renowned, exacting Fontainian chef. Diligently seeking the pinnacle of culinary excellence.",
+      "paimonmoepath": "characters/escoffier",
+      "genshinggpath": "characters/escoffier",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Escoffier",
+      "hoyowiki": 7624,
+      "subCollection": {}
+    },
     "Eula": {
       "image": "Characters/Cryo/Eula.png",
       "gender": "Female",
