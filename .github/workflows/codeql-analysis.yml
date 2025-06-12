@@ -81,7 +81,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.19.0
+        uses: subosito/flutter-action@v2.20.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
