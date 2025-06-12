@@ -1,3 +1,12 @@
+# 4.0.4
+- Updated app icons
+- Added color for Burgeon reaction
+- Added time since last banner for characters/weapons
+- Outfits now supports multiple characters
+- Fixed formatting issues
+- (iOS) Fixed constellation order scrambled
+- Dependency Updates
+
 # 4.0.3
 - (HOTFIX) Fixed character dictionary not loading until filtered
 - (HOTFIX) Fixed issue where deep links are opening in browser instead of app
