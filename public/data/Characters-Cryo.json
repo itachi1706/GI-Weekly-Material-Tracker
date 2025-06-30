@@ -5873,6 +5873,372 @@
       "hoyowiki": 29,
       "subCollection": {}
     },
+    "Skirk": {
+      "image": "Characters/Cryo/Skirk.png",
+      "gender": "Female",
+      "birthday": "5/11",
+      "caption": "Void Star",
+      "titles": [
+        "Sinner's Pupil, Fool's Master"
+      ],
+      "name": "Skirk",
+      "fullName": null,
+      "description": "A visitor who once appeared in an Abyssal rift and the Primordial Sea, this solitary warrior mentored Tartaglia in the martial arts.",
+      "nation": "Outlander",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Cosmic Calamity",
+      "constellation": "Crystallina",
+      "outfits": [
+        "Shattered_Star"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Contention",
+            "material3qty": 3,
+            "material4": "Meshing_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 2,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 4,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 6,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Contention",
+            "material3qty": 9,
+            "material4": "Mechanical_Spur_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 4,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 6,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 12,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Contention",
+            "material3qty": 16,
+            "material4": "Artificed_Dynamic_Gear",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Reason_Beyond_Reason": {
+            "name": "Reason Beyond Reason",
+            "effect": "When nearby party members trigger Frozen, Superconduct, Cryo Swirl, or Cryo Crystallize reactions against opponents, a Void Rift will be created near this opponent. This effect can be triggered once every 2.5s. 3 Void Rifts created by Skirk herself can exist on the field at once.\n\nSkirk can use the following methods to absorb nearby Void Rifts:\nWhen she hits an opponent with a Charged Attack in her Seven-Phase Flash mode.\nWhen she uses the special Elemental Burst Havoc: Extinction while in Seven-Phase Flash mode.\nWhen she Holds her Elemental Skill Havoc: Warp to engage in rapid movement.\n\nEach Rift absorbed will grant her 8 Serpent's Subtlety points.",
+            "image": "Talents/Passive/Talent_Reason_Beyond_Reason.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Return_to_Oblivion": {
+            "name": "Return to Oblivion",
+            "effect": "When nearby Hydro party members' Hydro attacks hit opponents, or when nearby Cryo party members apart from Skirk hit opponents with Cryo attacks, Skirk will gain the \"Death's Crossing\" effect for 20s. Max 3 stacks, each stack's duration is counted independently.\nEach character can grant Skirk at most 1 \"Death's Crossing\" stack by this means.\nEach \"Death's Crossing\" stack increases the Normal Attack DMG dealt by Skirk in Seven-Phase Flash mode to 110%/120%/170% of its original DMG and the DMG dealt when using her Elemental Burst Havoc: Ruin to 105%/115%/160% of its original DMG.",
+            "image": "Talents/Passive/Talent_Return_to_Oblivion.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Mutual_Weapons_Mentorship": {
+            "name": "Mutual Weapons Mentorship",
+            "effect": "When all party members are either Hydro or Cryo, and if there is at least 1 Hydro and 1 Cryo character, your own party members' Elemental Skill Level is increased by 1.",
+            "image": "Talents/Passive/Talent_Mutual_Weapons_Mentorship.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Havoc_Sunder": {
+            "name": "Havoc: Sunder",
+            "effect": "Normal Attack\nPerforms up to 5 consecutive attacks.\n\nCharged Attack\nConsumes a certain amount of Stamina to hurl a spinning crystal spear, dealing DMG to opponents ahead.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Havoc_Warp": {
+            "name": "Havoc: Warp",
+            "effect": "Imitates the combat style of \"The Foul.\" Produces different effects depending on whether you Tap or Hold.\n\nTap\nSkirk gains 45 Serpent's Subtlety and switches to Seven-Phase Flash mode.\n\nHold\nSkirk gains 45 Serpent's Subtlety and will continuously move at high speed. Her interruption resistance is increased in this state.\nDuring this time, Skirk can control her movement direction and move atop water. She can also use this Skill again to end rapid movement prematurely.",
+            "image": "Talents/Skill/Talent_Havoc_Warp.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Havoc_Ruin": {
+            "name": "Havoc: Ruin",
+            "effect": "Skirk's Elemental Burst is not reliant on Elemental Energy but instead on Serpent's Subtlety.\nWhen Skirk has at least 50 Serpent's Subtlety, she can expend all her Serpent's Subtlety to unleash her Elemental Burst, ripping the space before her apart and using rapid consecutive slashes that deal AoE Cryo DMG. At the same time, the DMG dealt by an instance of this Elemental Burst will be increased by every point of Serpent's Subtlety over 50 when it is unleashed. Up to 12 points can be counted for this purpose.\n\nWhen Skirk is in Seven-Phase Flash mode, Havoc: Ruin will be replaced by Havoc: Extinction.\n\nHavoc: Extinction\nA special Elemental Burst that can be used even without consuming Serpent's Subtlety.\nAfter using it, Skirk will gain the \"All Shall Wither\" effect, which will last until Seven-Phase Flash ends. After unlocking the Passive Talent Reason Beyond Reason, she can also absorb nearby Void Rifts.\nWhile \"All Shall Wither\" is active, every 0.1s, after Skirk's Normal Attack hits an opponent, that Normal Attack will deal increased DMG. If she absorbed any Void Rifts while using Havoc: Extinction, this Normal Attack's DMG will be further increased based on the number of Rifts absorbed.\nThis effect will be canceled when it has triggered 10 times.",
+            "image": "Talents/Burst/Talent_Havoc_Ruin.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Far to Fall",
+          "effect": "Enhances the effects of the Passive Talent Reason Beyond Reason: Every Void Rift absorbed will summon a crystal blade to attack nearby opponents, dealing 500% of Skirk's ATK as Cryo DMG. This DMG is considered Charged Attack DMG.\nYou must first unlock the Passive Talent Reason Beyond Reason.",
+          "image": "Constellation/Far_to_Fall.png"
+        },
+        "2": {
+          "name": "Into the Abyss",
+          "effect": "After unleashing her Elemental Skill Havoc: Warp, Skirk will gain 10 additional Serpent's Subtlety points.\nWhen using her Elemental Burst Havoc: Ruin, the DMG of this Elemental Burst instance will be increased by taking up to 10 more Serpent's Subtlety points into account.\nAdditionally, within 12.5s after Skirk unleashes the special Elemental Burst Havoc: Extinction while in her Seven-Phase Flash mode, her ATK is increased by 70%. This effect will be canceled when she leaves the Seven-Phase Flash mode.",
+          "image": "Constellation/Into_the_Abyss.png"
+        },
+        "3": {
+          "name": "Serendipitous Sin",
+          "effect": "Increases the Level of Havoc: Ruin by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Serendipitous_Sin.png"
+        },
+        "4": {
+          "name": "Fractured Flow",
+          "effect": "Enhances the effects of the Passive Talent Return to Oblivion: Each Death's Crossing stack also increases Skirk's ATK by 10%/20%/40%.\nYou must first unlock the Passive Talent Return to Oblivion.",
+          "image": "Constellation/Fractured_Flow.png"
+        },
+        "5": {
+          "name": "End of Wishes",
+          "effect": "Increases the Level of Havoc: Warp by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/End_of_Wishes.png"
+        },
+        "6": {
+          "name": "To the Source",
+          "effect": "Each Void Rift Skirk absorbs via the effects of the Passive Talent Reason Beyond Reason will grant her 1 Havoc: Sever stack. She can consume such stacks to initiate coordinated attacks and decrease the DMG she takes while in Seven-Phase Flash mode. These stacks last for 15s, and each stack's duration is counted independently (max 3 stacks).\nYou must first unlock the Passive Talent \"Reason Beyond Reason.\"\n\nHavoc: Sever\nWhen Skirk uses the Elemental Burst Havoc: Ruin, she will consume all Havoc: Sever stacks to initiate a coordinated attack in which each Havoc: Sever stack will deal 750% of Skirk's ATK as Cryo DMG. This DMG is considered Elemental Burst DMG.\nWhen she uses Normal Attacks while in Seven-Phase Flash mode, 1 Havoc: Sever stack will be consumed when her third or fifth sequenced attacks hit an opponent to launch 3 coordinated attacks. Each coordinated attack deals 180% of Skirk's ATK as Cryo DMG. This damage is considered Normal Attack DMG.\nWhen Skirk takes DMG while in Seven-Phase Flash mode, 1 Havoc: Sever stack will be consumed to decrease this DMG instance by 80% and attack nearby opponents 3 times, with each attack dealing 180% of Skirk's ATK as Cryo DMG. This DMG is considered Charged Attack DMG.",
+          "image": "Constellation/To_the_Source.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Meshing_Gear",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Ensnaring_Gaze",
+          "level": 40,
+          "material4": "Meshing_Gear",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Ensnaring_Gaze",
+          "level": 50,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Ensnaring_Gaze",
+          "level": 60,
+          "material4": "Mechanical_Spur_Gear",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Ensnaring_Gaze",
+          "level": 70,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Ensnaring_Gaze",
+          "level": 80,
+          "material4": "Artificed_Dynamic_Gear",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Skysplit_Gembloom",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "gem1": "Shivada_Jade_Silver",
+          "gem2": "Shivada_Jade_Fragment",
+          "gem3": "Shivada_Jade_Chunk",
+          "gem4": "Shivada_Jade_Gemstone",
+          "boss_drop": "Ensnaring_Gaze",
+          "local_speciality": "Skysplit_Gembloom"
+        },
+        "talents": {
+          "common1": "Meshing_Gear",
+          "common2": "Mechanical_Spur_Gear",
+          "common3": "Artificed_Dynamic_Gear",
+          "mastery1": "Teachings_of_Contention",
+          "mastery2": "Guide_to_Contention",
+          "mastery3": "Philosophies_of_Contention",
+          "weekly_boss_drop": "Ascended_Sample_Knight",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A mighty warrior of unknown origin. She claims to be the disciple of Surtalogi \"The Foul,\" one of Khaenri'ah's Five Sinners, and the master of \"Childe\" Tartaglia.",
+      "paimonmoepath": "characters/skirk",
+      "genshinggpath": "characters/skirk",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Skirk",
+      "hoyowiki": 7706,
+      "subCollection": {}
+    },
     "Wriothesley": {
       "image": "Characters/Cryo/Wriothesley.png",
       "gender": "Male",
