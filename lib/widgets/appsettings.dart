@@ -769,17 +769,20 @@ class SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
-      body: SettingsList(
-        sections: [
-          _userDataSettings(),
-          _appDataSettings(),
-          SettingsSection(
-            title: const Text('Notifications'),
-            tiles: _showNotificationTestMenu(),
-          ),
-          _infoSettings(),
-          _endSettings(),
-        ],
+      body: SafeArea(
+        bottom: true,
+        child: SettingsList(
+          sections: [
+            _userDataSettings(),
+            _appDataSettings(),
+            SettingsSection(
+              title: const Text('Notifications'),
+              tiles: _showNotificationTestMenu(),
+            ),
+            _infoSettings(),
+            _endSettings(),
+          ],
+        ),
       ),
     );
   }
