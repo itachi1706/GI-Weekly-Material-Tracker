@@ -208,50 +208,53 @@ class ParametricPageState extends State<ParametricPage> {
         title: const Text('Parametric Transformer'),
       ),
       drawer: const DrawerComponent(),
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset('assets/images/items/Item_Parametric_Transformer.png'),
-            const Text(
-              'Refreshing in',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-            ),
-            _countdownTimer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Spacer(
-                  flex: 20,
-                ),
-                TextButton(
-                  onPressed: _resetTime,
-                  child: const Text('Reset Time'),
-                ),
-                const Spacer(),
-                TextButton(
-                  onPressed: _showLastUseDialog,
-                  child: const Text('Set Last Use Time'),
-                ),
-                const Spacer(
-                  flex: 20,
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Text('Last updated on $_resetTimeString'),
-            ),
-            const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Text('Notifications: '),
-                _getNotificationState(),
-              ],
-            ),
-            TextButton(onPressed: _launchApp, child: const Text('Launch Game')),
-          ],
+      body: SafeArea(
+        bottom: true,
+        child: Center(
+          child: Column(
+            children: [
+              Image.asset('assets/images/items/Item_Parametric_Transformer.png'),
+              const Text(
+                'Refreshing in',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+              _countdownTimer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Spacer(
+                    flex: 20,
+                  ),
+                  TextButton(
+                    onPressed: _resetTime,
+                    child: const Text('Reset Time'),
+                  ),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: _showLastUseDialog,
+                    child: const Text('Set Last Use Time'),
+                  ),
+                  const Spacer(
+                    flex: 20,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text('Last updated on $_resetTimeString'),
+              ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text('Notifications: '),
+                  _getNotificationState(),
+                ],
+              ),
+              TextButton(onPressed: _launchApp, child: const Text('Launch Game')),
+            ],
+          ),
         ),
       ),
     );
