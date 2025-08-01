@@ -296,7 +296,7 @@ class WishPageCard extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.all(16),
                     padding: const EdgeInsets.all(4),
-                    color: color.withOpacity(0.75),
+                    color: color.withValues(alpha: 0.75),
                     child: Text(data.status.name.capitalized()),
                   ),
                 ),
