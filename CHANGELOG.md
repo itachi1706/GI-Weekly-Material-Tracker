@@ -1,3 +1,9 @@
+# 4.1.0
+- (Android) SDK Update to API 35
+- (Android) Edge-to-Edge Support
+- Flutter 3.28 Upgrade
+- Dependency Updates
+
 # 4.0.4
 - Updated app icons
 - Added color for Burgeon reaction
