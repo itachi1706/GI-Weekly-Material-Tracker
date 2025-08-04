@@ -162,7 +162,7 @@ class ParametricPageState extends State<ParametricPage> {
         .scheduleParametricReminder(notifyParametric);
   }
 
-  Future<void> _resetTime() async {
+  void _resetTime() async {
     _newDateTime = DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now());
     debugPrint('_resetTime: $_newDateTime');
     _updateNewEndTime(_newDateTime);
