@@ -2196,6 +2196,379 @@
       "hoyowiki": 7502,
       "subCollection": {}
     },
+    "Ineffa": {
+      "image": "Characters/Electro/Ineffa.png",
+      "gender": "Female",
+      "birthday": "2/4",
+      "caption": "Boom Boom Thunderwave",
+      "titles": [
+        "Multifunctional Robot for Domestic Application"
+      ],
+      "name": "Ineffa",
+      "fullName": "Ix Raq'lapuj Chue'q Buluk Ch'ule-L",
+      "description": "A multifunctional robot containing integrated mechanical components from various nations. The Source Core in her chest has endured the passage of countless years.",
+      "nation": "Nod-Krai, Natlan",
+      "weapon": "Polearm",
+      "rarity": 5,
+      "affiliation": "Clink-Clank Krumkake Craftshop, Thirteen Sovereign Lords",
+      "constellation": "Vanilla Planifolia",
+      "outfits": [
+        "Mechanical_Dreams"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Conflict",
+            "material3qty": 3,
+            "material4": "Sentrys_Wooden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 2,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 4,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 6,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Conflict",
+            "material3qty": 9,
+            "material4": "Warriors_Metal_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 4,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 6,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 12,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Conflict",
+            "material3qty": 16,
+            "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Overclocking_Circuit": {
+            "name": "Overclocking Circuit",
+            "effect": "If there are thunderclouds created by Lunar-Charged reactions nearby when Birgitta unleashes Discharge attacks, she will initiate an additional attack, dealing AoE Electro DMG equal to 65% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.",
+            "image": "Talents/Passive/Talent_Overclocking_Circuit.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Panoramic_Permutation_Protocol": {
+            "name": "Panoramic Permutation Protocol",
+            "effect": "When using the Elemental Burst Supreme Instruction: Cyclonic Exterminator, all your party members will gain the Parameter Permutation effect: Increases Ineffa and your own active party member's Elemental Mastery by 6% of Ineffa's ATK for 20s.",
+            "image": "Talents/Passive/Talent_Panoramic_Permutation_Protocol.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Assemblage_Hub": {
+            "name": "Assemblage Hub",
+            "effect": "When a party member triggers the Electro-Charged reaction, it will be converted into the Lunar-Charged reaction, with every 100 ATK that Ineffa has increasing Lunar-Charged's Base DMG by 0.7%, up to a maximum of 14%.\n\nFurther blessings may follow the new moon's rise...",
+            "image": "Talents/Passive/Talent_Assemblage_Hub.png",
+            "order": 2,
+            "type": "Passive 3 (Moonsign Benediction)"
+          },
+          "Flavor_Synthesis_Unit": {
+            "name": "Flavor Synthesis Unit",
+            "effect": "When Ineffa uses food, there is a 30% chance of gaining a seasoning ingredient.\n\nAdditionally, in Nod-Krai, it seems you'll be able to change Birgitta's appearance through certain means...",
+            "image": "Talents/Passive/Talent_Flavor_Synthesis_Unit.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Cyclonic_Duster": {
+            "name": "Cyclonic Duster",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive spear strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to perform a spinning attack.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Cleaning_Mode-Carrier_Frequency": {
+            "name": "Cleaning Mode: Carrier Frequency",
+            "effect": "Ineffa engages her Enhanced Cleaning Module, dealing a single instance of AoE Electro DMG to nearby opponents, activating her Optical Flow Shield Barrier, and summoning the Multipurpose Smart Assistance Unit, Birgitta.\nThe Optical Flow Shield Barrier absorbs DMG based on Ineffa's ATK, and it will absorb Electro DMG with 250% effectiveness.",
+            "image": "Talents/Skill/Talent_Cleaning_Mode_Carrier_Frequency.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Supreme_Instruction-Cyclonic_Exterminator": {
+            "name": "Supreme Instruction: Cyclonic Exterminator",
+            "effect": "The Multipurpose Smart Assistance Unit, Birgitta, can use Rocket Punches to quickly clean up opponents! Ineffa shoots Birgitta into the fray, dealing AoE Electro DMG and allowing Birgitta to remain on the field.\n\nIf Birgitta is already on the field, having been summoned by Ineffa, this Skill will re-summon Birgitta at the target's location and reset her duration.",
+            "image": "Talents/Burst/Talent_Supreme_Instruction_Cyclonic_Exterminator.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Rectifying Processor",
+          "effect": "When Ineffa activates her Optical Flow Shield Barrier, all nearby party members will gain the Carrier Flow Composite effect for 20s: Increases Lunar-Charged DMG by 2.5% for every 100 ATK that Ineffa has, up to a maximum of 50%.",
+          "image": "Constellation/Rectifying_Processor.png"
+        },
+        "2": {
+          "name": "Support Cleaning Module",
+          "effect": "After the Elemental Burst Supreme Instruction: Cyclonic Exterminator hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is attacked, nearby opponents will take AoE Electro DMG equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG. Additionally, when the Elemental Burst Supreme Instruction: Cyclonic Exterminator is unleashed, nearby party members will gain Optical Flow Shield Barriers.",
+          "image": "Constellation/Support_Cleaning_Module.png"
+        },
+        "3": {
+          "name": "Enhanced Emotion Emulator",
+          "effect": "Increases the Level of Cleaning Mode: Carrier Frequency by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Enhanced_Emotion_Emulator.png"
+        },
+        "4": {
+          "name": "The Edictless Path",
+          "effect": "When your own party members trigger Lunar-Charged reactions, recover 5 Elemental Energy. This effect can occur once every 4s.",
+          "image": "Constellation/The_Edictless_Path.png"
+        },
+        "5": {
+          "name": "Mirror's Dream Transcension",
+          "effect": "Increases the Level of Supreme Instruction: Cyclonic Exterminator by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Mirrors_Dream_Transcension.png"
+        },
+        "6": {
+          "name": "A Dawning Morn for You",
+          "effect": "When Ineffa is affected by the Carrier Flow Composite effect, she will deal AoE Electro DMG equal to 135% of her ATK to opponents in the current active character's vicinity after nearby thunderclouds release bursts of lightning at opponents. This DMG is considered Lunar-Charged DMG. The aforementioned effect can trigger once every 3.5s.",
+          "image": "Constellation/A_Dawning_Morn_for_You.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 40,
+          "material4": "Sentrys_Wooden_Whistle",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 50,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 60,
+          "material4": "Warriors_Metal_Whistle",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 70,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Secret_Source_Airflow_Accumulator",
+          "level": 80,
+          "material4": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Glowing_Hornshroom",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Secret_Source_Airflow_Accumulator",
+          "local_speciality": "Glowing_Hornshroom"
+        },
+        "talents": {
+          "common1": "Sentrys_Wooden_Whistle",
+          "common2": "Warriors_Metal_Whistle",
+          "common3": "Saurian-Crowned_Warriors_Golden_Whistle",
+          "mastery1": "Teachings_of_Conflict",
+          "mastery2": "Guide_to_Conflict",
+          "mastery3": "Philosophies_of_Conflict",
+          "weekly_boss_drop": "Eroded_Sunfire",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A robot from Nod-Krai constructed using mechanical components from all over the world. She was designed and built at the Clink-Clank Krumkake Craftshop.",
+      "paimonmoepath": "characters/ineffa",
+      "genshinggpath": "characters/ineffa",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ineffa",
+      "hoyowiki": 7852,
+      "subCollection": {}
+    },
     "Keqing": {
       "image": "Characters/Electro/Keqing.png",
       "gender": "Female",
