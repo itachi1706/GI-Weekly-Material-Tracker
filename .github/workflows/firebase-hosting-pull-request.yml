@@ -15,7 +15,7 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
