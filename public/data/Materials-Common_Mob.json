@@ -809,6 +809,114 @@
       },
       "hoyowiki": 6646,
       "subCollection": {}
+    },
+    "Tattered_Warrant": {
+      "image": "Materials/Common_Mob/Item_Tattered_Warrant.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A warrant issued to members of the Fatui Oprichniki.\nOne wonders what resolve drove its bearer to sign up.",
+      "enemies": ["Fatui Oprichniki"],
+      "obtained": "- Dropped by Fatui Oprichniki",
+      "name": "Tattered Warrant",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Tattered_Warrant",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8608,
+      "subCollection": {}
+    },
+    "Immaculate_Warrant": {
+      "image": "Materials/Common_Mob/Item_Immaculate_Warrant.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A warrant issued to members of the Fatui Oprichniki.\nOne wonders if the exquisite styling might hide a price paid for its owner's promotion.",
+      "enemies": ["Fatui Oprichniki"],
+      "obtained": "- Alchemy (3x Tattered Warrant)\n- Dropped by Lv.40+ Fatui Oprichniki",
+      "name": "Immaculate Warrant",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Immaculate_Warrant",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8609,
+      "subCollection": {}
+    },
+    "Frost-Etched_Warrant": {
+      "image": "Materials/Common_Mob/Item_Frost-Etched_Warrant.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "A warrant issued to members of the Fatui Oprichniki.\nAdorned by a frost-colored crystal — a symbol of glory. One wonders what deeds its bearer must have performed to prove their loyalty and worth.",
+      "enemies": ["Fatui Oprichniki"],
+      "obtained": "- Alchemy (3x Immaculate Warrant)\n- Dropped by Lv.60+ Fatui Oprichniki",
+      "name": "Tyrant's Fang",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Frost-Etched_Warrant",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8610,
+      "subCollection": {}
+    },
+    "Broken_Drive_Shaft": {
+      "image": "Materials/Common_Mob/Item_Broken_Drive_Shaft.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The drive shaft of a Landcruiser destroyed in battle.\nEven the most precise craftsmanship cannot withstand excessive wear, just as the most lofty ideals cannot bring back those who've died in vain for someone else's cause. Moreover, mass-produced components can hardly be called precise, and mass-produced ideals can hardly be considered true ideals.",
+      "enemies": ["Landcruisers"],
+      "obtained": "- Dropped by Landcruisers",
+      "name": "Broken Drive Shaft",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Broken_Drive_Shaft",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8605,
+      "subCollection": {}
+    },
+    "Reinforced_Drive_Shaft": {
+      "image": "Materials/Common_Mob/Item_Reinforced_Drive_Shaft.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The reinforced drive shaft of a Landcruiser.\nIt took countless reports of destruction to bring about this insignificant improvement. In a sense, the administrative system of the Royal Armory Palace is several times more complex than the machinery it builds. After all, even the most advanced Landcruisers don't take months or even years to build.",
+      "enemies": ["Landcruisers"],
+      "obtained": "- Alchemy (3x Broken Drive Shaft)\n- Dropped by Lv.40+ Landcruisers",
+      "name": "Reinforced Drive Shaft",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Reinforced_Drive_Shaft",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8606,
+      "subCollection": {}
+    },
+    "Precision_Drive_Shaft": {
+      "image": "Materials/Common_Mob/Item_Precision_Drive_Shaft.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The drive shaft of a Landcruiser refined by the Design Bureau.\nOn the blueprints drawn by the engineers of the north, this unassuming part was once the flawless embodiment of glory and technological advancement, its small metal body encapsulating the wisdom of countless generations. Now it lies in the cold dirt, waiting to be recycled once more.",
+      "enemies": ["Landcruisers"],
+      "obtained": "- Alchemy (3x Reinforced Drive Shaft)\n- Dropped by Lv.60+ Landcruisers",
+      "name": "Precision Drive Shaft",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Precision_Drive_Shaft",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 8607,
+      "subCollection": {}
     }
   }
 }
