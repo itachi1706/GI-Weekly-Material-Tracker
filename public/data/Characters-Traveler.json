@@ -2557,6 +2557,86 @@
       "wiki": "https://genshin-impact.fandom.com/wiki/Traveler",
       "hoyowiki": null,
       "subCollection": {}
+    },
+    "Wonderland_Manekin-Manekina": {
+      "image": "Characters/All/Wonderland_Manekin.png",
+      "gender": "Male",
+      "birthday": "-",
+      "caption": "-",
+      "crossover": true,
+      "titles": [],
+      "name": "Wonderland Manekin/Manekina",
+      "fullName": null,
+      "description": "A Manekin gifted to you and Paimon by a witch who uses the pseudonym \"Octavia.\" They are gifted at exploring the mysteries sealed within the Miliastra Wonderland.",
+      "nation": "Teyvat",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Octavia, Miliastra Wonderland",
+      "constellation": "-",
+      "outfits": [],
+      "talents": {
+        "ascension": {},
+        "passives": {
+          "Battlelines_Redrawn": {
+            "name": "Battlelines Redrawn",
+            "effect": "When the Manekin leaves the field, if a Restricted Area that they summoned is still active, it will explode, dealing AoE DMG of the Manekin's Elemental Type equal to 200% of the Manekin's ATK.",
+            "image": "Talents/Passive/Talent_Battlelines_Redrawn.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Combat_Readiness": {
+            "name": "Combat Readiness",
+            "effect": "When the Manekin is not on the field and their Elemental Energy is below 30%, they will recover 2 Elemental Energy per second.",
+            "image": "Talents/Passive/Talent_Combat_Readiness.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Agile_Stance": {
+            "name": "Agile Stance",
+            "effect": "When the Manekin unleashes an Elemental Skill or Burst, it will change to one of its existing ensembles at random.",
+            "image": "Talents/Passive/Talent_Combat_Readiness.png",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Outlander_Arts-Vigilant_Watch": {
+            "name": "Outlander Arts: Vigilant Watch",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive sword strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to perform 2 rapid sword strikes.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Unaligned.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Punishing_Barrage": {
+            "name": "Punishing Barrage",
+            "effect": "The Manekin attacks nearby opponents once, dealing AoE DMG corresponding to their own Elemental Type before pulling back rapidly. After unleashing an Elemental Skill, the Manekin's Normal Attacks, Charged Attacks, and Plunging Attacks are converted to deal the corresponding elemental DMG, which cannot be overridden by other Elemental infusions, for a period of time. This effect will disappear when the Manekin leaves the field.\n\nHas 2 charges.",
+            "image": "Talents/Skill/Talent_Punishing_Barrage.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "No_Entry": {
+            "name": "No Entry",
+            "effect": "The Manekin summons a \"Restricted Area\" that follows them around, dealing 1 instance of DMG corresponding to the Manekin's Elemental Type to nearby opponents.\nAdditionally, when opponents enter the Restricted Area, they will receive 1 instance of DMG corresponding to the Manekin's Elemental Type. This effect can trigger once every 0.5s.\nThe Restricted Area will disappear when the Manekin leaves the field.",
+            "image": "Talents/Burst/Talent_No_Entry.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {},
+      "ascension": {},
+      "materials": {
+        "ascension": {},
+        "talents": {}
+      },
+      "introduction": "Levelling requires reaching Miliastra Wonderland Level 10. Character shares element with the Traveler",
+      "paimonmoepath": null,
+      "genshinggpath": null,
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Wonderland_Manekin",
+      "hoyowiki": 9020,
+      "subCollection": {}
     }
   }
 }
