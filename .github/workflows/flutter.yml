@@ -333,10 +333,10 @@ jobs:
     env:
       APP_TYPE: Android
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: flutter-android-artifact
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: flutter-firebase-release-artifact
       - name: Git Commit Data
