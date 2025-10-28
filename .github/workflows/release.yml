@@ -92,7 +92,7 @@ jobs:
         run: |
           cp build/app/outputs/apk/release/app-release.apk ./release
           cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: flutter-android-artifact-rel
           path: |
@@ -176,7 +176,7 @@ jobs:
         run: flutter build appbundle
       - name: Move App Bundle to location
         run: cp build/app/outputs/bundle/release/app-release.aab ./appbundle-signed.aab
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: flutter-android-aab-artifact-rel
           path: |
@@ -246,7 +246,7 @@ jobs:
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: flutter-web-artifact-rel
           path: |
@@ -480,7 +480,7 @@ jobs:
           cd release
           ls -lh .
           cd ..
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: flutter-unsigned-ipa-artifact-rel
           path: |
