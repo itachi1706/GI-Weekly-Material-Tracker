@@ -41,7 +41,7 @@ target 'Runner' do
     firebase_sdk_version = firebase_sdk_version!
     Pod::UI.puts "Using Firebase SDK version '#{firebase_sdk_version}' defined in 'firebase_core for FirebaseFirestore framework'"
   else
-    raise "Error - unable to locate firebase_ios_sdk.rb script in firebase_core, and no FirebaseSDKVersion specified"
+    raise "Error - unable to locate firebase_sdk_version.rb script in firebase_core, and no FirebaseSDKVersion specified"
   end
 
   pod 'FirebaseFirestore',
