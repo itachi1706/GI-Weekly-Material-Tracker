@@ -67,10 +67,10 @@ jobs:
           ./ciscripts/get_version.sh
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
-      - name: Rebuild Flutter dependencies (MANUAL)
-        run: |
-          flutter clean
-          dart pub cache clean -f
+      # - name: Rebuild Flutter dependencies (MANUAL)
+      #   run: |
+      #     flutter clean
+      #     dart pub cache clean -f
       - name: Build Flutter App
         run: flutter build web
       - name: Package Artifact
@@ -154,10 +154,10 @@ jobs:
           ./ciscripts/get_version.sh
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
-      - name: Rebuild Flutter dependencies (MANUAL)
-        run: |
-          flutter clean
-          dart pub cache clean -f
+      # - name: Rebuild Flutter dependencies (MANUAL)
+      #   run: |
+      #     flutter clean
+      #     dart pub cache clean -f
       - name: Build Android Split APK
         run: |
           flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
@@ -253,10 +253,10 @@ jobs:
           ./ciscripts/get_version.sh
         env:
           CI_COMMIT_SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
-      - name: Rebuild Flutter dependencies (MANUAL)
-        run: |
-          flutter clean
-          dart pub cache clean -f
+      # - name: Rebuild Flutter dependencies (MANUAL)
+      #   run: |
+      #     flutter clean
+      #     dart pub cache clean -f
       - name: Install Flutter dependencies
         run: flutter pub get
       - name: Install CocoaPods Dependencies
