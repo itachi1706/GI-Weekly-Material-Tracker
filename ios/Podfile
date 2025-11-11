@@ -44,7 +44,8 @@ target 'Runner' do
   Pod::UI.puts "Resolved firebase_core version: #{firebase_core_version}"
 
   # firebase_core_script = File.join(File.dirname(__FILE__), '.symlinks/plugins/firebase_core/ios/firebase_sdk_version.rb')
-  firebase_core_dir = File.expand_path("firebase_core-#{firebase_core_version}", File.join(flutter_root, '..', '.pub-cache', 'hosted', 'pub.dev'))
+  cache_root = ENV['PUB_CACHE'] || File.join(Dir.home, '.pub-cache')
+  firebase_core_dir = File.expand_path("firebase_core-#{firebase_core_version}", File.join(cache_root, 'hosted', 'pub.dev'))
   firebase_core_script = File.join(firebase_core_dir, 'ios', 'firebase_sdk_version.rb')
 
   Pod::UI.puts "Looking for firebase_sdk_version.rb script at path: #{firebase_core_script}"
