@@ -262,6 +262,7 @@ jobs:
       - name: Install CocoaPods Dependencies
         working-directory: ios
         run: |
+          ls -lsa /Users/runner/hostedtoolcache/flutter/.pub-cache/hosted/pub.dev/
           pod update
           pod install --repo-update
           pod repo update
