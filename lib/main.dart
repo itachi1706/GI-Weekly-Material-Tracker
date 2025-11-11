@@ -59,11 +59,11 @@ class MyAppState extends State<MyApp> {
       debugPrint('[APP-CHECK] Adding App Check listener');
       await FirebaseAppCheck.instance.activate(
         // Replace this with your actual site key
-        webProvider:
+        providerWeb:
             ReCaptchaV3Provider('6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV'),
-        androidProvider: (kDebugMode)
-            ? AndroidProvider.debug
-            : AndroidProvider.playIntegrity,
+        providerAndroid: (kDebugMode)
+            ? AndroidDebugProvider()
+            : AndroidPlayIntegrityProvider(),
       );
       FirebaseAppCheck.instance.onTokenChange.listen(
         (token) async {

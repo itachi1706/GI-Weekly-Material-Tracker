@@ -44,7 +44,7 @@ class LoginPageState extends State<LoginPage> {
       if (mounted) {
         _finishLoggedInFlow(context, credentials.user);
       }
-    } on FirebaseAuthException catch (_, e) {
+    } on FirebaseAuthException catch (e) {
       if (mounted) {
         Util.showSnackbarQuick(context, 'Error signing in with test account');
       }
@@ -93,6 +93,7 @@ class LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return SignInScreen(
       providers: [
         GoogleProvider(clientId: _getClientId()),
@@ -100,6 +101,10 @@ class LoginPageState extends State<LoginPage> {
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
           _finishLoggedInFlow(context, state.user);
+        }),
+        AuthStateChangeAction<AuthFailed>((context, state) {
+          debugPrint(state.exception.toString());
+          Util.showSnackbarQuick(context, 'An error occurred. Report to dev');
         }),
       ],
       showAuthActionSwitch: false,
