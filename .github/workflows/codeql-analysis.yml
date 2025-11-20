@@ -38,7 +38,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -79,7 +79,7 @@ jobs:
     name: CodeQL Dart Analysis
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
         uses: subosito/flutter-action@v2.21.0
         with:
