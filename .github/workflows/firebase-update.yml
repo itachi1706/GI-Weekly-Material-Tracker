@@ -16,7 +16,7 @@ jobs:
     name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Use Node.JS 20
         uses: actions/setup-node@v6
         with:
@@ -35,7 +35,7 @@ jobs:
     name: Check which files are changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Check if files changed for Realtime DB Banner
@@ -165,7 +165,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.rtdbbanner
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Use Node.JS 20
         uses: actions/setup-node@v6
         with:
@@ -193,7 +193,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.fspj
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Use Node.JS 20
         uses: actions/setup-node@v6
         with:
@@ -235,7 +235,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.csd
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - id: 'auth'
         uses: 'google-github-actions/auth@v3'
         with:
@@ -257,7 +257,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fsi
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Update Indexes
         uses: w9jds/firebase-action@v14.26.0
         with:
@@ -271,7 +271,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fbsr
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Update Storage Security Rules
         uses: w9jds/firebase-action@v14.26.0
         with:
@@ -299,7 +299,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fbcf
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Use Node.JS 20
         uses: actions/setup-node@v6
         with:
@@ -322,7 +322,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.fstj
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Use Node.JS 20
         uses: actions/setup-node@v6
         with:
