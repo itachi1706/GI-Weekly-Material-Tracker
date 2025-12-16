@@ -17,7 +17,7 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
@@ -107,7 +107,7 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
@@ -194,7 +194,7 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
@@ -256,7 +256,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check Google Play Release Notes # From "Check Google Play Release Notes" in GitLab CI
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Set Script Executable
         run: chmod +x ./ciscripts/check_length.sh
       - name: Run Script
@@ -392,7 +392,7 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: iOS
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       # - uses: apple-actions/import-codesign-certs@v1
