@@ -646,8 +646,6 @@ class GridUtils {
     textData =
         textData.replaceAll('Lunar-Charged', '§eLunar-Charged§r');
     textData =
-        textData.replaceAll('Lunar-Bloom', '§dLunar-Bloom§r');
-    textData =
         textData.replaceAll('Lunar-§dBloom§r', '§dLunar-Bloom§r');
 
     // DMG
