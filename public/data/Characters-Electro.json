@@ -1633,12 +1633,19 @@
             "order": 1,
             "type": "Passive 2"
           },
+          "Phantasmal_Nocturne": {
+            "name": "Phantasmal Nocturne",
+            "effect": "After completing Witch's Homework: Of the Unexpected, Fischl will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nHark, Prince Nachtraben, Ozvaldo Hrafnavins, he who has witnessed the fall of countless worlds. Sing now the starry septet for your sovereign, for this is the moment of deepest sin, when the gathered souls at the end of causality shatter the darkness of fate.\nAdditionally, when Oz is on the field, party members will gain additional buff effects:\nAfter a nearby party member triggers an Overloaded reaction, Fischl and other nearby active party members have their ATK increased by 22.5% for 10s.\nAfter a nearby party member triggers an Electro-Charged or Lunar-Charged reaction, Fischl and other nearby active party members have their Elemental Mastery increased by 90 for 10s.",
+            "image": "Talents/Passive/Talent_Phantasmal_Nocturne.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
           "Mein_Hausgarten": {
             "name": "Mein Hausgarten",
             "effect": "When dispatched on an expedition in Mondstadt, the time consumed is reduced by 25%.",
             "image": "Talents/Passive/Talent_Mein_Hausgarten.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           }
         },
         "attack": {
@@ -1668,7 +1675,7 @@
       "constellations": {
         "1": {
           "name": "Gaze of the Deep",
-          "effect": "Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of ATK DMG.\nNote: The additional attack is fired from the orb near Fischl's shoulder and is only fired on normal attacks that have locked on to an enemy, regardless if it is blocked by obstacles or missed. The attack has slight homing and may bypass obstacles.",
+          "effect": "Even when Oz is not present in combat, he can still watch over Fischl through his raven eyes. When Fischl performs a Normal Attack against an opponent, Oz fires a coordinated attack, dealing DMG equal to 22% of Fischl's ATK.",
           "image": "Constellation/Gaze_of_the_Deep.png"
         },
         "2": {
@@ -1693,7 +1700,7 @@
         },
         "6": {
           "name": "Evernight Raven",
-          "effect": "Increases the duration of Oz's summoning by 2s. Additionally, Oz attacks with your active character when present, dealing 30% of Fischl's ATK as Electro DMG.",
+          "effect": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs coordinated attacks with your active character when present, dealing 30% of Fischl's ATK as Electro DMG.\nAfter Oz performs a coordinated attack, the increased ATK and Elemental Mastery effects of Witch's Eve Rite: Phantasmal Nocturne are further increased by 100% for 10s.",
           "image": "Constellation/Evernight_Raven.png"
         }
       },
@@ -5321,12 +5328,19 @@
             "order": 1,
             "type": "Passive 2"
           },
+          "Surge_of_Lightning": {
+            "name": "Surge of Lightning",
+            "effect": "After completing Witch's Homework: Of the Little Wolf Pack, Razor will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\nAdditionally, Razor's Elemental Burst Lightning Fang is enhanced: The Wolf Within's DMG dealt is increased by 70% of Razor's ATK.\n\nHexerei: Secret Rite\nWhile the Wolf Within summoned by Razor's Elemental Burst Lightning Fang is active, if the Electro Sigils from Razor's Elemental Skill Claw and Thunder overflow, the Wolf Within will call down a lightning strike on nearby enemies, dealing AoE Electro DMG equal to 150% of Razor's ATK and restoring 7 Energy to Razor. This effect can be triggered once every 1s.",
+            "image": "Talents/Passive/Talent_Surge_of_Lightning.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
           "Wolvensprint": {
             "name": "Wolvensprint",
             "effect": "Decreases sprinting Stamina consumption of your characters in the party by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
             "image": "Talents/Passive/Talent_Wolvensprint.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           }
         },
         "attack": {
@@ -5339,14 +5353,14 @@
           },
           "Claw_and_Thunder": {
             "name": "Claw and Thunder",
-            "effect": "Hunts his prey using the techniques taught to him by his master and his Lupical.\nPress: Swings the Thunder Wolf Claw, dealing Electro DMG to opponents in front of Razor.\nUpon striking an opponent, Razor gains an Electro Sigil, which increases his Energy Recharge rate.\nRazor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.\nHold: Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor's Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.\nGenerate 3 elemental particles when press and 4 when hold, if it hit at least 1 target.",
+            "effect": "Hunts his prey using the techniques taught to him by his master and his lupical.\n\n(‍Press‍/‍Tap‍)\nSwings the Thunder Wolf Claw, dealing Electro DMG to opponents in front of Razor.\nUpon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate.\nRazor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.\n\nHold\nGathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor's Electro Sigils.\nEach Electro Sigil cleared in this manner will be converted into Energy for Razor.",
             "image": "Talents/Skill/Talent_Claw_and_Thunder.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Lightning_Fang": {
             "name": "Lightning Fang",
-            "effect": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into elemental energy for him.\nThe Wolf Within will fight alongside Razor for the skill's duration.\nThe Wolf Within:\nStrikes alongside Razor's normal attacks, dealing Electro DMG.\nRaises Razor's ATK SPD and Electro RES.\nCauses Razor to be immune to DMG inflicted by the Electro-Charged status.\nDisables Razor's Charged Attacks.\nIncreases Razor's resistance to interruption",
+            "effect": "Summons the Wolf Within, which deals Electro DMG to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into Elemental Energy for him.\nThe Wolf Within will fight alongside Razor for the skill's duration.\n\nThe Wolf Within\nStrikes alongside Razor's normal attacks, dealing Electro DMG.\nRaises Razor's ATK SPD and Electro RES.\nCauses Razor to be immune to DMG inflicted by the Electro-Charged status.\nDisables Razor's Charged Attacks.\nIncreases Razor's resistance to interruption.\n\nThese effects end when Razor leaves the battlefield.\nWhen Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
             "image": "Talents/Burst/Talent_Lightning_Fang.png",
             "order": 2,
             "type": "Elemental Burst"
@@ -5381,7 +5395,7 @@
         },
         "6": {
           "name": "Lupus Fulguris",
-          "effect": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an opponent will grant Razor an Electro Sigil for Claw and Thunder",
+          "effect": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as Electro DMG.\nWhen Razor is not using Lightning Fang, lightning strikes on an opponent will grant 3 Electro Sigils for his Elemental Skill Claw and Thunder.\nAdditionally, when Razor gains Electro Sigils through his Elemental Skill Claw and Thunder, he will gain 3 Sigils instead.\nFor 15s after consuming Electro Sigils, Razor's CRIT Rate is increased by 10% and CRIT DMG by 50%.",
           "image": "Constellation/Lupus_Fulguris.png"
         }
       },

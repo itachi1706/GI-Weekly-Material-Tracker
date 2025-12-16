@@ -3844,12 +3844,19 @@
             "order": 1,
             "type": "Passive 2"
           },
+          "Sevenfold_Transmutation": {
+            "name": "Sevenfold Transmutation",
+            "effect": "After completing Witch's Homework: Of Wonderland Flowers, Sucrose will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nAfter creating a Small Wind Spirit, nearby party members' Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, and Elemental Burst DMG are increased by 5.71428% for 15s.\nAfter creating a Large Wind Spirit, nearby Hexerei party members' Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, and Elemental Burst DMG are increased by 7.14285% for 20s.",
+            "image": "Talents/Passive/Talent_Sevenfold_Transmutation.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
           "Astable_Invention": {
             "name": "Astable Invention",
             "effect": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product.",
             "image": "Talents/Passive/Talent_Astable_Invention.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           }
         },
         "attack": {
@@ -3862,7 +3869,7 @@
           },
           "Astable_Anemohypostasis Creation_6308": {
             "name": "Astable Anemohypostasis Creation - 6308",
-            "effect": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals Anemo DMG\nGenerate 4 elemental particles when it hit at least 1 target.",
+            "effect": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals Anemo DMG.",
             "image": "Talents/Skill/Talent_Astable_Anemohypostasis_Creation_-_6308.png",
             "order": 1,
             "type": "Elemental Skill"
@@ -3904,7 +3911,7 @@
         },
         "6": {
           "name": "Chaotic Entropy",
-          "effect": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
+          "effect": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element, and nearby Hexerei characters in the party gain an additional 8.57142% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
           "image": "Constellation/Chaotic_Entropy.png"
         }
       },
@@ -4208,37 +4215,44 @@
           },
           "Stormeye": {
             "name": "Stormeye",
-            "effect": "Regenerates 15 Energy for Venti after the effects of Wind's Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+            "effect": "Regenerates 15 Energy for Venti after the effects of Wind's Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element in the party.",
             "image": "Talents/Passive/Talent_Stormeye.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Temporal_Winds_Eulogy": {
+            "name": "Temporal Wind's Eulogy",
+            "effect": "After completing Witch's Homework: Of the Waking of Wind, Venti will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nWhile the Stormeye created by the Elemental Burst Wind's Grand Ode is active, for 4s after a nearby active character triggers a Swirl reaction, that character's DMG is increased by 50%, and Venti's Stormeye deals 135% of its original DMG.",
+            "image": "Talents/Passive/Talent_Temporal_Winds_Eulogy.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
           },
           "Windrider": {
             "name": "Windrider",
             "effect": "Decreases gliding Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
             "image": "Talents/Passive/Talent_Windrider.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           }
         },
         "attack": {
           "Divine_Marksmanship": {
             "name": "Divine Marksmanship",
-            "effect": "Normal Attack: Perform up to 6 consecutive shots with a bow.\nCharged Attack: Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\nPlunging Attack: Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "effect": "Normal Attack\nPerforms up to 6 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal Anemo DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\nHexerei: Secret Rite\nWhile the Stormeye created by the Elemental Burst Wind's Grand Ode is active, Venti will gain additional buff effects:\nVenti's Normal Attacks will be converted into enemy-piercing Windsunder Arrows that deal even more Anemo DMG to opponents along the path.\nWhen Venti's Normal Attacks hit opponents, Stormeye's duration is increased by 1s, and its CD is increased by 0.5s. This effect can be triggered once every 0.1s and up to 2 times after each use of the Elemental Burst Wind's Grand Ode.",
             "image": "Talents/Normal/Talent_Divine_Marksmanship.png",
             "order": 0,
             "type": "Normal/Charged Attack"
           },
           "Skyward_Sonnet": {
             "name": "Skyward Sonnet",
-            "effect": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!\nPress: Summons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.\nHold: Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air.\nOpponents hit by Skyward Sonnet will fall to the ground slowly.\nGenerate 3/4 elemental particles for press/hold when it hit at least 1 target.",
+            "effect": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!\n\n(‍Press‍/‍Tap‍)\nSummons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.\n\nHold\nSummons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air.\nAfter unleashing the Hold version of this ability, Venti rides the wind into the air.\n\nOpponents hit by Skyward Sonnet will fall to the ground slowly.",
             "image": "Talents/Skill/Talent_Skyward_Sonnet.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Winds_Grand_Ode": {
             "name": "Wind's Grand Ode",
-            "effect": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times Anemo DMG in 8 seconds.\nElemental Absorption: If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+            "effect": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in opponents and deals continuous Anemo DMG.\n\nElemental Absorption\nIf the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro, it will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use.",
             "image": "Talents/Burst/Talent_Wind_Grand_Ode.png",
             "order": 2,
             "type": "Elemental Burst"
@@ -4248,12 +4262,12 @@
       "constellations": {
         "1": {
           "name": "Splitting Gales",
-          "effect": "Fires 2 additional split arrows per Aimed Shot, each dealing 33% of the original arrow's DMG.\nNote: The additional arrows are fired in a 30° horizontal cone (each 15° to left and right), possibly hitting and damaging the same target in close range. Each arrow has its own critical.",
+          "effect": "Fires 2 additional arrows per Aimed Shot, each dealing 33% of the original arrow's DMG.\nAdditionally, 2 extra arrows that track opponents will be fired per Windsunder Arrow, each dealing 20% of the original arrow's DMG. This effect can be triggered once every 0.25s.",
           "image": "Constellation/Splitting_Gales.png"
         },
         "2": {
           "name": "Breeze of Reminiscence",
-          "effect": "Skyward Sonnet decreases opponents' Anemo RES and Physical RES by 12% for 10s. Opponents launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "effect": "Skyward Sonnet decreases opponents' Anemo RES and Physical RES by 24% for 10s.\nAdditionally, after unleashing the Elemental Burst Wind's Grand Ode, Venti gains the Wherever a Breeze Blows effect, and the cooldown for his Elemental Skill Skyward Sonnet is reset. After a Windsunder Arrow hits an opponent, there is also a 25% chance for Venti to gain the Wherever a Breeze Blows effect.\n\nWherever a Breeze Blows\nWhen pressing to unleash the Elemental Skill Skyward Sonnet, 300% of the original amount of DMG is dealt. This effect lasts for 15s and is removed after Venti presses to use the Elemental Skill Skyward Sonnet.",
           "image": "Constellation/Breeze_of_Reminiscence.png"
         },
         "3": {
@@ -4263,7 +4277,7 @@
         },
         "4": {
           "name": "Hurricane of Freedom",
-          "effect": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "effect": "After unleashing his Elemental Skill Skyward Sonnet or Elemental Burst Wind's Grand Ode, Venti and his own active party members gain a 25% Anemo DMG Bonus for 10s.",
           "image": "Constellation/Hurricane_of_Freedom.png"
         },
         "5": {
@@ -4273,7 +4287,7 @@
         },
         "6": {
           "name": "Storm of Defiance",
-          "effect": "Targets who take DMG from Wind's Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, their RES towards the corresponding Element is also decreased by 20%.",
+          "effect": "Targets who take DMG from Wind's Grand Ode have their Anemo RES decreased by 20%.\nIf an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.\nAdditionally, the DMG Venti deals to these opponents will gain a CRIT DMG Bonus of 100%.",
           "image": "Constellation/Storm_of_Defiance.png"
         }
       },
