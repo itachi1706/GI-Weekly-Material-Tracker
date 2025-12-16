@@ -25,16 +25,16 @@ project.logger.lifecycle("Flutter Information: Compile - ${flutter.compileSdkVer
 android {
     namespace = "com.itachi1706.gi_weekly_material_tracker"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.1.12297006" // Override the NDK version by flutter
+    ndkVersion = "29.0.14206865" // Override the NDK version by flutter
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true // For AGP 7.4+
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
