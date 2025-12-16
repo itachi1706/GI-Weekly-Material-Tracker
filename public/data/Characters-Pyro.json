@@ -2192,6 +2192,378 @@
       "hoyowiki": 43,
       "subCollection": {}
     },
+    "Durin": {
+      "image": "Characters/Pyro/Durin.png",
+      "gender": "Male",
+      "birthday": "14/3",
+      "caption": "\"The Undying Fire\"",
+      "titles": ["A Dragon Born From \"M\"'s Pen"],
+      "name": "Durin",
+      "fullName": null,
+      "description": "A dragon born from M's pen, who came to alight in the human world. His \"story\" continues to unfold.",
+      "nation": "Mondstadt, Simulanka",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Hexenzirkel",
+      "constellation": "Draco Rubedo",
+      "outfits": [
+        "A_Gift_From_the_Stars",
+        "Toward_the_Distant_Horizon"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Ballad",
+            "material3qty": 3,
+            "material4": "Tattered_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 2,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 4,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 6,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Ballad",
+            "material3qty": 9,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 4,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 6,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 12,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Eroded_Sunfire",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Ballad",
+            "material3qty": 16,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Light_Manifest_of_the_Divine_Calculus": {
+            "name": "Light Manifest of the Divine Calculus",
+            "effect": "Durin will trigger different buffs depending on the form that his power manifests as when he unleashes his Elemental Burst. When that form is:\n\nDragon of White Flame\nAfter nearby party members trigger Burning, Overloaded, Pyro Swirl, or Pyro Crystallize reactions on an opponent, or deal Pyro DMG or Dendro DMG to an opponent affected by Burning, that opponent's Pyro RES, and the RES for the corresponding Element involved in the reaction, are decreased by 20% for 6s.\n\nDragon of Dark Decay\nDurin's Vaporize DMG is increased by 40% and his Melt DMG is increased by 40%.",
+            "image": "Talents/Passive/Talent_Light_Manifest_of_the_Divine_Calculus.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Chaos_Formed_Like_the_Night": {
+            "name": "Chaos Formed Like the Night",
+            "effect": "After unleashing an Elemental Burst, Durin gains the Primordial Fusion of Forms effect for 20s: Durin gains 10 stacks of Primordial Fusion. When a periodic attack from Dragon of White Flame or Dragon of Dark Decay deals DMG, 1 stack of Primordial Fusion will be consumed to increase the DMG dealt by 3% of the original DMG for every 100 ATK. A maximum of 75% additional DMG can be dealt this way. When a single attack from Dragon of White Flame or Dragon of Dark Decay hits multiple opponents, only one stack of Primordial Fusion is consumed.\nPrimordial Fusion stacks are reset when the Elemental Burst is unleashed again.",
+            "image": "Talents/Passive/Talent_Chaos_Formed_Like_the_Night.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Ode_to_Ascension": {
+            "name": "Ode to Ascension",
+            "effect": "After completing Witch's Homework: Of This World, Durin will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nIncreases all effects of the Ascension Talent Light Manifest of the Divine Calculus (except for Duration) by 75%.",
+            "image": "Talents/Passive/Talent_Ode_to_Ascension.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
+          "Echoes_of_the_Surging_Earth": {
+            "name": "Echoes of the Surging Earth",
+            "effect": "Gains 25% more rewards when dispatched on a Mondstadt Expedition for 20 hours.",
+            "image": "Talents/Passive/Talent_Echoes_of_the_Surging_Earth.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Radiant_Wingslash": {
+            "name": "Radiant Wingslash",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive sword strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to perform a slash toward the front.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Pyro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Binary_Form-Convergence_and_Division": {
+            "name": "Binary Form: Convergence and Division",
+            "effect": "Purify the substance of souls and wishes to undergo Essential Transmutation. While transmuted, Durin's Elemental Skill Binary Form: Convergence and Division will be replaced with the special Elemental Skill Transmutation: Confirmation of Purity, and the Normal Attack Radiant Wingslash will be replaced with the special Elemental Skill Transmutation: Denial of Darkness.\n\nTransmutation: Confirmation of Purity\nDeal 1 instance of AoE Pyro DMG to nearby opponents, reverse Essential Transmutation, and enter the Confirmation of Purity state for 30s.\n\nTransmutation: Denial of Darkness\nDeal 3 consecutive instances of Pyro DMG to opponents in front, reverse Essential Transmutation, and enter the Denial of Darkness state for 30s.\n\nWhen Durin enters the Confirmation of Purity or Denial of Darkness state while in battle, he will restore a certain amount of Elemental Energy. Elemental Energy can be restored this way once every 6s.",
+            "image": "Talents/Skill/Talent_Binary_Form_Convergence_and_Division.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Principle_of_Purity-As_the_Light_Shifts": {
+            "name": "Principle of Purity: As the Light Shifts",
+            "effect": "Unleash the power of the \"Beast\" in different ways. Durin can use different Elemental Bursts based on his Essential Transmutation state.\n\nPrinciple of Purity: As the Light Shifts\nWhen Durin is in the Confirmation of Purity state, he will use the Elemental Burst Principle of Purity: As the Light Shifts, dealing 3 instances of AoE Pyro DMG to opponents in front, and manifesting his power in the Dragon of White Flame form. The Dragon of White Flame will follow the current active character and attack nearby opponents at intervals, dealing AoE Pyro DMG. This DMG is considered Elemental Burst DMG.\n\nPrinciple of Darkness: As the Stars Smolder\nWhen Durin is in the Denial of Darkness state, he will use the Elemental Burst Principle of Darkness: As the Stars Smolder, dealing 3 instances of AoE Pyro DMG to opponents in front, and manifesting his power in the Dragon of Dark Decay form. The Dragon of Dark Decay will follow the current active character and periodically attack a single nearby opponent, dealing Pyro DMG. This DMG is considered Elemental Burst DMG.\n\nWhen Durin is not in a special state as a result of Essential Transmutation, he will use the Elemental Burst Principle of Purity: As the Light Shifts.",
+            "image": "Talents/Burst/Talent_Principle_of_Purity_As_the_Light_Shifts.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Adamah's Redemption",
+          "effect": "After casting his Elemental Burst, Durin's effects will vary depending on the form of his Elemental Burst:\nPrinciple of Purity: As the Light Shifts: All other nearby party members gain 20 stacks of Cycle of Enlightenment lasting 20s. When nearby active characters deal Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst DMG, 1 stack of Cycle of Enlightenment will be consumed to increase the DMG dealt by 60% of Durin's ATK. Stack counts for characters in the party who have Cycle of Enlightenment are managed individually.\nPrinciple of Darkness: As the Stars Smolder: Durin gains 20 stacks of Cycle of Enlightenment lasting 20s. When Durin deals Elemental Burst DMG, 2 stacks of Cycle of Enlightenment will be consumed to increase the DMG dealt by 150% of Durin's ATK.\n\nWhen an Elemental Burst is used, Cycle of Enlightenment stacks will be refreshed.",
+          "image": "Constellation/Adamahs_Redemption.png"
+        },
+        "2": {
+          "name": "Unground Visions",
+          "effect": "For 20s after Durin uses an Elemental Burst, after nearby party members trigger Vaporize, Melt, Burning, Overloaded, Pyro Swirl, or Pyro Crystallize reactions, or deal Pyro DMG or Dendro DMG to an opponent affected by Burning, all nearby party members gain a 50% increase to their Pyro DMG and to the corresponding elemental DMG involved in the reaction for 6s.",
+          "image": "Constellation/Unground_Visions.png"
+        },
+        "3": {
+          "name": "Flame Mirror's Revelation",
+          "effect": "Increases the Level of Principle of Purity: As the Light Shifts by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Flame_Mirrors_Revelation.png"
+        },
+        "4": {
+          "name": "Emanare's Source",
+          "effect": "Durin's Elemental Burst DMG is increased by 40%. Additionally, when effects that consume Cycle of Enlightenment stacks are triggered as part of the Constellation Adamah's Redemption, there is a 30% chance that no Cycle of Enlightenment stacks will be consumed.",
+          "image": "Constellation/Emanares_Source.png"
+        },
+        "5": {
+          "name": "Scouring Flame's Sundering",
+          "effect": "Increases the Level of Binary Form: Convergence and Division by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Scouring_Flames_Sundering.png"
+        },
+        "6": {
+          "name": "Dual Birth",
+          "effect": "Durin's Elemental Burst DMG ignores 30% of opponents' DEF.\nAdditionally, Durin's Elemental Bursts Principle of Purity: As the Light Shifts and Principle of Darkness: As the Stars Smolder are each enhanced:\nAfter Principle of Purity: As the Light Shifts and Dragon of White Flame hit an opponent, that opponent's DEF is decreased by 30% for 6s.\nDMG from Principle of Darkness: As the Stars Smolder and Dragon of Dark Decay will ignore an additional 40% of opponents' DEF.",
+          "image": "Constellation/Dual_Birth.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Agnidus_Agate_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Tattered_Warrant",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Cyclic_Military_Kuuvahki_Core",
+          "level": 40,
+          "material4": "Tattered_Warrant",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Agnidus_Agate_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Cyclic_Military_Kuuvahki_Core",
+          "level": 50,
+          "material4": "Immaculate_Warrant",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Cyclic_Military_Kuuvahki_Core",
+          "level": 60,
+          "material4": "Immaculate_Warrant",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Agnidus_Agate_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Cyclic_Military_Kuuvahki_Core",
+          "level": 70,
+          "material4": "Frost-Etched_Warrant",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Agnidus_Agate_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Cyclic_Military_Kuuvahki_Core",
+          "level": 80,
+          "material4": "Frost-Etched_Warrant",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Frostlamp_Flower",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Tattered_Warrant",
+          "common2": "Immaculate_Warrant",
+          "common3": "Frost-Etched_Warrant",
+          "gem1": "Agnidus_Agate_Silver",
+          "gem2": "Agnidus_Agate_Fragment",
+          "gem3": "Agnidus_Agate_Chunk",
+          "gem4": "Agnidus_Agate_Gemstone",
+          "boss_drop": "Cyclic_Military_Kuuvahki_Core",
+          "local_speciality": "Frostlamp_Flower"
+        },
+        "talents": {
+          "common1": "Tattered_Warrant",
+          "common2": "Immaculate_Warrant",
+          "common3": "Frost-Etched_Warrant",
+          "mastery1": "Teachings_of_Ballad",
+          "mastery2": "Guide_to_Ballad",
+          "mastery3": "Philosophies_of_Ballad",
+          "weekly_boss_drop": "Eroded_Sunfire",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "Once a dragon who lived in a fairy tale, he now strives to learn how to live as a human.",
+      "paimonmoepath": "characters/durin",
+      "genshinggpath": "characters/durin",
+      "element": "Pyro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Durin",
+      "hoyowiki": 9017,
+      "subCollection": {}
+    },
     "Gaming": {
       "image": "Characters/Pyro/Gaming.png",
       "gender": "Male",
@@ -3081,7 +3453,7 @@
         "passives": {
           "Pounding_Surprise": {
             "name": "Pounding Surprise",
-            "effect": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+            "effect": "When Klee's Elemental Skill Jumpy Dumpty and Normal Attacks deal DMG, there is a 50% chance to grant her an Explosive Spark. Using her Elemental Skill Jumpy Dumpty or Elemental Burst Sparks 'n' Splash also grants 1 Explosive Spark. Klee can hold up to 3 Explosive Sparks.\nWhile holding an Explosive Spark, Klee's Charged Attack will consume 1 Spark to perform a special stamina-free Charged Attack, Boom-Boom Strike, dealing 50% increased DMG.\n\nHexerei: Secret Rite\nDuring the duration of Klee's Elemental Burst Sparks 'n' Splash, her Normal Attack sequence does not reset. If Klee holds an Explosive Spark while performing Normal Attacks, the third attack in the sequence will consume 1 Spark to unleash an additional attack equivalent to Boom-Boom Strike.",
             "image": "Talents/Passive/Talent_Pounding_Surprise.png",
             "order": 0,
             "type": "Passive 1"
@@ -3093,12 +3465,19 @@
             "order": 1,
             "type": "Passive 2"
           },
+          "Sparkborne_Magic": {
+            "name": "Sparkborne Magic",
+            "effect": "After completing Witch's Homework: Of Leaves That Spark, Klee will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nWhen Klee deals DMG with Normal Attacks, Elemental Skills, or Elemental Bursts, she gains 1 Boom Badge, lasting 20s. Each type of attack can grant at most 1 Boom Badge this way, and each badge has its own independent timer. While Klee has 1/2/3 Boom Badges, her special Charged Attack Boom-Boom Strike deals 115%/130%/150% of its original DMG.",
+            "image": "Talents/Passive/Talent_Sparkborne_Magic.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
           "All_Of_My_Treasures": {
             "name": "All Of My Treasures!",
             "effect": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
             "image": "Talents/Passive/Talent_All_Of_My_Treasures.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           }
         },
         "attack": {
@@ -3128,12 +3507,12 @@
       "constellations": {
         "1": {
           "name": "Chained Reactions",
-          "effect": "Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.",
+          "effect": "Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.\nFor 12s after triggering the above effect, Klee's ATK is increased by 60%.",
           "image": "Constellation/Chained_Reactions.png"
         },
         "2": {
           "name": "Explosive Frags",
-          "effect": "Being hit by Jumpy Dumpty's mines decreases opponents' DEF by 23% for 10s.",
+          "effect": "When Klee's Elemental Skill hits an opponent, that opponent's DEF will be decreased by 23% for 10s.",
           "image": "Constellation/Explosive_Frags.png"
         },
         "3": {
@@ -3143,7 +3522,7 @@
         },
         "4": {
           "name": "Sparkly Explosion",
-          "effect": "If Klee leaves the field during the duration of Sparks 'n' Splash, her departure triggers an explosion that deals 555% of her ATK as AoE Pyro DMG.",
+          "effect": "An explosion will be triggered if Klee leaves the field while Sparks 'n' Splash is active or when Sparks 'n' Splash ends, dealing 555% of ATK as AoE Pyro DMG. If Klee is on-field when the explosion occurs, its DMG will be increased by 100%.",
           "image": "Constellation/Sparkly_Explosion.png"
         },
         "5": {
@@ -3153,7 +3532,7 @@
         },
         "6": {
           "name": "Blazing Delight",
-          "effect": "While under the effects of Sparks 'n' Splash, other members of the party will continuously regenerate Energy.\nWhen Sparks 'n' Splash is used, all party members will gain a 10% Pyro DMG Bonus for 25s.",
+          "effect": "While under the effects of Sparks 'n' Splash, Klee will regenerate 3 Energy for all members of the party (excluding Klee) every 3s.\nWhen Sparks 'n' Splash is used, all party members will gain a 10% Pyro DMG Bonus for 25s.\n\nHexerei: Secret Rite\nWhen Klee uses an Explosive Spark, there is a 50% chance it will not be consumed. Additionally, while Sparks 'n' Splash is active, Klee's Normal Attacks have a 40% chance on the first and second hits to consume an Explosive Spark, dealing an additional attack equivalent to Boom-Boom Strike to her opponent(s).",
           "image": "Constellation/Blazing_Delight.png"
         }
       },

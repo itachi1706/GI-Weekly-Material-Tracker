@@ -2376,18 +2376,25 @@
             "order": 1,
             "type": "Passive 2"
           },
+          "Genesis_of_Starsigns": {
+            "name": "Genesis of Starsigns",
+            "effect": "After completing Witch's Homework: Of Untested Insight, Mona will become a Hexerei character. When the party includes at least 2 Hexerei characters, you will gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nWhen Mona's Normal Attacks or Charged Attacks hit an opponent, she gains 1 stack of Astral Glow of Mercury, for 8s. Max 3 stacks. This effect can grant at most one stack every 0.1s. When other party members trigger a Vaporize reaction on an enemy, all Astral Glow of Mercury stacks are consumed. Each stack consumed increases the damage of that Vaporize reaction by 5%.\nAdditionally, when Mona's Normal Attacks or Charged Attacks hit an opponent, the enemy's Omen duration is extended by 2s. This effect can trigger at most once every 0.5s, and can extend the Omen by up to 8s through this method.",
+            "image": "Talents/Passive/Talent_Genesis_of_Starsigns.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
           "Principium_of_Astrology": {
             "name": "Principium of Astrology",
-            "effect": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.",
+            "effect": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used.",
             "image": "Talents/Passive/Talent_Principium_of_Astrology.png",
-            "order": 2,
-            "type": "Passive 3"
+            "order": 3,
+            "type": "Passive 4 (Utility)"
           },
           "Illusory_Torrent": {
             "name": "Illusory Torrent",
-            "effect": "Alternate Sprint: Mona cloaks herself within the water's flow, consuming stamina to move rapidly.\nWhen under the effect of Illusory Torrent, Mona can move at high speed on water.\nApplies the Wet status to nearby opponents when she reappears.",
+            "effect": "Alternate Sprint\nMona cloaks herself within the water's flow, consuming stamina to move rapidly.\n\nWhen under the effect of Illusory Torrent, Mona can move at high speed on water.\nApplies the Wet status to nearby opponents when she reappears.",
             "image": "Talents/Passive/Talent_Illusory_Torrent.png",
-            "order": 3,
+            "order": 4,
             "type": "Alternate Sprint"
           }
         },
@@ -2401,14 +2408,14 @@
           },
           "Mirror_Reflection_of_Doom": {
             "name": "Mirror Reflection of Doom",
-            "effect": "Creates an illusory Phantom of fate from coalesced waterspouts.\nThe Phantom has the following special properties:\n\nContinuously taunts nearby opponents, attracting their fire.\nEach second, 4 times, deals AoE Hydro DMG.\nWhen its duration expires, the Phantom explodes, dealing AoE Hydro DMG.\nHold: Utilizes water currents to move backwards swiftly before conjuring a Phantom\nOnly one Phantom created by Mirror Reflection of Doom can exist at any time.\nWhen the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.",
+            "effect": "Creates an illusory Phantom of Fate from coalesced waterspouts.\n\nPhantom\nHas the following special properties:\nContinuously taunts nearby opponents, attracting their fire.\nContinuously deals Hydro DMG to nearby opponents.\nWhen its duration expires, the Phantom explodes, dealing AoE Hydro DMG.\n\nHold\nUtilizes water currents to move backwards swiftly before conjuring a Phantom.\n\nOnly one Phantom created by Mirror Reflection of Doom can exist at any time.",
             "image": "Talents/Skill/Talent_Mirror_Reflection_of_Doom.png",
             "order": 1,
             "type": "Elemental Skill"
           },
           "Stellaris_Phantasm": {
             "name": "Stellaris Phantasm",
-            "effect": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.\nIllusory Bubble: Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:\n\nApplies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.\nRemoves the Illusory Bubble, dealing Hydro DMG in the process.\nOmen: During its duration, increases DMG taken by opponents.",
+            "effect": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.\n\nIllusory Bubble\nTraps opponents inside a pocket of destiny and also makes them Wet.\nRenders weaker opponents immobile.\nWhen an opponent affected by Illusory Bubble sustains DMG, it has the following effects:\nApplies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.\nRemoves the Illusory Bubble, dealing Hydro DMG in the process.\n\nOmen\nDuring its duration, increases DMG taken by opponents.",
             "image": "Talents/Burst/Talent_Stellaris_Phantasm.png",
             "order": 2,
             "type": "Elemental Burst"
@@ -2418,12 +2425,12 @@
       "constellations": {
         "1": {
           "name": "Prophecy of Submersion",
-          "effect": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after any of your characters in the party hit an opponent affected by an Omen:\nElectro-Charged DMG is increased by 15%.\nVaporize DMG is increased by 15%.\nHydro Swirl DMG is increased by 15%.\nThe duration for which enemies are Frozen is increased by 15%.",
+          "effect": "When any of your own party members hits an opponent affected by an Omen, the effects of Hydro-related Elemental Reactions are enhanced for 8s:\n\nElectro-Charged DMG increases by 15%.\nLunar-Charged DMG increases by 15%.\nVaporize DMG increases by 15%.\nHydro Swirl DMG increases by 15%.\nFrozen duration is extended by 15%.\nAdditionally, when your off-field party members trigger the above effect, the DMG Bonus to the above Hydro-related Elemental Reactions is enhanced to 160% of its original effect.",
           "image": "Constellation/Prophecy_of_Submersion.png"
         },
         "2": {
           "name": "Lunar Chain",
-          "effect": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. This effect can only occur once every 5s.",
+          "effect": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. Additionally, within 5s after Mona unleashes her Elemental Burst Stellaris Phantasm, her next Normal Attack that hits an enemy will automatically trigger a Charged Attack.\nThis Charged Attack effect can only occur once every 5s.\nWhen Mona's Charged Attack hits an opponent, all nearby party members will have their Elemental Mastery increased by 80 for 12s.",
           "image": "Constellation/Lunar_Chain.png"
         },
         "3": {
@@ -2433,7 +2440,7 @@
         },
         "4": {
           "name": "Prophecy of Oblivion",
-          "effect": "When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.",
+          "effect": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%.\nWhen any Hexerei party member attacks an opponent affected by an Omen, their CRIT DMG is increased by 15%.",
           "image": "Constellation/Prophecy_of_Oblivion.png"
         },
         "5": {
@@ -2443,7 +2450,7 @@
         },
         "6": {
           "name": "Rhetorics of Calamitas",
-          "effect": "Upon entering Illusory Torrent, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+          "effect": "While Mona is the active character, when she enters Illusory Torrent or there are opponents affected by an Omen nearby, she gains a 60% increase to the DMG of her next Charged Attack per second. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.\nAdditionally, the DMG Mona's Charged Attacks deal to opponents affected by an Omen will be increased to 200% of the original DMG.",
           "image": "Constellation/Rhetorics_of_Calamitas.png"
         }
       },
