@@ -797,6 +797,17 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
         SplayTreeMap<String, CharacterAscension>.from(widget.info!.ascension!);
     var data = dataMap.entries.map((e) => e.value).toList();
 
+    if (data.isEmpty) {
+      var charName = widget.info!.name ?? 'This character';
+
+      return Padding(
+        padding: const EdgeInsets.only(top: 32.0, bottom: 32.0),
+        child: Center(
+          child: Text('$charName does not have any ascension data'),
+        ),
+      );
+    }
+
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -1552,8 +1563,13 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
     var wid = <Widget>[];
     _sortTalent(widget.info!.talent!.attack!).forEach((key, value) {
       var ascendInfo = widget.info!.talent!.ascension;
-      wid.add(_generateTalentWidget(value, false));
-      wid.add(_generateAscensionData(key, ascendInfo));
+      if (ascendInfo == null || ascendInfo.isEmpty) {
+        wid.add(_generateTalentWidget(value, true));
+      } else {
+        wid.add(_generateTalentWidget(value, false));
+        wid.add(_generateAscensionData(key, ascendInfo));
+      }
+
       wid.add(const Divider());
     });
 
@@ -1599,13 +1615,26 @@ class CharacterConstellationPage extends StatelessWidget {
   List<Widget> _constellationWidgets(BuildContext context) {
     var wid = <Widget>[];
     var sortedCons = SplayTreeMap<int, CharacterConstellations>.from(
-        info!.constellations ?? {});
+      info!.constellations ?? {},
+    );
+
     for (var data in sortedCons.entries) {
       wid.add(_generateConstellationWidget(data.key, data.value, context));
       wid.add(const Divider());
     }
 
     return wid;
+  }
+
+  Widget _noConstellations(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+
+    return SizedBox(
+      height: height,
+      child: Center(
+        child: Text("There are no constellations for ${info!.name}"),
+      ),
+    );
   }
 
   Widget _generateConstellationWidget(
@@ -1659,6 +1688,11 @@ class CharacterConstellationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (info == null) return Util.loadingScreen();
+
+    var cons = info!.constellations;
+    if (cons == null || cons.isEmpty) {
+      return _noConstellations(context);
+    }
 
     return Padding(
       padding: const EdgeInsets.all(8),
