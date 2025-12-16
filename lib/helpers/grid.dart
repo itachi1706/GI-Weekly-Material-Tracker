@@ -636,7 +636,7 @@ class GridUtils {
     textData = textData.replaceAll('Dendro', '§dDendro§r');
     textData = textData.replaceAll('Electro', '§eElectro§r');
     textData = textData.replaceAll('Geo', '§gGeo§r');
-    textData = textData.replaceAll('Hydro', '§hHydro§r');
+    textData = textData.replaceAll('Hydro ', '§hHydro§r ');
     textData = textData.replaceAll('Pyro', '§pPyro§r');
 
     // Specials
@@ -645,6 +645,8 @@ class GridUtils {
         textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
     textData =
         textData.replaceAll('Lunar-Charged', '§eLunar-Charged§r');
+    textData =
+        textData.replaceAll('Lunar-§dBloom§r', '§dLunar-Bloom§r');
 
     // DMG
     textData = textData.replaceAll('§aAnemo§r DMG', '§aAnemo DMG§r');
