@@ -78,7 +78,7 @@ jobs:
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: flutter-web-artifact
           path: |
@@ -169,13 +169,13 @@ jobs:
         run: |
           cp build/app/outputs/apk/release/app-release.apk ./release
           cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: flutter-android-artifact
           path: |
             release/
             app-fatapk.apk
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: flutter-firebase-release-artifact
           path: |
@@ -183,7 +183,7 @@ jobs:
             firebase/
       - name: Check App Size (Android ARM64)
         run: flutter build apk --analyze-size --target-platform android-arm64
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: android-app-size
           path: ~/.flutter-devtools/apk-code-size-analysis_01.json
@@ -290,19 +290,19 @@ jobs:
           cd release
           ls -lh .
           cd ..
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: flutter-ios-raw-artifact
           path: |
             release/
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: flutter-unsigned-ipa-artifact
           path: |
             release/app.ipa
       - name: Check App Size (iOS)
         run: flutter build ios --no-codesign --analyze-size
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: ios-app-size
           path: ~/.flutter-devtools/ios-code-size-analysis_01.json
