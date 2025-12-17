@@ -1249,8 +1249,18 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
 
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(widget.materialData![key]?.name ?? 'Unknown Item'),
-      Text((qty == 0) ? '' : ' x$qty'),
+      Expanded(
+        child: Text.rich(
+          TextSpan(
+            text: widget.materialData![key]?.name ?? 'Unknown Item',
+            children: [
+              TextSpan(
+                text: (qty == 0) ? '' : ' x$qty',
+              ),
+            ],
+          ),
+        ),
+      ),
     ];
   }
 
