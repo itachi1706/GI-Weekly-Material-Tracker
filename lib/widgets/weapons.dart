@@ -192,7 +192,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var message = '$bt in ${_info!.lastBannerName}\n'
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
-    return GridData.generateInfoLine(message, Icons.calendar_month, extraWidgets);
+    return GridData.generateInfoLine(
+        message, Icons.calendar_month, extraWidgets);
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {
@@ -464,12 +465,19 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       _getAscensionImage(key),
-      Flexible(
-        child: Text(
-          key == null ? '' : _materialData![key]?.name ?? 'Unknown Item',
+      Expanded(
+        child: Text.rich(
+          TextSpan(
+            text:
+                key == null ? '' : _materialData![key]?.name ?? 'Unknown Item',
+            children: [
+              TextSpan(
+                text: (qty == 0) ? '' : ' x$qty',
+              ),
+            ],
+          ),
         ),
       ),
-      Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
 

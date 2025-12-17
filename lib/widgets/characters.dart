@@ -632,10 +632,20 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
   List<Widget> _getAscensionTierMaterialRowChild(String? key, int? qty) {
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(
-        key == null ? '' : widget.materialData![key]?.name ?? 'Unknown Item',
+      Expanded(
+        child: Text.rich(
+          TextSpan(
+            text: key == null
+                ? ''
+                : widget.materialData![key]?.name ?? 'Unknown Item',
+            children: [
+              TextSpan(
+                text: (qty == 0) ? '' : ' x$qty',
+              ),
+            ],
+          ),
+        ),
       ),
-      Text((qty == 0) ? '' : ' x$qty'),
     ];
   }
 
@@ -1239,8 +1249,18 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
 
     return [
       GridData.getAscensionImage(key, widget.materialData),
-      Text(widget.materialData![key]?.name ?? 'Unknown Item'),
-      Text((qty == 0) ? '' : ' x$qty'),
+      Expanded(
+        child: Text.rich(
+          TextSpan(
+            text: widget.materialData![key]?.name ?? 'Unknown Item',
+            children: [
+              TextSpan(
+                text: (qty == 0) ? '' : ' x$qty',
+              ),
+            ],
+          ),
+        ),
+      ),
     ];
   }
 
