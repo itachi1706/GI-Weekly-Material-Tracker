@@ -9,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
+import 'package:gi_weekly_material_tracker/mixins/tracker_increment_decrement_mixin.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/commondata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
@@ -460,13 +461,8 @@ class GlobalTrackerCard extends StatefulWidget {
   GlobalTrackerCardState createState() => GlobalTrackerCardState();
 }
 
-class GlobalTrackerCardState extends State<GlobalTrackerCard> {
-  int _currentCount = 0;
-  bool _bulkChange = false;
-  Timer? _bulkTimer;
-  int _step = 1;
-  int _tick = 0;
-
+class GlobalTrackerCardState extends State<GlobalTrackerCard>
+    with TrackerIncrementDecrementMixin {
   int _tapCount = 0;
 
   Widget _typeWidget = SizedBox.shrink();
@@ -533,15 +529,18 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
   }
 
   Widget _getCharacterDataControls() {
+    var current = widget.data.current;
+    var max = widget.data.max;
+
     return Column(
       children: [
         Text(
-          _getCounterText(),
+          counterString(current, max),
           style: TextStyle(
             fontSize: 18,
             color: GridData.getCountColor(
-              (_bulkChange) ? _currentCount : widget.data.current,
-              widget.data.max,
+              (bulkChange) ? currentCount : current,
+              max,
               bw: true,
             ),
           ),
@@ -572,112 +571,28 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
     );
   }
 
-  String _getCounterText() {
-    String maxCnt = widget.data.max.toString();
-
-    return _bulkChange
-        ? "$_currentCount/$maxCnt"
-        : "${widget.data.current}/$maxCnt";
-  }
-
   void _startIncrement(LongPressStartDetails _) {
-    setState(() {
-      _bulkChange = true;
-      _currentCount = widget.data.current ?? 0;
-    });
-    var maxCnt = widget.data.max ?? 0;
-
-    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
-      if (_currentCount >= maxCnt) {
-        return;
-      }
-      var newCnt = _currentCount + _step;
-      if (newCnt >= maxCnt) newCnt = maxCnt;
-      setState(() {
-        _currentCount = newCnt;
-        _step = _stepCounterInc();
-        _tick++;
-      });
-    });
+    startCounter(true, widget.data.current ?? 0, widget.data.max ?? 0);
   }
 
   void _endIncrement(LongPressEndDetails _) {
-    _bulkTimer?.cancel();
-    TrackingData.setCount(
-      widget.trackerKey,
-      widget.data.type,
-      _currentCount,
-      widget.data.max!,
-    );
-    setState(() {
-      _bulkChange = false;
-      _step = 1;
-      _tick = 0;
-    });
+    endCounter(widget.trackerKey, widget.data.type, widget.data.max!);
   }
 
   void _startDecrement(LongPressStartDetails _) {
-    setState(() {
-      _bulkChange = true;
-      _currentCount = widget.data.current ?? 0;
-    });
-
-    _bulkTimer = Timer.periodic(Duration(milliseconds: 250), (timer) {
-      if (_currentCount <= 0) {
-        return;
-      }
-      var newCnt = _currentCount - _step;
-      if (newCnt <= 0) newCnt = 0;
-      setState(() {
-        _currentCount = newCnt;
-        _step = _stepCounterInc();
-        _tick++;
-      });
-    });
+    startCounter(false, widget.data.current ?? 0, widget.data.max ?? 0);
   }
 
   void _endDecrement(LongPressEndDetails _) {
-    _bulkTimer?.cancel();
-    TrackingData.setCount(
-      widget.trackerKey,
-      widget.data.type,
-      _currentCount,
-      widget.data.max!,
-    );
-    setState(() {
-      _bulkChange = false;
-      _step = 1;
-      _tick = 0;
-    });
-  }
-
-  int _stepCounterInc() {
-    var step = _step;
-    if (_tick > 5) {
-      if (step == 1) {
-        step = 2;
-      } else {
-        step = (step * 1.5).toInt();
-      }
-    }
-    return step;
+    endCounter(widget.trackerKey, widget.data.type, widget.data.max!);
   }
 
   void _increment() {
-    TrackingData.incrementCount(
-      widget.trackerKey,
-      widget.data.type,
-      widget.data.current!,
-      widget.data.max!,
-    );
+    incrementData(widget.trackerKey, widget.data.type, widget.data.current!, widget.data.max!);
   }
 
   void _decrement() {
-    TrackingData.decrementCount(
-      widget.trackerKey,
-      widget.data.type,
-      widget.data.current!,
-    );
+    decrementData(widget.trackerKey, widget.data.type, widget.data.current!);
   }
 
   void _secondaryTapDown(TapDownDetails details) {
