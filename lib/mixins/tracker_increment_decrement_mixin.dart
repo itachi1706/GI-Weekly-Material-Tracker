@@ -14,21 +14,24 @@ mixin TrackerIncrementDecrementMixin<T extends StatefulWidget> on State<T> {
 
   bool get bulkChange => _bulkChange;
 
+  static const _timerDuration = Duration(milliseconds: 250);
+  static const _accelerationTickThreshold = 5;
+  static const _accelerationMultiplier = 1.5;
+
   void startCounter(bool increment, int current, int max) {
     setState(() {
       _bulkChange = true;
       _currentCount = current;
     });
-    var maxCnt = max;
 
-    _bulkTimer = Timer.periodic(Duration(milliseconds: 250), (timer) {
+    _bulkTimer = Timer.periodic(_timerDuration, (timer) {
       var newCnt = _currentCount;
       if (increment) {
-        if (_currentCount >= maxCnt) {
+        if (_currentCount >= max) {
           return;
         }
         newCnt = _currentCount + _step;
-        if (newCnt >= maxCnt) newCnt = maxCnt;
+        if (newCnt >= max) newCnt = max;
       } else {
         if (_currentCount <= 0) {
           return;
@@ -69,8 +72,8 @@ mixin TrackerIncrementDecrementMixin<T extends StatefulWidget> on State<T> {
 
   int _stepCounterInc() {
     var step = _step;
-    if (_tick > 5) {
-      step = step == 1 ? 2 : (step * 1.5).toInt();
+    if (_tick > _accelerationTickThreshold) {
+      step = step == 1 ? 2 : (step * _accelerationMultiplier).toInt();
     }
 
     return step;
