@@ -23,7 +23,7 @@ jobs:
           node-version: 20.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
-      - run: npm ci
+      - run: npm ci --ignore-scripts
         working-directory: util
       - run: npm run build --if-present
         working-directory: util
@@ -180,7 +180,7 @@ jobs:
           echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > /tmp/sak.json
       - name: Copy Event Banner JSON to Folder
         run: cp public/data/EventBanners.json util
-      - run: npm i
+      - run: npm ci --ignore-scripts
         working-directory: util
       - name: Update Firebase Realtime DB Banner Data
         run: npm run updateBanners
@@ -211,7 +211,7 @@ jobs:
           mkdir util/import
           cp public/data/*.json util/import
           rm util/import/EventBanners.json
-      - run: npm i
+      - run: npm ci --ignore-scripts
         working-directory: util
       # PRE-PROCESSING
       - name: Update Material Usages
@@ -307,7 +307,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: firebase/functions/package-lock.json
       - name: Install Dependencies
-        run: npm i
+        run: npm ci --ignore-scripts
         working-directory: firebase/functions
       - name: Update Firebase Cloud Function
         uses: w9jds/firebase-action@v15.0.0
@@ -339,7 +339,7 @@ jobs:
         run: |
           mkdir util/templates
           cp public/templates/*.json util/templates
-      - run: npm i
+      - run: npm ci --ignore-scripts
         working-directory: util
       - name: Update Firestore Template Data
         run: npm run updateFirestoreTemplates
