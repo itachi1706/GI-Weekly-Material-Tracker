@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -235,11 +237,8 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
   Map<String, CharacterData>? _characterData;
 
   Color? _rarityColor;
-  int _tapCount = 0;
 
   bool _firstLoad = false;
-
-  ButtonStyle? _flatButtonStyle;
 
   @override
   void initState() {
@@ -247,16 +246,6 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
     debugPrint(Get.parameters.toString());
     _materialKey = Get.parameters['materialKey'];
     _getStaticData();
-    _flatButtonStyle = TextButton.styleFrom(
-      foregroundColor:
-          (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black,
-      minimumSize: const Size(0, 0),
-      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(2.0)),
-      ),
-    );
   }
 
   Widget _materialHeader() {
@@ -400,170 +389,17 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
           );
         }
 
-        return _getCharacterDataContainer(
-          imageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          typeWidget,
-          key,
-          data,
-          name!,
+        return GlobalTrackerCard(
+          imageRef: imageRef,
+          extraAscensionRef: extraAscensionRef,
+          extraTypeRef: extraTypeRef,
+          typeWidget: typeWidget,
+          trackerKey: key,
+          data: data,
+          name: name!,
+          material: _material,
         );
       },
-    );
-  }
-
-  Widget _getCharacterDataImage(
-    String? imageRef,
-    int extraAscensionRef,
-    Widget typeWidget,
-  ) {
-    return SizedBox(
-      height: 64,
-      width: 64,
-      child: Stack(
-        children: [
-          GridData.getImageAssetFromFirebase(
-            imageRef,
-            height: 48,
-          ),
-          Align(
-            alignment: FractionalOffset.bottomLeft,
-            child: Text(GridUtils.getRomanNumberArray(
-              extraAscensionRef - 1,
-            ).toString()),
-          ),
-          Align(
-            alignment: FractionalOffset.bottomRight,
-            child: typeWidget,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _getCharacterDataControls(String key, TrackingUserData data) {
-    return Column(
-      children: [
-        Text(
-          '${data.current}/${data.max}',
-          style: TextStyle(
-            fontSize: 18,
-            color: GridData.getCountColor(data.current, data.max, bw: true),
-          ),
-        ),
-        Row(
-          children: [
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.decrementCount(
-                key,
-                data.type,
-                data.current!,
-              ),
-              child: const Icon(Icons.remove),
-            ),
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.incrementCount(
-                key,
-                data.type,
-                data.current!,
-                data.max!,
-              ),
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  void _updateMultiTracking(
-    String? imageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    String key,
-    TrackingUserData data,
-  ) {
-    UpdateMultiTracking(context, _material).itemClickedAction(
-      data,
-      key,
-      {
-        'img': imageRef,
-        'asc': extraAscensionRef,
-        'type': extraTypeRef,
-      },
-      true,
-    );
-  }
-
-  Widget _getCharacterDataContainer(
-    String? imageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    Widget typeWidget,
-    String key,
-    TrackingUserData data,
-    String name,
-  ) {
-    return Card(
-      child: InkWell(
-        onSecondaryTapDown: (details) async {
-          if (kIsWeb) {
-            await BrowserContextMenu.disableContextMenu();
-            await Future.delayed(const Duration(seconds: 0));
-            BrowserContextMenu.enableContextMenu();
-          }
-        },
-        onSecondaryTap: () => _updateMultiTracking(
-          imageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          key,
-          data,
-        ),
-        onLongPress: () => _updateMultiTracking(
-          imageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          key,
-          data,
-        ),
-        onTap: () {
-          _tapCount++;
-          if (_tapCount > 5) {
-            Util.showSnackbarQuick(
-              context,
-              'Long press to bulk update tracked materials',
-            );
-          }
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _getCharacterDataImage(imageRef, extraAscensionRef, typeWidget),
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 200,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                  ],
-                ),
-              ),
-              const Spacer(),
-              _getCharacterDataControls(key, data),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
@@ -604,6 +440,257 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 ),
               ),
               _getCharacterData(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class GlobalTrackerCard extends StatefulWidget {
+  final String? imageRef;
+  final int extraAscensionRef;
+  final String? extraTypeRef;
+  final Widget typeWidget;
+  final String trackerKey;
+  final TrackingUserData data;
+  final String name;
+  final MaterialDataCommon? material;
+
+  const GlobalTrackerCard(
+      {super.key,
+      required this.imageRef,
+      required this.extraAscensionRef,
+      required this.extraTypeRef,
+      required this.typeWidget,
+      required this.trackerKey,
+      required this.data,
+      required this.name,
+      required this.material});
+
+  @override
+  GlobalTrackerCardState createState() => GlobalTrackerCardState();
+}
+
+class GlobalTrackerCardState extends State<GlobalTrackerCard> {
+  int _currentCount = 0;
+  bool _bulkChange = false;
+  Timer? _bulkTimer;
+
+  int _tapCount = 0;
+
+  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
+    foregroundColor: Colors.black87,
+    minimumSize: const Size(0, 0),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
+
+  void _updateMultiTracking() {
+    UpdateMultiTracking(context, widget.material).itemClickedAction(
+      widget.data,
+      widget.trackerKey,
+      {
+        'img': widget.imageRef,
+        'asc': widget.extraAscensionRef,
+        'type': widget.extraTypeRef,
+      },
+      true,
+    );
+  }
+
+  Widget _getCharacterDataImage() {
+    return SizedBox(
+      height: 64,
+      width: 64,
+      child: Stack(
+        children: [
+          GridData.getImageAssetFromFirebase(
+            widget.imageRef,
+            height: 48,
+          ),
+          Align(
+            alignment: FractionalOffset.bottomLeft,
+            child: Text(GridUtils.getRomanNumberArray(
+              widget.extraAscensionRef - 1,
+            ).toString()),
+          ),
+          Align(
+            alignment: FractionalOffset.bottomRight,
+            child: widget.typeWidget,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _getCharacterDataControls() {
+    return Column(
+      children: [
+        Text(
+          _getCounterText(),
+          style: TextStyle(
+            fontSize: 18,
+            color: GridData.getCountColor(
+                (_bulkChange) ? _currentCount : widget.data.current,
+                widget.data.max,
+                bw: true),
+          ),
+        ),
+        Row(
+          children: [
+            GestureDetector(
+              onLongPressStart: _startDecrement,
+              onLongPressEnd: _endDecrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _decrement,
+                child: const Icon(Icons.remove),
+              ),
+            ),
+            GestureDetector(
+              onLongPressStart: _startIncrement,
+              onLongPressEnd: _endIncrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _increment,
+                child: const Icon(Icons.add),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  String _getCounterText() {
+    String maxCnt = widget.data.max.toString();
+
+    return _bulkChange
+        ? "$_currentCount/$maxCnt"
+        : "${widget.data.current}/$maxCnt";
+  }
+
+  void _startIncrement(LongPressStartDetails _) {
+    setState(() {
+      _bulkChange = true;
+      _currentCount = widget.data.current ?? 0;
+    });
+
+    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+      if (_currentCount >= (widget.data.max ?? 0)) {
+        return;
+      }
+      setState(() {
+        _currentCount++;
+      });
+    });
+  }
+
+  void _endIncrement(LongPressEndDetails _) {
+    _bulkTimer?.cancel();
+    TrackingData.setCount(
+        widget.trackerKey, widget.data.type, _currentCount, widget.data.max!);
+    setState(() {
+      _bulkChange = false;
+    });
+  }
+
+  void _startDecrement(LongPressStartDetails _) {
+    setState(() {
+      _bulkChange = true;
+      _currentCount = widget.data.current ?? 0;
+    });
+
+    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+      if (_currentCount <= 0) {
+        return;
+      }
+      setState(() {
+        _currentCount--;
+      });
+    });
+  }
+
+  void _endDecrement(LongPressEndDetails _) {
+    _bulkTimer?.cancel();
+    TrackingData.setCount(
+        widget.trackerKey, widget.data.type, _currentCount, widget.data.max!);
+    setState(() {
+      _bulkChange = false;
+    });
+  }
+
+  void _increment() {
+    TrackingData.incrementCount(
+      widget.trackerKey,
+      widget.data.type,
+      widget.data.current!,
+      widget.data.max!,
+    );
+  }
+
+  void _decrement() {
+    TrackingData.decrementCount(
+      widget.trackerKey,
+      widget.data.type,
+      widget.data.current!,
+    );
+  }
+
+  void _secondaryTapDown(TapDownDetails details) {
+    _handleSecondaryTapDownAsync(details);
+  }
+
+  Future<void> _handleSecondaryTapDownAsync(TapDownDetails _) async {
+    if (kIsWeb) {
+      await BrowserContextMenu.disableContextMenu();
+      await Future.delayed(const Duration(seconds: 0));
+      BrowserContextMenu.enableContextMenu();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: InkWell(
+        onSecondaryTapDown: _secondaryTapDown,
+        onSecondaryTap: () => _updateMultiTracking(),
+        onLongPress: () => _updateMultiTracking(),
+        onTap: () {
+          _tapCount++;
+          if (_tapCount > 5) {
+            Util.showSnackbarQuick(
+              context,
+              'Long press to bulk update tracked materials',
+            );
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _getCharacterDataImage(),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 200,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.name,
+                      style: const TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              _getCharacterDataControls(),
             ],
           ),
         ),
