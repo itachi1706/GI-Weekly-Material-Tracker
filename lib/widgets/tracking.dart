@@ -501,7 +501,7 @@ class TrackerCardState extends State<TrackerCard> {
     );
   }
 
-  Widget _trackerInfo(MaterialDataCommon material) {
+  Widget _trackerInfo() {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
@@ -509,7 +509,7 @@ class TrackerCardState extends State<TrackerCard> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            material.name!,
+            widget.material.name!,
             style: const TextStyle(
               fontSize: 20,
               color: Colors.white,
@@ -521,7 +521,7 @@ class TrackerCardState extends State<TrackerCard> {
             itemSize: 12,
             unratedColor: Colors.transparent,
             initialRating: double.tryParse(
-              material.rarity.toString(),
+              widget.material.rarity.toString(),
             )!,
             itemBuilder: (context, _) => const Icon(
               Icons.star,
@@ -532,7 +532,7 @@ class TrackerCardState extends State<TrackerCard> {
             },
           ),
           Text(
-            material.obtained!.replaceAll('\\n', '\n'),
+            widget.material.obtained!.replaceAll('\\n', '\n'),
             style: const TextStyle(
               fontSize: 11,
               color: Colors.white,
@@ -543,12 +543,7 @@ class TrackerCardState extends State<TrackerCard> {
     );
   }
 
-  Widget _trackerControls(
-      TrackingUserData data,
-      String? extraImageRef,
-      int extraAscensionRef,
-      String? extraTypeRef,
-      ) {
+  Widget _trackerControls() {
     return Column(
       children: [
         Text(
@@ -557,7 +552,7 @@ class TrackerCardState extends State<TrackerCard> {
             fontSize: 18,
             color: GridData.getCountColor(
               (_bulkChange) ? _currentCount : widget.data.current,
-              data.max,
+              widget.data.max,
             ),
           ),
         ),
@@ -587,9 +582,9 @@ class TrackerCardState extends State<TrackerCard> {
           ],
         ),
         TrackingData.getSupportingWidget(
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
         ),
       ],
     );
@@ -716,14 +711,9 @@ class TrackerCardState extends State<TrackerCard> {
                 widget.material.image,
                 height: 48,
               ),
-              _trackerInfo(widget.material),
+              _trackerInfo(),
               const Spacer(),
-              _trackerControls(
-                widget.data,
-                widget.extraImageRef,
-                widget.extraAscensionRef,
-                widget.extraTypeRef,
-              ),
+              _trackerControls(),
             ],
           ),
         ),
