@@ -19,7 +19,7 @@ jobs:
           node-version: 16.x
           cache: 'npm'
           cache-dependency-path: util/package-lock.json
-      - run: npm ci
+      - run: npm ci --ignore-scripts
         working-directory: util
       - run: npm run build --if-present
         working-directory: util
@@ -44,7 +44,7 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           echo $FIREBASE_SERVICE_ACCOUNT | base64 -d > util/serviceAccountKey.json
-      - run: npm i
+      - run: npm ci --ignore-scripts
         working-directory: util
       - name: Crawl Promo Codes
         run: npm run updatePromoCode --if-present

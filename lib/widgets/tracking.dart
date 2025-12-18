@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
+import 'package:gi_weekly_material_tracker/mixins/tracker_increment_decrement_mixin.dart';
 import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
@@ -57,16 +60,6 @@ class TrackerPageState extends State<TrackerPage> {
   Map<String, CharacterData>? _characterData;
 
   late SharedPreferences _prefs;
-
-  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
-    foregroundColor: Colors.black87,
-    minimumSize: const Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(2.0)),
-    ),
-  );
 
   @override
   void initState() {
@@ -123,209 +116,19 @@ class TrackerPageState extends State<TrackerPage> {
                 }
               }
 
-              return _getCardData(
-                data,
-                dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-                material,
+              return TrackerCard(
+                data: data,
+                dataId: dataId,
+                extraImageRef: extraImageRef,
+                extraAscensionRef: extraAscensionRef,
+                extraTypeRef: extraTypeRef,
+                material: material,
               );
             },
           )
         : const Center(
             child: Text('No items being tracked for this material category'),
           );
-  }
-
-  void _updateMultiTracking(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    MaterialDataCommon material,
-    bool dialog,
-  ) {
-    UpdateMultiTracking(
-      context,
-      _materialData![data.name!],
-    ).itemClickedAction(
-      data,
-      dataId,
-      {
-        'img': extraImageRef,
-        'asc': extraAscensionRef,
-        'type': extraTypeRef,
-      },
-      dialog,
-    );
-  }
-
-  Widget _getCardData(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    MaterialDataCommon material,
-  ) {
-    return Card(
-      color: GridUtils.getRarityColor(material.rarity),
-      child: InkWell(
-        onTap: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          false,
-        ),
-        onSecondaryTapDown: (details) async {
-          if (kIsWeb) {
-            await BrowserContextMenu.disableContextMenu();
-            await Future.delayed(const Duration(seconds: 0));
-            BrowserContextMenu.enableContextMenu();
-          }
-        },
-        onSecondaryTap: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          true,
-        ),
-        onLongPress: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          true,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GridData.getImageAssetFromFirebase(
-                material.image,
-                height: 48,
-              ),
-              _trackerInfo(material),
-              const Spacer(),
-              _trackerControls(
-                data,
-                dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _trackerInfo(MaterialDataCommon material) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width - 180,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-          RatingBar.builder(
-            ignoreGestures: true,
-            itemCount: 5,
-            itemSize: 12,
-            unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              material.rarity.toString(),
-            )!,
-            itemBuilder: (context, _) => const Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-            onRatingUpdate: (rating) {
-              debugPrint(rating.toString());
-            },
-          ),
-          Text(
-            material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _trackerControls(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-  ) {
-    return Column(
-      children: [
-        Text(
-          '${data.current}/${data.max}',
-          style: TextStyle(
-            fontSize: 18,
-            color: GridData.getCountColor(
-              data.current,
-              data.max,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.decrementCount(
-                dataId,
-                data.type,
-                data.current!,
-              ),
-              child: const Icon(
-                Icons.remove,
-                color: Colors.white,
-              ),
-            ),
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.incrementCount(
-                dataId,
-                data.type,
-                data.current!,
-                data.max!,
-              ),
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
-          ],
-        ),
-        TrackingData.getSupportingWidget(
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-        ),
-      ],
-    );
   }
 
   void _retrieveData() async {
@@ -564,15 +367,18 @@ class PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
+
+    var year = _cDT!.year;
+    var mth = _cDT!.month;
+    var day = _cDT!.day;
+
     // This day at 12am
-    _beforeDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
+    _beforeDT = tz.TZDateTime(loc, year, mth, day, 0, 0, 0, 0);
     _dbDT = _cDT!.subtract(const Duration(days: 1));
     // Next day at 12am
     _afterDT = _beforeDT!.add(const Duration(days: 1));
     // This day at 4am
-    _coffDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
+    _coffDT = tz.TZDateTime(loc, year, mth, day, 4, 0, 0, 0);
 
     var ref = _db
         .collection('tracking')
@@ -633,6 +439,252 @@ class PlannerPageState extends State<PlannerPage> {
 
         return _buildWeeklyMaterials(mappedData);
       },
+    );
+  }
+}
+
+// Tracker card itself
+class TrackerCard extends StatefulWidget {
+  final TrackingUserData data;
+  final String dataId;
+  final String? extraImageRef;
+  final int extraAscensionRef;
+  final String? extraTypeRef;
+  final MaterialDataCommon material;
+
+  const TrackerCard({
+    super.key,
+    required this.data,
+    required this.dataId,
+    required this.extraImageRef,
+    required this.extraAscensionRef,
+    required this.extraTypeRef,
+    required this.material,
+  });
+
+  @override
+  TrackerCardState createState() => TrackerCardState();
+}
+
+class TrackerCardState extends State<TrackerCard>
+    with TrackerIncrementDecrementMixin {
+
+  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
+    foregroundColor: Colors.black87,
+    minimumSize: const Size(0, 0),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
+
+  void _updateMultiTracking(
+    TrackingUserData data,
+    String dataId,
+    String? extraImageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+    MaterialDataCommon material,
+    bool dialog,
+  ) {
+    UpdateMultiTracking(
+      context,
+      material,
+    ).itemClickedAction(
+      data,
+      dataId,
+      {
+        'img': extraImageRef,
+        'asc': extraAscensionRef,
+        'type': extraTypeRef,
+      },
+      dialog,
+    );
+  }
+
+  Widget _trackerInfo() {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width - 180,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            widget.material.name!,
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+          RatingBar.builder(
+            ignoreGestures: true,
+            itemCount: 5,
+            itemSize: 12,
+            unratedColor: Colors.transparent,
+            initialRating: double.tryParse(
+              widget.material.rarity.toString(),
+            )!,
+            itemBuilder: (context, _) => const Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) {
+              debugPrint(rating.toString());
+            },
+          ),
+          Text(
+            widget.material.obtained!.replaceAll('\\n', '\n'),
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _trackerControls() {
+    var current = widget.data.current;
+    var max = widget.data.max;
+
+    return Column(
+      children: [
+        Text(
+          counterString(current, max),
+          style: TextStyle(
+            fontSize: 18,
+            color: GridData.getCountColor(
+              (bulkChange) ? currentCount : current,
+              max,
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            GestureDetector(
+              onLongPressStart: _startDecrement,
+              onLongPressEnd: _endDecrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _decrement,
+                child: const Icon(
+                  Icons.remove,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onLongPressStart: _startIncrement,
+              onLongPressEnd: _endIncrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _increment,
+                child: const Icon(Icons.add, color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+        TrackingData.getSupportingWidget(
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+        ),
+      ],
+    );
+  }
+
+  void _startIncrement(LongPressStartDetails _) {
+    startCounter(true, widget.data.current ?? 0, widget.data.max ?? 0);
+  }
+
+  void _endIncrement(LongPressEndDetails _) {
+    endCounter(widget.dataId, widget.data.type, widget.data.max!);
+  }
+
+  void _startDecrement(LongPressStartDetails _) {
+    startCounter(false, widget.data.current ?? 0, widget.data.max ?? 0);
+  }
+
+  void _endDecrement(LongPressEndDetails _) {
+    endCounter(widget.dataId, widget.data.type, widget.data.max!);
+  }
+
+  void _increment() {
+    incrementData(
+      widget.dataId,
+      widget.data.type,
+      widget.data.current!,
+      widget.data.max!,
+    );
+  }
+
+  void _decrement() {
+    decrementData(widget.dataId, widget.data.type, widget.data.current!);
+  }
+
+  void _secondaryTapDown(TapDownDetails details) {
+    _handleSecondaryTapDownAsync(details);
+  }
+
+  Future<void> _handleSecondaryTapDownAsync(TapDownDetails _) async {
+    if (kIsWeb) {
+      await BrowserContextMenu.disableContextMenu();
+      await Future.delayed(const Duration(seconds: 0));
+      BrowserContextMenu.enableContextMenu();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: GridUtils.getRarityColor(widget.material.rarity),
+      child: InkWell(
+        onTap: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          false,
+        ),
+        onSecondaryTapDown: _secondaryTapDown,
+        onSecondaryTap: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          true,
+        ),
+        onLongPress: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          true,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GridData.getImageAssetFromFirebase(
+                widget.material.image,
+                height: 48,
+              ),
+              _trackerInfo(),
+              const Spacer(),
+              _trackerControls(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
