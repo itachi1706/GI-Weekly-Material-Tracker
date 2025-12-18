@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -58,16 +60,6 @@ class TrackerPageState extends State<TrackerPage> {
 
   late SharedPreferences _prefs;
 
-  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
-    foregroundColor: Colors.black87,
-    minimumSize: const Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(2.0)),
-    ),
-  );
-
   @override
   void initState() {
     super.initState();
@@ -123,209 +115,19 @@ class TrackerPageState extends State<TrackerPage> {
                 }
               }
 
-              return _getCardData(
-                data,
-                dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-                material,
+              return TrackerCard(
+                data: data,
+                dataId: dataId,
+                extraImageRef: extraImageRef,
+                extraAscensionRef: extraAscensionRef,
+                extraTypeRef: extraTypeRef,
+                material: material,
               );
             },
           )
         : const Center(
             child: Text('No items being tracked for this material category'),
           );
-  }
-
-  void _updateMultiTracking(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    MaterialDataCommon material,
-    bool dialog,
-  ) {
-    UpdateMultiTracking(
-      context,
-      _materialData![data.name!],
-    ).itemClickedAction(
-      data,
-      dataId,
-      {
-        'img': extraImageRef,
-        'asc': extraAscensionRef,
-        'type': extraTypeRef,
-      },
-      dialog,
-    );
-  }
-
-  Widget _getCardData(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-    MaterialDataCommon material,
-  ) {
-    return Card(
-      color: GridUtils.getRarityColor(material.rarity),
-      child: InkWell(
-        onTap: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          false,
-        ),
-        onSecondaryTapDown: (details) async {
-          if (kIsWeb) {
-            await BrowserContextMenu.disableContextMenu();
-            await Future.delayed(const Duration(seconds: 0));
-            BrowserContextMenu.enableContextMenu();
-          }
-        },
-        onSecondaryTap: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          true,
-        ),
-        onLongPress: () => _updateMultiTracking(
-          data,
-          dataId,
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-          material,
-          true,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GridData.getImageAssetFromFirebase(
-                material.image,
-                height: 48,
-              ),
-              _trackerInfo(material),
-              const Spacer(),
-              _trackerControls(
-                data,
-                dataId,
-                extraImageRef,
-                extraAscensionRef,
-                extraTypeRef,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _trackerInfo(MaterialDataCommon material) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width - 180,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-          ),
-          RatingBar.builder(
-            ignoreGestures: true,
-            itemCount: 5,
-            itemSize: 12,
-            unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              material.rarity.toString(),
-            )!,
-            itemBuilder: (context, _) => const Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
-            onRatingUpdate: (rating) {
-              debugPrint(rating.toString());
-            },
-          ),
-          Text(
-            material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _trackerControls(
-    TrackingUserData data,
-    String dataId,
-    String? extraImageRef,
-    int extraAscensionRef,
-    String? extraTypeRef,
-  ) {
-    return Column(
-      children: [
-        Text(
-          '${data.current}/${data.max}',
-          style: TextStyle(
-            fontSize: 18,
-            color: GridData.getCountColor(
-              data.current,
-              data.max,
-            ),
-          ),
-        ),
-        Row(
-          children: [
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.decrementCount(
-                dataId,
-                data.type,
-                data.current!,
-              ),
-              child: const Icon(
-                Icons.remove,
-                color: Colors.white,
-              ),
-            ),
-            TextButton(
-              style: _flatButtonStyle,
-              onPressed: () => TrackingData.incrementCount(
-                dataId,
-                data.type,
-                data.current!,
-                data.max!,
-              ),
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
-          ],
-        ),
-        TrackingData.getSupportingWidget(
-          extraImageRef,
-          extraAscensionRef,
-          extraTypeRef,
-        ),
-      ],
-    );
   }
 
   void _retrieveData() async {
@@ -633,6 +435,299 @@ class PlannerPageState extends State<PlannerPage> {
 
         return _buildWeeklyMaterials(mappedData);
       },
+    );
+  }
+}
+
+// Tracker card itself
+class TrackerCard extends StatefulWidget {
+  final TrackingUserData data;
+  final String dataId;
+  final String? extraImageRef;
+  final int extraAscensionRef;
+  final String? extraTypeRef;
+  final MaterialDataCommon material;
+
+  const TrackerCard({
+    super.key,
+    required this.data,
+    required this.dataId,
+    required this.extraImageRef,
+    required this.extraAscensionRef,
+    required this.extraTypeRef,
+    required this.material,
+  });
+
+  @override
+  TrackerCardState createState() => TrackerCardState();
+}
+
+class TrackerCardState extends State<TrackerCard> {
+  int _currentCount = 0;
+  bool _bulkChange = false;
+  Timer? _bulkTimer;
+
+  final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
+    foregroundColor: Colors.black87,
+    minimumSize: const Size(0, 0),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
+
+  void _updateMultiTracking(
+      TrackingUserData data,
+      String dataId,
+      String? extraImageRef,
+      int extraAscensionRef,
+      String? extraTypeRef,
+      MaterialDataCommon material,
+      bool dialog,
+      ) {
+    UpdateMultiTracking(
+      context,
+      material,
+    ).itemClickedAction(
+      data,
+      dataId,
+      {
+        'img': extraImageRef,
+        'asc': extraAscensionRef,
+        'type': extraTypeRef,
+      },
+      dialog,
+    );
+  }
+
+  Widget _trackerInfo(MaterialDataCommon material) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width - 180,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            material.name!,
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+          RatingBar.builder(
+            ignoreGestures: true,
+            itemCount: 5,
+            itemSize: 12,
+            unratedColor: Colors.transparent,
+            initialRating: double.tryParse(
+              material.rarity.toString(),
+            )!,
+            itemBuilder: (context, _) => const Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) {
+              debugPrint(rating.toString());
+            },
+          ),
+          Text(
+            material.obtained!.replaceAll('\\n', '\n'),
+            style: const TextStyle(
+              fontSize: 11,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _trackerControls(
+      TrackingUserData data,
+      String? extraImageRef,
+      int extraAscensionRef,
+      String? extraTypeRef,
+      ) {
+    return Column(
+      children: [
+        Text(
+          _getCounterText(),
+          style: TextStyle(
+            fontSize: 18,
+            color: GridData.getCountColor(
+              (_bulkChange) ? _currentCount : widget.data.current,
+              data.max,
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            GestureDetector(
+              onLongPressStart: _startDecrement,
+              onLongPressEnd: _endDecrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _decrement,
+                child: const Icon(
+                  Icons.remove,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onLongPressStart: _startIncrement,
+              onLongPressEnd: _endIncrement,
+              child: TextButton(
+                style: _flatButtonStyle,
+                onPressed: _increment,
+                child: const Icon(Icons.add, color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+        TrackingData.getSupportingWidget(
+          extraImageRef,
+          extraAscensionRef,
+          extraTypeRef,
+        ),
+      ],
+    );
+  }
+
+  String _getCounterText() {
+    String maxCnt = widget.data.max.toString();
+
+    return _bulkChange ? "$_currentCount/$maxCnt" : "${widget.data.current}/$maxCnt";
+  }
+
+  void _startIncrement(LongPressStartDetails _) {
+    setState(() {
+      _bulkChange = true;
+      _currentCount = widget.data.current ?? 0;
+    });
+
+    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+      if (_currentCount >= (widget.data.max ?? 0)) {
+        return;
+      }
+      setState(() {
+        _currentCount++;
+      });
+    });
+
+  }
+
+  void _endIncrement(LongPressEndDetails _) {
+    _bulkTimer?.cancel();
+    TrackingData.setCount(widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+    setState(() {
+      _bulkChange = false;
+    });
+  }
+
+  void _startDecrement(LongPressStartDetails _) {
+    setState(() {
+      _bulkChange = true;
+      _currentCount = widget.data.current ?? 0;
+    });
+
+    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+      if (_currentCount <= 0) {
+        return;
+      }
+      setState(() {
+        _currentCount--;
+      });
+    });
+
+  }
+
+  void _endDecrement(LongPressEndDetails _) {
+    _bulkTimer?.cancel();
+    TrackingData.setCount(widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+    setState(() {
+      _bulkChange = false;
+    });
+  }
+
+  void _increment() {
+    TrackingData.incrementCount(
+      widget.dataId,
+      widget.data.type,
+      widget.data.current!,
+      widget.data.max!,
+    );
+  }
+
+  void _decrement() {
+    TrackingData.decrementCount(
+      widget.dataId,
+      widget.data.type,
+      widget.data.current!,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: GridUtils.getRarityColor(widget.material.rarity),
+      child: InkWell(
+        onTap: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          false,
+        ),
+        onSecondaryTapDown: (details) async {
+          if (kIsWeb) {
+            await BrowserContextMenu.disableContextMenu();
+            await Future.delayed(const Duration(seconds: 0));
+            BrowserContextMenu.enableContextMenu();
+          }
+        },
+        onSecondaryTap: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          true,
+        ),
+        onLongPress: () => _updateMultiTracking(
+          widget.data,
+          widget.dataId,
+          widget.extraImageRef,
+          widget.extraAscensionRef,
+          widget.extraTypeRef,
+          widget.material,
+          true,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GridData.getImageAssetFromFirebase(
+                widget.material.image,
+                height: 48,
+              ),
+              _trackerInfo(widget.material),
+              const Spacer(),
+              _trackerControls(
+                widget.data,
+                widget.extraImageRef,
+                widget.extraAscensionRef,
+                widget.extraTypeRef,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
