@@ -99,6 +99,8 @@ flutter_launcher_icons:
   remove_alpha_ios: true
   adaptive_icon_foreground: assets/icons/appicon/android_foreground.png
   adaptive_icon_background: "#FF5722"
+  adaptive_icon_monochrome: assets/icons/appicon/android_foreground.png
+  adaptive_icon_foreground_inset: 24
   image_path_android: assets/icons/appicon/launcher_icon.png
   image_path_ios: assets/icons/appicon/launcher_ios.png
   web:
