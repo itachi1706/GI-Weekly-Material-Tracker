@@ -366,15 +366,18 @@ class PlannerPageState extends State<PlannerPage> {
   Widget build(BuildContext context) {
     var loc = tz.getLocation(_getLoc());
     _cDT = tz.TZDateTime.now(loc);
+
+    var year = _cDT!.year;
+    var mth = _cDT!.month;
+    var day = _cDT!.day;
+
     // This day at 12am
-    _beforeDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 0, 0, 0, 0);
+    _beforeDT = tz.TZDateTime(loc, year, mth, day, 0, 0, 0, 0);
     _dbDT = _cDT!.subtract(const Duration(days: 1));
     // Next day at 12am
     _afterDT = _beforeDT!.add(const Duration(days: 1));
     // This day at 4am
-    _coffDT =
-        tz.TZDateTime(loc, _cDT!.year, _cDT!.month, _cDT!.day, 4, 0, 0, 0);
+    _coffDT = tz.TZDateTime(loc, year, mth, day, 4, 0, 0, 0);
 
     var ref = _db
         .collection('tracking')
@@ -478,14 +481,14 @@ class TrackerCardState extends State<TrackerCard> {
   );
 
   void _updateMultiTracking(
-      TrackingUserData data,
-      String dataId,
-      String? extraImageRef,
-      int extraAscensionRef,
-      String? extraTypeRef,
-      MaterialDataCommon material,
-      bool dialog,
-      ) {
+    TrackingUserData data,
+    String dataId,
+    String? extraImageRef,
+    int extraAscensionRef,
+    String? extraTypeRef,
+    MaterialDataCommon material,
+    bool dialog,
+  ) {
     UpdateMultiTracking(
       context,
       material,
@@ -593,7 +596,9 @@ class TrackerCardState extends State<TrackerCard> {
   String _getCounterText() {
     String maxCnt = widget.data.max.toString();
 
-    return _bulkChange ? "$_currentCount/$maxCnt" : "${widget.data.current}/$maxCnt";
+    return _bulkChange
+        ? "$_currentCount/$maxCnt"
+        : "${widget.data.current}/$maxCnt";
   }
 
   void _startIncrement(LongPressStartDetails _) {
@@ -610,12 +615,12 @@ class TrackerCardState extends State<TrackerCard> {
         _currentCount++;
       });
     });
-
   }
 
   void _endIncrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
-    TrackingData.setCount(widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+    TrackingData.setCount(
+        widget.dataId, widget.data.type, _currentCount, widget.data.max!);
     setState(() {
       _bulkChange = false;
     });
@@ -635,12 +640,12 @@ class TrackerCardState extends State<TrackerCard> {
         _currentCount--;
       });
     });
-
   }
 
   void _endDecrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
-    TrackingData.setCount(widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+    TrackingData.setCount(
+        widget.dataId, widget.data.type, _currentCount, widget.data.max!);
     setState(() {
       _bulkChange = false;
     });
@@ -663,6 +668,18 @@ class TrackerCardState extends State<TrackerCard> {
     );
   }
 
+  void _secondaryTapDown(TapDownDetails details) {
+    _handleSecondaryTapDownAsync(details);
+  }
+
+  Future<void> _handleSecondaryTapDownAsync(TapDownDetails _) async {
+    if (kIsWeb) {
+      await BrowserContextMenu.disableContextMenu();
+      await Future.delayed(const Duration(seconds: 0));
+      BrowserContextMenu.enableContextMenu();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -677,13 +694,7 @@ class TrackerCardState extends State<TrackerCard> {
           widget.material,
           false,
         ),
-        onSecondaryTapDown: (details) async {
-          if (kIsWeb) {
-            await BrowserContextMenu.disableContextMenu();
-            await Future.delayed(const Duration(seconds: 0));
-            BrowserContextMenu.enableContextMenu();
-          }
-        },
+        onSecondaryTapDown: _secondaryTapDown,
         onSecondaryTap: () => _updateMultiTracking(
           widget.data,
           widget.dataId,
