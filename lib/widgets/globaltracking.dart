@@ -464,6 +464,8 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
   int _currentCount = 0;
   bool _bulkChange = false;
   Timer? _bulkTimer;
+  int _step = 1;
+  int _tick = 0;
 
   int _tapCount = 0;
 
@@ -583,13 +585,18 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
       _bulkChange = true;
       _currentCount = widget.data.current ?? 0;
     });
+    var maxCnt = widget.data.max ?? 0;
 
     _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
-      if (_currentCount >= (widget.data.max ?? 0)) {
+      if (_currentCount >= maxCnt) {
         return;
       }
+      var newCnt = _currentCount + _step;
+      if (newCnt >= maxCnt) newCnt = maxCnt;
       setState(() {
-        _currentCount++;
+        _currentCount = newCnt;
+        _step = _stepCounterInc();
+        _tick++;
       });
     });
   }
@@ -604,6 +611,8 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
     );
     setState(() {
       _bulkChange = false;
+      _step = 1;
+      _tick = 0;
     });
   }
 
@@ -613,12 +622,16 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
       _currentCount = widget.data.current ?? 0;
     });
 
-    _bulkTimer = Timer.periodic(Duration(milliseconds: 500), (timer) {
+    _bulkTimer = Timer.periodic(Duration(milliseconds: 250), (timer) {
       if (_currentCount <= 0) {
         return;
       }
+      var newCnt = _currentCount - _step;
+      if (newCnt <= 0) newCnt = 0;
       setState(() {
-        _currentCount--;
+        _currentCount = newCnt;
+        _step = _stepCounterInc();
+        _tick++;
       });
     });
   }
@@ -633,7 +646,21 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
     );
     setState(() {
       _bulkChange = false;
+      _step = 1;
+      _tick = 0;
     });
+  }
+
+  int _stepCounterInc() {
+    var step = _step;
+    if (_tick > 5) {
+      if (step == 1) {
+        step = 2;
+      } else {
+        step = (step * 1.5).toInt();
+      }
+    }
+    return step;
   }
 
   void _increment() {
