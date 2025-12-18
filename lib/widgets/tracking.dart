@@ -620,7 +620,11 @@ class TrackerCardState extends State<TrackerCard> {
   void _endIncrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
     TrackingData.setCount(
-        widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+      widget.dataId,
+      widget.data.type,
+      _currentCount,
+      widget.data.max!,
+    );
     setState(() {
       _bulkChange = false;
     });
@@ -645,7 +649,11 @@ class TrackerCardState extends State<TrackerCard> {
   void _endDecrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
     TrackingData.setCount(
-        widget.dataId, widget.data.type, _currentCount, widget.data.max!);
+      widget.dataId,
+      widget.data.type,
+      _currentCount,
+      widget.data.max!,
+    );
     setState(() {
       _bulkChange = false;
     });

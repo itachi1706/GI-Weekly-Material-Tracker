@@ -346,10 +346,9 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
         String? extraTypeRef;
         var name = _material!.name;
         var override = false;
-        debugPrint(key);
         var splitKey = key.split('_');
         var ascendTier = splitKey[splitKey.length - 1];
-        debugPrint(ascendTier);
+        debugPrint("$key - $ascendTier");
         if (data.addData != null) {
           // Grab image ref of extra data based on addedBy
           if (data.addedBy == 'character') {
@@ -366,11 +365,11 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
           } else if (data.addedBy == 'talent') {
             // Grab from character talent
             var cData = data.addData!.split('|');
-            imageRef =
-                _characterData![cData[0]]!.talent!.attack![cData[1]]!.image;
+            var atk = _characterData![cData[0]]!.talent!.attack!;
+            imageRef = atk[cData[1]]!.image;
             extraAscensionRef = int.tryParse(ascendTier) ?? 0;
             name =
-                "${_characterData![cData[0]]!.name}'s ${_characterData![cData[0]]!.talent!.attack![cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";
+                "${_characterData![cData[0]]!.name}'s ${atk[cData[1]]!.name} ${GridUtils.getRomanNumberArray(extraAscensionRef - 1)}";
             override = true;
           }
           if (!override) {
@@ -379,21 +378,10 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
           }
         }
 
-        Widget typeWidget = const SizedBox.shrink();
-        if (extraTypeRef != null) {
-          typeWidget = SvgPicture.asset(
-            GridUtils.getElementImageRef(extraTypeRef)!,
-            semanticsLabel: 'Element Image',
-            height: 20,
-            width: 20,
-          );
-        }
-
         return GlobalTrackerCard(
           imageRef: imageRef,
           extraAscensionRef: extraAscensionRef,
           extraTypeRef: extraTypeRef,
-          typeWidget: typeWidget,
           trackerKey: key,
           data: data,
           name: name!,
@@ -452,22 +440,21 @@ class GlobalTrackerCard extends StatefulWidget {
   final String? imageRef;
   final int extraAscensionRef;
   final String? extraTypeRef;
-  final Widget typeWidget;
   final String trackerKey;
   final TrackingUserData data;
   final String name;
   final MaterialDataCommon? material;
 
-  const GlobalTrackerCard(
-      {super.key,
-      required this.imageRef,
-      required this.extraAscensionRef,
-      required this.extraTypeRef,
-      required this.typeWidget,
-      required this.trackerKey,
-      required this.data,
-      required this.name,
-      required this.material});
+  const GlobalTrackerCard({
+    super.key,
+    required this.imageRef,
+    required this.extraAscensionRef,
+    required this.extraTypeRef,
+    required this.trackerKey,
+    required this.data,
+    required this.name,
+    required this.material,
+  });
 
   @override
   GlobalTrackerCardState createState() => GlobalTrackerCardState();
@@ -480,6 +467,8 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
 
   int _tapCount = 0;
 
+  Widget _typeWidget = SizedBox.shrink();
+
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),
@@ -489,6 +478,19 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.extraTypeRef != null) {
+      _typeWidget = SvgPicture.asset(
+        GridUtils.getElementImageRef(widget.extraTypeRef!)!,
+        semanticsLabel: 'Element Image',
+        height: 20,
+        width: 20,
+      );
+    }
+  }
 
   void _updateMultiTracking() {
     UpdateMultiTracking(context, widget.material).itemClickedAction(
@@ -521,7 +523,7 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
           ),
           Align(
             alignment: FractionalOffset.bottomRight,
-            child: widget.typeWidget,
+            child: _typeWidget,
           ),
         ],
       ),
@@ -536,9 +538,10 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
           style: TextStyle(
             fontSize: 18,
             color: GridData.getCountColor(
-                (_bulkChange) ? _currentCount : widget.data.current,
-                widget.data.max,
-                bw: true),
+              (_bulkChange) ? _currentCount : widget.data.current,
+              widget.data.max,
+              bw: true,
+            ),
           ),
         ),
         Row(
@@ -594,7 +597,11 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
   void _endIncrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
     TrackingData.setCount(
-        widget.trackerKey, widget.data.type, _currentCount, widget.data.max!);
+      widget.trackerKey,
+      widget.data.type,
+      _currentCount,
+      widget.data.max!,
+    );
     setState(() {
       _bulkChange = false;
     });
@@ -619,7 +626,11 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard> {
   void _endDecrement(LongPressEndDetails _) {
     _bulkTimer?.cancel();
     TrackingData.setCount(
-        widget.trackerKey, widget.data.type, _currentCount, widget.data.max!);
+      widget.trackerKey,
+      widget.data.type,
+      _currentCount,
+      widget.data.max!,
+    );
     setState(() {
       _bulkChange = false;
     });
