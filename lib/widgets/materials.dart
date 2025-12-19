@@ -217,10 +217,14 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     var toTrack = int.tryParse(_cntTrack) ?? 0;
+
     TrackingData.addToRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
+      if (mounted) {
+        Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
+      }
     });
+
     TrackingData.addToCollection(
       'Material_$_infoId',
       _infoId,
@@ -235,7 +239,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
+      if (mounted) {
+        Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
+      }
     });
     TrackingData.removeFromCollection('Material_$_infoId', _info!.innerType);
     Navigator.of(context).pop();
@@ -333,8 +339,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   List<Widget> _generateUsageList() {
     var widgets = <Widget>[];
+    var usage = _info?.usage;
 
-    if (_info?.usage == null) return widgets;
+    if (usage == null) return widgets;
 
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
     widgets.add(
@@ -350,7 +357,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
-    if (_info?.usage!.characters?.isNotEmpty ?? false) {
+    if (usage.characters?.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Characters',
         _info?.usage!.characters,
@@ -360,7 +367,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       ));
     }
 
-    if (_info?.usage!.weapons?.isNotEmpty ?? false) {
+    if (usage.weapons?.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Weapons',
         _info?.usage!.weapons,

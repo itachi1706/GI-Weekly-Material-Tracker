@@ -36,12 +36,11 @@ class GridData {
   }
 
   static Color getCountColor(int? current, int? max, {bw = false}) {
+    var themeColor =
+        (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+
     if (bw) {
-      return (current! >= max!)
-          ? Colors.green
-          : (Util.themeNotifier.isDarkMode())
-              ? Colors.white
-              : Colors.black;
+      return (current! >= max!) ? Colors.green : themeColor;
     }
 
     return (current! >= max!) ? Colors.greenAccent : Colors.white;
@@ -232,27 +231,6 @@ class GridData {
     }
   }
 
-  static void _launchWikiUrl(
-    BuildContext context,
-    CommonData data,
-    String? url,
-    String type,
-  ) async {
-    if (!await Util.launchWebPage(
-          url,
-          rarityColor: GridUtils.getRarityColor(
-            data.rarity,
-            crossover: data.crossover,
-          ),
-        ) &&
-        context.mounted) {
-      Util.showSnackbarQuick(
-        context,
-        '$type not available for ${data.name ?? 'Unknown'}',
-      );
-    }
-  }
-
   static List<Widget> generateHeaderInfoLine(
     String header,
     String description,
@@ -423,6 +401,27 @@ class GridData {
     }
 
     return widgets;
+  }
+
+  static void _launchWikiUrl(
+    BuildContext context,
+    CommonData data,
+    String? url,
+    String type,
+  ) async {
+    if (!await Util.launchWebPage(
+          url,
+          rarityColor: GridUtils.getRarityColor(
+            data.rarity,
+            crossover: data.crossover,
+          ),
+        ) &&
+        context.mounted) {
+      Util.showSnackbarQuick(
+        context,
+        '$type not available for ${data.name ?? 'Unknown'}',
+      );
+    }
   }
 
   static Widget? _getCharacterOrWeaponGrid(

@@ -126,8 +126,9 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
 
   Widget? _showFab() {
     if (_info == null) return null;
+    var model3D = _info?.model3D;
 
-    if (_info!.model3D == null || _info!.model3D!.isEmpty) return null;
+    if (model3D == null || model3D.isEmpty) return null;
 
     return FloatingActionButton(
       onPressed: () => Get.toNamed("/outfits/$_infoId/model"),
@@ -249,6 +250,8 @@ class OutfitInfoGeneralPage extends StatelessWidget {
 
   List<Widget> _generateShopInfo() {
     List<Widget> widgets = [];
+    var shopCostDiscounted = info?.shopCostDiscounted ?? 0;
+
 
     if (!(info?.shop ?? false)) {
       return widgets;
@@ -256,9 +259,9 @@ class OutfitInfoGeneralPage extends StatelessWidget {
 
     var textVal = "${info?.shopCost ?? 0} Genesis Crystals";
 
-    if ((info?.shopCostDiscounted ?? 0) > 0) {
+    if (shopCostDiscounted > 0) {
       textVal +=
-          "\n(${info?.shopCostDiscounted ?? 0} Genesis Crystals until ${info?.shopCostDiscountedTill ?? 'Unknown'})";
+          "\n($shopCostDiscounted Genesis Crystals until ${info?.shopCostDiscountedTill ?? 'Unknown'})";
     }
 
     return GridData.generateInfoLine(textVal, Icons.monetization_on);

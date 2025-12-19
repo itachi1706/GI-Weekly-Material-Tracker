@@ -59,7 +59,9 @@ class WeaponData extends CommonData {
       maxBaseAtk: parsedJson['max_base_atk'],
       maxSecondaryStat: parsedJson['max_secondary_stat'],
       ascension: WeaponAscension.getFromMap(
-          parsedJson['ascension'], parsedJson['materials']),
+        parsedJson['ascension'],
+        parsedJson['materials'],
+      ),
       effectName: parsedJson['effectName'],
       series: parsedJson['series'],
       released: parsedJson['released'],
@@ -95,7 +97,9 @@ class WeaponAscension extends CommonAscension {
   }) : super();
 
   factory WeaponAscension.fromJson(
-      Map<String, dynamic> parsedJson, Map<String, dynamic> materialJson) {
+    Map<String, dynamic> parsedJson,
+    Map<String, dynamic> materialJson,
+  ) {
     return WeaponAscension(
       material2Qty: parsedJson['material2qty'],
       material1: materialJson[parsedJson['material1type']],
@@ -109,12 +113,16 @@ class WeaponAscension extends CommonAscension {
   }
 
   static Map<String, WeaponAscension> getFromMap(
-      Map<String, dynamic> ascend, Map<String, dynamic> materials) {
+    Map<String, dynamic> ascend,
+    Map<String, dynamic> materials,
+  ) {
     var fin = <String, WeaponAscension>{};
     // Iterate through all ascend keys
     for (var key in ascend.keys) {
-      fin.putIfAbsent(key,
-          () => WeaponAscension.fromJson(ascend[key], materials['ascension']));
+      fin.putIfAbsent(
+        key,
+        () => WeaponAscension.fromJson(ascend[key], materials['ascension']),
+      );
     }
 
     return fin;

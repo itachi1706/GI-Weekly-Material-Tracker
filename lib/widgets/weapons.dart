@@ -153,9 +153,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _getLastBanner() {
-    if (_info == null ||
-        _info!.lastBannerCount == null ||
-        _info!.lastBannerEnd == null) {
+    var lastBannerCount = _info?.lastBannerCount;
+    var lastBannerEnd = _info?.lastBannerEnd;
+
+    if (_info == null || lastBannerCount == null || lastBannerEnd == null) {
       // No banners
       debugPrint('No banners for character');
 
@@ -166,13 +167,13 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var curDt = tz.TZDateTime.now(tz.getLocation('Asia/Singapore')).toUtc();
     var endState = 'Ended';
     var extraWidgets = <Widget>[];
-    if (curDt.isBefore(_info!.lastBannerEnd!)) {
+    if (curDt.isBefore(lastBannerEnd)) {
       endState = 'Ending';
       extraWidgets = [
         Row(
           children: [
             Text('Time Left: '),
-            GridUtils.getCounter(_info!.lastBannerEnd!.toLocal(), false),
+            GridUtils.getCounter(lastBannerEnd.toLocal(), false),
           ],
         ),
       ];
@@ -181,14 +182,14 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         Row(
           children: [
             Text('Time Since: '),
-            GridUtils.getCounter(_info!.lastBannerEnd!.toLocal(), true),
+            GridUtils.getCounter(lastBannerEnd.toLocal(), true),
           ],
         ),
       ];
     }
-    var bannerGrammar = _info!.lastBannerCount == 1 ? 'banner' : 'banners';
-    var bt = '${_info!.lastBannerCount} $bannerGrammar ago';
-    if (_info!.lastBannerCount! < 1) {
+    var bannerGrammar = lastBannerCount == 1 ? 'banner' : 'banners';
+    var bt = '$lastBannerCount $bannerGrammar ago';
+    if (lastBannerCount < 1) {
       bt = 'Current banner';
     }
     // Craft the message
@@ -196,7 +197,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
     return GridData.generateInfoLine(
-        message, Icons.calendar_month, extraWidgets);
+      message,
+      Icons.calendar_month,
+      extraWidgets,
+    );
   }
 
   List<Widget> _getSeriesIfExists(WeaponData info) {
@@ -210,13 +214,12 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _generateEffectName() {
-    return _info!.effectName != null
-        ? GridData.generateHeaderInfoLine(
-            _info!.effectName!,
-            _info!.effect!,
-            MdiIcons.shimmer,
-          )
-        : GridData.generateInfoLine(_info!.effect!, MdiIcons.shimmer);
+    var effect = _info?.effect;
+    var effectName = _info?.effectName;
+
+    return effectName != null
+        ? GridData.generateHeaderInfoLine(effectName, effect!, MdiIcons.shimmer)
+        : GridData.generateInfoLine(effect!, MdiIcons.shimmer);
   }
 
   Widget _generateWeaponHeader() {
@@ -249,6 +252,12 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   }
 
   List<Widget> _getWeaponStats() {
+    var maxBaseAtk = _info?.maxBaseAtk;
+    var baseAtk = _info?.baseAtk;
+    var maxSecondaryStat = _info?.maxSecondaryStat;
+    var secondaryStat = _info?.secondaryStat;
+    var secondaryStatType = _info?.secondaryStatType;
+
     return [
       Padding(
         padding: const EdgeInsets.all(8),
@@ -257,9 +266,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
             Icon(MdiIcons.swordCross),
             Padding(
               padding: const EdgeInsets.only(left: 8),
-              child: (_info!.maxBaseAtk == null)
-                  ? Text(_info!.baseAtk.toString())
-                  : Text('${_info!.baseAtk} -> ${_info!.maxBaseAtk}'),
+              child: (maxBaseAtk == null)
+                  ? Text(baseAtk.toString())
+                  : Text('$baseAtk -> $maxBaseAtk'),
             ),
           ],
         ),
@@ -272,12 +281,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
             Icon(MdiIcons.shield),
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
-              child: (_info!.maxSecondaryStat == null)
-                  ? Text(
-                      '${_info!.secondaryStat} (${_info!.secondaryStatType})',
-                    )
+              child: (maxSecondaryStat == null)
+                  ? Text('$secondaryStat ($secondaryStatType)')
                   : Text(
-                      '${_info!.secondaryStat} -> ${_info!.maxSecondaryStat} (${_info!.secondaryStatType})',
+                      '$secondaryStat -> $maxSecondaryStat ($secondaryStatType)',
                     ),
             ),
           ],
@@ -392,10 +399,12 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     TrackingData.addToRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        '${_info!.name} Ascension Tier $ascensionTierSel added to tracker!',
-      );
+      if (mounted) {
+        Util.showSnackbarQuick(
+          context,
+          '${_info!.name} Ascension Tier $ascensionTierSel added to tracker!',
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
@@ -438,10 +447,12 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     TrackingData.removeFromRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
       _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        '${_info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
-      );
+      if (mounted) {
+        Util.showSnackbarQuick(
+          context,
+          '${_info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
