@@ -7,6 +7,7 @@ import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -140,6 +141,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   String _cntTrack = '';
   final TextEditingController _textEditingController = TextEditingController();
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -150,6 +152,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _getStaticData() async {
     var value = await GridData.retrieveMaterialsMapData();
+    _prefs = await SharedPreferences.getInstance();
 
     setState(() {
       _info = value![_infoId!];
@@ -214,10 +217,14 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _trackMaterialAction() {
     var toTrack = int.tryParse(_cntTrack) ?? 0;
+
     TrackingData.addToRecord('material', _infoId).then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
+      }
     });
+
     TrackingData.addToCollection(
       'Material_$_infoId',
       _infoId,
@@ -231,8 +238,10 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
+      }
     });
     TrackingData.removeFromCollection('Material_$_infoId', _info!.innerType);
     Navigator.of(context).pop();
@@ -330,8 +339,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   List<Widget> _generateUsageList() {
     var widgets = <Widget>[];
+    var usage = _info?.usage;
 
-    if (_info?.usage == null) return widgets;
+    if (usage == null) return widgets;
 
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
     widgets.add(
@@ -347,7 +357,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
-    if (_info?.usage!.characters?.isNotEmpty ?? false) {
+    if (usage.characters?.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Characters',
         _info?.usage!.characters,
@@ -357,7 +367,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       ));
     }
 
-    if (_info?.usage!.weapons?.isNotEmpty ?? false) {
+    if (usage.weapons?.isNotEmpty ?? false) {
       widgets.addAll(GridData.generateCoWGridWidgets(
         'Weapons',
         _info?.usage!.weapons,
@@ -384,7 +394,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info!),
+            onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
             tooltip: 'View Wiki',
           ),
         ],

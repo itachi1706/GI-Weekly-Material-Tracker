@@ -7,6 +7,7 @@ import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -102,6 +103,8 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
   String? _infoId;
   Color? _rarityColor;
 
+  late SharedPreferences _prefs;
+
   @override
   void initState() {
     super.initState();
@@ -113,6 +116,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
     var outfitData = await GridData.retrieveOutfitsMapData();
     debugPrint("OutfitDataKey: ${outfitData?.keys}");
     debugPrint("Finding $_infoId");
+    _prefs = await SharedPreferences.getInstance();
     setState(() {
       _info = outfitData![_infoId!];
       debugPrint("Found $_info");
@@ -122,8 +126,9 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
 
   Widget? _showFab() {
     if (_info == null) return null;
+    var model3D = _info?.model3D;
 
-    if (_info!.model3D == null || _info!.model3D!.isEmpty) return null;
+    if (model3D == null || model3D.isEmpty) return null;
 
     return FloatingActionButton(
       onPressed: () => Get.toNamed("/outfits/$_infoId/model"),
@@ -159,7 +164,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
-              onPressed: () => GridData.launchWikiUrl(context, _info!),
+              onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
               tooltip: 'View Wiki',
             ),
           ],
@@ -245,6 +250,8 @@ class OutfitInfoGeneralPage extends StatelessWidget {
 
   List<Widget> _generateShopInfo() {
     List<Widget> widgets = [];
+    var shopCostDiscounted = info?.shopCostDiscounted ?? 0;
+
 
     if (!(info?.shop ?? false)) {
       return widgets;
@@ -252,9 +259,9 @@ class OutfitInfoGeneralPage extends StatelessWidget {
 
     var textVal = "${info?.shopCost ?? 0} Genesis Crystals";
 
-    if ((info?.shopCostDiscounted ?? 0) > 0) {
+    if (shopCostDiscounted > 0) {
       textVal +=
-          "\n(${info?.shopCostDiscounted ?? 0} Genesis Crystals until ${info?.shopCostDiscountedTill ?? 'Unknown'})";
+          "\n($shopCostDiscounted Genesis Crystals until ${info?.shopCostDiscountedTill ?? 'Unknown'})";
     }
 
     return GridData.generateInfoLine(textVal, Icons.monetization_on);

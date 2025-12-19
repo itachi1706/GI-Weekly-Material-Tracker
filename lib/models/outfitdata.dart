@@ -36,6 +36,7 @@ class OutfitData extends CommonData {
     super.image,
     super.description,
     super.wiki,
+    super.hoyowiki,
     super.released,
   }) : super(
           crossover: false,
@@ -48,6 +49,7 @@ class OutfitData extends CommonData {
           : [],
       gameImage: json['image'],
       wishImage: json['wishimage'],
+      hoyowiki: json['hoyowiki'],
       model3D: json['3dmodel'],
       obtained: json['obtained'],
       lore: json['lore'],

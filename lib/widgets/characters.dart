@@ -233,7 +233,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
-              onPressed: () => GridData.launchWikiUrl(context, _info!),
+              onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
               tooltip: 'View Wiki',
             ),
             IconButton(
@@ -304,6 +304,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
   }
 
   Widget _getGenderBirthdayWidget() {
+    var gender = widget.info!.gender!;
+
     return IntrinsicHeight(
       child: Row(
         children: [
@@ -312,12 +314,12 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             child: Row(
               children: [
                 _getGenderIcon(
-                  widget.info!.gender!,
+                  gender,
                   widget.info!.name ?? 'Unknown',
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
-                  child: Text(widget.info!.gender!),
+                  child: Text(gender),
                 ),
               ],
             ),
@@ -537,11 +539,13 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
 
     TrackingData.addToRecord('character', '${widget.infoId}_$_selectedTier')
         .then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        '${widget.info!.name} Ascension Tier $ascensionTierSel added to tracker!',
-      );
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(
+          context,
+          '${widget.info!.name} Ascension Tier $ascensionTierSel added to tracker!',
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
@@ -595,11 +599,13 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       'character',
       '${widget.infoId}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        '${widget.info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
-      );
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(
+          context,
+          '${widget.info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
@@ -949,7 +955,10 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
         '$endState: ${df.format(info.lastBannerEnd!.toLocal())}';
 
     return GridData.generateInfoLine(
-        message, Icons.calendar_month, extraWidgets);
+      message,
+      Icons.calendar_month,
+      extraWidgets,
+    );
   }
 
   @override
@@ -1031,8 +1040,9 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
     if (widget.materialData == null || widget.info == null) return; // No data
     if (_isBeingTracked == null) {
       var tmpTracker = <String, TrackingStatus>{};
-      for (var key in widget.info!.talent!.attack!.keys) {
-        for (var k2 in widget.info!.talent!.ascension!.keys) {
+      var talent = widget.info!.talent!;
+      for (var key in talent.attack!.keys) {
+        for (var k2 in talent.ascension!.keys) {
           tmpTracker['${key}_$k2'] = TrackingStatus.unknown;
         }
       }
@@ -1146,11 +1156,13 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       'talents',
       '${widget.infoId}_${_selectedTalent}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        "Tracking Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
-      );
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(
+          context,
+          "Tracking Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.addToCollection(
@@ -1204,11 +1216,13 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       'talents',
       '${widget.infoId}_${_selectedTalent}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
-      Util.showSnackbarQuick(
-        context,
-        "Untracked Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
-      );
+      if (mounted) {
+        _refreshTrackingStatus();
+        Util.showSnackbarQuick(
+          context,
+          "Untracked Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
+        );
+      }
     });
     if (ascendTier.material1 != null) {
       TrackingData.removeFromCollection(
@@ -1427,7 +1441,9 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
     }
 
     var dataMap = SplayTreeMap<String, CharacterAscension>.from(
-        ascendInfo!, (a, b) => int.parse(a).compareTo(int.parse(b)));
+      ascendInfo!,
+      (a, b) => int.parse(a).compareTo(int.parse(b)),
+    );
     var data = dataMap.entries.map((e) => e.value).toList();
 
     return ListView.builder(

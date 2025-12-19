@@ -14,6 +14,7 @@ import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
+import 'package:gi_weekly_material_tracker/models/settings_selector_configuration.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -32,6 +33,7 @@ class SettingsPage extends StatefulWidget {
 class SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
   String _versionStr = 'Unknown', _buildSource = 'Loading';
+  String _wikiSource = 'Loading';
   String _appCheckToken = 'Loading', _appCheckError = 'Loading';
   bool _darkMode = false,
       _dailylogin = false,
@@ -41,6 +43,50 @@ class SettingsPageState extends State<SettingsPage> {
   int? _cacheFiles = 0;
 
   late SharedPreferences _prefs;
+
+  final List<SettingsSelectorConfiguration> _region = [
+    SettingsSelectorConfiguration(
+      title: 'Asia',
+      description: 'GMT+8',
+      value: 'Asia',
+    ),
+    SettingsSelectorConfiguration(
+      title: 'America',
+      description: 'GMT-5',
+      value: 'NA',
+    ),
+    SettingsSelectorConfiguration(
+      title: 'Europe',
+      description: 'GMT+1',
+      value: 'EU',
+    ),
+  ];
+
+  final List<SettingsSelectorConfiguration> _buildGuide = [
+    SettingsSelectorConfiguration(
+      title: 'Genshin.GG Wiki Database',
+      description: 'genshin.gg',
+      value: 'genshin.gg',
+    ),
+    SettingsSelectorConfiguration(
+      title: 'Paimon.moe',
+      description: 'paimon.moe',
+      value: 'paimon.moe',
+    ),
+  ];
+
+  final List<SettingsSelectorConfiguration> _wikiGuide = [
+    SettingsSelectorConfiguration(
+      title: 'Genshin Impact Fandom Wiki',
+      description: 'genshin-impact.fandom.com',
+      value: 'Genshin Impact Wiki',
+    ),
+    SettingsSelectorConfiguration(
+      title: 'HoYoLab (HoYoWiki)',
+      description: 'wiki.hoyolab.com',
+      value: 'HoYoLab',
+    ),
+  ];
 
   @override
   void initState() {
@@ -74,6 +120,7 @@ class SettingsPageState extends State<SettingsPage> {
       _appCheckError = _prefs.getString('app_check_token_err') ?? 'No Errors';
       _location = _prefs.getString('location') ?? 'Asia';
       _buildSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
+      _wikiSource = _prefs.getString('wiki_source') ?? 'Genshin Impact Wiki';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
       _useDeepLink = _prefs.getBool('deeplinkEnabled') ?? false;
       _moveBot = _prefs.getBool('move_completed_bottom') ?? false;
@@ -258,47 +305,77 @@ class SettingsPageState extends State<SettingsPage> {
     });
   }
 
+  List<AbstractSettingsTile> _getSwitches() {
+    return [
+      SettingsTile.switchTile(
+        title: const Text('Dark Mode'),
+        leading: const Icon(Icons.wb_sunny_outlined),
+        onToggle: _toggleDarkMode,
+        initialValue: _darkMode,
+      ),
+      SettingsTile.switchTile(
+        title: const Text('Use Deep Links'),
+        leading: const Icon(Icons.link),
+        onToggle: _toggleDeepLink,
+        initialValue: _useDeepLink,
+      ),
+      SettingsTile.switchTile(
+        title: const Text('Move completed to bottom'),
+        description: const Text('Only for the tracking page'),
+        leading: const Icon(Icons.checklist),
+        onToggle: _toggleMoveCompletedToBottom,
+        initialValue: _moveBot,
+      ),
+    ];
+  }
+
+  List<AbstractSettingsTile> _getSelectors() {
+    return [
+      SettingsTile(
+        title: const Text('Build Guide Source'),
+        value: Text(_buildSource),
+        leading: Icon(MdiIcons.swordCross),
+        onPressed: (_) => _launchSelectorPage(
+          _buildGuide,
+          "build_guide_source",
+          'genshin.gg',
+          'Getting source of build guide',
+          'Build Guide Source',
+        ),
+      ),
+      SettingsTile(
+        title: const Text('Wiki Source'),
+        value: Text(_wikiSource),
+        leading: Icon(Icons.book),
+        onPressed: (_) => _launchSelectorPage(
+          _wikiGuide,
+          "wiki_source",
+          'Genshin Impact Wiki',
+          'Getting source of wiki',
+          'Wiki Source',
+        ),
+      ),
+      SettingsTile(
+        title: const Text('Game Server Location'),
+        value: Text(_location),
+        leading: Icon(MdiIcons.server),
+        onPressed: (_) => _launchSelectorPage(
+          _region,
+          'location',
+          'Asia',
+          'Getting Region',
+          'Game Server Location',
+        ),
+      ),
+    ];
+  }
+
   SettingsSection _appDataSettings() {
     return SettingsSection(
       title: const Text('Settings'),
       tiles: [
-        SettingsTile.switchTile(
-          title: const Text('Dark Mode'),
-          leading: const Icon(Icons.wb_sunny_outlined),
-          onToggle: _toggleDarkMode,
-          initialValue: _darkMode,
-        ),
-        SettingsTile.switchTile(
-          title: const Text('Use Deep Links'),
-          leading: const Icon(Icons.link),
-          onToggle: _toggleDeepLink,
-          initialValue: _useDeepLink,
-        ),
-        SettingsTile.switchTile(
-          title: const Text('Move completed to bottom'),
-          description: const Text('Only for the tracking page'),
-          leading: const Icon(Icons.checklist),
-          onToggle: _toggleMoveCompletedToBottom,
-          initialValue: _moveBot,
-        ),
-        SettingsTile(
-          title: const Text('Build Guide Source'),
-          value: Text(_buildSource),
-          leading: Icon(MdiIcons.swordCross),
-          onPressed: (context) {
-            Get.to(() => const BuildGuideSelectorPage())!
-                .then((value) => _refresh());
-          },
-        ),
-        SettingsTile(
-          title: const Text('Game Server Location'),
-          value: Text(_location),
-          leading: Icon(MdiIcons.server),
-          onPressed: (context) {
-            Get.to(() => const RegionSettingsPage())!
-                .then((value) => _refresh());
-          },
-        ),
+        ..._getSwitches(),
+        ..._getSelectors(),
         SettingsTile(
           title: const Text('Cache'),
           description: Text('Currently using $_cacheSize ($_cacheFiles files)'),
@@ -317,6 +394,23 @@ class SettingsPageState extends State<SettingsPage> {
         ),
       ],
     );
+  }
+
+  void _launchSelectorPage(
+    List<SettingsSelectorConfiguration> selections,
+    String prefName,
+    String defValue,
+    String loading,
+    String title,
+  ) {
+    Get.to(() => UniversalSelectorPage(
+              prefName: prefName,
+              defaultValue: defValue,
+              loadingText: loading,
+              settingsOptions: selections,
+              pageTitle: title,
+            ))!
+        .then((value) => _refresh());
   }
 
   SettingsSection _infoSettings() {
@@ -788,174 +882,6 @@ class SettingsPageState extends State<SettingsPage> {
   }
 }
 
-class RegionSettingsPage extends StatefulWidget {
-  const RegionSettingsPage({super.key});
-
-  @override
-  RegionSettingsPageState createState() => RegionSettingsPageState();
-}
-
-class RegionSettingsPageState extends State<RegionSettingsPage> {
-  String? _regionKey;
-  late SharedPreferences _prefs;
-
-  @override
-  void initState() {
-    super.initState();
-    SharedPreferences.getInstance().then((value) {
-      setState(() {
-        _prefs = value;
-        _regionKey = value.getString('location') ?? 'Asia';
-      });
-    });
-  }
-
-  Widget _buildBody() {
-    if (_regionKey == null) return Util.centerLoadingCircle('Getting Region');
-
-    return SettingsList(
-      sections: [
-        SettingsSection(
-          tiles: [
-            SettingsTile(
-              title: const Text('Asia'),
-              description: const Text('GMT+8'),
-              trailing: _trailingWidget('Asia'),
-              onPressed: (context) {
-                _changeRegion('Asia');
-              },
-            ),
-            SettingsTile(
-              title: const Text('America'),
-              description: const Text('GMT-5'),
-              trailing: _trailingWidget('NA'),
-              onPressed: (context) {
-                _changeRegion('NA');
-              },
-            ),
-            SettingsTile(
-              title: const Text('Europe'),
-              description: const Text('GMT+1'),
-              trailing: _trailingWidget('EU'),
-              onPressed: (context) {
-                _changeRegion('EU');
-              },
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _trailingWidget(String region) {
-    return Radio(
-      toggleable: false,
-      autofocus: false,
-      value: region,
-      onChanged: (dynamic ig) {
-        debugPrint('Set to $_regionKey');
-      },
-      groupValue: _regionKey,
-    );
-  }
-
-  void _changeRegion(String region) async {
-    await _prefs.setString('location', region);
-    setState(() {
-      _regionKey = region;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Game Server Location')),
-      body: _buildBody(),
-    );
-  }
-}
-
-class BuildGuideSelectorPage extends StatefulWidget {
-  const BuildGuideSelectorPage({super.key});
-
-  @override
-  BuildGuideSelectorPageState createState() => BuildGuideSelectorPageState();
-}
-
-class BuildGuideSelectorPageState extends State<BuildGuideSelectorPage> {
-  String? _buildGuideKey;
-  late SharedPreferences _prefs;
-
-  @override
-  void initState() {
-    super.initState();
-    SharedPreferences.getInstance().then((value) {
-      setState(() {
-        _prefs = value;
-        _buildGuideKey = value.getString('build_guide_source') ?? 'genshin.gg';
-      });
-    });
-  }
-
-  Widget _buildBody() {
-    if (_buildGuideKey == null) {
-      return Util.centerLoadingCircle('Getting source of build guide');
-    }
-
-    return SettingsList(
-      sections: [
-        SettingsSection(
-          tiles: [
-            SettingsTile(
-              title: const Text('Genshin.GG Wiki Database'),
-              description: const Text('genshin.gg'),
-              trailing: _trailingWidget('genshin.gg'),
-              onPressed: (context) {
-                _changeBuildGuide('genshin.gg');
-              },
-            ),
-            SettingsTile(
-              title: const Text('Paimon.moe'),
-              description: const Text('paimon.moe'),
-              trailing: _trailingWidget('paimon.moe'),
-              onPressed: (context) {
-                _changeBuildGuide('paimon.moe');
-              },
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget _trailingWidget(String buildGuideSource) {
-    return Radio(
-      toggleable: false,
-      autofocus: false,
-      value: buildGuideSource,
-      onChanged: (dynamic ig) {
-        debugPrint('Set to $_buildGuideKey');
-      },
-      groupValue: _buildGuideKey,
-    );
-  }
-
-  void _changeBuildGuide(String buildGuideSource) async {
-    await _prefs.setString('build_guide_source', buildGuideSource);
-    setState(() {
-      _buildGuideKey = buildGuideSource;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Build Guide Source')),
-      body: _buildBody(),
-    );
-  }
-}
-
 class NotificationDebugPage extends StatelessWidget {
   const NotificationDebugPage({super.key});
 
@@ -1030,6 +956,99 @@ class NotificationDebugPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class UniversalSelectorPage extends StatefulWidget {
+  final String prefName;
+  final String defaultValue;
+  final String loadingText;
+  final List<SettingsSelectorConfiguration> settingsOptions;
+  final String pageTitle;
+
+  const UniversalSelectorPage({
+    super.key,
+    required this.prefName,
+    required this.defaultValue,
+    required this.loadingText,
+    required this.settingsOptions,
+    required this.pageTitle,
+  });
+
+  @override
+  UniversalSelectorPageState createState() => UniversalSelectorPageState();
+}
+
+class UniversalSelectorPageState extends State<UniversalSelectorPage> {
+  String? _key;
+  late SharedPreferences _prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    SharedPreferences.getInstance().then((value) {
+      debugPrint("Pref name: ${widget.prefName} initialized");
+      setState(() {
+        _prefs = value;
+        _key = value.getString(widget.prefName) ?? widget.defaultValue;
+      });
+    });
+  }
+
+  Widget _buildBody() {
+    if (_key == null) {
+      return Util.centerLoadingCircle(widget.loadingText);
+    }
+
+    return SettingsList(
+      sections: [
+        SettingsSection(
+          tiles: widget.settingsOptions
+              .map((e) => SettingsTile(
+                    title: Text(e.title),
+                    description: Text(e.description),
+                    trailing: _trailingWidget(e.value),
+                    onPressed: (context) {
+                      _changeValue(e.value);
+                    },
+                  ))
+              .toList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _trailingWidget(String value) {
+    return Radio(
+      toggleable: false,
+      autofocus: false,
+      value: value,
+      onChanged: (dynamic ig) {
+        debugPrint('Set to $_key');
+      },
+      groupValue: _key,
+    );
+  }
+
+  void _changeValue(String value) async {
+    if (_key == null) {
+      debugPrint('Key is null!');
+
+      return;
+    }
+    debugPrint('Updating ${widget.prefName} to $value');
+    await _prefs.setString(widget.prefName, value);
+    setState(() {
+      _key = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.pageTitle)),
+      body: _buildBody(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_cached_image/firebase_cached_image.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +11,7 @@ import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:octo_image/octo_image.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -35,12 +36,11 @@ class GridData {
   }
 
   static Color getCountColor(int? current, int? max, {bw = false}) {
+    var themeColor =
+        (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+
     if (bw) {
-      return (current! >= max!)
-          ? Colors.green
-          : (Util.themeNotifier.isDarkMode())
-              ? Colors.white
-              : Colors.black;
+      return (current! >= max!) ? Colors.green : themeColor;
     }
 
     return (current! >= max!) ? Colors.greenAccent : Colors.white;
@@ -109,11 +109,14 @@ class GridData {
       (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
 
   static ImageProvider getFirebaseImage(String? url) {
-    return FirebaseImageProvider(FirebaseUrl(url!), maxSize: 10000 * 10000); // 10MB
+    return FirebaseImageProvider(
+      FirebaseUrl(url!),
+      maxSize: 10000 * 10000,
+    ); // 10MB
   }
 
   static Widget getImageAssetFromFirebase(
-    imageRef, {
+    String? imageRef, {
     double? height,
     double? width,
     double padding = 8.0,
@@ -201,18 +204,29 @@ class GridData {
     );
   }
 
-  static void launchWikiUrl(BuildContext context, CommonData data) async {
-    if (!await Util.launchWebPage(
-      data.wiki,
-      rarityColor:
-          GridUtils.getRarityColor(data.rarity, crossover: data.crossover),
-    )) {
-      if (context.mounted) {
-        Util.showSnackbarQuick(
-          context,
-          'Wiki Page not available for ${data.name ?? 'Unknown'}',
-        );
-      }
+  static void launchWikiUrl(
+    BuildContext context,
+    CommonData data,
+    SharedPreferences prefs,
+  ) {
+    var wikiSource = prefs.getString('wiki_source') ?? 'Genshin Impact Wiki';
+    debugPrint("Wiki Source: $wikiSource");
+    switch (wikiSource) {
+      case 'HoYoLab':
+        if (data.hoyowiki == null) {
+          _launchWikiUrl(context, data, null, 'HoYoWiki');
+          break;
+        }
+        // Get screen density
+        var width = MediaQuery.of(context).size.width;
+        final baseUrl = width < 600 ? Util.hoyoWikiMobileUrl : Util.hoyoWikiDesktopUrl;
+        final url = "$baseUrl${data.hoyowiki}";
+        debugPrint("Launching $url");
+        _launchWikiUrl(context, data, url, 'HoYoWiki');
+        break;
+      default:
+        _launchWikiUrl(context, data, data.wiki, "Wiki Page");
+        break;
     }
   }
 
@@ -255,7 +269,11 @@ class GridData {
     ];
   }
 
-  static List<Widget> generateInfoLine(String? textData, IconData icon, [List<Widget>? extraWidgetsBelow]) {
+  static List<Widget> generateInfoLine(
+    String? textData,
+    IconData icon, [
+    List<Widget>? extraWidgetsBelow,
+  ]) {
     if (textData == null) return const [];
 
     return [
@@ -264,26 +282,22 @@ class GridData {
         child: Row(
           children: [
             Icon(icon),
-                Expanded(
-                  child:
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8, right: 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(textData.replaceAll('\\n', '\n')),
-                            ...extraWidgetsBelow ?? [const SizedBox.shrink()],
-                          ],
-                        ),
-                      ),
-
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(textData.replaceAll('\\n', '\n')),
+                    ...extraWidgetsBelow ?? [const SizedBox.shrink()],
+                  ],
                 ),
-
+              ),
+            ),
           ],
         ),
       ),
-
       const Divider(),
     ];
   }
@@ -386,6 +400,27 @@ class GridData {
     }
 
     return widgets;
+  }
+
+  static void _launchWikiUrl(
+    BuildContext context,
+    CommonData data,
+    String? url,
+    String type,
+  ) async {
+    if (!await Util.launchWebPage(
+          url,
+          rarityColor: GridUtils.getRarityColor(
+            data.rarity,
+            crossover: data.crossover,
+          ),
+        ) &&
+        context.mounted) {
+      Util.showSnackbarQuick(
+        context,
+        '$type not available for ${data.name ?? 'Unknown'}',
+      );
+    }
   }
 
   static Widget? _getCharacterOrWeaponGrid(
@@ -493,11 +528,9 @@ class GridUtils {
   }
 
   static Color getHeaderColor(BuildContext context) {
-    if (Util.themeNotifier.isDarkMode()) {
-      return Theme.of(context).colorScheme.onSurface;
-    } else {
-      return Theme.of(context).colorScheme.onPrimary;
-    }
+    var cs = Theme.of(context).colorScheme;
+
+    return Util.themeNotifier.isDarkMode() ? cs.onSurface : cs.onPrimary;
   }
 
   static String? getElementImageRef(String element) {
@@ -643,10 +676,8 @@ class GridUtils {
     textData = textData.replaceAll('§hHydro§r-infused', '§hHydro-infused§r');
     textData =
         textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
-    textData =
-        textData.replaceAll('Lunar-Charged', '§eLunar-Charged§r');
-    textData =
-        textData.replaceAll('Lunar-§dBloom§r', '§dLunar-Bloom§r');
+    textData = textData.replaceAll('Lunar-Charged', '§eLunar-Charged§r');
+    textData = textData.replaceAll('Lunar-§dBloom§r', '§dLunar-Bloom§r');
 
     // DMG
     textData = textData.replaceAll('§aAnemo§r DMG', '§aAnemo DMG§r');
@@ -684,44 +715,45 @@ class GridUtils {
     );
     var currentTime = DateTime.now().toLocal();
     var diff =
-    isCountUp ? currentTime.difference(end) : end.difference(currentTime);
+        isCountUp ? currentTime.difference(end) : end.difference(currentTime);
     timer.setPresetTime(mSec: diff.inMilliseconds);
     timer.onStartTimer();
 
     return StreamBuilder(
-        stream: timer.rawTime,
-        builder: (context, snapshot) {
-          final value = snapshot.data;
+      stream: timer.rawTime,
+      builder: (context, snapshot) {
+        final value = snapshot.data;
 
-          // Convert to days hours mins secs from millis
-          var text = '';
-          if (value != null) {
-            var duration = Duration(milliseconds: value);
+        // Convert to days hours mins secs from millis
+        var text = '';
+        if (value != null) {
+          var duration = Duration(milliseconds: value);
 
-            var days = duration.inDays;
-            var hours = duration.inHours % 24;
-            var mins = duration.inMinutes % 60;
-            var secs = duration.inSeconds % 60;
+          var days = duration.inDays;
+          var hours = duration.inHours % 24;
+          var mins = duration.inMinutes % 60;
+          var secs = duration.inSeconds % 60;
 
-            text = '$days days, $hours hours, $mins mins, $secs secs';
+          text = '$days days, $hours hours, $mins mins, $secs secs';
 
-            // Do not show mins and secs if days > 30
-            if (days > 30) {
-              var months = days ~/ 30;
-              var daysLeft = days % 30;
-              text = '$months months, $daysLeft days';
-            }
-
-            // Do not show hours, mins and secs if days > 365
-            if (days > 365) {
-              var years = days ~/ 365;
-              var months = (days % 365) ~/ 30;
-              var daysLeft = days % 30;
-              text = '$years years, $months months, $daysLeft days';
-            }
+          // Do not show mins and secs if days > 30
+          if (days > 30) {
+            var months = days ~/ 30;
+            var daysLeft = days % 30;
+            text = '$months months, $daysLeft days';
           }
 
-          return Text(text);
-        });
+          // Do not show hours, mins and secs if days > 365
+          if (days > 365) {
+            var years = days ~/ 365;
+            var months = (days % 365) ~/ 30;
+            var daysLeft = days % 30;
+            text = '$years years, $months months, $daysLeft days';
+          }
+        }
+
+        return Text(text);
+      },
+    );
   }
 }

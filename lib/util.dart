@@ -14,6 +14,10 @@ final FirebaseStorage _storage = FirebaseStorage.instance;
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class Util {
+  static const String hoyoWikiMobileUrl =
+      'https://wiki.hoyolab.com/m/genshin/entry/';
+  static const String hoyoWikiDesktopUrl =
+      'https://wiki.hoyolab.com/pc/genshin/entry/';
   static const String genshinGGUrl = 'https://genshin.gg/';
   static const String paimonMoeUrl = 'https://paimon.moe/';
   static const String costumeGsUrl =

@@ -17,6 +17,7 @@ class MaterialDataCommon extends CommonData {
     super.wiki,
     this.obtained,
     this.usage,
+    super.hoyowiki,
     super.released,
   }) : super();
 
@@ -29,6 +30,7 @@ class MaterialDataCommon extends CommonData {
       name: parsedJson['name'],
       description: parsedJson['description'],
       wiki: parsedJson['wiki'],
+      hoyowiki: parsedJson['hoyowiki'],
       obtained: parsedJson['obtained'],
       released: parsedJson['released'],
       usage: parsedJson['usage'] != null
