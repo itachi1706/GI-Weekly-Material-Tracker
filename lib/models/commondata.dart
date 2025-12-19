@@ -6,6 +6,7 @@ class CommonData {
   String? wiki;
   bool? crossover;
   bool released;
+  int? hoyowiki;
 
   CommonData({
     this.name,
@@ -15,6 +16,7 @@ class CommonData {
     this.wiki,
     this.crossover = false,
     this.released = false,
+    this.hoyowiki,
   });
 }
 

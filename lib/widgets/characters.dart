@@ -233,7 +233,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
-              onPressed: () => GridData.launchWikiUrl(context, _info!),
+              onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
               tooltip: 'View Wiki',
             ),
             IconButton(

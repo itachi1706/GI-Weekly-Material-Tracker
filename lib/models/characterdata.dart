@@ -51,6 +51,7 @@ class CharacterData extends CommonData {
     this.lastBannerName,
     super.crossover,
     super.wiki,
+    super.hoyowiki,
     super.released,
   }) : super();
 
@@ -71,6 +72,7 @@ class CharacterData extends CommonData {
       paimonMoePath: parsedJson['paimonmoepath'],
       element: parsedJson['element'],
       wiki: parsedJson['wiki'],
+      hoyowiki: parsedJson['hoyowiki'],
       ascension: CharacterAscension.getFromMap(
         parsedJson['ascension'],
         parsedJson['materials'],

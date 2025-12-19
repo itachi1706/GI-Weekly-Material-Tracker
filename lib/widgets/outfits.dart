@@ -7,6 +7,7 @@ import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -102,6 +103,8 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
   String? _infoId;
   Color? _rarityColor;
 
+  late SharedPreferences _prefs;
+
   @override
   void initState() {
     super.initState();
@@ -113,6 +116,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
     var outfitData = await GridData.retrieveOutfitsMapData();
     debugPrint("OutfitDataKey: ${outfitData?.keys}");
     debugPrint("Finding $_infoId");
+    _prefs = await SharedPreferences.getInstance();
     setState(() {
       _info = outfitData![_infoId!];
       debugPrint("Found $_info");
@@ -159,7 +163,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
           actions: [
             IconButton(
               icon: const Icon(Icons.info_outline),
-              onPressed: () => GridData.launchWikiUrl(context, _info!),
+              onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
               tooltip: 'View Wiki',
             ),
           ],

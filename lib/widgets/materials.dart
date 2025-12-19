@@ -7,6 +7,7 @@ import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/listeners/sorter.dart';
 import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -140,6 +141,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   String _cntTrack = '';
   final TextEditingController _textEditingController = TextEditingController();
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -150,6 +152,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _getStaticData() async {
     var value = await GridData.retrieveMaterialsMapData();
+    _prefs = await SharedPreferences.getInstance();
 
     setState(() {
       _info = value![_infoId!];
@@ -384,7 +387,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info!),
+            onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
             tooltip: 'View Wiki',
           ),
         ],

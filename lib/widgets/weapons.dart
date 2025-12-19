@@ -12,6 +12,7 @@ import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 final FirebaseFirestore _db = FirebaseFirestore.instance;
@@ -141,6 +142,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   WeaponData? _info;
   Map<String, MaterialDataCommon>? _materialData;
   Map<String, TrackingStatus>? _isBeingTracked;
+
+  late SharedPreferences _prefs;
 
   @override
   void initState() {
@@ -683,6 +686,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   void _getStaticData() async {
     var infoData = await GridData.retrieveWeaponsMapData();
     var materialData = await GridData.retrieveMaterialsMapData();
+    _prefs = await SharedPreferences.getInstance();
     setState(() {
       _info = infoData![_infoId!];
       if (_info == null) Get.offAndToNamed('/splash');
@@ -704,7 +708,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outline),
-            onPressed: () => GridData.launchWikiUrl(context, _info!),
+            onPressed: () => GridData.launchWikiUrl(context, _info!, _prefs),
             tooltip: 'View Wiki',
           ),
         ],

@@ -38,6 +38,7 @@ class WeaponData extends CommonData {
     this.lastBannerCount,
     this.lastBannerEnd,
     this.lastBannerName,
+    super.hoyowiki,
     super.released,
   }) : super();
 
@@ -54,9 +55,11 @@ class WeaponData extends CommonData {
       effect: parsedJson['effect'] ?? 'Unknown Effect',
       rarity: parsedJson['rarity'],
       wiki: parsedJson['wiki'],
+      hoyowiki: parsedJson['hoyowiki'],
       maxBaseAtk: parsedJson['max_base_atk'],
       maxSecondaryStat: parsedJson['max_secondary_stat'],
-      ascension: WeaponAscension.getFromMap(parsedJson['ascension'], parsedJson['materials']),
+      ascension: WeaponAscension.getFromMap(
+          parsedJson['ascension'], parsedJson['materials']),
       effectName: parsedJson['effectName'],
       series: parsedJson['series'],
       released: parsedJson['released'],
@@ -91,7 +94,8 @@ class WeaponAscension extends CommonAscension {
     super.mora,
   }) : super();
 
-  factory WeaponAscension.fromJson(Map<String, dynamic> parsedJson, Map<String, dynamic> materialJson) {
+  factory WeaponAscension.fromJson(
+      Map<String, dynamic> parsedJson, Map<String, dynamic> materialJson) {
     return WeaponAscension(
       material2Qty: parsedJson['material2qty'],
       material1: materialJson[parsedJson['material1type']],
@@ -104,11 +108,13 @@ class WeaponAscension extends CommonAscension {
     );
   }
 
-  static Map<String, WeaponAscension> getFromMap(Map<String, dynamic> ascend, Map<String, dynamic> materials) {
+  static Map<String, WeaponAscension> getFromMap(
+      Map<String, dynamic> ascend, Map<String, dynamic> materials) {
     var fin = <String, WeaponAscension>{};
     // Iterate through all ascend keys
     for (var key in ascend.keys) {
-      fin.putIfAbsent(key, () => WeaponAscension.fromJson(ascend[key], materials['ascension']));
+      fin.putIfAbsent(key,
+          () => WeaponAscension.fromJson(ascend[key], materials['ascension']));
     }
 
     return fin;
