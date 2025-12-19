@@ -219,8 +219,8 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
     var toTrack = int.tryParse(_cntTrack) ?? 0;
 
     TrackingData.addToRecord('material', _infoId).then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(context, '${_info!.name} added to tracker!');
       }
     });
@@ -238,8 +238,8 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _untrackMaterialAction() {
     TrackingData.removeFromRecord('material', _infoId).then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(context, '${_info!.name} removed from tracker!');
       }
     });

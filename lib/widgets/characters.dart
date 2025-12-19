@@ -539,8 +539,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
 
     TrackingData.addToRecord('character', '${widget.infoId}_$_selectedTier')
         .then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           '${widget.info!.name} Ascension Tier $ascensionTierSel added to tracker!',
@@ -599,8 +599,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       'character',
       '${widget.infoId}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           '${widget.info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
@@ -1156,8 +1156,8 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       'talents',
       '${widget.infoId}_${_selectedTalent}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           "Tracking Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",
@@ -1216,8 +1216,8 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       'talents',
       '${widget.infoId}_${_selectedTalent}_$_selectedTier',
     ).then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           "Untracked Tier $ascensionTierSel of ${widget.info!.name}'s ${widget.info!.talent!.attack![_selectedTalent!]!.name}",

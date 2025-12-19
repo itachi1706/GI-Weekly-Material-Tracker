@@ -213,15 +213,14 @@ class GridData {
     debugPrint("Wiki Source: $wikiSource");
     switch (wikiSource) {
       case 'HoYoLab':
+        if (data.hoyowiki == null) {
+          _launchWikiUrl(context, data, null, 'HoYoWiki');
+          break;
+        }
         // Get screen density
         var width = MediaQuery.of(context).size.width;
-        String? url = "${Util.hoyoWikiDesktopUrl}${data.hoyowiki}";
-        if (width < 600) {
-          url = "${Util.hoyoWikiMobileUrl}${data.hoyowiki}";
-        }
-        if (data.hoyowiki == null) {
-          url = null; // To show error message
-        }
+        final baseUrl = width < 600 ? Util.hoyoWikiMobileUrl : Util.hoyoWikiDesktopUrl;
+        final url = "$baseUrl${data.hoyowiki}";
         debugPrint("Launching $url");
         _launchWikiUrl(context, data, url, 'HoYoWiki');
         break;

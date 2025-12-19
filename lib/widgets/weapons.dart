@@ -398,8 +398,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
 
     TrackingData.addToRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           '${_info!.name} Ascension Tier $ascensionTierSel added to tracker!',
@@ -446,8 +446,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
 
     TrackingData.removeFromRecord('weapon', '${_infoId}_$_selectedTier')
         .then((value) {
-      _refreshTrackingStatus();
       if (mounted) {
+        _refreshTrackingStatus();
         Util.showSnackbarQuick(
           context,
           '${_info!.name} Ascension Tier $ascensionTierSel removed from tracker!',
