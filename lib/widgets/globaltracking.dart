@@ -465,7 +465,7 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
     with TrackerIncrementDecrementMixin {
   int _tapCount = 0;
 
-  Widget _typeWidget = SizedBox.shrink();
+  Widget _typeWidget = const SizedBox.shrink();
 
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
