@@ -101,18 +101,19 @@ class SettingsPageState extends State<SettingsPage> {
     var pkgInfo = await PackageInfo.fromPlatform();
     var version = pkgInfo.version;
     var build = pkgInfo.buildNumber;
+    var type = 'Web';
     if (!kIsWeb) {
       var dir = await getTemporaryDirectory();
       var cacheDir = dir;
       files = _dirStatSync(cacheDir.path);
+      if (Platform.isAndroid) {
+        type = 'Android';
+      } else if (Platform.isIOS) {
+        type = 'iOS';
+      } else {
+        type = 'Others';
+      }
     }
-    var type = (kIsWeb)
-        ? 'Web'
-        : (Platform.isAndroid)
-            ? 'Android'
-            : (Platform.isIOS)
-                ? 'iOS'
-                : 'Others';
 
     setState(() {
       _prefs = pref;
@@ -696,7 +697,11 @@ class SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Future<void> _deleteAccount() async {
+  void _deleteAccount() {
+    _deleteAccountInternal();
+  }
+
+  Future<void> _deleteAccountInternal() async {
     var auth = FirebaseAuth.instance;
     await auth.currentUser?.delete();
     if (mounted) {
@@ -1001,33 +1006,38 @@ class UniversalSelectorPageState extends State<UniversalSelectorPage> {
       return Util.centerLoadingCircle(widget.loadingText);
     }
 
-    return SettingsList(
-      sections: [
-        SettingsSection(
-          tiles: widget.settingsOptions
-              .map((e) => SettingsTile(
-                    title: Text(e.title),
-                    description: Text(e.description),
-                    trailing: _trailingWidget(e.value),
-                    onPressed: (context) {
-                      _changeValue(e.value);
-                    },
-                  ))
-              .toList(),
-        ),
-      ],
+    return RadioGroup<String>(
+      groupValue: _key,
+      onChanged: (value) {
+        if (value != null) {
+          debugPrint('Updating value from $_key to $value');
+          _changeValue(value);
+        }
+      },
+      child: SettingsList(
+        sections: [
+          SettingsSection(
+            tiles: widget.settingsOptions
+                .map((e) => SettingsTile(
+                      title: Text(e.title),
+                      description: Text(e.description),
+                      trailing: _trailingWidget(e.value),
+                      onPressed: (context) {
+                        _changeValue(e.value);
+                      },
+                    ))
+                .toList(),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _trailingWidget(String value) {
-    return Radio(
+    return Radio<String>(
       toggleable: false,
       autofocus: false,
       value: value,
-      onChanged: (dynamic ig) {
-        debugPrint('Set to $_key');
-      },
-      groupValue: _key,
     );
   }
 
