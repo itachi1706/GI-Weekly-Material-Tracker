@@ -101,16 +101,23 @@ class ParametricPageState extends State<ParametricPage> {
   }
 
   void _launchApp() async {
+    var launcher = _prefs?.getString('game_launcher') ?? 'Genshin Impact App';
+    var androidPackage = 'com.miHoYo.GenshinImpact';
+    var iosPackage = '1517783697';
+    if (launcher == 'Genshin Impact Cloud App') {
+      androidPackage = 'com.hoyoverse.cloudgames.GenshinImpact';
+      iosPackage = '6446889955';
+    }
+
     if (kIsWeb) {
       // Launch the website
       await Util.launchWebPage('https://genshin.mihoyo.com/en/download');
     } else {
-      var androidId = 'com.miHoYo.GenshinImpact';
       if (Platform.isAndroid) {
-        var isInstalled = await appChecker.isAppInstalled(androidId);
-        debugPrint('App Installed: $isInstalled');
+        var isInstalled = await appChecker.isAppInstalled(androidPackage);
+        debugPrint('App $androidPackage Installed: $isInstalled');
         if (isInstalled) {
-          await appChecker.launchApp(androidId);
+          await appChecker.launchApp(androidPackage);
 
           return;
         }
@@ -126,8 +133,8 @@ class ParametricPageState extends State<ParametricPage> {
       // If not installed or iOS, launch app store
       debugPrint('Launching App Store');
       await StoreRedirect.redirect(
-        androidAppId: androidId,
-        iOSAppId: '1517783697',
+        androidAppId: androidPackage,
+        iOSAppId: iosPackage,
       );
     }
   }
