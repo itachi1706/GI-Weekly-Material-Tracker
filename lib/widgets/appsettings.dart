@@ -32,7 +32,9 @@ class SettingsPage extends StatefulWidget {
 
 class SettingsPageState extends State<SettingsPage> {
   String _location = 'Loading', _cacheSize = 'Loading', _version = 'Loading';
-  String _versionStr = 'Unknown', _buildSource = 'Loading';
+  String _versionStr = 'Unknown',
+      _gameLauncher = 'Loading',
+      _buildSource = 'Loading';
   String _wikiSource = 'Loading';
   String _appCheckToken = 'Loading', _appCheckError = 'Loading';
   bool _darkMode = false,
@@ -88,6 +90,24 @@ class SettingsPageState extends State<SettingsPage> {
     ),
   ];
 
+  final List<SettingsSelectorConfiguration> _mobileGameApp = [
+    SettingsSelectorConfiguration(
+      title: 'Genshin Impact',
+      description: 'Fully Downloaded Edition of the game',
+      value: "Genshin Impact App",
+    ),
+    SettingsSelectorConfiguration(
+      title: 'Genshin Impact Cloud',
+      description: 'Cloud Edition of the game',
+      value: "Genshin Impact Cloud App",
+    ),
+    SettingsSelectorConfiguration(
+      title: 'Genshin Impact (Vietnam)',
+      description: 'Fully Downloaded Edition of the game for the Vietnam Market',
+      value: "Genshin Impact Vietnam App",
+    ),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -101,18 +121,19 @@ class SettingsPageState extends State<SettingsPage> {
     var pkgInfo = await PackageInfo.fromPlatform();
     var version = pkgInfo.version;
     var build = pkgInfo.buildNumber;
+    var type = 'Web';
     if (!kIsWeb) {
       var dir = await getTemporaryDirectory();
       var cacheDir = dir;
       files = _dirStatSync(cacheDir.path);
+      if (Platform.isAndroid) {
+        type = 'Android';
+      } else if (Platform.isIOS) {
+        type = 'iOS';
+      } else {
+        type = 'Others';
+      }
     }
-    var type = (kIsWeb)
-        ? 'Web'
-        : (Platform.isAndroid)
-            ? 'Android'
-            : (Platform.isIOS)
-                ? 'iOS'
-                : 'Others';
 
     setState(() {
       _prefs = pref;
@@ -120,6 +141,7 @@ class SettingsPageState extends State<SettingsPage> {
       _appCheckError = _prefs.getString('app_check_token_err') ?? 'No Errors';
       _location = _prefs.getString('location') ?? 'Asia';
       _buildSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
+      _gameLauncher = _prefs.getString('game_launcher') ?? 'Genshin Impact App';
       _wikiSource = _prefs.getString('wiki_source') ?? 'Genshin Impact Wiki';
       _darkMode = _prefs.getBool('dark_mode') ?? false;
       _useDeepLink = _prefs.getBool('deeplinkEnabled') ?? false;
@@ -298,7 +320,9 @@ class SettingsPageState extends State<SettingsPage> {
 
   void _toggleMoveCompletedToBottom(bool value) {
     _prefs.setBool('move_completed_bottom', value).then((value) {
-      Util.showSnackbarQuick(context, 'Will be moved on next reload');
+      if (mounted) {
+        Util.showSnackbarQuick(context, 'Will be moved on next reload');
+      }
     });
     setState(() {
       _moveBot = value;
@@ -365,6 +389,18 @@ class SettingsPageState extends State<SettingsPage> {
           'Asia',
           'Getting Region',
           'Game Server Location',
+        ),
+      ),
+      SettingsTile(
+        title: const Text('Mobile Game Launcher'),
+        value: Text(_gameLauncher),
+        leading: Icon(MdiIcons.controller),
+        onPressed: (_) => _launchSelectorPage(
+          _mobileGameApp,
+          'game_launcher',
+          'Genshin Impact App',
+          'Getting Game Launcher Info',
+          'Mobile Game Launcher',
         ),
       ),
     ];
@@ -435,11 +471,14 @@ class SettingsPageState extends State<SettingsPage> {
             padding: const EdgeInsets.only(top: 22, bottom: 8),
             child: InkWell(
               onTap: () {
-                Clipboard.setData(ClipboardData(text: _version))
-                    .then((value) => Util.showSnackbarQuick(
-                          context,
-                          "Version copied to clipboard",
-                        ));
+                Clipboard.setData(ClipboardData(text: _version)).then((value) {
+                  if (mounted) {
+                    Util.showSnackbarQuick(
+                      context,
+                      "Version copied to clipboard",
+                    );
+                  }
+                });
               },
               child: Text(
                 _version,
@@ -696,7 +735,11 @@ class SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Future<void> _deleteAccount() async {
+  void _deleteAccount() {
+    _deleteAccountInternal();
+  }
+
+  Future<void> _deleteAccountInternal() async {
     var auth = FirebaseAuth.instance;
     await auth.currentUser?.delete();
     if (mounted) {
@@ -771,6 +814,8 @@ class SettingsPageState extends State<SettingsPage> {
   }
 
   void _showAboutPage(BuildContext context) {
+    var baseGitHub = 'https://github.com/itachi1706/GI-Weekly-Material-Tracker';
+
     showAboutPage(
       context: context,
       title: const Text('About this app'),
@@ -787,16 +832,14 @@ class SettingsPageState extends State<SettingsPage> {
           leading: const Icon(Icons.source_outlined),
           trailing: const SizedBox.shrink(),
           title: const Text('View Source Code'),
-          onTap: () => Util.launchWebPage(
-            'https://github.com/itachi1706/GI-Weekly-Material-Tracker',
-          ),
+          onTap: () => Util.launchWebPage(baseGitHub),
         ),
         ListTile(
           leading: const Icon(Icons.bug_report),
           trailing: const SizedBox.shrink(),
           title: const Text('Report a Bug'),
           onTap: () => Util.launchWebPage(
-            'https://github.com/itachi1706/GI-Weekly-Material-Tracker/issues/new?assignees=&labels=bug%2C+status%3A%3Ato+triage&template=bug-report.md&title=',
+            '$baseGitHub/issues/new?assignees=&labels=bug%2C+status%3A%3Ato+triage&template=bug-report.md&title=',
           ),
         ),
         ListTile(
@@ -804,7 +847,7 @@ class SettingsPageState extends State<SettingsPage> {
           trailing: const SizedBox.shrink(),
           title: const Text('Suggest a new Feature'),
           onTap: () => Util.launchWebPage(
-            'https://github.com/itachi1706/GI-Weekly-Material-Tracker/issues/new?assignees=&labels=status%3A%3Ato+triage%2C+suggestion&template=feature-request.md&title=',
+            '$baseGitHub/issues/new?assignees=&labels=status%3A%3Ato+triage%2C+suggestion&template=feature-request.md&title=',
           ),
         ),
         const MarkdownPageListTile(
@@ -1001,33 +1044,38 @@ class UniversalSelectorPageState extends State<UniversalSelectorPage> {
       return Util.centerLoadingCircle(widget.loadingText);
     }
 
-    return SettingsList(
-      sections: [
-        SettingsSection(
-          tiles: widget.settingsOptions
-              .map((e) => SettingsTile(
-                    title: Text(e.title),
-                    description: Text(e.description),
-                    trailing: _trailingWidget(e.value),
-                    onPressed: (context) {
-                      _changeValue(e.value);
-                    },
-                  ))
-              .toList(),
-        ),
-      ],
+    return RadioGroup<String>(
+      groupValue: _key,
+      onChanged: (value) {
+        if (value != null) {
+          debugPrint('Updating value from $_key to $value');
+          _changeValue(value);
+        }
+      },
+      child: SettingsList(
+        sections: [
+          SettingsSection(
+            tiles: widget.settingsOptions
+                .map((e) => SettingsTile(
+                      title: Text(e.title),
+                      description: Text(e.description),
+                      trailing: _trailingWidget(e.value),
+                      onPressed: (context) {
+                        _changeValue(e.value);
+                      },
+                    ))
+                .toList(),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _trailingWidget(String value) {
-    return Radio(
+    return Radio<String>(
       toggleable: false,
       autofocus: false,
       value: value,
-      onChanged: (dynamic ig) {
-        debugPrint('Set to $_key');
-      },
-      groupValue: _key,
     );
   }
 
