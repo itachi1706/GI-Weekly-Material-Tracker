@@ -130,7 +130,8 @@ class WishPageCard extends StatelessWidget {
   final Map<String, CharacterData> characterInfo;
   final Map<String, WeaponData> weaponInfo;
 
-  const WishPageCard(this.data, this.characterInfo, this.weaponInfo, {super.key});
+  const WishPageCard(this.data, this.characterInfo, this.weaponInfo,
+      {super.key});
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
@@ -663,6 +664,22 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     return [];
   }
 
+  List<Widget> _getVersion() {
+    var versionNumber = _bannerInfo?.versionNumber;
+    var versionName = _bannerInfo?.versionName;
+
+    if (versionNumber == null) {
+      return const [SizedBox.shrink()];
+    }
+
+    var versionString = "Version $versionNumber";
+    if (versionName != null) {
+      versionString = "Version \"$versionName\" ($versionNumber)";
+    }
+
+    return GridData.generateInfoLine(versionString, Icons.onetwothree);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_type == null || _index == null) {
@@ -692,6 +709,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
               Icons.timer,
             ),
             ..._getCountdown(),
+            ..._getVersion(),
             ...GridData.generateInfoLine(
               _bannerInfo!.description,
               Icons.format_list_bulleted,
