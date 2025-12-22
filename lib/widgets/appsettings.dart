@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:about/about.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:filesize/filesize.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -103,7 +104,8 @@ class SettingsPageState extends State<SettingsPage> {
     ),
     SettingsSelectorConfiguration(
       title: 'Genshin Impact (Vietnam)',
-      description: 'Fully Downloaded Edition of the game for the Vietnam Market',
+      description:
+          'Fully Downloaded Edition of the game for the Vietnam Market',
       value: "Genshin Impact Vietnam App",
     ),
   ];
@@ -463,6 +465,52 @@ class SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  Future<void> _getDeviceInfoInternal() async {
+    debugPrint("Hi test here");
+    var deviceInfo = DeviceInfoPlugin();
+    var debugData = _version;
+
+    if (Platform.isAndroid) {
+      var androidInfo = await deviceInfo.androidInfo;
+      debugPrint(androidInfo.toString());
+      debugData +=
+          "\nVersion: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})";
+      debugData +=
+          "\nDevice Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})";
+    } else if (Platform.isIOS) {
+      var iosInfo = await deviceInfo.iosInfo;
+      debugPrint(iosInfo.toString());
+      debugData += "\nDevice Model: ${iosInfo.modelName} (${iosInfo.model})";
+      debugData += "\nVersion: ${iosInfo.systemName} ${iosInfo.systemVersion}";
+    } else if (kIsWeb) {
+      debugData += "\nWeb";
+      var webInfo = await deviceInfo.webBrowserInfo;
+      debugPrint(webInfo.toString());
+      // webInfo.product
+      debugData += "\nUser-Agent: ${webInfo.userAgent}";
+    }
+
+    debugPrint(debugData);
+    Clipboard.setData(ClipboardData(text: debugData));
+  }
+
+  void _copySnackbar() async {
+    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    await Clipboard.setData(ClipboardData(text: _version));
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Version copied to clipboard'),
+          duration: const Duration(seconds: 2),
+          action: SnackBarAction(
+            label: 'Full Debug Info',
+            onPressed: () => _getDeviceInfoInternal(),
+          ),
+        ),
+      );
+    }
+  }
+
   CustomSettingsSection _endSettings() {
     return CustomSettingsSection(
       child: Column(
@@ -470,16 +518,7 @@ class SettingsPageState extends State<SettingsPage> {
           Padding(
             padding: const EdgeInsets.only(top: 22, bottom: 8),
             child: InkWell(
-              onTap: () {
-                Clipboard.setData(ClipboardData(text: _version)).then((value) {
-                  if (mounted) {
-                    Util.showSnackbarQuick(
-                      context,
-                      "Version copied to clipboard",
-                    );
-                  }
-                });
-              },
+              onTap: () => _copySnackbar(),
               child: Text(
                 _version,
                 style: const TextStyle(color: Color(0xFF777777)),
