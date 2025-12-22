@@ -101,6 +101,11 @@ class SettingsPageState extends State<SettingsPage> {
       description: 'Cloud Edition of the game',
       value: "Genshin Impact Cloud App",
     ),
+    SettingsSelectorConfiguration(
+      title: 'Genshin Impact (Vietnam)',
+      description: 'Fully Downloaded Edition of the game for the Vietnam Market',
+      value: "Genshin Impact Vietnam App",
+    ),
   ];
 
   @override

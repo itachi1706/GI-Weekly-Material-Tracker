@@ -104,9 +104,16 @@ class ParametricPageState extends State<ParametricPage> {
     var launcher = _prefs?.getString('game_launcher') ?? 'Genshin Impact App';
     var androidPackage = 'com.miHoYo.GenshinImpact';
     var iosPackage = '1517783697';
-    if (launcher == 'Genshin Impact Cloud App') {
-      androidPackage = 'com.hoyoverse.cloudgames.GenshinImpact';
-      iosPackage = '6446889955';
+    switch (launcher) {
+      case 'Genshin Impact Cloud App':
+        androidPackage = 'com.hoyoverse.cloudgames.GenshinImpact';
+        iosPackage = '6446889955';
+        break;
+      case 'Genshin Impact Vietnam App':
+        androidPackage = 'com.miHoYo.GenshinImpact.vn';
+        break;
+      default:
+        break;
     }
 
     if (kIsWeb) {
@@ -220,7 +227,9 @@ class ParametricPageState extends State<ParametricPage> {
         child: Center(
           child: Column(
             children: [
-              Image.asset('assets/images/items/Item_Parametric_Transformer.png'),
+              Image.asset(
+                'assets/images/items/Item_Parametric_Transformer.png',
+              ),
               const Text(
                 'Refreshing in',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
@@ -259,7 +268,10 @@ class ParametricPageState extends State<ParametricPage> {
                   _getNotificationState(),
                 ],
               ),
-              TextButton(onPressed: _launchApp, child: const Text('Launch Game')),
+              TextButton(
+                onPressed: _launchApp,
+                child: const Text('Launch Game'),
+              ),
             ],
           ),
         ),
