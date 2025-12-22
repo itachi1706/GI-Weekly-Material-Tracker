@@ -15,6 +15,8 @@ class BannerData {
   String? wiki;
   String? image;
   String key;
+  double? versionNumber;
+  String? versionName;
 
   BannerStatus status = BannerStatus.unknown;
 
@@ -32,30 +34,32 @@ class BannerData {
     required this.hardPity,
     required this.status,
     required this.key,
+    this.versionNumber,
+    this.versionName,
     this.wiki,
     this.image,
   });
 
   factory BannerData.fromJson(Map<dynamic, dynamic> parsedJson, String key) {
     List<String> char = parsedJson['characters']
-            ?.map((s) => s.toString())
-            .toList()
-            .cast<String>() ??
+        ?.map((s) => s.toString())
+        .toList()
+        .cast<String>() ??
         [];
     List<String> weap = parsedJson['weapons']
-            ?.map((s) => s.toString())
-            .toList()
-            .cast<String>() ??
+        ?.map((s) => s.toString())
+        .toList()
+        .cast<String>() ??
         [];
     List<String> ruChar = parsedJson['rateupcharacters']
-            ?.map((s) => s.toString())
-            .toList()
-            .cast<String>() ??
+        ?.map((s) => s.toString())
+        .toList()
+        .cast<String>() ??
         [];
     List<String> ruWeap = parsedJson['rateupweapon']
-            ?.map((s) => s.toString())
-            .toList()
-            .cast<String>() ??
+        ?.map((s) => s.toString())
+        .toList()
+        .cast<String>() ??
         [];
 
     var start = DateTime.parse(parsedJson['start']);
@@ -73,6 +77,12 @@ class BannerData {
       status = BannerStatus.current;
     }
 
+    var versionRaw = parsedJson['versionNumber'];
+    double? version;
+    if (versionRaw != null) {
+      version = versionRaw is int ? versionRaw.toDouble() : versionRaw;
+    }
+
     return BannerData(
       name: parsedJson['name'],
       start: DateTime.parse(parsedJson['start']),
@@ -87,6 +97,8 @@ class BannerData {
       hardPity: parsedJson['hardpity'],
       wiki: parsedJson['wiki'],
       image: parsedJson['image'],
+      versionNumber: version,
+      versionName: parsedJson['versionName'],
       key: key,
       status: status,
     );
