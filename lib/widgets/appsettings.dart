@@ -372,7 +372,7 @@ class SettingsPageState extends State<SettingsPage> {
       SettingsTile(
         title: const Text('Wiki Source'),
         value: Text(_wikiSource),
-        leading: Icon(Icons.book),
+        leading: const Icon(Icons.book),
         onPressed: (_) => _launchSelectorPage(
           _wikiGuide,
           "wiki_source",
@@ -513,7 +513,7 @@ class SettingsPageState extends State<SettingsPage> {
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Version copied to clipboard'),
+          content: const Text('Version copied to clipboard'),
           duration: const Duration(seconds: 2),
           action: SnackBarAction(
             label: 'Full Debug Info',

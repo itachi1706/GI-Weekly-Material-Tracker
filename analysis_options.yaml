@@ -4,6 +4,12 @@ analyzer:
   plugins:
     - dart_code_linter
 
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+
 dart_code_linter:
   anti-patterns:
     - long-method

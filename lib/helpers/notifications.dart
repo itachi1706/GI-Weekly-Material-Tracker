@@ -61,12 +61,12 @@ class NotificationManager {
     debugPrint('Initializing Notification Manager');
   }
 
-  Future onDidReceiveLocalNotification(
+  void onDidReceiveLocalNotification(
     int id,
     String? title,
     String? body,
     String? payload,
-  ) async {
+  ) {
     PlaceholderUtil.showUnimplementedSnackbar(Get.context!);
   }
 

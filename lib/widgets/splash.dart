@@ -42,7 +42,7 @@ class SplashPageState extends State<SplashPage> {
     Get.offNamed(value);
   }
 
-  Future<void> _miscInit() async {
+  void _miscInit() {
     tz.initializeTimeZones();
   }
 

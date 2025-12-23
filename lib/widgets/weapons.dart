@@ -172,7 +172,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       extraWidgets = [
         Row(
           children: [
-            Text('Time Left: '),
+            const Text('Time Left: '),
             GridUtils.getCounter(lastBannerEnd.toLocal(), false),
           ],
         ),
@@ -181,7 +181,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       extraWidgets = [
         Row(
           children: [
-            Text('Time Since: '),
+            const Text('Time Since: '),
             GridUtils.getCounter(lastBannerEnd.toLocal(), true),
           ],
         ),
