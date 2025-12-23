@@ -467,33 +467,36 @@ class SettingsPageState extends State<SettingsPage> {
 
   Future<void> _getDeviceInfoInternal() async {
     var deviceInfo = DeviceInfoPlugin();
-    var debugData = _version;
+    var debugDataArr = <String>[_version];
 
     if (kIsWeb) {
       debugPrint('Web Platform');
       var webInfo = await deviceInfo.webBrowserInfo;
       debugPrint(webInfo.data.toString());
-      debugData +=
-          "\nUser-Agent: ${webInfo.userAgent}\nVendor: ${webInfo.vendor}";
+      debugDataArr.add("Type: Web");
+      debugDataArr.add("User-Agent: ${webInfo.userAgent}");
+      debugDataArr.add("Vendor: ${webInfo.vendor}");
     } else if (Platform.isAndroid) {
       debugPrint('Android Platform');
       var androidInfo = await deviceInfo.androidInfo;
       debugPrint(androidInfo.data.toString());
-      debugData +=
-          "\nVersion: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})";
-      debugData +=
-          "\nDevice Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})";
+      debugDataArr.add("Type: Android");
+      debugDataArr.add("Version: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})");
+      debugDataArr.add("Device Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})");
     } else if (Platform.isIOS) {
       debugPrint('iOS Platform');
       var iosInfo = await deviceInfo.iosInfo;
       debugPrint(iosInfo.data.toString());
-      debugData +=
-          "\nDevice Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})";
-      debugData += "\nVersion: ${iosInfo.systemName} ${iosInfo.systemVersion}";
+      debugDataArr.add("Type: iOS");
+      debugDataArr.add("Device Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})");
+      debugDataArr.add("Version: ${iosInfo.systemName} ${iosInfo.systemVersion}");
+    } else {
+      debugPrint('Unsupported Platform');
     }
 
+    final debugData = debugDataArr.join('\n');
     debugPrint(debugData);
-    Clipboard.setData(ClipboardData(text: debugData));
+    await Clipboard.setData(ClipboardData(text: debugData));
   }
 
   void _copySnackbar() async {
