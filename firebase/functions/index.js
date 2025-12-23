@@ -12,7 +12,7 @@ const isDebugMode = process.env.DEBUG_MODE || false;
 
 function debugLog(message, ...optionalParams) {
   if (isDebugMode) {
-    console.log(`[DBG] ${message}`, optionalParams);
+    console.log(`[DBG] ${message}`, ...optionalParams);
   }
 }
 
