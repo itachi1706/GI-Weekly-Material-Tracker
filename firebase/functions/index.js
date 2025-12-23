@@ -8,6 +8,13 @@ const {getDatabase} = require('firebase-admin/database');
 
 const bucket = 'gs://gi-weekly-material-tracker-firestore-prod-backups';
 initializeApp();
+const isDebugMode = process.env.DEBUG_MODE === 'true';
+
+function debugLog(message, ...optionalParams) {
+  if (isDebugMode) {
+    console.log(`[DBG] ${message}`, ...optionalParams);
+  }
+}
 
 exports.scheduledFirestoreExport = functions.pubsub.schedule('every 24 hours').onRun((context) => {
   const projectId = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT;
@@ -25,7 +32,6 @@ exports.scheduledFirestoreExport = functions.pubsub.schedule('every 24 hours').o
   .then(responses => {
     const response = responses[0];
     console.log(`Operation Name: ${response['name']}`);
-    return;
   })
   .catch(err => {
     console.error(err);
@@ -45,7 +51,7 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
     // Get firestore data
     const firestoreDb = getFirestore();
 
-    var finalUpdates = {};
+    let finalUpdates = {};
 
     const weapons = await firestoreDb.collection('weapons').get();
     weapons.forEach((doc) => {
@@ -55,8 +61,8 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
       let time = null;
       let bannerName = null;
       // Get rateupweapon array from each banner data ite,
-      for (var item of bannerData) {
-        // console.log('[DBG] Checking Banner:', item.name);
+      for (let item of bannerData) {
+        debugLog('Checking Banner:', item.name);
         let special = item.rateupweapon;
         if (special.includes(doc.id)) {
           // Its this one
@@ -91,10 +97,10 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
 
     // Update all data in finalUpdates
     console.log("Has", Object.keys(finalUpdates).length, "items to update");
-    var batch = firestoreDb.batch();
-    for (var dt in finalUpdates) {
+    let batch = firestoreDb.batch();
+    for (let dt in finalUpdates) {
       console.log("Updating Weapon", dt);
-      batch.set(firestoreDb.collection('weapons').doc(dt), finalUpdates[dt])
+      batch.set(firestoreDb.collection('weapons').doc(dt), finalUpdates[dt]);
     }
     await batch.commit();
     console.log("Update complete");
@@ -113,7 +119,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
     // Get firestore data
     const firestoreDb = getFirestore();
 
-    var finalUpdates = {};
+    let finalUpdates = {};
 
     const characters = await firestoreDb.collection('characters').get();
     characters.forEach((doc) => {
@@ -123,8 +129,8 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
       let time = null;
       let bannerName = null;
       // Get rateupcharacters array from each banner data ite,
-      for (var item of bannerData) {
-        // console.log('[DBG] Checking Banner:', item.name);
+      for (let item of bannerData) {
+        debugLog('Checking Banner:', item.name);
         let special = item.rateupcharacters;
         if (special.includes(doc.id)) {
           // Its this one
@@ -159,10 +165,10 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
 
     // Update all data in finalUpdates
     console.log("Has", Object.keys(finalUpdates).length, "items to update");
-    var batch = firestoreDb.batch();
-    for (var dt in finalUpdates) {
+    let batch = firestoreDb.batch();
+    for (let dt in finalUpdates) {
       console.log("Updating Character", dt);
-      batch.set(firestoreDb.collection('characters').doc(dt), finalUpdates[dt])
+      batch.set(firestoreDb.collection('characters').doc(dt), finalUpdates[dt]);
     }
     await batch.commit();
     console.log("Update complete");
@@ -170,7 +176,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
   });
 
 exports.updateCharacterLastSeen = functions.firestore.document('characters/{charKey}').onWrite(async (change, context) => {
-  var key = context.params.charKey;
+  let key = context.params.charKey;
   if (!change.after.exists) {
     // Do not operate
     console.log("Character", key, "deleted. We do not update it");
@@ -194,8 +200,8 @@ exports.updateCharacterLastSeen = functions.firestore.document('characters/{char
   const banners = data.val();
 
   // Get rateupcharacters array from each banner data ite,
-  for (var item of banners) {
-    // console.log('[DBG] Checking Banner:', item.name);
+  for (let item of banners) {
+    debugLog('Checking Banner:', item.name);
     let special = item.rateupcharacters;
     if (special.includes(key)) {
       // Its this one
@@ -233,7 +239,7 @@ exports.updateCharacterLastSeen = functions.firestore.document('characters/{char
 });
 
 exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').onWrite(async (change, context) => {
-  var key = context.params.wepKey;
+  let key = context.params.wepKey;
   if (!change.after.exists) {
     // Do not operate
     console.log("Weapon", key, "deleted. We do not update it");
@@ -257,8 +263,8 @@ exports.updateWeaponLastSeen = functions.firestore.document('weapons/{wepKey}').
   const banners = data.val();
 
   // Get rateupweapon array from each banner data ite,
-  for (var item of banners) {
-    // console.log('[DBG] Checking Banner:', item.name);
+  for (let item of banners) {
+    debugLog('Checking Banner:', item.name);
     let special = item.rateupweapon;
     if (special.includes(key)) {
       // Its this one
