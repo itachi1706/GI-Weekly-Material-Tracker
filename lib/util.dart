@@ -6,6 +6,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/theme_notifier.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String _firebaseStorageUrl =
@@ -158,6 +159,8 @@ class Util {
 
   static String? _uid;
 
+  static Future<SharedPreferencesWithCache>? _prefsFuture;
+
   static void showSnackbarQuick(BuildContext context, String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -287,6 +290,14 @@ class Util {
 
     // Launch web browser for all other platforms
     return await _launchWebPageWeb(url);
+  }
+
+  static Future<SharedPreferencesWithCache> getSharedPreferenceInstance() {
+    _prefsFuture ??= SharedPreferencesWithCache.create(
+      cacheOptions: SharedPreferencesWithCacheOptions(),
+    );
+
+    return _prefsFuture!;
   }
 
   static Future<bool> _launchWebPageWeb(String url) async {

@@ -143,7 +143,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   Map<String, MaterialDataCommon>? _materialData;
   Map<String, TrackingStatus>? _isBeingTracked;
 
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   @override
   void initState() {
@@ -697,7 +697,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   void _getStaticData() async {
     var infoData = await GridData.retrieveWeaponsMapData();
     var materialData = await GridData.retrieveMaterialsMapData();
-    _prefs = await SharedPreferences.getInstance();
+    _prefs = await Util.getSharedPreferenceInstance();
     setState(() {
       _info = infoData![_infoId!];
       if (_info == null) Get.offAndToNamed('/splash');

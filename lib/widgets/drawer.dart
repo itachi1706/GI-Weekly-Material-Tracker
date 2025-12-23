@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -45,7 +44,7 @@ class DrawerComponentState extends State<DrawerComponent> {
         }
       }
     }
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
 
     // Launch the website otherwise
     await Util.launchWebPage(
@@ -61,7 +60,7 @@ class DrawerComponentState extends State<DrawerComponent> {
       );
 
   void _launchMap() async {
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
     await Util.launchWebPage(
       'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html',
       webView: true,

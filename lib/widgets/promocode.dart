@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:gi_weekly_material_tracker/models/promocodedata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseDatabase db = FirebaseDatabase.instance;
 
@@ -24,7 +23,7 @@ class PromoCodePageState extends State<PromoCodePage> {
   @override
   void initState() {
     super.initState();
-    SharedPreferences.getInstance().then((value) {
+    Util.getSharedPreferenceInstance().then((value) {
       setState(() {
         _location = value.getString('location') ?? 'Asia';
       });

@@ -59,7 +59,7 @@ class TrackerPageState extends State<TrackerPage> {
   Map<String, WeaponData>? _weaponData;
   Map<String, CharacterData>? _characterData;
 
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   @override
   void initState() {
@@ -132,7 +132,7 @@ class TrackerPageState extends State<TrackerPage> {
   }
 
   void _retrieveData() async {
-    var prefs = await SharedPreferences.getInstance();
+    var prefs = await Util.getSharedPreferenceInstance();
     var m = await GridData.retrieveMaterialsMapData();
     var c = await GridData.retrieveCharactersMapData();
     var w = await GridData.retrieveWeaponsMapData();
@@ -213,7 +213,7 @@ class PlannerPageState extends State<PlannerPage> {
           }),
         });
 
-    SharedPreferences.getInstance().then((value) {
+    Util.getSharedPreferenceInstance().then((value) {
       _location = value.getString('location') ?? 'Asia';
     });
     tz.initializeTimeZones();
@@ -468,7 +468,6 @@ class TrackerCard extends StatefulWidget {
 
 class TrackerCardState extends State<TrackerCard>
     with TrackerIncrementDecrementMixin {
-
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),

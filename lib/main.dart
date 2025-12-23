@@ -18,6 +18,7 @@ import 'package:gi_weekly_material_tracker/widgets/splash.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
 import 'package:gi_weekly_material_tracker/widgets/wishbanners.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
 
 import 'firebase_options.dart';
 
@@ -39,6 +40,7 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    _migrateSharedPreference();
     Util.themeNotifier.toggleTheme();
     Util.themeNotifier.addListener(() {
       setState(() {
@@ -47,6 +49,18 @@ class MyAppState extends State<MyApp> {
     });
 
     _initFirebaseAppCheck();
+  }
+
+  void _migrateSharedPreference() async {
+    debugPrint('[STARTUP] Migrating Shared Preferences');
+    const spo = SharedPreferencesOptions();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await migrateLegacySharedPreferencesToSharedPreferencesAsyncIfNecessary(
+      legacySharedPreferencesInstance: prefs,
+      sharedPreferencesAsyncOptions: spo,
+      migrationCompletedKey: 'sharedPrefAsyncMigrationCompleted',
+    );
+    debugPrint('[STARTUP] Shared Preferences Migration Complete');
   }
 
   void _initFirebaseAppCheck() async {
@@ -65,10 +79,10 @@ class MyAppState extends State<MyApp> {
             ? AndroidDebugProvider()
             : AndroidPlayIntegrityProvider(),
       );
+      var prefs = await Util.getSharedPreferenceInstance();
       FirebaseAppCheck.instance.onTokenChange.listen(
         (token) async {
           debugPrint('[APP-CHECK] App Check Token Updated to: $token');
-          var prefs = await SharedPreferences.getInstance();
           await prefs.setString("app_check_token", token ?? "-");
           if (prefs.containsKey("app_check_token_err")) {
             await prefs.remove("app_check_token_err");
@@ -76,7 +90,6 @@ class MyAppState extends State<MyApp> {
         },
         onError: (error) async {
           debugPrint('[APP-CHECK] App Check Error: $error');
-          var prefs = await SharedPreferences.getInstance();
           await prefs.setString("app_check_token_err", error);
         },
         onDone: () {

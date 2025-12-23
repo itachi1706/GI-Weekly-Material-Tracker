@@ -154,7 +154,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   Color? _rarityColor;
 
   Map<String, MaterialDataCommon>? _materialData;
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
   String? _bgSource;
 
   @override
@@ -167,7 +167,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
   void _getStaticData() async {
     var infoData = await GridData.retrieveCharactersMapData();
     var materialData = await GridData.retrieveMaterialsMapData();
-    _prefs = await SharedPreferences.getInstance();
+    _prefs = await Util.getSharedPreferenceInstance();
     setState(() {
       _info = infoData![_infoId!];
       if (_info == null) Get.offAndToNamed('/splash');
