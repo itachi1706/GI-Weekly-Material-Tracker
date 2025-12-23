@@ -8,7 +8,7 @@ const {getDatabase} = require('firebase-admin/database');
 
 const bucket = 'gs://gi-weekly-material-tracker-firestore-prod-backups';
 initializeApp();
-const isDebugMode = process.env.DEBUG_MODE || false;
+const isDebugMode = process.env.DEBUG_MODE === 'true';
 
 function debugLog(message, ...optionalParams) {
   if (isDebugMode) {
