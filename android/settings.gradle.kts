@@ -25,4 +25,5 @@ plugins {
     id("com.google.firebase.firebase-perf") version "2.0.2" apply false
 }
 
+rootProject.name = "gi_weekly_material_tracker"
 include(":app")

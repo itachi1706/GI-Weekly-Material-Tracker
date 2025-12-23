@@ -49,10 +49,10 @@ let description = prompt("What does the code give? (Write in a single line seper
 
 let date = 'no';
 let dateStr = '';
-while (isNaN(date)) {
+while (Number.isNaN(date)) {
     dateStr = prompt("Date of code added in UTC (dd MMM yy format, example: 13 Nov 2020): ");
     date = Date.parse(dateStr + ' UTC');
-    if (isNaN(date)) console.log("Invalid date. Please follow format");
+    if (Number.isNaN(date)) console.log("Invalid date. Please follow format");
 }
 
 let notify = false;

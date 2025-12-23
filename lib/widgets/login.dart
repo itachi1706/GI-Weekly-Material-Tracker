@@ -28,7 +28,7 @@ class LoginPageState extends State<LoginPage> {
     super.initState();
     _listener = _auth.userChanges().listen((event) {
       if (event != null) {
-        _finishLoggedInFlow(context, event);
+        _finishLoggedInFlow(event);
       }
     });
   }
@@ -42,7 +42,7 @@ class LoginPageState extends State<LoginPage> {
       );
 
       if (mounted) {
-        _finishLoggedInFlow(context, credentials.user);
+        _finishLoggedInFlow(credentials.user);
       }
     } on FirebaseAuthException catch (e) {
       if (mounted) {
@@ -52,13 +52,15 @@ class LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _finishLoggedInFlow(BuildContext context, User? user) {
+  void _finishLoggedInFlow(User? user) {
     Util.updateFirebaseUid();
-    Util.showSnackbarQuick(context, 'Logged in as ${user?.email}');
+    if (mounted) {
+      Util.showSnackbarQuick(context, 'Logged in as ${user?.email}');
+    }
     Get.offAllNamed('/menu');
   }
 
-  Widget _buildFooter(BuildContext context, AuthAction action) {
+  Widget _buildFooter(BuildContext _, AuthAction __) {
     if (!kReleaseMode) {
       return SignInButton(
         Buttons.Email,
@@ -100,7 +102,7 @@ class LoginPageState extends State<LoginPage> {
       ],
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
-          _finishLoggedInFlow(context, state.user);
+          _finishLoggedInFlow(state.user);
         }),
         AuthStateChangeAction<AuthFailed>((context, state) {
           debugPrint(state.exception.toString());

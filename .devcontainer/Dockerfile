@@ -20,7 +20,7 @@ USER root
 
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     apt-get update && \
-    apt-get -y install libpulse0 build-essential libkrb5-dev gcc make libgtk-3-dev && \
+    apt-get --no-install-recommends -y install build-essential gcc libgtk-3-dev libkrb5-dev libpulse0 make && \
     apt-get clean && \
     apt-get -y autoremove && \
     apt-get -y clean && \
@@ -29,11 +29,11 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - &
 USER vscode
 
 # Install Flutter sdk
-RUN cd /home/vscode && \
-  wget -qO flutter_sdk.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz && \
-  tar -xvf flutter_sdk.tar.xz && rm flutter_sdk.tar.xz
-
-RUN $FLUTTER_HOME/bin/flutter channel stable && $FLUTTER_HOME/bin/flutter upgrade && $FLUTTER_HOME/bin/flutter config --enable-web
+WORKDIR /home/vscode
+RUN wget -qO flutter_sdk.tar.xz "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz" && \
+  tar -xvf flutter_sdk.tar.xz && rm flutter_sdk.tar.xz && \
+  "$FLUTTER_HOME/bin/flutter" channel stable && "$FLUTTER_HOME/bin/flutter" upgrade && \
+  "$FLUTTER_HOME/bin/flutter" config --enable-web
 
 # Change the PUB_CACHE to /workspaces so dependencies are preserved.
 ENV PUB_CACHE=/workspaces/.pub_cache
