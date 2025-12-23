@@ -6,7 +6,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
@@ -73,7 +72,7 @@ class NotificationManager {
 
   Future rescheduleAllScheduledReminders() async {
     debugPrint('Rescheduling all scheduled reminders');
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
     await scheduleDailyForumReminder(pref.getBool('daily_login') ?? false);
     await scheduleParametricReminder(
       pref.getBool('parametric_notification') ?? false,
@@ -89,7 +88,7 @@ class NotificationManager {
           await Get.toNamed('/parametric');
           break;
         case 'forum-login':
-          var pref = await SharedPreferences.getInstance();
+          var pref = await Util.getSharedPreferenceInstance();
           await Util.launchWebPage(
             'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us',
             useDeepLink: pref.getBool('deeplinkEnabled') ?? false,
@@ -153,7 +152,7 @@ class NotificationManager {
   Future<void> resetScheduledIfNotInUse() async {
     if (kIsWeb || !GetPlatform.isAndroid) return;
 
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
 
     if (pref.containsKey('daily_login')) {
       var dailyLogin = pref.getBool('daily_login') ?? false;
@@ -186,7 +185,7 @@ class NotificationManager {
     }
 
     // Get from preference
-    var prefs = await SharedPreferences.getInstance();
+    var prefs = await Util.getSharedPreferenceInstance();
     var resetTime = -1;
     if (prefs.containsKey('parametric-reset-time')) {
       resetTime = prefs.getInt('parametric-reset-time') ?? -1;

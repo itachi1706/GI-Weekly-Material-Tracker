@@ -103,7 +103,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
   String? _infoId;
   Color? _rarityColor;
 
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   @override
   void initState() {
@@ -116,7 +116,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
     var outfitData = await GridData.retrieveOutfitsMapData();
     debugPrint("OutfitDataKey: ${outfitData?.keys}");
     debugPrint("Finding $_infoId");
-    _prefs = await SharedPreferences.getInstance();
+    _prefs = await Util.getSharedPreferenceInstance();
     setState(() {
       _info = outfitData![_infoId!];
       debugPrint("Found $_info");
@@ -251,7 +251,6 @@ class OutfitInfoGeneralPage extends StatelessWidget {
   List<Widget> _generateShopInfo() {
     List<Widget> widgets = [];
     var shopCostDiscounted = info?.shopCostDiscounted ?? 0;
-
 
     if (!(info?.shop ?? false)) {
       return widgets;

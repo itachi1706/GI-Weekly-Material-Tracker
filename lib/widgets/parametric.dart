@@ -25,7 +25,7 @@ class ParametricPage extends StatefulWidget {
 class ParametricPageState extends State<ParametricPage> {
   int _endTimeCountdown = -1;
   String? _resetTimeString = 'Refreshing...';
-  SharedPreferences? _prefs;
+  SharedPreferencesWithCache? _prefs;
   String? _newDateTime;
 
   final appChecker = AppCheck();
@@ -77,7 +77,7 @@ class ParametricPageState extends State<ParametricPage> {
     var data = await _db.collection('userdata').doc(uid).get();
     var epochTime = DateTime.now().millisecondsSinceEpoch;
     var lastResetStr = 'Unknown';
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
     if (data.exists) {
       var map = data.data()!;
       if (map.containsKey('parametricReset')) {

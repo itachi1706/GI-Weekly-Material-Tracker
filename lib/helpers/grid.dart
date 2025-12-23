@@ -207,7 +207,7 @@ class GridData {
   static void launchWikiUrl(
     BuildContext context,
     CommonData data,
-    SharedPreferences prefs,
+    SharedPreferencesWithCache prefs,
   ) {
     var wikiSource = prefs.getString('wiki_source') ?? 'Genshin Impact Wiki';
     debugPrint("Wiki Source: $wikiSource");

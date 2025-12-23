@@ -141,7 +141,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   String _cntTrack = '';
   final TextEditingController _textEditingController = TextEditingController();
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   @override
   void initState() {
@@ -152,7 +152,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
 
   void _getStaticData() async {
     var value = await GridData.retrieveMaterialsMapData();
-    _prefs = await SharedPreferences.getInstance();
+    _prefs = await Util.getSharedPreferenceInstance();
 
     setState(() {
       _info = value![_infoId!];

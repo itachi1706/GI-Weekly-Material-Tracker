@@ -6,6 +6,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/listeners/theme_notifier.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const String _firebaseStorageUrl =
@@ -287,6 +288,13 @@ class Util {
 
     // Launch web browser for all other platforms
     return await _launchWebPageWeb(url);
+  }
+
+  static Future<SharedPreferencesWithCache>
+      getSharedPreferenceInstance() async {
+    return await SharedPreferencesWithCache.create(
+      cacheOptions: SharedPreferencesWithCacheOptions(),
+    );
   }
 
   static Future<bool> _launchWebPageWeb(String url) async {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:gi_weekly_material_tracker/util.dart';
 
 class ThemeNotifier with ChangeNotifier {
   static bool _isDark = false;
@@ -13,7 +13,7 @@ class ThemeNotifier with ChangeNotifier {
   }
 
   void toggleTheme() async {
-    var sp = await SharedPreferences.getInstance();
+    var sp = await Util.getSharedPreferenceInstance();
     _isDark = sp.getBool('dark_mode') ?? false;
     notifyListeners();
   }

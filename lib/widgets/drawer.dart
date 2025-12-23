@@ -45,7 +45,7 @@ class DrawerComponentState extends State<DrawerComponent> {
         }
       }
     }
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
 
     // Launch the website otherwise
     await Util.launchWebPage(
@@ -61,7 +61,7 @@ class DrawerComponentState extends State<DrawerComponent> {
       );
 
   void _launchMap() async {
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
     await Util.launchWebPage(
       'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html',
       webView: true,

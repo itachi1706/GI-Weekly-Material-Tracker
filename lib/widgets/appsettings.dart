@@ -45,7 +45,7 @@ class SettingsPageState extends State<SettingsPage> {
       _moveBot = false;
   int? _cacheFiles = 0;
 
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   final List<SettingsSelectorConfiguration> _region = [
     SettingsSelectorConfiguration(
@@ -117,7 +117,7 @@ class SettingsPageState extends State<SettingsPage> {
   }
 
   void _refresh() async {
-    var pref = await SharedPreferences.getInstance();
+    var pref = await Util.getSharedPreferenceInstance();
     var files = <String, int>{'fileNum': 0, 'size': 0};
 
     var pkgInfo = await PackageInfo.fromPlatform();
@@ -481,15 +481,19 @@ class SettingsPageState extends State<SettingsPage> {
       var androidInfo = await deviceInfo.androidInfo;
       debugPrint(androidInfo.data.toString());
       debugDataArr.add("Type: Android");
-      debugDataArr.add("Version: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})");
-      debugDataArr.add("Device Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})");
+      debugDataArr.add(
+          "Version: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})");
+      debugDataArr.add(
+          "Device Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})");
     } else if (Platform.isIOS) {
       debugPrint('iOS Platform');
       var iosInfo = await deviceInfo.iosInfo;
       debugPrint(iosInfo.data.toString());
       debugDataArr.add("Type: iOS");
-      debugDataArr.add("Device Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})");
-      debugDataArr.add("Version: ${iosInfo.systemName} ${iosInfo.systemVersion}");
+      debugDataArr.add(
+          "Device Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})");
+      debugDataArr
+          .add("Version: ${iosInfo.systemName} ${iosInfo.systemVersion}");
     } else {
       debugPrint('Unsupported Platform');
     }
@@ -498,7 +502,8 @@ class SettingsPageState extends State<SettingsPage> {
     debugPrint(debugData);
     await Clipboard.setData(ClipboardData(text: debugData));
     if (mounted) {
-      Util.showSnackbarQuick(context, 'Full Debug Info copied to clipboard for sharing');
+      Util.showSnackbarQuick(
+          context, 'Full Debug Info copied to clipboard for sharing');
     }
   }
 
@@ -1072,12 +1077,12 @@ class UniversalSelectorPage extends StatefulWidget {
 
 class UniversalSelectorPageState extends State<UniversalSelectorPage> {
   String? _key;
-  late SharedPreferences _prefs;
+  late SharedPreferencesWithCache _prefs;
 
   @override
   void initState() {
     super.initState();
-    SharedPreferences.getInstance().then((value) {
+    Util.getSharedPreferenceInstance().then((value) {
       debugPrint("Pref name: ${widget.prefName} initialized");
       setState(() {
         _prefs = value;
