@@ -497,6 +497,9 @@ class SettingsPageState extends State<SettingsPage> {
     final debugData = debugDataArr.join('\n');
     debugPrint(debugData);
     await Clipboard.setData(ClipboardData(text: debugData));
+    if (mounted) {
+      Util.showSnackbarQuick(context, 'Full Debug Info copied to clipboard for sharing');
+    }
   }
 
   void _copySnackbar() async {
