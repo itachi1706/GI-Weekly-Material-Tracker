@@ -159,6 +159,8 @@ class Util {
 
   static String? _uid;
 
+  static Future<SharedPreferencesWithCache>? _prefsFuture;
+
   static void showSnackbarQuick(BuildContext context, String message) {
     ScaffoldMessenger.of(context).removeCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -290,11 +292,12 @@ class Util {
     return await _launchWebPageWeb(url);
   }
 
-  static Future<SharedPreferencesWithCache>
-      getSharedPreferenceInstance() async {
-    return await SharedPreferencesWithCache.create(
+  static Future<SharedPreferencesWithCache> getSharedPreferenceInstance() {
+    _prefsFuture ??= SharedPreferencesWithCache.create(
       cacheOptions: SharedPreferencesWithCacheOptions(),
     );
+
+    return _prefsFuture!;
   }
 
   static Future<bool> _launchWebPageWeb(String url) async {
