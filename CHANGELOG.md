@@ -1,3 +1,13 @@
+# 4.1.1
+- Add and fixed color support for Hydro, Lunar-Charged and Lunar-Bloom reactions
+- Fixed text overflow issue on some devices when adding/removing tracking
+- Added new HoYoWiki source
+- Added version number to banner information
+- Added ability to launch Cloud Edition of the game
+- (Android) Updated app icons
+- Optimizations and cleanup of various app functions
+- Dependency Updates
+
 # 4.1.0
 - (Android) SDK Update to API 35
 - (Android) Edge-to-Edge Support
