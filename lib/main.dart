@@ -76,8 +76,8 @@ class MyAppState extends State<MyApp> {
         providerWeb:
             ReCaptchaV3Provider('6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV'),
         providerAndroid: (kDebugMode)
-            ? AndroidDebugProvider()
-            : AndroidPlayIntegrityProvider(),
+            ? const AndroidDebugProvider()
+            : const AndroidPlayIntegrityProvider(),
       );
       var prefs = await Util.getSharedPreferenceInstance();
       FirebaseAppCheck.instance.onTokenChange.listen(

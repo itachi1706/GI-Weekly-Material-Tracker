@@ -294,7 +294,7 @@ class Util {
 
   static Future<SharedPreferencesWithCache> getSharedPreferenceInstance() {
     _prefsFuture ??= SharedPreferencesWithCache.create(
-      cacheOptions: SharedPreferencesWithCacheOptions(),
+      cacheOptions: const SharedPreferencesWithCacheOptions(),
     );
 
     return _prefsFuture!;

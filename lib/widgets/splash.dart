@@ -42,7 +42,7 @@ class SplashPageState extends State<SplashPage> {
     Get.offNamed(value);
   }
 
-  Future<void> _miscInit() async {
+  void _miscInit() {
     tz.initializeTimeZones();
   }
 
@@ -108,11 +108,11 @@ class SplashPageState extends State<SplashPage> {
   }
 
   Future<String> _login() async {
+    _miscInit();
     var res = await Future.wait(
       [
         _initFirebase(),
         _setupNotifications(),
-        _miscInit(),
         Future.delayed(const Duration(seconds: 2)),
       ],
     );

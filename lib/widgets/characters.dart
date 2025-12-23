@@ -930,7 +930,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       extraWidgets = [
         Row(
           children: [
-            Text('Time Left: '),
+            const Text('Time Left: '),
             GridUtils.getCounter(info.lastBannerEnd!.toLocal(), false),
           ],
         ),
@@ -939,7 +939,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       extraWidgets = [
         Row(
           children: [
-            Text('Time Since: '),
+            const Text('Time Since: '),
             GridUtils.getCounter(info.lastBannerEnd!.toLocal(), true),
           ],
         ),
