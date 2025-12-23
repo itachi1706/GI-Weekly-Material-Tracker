@@ -100,7 +100,7 @@ exports.updateWeaponsLastSeen = functions.database.ref('/banners/weapon').onWrit
     let batch = firestoreDb.batch();
     for (let dt in finalUpdates) {
       console.log("Updating Weapon", dt);
-      batch.set(firestoreDb.collection('weapons').doc(dt), finalUpdates[dt])
+      batch.set(firestoreDb.collection('weapons').doc(dt), finalUpdates[dt]);
     }
     await batch.commit();
     console.log("Update complete");
@@ -168,7 +168,7 @@ exports.updateCharactersLastSeen = functions.database.ref('/banners/character').
     let batch = firestoreDb.batch();
     for (let dt in finalUpdates) {
       console.log("Updating Character", dt);
-      batch.set(firestoreDb.collection('characters').doc(dt), finalUpdates[dt])
+      batch.set(firestoreDb.collection('characters').doc(dt), finalUpdates[dt]);
     }
     await batch.commit();
     console.log("Update complete");
