@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 

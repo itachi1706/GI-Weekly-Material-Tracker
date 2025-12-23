@@ -468,7 +468,6 @@ class TrackerCard extends StatefulWidget {
 
 class TrackerCardState extends State<TrackerCard>
     with TrackerIncrementDecrementMixin {
-
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),
