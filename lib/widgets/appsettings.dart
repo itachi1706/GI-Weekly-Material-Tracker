@@ -473,7 +473,8 @@ class SettingsPageState extends State<SettingsPage> {
       debugPrint('Web Platform');
       var webInfo = await deviceInfo.webBrowserInfo;
       debugPrint(webInfo.data.toString());
-      debugData += "\nUser-Agent: ${webInfo.userAgent}\nVendor: ${webInfo.vendor}";
+      debugData +=
+          "\nUser-Agent: ${webInfo.userAgent}\nVendor: ${webInfo.vendor}";
     } else if (Platform.isAndroid) {
       debugPrint('Android Platform');
       var androidInfo = await deviceInfo.androidInfo;
@@ -486,7 +487,8 @@ class SettingsPageState extends State<SettingsPage> {
       debugPrint('iOS Platform');
       var iosInfo = await deviceInfo.iosInfo;
       debugPrint(iosInfo.data.toString());
-      debugData += "\nDevice Model: ${iosInfo.modelName} (${iosInfo.model})";
+      debugData +=
+          "\nDevice Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})";
       debugData += "\nVersion: ${iosInfo.systemName} ${iosInfo.systemVersion}";
     }
 
