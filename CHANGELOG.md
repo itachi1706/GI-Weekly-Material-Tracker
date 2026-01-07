@@ -1,3 +1,6 @@
+# 4.1.2
+- Fixed black text issue for global tracking
+
 # 4.1.1
 - Add and fixed color support for Hydro, Lunar-Charged and Lunar-Bloom reactions
 - Fixed text overflow issue on some devices when adding/removing tracking
