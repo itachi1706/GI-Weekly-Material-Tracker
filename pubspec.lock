@@ -93,10 +93,10 @@ packages:
     dependency: "direct main"
     description:
       name: appcheck
-      sha256: aa5877ae559f266a677af538cd343cc463cc592c79f8afce8b6b213894d2e7c0
+      sha256: "63abf1ba508a86cd5f7bf134d202d008562ac9bbdbc713c92c28bf3f45beca1d"
       url: "https://pub.dev"
     source: hosted
-    version: "1.6.0"
+    version: "1.7.0"
   archive:
     dependency: transitive
     description:
@@ -137,14 +137,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  build_config:
-    dependency: transitive
-    description:
-      name: build_config
-      sha256: "4f64382b97504dc2fcdf487d5aae33418e08b4703fc21249e4db6d804a4d0187"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0"
   cached_network_image:
     dependency: "direct main"
     description:
@@ -297,14 +289,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
-  dependency_validator:
-    dependency: "direct dev"
-    description:
-      name: dependency_validator
-      sha256: a5928c0e3773808027bdafeb13fb4be0e4fdd79819773ad3df34d0fcf42636f2
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.3"
   desktop_webview_auth:
     dependency: transitive
     description:
@@ -957,14 +941,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.20.2"
-  io:
-    dependency: transitive
-    description:
-      name: io
-      sha256: dfd5a80599cf0165756e3181807ed3e77daf6dd4137caaad72d0b7931597650b
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   json_annotation:
     dependency: transitive
     description:
@@ -1049,10 +1025,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: e3641ec5d63ebf0d9b41bd43201a66e3fc79a65db5f61fc181f04cd27aab950c
+      sha256: "23f08335362185a5ea2ad3a4e597f1375e78bce8a040df5c600c8d3552ef2394"
       url: "https://pub.dev"
     source: hosted
-    version: "1.16.0"
+    version: "1.17.0"
   model_viewer_plus:
     dependency: "direct main"
     description:
@@ -1237,14 +1213,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.0"
-  pubspec_parse:
-    dependency: transitive
-    description:
-      name: pubspec_parse
-      sha256: "0560ba233314abbed0a48a2956f7f022cce7c3e1e73df540277da7544cad4082"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.0"
   rxdart:
     dependency: transitive
     description:
@@ -1438,10 +1406,10 @@ packages:
     dependency: transitive
     description:
       name: test_api
-      sha256: "522f00f556e73044315fa4585ec3270f1808a4b186c936e612cab0b565ff1e00"
+      sha256: ab2726c1a94d3176a45960b6234466ec367179b87dd74f1611adb1f3b5fb9d55
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.6"
+    version: "0.7.7"
   timezone:
     dependency: "direct main"
     description:
