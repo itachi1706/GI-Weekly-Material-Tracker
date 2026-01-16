@@ -1465,6 +1465,368 @@
       "hoyowiki": 5,
       "subCollection": {}
     },
+    "Illuga": {
+      "image": "Characters/Geo/Illuga.png",
+      "gender": "Male",
+      "birthday": "23/12",
+      "caption": "Burning Heart Amidst the Nightmare",
+      "titles": ["Member of the investigation squad, the Nightmare Orioles"],
+      "name": "Illuga",
+      "fullName": null,
+      "description": "Member of the investigation squad, the Nightmare Orioles. The youngest squad leader among the Lightkeepers.",
+      "nation": "Nod-Krai",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Lightkeepers",
+      "constellation": "Oriolus",
+      "outfits": [],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Common_1",
+          "common2": "Common_2",
+          "common3": "Common_3",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "BossDrop",
+          "local_speciality": "LocalSpeciality"
+        },
+        "talents": {
+          "common1": "Common_1",
+          "common2": "Common_2",
+          "common3": "Common_3",
+          "mastery1": "Mastery_1",
+          "mastery2": "Mastery_2",
+          "mastery3": "Mastery_3",
+          "weekly_boss_drop": "Weekly_Boss_Drop",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": "characters/illuga",
+      "genshinggpath": "characters/illuga",
+      "element": "Geo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Illuga",
+      "hoyowiki": 9123,
+      "subCollection": {}
+    },
     "Kachina": {
       "image": "Characters/Geo/Kachina.png",
       "gender": "Female",
@@ -4042,6 +4404,368 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Zhongli",
       "hoyowiki": 46,
+      "subCollection": {}
+    },
+    "Zibai": {
+      "image": "Characters/Geo/Zibai.png",
+      "gender": "Female",
+      "birthday": null,
+      "caption": "White Horse's Fleeting Spring",
+      "titles": ["The White Horse Adeptus from Liyue's legends"],
+      "name": "Zibai",
+      "fullName": null,
+      "description": "The White Horse Adeptus from Liyue's legends, known as Zibai, is the most mysterious figure in Liyue's myths.",
+      "nation": "Liyue",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Eight Adepts, Celestia",
+      "constellation": "Equa Alba",
+      "outfits": [],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_1",
+            "material3qty": 3,
+            "material4": "Common_1",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 2,
+            "material4": "Common_2",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 4,
+            "material4": "Common_2",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 6,
+            "material4": "Common_2",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Mastery_2",
+            "material3qty": 9,
+            "material4": "Common_2",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 4,
+            "material4": "Common_3",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 1,
+            "material3": "Mastery_3",
+            "material3qty": 6,
+            "material4": "Common_3",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 12,
+            "material4": "Common_3",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Weekly_Boss_Drop",
+            "material2qty": 2,
+            "material3": "Mastery_3",
+            "material3qty": 16,
+            "material4": "Common_3",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Passive_1": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Passive_2": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Passive_3": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Passive/",
+            "order": 2,
+            "type": "Passive 3"
+          }
+        },
+        "attack": {
+          "Normal": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Normal/",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Skill": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Skill/",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Burst": {
+            "name": null,
+            "effect": null,
+            "image": "Talents/Burst/",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "2": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "3": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "4": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "5": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        },
+        "6": {
+          "name": null,
+          "effect": null,
+          "image": "Constellation/"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Common_1",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "LocalSpeciality",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "BossDrop",
+          "level": 40,
+          "material4": "Common_1",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "LocalSpeciality",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "BossDrop",
+          "level": 50,
+          "material4": "Common_2",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "LocalSpeciality",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "BossDrop",
+          "level": 60,
+          "material4": "Common_2",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "LocalSpeciality",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "BossDrop",
+          "level": 70,
+          "material4": "Common_3",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "LocalSpeciality",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "BossDrop",
+          "level": 80,
+          "material4": "Common_3",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "LocalSpeciality",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Common_1",
+          "common2": "Common_2",
+          "common3": "Common_3",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "BossDrop",
+          "local_speciality": "LocalSpeciality"
+        },
+        "talents": {
+          "common1": "Common_1",
+          "common2": "Common_2",
+          "common3": "Common_3",
+          "mastery1": "Mastery_1",
+          "mastery2": "Mastery_2",
+          "mastery3": "Mastery_3",
+          "weekly_boss_drop": "Weekly_Boss_Drop",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": null,
+      "paimonmoepath": "characters/zibai",
+      "genshinggpath": "characters/zibai",
+      "element": "Geo",
+      "released": false,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Zibai",
+      "hoyowiki": 9122,
       "subCollection": {}
     }
   }
