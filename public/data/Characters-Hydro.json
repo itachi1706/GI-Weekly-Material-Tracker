@@ -1106,6 +1106,375 @@
       "hoyowiki": 2815,
       "subCollection": {}
     },
+    "Columbina": {
+      "image": "Characters/Hydro/",
+      "gender": "Female",
+      "birthday": "14/1",
+      "caption": "Welkin Moon's Homecoming",
+      "titles": ["The Moon Maiden"],
+      "name": "Columbina",
+      "fullName": "Columbina Hyposelenia",
+      "description": "The Moon Maiden born in Nod-Krai, and also the welkin moon returning home.",
+      "nation": "Nod-Krai",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Frost Moon, Frostmoon Scions (Former), Fatui (Former), Eleven Fatui Harbingers (Former)",
+      "constellation": "Columbina Hyposelenia",
+      "outfits": ["Moonweave_Gossamer"],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Moonlight",
+            "material3qty": 3,
+            "material4": "Slime_Condensate",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Moonlight",
+            "material3qty": 2,
+            "material4": "Slime_Secretions",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Moonlight",
+            "material3qty": 4,
+            "material4": "Slime_Secretions",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Moonlight",
+            "material3qty": 6,
+            "material4": "Slime_Secretions",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Moonlight",
+            "material3qty": 9,
+            "material4": "Slime_Secretions",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Moonlight",
+            "material3qty": 4,
+            "material4": "Slime_Concentrate",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Moonlight",
+            "material3qty": 6,
+            "material4": "Slime_Concentrate",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Moonlight",
+            "material3qty": 12,
+            "material4": "Slime_Concentrate",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Moonlight",
+            "material3qty": 16,
+            "material4": "Slime_Concentrate",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Lunacys_Lure": {
+            "name": "Lunacy's Lure",
+            "effect": "When triggering Gravity Interference, Columbina gains the Lunacy effect, increasing her CRIT Rate by 5% for 10s. This effect can be stacked up to 3 times.",
+            "image": "Talents/Passive/Talent_Lunacys_Lure.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Law_of_the_New_Moon": {
+            "name": "Law of the New Moon",
+            "effect": "When characters within the Lunar Domain trigger Lunar reactions, they will gain the following effects respectively:\nLunar-Charged: When the Thundercloud performs lightning strike(s) against a valid target, it has a 33% chance to perform an additional lightning strike.\nLunar-Bloom: When triggering Lunar-Bloom reactions, the party gains a special Moonridge Dew. Up to 3 Moonridge Dews can be gained every 18s.\nLunar-Crystallize: When Moondrift Harmony is triggered, every Moondrift has a 33% chance to inflict an extra attack.",
+            "image": "Talents/Passive/Talent_Law_of_the_New_Moon.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Moonlight_Lent_Unto_You": {
+            "name": "Moonlight, Lent Unto You",
+            "effect": "When a party member triggers an Electro-Charged, Bloom, or Hydro-Crystallize reaction, it will be converted into a Lunar-Charged, Lunar-Bloom, or Lunar-Crystallize reaction respectively. Lunar Reaction DMG inflicted by party members gain a Base DMG increase based on Columbina's Max HP. For every 1,000 points of Max HP, the Base DMG of Lunar reactions is increased by 0.2%, up to a maximum of 7%.\n\nAdditionally, when Columbina is in the party, the party's Moonsign will increase by 1 level.",
+            "image": "Talents/Passive/Talent_Moonlight_Lent_Unto_You.png",
+            "order": 2,
+            "type": "Passive 3 (Moonsign Benediction)"
+          },
+          "Lunar_Vigil": {
+            "name": "Lunar Vigil",
+            "effect": "If one of your party members is incapacitated while in the Nod-Krai region, Columbina will revive this character. The amount of HP the character will have upon revival is based on Columbina's Friendship Level. This effect can occur once every 100s. This effect does not trigger in Domains, Trounce Domains, or the Spiral Abyss.\nAdditionally, Columbina appears to have a special affinity for certain animals who are influenced by kuuvahki...",
+            "image": "Talents/Passive/Talent_Lunar_Vigil.png",
+            "order": 2,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Moondew_Cascade": {
+            "name": "Moondew Cascade",
+            "effect": "Normal Attack\nSummons Moonlit Tides, performing up to 3 attacks that deal Hydro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.\nIf you have at least 1 Verdant Dew, Columbina's Charged Attacks will be replaced with the special Charged Attack Moondew Cleanse, which will not consume Stamina: Consume 1 Verdant Dew to deal 3 instances of AoE Dendro DMG to opponents in front. This DMG is considered Lunar-Bloom DMG.\n\nPlunging Attack\nPlunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Hydro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Eternal_Tides": {
+            "name": "Eternal Tides",
+            "effect": "Awaken Moonbound Tides, dealing AoE Hydro DMG and summoning Gravity Ripple.\nGravity Ripple will follow the active character on the field, while continuously dealing AoE Hydro DMG to surrounding opponents. While Gravity Ripple is on the field, and nearby party members trigger Lunar reactions or inflict Lunar Reaction DMG, Columbina will accrue a special Gravity. Once Gravity is accumulated to its limit, different types of damage will be dealt to enemies based on the type of Lunar Reaction that has accumulated the most Gravity for Columbina.\nMoonsign: Ascendant Gleam: Gravity Ripple inflicts AoE Hydro DMG over a wider area.",
+            "image": "Talents/Skill/Talent_Eternal_Tides.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Moonlit_Melancholy": {
+            "name": "Moonlit Melancholy",
+            "effect": "Hills and tides unite under the silver light of a pristine new moon. Temporarily transforms the surrounding terrain into Lunar Domain, dealing AoE Hydro DMG.",
+            "image": "Talents/Burst/Talent_Moonlit_Melancholy.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Radiance Over Blossoms and Peaks",
+          "effect": "Unleashing her Elemental Skill Eternal Tides will immediately trigger an effect equivalent to the effect of Gravity Interference. This effect can be triggered once every 15s.\nMoonsign: Ascendant Gleam\nWhen Gravity Interference is triggered, if the Lunar reaction type that has accumulated the most Gravity for Columbina is:\nLunar-Charged: Your current active character will recover 6 Energy.\nLunar-Bloom: Your active character's interruption resistance will be increased for 8s.\nLunar-Crystallize: Summons a Rainsea Shield. The Rainsea Shield's DMG absorption is based on 12% of Columbina's Max HP, and it will absorb Hydro DMG with 250% effectiveness for 8s.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 1.5%.",
+          "image": "Constellation/Radiance_Over_Blossoms_and_Peaks.png"
+        },
+        "2": {
+          "name": "Not in Lone Splendor",
+          "effect": "Rate of accumulating Gravity increases by 34%.\nWhen Gravity Interference is triggered, Columbina will receive the Lunar Brilliance effect, which increases her Max HP by 40% for 8s.\nMoonsign: Ascendant Gleam:\nWhen Lunar Brilliance is active, if, during the current trigger of Gravity Interference, the Lunar reaction type that has accumulated the most Gravity for Columbina is:\nLunar-Charged: ATK of your current active character increases. Increase in ATK is equal to 1% of Columbina's Max HP.\nLunar-Bloom: Elemental Mastery of your current active character increases. Increase in Elemental Mastery is equal to 0.35% of Columbina's Max HP.\nLunar-Crystallize: DEF of your current active character increases. Increase in DEF is equal to 1% of Columbina's Max HP.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 7%.",
+          "image": "Constellation/Not_in_Lone_Splendor.png"
+        },
+        "3": {
+          "name": "Dreamlike Glow Across Tranquil Waters",
+          "effect": "Increases the Level of Elemental Skill Eternal Tides by 3.\nMaximum upgrade level is 15.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 1.5%.",
+          "image": "Constellation/Dreamlike_Glow_Across_Tranquil_Waters.png"
+        },
+        "4": {
+          "name": "Cloudveiled Ridges in Floral Mists",
+          "effect": "When Gravity Interference is triggered, 4 Elemental Energy will be restored to Columbina;\nAdditionally, if the Lunar reaction type that accumulates the most Gravity for Columbina is Lunar-Charged, Lunar-Bloom, or Lunar-Crystallize, the Lunar Reaction DMG dealt by this instance of Gravity Interference is increased by 12.5%/2.5%/12.5% of Columbina's Max HP respectively. This effect can be triggered at most once every 15s.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 1.5%.",
+          "image": "Constellation/Cloudveiled_Ridges_in_Floral_Mists.png"
+        },
+        "5": {
+          "name": "Silence Tending One Lone Song",
+          "effect": "Increases the Level of Elemental Burst Moonlit Melancholy by 3.\nMaximum upgrade level is 15.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 1.5%.",
+          "image": "Constellation/Silence_Tending_One_Lone_Song.png"
+        },
+        "6": {
+          "name": "Through Darkness Led by Moonlight",
+          "effect": "For 8s after characters in the Lunar Domain trigger a Lunar reaction, based on the elements involved in the reaction, the CRIT DMG of the corresponding Elemental DMG done by all party members is increased by 80%. The CRIT DMG-increasing effects for the same Elemental Type do not stack.\n\nAll nearby party members' Lunar Reaction DMG is elevated by 7%.",
+          "image": "Constellation/Through_Darkness_Led_by_Moonlight.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Slime_Condensate",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Winter_Icelea",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Radiant_Antler",
+          "level": 40,
+          "material4": "Slime_Condensate",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Winter_Icelea",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Radiant_Antler",
+          "level": 50,
+          "material4": "Slime_Secretions",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Winter_Icelea",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Radiant_Antler",
+          "level": 60,
+          "material4": "Slime_Secretions",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Winter_Icelea",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Radiant_Antler",
+          "level": 70,
+          "material4": "Slime_Concentrate",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Winter_Icelea",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Radiant_Antler",
+          "level": 80,
+          "material4": "Slime_Concentrate",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Winter_Icelea",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "gem1": "Varunada_Lazurite_Silver",
+          "gem2": "Varunada_Lazurite_Fragment",
+          "gem3": "Varunada_Lazurite_Chunk",
+          "gem4": "Varunada_Lazurite_Gemstone",
+          "boss_drop": "Radiant_Antler",
+          "local_speciality": "Winter_Icelea"
+        },
+        "talents": {
+          "common1": "Slime_Condensate",
+          "common2": "Slime_Secretions",
+          "common3": "Slime_Concentrate",
+          "mastery1": "Teachings_of_Moonlight",
+          "mastery2": "Guide_to_Moonlight",
+          "mastery3": "Philosophies_of_Moonlight",
+          "weekly_boss_drop": "Mask_of_the_Virtuous_Doctor",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "Kuutar, the Moon Goddess of Nod-Krai, and formerly The Damselette, Third of the Fatui Harbingers. Still, her friends call her Columbina Hyposelenia, and she prefers it that way.",
+      "paimonmoepath": "characters/columbina",
+      "genshinggpath": "characters/columbina",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Columbina",
+      "hoyowiki": 7476,
+      "subCollection": {}
+    },
     "Dahlia": {
       "image": "Characters/Hydro/Dahlia.png",
       "gender": "Male",
