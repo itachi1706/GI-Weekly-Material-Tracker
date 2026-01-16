@@ -19,7 +19,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -173,6 +175,13 @@
             "image": "Talents/Passive/Talent_Second_Wind.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Windwrath": {
+            "name": "Foreign Windwrath",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs\n\nAdditionally, when Pyro, Hydro, Cryo, or Electro attacks from nearby party members hit opponents, Traveler will receive 1 stack of Blade of the Dawn Breeze. Each Elemental Type can grant 1 Blade of the Dawn Breeze stack. After obtaining at least 2 stacks of Blade of the Dawn Breeze, performing a Charged Attack will consume all stacks of Blade of the Dawn Breeze and transform into the special Charged Attack: Whirlwind.\n\nCharged Attack: Whirlwind\nEach Charged Attack hit deals increased Anemo DMG. Increase in DMG is equal to 60% of Traveler's ATK.\nEvery time a Blade of the Dawn Breeze of a certain elemental type is consumed, a Blade Wind matching this elemental type will also be summoned, dealing elemental DMG equal to 50% of Traveler's ATK. This DMG is considered Charged Attack DMG.\nCharged Attack: Whirlwind can be triggered up to once every 15s.\nFor the duration of Charged Attack: Whirlwind, no Blade of the Dawn Breeze will be obtained.",
+            "image": "Talents/Passive/Talent_Foreign_Windwrath.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -383,7 +392,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -537,6 +548,13 @@
             "image": "Talents/Passive/Talent_Frenzied_Rockslide.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Adamantine": {
+            "name": "Foreign Adamantine",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs.\n\nAdditionally, when nearby party members become protected by a shield, when the shield is replaced for any reason, or when Geo Constructs are created, the Traveler will receive 1 stack of Blade of Archaic Petra, max 3 stacks. Up to 1 stack may be obtained every second in this way. After obtaining 3 stacks of Blade of Archaic Petra, performing a Charged Attack will consume all stacks of Blade of Archaic Petra and transform into the special Charged Attack: Rockfell.\n\nCharged Attack: Rockfell\nEach Charged Attack hit deals increased Geo DMG. Increase in DMG is equal to 120% of Traveler's ATK.\nFor 15s after hitting an opponent, nearby party members will have their shield strength temporarily increased by 20%.\nCharged Attack: Rockfell can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Adamantine.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -749,7 +767,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -903,6 +923,13 @@
             "image": "Talents/Passive/Talent_Resounding_Roar.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Thundertrail": {
+            "name": "Foreign Thundertrail",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs.\n\nIn addition, when nearby party members unleash an Elemental Burst, Traveler will receive 1 stack of Blade of Resounding Thunder, max 3 stacks. After obtaining 3 stacks of Blade of Resounding Thunder, performing a Charged Attack will consume all stacks of Blade of Resounding Thunder and transform into the special Charged Attack: Detonate.\n\nCharged Attack: Detonate\nEach Charged Attack hit deals increased Electro DMG. Increase in DMG is equal to 100% of Traveler's ATK.\n3s after hitting the enemy, 1 additional lightning strike will be triggered, dealing Electro DMG equal to 200% of Traveler's ATK. 1 Abundance Amulet will also be created. This DMG is considered Charged Attack DMG.\nCharged Attack: Detonate can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Thundertrail.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -1117,7 +1144,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -1271,6 +1300,13 @@
             "image": "Talents/Passive/Talent_Verdant_Luxury.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Verdalume": {
+            "name": "Foreign Verdalume",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs.\n\nAdditionally, when Dendro Cores (including Bountiful Cores, Seeds of Deceit) appear nearby on the field, or when the party obtains Verdant Dew, Traveler will receive 1 stack of Blade of Verdant Viridis. These two methods can each grant the Traveler up to 1 stack of Blade of Verdant Viridis every 4s, max 3 stacks. After obtaining 3 stacks of Blade of Verdant Viridis, performing a Charged Attack will consume all stacks of Blade of Verdant Viridis and transform into the special Charged Attack: Verdessence.\n\nCharged Attack: Verdessence\nEach Charged Attack hit deals increased Dendro DMG. The increase in DMG is equal to 80% of Traveler's ATK. Two Vinecores will also be created on the spot, which will explode after 4/8s respectively, inflicting Dendro DMG equal to 120% of Traveler's ATK. This DMG is considered Charged Attack DMG.\nCharged Attack: Verdessence can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Verdalume.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -1487,7 +1523,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -1641,6 +1679,13 @@
             "image": "Talents/Passive/Talent_Clear_Waters.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Aqualis": {
+            "name": "Foreign Aqualis",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs.\n\nAdditionally, when nearby party members' current HP increases or decreases by 5%, Traveler will receive 1 stack of Blade of Many Waters. You can gain 1 stack of Blade of Many Waters this way once every 4s, max 3 stacks. After obtaining 3 stacks of Blade of Many Waters, performing a Charged Attack will consume all stacks of Blade of Many Waters and transform into the special Charged Attack: Tidebound.\n\nCharged Attack: Tidebound\nEach Charged Attack hit deals increased Hydro DMG. Increase in DMG is equal to 150% of Traveler's ATK,\nWhen Traveler's HP is no less than 50%, 10% of Traveler's Max HP will be consumed to increase DMG inflicted by each Charged Attack hit by 100% of Traveler's ATK.\nWhen Traveler's HP is lower than 50%, one instance of healing equal to 25% of Traveler's Max HP will be restored upon hitting an enemy.\nCharged Attack: Tidebound can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Aqualis.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -1852,7 +1897,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -2006,6 +2053,13 @@
             "image": "Talents/Passive/Talent_Embers_Unspent.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Starfire": {
+            "name": "Foreign Starfire",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs .\n\nAdditionally, when nearby party members trigger Nightsoul Burst, Traveler will receive 1 stack of Blade of the Sacred Flame, max 2 stacks. After obtaining 2 stacks of Blade of the Sacred Flame, performing a Charged Attack will consume all stacks of Blade of the Sacred Flame and transform into a special Charged Attack: Inferno.\n\nCharged Attack: Inferno\nEach Charged Attack hit deals increased, Nightsoul-aligned Pyro DMG. Increase in DMG is equal to 200% of Traveler's ATK.\nCharged Attack: Inferno can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Starfire.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
@@ -2213,7 +2267,9 @@
       "constellation": "Viator/Viatrix",
       "outfits": [
         "Rising_Star_Male",
-        "Rising_Star_Female"
+        "Rising_Star_Female",
+        "As_Heaven_and_Earth_Are_Made_Anew_Male",
+        "As_Heaven_and_Earth_Are_Made_Anew_Female"
       ],
       "talents": {
         "ascension": {
@@ -2367,6 +2423,13 @@
             "image": "Talents/Passive/Talent_Resounding_Roar.png",
             "order": 1,
             "type": "Passive 2"
+          },
+          "Foreign_Starfire": {
+            "name": "Foreign Starfire",
+            "effect": "Draw new strength from journeys past. For every element you have resonated with, you gain additional buffs .\n\nAdditionally, when nearby party members trigger Nightsoul Burst, Traveler will receive 1 stack of Blade of the Sacred Flame, max 2 stacks. After obtaining 2 stacks of Blade of the Sacred Flame, performing a Charged Attack will consume all stacks of Blade of the Sacred Flame and transform into a special Charged Attack: Inferno.\n\nCharged Attack: Inferno\nEach Charged Attack hit deals increased, Nightsoul-aligned Pyro DMG. Increase in DMG is equal to 200% of Traveler's ATK.\nCharged Attack: Inferno can be triggered up to once every 15s.",
+            "image": "Talents/Passive/Talent_Foreign_Starfire.png",
+            "order": 2,
+            "type": "Additional Talent"
           }
         },
         "attack": {
