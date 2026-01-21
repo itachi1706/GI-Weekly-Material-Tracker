@@ -4,7 +4,7 @@
 import { getFirestore } from '@/lib/firebase-admin';
 import { revalidatePath } from 'next/cache';
 
-export async function getCollectionData(collectionName: string) {
+export async function getCollectionData(collectionName: string): Promise<any[]> {
     try {
         const db = getFirestore();
         const snapshot = await db.collection(collectionName).get();
