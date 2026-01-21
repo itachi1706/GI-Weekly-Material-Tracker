@@ -36,7 +36,7 @@ export default async function proxy(request: NextRequest) {
   try {
     const { payload } = await jwtVerify(token, JWKS, {
       issuer: `${teamDomain}`,
-      audience: process.env.CLOUDFLARE_AUD, // Optional: if we want to verify specific app audience
+      audience: process.env.CLOUDFLARE_AUDIENCE_TAG,
     });
 
     // 4. Success - pass user info to headers
