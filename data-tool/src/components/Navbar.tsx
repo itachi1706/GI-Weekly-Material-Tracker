@@ -11,6 +11,7 @@ export default async function Navbar() {
                     <span className="font-bold text-xl text-zinc-900 dark:text-zinc-50">Data Tool</span>
                 </div>
                 <div className="flex items-center gap-4">
+                    <a href="/add" className="text-sm font-medium hover:underline text-zinc-700 dark:text-zinc-300">Add Entry</a>
                     <span className="text-sm text-zinc-600 dark:text-zinc-400">
                         {email}
                     </span>
