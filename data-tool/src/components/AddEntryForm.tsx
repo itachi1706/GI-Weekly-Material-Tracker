@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { CollectionType } from '@/types/schema';
 import { addDocument } from '@/actions/firestore';
+import DynamicForm from './form/DynamicForm';
 
 interface AddEntryFormProps {
     templates: {
@@ -23,6 +24,7 @@ export default function AddEntryForm({ templates, initialCollection, initialData
     const [formData, setFormData] = useState<string>(initialData ? JSON.stringify(initialData, null, 2) : '');
     const [id, setId] = useState<string>(initialId || '');
     const [status, setStatus] = useState<string>('');
+    const [showJson, setShowJson] = useState<boolean>(false);
 
     const currentTemplates = templates[collection] || {};
 
@@ -107,13 +109,32 @@ export default function AddEntryForm({ templates, initialCollection, initialData
             </div>
 
             <div>
-                <label className="block text-sm font-medium mb-2">Data (JSON)</label>
-                <textarea
-                    value={formData}
-                    onChange={(e) => setFormData(e.target.value)}
-                    rows={20}
-                    className="w-full p-2 rounded border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 font-mono text-sm"
-                />
+                <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium">Entry Data</label>
+                    <button
+                        type="button"
+                        onClick={() => setShowJson(!showJson)}
+                        className="text-xs text-blue-600 hover:underline"
+                    >
+                        {showJson ? 'Switch to Form View' : 'View Raw JSON'}
+                    </button>
+                </div>
+
+                {showJson ? (
+                    <textarea
+                        value={formData}
+                        onChange={(e) => setFormData(e.target.value)}
+                        rows={20}
+                        className="w-full p-2 rounded border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 font-mono text-sm"
+                    />
+                ) : (
+                    <div className="p-4 border rounded bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800">
+                        <DynamicForm
+                            data={formData ? JSON.parse(formData) : {}}
+                            onChange={(newData) => setFormData(JSON.stringify(newData, null, 2))}
+                        />
+                    </div>
+                )}
             </div>
 
             <div className="flex items-center justify-between">
