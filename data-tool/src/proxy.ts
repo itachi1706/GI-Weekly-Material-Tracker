@@ -31,11 +31,14 @@ export default async function proxy(request: NextRequest) {
     return new NextResponse('Server Configuration Error: CLOUDFLARE_TEAM_DOMAIN not set', { status: 500 });
   }
 
-  const JWKS = createRemoteJWKSet(new URL(`${teamDomain}/cdn-cgi/access/certs`));
+  // Ensure protocol is present
+  const domainUrl = teamDomain.startsWith('http') ? teamDomain : `https://${teamDomain}`;
+
+  const JWKS = createRemoteJWKSet(new URL(`${domainUrl}/cdn-cgi/access/certs`));
 
   try {
     const { payload } = await jwtVerify(token, JWKS, {
-      issuer: `${teamDomain}`,
+      issuer: `${domainUrl}`,
       audience: process.env.CLOUDFLARE_AUDIENCE_TAG,
     });
 
