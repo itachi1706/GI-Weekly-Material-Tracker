@@ -259,7 +259,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Update Indexes
-        uses: w9jds/firebase-action@v15.1.0
+        uses: w9jds/firebase-action@v15.4.0
         with:
           args: deploy --only firestore:indexes --force
         env:
@@ -273,21 +273,21 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Update Storage Security Rules
-        uses: w9jds/firebase-action@v15.1.0
+        uses: w9jds/firebase-action@v15.4.0
         with:
           args: deploy --only storage
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
       - name: Update Firestore Security Rules
-        uses: w9jds/firebase-action@v15.1.0
+        uses: w9jds/firebase-action@v15.4.0
         with:
           args: deploy --only firestore:rules
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
       - name: Update Realtime DB Security Rules
-        uses: w9jds/firebase-action@v15.1.0
+        uses: w9jds/firebase-action@v15.4.0
         with:
           args: deploy --only database
         env:
@@ -310,7 +310,7 @@ jobs:
         run: npm ci --ignore-scripts
         working-directory: firebase/functions
       - name: Update Firebase Cloud Function
-        uses: w9jds/firebase-action@v15.1.0
+        uses: w9jds/firebase-action@v15.4.0
         with:
           args: deploy --only functions
         env:
