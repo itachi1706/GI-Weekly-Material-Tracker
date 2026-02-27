@@ -270,7 +270,7 @@ jobs:
       # url: ${{ steps.prod-deploy.outputs.details_url }} # See: https://github.com/FirebaseExtended/action-hosting-deploy/issues/213
       url: https://gi-weekly-material-tracker.web.app/
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: flutter-web-artifact-rel
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -294,7 +294,7 @@ jobs:
     env:
       GIT_COMMIT_COUNT: ${{ needs.releaseaab.outputs.relid }}
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: flutter-android-aab-artifact-rel
       - name: Get Google Play Service Account Data
@@ -323,10 +323,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: flutter-android-artifact-rel
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: flutter-unsigned-ipa-artifact-rel
       - name: Git Commit Data
