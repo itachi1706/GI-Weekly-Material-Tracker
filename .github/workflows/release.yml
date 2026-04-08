@@ -17,17 +17,17 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -39,13 +39,13 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Install JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
@@ -66,7 +66,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -92,7 +92,7 @@ jobs:
         run: |
           cp build/app/outputs/apk/release/app-release.apk ./release
           cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-android-artifact-rel
           path: |
@@ -107,17 +107,17 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -129,13 +129,13 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Install JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
@@ -156,7 +156,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -176,7 +176,7 @@ jobs:
         run: flutter build appbundle
       - name: Move App Bundle to location
         run: cp build/app/outputs/bundle/release/app-release.aab ./appbundle-signed.aab
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-android-aab-artifact-rel
           path: |
@@ -194,17 +194,17 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -226,7 +226,7 @@ jobs:
         run: |
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -246,7 +246,7 @@ jobs:
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-web-artifact-rel
           path: |
@@ -256,7 +256,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check Google Play Release Notes # From "Check Google Play Release Notes" in GitLab CI
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Set Script Executable
         run: chmod +x ./ciscripts/check_length.sh
       - name: Run Script
@@ -270,10 +270,10 @@ jobs:
       # url: ${{ steps.prod-deploy.outputs.details_url }} # See: https://github.com/FirebaseExtended/action-hosting-deploy/issues/213
       url: https://gi-weekly-material-tracker.web.app/
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-web-artifact-rel
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@e2eda2e106cfa35cdbcf4ac9ddaf6c4756df2c8c # v0
         id: prod-deploy
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -294,7 +294,7 @@ jobs:
     env:
       GIT_COMMIT_COUNT: ${{ needs.releaseaab.outputs.relid }}
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-android-aab-artifact-rel
       - name: Get Google Play Service Account Data
@@ -323,15 +323,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-android-artifact-rel
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-unsigned-ipa-artifact-rel
       - name: Git Commit Data
-        uses: rlespinasse/git-commit-data-action@v1.5.0
-      - uses: benjlevesque/short-sha@v3.0
+        uses: rlespinasse/git-commit-data-action@2b76766acf9574c24b5cec7608be8db5dc17968e # v1.5.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -348,7 +348,7 @@ jobs:
           printf "\n\nAPK Built on $builddate on branch $CI_COMMIT_REF_NAME ($CI_COMMIT_SHORT_SHA), type $APP_BUILD_VER" >> release-beta.txt
       - name: Prep Changelog
         id: changelog
-        uses: requarks/changelog-action@v1
+        uses: requarks/changelog-action@6d71e098526ee17bae963f058d34cd763378337f # v1
         with:
           token: ${{ github.token }}
           tag: ${{ github.ref_name }}
@@ -372,10 +372,10 @@ jobs:
           mv ./release/app-armeabi-v7a-release.apk apks/gi-material-tracker-arm-$APP_VERSION.apk
           mv ./app-fatapk.apk apks/gi-material-tracker-multiarch-$APP_VERSION.apk
           mv ./app.ipa apks/gi-material-tracker-ios-$APP_VERSION.ipa
-      - uses: olegtarasov/get-tag@v2.1
+      - uses: olegtarasov/get-tag@53af8e1e538a0ffab949cdde3e332d8e58e8630f # v2.1
         id: tagName
       - name: Generating Releases to deploy tagged version of app
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2
         with:
           generate_release_notes: true
           body_path: release-beta.txt
@@ -392,7 +392,7 @@ jobs:
       APP_BUILD_VER: beta
       APP_TYPE: iOS
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       # - uses: apple-actions/import-codesign-certs@v1
@@ -401,18 +401,18 @@ jobs:
       #     p12-file-base64: ${{ secrets.APPLE_DEVCERT }}
       #     p12-password: ${{ secrets.APPLE_DEVCERT_PASSWORD }}
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Use latest stable version of XCode
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1
         with:
           # xcode-version: latest-stable
           xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -424,7 +424,7 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Cache Cocoapods
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
@@ -433,7 +433,7 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
         run: flutter doctor -v  
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -480,7 +480,7 @@ jobs:
           cd release
           ls -lh .
           cd ..
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-unsigned-ipa-artifact-rel
           path: |

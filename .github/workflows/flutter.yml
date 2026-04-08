@@ -22,17 +22,17 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -54,7 +54,7 @@ jobs:
         run: |
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -78,7 +78,7 @@ jobs:
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-web-artifact
           path: |
@@ -91,17 +91,17 @@ jobs:
       APP_BUILD_VER: dogfood
       APP_TYPE: Android
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -113,13 +113,13 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Install JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@40fd30fb8d7440372e1316f5d1809ec01dcd3699 # v4
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
@@ -140,7 +140,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -169,13 +169,13 @@ jobs:
         run: |
           cp build/app/outputs/apk/release/app-release.apk ./release
           cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-android-artifact
           path: |
             release/
             app-fatapk.apk
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-firebase-release-artifact
           path: |
@@ -183,7 +183,7 @@ jobs:
             firebase/
       - name: Check App Size (Android ARM64)
         run: flutter build apk --analyze-size --target-platform android-arm64
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: android-app-size
           path: ~/.flutter-devtools/apk-code-size-analysis_01.json
@@ -198,7 +198,7 @@ jobs:
       group: ios-debug-${{ github.ref }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       # - uses: apple-actions/import-codesign-certs@v1
@@ -207,18 +207,18 @@ jobs:
       #     p12-file-base64: ${{ secrets.APPLE_DEVCERT }}
       #     p12-password: ${{ secrets.APPLE_DEVCERT_PASSWORD }}
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Use latest stable version of XCode
-        uses: maxim-lobanov/setup-xcode@v1
+        uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1
         with:
           # xcode-version: latest-stable
           xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -230,7 +230,7 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Cache Cocoapods
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
@@ -239,7 +239,7 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
         run: flutter doctor -v  
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -290,19 +290,19 @@ jobs:
           cd release
           ls -lh .
           cd ..
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-ios-raw-artifact
           path: |
             release/
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: flutter-unsigned-ipa-artifact
           path: |
             release/app.ipa
       - name: Check App Size (iOS)
         run: flutter build ios --no-codesign --analyze-size
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: ios-app-size
           path: ~/.flutter-devtools/ios-code-size-analysis_01.json
@@ -310,12 +310,12 @@ jobs:
     name: Check which files are changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Check if files changed for Dogfood release
         id: dfoodapk
-        uses: tj-actions/changed-files@v47.0.5
+        uses: tj-actions/changed-files@22103cc46bda19c2b464ffe86db46df6922fd323 # v47.0.5
         with:
           files: |
             android/**/*
@@ -345,15 +345,15 @@ jobs:
     env:
       APP_TYPE: Android
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-android-artifact
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-firebase-release-artifact
       - name: Git Commit Data
-        uses: rlespinasse/git-commit-data-action@v1.5.0
-      - uses: benjlevesque/short-sha@v3.0
+        uses: rlespinasse/git-commit-data-action@2b76766acf9574c24b5cec7608be8db5dc17968e # v1.5.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -374,7 +374,7 @@ jobs:
           cp ./release/app-arm64-v8a-release.apk ./firebase/app.apk
           cp release-dogfood.txt ./firebase
       - name: Deploy APK to Firebase App Distribution
-        uses: w9jds/firebase-action@v15.13.0
+        uses: w9jds/firebase-action@587b468aacd6ff963cca9e87ae89de959d29dc46 # v15.13.0
         with:
           args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt" --debug
         env:
