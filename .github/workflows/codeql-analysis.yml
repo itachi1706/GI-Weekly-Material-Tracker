@@ -38,11 +38,11 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v4
+      uses: github/codeql-action/init@c10b8064de6f491fea524254123dbe5e09572f13 # v4
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
@@ -53,7 +53,7 @@ jobs:
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v4
+      uses: github/codeql-action/autobuild@c10b8064de6f491fea524254123dbe5e09572f13 # v4
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
@@ -67,7 +67,7 @@ jobs:
     #   make release
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v4
+      uses: github/codeql-action/analyze@c10b8064de6f491fea524254123dbe5e09572f13 # v4
 
   # Custom Dart CodeQL
   dart-analyzer:
@@ -79,9 +79,9 @@ jobs:
     name: CodeQL Dart Analysis
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
@@ -96,11 +96,11 @@ jobs:
       - name: Dart Analyze
         run: flutter analyze --write dart_analyze.txt || true
       - name: Dart Analyze to SARIF
-        uses: advanced-security/dart-analyzer-sarif@main
+        uses: advanced-security/dart-analyzer-sarif@63edda78ee1ce2b3b5bc5b8c0418ce3128887e23 # main
         with:
           input: dart_analyze.txt
           output: dart_analyze.sarif
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v4
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4
         with:
           sarif_file: dart_analyze.sarif

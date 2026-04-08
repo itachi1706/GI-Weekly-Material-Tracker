@@ -12,9 +12,9 @@ jobs:
     name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Use Node.js 16
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: 16.x
           cache: 'npm'
@@ -32,9 +32,9 @@ jobs:
     name: Crawl for Promo Codes Cron
     needs: build-utility
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Use Node.js 16
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: 16.x
           cache: 'npm'
@@ -49,4 +49,3 @@ jobs:
       - name: Crawl Promo Codes
         run: npm run updatePromoCode --if-present
         working-directory: util
-  

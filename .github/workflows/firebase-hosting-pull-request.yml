@@ -15,17 +15,17 @@ jobs:
       APP_BUILD_VER: web
       APP_TYPE: Web
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
       - name: Install Flutter Stable (${{vars.FLUTTER_COMPILE_VERSION}})
-        uses: subosito/flutter-action@v2.23.0
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           flutter-version: ${{ vars.FLUTTER_COMPILE_VERSION }}
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -38,7 +38,7 @@ jobs:
           restore-keys: build-pubspec-
       - name: Trust GitHub Workspace
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - uses: benjlevesque/short-sha@v3.0
+      - uses: benjlevesque/short-sha@599815c8ee942a9616c92bcfb4f947a3b670ab0b # v3.0
         id: short-sha
         with:
           length: 8
@@ -61,7 +61,7 @@ jobs:
         run: | 
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@e2eda2e106cfa35cdbcf4ac9ddaf6c4756df2c8c # v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           expires: 1d
