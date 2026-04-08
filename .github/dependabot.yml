@@ -9,9 +9,6 @@ updates:
       include: "scope"
     cooldown:
       default-days: 3
-      semver-patch-days: 3
-      semver-minor-days: 3
-      semver-major-days: 7
     schedule:
       interval: "daily"
   # Maintain dependencies for npm
