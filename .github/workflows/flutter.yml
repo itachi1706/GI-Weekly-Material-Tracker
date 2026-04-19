@@ -32,7 +32,7 @@ jobs:
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -101,7 +101,7 @@ jobs:
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -218,7 +218,7 @@ jobs:
           # xcode-version: latest-stable
           xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
       - name: Cache pubspec dependencies
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -230,7 +230,7 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Cache Cocoapods
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
