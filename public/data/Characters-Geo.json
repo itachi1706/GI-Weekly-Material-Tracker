@@ -2209,6 +2209,379 @@
       "hoyowiki": 6318,
       "subCollection": {}
     },
+    "Linnea": {
+      "image": "Characters/Geo/Linnea.png",
+      "gender": "Female",
+      "birthday": "23/5",
+      "caption": "Augur of Wonders",
+      "titles": [
+        "Advisor for the Adventurers' Guild"
+      ],
+      "name": "Linnea",
+      "fullName": null,
+      "description": "Naturalist and Advisor to the Nod-Krai Branch of the Adventurers' Guild.",
+      "nation": "Nod-Krai",
+      "weapon": "Bow",
+      "rarity": 5,
+      "affiliation": "Adventurers' Guild, Snowland Fae, Conch Gang",
+      "constellation": "Alcyon",
+      "outfits": [
+        "Lone_Feathers_Omen"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Vagrancy",
+            "material3qty": 3,
+            "material4": "Tattered_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 2,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 4,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 6,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 9,
+            "material4": "Immaculate_Warrant",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 4,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 6,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 12,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 16,
+            "material4": "Frost-Etched_Warrant",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Field_Observation_Notes": {
+            "name": "Field Observation Notes",
+            "effect": "When Lumi is present on the field, the Geo RES of opponents near Lumi will decrease by 15%.\n\nMoonsign: Ascendant Gleam: Linnea's Elemental Skill Countermeasure: Lumi's Battle Cry! and Elemental Burst Memo: Survival Guide in Extreme Conditions are enhanced. After summoning Lumi, the Geo RES of opponents near Lumi will be further decreased by 15%.",
+            "image": "Talents/Passive/Talent_Field_Observation_Notes.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Universal_Naturalist_Archive": {
+            "name": "Universal Naturalist Archive",
+            "effect": "Linnea will increase the Elemental Mastery of certain characters in your party according to your current active character. Increase in Elemental Mastery is based on 5% of Linnea's DEF. If your current active character:\n- Is a Moonsign character: Increase this character's Elemental Mastery.\n- Is not a Moonsign character: Increase Linnea's own Elemental Mastery.",
+            "image": "Talents/Passive/Talent_Universal_Naturalist_Archive.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Habitat_Survey": {
+            "name": "Habitat Survey",
+            "effect": "When a party member triggers a Hydro Crystallize reaction, it will be converted into the Lunar-Crystallize reaction, with every 100 DEF that Linnea has increasing Lunar-Crystallize's Base DMG by 0.7%, up to a maximum of 14%.\n\nAdditionally, when Linnea is in the party, the party's Moonsign will increase by 1 level.",
+            "image": "Talents/Passive/Talent_Habitat_Survey.png",
+            "order": 2,
+            "type": "Passive 3 (Moonsign Benediction)"
+          },
+          "Master_Adventurer": {
+            "name": "Master Adventurer",
+            "effect": "When Linnea is not in combat, the charge time of her Aimed Shot is greatly decreased, and she will shoot an Ultra Convenient Quick Arrow instead. Different effects will occur depending on the targets hit:\n- Specific animals: Ultra Convenient Quick Arrow will be transformed into a special \"Net\" that can capture the essence and form of these animals, using them as a medium to manifest the animal's physical form again. The "Net" can only be used for a limited number of times each week.\n- Ore veins used in forging: Linnea will dispatch Lumi, who will quickly strike at the ore marked by the Ultra Convenient Quick Arrow, then collect the dislodged ore. If Lumi is not on the field, Linnea will summon her for a short duration to help obtain the ore.\n\nThe DMG dealt to opponents by Linnea's Ultra Convenient Quick Arrow is reduced to 20% of her original Charged Arrow. Additionally, after firing a certain number of Ultra Convenient Quick Arrows within a short period of time, Linnea needs to take a temporary break before she can continue using them.",
+            "image": "Talents/Passive/Talent_Master_Adventurer.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Capture_Protocol": {
+            "name": "Capture Protocol",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive shots with a bow.\n\nCharged Attack\nPerforms a more precise Aimed Shot with increased DMG.\nWhile aiming, stone crystals will accumulate on the arrowhead. A fully charged crystalline arrow will deal Geo DMG.\n\nPlunging Attack\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Bow_Geo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Countermeasure-Lumis_Battle_Cry": {
+            "name": "Countermeasure: Lumi's Battle Cry!",
+            "effect": "Adventure with Lumi! Depending on how you Tap, Lumi attacks in different forms.\n\nTap\nLumi strikes in a Super Power Form, attacking nearby enemies continuously, dealing AoE Geo DMG. If there are Moondrifts nearby, Lumi will also deal AoE Geo DMG to nearby enemies, which will be considered Lunar-Crystallize Reaction DMG.\n\nContinuous Tapping\nTime to show what we're really capable of! After using her Elemental Skill, Linnea will feed Lumi sparkling gemstones when her Elemental Skill or Normal Attack is Tapped repeatedly. A full-bellied Lumi will strike in her Ultimate Power Form, dealing an especially powerful instance of AoE Geo DMG that is considered Lunar-Crystallize Reaction DMG, switching to Standard Power Form.\nAdditionally, tapping the Elemental Skill increases Linnea's interruption resistance.",
+            "image": "Talents/Skill/Talent_Countermeasure-_Lumis_Battle_Cry.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Memo-Survival_Guide_in_Extreme_Conditions": {
+            "name": "Memo: Survival Guide in Extreme Conditions",
+            "effect": "Even master adventurers need proper rest! Linnea summons Lumi to strike in Super Power Form, healing nearby party members. For a short duration, she will continuously heal nearby active party members based on Linnea's DEF.\nIf Lumi is already on the field when Linnea unleashes Elemental Burst, Lumi's active duration will be reset instead and her Strike Form will not change.",
+            "image": "Talents/Burst/Talent_Memo-_Survival_Guide_in_Extreme_Conditions.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Provisional Classification",
+          "effect": "When unleashing Elemental Skill Countermeasure: Lumi's Battle Cry!, or when triggering Moondrift Harmony, Linnea gains 6 stacks of the Field Catalog effect for 10s. Max 18 stacks. When nearby party members deal Lunar-Crystallize Reaction DMG, consume 1 stack of Field Catalog to increase the DMG dealt. The increase in DMG is equal to 75% of Linnea's DEF.\nAdditionally, when Lumi uses Million Ton Crush in her Ultimate Power Form, Linnea can consume up to 5 stacks of Field Catalog. Each stack will increase the DMG dealt by 150% of Linnea's DEF.",
+          "image": "Constellation/Provisional_Classification.png"
+        },
+        "2": {
+          "name": "Tidings of Joy and Sorrow",
+          "effect": "Within 8s after triggering Moondrift Harmony, all Hydro and Geo party members have their CRIT DMG increased by 40%. Additionally, when Lumi uses Million Ton Crush in her Ultimate Power Form, the CRIT DMG of that attack increases by an additional 150%.\n\nMoonsign: Ascendant Gleam: When Lumi uses Heavy Overdrive Hammer in her Super Power Form, or when she uses Million Ton Crush in her Ultimate Power Form, an instance of Moondrift Harmony will be triggered. For this instance of Moondrift Harmony, all Hydro and Geo characters in the party will be considered to have applied their Elements in the reaction.",
+          "image": "Constellation/Tidings_of_Joy_and_Sorrow.png"
+        },
+        "3": {
+          "name": "Eventful Log Page",
+          "effect": "Increases the Level of Countermeasure: Lumi's Battle Cry! by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Eventful_Log_Page.png"
+        },
+        "4": {
+          "name": "Expert Instinct",
+          "effect": "Within 5s after Moondrift Harmony is triggered, increase the DEF of Linnea and your current active character by 25% respectively. When Linnea is on field, the DEF-increasing effect can be stacked.",
+          "image": "Constellation/Expert_Instinct.png"
+        },
+        "5": {
+          "name": "Fairyland's Farewell Gift",
+          "effect": "Elemental Burst Memo: Survival Guide in Extreme Conditions increases by 3 Levels.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Fairylands_Farewell_Gift.png"
+        },
+        "6": {
+          "name": "Golden Beagle's Dream",
+          "effect": "The effects of the Constellation, Provisional Classification, are enhanced: When unleashing Elemental Skill Countermeasure: Lumi's Battle Cry!, or when triggering Moondrift Harmony, Linnea will directly gain the maximum number of Field Catalog stacks. When consuming Field Catalog, consume twice the original number of stacks, such that the increase in DMG will be boosted to 150% of the original value.\n\nMoonsign: Ascendant Gleam: Lunar-Crystallize Reaction DMG dealt by nearby party members is elevated by 25%.",
+          "image": "Constellation/Golden_Beagles_Dream.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Prithiva_Topaz_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Tattered_Warrant",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 40,
+          "material4": "Tattered_Warrant",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Prithiva_Topaz_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 50,
+          "material4": "Immaculate_Warrant",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 60,
+          "material4": "Immaculate_Warrant",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Prithiva_Topaz_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 70,
+          "material4": "Frost-Etched_Warrant",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Prithiva_Topaz_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 80,
+          "material4": "Frost-Etched_Warrant",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Tattered_Warrant",
+          "common2": "Immaculate_Warrant",
+          "common3": "Frost-Etched_Warrant",
+          "gem1": "Prithiva_Topaz_Silver",
+          "gem2": "Prithiva_Topaz_Fragment",
+          "gem3": "Prithiva_Topaz_Chunk",
+          "gem4": "Prithiva_Topaz_Gemstone",
+          "boss_drop": "Plume_of_the_Fallen_Watcher",
+          "local_speciality": "Etherwing_Moth"
+        },
+        "talents": {
+          "common1": "Tattered_Warrant",
+          "common2": "Immaculate_Warrant",
+          "common3": "Frost-Etched_Warrant",
+          "mastery1": "Teachings_of_Vagrancy",
+          "mastery2": "Guide_to_Vagrancy",
+          "mastery3": "Philosophies_of_Vagrancy",
+          "weekly_boss_drop": "Elixir_of_the_Heretic",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "Advisor for the Adventurers' Guild, a changeling, born of the fae but raised among humans.",
+      "paimonmoepath": "characters/linnea",
+      "genshinggpath": "characters/linnea",
+      "element": "Geo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Linnea/Profile",
+      "hoyowiki": 10412,
+      "subCollection": {}
+    },
     "Navia": {
       "image": "Characters/Geo/Navia.png",
       "gender": "Female",
