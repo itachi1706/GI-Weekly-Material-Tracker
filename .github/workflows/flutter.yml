@@ -374,7 +374,7 @@ jobs:
           cp ./release/app-arm64-v8a-release.apk ./firebase/app.apk
           cp release-dogfood.txt ./firebase
       - name: Deploy APK to Firebase App Distribution
-        uses: w9jds/firebase-action@0a4f77dac6df6028b126dd9635acbb7ec0b714cc # v15.18.0
+        uses: w9jds/firebase-action@47ca9cd931889c1fb7bc67f51597278159cb7c9e # v15.20.0
         with:
           args: appdistribution:distribute app.apk --app $FIREBASE_APPID --groups "dogfooder" --release-notes-file "release-dogfood.txt" --debug
         env:
