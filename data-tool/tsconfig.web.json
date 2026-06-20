@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@renderer/*": ["src/renderer/src/*"],
