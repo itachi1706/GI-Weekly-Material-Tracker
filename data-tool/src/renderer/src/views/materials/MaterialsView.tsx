@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import type {
-  MaterialChange,
-  MaterialRecord,
-  MaterialSummary,
-  CommitPreview as Preview
-} from '@shared/types'
+import type { MaterialChange, MaterialRecord, MaterialSummary, CommitPreview as Preview } from '@shared/types'
 import {
   applyFormValues,
+  CREATE_OPTIONS,
   defaultImageName,
   getMaterialSchema,
+  resolveImageFolder,
+  type CreateOption,
   type MaterialTypeSchema
 } from '@shared/materialsSchema'
 import { useMaterials } from './useMaterials'
@@ -17,21 +15,18 @@ import MaterialForm, { type FormDraft } from './MaterialForm'
 import CommitPreview from './CommitPreview'
 import { extOf, sanitizeImageBasename, toImagePlan } from './util'
 
-/** Default file for creating a record of a given innerType (only local_speciality creatable now). */
-const CREATE_FILE: Record<string, string> = {
-  local_speciality: 'Materials-Local_Specialities.json'
-}
-
 interface FormContext {
   op: 'create' | 'edit'
   schema: MaterialTypeSchema
   base: MaterialRecord
+  /** Source file — always set for edit; empty string for create (derived from schema at preview time). */
   file: string
   originalKey?: string
 }
 
 type Screen =
   | { kind: 'list' }
+  | { kind: 'typePick' }
   | { kind: 'form'; ctx: FormContext }
   | { kind: 'view'; row: MaterialSummary; record: MaterialRecord }
 
@@ -48,37 +43,42 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     setError(null)
   }
 
-  const onNew = async () => {
-    const schema = getMaterialSchema('local_speciality')!
+  // ── Create flow ─────────────────────────────────────────────────────────────
+
+  const onNew = () => setScreen({ kind: 'typePick' })
+
+  const onPickCreateOption = async (opt: CreateOption) => {
     const templates = await window.api.materials.templates(rootPath)
-    const base = (templates[schema.templateKey] ?? { innerType: schema.innerType }) as MaterialRecord
-    setScreen({
-      kind: 'form',
-      ctx: { op: 'create', schema, base, file: CREATE_FILE[schema.innerType] }
-    })
+    const base = (templates[opt.schema.templateKey] ?? { innerType: opt.schema.innerType }) as MaterialRecord
+    setScreen({ kind: 'form', ctx: { op: 'create', schema: opt.schema, base, file: '' } })
   }
+
+  // ── Open existing record ────────────────────────────────────────────────────
 
   const onOpen = async (row: MaterialSummary) => {
     const record = await window.api.materials.get(rootPath, row.file, row.key)
     if (!record) return
-    const schema = getMaterialSchema(row.innerType)
+    const schema = getMaterialSchema(row.innerType, row.file)
     if (!schema) {
       setScreen({ kind: 'view', row, record })
       return
     }
-    setScreen({
-      kind: 'form',
-      ctx: { op: 'edit', schema, base: record, file: row.file, originalKey: row.key }
-    })
+    setScreen({ kind: 'form', ctx: { op: 'edit', schema, base: record, file: row.file, originalKey: row.key } })
   }
 
-  /** Build a MaterialChange from the form draft and open the preview modal. */
+  // ── Form → preview ──────────────────────────────────────────────────────────
+
   const onFormPreview = async (ctx: FormContext, draft: FormDraft) => {
     const { schema } = ctx
     const st = draft.imageState
-    const ext = st.mode === 'localFile' ? extOf(st.sourcePath) : st.mode === 'url' ? extOf(st.url) : 'png'
-    // Use the user's name override when set; otherwise derive sensible defaults.
-    // URL: sanitized filename from the URL. Local file: Item_<key>.<ext> convention.
+    const ext =
+      st.mode === 'localFile' ? extOf(st.sourcePath) :
+      st.mode === 'url' ? extOf(st.url) : 'png'
+
+    // Derive the images/ subfolder dynamically (mob_drops/boss_drops change folder by type).
+    const imgFolder = resolveImageFolder(schema, draft.values)
+
+    // Build the destination filename.
     let destFilename: string
     if (st.mode === 'url') {
       const base = st.imageName?.trim() || sanitizeImageBasename(st.url)
@@ -89,14 +89,19 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     } else {
       destFilename = defaultImageName(draft.key, ext)
     }
-    const destRelative = `${schema.imageFolder}/${destFilename}`
+    const destRelative = `${imgFolder}/${destFilename}`
+
     const imageRelative =
       st.mode === 'existing' ? st.relative : st.mode === 'none' ? '' : destRelative
 
     const record = applyFormValues(ctx.base, schema, { ...draft.values, image: imageRelative })
+
+    // For create, derive the target file from the form values.
+    const targetFile = ctx.op === 'edit' ? ctx.file : schema.deriveFile(draft.values)
+
     const change: MaterialChange = {
       op: ctx.op === 'edit' ? 'update' : 'create',
-      file: ctx.file,
+      file: targetFile,
       key: draft.key,
       originalKey: ctx.op === 'edit' ? ctx.originalKey : undefined,
       record,
@@ -106,6 +111,8 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     setError(null)
     setPreview({ data: await window.api.materials.previewCommit(rootPath, change), change })
   }
+
+  // ── Delete ──────────────────────────────────────────────────────────────────
 
   const onDelete = (ctx: FormContext) => {
     if (!ctx.originalKey) return
@@ -123,6 +130,8 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     })
   }
 
+  // ── Apply ───────────────────────────────────────────────────────────────────
+
   const onApply = async () => {
     if (!preview) return
     setApplying(true)
@@ -136,10 +145,36 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     }
   }
 
+  // ── Render ──────────────────────────────────────────────────────────────────
+
   return (
     <div className="materials">
       {screen.kind === 'list' && (
         <MaterialsList rootPath={rootPath} list={list} loading={loading} onNew={onNew} onOpen={onOpen} />
+      )}
+
+      {screen.kind === 'typePick' && (
+        <div className="type-pick">
+          <header className="mat-form-head">
+            <h2>New material — choose type</h2>
+          </header>
+          <div className="type-pick-grid">
+            {CREATE_OPTIONS.map((opt) => (
+              <button
+                key={opt.schemaKey}
+                type="button"
+                className="type-pick-card"
+                onClick={() => void onPickCreateOption(opt)}
+              >
+                <span className="type-pick-label">{opt.label}</span>
+                <span className="type-pick-key muted">{opt.schema.innerType}</span>
+              </button>
+            ))}
+          </div>
+          <div className="mat-form-actions" style={{ marginTop: 20 }}>
+            <button className="btn-secondary" onClick={goList}>Cancel</button>
+          </div>
+        </div>
       )}
 
       {screen.kind === 'view' && (
@@ -148,11 +183,9 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
             <h2>{screen.row.name}</h2>
             <span className="pill">{screen.row.innerType} · view only</span>
           </header>
-          <p className="muted">Editing for this innerType isn’t implemented yet.</p>
+          <p className="muted">Editing for this innerType isn't implemented yet.</p>
           <pre className="json-view">{JSON.stringify(screen.record, null, 2)}</pre>
-          <button className="btn-secondary" onClick={goList}>
-            Back
-          </button>
+          <button className="btn-secondary" onClick={goList}>Back</button>
         </div>
       )}
 
@@ -163,7 +196,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
           mode={screen.ctx.op}
           base={screen.ctx.base}
           originalKey={screen.ctx.originalKey}
-          onPreview={(draft) => onFormPreview(screen.ctx, draft)}
+          onPreview={(draft) => void onFormPreview(screen.ctx, draft)}
           onDelete={screen.ctx.op === 'edit' ? () => onDelete(screen.ctx) : undefined}
           onCancel={goList}
         />
@@ -177,10 +210,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
               applying={applying}
               error={error}
               onApply={onApply}
-              onBack={() => {
-                setPreview(null)
-                setError(null)
-              }}
+              onBack={() => { setPreview(null); setError(null) }}
               onDiscard={goList}
             />
           </div>

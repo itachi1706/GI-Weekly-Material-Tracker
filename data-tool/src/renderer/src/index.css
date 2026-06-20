@@ -740,6 +740,96 @@ textarea:focus {
   max-width: 88px;
 }
 
+/* ---- tags input ---- */
+.tags-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px 3px 10px;
+  font-size: 12px;
+}
+.tag-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 0 0 2px;
+}
+.tag-remove:hover { color: var(--danger-text); }
+.tags-add {
+  display: flex;
+  gap: 8px;
+}
+.tags-add input { flex: 1; }
+
+/* ---- days selector ---- */
+.days-select {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.day-btn {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  user-select: none;
+}
+.day-btn input[type='checkbox'] { display: none; }
+.day-btn:hover { color: var(--text); border-color: var(--accent); }
+.day-btn-active {
+  background: rgba(108, 140, 255, 0.15);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ---- type picker ---- */
+.type-pick { max-width: 640px; }
+.type-pick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.type-pick-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+.type-pick-card:hover { border-color: var(--accent); background: rgba(108,140,255,0.06); }
+.type-pick-label { font-weight: 500; font-size: 14px; }
+.type-pick-key { font-size: 11px; }
+
 /* ---- url image name row ---- */
 .image-name-ext {
   font-size: 13px;
