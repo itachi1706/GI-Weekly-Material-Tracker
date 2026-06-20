@@ -15,7 +15,7 @@ import { useMaterials } from './useMaterials'
 import MaterialsList from './MaterialsList'
 import MaterialForm, { type FormDraft } from './MaterialForm'
 import CommitPreview from './CommitPreview'
-import { extOf, toImagePlan } from './util'
+import { extOf, sanitizeImageBasename, toImagePlan } from './util'
 
 /** Default file for creating a record of a given innerType (only local_speciality creatable now). */
 const CREATE_FILE: Record<string, string> = {
@@ -77,7 +77,19 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     const { schema } = ctx
     const st = draft.imageState
     const ext = st.mode === 'localFile' ? extOf(st.sourcePath) : st.mode === 'url' ? extOf(st.url) : 'png'
-    const destRelative = `${schema.imageFolder}/${defaultImageName(draft.key, ext)}`
+    // Use the user's name override when set; otherwise derive sensible defaults.
+    // URL: sanitized filename from the URL. Local file: Item_<key>.<ext> convention.
+    let destFilename: string
+    if (st.mode === 'url') {
+      const base = st.imageName?.trim() || sanitizeImageBasename(st.url)
+      destFilename = `${base}.${ext}`
+    } else if (st.mode === 'localFile') {
+      const base = st.imageName?.trim()
+      destFilename = base ? `${base}.${ext}` : defaultImageName(draft.key, ext)
+    } else {
+      destFilename = defaultImageName(draft.key, ext)
+    }
+    const destRelative = `${schema.imageFolder}/${destFilename}`
     const imageRelative =
       st.mode === 'existing' ? st.relative : st.mode === 'none' ? '' : destRelative
 
@@ -127,7 +139,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
   return (
     <div className="materials">
       {screen.kind === 'list' && (
-        <MaterialsList list={list} loading={loading} onNew={onNew} onOpen={onOpen} />
+        <MaterialsList rootPath={rootPath} list={list} loading={loading} onNew={onNew} onOpen={onOpen} />
       )}
 
       {screen.kind === 'view' && (

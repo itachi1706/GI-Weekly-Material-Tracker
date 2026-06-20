@@ -11,8 +11,19 @@ export function extOf(pathOrUrl: string): string {
 export type ImageState =
   | { mode: 'none' }
   | { mode: 'existing'; relative: string }
-  | { mode: 'localFile'; sourcePath: string }
-  | { mode: 'url'; url: string }
+  | { mode: 'localFile'; sourcePath: string; imageName?: string }
+  | { mode: 'url'; url: string; imageName?: string }
+
+/**
+ * Derive a safe image basename from a URL.
+ * Strips the extension, then replaces anything that isn't alphanumeric / dash / underscore with `_`.
+ */
+export function sanitizeImageBasename(url: string): string {
+  const clean = url.split(/[?#]/)[0]
+  const filename = clean.split('/').pop() ?? 'image'
+  const base = filename.replace(/\.[^.]+$/, '') || 'image'
+  return base.replace(/[^a-zA-Z0-9\-_]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '') || 'image'
+}
 
 /** Convert form ImageState + the target relative path into an ImagePlan for the commit. */
 export function toImagePlan(state: ImageState, destRelative: string): ImagePlan | null {

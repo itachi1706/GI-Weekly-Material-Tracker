@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react'
 import type { ImagePlan } from '@shared/types'
 import type { ImageState } from './util'
+import { extOf, sanitizeImageBasename } from './util'
 
 interface Props {
   rootPath: string
   imageFolder: string
+  /** Default save-as basename (no extension) when the user hasn't typed an override — e.g. "Item_Amakumo_Fruit". */
+  defaultBasename?: string
   state: ImageState
   onChange: (state: ImageState) => void
 }
 
-/** Build the ImagePlan needed only to fetch a preview thumbnail (dest path irrelevant for preview). */
 function previewPlan(state: ImageState): ImagePlan | null {
   switch (state.mode) {
     case 'existing':
@@ -23,95 +25,198 @@ function previewPlan(state: ImageState): ImagePlan | null {
   }
 }
 
-export default function ImageField({ rootPath, imageFolder, state, onChange }: Props) {
+
+export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange }: Props) {
   const [existing, setExisting] = useState<string[]>([])
   const [thumb, setThumb] = useState<string | null>(null)
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
+  const [showUrl, setShowUrl] = useState(state.mode === 'url')
+  const [popupOpen, setPopupOpen] = useState(false)
+  const [popupThumbs, setPopupThumbs] = useState<Record<string, string>>({})
 
-  // Load the existing images in this folder once.
   useEffect(() => {
     void window.api.materials.listImages(rootPath, imageFolder).then(setExisting)
   }, [rootPath, imageFolder])
 
-  // Refresh the thumbnail whenever the source changes.
   useEffect(() => {
     const plan = previewPlan(state)
-    if (!plan) {
-      setThumb(null)
-      return
-    }
+    if (!plan) { setThumb(null); return }
     let cancelled = false
     void window.api.materials.previewImage(rootPath, plan).then((d) => {
       if (!cancelled) setThumb(d)
     })
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [rootPath, state])
+
+  const openBrowse = () => {
+    setPopupOpen(true)
+    existing.forEach((f) => {
+      if (popupThumbs[f]) return
+      void window.api.materials
+        .previewImage(rootPath, { source: 'existing', relativePath: `${imageFolder}/${f}` })
+        .then((d) => { if (d) setPopupThumbs((prev) => ({ ...prev, [f]: d })) })
+    })
+  }
+
+  const selectExisting = (f: string) => {
+    onChange({ mode: 'existing', relative: `${imageFolder}/${f}` })
+    setPopupOpen(false)
+  }
 
   const importFile = async () => {
     const path = await window.api.materials.selectImageFile()
-    if (path) onChange({ mode: 'localFile', sourcePath: path })
+    if (!path) return
+    // Leave imageName unset — MaterialsView falls back to Item_<key>.<ext>.
+    // User can override via the "Save as" field.
+    onChange({ mode: 'localFile', sourcePath: path })
   }
 
-  const label =
+  const applyUrl = () => {
+    const url = urlInput.trim()
+    if (!url) return
+    onChange({ mode: 'url', url, imageName: sanitizeImageBasename(url) })
+  }
+
+  const currentLabel =
     state.mode === 'existing'
-      ? `images/${state.relative}`
+      ? state.relative.split('/').pop() ?? state.relative
       : state.mode === 'localFile'
-        ? state.sourcePath
+        ? state.sourcePath.split(/[/\\]/).pop() ?? state.sourcePath
         : state.mode === 'url'
           ? state.url
-          : 'No image selected'
+          : null
+
+  const nameExt =
+    state.mode === 'localFile' ? extOf(state.sourcePath) :
+    state.mode === 'url' ? extOf(state.url) : 'png'
+
+  const nameValue =
+    state.mode === 'localFile' ? (state.imageName ?? '') :
+    state.mode === 'url' ? (state.imageName ?? '') : ''
+
+  const onNameChange = (raw: string) => {
+    if (state.mode !== 'localFile' && state.mode !== 'url') return
+    const clean = raw.replace(/[^a-zA-Z0-9\-_]/g, '_').replace(/_+/g, '_')
+    onChange({ ...state, imageName: clean })
+  }
 
   return (
     <div className="image-field">
+      {/* Thumbnail */}
       <div className="image-field-preview">
-        {thumb ? <img src={thumb} alt="preview" /> : <div className="image-field-empty">no preview</div>}
+        {thumb
+          ? <img src={thumb} alt="preview" />
+          : <div className="image-field-empty">no preview</div>
+        }
       </div>
 
       <div className="image-field-controls">
-        <div className="image-source-label" title={label}>
-          {label}
-        </div>
+        {/* Current selection label */}
+        {currentLabel && (
+          <div className="image-source-label" title={currentLabel}>
+            {currentLabel}
+          </div>
+        )}
 
-        <div className="image-field-row">
-          <select
-            value={state.mode === 'existing' ? state.relative : ''}
-            onChange={(e) =>
-              e.target.value
-                ? onChange({ mode: 'existing', relative: `${imageFolder}/${e.target.value}` })
-                : onChange({ mode: 'none' })
-            }
-          >
-            <option value="">— pick existing —</option>
-            {existing.map((f) => (
-              <option key={f} value={f}>
-                {f}
-              </option>
-            ))}
-          </select>
-          <button type="button" className="btn-secondary" onClick={importFile}>
-            Import file…
-          </button>
-        </div>
-
-        <div className="image-field-row">
-          <input
-            type="text"
-            placeholder="…or paste an image URL"
-            value={urlInput}
-            onChange={(e) => setUrlInput(e.target.value)}
-          />
+        {/* Three source buttons inline */}
+        <div className="image-source-row">
           <button
             type="button"
-            className="btn-secondary"
-            disabled={!urlInput.trim()}
-            onClick={() => onChange({ mode: 'url', url: urlInput.trim() })}
+            className={`image-source-btn${state.mode === 'existing' ? ' image-source-btn-active' : ''}`}
+            onClick={openBrowse}
           >
-            Use URL
+            Browse existing
+          </button>
+          <button
+            type="button"
+            className={`image-source-btn${state.mode === 'localFile' ? ' image-source-btn-active' : ''}`}
+            onClick={importFile}
+          >
+            Import file…
+          </button>
+          <button
+            type="button"
+            className={`image-source-btn${state.mode === 'url' || showUrl ? ' image-source-btn-active' : ''}`}
+            onClick={() => setShowUrl((v) => !v)}
+          >
+            From URL
           </button>
         </div>
+
+        {/* URL input — shown when toggled or active */}
+        {showUrl && (
+          <div className="image-field-section">
+            <div className="image-field-section-row">
+              <input
+                type="text"
+                placeholder="Paste image URL…"
+                value={urlInput}
+                onChange={(e) => setUrlInput(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') applyUrl() }}
+              />
+              <button type="button" className="btn-secondary" disabled={!urlInput.trim()} onClick={applyUrl}>
+                Use
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Save-as name override — for localFile and url */}
+        {(state.mode === 'localFile' || state.mode === 'url') && (
+          <div className="image-field-section">
+            <div className="image-field-section-row">
+              <span className="image-field-label">Save as</span>
+              <input
+                type="text"
+                placeholder={defaultBasename ?? 'filename'}
+                value={nameValue}
+                onChange={(e) => onNameChange(e.target.value)}
+              />
+              <span className="image-name-ext">.{nameExt}</span>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* Browse popup */}
+      {popupOpen && (
+        <div className="image-picker-backdrop" onClick={() => setPopupOpen(false)}>
+          <div className="image-picker-popup" onClick={(e) => e.stopPropagation()}>
+            <div className="image-picker-header">
+              <span>Pick existing image</span>
+              <button type="button" className="btn-link" onClick={() => setPopupOpen(false)}>
+                ✕ Close
+              </button>
+            </div>
+            {existing.length === 0 ? (
+              <p className="muted" style={{ padding: '16px' }}>No images found in {imageFolder}.</p>
+            ) : (
+              <div className="image-picker-grid">
+                {existing.map((f) => {
+                  const rel = `${imageFolder}/${f}`
+                  const isSelected = state.mode === 'existing' && state.relative === rel
+                  return (
+                    <button
+                      key={f}
+                      type="button"
+                      className={`image-picker-item${isSelected ? ' image-picker-selected' : ''}`}
+                      onClick={() => selectExisting(f)}
+                    >
+                      <div className="image-picker-thumb">
+                        {popupThumbs[f]
+                          ? <img src={popupThumbs[f]} alt="" />
+                          : <div className="image-picker-loading" />
+                        }
+                      </div>
+                      <div className="image-picker-name">{f}</div>
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

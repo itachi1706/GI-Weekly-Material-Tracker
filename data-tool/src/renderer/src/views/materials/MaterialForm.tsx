@@ -111,6 +111,7 @@ export default function MaterialForm({
                 <ImageField
                   rootPath={rootPath}
                   imageFolder={imageFolder}
+                  defaultBasename={key.trim() ? `Item_${key.trim()}` : undefined}
                   state={imageState}
                   onChange={setImageState}
                 />
