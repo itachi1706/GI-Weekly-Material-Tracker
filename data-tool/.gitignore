@@ -1,0 +1,9 @@
+node_modules/
+out/
+dist/
+
+# Local, uncommitted reference copy of the dataset (selected at runtime via the folder picker)
+dataset/
+
+.DS_Store
+*.log
