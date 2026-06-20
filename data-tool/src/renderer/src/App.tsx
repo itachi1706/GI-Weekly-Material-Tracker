@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import { useDataset } from './state/datasetStore'
 import FolderPicker from './components/FolderPicker'
 import Sidebar from './components/Sidebar'
 import DatasetSummary from './components/DatasetSummary'
+import MaterialsView from './views/materials/MaterialsView'
+import type { EntityKey } from '@shared/types'
 
 export default function App() {
   const { info, loading, selectFolder, reload } = useDataset()
+  const [active, setActive] = useState<EntityKey | null>(null)
 
   // Initial restore in progress.
   if (loading && !info) {
@@ -22,9 +26,19 @@ export default function App() {
 
   return (
     <div className="app-layout">
-      <Sidebar info={info} onChangeFolder={selectFolder} />
+      <Sidebar
+        info={info}
+        active={active}
+        onSelectEntity={setActive}
+        onShowOverview={() => setActive(null)}
+        onChangeFolder={selectFolder}
+      />
       <main className="app-main">
-        <DatasetSummary info={info} onReload={reload} loading={loading} />
+        {active === 'materials' ? (
+          <MaterialsView rootPath={info.rootPath} />
+        ) : (
+          <DatasetSummary info={info} onReload={reload} loading={loading} />
+        )}
       </main>
     </div>
   )

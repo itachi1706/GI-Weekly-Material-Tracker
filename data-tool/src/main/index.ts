@@ -1,10 +1,19 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'node:path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import { selectDatasetFolder } from './ipc/dialog'
+import { selectDatasetFolder, selectImageFile } from './ipc/dialog'
 import { scanDataset } from './ipc/dataset'
+import {
+  listMaterials,
+  getMaterial,
+  listTemplates,
+  listImages,
+  previewImage,
+  previewCommit,
+  commit
+} from './ipc/materials'
 import { readSettings, writeSettings } from './settings'
-import type { DatasetInfo } from '@shared/types'
+import type { DatasetInfo, ImagePlan, MaterialChange } from '@shared/types'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -59,6 +68,26 @@ function registerIpc(): void {
     const info = await scanDataset(lastDatasetPath)
     return info.valid ? info : null
   })
+
+  // Materials CRUD.
+  ipcMain.handle('materials:list', (_e, rootPath: string) => listMaterials(rootPath))
+  ipcMain.handle('materials:get', (_e, rootPath: string, file: string, key: string) =>
+    getMaterial(rootPath, file, key)
+  )
+  ipcMain.handle('materials:templates', (_e, rootPath: string) => listTemplates(rootPath))
+  ipcMain.handle('materials:listImages', (_e, rootPath: string, folder: string) =>
+    listImages(rootPath, folder)
+  )
+  ipcMain.handle('materials:previewImage', (_e, rootPath: string, plan: ImagePlan) =>
+    previewImage(rootPath, plan)
+  )
+  ipcMain.handle('materials:selectImageFile', () => selectImageFile())
+  ipcMain.handle('materials:previewCommit', (_e, rootPath: string, change: MaterialChange) =>
+    previewCommit(rootPath, change)
+  )
+  ipcMain.handle('materials:commit', (_e, rootPath: string, change: MaterialChange) =>
+    commit(rootPath, change)
+  )
 }
 
 app.whenReady().then(() => {

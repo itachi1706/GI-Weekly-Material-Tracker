@@ -15,7 +15,7 @@ export const REQUIRED_SUBFOLDERS = ['data', 'images', 'templates'] as const
  * as each entity's CRUD is built.
  */
 export const ENTITIES: EntityConfig[] = [
-  { key: 'materials', label: 'Materials', rootKey: 'materials', filePrefix: 'Materials-', enabled: false },
+  { key: 'materials', label: 'Materials', rootKey: 'materials', filePrefix: 'Materials-', enabled: true },
   { key: 'characters', label: 'Characters', rootKey: 'characters', filePrefix: 'Characters-', enabled: false },
   { key: 'weapons', label: 'Weapons', rootKey: 'weapons', filePrefix: 'Weapons-', enabled: false },
   { key: 'outfits', label: 'Outfits', rootKey: 'outfits', filePrefix: 'Outfits-', enabled: false },
