@@ -10,7 +10,9 @@ import {
   listImages,
   previewImage,
   previewCommit,
-  commit
+  commit,
+  previewBatchCommit,
+  batchCommit
 } from './ipc/materials'
 import { readSettings, writeSettings } from './settings'
 import type { DatasetInfo, ImagePlan, MaterialChange } from '@shared/types'
@@ -87,6 +89,12 @@ function registerIpc(): void {
   )
   ipcMain.handle('materials:commit', (_e, rootPath: string, change: MaterialChange) =>
     commit(rootPath, change)
+  )
+  ipcMain.handle('materials:previewBatch', (_e, rootPath: string, changes: MaterialChange[]) =>
+    previewBatchCommit(rootPath, changes)
+  )
+  ipcMain.handle('materials:batchCommit', (_e, rootPath: string, changes: MaterialChange[]) =>
+    batchCommit(rootPath, changes)
   )
 }
 

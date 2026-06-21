@@ -34,7 +34,11 @@ const api = {
     previewCommit: (rootPath: string, change: MaterialChange): Promise<CommitPreview> =>
       ipcRenderer.invoke('materials:previewCommit', rootPath, change),
     commit: (rootPath: string, change: MaterialChange): Promise<CommitResult> =>
-      ipcRenderer.invoke('materials:commit', rootPath, change)
+      ipcRenderer.invoke('materials:commit', rootPath, change),
+    previewBatch: (rootPath: string, changes: MaterialChange[]): Promise<CommitPreview> =>
+      ipcRenderer.invoke('materials:previewBatch', rootPath, changes),
+    batchCommit: (rootPath: string, changes: MaterialChange[]): Promise<CommitResult> =>
+      ipcRenderer.invoke('materials:batchCommit', rootPath, changes)
   }
 }
 

@@ -17,6 +17,35 @@ export interface FieldSpec {
   computeFn?: (sourceValue: unknown) => unknown
 }
 
+/** Config for one tier within a tier set (e.g. one rarity level of a mob drop group). */
+export interface TierItemConfig {
+  /** Template key in templates/materials.json (falls back to schema.templateKey if absent). */
+  templateKey?: string
+  /** Fixed rarity value written to this tier's record. */
+  rarity: number
+}
+
+/** Config for a multi-tier create flow (mob drops, domain materials, weekly boss sets). */
+export interface TierSetConfig {
+  /**
+   * Per-tier configuration array, or a function that derives it from the current shared form
+   * values. Use a function when tier count varies (e.g. forgery=4 tiers, mastery=3).
+   */
+  tiers: TierItemConfig[] | ((shared: Record<string, unknown>) => TierItemConfig[])
+  /** Keys of schema.fields shown once in the shared section at the top of the form. */
+  sharedFieldKeys: string[]
+  /**
+   * When true the "obtained" field appears only in the shared section and is copied to all
+   * tiers (used for weekly boss where all 3 drops share the same obtained text).
+   */
+  sharedObtained?: boolean
+  /**
+   * When true, tiers at index ≥ 1 get an "Auto-fill" button that inserts the alchemy recipe
+   * referencing the previous tier's name (mob drops and domain materials).
+   */
+  autoAlchemy?: boolean
+}
+
 export interface MaterialTypeSchema {
   innerType: MaterialInnerType
   /** Human-readable label shown in the UI. */
@@ -35,11 +64,22 @@ export interface MaterialTypeSchema {
   /** Editable fields in form display order. Fields managed implicitly (usage, subCollection,
    *  innerType, rarity for local_speciality) are excluded. */
   fields: FieldSpec[]
+  /**
+   * When 'tier_set', the "New" flow uses TierSetForm (multi-tier) instead of the single-record
+   * MaterialForm.
+   */
+  createMode?: 'tier_set'
+  tierSet?: TierSetConfig
 }
 
 /** Resolve the actual images/ folder to use given the current form values. */
 export function resolveImageFolder(schema: MaterialTypeSchema, values: Record<string, unknown>): string {
   return schema.imageFolderFn ? schema.imageFolderFn(values) : schema.imageFolder
+}
+
+/** Resolve the current tier configs from a TierSetConfig, given the current shared values. */
+export function resolveTiers(config: TierSetConfig, shared: Record<string, unknown>): TierItemConfig[] {
+  return typeof config.tiers === 'function' ? config.tiers(shared) : config.tiers
 }
 
 // ── Shared region lists ──────────────────────────────────────────────────────
@@ -105,6 +145,25 @@ const mobDrops: MaterialTypeSchema = {
     values['type'] === 'Common Ascension Material (Normal)'
       ? 'Materials-Common_Mob.json'
       : 'Materials-Elite_Mob.json',
+  createMode: 'tier_set',
+  tierSet: {
+    tiers: (shared) => {
+      const isNormal = !shared['type'] || shared['type'] === 'Common Ascension Material (Normal)'
+      return isNormal
+        ? [
+            { templateKey: 'Common_1', rarity: 1 },
+            { templateKey: 'Common_2', rarity: 2 },
+            { templateKey: 'Common_3', rarity: 3 }
+          ]
+        : [
+            { templateKey: 'Elite_1', rarity: 2 },
+            { templateKey: 'Elite_2', rarity: 3 },
+            { templateKey: 'Elite_3', rarity: 4 }
+          ]
+    },
+    sharedFieldKeys: ['type', 'enemies', 'released'],
+    autoAlchemy: true
+  },
   fields: [
     {
       key: 'name', label: 'Name', widget: 'text', required: true,
@@ -173,6 +232,16 @@ const bossDropsWeekly: MaterialTypeSchema = {
   templateKey: 'Weekly_Boss',
   imageFolder: 'Materials/Boss_Drops',
   deriveFile: () => 'Materials-Weekly_Boss_Drops.json',
+  createMode: 'tier_set',
+  tierSet: {
+    tiers: [
+      { templateKey: 'Weekly_Boss', rarity: 5 },
+      { templateKey: 'Weekly_Boss', rarity: 5 },
+      { templateKey: 'Weekly_Boss', rarity: 5 }
+    ],
+    sharedFieldKeys: ['type', 'obtained', 'released'],
+    sharedObtained: true
+  },
   fields: [
     { key: 'name', label: 'Name', widget: 'text', required: true },
     { key: 'type', label: 'Category', widget: 'select', required: true, options: BOSS_WEEKLY_TYPE_OPTIONS },
@@ -208,6 +277,26 @@ const domainMaterial: MaterialTypeSchema = {
     String(values['type'] ?? '').includes('Mastery')
       ? 'Materials-Mastery_Domain.json'
       : 'Materials-Forgery_Domain.json',
+  createMode: 'tier_set',
+  tierSet: {
+    tiers: (shared) => {
+      const isForgery = !shared['type'] || String(shared['type']).includes('Forgery')
+      return isForgery
+        ? [
+            { templateKey: 'Forgery_1', rarity: 2 },
+            { templateKey: 'Forgery_2', rarity: 3 },
+            { templateKey: 'Forgery_3', rarity: 4 },
+            { templateKey: 'Forgery_4', rarity: 5 }
+          ]
+        : [
+            { templateKey: 'Mastery_1', rarity: 2 },
+            { templateKey: 'Mastery_2', rarity: 3 },
+            { templateKey: 'Mastery_3', rarity: 4 }
+          ]
+    },
+    sharedFieldKeys: ['type', 'days', 'released'],
+    autoAlchemy: true
+  },
   fields: [
     { key: 'name', label: 'Name', widget: 'text', required: true },
     { key: 'type', label: 'Domain Type', widget: 'select', required: true, options: DOMAIN_TYPE_OPTIONS },
@@ -269,10 +358,10 @@ export interface CreateOption {
 
 export const CREATE_OPTIONS: CreateOption[] = [
   { label: 'Local Speciality', schemaKey: 'local_speciality', schema: localSpeciality },
-  { label: 'Mob Drops', schemaKey: 'mob_drops', schema: mobDrops },
+  { label: 'Mob Drops (3-tier set)', schemaKey: 'mob_drops', schema: mobDrops },
   { label: 'Boss Drop / Ascension Gem', schemaKey: 'boss_drops', schema: bossDropsStandard },
-  { label: 'Weekly Boss Drop', schemaKey: 'boss_drops:Materials-Weekly_Boss_Drops.json', schema: bossDropsWeekly },
-  { label: 'Domain Material', schemaKey: 'domain_material', schema: domainMaterial }
+  { label: 'Weekly Boss Drop (3-item set)', schemaKey: 'boss_drops:Materials-Weekly_Boss_Drops.json', schema: bossDropsWeekly },
+  { label: 'Domain Material (tier set)', schemaKey: 'domain_material', schema: domainMaterial }
 ]
 
 /** Derive the record key from a display name (spaces → underscores). */
@@ -296,12 +385,12 @@ export function defaultImageName(key: string, ext: string): string {
  *  - innerType is forced to the schema's type
  *
  * Special per-widget rules:
+ *  - `image`: if a non-empty value is provided, it is written directly to record.image
  *  - `tags` (string array): written only if non-empty OR the key already exists in base (prevents
  *    silently adding an `enemies` key to Weekly_Boss_Drop records that don't have one)
  *  - `days` (number array): written as a sorted number array
  *  - `computed`: value is derived via computeFn rather than read from form input
  *  - `hoyowiki` empty/NaN → null
- *  - `image` is handled outside this function (it lives in draft.imageState)
  */
 export function applyFormValues(
   base: MaterialRecord,
@@ -310,7 +399,12 @@ export function applyFormValues(
 ): MaterialRecord {
   const record: MaterialRecord = { ...base }
   for (const field of schema.fields) {
-    if (field.widget === 'image') continue
+    if (field.widget === 'image') {
+      // Apply image path directly when a non-empty value is provided; otherwise keep base value.
+      const img = values[field.key]
+      if (img != null && img !== '') record.image = String(img)
+      continue
+    }
     const v = values[field.key]
     if (field.widget === 'number') {
       record[field.key] =

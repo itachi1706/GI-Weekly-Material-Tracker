@@ -199,3 +199,57 @@ export async function commit(rootPath: string, change: MaterialChange): Promise<
     return { ok: false, error: err instanceof Error ? err.message : String(err) }
   }
 }
+
+/** Preview all changes in a batch (all must target the same file), applied sequentially. */
+export async function previewBatchCommit(
+  rootPath: string,
+  changes: MaterialChange[]
+): Promise<CommitPreview> {
+  if (changes.length === 0) throw new Error('Empty batch')
+  const file = changes[0].file
+  const { raw } = await readRecords(rootPath, file)
+  const parsed = raw ? JSON.parse(raw) : { materials: {} }
+
+  let records = parsed.materials ?? {}
+  for (const change of changes) {
+    records = applyChange(records, change)
+  }
+
+  const reference = raw || '\n'
+  const after = withTrailingNewline(stringifyDataFile({ ...parsed, materials: records }), reference)
+
+  const imageActions = changes.map(imageActionText).filter((s): s is string => s !== null)
+
+  return {
+    file,
+    before: raw,
+    after,
+    imageAction: imageActions.length > 0 ? imageActions.join('\n') : null,
+    formattingDriftWarning:
+      raw && !roundTrips(raw)
+        ? 'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
+        : null
+  }
+}
+
+/** Commit a batch of changes to the same file, performing all image ops then writing once. */
+export async function batchCommit(
+  rootPath: string,
+  changes: MaterialChange[]
+): Promise<CommitResult> {
+  try {
+    const preview = await previewBatchCommit(rootPath, changes)
+    if (preview.formattingDriftWarning) {
+      return { ok: false, error: preview.formattingDriftWarning }
+    }
+
+    for (const change of changes) {
+      if (change.image) await performImageOp(rootPath, change.image)
+    }
+
+    await writeFile(join(dataDir(rootPath), changes[0].file), preview.after, 'utf-8')
+    return { ok: true }
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) }
+  }
+}

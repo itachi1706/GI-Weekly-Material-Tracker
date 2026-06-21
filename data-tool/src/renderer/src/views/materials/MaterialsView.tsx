@@ -12,6 +12,7 @@ import {
 import { useMaterials } from './useMaterials'
 import MaterialsList from './MaterialsList'
 import MaterialForm, { type FormDraft } from './MaterialForm'
+import TierSetForm from './TierSetForm'
 import CommitPreview from './CommitPreview'
 import { extOf, sanitizeImageBasename, toImagePlan } from './util'
 
@@ -28,12 +29,17 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'typePick' }
   | { kind: 'form'; ctx: FormContext }
+  | { kind: 'tierSetForm'; schema: MaterialTypeSchema; templates: Record<string, MaterialRecord> }
   | { kind: 'view'; row: MaterialSummary; record: MaterialRecord }
 
 export default function MaterialsView({ rootPath }: { rootPath: string }) {
   const { list, loading, reload } = useMaterials(rootPath)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })
-  const [preview, setPreview] = useState<{ data: Preview; change: MaterialChange } | null>(null)
+  const [preview, setPreview] = useState<{
+    data: Preview
+    change?: MaterialChange
+    changes?: MaterialChange[]
+  } | null>(null)
   const [applying, setApplying] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -49,8 +55,12 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
 
   const onPickCreateOption = async (opt: CreateOption) => {
     const templates = await window.api.materials.templates(rootPath)
-    const base = (templates[opt.schema.templateKey] ?? { innerType: opt.schema.innerType }) as MaterialRecord
-    setScreen({ kind: 'form', ctx: { op: 'create', schema: opt.schema, base, file: '' } })
+    if (opt.schema.createMode === 'tier_set') {
+      setScreen({ kind: 'tierSetForm', schema: opt.schema, templates })
+    } else {
+      const base = (templates[opt.schema.templateKey] ?? { innerType: opt.schema.innerType }) as MaterialRecord
+      setScreen({ kind: 'form', ctx: { op: 'create', schema: opt.schema, base, file: '' } })
+    }
   }
 
   // ── Open existing record ────────────────────────────────────────────────────
@@ -66,7 +76,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     setScreen({ kind: 'form', ctx: { op: 'edit', schema, base: record, file: row.file, originalKey: row.key } })
   }
 
-  // ── Form → preview ──────────────────────────────────────────────────────────
+  // ── Form → preview (single record) ─────────────────────────────────────────
 
   const onFormPreview = async (ctx: FormContext, draft: FormDraft) => {
     const { schema } = ctx
@@ -75,10 +85,8 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
       st.mode === 'localFile' ? extOf(st.sourcePath) :
       st.mode === 'url' ? extOf(st.url) : 'png'
 
-    // Derive the images/ subfolder dynamically (mob_drops/boss_drops change folder by type).
     const imgFolder = resolveImageFolder(schema, draft.values)
 
-    // Build the destination filename.
     let destFilename: string
     if (st.mode === 'url') {
       const base = st.imageName?.trim() || sanitizeImageBasename(st.url)
@@ -96,7 +104,6 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
 
     const record = applyFormValues(ctx.base, schema, { ...draft.values, image: imageRelative })
 
-    // For create, derive the target file from the form values.
     const targetFile = ctx.op === 'edit' ? ctx.file : schema.deriveFile(draft.values)
 
     const change: MaterialChange = {
@@ -109,7 +116,16 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
       image: toImagePlan(st, destRelative) ?? undefined
     }
     setError(null)
-    setPreview({ data: await window.api.materials.previewCommit(rootPath, change), change })
+    const data = await window.api.materials.previewCommit(rootPath, change)
+    setPreview({ data, change })
+  }
+
+  // ── Tier-set → preview (batch) ──────────────────────────────────────────────
+
+  const onBatchPreview = async (changes: MaterialChange[]) => {
+    setError(null)
+    const data = await window.api.materials.previewBatch(rootPath, changes)
+    setPreview({ data, changes })
   }
 
   // ── Delete ──────────────────────────────────────────────────────────────────
@@ -135,7 +151,9 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
   const onApply = async () => {
     if (!preview) return
     setApplying(true)
-    const res = await window.api.materials.commit(rootPath, preview.change)
+    const res = preview.changes
+      ? await window.api.materials.batchCommit(rootPath, preview.changes)
+      : await window.api.materials.commit(rootPath, preview.change!)
     setApplying(false)
     if (res.ok) {
       await reload()
@@ -198,6 +216,16 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
           originalKey={screen.ctx.originalKey}
           onPreview={(draft) => void onFormPreview(screen.ctx, draft)}
           onDelete={screen.ctx.op === 'edit' ? () => onDelete(screen.ctx) : undefined}
+          onCancel={goList}
+        />
+      )}
+
+      {screen.kind === 'tierSetForm' && (
+        <TierSetForm
+          rootPath={rootPath}
+          schema={screen.schema}
+          templates={screen.templates}
+          onPreview={(changes) => void onBatchPreview(changes)}
           onCancel={goList}
         />
       )}

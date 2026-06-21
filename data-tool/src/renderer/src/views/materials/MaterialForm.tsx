@@ -24,7 +24,7 @@ interface Props {
 
 // ── Tag input ─────────────────────────────────────────────────────────────────
 
-function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
+export function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
   const [input, setInput] = useState('')
 
   const add = () => {
@@ -77,7 +77,7 @@ const DAY_OPTIONS = [
   { n: 7, label: 'Sun' }
 ]
 
-function DaysSelect({ value, onChange }: { value: number[]; onChange: (v: number[]) => void }) {
+export function DaysSelect({ value, onChange }: { value: number[]; onChange: (v: number[]) => void }) {
   const toggle = (n: number) => {
     if (value.includes(n)) onChange(value.filter((x) => x !== n))
     else onChange([...value, n].sort((a, b) => a - b))
