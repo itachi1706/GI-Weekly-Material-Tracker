@@ -93,13 +93,14 @@ interface Props {
   editFile?: string
   editKeys?: string[]
   onPreview: (changes: MaterialChange[]) => void
+  onDelete?: () => void
   onCancel: () => void
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function TierSetForm({
-  rootPath, schema, templates, editRecords, editFile, editKeys, onPreview, onCancel
+  rootPath, schema, templates, editRecords, editFile, editKeys, onPreview, onDelete, onCancel
 }: Props) {
   const config = schema.tierSet!
 
@@ -328,7 +329,7 @@ export default function TierSetForm({
   // ── Render ──────────────────────────────────────────────────────────────────
 
   return (
-    <div className="mat-form">
+    <div className="mat-tier-form">
       <header className="mat-form-head">
         <h2>{editRecords ? 'Edit' : 'New'} {schema.label}</h2>
         <span className="pill">{tierConfigs.length}-item set</span>
@@ -463,6 +464,17 @@ export default function TierSetForm({
       <footer className="mat-form-actions">
         <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
         <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        {onDelete && (
+          <button
+            className="btn-danger"
+            onClick={() => {
+              if (confirm(`Delete all ${tierConfigs.length} tiers of this set? This can be reviewed in the preview before it's applied.`))
+                onDelete()
+            }}
+          >
+            Delete set
+          </button>
+        )}
       </footer>
     </div>
   )

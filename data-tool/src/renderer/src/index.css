@@ -869,6 +869,15 @@ textarea:focus {
 }
 
 /* ---- tier set form ---- */
+.mat-tier-form {
+  width: 100%;
+}
+.mat-tier-form .mat-form-head,
+.mat-tier-form .tier-shared-section,
+.mat-tier-form .form-errors,
+.mat-tier-form .mat-form-actions {
+  max-width: 900px;
+}
 .tier-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));

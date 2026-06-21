@@ -175,6 +175,18 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
     })
   }
 
+  // ── Delete tier set ─────────────────────────────────────────────────────────
+
+  const onDeleteTierSet = (file: string, keys: string[]) => {
+    const changes: MaterialChange[] = keys.map((key) => ({
+      op: 'delete',
+      file,
+      key,
+      ordering: 'alphabetical'
+    }))
+    void onBatchPreview(changes)
+  }
+
   // ── Apply ───────────────────────────────────────────────────────────────────
 
   const onApply = async () => {
@@ -263,6 +275,11 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
           editFile={screen.editFile}
           editKeys={screen.editKeys}
           onPreview={(changes) => void onBatchPreview(changes)}
+          onDelete={
+            screen.editFile && screen.editKeys
+              ? () => onDeleteTierSet(screen.editFile!, screen.editKeys!)
+              : undefined
+          }
           onCancel={goList}
         />
       )}
