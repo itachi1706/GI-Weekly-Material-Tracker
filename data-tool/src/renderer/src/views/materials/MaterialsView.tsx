@@ -4,6 +4,7 @@ import {
   applyFormValues,
   CREATE_OPTIONS,
   defaultImageName,
+  findTierSetSiblings,
   getMaterialSchema,
   resolveImageFolder,
   type CreateOption,
@@ -29,12 +30,21 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'typePick' }
   | { kind: 'form'; ctx: FormContext }
-  | { kind: 'tierSetForm'; schema: MaterialTypeSchema; templates: Record<string, MaterialRecord> }
+  | {
+      kind: 'tierSetForm'
+      schema: MaterialTypeSchema
+      templates: Record<string, MaterialRecord>
+      editRecords?: MaterialRecord[]
+      editFile?: string
+      editKeys?: string[]
+    }
   | { kind: 'view'; row: MaterialSummary; record: MaterialRecord }
 
 export default function MaterialsView({ rootPath }: { rootPath: string }) {
   const { list, loading, reload } = useMaterials(rootPath)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })
+  const [listQuery, setListQuery] = useState('')
+  const [listTypeFilter, setListTypeFilter] = useState('')
   const [preview, setPreview] = useState<{
     data: Preview
     change?: MaterialChange
@@ -73,6 +83,25 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
       setScreen({ kind: 'view', row, record })
       return
     }
+
+    // For tier-set schemas, try to open the full set in TierSetForm edit mode.
+    if (schema.createMode === 'tier_set') {
+      const allRecords = await window.api.materials.listFile(rootPath, row.file)
+      const siblings = findTierSetSiblings(record, row.innerType, row.file, allRecords)
+      if (siblings) {
+        const templates = await window.api.materials.templates(rootPath)
+        setScreen({
+          kind: 'tierSetForm',
+          schema,
+          templates,
+          editRecords: siblings.map((s) => s.record),
+          editFile: row.file,
+          editKeys: siblings.map((s) => s.key)
+        })
+        return
+      }
+    }
+
     setScreen({ kind: 'form', ctx: { op: 'edit', schema, base: record, file: row.file, originalKey: row.key } })
   }
 
@@ -168,7 +197,12 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
   return (
     <div className="materials">
       {screen.kind === 'list' && (
-        <MaterialsList rootPath={rootPath} list={list} loading={loading} onNew={onNew} onOpen={onOpen} />
+        <MaterialsList
+          rootPath={rootPath} list={list} loading={loading}
+          query={listQuery} typeFilter={listTypeFilter}
+          onQueryChange={setListQuery} onTypeFilterChange={setListTypeFilter}
+          onNew={onNew} onOpen={onOpen}
+        />
       )}
 
       {screen.kind === 'typePick' && (
@@ -225,6 +259,9 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
           rootPath={rootPath}
           schema={screen.schema}
           templates={screen.templates}
+          editRecords={screen.editRecords}
+          editFile={screen.editFile}
+          editKeys={screen.editKeys}
           onPreview={(changes) => void onBatchPreview(changes)}
           onCancel={goList}
         />

@@ -6,6 +6,7 @@ import { scanDataset } from './ipc/dataset'
 import {
   listMaterials,
   getMaterial,
+  getMaterialsForFile,
   listTemplates,
   listImages,
   previewImage,
@@ -95,6 +96,9 @@ function registerIpc(): void {
   )
   ipcMain.handle('materials:batchCommit', (_e, rootPath: string, changes: MaterialChange[]) =>
     batchCommit(rootPath, changes)
+  )
+  ipcMain.handle('materials:listFile', (_e, rootPath: string, file: string) =>
+    getMaterialsForFile(rootPath, file)
   )
 }
 

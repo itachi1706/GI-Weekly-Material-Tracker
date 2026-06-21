@@ -438,3 +438,52 @@ export function applyFormValues(
   if (record.subCollection == null) record.subCollection = {}
   return record
 }
+
+/**
+ * Return a string that uniquely identifies which tier set a record belongs to.
+ * Records that share the same key are in the same set.
+ * Returns '' for types that don't use tier sets.
+ */
+export function getTierSetKey(record: MaterialRecord, innerType: string, file?: string): string {
+  if (innerType === 'boss_drops' && file?.includes('Weekly_Boss')) {
+    return `weekly:${record.obtained ?? ''}`
+  }
+  if (innerType === 'mob_drops') {
+    const enemies = [...((record.enemies ?? []) as string[])].sort()
+    return `mob:${record.type ?? ''}:${enemies.join(',')}`
+  }
+  if (innerType === 'domain_material') {
+    const days = [...((record.days ?? []) as number[])].sort((a, b) => a - b)
+    return `domain:${record.type ?? ''}:${days.join(',')}`
+  }
+  return ''
+}
+
+/**
+ * Find all records in `allRecords` that belong to the same tier set as `record`.
+ * Returns them sorted by rarity (ascending), or null if the count doesn't match
+ * the expected tier count for the schema (meaning the set is incomplete/orphaned).
+ */
+export function findTierSetSiblings(
+  record: MaterialRecord,
+  innerType: string,
+  file: string,
+  allRecords: Record<string, MaterialRecord>
+): { key: string; record: MaterialRecord }[] | null {
+  const schema = getMaterialSchema(innerType, file)
+  if (!schema?.tierSet) return null
+
+  const setKey = getTierSetKey(record, innerType, file)
+  if (!setKey) return null
+
+  const siblings = Object.entries(allRecords)
+    .filter(([, r]) => getTierSetKey(r, innerType, file) === setKey)
+    .sort(([, a], [, b]) => ((a.rarity as number) ?? 0) - ((b.rarity as number) ?? 0))
+
+  // Determine expected tier count from schema config using the record's shared values
+  const sharedProxy = { type: record.type ?? '', innerSubType: record.innerSubType ?? '' }
+  const expectedCount = resolveTiers(schema.tierSet, sharedProxy).length
+  if (siblings.length !== expectedCount) return null
+
+  return siblings.map(([k, r]) => ({ key: k, record: r }))
+}

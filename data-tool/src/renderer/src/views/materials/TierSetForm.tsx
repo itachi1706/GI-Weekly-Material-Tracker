@@ -7,7 +7,8 @@ import {
   resolveImageFolder,
   resolveTiers,
   type MaterialTypeSchema,
-  type TierItemConfig
+  type TierItemConfig,
+  type TierSetConfig
 } from '@shared/materialsSchema'
 import ImageField from './ImageField'
 import { TagsInput, DaysSelect } from './MaterialForm'
@@ -35,18 +36,44 @@ function emptyTier(): TierData {
 
 // ── Shared values initialiser ─────────────────────────────────────────────────
 
-function initShared(schema: MaterialTypeSchema): Record<string, unknown> {
+function initShared(schema: MaterialTypeSchema, fromRecord?: MaterialRecord): Record<string, unknown> {
   const config = schema.tierSet!
   const v: Record<string, unknown> = {}
   for (const key of config.sharedFieldKeys) {
     const field = schema.fields.find((f) => f.key === key)
     if (!field) continue
-    if (field.widget === 'bool') v[key] = true
-    else if (field.widget === 'tags') v[key] = []
-    else if (field.widget === 'days') v[key] = []
-    else v[key] = ''
+    if (fromRecord) {
+      const raw = (fromRecord as Record<string, unknown>)[key]
+      if (field.widget === 'tags' || field.widget === 'days') {
+        v[key] = Array.isArray(raw) ? raw : []
+      } else if (field.widget === 'bool') {
+        v[key] = Boolean(raw ?? true)
+      } else {
+        v[key] = raw ?? ''
+      }
+    } else {
+      if (field.widget === 'bool') v[key] = true
+      else if (field.widget === 'tags') v[key] = []
+      else if (field.widget === 'days') v[key] = []
+      else v[key] = ''
+    }
   }
   return v
+}
+
+function tierDataFromRecord(record: MaterialRecord, existingKey: string, config: TierSetConfig): TierData {
+  return {
+    name: String(record.name ?? ''),
+    description: String(record.description ?? ''),
+    obtained: config.sharedObtained ? '' : String(record.obtained ?? ''),
+    wiki: String(record.wiki ?? ''),
+    hoyowiki: String(record.hoyowiki ?? ''),
+    imageState: record.image
+      ? { mode: 'existing' as const, relative: String(record.image) }
+      : { mode: 'none' as const },
+    keyOverride: existingKey,
+    keyTouched: true
+  }
 }
 
 // ── Stars helper ─────────────────────────────────────────────────────────────
@@ -61,19 +88,30 @@ interface Props {
   rootPath: string
   schema: MaterialTypeSchema
   templates: Record<string, MaterialRecord>
+  /** When provided, the form opens in edit mode pre-populated with these records (sorted by rarity). */
+  editRecords?: MaterialRecord[]
+  editFile?: string
+  editKeys?: string[]
   onPreview: (changes: MaterialChange[]) => void
   onCancel: () => void
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-export default function TierSetForm({ rootPath, schema, templates, onPreview, onCancel }: Props) {
+export default function TierSetForm({
+  rootPath, schema, templates, editRecords, editFile, editKeys, onPreview, onCancel
+}: Props) {
   const config = schema.tierSet!
 
-  const [shared, setShared] = useState<Record<string, unknown>>(() => initShared(schema))
-  const [tiers, setTiers] = useState<TierData[]>(() =>
-    resolveTiers(config, {}).map(() => emptyTier())
+  const [shared, setShared] = useState<Record<string, unknown>>(() =>
+    initShared(schema, editRecords?.[0])
   )
+  const [tiers, setTiers] = useState<TierData[]>(() => {
+    if (editRecords && editKeys) {
+      return editRecords.map((r, i) => tierDataFromRecord(r, editKeys[i] ?? '', config))
+    }
+    return resolveTiers(config, {}).map(() => emptyTier())
+  })
   const [errors, setErrors] = useState<string[]>([])
 
   // Recompute tier count when domain type changes (forgery=4, mastery=3).
@@ -186,11 +224,12 @@ export default function TierSetForm({ rootPath, schema, templates, onPreview, on
       const record = applyFormValues(base, schema, values)
 
       return {
-        op: 'create' as const,
-        file: targetFile,
+        op: editRecords ? 'update' as const : 'create' as const,
+        file: editFile ?? targetFile,
         key,
+        originalKey: editRecords ? (editKeys?.[i] ?? key) : undefined,
         record,
-        ordering: 'append' as const,
+        ordering: editRecords ? 'alphabetical' as const : 'append' as const,
         image: imagePlan
       }
     })
@@ -291,7 +330,7 @@ export default function TierSetForm({ rootPath, schema, templates, onPreview, on
   return (
     <div className="mat-form">
       <header className="mat-form-head">
-        <h2>New {schema.label}</h2>
+        <h2>{editRecords ? 'Edit' : 'New'} {schema.label}</h2>
         <span className="pill">{tierConfigs.length}-item set</span>
       </header>
 
@@ -304,6 +343,7 @@ export default function TierSetForm({ rootPath, schema, templates, onPreview, on
       </div>
 
       {/* Per-tier cards */}
+      <div className="tier-cards-grid">
       {tierConfigs.map((cfg: TierItemConfig, i: number) => {
         const tier = tiers[i] ?? emptyTier()
         const key = tierKey(i)
@@ -412,6 +452,7 @@ export default function TierSetForm({ rootPath, schema, templates, onPreview, on
           </div>
         )
       })}
+      </div>
 
       {errors.length > 0 && (
         <ul className="form-errors">

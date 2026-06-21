@@ -72,6 +72,15 @@ export async function getMaterial(
   return parsed.materials[key] ?? null
 }
 
+/** Return all records in a single file (used for tier-set sibling lookup). */
+export async function getMaterialsForFile(
+  rootPath: string,
+  file: string
+): Promise<Record<string, MaterialRecord>> {
+  const { parsed } = await readRecords(rootPath, file)
+  return parsed.materials ?? {}
+}
+
 /** Template skeletons from templates/materials.json (base objects for new records). */
 export async function listTemplates(rootPath: string): Promise<Record<string, MaterialRecord>> {
   const path = join(rootPath, 'templates', 'materials.json')

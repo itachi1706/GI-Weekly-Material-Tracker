@@ -2,6 +2,7 @@
   --bg: #1a1c22;
   --bg-elev: #23262e;
   --bg-input: #2b2f39;
+  --bg-secondary: #20232b;
   --border: #353a45;
   --text: #e6e8ee;
   --text-muted: #9aa0ad;
@@ -326,7 +327,7 @@ code {
 
 /* ---- materials list ---- */
 .materials {
-  max-width: 1000px;
+  width: 100%;
 }
 .mat-list-head,
 .mat-form-head,
@@ -374,6 +375,32 @@ code {
 .mat-table .num {
   text-align: right;
 }
+.th-sort {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.th-sort:hover {
+  color: var(--text);
+}
+.sort-indicator {
+  font-size: 10px;
+  color: var(--accent);
+}
+.sort-indicator.muted {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
 .mat-table tbody tr {
   cursor: pointer;
 }
@@ -393,6 +420,9 @@ code {
 }
 
 /* ---- form ---- */
+.mat-form {
+  max-width: 900px;
+}
 .mat-form-head {
   margin-bottom: 16px;
 }
@@ -839,6 +869,12 @@ textarea:focus {
 }
 
 /* ---- tier set form ---- */
+.tier-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
 .tier-shared-section {
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -857,8 +893,13 @@ textarea:focus {
 .tier-card {
   border: 1px solid var(--border);
   border-radius: 6px;
-  margin-bottom: 16px;
   overflow: hidden;
+  container-type: inline-size;
+  container-name: tier-card;
+}
+
+@container tier-card (max-width: 499px) {
+  .mat-form-grid { grid-template-columns: 1fr; }
 }
 .tier-card-header {
   display: flex;
