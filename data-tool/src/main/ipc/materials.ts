@@ -98,6 +98,37 @@ export async function listImages(rootPath: string, folder: string): Promise<stri
     .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
 }
 
+/** Recursively collect image paths (relative to the given dir) within a single directory. */
+async function collectImagesRecursive(dir: string, prefix: string): Promise<string[]> {
+  const entries = await readdir(dir, { withFileTypes: true })
+  const out: string[] = []
+  for (const e of entries) {
+    if (e.isDirectory()) {
+      const sub = await collectImagesRecursive(join(dir, e.name), `${prefix}${e.name}/`)
+      out.push(...sub)
+    } else if (/\.(png|jpe?g|webp|gif)$/i.test(e.name)) {
+      out.push(`${prefix}${e.name}`)
+    }
+  }
+  return out
+}
+
+/**
+ * List images from multiple folders recursively, returning paths relative to images/ root.
+ * E.g. ["Characters/Pyro/Amber.png", "Outfits/Thumbnail/Standard/Amber.png"]
+ */
+export async function listImagesMulti(rootPath: string, folders: string[]): Promise<string[]> {
+  const imDir = imagesDir(rootPath)
+  const results: string[] = []
+  for (const folder of folders) {
+    const dirPath = join(imDir, folder)
+    if (!existsSync(dirPath)) continue
+    const rel = await collectImagesRecursive(dirPath, '')
+    for (const f of rel) results.push(`${folder}/${f}`.replace(/\\/g, '/'))
+  }
+  return results.sort((a, b) => a.localeCompare(b))
+}
+
 function mimeFor(path: string): string {
   const ext = extname(path).toLowerCase()
   if (ext === '.jpg' || ext === '.jpeg') return 'image/jpeg'

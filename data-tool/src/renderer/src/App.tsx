@@ -4,6 +4,7 @@ import FolderPicker from './components/FolderPicker'
 import Sidebar from './components/Sidebar'
 import DatasetSummary from './components/DatasetSummary'
 import MaterialsView from './views/materials/MaterialsView'
+import OutfitsView from './views/outfits/OutfitsView'
 import type { EntityKey } from '@shared/types'
 
 export default function App() {
@@ -36,6 +37,8 @@ export default function App() {
       <main className="app-main">
         {active === 'materials' ? (
           <MaterialsView rootPath={info.rootPath} />
+        ) : active === 'outfits' ? (
+          <OutfitsView rootPath={info.rootPath} />
         ) : (
           <DatasetSummary info={info} onReload={reload} loading={loading} />
         )}

@@ -9,14 +9,22 @@ import {
   getMaterialsForFile,
   listTemplates,
   listImages,
+  listImagesMulti,
   previewImage,
   previewCommit,
   commit,
   previewBatchCommit,
   batchCommit
 } from './ipc/materials'
+import {
+  listOutfits,
+  getOutfit,
+  listMiscTemplates,
+  previewOutfitCommit,
+  commitOutfit
+} from './ipc/outfits'
 import { readSettings, writeSettings } from './settings'
-import type { DatasetInfo, ImagePlan, MaterialChange } from '@shared/types'
+import type { DatasetInfo, ImagePlan, MaterialChange, OutfitChange } from '@shared/types'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -81,6 +89,9 @@ function registerIpc(): void {
   ipcMain.handle('materials:listImages', (_e, rootPath: string, folder: string) =>
     listImages(rootPath, folder)
   )
+  ipcMain.handle('materials:listImagesMulti', (_e, rootPath: string, folders: string[]) =>
+    listImagesMulti(rootPath, folders)
+  )
   ipcMain.handle('materials:previewImage', (_e, rootPath: string, plan: ImagePlan) =>
     previewImage(rootPath, plan)
   )
@@ -99,6 +110,19 @@ function registerIpc(): void {
   )
   ipcMain.handle('materials:listFile', (_e, rootPath: string, file: string) =>
     getMaterialsForFile(rootPath, file)
+  )
+
+  // Outfits CRUD.
+  ipcMain.handle('outfits:list', (_e, rootPath: string) => listOutfits(rootPath))
+  ipcMain.handle('outfits:get', (_e, rootPath: string, file: string, key: string) =>
+    getOutfit(rootPath, file, key)
+  )
+  ipcMain.handle('outfits:miscTemplates', (_e, rootPath: string) => listMiscTemplates(rootPath))
+  ipcMain.handle('outfits:previewCommit', (_e, rootPath: string, change: OutfitChange) =>
+    previewOutfitCommit(rootPath, change)
+  )
+  ipcMain.handle('outfits:commit', (_e, rootPath: string, change: OutfitChange) =>
+    commitOutfit(rootPath, change)
   )
 }
 

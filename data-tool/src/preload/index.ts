@@ -4,6 +4,9 @@ import type {
   MaterialSummary,
   MaterialRecord,
   MaterialChange,
+  OutfitSummary,
+  OutfitRecord,
+  OutfitChange,
   CommitPreview,
   CommitResult,
   ImagePlan
@@ -27,6 +30,8 @@ const api = {
       ipcRenderer.invoke('materials:templates', rootPath),
     listImages: (rootPath: string, folder: string): Promise<string[]> =>
       ipcRenderer.invoke('materials:listImages', rootPath, folder),
+    listImagesMulti: (rootPath: string, folders: string[]): Promise<string[]> =>
+      ipcRenderer.invoke('materials:listImagesMulti', rootPath, folders),
     previewImage: (rootPath: string, plan: ImagePlan): Promise<string | null> =>
       ipcRenderer.invoke('materials:previewImage', rootPath, plan),
     selectImageFile: (): Promise<string | null> =>
@@ -41,6 +46,19 @@ const api = {
       ipcRenderer.invoke('materials:batchCommit', rootPath, changes),
     listFile: (rootPath: string, file: string): Promise<Record<string, MaterialRecord>> =>
       ipcRenderer.invoke('materials:listFile', rootPath, file)
+  },
+
+  outfits: {
+    list: (rootPath: string): Promise<OutfitSummary[]> =>
+      ipcRenderer.invoke('outfits:list', rootPath),
+    get: (rootPath: string, file: string, key: string): Promise<OutfitRecord | null> =>
+      ipcRenderer.invoke('outfits:get', rootPath, file, key),
+    miscTemplates: (rootPath: string): Promise<Record<string, OutfitRecord>> =>
+      ipcRenderer.invoke('outfits:miscTemplates', rootPath),
+    previewCommit: (rootPath: string, change: OutfitChange): Promise<CommitPreview> =>
+      ipcRenderer.invoke('outfits:previewCommit', rootPath, change),
+    commit: (rootPath: string, change: OutfitChange): Promise<CommitResult> =>
+      ipcRenderer.invoke('outfits:commit', rootPath, change)
   }
 }
 

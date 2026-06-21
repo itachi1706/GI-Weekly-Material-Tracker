@@ -10,6 +10,13 @@ interface Props {
   defaultBasename?: string
   state: ImageState
   onChange: (state: ImageState) => void
+  /**
+   * When set, the Browse popup lists images from these folders recursively, returning paths
+   * relative to the images/ root (e.g. "Characters/Pyro/Amber.png"). Use for multi-folder
+   * browsing (e.g. outfit thumbnails span Characters/ and Outfits/Thumbnail/).
+   * If omitted, Browse lists `imageFolder` non-recursively (default behavior).
+   */
+  browseSourceFolders?: string[]
 }
 
 function previewPlan(state: ImageState): ImagePlan | null {
@@ -26,7 +33,7 @@ function previewPlan(state: ImageState): ImagePlan | null {
 }
 
 
-export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange }: Props) {
+export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders }: Props) {
   const [existing, setExisting] = useState<string[]>([])
   const [thumb, setThumb] = useState<string | null>(null)
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
@@ -35,8 +42,12 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   const [popupThumbs, setPopupThumbs] = useState<Record<string, string>>({})
 
   useEffect(() => {
-    void window.api.materials.listImages(rootPath, imageFolder).then(setExisting)
-  }, [rootPath, imageFolder])
+    if (browseSourceFolders) {
+      void window.api.materials.listImagesMulti(rootPath, browseSourceFolders).then(setExisting)
+    } else {
+      void window.api.materials.listImages(rootPath, imageFolder).then(setExisting)
+    }
+  }, [rootPath, imageFolder, browseSourceFolders?.join(',')])
 
   useEffect(() => {
     const plan = previewPlan(state)
@@ -48,18 +59,21 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     return () => { cancelled = true }
   }, [rootPath, state])
 
+  // When browseSourceFolders is set, `f` is already root-relative; otherwise prepend imageFolder.
+  const browseRelative = (f: string) => browseSourceFolders ? f : `${imageFolder}/${f}`
+
   const openBrowse = () => {
     setPopupOpen(true)
     existing.forEach((f) => {
       if (popupThumbs[f]) return
       void window.api.materials
-        .previewImage(rootPath, { source: 'existing', relativePath: `${imageFolder}/${f}` })
+        .previewImage(rootPath, { source: 'existing', relativePath: browseRelative(f) })
         .then((d) => { if (d) setPopupThumbs((prev) => ({ ...prev, [f]: d })) })
     })
   }
 
   const selectExisting = (f: string) => {
-    onChange({ mode: 'existing', relative: `${imageFolder}/${f}` })
+    onChange({ mode: 'existing', relative: browseRelative(f) })
     setPopupOpen(false)
   }
 
@@ -193,8 +207,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
             ) : (
               <div className="image-picker-grid">
                 {existing.map((f) => {
-                  const rel = `${imageFolder}/${f}`
-                  const isSelected = state.mode === 'existing' && state.relative === rel
+                  const isSelected = state.mode === 'existing' && state.relative === browseRelative(f)
                   return (
                     <button
                       key={f}

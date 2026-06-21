@@ -113,3 +113,58 @@ export interface CommitResult {
   ok: boolean
   error?: string
 }
+
+// ---- Outfits ----
+
+export interface OutfitRecord {
+  name?: string | null
+  character?: string | null
+  characters?: string[]
+  rarity?: number
+  type?: string
+  image?: string | null
+  thumbnail?: string | null
+  wishimage?: string | null
+  '3dmodel'?: string | null
+  description?: string | null
+  obtained?: string | null
+  lore?: string | null
+  shop?: boolean
+  shop_cost?: number
+  shop_cost_discounted?: number
+  shop_cost_discounted_till?: string | null
+  event_give_free?: boolean
+  event_give_free_till?: string | null
+  released_version?: number
+  released_version_name?: string | null
+  released?: boolean
+  wiki?: string | null
+  subCollection?: Record<string, never>
+  [key: string]: unknown
+}
+
+export interface OutfitSummary {
+  key: string
+  file: string
+  name: string
+  character: string
+  type: string
+  image: string
+  rarity: number
+  released: boolean
+}
+
+export interface OutfitChange {
+  op: 'create' | 'update' | 'delete'
+  file: string
+  key: string
+  originalKey?: string
+  record?: OutfitRecord
+  ordering: InsertModeName
+  /** Primary portrait (image field) */
+  image?: ImagePlan
+  /** Character thumbnail (thumbnail field) */
+  thumbnailImage?: ImagePlan
+  /** Wish card (wishimage field) */
+  wishimageImage?: ImagePlan
+}

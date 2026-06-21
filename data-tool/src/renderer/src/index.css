@@ -12,6 +12,8 @@
   --danger-border: #6b3640;
   --danger-text: #ff9aa6;
   --radius: 10px;
+  /* Tell the browser to render native controls (date picker, scrollbars, etc.) in dark mode */
+  color-scheme: dark;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -455,6 +457,7 @@ code {
 input[type='text'],
 input[type='search'],
 input[type='number'],
+input[type='date'],
 select,
 textarea {
   background: var(--bg-input);

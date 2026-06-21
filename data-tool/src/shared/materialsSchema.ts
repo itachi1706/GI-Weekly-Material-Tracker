@@ -366,7 +366,12 @@ export const CREATE_OPTIONS: CreateOption[] = [
 
 /** Derive the record key from a display name (spaces → underscores). */
 export function deriveKey(name: string): string {
-  return name.trim().replace(/\s+/g, '_')
+  return name.trim()
+    .replace(/[^A-Za-z0-9_\- ]/g, '')  // strip chars outside A-Za-z0-9 _ -
+    .trim()
+    .replace(/\s+/g, '_')               // spaces → underscores
+    .replace(/_+/g, '_')                // collapse consecutive underscores
+    .replace(/^[_-]+|[_-]+$/g, '')      // trim leading/trailing _ or -
 }
 
 /** Default image filename for a new record: `Item_<key>.<ext>`. */
