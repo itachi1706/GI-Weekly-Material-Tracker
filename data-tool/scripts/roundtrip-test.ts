@@ -10,7 +10,9 @@ import { roundTrips } from '../src/shared/serialize.ts'
 const dataDir = process.argv[2] ?? join(import.meta.dirname, '..', 'dataset', 'data')
 
 const files = readdirSync(dataDir).filter(
-  (f) => (f.startsWith('Materials-') || f.startsWith('Outfits-')) && f.endsWith('.json')
+  (f) =>
+    (f.startsWith('Materials-') || f.startsWith('Outfits-') || f.startsWith('Weapons-')) &&
+    f.endsWith('.json')
 )
 let failures = 0
 

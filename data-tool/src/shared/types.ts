@@ -168,3 +168,63 @@ export interface OutfitChange {
   /** Wish card (wishimage field) */
   wishimageImage?: ImagePlan
 }
+
+// ---- Weapons ----
+
+export interface WeaponAscensionPhase {
+  material3: string
+  level: number
+  material2: string
+  material3qty: number
+  material1: string
+  material2qty: number
+  material1qty: number
+  mora: number
+  material3type: string
+  material2type: string
+  material1type: string
+}
+
+export interface WeaponRecord {
+  secondary_stat_type?: string | null
+  description?: string | null
+  name?: string | null
+  series?: string | null
+  ascension?: Record<string, WeaponAscensionPhase>
+  materials?: { ascension?: Record<string, string> }
+  image?: string | null
+  secondary_stat?: string | null
+  rarity?: number
+  type?: string | null
+  max_secondary_stat?: string | null
+  max_base_atk?: number | null
+  base_atk?: number | null
+  obtained?: string | null
+  effectName?: string | null
+  effect?: string | null
+  released?: boolean
+  wiki?: string | null
+  hoyowiki?: number | null
+  subCollection?: Record<string, never>
+  [key: string]: unknown
+}
+
+export interface WeaponSummary {
+  key: string
+  file: string
+  name: string
+  type: string
+  rarity: number
+  image: string
+  released: boolean
+}
+
+export interface WeaponChange {
+  op: 'create' | 'update' | 'delete'
+  file: string
+  key: string
+  originalKey?: string
+  record?: WeaponRecord
+  ordering: InsertModeName
+  image?: ImagePlan
+}

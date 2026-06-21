@@ -959,3 +959,54 @@ textarea:focus {
   margin-top: 2px;
   font-family: var(--font-mono, monospace);
 }
+
+/* ---- Weapons: ascension material slots ---- */
+.weapon-mat-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+.weapon-mat-slot-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.weapon-mat-slot-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  min-width: 56px;
+}
+.weapon-mat-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.weapon-mat-slot-tier {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.weapon-mat-slot input {
+  width: 180px;
+}
+
+/* ---- Weapons: ascension phases table ---- */
+.weapon-asc-table .asc-input {
+  width: 72px;
+  text-align: right;
+}
+.weapon-asc-table .asc-mat-cell {
+  font-size: 11px;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.weapon-asc-table .asc-mat-empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
