@@ -14,6 +14,7 @@
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
     "test:roundtrip": "node scripts/roundtrip-test.ts",
     "test:materials": "node scripts/materials-commit-test.ts",
+    "normalize:format": "node scripts/normalize-format.ts",
     "build:mac": "electron-vite build && electron-builder --mac",
     "build:win": "electron-vite build && electron-builder --win"
   },

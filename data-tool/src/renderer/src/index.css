@@ -514,72 +514,68 @@ textarea:focus {
 
 /* ---- image field ---- */
 .image-field {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  display: inline-block;
 }
-.image-field-preview {
+/* Resting view: clickable thumbnail tile + filename caption */
+.image-field-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 96px;
+}
+.image-field-tile {
+  position: relative;
   width: 96px;
   height: 96px;
-  flex: none;
+  padding: 0;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg-input);
   display: grid;
   place-items: center;
   overflow: hidden;
+  cursor: pointer;
 }
-.image-field-preview img {
+.image-field-tile:hover {
+  border-color: var(--accent);
+}
+.image-field-tile img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
 }
-.image-field-empty {
-  font-size: 11px;
+.image-field-tile-add {
+  font-size: 12px;
+  font-weight: 500;
   color: var(--text-muted);
 }
-.image-field-controls {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.image-field-tile:hover .image-field-tile-add {
+  color: var(--text);
 }
-.image-source-label {
-  font-size: 12px;
+.image-field-tile-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px 0;
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.image-field-tile:hover .image-field-tile-hint {
+  opacity: 1;
+}
+.image-field-tile-caption {
+  font-size: 11px;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.image-source-row {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-.image-source-btn {
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-input);
-  color: var(--text-muted);
-  cursor: pointer;
-  white-space: nowrap;
-}
-.image-source-btn:hover {
-  color: var(--text);
-  border-color: var(--accent);
-}
-.image-source-btn-active {
-  background: rgba(108, 140, 255, 0.12);
-  border-color: var(--accent);
-  color: var(--text);
-}
-.image-field-section {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+/* Shared row/label used inside the picker modal */
 .image-field-section-row {
   display: flex;
   gap: 8px;
@@ -593,6 +589,65 @@ textarea:focus {
   font-size: 12px;
   color: var(--text-muted);
   white-space: nowrap;
+}
+/* Picker modal: import controls */
+.image-picker-import {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.image-picker-import-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.image-picker-import-row input {
+  flex: 1;
+  min-width: 0;
+}
+.image-picker-staged {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--bg-input);
+}
+.image-picker-staged-preview {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--bg-elev);
+}
+.image-picker-staged-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.image-picker-staged-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.image-picker-staged-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.image-picker-divider {
+  padding: 10px 16px 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 /* ---- modal + preview ---- */

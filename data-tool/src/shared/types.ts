@@ -228,3 +228,105 @@ export interface WeaponChange {
   ordering: InsertModeName
   image?: ImagePlan
 }
+
+// ---- Characters ----
+
+/** A character-level ascension phase ("1".."6"). material*type keys point into materials.ascension. */
+export interface CharacterAscensionPhase {
+  level: number
+  mora: number
+  material1: string | null
+  material1qty: number
+  material2: string | null
+  material2qty: number
+  material3: string | null
+  material3qty: number
+  material4: string | null
+  material4qty: number
+  material1type: string | null
+  material2type: string | null
+  material3type: string | null
+  material4type: string | null
+  [key: string]: unknown
+}
+
+/** A talent level-up entry ("2".."10"). material*type keys point into materials.talents. */
+export interface CharacterTalentLevel {
+  mora: number
+  material1: string | null
+  material1qty: number
+  material2: string | null
+  material2qty: number
+  material3: string | null
+  material3qty: number
+  material4: string | null
+  material4qty: number
+  material1type: string | null
+  material2type: string | null
+  material3type: string | null
+  material4type: string | null
+  [key: string]: unknown
+}
+
+/**
+ * `talents.passives`, `talents.attack`, and `constellations` are passed through verbatim this
+ * milestone (not richly edited), so they're typed loosely as pass-through objects.
+ */
+export interface CharacterRecord {
+  image?: string | null
+  gender?: string | null
+  birthday?: string | null
+  caption?: string | null
+  titles?: string[]
+  name?: string | null
+  fullName?: string | null
+  description?: string | null
+  nation?: string | null
+  weapon?: string | null
+  rarity?: number
+  affiliation?: string | null
+  constellation?: string | null
+  outfits?: string[]
+  talents?: {
+    ascension?: Record<string, CharacterTalentLevel>
+    passives?: Record<string, unknown>
+    attack?: Record<string, unknown>
+    [key: string]: unknown
+  }
+  constellations?: Record<string, unknown>
+  ascension?: Record<string, CharacterAscensionPhase>
+  materials?: {
+    ascension?: Record<string, string>
+    talents?: Record<string, string>
+  }
+  introduction?: string | null
+  paimonmoepath?: string | null
+  genshinggpath?: string | null
+  element?: string | null
+  released?: boolean
+  wiki?: string | null
+  hoyowiki?: number | null
+  subCollection?: Record<string, never>
+  [key: string]: unknown
+}
+
+export interface CharacterSummary {
+  key: string
+  file: string
+  name: string
+  element: string
+  weapon: string
+  rarity: number
+  image: string
+  released: boolean
+}
+
+export interface CharacterChange {
+  op: 'create' | 'update' | 'delete'
+  file: string
+  key: string
+  originalKey?: string
+  record?: CharacterRecord
+  ordering: InsertModeName
+  image?: ImagePlan
+}

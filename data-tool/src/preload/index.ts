@@ -10,6 +10,9 @@ import type {
   WeaponSummary,
   WeaponRecord,
   WeaponChange,
+  CharacterSummary,
+  CharacterRecord,
+  CharacterChange,
   CommitPreview,
   CommitResult,
   ImagePlan
@@ -75,6 +78,19 @@ const api = {
       ipcRenderer.invoke('weapons:previewCommit', rootPath, change),
     commit: (rootPath: string, change: WeaponChange): Promise<CommitResult> =>
       ipcRenderer.invoke('weapons:commit', rootPath, change)
+  },
+
+  characters: {
+    list: (rootPath: string): Promise<CharacterSummary[]> =>
+      ipcRenderer.invoke('characters:list', rootPath),
+    get: (rootPath: string, file: string, key: string): Promise<CharacterRecord | null> =>
+      ipcRenderer.invoke('characters:get', rootPath, file, key),
+    templates: (rootPath: string): Promise<Record<string, CharacterRecord>> =>
+      ipcRenderer.invoke('characters:templates', rootPath),
+    previewCommit: (rootPath: string, change: CharacterChange): Promise<CommitPreview> =>
+      ipcRenderer.invoke('characters:previewCommit', rootPath, change),
+    commit: (rootPath: string, change: CharacterChange): Promise<CommitResult> =>
+      ipcRenderer.invoke('characters:commit', rootPath, change)
   }
 }
 

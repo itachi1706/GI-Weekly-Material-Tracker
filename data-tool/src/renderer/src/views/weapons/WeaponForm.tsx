@@ -3,6 +3,7 @@ import type { WeaponRecord, WeaponChange, WeaponAscensionPhase, ImagePlan, Mater
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
+import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -30,34 +31,13 @@ const PREFIX_TO_FILE_KEYWORD: Record<string, string> = {
   elite:   'Elite',
   common:  'Common',
 }
+const PREFIX_TIER_SIZE: Record<string, number> = { forgery: 4, elite: 3, common: 3 }
 
 // Expected rarity for a given slot: forgery1→2, elite1→2, common1→1, etc.
 function slotExpectedRarity(slotKey: string): number {
   const m = slotKey.match(/^(forgery|elite|common)(\d+)$/)
   if (!m) return -1
   return m[1] === 'common' ? Number(m[2]) : Number(m[2]) + 1
-}
-
-// Find all tier-set members given any one member key.
-// Materials are stored in consecutive groups of 4 (forgery) or 3 (elite/common) by ascending rarity.
-function findTierSet(
-  summaries: MaterialSummary[],
-  selectedKey: string,
-  prefix: string
-): Record<string, string> | null {
-  const fileKeyword = PREFIX_TO_FILE_KEYWORD[prefix]
-  if (!fileKeyword) return null
-  const tierSize = prefix === 'forgery' ? 4 : 3
-  const mats = summaries.filter((m) => m.file.includes(fileKeyword))
-  for (let i = 0; i + tierSize <= mats.length; i += tierSize) {
-    const set = mats.slice(i, i + tierSize)
-    if (set.some((m) => m.key === selectedKey)) {
-      const result: Record<string, string> = {}
-      set.forEach((m, j) => { result[`${prefix}${j + 1}`] = m.key })
-      return result
-    }
-  }
-  return null
 }
 
 // ── Image helpers ─────────────────────────────────────────────────────────────
@@ -165,99 +145,6 @@ function draftFromRecord(rec: WeaponRecord, defaultFile?: string, existingKey?: 
   }
 }
 
-// ── Sub-components ────────────────────────────────────────────────────────────
-
-function MatImage({ rootPath, imagePath, className }: {
-  rootPath: string; imagePath: string; className: string
-}) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!imagePath) { setSrc(null); return }
-    let cancelled = false
-    void window.api.materials
-      .previewImage(rootPath, { source: 'existing', relativePath: imagePath })
-      .then((d) => { if (!cancelled) setSrc(d) })
-    return () => { cancelled = true }
-  }, [rootPath, imagePath])
-  return src
-    ? <img className={className} src={src} alt="" />
-    : <div className={`${className} mat-img-empty`} />
-}
-
-// ── Material picker popup ─────────────────────────────────────────────────────
-
-interface PickerProps {
-  rootPath: string
-  slotKey: string
-  prefix: string
-  selectedKey: string
-  materials: MaterialSummary[]
-  onSelect: (key: string) => void
-  onClose: () => void
-}
-
-function MaterialPickerPopup({
-  rootPath, slotKey, prefix, selectedKey, materials, onSelect, onClose
-}: PickerProps) {
-  const [search, setSearch] = useState('')
-
-  const label = prefix.charAt(0).toUpperCase() + prefix.slice(1)
-  const fileKeyword = PREFIX_TO_FILE_KEYWORD[prefix] ?? ''
-  const expectedRarity = slotExpectedRarity(slotKey)
-  const roman = ['I', 'II', 'III', 'IV'][Number(slotKey.replace(/\D/g, '')) - 1] ?? ''
-
-  const filtered = useMemo(() => {
-    const q = search.toLowerCase()
-    return materials
-      .filter((m) => m.file.includes(fileKeyword) && (expectedRarity < 0 || m.rarity === expectedRarity))
-      .filter((m) => !q || m.name.toLowerCase().includes(q) || m.key.toLowerCase().includes(q))
-      .sort((a, b) => a.name.localeCompare(b.name))
-  }, [materials, fileKeyword, expectedRarity, search])
-
-  return (
-    <div className="image-picker-backdrop" onClick={onClose}>
-      <div className="mat-picker-popup" onClick={(e) => e.stopPropagation()}>
-        <div className="image-picker-header">
-          <span>{label} {roman} — {'★'.repeat(Math.max(0, expectedRarity))}</span>
-          <button type="button" className="btn-link" onClick={onClose}>✕ Close</button>
-        </div>
-        <div className="mat-picker-search-wrap">
-          <input
-            type="search"
-            placeholder="Search name or key…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            autoFocus
-          />
-        </div>
-        <div className="mat-picker-list">
-          {filtered.length === 0 ? (
-            <p className="muted" style={{ padding: '12px 16px' }}>No materials found.</p>
-          ) : (
-            filtered.map((m) => (
-              <button
-                key={m.key}
-                type="button"
-                className={`mat-picker-item${m.key === selectedKey ? ' mat-picker-selected' : ''}`}
-                onClick={() => onSelect(m.key)}
-              >
-                <MatImage rootPath={rootPath} imagePath={m.image} className="mat-picker-thumb" />
-                <div className="mat-picker-info">
-                  <span className="mat-picker-name">{m.name}</span>
-                  <span className="mat-picker-meta muted">
-                    <span className="mat-picker-rarity">{'★'.repeat(m.rarity)}</span>
-                    <span className="mat-picker-key">{m.key}</span>
-                  </span>
-                </div>
-              </button>
-            ))
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ── Props ─────────────────────────────────────────────────────────────────────
 
 interface Props {
@@ -327,9 +214,10 @@ export default function WeaponForm({
 
   const handlePickerSelect = (key: string) => {
     if (!pickerState) return
+    const { prefix } = pickerState
     const newSlots = { ...draft.matSlots, [pickerState.slotKey]: key }
     // Autofill other tiers in the same set
-    const tierFill = findTierSet(matSummaries, key, pickerState.prefix)
+    const tierFill = findTierSet(matSummaries, key, PREFIX_TO_FILE_KEYWORD[prefix] ?? '', PREFIX_TIER_SIZE[prefix] ?? 0, prefix)
     if (tierFill) Object.assign(newSlots, tierFill)
     setDraft((p) => ({ ...p, matSlots: newSlots }))
     setPickerState(null)
@@ -600,7 +488,6 @@ export default function WeaponForm({
                 <div className="wmr-slots" data-count={count}>
                   {Array.from({ length: count }, (_, i) => {
                     const slotKey = `${prefix}${i + 1}`
-                    const roman = ['I', 'II', 'III', 'IV'][i]
                     const selectedKey = draft.matSlots[slotKey] ?? ''
                     const displayName = selectedKey
                       ? (matSummaryMap.get(selectedKey)?.name ?? selectedKey)
@@ -608,7 +495,7 @@ export default function WeaponForm({
                     const imgPath = selectedKey ? (matSummaryMap.get(selectedKey)?.image ?? '') : ''
                     return (
                       <div key={slotKey} className="wmr-slot">
-                        <span className="wmr-tier">{roman}</span>
+                        <span className="wmr-tier">{roman(i + 1)}</span>
                         <div className="mat-slot-picker">
                           {imgPath && (
                             <MatImage rootPath={rootPath} imagePath={imgPath} className="mat-slot-icon" />
@@ -714,8 +601,9 @@ export default function WeaponForm({
       {pickerState && (
         <MaterialPickerPopup
           rootPath={rootPath}
-          slotKey={pickerState.slotKey}
-          prefix={pickerState.prefix}
+          title={`${pickerState.prefix.charAt(0).toUpperCase()}${pickerState.prefix.slice(1)} ${roman(Number(pickerState.slotKey.replace(/\D/g, '')))}`}
+          fileKeyword={PREFIX_TO_FILE_KEYWORD[pickerState.prefix] ?? ''}
+          expectedRarity={slotExpectedRarity(pickerState.slotKey)}
           selectedKey={draft.matSlots[pickerState.slotKey] ?? ''}
           materials={matSummaries}
           onSelect={handlePickerSelect}

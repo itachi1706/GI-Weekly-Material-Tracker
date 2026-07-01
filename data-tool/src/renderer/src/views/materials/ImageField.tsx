@@ -32,13 +32,11 @@ function previewPlan(state: ImageState): ImagePlan | null {
   }
 }
 
-
 export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders }: Props) {
   const [existing, setExisting] = useState<string[]>([])
   const [thumb, setThumb] = useState<string | null>(null)
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
-  const [showUrl, setShowUrl] = useState(state.mode === 'url')
-  const [popupOpen, setPopupOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [popupThumbs, setPopupThumbs] = useState<Record<string, string>>({})
 
   useEffect(() => {
@@ -62,8 +60,8 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   // When browseSourceFolders is set, `f` is already root-relative; otherwise prepend imageFolder.
   const browseRelative = (f: string) => browseSourceFolders ? f : `${imageFolder}/${f}`
 
-  const openBrowse = () => {
-    setPopupOpen(true)
+  const openModal = () => {
+    setOpen(true)
     existing.forEach((f) => {
       if (popupThumbs[f]) return
       void window.api.materials
@@ -74,13 +72,13 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
 
   const selectExisting = (f: string) => {
     onChange({ mode: 'existing', relative: browseRelative(f) })
-    setPopupOpen(false)
+    setOpen(false)
   }
 
   const importFile = async () => {
     const path = await window.api.materials.selectImageFile()
     if (!path) return
-    // Leave imageName unset — MaterialsView falls back to Item_<key>.<ext>.
+    // Leave imageName unset — the commit layer falls back to the default basename.
     // User can override via the "Save as" field.
     onChange({ mode: 'localFile', sourcePath: path })
   }
@@ -89,6 +87,11 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     const url = urlInput.trim()
     if (!url) return
     onChange({ mode: 'url', url, imageName: sanitizeImageBasename(url) })
+  }
+
+  const clearSelection = () => {
+    onChange({ mode: 'none' })
+    setUrlInput('')
   }
 
   const currentLabel =
@@ -114,96 +117,77 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     onChange({ ...state, imageName: clean })
   }
 
+  const staged = state.mode === 'localFile' || state.mode === 'url'
+
   return (
     <div className="image-field">
-      {/* Thumbnail */}
-      <div className="image-field-preview">
-        {thumb
-          ? <img src={thumb} alt="preview" />
-          : <div className="image-field-empty">no preview</div>
-        }
-      </div>
-
-      <div className="image-field-controls">
-        {/* Current selection label */}
+      {/* Resting view: clickable thumbnail + filename caption */}
+      <div className="image-field-trigger">
+        <button type="button" className="image-field-tile" onClick={openModal} title="Click to change image">
+          {thumb
+            ? <img src={thumb} alt="preview" />
+            : <span className="image-field-tile-add">+ Add image</span>
+          }
+          {thumb && <span className="image-field-tile-hint">Change</span>}
+        </button>
         {currentLabel && (
-          <div className="image-source-label" title={currentLabel}>
-            {currentLabel}
-          </div>
-        )}
-
-        {/* Three source buttons inline */}
-        <div className="image-source-row">
-          <button
-            type="button"
-            className={`image-source-btn${state.mode === 'existing' ? ' image-source-btn-active' : ''}`}
-            onClick={openBrowse}
-          >
-            Browse existing
-          </button>
-          <button
-            type="button"
-            className={`image-source-btn${state.mode === 'localFile' ? ' image-source-btn-active' : ''}`}
-            onClick={importFile}
-          >
-            Import file…
-          </button>
-          <button
-            type="button"
-            className={`image-source-btn${state.mode === 'url' || showUrl ? ' image-source-btn-active' : ''}`}
-            onClick={() => setShowUrl((v) => !v)}
-          >
-            From URL
-          </button>
-        </div>
-
-        {/* URL input — shown when toggled or active */}
-        {showUrl && (
-          <div className="image-field-section">
-            <div className="image-field-section-row">
-              <input
-                type="text"
-                placeholder="Paste image URL…"
-                value={urlInput}
-                onChange={(e) => setUrlInput(e.target.value)}
-                onKeyDown={(e) => { if (e.key === 'Enter') applyUrl() }}
-              />
-              <button type="button" className="btn-secondary" disabled={!urlInput.trim()} onClick={applyUrl}>
-                Use
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Save-as name override — for localFile and url */}
-        {(state.mode === 'localFile' || state.mode === 'url') && (
-          <div className="image-field-section">
-            <div className="image-field-section-row">
-              <span className="image-field-label">Save as</span>
-              <input
-                type="text"
-                placeholder={defaultBasename ?? 'filename'}
-                value={nameValue}
-                onChange={(e) => onNameChange(e.target.value)}
-              />
-              <span className="image-name-ext">.{nameExt}</span>
-            </div>
-          </div>
+          <div className="image-field-tile-caption" title={currentLabel}>{currentLabel}</div>
         )}
       </div>
 
-      {/* Browse popup */}
-      {popupOpen && (
-        <div className="image-picker-backdrop" onClick={() => setPopupOpen(false)}>
+      {/* Modal: import controls + existing grid */}
+      {open && (
+        <div className="image-picker-backdrop" onClick={() => setOpen(false)}>
           <div className="image-picker-popup" onClick={(e) => e.stopPropagation()}>
             <div className="image-picker-header">
-              <span>Pick existing image</span>
-              <button type="button" className="btn-link" onClick={() => setPopupOpen(false)}>
-                ✕ Close
-              </button>
+              <span>Select image</span>
+              <button type="button" className="btn-link" onClick={() => setOpen(false)}>✕ Close</button>
             </div>
+
+            {/* Import from file / URL */}
+            <div className="image-picker-import">
+              <div className="image-picker-import-row">
+                <button type="button" className="btn-secondary" onClick={importFile}>Import file…</button>
+                <input
+                  type="text"
+                  placeholder="…or paste an image URL"
+                  value={urlInput}
+                  onChange={(e) => setUrlInput(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === 'Enter') applyUrl() }}
+                />
+                <button type="button" className="btn-secondary" disabled={!urlInput.trim()} onClick={applyUrl}>Use</button>
+              </div>
+
+              {/* Save-as name override — for a staged localFile/url import */}
+              {staged && (
+                <div className="image-picker-staged">
+                  <div className="image-picker-staged-preview">
+                    {thumb ? <img src={thumb} alt="staged" /> : <span className="image-field-tile-add">…</span>}
+                  </div>
+                  <div className="image-picker-staged-fields">
+                    <div className="image-field-section-row">
+                      <span className="image-field-label">Save as</span>
+                      <input
+                        type="text"
+                        placeholder={defaultBasename ?? 'filename'}
+                        value={nameValue}
+                        onChange={(e) => onNameChange(e.target.value)}
+                      />
+                      <span className="image-name-ext">.{nameExt}</span>
+                    </div>
+                    <div className="image-picker-staged-actions">
+                      <button type="button" className="btn-primary" onClick={() => setOpen(false)}>Done</button>
+                      <button type="button" className="btn-link" onClick={clearSelection}>Clear</button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Existing grid */}
+            <div className="image-picker-divider">Or choose an existing image</div>
             {existing.length === 0 ? (
-              <p className="muted" style={{ padding: '16px' }}>No images found in {imageFolder}.</p>
+              <p className="muted" style={{ padding: '0 16px 16px' }}>No images found in {imageFolder}.</p>
             ) : (
               <div className="image-picker-grid">
                 {existing.map((f) => {

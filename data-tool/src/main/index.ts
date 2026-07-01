@@ -30,8 +30,22 @@ import {
   previewWeaponCommit,
   commitWeapon
 } from './ipc/weapons'
+import {
+  listCharacters,
+  getCharacter,
+  listCharacterTemplates,
+  previewCharacterCommit,
+  commitCharacter
+} from './ipc/characters'
 import { readSettings, writeSettings } from './settings'
-import type { DatasetInfo, ImagePlan, MaterialChange, OutfitChange, WeaponChange } from '@shared/types'
+import type {
+  DatasetInfo,
+  ImagePlan,
+  MaterialChange,
+  OutfitChange,
+  WeaponChange,
+  CharacterChange
+} from '@shared/types'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -143,6 +157,21 @@ function registerIpc(): void {
   )
   ipcMain.handle('weapons:commit', (_e, rootPath: string, change: WeaponChange) =>
     commitWeapon(rootPath, change)
+  )
+
+  // Characters CRUD.
+  ipcMain.handle('characters:list', (_e, rootPath: string) => listCharacters(rootPath))
+  ipcMain.handle('characters:get', (_e, rootPath: string, file: string, key: string) =>
+    getCharacter(rootPath, file, key)
+  )
+  ipcMain.handle('characters:templates', (_e, rootPath: string) =>
+    listCharacterTemplates(rootPath)
+  )
+  ipcMain.handle('characters:previewCommit', (_e, rootPath: string, change: CharacterChange) =>
+    previewCharacterCommit(rootPath, change)
+  )
+  ipcMain.handle('characters:commit', (_e, rootPath: string, change: CharacterChange) =>
+    commitCharacter(rootPath, change)
   )
 }
 

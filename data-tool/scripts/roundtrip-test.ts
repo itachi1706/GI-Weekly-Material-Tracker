@@ -11,7 +11,10 @@ const dataDir = process.argv[2] ?? join(import.meta.dirname, '..', 'dataset', 'd
 
 const files = readdirSync(dataDir).filter(
   (f) =>
-    (f.startsWith('Materials-') || f.startsWith('Outfits-') || f.startsWith('Weapons-')) &&
+    (f.startsWith('Materials-') ||
+      f.startsWith('Outfits-') ||
+      f.startsWith('Weapons-') ||
+      f.startsWith('Characters-')) &&
     f.endsWith('.json')
 )
 let failures = 0

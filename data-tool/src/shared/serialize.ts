@@ -6,10 +6,14 @@
  *   - 2-space indent, objects expanded
  *   - Empty arrays/objects (`[]`, `{}`) already inline from JSON.stringify
  *   - Populated arrays whose elements are ALL primitives (strings, numbers, null, bool)
- *     are kept INLINE on one line when the resulting line is ≤ 200 chars,
- *     EXCEPT `characters` arrays with more than one entry (Traveler's 5 forms are kept expanded):
+ *     are kept INLINE on one line when the resulting line is ≤ 200 chars:
  *       numbers  →  [1,4,7]         (no spaces)
  *       strings  →  ["a", "b"]      (space after comma)
+ *     EXCEPT these fields, which are kept EXPANDED to match the committed files:
+ *       - `characters` arrays with more than one entry (Traveler's 5 forms)
+ *       - `titles` / `outfits` (character records) — always expanded, even single-element.
+ *         Note: the dataset historically had a few stragglers with these inline; run
+ *         `npm run normalize:format` once against a dataset to bring them to canonical form.
  *   - Arrays containing objects, nested arrays, or too long to fit one line stay expanded
  *   - `released_version` integer values (e.g. `1` parsed from `1.0`) are re-written as `1.0`
  *
@@ -74,10 +78,15 @@ function collapsePrimitiveArrays(json: string): string {
       const closing = lines[j].trim() === '],' ? ',' : ''
       const collapsed = `${trimmed.slice(0, -1)}[${items.join(sep)}]${closing}`
 
-      // The `characters` field for Traveler outfits has 5 entries and is kept expanded in the
-      // committed files. Single-element characters arrays stay collapsed as normal.
+      // Some fields are kept expanded in the committed files even when they'd fit on one line:
+      //   - `characters` (Traveler outfits) with more than one entry; single-element stays collapsed
+      //   - `titles` / `outfits` (character records) are ALWAYS expanded, even single-element
       const fieldMatch = trimmed.match(/"([^"]+)":\s*\[$/)
-      const forceExpand = fieldMatch?.[1] === 'characters' && items.length > 1
+      const field = fieldMatch?.[1]
+      const forceExpand =
+        (field === 'characters' && items.length > 1) ||
+        field === 'titles' ||
+        field === 'outfits'
 
       if (!forceExpand && collapsed.length <= 200) {
         out.push(collapsed)
