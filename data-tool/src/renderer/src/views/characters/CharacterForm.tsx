@@ -608,8 +608,7 @@ export default function CharacterForm({
             value={draft.outfits}
             onChange={(v) => set('outfits', v)}
             options={outfitOptions}
-            addLabel="+ Add existing outfit…"
-            customPlaceholder="…or type a custom key"
+            placeholder="Type to search outfits, or enter a custom key…"
           />
         </div>
 

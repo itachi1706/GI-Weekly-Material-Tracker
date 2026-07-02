@@ -898,6 +898,110 @@ textarea:focus {
   white-space: nowrap;
 }
 
+/* ---- entity-link combobox (select2-style character/outfit picker) ---- */
+.entity-link {
+  position: relative;
+}
+.entity-link-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-input);
+  min-height: 20px;
+  cursor: text;
+}
+.entity-link-tags:focus-within {
+  border-color: var(--accent);
+}
+.entity-link-input {
+  flex: 1;
+  min-width: 160px;
+  border: none;
+  background: none;
+  padding: 4px 2px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+.entity-link-input:focus {
+  outline: none;
+}
+.entity-link-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 4px 0;
+}
+.entity-link-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+}
+.entity-link-option:hover,
+.entity-link-option-active {
+  background: var(--bg-input);
+}
+.entity-link-option-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.entity-link-option-thumb.mat-img-empty {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  background: var(--bg-secondary);
+}
+.entity-link-option-thumb-custom {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.entity-link-option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.entity-link-option-name {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.entity-link-option-sub {
+  font-size: 11px;
+}
+.entity-link-option-custom .entity-link-option-name {
+  font-style: italic;
+}
+
 /* ---- compact image row (Outfit portrait / thumbnail / wish image) ---- */
 .image-field-row {
   display: flex;

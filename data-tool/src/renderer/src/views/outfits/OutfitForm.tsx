@@ -327,8 +327,7 @@ export default function OutfitForm({
             value={draft.characters}
             onChange={(v) => set('characters', v)}
             options={characterOptions}
-            addLabel="+ Add existing character…"
-            customPlaceholder="…or type a custom key"
+            placeholder="Type to search characters, or enter a custom key…"
           />
           <p className="field-help">
             The legacy <code>character</code> field is auto-set to the first entry
