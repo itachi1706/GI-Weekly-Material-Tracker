@@ -14,7 +14,8 @@ const files = readdirSync(dataDir).filter(
     (f.startsWith('Materials-') ||
       f.startsWith('Outfits-') ||
       f.startsWith('Weapons-') ||
-      f.startsWith('Characters-')) &&
+      f.startsWith('Characters-') ||
+      f === 'EventBanners.json') &&
     f.endsWith('.json')
 )
 let failures = 0

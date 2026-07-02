@@ -29,8 +29,25 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
   const [inputValue, setInputValue] = useState('')
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(0)
+  const [dragIndex, setDragIndex] = useState<number | null>(null)
+  const [dropIndex, setDropIndex] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Move the entry at `from` to position `to` (used by drag-and-drop and the ‹ › fallback buttons).
+  const move = (from: number, to: number) => {
+    if (to < 0 || to >= value.length || from === to) return
+    const next = [...value]
+    const [moved] = next.splice(from, 1)
+    next.splice(to, 0, moved)
+    onChange(next)
+  }
+
+  const onDrop = (targetIdx: number) => {
+    if (dragIndex != null) move(dragIndex, targetIdx)
+    setDragIndex(null)
+    setDropIndex(null)
+  }
 
   const byKey = useMemo(() => new Map(options.map((o) => [o.key, o])), [options])
 
@@ -89,15 +106,28 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
   return (
     <div className="entity-link" ref={containerRef}>
       <div className="entity-link-tags" onClick={() => inputRef.current?.focus()}>
-        {value.map((k) => {
+        {value.map((k, idx) => {
           const opt = byKey.get(k)
           return (
-            <span key={k} className="tag tag-with-thumb">
+            <span
+              key={k}
+              className={`tag tag-with-thumb tag-draggable${dragIndex === idx ? ' tag-dragging' : ''}${dropIndex === idx ? ' tag-drop-target' : ''}`}
+              draggable
+              onDragStart={(e) => { setDragIndex(idx); e.dataTransfer.effectAllowed = 'move' }}
+              onDragOver={(e) => { e.preventDefault(); if (dropIndex !== idx) setDropIndex(idx) }}
+              onDrop={(e) => { e.preventDefault(); onDrop(idx) }}
+              onDragEnd={() => { setDragIndex(null); setDropIndex(null) }}
+              title="Drag to reorder"
+            >
+              <button type="button" className="tag-move" title="Move left"
+                onClick={(e) => { e.stopPropagation(); move(idx, idx - 1) }} disabled={idx === 0}>‹</button>
               {opt
                 ? <MatImage rootPath={rootPath} imagePath={opt.image} className="tag-thumb" />
                 : <span className="tag-thumb tag-thumb-unknown" title="Not found in dataset">?</span>}
               <span className="tag-label">{opt?.name ?? k}</span>
-              <button type="button" className="tag-remove" onClick={() => onChange(value.filter((x) => x !== k))}>
+              <button type="button" className="tag-move" title="Move right"
+                onClick={(e) => { e.stopPropagation(); move(idx, idx + 1) }} disabled={idx === value.length - 1}>›</button>
+              <button type="button" className="tag-remove" onClick={(e) => { e.stopPropagation(); onChange(value.filter((x) => x !== k)) }}>
                 ×
               </button>
             </span>

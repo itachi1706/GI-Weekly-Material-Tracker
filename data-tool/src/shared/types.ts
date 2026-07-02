@@ -330,3 +330,51 @@ export interface CharacterChange {
   ordering: InsertModeName
   image?: ImagePlan
 }
+
+// ---- Banners ----
+
+export type BannerType = 'character' | 'weapon' | 'standard' | 'chronicled'
+
+/**
+ * One event-wish banner. Unlike other entities, banners live in arrays (per type) inside
+ * EventBanners.json, not a name-keyed map. `versionName` is sometimes ABSENT (not null) — preserve
+ * its presence. `characters`/`weapons` are the full gacha pool; `rateup*` are the featured entries.
+ */
+export interface BannerRecord {
+  name?: string | null
+  start?: string | null
+  end?: string | null
+  description?: string | null
+  type?: string | null
+  characters?: string[]
+  weapons?: string[]
+  rateupcharacters?: string[]
+  rateupweapon?: string[]
+  softpity?: number | null
+  hardpity?: number | null
+  versionNumber?: number | null
+  versionName?: string | null
+  wiki?: string | null
+  image?: string | null
+  [key: string]: unknown
+}
+
+export interface BannerSummary {
+  bannerType: BannerType
+  index: number
+  name: string
+  version: number
+  start: string
+  end: string
+  image: string
+  rateup: string[]
+}
+
+export interface BannerChange {
+  op: 'create' | 'update' | 'delete'
+  bannerType: BannerType
+  /** Array index within the type's array — required for update/delete. */
+  index?: number
+  record?: BannerRecord
+  image?: ImagePlan
+}

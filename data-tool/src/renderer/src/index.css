@@ -897,6 +897,20 @@ textarea:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.tag-draggable { cursor: grab; }
+.tag-dragging { opacity: 0.4; }
+.tag-drop-target { box-shadow: inset 2px 0 0 0 var(--accent); }
+.tag-move {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  padding: 0 1px;
+}
+.tag-move:hover:not(:disabled) { color: var(--text); }
+.tag-move:disabled { opacity: 0.25; cursor: default; }
 
 /* ---- entity-link combobox (select2-style character/outfit picker) ---- */
 .entity-link {
@@ -1376,4 +1390,45 @@ textarea:focus {
 .mat-picker-key {
   font-size: 11px;
   font-family: var(--font-mono, monospace);
+}
+
+/* ---- banners ---- */
+.banner-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.banner-rateup {
+  font-size: 12px;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.banner-datetime {
+  display: flex;
+  gap: 8px;
+}
+.banner-datetime input[type='date'] { flex: 1; min-width: 0; }
+.banner-pool {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.banner-pool > summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.banner-pool-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.banner-pool-body > label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
 }

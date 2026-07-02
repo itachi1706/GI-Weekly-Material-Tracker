@@ -7,6 +7,7 @@ import MaterialsView from './views/materials/MaterialsView'
 import OutfitsView from './views/outfits/OutfitsView'
 import WeaponsView from './views/weapons/WeaponsView'
 import CharactersView from './views/characters/CharactersView'
+import BannersView from './views/banners/BannersView'
 import type { EntityKey } from '@shared/types'
 
 export default function App() {
@@ -45,6 +46,8 @@ export default function App() {
           <WeaponsView rootPath={info.rootPath} />
         ) : active === 'characters' ? (
           <CharactersView rootPath={info.rootPath} />
+        ) : active === 'banners' ? (
+          <BannersView rootPath={info.rootPath} />
         ) : (
           <DatasetSummary info={info} onReload={reload} loading={loading} />
         )}

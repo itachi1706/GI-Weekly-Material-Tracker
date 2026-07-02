@@ -22,8 +22,9 @@
  */
 export function stringifyDataFile(obj: unknown): string {
   let result = collapsePrimitiveArrays(JSON.stringify(obj, null, 2))
-  // JSON.parse loses the trailing zero from floats like 1.0 → 1. Restore it for version fields.
-  result = result.replace(/("released_version": )(\d+)(?![\d.])/g, '$1$2.0')
+  // JSON.parse loses the trailing zero from floats like 1.0 → 1. Restore it for version fields that
+  // are always written as floats on disk: `released_version` (outfits) and `versionNumber` (banners).
+  result = result.replace(/("(?:released_version|versionNumber)": )(\d+)(?![\d.])/g, '$1$2.0')
   return result
 }
 
@@ -80,13 +81,19 @@ function collapsePrimitiveArrays(json: string): string {
 
       // Some fields are kept expanded in the committed files even when they'd fit on one line:
       //   - `characters` (Traveler outfits) with more than one entry; single-element stays collapsed
-      //   - `titles` / `outfits` (character records) are ALWAYS expanded, even single-element
+      //   - `titles` / `outfits` (character records) — ALWAYS expanded, even single-element
+      //   - `weapons` / `rateupcharacters` / `rateupweapon` (banner records) — ALWAYS expanded
+      //     (populated ones are one-per-line on disk, even single-element; empty `[]` stays inline
+      //     because empty arrays never reach this branch)
       const fieldMatch = trimmed.match(/"([^"]+)":\s*\[$/)
       const field = fieldMatch?.[1]
       const forceExpand =
         (field === 'characters' && items.length > 1) ||
         field === 'titles' ||
-        field === 'outfits'
+        field === 'outfits' ||
+        field === 'weapons' ||
+        field === 'rateupcharacters' ||
+        field === 'rateupweapon'
 
       if (!forceExpand && collapsed.length <= 200) {
         out.push(collapsed)

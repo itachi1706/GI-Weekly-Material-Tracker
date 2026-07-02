@@ -13,6 +13,10 @@ import type {
   CharacterSummary,
   CharacterRecord,
   CharacterChange,
+  BannerSummary,
+  BannerRecord,
+  BannerChange,
+  BannerType,
   CommitPreview,
   CommitResult,
   ImagePlan
@@ -91,6 +95,19 @@ const api = {
       ipcRenderer.invoke('characters:previewCommit', rootPath, change),
     commit: (rootPath: string, change: CharacterChange): Promise<CommitResult> =>
       ipcRenderer.invoke('characters:commit', rootPath, change)
+  },
+
+  banners: {
+    list: (rootPath: string): Promise<BannerSummary[]> =>
+      ipcRenderer.invoke('banners:list', rootPath),
+    get: (rootPath: string, bannerType: BannerType, index: number): Promise<BannerRecord | null> =>
+      ipcRenderer.invoke('banners:get', rootPath, bannerType, index),
+    template: (rootPath: string): Promise<BannerRecord | null> =>
+      ipcRenderer.invoke('banners:template', rootPath),
+    previewCommit: (rootPath: string, change: BannerChange): Promise<CommitPreview> =>
+      ipcRenderer.invoke('banners:previewCommit', rootPath, change),
+    commit: (rootPath: string, change: BannerChange): Promise<CommitResult> =>
+      ipcRenderer.invoke('banners:commit', rootPath, change)
   }
 }
 

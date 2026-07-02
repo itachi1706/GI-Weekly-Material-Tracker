@@ -19,5 +19,5 @@ export const ENTITIES: EntityConfig[] = [
   { key: 'characters', label: 'Characters', rootKey: 'characters', filePrefix: 'Characters-', enabled: true },
   { key: 'weapons', label: 'Weapons', rootKey: 'weapons', filePrefix: 'Weapons-', enabled: true },
   { key: 'outfits', label: 'Outfits', rootKey: 'outfits', filePrefix: 'Outfits-', enabled: true },
-  { key: 'banners', label: 'Banners', rootKey: 'banners', singleFile: 'EventBanners.json', enabled: false }
+  { key: 'banners', label: 'Banners', rootKey: 'banners', singleFile: 'EventBanners.json', enabled: true }
 ]

@@ -37,6 +37,13 @@ import {
   previewCharacterCommit,
   commitCharacter
 } from './ipc/characters'
+import {
+  listBanners,
+  getBanner,
+  getBannerTemplate,
+  previewBannerCommit,
+  commitBanner
+} from './ipc/banners'
 import { readSettings, writeSettings } from './settings'
 import type {
   DatasetInfo,
@@ -44,7 +51,9 @@ import type {
   MaterialChange,
   OutfitChange,
   WeaponChange,
-  CharacterChange
+  CharacterChange,
+  BannerChange,
+  BannerType
 } from '@shared/types'
 
 function createWindow(): void {
@@ -172,6 +181,19 @@ function registerIpc(): void {
   )
   ipcMain.handle('characters:commit', (_e, rootPath: string, change: CharacterChange) =>
     commitCharacter(rootPath, change)
+  )
+
+  // Banners CRUD.
+  ipcMain.handle('banners:list', (_e, rootPath: string) => listBanners(rootPath))
+  ipcMain.handle('banners:get', (_e, rootPath: string, bannerType: BannerType, index: number) =>
+    getBanner(rootPath, bannerType, index)
+  )
+  ipcMain.handle('banners:template', (_e, rootPath: string) => getBannerTemplate(rootPath))
+  ipcMain.handle('banners:previewCommit', (_e, rootPath: string, change: BannerChange) =>
+    previewBannerCommit(rootPath, change)
+  )
+  ipcMain.handle('banners:commit', (_e, rootPath: string, change: BannerChange) =>
+    commitBanner(rootPath, change)
   )
 }
 
