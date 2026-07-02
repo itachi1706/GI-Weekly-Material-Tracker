@@ -4,6 +4,7 @@ import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
 import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
+import { RaritySelect } from '../shared/rarity'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -359,11 +360,12 @@ export default function WeaponForm({
 
         <div className="field">
           <label>Rarity<span className="req">*</span></label>
-          <select value={draft.rarity} disabled={mode === 'edit'}
-            onChange={(e) => { if (mode === 'create') applyTemplate(draft.type, e.target.value) }}
-          >
-            {[1, 2, 3, 4, 5].map((r) => <option key={r} value={r}>{'★'.repeat(r)}</option>)}
-          </select>
+          <RaritySelect
+            value={draft.rarity}
+            disabled={mode === 'edit'}
+            options={[1, 2, 3, 4, 5]}
+            onChange={(v) => { if (mode === 'create') applyTemplate(draft.type, v) }}
+          />
           {mode === 'edit' && <p className="field-help">Rarity cannot be changed after creation.</p>}
         </div>
 

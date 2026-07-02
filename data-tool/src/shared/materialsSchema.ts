@@ -1,7 +1,7 @@
 import type { MaterialInnerType, MaterialRecord } from './types'
 
 /** Form widget kinds the renderer knows how to draw. */
-export type Widget = 'text' | 'textarea' | 'number' | 'select' | 'bool' | 'image' | 'tags' | 'days' | 'computed'
+export type Widget = 'text' | 'textarea' | 'number' | 'select' | 'bool' | 'image' | 'tags' | 'days' | 'computed' | 'rarity'
 
 export interface FieldSpec {
   key: string
@@ -15,6 +15,18 @@ export interface FieldSpec {
   /** For computed widget: source field key + transform. */
   computeFrom?: string
   computeFn?: (sourceValue: unknown) => unknown
+  /**
+   * For rarity widget: the valid star values to offer, or a function deriving them from the
+   * current form values (e.g. Normal vs Elite mob drops have different rarity ranges). Defaults
+   * to [1,2,3,4,5] when omitted.
+   */
+  rarityOptions?: number[] | ((values: Record<string, unknown>) => number[])
+}
+
+/** Resolve the valid rarity values for a `rarity` field given the current form values. */
+export function resolveRarityOptions(field: FieldSpec, values: Record<string, unknown>): number[] {
+  if (!field.rarityOptions) return [1, 2, 3, 4, 5]
+  return typeof field.rarityOptions === 'function' ? field.rarityOptions(values) : field.rarityOptions
 }
 
 /** Config for one tier within a tier set (e.g. one rarity level of a mob drop group). */
@@ -170,7 +182,10 @@ const mobDrops: MaterialTypeSchema = {
       help: 'Display name. Record key derived from this.'
     },
     { key: 'type', label: 'Category', widget: 'select', required: true, options: MOB_TYPE_OPTIONS },
-    { key: 'rarity', label: 'Rarity', widget: 'number', required: true, help: '1–3 (Normal) or 2–4 (Elite)' },
+    {
+      key: 'rarity', label: 'Rarity', widget: 'rarity', required: true,
+      rarityOptions: (v) => v['type'] === 'Common Ascension Material (Normal)' ? [1, 2, 3] : [2, 3, 4]
+    },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Common_Mob' },
     {
       key: 'enemies', label: 'Dropped By', widget: 'tags', required: true,
@@ -205,7 +220,10 @@ const bossDropsStandard: MaterialTypeSchema = {
   fields: [
     { key: 'name', label: 'Name', widget: 'text', required: true },
     { key: 'type', label: 'Category', widget: 'select', required: true, options: BOSS_STANDARD_TYPE_OPTIONS },
-    { key: 'rarity', label: 'Rarity', widget: 'number', required: true },
+    {
+      key: 'rarity', label: 'Rarity', widget: 'rarity', required: true,
+      rarityOptions: (v) => v['type'] === 'Ascension Gems' ? [2, 3, 4, 5] : [4]
+    },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Boss_Drops' },
     {
       key: 'enemies', label: 'Dropped By', widget: 'tags', required: true,
@@ -245,7 +263,7 @@ const bossDropsWeekly: MaterialTypeSchema = {
   fields: [
     { key: 'name', label: 'Name', widget: 'text', required: true },
     { key: 'type', label: 'Category', widget: 'select', required: true, options: BOSS_WEEKLY_TYPE_OPTIONS },
-    { key: 'rarity', label: 'Rarity', widget: 'number', required: true },
+    { key: 'rarity', label: 'Rarity', widget: 'rarity', required: true, rarityOptions: [5] },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Boss_Drops' },
     { key: 'description', label: 'Description', widget: 'textarea' },
     { key: 'obtained', label: 'Obtained', widget: 'textarea' },
@@ -306,7 +324,10 @@ const domainMaterial: MaterialTypeSchema = {
       computeFrom: 'type',
       computeFn: (type: unknown) => String(type).includes('Forgery') ? 'forgery' : 'mastery'
     },
-    { key: 'rarity', label: 'Rarity', widget: 'number', required: true, help: '2–5' },
+    {
+      key: 'rarity', label: 'Rarity', widget: 'rarity', required: true,
+      rarityOptions: (v) => String(v['type'] ?? '').includes('Forgery') ? [2, 3, 4, 5] : [2, 3, 4]
+    },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Forgery_Domain' },
     {
       key: 'days', label: 'Available Days', widget: 'days', required: true,
@@ -411,7 +432,7 @@ export function applyFormValues(
       continue
     }
     const v = values[field.key]
-    if (field.widget === 'number') {
+    if (field.widget === 'number' || field.widget === 'rarity') {
       record[field.key] =
         v === '' || v === null || v === undefined || Number.isNaN(Number(v))
           ? null

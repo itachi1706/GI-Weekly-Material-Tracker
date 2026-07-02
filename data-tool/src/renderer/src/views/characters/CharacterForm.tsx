@@ -5,13 +5,16 @@ import type {
   CharacterAscensionPhase,
   CharacterTalentLevel,
   ImagePlan,
-  MaterialSummary
+  MaterialSummary,
+  OutfitSummary
 } from '@shared/types'
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { TagsInput } from '../materials/MaterialForm'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
 import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
+import { RaritySelect } from '../shared/rarity'
+import { EntityLinkInput, type LinkOption } from '../shared/entityLink'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -223,12 +226,18 @@ export default function CharacterForm({
   const [draft, setDraft] = useState<Draft>(() => draftFromRecord(template, originalKey))
   const [errors, setErrors] = useState<string[]>([])
   const [matSummaries, setMatSummaries] = useState<MaterialSummary[]>([])
+  const [outfitSummaries, setOutfitSummaries] = useState<OutfitSummary[]>([])
   const [templates, setTemplates] = useState<Record<string, CharacterRecord>>({})
   const [pickerSpec, setPickerSpec] = useState<SlotSpec | null>(null)
 
   const matSummaryMap = useMemo(() => new Map(matSummaries.map((m) => [m.key, m])), [matSummaries])
+  const outfitOptions = useMemo<LinkOption[]>(
+    () => outfitSummaries.map((o) => ({ key: o.key, name: o.name, image: o.image, sublabel: o.type })),
+    [outfitSummaries]
+  )
 
   useEffect(() => { void window.api.materials.list(rootPath).then(setMatSummaries) }, [rootPath])
+  useEffect(() => { void window.api.outfits.list(rootPath).then(setOutfitSummaries) }, [rootPath])
   useEffect(() => {
     if (mode === 'create') void window.api.characters.templates(rootPath).then(setTemplates)
   }, [rootPath, mode])
@@ -524,10 +533,12 @@ export default function CharacterForm({
 
         <div className="field">
           <label>Rarity<span className="req">*</span></label>
-          <select value={draft.rarity} disabled={mode === 'edit'}
-            onChange={(e) => { if (mode === 'create') applyTemplate(draft.element, e.target.value) }}>
-            {[4, 5].map((r) => <option key={r} value={r}>{'★'.repeat(r)}</option>)}
-          </select>
+          <RaritySelect
+            value={draft.rarity}
+            disabled={mode === 'edit'}
+            options={[4, 5]}
+            onChange={(v) => { if (mode === 'create') applyTemplate(draft.element, v) }}
+          />
           {mode === 'edit' && <p className="field-help">Rarity cannot be changed after creation.</p>}
         </div>
 
@@ -592,8 +603,14 @@ export default function CharacterForm({
 
         <div className="field field-wide">
           <label>Outfits</label>
-          <TagsInput value={draft.outfits} onChange={(v) => set('outfits', v)} />
-          <p className="field-help">Outfit record keys (e.g. "Newmoon_Starlight").</p>
+          <EntityLinkInput
+            rootPath={rootPath}
+            value={draft.outfits}
+            onChange={(v) => set('outfits', v)}
+            options={outfitOptions}
+            addLabel="+ Add existing outfit…"
+            customPlaceholder="…or type a custom key"
+          />
         </div>
 
         {/* ── Image ── */}

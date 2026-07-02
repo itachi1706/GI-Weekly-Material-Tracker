@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import type { MaterialRecord, InsertModeName } from '@shared/types'
-import { deriveKey, resolveImageFolder, type MaterialTypeSchema } from '@shared/materialsSchema'
+import { deriveKey, resolveImageFolder, resolveRarityOptions, type MaterialTypeSchema } from '@shared/materialsSchema'
 import ImageField from './ImageField'
+import { RaritySelect } from '../shared/rarity'
 import type { ImageState } from './util'
 
 export interface FormDraft {
@@ -102,7 +103,7 @@ function initialValues(schema: MaterialTypeSchema, base: MaterialRecord): Record
     if (f.widget === 'image' || f.widget === 'computed') continue
     const raw = base[f.key]
     if (f.widget === 'bool') v[f.key] = Boolean(raw)
-    else if (f.widget === 'number') v[f.key] = raw == null ? '' : String(raw)
+    else if (f.widget === 'number' || f.widget === 'rarity') v[f.key] = raw == null ? '' : String(raw)
     else if (f.widget === 'tags') v[f.key] = Array.isArray(raw) ? raw : []
     else if (f.widget === 'days') v[f.key] = Array.isArray(raw) ? raw : []
     else v[f.key] = raw == null ? '' : String(raw)
@@ -141,7 +142,16 @@ export default function MaterialForm({
   const imageFolder = resolveImageFolder(schema, values)
 
   const setField = (k: string, val: unknown) => {
-    setValues((prev) => ({ ...prev, [k]: val }))
+    setValues((prev) => {
+      const next = { ...prev, [k]: val }
+      // Keep rarity valid when its governing field (e.g. `type`) changes underneath it.
+      for (const f of schema.fields) {
+        if (f.widget !== 'rarity') continue
+        const opts = resolveRarityOptions(f, next)
+        if (!opts.includes(Number(next[f.key]))) next[f.key] = String(opts[0])
+      }
+      return next
+    })
     if (k === 'name' && !keyTouched) setKey(deriveKey(String(val)))
   }
 
@@ -265,6 +275,13 @@ export default function MaterialForm({
                   type="number"
                   value={String(v ?? '')}
                   onChange={(e) => setField(f.key, e.target.value)}
+                />
+              )}
+              {f.widget === 'rarity' && (
+                <RaritySelect
+                  value={String(v ?? '')}
+                  onChange={(val) => setField(f.key, val)}
+                  options={resolveRarityOptions(f, values)}
                 />
               )}
               {f.widget === 'select' && (

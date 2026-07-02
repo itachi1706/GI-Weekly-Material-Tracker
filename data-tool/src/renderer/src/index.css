@@ -870,6 +870,52 @@ textarea:focus {
 }
 .tags-add input { flex: 1; }
 
+/* ---- entity-link tags (Outfit↔Character cross-references) ---- */
+.tag-with-thumb { padding-left: 3px; }
+.tag-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.tag-thumb.mat-img-empty,
+.tag-thumb-unknown {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.tag-label {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- compact image row (Outfit portrait / thumbnail / wish image) ---- */
+.image-field-row {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.image-field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.image-field-item-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 /* ---- days selector ---- */
 .days-select {
   display: flex;

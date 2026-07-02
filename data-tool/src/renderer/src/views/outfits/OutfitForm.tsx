@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import type { OutfitRecord, OutfitChange, ImagePlan } from '@shared/types'
+import { useEffect, useMemo, useState } from 'react'
+import type { OutfitRecord, OutfitChange, ImagePlan, CharacterSummary } from '@shared/types'
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
-import { TagsInput } from '../materials/MaterialForm'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
+import { RaritySelect } from '../shared/rarity'
+import { EntityLinkInput, type LinkOption } from '../shared/entityLink'
 
 // ── Outfit set definitions ────────────────────────────────────────────────────
 
@@ -153,6 +154,14 @@ export default function OutfitForm({
     draftFromRecord(template, file, originalKey)
   )
   const [errors, setErrors] = useState<string[]>([])
+  const [characterSummaries, setCharacterSummaries] = useState<CharacterSummary[]>([])
+
+  const characterOptions = useMemo<LinkOption[]>(
+    () => characterSummaries.map((c) => ({ key: c.key, name: c.name, image: c.image, sublabel: c.element })),
+    [characterSummaries]
+  )
+
+  useEffect(() => { void window.api.characters.list(rootPath).then(setCharacterSummaries) }, [rootPath])
 
   const set = <K extends keyof Draft>(key: K, val: Draft[K]) =>
     setDraft((prev) => ({ ...prev, [key]: val }))
@@ -307,18 +316,19 @@ export default function OutfitForm({
 
         <div className="field">
           <label>Rarity<span className="req">*</span></label>
-          <select value={draft.rarity} onChange={(e) => set('rarity', e.target.value)}>
-            <option value="4">4 ★★★★</option>
-            <option value="5">5 ★★★★★</option>
-          </select>
+          <RaritySelect value={draft.rarity} onChange={(v) => set('rarity', v)} options={[4, 5]} />
         </div>
 
         {/* Characters (multi-entry; character = characters[0]) */}
         <div className="field field-wide">
           <label>Characters<span className="req">*</span></label>
-          <TagsInput
+          <EntityLinkInput
+            rootPath={rootPath}
             value={draft.characters}
             onChange={(v) => set('characters', v)}
+            options={characterOptions}
+            addLabel="+ Add existing character…"
+            customPlaceholder="…or type a custom key"
           />
           <p className="field-help">
             The legacy <code>character</code> field is auto-set to the first entry
@@ -344,38 +354,40 @@ export default function OutfitForm({
 
         {/* ── Images ── */}
         <div className="field field-wide">
-          <label>Image (primary portrait)</label>
-          <ImageField
-            rootPath={rootPath}
-            imageFolder={outfitSet.folder}
-            defaultBasename={currentKey || undefined}
-            state={draft.imageState}
-            onChange={(s) => set('imageState', s)}
-          />
-        </div>
-
-        <div className="field field-wide">
-          <label>Thumbnail</label>
-          <ImageField
-            rootPath={rootPath}
-            imageFolder="Characters"
-            browseSourceFolders={['Characters', `Outfits/Thumbnail/${outfitSet.label}`]}
-            defaultBasename={draft.characters[0] || currentKey || undefined}
-            state={draft.thumbnailState}
-            onChange={(s) => set('thumbnailState', s)}
-          />
-          <p className="field-help">Searches Characters/ (all elements) and Outfits/Thumbnail/{outfitSet.label}/.</p>
-        </div>
-
-        <div className="field field-wide">
-          <label>Wish image</label>
-          <ImageField
-            rootPath={rootPath}
-            imageFolder={outfitSet.wishFolder}
-            defaultBasename={currentKey || undefined}
-            state={draft.wishimageState}
-            onChange={(s) => set('wishimageState', s)}
-          />
+          <label>Images</label>
+          <div className="image-field-row">
+            <div className="image-field-item">
+              <span className="image-field-item-label">Portrait</span>
+              <ImageField
+                rootPath={rootPath}
+                imageFolder={outfitSet.folder}
+                defaultBasename={currentKey || undefined}
+                state={draft.imageState}
+                onChange={(s) => set('imageState', s)}
+              />
+            </div>
+            <div className="image-field-item">
+              <span className="image-field-item-label">Thumbnail</span>
+              <ImageField
+                rootPath={rootPath}
+                imageFolder="Characters"
+                browseSourceFolders={['Characters', `Outfits/Thumbnail/${outfitSet.label}`]}
+                defaultBasename={draft.characters[0] || currentKey || undefined}
+                state={draft.thumbnailState}
+                onChange={(s) => set('thumbnailState', s)}
+              />
+            </div>
+            <div className="image-field-item">
+              <span className="image-field-item-label">Wish image</span>
+              <ImageField
+                rootPath={rootPath}
+                imageFolder={outfitSet.wishFolder}
+                defaultBasename={currentKey || undefined}
+                state={draft.wishimageState}
+                onChange={(s) => set('wishimageState', s)}
+              />
+            </div>
+          </div>
         </div>
 
         {/* ── 3D model ── */}
