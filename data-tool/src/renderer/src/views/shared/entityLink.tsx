@@ -64,14 +64,32 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
 
   const byKey = useMemo(() => new Map(options.map((o) => [o.key, o])), [options])
 
+  // Debounce the query used for filtering so fast typing doesn't re-render the (image-bearing)
+  // dropdown on every keystroke. The input itself stays immediate.
+  const [debouncedInput, setDebouncedInput] = useState(inputValue)
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedInput(inputValue), 120)
+    return () => clearTimeout(t)
+  }, [inputValue])
+
+  // Pre-sort the available options once (not per keystroke); filtering then just scans + slices.
+  const sortedOptions = useMemo(
+    () => [...options].sort((a, b) => a.name.localeCompare(b.name)),
+    [options]
+  )
+
   const filtered = useMemo(() => {
-    const q = inputValue.trim().toLowerCase()
-    const avail = options.filter((o) => !value.includes(o.key))
-    const matched = q
-      ? avail.filter((o) => o.name.toLowerCase().includes(q) || o.key.toLowerCase().includes(q))
-      : avail
-    return matched.sort((a, b) => a.name.localeCompare(b.name)).slice(0, MAX_RESULTS)
-  }, [options, value, inputValue])
+    const q = debouncedInput.trim().toLowerCase()
+    const selected = new Set(value)
+    const out: LinkOption[] = []
+    for (const o of sortedOptions) {
+      if (selected.has(o.key)) continue
+      if (q && !o.name.toLowerCase().includes(q) && !o.key.toLowerCase().includes(q)) continue
+      out.push(o)
+      if (out.length >= MAX_RESULTS) break
+    }
+    return out
+  }, [sortedOptions, value, debouncedInput])
 
   const trimmed = inputValue.trim()
   const showCustomRow = trimmed.length > 0 &&

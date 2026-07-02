@@ -44,6 +44,8 @@ const api = {
       ipcRenderer.invoke('materials:listImagesMulti', rootPath, folders),
     previewImage: (rootPath: string, plan: ImagePlan): Promise<string | null> =>
       ipcRenderer.invoke('materials:previewImage', rootPath, plan),
+    previewImages: (rootPath: string, paths: string[]): Promise<Record<string, string | null>> =>
+      ipcRenderer.invoke('materials:previewImages', rootPath, paths),
     selectImageFile: (): Promise<string | null> =>
       ipcRenderer.invoke('materials:selectImageFile'),
     previewCommit: (rootPath: string, change: MaterialChange): Promise<CommitPreview> =>

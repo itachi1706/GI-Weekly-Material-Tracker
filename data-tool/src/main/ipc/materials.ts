@@ -162,6 +162,24 @@ export async function previewImage(rootPath: string, plan: ImagePlan): Promise<s
   }
 }
 
+/**
+ * Batch variant of previewImage for existing images: resolves many relative paths in one IPC
+ * round-trip, returning a map of path → data URL (or null). Callers coalesce their per-image
+ * requests into a single call to avoid flooding the channel (see renderer imageCache).
+ */
+export async function previewImages(
+  rootPath: string,
+  relativePaths: string[]
+): Promise<Record<string, string | null>> {
+  const out: Record<string, string | null> = {}
+  await Promise.all(
+    relativePaths.map(async (rel) => {
+      out[rel] = await previewImage(rootPath, { source: 'existing', relativePath: rel })
+    })
+  )
+  return out
+}
+
 /** Apply a change to a records map, returning the new map (order-preserving). */
 function applyChange(
   records: Record<string, MaterialRecord>,

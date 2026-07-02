@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { MaterialSummary } from '@shared/types'
+import { useImage } from './imageCache'
 
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI']
 export function roman(n: number): string {
@@ -17,15 +18,7 @@ export function MatImage({
   imagePath: string
   className: string
 }) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!imagePath) { setSrc(null); return }
-    let cancelled = false
-    void window.api.materials
-      .previewImage(rootPath, { source: 'existing', relativePath: imagePath })
-      .then((d) => { if (!cancelled) setSrc(d) })
-    return () => { cancelled = true }
-  }, [rootPath, imagePath])
+  const src = useImage(rootPath, imagePath)
   return src
     ? <img className={className} src={src} alt="" />
     : <div className={`${className} mat-img-empty`} />

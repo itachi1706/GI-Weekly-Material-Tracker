@@ -26,6 +26,7 @@ export default function BannersList({
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
   // key → image path, resolved across characters + weapons for rate-up thumbnails.
   const [imgByKey, setImgByKey] = useState<Map<string, string>>(new Map())
+  const [refsLoaded, setRefsLoaded] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -38,6 +39,7 @@ export default function BannersList({
       for (const c of chars) m.set(c.key, c.image)
       for (const w of weapons) m.set(w.key, w.image)
       setImgByKey(m)
+      setRefsLoaded(true)
     })
     return () => { cancelled = true }
   }, [rootPath])
@@ -101,11 +103,21 @@ export default function BannersList({
                     <div className="banner-rateup-thumbs">
                       {b.rateup.length === 0
                         ? <span className="muted">—</span>
-                        : b.rateup.map((k) => (
-                          <span key={k} className="banner-rateup-thumb" title={k}>
-                            <MatImage rootPath={rootPath} imagePath={imgByKey.get(k) ?? ''} className="banner-rateup-img" />
-                          </span>
-                        ))}
+                        : b.rateup.map((k) => {
+                          const img = imgByKey.get(k)
+                          // Consistent with EntityLinkInput: unknown keys show a "?" once refs load.
+                          if (refsLoaded && img === undefined) {
+                            return (
+                              <span key={k} className="banner-rateup-img mat-img-empty banner-rateup-unknown"
+                                title={`${k} (not found)`}>?</span>
+                            )
+                          }
+                          return (
+                            <span key={k} className="banner-rateup-thumb" title={k}>
+                              <MatImage rootPath={rootPath} imagePath={img ?? ''} className="banner-rateup-img" />
+                            </span>
+                          )
+                        })}
                     </div>
                   </td>
                 </tr>

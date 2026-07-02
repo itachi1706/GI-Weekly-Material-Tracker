@@ -11,6 +11,7 @@ import {
   listImages,
   listImagesMulti,
   previewImage,
+  previewImages,
   previewCommit,
   commit,
   previewBatchCommit,
@@ -124,6 +125,9 @@ function registerIpc(): void {
   )
   ipcMain.handle('materials:previewImage', (_e, rootPath: string, plan: ImagePlan) =>
     previewImage(rootPath, plan)
+  )
+  ipcMain.handle('materials:previewImages', (_e, rootPath: string, paths: string[]) =>
+    previewImages(rootPath, paths)
   )
   ipcMain.handle('materials:selectImageFile', () => selectImageFile())
   ipcMain.handle('materials:previewCommit', (_e, rootPath: string, change: MaterialChange) =>
