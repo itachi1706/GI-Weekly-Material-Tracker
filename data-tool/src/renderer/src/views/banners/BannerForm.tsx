@@ -84,8 +84,9 @@ function draftFromRecord(rec: BannerRecord, bannerType: BannerType, mode: 'creat
   const e = parseIso(rec.end)
   return {
     type: (rec.type as BannerType) ?? bannerType,
-    // Create seeds from the previous banner but these are per-banner unique — start blank.
-    name: mode === 'create' ? '' : String(rec.name ?? ''),
+    // Create clones the previous banner's name too (user edits it); wiki/image start blank as
+    // they're truly per-banner unique (wiki URL is date-stamped, image is banner-specific).
+    name: String(rec.name ?? ''),
     startDate: s.date,
     startHour: s.hour || '11',
     endDate: e.date,
@@ -129,6 +130,7 @@ export default function BannerForm({
   const [errors, setErrors] = useState<string[]>([])
   const [charOpts, setCharOpts] = useState<LinkOption[]>([])
   const [weaponOpts, setWeaponOpts] = useState<LinkOption[]>([])
+  const [poolOpen, setPoolOpen] = useState(false)
 
   useEffect(() => {
     void window.api.characters.list(rootPath).then((cs) =>
@@ -319,10 +321,12 @@ export default function BannerForm({
           <input type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
         </div>
 
-        {/* Gacha pool (large; collapsed) */}
+        {/* Gacha pool (large; collapsed). Contents render only once expanded so the (100+) pool
+            thumbnails don't all load on mount and lag the edit screen. */}
         <div className="field field-wide">
-          <details className="banner-pool">
+          <details className="banner-pool" onToggle={(e) => setPoolOpen((e.currentTarget as HTMLDetailsElement).open)}>
             <summary>Gacha pool ({draft.characters.length} characters, {draft.weapons.length} weapons)</summary>
+            {poolOpen && (
             <div className="banner-pool-body">
               <label>Pool characters</label>
               <EntityLinkInput
@@ -341,6 +345,7 @@ export default function BannerForm({
                 placeholder="Add a weapon to the pool…"
               />
             </div>
+            )}
           </details>
         </div>
       </div>

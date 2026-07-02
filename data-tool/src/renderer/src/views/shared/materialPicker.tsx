@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { MaterialSummary } from '@shared/types'
-import { useImage } from './imageCache'
+import { observeVisible, peekImage, useImage } from './imageCache'
 
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI']
 export function roman(n: number): string {
@@ -18,10 +18,22 @@ export function MatImage({
   imagePath: string
   className: string
 }) {
-  const src = useImage(rootPath, imagePath)
+  const ref = useRef<HTMLDivElement>(null)
+  // Already-cached images render immediately; others defer their IPC load until near the viewport,
+  // so long lists (hundreds of thumbnails) don't all fetch at once and freeze the main thread.
+  const [visible, setVisible] = useState(() => !imagePath || peekImage(rootPath, imagePath) !== undefined)
+
+  useEffect(() => {
+    if (visible) return
+    const el = ref.current
+    if (!el) return
+    return observeVisible(el, () => setVisible(true))
+  }, [visible, rootPath, imagePath])
+
+  const src = useImage(rootPath, visible ? imagePath : null)
   return src
     ? <img className={className} src={src} alt="" />
-    : <div className={`${className} mat-img-empty`} />
+    : <div ref={ref} className={`${className} mat-img-empty`} />
 }
 
 /**

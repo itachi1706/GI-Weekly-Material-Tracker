@@ -6,6 +6,14 @@ const TYPE_LABEL: Record<BannerType, string> = {
   character: 'Character', weapon: 'Weapon', standard: 'Standard', chronicled: 'Chronicled'
 }
 
+// How many rows to paint immediately; the rest stream in over subsequent frames so switching to
+// the list (or returning from an edit) doesn't block on rendering all ~170 rows at once.
+const CHUNK = 60
+
+// Module-level cache of the key → image-path map (characters + weapons), keyed by rootPath, so
+// re-mounting the list doesn't re-fetch and rebuild 270+ summaries every time.
+const refMapCache = new Map<string, Map<string, string>>()
+
 type SortCol = 'name' | 'version' | 'start' | 'end'
 
 interface Props {
@@ -24,20 +32,23 @@ export default function BannersList({
 }: Props) {
   const [sortCol, setSortCol] = useState<SortCol>('start')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
-  // key → image path, resolved across characters + weapons for rate-up thumbnails.
-  const [imgByKey, setImgByKey] = useState<Map<string, string>>(new Map())
-  const [refsLoaded, setRefsLoaded] = useState(false)
+  // key → image path, for rate-up thumbnails. Seeded synchronously from the module cache if present.
+  const [imgByKey, setImgByKey] = useState<Map<string, string>>(() => refMapCache.get(rootPath) ?? new Map())
+  const [refsLoaded, setRefsLoaded] = useState(() => refMapCache.has(rootPath))
 
   useEffect(() => {
+    const cached = refMapCache.get(rootPath)
+    if (cached) { setImgByKey(cached); setRefsLoaded(true); return }
     let cancelled = false
     void Promise.all([
       window.api.characters.list(rootPath),
       window.api.weapons.list(rootPath)
     ]).then(([chars, weapons]) => {
-      if (cancelled) return
       const m = new Map<string, string>()
       for (const c of chars) m.set(c.key, c.image)
       for (const w of weapons) m.set(w.key, w.image)
+      refMapCache.set(rootPath, m)
+      if (cancelled) return
       setImgByKey(m)
       setRefsLoaded(true)
     })
@@ -63,6 +74,19 @@ export default function BannersList({
       return sortDir === 'asc' ? cmp : -cmp
     })
   }, [list, query, bannerType, sortCol, sortDir])
+
+  // Progressive rendering: reset to one chunk whenever the result set changes, then grow per frame.
+  const [renderCount, setRenderCount] = useState(CHUNK)
+  useEffect(() => { setRenderCount(CHUNK) }, [filtered])
+  useEffect(() => {
+    if (renderCount >= filtered.length) return
+    const id = requestAnimationFrame(() =>
+      setRenderCount((c) => Math.min(c + CHUNK, filtered.length))
+    )
+    return () => cancelAnimationFrame(id)
+  }, [renderCount, filtered.length])
+
+  const visible = filtered.slice(0, renderCount)
 
   return (
     <div className="mat-list">
@@ -92,11 +116,15 @@ export default function BannersList({
               </tr>
             </thead>
             <tbody>
-              {filtered.map((b) => (
+              {visible.map((b) => (
                 <tr key={`${b.bannerType}:${b.index}:${b.start}`} onClick={() => onOpen(b)} className="mat-row">
-                  <td><BannerThumb rootPath={rootPath} image={b.image} /></td>
+                  <td>
+                    {b.image
+                      ? <MatImage rootPath={rootPath} imagePath={b.image} className="mat-thumb" />
+                      : <div className="mat-thumb mat-thumb-empty" />}
+                  </td>
                   <td>{b.name}</td>
-                  <td>{b.version || ''}</td>
+                  <td>{b.version ? b.version.toFixed(1) : ''}</td>
                   <td className="banner-date">{b.start.replace('T', ' ').replace('+08', '')}</td>
                   <td className="banner-date">{b.end.replace('T', ' ').replace('+08', '')}</td>
                   <td>
@@ -132,10 +160,4 @@ export default function BannersList({
       <p className="mat-list-count muted">{filtered.length} {TYPE_LABEL[bannerType].toLowerCase()} banners</p>
     </div>
   )
-}
-
-function BannerThumb({ rootPath, image }: { rootPath: string; image: string }) {
-  return image
-    ? <MatImage rootPath={rootPath} imagePath={image} className="mat-thumb" />
-    : <div className="mat-thumb mat-thumb-empty" />
 }
