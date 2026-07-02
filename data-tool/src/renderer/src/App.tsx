@@ -8,11 +8,14 @@ import OutfitsView from './views/outfits/OutfitsView'
 import WeaponsView from './views/weapons/WeaponsView'
 import CharactersView from './views/characters/CharactersView'
 import BannersView from './views/banners/BannersView'
-import type { EntityKey } from '@shared/types'
+import type { EntityKey, BannerType } from '@shared/types'
 
 export default function App() {
   const { info, loading, selectFolder, reload } = useDataset()
   const [active, setActive] = useState<EntityKey | null>(null)
+  const [bannerType, setBannerType] = useState<BannerType>('character')
+
+  const selectBannerType = (t: BannerType) => { setBannerType(t); setActive('banners') }
 
   // Initial restore in progress.
   if (loading && !info) {
@@ -33,7 +36,9 @@ export default function App() {
       <Sidebar
         info={info}
         active={active}
+        bannerType={bannerType}
         onSelectEntity={setActive}
+        onSelectBannerType={selectBannerType}
         onShowOverview={() => setActive(null)}
         onChangeFolder={selectFolder}
       />
@@ -47,7 +52,7 @@ export default function App() {
         ) : active === 'characters' ? (
           <CharactersView rootPath={info.rootPath} />
         ) : active === 'banners' ? (
-          <BannersView rootPath={info.rootPath} />
+          <BannersView rootPath={info.rootPath} bannerType={bannerType} />
         ) : (
           <DatasetSummary info={info} onReload={reload} loading={loading} />
         )}

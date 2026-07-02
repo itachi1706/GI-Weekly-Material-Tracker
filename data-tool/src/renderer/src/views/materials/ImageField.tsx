@@ -17,6 +17,8 @@ interface Props {
    * If omitted, Browse lists `imageFolder` non-recursively (default behavior).
    */
   browseSourceFolders?: string[]
+  /** Resting-view shape: 'tile' (default 96×96 square) or 'hero' (full-width wide banner). */
+  variant?: 'tile' | 'hero'
 }
 
 function previewPlan(state: ImageState): ImagePlan | null {
@@ -32,7 +34,7 @@ function previewPlan(state: ImageState): ImagePlan | null {
   }
 }
 
-export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders }: Props) {
+export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders, variant = 'tile' }: Props) {
   const [existing, setExisting] = useState<string[]>([])
   const [thumb, setThumb] = useState<string | null>(null)
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
@@ -120,7 +122,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   const staged = state.mode === 'localFile' || state.mode === 'url'
 
   return (
-    <div className="image-field">
+    <div className={`image-field${variant === 'hero' ? ' image-field-hero' : ''}`}>
       {/* Resting view: clickable thumbnail + filename caption */}
       <div className="image-field-trigger">
         <button type="button" className="image-field-tile" onClick={openModal} title="Click to change image">

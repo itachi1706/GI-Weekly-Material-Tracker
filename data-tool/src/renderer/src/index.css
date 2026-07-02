@@ -308,6 +308,34 @@ code {
   box-shadow: inset 2px 0 0 var(--accent);
 }
 
+/* ---- sidebar sub-items (banner types) ---- */
+.nav-subitems {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 0 4px 10px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+.nav-subitem {
+  text-align: left;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+.nav-subitem:hover {
+  background: var(--bg-input);
+  color: var(--text);
+}
+.nav-subitem-active {
+  background: var(--bg-input);
+  color: var(--text);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
 /* ---- pills / badges ---- */
 .pill {
   font-size: 11px;
@@ -515,6 +543,23 @@ textarea:focus {
 /* ---- image field ---- */
 .image-field {
   display: inline-block;
+}
+/* Hero variant: full-width wide banner preview (used by the banner editor). */
+.image-field-hero {
+  display: block;
+  width: 100%;
+}
+.image-field-hero .image-field-trigger {
+  width: 100%;
+}
+.image-field-hero .image-field-tile {
+  width: 100%;
+  height: 200px;
+}
+.image-field-hero .image-field-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* Resting view: clickable thumbnail tile + filename caption */
 .image-field-trigger {
@@ -899,7 +944,8 @@ textarea:focus {
 }
 .tag-draggable { cursor: grab; }
 .tag-dragging { opacity: 0.4; }
-.tag-drop-target { box-shadow: inset 2px 0 0 0 var(--accent); }
+.tag-gap-before { box-shadow: -3px 0 0 0 var(--accent); }
+.tag-gap-after { box-shadow: 3px 0 0 0 var(--accent); }
 .tag-move {
   background: none;
   border: none;
@@ -931,9 +977,20 @@ textarea:focus {
 .entity-link-tags:focus-within {
   border-color: var(--accent);
 }
-.entity-link-input {
+.entity-link-tail {
   flex: 1;
   min-width: 160px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  border-radius: 4px;
+}
+.entity-link-tail-active {
+  box-shadow: inset 3px 0 0 0 var(--accent);
+}
+.entity-link-input {
+  flex: 1;
+  min-width: 0;
   border: none;
   background: none;
   padding: 4px 2px;
@@ -1398,12 +1455,29 @@ textarea:focus {
   color: var(--text-muted);
   white-space: nowrap;
 }
-.banner-rateup {
-  font-size: 12px;
-  max-width: 260px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.banner-rateup-thumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.banner-rateup-thumb {
+  display: inline-flex;
+}
+.banner-rateup-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.banner-rateup-img.mat-img-empty {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: var(--bg-secondary);
+}
+.banner-hero {
+  margin-bottom: 20px;
 }
 .banner-datetime {
   display: flex;

@@ -208,6 +208,18 @@ export default function BannerForm({
         {mode === 'edit' && <span className="pill">{TYPE_LABEL[draft.type]}</span>}
       </header>
 
+      {/* Hero banner image — full-width, click to open the picker modal. */}
+      <div className="banner-hero">
+        <ImageField
+          rootPath={rootPath}
+          imageFolder={imageFolder}
+          defaultBasename={defaultImageName}
+          state={draft.imageState}
+          onChange={(s) => set('imageState', s)}
+          variant="hero"
+        />
+      </div>
+
       <div className="mat-form-grid">
         <div className="field">
           <label>Type<span className="req">*</span></label>
@@ -300,19 +312,6 @@ export default function BannerForm({
           <label>Version name</label>
           <input type="text" value={draft.versionName} onChange={(e) => set('versionName', e.target.value)} />
           <p className="field-help">Optional, e.g. "Luna VII".</p>
-        </div>
-
-        {/* Image */}
-        <div className="field field-wide">
-          <label>Banner image</label>
-          <ImageField
-            rootPath={rootPath}
-            imageFolder={imageFolder}
-            defaultBasename={defaultImageName}
-            state={draft.imageState}
-            onChange={(s) => set('imageState', s)}
-          />
-          <p className="field-help">Stored at {imageFolder}/…</p>
         </div>
 
         <div className="field field-wide">

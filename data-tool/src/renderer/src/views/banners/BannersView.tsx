@@ -8,12 +8,11 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'form'; mode: 'create' | 'edit'; record: BannerRecord; bannerType: BannerType; index?: number }
 
-export default function BannersView({ rootPath }: { rootPath: string }) {
+export default function BannersView({ rootPath, bannerType }: { rootPath: string; bannerType: BannerType }) {
   const [list, setList] = useState<BannerSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })
   const [listQuery, setListQuery] = useState('')
-  const [listTypeFilter, setListTypeFilter] = useState('')
   const [preview, setPreview] = useState<{ data: Preview; change: BannerChange } | null>(null)
   const [applying, setApplying] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -27,6 +26,9 @@ export default function BannersView({ rootPath }: { rootPath: string }) {
 
   const goList = () => { setScreen({ kind: 'list' }); setPreview(null); setError(null) }
 
+  // Switching subsection in the sidebar returns to that type's list.
+  useEffect(() => { setScreen({ kind: 'list' }); setPreview(null); setError(null) }, [bannerType])
+
   // Seed a new banner from the most-recent existing banner of the given type (fallback: template).
   const seedFor = async (bannerType: BannerType): Promise<BannerRecord> => {
     const top = await window.api.banners.get(rootPath, bannerType, 0)
@@ -35,8 +37,8 @@ export default function BannersView({ rootPath }: { rootPath: string }) {
   }
 
   const onNew = async () => {
-    const record = await seedFor('character')
-    setScreen({ kind: 'form', mode: 'create', record, bannerType: 'character' })
+    const record = await seedFor(bannerType)
+    setScreen({ kind: 'form', mode: 'create', record, bannerType })
   }
 
   const onOpen = async (row: BannerSummary) => {
@@ -76,10 +78,9 @@ export default function BannersView({ rootPath }: { rootPath: string }) {
           rootPath={rootPath}
           list={list}
           loading={loading}
+          bannerType={bannerType}
           query={listQuery}
-          typeFilter={listTypeFilter}
           onQueryChange={setListQuery}
-          onTypeFilterChange={setListTypeFilter}
           onNew={onNew}
           onOpen={onOpen}
         />

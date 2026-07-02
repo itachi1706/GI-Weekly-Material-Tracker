@@ -1,10 +1,19 @@
 import { ENTITIES } from '@shared/entities'
-import type { DatasetInfo, EntityKey } from '@shared/types'
+import type { DatasetInfo, EntityKey, BannerType } from '@shared/types'
+
+const BANNER_SUBSECTIONS: { type: BannerType; label: string }[] = [
+  { type: 'character', label: 'Character' },
+  { type: 'weapon', label: 'Weapon' },
+  { type: 'standard', label: 'Standard' },
+  { type: 'chronicled', label: 'Chronicled' }
+]
 
 interface Props {
   info: DatasetInfo
   active: EntityKey | null
+  bannerType: BannerType
   onSelectEntity: (key: EntityKey) => void
+  onSelectBannerType: (t: BannerType) => void
   onShowOverview: () => void
   onChangeFolder: () => void
 }
@@ -12,7 +21,9 @@ interface Props {
 export default function Sidebar({
   info,
   active,
+  bannerType,
   onSelectEntity,
+  onSelectBannerType,
   onShowOverview,
   onChangeFolder
 }: Props) {
@@ -30,16 +41,31 @@ export default function Sidebar({
           <span>Overview</span>
         </button>
         {ENTITIES.map((ent) => (
-          <button
-            key={ent.key}
-            className={`nav-item ${active === ent.key ? 'nav-item-active' : ''}`}
-            disabled={!ent.enabled}
-            title={ent.enabled ? ent.label : 'Coming soon'}
-            onClick={() => ent.enabled && onSelectEntity(ent.key)}
-          >
-            <span>{ent.label}</span>
-            {!ent.enabled && <span className="nav-badge">soon</span>}
-          </button>
+          <div key={ent.key}>
+            <button
+              className={`nav-item ${active === ent.key ? 'nav-item-active' : ''}`}
+              disabled={!ent.enabled}
+              title={ent.enabled ? ent.label : 'Coming soon'}
+              onClick={() => ent.enabled && onSelectEntity(ent.key)}
+            >
+              <span>{ent.label}</span>
+              {!ent.enabled && <span className="nav-badge">soon</span>}
+            </button>
+            {/* Banner type subsections */}
+            {ent.key === 'banners' && ent.enabled && (
+              <div className="nav-subitems">
+                {BANNER_SUBSECTIONS.map((sub) => (
+                  <button
+                    key={sub.type}
+                    className={`nav-subitem ${active === 'banners' && bannerType === sub.type ? 'nav-subitem-active' : ''}`}
+                    onClick={() => onSelectBannerType(sub.type)}
+                  >
+                    {sub.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
       </nav>
 

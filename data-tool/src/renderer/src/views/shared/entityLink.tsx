@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type DragEvent } from 'react'
 import { MatImage } from './materialPicker'
 
 export interface LinkOption {
@@ -30,11 +30,12 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(0)
   const [dragIndex, setDragIndex] = useState<number | null>(null)
-  const [dropIndex, setDropIndex] = useState<number | null>(null)
+  // Insertion gap the drop would land in: 0..value.length (value.length = after the last chip).
+  const [dropGap, setDropGap] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // Move the entry at `from` to position `to` (used by drag-and-drop and the ‹ › fallback buttons).
+  // Adjacent-swap used by the ‹ › fallback buttons.
   const move = (from: number, to: number) => {
     if (to < 0 || to >= value.length || from === to) return
     const next = [...value]
@@ -43,10 +44,22 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
     onChange(next)
   }
 
-  const onDrop = (targetIdx: number) => {
-    if (dragIndex != null) move(dragIndex, targetIdx)
+  // Move the dragged chip into insertion gap `gap` (0..length). Handles the rightmost slot.
+  const reorderToGap = (gap: number) => {
+    if (dragIndex == null) { setDropGap(null); return }
+    const next = [...value]
+    const [moved] = next.splice(dragIndex, 1)
+    const adj = gap > dragIndex ? gap - 1 : gap
+    next.splice(adj, 0, moved)
+    onChange(next)
     setDragIndex(null)
-    setDropIndex(null)
+    setDropGap(null)
+  }
+
+  // On dragover a chip, pick the nearer gap (before it, or after it = idx+1) from the pointer x.
+  const gapForChip = (e: DragEvent, idx: number): number => {
+    const r = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    return e.clientX > r.left + r.width / 2 ? idx + 1 : idx
   }
 
   const byKey = useMemo(() => new Map(options.map((o) => [o.key, o])), [options])
@@ -103,20 +116,30 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
     }
   }
 
+  const dragging = dragIndex != null
+
   return (
     <div className="entity-link" ref={containerRef}>
-      <div className="entity-link-tags" onClick={() => inputRef.current?.focus()}>
+      <div
+        className="entity-link-tags"
+        onClick={() => inputRef.current?.focus()}
+        onDragEnd={() => { setDragIndex(null); setDropGap(null) }}
+      >
         {value.map((k, idx) => {
           const opt = byKey.get(k)
           return (
             <span
               key={k}
-              className={`tag tag-with-thumb tag-draggable${dragIndex === idx ? ' tag-dragging' : ''}${dropIndex === idx ? ' tag-drop-target' : ''}`}
+              className={
+                `tag tag-with-thumb tag-draggable`
+                + (dragIndex === idx ? ' tag-dragging' : '')
+                + (dropGap === idx ? ' tag-gap-before' : '')
+                + (dropGap === idx + 1 ? ' tag-gap-after' : '')
+              }
               draggable
               onDragStart={(e) => { setDragIndex(idx); e.dataTransfer.effectAllowed = 'move' }}
-              onDragOver={(e) => { e.preventDefault(); if (dropIndex !== idx) setDropIndex(idx) }}
-              onDrop={(e) => { e.preventDefault(); onDrop(idx) }}
-              onDragEnd={() => { setDragIndex(null); setDropIndex(null) }}
+              onDragOver={(e) => { if (!dragging) return; e.preventDefault(); setDropGap(gapForChip(e, idx)) }}
+              onDrop={(e) => { e.preventDefault(); reorderToGap(gapForChip(e, idx)) }}
               title="Drag to reorder"
             >
               <button type="button" className="tag-move" title="Move left"
@@ -133,16 +156,23 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
             </span>
           )
         })}
-        <input
-          ref={inputRef}
-          type="text"
-          className="entity-link-input"
-          placeholder={value.length === 0 ? placeholder : 'Add another…'}
-          value={inputValue}
-          onChange={(e) => { setInputValue(e.target.value); setOpen(true) }}
-          onFocus={() => setOpen(true)}
-          onKeyDown={onKeyDown}
-        />
+        {/* Trailing flex-fill zone (wraps the input) — dropping here moves the chip to the end. */}
+        <div
+          className={`entity-link-tail${dragging && dropGap === value.length ? ' entity-link-tail-active' : ''}`}
+          onDragOver={(e) => { if (!dragging) return; e.preventDefault(); setDropGap(value.length) }}
+          onDrop={(e) => { e.preventDefault(); reorderToGap(value.length) }}
+        >
+          <input
+            ref={inputRef}
+            type="text"
+            className="entity-link-input"
+            placeholder={value.length === 0 ? placeholder : 'Add another…'}
+            value={inputValue}
+            onChange={(e) => { setInputValue(e.target.value); setOpen(true) }}
+            onFocus={() => setOpen(true)}
+            onKeyDown={onKeyDown}
+          />
+        </div>
       </div>
 
       {open && rowCount > 0 && (
