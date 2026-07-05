@@ -694,6 +694,20 @@ textarea:focus {
   font-weight: 500;
   color: var(--text-muted);
 }
+.image-picker-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 4px;
+}
+.image-picker-search input {
+  flex: 1;
+  min-width: 0;
+}
+.image-picker-search span {
+  font-size: 12px;
+  white-space: nowrap;
+}
 
 /* ---- modal + preview ---- */
 .modal-backdrop {

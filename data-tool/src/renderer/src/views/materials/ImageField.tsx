@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { ImagePlan } from '@shared/types'
 import type { ImageState } from './util'
 import { extOf, sanitizeImageBasename } from './util'
+import { loadImage } from '../shared/imageCache'
 
 interface Props {
   rootPath: string
@@ -40,6 +41,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
   const [open, setOpen] = useState(false)
   const [popupThumbs, setPopupThumbs] = useState<Record<string, string>>({})
+  const [browseSearch, setBrowseSearch] = useState('')
 
   useEffect(() => {
     if (browseSourceFolders) {
@@ -53,9 +55,12 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     const plan = previewPlan(state)
     if (!plan) { setThumb(null); return }
     let cancelled = false
-    void window.api.materials.previewImage(rootPath, plan).then((d) => {
-      if (!cancelled) setThumb(d)
-    })
+    // Existing images go through the shared cache (dedup + coalesced batch); localFile/url are
+    // one-off and stay direct.
+    const p = plan.source === 'existing'
+      ? loadImage(rootPath, plan.relativePath)
+      : window.api.materials.previewImage(rootPath, plan)
+    void p.then((d) => { if (!cancelled) setThumb(d) })
     return () => { cancelled = true }
   }, [rootPath, state])
 
@@ -64,11 +69,12 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
 
   const openModal = () => {
     setOpen(true)
+    setBrowseSearch('')
     existing.forEach((f) => {
       if (popupThumbs[f]) return
-      void window.api.materials
-        .previewImage(rootPath, { source: 'existing', relativePath: browseRelative(f) })
-        .then((d) => { if (d) setPopupThumbs((prev) => ({ ...prev, [f]: d })) })
+      void loadImage(rootPath, browseRelative(f)).then((d) => {
+        if (d) setPopupThumbs((prev) => ({ ...prev, [f]: d }))
+      })
     })
   }
 
@@ -190,9 +196,25 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
             <div className="image-picker-divider">Or choose an existing image</div>
             {existing.length === 0 ? (
               <p className="muted" style={{ padding: '0 16px 16px' }}>No images found in {imageFolder}.</p>
-            ) : (
+            ) : (() => {
+              const q = browseSearch.trim().toLowerCase()
+              const matches = q ? existing.filter((f) => f.toLowerCase().includes(q)) : existing
+              return (
+                <>
+                  <div className="image-picker-search">
+                    <input
+                      type="search"
+                      placeholder={`Filter ${existing.length} images…`}
+                      value={browseSearch}
+                      onChange={(e) => setBrowseSearch(e.target.value)}
+                    />
+                    {q && <span className="muted">{matches.length} match{matches.length === 1 ? '' : 'es'}</span>}
+                  </div>
+                  {matches.length === 0 ? (
+                    <p className="muted" style={{ padding: '0 16px 16px' }}>No images match “{browseSearch}”.</p>
+                  ) : (
               <div className="image-picker-grid">
-                {existing.map((f) => {
+                {matches.map((f) => {
                   const isSelected = state.mode === 'existing' && state.relative === browseRelative(f)
                   return (
                     <button
@@ -212,7 +234,10 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
                   )
                 })}
               </div>
-            )}
+                  )}
+                </>
+              )
+            })()}
           </div>
         </div>
       )}
