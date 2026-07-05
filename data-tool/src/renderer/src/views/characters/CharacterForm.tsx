@@ -4,6 +4,8 @@ import type {
   CharacterChange,
   CharacterAscensionPhase,
   CharacterTalentLevel,
+  CharacterTalentEntry,
+  CharacterConstellation,
   ImagePlan,
   MaterialSummary,
   OutfitSummary
@@ -104,10 +106,34 @@ function stateFromImage(path: string | null | undefined): ImageState {
 
 const emptyToNull = (s: string): string | null => (s.trim() ? s.trim() : null)
 
+// Image folder for a talent-attack entry, by its (structural) type. Passives are always
+// Talents/Passive; constellations always Constellation.
+const ATTACK_FOLDER: Record<string, string> = {
+  'Normal/Charged Attack': 'Talents/Normal',
+  'Elemental Skill': 'Talents/Skill',
+  'Elemental Burst': 'Talents/Burst'
+}
+const PASSIVE_TYPES = [
+  'Passive 1', 'Passive 2', 'Passive 3', 'Passive 4 (Utility)', 'Alternate Sprint'
+]
+
 // ── Draft ───────────────────────────────────────────────────────────────────
 
 interface AscPhaseDraft { levelKey: string; level: number; mora: number; q1: number; q2: number; q3: number; q4: number }
 interface TalentLevelDraft { levelKey: string; mora: number; q1: number; q2: number; q3: number; q4: number }
+// Attacks (3) and passives (variable). `originalKey` is the on-disk key (for base lookup); `key` is
+// the editable current key (defaults to originalKey; derived from name for new entries).
+interface TalentEntryDraft {
+  originalKey: string
+  key: string
+  keyTouched: boolean
+  name: string
+  effect: string
+  imageState: ImageState
+  order: number
+  type: string
+}
+interface ConstEntryDraft { key: string; name: string; effect: string; imageState: ImageState }
 
 interface Draft {
   name: string
@@ -136,6 +162,9 @@ interface Draft {
   matSlots: Record<string, string>
   ascPhases: AscPhaseDraft[]
   talentLevels: TalentLevelDraft[]
+  attacks: TalentEntryDraft[]
+  passives: TalentEntryDraft[]
+  constellationEntries: ConstEntryDraft[]
 }
 
 function ascPhasesFromRecord(rec: CharacterRecord): AscPhaseDraft[] {
@@ -157,6 +186,26 @@ function talentLevelsFromRecord(rec: CharacterRecord): TalentLevelDraft[] {
     q2: Number(p.material2qty ?? 0),
     q3: Number(p.material3qty ?? 0),
     q4: Number(p.material4qty ?? 0)
+  }))
+}
+function talentEntriesFromRecord(obj: Record<string, CharacterTalentEntry> | undefined): TalentEntryDraft[] {
+  return Object.entries(obj ?? {}).map(([key, e]) => ({
+    originalKey: key,
+    key,
+    keyTouched: true,
+    name: String(e.name ?? ''),
+    effect: String(e.effect ?? ''),
+    imageState: stateFromImage(e.image),
+    order: Number(e.order ?? 0),
+    type: String(e.type ?? '')
+  }))
+}
+function constEntriesFromRecord(obj: Record<string, CharacterConstellation> | undefined): ConstEntryDraft[] {
+  return Object.entries(obj ?? {}).map(([key, e]) => ({
+    key,
+    name: String(e.name ?? ''),
+    effect: String(e.effect ?? ''),
+    imageState: stateFromImage(e.image)
   }))
 }
 
@@ -199,7 +248,10 @@ function draftFromRecord(rec: CharacterRecord, existingKey?: string): Draft {
     imageState: stateFromImage(rec.image),
     matSlots: matSlotsFromRecord(rec),
     ascPhases: ascPhasesFromRecord(rec),
-    talentLevels: talentLevelsFromRecord(rec)
+    talentLevels: talentLevelsFromRecord(rec),
+    attacks: talentEntriesFromRecord(rec.talents?.attack),
+    passives: talentEntriesFromRecord(rec.talents?.passives),
+    constellationEntries: constEntriesFromRecord(rec.constellations)
   }
 }
 
@@ -229,6 +281,8 @@ export default function CharacterForm({
   const [outfitSummaries, setOutfitSummaries] = useState<OutfitSummary[]>([])
   const [templates, setTemplates] = useState<Record<string, CharacterRecord>>({})
   const [pickerSpec, setPickerSpec] = useState<SlotSpec | null>(null)
+  // Collapsible encyclopedic sections — render contents (and load their icons) only when open.
+  const [openSections, setOpenSections] = useState({ attacks: false, passives: false, constellations: false })
 
   const matSummaryMap = useMemo(() => new Map(matSummaries.map((m) => [m.key, m])), [matSummaries])
   const outfitOptions = useMemo<LinkOption[]>(
@@ -259,7 +313,10 @@ export default function CharacterForm({
       ...p, element, rarity,
       matSlots: matSlotsFromRecord(tpl),
       ascPhases: ascPhasesFromRecord(tpl),
-      talentLevels: talentLevelsFromRecord(tpl)
+      talentLevels: talentLevelsFromRecord(tpl),
+      attacks: talentEntriesFromRecord(tpl.talents?.attack),
+      passives: talentEntriesFromRecord(tpl.talents?.passives),
+      constellationEntries: constEntriesFromRecord(tpl.constellations)
     }))
   }
 
@@ -298,6 +355,39 @@ export default function CharacterForm({
       talentLevels[i] = { ...talentLevels[i], [field]: val }
       return { ...p, talentLevels }
     })
+
+  // Talent/constellation entry editors.
+  const updateEntry = (
+    listKey: 'attacks' | 'passives',
+    i: number,
+    patch: Partial<TalentEntryDraft>
+  ) =>
+    setDraft((p) => {
+      const list = [...p[listKey]]
+      list[i] = { ...list[i], ...patch }
+      return { ...p, [listKey]: list }
+    })
+  const updateConst = (i: number, patch: Partial<ConstEntryDraft>) =>
+    setDraft((p) => {
+      const constellationEntries = [...p.constellationEntries]
+      constellationEntries[i] = { ...constellationEntries[i], ...patch }
+      return { ...p, constellationEntries }
+    })
+  const addPassive = () =>
+    setDraft((p) => ({
+      ...p,
+      passives: [
+        ...p.passives,
+        {
+          originalKey: '', key: '', keyTouched: false, name: '', effect: '',
+          imageState: { mode: 'none' },
+          order: p.passives.length,
+          type: `Passive ${p.passives.length + 1}`
+        }
+      ]
+    }))
+  const removePassive = (i: number) =>
+    setDraft((p) => ({ ...p, passives: p.passives.filter((_, idx) => idx !== i) }))
 
   // ── Validation ─────────────────────────────────────────────────────────────
 
@@ -390,6 +480,60 @@ export default function CharacterForm({
       }
     }
 
+    // ── Talents (attack/passives) + constellations: rebuild preserving key + field order, edit in
+    // place (keys stable unless the user edits the key field). New/changed icons collect image ops.
+    const iconPlans: ImagePlan[] = []
+
+    // Resolve an icon's image path. With no active selection (mode 'none'), preserve the base value
+    // EXACTLY — some entries store "" (not null) and that distinction must round-trip — collapsing
+    // only template bare-folder paths ("Talents/Passive/") to null. Otherwise build from the state
+    // and stage any copy/download op.
+    const resolveIconImage = (
+      state: ImageState, folder: string, defaultName: string, baseImage: string | null | undefined
+    ): string | null => {
+      if (state.mode === 'none') {
+        if (typeof baseImage === 'string' && baseImage.endsWith('/')) return null
+        return baseImage ?? null
+      }
+      const entry = buildImageEntry(state, folder, defaultName)
+      if (entry.plan && entry.plan.source !== 'existing') iconPlans.push(entry.plan)
+      return entry.path
+    }
+
+    const buildTalentObj = (
+      entries: TalentEntryDraft[],
+      kind: 'attack' | 'passive'
+    ): Record<string, CharacterTalentEntry> => {
+      const baseObj = (kind === 'attack' ? base.talents?.attack : base.talents?.passives) ?? {}
+      const out: Record<string, CharacterTalentEntry> = {}
+      for (const e of entries) {
+        const finalKey = (e.keyTouched && e.key.trim() ? e.key.trim() : deriveKey(e.name)) || e.originalKey
+        if (!finalKey) continue
+        const baseEntry = baseObj[e.originalKey]
+        const folder = kind === 'attack' ? (ATTACK_FOLDER[e.type] ?? 'Talents/Normal') : 'Talents/Passive'
+        out[finalKey] = {
+          ...(baseEntry ?? {}),
+          name: e.name.trim() || null,
+          effect: e.effect.trim() || null,
+          image: resolveIconImage(e.imageState, folder, `Talent_${finalKey}`, baseEntry?.image),
+          order: e.order,
+          type: e.type
+        }
+      }
+      return out
+    }
+
+    const constellationsObj: Record<string, CharacterConstellation> = {}
+    for (const e of draft.constellationEntries) {
+      const baseEntry = base.constellations?.[e.key]
+      constellationsObj[e.key] = {
+        ...(baseEntry ?? {}),
+        name: e.name.trim() || null,
+        effect: e.effect.trim() || null,
+        image: resolveIconImage(e.imageState, 'Constellation', deriveKey(e.name) || e.key, baseEntry?.image)
+      }
+    }
+
     const record: CharacterRecord = {
       ...base,
       image: img.path,
@@ -405,7 +549,13 @@ export default function CharacterForm({
       affiliation: emptyToNull(draft.affiliation),
       constellation: emptyToNull(draft.constellation),
       outfits: draft.outfits,
-      talents: { ...base.talents, ascension: talentAsc },
+      talents: {
+        ...base.talents,
+        ascension: talentAsc,
+        passives: buildTalentObj(draft.passives, 'passive'),
+        attack: buildTalentObj(draft.attacks, 'attack')
+      },
+      constellations: constellationsObj,
       ascension,
       materials,
       introduction: emptyToNull(draft.introduction),
@@ -429,7 +579,8 @@ export default function CharacterForm({
       originalKey: mode === 'edit' ? originalKey : undefined,
       record,
       ordering: 'alphabetical',
-      image: img.plan
+      image: img.plan,
+      images: iconPlans
     }
   }
 
@@ -492,6 +643,82 @@ export default function CharacterForm({
       </td>
     )
   }
+
+  // Icon folder for an attack entry (by structural type); passives are always Talents/Passive.
+  const attackFolder = (type: string) => ATTACK_FOLDER[type] ?? 'Talents/Normal'
+
+  const renderTalentEntry = (
+    listKey: 'attacks' | 'passives', e: TalentEntryDraft, i: number
+  ) => {
+    const isPassive = listKey === 'passives'
+    const folder = isPassive ? 'Talents/Passive' : attackFolder(e.type)
+    const displayKey = e.keyTouched ? e.key : deriveKey(e.name)
+    return (
+      <div key={i} className="talent-entry">
+        <div className="talent-entry-icon">
+          <ImageField
+            rootPath={rootPath}
+            imageFolder={folder}
+            defaultBasename={displayKey ? `Talent_${displayKey}` : undefined}
+            state={e.imageState}
+            onChange={(s) => updateEntry(listKey, i, { imageState: s })}
+          />
+        </div>
+        <div className="talent-entry-fields">
+          <div className="talent-entry-row">
+            <input type="text" className="talent-entry-name" placeholder="Name"
+              value={e.name}
+              onChange={(ev) => {
+                const name = ev.target.value
+                updateEntry(listKey, i, e.keyTouched ? { name } : { name, key: deriveKey(name) })
+              }} />
+            {isPassive ? (
+              <>
+                <input type="text" className="talent-entry-type" list="passive-types" placeholder="Type"
+                  value={e.type} onChange={(ev) => updateEntry(listKey, i, { type: ev.target.value })} />
+                <input type="number" className="talent-entry-order" title="Order"
+                  value={e.order} onChange={(ev) => updateEntry(listKey, i, { order: Number(ev.target.value) })} />
+                <button type="button" className="btn-danger btn-sm" title="Remove passive"
+                  onClick={() => removePassive(i)}>Remove</button>
+              </>
+            ) : (
+              <span className="pill talent-entry-typelabel">{e.type}</span>
+            )}
+          </div>
+          <textarea className="talent-entry-effect" rows={3} placeholder="Effect"
+            value={e.effect} onChange={(ev) => updateEntry(listKey, i, { effect: ev.target.value })} />
+          <div className="talent-entry-key">
+            <label>key</label>
+            <input type="text" value={displayKey}
+              onChange={(ev) => updateEntry(listKey, i, { key: ev.target.value, keyTouched: true })} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const renderConstEntry = (e: ConstEntryDraft, i: number) => (
+    <div key={e.key} className="talent-entry">
+      <div className="talent-entry-icon">
+        <ImageField
+          rootPath={rootPath}
+          imageFolder="Constellation"
+          defaultBasename={deriveKey(e.name) || undefined}
+          state={e.imageState}
+          onChange={(s) => updateConst(i, { imageState: s })}
+        />
+      </div>
+      <div className="talent-entry-fields">
+        <div className="talent-entry-row">
+          <span className="pill talent-entry-typelabel">C{e.key}</span>
+          <input type="text" className="talent-entry-name" placeholder="Name"
+            value={e.name} onChange={(ev) => updateConst(i, { name: ev.target.value })} />
+        </div>
+        <textarea className="talent-entry-effect" rows={3} placeholder="Effect"
+          value={e.effect} onChange={(ev) => updateConst(i, { effect: ev.target.value })} />
+      </div>
+    </div>
+  )
 
   // ── Render ────────────────────────────────────────────────────────────────────
 
@@ -770,11 +997,52 @@ export default function CharacterForm({
               )}
             </tbody>
           </table>
-          <p className="field-help">
-            Talents, passives, and constellations are preserved as-is and edited in a later milestone.
-          </p>
+        </div>
+
+        {/* ── Attacks (Normal / Skill / Burst) ── */}
+        <div className="field field-wide">
+          <details className="talent-section"
+            onToggle={(e) => { const open = (e.currentTarget as HTMLDetailsElement | null)?.open ?? false; setOpenSections((s) => ({ ...s, attacks: open })) }}>
+            <summary>Attacks ({draft.attacks.length})</summary>
+            {openSections.attacks && (
+              <div className="talent-section-body">
+                {draft.attacks.map((e, i) => renderTalentEntry('attacks', e, i))}
+              </div>
+            )}
+          </details>
+        </div>
+
+        {/* ── Passives ── */}
+        <div className="field field-wide">
+          <details className="talent-section"
+            onToggle={(e) => { const open = (e.currentTarget as HTMLDetailsElement | null)?.open ?? false; setOpenSections((s) => ({ ...s, passives: open })) }}>
+            <summary>Passives ({draft.passives.length})</summary>
+            {openSections.passives && (
+              <div className="talent-section-body">
+                {draft.passives.map((e, i) => renderTalentEntry('passives', e, i))}
+                <button type="button" className="btn-secondary btn-sm" onClick={addPassive}>+ Add passive</button>
+              </div>
+            )}
+          </details>
+        </div>
+
+        {/* ── Constellations ── */}
+        <div className="field field-wide">
+          <details className="talent-section"
+            onToggle={(e) => { const open = (e.currentTarget as HTMLDetailsElement | null)?.open ?? false; setOpenSections((s) => ({ ...s, constellations: open })) }}>
+            <summary>Constellations ({draft.constellationEntries.length})</summary>
+            {openSections.constellations && (
+              <div className="talent-section-body">
+                {draft.constellationEntries.map((e, i) => renderConstEntry(e, i))}
+              </div>
+            )}
+          </details>
         </div>
       </div>
+
+      <datalist id="passive-types">
+        {PASSIVE_TYPES.map((t) => <option key={t} value={t} />)}
+      </datalist>
 
       {errors.length > 0 && (
         <ul className="form-errors">

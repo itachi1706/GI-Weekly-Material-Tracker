@@ -268,10 +268,24 @@ export interface CharacterTalentLevel {
   [key: string]: unknown
 }
 
-/**
- * `talents.passives`, `talents.attack`, and `constellations` are passed through verbatim this
- * milestone (not richly edited), so they're typed loosely as pass-through objects.
- */
+/** A talent attack/passive entry (keyed by a name-derived key). On-disk field order preserved. */
+export interface CharacterTalentEntry {
+  name: string | null
+  effect: string | null
+  image: string | null
+  order: number
+  type: string
+  [key: string]: unknown
+}
+
+/** A constellation entry ("1".."6"). No order/type. */
+export interface CharacterConstellation {
+  name: string | null
+  effect: string | null
+  image: string | null
+  [key: string]: unknown
+}
+
 export interface CharacterRecord {
   image?: string | null
   gender?: string | null
@@ -289,11 +303,11 @@ export interface CharacterRecord {
   outfits?: string[]
   talents?: {
     ascension?: Record<string, CharacterTalentLevel>
-    passives?: Record<string, unknown>
-    attack?: Record<string, unknown>
+    passives?: Record<string, CharacterTalentEntry>
+    attack?: Record<string, CharacterTalentEntry>
     [key: string]: unknown
   }
-  constellations?: Record<string, unknown>
+  constellations?: Record<string, CharacterConstellation>
   ascension?: Record<string, CharacterAscensionPhase>
   materials?: {
     ascension?: Record<string, string>
@@ -328,7 +342,10 @@ export interface CharacterChange {
   originalKey?: string
   record?: CharacterRecord
   ordering: InsertModeName
+  /** Portrait image op. */
   image?: ImagePlan
+  /** Additional image ops (talent/constellation icons). */
+  images?: ImagePlan[]
 }
 
 // ---- Banners ----

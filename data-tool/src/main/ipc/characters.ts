@@ -122,11 +122,15 @@ export async function previewCharacterCommit(
   const reference = before || '\n'
   const after = withTrailingNewline(stringifyDataFile(nextParsed), reference)
 
+  const imageActions = [change.image, ...(change.images ?? [])]
+    .map(planActionText)
+    .filter((s): s is string => s !== null)
+
   return {
     file: change.file,
     before,
     after,
-    imageAction: planActionText(change.image),
+    imageAction: imageActions.length ? imageActions.join('\n') : null,
     formattingDriftWarning:
       before && !roundTrips(before)
         ? 'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records. Run `npm run normalize:format` against the dataset once to fix.'
@@ -157,6 +161,7 @@ export async function commitCharacter(
       return { ok: false, error: preview.formattingDriftWarning }
     }
     if (change.image) await performImageOp(rootPath, change.image)
+    for (const plan of change.images ?? []) await performImageOp(rootPath, plan)
     await writeFile(join(dataDir(rootPath), change.file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {

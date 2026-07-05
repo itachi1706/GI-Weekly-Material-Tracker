@@ -1512,3 +1512,74 @@ textarea:focus {
   font-weight: 500;
   color: var(--text-muted);
 }
+
+/* ---- character talent/constellation editors ---- */
+.talent-section {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.talent-section > summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.talent-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+.talent-entry {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.talent-section-body > .talent-entry:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.talent-entry-icon {
+  flex: none;
+}
+.talent-entry-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.talent-entry-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.talent-entry-name { flex: 1; min-width: 0; }
+.talent-entry-type { width: 200px; }
+.talent-entry-order { width: 64px; text-align: right; }
+.talent-entry-typelabel { flex: none; }
+.talent-entry-effect { width: 100%; box-sizing: border-box; }
+.talent-entry-key {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.talent-entry-key label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.talent-entry-key input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+}
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+}

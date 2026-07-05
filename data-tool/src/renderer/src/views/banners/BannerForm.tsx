@@ -324,7 +324,7 @@ export default function BannerForm({
         {/* Gacha pool (large; collapsed). Contents render only once expanded so the (100+) pool
             thumbnails don't all load on mount and lag the edit screen. */}
         <div className="field field-wide">
-          <details className="banner-pool" onToggle={(e) => setPoolOpen((e.currentTarget as HTMLDetailsElement).open)}>
+          <details className="banner-pool" onToggle={(e) => setPoolOpen((e.currentTarget as HTMLDetailsElement | null)?.open ?? false)}>
             <summary>Gacha pool ({draft.characters.length} characters, {draft.weapons.length} weapons)</summary>
             {poolOpen && (
             <div className="banner-pool-body">
