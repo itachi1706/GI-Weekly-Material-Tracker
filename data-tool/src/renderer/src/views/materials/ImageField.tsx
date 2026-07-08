@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { ImagePlan } from '@shared/types'
 import type { ImageState } from './util'
-import { extOf, sanitizeImageBasename } from './util'
+import { extOf, sanitizeImageBasename, normalizeImageUrl } from './util'
 import { loadImage } from '../shared/imageCache'
 
 interface Props {
@@ -92,7 +92,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   }
 
   const applyUrl = () => {
-    const url = urlInput.trim()
+    const url = normalizeImageUrl(urlInput)
     if (!url) return
     onChange({ mode: 'url', url, imageName: sanitizeImageBasename(url) })
   }

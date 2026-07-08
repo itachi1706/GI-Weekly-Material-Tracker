@@ -15,6 +15,21 @@ export type ImageState =
   | { mode: 'url'; url: string; imageName?: string }
 
 /**
+ * Normalize an image URL by truncating everything after the image filename.
+ * Genshin Wiki / Fandom (and similar CDNs) append `/revision/latest/scale-to-width-down/NNN?cb=…`
+ * after the real filename, e.g.
+ *   https://…/Sandrone_Icon.png/revision/latest/scale-to-width-down/150?cb=2026…
+ * → https://…/Sandrone_Icon.png
+ * Keeps the true filename (so the save-as name is "Sandrone_Icon", not "150") and fetches full-res.
+ * If the URL has no recognizable image extension, it's returned unchanged.
+ */
+export function normalizeImageUrl(url: string): string {
+  const trimmed = url.trim()
+  const m = trimmed.match(/^(https?:\/\/.*?\.(?:png|jpe?g|gif|webp|avif|bmp|svg))(?:[/?#].*)?$/i)
+  return m ? m[1] : trimmed
+}
+
+/**
  * Derive a safe image basename from a URL.
  * Strips the extension, then replaces anything that isn't alphanumeric / dash / underscore with `_`.
  */

@@ -162,6 +162,7 @@ interface Draft {
   paimonmoepath: string
   genshinggpath: string
   released: boolean
+  crossover: boolean
   wiki: string
   hoyowiki: string
   imageState: ImageState
@@ -248,6 +249,7 @@ function draftFromRecord(rec: CharacterRecord, existingKey?: string): Draft {
     paimonmoepath: String(rec.paimonmoepath ?? ''),
     genshinggpath: String(rec.genshinggpath ?? ''),
     released: Boolean(rec.released),
+    crossover: Boolean(rec.crossover),
     wiki: String(rec.wiki ?? ''),
     hoyowiki: rec.hoyowiki != null ? String(rec.hoyowiki) : '',
     imageState: stateFromImage(rec.image),
@@ -582,6 +584,11 @@ export default function CharacterForm({
     if ('fullName' in base) record.fullName = emptyToNull(draft.fullName)
     else if (draft.fullName.trim()) record.fullName = draft.fullName.trim()
 
+    // `crossover` is a boolean present ONLY on crossover characters (Aloy, Manekin) as `true`;
+    // omit the key entirely otherwise (never write `false`).
+    if (draft.crossover) record.crossover = true
+    else delete record.crossover
+
     return {
       op: mode === 'edit' ? 'update' : 'create',
       file: mode === 'edit' && file ? file : fileForElement(draft.element),
@@ -893,6 +900,16 @@ export default function CharacterForm({
               onChange={(e) => set('released', e.target.checked)} />
             <span>{draft.released ? 'Yes' : 'No'}</span>
           </label>
+        </div>
+
+        <div className="field">
+          <label>Crossover</label>
+          <label className="switch">
+            <input type="checkbox" checked={draft.crossover}
+              onChange={(e) => set('crossover', e.target.checked)} />
+            <span>{draft.crossover ? 'Yes' : 'No'}</span>
+          </label>
+          <p className="field-help">Sets <code>crossover: true</code> (e.g. Aloy, Manekin); omitted when off.</p>
         </div>
 
         <div className="field">
