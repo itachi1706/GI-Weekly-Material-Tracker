@@ -15,13 +15,6 @@ import type {
 
 const CHARACTERS = ENTITIES.find((e) => e.key === 'characters')!
 
-/**
- * Traveler has a distinct template/shape and is deferred to its own milestone. It is excluded from
- * the browse list (so it can't be opened for edit) and from create; its file is still round-tripped
- * by the formatting gate.
- */
-const DEFERRED_FILES = new Set(['Characters-Traveler.json'])
-
 function dataDir(rootPath: string): string {
   return join(rootPath, 'data')
 }
@@ -33,7 +26,6 @@ async function characterFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
   return files
     .filter((f) => f.startsWith(CHARACTERS.filePrefix!) && f.endsWith('.json'))
-    .filter((f) => !DEFERRED_FILES.has(f))
     .sort()
 }
 

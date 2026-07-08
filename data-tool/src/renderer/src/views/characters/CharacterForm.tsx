@@ -29,49 +29,55 @@ function fileForElement(element: string): string {
   return `Characters-${element}.json`
 }
 
-// Material slot specs. Tier sets (tierSize > 1) auto-fill siblings; singles (tierSize 0) don't.
-// `common*` slots are SHARED between the ascension and talents maps (identical in the data), so
-// they're edited once under Ascension and written to both maps on commit.
+// A material-map slot, DERIVED from the keys actually present in a record's materials maps — so the
+// Traveler's boss_drop-less ascension and mastery2-1..mastery3-3 talent variants render correctly,
+// rather than assuming the standard fixed slot set. Tier slots (tierSize > 1) auto-fill siblings.
 interface SlotSpec {
-  slotKey: string        // matches the data's material-map key (e.g. "gem1", "boss_drop")
-  prefix: string         // tier prefix ("gem"/"common"/"mastery") or the single-slot key
-  label: string          // display label, e.g. "Gem"
-  fileKeyword: string    // substring matched against MaterialSummary.file
-  tierSize: number       // 4 or 3 for tier sets; 0 for singles
-  index: number          // 1-based position within its tier (1 for singles)
+  map: 'ascension' | 'talents' // which materials sub-map this slot belongs to
+  slotKey: string        // the data's material-map key (e.g. "gem1", "boss_drop", "mastery2-1")
+  prefix: string         // autofill group ("gem"/"common"/"mastery"); singles/variants use slotKey
+  label: string          // display label
+  fileKeyword: string    // substring matched against MaterialSummary.file (picker filter)
+  tierSize: number       // > 1 → findTierSet autofill; else individual picker
+  index: number          // position within tier (roman label)
+  expectedRarity: number // picker rarity filter; -1 = any
 }
 
-function tierSpecs(prefix: string, label: string, fileKeyword: string, count: number, tierSize: number): SlotSpec[] {
-  return Array.from({ length: count }, (_, i) => ({
-    slotKey: `${prefix}${i + 1}`, prefix, label, fileKeyword, tierSize, index: i + 1
-  }))
-}
-function single(slotKey: string, label: string, fileKeyword: string): SlotSpec {
-  return { slotKey, prefix: slotKey, label, fileKeyword, tierSize: 0, index: 1 }
+// Draft key namespaced by map, since ascension & talents can hold DIFFERENT `common1..3` values
+// (true for Travelers: ascension commons are masks, talent commons are region books).
+const slotDraftKey = (s: SlotSpec): string => `${s.map}.${s.slotKey}`
+
+const SINGLE_SLOTS: Record<string, { label: string; fileKeyword: string }> = {
+  boss_drop: { label: 'Boss drop', fileKeyword: 'Boss_Drops' },
+  local_speciality: { label: 'Local specialty', fileKeyword: 'Local_Special' },
+  weekly_boss_drop: { label: 'Weekly boss drop', fileKeyword: 'Weekly_Boss' },
+  crown: { label: 'Crown', fileKeyword: 'Weekly_Boss' }
 }
 
-const COMMON_SLOTS = tierSpecs('common', 'Common', 'Common_Mob', 3, 3)
-const ASCENSION_SLOTS: SlotSpec[] = [
-  ...tierSpecs('gem', 'Gem', 'Boss_Gems', 4, 4),
-  single('boss_drop', 'Boss drop', 'Boss_Drops'),
-  single('local_speciality', 'Local specialty', 'Local_Special'),
-  ...COMMON_SLOTS
-]
-const TALENT_SLOTS: SlotSpec[] = [
-  ...tierSpecs('mastery', 'Mastery', 'Mastery_Domain', 3, 3),
-  single('weekly_boss_drop', 'Weekly boss drop', 'Weekly_Boss'),
-  single('crown', 'Crown', 'Weekly_Boss')
-]
+/** Classify a material-map key into a slot spec (picker filter + optional tier autofill). */
+function classifySlot(key: string, map: 'ascension' | 'talents'): SlotSpec {
+  let m: RegExpMatchArray | null
+  if ((m = key.match(/^gem(\d+)$/)))
+    return { map, slotKey: key, prefix: 'gem', label: 'Gem', fileKeyword: 'Boss_Gems', tierSize: 4, index: +m[1], expectedRarity: +m[1] + 1 }
+  if ((m = key.match(/^common(\d+)$/)))
+    return { map, slotKey: key, prefix: 'common', label: 'Common', fileKeyword: 'Common_Mob', tierSize: 3, index: +m[1], expectedRarity: +m[1] }
+  if ((m = key.match(/^mastery(\d+)$/)))
+    return { map, slotKey: key, prefix: 'mastery', label: 'Mastery', fileKeyword: 'Mastery_Domain', tierSize: 3, index: +m[1], expectedRarity: +m[1] + 1 }
+  if ((m = key.match(/^mastery(\d+)-(\d+)$/))) // Traveler variant: 3 parallel book-lines, no autofill
+    return { map, slotKey: key, prefix: key, label: `Mastery ${roman(+m[1])} (set ${m[2]})`, fileKeyword: 'Mastery_Domain', tierSize: 0, index: +m[1], expectedRarity: +m[1] + 1 }
+  const s = SINGLE_SLOTS[key]
+  if (s) return { map, slotKey: key, prefix: key, label: s.label, fileKeyword: s.fileKeyword, tierSize: 0, index: 1, expectedRarity: -1 }
+  return { map, slotKey: key, prefix: key, label: key, fileKeyword: '', tierSize: 0, index: 1, expectedRarity: -1 }
+}
+
+/** Slot specs for a materials sub-map, in on-disk key order. */
+function deriveSlots(mapObj: Record<string, string> | undefined, map: 'ascension' | 'talents'): SlotSpec[] {
+  return Object.keys(mapObj ?? {}).map((k) => classifySlot(k, map))
+}
 
 // Semantic column meaning of material1..4 in each table (a hard game convention, verified in data).
 const ASC_COLS = ['Gem', 'Boss', 'Local spec.', 'Common'] as const
 const TALENT_COLS = ['Crown', 'Weekly', 'Mastery', 'Common'] as const
-
-function expectedRarityFor(spec: SlotSpec): number {
-  if (spec.prefix === 'gem' || spec.prefix === 'mastery') return spec.index + 1
-  if (spec.prefix === 'common') return spec.index
-  return -1
-}
 
 // ── Image helpers ─────────────────────────────────────────────────────────────
 
@@ -213,10 +219,9 @@ function matSlotsFromRecord(rec: CharacterRecord): Record<string, string> {
   const a = (rec.materials?.ascension ?? {}) as Record<string, string>
   const t = (rec.materials?.talents ?? {}) as Record<string, string>
   const out: Record<string, string> = {}
-  for (const s of ASCENSION_SLOTS) out[s.slotKey] = a[s.slotKey] ?? ''
-  for (const s of TALENT_SLOTS) out[s.slotKey] = t[s.slotKey] ?? ''
-  // commons live in both maps; prefer the ascension copy
-  for (const s of COMMON_SLOTS) out[s.slotKey] = a[s.slotKey] ?? t[s.slotKey] ?? ''
+  // Namespaced by map — ascension.common1 and talents.common1 are independent (differ for Travelers).
+  for (const k of Object.keys(a)) out[`ascension.${k}`] = a[k] ?? ''
+  for (const k of Object.keys(t)) out[`talents.${k}`] = t[k] ?? ''
   return out
 }
 
@@ -284,6 +289,10 @@ export default function CharacterForm({
   // Collapsible encyclopedic sections — render contents (and load their icons) only when open.
   const [openSections, setOpenSections] = useState({ attacks: false, passives: false, constellations: false })
 
+  // Slot specs derived from the record's actual material keys (handles Traveler shapes).
+  const ascSlots = useMemo(() => deriveSlots(base.materials?.ascension, 'ascension'), [base])
+  const talSlots = useMemo(() => deriveSlots(base.materials?.talents, 'talents'), [base])
+
   const matSummaryMap = useMemo(() => new Map(matSummaries.map((m) => [m.key, m])), [matSummaries])
   const outfitOptions = useMemo<LinkOption[]>(
     () => outfitSummaries.map((o) => ({ key: o.key, name: o.name, image: o.image, sublabel: o.type })),
@@ -327,10 +336,11 @@ export default function CharacterForm({
 
   const handlePickerSelect = (key: string) => {
     if (!pickerSpec) return
-    const { slotKey, prefix, fileKeyword, tierSize } = pickerSpec
-    const newSlots = { ...draft.matSlots, [slotKey]: key }
+    const { map, prefix, fileKeyword, tierSize } = pickerSpec
+    const newSlots = { ...draft.matSlots, [slotDraftKey(pickerSpec)]: key }
     const tierFill = findTierSet(matSummaries, key, fileKeyword, tierSize, prefix)
-    if (tierFill) Object.assign(newSlots, tierFill)
+    // tierFill keys are bare (common1, gem1…); scope them to this slot's map.
+    if (tierFill) for (const [k, v] of Object.entries(tierFill)) newSlots[`${map}.${k}`] = v
     setDraft((p) => ({ ...p, matSlots: newSlots }))
     setPickerSpec(null)
   }
@@ -407,20 +417,20 @@ export default function CharacterForm({
     const img = buildImageEntry(draft.imageState, imageFolder, currentKey)
     const slots = draft.matSlots
 
-    // Two material maps; commons are shared (edited once, written to both). Compute only the slots
-    // the user actually changed (non-empty and different from base) so a no-op edit stays byte-exact
-    // and pre-existing map keys/order are preserved untouched.
+    // Each map's slots are independent (namespaced draft keys). Compute only the slots the user
+    // actually changed (non-empty and different from base) so a no-op edit stays byte-exact and
+    // pre-existing map keys/order are preserved untouched.
     const changedSlots = (specs: SlotSpec[], baseMap: Record<string, string> | undefined) => {
       const c: Record<string, string> = {}
       for (const s of specs) {
-        const nv = cleanSlot(slots[s.slotKey] ?? '')
+        const nv = cleanSlot(slots[slotDraftKey(s)] ?? '')
         const ov = (baseMap ?? {})[s.slotKey] ?? ''
         if (nv && nv !== ov) c[s.slotKey] = nv
       }
       return c
     }
-    const ascChanged = changedSlots(ASCENSION_SLOTS, base.materials?.ascension)
-    const talChanged = changedSlots([...TALENT_SLOTS, ...COMMON_SLOTS], base.materials?.talents)
+    const ascChanged = changedSlots(ascSlots, base.materials?.ascension)
+    const talChanged = changedSlots(talSlots, base.materials?.talents)
 
     const ascensionMap: Record<string, string> = { ...(base.materials?.ascension ?? {}) }
     for (const [k, v] of Object.entries(ascChanged)) ascensionMap[k] = v
@@ -593,12 +603,13 @@ export default function CharacterForm({
   // ── Render helpers ────────────────────────────────────────────────────────────
 
   const renderSlot = (spec: SlotSpec) => {
-    const selectedKey = draft.matSlots[spec.slotKey] ?? ''
+    const draftKey = slotDraftKey(spec)
+    const selectedKey = draft.matSlots[draftKey] ?? ''
     const displayName = slotName(selectedKey)
     const imgPath = slotImage(selectedKey)
     const tierLabel = spec.tierSize > 1 ? `${spec.label} ${roman(spec.index)}` : spec.label
     return (
-      <div key={spec.slotKey} className="wmr-slot">
+      <div key={draftKey} className="wmr-slot">
         <span className="wmr-tier">{tierLabel}</span>
         <div className="mat-slot-picker">
           {imgPath && <MatImage rootPath={rootPath} imagePath={imgPath} className="mat-slot-icon" />}
@@ -611,12 +622,24 @@ export default function CharacterForm({
           </button>
           {selectedKey && (
             <button type="button" className="mat-slot-clear" title="Clear"
-              onClick={() => setMatSlot(spec.slotKey, '')}>×</button>
+              onClick={() => setMatSlot(draftKey, '')}>×</button>
           )}
         </div>
       </div>
     )
   }
+
+  // A labeled row of material slots; renders nothing if the group has no slots (e.g. Travelers have
+  // no boss_drop, so the "Boss / Local" group shows only Local).
+  const renderMatGroup = (label: string, slots: SlotSpec[]) =>
+    slots.length === 0 ? null : (
+      <div className="weapon-mat-row">
+        <span className="wmr-label">{label}</span>
+        <div className="wmr-slots" data-count={slots.length}>
+          {slots.map(renderSlot)}
+        </div>
+      </div>
+    )
 
   // A qty cell is only editable when the base phase actually uses that material slot (type != null).
   const ascQtyCell = (i: number, phaseKey: string, colIdx: 1 | 2 | 3 | 4) => {
@@ -889,44 +912,20 @@ export default function CharacterForm({
             <span className="field-help-inline muted"> — click a slot to pick; selecting any tier auto-fills the set</span>
           </label>
           <div className="weapon-mat-slots">
-            <div className="weapon-mat-row">
-              <span className="wmr-label">Gem</span>
-              <div className="wmr-slots" data-count={4}>
-                {ASCENSION_SLOTS.filter((s) => s.prefix === 'gem').map(renderSlot)}
-              </div>
-            </div>
-            <div className="weapon-mat-row">
-              <span className="wmr-label">Boss / Local</span>
-              <div className="wmr-slots" data-count={2}>
-                {ASCENSION_SLOTS.filter((s) => s.slotKey === 'boss_drop' || s.slotKey === 'local_speciality').map(renderSlot)}
-              </div>
-            </div>
-            <div className="weapon-mat-row">
-              <span className="wmr-label">Common</span>
-              <div className="wmr-slots" data-count={3}>
-                {COMMON_SLOTS.map(renderSlot)}
-              </div>
-            </div>
+            {renderMatGroup('Gem', ascSlots.filter((s) => s.prefix === 'gem'))}
+            {renderMatGroup('Boss / Local', ascSlots.filter((s) => s.prefix !== 'gem' && s.prefix !== 'common'))}
+            {renderMatGroup('Common', ascSlots.filter((s) => s.prefix === 'common'))}
           </div>
-          <p className="field-help">Common materials are shared with talents.</p>
         </div>
 
         {/* ── Talent materials map ── */}
         <div className="field field-wide">
           <label>Talent Materials</label>
           <div className="weapon-mat-slots">
-            <div className="weapon-mat-row">
-              <span className="wmr-label">Mastery</span>
-              <div className="wmr-slots" data-count={3}>
-                {TALENT_SLOTS.filter((s) => s.prefix === 'mastery').map(renderSlot)}
-              </div>
-            </div>
-            <div className="weapon-mat-row">
-              <span className="wmr-label">Weekly / Crown</span>
-              <div className="wmr-slots" data-count={2}>
-                {TALENT_SLOTS.filter((s) => s.slotKey === 'weekly_boss_drop' || s.slotKey === 'crown').map(renderSlot)}
-              </div>
-            </div>
+            {renderMatGroup('Mastery', talSlots.filter((s) => s.slotKey.startsWith('mastery')))}
+            {renderMatGroup('Weekly / Crown',
+              talSlots.filter((s) => !s.slotKey.startsWith('mastery') && s.prefix !== 'common'))}
+            {renderMatGroup('Common', talSlots.filter((s) => s.prefix === 'common'))}
           </div>
         </div>
 
@@ -1067,8 +1066,8 @@ export default function CharacterForm({
           rootPath={rootPath}
           title={pickerSpec.tierSize > 1 ? `${pickerSpec.label} ${roman(pickerSpec.index)}` : pickerSpec.label}
           fileKeyword={pickerSpec.fileKeyword}
-          expectedRarity={expectedRarityFor(pickerSpec)}
-          selectedKey={draft.matSlots[pickerSpec.slotKey] ?? ''}
+          expectedRarity={pickerSpec.expectedRarity}
+          selectedKey={draft.matSlots[slotDraftKey(pickerSpec)] ?? ''}
           materials={matSummaries}
           onSelect={handlePickerSelect}
           onClose={() => setPickerSpec(null)}

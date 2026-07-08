@@ -2,6 +2,9 @@ import { useEffect, useMemo, useState } from 'react'
 import type { CharacterSummary, ImagePlan } from '@shared/types'
 
 const ELEMENTS = ['Anemo', 'Cryo', 'Dendro', 'Electro', 'Geo', 'Hydro', 'Pyro'] as const
+const TRAVELER_FILTER = '__traveler__'
+const TRAVELER_FILE = 'Characters-Traveler.json'
+const isTraveler = (c: CharacterSummary) => c.file === TRAVELER_FILE
 
 type SortCol = 'name' | 'element' | 'weapon' | 'rarity' | 'released'
 
@@ -57,11 +60,13 @@ export default function CharactersList({
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    const base = list.filter(
-      (c) =>
-        (!elementFilter || c.element === elementFilter) &&
-        (!q || c.name.toLowerCase().includes(q) || c.key.toLowerCase().includes(q))
-    )
+    const base = list.filter((c) => {
+      if (q && !c.name.toLowerCase().includes(q) && !c.key.toLowerCase().includes(q)) return false
+      if (!elementFilter) return true
+      // "Traveler" shows only the Traveler file; element tabs exclude Travelers so they don't mix in.
+      if (elementFilter === TRAVELER_FILTER) return isTraveler(c)
+      return c.element === elementFilter && !isTraveler(c)
+    })
     if (!sortCol) return base
     return [...base].sort((a, b) => {
       let av: string | number
@@ -93,6 +98,7 @@ export default function CharactersList({
           {ELEMENTS.map((el) => (
             <option key={el} value={el}>{el}</option>
           ))}
+          <option value={TRAVELER_FILTER}>Traveler</option>
         </select>
       </div>
 
@@ -137,7 +143,7 @@ export default function CharactersList({
                   <td>
                     <CharacterThumb rootPath={rootPath} image={c.image} />
                   </td>
-                  <td>{c.name}</td>
+                  <td>{c.name}{isTraveler(c) && <span className="pill" style={{ marginLeft: 6 }}>Traveler</span>}</td>
                   <td><span className="pill">{c.element}</span></td>
                   <td>{c.weapon}</td>
                   <td>{'★'.repeat(c.rarity)}</td>
