@@ -45,6 +45,7 @@ import {
   previewBannerCommit,
   commitBanner
 } from './ipc/banners'
+import { fetchCharacterFromWiki } from './ipc/wiki'
 import { readSettings, writeSettings } from './settings'
 import type {
   DatasetInfo,
@@ -199,6 +200,9 @@ function registerIpc(): void {
   ipcMain.handle('banners:commit', (_e, rootPath: string, change: BannerChange) =>
     commitBanner(rootPath, change)
   )
+
+  // Wiki auto-fill (Fandom). No rootPath — purely external fetch + parse.
+  ipcMain.handle('wiki:fetchCharacter', (_e, url: string) => fetchCharacterFromWiki(url))
 }
 
 app.whenReady().then(() => {

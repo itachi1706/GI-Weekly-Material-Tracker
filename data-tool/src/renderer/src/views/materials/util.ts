@@ -31,13 +31,26 @@ export function normalizeImageUrl(url: string): string {
 
 /**
  * Derive a safe image basename from a URL.
- * Strips the extension, then replaces anything that isn't alphanumeric / dash / underscore with `_`.
+ * URL-decodes first (so `%2C`, `%21` etc. become the real punctuation), strips the extension, then
+ * drops anything that isn't alphanumeric / dash / underscore — collapsing runs to a single `_` and
+ * trimming edges. So `…Not%21.png` → `Not`, `…Life%2C_Who…` → `Life_Who` (matching the dataset).
  */
 export function sanitizeImageBasename(url: string): string {
   const clean = url.split(/[?#]/)[0]
-  const filename = clean.split('/').pop() ?? 'image'
+  let filename = clean.split('/').pop() ?? 'image'
+  try {
+    filename = decodeURIComponent(filename)
+  } catch {
+    // Malformed %-escape — fall back to the raw filename.
+  }
   const base = filename.replace(/\.[^.]+$/, '') || 'image'
-  return base.replace(/[^a-zA-Z0-9\-_]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '') || 'image'
+  return (
+    base
+      .replace(/['’]/g, '') // apostrophes are dropped, not underscored ("It's" → "Its")
+      .replace(/[^a-zA-Z0-9\-_]/g, '_')
+      .replace(/_+/g, '_')
+      .replace(/^_|_$/g, '') || 'image'
+  )
 }
 
 /** Convert form ImageState + the target relative path into an ImagePlan for the commit. */

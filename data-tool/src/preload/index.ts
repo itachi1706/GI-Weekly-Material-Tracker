@@ -19,7 +19,8 @@ import type {
   BannerType,
   CommitPreview,
   CommitResult,
-  ImagePlan
+  ImagePlan,
+  WikiCharacterResult
 } from '@shared/types'
 
 const api = {
@@ -110,6 +111,12 @@ const api = {
       ipcRenderer.invoke('banners:previewCommit', rootPath, change),
     commit: (rootPath: string, change: BannerChange): Promise<CommitResult> =>
       ipcRenderer.invoke('banners:commit', rootPath, change)
+  },
+
+  wiki: {
+    /** Fetch + parse a Fandom character page into per-field review candidates. Rejects on failure. */
+    fetchCharacter: (url: string): Promise<WikiCharacterResult> =>
+      ipcRenderer.invoke('wiki:fetchCharacter', url)
   }
 }
 

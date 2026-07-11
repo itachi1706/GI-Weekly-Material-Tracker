@@ -8,15 +8,18 @@ import type {
   CharacterConstellation,
   ImagePlan,
   MaterialSummary,
-  OutfitSummary
+  OutfitSummary,
+  WikiCharacterResult,
+  WikiTalent
 } from '@shared/types'
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { TagsInput } from '../materials/MaterialForm'
-import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
+import { extOf, sanitizeImageBasename, normalizeImageUrl, type ImageState } from '../materials/util'
 import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
 import { RaritySelect } from '../shared/rarity'
 import { EntityLinkInput, type LinkOption } from '../shared/entityLink'
+import WikiFillPanel, { type WikiRow } from './WikiFillPanel'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -111,6 +114,53 @@ function stateFromImage(path: string | null | undefined): ImageState {
 }
 
 const emptyToNull = (s: string): string | null => (s.trim() ? s.trim() : null)
+
+// ── Wiki auto-fill helpers ──────────────────────────────────────────────────────
+
+/**
+ * Build a url-mode ImageState from a raw wiki CDN URL (normalized).
+ * `basename` controls the save-as name:
+ *  - undefined → the wiki filename (correct for talent/passive icons, e.g. "Sword_Hydro", "Talent_X")
+ *  - a string  → that exact name (constellations pass the wiki name minus its "Constellation_" prefix)
+ *  - null      → omit it, so the commit falls back to the entry's default (e.g. the character key)
+ */
+function urlStateFromWiki(raw: string, basename?: string | null): ImageState {
+  const url = normalizeImageUrl(raw)
+  if (basename === null) return { mode: 'url', url }
+  return { mode: 'url', url, imageName: basename ?? sanitizeImageBasename(url) }
+}
+
+/**
+ * The final on-disk filename (basename + extension) a wiki icon URL will produce — so the review
+ * preview matches the committed name and can be compared against the current image. `override`
+ * supplies a custom basename (constellations pass their prefix-stripped name).
+ */
+function wikiIconFileName(raw: string, override?: string): string {
+  const url = normalizeImageUrl(raw)
+  const base = override ?? sanitizeImageBasename(url)
+  return `${base}.${extOf(url)}`
+}
+
+/** Human-readable summary of an ImageState for the review table's "current" column. */
+function describeImage(state: ImageState): string {
+  if (state.mode === 'existing') return state.relative.split('/').pop() ?? state.relative
+  if (state.mode === 'url') return state.url.split('/').pop() ?? state.url
+  if (state.mode === 'localFile') return state.sourcePath.split(/[/\\]/).pop() ?? state.sourcePath
+  return ''
+}
+
+const eqi = (a: string, b: string): boolean => a.trim().toLowerCase() === b.trim().toLowerCase()
+
+/** Which draft attack index a wiki talent maps to (fixed 3, matched by structural type), or -1. */
+function attackIndexFor(wt: WikiTalent, attacks: { type: string }[]): number {
+  const t = wt.type.toLowerCase()
+  if (t.includes('normal')) return attacks.findIndex((a) => /normal/i.test(a.type))
+  if (t.includes('skill')) return attacks.findIndex((a) => /skill/i.test(a.type))
+  if (t.includes('burst')) return attacks.findIndex((a) => /burst/i.test(a.type))
+  return -1
+}
+
+const isPassiveType = (t: string): boolean => /passive|sprint/i.test(t)
 
 // Image folder for a talent-attack entry, by its (structural) type. Passives are always
 // Talents/Passive; constellations always Constellation.
@@ -290,6 +340,13 @@ export default function CharacterForm({
   const [pickerSpec, setPickerSpec] = useState<SlotSpec | null>(null)
   // Collapsible encyclopedic sections — render contents (and load their icons) only when open.
   const [openSections, setOpenSections] = useState({ attacks: false, passives: false, constellations: false })
+  // Wiki auto-fill. The URL box is hidden behind a header toggle — shown by default only when
+  // creating a new character (where auto-fill is most useful), collapsed when editing.
+  const [showWiki, setShowWiki] = useState(mode === 'create')
+  const [wikiUrl, setWikiUrl] = useState('')
+  const [wikiBusy, setWikiBusy] = useState(false)
+  const [wikiError, setWikiError] = useState<string | null>(null)
+  const [wikiResult, setWikiResult] = useState<WikiCharacterResult | null>(null)
 
   // Slot specs derived from the record's actual material keys (handles Traveler shapes).
   const ascSlots = useMemo(() => deriveSlots(base.materials?.ascension, 'ascension'), [base])
@@ -607,6 +664,160 @@ export default function CharacterForm({
     if (!errs.length) onPreview(buildChange())
   }
 
+  // ── Wiki auto-fill ───────────────────────────────────────────────────────────
+
+  const fetchWiki = () => {
+    const url = (wikiUrl.trim() || draft.wiki.trim())
+    if (!url) { setWikiError('Paste a Genshin Wiki page URL first.'); return }
+    setWikiBusy(true)
+    setWikiError(null)
+    window.api.wiki
+      .fetchCharacter(url)
+      .then((r) => { setWikiResult(r); setWikiUrl(url) })
+      .catch((e: unknown) => setWikiError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setWikiBusy(false))
+  }
+
+  // Build the review rows + a map of id → Draft mutation. Recomputed from the current draft so the
+  // "current" column and match indices stay accurate; apply fns operate on the accumulator so a
+  // multi-row apply composes cleanly. Nothing here writes to disk — only into the Draft.
+  const wikiData = useMemo(() => {
+    const res = wikiResult
+    const rows: WikiRow[] = []
+    const apply: Record<string, (d: Draft) => Draft> = {}
+    if (!res) return { rows, apply }
+
+    const add = (
+      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
+      fn?: (d: Draft) => Draft
+    ) => {
+      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+      rows.push({ ...row, changed })
+      if (fn) apply[row.id] = fn
+    }
+
+    // When creating, a matched attack/passive still carries the template's placeholder key
+    // ("Normal", "Passive_1"); re-key it from the applied name so the object key matches the dataset
+    // convention (e.g. "Soloists_Solicitation"). In edit mode keys are already correct and may carry
+    // intentional disambiguation suffixes, so leave them untouched (the "never auto-re-key" rule).
+    const keyPatch = (name: string): Partial<TalentEntryDraft> =>
+      mode === 'create' ? { key: deriveKey(name), keyTouched: false } : {}
+
+    // Identity (editable text).
+    const idField = (
+      id: string, label: string, current: string, fetched: string | null,
+      fn: (d: Draft, v: string) => Draft
+    ) => {
+      const v = fetched ?? ''
+      if (!v) return
+      add({ id, group: 'Identity', label, current, fetched: v }, (d) => fn(d, v))
+    }
+    idField('id-name', 'Name', draft.name, res.name, (d, v) => ({
+      ...d, name: v, ...(d.keyTouched ? {} : { keyOverride: deriveKey(v) })
+    }))
+    idField('id-fullname', 'Full name', draft.fullName, res.fullName, (d, v) => ({ ...d, fullName: v }))
+    idField('id-caption', 'Caption', draft.caption, res.caption, (d, v) => ({ ...d, caption: v }))
+    idField('id-affiliation', 'Affiliation', draft.affiliation, res.affiliation, (d, v) => ({ ...d, affiliation: v }))
+    idField('id-constellation', 'Constellation', draft.constellation, res.constellation, (d, v) => ({ ...d, constellation: v }))
+    idField('id-nation', 'Nation', draft.nation, res.nation, (d, v) => ({ ...d, nation: v }))
+    idField('id-birthday', 'Birthday', draft.birthday, res.birthday, (d, v) => ({ ...d, birthday: v }))
+    idField('id-wiki', 'Wiki URL', draft.wiki, res.wikiUrl, (d, v) => ({ ...d, wiki: v }))
+    if (res.titles.length) {
+      const fetched = res.titles.join(', ')
+      add({ id: 'id-titles', group: 'Identity', label: 'Titles', current: draft.titles.join(', '), fetched },
+        (d) => ({ ...d, titles: [...res.titles] }))
+    }
+
+    // Confirmation-only (locked/game fields) — badge, never applied.
+    const confirmRow = (id: string, label: string, current: string, fetched: string | null) => {
+      if (!fetched) return
+      add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
+    }
+    confirmRow('cf-element', 'Element (locked)', draft.element, res.element)
+    confirmRow('cf-rarity', 'Rarity (locked)', draft.rarity, res.rarity != null ? String(res.rarity) : null)
+    confirmRow('cf-weapon', 'Weapon', draft.weapon, res.weapon)
+
+    // Talents → attacks (by type) + passives (by order).
+    for (const wt of res.talents) {
+      if (isPassiveType(wt.type)) continue
+      const ai = attackIndexFor(wt, draft.attacks)
+      if (ai < 0) continue
+      const cur = draft.attacks[ai]
+      add({ id: `atk-txt-${ai}`, group: 'Talents', label: `${wt.name} — name & effect`, current: cur.effect, fetched: wt.effect ?? '' },
+        (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, name: wt.name, effect: wt.effect ?? a.effect, ...keyPatch(wt.name) } : a) }))
+      if (wt.iconUrl) {
+        const file = wikiIconFileName(wt.iconUrl)
+        add({ id: `atk-icon-${ai}`, group: 'Talents', label: `${wt.name} — icon`, current: describeImage(cur.imageState),
+          fetched: file, changed: describeImage(cur.imageState) !== file },
+          (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, imageState: urlStateFromWiki(wt.iconUrl!) } : a) }))
+      }
+    }
+    const wikiPassives = res.talents.filter((t) => isPassiveType(t.type))
+    wikiPassives.forEach((wp, pi) => {
+      if (pi < draft.passives.length) {
+        const cur = draft.passives[pi]
+        add({ id: `pas-txt-${pi}`, group: 'Talents', label: `${wp.name} — name & effect`, current: cur.effect, fetched: wp.effect ?? '' },
+          (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, name: wp.name, effect: wp.effect ?? p.effect, ...keyPatch(wp.name) } : p) }))
+        if (wp.iconUrl) {
+          const file = wikiIconFileName(wp.iconUrl)
+          add({ id: `pas-icon-${pi}`, group: 'Talents', label: `${wp.name} — icon`, current: describeImage(cur.imageState),
+            fetched: file, changed: describeImage(cur.imageState) !== file },
+            (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, imageState: urlStateFromWiki(wp.iconUrl!) } : p) }))
+        }
+      } else {
+        // No matching draft passive → append a new one (name + effect + icon together).
+        add({ id: `pas-new-${pi}`, group: 'Talents', label: `${wp.name}`, current: '', fetched: wp.effect ?? wp.name,
+          note: 'no draft match — will append', changed: false },
+          (d) => ({
+            ...d,
+            passives: [...d.passives, {
+              originalKey: '', key: deriveKey(wp.name), keyTouched: false, name: wp.name, effect: wp.effect ?? '',
+              imageState: wp.iconUrl ? urlStateFromWiki(wp.iconUrl) : { mode: 'none' },
+              order: d.passives.length, type: `Passive ${d.passives.length + 1}`
+            }]
+          }))
+      }
+    })
+
+    // Constellations (by index).
+    for (const wc of res.constellations) {
+      const ci = draft.constellationEntries.findIndex((c) => c.key === String(wc.index))
+      if (ci >= 0) {
+        const cur = draft.constellationEntries[ci]
+        add({ id: `con-txt-${wc.index}`, group: 'Constellations', label: `C${wc.index} ${wc.name} — name & effect`, current: cur.effect, fetched: wc.effect ?? '' },
+          (d) => ({ ...d, constellationEntries: d.constellationEntries.map((c, j) => j === ci ? { ...c, name: wc.name, effect: wc.effect ?? c.effect } : c) }))
+        if (wc.iconUrl) {
+          const cbase = sanitizeImageBasename(normalizeImageUrl(wc.iconUrl)).replace(/^Constellation_/, '')
+          const file = wikiIconFileName(wc.iconUrl, cbase)
+          add({ id: `con-icon-${wc.index}`, group: 'Constellations', label: `C${wc.index} — icon`, current: describeImage(cur.imageState),
+            fetched: file, changed: describeImage(cur.imageState) !== file },
+            (d) => ({
+            ...d,
+            constellationEntries: d.constellationEntries.map((c, j) =>
+              j === ci ? { ...c, imageState: urlStateFromWiki(wc.iconUrl!, cbase) } : c)
+          }))
+        }
+      }
+    }
+
+    // Portrait image candidates (opt-in; multiple → last checked wins). Saved as the character key
+    // (buildChange's default) rather than the wiki filename, matching the dataset convention.
+    res.imageCandidates.forEach((img, i) => {
+      add({ id: `img-${i}`, group: 'Images', label: `Portrait: ${img.label}`, current: describeImage(draft.imageState),
+        fetched: `${currentKey}.png`, changed: false },
+        (d) => ({ ...d, imageState: urlStateFromWiki(img.url, null) }))
+    })
+
+    return { rows, apply }
+  }, [wikiResult, draft])
+
+  const applyWiki = (ids: string[]) => {
+    setDraft((d) => ids.reduce((acc, id) => (wikiData.apply[id] ? wikiData.apply[id](acc) : acc), d))
+    // Reveal the collapsible sections so applied talent/constellation edits are visible.
+    setOpenSections({ attacks: true, passives: true, constellations: true })
+    setWikiResult(null)
+  }
+
   // ── Render helpers ────────────────────────────────────────────────────────────
 
   const renderSlot = (spec: SlotSpec) => {
@@ -757,9 +968,30 @@ export default function CharacterForm({
       <header className="mat-form-head">
         <h2>{mode === 'edit' ? 'Edit' : 'New'} Character</h2>
         {mode === 'edit' && originalKey && <span className="pill">{originalKey}</span>}
+        <button type="button" className="btn-secondary btn-sm wiki-toggle"
+          aria-expanded={showWiki} onClick={() => setShowWiki((v) => !v)}>
+          {showWiki ? 'Hide auto-fill' : '✨ Auto-fill from wiki'}
+        </button>
       </header>
 
       <div className="mat-form-grid">
+        {/* ── Wiki auto-fill (toggled from the header) ── */}
+        {showWiki && (
+          <div className="field field-wide wiki-fetch-field">
+            <label>Auto-fill from Genshin Wiki</label>
+            <div className="wiki-fetch-row">
+              <input type="text" placeholder="Paste a fandom.com character page URL…" autoFocus
+                value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); fetchWiki() } }} />
+              <button type="button" className="btn-secondary" disabled={wikiBusy} onClick={fetchWiki}>
+                {wikiBusy ? 'Fetching…' : 'Fetch'}
+              </button>
+            </div>
+            {wikiError && <p className="field-help wiki-fetch-error">{wikiError}</p>}
+            <p className="field-help">Fetches identity, talents &amp; constellations; you pick which fields to apply.</p>
+          </div>
+        )}
+
         {/* ── Identity ── */}
         <div className="field">
           <label>Name<span className="req">*</span></label>
@@ -1088,6 +1320,15 @@ export default function CharacterForm({
           materials={matSummaries}
           onSelect={handlePickerSelect}
           onClose={() => setPickerSpec(null)}
+        />
+      )}
+
+      {wikiResult && (
+        <WikiFillPanel
+          sourceTitle={wikiResult.title}
+          rows={wikiData.rows}
+          onApply={applyWiki}
+          onClose={() => setWikiResult(null)}
         />
       )}
     </div>

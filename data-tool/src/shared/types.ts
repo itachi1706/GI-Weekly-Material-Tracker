@@ -348,6 +348,62 @@ export interface CharacterChange {
   images?: ImagePlan[]
 }
 
+// ---- Wiki auto-fill (Fandom Genshin Impact wiki) ----
+
+/** One talent parsed from a wiki page. `type` is the wiki label (e.g. "Normal Attack", "Elemental
+ * Skill", "1st Ascension Passive", "Utility Passive"); the renderer maps it to a draft attack/passive. */
+export interface WikiTalent {
+  name: string
+  type: string
+  effect: string | null
+  /** Raw Fandom CDN URL (renderer normalizes via normalizeImageUrl). */
+  iconUrl: string | null
+}
+
+/** One constellation parsed from a wiki page. `index` is 1..6 (matches the dataset "1".."6" keys). */
+export interface WikiConstellation {
+  index: number
+  name: string
+  effect: string | null
+  iconUrl: string | null
+}
+
+/**
+ * Result of parsing a Fandom character page. All identity fields are raw candidate strings the user
+ * reviews per-field; nulls mean "not found on the page" (a missing field never crashes the parse).
+ * `element`/`weapon`/`rarity` are confirmation-only (never auto-applied). `description`/`introduction`
+ * are intentionally absent — the in-game archive/profile text is not on the wiki page.
+ */
+export interface WikiCharacterResult {
+  sourceUrl: string
+  title: string
+  /** Canonical Fandom page URL for the (redirect-resolved) title — for the dataset `wiki` field. */
+  wikiUrl: string
+  name: string | null
+  /** From infobox `realname` — often a partial match for the dataset `fullName`. */
+  fullName: string | null
+  /** From infobox `title` — maps to the dataset `caption`. */
+  caption: string | null
+  /** From infobox `title2`(+3) — maps to the dataset `titles[]`. */
+  titles: string[]
+  /** From infobox `affiliation`(+2/3), joined with ", ". */
+  affiliation: string | null
+  /** Constellation NAME (infobox `constellation`). */
+  constellation: string | null
+  /** From infobox `region`. */
+  nation: string | null
+  /** Reformatted to the dataset "DD/MM" from the wiki "Month Dayth". */
+  birthday: string | null
+  // confirmation-only (compared, never applied):
+  element: string | null
+  weapon: string | null
+  rarity: number | null
+  talents: WikiTalent[]
+  constellations: WikiConstellation[]
+  /** Candidate portrait/card image URLs from the infobox gallery (raw Fandom CDN URLs). */
+  imageCandidates: { label: string; url: string }[]
+}
+
 // ---- Banners ----
 
 export type BannerType = 'character' | 'weapon' | 'standard' | 'chronicled'

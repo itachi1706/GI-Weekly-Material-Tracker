@@ -1597,3 +1597,108 @@ textarea:focus {
   padding: 4px 10px;
   font-size: 12px;
 }
+
+/* ── Wiki auto-fill ── */
+.wiki-toggle {
+  margin-left: auto;
+}
+.wiki-fetch-field {
+  padding: 10px 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.wiki-fetch-row {
+  display: flex;
+  gap: 8px;
+}
+.wiki-fetch-row input {
+  flex: 1;
+  min-width: 0;
+}
+.wiki-fetch-error {
+  color: var(--danger, #e05260);
+}
+.wiki-fill-popup {
+  width: min(880px, 100%);
+}
+.wiki-fill-hint {
+  padding: 10px 16px 0;
+  margin: 0;
+  font-size: 12px;
+}
+.wiki-fill-body {
+  overflow-y: auto;
+  padding: 8px 16px 16px;
+}
+.wiki-fill-group {
+  margin-top: 14px;
+}
+.wiki-fill-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.wiki-fill-group-head h4 {
+  margin: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim, #9aa0aa);
+}
+.wiki-fill-group-actions {
+  display: flex;
+  gap: 8px;
+}
+.wiki-fill-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.wiki-fill-table td {
+  padding: 5px 6px;
+  vertical-align: top;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.wiki-fill-check {
+  width: 28px;
+  text-align: center;
+}
+.wiki-fill-label {
+  width: 26%;
+  font-weight: 500;
+}
+.wiki-fill-note {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dim, #9aa0aa);
+}
+.wiki-fill-current,
+.wiki-fill-fetched {
+  width: 32%;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.wiki-fill-current {
+  color: var(--text-dim, #9aa0aa);
+}
+.wiki-fill-arrow {
+  width: 16px;
+  text-align: center;
+  color: var(--text-dim, #9aa0aa);
+}
+.wiki-fill-confirm td {
+  background: color-mix(in srgb, var(--bg-elev) 60%, transparent);
+}
+.wiki-badge-ok { color: #3fb56b; font-weight: 700; }
+.wiki-badge-bad { color: var(--danger, #e05260); font-weight: 700; }
+.wiki-fill-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  flex: none;
+}
