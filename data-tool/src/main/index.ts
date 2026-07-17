@@ -221,6 +221,8 @@ app.whenReady().then(() => {
   })
 })
 
+// Quit fully when the window is closed, including on macOS (the default keeps the app alive in the
+// dock; this is a single-window utility app, so closing the window should end the process).
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
+  app.quit()
 })
