@@ -206,7 +206,8 @@ function registerIpc(): void {
 }
 
 app.whenReady().then(() => {
-  electronApp.setAppUserModelId('com.giwmt.datatool')
+  // Keep in sync with `appId` in electron-builder.yml.
+  electronApp.setAppUserModelId('com.itachi1706.gi-weekly-material-tracker.datatool')
 
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)

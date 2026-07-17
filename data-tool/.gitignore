@@ -2,6 +2,11 @@ node_modules/
 out/
 dist/
 
+# The Flutter repo root ignores `build/` globally, but here build/ is our electron-builder
+# buildResources dir (app icon + afterPack signing hook) and must be tracked.
+!build/
+!build/**
+
 # Local, uncommitted reference copy of the dataset (selected at runtime via the folder picker)
 dataset/
 

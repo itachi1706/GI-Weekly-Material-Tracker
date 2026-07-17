@@ -5,6 +5,7 @@
   "main": "./out/main/index.js",
   "private": true,
   "license": "MIT",
+  "author": "itachi1706",
   "scripts": {
     "dev": "electron-vite dev",
     "start": "electron-vite preview",
@@ -16,7 +17,8 @@
     "test:materials": "node scripts/materials-commit-test.ts",
     "normalize:format": "node scripts/normalize-format.ts",
     "build:mac": "electron-vite build && electron-builder --mac",
-    "build:win": "electron-vite build && electron-builder --win"
+    "build:win": "electron-vite build && electron-builder --win",
+    "dist": "npm run build:mac"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0",

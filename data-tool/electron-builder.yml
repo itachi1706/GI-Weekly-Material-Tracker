@@ -3,6 +3,8 @@ productName: GI Weekly Material Tracker Data Management Tool
 directories:
   output: dist
   buildResources: build
+# Ad-hoc sign the bundle post-pack so the unsigned app still launches on Apple Silicon.
+afterPack: build/afterPack.cjs
 files:
   - '!**/.vscode/*'
   - '!src/*'
@@ -11,9 +13,15 @@ files:
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!dataset/*'
 mac:
+  icon: build/icon.icns
   target:
-    - dmg
+    - target: dmg
+      arch: universal
   category: public.app-category.developer-tools
+  # Unsigned local build — no Apple Developer identity. Gatekeeper may warn on first launch
+  # (right-click → Open, or `xattr -cr <app>`); electron-builder ad-hoc signs for arm64.
+  identity: null
+  artifactName: GIWMT-DataTool-${version}-${arch}.${ext}
 win:
   target:
     - nsis
