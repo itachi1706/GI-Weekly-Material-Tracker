@@ -1,7 +1,12 @@
 import * as cheerio from 'cheerio'
 import type { CheerioAPI } from 'cheerio'
 import type { AnyNode } from 'domhandler'
-import type { WikiCharacterResult, WikiTalent, WikiConstellation } from '@shared/types'
+import type {
+  WikiCharacterResult,
+  WikiTalent,
+  WikiConstellation,
+  WikiWeaponResult
+} from '@shared/types'
 
 const WIKI_HOST = 'genshin-impact.fandom.com'
 const USER_AGENT = 'gi-dataset-tool/0.1 (personal dataset manager; contact via local app)'
@@ -54,6 +59,7 @@ function cleanInline(s: string): string {
     .replace(/&nbsp;/gi, ' ')
     .replace(/&mdash;/gi, '—')
     .replace(/&amp;/gi, '&')
+    .replace(/&shy;|­/gi, '') // soft hyphens (e.g. "Mist&shy;split&shy;ter" → "Mistsplitter")
     .replace(/\s+/g, ' ')
     .trim()
 }
@@ -70,9 +76,9 @@ function wikiParam(infobox: string, key: string): string | null {
   return cleaned || null
 }
 
-/** Isolate the Character Infobox template block from full wikitext. */
-function infoboxBlock(wikitext: string): string {
-  const start = wikitext.search(/\{\{Character Infobox/i)
+/** Isolate an infobox template block (e.g. "Character Infobox" / "Weapon Infobox") from wikitext. */
+function infoboxBlock(wikitext: string, template = 'Character Infobox'): string {
+  const start = wikitext.search(new RegExp(`\\{\\{${template}`, 'i'))
   if (start < 0) return ''
   // Walk braces to find the matching close.
   let depth = 0
@@ -197,17 +203,25 @@ function parseImageCandidates($: CheerioAPI): { label: string; url: string }[] {
   return out
 }
 
-/**
- * Fetch a Fandom character page and parse it into review candidates. Network runs in main (renderer
- * CSP blocks cross-origin). One `parse` API call returns both wikitext (clean infobox params) and
- * rendered HTML (talent/constellation effect prose). Throws with a friendly message on failure.
- */
-export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacterResult> {
-  const title = pageTitleFromUrl(url)
-  if (/^(Traveler|Aether|Lumine)$/i.test(title)) {
-    throw new Error('Traveler pages are not supported by auto-fill (multi-element layout).')
-  }
+/** Canonical Fandom page URL in the dataset's style: spaces → underscores, no extra encoding. */
+function canonicalWikiUrl(resolvedTitle: string): string {
+  return `https://${WIKI_HOST}/wiki/${resolvedTitle.replace(/ /g, '_')}`
+}
 
+interface ParseResult {
+  title: string
+  resolvedTitle: string
+  wikitext: string
+  html: string
+}
+
+/**
+ * Fetch + validate a Fandom page via the MediaWiki parse API (one call for both raw wikitext and
+ * rendered HTML). Network runs in main (renderer CSP blocks cross-origin). Throws a friendly message
+ * on any failure. Shared by the character + weapon fetchers.
+ */
+async function fetchParse(url: string): Promise<ParseResult> {
+  const title = pageTitleFromUrl(url)
   const api = `https://${WIKI_HOST}/api.php?action=parse&page=${encodeURIComponent(
     title
   )}&format=json&formatversion=2&prop=wikitext%7Ctext&redirects=1`
@@ -228,7 +242,20 @@ export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacter
   const wikitext = json.parse?.wikitext ?? ''
   const html = json.parse?.text ?? ''
   if (!wikitext && !html) throw new Error('Wiki returned an empty page.')
+  return { title, resolvedTitle: json.parse?.title ?? title, wikitext, html }
+}
 
+/**
+ * Fetch a Fandom character page and parse it into review candidates. One `parse` API call returns
+ * both wikitext (clean infobox params) and rendered HTML (talent/constellation effect prose).
+ */
+export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacterResult> {
+  const title = pageTitleFromUrl(url)
+  if (/^(Traveler|Aether|Lumine)$/i.test(title)) {
+    throw new Error('Traveler pages are not supported by auto-fill (multi-element layout).')
+  }
+
+  const { resolvedTitle, wikitext, html } = await fetchParse(url)
   const box = infoboxBlock(wikitext)
   const titlesRaw = [wikiParam(box, 'title'), wikiParam(box, 'title2'), wikiParam(box, 'title3')]
   const caption = titlesRaw[0]
@@ -245,13 +272,10 @@ export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacter
 
   const $ = cheerio.load(html)
 
-  const resolvedTitle = json.parse?.title ?? title
-
   return {
     sourceUrl: url,
     title: resolvedTitle,
-    // Canonical page URL in the dataset's style: spaces → underscores, no extra encoding.
-    wikiUrl: `https://${WIKI_HOST}/wiki/${resolvedTitle.replace(/ /g, '_')}`,
+    wikiUrl: canonicalWikiUrl(resolvedTitle),
     name: wikiParam(box, 'name'),
     fullName: wikiParam(box, 'realname'),
     caption,
@@ -266,5 +290,108 @@ export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacter
     talents: parseTalents($),
     constellations: parseConstellations($),
     imageCandidates: parseImageCandidates($)
+  }
+}
+
+// ── Weapons ─────────────────────────────────────────────────────────────────────
+
+/** Extract the `{{Description|…}}` short weapon description (the one right after the infobox). */
+function descriptionTemplate(wikitext: string): string | null {
+  const m = wikitext.match(/\{\{Description\|([\s\S]*?)\}\}/)
+  return m ? cleanInline(m[1]) || null : null
+}
+
+/**
+ * Substitute a weapon effect's `(varN)` placeholders with their `R1~R5` inline range, matching the
+ * dataset (e.g. `(var1)` → `12~24`, multi-stack `(var2)` → `8/16/28~16/32/56`). Values come from the
+ * infobox `eff_rank1_varN`/`eff_rank5_varN` params. Leaves the placeholder if a value is missing.
+ */
+function substituteEffectVars(effect: string, box: string): string {
+  return effect.replace(/\(var(\d+)\)/g, (_m, n: string) => {
+    const r1 = wikiParam(box, `eff_rank1_var${n}`)
+    const r5 = wikiParam(box, `eff_rank5_var${n}`)
+    if (r1 && r5) return r1 === r5 ? r1 : `${r1}~${r5}`
+    return r1 ?? r5 ?? `(var${n})`
+  })
+}
+
+/** Strip a trailing flag letter from a stat value (`9.6%b` → `9.6%`; `7.5%` unchanged). */
+function cleanStatValue(v: string | null): string | null {
+  if (!v) return null
+  return v.replace(/[a-zA-Z]+$/, '').trim() || null
+}
+
+/**
+ * Normalize a weapon series to the dataset's "<Name> Series" form: the infobox gives the short name
+ * ("Inazuma"), the dataset stores "Inazuma Series". Append " Series" unless it's already there.
+ * Null (no series) stays null — no fabrication.
+ */
+function normalizeSeries(v: string | null): string | null {
+  if (!v) return null
+  return /\bseries$/i.test(v) ? v : `${v} Series`
+}
+
+/**
+ * Max base ATK + max secondary stat from the rendered "Weapon Ascensions and Stats" table: the last
+ * row whose level cell looks like `N/M` (level 90 for 3–5★, 70 for 1–2★). Ascension-cost rows don't
+ * match that pattern, so they're skipped.
+ */
+function weaponMaxStats($: CheerioAPI): { maxBaseAtk: number | null; maxSecondaryStat: string | null } {
+  let maxBaseAtk: number | null = null
+  let maxSecondaryStat: string | null = null
+  $('table.wikitable').each((_i, t) => {
+    $(t).find('tr').each((_j, tr) => {
+      const cells = $(tr).children('td,th').map((_k, c) => $(c).text().trim()).get()
+      const lvlIdx = cells.findIndex((c) => /^\d+\/\d+$/.test(c))
+      if (lvlIdx < 0) return
+      const rest = cells.slice(lvlIdx + 1).filter((c) => c !== '')
+      if (rest.length >= 1 && /^\d[\d,]*$/.test(rest[0])) {
+        maxBaseAtk = parseInt(rest[0].replace(/,/g, ''), 10)
+        maxSecondaryStat = rest[1] ?? null
+      }
+    })
+  })
+  return { maxBaseAtk: Number.isFinite(maxBaseAtk) ? maxBaseAtk : null, maxSecondaryStat }
+}
+
+/**
+ * Fetch a Fandom weapon page and parse it into review candidates. Nearly everything comes from the
+ * `{{Weapon Infobox}}` wikitext; rendered HTML supplies only the max stats + base icon.
+ */
+export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult> {
+  const { resolvedTitle, wikitext, html } = await fetchParse(url)
+  const box = infoboxBlock(wikitext, 'Weapon Infobox')
+  if (!box) throw new Error('That page has no Weapon Infobox — is it a weapon page?')
+
+  const baseAtkStr = wikiParam(box, 'base_atk')
+  const baseAtk = baseAtkStr ? parseInt(baseAtkStr, 10) : null
+  const qualityStr = wikiParam(box, 'quality')
+  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+
+  const effectTemplate = wikiParam(box, 'effect')
+  const effect = effectTemplate ? substituteEffectVars(effectTemplate, box) : null
+
+  const $ = cheerio.load(html)
+  const { maxBaseAtk, maxSecondaryStat } = weaponMaxStats($)
+  const iconUrl = parseImageCandidates($)[0]?.url ?? null
+
+  return {
+    sourceUrl: url,
+    title: resolvedTitle,
+    wikiUrl: canonicalWikiUrl(resolvedTitle),
+    // Some weapon infoboxes omit `title` (e.g. "Amos' Bow") → fall back to the page title.
+    name: wikiParam(box, 'title') ?? resolvedTitle,
+    series: normalizeSeries(wikiParam(box, 'series')),
+    description: descriptionTemplate(wikitext),
+    effectName: wikiParam(box, 'passive'),
+    effect,
+    baseAtk: baseAtk && Number.isFinite(baseAtk) ? baseAtk : null,
+    maxBaseAtk,
+    secondaryStat: cleanStatValue(wikiParam(box, '2nd_stat')),
+    maxSecondaryStat: cleanStatValue(maxSecondaryStat),
+    secondaryStatType: wikiParam(box, '2nd_stat_type'),
+    type: wikiParam(box, 'type'),
+    rarity: rarity && Number.isFinite(rarity) ? rarity : null,
+    iconUrl
   }
 }

@@ -20,7 +20,8 @@ import type {
   CommitPreview,
   CommitResult,
   ImagePlan,
-  WikiCharacterResult
+  WikiCharacterResult,
+  WikiWeaponResult
 } from '@shared/types'
 
 const api = {
@@ -116,7 +117,10 @@ const api = {
   wiki: {
     /** Fetch + parse a Fandom character page into per-field review candidates. Rejects on failure. */
     fetchCharacter: (url: string): Promise<WikiCharacterResult> =>
-      ipcRenderer.invoke('wiki:fetchCharacter', url)
+      ipcRenderer.invoke('wiki:fetchCharacter', url),
+    /** Fetch + parse a Fandom weapon page into per-field review candidates. Rejects on failure. */
+    fetchWeapon: (url: string): Promise<WikiWeaponResult> =>
+      ipcRenderer.invoke('wiki:fetchWeapon', url)
   }
 }
 

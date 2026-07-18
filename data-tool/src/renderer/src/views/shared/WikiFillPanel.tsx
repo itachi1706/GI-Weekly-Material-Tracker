@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react'
 
 /**
- * A single reviewable field from a wiki fetch. Display-only: the actual Draft mutation lives in
- * CharacterForm (which owns the Draft), keyed by `id`. `confirmOnly` rows (element/rarity/weapon)
- * are shown as a match badge and cannot be applied.
+ * A single reviewable field from a wiki fetch. Display-only: the actual Draft mutation lives in the
+ * owning form (Character/Weapon), keyed by `id`. `confirmOnly` rows (locked fields like element/
+ * rarity/weapon-type) are shown as a match badge and cannot be applied.
  */
 export interface WikiRow {
   id: string
@@ -27,16 +27,19 @@ interface Props {
   rows: WikiRow[]
   onApply: (ids: string[]) => void
   onClose: () => void
+  /** Section display order; unknown groups sort last. Defaults to the character grouping. */
+  groupOrder?: string[]
 }
 
-const GROUP_ORDER = ['Identity', 'Talents', 'Constellations', 'Images']
+const DEFAULT_GROUP_ORDER = ['Identity', 'Talents', 'Constellations', 'Images']
 
 function truncate(s: string, n = 140): string {
   const oneLine = s.replace(/\s+/g, ' ').trim()
   return oneLine.length > n ? oneLine.slice(0, n) + '…' : oneLine
 }
 
-export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose }: Props) {
+export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, groupOrder }: Props) {
+  const order = groupOrder ?? DEFAULT_GROUP_ORDER
   const appliable = useMemo(() => rows.filter((r) => !r.confirmOnly), [rows])
   const [checked, setChecked] = useState<Set<string>>(
     () => new Set(appliable.filter((r) => r.changed).map((r) => r.id))
@@ -56,10 +59,12 @@ export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose }: P
       if (!byGroup.has(r.group)) byGroup.set(r.group, [])
       byGroup.get(r.group)!.push(r)
     }
-    return [...byGroup.entries()].sort(
-      (a, b) => GROUP_ORDER.indexOf(a[0]) - GROUP_ORDER.indexOf(b[0])
-    )
-  }, [rows])
+    const rank = (g: string) => {
+      const i = order.indexOf(g)
+      return i < 0 ? Number.MAX_SAFE_INTEGER : i
+    }
+    return [...byGroup.entries()].sort((a, b) => rank(a[0]) - rank(b[0]))
+  }, [rows, order])
 
   const setGroup = (groupRows: WikiRow[], on: boolean) =>
     setChecked((prev) => {

@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { WeaponRecord, WeaponChange, WeaponAscensionPhase, ImagePlan, MaterialSummary } from '@shared/types'
+import type {
+  WeaponRecord, WeaponChange, WeaponAscensionPhase, ImagePlan, MaterialSummary, WikiWeaponResult
+} from '@shared/types'
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
 import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
 import { RaritySelect } from '../shared/rarity'
+import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
+import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -15,6 +19,14 @@ const SECONDARY_STAT_TYPES = [
   'ATK%', 'HP%', 'DEF%', 'CRIT Rate%', 'CRIT DMG%',
   'Elemental Mastery', 'Energy Recharge%', 'Physical DMG%',
 ] as const
+
+// Wiki 2nd_stat_type vocab → this form's `%`-suffixed options (the `%` is intentional; see plan).
+const STAT_TYPE_WIKI_TO_FORM: Record<string, string> = {
+  ATK: 'ATK%', HP: 'HP%', DEF: 'DEF%',
+  'CRIT Rate': 'CRIT Rate%', 'CRIT DMG': 'CRIT DMG%',
+  'Energy Recharge': 'Energy Recharge%', 'Physical DMG Bonus': 'Physical DMG%',
+  'Elemental Mastery': 'Elemental Mastery'
+}
 
 function matSlotKeys(rarity: number): string[] {
   if (rarity <= 2) {
@@ -171,6 +183,12 @@ export default function WeaponForm({
   const [matSummaries, setMatSummaries] = useState<MaterialSummary[]>([])
   const [templates, setTemplates] = useState<Record<string, WeaponRecord>>({})
   const [pickerState, setPickerState] = useState<{ slotKey: string; prefix: string } | null>(null)
+  // Wiki auto-fill (URL box hidden behind a header toggle; open by default when creating).
+  const [showWiki, setShowWiki] = useState(mode === 'create')
+  const [wikiUrl, setWikiUrl] = useState('')
+  const [wikiBusy, setWikiBusy] = useState(false)
+  const [wikiError, setWikiError] = useState<string | null>(null)
+  const [wikiResult, setWikiResult] = useState<WikiWeaponResult | null>(null)
 
   const matSummaryMap = useMemo(
     () => new Map(matSummaries.map((m) => [m.key, m])),
@@ -222,6 +240,96 @@ export default function WeaponForm({
     if (tierFill) Object.assign(newSlots, tierFill)
     setDraft((p) => ({ ...p, matSlots: newSlots }))
     setPickerState(null)
+  }
+
+  // ── Wiki auto-fill ─────────────────────────────────────────────────────────────
+
+  const fetchWeaponWiki = () => {
+    const url = wikiUrl.trim() || draft.wiki.trim()
+    if (!url) { setWikiError('Paste a Genshin Wiki weapon URL first.'); return }
+    setWikiBusy(true)
+    setWikiError(null)
+    window.api.wiki
+      .fetchWeapon(url)
+      .then((r) => { setWikiResult(r); setWikiUrl(url) })
+      .catch((e: unknown) => setWikiError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setWikiBusy(false))
+  }
+
+  // Build review rows + id→Draft mutation map (grouped Identity/Stats/Effect/Image). Apply fns are
+  // simple field writes since the Draft is flat. Recomputed from the current draft so "current" stays
+  // accurate; nothing writes to disk — only into the Draft, still gated by the commit preview.
+  const wikiData = useMemo(() => {
+    const res = wikiResult
+    const rows: WikiRow[] = []
+    const apply: Record<string, (d: Draft) => Draft> = {}
+    if (!res) return { rows, apply }
+
+    const add = (
+      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
+      fn?: (d: Draft) => Draft
+    ) => {
+      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+      rows.push({ ...row, changed })
+      if (fn) apply[row.id] = fn
+    }
+    const field = (
+      id: string, group: string, label: string, current: string, fetched: string | null,
+      fn: (d: Draft, v: string) => Draft
+    ) => {
+      const v = fetched ?? ''
+      if (!v) return
+      add({ id, group, label, current, fetched: v }, (d) => fn(d, v))
+    }
+    const numStr = (n: number | null): string => (n != null ? String(n) : '')
+
+    // Identity
+    field('w-name', 'Identity', 'Name', draft.name, res.name, (d, v) => ({
+      ...d, name: v, ...(d.keyTouched ? {} : { keyOverride: deriveKey(v) })
+    }))
+    field('w-series', 'Identity', 'Series', draft.series, res.series, (d, v) => ({ ...d, series: v }))
+    field('w-desc', 'Identity', 'Description', draft.description, res.description, (d, v) => ({ ...d, description: v }))
+    // Confirmation-only (locked): type + rarity
+    const confirm = (id: string, label: string, current: string, fetched: string | null) => {
+      if (!fetched) return
+      add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
+    }
+    confirm('w-type', 'Type (locked)', draft.type, res.type)
+    confirm('w-rarity', 'Rarity (locked)', draft.rarity, res.rarity != null ? String(res.rarity) : null)
+
+    // Stats
+    field('w-batk', 'Stats', 'Base ATK', draft.baseAtk, numStr(res.baseAtk), (d, v) => ({ ...d, baseAtk: v }))
+    field('w-mbatk', 'Stats', 'Max base ATK', draft.maxBaseAtk, numStr(res.maxBaseAtk), (d, v) => ({ ...d, maxBaseAtk: v }))
+    if (res.secondaryStatType) {
+      const mapped = STAT_TYPE_WIKI_TO_FORM[res.secondaryStatType] ?? res.secondaryStatType
+      add({ id: 'w-stype', group: 'Stats', label: 'Secondary stat type', current: draft.secondaryStatType, fetched: mapped },
+        (d) => ({ ...d, secondaryStatType: mapped }))
+    }
+    field('w-sstat', 'Stats', 'Secondary stat', draft.secondaryStat, res.secondaryStat, (d, v) => ({ ...d, secondaryStat: v }))
+    field('w-msstat', 'Stats', 'Max secondary stat', draft.maxSecondaryStat, res.maxSecondaryStat, (d, v) => ({ ...d, maxSecondaryStat: v }))
+
+    // Effect
+    field('w-effname', 'Effect', 'Effect name', draft.effectName, res.effectName, (d, v) => ({ ...d, effectName: v }))
+    field('w-eff', 'Effect', 'Effect', draft.effect, res.effect, (d, v) => ({ ...d, effect: v }))
+
+    // Image — save as the weapon key in Weapons/<type>/ (pass currentKey; buildImageEntry's url
+    // fallback would otherwise use the wiki filename "Weapon_<Name>").
+    if (res.iconUrl) {
+      const file = wikiIconFileName(res.iconUrl, currentKey)
+      add({ id: 'w-icon', group: 'Image', label: 'Icon', current: describeImage(draft.imageState),
+        fetched: file, changed: describeImage(draft.imageState) !== file },
+        (d) => ({ ...d, imageState: urlStateFromWiki(res.iconUrl!, currentKey) }))
+    }
+
+    // Wiki URL
+    field('w-wiki', 'Identity', 'Wiki URL', draft.wiki, res.wikiUrl, (d, v) => ({ ...d, wiki: v }))
+
+    return { rows, apply }
+  }, [wikiResult, draft, currentKey])
+
+  const applyWiki = (ids: string[]) => {
+    setDraft((d) => ids.reduce((acc, id) => (wikiData.apply[id] ? wikiData.apply[id](acc) : acc), d))
+    setWikiResult(null)
   }
 
   // ── Validation ───────────────────────────────────────────────────────────────
@@ -291,6 +399,10 @@ export default function WeaponForm({
       subCollection: {},
     }
 
+    // Omit `series` entirely when empty (don't write `series: null`) — matches the dataset weapons
+    // that have no series key. Built in-position above so the key order is preserved when present.
+    if (!draft.series.trim()) delete record.series
+
     return {
       op: mode === 'edit' ? 'update' : 'create',
       file: mode === 'edit' && file ? file : draft.file,
@@ -323,9 +435,30 @@ export default function WeaponForm({
       <header className="mat-form-head">
         <h2>{mode === 'edit' ? 'Edit' : 'New'} Weapon</h2>
         {mode === 'edit' && originalKey && <span className="pill">{originalKey}</span>}
+        <button type="button" className="btn-secondary btn-sm wiki-toggle"
+          aria-expanded={showWiki} onClick={() => setShowWiki((v) => !v)}>
+          {showWiki ? 'Hide auto-fill' : '✨ Auto-fill from wiki'}
+        </button>
       </header>
 
       <div className="mat-form-grid">
+
+        {/* ── Wiki auto-fill (toggled from the header) ── */}
+        {showWiki && (
+          <div className="field field-wide wiki-fetch-field">
+            <label>Auto-fill from Genshin Wiki</label>
+            <div className="wiki-fetch-row">
+              <input type="text" placeholder="Paste a fandom.com weapon page URL…" autoFocus
+                value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); fetchWeaponWiki() } }} />
+              <button type="button" className="btn-secondary" disabled={wikiBusy} onClick={fetchWeaponWiki}>
+                {wikiBusy ? 'Fetching…' : 'Fetch'}
+              </button>
+            </div>
+            {wikiError && <p className="field-help wiki-fetch-error">{wikiError}</p>}
+            <p className="field-help">Fetches identity, stats &amp; effect; you pick which fields to apply.</p>
+          </div>
+        )}
 
         {/* ── Identity ── */}
         <div className="field">
@@ -610,6 +743,16 @@ export default function WeaponForm({
           materials={matSummaries}
           onSelect={handlePickerSelect}
           onClose={() => setPickerState(null)}
+        />
+      )}
+
+      {wikiResult && (
+        <WikiFillPanel
+          sourceTitle={wikiResult.title}
+          rows={wikiData.rows}
+          groupOrder={['Identity', 'Stats', 'Effect', 'Image']}
+          onApply={applyWiki}
+          onClose={() => setWikiResult(null)}
         />
       )}
     </div>

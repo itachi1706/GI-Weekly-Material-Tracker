@@ -19,7 +19,8 @@ import { extOf, sanitizeImageBasename, normalizeImageUrl, type ImageState } from
 import { MatImage, MaterialPickerPopup, findTierSet, roman } from '../shared/materialPicker'
 import { RaritySelect } from '../shared/rarity'
 import { EntityLinkInput, type LinkOption } from '../shared/entityLink'
-import WikiFillPanel, { type WikiRow } from './WikiFillPanel'
+import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
+import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -116,40 +117,6 @@ function stateFromImage(path: string | null | undefined): ImageState {
 const emptyToNull = (s: string): string | null => (s.trim() ? s.trim() : null)
 
 // ── Wiki auto-fill helpers ──────────────────────────────────────────────────────
-
-/**
- * Build a url-mode ImageState from a raw wiki CDN URL (normalized).
- * `basename` controls the save-as name:
- *  - undefined → the wiki filename (correct for talent/passive icons, e.g. "Sword_Hydro", "Talent_X")
- *  - a string  → that exact name (constellations pass the wiki name minus its "Constellation_" prefix)
- *  - null      → omit it, so the commit falls back to the entry's default (e.g. the character key)
- */
-function urlStateFromWiki(raw: string, basename?: string | null): ImageState {
-  const url = normalizeImageUrl(raw)
-  if (basename === null) return { mode: 'url', url }
-  return { mode: 'url', url, imageName: basename ?? sanitizeImageBasename(url) }
-}
-
-/**
- * The final on-disk filename (basename + extension) a wiki icon URL will produce — so the review
- * preview matches the committed name and can be compared against the current image. `override`
- * supplies a custom basename (constellations pass their prefix-stripped name).
- */
-function wikiIconFileName(raw: string, override?: string): string {
-  const url = normalizeImageUrl(raw)
-  const base = override ?? sanitizeImageBasename(url)
-  return `${base}.${extOf(url)}`
-}
-
-/** Human-readable summary of an ImageState for the review table's "current" column. */
-function describeImage(state: ImageState): string {
-  if (state.mode === 'existing') return state.relative.split('/').pop() ?? state.relative
-  if (state.mode === 'url') return state.url.split('/').pop() ?? state.url
-  if (state.mode === 'localFile') return state.sourcePath.split(/[/\\]/).pop() ?? state.sourcePath
-  return ''
-}
-
-const eqi = (a: string, b: string): boolean => a.trim().toLowerCase() === b.trim().toLowerCase()
 
 /** Which draft attack index a wiki talent maps to (fixed 3, matched by structural type), or -1. */
 function attackIndexFor(wt: WikiTalent, attacks: { type: string }[]): number {

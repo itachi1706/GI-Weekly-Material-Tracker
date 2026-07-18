@@ -404,6 +404,34 @@ export interface WikiCharacterResult {
   imageCandidates: { label: string; url: string }[]
 }
 
+/**
+ * Result of parsing a Fandom weapon page. Candidate strings the user reviews per-field; nulls mean
+ * "not found". `secondaryStatType` is the RAW wiki value (e.g. "CRIT DMG") — the renderer maps it to
+ * the form's `%`-vocab. `type`/`rarity` are confirmation-only. `obtained` is intentionally absent (the
+ * dataset's is a hand-curated controlled vocab that doesn't map from the wiki's short obtain text).
+ */
+export interface WikiWeaponResult {
+  sourceUrl: string
+  title: string
+  wikiUrl: string
+  name: string | null
+  series: string | null
+  description: string | null
+  effectName: string | null
+  /** Passive effect with `(varN)` placeholders substituted to `R1~R5` inline ranges. */
+  effect: string | null
+  baseAtk: number | null
+  maxBaseAtk: number | null
+  secondaryStat: string | null
+  maxSecondaryStat: string | null
+  /** Raw wiki stat type, e.g. "CRIT DMG" / "Physical DMG Bonus" (renderer maps to form vocab). */
+  secondaryStatType: string | null
+  // confirmation-only:
+  type: string | null
+  rarity: number | null
+  iconUrl: string | null
+}
+
 // ---- Banners ----
 
 export type BannerType = 'character' | 'weapon' | 'standard' | 'chronicled'
