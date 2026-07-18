@@ -10,11 +10,12 @@ const BANNER_SUBSECTIONS: { type: BannerType; label: string }[] = [
 
 interface Props {
   info: DatasetInfo
-  active: EntityKey | null
+  active: EntityKey | 'validate' | null
   bannerType: BannerType
   onSelectEntity: (key: EntityKey) => void
   onSelectBannerType: (t: BannerType) => void
   onShowOverview: () => void
+  onShowValidate: () => void
   onChangeFolder: () => void
 }
 
@@ -25,6 +26,7 @@ export default function Sidebar({
   onSelectEntity,
   onSelectBannerType,
   onShowOverview,
+  onShowValidate,
   onChangeFolder
 }: Props) {
   return (
@@ -67,6 +69,14 @@ export default function Sidebar({
             )}
           </div>
         ))}
+
+        <button
+          className={`nav-item ${active === 'validate' ? 'nav-item-active' : ''}`}
+          title="Validate the dataset (read-only)"
+          onClick={onShowValidate}
+        >
+          <span>Validation</span>
+        </button>
       </nav>
 
       <div className="sidebar-footer">

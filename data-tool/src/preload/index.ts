@@ -25,6 +25,7 @@ import type {
   WikiOutfitResult,
   WikiMaterialResult
 } from '@shared/types'
+import type { ValidationReport } from '@shared/validate'
 
 const api = {
   /** Open the native folder picker, scan it, persist when valid. Null if cancelled. */
@@ -129,6 +130,12 @@ const api = {
     /** Fetch + parse a Fandom material page into per-field review candidates. Rejects on failure. */
     fetchMaterial: (url: string): Promise<WikiMaterialResult> =>
       ipcRenderer.invoke('wiki:fetchMaterial', url)
+  },
+
+  validate: {
+    /** Scan the dataset (report-only) and return structured findings. */
+    run: (rootPath: string): Promise<ValidationReport> =>
+      ipcRenderer.invoke('validate:run', rootPath)
   }
 }
 

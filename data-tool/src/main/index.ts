@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { selectDatasetFolder, selectImageFile } from './ipc/dialog'
 import { scanDataset } from './ipc/dataset'
+import { runValidation } from './ipc/validate'
 import {
   listMaterials,
   getMaterial,
@@ -211,6 +212,9 @@ function registerIpc(): void {
   ipcMain.handle('wiki:fetchWeapon', (_e, url: string) => fetchWeaponFromWiki(url))
   ipcMain.handle('wiki:fetchOutfit', (_e, url: string) => fetchOutfitFromWiki(url))
   ipcMain.handle('wiki:fetchMaterial', (_e, url: string) => fetchMaterialFromWiki(url))
+
+  // Dataset validation (report-only). Reuses the shared rules that back `npm run validate`.
+  ipcMain.handle('validate:run', (_e, rootPath: string) => runValidation(rootPath))
 }
 
 app.whenReady().then(() => {

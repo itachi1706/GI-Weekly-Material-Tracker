@@ -8,11 +8,15 @@ import OutfitsView from './views/outfits/OutfitsView'
 import WeaponsView from './views/weapons/WeaponsView'
 import CharactersView from './views/characters/CharactersView'
 import BannersView from './views/banners/BannersView'
+import ValidationView from './views/validate/ValidationView'
 import type { EntityKey, BannerType } from '@shared/types'
+
+/** Sidebar targets: an entity, the validation view, or the overview (null). */
+type ActiveView = EntityKey | 'validate' | null
 
 export default function App() {
   const { info, loading, selectFolder, reload } = useDataset()
-  const [active, setActive] = useState<EntityKey | null>(null)
+  const [active, setActive] = useState<ActiveView>(null)
   const [bannerType, setBannerType] = useState<BannerType>('character')
 
   const selectBannerType = (t: BannerType) => { setBannerType(t); setActive('banners') }
@@ -40,6 +44,7 @@ export default function App() {
         onSelectEntity={setActive}
         onSelectBannerType={selectBannerType}
         onShowOverview={() => setActive(null)}
+        onShowValidate={() => setActive('validate')}
         onChangeFolder={selectFolder}
       />
       <main className="app-main">
@@ -53,6 +58,8 @@ export default function App() {
           <CharactersView rootPath={info.rootPath} />
         ) : active === 'banners' ? (
           <BannersView rootPath={info.rootPath} bannerType={bannerType} />
+        ) : active === 'validate' ? (
+          <ValidationView rootPath={info.rootPath} />
         ) : (
           <DatasetSummary info={info} onReload={reload} loading={loading} />
         )}
