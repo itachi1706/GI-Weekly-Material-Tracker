@@ -74,7 +74,7 @@ export interface MaterialTypeSchema {
    */
   deriveFile: (values: Record<string, unknown>) => string
   /** Editable fields in form display order. Fields managed implicitly (usage, subCollection,
-   *  innerType, rarity for local_speciality) are excluded. */
+   *  innerType) are excluded. */
   fields: FieldSpec[]
   /**
    * When 'tier_set', the "New" flow uses TierSetForm (multi-tier) instead of the single-record
@@ -122,6 +122,8 @@ const localSpeciality: MaterialTypeSchema = {
       key: 'type', label: 'Region', widget: 'select', required: true,
       options: LOCAL_SPECIALITY_TYPES
     },
+    // Local specialities are canonically 1★ (all existing records), but keep it editable.
+    { key: 'rarity', label: 'Rarity', widget: 'rarity', required: true },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Local_Specialities' },
     { key: 'description', label: 'Description', widget: 'textarea' },
     {

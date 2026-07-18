@@ -376,7 +376,11 @@ export default function WeaponForm({
     })
 
     const hasStat = !!draft.secondaryStatType
+    // Spread the original record first so any field not modelled by the form is preserved (edit mode:
+    // `template` is the on-disk record; create mode: the template skeleton). Explicit fields below
+    // override in place, keeping the canonical key order.
     const record: WeaponRecord = {
+      ...template,
       secondary_stat_type: hasStat ? draft.secondaryStatType : null,
       description: draft.description.trim() || null,
       name: draft.name.trim() || null,

@@ -38,6 +38,7 @@ const editBase = parsed.materials[firstKey]
 const editedRec = applyFormValues(editBase, schema, {
   name: editBase.name,
   type: editBase.type,
+  rarity: editBase.rarity, // seeded by the form's initialValues (local_speciality rarity is editable)
   image: editBase.image,
   description: editBase.description,
   obtained: '- EDITED FOR TEST',
@@ -67,6 +68,7 @@ const newKey = deriveKey('Zzz Test Speciality')
 const newRec = applyFormValues(templateBase, schema, {
   name: 'Zzz Test Speciality',
   type: 'Local Speciality (Mondstadt)',
+  rarity: templateBase.rarity, // seeded by the form's initialValues (defaults to the template's 1★)
   image: `Materials/Local_Specialities/Item_${newKey}.png`,
   description: 'A test material.',
   obtained: '- Found in tests',

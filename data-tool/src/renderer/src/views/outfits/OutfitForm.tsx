@@ -290,8 +290,11 @@ export default function OutfitForm({
     const thumb = buildImageEntry(draft.thumbnailState, 'Characters', character ?? currentKey)
     const wish = buildImageEntry(draft.wishimageState, outfitSet.wishFolder, currentKey)
 
-    // Explicit key order matching templates/misc.json to prevent position drift on edits.
+    // Spread the original record first so any field not modelled by the form is preserved (edit mode:
+    // `template` is the on-disk record; create mode: the skeleton). Explicit fields below override in
+    // place, keeping the canonical key order (matching templates/misc.json).
     const record: OutfitRecord = {
+      ...template,
       name: draft.name.trim() || null,
       character,
       characters,
@@ -318,6 +321,11 @@ export default function OutfitForm({
       wiki: draft.wiki.trim() || null,
       subCollection: {}
     }
+
+    // `released_version_name` is absent (not null) on older records. Preserve that: only omit when the
+    // user hasn't entered one AND the original record didn't have the key (else keep the null/value).
+    if (!draft.releasedVersionName.trim() && !('released_version_name' in template))
+      delete record.released_version_name
 
     return {
       op: mode === 'edit' ? 'update' : 'create',
