@@ -1,9 +1,13 @@
-import { useState } from 'react'
-import type { MaterialRecord, InsertModeName } from '@shared/types'
+import { useMemo, useState } from 'react'
+import type { MaterialRecord, InsertModeName, WikiMaterialResult } from '@shared/types'
 import { deriveKey, resolveImageFolder, resolveRarityOptions, type MaterialTypeSchema } from '@shared/materialsSchema'
 import ImageField from './ImageField'
 import { RaritySelect } from '../shared/rarity'
 import type { ImageState } from './util'
+import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
+import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
+
+const DAY_ABBR = ['', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 export interface FormDraft {
   key: string
@@ -138,6 +142,12 @@ export default function MaterialForm({
   const [keyTouched, setKeyTouched] = useState(false)
   const [ordering, setOrdering] = useState<InsertModeName>('alphabetical')
   const [errors, setErrors] = useState<string[]>([])
+  // Wiki auto-fill.
+  const [showWiki, setShowWiki] = useState(mode === 'create')
+  const [wikiUrl, setWikiUrl] = useState('')
+  const [wikiBusy, setWikiBusy] = useState(false)
+  const [wikiError, setWikiError] = useState<string | null>(null)
+  const [wikiResult, setWikiResult] = useState<WikiMaterialResult | null>(null)
 
   const imageFolder = resolveImageFolder(schema, values)
 
@@ -153,6 +163,80 @@ export default function MaterialForm({
       return next
     })
     if (k === 'name' && !keyTouched) setKey(deriveKey(String(val)))
+  }
+
+  // ── Wiki auto-fill ─────────────────────────────────────────────────────────────
+
+  const fetchMaterialWiki = () => {
+    const url = wikiUrl.trim() || String(values.wiki ?? '').trim()
+    if (!url) { setWikiError('Paste a Genshin Wiki material URL first.'); return }
+    setWikiBusy(true)
+    setWikiError(null)
+    window.api.wiki
+      .fetchMaterial(url)
+      .then((r) => { setWikiResult(r); setWikiUrl(url) })
+      .catch((e: unknown) => setWikiError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setWikiBusy(false))
+  }
+
+  // Schema-aware review rows. Value rows patch the `values` map; the icon row sets `imageState`.
+  // Only fields present in the active schema are offered (e.g. `days` only for domain materials).
+  const wikiData = useMemo(() => {
+    const res = wikiResult
+    const rows: WikiRow[] = []
+    const applyVals: Record<string, (v: Record<string, unknown>) => Record<string, unknown>> = {}
+    let imageApply: { id: string; state: ImageState } | null = null
+    if (!res) return { rows, applyVals, imageApply }
+
+    const has = new Set(schema.fields.map((f) => f.key))
+    const strVal = (k: string): string => { const v = values[k]; return v == null ? '' : String(v) }
+    const add = (
+      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
+      fn?: (v: Record<string, unknown>) => Record<string, unknown>
+    ) => {
+      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+      rows.push({ ...row, changed })
+      if (fn) applyVals[row.id] = fn
+    }
+    const daysDisp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
+
+    if (has.has('name') && res.name)
+      add({ id: 'mt-name', group: 'Identity', label: 'Name', current: strVal('name'), fetched: res.name },
+        (v) => ({ ...v, name: res.name }))
+    if (has.has('description') && res.description)
+      add({ id: 'mt-desc', group: 'Identity', label: 'Description', current: strVal('description'), fetched: res.description },
+        (v) => ({ ...v, description: res.description }))
+    if (has.has('wiki') && res.wikiUrl)
+      add({ id: 'mt-wiki', group: 'Identity', label: 'Wiki URL', current: strVal('wiki'), fetched: res.wikiUrl },
+        (v) => ({ ...v, wiki: res.wikiUrl }))
+    if (has.has('days') && res.days)
+      add({ id: 'mt-days', group: 'Details', label: 'Available days',
+        current: daysDisp((values.days as number[]) ?? []), fetched: daysDisp(res.days) },
+        (v) => ({ ...v, days: res.days }))
+    // Confirmation-only
+    if (has.has('rarity') && res.rarity != null)
+      add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'),
+        fetched: String(res.rarity), confirmOnly: true, ok: eqi(strVal('rarity'), String(res.rarity)), changed: false })
+    if (has.has('type') && res.type)
+      add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'),
+        fetched: res.type, confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
+    // Image — dataset convention is Item_<key>
+    if (res.iconUrl) {
+      const base = `Item_${key.trim() || deriveKey(String(values.name ?? ''))}`
+      const file = wikiIconFileName(res.iconUrl, base)
+      rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
+        fetched: file, changed: describeImage(imageState) !== file })
+      imageApply = { id: 'mt-icon', state: urlStateFromWiki(res.iconUrl, base) }
+    }
+
+    return { rows, applyVals, imageApply }
+  }, [wikiResult, values, imageState, key, schema])
+
+  const applyWiki = (ids: string[]) => {
+    setValues((prev) => ids.reduce((acc, id) => (wikiData.applyVals[id] ? wikiData.applyVals[id](acc) : acc), prev))
+    if (ids.includes('mt-name') && !keyTouched && wikiResult?.name) setKey(deriveKey(wikiResult.name))
+    if (wikiData.imageApply && ids.includes(wikiData.imageApply.id)) setImageState(wikiData.imageApply.state)
+    setWikiResult(null)
   }
 
   const validate = (): string[] => {
@@ -190,9 +274,28 @@ export default function MaterialForm({
       <header className="mat-form-head">
         <h2>{mode === 'create' ? 'New material' : `Edit: ${originalKey}`}</h2>
         <span className="pill">{schema.label}</span>
+        <button type="button" className="btn-secondary btn-sm wiki-toggle"
+          aria-expanded={showWiki} onClick={() => setShowWiki((v) => !v)}>
+          {showWiki ? 'Hide auto-fill' : '✨ Auto-fill from wiki'}
+        </button>
       </header>
 
       <div className="mat-form-grid">
+        {showWiki && (
+          <div className="field field-wide wiki-fetch-field">
+            <label>Auto-fill from Genshin Wiki</label>
+            <div className="wiki-fetch-row">
+              <input type="text" placeholder="Paste a fandom.com material page URL…" autoFocus
+                value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); fetchMaterialWiki() } }} />
+              <button type="button" className="btn-secondary" disabled={wikiBusy} onClick={fetchMaterialWiki}>
+                {wikiBusy ? 'Fetching…' : 'Fetch'}
+              </button>
+            </div>
+            {wikiError && <p className="field-help wiki-fetch-error">{wikiError}</p>}
+            <p className="field-help">Fetches name, description &amp; image (plus days for domain materials).</p>
+          </div>
+        )}
         {schema.fields.map((f) => {
           // Computed fields are not shown.
           if (f.widget === 'computed') return null
@@ -344,6 +447,16 @@ export default function MaterialForm({
           <button className="btn-danger" onClick={onDelete}>Delete…</button>
         )}
       </footer>
+
+      {wikiResult && (
+        <WikiFillPanel
+          sourceTitle={wikiResult.title}
+          rows={wikiData.rows}
+          groupOrder={['Identity', 'Details', 'Image']}
+          onApply={applyWiki}
+          onClose={() => setWikiResult(null)}
+        />
+      )}
     </div>
   )
 }

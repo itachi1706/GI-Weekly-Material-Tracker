@@ -5,7 +5,9 @@ import type {
   WikiCharacterResult,
   WikiTalent,
   WikiConstellation,
-  WikiWeaponResult
+  WikiWeaponResult,
+  WikiOutfitResult,
+  WikiMaterialResult
 } from '@shared/types'
 
 const WIKI_HOST = 'genshin-impact.fandom.com'
@@ -65,15 +67,33 @@ function cleanInline(s: string): string {
 }
 
 /**
- * Read a named infobox param from the `{{Character Infobox ...}}` block. Grabs everything after
- * `|key =` up to the next top-level `|` at line start or the closing `}}`.
+ * Raw value of a named infobox param: everything after `|key =` up to the next top-level `|param =`
+ * or the closing `}}`. No markup cleaning.
  */
-function wikiParam(infobox: string, key: string): string | null {
+function rawParam(infobox: string, key: string): string | null {
   const re = new RegExp(`\\|\\s*${key}\\s*=\\s*([\\s\\S]*?)(?=\\n\\s*\\|[a-zA-Z0-9_]+\\s*=|\\n\\}\\})`, 'i')
   const m = infobox.match(re)
-  if (!m) return null
-  const cleaned = cleanInline(m[1])
-  return cleaned || null
+  return m ? m[1] : null
+}
+
+/** Read + inline-clean a named infobox param (single-line: `<br>` collapses to a space). */
+function wikiParam(infobox: string, key: string): string | null {
+  const raw = rawParam(infobox, key)
+  return raw == null ? null : cleanInline(raw) || null
+}
+
+/** Like wikiParam but preserves line breaks (`<br>` and blank lines → `\n`) — for description fields. */
+function wikiParamMultiline(infobox: string, key: string): string | null {
+  const raw = rawParam(infobox, key)
+  if (raw == null) return null
+  const out = raw
+    .replace(/<br\s*\/?>/gi, '\n')
+    .split('\n')
+    .map((line) => cleanInline(line))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+  return out || null
 }
 
 /** Isolate an infobox template block (e.g. "Character Infobox" / "Weapon Infobox") from wikitext. */
@@ -392,6 +412,89 @@ export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult
     secondaryStatType: wikiParam(box, '2nd_stat_type'),
     type: wikiParam(box, 'type'),
     rarity: rarity && Number.isFinite(rarity) ? rarity : null,
+    iconUrl
+  }
+}
+
+// ── Outfits + Materials ─────────────────────────────────────────────────────────
+
+/** Extract a top-level `==Heading==` section body (up to the next `==…==`), cleaned to prose. */
+function wikiSection(wikitext: string, heading: string): string | null {
+  const re = new RegExp(`\\n==\\s*${heading}\\s*==\\s*\\n([\\s\\S]*?)(?=\\n==[^=]|$)`, 'i')
+  const m = wikitext.match(re)
+  if (!m) return null
+  // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.
+  const raw = m[1]
+    .replace(/<br\s*\/?>/gi, '\n')
+    .split('\n')
+    .map((line) => cleanInline(line))
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+  return raw || null
+}
+
+const DAY_NAME_TO_NUM: Record<string, number> = {
+  monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6, sunday: 7
+}
+
+/** Fetch a Fandom outfit page → review candidates (mostly wikitext; images from rendered infobox). */
+export async function fetchOutfitFromWiki(url: string): Promise<WikiOutfitResult> {
+  const { resolvedTitle, wikitext, html } = await fetchParse(url)
+  const box = infoboxBlock(wikitext, 'Outfit Infobox')
+  if (!box) throw new Error('That page has no Outfit Infobox — is it an outfit page?')
+
+  const qualityStr = wikiParam(box, 'quality')
+  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+
+  const $ = cheerio.load(html)
+  const images = parseImageCandidates($)
+  const pick = (labelRe: RegExp): string | null =>
+    images.find((c) => labelRe.test(c.label))?.url ?? null
+
+  return {
+    sourceUrl: url,
+    title: resolvedTitle,
+    wikiUrl: canonicalWikiUrl(resolvedTitle),
+    name: wikiParam(box, 'title') ?? resolvedTitle,
+    description: wikiParamMultiline(box, 'description'),
+    lore: wikiSection(wikitext, 'Description'),
+    obtained: wikiParam(box, 'obtain'),
+    character: wikiParam(box, 'character'),
+    type: wikiParam(box, 'type'),
+    rarity: rarity && Number.isFinite(rarity) ? rarity : null,
+    portraitUrl: pick(/in.?game/i) ?? pick(/game/i),
+    wishUrl: pick(/wish/i)
+  }
+}
+
+/** Fetch a Fandom material (`{{Item Infobox}}`) page → review candidates (description-centric). */
+export async function fetchMaterialFromWiki(url: string): Promise<WikiMaterialResult> {
+  const { resolvedTitle, wikitext, html } = await fetchParse(url)
+  const box = infoboxBlock(wikitext, 'Item Infobox')
+  if (!box) throw new Error('That page has no Item Infobox — is it a material page?')
+
+  const qualityStr = wikiParam(box, 'quality')
+  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+
+  // Domain-material availability days (day1/day2/day3 → Mon=1…Sun=7).
+  const days = [1, 2, 3]
+    .map((n) => wikiParam(box, `day${n}`))
+    .map((d) => (d ? DAY_NAME_TO_NUM[d.toLowerCase()] : undefined))
+    .filter((n): n is number => typeof n === 'number')
+
+  const $ = cheerio.load(html)
+  const iconUrl = parseImageCandidates($)[0]?.url ?? null
+
+  return {
+    sourceUrl: url,
+    title: resolvedTitle,
+    wikiUrl: canonicalWikiUrl(resolvedTitle),
+    name: wikiParam(box, 'title') ?? resolvedTitle,
+    description: wikiParamMultiline(box, 'description'),
+    days: days.length ? days : null,
+    rarity: rarity && Number.isFinite(rarity) ? rarity : null,
+    type: wikiParam(box, 'type'),
     iconUrl
   }
 }

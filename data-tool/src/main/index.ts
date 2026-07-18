@@ -45,7 +45,12 @@ import {
   previewBannerCommit,
   commitBanner
 } from './ipc/banners'
-import { fetchCharacterFromWiki, fetchWeaponFromWiki } from './ipc/wiki'
+import {
+  fetchCharacterFromWiki,
+  fetchWeaponFromWiki,
+  fetchOutfitFromWiki,
+  fetchMaterialFromWiki
+} from './ipc/wiki'
 import { readSettings, writeSettings } from './settings'
 import type {
   DatasetInfo,
@@ -204,6 +209,8 @@ function registerIpc(): void {
   // Wiki auto-fill (Fandom). No rootPath — purely external fetch + parse.
   ipcMain.handle('wiki:fetchCharacter', (_e, url: string) => fetchCharacterFromWiki(url))
   ipcMain.handle('wiki:fetchWeapon', (_e, url: string) => fetchWeaponFromWiki(url))
+  ipcMain.handle('wiki:fetchOutfit', (_e, url: string) => fetchOutfitFromWiki(url))
+  ipcMain.handle('wiki:fetchMaterial', (_e, url: string) => fetchMaterialFromWiki(url))
 }
 
 app.whenReady().then(() => {

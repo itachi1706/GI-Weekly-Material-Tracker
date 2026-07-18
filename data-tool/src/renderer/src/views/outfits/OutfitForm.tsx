@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { OutfitRecord, OutfitChange, ImagePlan, CharacterSummary } from '@shared/types'
+import type {
+  OutfitRecord, OutfitChange, ImagePlan, CharacterSummary, WikiOutfitResult
+} from '@shared/types'
 import { deriveKey } from '@shared/materialsSchema'
 import ImageField from '../materials/ImageField'
 import { extOf, sanitizeImageBasename, type ImageState } from '../materials/util'
 import { RaritySelect } from '../shared/rarity'
 import { EntityLinkInput, type LinkOption } from '../shared/entityLink'
+import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
+import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
 
 // ── Outfit set definitions ────────────────────────────────────────────────────
 
@@ -155,6 +159,12 @@ export default function OutfitForm({
   )
   const [errors, setErrors] = useState<string[]>([])
   const [characterSummaries, setCharacterSummaries] = useState<CharacterSummary[]>([])
+  // Wiki auto-fill.
+  const [showWiki, setShowWiki] = useState(mode === 'create')
+  const [wikiUrl, setWikiUrl] = useState('')
+  const [wikiBusy, setWikiBusy] = useState(false)
+  const [wikiError, setWikiError] = useState<string | null>(null)
+  const [wikiResult, setWikiResult] = useState<WikiOutfitResult | null>(null)
 
   const characterOptions = useMemo<LinkOption[]>(
     () => characterSummaries.map((c) => ({ key: c.key, name: c.name, image: c.image, sublabel: c.element })),
@@ -172,6 +182,84 @@ export default function OutfitForm({
 
   // Edit mode: target file is locked to the prop. Create mode: driven by outfit set selector.
   const outfitSet = mode === 'edit' && file ? setByFile(file) : setByFile(draft.outfitSetFile)
+
+  // ── Wiki auto-fill ─────────────────────────────────────────────────────────────
+
+  const fetchOutfitWiki = () => {
+    const url = wikiUrl.trim() || draft.wiki.trim()
+    if (!url) { setWikiError('Paste a Genshin Wiki outfit URL first.'); return }
+    setWikiBusy(true)
+    setWikiError(null)
+    window.api.wiki
+      .fetchOutfit(url)
+      .then((r) => { setWikiResult(r); setWikiUrl(url) })
+      .catch((e: unknown) => setWikiError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setWikiBusy(false))
+  }
+
+  const wikiData = useMemo(() => {
+    const res = wikiResult
+    const rows: WikiRow[] = []
+    const apply: Record<string, (d: Draft) => Draft> = {}
+    if (!res) return { rows, apply }
+
+    const add = (
+      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
+      fn?: (d: Draft) => Draft
+    ) => {
+      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+      rows.push({ ...row, changed })
+      if (fn) apply[row.id] = fn
+    }
+    const field = (
+      id: string, group: string, label: string, current: string, fetched: string | null,
+      fn: (d: Draft, v: string) => Draft
+    ) => {
+      const v = fetched ?? ''
+      if (!v) return
+      add({ id, group, label, current, fetched: v }, (d) => fn(d, v))
+    }
+
+    // Identity
+    field('o-name', 'Identity', 'Name', draft.name, res.name, (d, v) => ({
+      ...d, name: v, ...(d.keyTouched ? {} : { keyOverride: deriveKey(v) })
+    }))
+    field('o-desc', 'Identity', 'Description', draft.description, res.description, (d, v) => ({ ...d, description: v }))
+    field('o-obtained', 'Identity', 'Obtained', draft.obtained, res.obtained, (d, v) => ({ ...d, obtained: v }))
+    field('o-wiki', 'Identity', 'Wiki URL', draft.wiki, res.wikiUrl, (d, v) => ({ ...d, wiki: v }))
+    // Confirmation-only
+    const confirm = (id: string, label: string, current: string, fetched: string | null) => {
+      if (!fetched) return
+      add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
+    }
+    confirm('o-char', 'Character', draft.characters[0] ?? '', res.character)
+    confirm('o-set', 'Outfit set (locked)', outfitSet.type, res.type)
+    confirm('o-rarity', 'Rarity', draft.rarity, res.rarity != null ? String(res.rarity) : null)
+
+    // Lore
+    field('o-lore', 'Lore', 'Lore', draft.lore, res.lore, (d, v) => ({ ...d, lore: v }))
+
+    // Images (opt-in; Themed basename convention — review save-as for other sets)
+    if (res.portraitUrl) {
+      const base = `Outfit_${currentKey}_Portrait`
+      add({ id: 'o-portrait', group: 'Image', label: 'Portrait', current: describeImage(draft.imageState),
+        fetched: wikiIconFileName(res.portraitUrl, base), changed: false },
+        (d) => ({ ...d, imageState: urlStateFromWiki(res.portraitUrl!, base) }))
+    }
+    if (res.wishUrl) {
+      const base = `Outfit_${currentKey}_Preview`
+      add({ id: 'o-wish', group: 'Image', label: 'Wish image', current: describeImage(draft.wishimageState),
+        fetched: wikiIconFileName(res.wishUrl, base), changed: false },
+        (d) => ({ ...d, wishimageState: urlStateFromWiki(res.wishUrl!, base) }))
+    }
+
+    return { rows, apply }
+  }, [wikiResult, draft, currentKey, outfitSet])
+
+  const applyWiki = (ids: string[]) => {
+    setDraft((d) => ids.reduce((acc, id) => (wikiData.apply[id] ? wikiData.apply[id](acc) : acc), d))
+    setWikiResult(null)
+  }
 
   // ── Validation ──────────────────────────────────────────────────────────────
 
@@ -250,9 +338,30 @@ export default function OutfitForm({
       <header className="mat-form-head">
         <h2>{mode === 'edit' ? 'Edit' : 'New'} Outfit</h2>
         {mode === 'edit' && originalKey && <span className="pill">{originalKey}</span>}
+        <button type="button" className="btn-secondary btn-sm wiki-toggle"
+          aria-expanded={showWiki} onClick={() => setShowWiki((v) => !v)}>
+          {showWiki ? 'Hide auto-fill' : '✨ Auto-fill from wiki'}
+        </button>
       </header>
 
       <div className="mat-form-grid">
+
+        {/* ── Wiki auto-fill (toggled from the header) ── */}
+        {showWiki && (
+          <div className="field field-wide wiki-fetch-field">
+            <label>Auto-fill from Genshin Wiki</label>
+            <div className="wiki-fetch-row">
+              <input type="text" placeholder="Paste a fandom.com outfit page URL…" autoFocus
+                value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); fetchOutfitWiki() } }} />
+              <button type="button" className="btn-secondary" disabled={wikiBusy} onClick={fetchOutfitWiki}>
+                {wikiBusy ? 'Fetching…' : 'Fetch'}
+              </button>
+            </div>
+            {wikiError && <p className="field-help wiki-fetch-error">{wikiError}</p>}
+            <p className="field-help">Fetches name, description, lore &amp; obtained; you pick which fields to apply.</p>
+          </div>
+        )}
 
         {/* ── Identity ── */}
         <div className="field">
@@ -495,6 +604,16 @@ export default function OutfitForm({
           </button>
         )}
       </footer>
+
+      {wikiResult && (
+        <WikiFillPanel
+          sourceTitle={wikiResult.title}
+          rows={wikiData.rows}
+          groupOrder={['Identity', 'Lore', 'Image']}
+          onApply={applyWiki}
+          onClose={() => setWikiResult(null)}
+        />
+      )}
     </div>
   )
 }

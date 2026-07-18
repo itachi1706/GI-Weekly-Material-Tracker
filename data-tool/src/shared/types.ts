@@ -432,6 +432,48 @@ export interface WikiWeaponResult {
   iconUrl: string | null
 }
 
+/**
+ * Result of parsing a Fandom outfit page. `character`/`type`/`rarity` are confirmation-only (the wiki
+ * `type` is the outfit *set* "Themed"/"Default", not the dataset `type` "Summer"/"Formal"). `obtained`
+ * DOES map cleanly. Portrait/wish image URLs come from the infobox gallery (raw Fandom CDN URLs).
+ */
+export interface WikiOutfitResult {
+  sourceUrl: string
+  title: string
+  wikiUrl: string
+  name: string | null
+  description: string | null
+  /** Long lore from the `==Description==` section (multi-paragraph, `\n`-joined). */
+  lore: string | null
+  obtained: string | null
+  // confirmation-only:
+  character: string | null
+  type: string | null
+  rarity: number | null
+  /** "In-Game" gallery image → portrait slot. */
+  portraitUrl: string | null
+  /** "Wish" gallery image → wishimage slot. */
+  wishUrl: string | null
+}
+
+/**
+ * Result of parsing a Fandom material (`{{Item Infobox}}`) page. Description-centric: `obtained`,
+ * `enemies`, `hoyowiki` are intentionally absent (dataset values are curated / not on the wiki).
+ * `rarity`/`type` are confirmation-only. `days` (domain-material availability) is Mon=1…Sun=7.
+ */
+export interface WikiMaterialResult {
+  sourceUrl: string
+  title: string
+  wikiUrl: string
+  name: string | null
+  description: string | null
+  days: number[] | null
+  // confirmation-only:
+  rarity: number | null
+  type: string | null
+  iconUrl: string | null
+}
+
 // ---- Banners ----
 
 export type BannerType = 'character' | 'weapon' | 'standard' | 'chronicled'
