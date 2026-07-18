@@ -1,8 +1,9 @@
 import type { ImagePlan } from '@shared/types'
 
-/** Extension (no dot, lowercased) from a path or URL; defaults to "png". */
+/** Extension (no dot, lowercased) from a path or URL; defaults to "png". Ignores a Fandom
+ *  `/revision/latest[/scale…]` suffix so the ext is read from the real `…X.png` filename. */
 export function extOf(pathOrUrl: string): string {
-  const clean = pathOrUrl.split(/[?#]/)[0]
+  const clean = pathOrUrl.split(/[?#]/)[0].replace(/\/revision\/.*$/i, '')
   const m = clean.match(/\.([a-zA-Z0-9]+)$/)
   return m ? m[1].toLowerCase() : 'png'
 }
@@ -15,16 +16,19 @@ export type ImageState =
   | { mode: 'url'; url: string; imageName?: string }
 
 /**
- * Normalize an image URL by truncating everything after the image filename.
- * Genshin Wiki / Fandom (and similar CDNs) append `/revision/latest/scale-to-width-down/NNN?cb=…`
- * after the real filename, e.g.
- *   https://…/Sandrone_Icon.png/revision/latest/scale-to-width-down/150?cb=2026…
- * → https://…/Sandrone_Icon.png
- * Keeps the true filename (so the save-as name is "Sandrone_Icon", not "150") and fetches full-res.
- * If the URL has no recognizable image extension, it's returned unchanged.
+ * Normalize a Fandom image URL to the full-res LATEST-revision download URL, dropping the thumbnail
+ * scaling + cache-buster. Fandom serves `…/X.png/revision/latest/scale-to-width-down/NNN?cb=…`; we
+ * keep `…/X.png/revision/latest` (the un-scaled latest revision), e.g.
+ *   https://…/Prune_Icon.png/revision/latest/scale-to-width-down/74?cb=2026…
+ * → https://…/Prune_Icon.png/revision/latest
+ * The save-as name is derived separately (`sanitizeImageBasename` ignores the `/revision/…` suffix, so
+ * it still yields "Prune_Icon"). URLs without `/revision/…` fall back to truncating after the image
+ * extension; anything unrecognized is returned unchanged.
  */
 export function normalizeImageUrl(url: string): string {
   const trimmed = url.trim()
+  const rev = trimmed.match(/^(https?:\/\/.*?\/revision\/latest)(?:[/?#].*)?$/i)
+  if (rev) return rev[1]
   const m = trimmed.match(/^(https?:\/\/.*?\.(?:png|jpe?g|gif|webp|avif|bmp|svg))(?:[/?#].*)?$/i)
   return m ? m[1] : trimmed
 }
@@ -36,7 +40,9 @@ export function normalizeImageUrl(url: string): string {
  * trimming edges. So `…Not%21.png` → `Not`, `…Life%2C_Who…` → `Life_Who` (matching the dataset).
  */
 export function sanitizeImageBasename(url: string): string {
-  const clean = url.split(/[?#]/)[0]
+  // Drop query/hash AND a Fandom `/revision/latest[/scale…]` suffix so the last path segment is the
+  // real `X.png` filename (not "latest").
+  const clean = url.split(/[?#]/)[0].replace(/\/revision\/.*$/i, '')
   let filename = clean.split('/').pop() ?? 'image'
   try {
     filename = decodeURIComponent(filename)
