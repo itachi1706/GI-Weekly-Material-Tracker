@@ -695,13 +695,26 @@ export default function CharacterForm({
         (d) => ({ ...d, titles: [...res.titles] }))
     }
 
-    // Confirmation-only (locked/game fields) — badge, never applied.
+    // Element + rarity: appliable ONLY when creating (applying loads the matching template — see
+    // applyWiki). For an existing character they're locked, so show a confirm-only ✓/✗ badge.
     const confirmRow = (id: string, label: string, current: string, fetched: string | null) => {
       if (!fetched) return
       add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
     }
-    confirmRow('cf-element', 'Element (locked)', draft.element, res.element)
-    confirmRow('cf-rarity', 'Rarity (locked)', draft.rarity, res.rarity != null ? String(res.rarity) : null)
+    const elFetched = res.element && ELEMENTS.includes(res.element as Element) ? res.element : null
+    const rarFetched = res.rarity != null ? String(res.rarity) : null
+    if (mode === 'create') {
+      // apply fns just set the field; applyWiki detects these ids and reloads the template first.
+      if (elFetched)
+        add({ id: 'cf-element', group: 'Identity', label: 'Element', current: draft.element, fetched: elFetched },
+          (d) => ({ ...d, element: elFetched as Element }))
+      if (rarFetched)
+        add({ id: 'cf-rarity', group: 'Identity', label: 'Rarity', current: draft.rarity, fetched: rarFetched },
+          (d) => ({ ...d, rarity: rarFetched }))
+    } else {
+      confirmRow('cf-element', 'Element (locked)', draft.element, res.element)
+      confirmRow('cf-rarity', 'Rarity (locked)', draft.rarity, rarFetched)
+    }
     // Weapon is an editable field (not locked like element/rarity) → apply it (e.g. Nicole = Catalyst).
     idField('id-weapon', 'Weapon', draft.weapon, res.weapon, (d, v) => ({ ...d, weapon: v }))
 
@@ -780,7 +793,38 @@ export default function CharacterForm({
   }, [wikiResult, draft])
 
   const applyWiki = (ids: string[]) => {
-    setDraft((d) => ids.reduce((acc, id) => (wikiData.apply[id] ? wikiData.apply[id](acc) : acc), d))
+    let d = draft
+    let nextBase = base
+    // Element/rarity (create only): load the matching template FIRST — as if the dropdown were
+    // switched — so the ascension/talent-material structure is right before the other rows apply on
+    // top. Done here (not via the generic reduce) so it precedes the talent/constellation writes.
+    const res = wikiResult
+    if (mode === 'create' && res && (ids.includes('cf-element') || ids.includes('cf-rarity'))) {
+      const el = (ids.includes('cf-element') && res.element && ELEMENTS.includes(res.element as Element)
+        ? (res.element as Element) : draft.element)
+      const rar = ids.includes('cf-rarity') && res.rarity != null ? String(res.rarity) : draft.rarity
+      const tpl = templates[`${el}_${rar}`]
+      if (tpl) {
+        nextBase = tpl
+        d = {
+          ...d, element: el, rarity: rar,
+          matSlots: matSlotsFromRecord(tpl),
+          ascPhases: ascPhasesFromRecord(tpl),
+          talentLevels: talentLevelsFromRecord(tpl),
+          attacks: talentEntriesFromRecord(tpl.talents?.attack),
+          passives: talentEntriesFromRecord(tpl.talents?.passives),
+          constellationEntries: constEntriesFromRecord(tpl.constellations)
+        }
+      } else {
+        d = { ...d, element: el, rarity: rar }
+      }
+    }
+    // Apply the remaining selected rows on top (element/rarity already handled above).
+    d = ids
+      .filter((id) => id !== 'cf-element' && id !== 'cf-rarity')
+      .reduce((acc, id) => (wikiData.apply[id] ? wikiData.apply[id](acc) : acc), d)
+    setBase(nextBase)
+    setDraft(d)
     // Reveal the collapsible sections so applied talent/constellation edits are visible.
     setOpenSections({ attacks: true, passives: true, constellations: true })
     setWikiResult(null)
