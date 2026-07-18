@@ -277,10 +277,10 @@ export default function MaterialForm({
           confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
     }
 
-    // Confirmation-only rarity
+    // Rarity (appliable; applyWiki snaps it to a valid option for the resulting type).
     if (has.has('rarity') && res.rarity != null)
-      add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'),
-        fetched: String(res.rarity), confirmOnly: true, ok: eqi(strVal('rarity'), String(res.rarity)), changed: false })
+      add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'), fetched: String(res.rarity) },
+        (v) => ({ ...v, rarity: String(res.rarity) }))
 
     // Image — dataset convention is Item_<key>; use the fetched name's key so a first-time fill
     // (before the name row is applied) still resolves the right basename instead of "Item_".
@@ -296,7 +296,16 @@ export default function MaterialForm({
   }, [wikiResult, values, imageState, key, schema])
 
   const applyWiki = (ids: string[]) => {
-    setValues((prev) => ids.reduce((acc, id) => (wikiData.applyVals[id] ? wikiData.applyVals[id](acc) : acc), prev))
+    setValues((prev) => {
+      let next = ids.reduce((acc, id) => (wikiData.applyVals[id] ? wikiData.applyVals[id](acc) : acc), prev)
+      // Keep rarity valid vs the (possibly newly-applied) type — mirrors setField's snap.
+      for (const f of schema.fields) {
+        if (f.widget !== 'rarity') continue
+        const opts = resolveRarityOptions(f, next)
+        if (!opts.includes(Number(next[f.key]))) next = { ...next, [f.key]: String(opts[0]) }
+      }
+      return next
+    })
     if (ids.includes('mt-name') && !keyTouched && wikiResult?.name) setKey(deriveKey(wikiResult.name))
     if (wikiData.imageApply && ids.includes(wikiData.imageApply.id)) setImageState(wikiData.imageApply.state)
     setWikiResult(null)

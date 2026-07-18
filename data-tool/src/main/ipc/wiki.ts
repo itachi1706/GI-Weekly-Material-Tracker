@@ -51,8 +51,10 @@ function cleanInline(s: string): string {
     .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1') // [[a|b]] → b
     .replace(/\[\[([^\]]*)\]\]/g, '$1') // [[a]] → a
-    .replace(/\{\{(?:w|zh|ja|ko)\|([^}|]*)(?:\|[^}]*)?\}\}/gi, '$1') // {{w|X}} → X
-    .replace(/\{\{[^{}]*\}\}/g, '') // drop other templates
+    // Text-wrapping templates: keep the (first) displayed arg. {{w|X}}, {{sic|X}} ("X" [sic]),
+    // {{tt|display|title}} (tooltip) — dropping these whole would lose real words (e.g. "Barbara").
+    .replace(/\{\{(?:w|zh|ja|ko|sic|tt)\|([^}|]*)(?:\|[^}]*)?\}\}/gi, '$1')
+    .replace(/\{\{[^{}]*\}\}/g, '') // drop other (non-text) templates
     .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1') // [url label] → label
     .replace(/\[https?:\/\/\S+\]/g, '')
     .replace(/'''?/g, '')
