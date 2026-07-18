@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import type { MaterialChange, MaterialRecord } from '@shared/types'
+import { useState, useEffect, useMemo } from 'react'
+import type { MaterialChange, MaterialRecord, WikiMaterialResult } from '@shared/types'
 import {
   applyFormValues,
   deriveKey,
@@ -13,6 +13,9 @@ import {
 import ImageField from './ImageField'
 import { TagsInput, DaysSelect } from './MaterialForm'
 import { extOf, sanitizeImageBasename, type ImageState } from './util'
+import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
+import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
+import { DAY_ABBR, CATEGORY_LABEL, inferWikiCategory } from './materialWiki'
 
 // ── Per-tier state ────────────────────────────────────────────────────────────
 
@@ -114,6 +117,11 @@ export default function TierSetForm({
     return resolveTiers(config, {}).map(() => emptyTier())
   })
   const [errors, setErrors] = useState<string[]>([])
+  // Wiki auto-fill — per-tier (each tier is a separate Fandom page). One active fetch at a time.
+  const [wikiTier, setWikiTier] = useState<number | null>(null)
+  const [wikiBusy, setWikiBusy] = useState(false)
+  const [wikiError, setWikiError] = useState<string | null>(null)
+  const [wikiResult, setWikiResult] = useState<WikiMaterialResult | null>(null)
 
   // Recompute tier count when domain type changes (forgery=4, mastery=3).
   const tierConfigs = resolveTiers(config, shared)
@@ -143,6 +151,112 @@ export default function TierSetForm({
   const autoFillObtained = (i: number) => {
     const prevName = tiers[i - 1]?.name.trim() ?? ''
     updateTier(i, { obtained: prevName ? `- Alchemy (3x ${prevName})\n` : '' })
+  }
+
+  // ── Wiki auto-fill (per tier) ────────────────────────────────────────────────
+
+  const fetchTierWiki = (i: number) => {
+    const url = tiers[i]?.wiki.trim() ?? ''
+    setWikiTier(i)
+    if (!url) { setWikiError('Paste a wiki URL for this tier first.'); return }
+    setWikiBusy(true)
+    setWikiError(null)
+    setWikiResult(null)
+    window.api.wiki
+      .fetchMaterial(url)
+      .then((r) => setWikiResult(r))
+      .catch((e: unknown) => setWikiError(e instanceof Error ? e.message : String(e)))
+      .finally(() => setWikiBusy(false))
+  }
+
+  // Review rows for the active tier. Identity/Image patch that tier; Details type/days patch the
+  // SHARED section; rarity is confirm-only (each tier's rarity is fixed by position — catches a
+  // wrong-tier paste). `apply` entries are tagged tier|shared|image and split in applyWiki.
+  type TierApply =
+    | { kind: 'tier'; patch: Partial<TierData> }
+    | { kind: 'shared'; key: string; value: unknown }
+    | { kind: 'image'; state: ImageState }
+  const wikiData = useMemo(() => {
+    const res = wikiResult
+    const i = wikiTier
+    const rows: WikiRow[] = []
+    const apply: Record<string, TierApply> = {}
+    if (res == null || i == null) return { rows, apply }
+    const tier = tiers[i] ?? emptyTier()
+    const cfg = tierConfigs[i]
+
+    const add = (
+      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
+      entry?: TierApply
+    ) => {
+      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+      rows.push({ ...row, changed })
+      if (entry) apply[row.id] = entry
+    }
+
+    // Identity (→ this tier)
+    if (res.name)
+      add({ id: 't-name', group: 'Identity', label: 'Name', current: tier.name, fetched: res.name },
+        { kind: 'tier', patch: { name: res.name, ...(tier.keyTouched ? {} : { keyOverride: deriveKey(res.name) }) } })
+    if (res.description)
+      add({ id: 't-desc', group: 'Identity', label: 'Description', current: tier.description, fetched: res.description },
+        { kind: 'tier', patch: { description: res.description } })
+    if (res.obtained) {
+      if (config.sharedObtained)
+        add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String(shared['obtained'] ?? ''), fetched: res.obtained },
+          { kind: 'shared', key: 'obtained', value: res.obtained })
+      else
+        add({ id: 't-obtained', group: 'Identity', label: 'Obtained', current: tier.obtained, fetched: res.obtained },
+          { kind: 'tier', patch: { obtained: res.obtained } })
+    }
+    if (res.wikiUrl)
+      add({ id: 't-wiki', group: 'Identity', label: 'Wiki URL', current: tier.wiki, fetched: res.wikiUrl },
+        { kind: 'tier', patch: { wiki: res.wikiUrl } })
+
+    // Details — category confirm (mismatch = wrong page), shared days, tier-rarity confirm.
+    const inferred = inferWikiCategory(res)
+    if (inferred)
+      add({ id: 't-category', group: 'Details', label: 'Category', current: CATEGORY_LABEL[schema.innerType] ?? schema.innerType,
+        fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: inferred === schema.innerType, changed: false,
+        note: inferred === schema.innerType ? undefined : 'pasted page is a different material category' })
+    if (config.sharedFieldKeys.includes('days') && res.days) {
+      const disp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
+      add({ id: 't-days', group: 'Details', label: 'Available days (shared)', current: disp((shared['days'] as number[]) ?? []), fetched: disp(res.days) },
+        { kind: 'shared', key: 'days', value: res.days })
+    }
+    if (cfg && res.rarity != null)
+      add({ id: 't-rarity', group: 'Details', label: `Rarity (tier ${i + 1})`, current: String(cfg.rarity),
+        fetched: String(res.rarity), confirmOnly: true, ok: res.rarity === cfg.rarity, changed: false,
+        note: res.rarity === cfg.rarity ? undefined : 'does not match this tier — wrong page?' })
+
+    // Image (→ this tier). Basename from the FETCHED name (first-fill resolves the real name, not "Item_").
+    if (res.iconUrl) {
+      const base = `Item_${deriveKey(String(res.name ?? '')) || tierKey(i)}`
+      const file = wikiIconFileName(res.iconUrl, base)
+      add({ id: 't-icon', group: 'Image', label: 'Icon', current: describeImage(tier.imageState), fetched: file,
+        changed: describeImage(tier.imageState) !== file },
+        { kind: 'image', state: urlStateFromWiki(res.iconUrl, base) })
+    }
+
+    return { rows, apply }
+  }, [wikiResult, wikiTier, tiers, shared, tierConfigs, config, schema])
+
+  const applyWiki = (ids: string[]) => {
+    const i = wikiTier
+    if (i == null) { setWikiResult(null); return }
+    let tierPatch: Partial<TierData> = {}
+    const sharedUpdates: Record<string, unknown> = {}
+    for (const id of ids) {
+      const e = wikiData.apply[id]
+      if (!e) continue
+      if (e.kind === 'tier') tierPatch = { ...tierPatch, ...e.patch }
+      else if (e.kind === 'image') tierPatch = { ...tierPatch, imageState: e.state }
+      else if (e.kind === 'shared') sharedUpdates[e.key] = e.value
+    }
+    if (Object.keys(tierPatch).length) updateTier(i, tierPatch)
+    if (Object.keys(sharedUpdates).length) setShared((prev) => ({ ...prev, ...sharedUpdates }))
+    setWikiResult(null)
+    setWikiTier(null)
   }
 
   // ── Validation ──────────────────────────────────────────────────────────────
@@ -434,11 +548,20 @@ export default function TierSetForm({
                 {/* Wiki + HoYoWiki */}
                 <div className="field">
                   <label>Wiki URL</label>
-                  <input
-                    type="text"
-                    value={tier.wiki}
-                    onChange={(e) => updateTier(i, { wiki: e.target.value })}
-                  />
+                  <div className="wiki-fetch-row">
+                    <input
+                      type="text"
+                      placeholder="Paste this tier's page URL…"
+                      value={tier.wiki}
+                      onChange={(e) => updateTier(i, { wiki: e.target.value })}
+                      onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); fetchTierWiki(i) } }}
+                    />
+                    <button type="button" className="btn-secondary" disabled={wikiBusy && wikiTier === i}
+                      onClick={() => fetchTierWiki(i)}>
+                      {wikiBusy && wikiTier === i ? 'Fetching…' : '✨ Fetch'}
+                    </button>
+                  </div>
+                  {wikiError && wikiTier === i && <p className="field-help wiki-fetch-error">{wikiError}</p>}
                 </div>
                 <div className="field">
                   <label>HoYoWiki ID</label>
@@ -476,6 +599,16 @@ export default function TierSetForm({
           </button>
         )}
       </footer>
+
+      {wikiResult && wikiTier !== null && (
+        <WikiFillPanel
+          sourceTitle={`${wikiResult.title} → Tier ${wikiTier + 1}`}
+          rows={wikiData.rows}
+          groupOrder={['Identity', 'Details', 'Image']}
+          onApply={applyWiki}
+          onClose={() => { setWikiResult(null); setWikiTier(null) }}
+        />
+      )}
     </div>
   )
 }
