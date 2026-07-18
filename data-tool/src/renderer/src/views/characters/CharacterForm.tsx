@@ -29,6 +29,15 @@ type Element = typeof ELEMENTS[number]
 
 const WEAPON_TYPES = ['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'] as const
 
+// Gender is a fixed set (Male/Female for most; "Male/Female" for the Traveler). Empty = unspecified.
+const GENDERS = ['Male', 'Female', 'Male/Female'] as const
+// Nation suggestions (datalist) — the canonical regions; the field still accepts custom/composite
+// values ("Nod-Krai, Snezhnaya", crossover origins, etc.) which the dataset uses.
+const NATIONS = [
+  'Mondstadt', 'Liyue', 'Inazuma', 'Sumeru', 'Fontaine', 'Natlan', 'Snezhnaya',
+  'Nod-Krai', "Khaenri'ah", 'Teyvat', 'Outlander'
+] as const
+
 function fileForElement(element: string): string {
   return `Characters-${element}.json`
 }
@@ -1052,7 +1061,14 @@ export default function CharacterForm({
 
         <div className="field">
           <label>Gender</label>
-          <input type="text" value={draft.gender} onChange={(e) => set('gender', e.target.value)} />
+          <select value={draft.gender} onChange={(e) => set('gender', e.target.value)}>
+            <option value="">—</option>
+            {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
+            {/* Keep an unrecognized existing value selectable so editing never silently drops it. */}
+            {draft.gender && !GENDERS.includes(draft.gender as typeof GENDERS[number]) && (
+              <option value={draft.gender}>{draft.gender}</option>
+            )}
+          </select>
         </div>
 
         <div className="field">
@@ -1063,7 +1079,9 @@ export default function CharacterForm({
 
         <div className="field">
           <label>Nation</label>
-          <input type="text" value={draft.nation} onChange={(e) => set('nation', e.target.value)} />
+          <input type="text" list="character-nations" value={draft.nation}
+            onChange={(e) => set('nation', e.target.value)} />
+          <p className="field-help">Pick a region or type a custom/composite value.</p>
         </div>
 
         <div className="field">
@@ -1302,6 +1320,10 @@ export default function CharacterForm({
 
       <datalist id="passive-types">
         {PASSIVE_TYPES.map((t) => <option key={t} value={t} />)}
+      </datalist>
+
+      <datalist id="character-nations">
+        {NATIONS.map((n) => <option key={n} value={n} />)}
       </datalist>
 
       {errors.length > 0 && (
