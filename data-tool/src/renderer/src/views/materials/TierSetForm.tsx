@@ -153,6 +153,19 @@ export default function TierSetForm({
     updateTier(i, { obtained: prevName ? `- Alchemy (3x ${prevName})\n` : '' })
   }
 
+  // Append one "- Dropped by <enemy>" line per enemy in the shared "Dropped By" list (mob drops).
+  // Level qualifier by tier: tier 1 none, tier 2 "Lv.40+", tier 3 "Lv.60+" (dataset convention).
+  // Appends (so it composes with the alchemy line); the user can still tweak wording afterward.
+  const appendDroppedBy = (i: number) => {
+    const enemies = ((shared['enemies'] as string[] | undefined) ?? []).map((e) => e.trim()).filter(Boolean)
+    if (!enemies.length) return
+    const qual = ['', 'Lv.40+ ', 'Lv.60+ '][i] ?? ''
+    const lines = enemies.map((e) => `- Dropped by ${qual}${e}`).join('\n')
+    const cur = tiers[i]?.obtained ?? ''
+    const prefix = cur.trim() ? cur.replace(/\n+$/, '') + '\n' : ''
+    updateTier(i, { obtained: prefix + lines })
+  }
+
   // ── Wiki auto-fill (per tier) ────────────────────────────────────────────────
 
   const fetchTierWiki = (i: number) => {
@@ -522,6 +535,16 @@ export default function TierSetForm({
                           onClick={() => autoFillObtained(i)}
                         >
                           ↩ Auto-fill alchemy
+                        </button>
+                      )}
+                      {config.sharedFieldKeys.includes('enemies') && (
+                        <button
+                          type="button"
+                          className="tier-alchemy-btn"
+                          title="Append a '- Dropped by <enemy>' line per enemy in the Dropped By list"
+                          onClick={() => appendDroppedBy(i)}
+                        >
+                          + Dropped by
                         </button>
                       )}
                     </label>
