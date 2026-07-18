@@ -16,6 +16,7 @@
     "test:roundtrip": "node scripts/roundtrip-test.ts",
     "test:materials": "node scripts/materials-commit-test.ts",
     "normalize:format": "node scripts/normalize-format.ts",
+    "validate": "node scripts/validate-dataset.ts",
     "build:mac": "electron-vite build && electron-builder --mac",
     "build:win": "electron-vite build && electron-builder --win",
     "dist": "npm run build:mac"
