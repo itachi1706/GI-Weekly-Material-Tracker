@@ -702,7 +702,8 @@ export default function CharacterForm({
     }
     confirmRow('cf-element', 'Element (locked)', draft.element, res.element)
     confirmRow('cf-rarity', 'Rarity (locked)', draft.rarity, res.rarity != null ? String(res.rarity) : null)
-    confirmRow('cf-weapon', 'Weapon', draft.weapon, res.weapon)
+    // Weapon is an editable field (not locked like element/rarity) → apply it (e.g. Nicole = Catalyst).
+    idField('id-weapon', 'Weapon', draft.weapon, res.weapon, (d, v) => ({ ...d, weapon: v }))
 
     // Talents → attacks (by type) + passives (by order).
     for (const wt of res.talents) {

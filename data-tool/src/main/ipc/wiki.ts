@@ -13,9 +13,14 @@ import type {
 const WIKI_HOST = 'genshin-impact.fandom.com'
 const USER_AGENT = 'gi-dataset-tool/0.1 (personal dataset manager; contact via local app)'
 
-/** Talent-table `type` labels we treat as real talent header rows (vs scaling sub-rows). */
+/**
+ * Talent-table `type` labels we treat as real talent header rows (vs scaling sub-rows, which lack an
+ * icon anyway). Combat talents by exact name; any passive by an `…Passive` suffix — this covers the
+ * standard "Nth Ascension Passive" / "Utility Passive" AND special ones like "Witch's Eve Rite Passive"
+ * (Nicole) or other character-specific passive labels.
+ */
 const TALENT_TYPE_RE =
-  /^(Normal Attack|Elemental Skill|Elemental Burst|Alternate Sprint|\d(?:st|nd|rd|th) Ascension Passive|Utility Passive|Passive)$/
+  /^(?:Normal Attack|Elemental Skill|Elemental Burst|Alternate Sprint|.*Passive)$/
 
 const MONTHS: Record<string, number> = {
   january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
@@ -73,7 +78,9 @@ function cleanInline(s: string): string {
  * or the closing `}}`. No markup cleaning.
  */
 function rawParam(infobox: string, key: string): string | null {
-  const re = new RegExp(`\\|\\s*${key}\\s*=\\s*([\\s\\S]*?)(?=\\n\\s*\\|[a-zA-Z0-9_]+\\s*=|\\n\\}\\})`, 'i')
+  // NB: horizontal-only whitespace after `=` (`[ \t]*`, not `\s*`) — otherwise an EMPTY param
+  // (`|realname =\n|birthday = …`) would let `\s*` eat the newline and capture the next param's value.
+  const re = new RegExp(`\\|\\s*${key}\\s*=[ \\t]*([\\s\\S]*?)(?=\\n\\s*\\|[a-zA-Z0-9_]+\\s*=|\\n\\}\\})`, 'i')
   const m = infobox.match(re)
   return m ? m[1] : null
 }

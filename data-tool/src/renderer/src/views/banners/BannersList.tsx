@@ -37,9 +37,13 @@ export default function BannersList({
   const [refsLoaded, setRefsLoaded] = useState(() => refMapCache.has(rootPath))
 
   useEffect(() => {
-    const cached = refMapCache.get(rootPath)
-    if (cached) { setImgByKey(cached); setRefsLoaded(true); return }
     let cancelled = false
+    // Stale-while-revalidate: render instantly from the module cache if present, but ALWAYS re-fetch
+    // in the background and update. This lets "?" rate-up tiles (a character/weapon that had no image,
+    // or didn't exist, when the cache was first built) resolve once its image is added — the previous
+    // cache-and-return-forever behavior left them stuck.
+    const cached = refMapCache.get(rootPath)
+    if (cached) { setImgByKey(cached); setRefsLoaded(true) }
     void Promise.all([
       window.api.characters.list(rootPath),
       window.api.weapons.list(rootPath)
