@@ -9,6 +9,47 @@ import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../share
 
 const DAY_ABBR = ['', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+const CATEGORY_LABEL: Record<string, string> = {
+  local_speciality: 'Local Speciality', boss_drops: 'Boss Drop / Ascension Gem',
+  domain_material: 'Domain Material', mob_drops: 'Mob Drop'
+}
+
+/**
+ * Infer the material category from a wiki page's group/type (the wiki `type` param is a broad
+ * category; the `group`/`group2` are the useful "Item Group"). Used to warn when the pasted page
+ * doesn't match the material sub-type being edited.
+ */
+function inferWikiCategory(res: WikiMaterialResult): string | null {
+  const t = res.type ?? '', g = res.group ?? '', g2 = res.group2 ?? ''
+  if (/local special/i.test(t) || /local special/i.test(g)) return 'local_speciality'
+  if (/ascension gem/i.test(g2) || /ascension gem/i.test(g)) return 'boss_drops'
+  if (/boss drop/i.test(g)) return 'boss_drops'
+  if (/talent book|weapon ascension|forgery/i.test(g2) || /talent material|weapon ascension material/i.test(t))
+    return 'domain_material'
+  if (/common ascension|mob/i.test(g) || /common ascension/i.test(t)) return 'mob_drops'
+  return null
+}
+
+/**
+ * Map a wiki page's group/type → the dataset `type` string for this schema, from the Item GROUP
+ * (not the broad wiki `type` param): local specialities keep their region ("Local Speciality
+ * (Inazuma)"); "Normal Boss Drops" → "Boss Drops"; ascension gems → "Ascension Gems". Returns null
+ * unless the result is a valid option in this schema (domain/mob aren't cleanly derivable).
+ */
+function mapWikiType(res: WikiMaterialResult, innerType: string, typeOptions: string[]): string | null {
+  let candidate: string | null = null
+  if (innerType === 'local_speciality') {
+    const m = (res.type ?? '').match(/\(([^)]+)\)/) // "Local Specialty (Inazuma)" → region
+    if (m) candidate = `Local Speciality (${m[1]})`
+  } else if (innerType === 'boss_drops') {
+    const g = res.group ?? '', g2 = res.group2 ?? '', t = res.type ?? ''
+    if (/ascension gem/i.test(g2) || /ascension gem/i.test(g)) candidate = 'Ascension Gems'
+    else if (/weekly/i.test(g) || /weekly/i.test(t)) candidate = 'Boss Drops (Weekly)'
+    else if (/boss drop/i.test(g)) candidate = 'Boss Drops'
+  }
+  return candidate && typeOptions.includes(candidate) ? candidate : null
+}
+
 export interface FormDraft {
   key: string
   ordering: InsertModeName
@@ -209,20 +250,42 @@ export default function MaterialForm({
     if (has.has('wiki') && res.wikiUrl)
       add({ id: 'mt-wiki', group: 'Identity', label: 'Wiki URL', current: strVal('wiki'), fetched: res.wikiUrl },
         (v) => ({ ...v, wiki: res.wikiUrl }))
+    if (has.has('obtained') && res.obtained)
+      add({ id: 'mt-obtained', group: 'Details', label: 'Obtained', current: strVal('obtained'), fetched: res.obtained },
+        (v) => ({ ...v, obtained: res.obtained }))
     if (has.has('days') && res.days)
       add({ id: 'mt-days', group: 'Details', label: 'Available days',
         current: daysDisp((values.days as number[]) ?? []), fetched: daysDisp(res.days) },
         (v) => ({ ...v, days: res.days }))
-    // Confirmation-only
+
+    // Type: mapped from the wiki Item GROUP → this schema's `type` option. If the pasted page is a
+    // different material category, warn instead of applying a wrong value.
+    const inferred = inferWikiCategory(res)
+    if (inferred && inferred !== schema.innerType) {
+      add({ id: 'mt-mismatch', group: 'Details', label: '⚠ Material type', current: schema.label,
+        fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: false, changed: false,
+        note: 'the pasted page is a different material category' })
+    } else if (has.has('type')) {
+      const typeField = schema.fields.find((f) => f.key === 'type')
+      const typeOptions = (typeField?.options ?? []).map((o) => String(o.value))
+      const mapped = mapWikiType(res, schema.innerType, typeOptions)
+      if (mapped)
+        add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: mapped },
+          (v) => ({ ...v, type: mapped }))
+      else if (res.type)
+        add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: res.type,
+          confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
+    }
+
+    // Confirmation-only rarity
     if (has.has('rarity') && res.rarity != null)
       add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'),
         fetched: String(res.rarity), confirmOnly: true, ok: eqi(strVal('rarity'), String(res.rarity)), changed: false })
-    if (has.has('type') && res.type)
-      add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'),
-        fetched: res.type, confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
-    // Image — dataset convention is Item_<key>
+
+    // Image — dataset convention is Item_<key>; use the fetched name's key so a first-time fill
+    // (before the name row is applied) still resolves the right basename instead of "Item_".
     if (res.iconUrl) {
-      const base = `Item_${key.trim() || deriveKey(String(values.name ?? ''))}`
+      const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String(values.name ?? ''))}`
       const file = wikiIconFileName(res.iconUrl, base)
       rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
         fetched: file, changed: describeImage(imageState) !== file })

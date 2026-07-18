@@ -87,6 +87,7 @@ function wikiParamMultiline(infobox: string, key: string): string | null {
   const raw = rawParam(infobox, key)
   if (raw == null) return null
   const out = raw
+    .replace(/<!--[\s\S]*?-->/g, '') // multi-line HTML comments (per-line cleanInline can't catch these)
     .replace(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
@@ -223,9 +224,19 @@ function parseImageCandidates($: CheerioAPI): { label: string; url: string }[] {
   return out
 }
 
-/** Canonical Fandom page URL in the dataset's style: spaces → underscores, no extra encoding. */
+/**
+ * Canonical Fandom page URL, URL-safe: spaces → underscores, then percent-encode special characters
+ * (e.g. `'`→`%27`) so it matches the dataset's encoded form (`Gunnhildr%27s_Legacy`) rather than a
+ * raw apostrophe. `encodeURIComponent` leaves `'!()*` alone, so encode those explicitly.
+ */
 function canonicalWikiUrl(resolvedTitle: string): string {
-  return `https://${WIKI_HOST}/wiki/${resolvedTitle.replace(/ /g, '_')}`
+  const enc = encodeURIComponent(resolvedTitle.replace(/ /g, '_'))
+    .replace(/'/g, '%27')
+    .replace(/!/g, '%21')
+    .replace(/\(/g, '%28')
+    .replace(/\)/g, '%29')
+    .replace(/\*/g, '%2A')
+  return `https://${WIKI_HOST}/wiki/${enc}`
 }
 
 interface ParseResult {
@@ -425,6 +436,7 @@ function wikiSection(wikitext: string, heading: string): string | null {
   if (!m) return null
   // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.
   const raw = m[1]
+    .replace(/<!--[\s\S]*?-->/g, '') // strip multi-line HTML comments first (e.g. `<!--\n-->` separators)
     .replace(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
@@ -483,6 +495,12 @@ export async function fetchMaterialFromWiki(url: string): Promise<WikiMaterialRe
     .map((d) => (d ? DAY_NAME_TO_NUM[d.toLowerCase()] : undefined))
     .filter((n): n is number => typeof n === 'number')
 
+  // Obtained: bullet list from source1..source6 (drops template-only sources that clean to empty).
+  const sources = [1, 2, 3, 4, 5, 6]
+    .map((n) => wikiParam(box, `source${n}`))
+    .filter((s): s is string => !!s)
+  const obtained = sources.length ? sources.map((s) => `- ${s}`).join('\n') : null
+
   const $ = cheerio.load(html)
   const iconUrl = parseImageCandidates($)[0]?.url ?? null
 
@@ -492,9 +510,12 @@ export async function fetchMaterialFromWiki(url: string): Promise<WikiMaterialRe
     wikiUrl: canonicalWikiUrl(resolvedTitle),
     name: wikiParam(box, 'title') ?? resolvedTitle,
     description: wikiParamMultiline(box, 'description'),
+    obtained,
     days: days.length ? days : null,
-    rarity: rarity && Number.isFinite(rarity) ? rarity : null,
     type: wikiParam(box, 'type'),
+    group: wikiParam(box, 'group'),
+    group2: wikiParam(box, 'group2'),
+    rarity: rarity && Number.isFinite(rarity) ? rarity : null,
     iconUrl
   }
 }

@@ -40,6 +40,14 @@ function inputDateToJson(s: string): string {
   return `${parseInt(day)}-${parseInt(month)}-${year}`
 }
 
+/** Display a game version keeping the trailing `.0` for whole numbers (`1` → `"1.0"`, `1.6` → `"1.6"`). */
+function fmtVersion(v: unknown): string {
+  if (v == null || v === '') return '1.0'
+  const n = Number(v)
+  if (!Number.isFinite(n)) return String(v)
+  return Number.isInteger(n) ? n.toFixed(1) : String(n)
+}
+
 // ── Image entry builder ───────────────────────────────────────────────────────
 
 function buildImageEntry(
@@ -128,7 +136,7 @@ function draftFromRecord(rec: OutfitRecord, defaultFile?: string, existingKey?: 
     shopCostDiscountedTill: jsonDateToInput(String(rec.shop_cost_discounted_till ?? '')),
     eventGiveFree: Boolean(rec.event_give_free),
     eventGiveFreeTill: jsonDateToInput(String(rec.event_give_free_till ?? '')),
-    releasedVersion: String(rec.released_version ?? '1'),
+    releasedVersion: fmtVersion(rec.released_version),
     releasedVersionName: String(rec.released_version_name ?? ''),
     released: Boolean(rec.released),
     wiki: String(rec.wiki ?? '')

@@ -467,10 +467,16 @@ export interface WikiMaterialResult {
   wikiUrl: string
   name: string | null
   description: string | null
+  /** Bullet list built from the infobox `source1..N` params (`- a\n- b`), for the `obtained` field. */
+  obtained: string | null
   days: number[] | null
-  // confirmation-only:
-  rarity: number | null
+  /** Raw infobox `type` param (broad category, e.g. "Local Specialty (Inazuma)"). */
   type: string | null
+  /** Infobox `group` param (the useful Item Group, e.g. "Local Specialties", "Normal Boss Drops"). */
+  group: string | null
+  /** Infobox `group2` param (secondary group, e.g. "Ascension Gems", "Talent Books"). */
+  group2: string | null
+  rarity: number | null
   iconUrl: string | null
 }
 
