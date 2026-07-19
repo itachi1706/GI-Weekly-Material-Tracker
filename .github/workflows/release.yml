@@ -398,7 +398,7 @@ jobs:
             datatool-dmg/*.dmg
             datatool-win/*.exe
   releaseipa:
-    runs-on: macos-14 # For Apple Silicon
+    runs-on: macos-15 # Pinned (not macos-latest) to keep the Xcode 16.1.0 pin below valid; macos-14 retires 2026-11-02
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta
