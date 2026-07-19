@@ -39,7 +39,8 @@ export function pageTitleFromUrl(raw: string): string {
   } catch {
     throw new Error('Not a valid URL. Paste a full Genshin Wiki page URL.')
   }
-  if (!u.hostname.endsWith('fandom.com')) {
+  const hostname = u.hostname.toLowerCase()
+  if (hostname !== WIKI_HOST) {
     throw new Error(`Expected a ${WIKI_HOST} URL, got "${u.hostname}".`)
   }
   const m = u.pathname.match(/\/wiki\/(.+)$/)
