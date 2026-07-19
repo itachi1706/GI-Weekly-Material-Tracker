@@ -46,31 +46,31 @@ export function pageTitleFromUrl(raw: string): string {
   const m = /\/wiki\/(.+)$/.exec(u.pathname)
   const rawTitle = m ? m[1] : u.searchParams.get('title')
   if (!rawTitle) throw new Error('Could not find a page title in that URL.')
-  return decodeURIComponent(rawTitle).replace(/_/g, ' ').trim()
+  return decodeURIComponent(rawTitle).replaceAll(/_/g, ' ').trim()
 }
 
 /** Strip inline wiki markup from an infobox param value → plain text. */
 function cleanInline(s: string): string {
   return s
-    .replace(/<ref[^>]*\/>/gi, '')
-    .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replace(/<!--[\s\S]*?-->/g, '')
-    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1') // [[a|b]] → b
-    .replace(/\[\[([^\]]*)\]\]/g, '$1') // [[a]] → a
+    .replaceAll(/<ref[^>]*\/>/gi, '')
+    .replaceAll(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
+    .replaceAll(/<!--[\s\S]*?-->/g, '')
+    .replaceAll(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1') // [[a|b]] → b
+    .replaceAll(/\[\[([^\]]*)\]\]/g, '$1') // [[a]] → a
     // Text-wrapping templates: keep the (first) displayed arg. {{w|X}}, {{sic|X}} ("X" [sic]),
     // {{tt|display|title}} (tooltip) — dropping these whole would lose real words (e.g. "Barbara").
-    .replace(/\{\{(?:w|zh|ja|ko|sic|tt)\|([^}|]*)(?:\|[^}]*)?\}\}/gi, '$1')
-    .replace(/\{\{[^{}]*\}\}/g, '') // drop other (non-text) templates
-    .replace(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1') // [url label] → label
-    .replace(/\[https?:\/\/\S+\]/g, '')
-    .replace(/'''?/g, '')
-    .replace(/<br\s*\/?>/gi, ' ')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&mdash;/gi, '—')
-    .replace(/&amp;/gi, '&')
-    .replace(/&shy;|­/gi, '') // soft hyphens (e.g. "Mist&shy;split&shy;ter" → "Mistsplitter")
-    .replace(/\s+/g, ' ')
+    .replaceAll(/\{\{(?:w|zh|ja|ko|sic|tt)\|([^}|]*)(?:\|[^}]*)?\}\}/gi, '$1')
+    .replaceAll(/\{\{[^{}]*\}\}/g, '') // drop other (non-text) templates
+    .replaceAll(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1') // [url label] → label
+    .replaceAll(/\[https?:\/\/\S+\]/g, '')
+    .replaceAll(/'''?/g, '')
+    .replaceAll(/<br\s*\/?>/gi, ' ')
+    .replaceAll(/<[^>]+>/g, '')
+    .replaceAll(/&nbsp;/gi, ' ')
+    .replaceAll(/&mdash;/gi, '—')
+    .replaceAll(/&amp;/gi, '&')
+    .replaceAll(/&shy;|­/gi, '') // soft hyphens (e.g. "Mist&shy;split&shy;ter" → "Mistsplitter")
+    .replaceAll(/\s+/g, ' ')
     .trim()
 }
 
@@ -97,12 +97,12 @@ function wikiParamMultiline(infobox: string, key: string): string | null {
   const raw = rawParam(infobox, key)
   if (raw == null) return null
   const out = raw
-    .replace(/<!--[\s\S]*?-->/g, '') // multi-line HTML comments (per-line cleanInline can't catch these)
-    .replace(/<br\s*\/?>/gi, '\n')
+    .replaceAll(/<!--[\s\S]*?-->/g, '') // multi-line HTML comments (per-line cleanInline can't catch these)
+    .replaceAll(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
     .join('\n')
-    .replace(/\n{3,}/g, '\n\n')
+    .replaceAll(/\n{3,}/g, '\n\n')
     .trim()
   return out || null
 }
@@ -147,10 +147,10 @@ function cleanBlock($: CheerioAPI, el: AnyNode): string {
   txt = txt
     .replace(/\n?Hover over previews[\s\S]*$/i, '')
     .replace(/\n?\(Preview Preferences\)[\s\S]*$/i, '')
-    .replace(/ /g, ' ')
-    .replace(/[ \t]+\n/g, '\n')
-    .replace(/\n[ \t]+/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
+    .replaceAll(/ /g, ' ')
+    .replaceAll(/[ \t]+\n/g, '\n')
+    .replaceAll(/\n[ \t]+/g, '\n')
+    .replaceAll(/\n{3,}/g, '\n\n')
     .trim()
   return txt || ''
 }
@@ -240,12 +240,12 @@ function parseImageCandidates($: CheerioAPI): { label: string; url: string }[] {
  * raw apostrophe. `encodeURIComponent` leaves `'!()*` alone, so encode those explicitly.
  */
 function canonicalWikiUrl(resolvedTitle: string): string {
-  const enc = encodeURIComponent(resolvedTitle.replace(/ /g, '_'))
-    .replace(/'/g, '%27')
-    .replace(/!/g, '%21')
-    .replace(/\(/g, '%28')
-    .replace(/\)/g, '%29')
-    .replace(/\*/g, '%2A')
+  const enc = encodeURIComponent(resolvedTitle.replaceAll(/ /g, '_'))
+    .replaceAll(/'/g, '%27')
+    .replaceAll(/!/g, '%21')
+    .replaceAll(/\(/g, '%28')
+    .replaceAll(/\)/g, '%29')
+    .replaceAll(/\*/g, '%2A')
   return `https://${WIKI_HOST}/wiki/${enc}`
 }
 
@@ -348,7 +348,7 @@ function descriptionTemplate(wikitext: string): string | null {
  * infobox `eff_rank1_varN`/`eff_rank5_varN` params. Leaves the placeholder if a value is missing.
  */
 function substituteEffectVars(effect: string, box: string): string {
-  return effect.replace(/\(var(\d+)\)/g, (_m, n: string) => {
+  return effect.replaceAll(/\(var(\d+)\)/g, (_m, n: string) => {
     const r1 = wikiParam(box, `eff_rank1_var${n}`)
     const r5 = wikiParam(box, `eff_rank5_var${n}`)
     if (r1 && r5) return r1 === r5 ? r1 : `${r1}~${r5}`
@@ -387,7 +387,7 @@ function weaponMaxStats($: CheerioAPI): { maxBaseAtk: number | null; maxSecondar
       if (lvlIdx < 0) return
       const rest = cells.slice(lvlIdx + 1).filter((c) => c !== '')
       if (rest.length >= 1 && /^\d[\d,]*$/.test(rest[0])) {
-        maxBaseAtk = Number.parseInt(rest[0].replace(/,/g, ''), 10)
+        maxBaseAtk = Number.parseInt(rest[0].replaceAll(/,/g, ''), 10)
         maxSecondaryStat = rest[1] ?? null
       }
     })
@@ -446,12 +446,12 @@ function wikiSection(wikitext: string, heading: string): string | null {
   if (!m) return null
   // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.
   const raw = m[1]
-    .replace(/<!--[\s\S]*?-->/g, '') // strip multi-line HTML comments first (e.g. `<!--\n-->` separators)
-    .replace(/<br\s*\/?>/gi, '\n')
+    .replaceAll(/<!--[\s\S]*?-->/g, '') // strip multi-line HTML comments first (e.g. `<!--\n-->` separators)
+    .replaceAll(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
     .join('\n')
-    .replace(/\n{3,}/g, '\n\n')
+    .replaceAll(/\n{3,}/g, '\n\n')
     .trim()
   return raw || null
 }

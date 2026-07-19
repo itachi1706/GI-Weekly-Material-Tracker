@@ -175,7 +175,7 @@ interface Props {
 
 export default function WeaponForm({
   rootPath, mode, template, originalKey, file, onPreview, onDelete, onCancel
-}: Props) {
+}: Readonly<Props>) {
   const [draft, setDraft] = useState<Draft>(() =>
     draftFromRecord(template, file, originalKey)
   )
@@ -725,10 +725,10 @@ export default function WeaponForm({
       )}
 
       <footer className="mat-form-actions">
-        <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
-        <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        <button type="button" className="btn-primary" onClick={submitPreview}>Preview changes</button>
+        <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>
         {onDelete && (
-          <button className="btn-danger"
+          <button type="button" className="btn-danger"
             onClick={() => {
               if (confirm(`Delete "${originalKey}"? This can be reviewed in the preview before it's applied.`))
                 onDelete()
@@ -740,7 +740,7 @@ export default function WeaponForm({
       {pickerState && (
         <MaterialPickerPopup
           rootPath={rootPath}
-          title={`${pickerState.prefix.charAt(0).toUpperCase()}${pickerState.prefix.slice(1)} ${roman(Number(pickerState.slotKey.replace(/\D/g, '')))}`}
+          title={`${pickerState.prefix.charAt(0).toUpperCase()}${pickerState.prefix.slice(1)} ${roman(Number(pickerState.slotKey.replaceAll(/\D/g, '')))}`}
           fileKeyword={PREFIX_TO_FILE_KEYWORD[pickerState.prefix] ?? ''}
           expectedRarity={slotExpectedRarity(pickerState.slotKey)}
           selectedKey={draft.matSlots[pickerState.slotKey] ?? ''}

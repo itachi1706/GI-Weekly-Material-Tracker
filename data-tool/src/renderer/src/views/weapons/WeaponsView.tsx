@@ -8,7 +8,7 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'form'; mode: 'create' | 'edit'; template: WeaponRecord; originalKey?: string; file?: string }
 
-export default function WeaponsView({ rootPath }: { rootPath: string }) {
+export default function WeaponsView({ rootPath }: Readonly<{ rootPath: string }>) {
   const [list, setList] = useState<WeaponSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })

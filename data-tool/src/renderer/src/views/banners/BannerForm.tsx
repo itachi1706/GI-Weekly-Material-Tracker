@@ -124,7 +124,7 @@ interface Props {
 
 export default function BannerForm({
   rootPath, mode, record, bannerType, index, seedFor, onPreview, onDelete, onCancel
-}: Props) {
+}: Readonly<Props>) {
   const [base, setBase] = useState<BannerRecord>(record)
   const [draft, setDraft] = useState<Draft>(() => draftFromRecord(record, bannerType, mode))
   const [errors, setErrors] = useState<string[]>([])
@@ -143,7 +143,7 @@ export default function BannerForm({
     setDraft((prev) => ({ ...prev, [key]: val }))
 
   const imageFolder = IMAGE_FOLDER[draft.type]
-  const defaultImageName = (draft.name.trim() || 'banner').replace(/[^a-zA-Z0-9\-_]/g, '_')
+  const defaultImageName = (draft.name.trim() || 'banner').replaceAll(/[^a-zA-Z0-9\-_]/g, '_')
 
   // Create mode: switching type re-seeds from that type's most-recent banner.
   const onTypeChange = async (type: BannerType) => {
@@ -355,10 +355,10 @@ export default function BannerForm({
       )}
 
       <footer className="mat-form-actions">
-        <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
-        <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        <button type="button" className="btn-primary" onClick={submitPreview}>Preview changes</button>
+        <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>
         {onDelete && (
-          <button className="btn-danger"
+          <button type="button" className="btn-danger"
             onClick={() => { if (confirm('Delete this banner? Reviewable in the preview before applying.')) onDelete() }}>
             Delete
           </button>

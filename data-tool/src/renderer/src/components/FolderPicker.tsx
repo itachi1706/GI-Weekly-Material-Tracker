@@ -6,7 +6,7 @@ interface Props {
   onSelect: () => void
 }
 
-export default function FolderPicker({ info, loading, onSelect }: Props) {
+export default function FolderPicker({ info, loading, onSelect }: Readonly<Props>) {
   const invalid = info && !info.valid
 
   return (
@@ -32,7 +32,7 @@ export default function FolderPicker({ info, loading, onSelect }: Props) {
           </div>
         )}
 
-        <button className="btn-primary" onClick={onSelect} disabled={loading}>
+        <button type="button" className="btn-primary" onClick={onSelect} disabled={loading}>
           {loading ? 'Working…' : 'Select dataset folder'}
         </button>
 

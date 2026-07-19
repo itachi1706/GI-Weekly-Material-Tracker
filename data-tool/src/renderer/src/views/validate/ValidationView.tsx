@@ -78,10 +78,10 @@ export default function ValidationView({ rootPath }: { rootPath: string }) {
           </p>
         </div>
         <div className="validate-actions">
-          <button className="btn-secondary" onClick={copyReport} disabled={!report || loading}>
+          <button type="button" className="btn-secondary" onClick={copyReport} disabled={!report || loading}>
             {copied ? 'Copied!' : 'Copy report'}
           </button>
-          <button className="btn-primary" onClick={() => void run()} disabled={loading}>
+          <button type="button" className="btn-primary" onClick={() => void run()} disabled={loading}>
             {loading ? 'Scanning…' : report ? 'Re-run' : 'Run validation'}
           </button>
         </div>

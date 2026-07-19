@@ -11,7 +11,7 @@ const INNER_TYPE_LABELS: Record<string, string> = {
 }
 
 function labelType(key: string): string {
-  return INNER_TYPE_LABELS[key] ?? key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+  return INNER_TYPE_LABELS[key] ?? key.replaceAll(/_/g, ' ').replaceAll(/\b\w/g, (c) => c.toUpperCase())
 }
 
 interface Props {
@@ -31,7 +31,7 @@ export default function MaterialsList({
   rootPath, list, loading,
   query, typeFilter, onQueryChange, onTypeFilterChange,
   onNew, onOpen
-}: Props) {
+}: Readonly<Props>) {
   const types = useMemo(
     () => Array.from(new Set(list.map((m) => m.innerType))).sort((a, b) => a.localeCompare(b)),
     [list]
@@ -60,8 +60,8 @@ export default function MaterialsList({
     { key: 'type', header: 'Type', sortValue: (m) => labelType(m.innerType).toLowerCase(),
       render: (m) => labelType(m.innerType) },
     { key: 'file', header: 'File',
-      sortValue: (m) => m.file.replace(/^Materials-|\.json$/g, '').toLowerCase(),
-      tdClassName: 'mat-file', render: (m) => m.file.replace(/^Materials-|\.json$/g, '') },
+      sortValue: (m) => m.file.replaceAll(/^Materials-|\.json$/g, '').toLowerCase(),
+      tdClassName: 'mat-file', render: (m) => m.file.replaceAll(/^Materials-|\.json$/g, '') },
     { key: 'rarity', header: 'Rarity', thClassName: 'num', tdClassName: 'num',
       sortValue: (m) => m.rarity, render: (m) => m.rarity },
     // Released order is INVERTED vs the other lists (released sorts first in asc).
@@ -75,7 +75,7 @@ export default function MaterialsList({
     <div className="mat-list">
       <header className="mat-list-head">
         <h2>Materials</h2>
-        <button className="btn-primary" onClick={onNew}>
+        <button type="button" className="btn-primary" onClick={onNew}>
           + New material
         </button>
       </header>

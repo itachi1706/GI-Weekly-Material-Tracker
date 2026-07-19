@@ -13,11 +13,11 @@ export function roman(n: number): string {
  */
 export function MatImage({
   rootPath, imagePath, className
-}: {
+}: Readonly<{
   rootPath: string
   imagePath: string
   className: string
-}) {
+}>) {
   const ref = useRef<HTMLDivElement>(null)
   // Already-cached images render immediately; others defer their IPC load until near the viewport,
   // so long lists (hundreds of thumbnails) don't all fetch at once and freeze the main thread.

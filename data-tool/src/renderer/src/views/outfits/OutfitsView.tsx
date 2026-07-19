@@ -8,7 +8,7 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'form'; mode: 'create' | 'edit'; template: OutfitRecord; originalKey?: string; file?: string }
 
-export default function OutfitsView({ rootPath }: { rootPath: string }) {
+export default function OutfitsView({ rootPath }: Readonly<{ rootPath: string }>) {
   const [list, setList] = useState<OutfitSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })

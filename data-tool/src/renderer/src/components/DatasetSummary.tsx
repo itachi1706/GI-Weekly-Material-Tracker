@@ -6,7 +6,7 @@ interface Props {
   onReload: () => void
 }
 
-export default function DatasetSummary({ info, loading, onReload }: Props) {
+export default function DatasetSummary({ info, loading, onReload }: Readonly<Props>) {
   const totalFiles = info.entities.reduce((s, e) => s + e.files.length, 0)
   const totalRecords = info.entities.reduce((s, e) => s + e.recordCount, 0)
 
@@ -17,7 +17,7 @@ export default function DatasetSummary({ info, loading, onReload }: Props) {
           <h2>Dataset loaded</h2>
           <p className="summary-path">{info.rootPath}</p>
         </div>
-        <button className="btn-secondary" onClick={onReload} disabled={loading}>
+        <button type="button" className="btn-secondary" onClick={onReload} disabled={loading}>
           {loading ? 'Scanning…' : 'Reload'}
         </button>
       </header>

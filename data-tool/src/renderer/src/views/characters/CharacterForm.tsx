@@ -308,7 +308,7 @@ interface Props {
 
 export default function CharacterForm({
   rootPath, mode, template, originalKey, file, onPreview, onDelete, onCancel
-}: Props) {
+}: Readonly<Props>) {
   // The base record we spread-and-override on commit (template for create, fetched record for edit).
   const [base, setBase] = useState<CharacterRecord>(template)
   const [draft, setDraft] = useState<Draft>(() => draftFromRecord(template, originalKey))
@@ -1336,10 +1336,10 @@ export default function CharacterForm({
       )}
 
       <footer className="mat-form-actions">
-        <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
-        <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        <button type="button" className="btn-primary" onClick={submitPreview}>Preview changes</button>
+        <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>
         {onDelete && (
-          <button className="btn-danger"
+          <button type="button" className="btn-danger"
             onClick={() => {
               if (confirm(`Delete "${originalKey}"? This can be reviewed in the preview before it's applied.`))
                 onDelete()

@@ -24,7 +24,7 @@ export function stringifyDataFile(obj: unknown): string {
   let result = collapsePrimitiveArrays(JSON.stringify(obj, null, 2))
   // JSON.parse loses the trailing zero from floats like 1.0 → 1. Restore it for version fields that
   // are always written as floats on disk: `released_version` (outfits) and `versionNumber` (banners).
-  result = result.replace(/("(?:released_version|versionNumber)": )(\d+)(?![\d.])/g, '$1$2.0')
+  result = result.replaceAll(/("(?:released_version|versionNumber)": )(\d+)(?![\d.])/g, '$1$2.0')
   return result
 }
 

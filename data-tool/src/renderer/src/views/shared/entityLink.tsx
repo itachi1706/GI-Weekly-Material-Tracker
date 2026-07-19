@@ -25,7 +25,7 @@ const MAX_RESULTS = 50
  * arrow keys + Enter, or press Enter on unmatched text to add it as a custom key. Selected entries
  * render as removable chips. Used for Outfit↔Character cross-references.
  */
-export function EntityLinkInput({ rootPath, value, onChange, options, placeholder }: Props) {
+export function EntityLinkInput({ rootPath, value, onChange, options, placeholder }: Readonly<Props>) {
   const [inputValue, setInputValue] = useState('')
   const [open, setOpen] = useState(false)
   const [highlight, setHighlight] = useState(0)

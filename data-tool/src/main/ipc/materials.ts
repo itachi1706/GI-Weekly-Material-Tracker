@@ -124,7 +124,7 @@ export async function listImagesMulti(rootPath: string, folders: string[]): Prom
     const dirPath = join(imDir, folder)
     if (!existsSync(dirPath)) continue
     const rel = await collectImagesRecursive(dirPath, '')
-    for (const f of rel) results.push(`${folder}/${f}`.replace(/\\/g, '/'))
+    for (const f of rel) results.push(`${folder}/${f}`.replaceAll(/\\/g, '/'))
   }
   return results.sort((a, b) => a.localeCompare(b))
 }

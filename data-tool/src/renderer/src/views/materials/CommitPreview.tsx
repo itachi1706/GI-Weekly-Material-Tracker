@@ -49,7 +49,7 @@ export default function CommitPreview({
   onDiscard,
   applying,
   error
-}: Props) {
+}: Readonly<Props>) {
   const rows = useMemo(() => buildRows(preview.before, preview.after), [preview])
   const [showFull, setShowFull] = useState(false)
   const fullRows = useMemo<Row[]>(
@@ -93,18 +93,18 @@ export default function CommitPreview({
         ))}
       </div>
 
-      <button className="btn-link" onClick={() => setShowFull((s) => !s)}>
+      <button type="button" className="btn-link" onClick={() => setShowFull((s) => !s)}>
         {showFull ? 'Show diff only' : 'Show full file'}
       </button>
 
       <footer className="preview-actions">
-        <button className="btn-primary" onClick={onApply} disabled={applying || blocked}>
+        <button type="button" className="btn-primary" onClick={onApply} disabled={applying || blocked}>
           {applying ? 'Applying…' : 'Apply'}
         </button>
-        <button className="btn-secondary" onClick={onBack} disabled={applying}>
+        <button type="button" className="btn-secondary" onClick={onBack} disabled={applying}>
           Back to edit
         </button>
-        <button className="btn-link" onClick={onDiscard} disabled={applying}>
+        <button type="button" className="btn-link" onClick={onDiscard} disabled={applying}>
           Discard
         </button>
       </footer>

@@ -35,7 +35,7 @@ function previewPlan(state: ImageState): ImagePlan | null {
   }
 }
 
-export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders, variant = 'tile' }: Props) {
+export default function ImageField({ rootPath, imageFolder, defaultBasename, state, onChange, browseSourceFolders, variant = 'tile' }: Readonly<Props>) {
   const [existing, setExisting] = useState<string[]>([])
   const [thumb, setThumb] = useState<string | null>(null)
   const [urlInput, setUrlInput] = useState(state.mode === 'url' ? state.url : '')
@@ -121,7 +121,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
 
   const onNameChange = (raw: string) => {
     if (state.mode !== 'localFile' && state.mode !== 'url') return
-    const clean = raw.replace(/[^a-zA-Z0-9\-_]/g, '_').replace(/_+/g, '_')
+    const clean = raw.replaceAll(/[^a-zA-Z0-9\-_]/g, '_').replaceAll(/_+/g, '_')
     onChange({ ...state, imageName: clean })
   }
 

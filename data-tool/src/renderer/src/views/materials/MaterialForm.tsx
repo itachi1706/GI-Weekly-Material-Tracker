@@ -28,7 +28,7 @@ interface Props {
 
 // ── Tag input ─────────────────────────────────────────────────────────────────
 
-export function TagsInput({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
+export function TagsInput({ value, onChange }: Readonly<{ value: string[]; onChange: (v: string[]) => void }>) {
   const [input, setInput] = useState('')
 
   const add = () => {
@@ -81,7 +81,7 @@ const DAY_OPTIONS = [
   { n: 7, label: 'Sun' }
 ]
 
-export function DaysSelect({ value, onChange }: { value: number[]; onChange: (v: number[]) => void }) {
+export function DaysSelect({ value, onChange }: Readonly<{ value: number[]; onChange: (v: number[]) => void }>) {
   const toggle = (n: number) => {
     if (value.includes(n)) onChange(value.filter((x) => x !== n))
     else onChange([...value, n].sort((a, b) => a - b))
@@ -134,7 +134,7 @@ export default function MaterialForm({
   onPreview,
   onDelete,
   onCancel
-}: Props) {
+}: Readonly<Props>) {
   const [values, setValues] = useState<Record<string, unknown>>(() => initialValues(schema, base))
   const [imageState, setImageState] = useState<ImageState>(() => initialImageState(base))
   const [key, setKey] = useState<string>(originalKey ?? '')
@@ -471,10 +471,10 @@ export default function MaterialForm({
       )}
 
       <footer className="mat-form-actions">
-        <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
-        <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        <button type="button" className="btn-primary" onClick={submitPreview}>Preview changes</button>
+        <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>
         {mode === 'edit' && onDelete && (
-          <button className="btn-danger" onClick={onDelete}>Delete…</button>
+          <button type="button" className="btn-danger" onClick={onDelete}>Delete…</button>
         )}
       </footer>
 

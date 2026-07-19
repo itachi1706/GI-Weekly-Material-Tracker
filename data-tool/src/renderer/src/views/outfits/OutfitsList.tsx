@@ -5,7 +5,7 @@ import SortableTable, { type Column } from '../shared/SortableTable'
 
 /** "Outfits-Standard.json" → "Standard" */
 function fileLabel(file: string): string {
-  return file.replace(/^Outfits-|\.json$/g, '')
+  return file.replaceAll(/^Outfits-|\.json$/g, '')
 }
 
 interface Props {
@@ -24,7 +24,7 @@ export default function OutfitsList({
   rootPath, list, loading,
   query, fileFilter, onQueryChange, onFileFilterChange,
   onNew, onOpen
-}: Props) {
+}: Readonly<Props>) {
   const files = useMemo(
     () => Array.from(new Set(list.map((o) => o.file))).sort((a, b) => a.localeCompare(b)),
     [list]
@@ -61,7 +61,7 @@ export default function OutfitsList({
     <div className="mat-list">
       <header className="mat-list-head">
         <h2>Outfits</h2>
-        <button className="btn-primary" onClick={onNew}>+ New outfit</button>
+        <button type="button" className="btn-primary" onClick={onNew}>+ New outfit</button>
       </header>
 
       <div className="mat-list-filters">

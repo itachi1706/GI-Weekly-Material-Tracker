@@ -161,7 +161,7 @@ interface Props {
 
 export default function OutfitForm({
   rootPath, mode, template, originalKey, file, onPreview, onDelete, onCancel
-}: Props) {
+}: Readonly<Props>) {
   const [draft, setDraft] = useState<Draft>(() =>
     draftFromRecord(template, file, originalKey)
   )
@@ -606,10 +606,10 @@ export default function OutfitForm({
       )}
 
       <footer className="mat-form-actions">
-        <button className="btn-primary" onClick={submitPreview}>Preview changes</button>
-        <button className="btn-secondary" onClick={onCancel}>Cancel</button>
+        <button type="button" className="btn-primary" onClick={submitPreview}>Preview changes</button>
+        <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>
         {onDelete && (
-          <button
+          <button type="button"
             className="btn-danger"
             onClick={() => {
               if (confirm(`Delete "${originalKey}"? This can be reviewed in the preview before it's applied.`))

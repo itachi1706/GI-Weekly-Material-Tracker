@@ -52,10 +52,10 @@ export function sanitizeImageBasename(url: string): string {
   const base = filename.replace(/\.[^.]+$/, '') || 'image'
   return (
     base
-      .replace(/['’]/g, '') // apostrophes are dropped, not underscored ("It's" → "Its")
-      .replace(/[^a-zA-Z0-9\-_]/g, '_')
-      .replace(/_+/g, '_')
-      .replace(/^_|_$/g, '') || 'image'
+      .replaceAll(/['’]/g, '') // apostrophes are dropped, not underscored ("It's" → "Its")
+      .replaceAll(/[^a-zA-Z0-9\-_]/g, '_')
+      .replaceAll(/_+/g, '_')
+      .replaceAll(/^_|_$/g, '') || 'image'
   )
 }
 

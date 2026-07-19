@@ -21,7 +21,7 @@ export default function WeaponsList({
   rootPath, list, loading,
   query, typeFilter, onQueryChange, onTypeFilterChange,
   onNew, onOpen
-}: Props) {
+}: Readonly<Props>) {
   const base = useMemo(() => {
     const q = query.trim().toLowerCase()
     return list.filter(
@@ -47,7 +47,7 @@ export default function WeaponsList({
     <div className="mat-list">
       <header className="mat-list-head">
         <h2>Weapons</h2>
-        <button className="btn-primary" onClick={onNew}>+ New weapon</button>
+        <button type="button" className="btn-primary" onClick={onNew}>+ New weapon</button>
       </header>
 
       <div className="mat-list-filters">

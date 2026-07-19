@@ -8,7 +8,7 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'form'; mode: 'create' | 'edit'; template: CharacterRecord; originalKey?: string; file?: string }
 
-export default function CharactersView({ rootPath }: { rootPath: string }) {
+export default function CharactersView({ rootPath }: Readonly<{ rootPath: string }>) {
   const [list, setList] = useState<CharacterSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })

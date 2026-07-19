@@ -29,7 +29,7 @@ interface Props {
 
 export default function BannersList({
   rootPath, list, loading, bannerType, query, onQueryChange, onNew, onOpen
-}: Props) {
+}: Readonly<Props>) {
   const [sortCol, setSortCol] = useState<SortCol>('start')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
   // key → image path, for rate-up thumbnails. Seeded synchronously from the module cache if present.
@@ -96,7 +96,7 @@ export default function BannersList({
     <div className="mat-list">
       <header className="mat-list-head">
         <h2>{TYPE_LABEL[bannerType]} Banners</h2>
-        <button className="btn-primary" onClick={onNew}>+ New {TYPE_LABEL[bannerType].toLowerCase()} banner</button>
+        <button type="button" className="btn-primary" onClick={onNew}>+ New {TYPE_LABEL[bannerType].toLowerCase()} banner</button>
       </header>
 
       <div className="mat-list-filters">
@@ -112,10 +112,10 @@ export default function BannersList({
             <thead>
               <tr>
                 <th></th>
-                <th><button className="th-sort" onClick={() => toggleSort('name')}>Name {sortIndicator('name')}</button></th>
-                <th><button className="th-sort" onClick={() => toggleSort('version')}>Version {sortIndicator('version')}</button></th>
-                <th><button className="th-sort" onClick={() => toggleSort('start')}>Start {sortIndicator('start')}</button></th>
-                <th><button className="th-sort" onClick={() => toggleSort('end')}>End {sortIndicator('end')}</button></th>
+                <th><button type="button" className="th-sort" onClick={() => toggleSort('name')}>Name {sortIndicator('name')}</button></th>
+                <th><button type="button" className="th-sort" onClick={() => toggleSort('version')}>Version {sortIndicator('version')}</button></th>
+                <th><button type="button" className="th-sort" onClick={() => toggleSort('start')}>Start {sortIndicator('start')}</button></th>
+                <th><button type="button" className="th-sort" onClick={() => toggleSort('end')}>End {sortIndicator('end')}</button></th>
                 <th>Rate-up</th>
               </tr>
             </thead>

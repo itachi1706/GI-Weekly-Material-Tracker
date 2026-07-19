@@ -24,7 +24,7 @@ export default function CharactersList({
   rootPath, list, loading,
   query, elementFilter, onQueryChange, onElementFilterChange,
   onNew, onOpen
-}: Props) {
+}: Readonly<Props>) {
   const base = useMemo(() => {
     const q = query.trim().toLowerCase()
     return list.filter((c) => {
@@ -56,7 +56,7 @@ export default function CharactersList({
     <div className="mat-list">
       <header className="mat-list-head">
         <h2>Characters</h2>
-        <button className="btn-primary" onClick={onNew}>+ New character</button>
+        <button type="button" className="btn-primary" onClick={onNew}>+ New character</button>
       </header>
 
       <div className="mat-list-filters">

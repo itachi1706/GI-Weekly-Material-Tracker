@@ -40,7 +40,7 @@ type Screen =
     }
   | { kind: 'view'; row: MaterialSummary; record: MaterialRecord }
 
-export default function MaterialsView({ rootPath }: { rootPath: string }) {
+export default function MaterialsView({ rootPath }: Readonly<{ rootPath: string }>) {
   const { list, loading, reload } = useMaterials(rootPath)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })
   const [listQuery, setListQuery] = useState('')
@@ -236,7 +236,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
             ))}
           </div>
           <div className="mat-form-actions" style={{ marginTop: 20 }}>
-            <button className="btn-secondary" onClick={goList}>Cancel</button>
+            <button type="button" className="btn-secondary" onClick={goList}>Cancel</button>
           </div>
         </div>
       )}
@@ -249,7 +249,7 @@ export default function MaterialsView({ rootPath }: { rootPath: string }) {
           </header>
           <p className="muted">Editing for this innerType isn't implemented yet.</p>
           <pre className="json-view">{JSON.stringify(screen.record, null, 2)}</pre>
-          <button className="btn-secondary" onClick={goList}>Back</button>
+          <button type="button" className="btn-secondary" onClick={goList}>Back</button>
         </div>
       )}
 

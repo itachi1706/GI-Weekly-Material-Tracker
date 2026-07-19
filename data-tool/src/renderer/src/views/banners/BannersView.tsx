@@ -8,7 +8,7 @@ type Screen =
   | { kind: 'list' }
   | { kind: 'form'; mode: 'create' | 'edit'; record: BannerRecord; bannerType: BannerType; index?: number }
 
-export default function BannersView({ rootPath, bannerType }: { rootPath: string; bannerType: BannerType }) {
+export default function BannersView({ rootPath, bannerType }: Readonly<{ rootPath: string; bannerType: BannerType }>) {
   const [list, setList] = useState<BannerSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })

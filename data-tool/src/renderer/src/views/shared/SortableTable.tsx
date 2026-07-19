@@ -77,7 +77,7 @@ export default function SortableTable<T extends { key: string; file: string }>({
   rows, total, noun, columns, loading, onOpen,
   rowClassName = 'mat-row',
   rowKey = (row) => `${row.file}:${row.key}`
-}: SortableTableProps<T>) {
+}: Readonly<SortableTableProps<T>>) {
   const { sorted, sortKey, dir, toggle } = useSortableList(rows, columns)
 
   const indicator = (key: string): ReactNode =>
@@ -102,7 +102,7 @@ export default function SortableTable<T extends { key: string; file: string }>({
                     {c.sortable === false ? (
                       c.header
                     ) : (
-                      <button className="th-sort" onClick={() => toggle(c.key)}>
+                      <button type="button" className="th-sort" onClick={() => toggle(c.key)}>
                         {c.header} {indicator(c.key)}
                       </button>
                     )}

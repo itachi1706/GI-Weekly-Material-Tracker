@@ -28,15 +28,15 @@ export default function Sidebar({
   onShowOverview,
   onShowValidate,
   onChangeFolder
-}: Props) {
+}: Readonly<Props>) {
   return (
     <aside className="sidebar">
-      <button className="sidebar-brand sidebar-brand-btn" onClick={onShowOverview}>
+      <button type="button" className="sidebar-brand sidebar-brand-btn" onClick={onShowOverview}>
         GI Dataset Tool
       </button>
 
       <nav className="sidebar-nav">
-        <button
+        <button type="button"
           className={`nav-item ${active === null ? 'nav-item-active' : ''}`}
           onClick={onShowOverview}
         >
@@ -44,7 +44,7 @@ export default function Sidebar({
         </button>
         {ENTITIES.map((ent) => (
           <div key={ent.key}>
-            <button
+            <button type="button"
               className={`nav-item ${active === ent.key ? 'nav-item-active' : ''}`}
               disabled={!ent.enabled}
               title={ent.enabled ? ent.label : 'Coming soon'}
@@ -57,7 +57,7 @@ export default function Sidebar({
             {ent.key === 'banners' && ent.enabled && (
               <div className="nav-subitems">
                 {BANNER_SUBSECTIONS.map((sub) => (
-                  <button
+                  <button type="button"
                     key={sub.type}
                     className={`nav-subitem ${active === 'banners' && bannerType === sub.type ? 'nav-subitem-active' : ''}`}
                     onClick={() => onSelectBannerType(sub.type)}
@@ -70,7 +70,7 @@ export default function Sidebar({
           </div>
         ))}
 
-        <button
+        <button type="button"
           className={`nav-item ${active === 'validate' ? 'nav-item-active' : ''}`}
           title="Validate the dataset (read-only)"
           onClick={onShowValidate}
@@ -84,7 +84,7 @@ export default function Sidebar({
         <div className="folder-path" title={info.rootPath}>
           {info.rootPath}
         </div>
-        <button className="btn-link" onClick={onChangeFolder}>
+        <button type="button" className="btn-link" onClick={onChangeFolder}>
           Change folder
         </button>
       </div>

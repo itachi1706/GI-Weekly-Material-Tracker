@@ -34,11 +34,11 @@ interface Props {
 const DEFAULT_GROUP_ORDER = ['Identity', 'Talents', 'Constellations', 'Images']
 
 function truncate(s: string, n = 140): string {
-  const oneLine = s.replace(/\s+/g, ' ').trim()
+  const oneLine = s.replaceAll(/\s+/g, ' ').trim()
   return oneLine.length > n ? oneLine.slice(0, n) + '…' : oneLine
 }
 
-export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, groupOrder }: Props) {
+export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, groupOrder }: Readonly<Props>) {
   const order = groupOrder ?? DEFAULT_GROUP_ORDER
   const appliable = useMemo(() => rows.filter((r) => !r.confirmOnly), [rows])
   const [checked, setChecked] = useState<Set<string>>(
