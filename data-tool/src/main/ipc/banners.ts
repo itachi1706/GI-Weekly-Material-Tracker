@@ -1,6 +1,6 @@
 import { readFile, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname, relative } from 'node:path'
+import { join, dirname } from 'node:path'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
 import type {
   BannerChange,

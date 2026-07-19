@@ -133,11 +133,11 @@ export async function previewCharacterCommit(
 async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
   const dest = join(imagesDir(rootPath), plan.destRelative)
-  const dest = join(imagesDir(rootPath), plan.destRelative)
   if (relative(imagesDir(rootPath), dest).startsWith('..')) {
     throw new Error('Path traversal detected')
   }
   await mkdir(dirname(dest), { recursive: true })
+  if (plan.source === 'localFile') {
     await copyFile(plan.sourcePath, dest)
     return
   }
