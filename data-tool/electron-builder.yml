@@ -3,6 +3,12 @@ productName: GI Weekly Material Tracker Data Management Tool
 directories:
   output: dist
   buildResources: build
+# Feed for electron-updater. Embeds app-update.yml in the package and makes builds emit
+# latest.yml (Windows self-update) / latest-mac.yml. macOS is notice-only (unsigned — see updater.ts).
+publish:
+  provider: github
+  owner: itachi1706
+  repo: GI-Weekly-Material-Tracker
 # Ad-hoc sign the bundle post-pack so the unsigned app still launches on Apple Silicon.
 afterPack: build/afterPack.cjs
 files:

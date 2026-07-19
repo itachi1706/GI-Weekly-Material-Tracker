@@ -4,6 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { selectDatasetFolder, selectImageFile } from './ipc/dialog'
 import { scanDataset } from './ipc/dataset'
 import { runValidation } from './ipc/validate'
+import { initAutoUpdate } from './updater'
 import {
   listMaterials,
   getMaterial,
@@ -64,7 +65,7 @@ import type {
   BannerType
 } from '@shared/types'
 
-function createWindow(): void {
+function createWindow(): BrowserWindow {
   const mainWindow = new BrowserWindow({
     width: 1100,
     height: 720,
@@ -93,6 +94,8 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  return mainWindow
 }
 
 function registerIpc(): void {
@@ -226,7 +229,8 @@ app.whenReady().then(() => {
   })
 
   registerIpc()
-  createWindow()
+  const mainWindow = createWindow()
+  initAutoUpdate(mainWindow)
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()

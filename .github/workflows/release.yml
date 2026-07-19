@@ -397,6 +397,8 @@ jobs:
             apks/*.ipa
             datatool-dmg/*.dmg
             datatool-win/*.exe
+            datatool-win/*.exe.blockmap
+            datatool-win/latest.yml
   releaseipa:
     runs-on: macos-15 # Pinned (not macos-latest) to keep the Xcode 16.1.0 pin below valid; macos-14 retires 2026-11-02
     name: Generate Release Flutter Unsigned IPA
@@ -557,5 +559,9 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: datatool-exe-artifact-rel
-          path: data-tool/dist/*.exe
+          # latest.yml + *.blockmap are the electron-updater metadata Windows self-update needs.
+          path: |
+            data-tool/dist/*.exe
+            data-tool/dist/*.exe.blockmap
+            data-tool/dist/latest.yml
           if-no-files-found: error
