@@ -1,6 +1,6 @@
 import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { join, dirname, relative } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
@@ -135,8 +135,11 @@ export async function previewOutfitCommit(
 async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
   const dest = join(imagesDir(rootPath), plan.destRelative)
+  const dest = join(imagesDir(rootPath), plan.destRelative)
+  if (relative(imagesDir(rootPath), dest).startsWith('..')) {
+    throw new Error('Path traversal detected')
+  }
   await mkdir(dirname(dest), { recursive: true })
-  if (plan.source === 'localFile') {
     await copyFile(plan.sourcePath, dest)
     return
   }

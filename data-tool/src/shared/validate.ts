@@ -105,6 +105,7 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
     for (const [slot, matKey] of Object.entries(map)) refCheck(file, key, `materials.${mapName}.${slot}`, matKey, materialKeys, 'material')
     if (!phases || typeof phases !== 'object') return
     for (const [pk, phase] of Object.entries(phases as Record<string, Record<string, unknown>>)) {
+      if (!phase || typeof phase !== 'object') continue
       for (const n of [1, 2, 3, 4]) {
         const type = phase[`material${n}type`] as string | null | undefined
         const name = phase[`material${n}`] as string | null | undefined
@@ -163,7 +164,8 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
     const groups = (bannerFile.data.banners as Record<string, unknown>) ?? {}
     for (const [type, arr] of Object.entries(groups)) {
       if (type === 'template' || !Array.isArray(arr)) continue
-      arr.forEach((b: Record<string, unknown>, i) => {
+      arr.forEach((b: Record<string, unknown> | null, i) => {
+        if (!b || typeof b !== 'object') return
         const key = `${type}[${i}] ${b.name ?? ''}`.trim()
         checkText('EventBanners.json', key, 'name', b.name)
         checkText('EventBanners.json', key, 'description', b.description)

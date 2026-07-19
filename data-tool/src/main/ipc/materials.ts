@@ -1,6 +1,6 @@
 import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname, extname } from 'node:path'
+import { join, dirname, extname, relative } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { getMaterialSchema } from '@shared/materialsSchema'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
@@ -142,7 +142,7 @@ export async function previewImage(rootPath: string, plan: ImagePlan): Promise<s
   try {
     if (plan.source === 'existing') {
       const abs = join(imagesDir(rootPath), plan.relativePath)
-      if (!existsSync(abs)) return null
+      if (relative(imagesDir(rootPath), abs).startsWith('..') || !existsSync(abs)) return null
       const buf = await readFile(abs)
       return `data:${mimeFor(abs)};base64,${buf.toString('base64')}`
     }
