@@ -18,10 +18,12 @@ mac:
     - target: dmg
       arch: universal
   category: public.app-category.developer-tools
-  # Unsigned local build — no Apple Developer identity. Gatekeeper may warn on first launch
-  # (right-click → Open, or `xattr -cr <app>`); electron-builder ad-hoc signs for arm64.
+  # Unsigned build — no Apple Developer identity. Gatekeeper may warn on first launch
+  # (right-click → Open, or `xattr -cr <app>`); electron-builder ad-hoc signs the universal
+  # bundle (both the Intel x64 and Apple Silicon arm64 slices).
   identity: null
   artifactName: GIWMT-DataTool-${version}-${arch}.${ext}
 win:
+  artifactName: GIWMT-DataTool-${version}-${arch}.${ext}
   target:
     - nsis
