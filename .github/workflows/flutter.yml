@@ -217,6 +217,10 @@ jobs:
         with:
           # xcode-version: latest-stable
           xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
+      - name: Install iOS platform SDK
+        # Pinned Xcodes on the runner image no longer bundle the iOS platform, so the
+        # generic/platform=iOS destination is missing until we download it explicitly.
+        run: xcodebuild -downloadPlatform iOS
       - name: Cache pubspec dependencies
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
