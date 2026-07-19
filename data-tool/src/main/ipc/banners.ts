@@ -89,9 +89,9 @@ function applyChange(parsed: BannersFile, change: BannerChange): void {
     if (change.index != null) arr.splice(change.index, 1)
   } else if (change.op === 'update') {
     if (change.index != null && change.record) arr[change.index] = change.record
-  } else {
+  } else if (change.record) {
     // create → insert at the top (index 0) of the type's array
-    if (change.record) arr.unshift(change.record)
+    arr.unshift(change.record)
   }
   parsed.banners[change.bannerType] = arr
 }

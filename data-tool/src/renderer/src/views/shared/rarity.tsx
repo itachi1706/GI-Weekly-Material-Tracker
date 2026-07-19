@@ -5,12 +5,12 @@
  */
 export function RaritySelect({
   value, onChange, options, disabled
-}: {
+}: Readonly<{
   value: string
   onChange: (v: string) => void
   options: number[]
   disabled?: boolean
-}) {
+}>) {
   return (
     <select value={value} disabled={disabled} onChange={(e) => onChange(e.target.value)}>
       {options.map((n) => (

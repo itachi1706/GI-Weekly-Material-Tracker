@@ -434,7 +434,7 @@ export default function MaterialForm({
                     checked={Boolean(v)}
                     onChange={(e) => setField(f.key, e.target.checked)}
                   />
-                  <span>{Boolean(v) ? 'Yes' : 'No'}</span>
+                  <span>{v ? 'Yes' : 'No'}</span>
                 </label>
               )}
               {f.help && <p className="field-help">{f.help}</p>}

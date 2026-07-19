@@ -31,7 +31,7 @@ export default function App() {
   }
 
   // No folder yet, or the selected folder isn't a valid dataset.
-  if (!info || !info.valid) {
+  if (!info?.valid) {
     return <FolderPicker info={info} loading={loading} onSelect={selectFolder} />
   }
 

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { formatReport, type Finding, type ValidationReport } from '@shared/validate'
 
 /** Read-only dataset validation, run in-app via the `validate:run` IPC (same rules as `npm run validate`). */
-export default function ValidationView({ rootPath }: { rootPath: string }) {
+export default function ValidationView({ rootPath }: Readonly<{ rootPath: string }>) {
   const [report, setReport] = useState<ValidationReport | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)

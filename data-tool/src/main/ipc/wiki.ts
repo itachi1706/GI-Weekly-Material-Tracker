@@ -46,7 +46,7 @@ export function pageTitleFromUrl(raw: string): string {
   const m = /\/wiki\/(.+)$/.exec(u.pathname)
   const rawTitle = m ? m[1] : u.searchParams.get('title')
   if (!rawTitle) throw new Error('Could not find a page title in that URL.')
-  return decodeURIComponent(rawTitle).replaceAll(/_/g, ' ').trim()
+  return decodeURIComponent(rawTitle).replaceAll('_', ' ').trim()
 }
 
 /** Strip inline wiki markup from an infobox param value → plain text. */
@@ -147,7 +147,7 @@ function cleanBlock($: CheerioAPI, el: AnyNode): string {
   txt = txt
     .replace(/\n?Hover over previews[\s\S]*$/i, '')
     .replace(/\n?\(Preview Preferences\)[\s\S]*$/i, '')
-    .replaceAll(/ /g, ' ')
+    .replaceAll('\u00A0', ' ')
     .replaceAll(/[ \t]+\n/g, '\n')
     .replaceAll(/\n[ \t]+/g, '\n')
     .replaceAll(/\n{3,}/g, '\n\n')
@@ -170,7 +170,7 @@ function parseTalents($: CheerioAPI): WikiTalent[] {
     if (isHeader) {
       cur = { name: tds.eq(1).text().trim(), type, effect: null, iconUrl: img.attr('data-src') ?? null }
       out.push(cur)
-    } else if (cur && cur.effect === null) {
+    } else if (cur?.effect === null) {
       const tabber = $tr.find('.wds-tabber').first()
       if (tabber.length) {
         const labels = tabber.find('.wds-tabs__tab').map((_i, l) => $(l).text().trim()).get()
@@ -207,7 +207,7 @@ function parseConstellations($: CheerioAPI): WikiConstellation[] {
         iconUrl: img.attr('data-src') ?? null
       }
       out.push(cur)
-    } else if (cur && cur.effect === null && tds.length) {
+    } else if (cur?.effect === null && tds.length) {
       cur.effect = cleanBlock($, tds.get(tds.length - 1)!)
     }
   })
@@ -240,12 +240,12 @@ function parseImageCandidates($: CheerioAPI): { label: string; url: string }[] {
  * raw apostrophe. `encodeURIComponent` leaves `'!()*` alone, so encode those explicitly.
  */
 function canonicalWikiUrl(resolvedTitle: string): string {
-  const enc = encodeURIComponent(resolvedTitle.replaceAll(/ /g, '_'))
-    .replaceAll(/'/g, '%27')
-    .replaceAll(/!/g, '%21')
-    .replaceAll(/\(/g, '%28')
-    .replaceAll(/\)/g, '%29')
-    .replaceAll(/\*/g, '%2A')
+  const enc = encodeURIComponent(resolvedTitle.replaceAll(' ', '_'))
+    .replaceAll("'", '%27')
+    .replaceAll('!', '%21')
+    .replaceAll('(', '%28')
+    .replaceAll(')', '%29')
+    .replaceAll('*', '%2A')
   return `https://${WIKI_HOST}/wiki/${enc}`
 }
 
@@ -387,7 +387,7 @@ function weaponMaxStats($: CheerioAPI): { maxBaseAtk: number | null; maxSecondar
       if (lvlIdx < 0) return
       const rest = cells.slice(lvlIdx + 1).filter((c) => c !== '')
       if (rest.length >= 1 && /^\d[\d,]*$/.test(rest[0])) {
-        maxBaseAtk = Number.parseInt(rest[0].replaceAll(/,/g, ''), 10)
+        maxBaseAtk = Number.parseInt(rest[0].replaceAll(',', ''), 10)
         maxSecondaryStat = rest[1] ?? null
       }
     })

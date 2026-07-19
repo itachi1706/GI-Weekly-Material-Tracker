@@ -462,7 +462,7 @@ export default function CharacterForm({
       const c: Record<string, string> = {}
       for (const s of specs) {
         const nv = cleanSlot(slots[slotDraftKey(s)] ?? '')
-        const ov = (baseMap ?? {})[s.slotKey] ?? ''
+        const ov = baseMap?.[s.slotKey] ?? ''
         if (nv && nv !== ov) c[s.slotKey] = nv
       }
       return c
@@ -488,7 +488,7 @@ export default function CharacterForm({
     ): string | null => {
       if (!type) return null
       const v = map[type]
-      return v && v.length ? v : (baseName ?? null)
+      return v?.length ? v : (baseName ?? null)
     }
 
     const ascension: Record<string, CharacterAscensionPhase> = {}

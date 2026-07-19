@@ -81,7 +81,7 @@ export interface MaterialPickerPopupProps {
 /** Searchable popup that lists materials from one file (optionally one rarity), with thumbnails. */
 export function MaterialPickerPopup({
   rootPath, title, fileKeyword, expectedRarity, selectedKey, materials, onSelect, onClose
-}: MaterialPickerPopupProps) {
+}: Readonly<MaterialPickerPopupProps>) {
   const [search, setSearch] = useState('')
 
   const filtered = useMemo(() => {

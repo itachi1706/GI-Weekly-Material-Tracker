@@ -113,7 +113,7 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
         if (!type) continue
         if (!(type in map)) { add('ERROR', 'phase-slot', file, key, `${mapName}[${pk}].material${n}type "${type}" not in materials.${mapName} map`); continue }
         const mapped = map[type]
-        if (mapped && mapped.length && name !== mapped)
+        if (mapped?.length && name !== mapped)
           add('ERROR', 'phase-vs-map', file, key, `${mapName}[${pk}].material${n} = "${name}" but materials.${mapName}.${type} = "${mapped}" (map is source of truth)`)
       }
     }

@@ -54,11 +54,14 @@ function initShared(schema: MaterialTypeSchema, fromRecord?: MaterialRecord): Re
       } else {
         v[key] = raw ?? ''
       }
+    } else if (field.widget === 'bool') {
+      v[key] = true
+    } else if (field.widget === 'tags') {
+      v[key] = []
+    } else if (field.widget === 'days') {
+      v[key] = []
     } else {
-      if (field.widget === 'bool') v[key] = true
-      else if (field.widget === 'tags') v[key] = []
-      else if (field.widget === 'days') v[key] = []
-      else v[key] = ''
+      v[key] = ''
     }
   }
   return v
@@ -285,8 +288,8 @@ export default function TierSetForm({
         if (!(v as string[]).length) errs.push(`${field.label} is required.`)
       } else if (field.widget === 'days') {
         if (!(v as number[]).length) errs.push(`${field.label}: select at least one day.`)
-      } else {
-        if (!v || String(v).trim() === '') errs.push(`${field.label} is required.`)
+      } else if (!v || String(v).trim() === '') {
+        errs.push(`${field.label} is required.`)
       }
     }
 
@@ -423,7 +426,7 @@ export default function TierSetForm({
               checked={Boolean(v)}
               onChange={(e) => setSharedField(key, e.target.checked)}
             />
-            <span>{Boolean(v) ? 'Yes' : 'No'}</span>
+            <span>{v ? 'Yes' : 'No'}</span>
           </label>
         </div>
       )

@@ -11,7 +11,7 @@ const INNER_TYPE_LABELS: Record<string, string> = {
 }
 
 function labelType(key: string): string {
-  return INNER_TYPE_LABELS[key] ?? key.replaceAll(/_/g, ' ').replaceAll(/\b\w/g, (c) => c.toUpperCase())
+  return INNER_TYPE_LABELS[key] ?? key.replaceAll('_', ' ').replaceAll(/\b\w/g, (c) => c.toUpperCase())
 }
 
 interface Props {

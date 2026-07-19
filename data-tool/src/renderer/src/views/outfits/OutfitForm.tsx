@@ -315,7 +315,7 @@ export default function OutfitForm({
       event_give_free: draft.eventGiveFree,
       event_give_free_till: draft.eventGiveFree && draft.eventGiveFreeTill
         ? inputDateToJson(draft.eventGiveFreeTill) : null,
-      released_version: parseFloat(draft.releasedVersion) || 1,
+      released_version: Number.parseFloat(draft.releasedVersion) || 1,
       released_version_name: draft.releasedVersionName.trim() || null,
       released: draft.released,
       wiki: draft.wiki.trim() || null,
