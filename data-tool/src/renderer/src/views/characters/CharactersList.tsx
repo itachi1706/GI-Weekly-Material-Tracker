@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { CharacterSummary, ImagePlan } from '@shared/types'
+import { useMemo, useState } from 'react'
+import type { CharacterSummary } from '@shared/types'
+import { MatImage } from '../shared/materialPicker'
 
 const ELEMENTS = ['Anemo', 'Cryo', 'Dendro', 'Electro', 'Geo', 'Hydro', 'Pyro'] as const
 const TRAVELER_FILTER = '__traveler__'
@@ -7,21 +8,6 @@ const TRAVELER_FILE = 'Characters-Traveler.json'
 const isTraveler = (c: CharacterSummary) => c.file === TRAVELER_FILE
 
 type SortCol = 'name' | 'element' | 'weapon' | 'rarity' | 'released'
-
-function CharacterThumb({ rootPath, image }: { rootPath: string; image: string }) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!image) return
-    const plan: ImagePlan = { source: 'existing', relativePath: image }
-    void window.api.materials.previewImage(rootPath, plan).then(setSrc)
-  }, [rootPath, image])
-
-  return src ? (
-    <img className="mat-thumb" src={src} alt="" />
-  ) : (
-    <div className="mat-thumb mat-thumb-empty" />
-  )
-}
 
 interface Props {
   rootPath: string
@@ -141,7 +127,7 @@ export default function CharactersList({
               {filtered.map((c) => (
                 <tr key={`${c.file}:${c.key}`} onClick={() => onOpen(c)} className="mat-row">
                   <td>
-                    <CharacterThumb rootPath={rootPath} image={c.image} />
+                    <MatImage rootPath={rootPath} imagePath={c.image ?? ''} className="mat-thumb" />
                   </td>
                   <td>{c.name}{isTraveler(c) && <span className="pill" style={{ marginLeft: 6 }}>Traveler</span>}</td>
                   <td><span className="pill">{c.element}</span></td>

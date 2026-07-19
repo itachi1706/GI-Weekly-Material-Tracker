@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { MaterialSummary, ImagePlan } from '@shared/types'
+import { useMemo, useState } from 'react'
+import type { MaterialSummary } from '@shared/types'
+import { MatImage } from '../shared/materialPicker'
 
 const INNER_TYPE_LABELS: Record<string, string> = {
   local_speciality: 'Local Speciality',
@@ -14,6 +15,8 @@ function labelType(key: string): string {
 
 type SortCol = 'name' | 'type' | 'file' | 'rarity' | 'released'
 
+// (thumbnails now use the shared, lazy + IPC-batched MatImage from ./materialPicker)
+
 interface Props {
   rootPath: string
   list: MaterialSummary[]
@@ -27,21 +30,6 @@ interface Props {
   onOpen: (row: MaterialSummary) => void
 }
 
-/** Lazy-loads a single thumbnail via IPC and renders it. */
-function MatThumb({ rootPath, image }: { rootPath: string; image: string }) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!image) return
-    const plan: ImagePlan = { source: 'existing', relativePath: image }
-    void window.api.materials.previewImage(rootPath, plan).then(setSrc)
-  }, [rootPath, image])
-
-  return src ? (
-    <img className="mat-thumb" src={src} alt="" />
-  ) : (
-    <div className="mat-thumb mat-thumb-empty" />
-  )
-}
 
 export default function MaterialsList({
   rootPath, list, loading,
@@ -169,7 +157,7 @@ export default function MaterialsList({
                 onClick={() => onOpen(m)}
               >
                 <td>
-                  <MatThumb rootPath={rootPath} image={m.image} />
+                  <MatImage rootPath={rootPath} imagePath={m.image ?? ''} className="mat-thumb" />
                 </td>
                 <td>
                   <div className="mat-name">{m.name}</div>

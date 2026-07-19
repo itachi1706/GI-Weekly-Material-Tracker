@@ -801,6 +801,10 @@ textarea:focus {
   border-radius: 4px;
   display: block;
 }
+/* MatImage renders its empty/loading placeholder as `mat-thumb mat-img-empty`; keep the grey box. */
+.mat-thumb.mat-img-empty {
+  background: var(--bg-input);
+}
 .mat-thumb-empty {
   width: 32px;
   height: 32px;

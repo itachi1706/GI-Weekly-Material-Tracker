@@ -1,26 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { OutfitSummary, ImagePlan } from '@shared/types'
+import { useMemo, useState } from 'react'
+import type { OutfitSummary } from '@shared/types'
+import { MatImage } from '../shared/materialPicker'
 
 type SortCol = 'name' | 'character' | 'file' | 'rarity' | 'released'
 
 /** "Outfits-Standard.json" → "Standard" */
 function fileLabel(file: string): string {
   return file.replace(/^Outfits-|\.json$/g, '')
-}
-
-function OutfitThumb({ rootPath, image }: { rootPath: string; image: string }) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!image) return
-    const plan: ImagePlan = { source: 'existing', relativePath: image }
-    void window.api.materials.previewImage(rootPath, plan).then(setSrc)
-  }, [rootPath, image])
-
-  return src ? (
-    <img className="mat-thumb" src={src} alt="" />
-  ) : (
-    <div className="mat-thumb mat-thumb-empty" />
-  )
 }
 
 interface Props {
@@ -144,7 +130,7 @@ export default function OutfitsList({
               {filtered.map((o) => (
                 <tr key={`${o.file}:${o.key}`} onClick={() => onOpen(o)} className="mat-row">
                   <td>
-                    <OutfitThumb rootPath={rootPath} image={o.image} />
+                    <MatImage rootPath={rootPath} imagePath={o.image ?? ''} className="mat-thumb" />
                   </td>
                   <td>{o.name}</td>
                   <td>{o.character}</td>

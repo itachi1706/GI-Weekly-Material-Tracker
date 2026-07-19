@@ -1,24 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { WeaponSummary, ImagePlan } from '@shared/types'
+import { useMemo, useState } from 'react'
+import type { WeaponSummary } from '@shared/types'
+import { MatImage } from '../shared/materialPicker'
 
 const WEAPON_TYPES = ['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'] as const
 
 type SortCol = 'name' | 'type' | 'rarity' | 'released'
-
-function WeaponThumb({ rootPath, image }: { rootPath: string; image: string }) {
-  const [src, setSrc] = useState<string | null>(null)
-  useEffect(() => {
-    if (!image) return
-    const plan: ImagePlan = { source: 'existing', relativePath: image }
-    void window.api.materials.previewImage(rootPath, plan).then(setSrc)
-  }, [rootPath, image])
-
-  return src ? (
-    <img className="mat-thumb" src={src} alt="" />
-  ) : (
-    <div className="mat-thumb mat-thumb-empty" />
-  )
-}
 
 interface Props {
   rootPath: string
@@ -130,7 +116,7 @@ export default function WeaponsList({
               {filtered.map((w) => (
                 <tr key={`${w.file}:${w.key}`} onClick={() => onOpen(w)} className="mat-row">
                   <td>
-                    <WeaponThumb rootPath={rootPath} image={w.image} />
+                    <MatImage rootPath={rootPath} imagePath={w.image ?? ''} className="mat-thumb" />
                   </td>
                   <td>{w.name}</td>
                   <td><span className="pill">{w.type}</span></td>
