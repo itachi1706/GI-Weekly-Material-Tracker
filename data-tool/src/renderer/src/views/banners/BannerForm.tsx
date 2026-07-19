@@ -224,8 +224,8 @@ export default function BannerForm({
 
       <div className="mat-form-grid">
         <div className="field">
-          <label>Type<span className="req">*</span></label>
-          <select value={draft.type} disabled={mode === 'edit'}
+          <label htmlFor="ban-f1">Type<span className="req">*</span></label>
+          <select id="ban-f1" value={draft.type} disabled={mode === 'edit'}
             onChange={(e) => void onTypeChange(e.target.value as BannerType)}>
             {BANNER_TYPES.map((t) => <option key={t} value={t}>{TYPE_LABEL[t]}</option>)}
           </select>
@@ -235,8 +235,8 @@ export default function BannerForm({
         </div>
 
         <div className="field">
-          <label>Name<span className="req">*</span></label>
-          <input type="text" value={draft.name} onChange={(e) => set('name', e.target.value)} />
+          <label htmlFor="ban-f2">Name<span className="req">*</span></label>
+          <input id="ban-f2" type="text" value={draft.name} onChange={(e) => set('name', e.target.value)} />
           <p className="field-help">e.g. "Epitome Invocation (C)"</p>
         </div>
 
@@ -268,8 +268,8 @@ export default function BannerForm({
         </div>
 
         <div className="field field-wide">
-          <label>Description</label>
-          <textarea rows={3} value={draft.description} onChange={(e) => set('description', e.target.value)} />
+          <label htmlFor="ban-f3">Description</label>
+          <textarea id="ban-f3" rows={3} value={draft.description} onChange={(e) => set('description', e.target.value)} />
         </div>
 
         {/* Rate-up (primary edit surface) */}
@@ -297,28 +297,28 @@ export default function BannerForm({
 
         {/* Pity + version */}
         <div className="field">
-          <label>Soft pity</label>
-          <input type="number" min={0} value={draft.softpity} onChange={(e) => set('softpity', e.target.value)} />
+          <label htmlFor="ban-f4">Soft pity</label>
+          <input id="ban-f4" type="number" min={0} value={draft.softpity} onChange={(e) => set('softpity', e.target.value)} />
         </div>
         <div className="field">
-          <label>Hard pity</label>
-          <input type="number" min={0} value={draft.hardpity} onChange={(e) => set('hardpity', e.target.value)} />
+          <label htmlFor="ban-f5">Hard pity</label>
+          <input id="ban-f5" type="number" min={0} value={draft.hardpity} onChange={(e) => set('hardpity', e.target.value)} />
         </div>
         <div className="field">
-          <label>Version number</label>
-          <input type="number" step="0.1" min={0} value={draft.versionNumber}
+          <label htmlFor="ban-f6">Version number</label>
+          <input id="ban-f6" type="number" step="0.1" min={0} value={draft.versionNumber}
             onChange={(e) => set('versionNumber', e.target.value)} />
           <p className="field-help">e.g. 6.6</p>
         </div>
         <div className="field">
-          <label>Version name</label>
-          <input type="text" value={draft.versionName} onChange={(e) => set('versionName', e.target.value)} />
+          <label htmlFor="ban-f7">Version name</label>
+          <input id="ban-f7" type="text" value={draft.versionName} onChange={(e) => set('versionName', e.target.value)} />
           <p className="field-help">Optional, e.g. "Luna VII".</p>
         </div>
 
         <div className="field field-wide">
-          <label>Wiki URL</label>
-          <input type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
+          <label htmlFor="ban-f8">Wiki URL</label>
+          <input id="ban-f8" type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
         </div>
 
         {/* Gacha pool (large; collapsed). Contents render only once expanded so the (100+) pool

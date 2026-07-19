@@ -953,8 +953,8 @@ export default function CharacterForm({
           <textarea className="talent-entry-effect" rows={3} placeholder="Effect"
             value={e.effect} onChange={(ev) => updateEntry(listKey, i, { effect: ev.target.value })} />
           <div className="talent-entry-key">
-            <label>key</label>
-            <input type="text" value={displayKey}
+            <label htmlFor="chr-f1">key</label>
+            <input id="chr-f1" type="text" value={displayKey}
               onChange={(ev) => updateEntry(listKey, i, { key: ev.target.value, keyTouched: true })} />
           </div>
         </div>
@@ -1018,8 +1018,8 @@ export default function CharacterForm({
 
         {/* ── Identity ── */}
         <div className="field">
-          <label>Name<span className="req">*</span></label>
-          <input type="text" value={draft.name}
+          <label htmlFor="chr-f2">Name<span className="req">*</span></label>
+          <input id="chr-f2" type="text" value={draft.name}
             onChange={(e) => {
               const name = e.target.value
               set('name', name)
@@ -1028,16 +1028,16 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Record key</label>
-          <input type="text"
+          <label htmlFor="chr-f3">Record key</label>
+          <input id="chr-f3" type="text"
             value={draft.keyTouched ? draft.keyOverride : deriveKey(draft.name)}
             onChange={(e) => setDraft((p) => ({ ...p, keyOverride: e.target.value, keyTouched: true }))} />
           <p className="field-help">Auto-derived from name; edit to override.</p>
         </div>
 
         <div className="field">
-          <label>Element<span className="req">*</span></label>
-          <select value={draft.element} disabled={mode === 'edit'}
+          <label htmlFor="chr-f4">Element<span className="req">*</span></label>
+          <select id="chr-f4" value={draft.element} disabled={mode === 'edit'}
             onChange={(e) => { if (mode === 'create') applyTemplate(e.target.value as Element, draft.rarity) }}>
             {ELEMENTS.map((el) => <option key={el} value={el}>{el}</option>)}
           </select>
@@ -1056,15 +1056,15 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Weapon<span className="req">*</span></label>
-          <select value={draft.weapon} onChange={(e) => set('weapon', e.target.value)}>
+          <label htmlFor="chr-f5">Weapon<span className="req">*</span></label>
+          <select id="chr-f5" value={draft.weapon} onChange={(e) => set('weapon', e.target.value)}>
             {WEAPON_TYPES.map((w) => <option key={w} value={w}>{w}</option>)}
           </select>
         </div>
 
         <div className="field">
-          <label>Gender</label>
-          <select value={draft.gender} onChange={(e) => set('gender', e.target.value)}>
+          <label htmlFor="chr-f6">Gender</label>
+          <select id="chr-f6" value={draft.gender} onChange={(e) => set('gender', e.target.value)}>
             <option value="">—</option>
             {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
             {/* Keep an unrecognized existing value selectable so editing never silently drops it. */}
@@ -1075,47 +1075,47 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Birthday</label>
-          <input type="text" placeholder="DD/MM" value={draft.birthday}
+          <label htmlFor="chr-f7">Birthday</label>
+          <input id="chr-f7" type="text" placeholder="DD/MM" value={draft.birthday}
             onChange={(e) => set('birthday', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Nation</label>
-          <input type="text" list="character-nations" value={draft.nation}
+          <label htmlFor="chr-f8">Nation</label>
+          <input id="chr-f8" type="text" list="character-nations" value={draft.nation}
             onChange={(e) => set('nation', e.target.value)} />
           <p className="field-help">Pick a region or type a custom/composite value.</p>
         </div>
 
         <div className="field">
-          <label>Affiliation</label>
-          <input type="text" value={draft.affiliation} onChange={(e) => set('affiliation', e.target.value)} />
+          <label htmlFor="chr-f9">Affiliation</label>
+          <input id="chr-f9" type="text" value={draft.affiliation} onChange={(e) => set('affiliation', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Constellation</label>
-          <input type="text" value={draft.constellation} onChange={(e) => set('constellation', e.target.value)} />
+          <label htmlFor="chr-f10">Constellation</label>
+          <input id="chr-f10" type="text" value={draft.constellation} onChange={(e) => set('constellation', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Full name</label>
-          <input type="text" value={draft.fullName} onChange={(e) => set('fullName', e.target.value)} />
+          <label htmlFor="chr-f11">Full name</label>
+          <input id="chr-f11" type="text" value={draft.fullName} onChange={(e) => set('fullName', e.target.value)} />
           <p className="field-help">Optional; most characters leave this blank.</p>
         </div>
 
         <div className="field field-wide">
-          <label>Caption</label>
-          <input type="text" value={draft.caption} onChange={(e) => set('caption', e.target.value)} />
+          <label htmlFor="chr-f12">Caption</label>
+          <input id="chr-f12" type="text" value={draft.caption} onChange={(e) => set('caption', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Description</label>
-          <textarea rows={2} value={draft.description} onChange={(e) => set('description', e.target.value)} />
+          <label htmlFor="chr-f13">Description</label>
+          <textarea id="chr-f13" rows={2} value={draft.description} onChange={(e) => set('description', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Introduction</label>
-          <textarea rows={3} value={draft.introduction} onChange={(e) => set('introduction', e.target.value)} />
+          <label htmlFor="chr-f14">Introduction</label>
+          <textarea id="chr-f14" rows={3} value={draft.introduction} onChange={(e) => set('introduction', e.target.value)} />
         </div>
 
         <div className="field field-wide">
@@ -1149,13 +1149,13 @@ export default function CharacterForm({
 
         {/* ── Paths / meta ── */}
         <div className="field">
-          <label>paimon.moe path</label>
-          <input type="text" value={draft.paimonmoepath} onChange={(e) => set('paimonmoepath', e.target.value)} />
+          <label htmlFor="chr-f15">paimon.moe path</label>
+          <input id="chr-f15" type="text" value={draft.paimonmoepath} onChange={(e) => set('paimonmoepath', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>genshin.gg path</label>
-          <input type="text" value={draft.genshinggpath} onChange={(e) => set('genshinggpath', e.target.value)} />
+          <label htmlFor="chr-f16">genshin.gg path</label>
+          <input id="chr-f16" type="text" value={draft.genshinggpath} onChange={(e) => set('genshinggpath', e.target.value)} />
         </div>
 
         <div className="field">
@@ -1178,14 +1178,14 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>HoYoWiki ID</label>
-          <input type="number" min={0} value={draft.hoyowiki}
+          <label htmlFor="chr-f17">HoYoWiki ID</label>
+          <input id="chr-f17" type="number" min={0} value={draft.hoyowiki}
             onChange={(e) => set('hoyowiki', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Wiki URL</label>
-          <input type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
+          <label htmlFor="chr-f18">Wiki URL</label>
+          <input id="chr-f18" type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
         </div>
 
         {/* ── Ascension materials map ── */}

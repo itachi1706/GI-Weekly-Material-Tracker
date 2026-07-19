@@ -466,8 +466,8 @@ export default function WeaponForm({
 
         {/* ── Identity ── */}
         <div className="field">
-          <label>Name<span className="req">*</span></label>
-          <input type="text" value={draft.name}
+          <label htmlFor="wpn-f1">Name<span className="req">*</span></label>
+          <input id="wpn-f1" type="text" value={draft.name}
             onChange={(e) => {
               const name = e.target.value
               set('name', name)
@@ -477,8 +477,8 @@ export default function WeaponForm({
         </div>
 
         <div className="field">
-          <label>Record key</label>
-          <input type="text"
+          <label htmlFor="wpn-f2">Record key</label>
+          <input id="wpn-f2" type="text"
             value={draft.keyTouched ? draft.keyOverride : deriveKey(draft.name)}
             onChange={(e) => setDraft((p) => ({ ...p, keyOverride: e.target.value, keyTouched: true }))}
           />
@@ -486,8 +486,8 @@ export default function WeaponForm({
         </div>
 
         <div className="field">
-          <label>Weapon type<span className="req">*</span></label>
-          <select value={draft.type} disabled={mode === 'edit'}
+          <label htmlFor="wpn-f3">Weapon type<span className="req">*</span></label>
+          <select id="wpn-f3" value={draft.type} disabled={mode === 'edit'}
             onChange={(e) => { if (mode === 'create') applyTemplate(e.target.value as WeaponType, draft.rarity) }}
           >
             {WEAPON_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
@@ -508,20 +508,20 @@ export default function WeaponForm({
 
         {/* ── Stats ── */}
         <div className="field">
-          <label>Base ATK</label>
-          <input type="number" min={0} value={draft.baseAtk}
+          <label htmlFor="wpn-f4">Base ATK</label>
+          <input id="wpn-f4" type="number" min={0} value={draft.baseAtk}
             onChange={(e) => set('baseAtk', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Max Base ATK</label>
-          <input type="number" min={0} value={draft.maxBaseAtk}
+          <label htmlFor="wpn-f5">Max Base ATK</label>
+          <input id="wpn-f5" type="number" min={0} value={draft.maxBaseAtk}
             onChange={(e) => set('maxBaseAtk', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Secondary stat type</label>
-          <select value={draft.secondaryStatType}
+          <label htmlFor="wpn-f6">Secondary stat type</label>
+          <select id="wpn-f6" value={draft.secondaryStatType}
             onChange={(e) => set('secondaryStatType', e.target.value)}
           >
             <option value="">None</option>
@@ -531,47 +531,47 @@ export default function WeaponForm({
 
         {draft.secondaryStatType && (<>
           <div className="field">
-            <label>Secondary stat</label>
-            <input type="text" placeholder="e.g. 9.6%" value={draft.secondaryStat}
+            <label htmlFor="wpn-f7">Secondary stat</label>
+            <input id="wpn-f7" type="text" placeholder="e.g. 9.6%" value={draft.secondaryStat}
               onChange={(e) => set('secondaryStat', e.target.value)} />
           </div>
           <div className="field">
-            <label>Max secondary stat</label>
-            <input type="text" placeholder="e.g. 44.1%" value={draft.maxSecondaryStat}
+            <label htmlFor="wpn-f8">Max secondary stat</label>
+            <input id="wpn-f8" type="text" placeholder="e.g. 44.1%" value={draft.maxSecondaryStat}
               onChange={(e) => set('maxSecondaryStat', e.target.value)} />
           </div>
         </>)}
 
         {/* ── Effect ── */}
         <div className="field">
-          <label>Effect name</label>
-          <input type="text" value={draft.effectName}
+          <label htmlFor="wpn-f9">Effect name</label>
+          <input id="wpn-f9" type="text" value={draft.effectName}
             onChange={(e) => set('effectName', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Effect description</label>
-          <textarea rows={3} value={draft.effect}
+          <label htmlFor="wpn-f10">Effect description</label>
+          <textarea id="wpn-f10" rows={3} value={draft.effect}
             onChange={(e) => set('effect', e.target.value)} />
         </div>
 
         {/* ── Info ── */}
         <div className="field">
-          <label>Series</label>
-          <input type="text" value={draft.series}
+          <label htmlFor="wpn-f11">Series</label>
+          <input id="wpn-f11" type="text" value={draft.series}
             onChange={(e) => set('series', e.target.value)} />
           <p className="field-help">e.g. "Lithic Series"</p>
         </div>
 
         <div className="field field-wide">
-          <label>Description</label>
-          <textarea rows={2} value={draft.description}
+          <label htmlFor="wpn-f12">Description</label>
+          <textarea id="wpn-f12" rows={2} value={draft.description}
             onChange={(e) => set('description', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>Obtained</label>
-          <input type="text" value={draft.obtained}
+          <label htmlFor="wpn-f13">Obtained</label>
+          <input id="wpn-f13" type="text" value={draft.obtained}
             onChange={(e) => set('obtained', e.target.value)} />
           <p className="field-help">e.g. "Gacha", "Forging", "Battle Pass"</p>
         </div>
@@ -600,14 +600,14 @@ export default function WeaponForm({
         </div>
 
         <div className="field field-wide">
-          <label>Wiki URL</label>
-          <input type="text" value={draft.wiki}
+          <label htmlFor="wpn-f14">Wiki URL</label>
+          <input id="wpn-f14" type="text" value={draft.wiki}
             onChange={(e) => set('wiki', e.target.value)} />
         </div>
 
         <div className="field">
-          <label>HoYoWiki ID</label>
-          <input type="number" min={0} value={draft.hoyowiki}
+          <label htmlFor="wpn-f15">HoYoWiki ID</label>
+          <input id="wpn-f15" type="number" min={0} value={draft.hoyowiki}
             onChange={(e) => set('hoyowiki', e.target.value)} />
         </div>
 

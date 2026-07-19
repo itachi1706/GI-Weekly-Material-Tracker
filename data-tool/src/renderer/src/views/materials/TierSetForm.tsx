@@ -380,8 +380,8 @@ export default function TierSetForm({
     if (field.widget === 'select') {
       return (
         <div className="field" key={key}>
-          <label>{field.label}{field.required && <span className="req">*</span>}</label>
-          <select value={String(v ?? '')} onChange={(e) => setSharedField(key, e.target.value)}>
+          <label htmlFor="tsf-f1">{field.label}{field.required && <span className="req">*</span>}</label>
+          <select id="tsf-f1" value={String(v ?? '')} onChange={(e) => setSharedField(key, e.target.value)}>
             <option value="">— select —</option>
             {field.options?.map((o) => (
               <option key={String(o.value)} value={String(o.value)}>{o.label}</option>
@@ -431,8 +431,8 @@ export default function TierSetForm({
     if (field.widget === 'textarea') {
       return (
         <div className="field field-wide" key={key}>
-          <label>{field.label}{field.required && <span className="req">*</span>}</label>
-          <textarea
+          <label htmlFor="tsf-f2">{field.label}{field.required && <span className="req">*</span>}</label>
+          <textarea id="tsf-f2"
             rows={3}
             value={String(v ?? '')}
             onChange={(e) => setSharedField(key, e.target.value)}
@@ -443,8 +443,8 @@ export default function TierSetForm({
     }
     return (
       <div className="field" key={key}>
-        <label>{field.label}{field.required && <span className="req">*</span>}</label>
-        <input
+        <label htmlFor="tsf-f3">{field.label}{field.required && <span className="req">*</span>}</label>
+        <input id="tsf-f3"
           type="text"
           value={String(v ?? '')}
           onChange={(e) => setSharedField(key, e.target.value)}
@@ -489,8 +489,8 @@ export default function TierSetForm({
               <div className="mat-form-grid">
                 {/* Name → key */}
                 <div className="field">
-                  <label>Name<span className="req">*</span></label>
-                  <input
+                  <label htmlFor="tsf-f4">Name<span className="req">*</span></label>
+                  <input id="tsf-f4"
                     type="text"
                     value={tier.name}
                     onChange={(e) => {
@@ -503,8 +503,8 @@ export default function TierSetForm({
                   />
                 </div>
                 <div className="field">
-                  <label>Record key</label>
-                  <input
+                  <label htmlFor="tsf-f5">Record key</label>
+                  <input id="tsf-f5"
                     type="text"
                     value={tier.keyTouched ? tier.keyOverride : deriveKey(tier.name)}
                     onChange={(e) => updateTier(i, { keyOverride: e.target.value, keyTouched: true })}
@@ -514,8 +514,8 @@ export default function TierSetForm({
 
                 {/* Description */}
                 <div className="field field-wide">
-                  <label>Description</label>
-                  <textarea
+                  <label htmlFor="tsf-f6">Description</label>
+                  <textarea id="tsf-f6"
                     rows={2}
                     value={tier.description}
                     onChange={(e) => updateTier(i, { description: e.target.value })}
@@ -525,7 +525,7 @@ export default function TierSetForm({
                 {/* Obtained — skip if sharedObtained (it's in the shared section) */}
                 {!config.sharedObtained && (
                   <div className="field field-wide">
-                    <label>
+                    <label htmlFor="tsf-f7">
                       Obtained
                       {showAlchemy && (
                         <button
@@ -548,7 +548,7 @@ export default function TierSetForm({
                         </button>
                       )}
                     </label>
-                    <textarea
+                    <textarea id="tsf-f7"
                       rows={2}
                       value={tier.obtained}
                       onChange={(e) => updateTier(i, { obtained: e.target.value })}
@@ -587,8 +587,8 @@ export default function TierSetForm({
                   {wikiError && wikiTier === i && <p className="field-help wiki-fetch-error">{wikiError}</p>}
                 </div>
                 <div className="field">
-                  <label>HoYoWiki ID</label>
-                  <input
+                  <label htmlFor="tsf-f8">HoYoWiki ID</label>
+                  <input id="tsf-f8"
                     type="number"
                     value={tier.hoyowiki}
                     onChange={(e) => updateTier(i, { hoyowiki: e.target.value })}

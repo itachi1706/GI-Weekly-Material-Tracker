@@ -381,8 +381,8 @@ export default function OutfitForm({
 
         {/* ── Identity ── */}
         <div className="field">
-          <label>Name<span className="req">*</span></label>
-          <input
+          <label htmlFor="out-f1">Name<span className="req">*</span></label>
+          <input id="out-f1"
             type="text"
             value={draft.name}
             onChange={(e) => {
@@ -394,8 +394,8 @@ export default function OutfitForm({
         </div>
 
         <div className="field">
-          <label>Record key</label>
-          <input
+          <label htmlFor="out-f2">Record key</label>
+          <input id="out-f2"
             type="text"
             value={draft.keyTouched ? draft.keyOverride : deriveKey(draft.name)}
             onChange={(e) => setDraft((p) => ({ ...p, keyOverride: e.target.value, keyTouched: true }))}
@@ -405,8 +405,8 @@ export default function OutfitForm({
 
         {/* Outfit set → target file */}
         <div className="field">
-          <label>Outfit set<span className="req">*</span></label>
-          <select
+          <label htmlFor="out-f3">Outfit set<span className="req">*</span></label>
+          <select id="out-f3"
             value={outfitSet.file}
             disabled={mode === 'edit'}
             onChange={(e) => {
@@ -424,8 +424,8 @@ export default function OutfitForm({
 
         {/* Readable type field (independent of outfit set) */}
         <div className="field">
-          <label>Type (readable)</label>
-          <input
+          <label htmlFor="out-f4">Type (readable)</label>
+          <input id="out-f4"
             type="text"
             list="outfit-types"
             value={draft.type}
@@ -462,18 +462,18 @@ export default function OutfitForm({
 
         {/* ── Description / lore ── */}
         <div className="field field-wide">
-          <label>Description</label>
-          <textarea rows={2} value={draft.description} onChange={(e) => set('description', e.target.value)} />
+          <label htmlFor="out-f5">Description</label>
+          <textarea id="out-f5" rows={2} value={draft.description} onChange={(e) => set('description', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Obtained</label>
-          <textarea rows={2} value={draft.obtained} onChange={(e) => set('obtained', e.target.value)} />
+          <label htmlFor="out-f6">Obtained</label>
+          <textarea id="out-f6" rows={2} value={draft.obtained} onChange={(e) => set('obtained', e.target.value)} />
         </div>
 
         <div className="field field-wide">
-          <label>Lore</label>
-          <textarea rows={3} value={draft.lore} onChange={(e) => set('lore', e.target.value)} />
+          <label htmlFor="out-f7">Lore</label>
+          <textarea id="out-f7" rows={3} value={draft.lore} onChange={(e) => set('lore', e.target.value)} />
         </div>
 
         {/* ── Images ── */}
@@ -516,8 +516,8 @@ export default function OutfitForm({
 
         {/* ── 3D model ── */}
         <div className="field">
-          <label>3D model (.glb)</label>
-          <input type="text" value={draft.model3d} onChange={(e) => set('model3d', e.target.value)} />
+          <label htmlFor="out-f8">3D model (.glb)</label>
+          <input id="out-f8" type="text" value={draft.model3d} onChange={(e) => set('model3d', e.target.value)} />
           <p className="field-help">Filename only, e.g. Amber.glb</p>
         </div>
 
@@ -533,16 +533,16 @@ export default function OutfitForm({
         {draft.shop && (
           <>
             <div className="field">
-              <label>Shop cost</label>
-              <input type="number" min={0} value={draft.shopCost} onChange={(e) => set('shopCost', e.target.value)} />
+              <label htmlFor="out-f9">Shop cost</label>
+              <input id="out-f9" type="number" min={0} value={draft.shopCost} onChange={(e) => set('shopCost', e.target.value)} />
             </div>
             <div className="field">
-              <label>Discounted cost</label>
-              <input type="number" min={0} value={draft.shopCostDiscounted} onChange={(e) => set('shopCostDiscounted', e.target.value)} />
+              <label htmlFor="out-f10">Discounted cost</label>
+              <input id="out-f10" type="number" min={0} value={draft.shopCostDiscounted} onChange={(e) => set('shopCostDiscounted', e.target.value)} />
             </div>
             <div className="field">
-              <label>Discount ends</label>
-              <input type="date" value={draft.shopCostDiscountedTill} onChange={(e) => set('shopCostDiscountedTill', e.target.value)} />
+              <label htmlFor="out-f11">Discount ends</label>
+              <input id="out-f11" type="date" value={draft.shopCostDiscountedTill} onChange={(e) => set('shopCostDiscountedTill', e.target.value)} />
             </div>
           </>
         )}
@@ -558,15 +558,15 @@ export default function OutfitForm({
 
         {draft.eventGiveFree && (
           <div className="field">
-            <label>Free until</label>
-            <input type="date" value={draft.eventGiveFreeTill} onChange={(e) => set('eventGiveFreeTill', e.target.value)} />
+            <label htmlFor="out-f12">Free until</label>
+            <input id="out-f12" type="date" value={draft.eventGiveFreeTill} onChange={(e) => set('eventGiveFreeTill', e.target.value)} />
           </div>
         )}
 
         {/* ── Release ── */}
         <div className="field">
-          <label>Released version</label>
-          <input
+          <label htmlFor="out-f13">Released version</label>
+          <input id="out-f13"
             type="text"
             value={draft.releasedVersion}
             onChange={(e) => set('releasedVersion', e.target.value)}
@@ -575,8 +575,8 @@ export default function OutfitForm({
         </div>
 
         <div className="field">
-          <label>Version name</label>
-          <input
+          <label htmlFor="out-f14">Version name</label>
+          <input id="out-f14"
             type="text"
             value={draft.releasedVersionName}
             onChange={(e) => set('releasedVersionName', e.target.value)}
@@ -594,8 +594,8 @@ export default function OutfitForm({
 
         {/* ── Wiki ── */}
         <div className="field field-wide">
-          <label>Wiki URL</label>
-          <input type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
+          <label htmlFor="out-f15">Wiki URL</label>
+          <input id="out-f15" type="text" value={draft.wiki} onChange={(e) => set('wiki', e.target.value)} />
         </div>
       </div>
 

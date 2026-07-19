@@ -443,11 +443,11 @@ export default function MaterialForm({
         })}
 
         <div className="field">
-          <label>
+          <label htmlFor="mat-f1">
             Record key
             {renamed && <span className="pill pill-warn">rename</span>}
           </label>
-          <input
+          <input id="mat-f1"
             type="text"
             value={key}
             onChange={(e) => { setKey(e.target.value); setKeyTouched(true) }}
@@ -456,8 +456,8 @@ export default function MaterialForm({
         </div>
 
         <div className="field">
-          <label>Insert position</label>
-          <select value={ordering} onChange={(e) => setOrdering(e.target.value as InsertModeName)}>
+          <label htmlFor="mat-f2">Insert position</label>
+          <select id="mat-f2" value={ordering} onChange={(e) => setOrdering(e.target.value as InsertModeName)}>
             <option value="alphabetical">Alphabetical</option>
             <option value="append">Append to bottom</option>
           </select>
