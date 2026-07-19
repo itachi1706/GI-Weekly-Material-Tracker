@@ -43,7 +43,7 @@ export function pageTitleFromUrl(raw: string): string {
   if (hostname !== WIKI_HOST) {
     throw new Error(`Expected a ${WIKI_HOST} URL, got "${u.hostname}".`)
   }
-  const m = u.pathname.match(/\/wiki\/(.+)$/)
+  const m = /\/wiki\/(.+)$/.exec(u.pathname)
   const rawTitle = m ? m[1] : u.searchParams.get('title')
   if (!rawTitle) throw new Error('Could not find a page title in that URL.')
   return decodeURIComponent(rawTitle).replace(/_/g, ' ').trim()
@@ -82,7 +82,7 @@ function rawParam(infobox: string, key: string): string | null {
   // NB: horizontal-only whitespace after `=` (`[ \t]*`, not `\s*`) — otherwise an EMPTY param
   // (`|realname =\n|birthday = …`) would let `\s*` eat the newline and capture the next param's value.
   const re = new RegExp(`\\|\\s*${key}\\s*=[ \\t]*([\\s\\S]*?)(?=\\n\\s*\\|[a-zA-Z0-9_]+\\s*=|\\n\\}\\})`, 'i')
-  const m = infobox.match(re)
+  const m = re.exec(infobox)
   return m ? m[1] : null
 }
 
@@ -123,10 +123,10 @@ function infoboxBlock(wikitext: string, template = 'Character Infobox'): string 
 /** "October 13th" → "13/10" (the dataset's D/M, NO leading zeros). Unchanged if unparseable. */
 function convertBirthday(raw: string | null): string | null {
   if (!raw) return null
-  const m = raw.match(/([A-Za-z]+)\s+(\d{1,2})/)
+  const m = /([A-Za-z]+)\s+(\d{1,2})/.exec(raw)
   if (m) {
     const mon = MONTHS[m[1].toLowerCase()]
-    if (mon) return `${parseInt(m[2], 10)}/${mon}`
+    if (mon) return `${Number.parseInt(m[2], 10)}/${mon}`
   }
   return raw
 }
@@ -199,7 +199,7 @@ function parseConstellations($: CheerioAPI): WikiConstellation[] {
     const tds = $tr.children('td')
     const img = $tr.find('td img[data-src]').first()
     if (tds.length >= 3 && img.length) {
-      const level = parseInt(tds.eq(2).text().trim(), 10)
+      const level = Number.parseInt(tds.eq(2).text().trim(), 10)
       cur = {
         index: Number.isFinite(level) ? level : out.length + 1,
         name: tds.eq(1).text().trim(),
@@ -309,7 +309,7 @@ export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacter
   ].filter((a): a is string => !!a)
 
   const qualityStr = wikiParam(box, 'quality')
-  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+  const rarity = qualityStr ? Number.parseInt(qualityStr, 10) : null
 
   const $ = cheerio.load(html)
 
@@ -338,7 +338,7 @@ export async function fetchCharacterFromWiki(url: string): Promise<WikiCharacter
 
 /** Extract the `{{Description|…}}` short weapon description (the one right after the infobox). */
 function descriptionTemplate(wikitext: string): string | null {
-  const m = wikitext.match(/\{\{Description\|([\s\S]*?)\}\}/)
+  const m = /\{\{Description\|([\s\S]*?)\}\}/.exec(wikitext)
   return m ? cleanInline(m[1]) || null : null
 }
 
@@ -387,7 +387,7 @@ function weaponMaxStats($: CheerioAPI): { maxBaseAtk: number | null; maxSecondar
       if (lvlIdx < 0) return
       const rest = cells.slice(lvlIdx + 1).filter((c) => c !== '')
       if (rest.length >= 1 && /^\d[\d,]*$/.test(rest[0])) {
-        maxBaseAtk = parseInt(rest[0].replace(/,/g, ''), 10)
+        maxBaseAtk = Number.parseInt(rest[0].replace(/,/g, ''), 10)
         maxSecondaryStat = rest[1] ?? null
       }
     })
@@ -405,9 +405,9 @@ export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult
   if (!box) throw new Error('That page has no Weapon Infobox — is it a weapon page?')
 
   const baseAtkStr = wikiParam(box, 'base_atk')
-  const baseAtk = baseAtkStr ? parseInt(baseAtkStr, 10) : null
+  const baseAtk = baseAtkStr ? Number.parseInt(baseAtkStr, 10) : null
   const qualityStr = wikiParam(box, 'quality')
-  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+  const rarity = qualityStr ? Number.parseInt(qualityStr, 10) : null
 
   const effectTemplate = wikiParam(box, 'effect')
   const effect = effectTemplate ? substituteEffectVars(effectTemplate, box) : null
@@ -442,7 +442,7 @@ export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult
 /** Extract a top-level `==Heading==` section body (up to the next `==…==`), cleaned to prose. */
 function wikiSection(wikitext: string, heading: string): string | null {
   const re = new RegExp(`\\n==\\s*${heading}\\s*==\\s*\\n([\\s\\S]*?)(?=\\n==[^=]|$)`, 'i')
-  const m = wikitext.match(re)
+  const m = re.exec(wikitext)
   if (!m) return null
   // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.
   const raw = m[1]
@@ -467,7 +467,7 @@ export async function fetchOutfitFromWiki(url: string): Promise<WikiOutfitResult
   if (!box) throw new Error('That page has no Outfit Infobox — is it an outfit page?')
 
   const qualityStr = wikiParam(box, 'quality')
-  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+  const rarity = qualityStr ? Number.parseInt(qualityStr, 10) : null
 
   const $ = cheerio.load(html)
   const images = parseImageCandidates($)
@@ -497,7 +497,7 @@ export async function fetchMaterialFromWiki(url: string): Promise<WikiMaterialRe
   if (!box) throw new Error('That page has no Item Infobox — is it a material page?')
 
   const qualityStr = wikiParam(box, 'quality')
-  const rarity = qualityStr ? parseInt(qualityStr, 10) : null
+  const rarity = qualityStr ? Number.parseInt(qualityStr, 10) : null
 
   // Domain-material availability days (day1/day2/day3 → Mon=1…Sun=7).
   const days = [1, 2, 3]

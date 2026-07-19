@@ -4,7 +4,7 @@ import type { ImagePlan } from '@shared/types'
  *  `/revision/latest[/scale…]` suffix so the ext is read from the real `…X.png` filename. */
 export function extOf(pathOrUrl: string): string {
   const clean = pathOrUrl.split(/[?#]/)[0].replace(/\/revision\/.*$/i, '')
-  const m = clean.match(/\.([a-zA-Z0-9]+)$/)
+  const m = /\.([a-zA-Z0-9]+)$/.exec(clean)
   return m ? m[1].toLowerCase() : 'png'
 }
 
@@ -27,9 +27,9 @@ export type ImageState =
  */
 export function normalizeImageUrl(url: string): string {
   const trimmed = url.trim()
-  const rev = trimmed.match(/^(https?:\/\/.*?\/revision\/latest)(?:[/?#].*)?$/i)
+  const rev = /^(https?:\/\/.*?\/revision\/latest)(?:[/?#].*)?$/i.exec(trimmed)
   if (rev) return rev[1]
-  const m = trimmed.match(/^(https?:\/\/.*?\.(?:png|jpe?g|gif|webp|avif|bmp|svg))(?:[/?#].*)?$/i)
+  const m = /^(https?:\/\/.*?\.(?:png|jpe?g|gif|webp|avif|bmp|svg))(?:[/?#].*)?$/i.exec(trimmed)
   return m ? m[1] : trimmed
 }
 

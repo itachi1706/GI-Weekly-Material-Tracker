@@ -32,7 +32,10 @@ export default function MaterialsList({
   query, typeFilter, onQueryChange, onTypeFilterChange,
   onNew, onOpen
 }: Props) {
-  const types = useMemo(() => Array.from(new Set(list.map((m) => m.innerType))).sort(), [list])
+  const types = useMemo(
+    () => Array.from(new Set(list.map((m) => m.innerType))).sort((a, b) => a.localeCompare(b)),
+    [list]
+  )
 
   const base = useMemo(() => {
     const q = query.trim().toLowerCase()

@@ -37,7 +37,7 @@ export function inferWikiCategory(res: WikiMaterialResult): string | null {
 export function mapWikiType(res: WikiMaterialResult, innerType: string, typeOptions: string[]): string | null {
   let candidate: string | null = null
   if (innerType === 'local_speciality') {
-    const m = (res.type ?? '').match(/\(([^)]+)\)/) // "Local Specialty (Inazuma)" → region
+    const m = /\(([^)]+)\)/.exec(res.type ?? '') // "Local Specialty (Inazuma)" → region
     if (m) candidate = `Local Speciality (${m[1]})`
   } else if (innerType === 'boss_drops') {
     const g = res.group ?? '', g2 = res.group2 ?? '', t = res.type ?? ''

@@ -477,7 +477,7 @@ export function getTierSetKey(record: MaterialRecord, innerType: string, file?: 
     return `weekly:${record.obtained ?? ''}`
   }
   if (innerType === 'mob_drops') {
-    const enemies = [...((record.enemies ?? []) as string[])].sort()
+    const enemies = [...((record.enemies ?? []) as string[])].sort((a, b) => a.localeCompare(b))
     return `mob:${record.type ?? ''}:${enemies.join(',')}`
   }
   if (innerType === 'domain_material') {

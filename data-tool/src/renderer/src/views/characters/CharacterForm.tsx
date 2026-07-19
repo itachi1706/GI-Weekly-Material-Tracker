@@ -69,15 +69,18 @@ const SINGLE_SLOTS: Record<string, { label: string; fileKeyword: string }> = {
 
 /** Classify a material-map key into a slot spec (picker filter + optional tier autofill). */
 function classifySlot(key: string, map: 'ascension' | 'talents'): SlotSpec {
-  let m: RegExpMatchArray | null
-  if ((m = key.match(/^gem(\d+)$/)))
-    return { map, slotKey: key, prefix: 'gem', label: 'Gem', fileKeyword: 'Boss_Gems', tierSize: 4, index: +m[1], expectedRarity: +m[1] + 1 }
-  if ((m = key.match(/^common(\d+)$/)))
-    return { map, slotKey: key, prefix: 'common', label: 'Common', fileKeyword: 'Common_Mob', tierSize: 3, index: +m[1], expectedRarity: +m[1] }
-  if ((m = key.match(/^mastery(\d+)$/)))
-    return { map, slotKey: key, prefix: 'mastery', label: 'Mastery', fileKeyword: 'Mastery_Domain', tierSize: 3, index: +m[1], expectedRarity: +m[1] + 1 }
-  if ((m = key.match(/^mastery(\d+)-(\d+)$/))) // Traveler variant: 3 parallel book-lines, no autofill
-    return { map, slotKey: key, prefix: key, label: `Mastery ${roman(+m[1])} (set ${m[2]})`, fileKeyword: 'Mastery_Domain', tierSize: 0, index: +m[1], expectedRarity: +m[1] + 1 }
+  const gem = /^gem(\d+)$/.exec(key)
+  if (gem)
+    return { map, slotKey: key, prefix: 'gem', label: 'Gem', fileKeyword: 'Boss_Gems', tierSize: 4, index: +gem[1], expectedRarity: +gem[1] + 1 }
+  const common = /^common(\d+)$/.exec(key)
+  if (common)
+    return { map, slotKey: key, prefix: 'common', label: 'Common', fileKeyword: 'Common_Mob', tierSize: 3, index: +common[1], expectedRarity: +common[1] }
+  const mastery = /^mastery(\d+)$/.exec(key)
+  if (mastery)
+    return { map, slotKey: key, prefix: 'mastery', label: 'Mastery', fileKeyword: 'Mastery_Domain', tierSize: 3, index: +mastery[1], expectedRarity: +mastery[1] + 1 }
+  const masterySet = /^mastery(\d+)-(\d+)$/.exec(key) // Traveler variant: 3 parallel book-lines, no autofill
+  if (masterySet)
+    return { map, slotKey: key, prefix: key, label: `Mastery ${roman(+masterySet[1])} (set ${masterySet[2]})`, fileKeyword: 'Mastery_Domain', tierSize: 0, index: +masterySet[1], expectedRarity: +masterySet[1] + 1 }
   const s = SINGLE_SLOTS[key]
   if (s) return { map, slotKey: key, prefix: key, label: s.label, fileKeyword: s.fileKeyword, tierSize: 0, index: 1, expectedRarity: -1 }
   return { map, slotKey: key, prefix: key, label: key, fileKeyword: '', tierSize: 0, index: 1, expectedRarity: -1 }

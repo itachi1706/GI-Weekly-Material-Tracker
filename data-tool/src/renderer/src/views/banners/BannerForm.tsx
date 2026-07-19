@@ -16,7 +16,7 @@ const IMAGE_FOLDER: Record<BannerType, string> = {
 // ── Date helpers (on-disk: "YYYY-MM-DDTHH:00:00+08" start / "…THH:59:59+08" end, GMT+8) ──────────
 
 function parseIso(s: string | null | undefined): { date: string; hour: string } {
-  const m = String(s ?? '').match(/^(\d{4}-\d{2}-\d{2})T(\d{2}):/)
+  const m = /^(\d{4}-\d{2}-\d{2})T(\d{2}):/.exec(String(s ?? ''))
   return m ? { date: m[1], hour: m[2] } : { date: '', hour: '' }
 }
 function startIso(date: string, hour: string): string | null {

@@ -25,7 +25,10 @@ export default function OutfitsList({
   query, fileFilter, onQueryChange, onFileFilterChange,
   onNew, onOpen
 }: Props) {
-  const files = useMemo(() => Array.from(new Set(list.map((o) => o.file))).sort(), [list])
+  const files = useMemo(
+    () => Array.from(new Set(list.map((o) => o.file))).sort((a, b) => a.localeCompare(b)),
+    [list]
+  )
 
   const base = useMemo(() => {
     const q = query.trim().toLowerCase()

@@ -33,7 +33,7 @@ export default function ValidationView({ rootPath }: { rootPath: string }) {
 
   const categories = useMemo(() => {
     if (!report) return []
-    return [...new Set(report.findings.map((f) => f.category))].sort()
+    return [...new Set(report.findings.map((f) => f.category))].sort((a, b) => a.localeCompare(b))
   }, [report])
 
   const filtered = useMemo(() => {

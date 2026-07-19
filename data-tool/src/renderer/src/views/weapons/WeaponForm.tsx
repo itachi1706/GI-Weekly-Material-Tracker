@@ -48,7 +48,7 @@ const PREFIX_TIER_SIZE: Record<string, number> = { forgery: 4, elite: 3, common:
 
 // Expected rarity for a given slot: forgery1→2, elite1→2, common1→1, etc.
 function slotExpectedRarity(slotKey: string): number {
-  const m = slotKey.match(/^(forgery|elite|common)(\d+)$/)
+  const m = /^(forgery|elite|common)(\d+)$/.exec(slotKey)
   if (!m) return -1
   return m[1] === 'common' ? Number(m[2]) : Number(m[2]) + 1
 }

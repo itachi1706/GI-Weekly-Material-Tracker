@@ -27,17 +27,17 @@ function setByFile(file: string) {
 // ── Date helpers (JSON: "D-M-YYYY", HTML date input: "YYYY-MM-DD") ────────────
 
 function jsonDateToInput(s: string): string {
-  const m = s.match(/^(\d+)-(\d+)-(\d{4})$/)
+  const m = /^(\d+)-(\d+)-(\d{4})$/.exec(s)
   if (!m) return ''
   const [, day, month, year] = m
   return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
 }
 
 function inputDateToJson(s: string): string {
-  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s)
   if (!m) return ''
   const [, year, month, day] = m
-  return `${parseInt(day)}-${parseInt(month)}-${year}`
+  return `${Number.parseInt(day)}-${Number.parseInt(month)}-${year}`
 }
 
 /** Display a game version keeping the trailing `.0` for whole numbers (`1` → `"1.0"`, `1.6` → `"1.6"`). */

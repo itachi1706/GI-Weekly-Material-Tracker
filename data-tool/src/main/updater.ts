@@ -11,7 +11,8 @@ const RELEASES_PAGE = `https://github.com/${OWNER}/${REPO}/releases/latest`
  * never reads as "newer".
  */
 export function isNewer(current: string, latest: string): boolean {
-  const parse = (v: string): number[] => v.split('-')[0].split('.').map((n) => parseInt(n, 10) || 0)
+  const parse = (v: string): number[] =>
+    v.split('-')[0].split('.').map((n) => Number.parseInt(n, 10) || 0)
   const a = parse(current)
   const b = parse(latest)
   for (let i = 0; i < Math.max(a.length, b.length); i++) {

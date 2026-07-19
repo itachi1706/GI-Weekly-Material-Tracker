@@ -85,7 +85,7 @@ function collapsePrimitiveArrays(json: string): string {
       //   - `weapons` / `rateupcharacters` / `rateupweapon` (banner records) — ALWAYS expanded
       //     (populated ones are one-per-line on disk, even single-element; empty `[]` stays inline
       //     because empty arrays never reach this branch)
-      const fieldMatch = trimmed.match(/"([^"]+)":\s*\[$/)
+      const fieldMatch = /"([^"]+)":\s*\[$/.exec(trimmed)
       const field = fieldMatch?.[1]
       const forceExpand =
         (field === 'characters' && items.length > 1) ||
