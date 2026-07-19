@@ -1,8 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import type { OutfitSummary } from '@shared/types'
 import { MatImage } from '../shared/materialPicker'
-
-type SortCol = 'name' | 'character' | 'file' | 'rarity' | 'released'
+import SortableTable, { type Column } from '../shared/SortableTable'
 
 /** "Outfits-Standard.json" → "Standard" */
 function fileLabel(file: string): string {
@@ -26,29 +25,11 @@ export default function OutfitsList({
   query, fileFilter, onQueryChange, onFileFilterChange,
   onNew, onOpen
 }: Props) {
-  const [sortCol, setSortCol] = useState<SortCol | null>(null)
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
-
   const files = useMemo(() => Array.from(new Set(list.map((o) => o.file))).sort(), [list])
 
-  const toggleSort = (col: SortCol) => {
-    if (sortCol === col) {
-      if (sortDir === 'asc') setSortDir('desc')
-      else { setSortCol(null); setSortDir('asc') }
-    } else {
-      setSortCol(col)
-      setSortDir('asc')
-    }
-  }
-
-  const sortIndicator = (col: SortCol) => {
-    if (sortCol !== col) return <span className="sort-indicator muted">↕</span>
-    return <span className="sort-indicator">{sortDir === 'asc' ? '↑' : '↓'}</span>
-  }
-
-  const filtered = useMemo(() => {
+  const base = useMemo(() => {
     const q = query.trim().toLowerCase()
-    const base = list.filter(
+    return list.filter(
       (o) =>
         (!fileFilter || o.file === fileFilter) &&
         (!q ||
@@ -56,17 +37,22 @@ export default function OutfitsList({
           o.character.toLowerCase().includes(q) ||
           o.key.toLowerCase().includes(q))
     )
-    if (!sortCol) return base
-    return [...base].sort((a, b) => {
-      let av: string | number
-      let bv: string | number
-      if (sortCol === 'rarity') { av = a.rarity; bv = b.rarity }
-      else if (sortCol === 'released') { av = a.released ? 1 : 0; bv = b.released ? 1 : 0 }
-      else { av = a[sortCol].toLowerCase(); bv = b[sortCol].toLowerCase() }
-      const cmp = av < bv ? -1 : av > bv ? 1 : 0
-      return sortDir === 'asc' ? cmp : -cmp
-    })
-  }, [list, query, fileFilter, sortCol, sortDir])
+  }, [list, query, fileFilter])
+
+  const columns: Column<OutfitSummary>[] = useMemo(() => [
+    { key: '_thumb', header: '', sortable: false,
+      render: (o) => <MatImage rootPath={rootPath} imagePath={o.image ?? ''} className="mat-thumb" /> },
+    { key: 'name', header: 'Name', render: (o) => o.name },
+    { key: 'character', header: 'Character', render: (o) => o.character },
+    // Type is display-only (not sortable); Set sorts by the raw `file` while rendering fileLabel.
+    { key: 'type', header: 'Type', sortable: false, render: (o) => <span className="pill">{o.type}</span> },
+    { key: 'file', header: 'Set', render: (o) => <span className="pill">{fileLabel(o.file)}</span> },
+    { key: 'rarity', header: 'Rarity', sortValue: (o) => o.rarity, render: (o) => '★'.repeat(o.rarity) },
+    { key: 'released', header: 'Released', sortValue: (o) => (o.released ? 1 : 0),
+      render: (o) => (
+        <span className={`pill ${o.released ? 'pill-ok' : ''}`}>{o.released ? 'Yes' : 'No'}</span>
+      ) }
+  ], [rootPath])
 
   return (
     <div className="mat-list">
@@ -90,72 +76,14 @@ export default function OutfitsList({
         </select>
       </div>
 
-      {loading ? (
-        <p className="muted">Loading…</p>
-      ) : (
-        <div className="mat-table-wrap">
-          <table className="mat-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>
-                  <button className="th-sort" onClick={() => toggleSort('name')}>
-                    Name {sortIndicator('name')}
-                  </button>
-                </th>
-                <th>
-                  <button className="th-sort" onClick={() => toggleSort('character')}>
-                    Character {sortIndicator('character')}
-                  </button>
-                </th>
-                <th>Type</th>
-                <th>
-                  <button className="th-sort" onClick={() => toggleSort('file')}>
-                    Set {sortIndicator('file')}
-                  </button>
-                </th>
-                <th>
-                  <button className="th-sort" onClick={() => toggleSort('rarity')}>
-                    Rarity {sortIndicator('rarity')}
-                  </button>
-                </th>
-                <th>
-                  <button className="th-sort" onClick={() => toggleSort('released')}>
-                    Released {sortIndicator('released')}
-                  </button>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((o) => (
-                <tr key={`${o.file}:${o.key}`} onClick={() => onOpen(o)} className="mat-row">
-                  <td>
-                    <MatImage rootPath={rootPath} imagePath={o.image ?? ''} className="mat-thumb" />
-                  </td>
-                  <td>{o.name}</td>
-                  <td>{o.character}</td>
-                  <td><span className="pill">{o.type}</span></td>
-                  <td><span className="pill">{fileLabel(o.file)}</span></td>
-                  <td>{'★'.repeat(o.rarity)}</td>
-                  <td>
-                    <span className={`pill ${o.released ? 'pill-ok' : ''}`}>
-                      {o.released ? 'Yes' : 'No'}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-              {filtered.length === 0 && (
-                <tr>
-                  <td colSpan={7} className="muted" style={{ padding: '16px 0' }}>
-                    No outfits match your filter.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      )}
-      <p className="mat-list-count muted">{filtered.length} of {list.length} outfits</p>
+      <SortableTable
+        rows={base}
+        total={list.length}
+        noun="outfits"
+        columns={columns}
+        loading={loading}
+        onOpen={onOpen}
+      />
     </div>
   )
 }
