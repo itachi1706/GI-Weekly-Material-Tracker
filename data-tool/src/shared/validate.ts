@@ -41,9 +41,12 @@ const TITLE_BAD = /[[\]{}|<>]/
 const TEXT_FIELDS = ['name', 'fullName', 'caption', 'nation', 'affiliation', 'constellation',
   'description', 'introduction', 'effect', 'effectName', 'lore', 'obtained', 'series']
 
-const rootKey = (file: string): string =>
-  file.startsWith('Characters-') ? 'characters' : file.startsWith('Weapons-') ? 'weapons'
-    : file.startsWith('Outfits-') ? 'outfits' : 'materials'
+const rootKey = (file: string): string => {
+  if (file.startsWith('Characters-')) return 'characters'
+  if (file.startsWith('Weapons-')) return 'weapons'
+  if (file.startsWith('Outfits-')) return 'outfits'
+  return 'materials'
+}
 
 /**
  * Run every check against the given files. Each file is `{ file, raw }`; parsing happens here so a

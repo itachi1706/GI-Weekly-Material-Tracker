@@ -18,6 +18,8 @@ interface Row {
 
 const CONTEXT = 3
 
+const DIFF_GUTTER: Record<string, string> = { add: '+', del: '-' }
+
 /** Build a compact diff: changed lines plus a few context lines, collapsing long unchanged runs. */
 function buildRows(before: string, after: string): Row[] {
   const parts = diffLines(before, after)
@@ -87,7 +89,7 @@ export default function CommitPreview({
       <div className="diff">
         {(showFull ? fullRows : rows).map((r, i) => (
           <div key={i} className={`diff-line diff-${r.type}`}>
-            <span className="diff-gutter">{r.type === 'add' ? '+' : r.type === 'del' ? '-' : ''}</span>
+            <span className="diff-gutter">{DIFF_GUTTER[r.type] ?? ''}</span>
             <span className="diff-text">{r.text}</span>
           </div>
         ))}

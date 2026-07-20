@@ -67,6 +67,10 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
     setTimeout(() => setCopied(false), 1500)
   }
 
+  let runLabel = 'Run validation'
+  if (loading) runLabel = 'Scanning…'
+  else if (report) runLabel = 'Re-run'
+
   return (
     <div className="mat-list validate-view">
       <header className="mat-list-head">
@@ -82,7 +86,7 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
             {copied ? 'Copied!' : 'Copy report'}
           </button>
           <button type="button" className="btn-primary" onClick={() => void run()} disabled={loading}>
-            {loading ? 'Scanning…' : report ? 'Re-run' : 'Run validation'}
+            {runLabel}
           </button>
         </div>
       </header>

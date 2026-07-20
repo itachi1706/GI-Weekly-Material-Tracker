@@ -95,7 +95,11 @@ export async function listImages(rootPath: string, folder: string): Promise<stri
   const files = await readdir(dir)
   return files
     .filter((f) => /\.(png|jpe?g|webp|gif)$/i.test(f))
-    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+    .sort((a, b) => {
+      if (a < b) return -1
+      if (a > b) return 1
+      return 0
+    })
 }
 
 /** Recursively collect image paths (relative to the given dir) within a single directory. */

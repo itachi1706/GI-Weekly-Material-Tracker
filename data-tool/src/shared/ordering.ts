@@ -14,7 +14,9 @@ export type InsertMode = 'alphabetical' | 'append'
 
 /** Raw code-unit comparison, matching the dataset's on-disk key ordering. */
 export function compareKeys(a: string, b: string): number {
-  return a < b ? -1 : a > b ? 1 : 0
+  if (a < b) return -1
+  if (a > b) return 1
+  return 0
 }
 
 /**

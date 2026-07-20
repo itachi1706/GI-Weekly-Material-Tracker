@@ -113,6 +113,9 @@ function stateFromPath(path: string | null | undefined): ImageState {
 
 function draftFromRecord(rec: OutfitRecord, defaultFile?: string, existingKey?: string): Draft {
   const file = (defaultFile ?? 'Outfits-Standard.json') as OutfitSetFile
+  let characters: string[] = []
+  if (Array.isArray(rec.characters) && rec.characters.length > 0) characters = rec.characters.map(String)
+  else if (rec.character) characters = [String(rec.character)]
   return {
     name: String(rec.name ?? ''),
     keyOverride: existingKey ?? '',
@@ -120,9 +123,7 @@ function draftFromRecord(rec: OutfitRecord, defaultFile?: string, existingKey?: 
     outfitSetFile: file,
     type: String(rec.type ?? setByFile(file).type),
     rarity: String(rec.rarity ?? 4),
-    characters: Array.isArray(rec.characters) && rec.characters.length > 0
-      ? rec.characters.map(String)
-      : rec.character ? [String(rec.character)] : [],
+    characters,
     description: String(rec.description ?? ''),
     obtained: String(rec.obtained ?? 'Obtaining Character'),
     lore: String(rec.lore ?? ''),

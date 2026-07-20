@@ -48,7 +48,9 @@ function useSortableList<T>(rows: T[], columns: Column<T>[]) {
     return [...rows].sort((a, b) => {
       const av = valueOf(a)
       const bv = valueOf(b)
-      const cmp = av < bv ? -1 : av > bv ? 1 : 0
+      let cmp = 0
+      if (av < bv) cmp = -1
+      else if (av > bv) cmp = 1
       return dir === 'asc' ? cmp : -cmp
     })
   }, [rows, columns, sortKey, dir])

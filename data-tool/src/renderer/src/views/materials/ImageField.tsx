@@ -102,22 +102,17 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     setUrlInput('')
   }
 
-  const currentLabel =
-    state.mode === 'existing'
-      ? state.relative.split('/').pop() ?? state.relative
-      : state.mode === 'localFile'
-        ? state.sourcePath.split(/[/\\]/).pop() ?? state.sourcePath
-        : state.mode === 'url'
-          ? state.url
-          : null
+  let currentLabel: string | null = null
+  if (state.mode === 'existing') currentLabel = state.relative.split('/').pop() ?? state.relative
+  else if (state.mode === 'localFile') currentLabel = state.sourcePath.split(/[/\\]/).pop() ?? state.sourcePath
+  else if (state.mode === 'url') currentLabel = state.url
 
-  const nameExt =
-    state.mode === 'localFile' ? extOf(state.sourcePath) :
-    state.mode === 'url' ? extOf(state.url) : 'png'
+  let nameExt = 'png'
+  if (state.mode === 'localFile') nameExt = extOf(state.sourcePath)
+  else if (state.mode === 'url') nameExt = extOf(state.url)
 
-  const nameValue =
-    state.mode === 'localFile' ? (state.imageName ?? '') :
-    state.mode === 'url' ? (state.imageName ?? '') : ''
+  let nameValue = ''
+  if (state.mode === 'localFile' || state.mode === 'url') nameValue = state.imageName ?? ''
 
   const onNameChange = (raw: string) => {
     if (state.mode !== 'localFile' && state.mode !== 'url') return

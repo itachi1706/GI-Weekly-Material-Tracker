@@ -35,6 +35,16 @@ export default function App() {
     return <FolderPicker info={info} loading={loading} onSelect={selectFolder} />
   }
 
+  const renderActive = () => {
+    if (active === 'materials') return <MaterialsView rootPath={info.rootPath} />
+    if (active === 'outfits') return <OutfitsView rootPath={info.rootPath} />
+    if (active === 'weapons') return <WeaponsView rootPath={info.rootPath} />
+    if (active === 'characters') return <CharactersView rootPath={info.rootPath} />
+    if (active === 'banners') return <BannersView rootPath={info.rootPath} bannerType={bannerType} />
+    if (active === 'validate') return <ValidationView rootPath={info.rootPath} />
+    return <DatasetSummary info={info} onReload={reload} loading={loading} />
+  }
+
   return (
     <div className="app-layout">
       <Sidebar
@@ -47,23 +57,7 @@ export default function App() {
         onShowValidate={() => setActive('validate')}
         onChangeFolder={selectFolder}
       />
-      <main className="app-main">
-        {active === 'materials' ? (
-          <MaterialsView rootPath={info.rootPath} />
-        ) : active === 'outfits' ? (
-          <OutfitsView rootPath={info.rootPath} />
-        ) : active === 'weapons' ? (
-          <WeaponsView rootPath={info.rootPath} />
-        ) : active === 'characters' ? (
-          <CharactersView rootPath={info.rootPath} />
-        ) : active === 'banners' ? (
-          <BannersView rootPath={info.rootPath} bannerType={bannerType} />
-        ) : active === 'validate' ? (
-          <ValidationView rootPath={info.rootPath} />
-        ) : (
-          <DatasetSummary info={info} onReload={reload} loading={loading} />
-        )}
-      </main>
+      <main className="app-main">{renderActive()}</main>
     </div>
   )
 }

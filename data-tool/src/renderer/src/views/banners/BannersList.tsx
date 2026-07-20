@@ -74,7 +74,9 @@ export default function BannersList({
       let av: string | number, bv: string | number
       if (sortCol === 'version') { av = a.version; bv = b.version }
       else { av = a[sortCol].toLowerCase?.() ?? a[sortCol]; bv = b[sortCol].toLowerCase?.() ?? b[sortCol] }
-      const cmp = av < bv ? -1 : av > bv ? 1 : 0
+      let cmp = 0
+      if (av < bv) cmp = -1
+      else if (av > bv) cmp = 1
       return sortDir === 'asc' ? cmp : -cmp
     })
   }, [list, query, bannerType, sortCol, sortDir])

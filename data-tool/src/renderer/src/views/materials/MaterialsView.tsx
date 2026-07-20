@@ -110,9 +110,9 @@ export default function MaterialsView({ rootPath }: Readonly<{ rootPath: string 
   const onFormPreview = async (ctx: FormContext, draft: FormDraft) => {
     const { schema } = ctx
     const st = draft.imageState
-    const ext =
-      st.mode === 'localFile' ? extOf(st.sourcePath) :
-      st.mode === 'url' ? extOf(st.url) : 'png'
+    let ext = 'png'
+    if (st.mode === 'localFile') ext = extOf(st.sourcePath)
+    else if (st.mode === 'url') ext = extOf(st.url)
 
     const imgFolder = resolveImageFolder(schema, draft.values)
 
@@ -128,8 +128,9 @@ export default function MaterialsView({ rootPath }: Readonly<{ rootPath: string 
     }
     const destRelative = `${imgFolder}/${destFilename}`
 
-    const imageRelative =
-      st.mode === 'existing' ? st.relative : st.mode === 'none' ? '' : destRelative
+    let imageRelative = destRelative
+    if (st.mode === 'existing') imageRelative = st.relative
+    else if (st.mode === 'none') imageRelative = ''
 
     const record = applyFormValues(ctx.base, schema, { ...draft.values, image: imageRelative })
 
