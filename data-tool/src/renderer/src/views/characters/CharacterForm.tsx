@@ -1002,7 +1002,7 @@ export default function CharacterForm({
         {/* ── Wiki auto-fill (toggled from the header) ── */}
         {showWiki && (
           <div className="field field-wide wiki-fetch-field">
-            <label>Auto-fill from Genshin Wiki</label>
+            <div className="field-label">Auto-fill from Genshin Wiki</div>
             <div className="wiki-fetch-row">
               <input type="text" placeholder="Paste a fandom.com character page URL…" autoFocus
                 value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
@@ -1045,7 +1045,7 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Rarity<span className="req">*</span></label>
+          <div className="field-label">Rarity<span className="req">*</span></div>
           <RaritySelect
             value={draft.rarity}
             disabled={mode === 'edit'}
@@ -1119,12 +1119,12 @@ export default function CharacterForm({
         </div>
 
         <div className="field field-wide">
-          <label>Titles</label>
+          <div className="field-label">Titles</div>
           <TagsInput value={draft.titles} onChange={(v) => set('titles', v)} />
         </div>
 
         <div className="field field-wide">
-          <label>Outfits</label>
+          <div className="field-label">Outfits</div>
           <EntityLinkInput
             rootPath={rootPath}
             value={draft.outfits}
@@ -1136,7 +1136,7 @@ export default function CharacterForm({
 
         {/* ── Image ── */}
         <div className="field field-wide">
-          <label>Portrait image</label>
+          <div className="field-label">Portrait image</div>
           <ImageField
             rootPath={rootPath}
             imageFolder={imageFolder}
@@ -1159,7 +1159,7 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Released</label>
+          <div className="field-label">Released</div>
           <label className="switch">
             <input type="checkbox" checked={draft.released}
               onChange={(e) => set('released', e.target.checked)} />
@@ -1168,7 +1168,7 @@ export default function CharacterForm({
         </div>
 
         <div className="field">
-          <label>Crossover</label>
+          <div className="field-label">Crossover</div>
           <label className="switch">
             <input type="checkbox" checked={draft.crossover}
               onChange={(e) => set('crossover', e.target.checked)} />
@@ -1190,9 +1190,7 @@ export default function CharacterForm({
 
         {/* ── Ascension materials map ── */}
         <div className="field field-wide">
-          <label>Ascension Materials
-            <span className="field-help-inline muted"> — click a slot to pick; selecting any tier auto-fills the set</span>
-          </label>
+          <div className="field-label">Ascension Materials<span className="field-help-inline muted"> — click a slot to pick; selecting any tier auto-fills the set</span></div>
           <div className="weapon-mat-slots">
             {renderMatGroup('Gem', ascSlots.filter((s) => s.prefix === 'gem'))}
             {renderMatGroup('Boss / Local', ascSlots.filter((s) => s.prefix !== 'gem' && s.prefix !== 'common'))}
@@ -1202,7 +1200,7 @@ export default function CharacterForm({
 
         {/* ── Talent materials map ── */}
         <div className="field field-wide">
-          <label>Talent Materials</label>
+          <div className="field-label">Talent Materials</div>
           <div className="weapon-mat-slots">
             {renderMatGroup('Mastery', talSlots.filter((s) => s.slotKey.startsWith('mastery')))}
             {renderMatGroup('Weekly / Crown',
@@ -1213,7 +1211,7 @@ export default function CharacterForm({
 
         {/* ── Ascension phases table ── */}
         <div className="field field-wide">
-          <label>Ascension Phases</label>
+          <div className="field-label">Ascension Phases</div>
           <table className="mat-table weapon-asc-table">
             <thead>
               <tr>
@@ -1250,7 +1248,7 @@ export default function CharacterForm({
 
         {/* ── Talent levels table ── */}
         <div className="field field-wide">
-          <label>Talent Level-Up</label>
+          <div className="field-label">Talent Level-Up</div>
           <table className="mat-table weapon-asc-table">
             <thead>
               <tr>

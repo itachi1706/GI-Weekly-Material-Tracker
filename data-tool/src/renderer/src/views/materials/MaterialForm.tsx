@@ -313,7 +313,7 @@ export default function MaterialForm({
       <div className="mat-form-grid">
         {showWiki && (
           <div className="field field-wide wiki-fetch-field">
-            <label>Auto-fill from Genshin Wiki</label>
+            <div className="field-label">Auto-fill from Genshin Wiki</div>
             <div className="wiki-fetch-row">
               <input type="text" placeholder="Paste a fandom.com material page URL…" autoFocus
                 value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
@@ -333,10 +333,10 @@ export default function MaterialForm({
           if (f.widget === 'image') {
             return (
               <div className="field field-wide" key={f.key}>
-                <label>
+                <div className="field-label">
                   {f.label}
                   {f.required && <span className="req">*</span>}
-                </label>
+                </div>
                 <ImageField
                   rootPath={rootPath}
                   imageFolder={imageFolder}
@@ -354,10 +354,10 @@ export default function MaterialForm({
           if (f.widget === 'tags') {
             return (
               <div className="field field-wide" key={f.key}>
-                <label>
+                <div className="field-label">
                   {f.label}
                   {f.required && <span className="req">*</span>}
-                </label>
+                </div>
                 <TagsInput
                   value={Array.isArray(v) ? (v as string[]) : []}
                   onChange={(tags) => setField(f.key, tags)}
@@ -370,10 +370,10 @@ export default function MaterialForm({
           if (f.widget === 'days') {
             return (
               <div className="field field-wide" key={f.key}>
-                <label>
+                <div className="field-label">
                   {f.label}
                   {f.required && <span className="req">*</span>}
-                </label>
+                </div>
                 <DaysSelect
                   value={Array.isArray(v) ? (v as number[]) : []}
                   onChange={(days) => setField(f.key, days)}
@@ -385,10 +385,10 @@ export default function MaterialForm({
 
           return (
             <div className={`field ${f.widget === 'textarea' ? 'field-wide' : ''}`} key={f.key}>
-              <label>
+              <div className="field-label">
                 {f.label}
                 {f.required && <span className="req">*</span>}
-              </label>
+              </div>
               {f.widget === 'textarea' && (
                 <textarea
                   rows={3}

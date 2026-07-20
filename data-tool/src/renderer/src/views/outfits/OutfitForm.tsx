@@ -366,7 +366,7 @@ export default function OutfitForm({
         {/* ── Wiki auto-fill (toggled from the header) ── */}
         {showWiki && (
           <div className="field field-wide wiki-fetch-field">
-            <label>Auto-fill from Genshin Wiki</label>
+            <div className="field-label">Auto-fill from Genshin Wiki</div>
             <div className="wiki-fetch-row">
               <input type="text" placeholder="Paste a fandom.com outfit page URL…" autoFocus
                 value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
@@ -441,13 +441,13 @@ export default function OutfitForm({
         </div>
 
         <div className="field">
-          <label>Rarity<span className="req">*</span></label>
+          <div className="field-label">Rarity<span className="req">*</span></div>
           <RaritySelect value={draft.rarity} onChange={(v) => set('rarity', v)} options={[4, 5]} />
         </div>
 
         {/* Characters (multi-entry; character = characters[0]) */}
         <div className="field field-wide">
-          <label>Characters<span className="req">*</span></label>
+          <div className="field-label">Characters<span className="req">*</span></div>
           <EntityLinkInput
             rootPath={rootPath}
             value={draft.characters}
@@ -479,7 +479,7 @@ export default function OutfitForm({
 
         {/* ── Images ── */}
         <div className="field field-wide">
-          <label>Images</label>
+          <div className="field-label">Images</div>
           <div className="image-field-row">
             <div className="image-field-item">
               <span className="image-field-item-label">Portrait</span>
@@ -524,7 +524,7 @@ export default function OutfitForm({
 
         {/* ── Shop ── */}
         <div className="field">
-          <label>In shop</label>
+          <div className="field-label">In shop</div>
           <label className="switch">
             <input type="checkbox" checked={draft.shop} onChange={(e) => set('shop', e.target.checked)} />
             <span>{draft.shop ? 'Yes' : 'No'}</span>
@@ -550,7 +550,7 @@ export default function OutfitForm({
 
         {/* ── Event ── */}
         <div className="field">
-          <label>Event (free)</label>
+          <div className="field-label">Event (free)</div>
           <label className="switch">
             <input type="checkbox" checked={draft.eventGiveFree} onChange={(e) => set('eventGiveFree', e.target.checked)} />
             <span>{draft.eventGiveFree ? 'Yes' : 'No'}</span>
@@ -586,7 +586,7 @@ export default function OutfitForm({
         </div>
 
         <div className="field">
-          <label>Released</label>
+          <div className="field-label">Released</div>
           <label className="switch">
             <input type="checkbox" checked={draft.released} onChange={(e) => set('released', e.target.checked)} />
             <span>{draft.released ? 'Yes' : 'No'}</span>

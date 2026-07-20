@@ -81,7 +81,7 @@ function cleanInline(s: string): string {
 function rawParam(infobox: string, key: string): string | null {
   // NB: horizontal-only whitespace after `=` (`[ \t]*`, not `\s*`) — otherwise an EMPTY param
   // (`|realname =\n|birthday = …`) would let `\s*` eat the newline and capture the next param's value.
-  const re = new RegExp(`\\|\\s*${key}\\s*=[ \\t]*([\\s\\S]*?)(?=\\n\\s*\\|[a-zA-Z0-9_]+\\s*=|\\n\\}\\})`, 'i')
+  const re = new RegExp(String.raw`\|\s*${key}\s*=[ \t]*([\s\S]*?)(?=\n\s*\|[a-zA-Z0-9_]+\s*=|\n\}\})`, 'i')
   const m = re.exec(infobox)
   return m ? m[1] : null
 }
@@ -109,7 +109,7 @@ function wikiParamMultiline(infobox: string, key: string): string | null {
 
 /** Isolate an infobox template block (e.g. "Character Infobox" / "Weapon Infobox") from wikitext. */
 function infoboxBlock(wikitext: string, template = 'Character Infobox'): string {
-  const start = wikitext.search(new RegExp(`\\{\\{${template}`, 'i'))
+  const start = wikitext.search(new RegExp(String.raw`\{\{${template}`, 'i'))
   if (start < 0) return ''
   // Walk braces to find the matching close.
   let depth = 0
@@ -441,7 +441,7 @@ export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult
 
 /** Extract a top-level `==Heading==` section body (up to the next `==…==`), cleaned to prose. */
 function wikiSection(wikitext: string, heading: string): string | null {
-  const re = new RegExp(`\\n==\\s*${heading}\\s*==\\s*\\n([\\s\\S]*?)(?=\\n==[^=]|$)`, 'i')
+  const re = new RegExp(String.raw`\n==\s*${heading}\s*==\s*\n([\s\S]*?)(?=\n==[^=]|$)`, 'i')
   const m = re.exec(wikitext)
   if (!m) return null
   // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.

@@ -243,7 +243,7 @@ export default function BannerForm({
 
         {/* Start / End: date + hour (GMT+8); start → :00:00, end → :59:59 */}
         <div className="field">
-          <label>Start<span className="req">*</span></label>
+          <div className="field-label">Start<span className="req">*</span></div>
           <div className="banner-datetime">
             <input type="date" value={draft.startDate} onChange={(e) => set('startDate', e.target.value)} />
             <select value={draft.startHour} onChange={(e) => set('startHour', e.target.value)}>
@@ -256,7 +256,7 @@ export default function BannerForm({
         </div>
 
         <div className="field">
-          <label>End<span className="req">*</span></label>
+          <div className="field-label">End<span className="req">*</span></div>
           <div className="banner-datetime">
             <input type="date" value={draft.endDate} onChange={(e) => set('endDate', e.target.value)} />
             <select value={draft.endHour} onChange={(e) => set('endHour', e.target.value)}>
@@ -275,7 +275,7 @@ export default function BannerForm({
 
         {/* Rate-up (primary edit surface) */}
         <div className="field field-wide">
-          <label>Rate-up characters</label>
+          <div className="field-label">Rate-up characters</div>
           <EntityLinkInput
             rootPath={rootPath}
             value={draft.rateupcharacters}
@@ -286,7 +286,7 @@ export default function BannerForm({
         </div>
 
         <div className="field field-wide">
-          <label>Rate-up weapons</label>
+          <div className="field-label">Rate-up weapons</div>
           <EntityLinkInput
             rootPath={rootPath}
             value={draft.rateupweapon}
@@ -329,7 +329,7 @@ export default function BannerForm({
             <summary>Gacha pool ({draft.characters.length} characters, {draft.weapons.length} weapons)</summary>
             {poolOpen && (
             <div className="banner-pool-body">
-              <label>Pool characters</label>
+              <div className="field-label">Pool characters</div>
               <EntityLinkInput
                 rootPath={rootPath}
                 value={draft.characters}
@@ -337,7 +337,7 @@ export default function BannerForm({
                 options={charOpts}
                 placeholder="Add a character to the pool…"
               />
-              <label>Pool weapons</label>
+              <div className="field-label">Pool weapons</div>
               <EntityLinkInput
                 rootPath={rootPath}
                 value={draft.weapons}

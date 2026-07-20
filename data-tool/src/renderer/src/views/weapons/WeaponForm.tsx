@@ -450,7 +450,7 @@ export default function WeaponForm({
         {/* ── Wiki auto-fill (toggled from the header) ── */}
         {showWiki && (
           <div className="field field-wide wiki-fetch-field">
-            <label>Auto-fill from Genshin Wiki</label>
+            <div className="field-label">Auto-fill from Genshin Wiki</div>
             <div className="wiki-fetch-row">
               <input type="text" placeholder="Paste a fandom.com weapon page URL…" autoFocus
                 value={wikiUrl} onChange={(e) => setWikiUrl(e.target.value)}
@@ -496,7 +496,7 @@ export default function WeaponForm({
         </div>
 
         <div className="field">
-          <label>Rarity<span className="req">*</span></label>
+          <div className="field-label">Rarity<span className="req">*</span></div>
           <RaritySelect
             value={draft.rarity}
             disabled={mode === 'edit'}
@@ -578,7 +578,7 @@ export default function WeaponForm({
 
         {/* ── Image ── */}
         <div className="field field-wide">
-          <label>Image</label>
+          <div className="field-label">Image</div>
           <ImageField
             rootPath={rootPath}
             imageFolder={imageFolder}
@@ -591,7 +591,7 @@ export default function WeaponForm({
 
         {/* ── Release ── */}
         <div className="field">
-          <label>Released</label>
+          <div className="field-label">Released</div>
           <label className="switch">
             <input type="checkbox" checked={draft.released}
               onChange={(e) => set('released', e.target.checked)} />
@@ -613,9 +613,7 @@ export default function WeaponForm({
 
         {/* ── Ascension materials map ── */}
         <div className="field field-wide">
-          <label>Ascension Materials
-            <span className="field-help-inline muted"> — click a slot to pick; selecting any tier auto-fills the set</span>
-          </label>
+          <div className="field-label">Ascension Materials<span className="field-help-inline muted"> — click a slot to pick; selecting any tier auto-fills the set</span></div>
           <div className="weapon-mat-slots">
             {[
               { prefix: 'forgery', label: 'Forgery', count: Number(draft.rarity) <= 2 ? 3 : 4 },
@@ -662,7 +660,7 @@ export default function WeaponForm({
 
         {/* ── Ascension phases table ── */}
         <div className="field field-wide">
-          <label>Ascension Phases</label>
+          <div className="field-label">Ascension Phases</div>
           <table className="mat-table weapon-asc-table">
             <thead>
               <tr>
@@ -676,7 +674,7 @@ export default function WeaponForm({
             </thead>
             <tbody>
               {activePhases.map((p, i) => (
-                <tr key={i}>
+                <tr key={p.level}>
                   <td>{i + 1}</td>
                   <td>
                     <input type="number" min={1} max={90} className="asc-input"

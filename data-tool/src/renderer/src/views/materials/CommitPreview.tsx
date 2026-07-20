@@ -77,8 +77,8 @@ export default function CommitPreview({
       {preview.imageAction && (
         <div className="preview-image-action">
           <strong>Image{preview.imageAction.includes('\n') ? 's' : ''}:</strong>
-          {preview.imageAction.split('\n').filter(Boolean).map((line, i) => (
-            <div key={i} className="preview-image-action-line">{line}</div>
+          {preview.imageAction.split('\n').filter(Boolean).map((line) => (
+            <div key={line} className="preview-image-action-line">{line}</div>
           ))}
         </div>
       )}

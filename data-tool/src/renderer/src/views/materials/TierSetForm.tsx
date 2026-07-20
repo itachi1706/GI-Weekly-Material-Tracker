@@ -396,7 +396,7 @@ export default function TierSetForm({
     if (field.widget === 'tags') {
       return (
         <div className="field field-wide" key={key}>
-          <label>{field.label}{field.required && <span className="req">*</span>}</label>
+          <div className="field-label">{field.label}{field.required && <span className="req">*</span>}</div>
           <TagsInput
             value={Array.isArray(v) ? (v as string[]) : []}
             onChange={(tags) => setSharedField(key, tags)}
@@ -408,7 +408,7 @@ export default function TierSetForm({
     if (field.widget === 'days') {
       return (
         <div className="field field-wide" key={key}>
-          <label>{field.label}{field.required && <span className="req">*</span>}</label>
+          <div className="field-label">{field.label}{field.required && <span className="req">*</span>}</div>
           <DaysSelect
             value={Array.isArray(v) ? (v as number[]) : []}
             onChange={(days) => setSharedField(key, days)}
@@ -419,7 +419,7 @@ export default function TierSetForm({
     if (field.widget === 'bool') {
       return (
         <div className="field" key={key}>
-          <label>{field.label}</label>
+          <div className="field-label">{field.label}</div>
           <label className="switch">
             <input
               type="checkbox"
@@ -482,7 +482,7 @@ export default function TierSetForm({
         const tierDefaultBasename = key ? `Item_${key}` : undefined
 
         return (
-          <div className="tier-card" key={i}>
+          <div className="tier-card" key={cfg.rarity}>
             <div className="tier-card-header">
               <span className="tier-card-title">Tier {i + 1}</span>
               <span className="tier-stars">{stars(cfg.rarity)}</span>
@@ -561,7 +561,7 @@ export default function TierSetForm({
 
                 {/* Image */}
                 <div className="field field-wide">
-                  <label>Image</label>
+                  <div className="field-label">Image</div>
                   <ImageField
                     rootPath={rootPath}
                     imageFolder={imageFolder}
@@ -573,7 +573,7 @@ export default function TierSetForm({
 
                 {/* Wiki + HoYoWiki */}
                 <div className="field">
-                  <label>Wiki URL</label>
+                  <div className="field-label">Wiki URL</div>
                   <div className="wiki-fetch-row">
                     <input
                       type="text"

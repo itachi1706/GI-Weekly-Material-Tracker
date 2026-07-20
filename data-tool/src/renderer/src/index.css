@@ -469,7 +469,8 @@ code {
 .field-wide {
   grid-column: 1 / -1;
 }
-.field label {
+.field label,
+.field-label {
   font-size: 13px;
   font-weight: 500;
 }
