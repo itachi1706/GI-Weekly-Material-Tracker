@@ -106,10 +106,10 @@ function initialValues(schema: MaterialTypeSchema, base: MaterialRecord): Record
     if (f.widget === 'image' || f.widget === 'computed') continue
     const raw = base[f.key]
     if (f.widget === 'bool') v[f.key] = Boolean(raw)
-    else if (f.widget === 'number' || f.widget === 'rarity') v[f.key] = raw == null ? '' : String(raw)
+    else if (f.widget === 'number' || f.widget === 'rarity') v[f.key] = raw == null || typeof raw === 'object' ? '' : String(raw)
     else if (f.widget === 'tags') v[f.key] = Array.isArray(raw) ? raw : []
     else if (f.widget === 'days') v[f.key] = Array.isArray(raw) ? raw : []
-    else v[f.key] = raw == null ? '' : String(raw)
+    else v[f.key] = raw == null || typeof raw === 'object' ? '' : String(raw)
   }
   return v
 }

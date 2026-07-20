@@ -44,7 +44,10 @@ function useSortableList<T>(rows: T[], columns: Column<T>[]) {
     if (!col) return rows
     const valueOf =
       col.sortValue ??
-      ((row: T) => String((row as Record<string, unknown>)[col.key] ?? '').toLowerCase())
+      ((row: T) => {
+        const raw = (row as Record<string, unknown>)[col.key]
+        return raw == null || typeof raw === 'object' ? '' : String(raw).toLowerCase()
+      })
     return [...rows].sort((a, b) => {
       const av = valueOf(a)
       const bv = valueOf(b)

@@ -169,7 +169,7 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
       if (type === 'template' || !Array.isArray(arr)) continue
       arr.forEach((b: Record<string, unknown> | null, i) => {
         if (!b || typeof b !== 'object') return
-        const key = `${type}[${i}] ${b.name ?? ''}`.trim()
+        const key = `${type}[${i}] ${typeof b.name === 'string' ? b.name : ''}`.trim()
         checkText('EventBanners.json', key, 'name', b.name)
         checkText('EventBanners.json', key, 'description', b.description)
         checkImage('EventBanners.json', key, 'image', b.image)

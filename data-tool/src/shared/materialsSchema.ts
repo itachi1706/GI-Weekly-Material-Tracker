@@ -1,5 +1,9 @@
 import type { MaterialInnerType, MaterialRecord } from './types'
 
+/** Safe stringify for `unknown` form values (objects/nullish → '' rather than "[object Object]"). */
+const str = (v: unknown): string =>
+  v == null || typeof v === 'object' || typeof v === 'function' ? '' : String(v)
+
 /** Form widget kinds the renderer knows how to draw. */
 export type Widget = 'text' | 'textarea' | 'number' | 'select' | 'bool' | 'image' | 'tags' | 'days' | 'computed' | 'rarity'
 
@@ -288,19 +292,19 @@ const domainMaterial: MaterialTypeSchema = {
   templateKey: 'Forgery_1',
   imageFolder: 'Materials/Forgery_Domain',
   imageFolderFn: (values) =>
-    String(values['innerSubType'] ?? values['type'] ?? '').includes('mastery') ||
-    String(values['type'] ?? '').includes('Mastery')
+    str(values['innerSubType'] ?? values['type']).includes('mastery') ||
+    str(values['type']).includes('Mastery')
       ? 'Materials/Mastery_Domain'
       : 'Materials/Forgery_Domain',
   deriveFile: (values) =>
-    String(values['innerSubType'] ?? values['type'] ?? '').includes('mastery') ||
-    String(values['type'] ?? '').includes('Mastery')
+    str(values['innerSubType'] ?? values['type']).includes('mastery') ||
+    str(values['type']).includes('Mastery')
       ? 'Materials-Mastery_Domain.json'
       : 'Materials-Forgery_Domain.json',
   createMode: 'tier_set',
   tierSet: {
     tiers: (shared) => {
-      const isForgery = !shared['type'] || String(shared['type']).includes('Forgery')
+      const isForgery = !shared['type'] || str(shared['type']).includes('Forgery')
       return isForgery
         ? [
             { templateKey: 'Forgery_1', rarity: 2 },
@@ -328,7 +332,7 @@ const domainMaterial: MaterialTypeSchema = {
     },
     {
       key: 'rarity', label: 'Rarity', widget: 'rarity', required: true,
-      rarityOptions: (v) => String(v['type'] ?? '').includes('Forgery') ? [2, 3, 4, 5] : [2, 3, 4]
+      rarityOptions: (v) => str(v['type']).includes('Forgery') ? [2, 3, 4, 5] : [2, 3, 4]
     },
     { key: 'image', label: 'Image', widget: 'image', required: true, imageFolder: 'Materials/Forgery_Domain' },
     {
@@ -430,7 +434,7 @@ export function applyFormValues(
     if (field.widget === 'image') {
       // Apply image path directly when a non-empty value is provided; otherwise keep base value.
       const img = values[field.key]
-      if (img != null && img !== '') record.image = String(img)
+      if (img != null && img !== '') record.image = str(img)
       continue
     }
     const v = values[field.key]
