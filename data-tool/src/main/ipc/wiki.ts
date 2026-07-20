@@ -176,7 +176,7 @@ function parseTalents($: CheerioAPI): WikiTalent[] {
         const labels = tabber.find('.wds-tabs__tab').map((_i, l) => $(l).text().trim()).get()
         const panels = tabber.find('.wds-tab__content')
         const di = labels.findIndex((l) => /^Description/i.test(l))
-        const panel = panels.get(di >= 0 ? di : 0)
+        const panel = panels.get(Math.max(di, 0))
         if (panel) cur.effect = cleanBlock($, panel)
       } else {
         // Short passive with no tabber: fall back to the row's own prose.

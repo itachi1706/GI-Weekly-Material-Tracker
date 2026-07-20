@@ -156,7 +156,7 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
               }
               draggable
               onDragStart={(e) => { setDragIndex(idx); e.dataTransfer.effectAllowed = 'move' }}
-              onDragOver={(e) => { if (!dragging) return; e.preventDefault(); setDropGap(gapForChip(e, idx)) }}
+              onDragOver={(e) => { if (!dragging) { return } e.preventDefault(); setDropGap(gapForChip(e, idx)) }}
               onDrop={(e) => { e.preventDefault(); reorderToGap(gapForChip(e, idx)) }}
               title="Drag to reorder"
             >
@@ -177,7 +177,7 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
         {/* Trailing flex-fill zone (wraps the input) — dropping here moves the chip to the end. */}
         <div
           className={`entity-link-tail${dragging && dropGap === value.length ? ' entity-link-tail-active' : ''}`}
-          onDragOver={(e) => { if (!dragging) return; e.preventDefault(); setDropGap(value.length) }}
+          onDragOver={(e) => { if (!dragging) { return } e.preventDefault(); setDropGap(value.length) }}
           onDrop={(e) => { e.preventDefault(); reorderToGap(value.length) }}
         >
           <input

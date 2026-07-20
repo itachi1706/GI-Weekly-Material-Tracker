@@ -80,9 +80,12 @@ export type ImagePlan =
   | { source: 'localFile'; sourcePath: string; destRelative: string }
   | { source: 'url'; url: string; destRelative: string }
 
+/** The kind of change in a *Change payload. */
+export type ChangeOp = 'create' | 'update' | 'delete'
+
 /** A pending change to a material record, fed to previewCommit/commit. */
 export interface MaterialChange {
-  op: 'create' | 'update' | 'delete'
+  op: ChangeOp
   /** Target data file, e.g. "Materials-Local_Specialities.json". */
   file: string
   /** Record key after the change (omit meaning for delete: the key to remove). */
@@ -155,7 +158,7 @@ export interface OutfitSummary {
 }
 
 export interface OutfitChange {
-  op: 'create' | 'update' | 'delete'
+  op: ChangeOp
   file: string
   key: string
   originalKey?: string
@@ -220,7 +223,7 @@ export interface WeaponSummary {
 }
 
 export interface WeaponChange {
-  op: 'create' | 'update' | 'delete'
+  op: ChangeOp
   file: string
   key: string
   originalKey?: string
@@ -336,7 +339,7 @@ export interface CharacterSummary {
 }
 
 export interface CharacterChange {
-  op: 'create' | 'update' | 'delete'
+  op: ChangeOp
   file: string
   key: string
   originalKey?: string
@@ -520,7 +523,7 @@ export interface BannerSummary {
 }
 
 export interface BannerChange {
-  op: 'create' | 'update' | 'delete'
+  op: ChangeOp
   bannerType: BannerType
   /** Array index within the type's array — required for update/delete. */
   index?: number

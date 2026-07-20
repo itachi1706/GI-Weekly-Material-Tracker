@@ -470,9 +470,9 @@ export default function CharacterForm({
     const ascChanged = changedSlots(ascSlots, base.materials?.ascension)
     const talChanged = changedSlots(talSlots, base.materials?.talents)
 
-    const ascensionMap: Record<string, string> = { ...(base.materials?.ascension ?? {}) }
+    const ascensionMap: Record<string, string> = { ...base.materials?.ascension }
     for (const [k, v] of Object.entries(ascChanged)) ascensionMap[k] = v
-    const talentsMap: Record<string, string> = { ...(base.materials?.talents ?? {}) }
+    const talentsMap: Record<string, string> = { ...base.materials?.talents }
     for (const [k, v] of Object.entries(talChanged)) talentsMap[k] = v
     const materials = { ...base.materials, ascension: ascensionMap, talents: talentsMap }
 
@@ -560,7 +560,7 @@ export default function CharacterForm({
         const baseEntry = baseObj[e.originalKey]
         const folder = kind === 'attack' ? (ATTACK_FOLDER[e.type] ?? 'Talents/Normal') : 'Talents/Passive'
         out[finalKey] = {
-          ...(baseEntry ?? {}),
+          ...baseEntry,
           name: e.name.trim() || null,
           effect: e.effect.trim() || null,
           image: resolveIconImage(e.imageState, folder, `Talent_${finalKey}`, baseEntry?.image),

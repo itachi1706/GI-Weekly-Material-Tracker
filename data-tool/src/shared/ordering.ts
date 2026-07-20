@@ -31,7 +31,7 @@ export function insertRecord<T>(
   record: T,
   mode: InsertMode
 ): Record<string, T> {
-  if (Object.prototype.hasOwnProperty.call(records, key)) {
+  if (Object.hasOwn(records, key)) {
     const out: Record<string, T> = {}
     for (const k of Object.keys(records)) out[k] = k === key ? record : records[k]
     return out

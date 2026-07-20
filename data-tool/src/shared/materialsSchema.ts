@@ -463,7 +463,7 @@ export function applyFormValues(
   }
   record.innerType = schema.innerType
   record.usage = { characters: [], weapons: [] }
-  if (record.subCollection == null) record.subCollection = {}
+  record.subCollection ??= {}
   return record
 }
 

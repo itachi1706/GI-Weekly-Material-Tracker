@@ -183,8 +183,9 @@ export default function BannerForm({
     }
     // versionNumber (absent on 98) and versionName (absent on 239) are omitted, not null, on many
     // banners — preserve presence/position; only write when base had it or the user entered a value.
-    if ('versionNumber' in base) record.versionNumber = numOrNull(draft.versionNumber)
-    else if (draft.versionNumber.trim()) record.versionNumber = numOrNull(draft.versionNumber)
+    if ('versionNumber' in base || draft.versionNumber.trim()) {
+      record.versionNumber = numOrNull(draft.versionNumber)
+    }
     if ('versionName' in base) record.versionName = emptyToNull(draft.versionName)
     else if (draft.versionName.trim()) record.versionName = draft.versionName.trim()
 
