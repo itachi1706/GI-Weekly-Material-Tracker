@@ -49,12 +49,41 @@ export function pageTitleFromUrl(raw: string): string {
   return decodeURIComponent(rawTitle).replaceAll('_', ' ').trim()
 }
 
+/**
+ * Remove every match of `re` (which must be global) repeatedly until the string stops changing, so
+ * a single pass can't leave residual markup when a removal glues two fragments into a fresh match
+ * (e.g. `<scr<script>ipt>`, or overlapping `<!--…<!--…-->`). Terminates because the string only shrinks.
+ */
+function stripUntilStable(s: string, re: RegExp): string {
+  let prev: string
+  do {
+    prev = s
+    s = s.replace(re, '')
+  } while (s !== prev)
+  return s
+}
+
+/** Named HTML entities the inline cleaner decodes. */
+const INLINE_ENTITIES: Record<string, string> = { nbsp: ' ', mdash: '—', amp: '&', shy: '' }
+
+/**
+ * Decode our handful of expected entities in ONE pass. A single combined replace (rather than a
+ * chain that decodes `&amp;`→`&` after the others) avoids double-unescaping — a decoded `&` can't
+ * recombine with following text into an entity that an earlier step would have expanded.
+ */
+function decodeEntities(s: string): string {
+  return s
+    .replaceAll(/&(nbsp|mdash|amp|shy);/gi, (_m, name: string) => INLINE_ENTITIES[name.toLowerCase()] ?? _m)
+    .replaceAll(/­/g, '') // bare soft-hyphen character
+}
+
 /** Strip inline wiki markup from an infobox param value → plain text. */
 function cleanInline(s: string): string {
-  return s
+  let out = s
     .replaceAll(/<ref[^>]*\/>/gi, '')
     .replaceAll(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
-    .replaceAll(/<!--[\s\S]*?-->/g, '')
+  out = stripUntilStable(out, /<!--[\s\S]*?-->/g) // HTML comments (repeat: nested/overlapping)
+  out = out
     .replaceAll(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1') // [[a|b]] → b
     .replaceAll(/\[\[([^\]]*)\]\]/g, '$1') // [[a]] → a
     // Text-wrapping templates: keep the (first) displayed arg. {{w|X}}, {{sic|X}} ("X" [sic]),
@@ -65,11 +94,8 @@ function cleanInline(s: string): string {
     .replaceAll(/\[https?:\/\/\S+\]/g, '')
     .replaceAll(/'''?/g, '')
     .replaceAll(/<br\s*\/?>/gi, ' ')
-    .replaceAll(/<[^>]+>/g, '')
-    .replaceAll(/&nbsp;/gi, ' ')
-    .replaceAll(/&mdash;/gi, '—')
-    .replaceAll(/&amp;/gi, '&')
-    .replaceAll(/&shy;|­/gi, '') // soft hyphens (e.g. "Mist&shy;split&shy;ter" → "Mistsplitter")
+  out = stripUntilStable(out, /<[^>]+>/g) // HTML tags (repeat: a removal can't re-form a tag)
+  return decodeEntities(out)
     .replaceAll(/\s+/g, ' ')
     .trim()
 }
@@ -96,8 +122,7 @@ function wikiParam(infobox: string, key: string): string | null {
 function wikiParamMultiline(infobox: string, key: string): string | null {
   const raw = rawParam(infobox, key)
   if (raw == null) return null
-  const out = raw
-    .replaceAll(/<!--[\s\S]*?-->/g, '') // multi-line HTML comments (per-line cleanInline can't catch these)
+  const out = stripUntilStable(raw, /<!--[\s\S]*?-->/g) // multi-line HTML comments (per-line cleanInline can't catch these)
     .replaceAll(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
@@ -453,8 +478,7 @@ function wikiSection(wikitext: string, heading: string): string | null {
   const m = re.exec(wikitext)
   if (!m) return null
   // Preserve paragraph breaks: <br> and blank lines → newlines; then clean each line's inline markup.
-  const raw = m[1]
-    .replaceAll(/<!--[\s\S]*?-->/g, '') // strip multi-line HTML comments first (e.g. `<!--\n-->` separators)
+  const raw = stripUntilStable(m[1], /<!--[\s\S]*?-->/g) // strip multi-line HTML comments first (e.g. `<!--\n-->` separators)
     .replaceAll(/<br\s*\/?>/gi, '\n')
     .split('\n')
     .map((line) => cleanInline(line))
