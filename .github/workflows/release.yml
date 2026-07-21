@@ -529,7 +529,7 @@ jobs:
           else
             echo "Tag '$GITHUB_REF_NAME' is not semver; keeping package.json version."
           fi
-      - run: npm ci
+      - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build unsigned universal DMG
         run: npm run build:mac
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
@@ -560,7 +560,7 @@ jobs:
           else
             echo "Tag '$GITHUB_REF_NAME' is not semver; keeping package.json version."
           fi
-      - run: npm ci
+      - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build NSIS installer
         run: npm run build:win
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
