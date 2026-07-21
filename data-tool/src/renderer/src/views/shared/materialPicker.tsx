@@ -93,8 +93,15 @@ export function MaterialPickerPopup({
   }, [materials, fileKeyword, expectedRarity, search])
 
   return (
-    <div className="image-picker-backdrop" onClick={onClose}>
-      <div className="mat-picker-popup" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="image-picker-backdrop"
+      role="button"
+      tabIndex={0}
+      aria-label="Close dialog"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') onClose() }}
+    >
+      <div className="mat-picker-popup">
         <div className="image-picker-header">
           <span>{title}{expectedRarity > 0 ? ` — ${'★'.repeat(expectedRarity)}` : ''}</span>
           <button type="button" className="btn-link" onClick={onClose}>✕ Close</button>

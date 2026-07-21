@@ -263,9 +263,17 @@ interface ParseResult {
  */
 async function fetchParse(url: string): Promise<ParseResult> {
   const title = pageTitleFromUrl(url)
-  const api = `https://${WIKI_HOST}/api.php?action=parse&page=${encodeURIComponent(
-    title
-  )}&format=json&formatversion=2&prop=wikitext%7Ctext&redirects=1`
+  // Build via URL/URLSearchParams so the (user-derived) page title is safely encoded into a
+  // fixed-host request rather than concatenated into the string.
+  const api = new URL(`https://${WIKI_HOST}/api.php`)
+  api.search = new URLSearchParams({
+    action: 'parse',
+    page: title,
+    format: 'json',
+    formatversion: '2',
+    prop: 'wikitext|text',
+    redirects: '1'
+  }).toString()
 
   interface ParseResponse {
     parse?: { title?: string; wikitext?: string; text?: string }

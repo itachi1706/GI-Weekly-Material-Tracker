@@ -44,7 +44,7 @@ function inputDateToJson(s: string): string {
 function fmtVersion(v: unknown): string {
   if (v == null || v === '') return '1.0'
   const n = Number(v)
-  if (!Number.isFinite(n)) return typeof v === 'object' ? '1.0' : String(v)
+  if (!Number.isFinite(n)) return typeof v === 'object' ? '1.0' : String(v as string)
   return Number.isInteger(n) ? n.toFixed(1) : String(n)
 }
 

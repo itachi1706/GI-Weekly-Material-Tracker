@@ -140,8 +140,15 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
 
       {/* Modal: import controls + existing grid */}
       {open && (
-        <div className="image-picker-backdrop" onClick={() => setOpen(false)}>
-          <div className="image-picker-popup" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="image-picker-backdrop"
+          role="button"
+          tabIndex={0}
+          aria-label="Close dialog"
+          onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
+          onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') setOpen(false) }}
+        >
+          <div className="image-picker-popup">
             <div className="image-picker-header">
               <span>Select image</span>
               <button type="button" className="btn-link" onClick={() => setOpen(false)}>✕ Close</button>

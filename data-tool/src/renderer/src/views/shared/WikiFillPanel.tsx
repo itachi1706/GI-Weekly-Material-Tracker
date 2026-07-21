@@ -80,8 +80,15 @@ export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, gro
   const selectedCount = checked.size
 
   return (
-    <div className="image-picker-backdrop" onClick={onClose}>
-      <div className="image-picker-popup wiki-fill-popup" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="image-picker-backdrop"
+      role="button"
+      tabIndex={0}
+      aria-label="Close dialog"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') onClose() }}
+    >
+      <div className="image-picker-popup wiki-fill-popup">
         <div className="image-picker-header">
           <span>Auto-fill from wiki — <strong>{sourceTitle}</strong></span>
           <button type="button" className="btn-link" onClick={onClose}>✕ Close</button>

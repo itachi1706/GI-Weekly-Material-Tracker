@@ -82,7 +82,16 @@ async function checkMacUpdate(mainWindow: BrowserWindow): Promise<void> {
       message: `Version ${latest} is available (you have ${current}).`,
       detail: 'macOS builds are not code-signed, so updates are downloaded and installed manually.'
     })
-    if (response === 0) await shell.openExternal(data.html_url ?? RELEASES_PAGE)
+    if (response === 0) {
+      // Only trust an API-supplied URL that points at this repo's own GitHub pages; otherwise fall
+      // back to the hard-coded releases page (guards against a tampered/unexpected API response).
+      const repoPrefix = `https://github.com/${OWNER}/${REPO}/`
+      const target =
+        typeof data.html_url === 'string' && data.html_url.startsWith(repoPrefix)
+          ? data.html_url
+          : RELEASES_PAGE
+      await shell.openExternal(target)
+    }
   } catch (e) {
     console.warn('[updater] macOS update check failed:', e)
   }

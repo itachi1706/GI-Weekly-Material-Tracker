@@ -1,8 +1,11 @@
 import type { MaterialInnerType, MaterialRecord } from './types'
 
 /** Safe stringify for `unknown` form values (objects/nullish → '' rather than "[object Object]"). */
-const str = (v: unknown): string =>
-  v == null || typeof v === 'object' || typeof v === 'function' ? '' : String(v)
+const str = (v: unknown): string => {
+  if (typeof v === 'string') return v
+  if (typeof v === 'number' || typeof v === 'boolean' || typeof v === 'bigint') return String(v)
+  return ''
+}
 
 /** Form widget kinds the renderer knows how to draw. */
 export type Widget = 'text' | 'textarea' | 'number' | 'select' | 'bool' | 'image' | 'tags' | 'days' | 'computed' | 'rarity'

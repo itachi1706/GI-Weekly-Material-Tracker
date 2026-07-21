@@ -575,7 +575,7 @@ export default function CharacterForm({
     for (const e of draft.constellationEntries) {
       const baseEntry = base.constellations?.[e.key]
       constellationsObj[e.key] = {
-        ...(baseEntry ?? {}),
+        ...baseEntry,
         name: e.name.trim() || null,
         effect: e.effect.trim() || null,
         image: resolveIconImage(e.imageState, 'Constellation', deriveKey(e.name) || e.key, baseEntry?.image)

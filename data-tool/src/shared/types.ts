@@ -65,7 +65,7 @@ export interface MaterialRecord {
 export interface MaterialSummary {
   key: string
   file: string
-  innerType: MaterialInnerType | string
+  innerType: MaterialInnerType | (string & {})
   name: string
   rarity: number
   image: string
