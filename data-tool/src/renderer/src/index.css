@@ -823,7 +823,19 @@ textarea:focus {
   z-index: 20;
   padding: 24px;
 }
+/* Transparent full-area button behind the popup: a click on the dim area closes the modal, using a
+   real <button> (not an interactive div) so it stays accessible. The popup's z-index keeps it on top. */
+.image-picker-dismiss {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
 .image-picker-popup {
+  position: relative;
+  z-index: 1;
   background: var(--bg-elev);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1385,6 +1397,8 @@ textarea:focus {
 
 /* ---- Material picker popup ---- */
 .mat-picker-popup {
+  position: relative;
+  z-index: 1;
   background: var(--bg-card, var(--bg-secondary));
   border: 1px solid var(--border);
   border-radius: 8px;

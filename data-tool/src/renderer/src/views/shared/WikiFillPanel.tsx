@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 /**
  * A single reviewable field from a wiki fetch. Display-only: the actual Draft mutation lives in the
@@ -79,15 +79,14 @@ export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, gro
 
   const selectedCount = checked.size
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent): void => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [onClose])
+
   return (
-    <div
-      className="image-picker-backdrop"
-      role="button"
-      tabIndex={0}
-      aria-label="Close dialog"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
-      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') onClose() }}
-    >
+    <div className="image-picker-backdrop">
       <div className="image-picker-popup wiki-fill-popup">
         <div className="image-picker-header">
           <span>Auto-fill from wiki — <strong>{sourceTitle}</strong></span>
@@ -152,6 +151,7 @@ export default function WikiFillPanel({ sourceTitle, rows, onApply, onClose, gro
           <button type="button" className="btn-secondary" onClick={onClose}>Cancel</button>
         </footer>
       </div>
+      <button type="button" className="image-picker-dismiss" aria-label="Close" onClick={onClose} />
     </div>
   )
 }

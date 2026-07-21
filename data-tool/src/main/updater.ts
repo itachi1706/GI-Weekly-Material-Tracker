@@ -68,7 +68,7 @@ async function checkMacUpdate(mainWindow: BrowserWindow): Promise<void> {
       headers: { 'User-Agent': `${REPO}-DataTool`, Accept: 'application/vnd.github+json' }
     })
     if (!res.ok) return
-    const data = (await res.json()) as { tag_name?: string; html_url?: string }
+    const data = (await res.json()) as { tag_name?: string }
     const latest = String(data.tag_name ?? '').replace(/^v/, '')
     const current = app.getVersion()
     if (!latest || !isNewer(current, latest)) return
@@ -82,16 +82,9 @@ async function checkMacUpdate(mainWindow: BrowserWindow): Promise<void> {
       message: `Version ${latest} is available (you have ${current}).`,
       detail: 'macOS builds are not code-signed, so updates are downloaded and installed manually.'
     })
-    if (response === 0) {
-      // Only trust an API-supplied URL that points at this repo's own GitHub pages; otherwise fall
-      // back to the hard-coded releases page (guards against a tampered/unexpected API response).
-      const repoPrefix = `https://github.com/${OWNER}/${REPO}/`
-      const target =
-        typeof data.html_url === 'string' && data.html_url.startsWith(repoPrefix)
-          ? data.html_url
-          : RELEASES_PAGE
-      await shell.openExternal(target)
-    }
+    // Open only the hard-coded releases page — never a URL from the API response — so no
+    // network-controlled data can reach shell.openExternal. /releases/latest redirects to the newest.
+    if (response === 0) await shell.openExternal(RELEASES_PAGE)
   } catch (e) {
     console.warn('[updater] macOS update check failed:', e)
   }

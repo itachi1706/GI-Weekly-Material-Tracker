@@ -74,7 +74,7 @@ const INLINE_ENTITIES: Record<string, string> = { nbsp: ' ', mdash: '—', amp: 
 function decodeEntities(s: string): string {
   return s
     .replaceAll(/&(nbsp|mdash|amp|shy);/gi, (_m, name: string) => INLINE_ENTITIES[name.toLowerCase()] ?? _m)
-    .replaceAll(/­/g, '') // bare soft-hyphen character
+    .replaceAll('­', '') // bare soft-hyphen character
 }
 
 /** Strip inline wiki markup from an infobox param value → plain text. */

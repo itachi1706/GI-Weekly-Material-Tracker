@@ -64,6 +64,13 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
     return () => { cancelled = true }
   }, [rootPath, state])
 
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent): void => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
+
   // When browseSourceFolders is set, `f` is already root-relative; otherwise prepend imageFolder.
   const browseRelative = (f: string) => browseSourceFolders ? f : `${imageFolder}/${f}`
 
@@ -140,14 +147,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
 
       {/* Modal: import controls + existing grid */}
       {open && (
-        <div
-          className="image-picker-backdrop"
-          role="button"
-          tabIndex={0}
-          aria-label="Close dialog"
-          onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
-          onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') setOpen(false) }}
-        >
+        <div className="image-picker-backdrop">
           <div className="image-picker-popup">
             <div className="image-picker-header">
               <span>Select image</span>
@@ -241,6 +241,7 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
               )
             })()}
           </div>
+          <button type="button" className="image-picker-dismiss" aria-label="Close" onClick={() => setOpen(false)} />
         </div>
       )}
     </div>

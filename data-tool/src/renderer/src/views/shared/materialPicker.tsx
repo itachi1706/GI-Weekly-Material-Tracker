@@ -92,15 +92,14 @@ export function MaterialPickerPopup({
       .sort((a, b) => a.name.localeCompare(b.name))
   }, [materials, fileKeyword, expectedRarity, search])
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent): void => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [onClose])
+
   return (
-    <div
-      className="image-picker-backdrop"
-      role="button"
-      tabIndex={0}
-      aria-label="Close dialog"
-      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
-      onKeyDown={(e) => { if (e.key === 'Escape' || e.key === 'Enter') onClose() }}
-    >
+    <div className="image-picker-backdrop">
       <div className="mat-picker-popup">
         <div className="image-picker-header">
           <span>{title}{expectedRarity > 0 ? ` — ${'★'.repeat(expectedRarity)}` : ''}</span>
@@ -139,6 +138,7 @@ export function MaterialPickerPopup({
           )}
         </div>
       </div>
+      <button type="button" className="image-picker-dismiss" aria-label="Close" onClick={onClose} />
     </div>
   )
 }
