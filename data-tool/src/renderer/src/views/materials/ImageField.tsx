@@ -70,12 +70,12 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   const openModal = () => {
     setOpen(true)
     setBrowseSearch('')
-    existing.forEach((f) => {
-      if (popupThumbs[f]) return
+    for (const f of existing) {
+      if (popupThumbs[f]) continue
       void loadImage(rootPath, browseRelative(f)).then((d) => {
         if (d) setPopupThumbs((prev) => ({ ...prev, [f]: d }))
       })
-    })
+    }
   }
 
   const selectExisting = (f: string) => {

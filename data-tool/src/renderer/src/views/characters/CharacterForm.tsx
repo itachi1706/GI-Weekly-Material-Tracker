@@ -746,7 +746,8 @@ export default function CharacterForm({
       }
     }
     const wikiPassives = res.talents.filter((t) => isPassiveType(t.type))
-    wikiPassives.forEach((wp, pi) => {
+    for (let pi = 0; pi < wikiPassives.length; pi++) {
+      const wp = wikiPassives[pi]
       if (pi < draft.passives.length) {
         const cur = draft.passives[pi]
         add({ id: `pas-txt-${pi}`, group: 'Talents', label: `${wp.name} — name & effect`, current: cur.effect, fetched: wp.effect ?? '' },
@@ -770,7 +771,7 @@ export default function CharacterForm({
             }]
           }))
       }
-    })
+    }
 
     // Constellations (by index).
     for (const wc of res.constellations) {

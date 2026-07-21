@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type DragEvent } from 'react'
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent, type DragEvent } from 'react'
 import { MatImage } from './materialPicker'
 
 export interface LinkOption {
@@ -135,12 +135,15 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
   }
 
   const dragging = dragIndex != null
+  const inputId = useId()
 
   return (
     <div className="entity-link" ref={containerRef}>
-      <div
+      {/* A <label> natively focuses the input on click; clicks on the chip buttons are not
+          forwarded (they're interactive descendants), so drag/remove still work as before. */}
+      <label
         className="entity-link-tags"
-        onClick={() => inputRef.current?.focus()}
+        htmlFor={inputId}
         onDragEnd={() => { setDragIndex(null); setDropGap(null) }}
       >
         {value.map((k, idx) => {
@@ -182,6 +185,7 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
         >
           <input
             ref={inputRef}
+            id={inputId}
             type="text"
             className="entity-link-input"
             placeholder={value.length === 0 ? placeholder : 'Add another…'}
@@ -191,7 +195,7 @@ export function EntityLinkInput({ rootPath, value, onChange, options, placeholde
             onKeyDown={onKeyDown}
           />
         </div>
-      </div>
+      </label>
 
       {open && rowCount > 0 && (
         <div className="entity-link-dropdown">

@@ -12,6 +12,7 @@ interface Props {
 }
 
 interface Row {
+  id: number
   type: 'add' | 'del' | 'ctx' | 'gap'
   text: string
 }
@@ -23,7 +24,7 @@ const DIFF_GUTTER: Record<string, string> = { add: '+', del: '-' }
 /** Build a compact diff: changed lines plus a few context lines, collapsing long unchanged runs. */
 function buildRows(before: string, after: string): Row[] {
   const parts = diffLines(before, after)
-  const rows: Row[] = []
+  const rows: Omit<Row, 'id'>[] = []
   parts.forEach((part, i) => {
     const lines = part.value.replace(/\n$/, '').split('\n')
     if (part.added || part.removed) {
@@ -41,7 +42,7 @@ function buildRows(before: string, after: string): Row[] {
     rows.push({ type: 'gap', text: `… ${lines.length - (isFirst ? CONTEXT : CONTEXT * 2)} unchanged lines …` })
     if (!isLast) for (const l of lines.slice(-CONTEXT)) rows.push({ type: 'ctx', text: l })
   })
-  return rows
+  return rows.map((r, i) => ({ ...r, id: i }))
 }
 
 export default function CommitPreview({
@@ -60,7 +61,7 @@ export default function CommitPreview({
         ? preview.after
             .replace(/\n$/, '')
             .split('\n')
-            .map((text) => ({ type: 'ctx', text }))
+            .map((text, i) => ({ id: i, type: 'ctx' as const, text }))
         : [],
     [showFull, preview]
   )
@@ -87,8 +88,8 @@ export default function CommitPreview({
       {error && <div className="preview-block">{error}</div>}
 
       <div className="diff">
-        {(showFull ? fullRows : rows).map((r, i) => (
-          <div key={i} className={`diff-line diff-${r.type}`}>
+        {(showFull ? fullRows : rows).map((r) => (
+          <div key={r.id} className={`diff-line diff-${r.type}`}>
             <span className="diff-gutter">{DIFF_GUTTER[r.type] ?? ''}</span>
             <span className="diff-text">{r.text}</span>
           </div>
