@@ -54,7 +54,7 @@ export function pageTitleFromUrl(raw: string): string {
  * a single pass can't leave residual markup when a removal glues two fragments into a fresh match
  * (e.g. `<scr<script>ipt>`, or overlapping `<!--…<!--…-->`). Terminates because the string only shrinks.
  */
-function stripUntilStable(s: string, re: RegExp): string {
+export function stripUntilStable(s: string, re: RegExp): string {
   let prev: string
   do {
     prev = s
@@ -71,14 +71,14 @@ const INLINE_ENTITIES: Record<string, string> = { nbsp: ' ', mdash: '—', amp: 
  * chain that decodes `&amp;`→`&` after the others) avoids double-unescaping — a decoded `&` can't
  * recombine with following text into an entity that an earlier step would have expanded.
  */
-function decodeEntities(s: string): string {
+export function decodeEntities(s: string): string {
   return s
     .replaceAll(/&(nbsp|mdash|amp|shy);/gi, (_m, name: string) => INLINE_ENTITIES[name.toLowerCase()] ?? _m)
     .replaceAll('­', '') // bare soft-hyphen character
 }
 
 /** Strip inline wiki markup from an infobox param value → plain text. */
-function cleanInline(s: string): string {
+export function cleanInline(s: string): string {
   let out = s
     .replaceAll(/<ref[^>]*\/>/gi, '')
     .replaceAll(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
@@ -104,7 +104,7 @@ function cleanInline(s: string): string {
  * Raw value of a named infobox param: everything after `|key =` up to the next top-level `|param =`
  * or the closing `}}`. No markup cleaning.
  */
-function rawParam(infobox: string, key: string): string | null {
+export function rawParam(infobox: string, key: string): string | null {
   // NB: horizontal-only whitespace after `=` (`[ \t]*`, not `\s*`) — otherwise an EMPTY param
   // (`|realname =\n|birthday = …`) would let `\s*` eat the newline and capture the next param's value.
   const re = new RegExp(String.raw`\|\s*${key}\s*=[ \t]*([\s\S]*?)(?=\n\s*\|[a-zA-Z0-9_]+\s*=|\n\}\})`, 'i')
@@ -113,13 +113,13 @@ function rawParam(infobox: string, key: string): string | null {
 }
 
 /** Read + inline-clean a named infobox param (single-line: `<br>` collapses to a space). */
-function wikiParam(infobox: string, key: string): string | null {
+export function wikiParam(infobox: string, key: string): string | null {
   const raw = rawParam(infobox, key)
   return raw == null ? null : cleanInline(raw) || null
 }
 
 /** Like wikiParam but preserves line breaks (`<br>` and blank lines → `\n`) — for description fields. */
-function wikiParamMultiline(infobox: string, key: string): string | null {
+export function wikiParamMultiline(infobox: string, key: string): string | null {
   const raw = rawParam(infobox, key)
   if (raw == null) return null
   const out = stripUntilStable(raw, /<!--[\s\S]*?-->/g) // multi-line HTML comments (per-line cleanInline can't catch these)
@@ -133,7 +133,7 @@ function wikiParamMultiline(infobox: string, key: string): string | null {
 }
 
 /** Isolate an infobox template block (e.g. "Character Infobox" / "Weapon Infobox") from wikitext. */
-function infoboxBlock(wikitext: string, template = 'Character Infobox'): string {
+export function infoboxBlock(wikitext: string, template = 'Character Infobox'): string {
   const start = wikitext.search(new RegExp(String.raw`\{\{${template}`, 'i'))
   if (start < 0) return ''
   // Walk braces to find the matching close.
@@ -146,7 +146,7 @@ function infoboxBlock(wikitext: string, template = 'Character Infobox'): string 
 }
 
 /** "October 13th" → "13/10" (the dataset's D/M, NO leading zeros). Unchanged if unparseable. */
-function convertBirthday(raw: string | null): string | null {
+export function convertBirthday(raw: string | null): string | null {
   if (!raw) return null
   const m = /([A-Za-z]+)\s+(\d{1,2})/.exec(raw)
   if (m) {
@@ -473,7 +473,7 @@ export async function fetchWeaponFromWiki(url: string): Promise<WikiWeaponResult
 // ── Outfits + Materials ─────────────────────────────────────────────────────────
 
 /** Extract a top-level `==Heading==` section body (up to the next `==…==`), cleaned to prose. */
-function wikiSection(wikitext: string, heading: string): string | null {
+export function wikiSection(wikitext: string, heading: string): string | null {
   const re = new RegExp(String.raw`\n==\s*${heading}\s*==\s*\n([\s\S]*?)(?=\n==[^=]|$)`, 'i')
   const m = re.exec(wikitext)
   if (!m) return null
