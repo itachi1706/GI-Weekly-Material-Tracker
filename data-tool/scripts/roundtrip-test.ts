@@ -6,8 +6,9 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { roundTrips } from '../src/shared/serialize.ts'
+import { resolveDataDir } from './paths.ts'
 
-const dataDir = process.argv[2] ?? join(import.meta.dirname, '..', 'dataset', 'data')
+const dataDir = resolveDataDir(process.argv[2], 'dataset/data')
 
 const files = readdirSync(dataDir).filter(
   (f) =>

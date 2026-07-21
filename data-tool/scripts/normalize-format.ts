@@ -15,10 +15,11 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { stringifyDataFile, withTrailingNewline } from '../src/shared/serialize.ts'
+import { resolveDataDir } from './paths.ts'
 
 const args = process.argv.slice(2)
 const write = args.includes('--write')
-const dataDir = args.find((a) => !a.startsWith('--')) ?? join(import.meta.dirname, '..', 'dataset', 'data')
+const dataDir = resolveDataDir(args.find((a) => !a.startsWith('--')), 'dataset/data')
 
 const files = readdirSync(dataDir).filter((f) => f.endsWith('.json'))
 let changed = 0

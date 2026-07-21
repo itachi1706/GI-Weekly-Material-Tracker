@@ -13,10 +13,11 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { roundTrips } from '../src/shared/serialize.ts'
 import { validateDataset, formatReport, isDataFile } from '../src/shared/validate.ts'
+import { resolveDataDir } from './paths.ts'
 
 const args = process.argv.slice(2)
 const strict = args.includes('--strict')
-const dataDir = args.find((a) => !a.startsWith('--')) ?? join(import.meta.dirname, '..', 'dataset', 'data')
+const dataDir = resolveDataDir(args.find((a) => !a.startsWith('--')), 'dataset/data')
 const imagesDir = join(dirname(dataDir), 'images')
 
 const names = readdirSync(dataDir).filter(isDataFile)
