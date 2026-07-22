@@ -130,7 +130,7 @@ function addTierIdentityRows(add: TierAddFn, ctx: TierWikiCtx): void {
       { kind: 'tier', patch: { description: res.description } })
   if (res.obtained) {
     if (config.sharedObtained)
-      add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String(shared['obtained'] ?? ''), fetched: res.obtained },
+      add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String((shared['obtained'] as string) ?? ''), fetched: res.obtained },
         { kind: 'shared', key: 'obtained', value: res.obtained })
     else
       add({ id: 't-obtained', group: 'Identity', label: 'Obtained', current: tier.obtained, fetched: res.obtained },
@@ -170,17 +170,25 @@ function addTierImageRow(add: TierAddFn, ctx: TierWikiCtx): void {
     { kind: 'image', state: urlStateFromWiki(res.iconUrl, base) })
 }
 
-function buildTierWikiData(
-  wikiResult: WikiMaterialResult | null, wikiTier: number | null, tiers: TierData[],
-  tierConfigs: TierItemConfig[], config: TierSetConfig, shared: Record<string, unknown>,
-  schema: MaterialTypeSchema, fallbackKeyOf: (i: number) => string
-): { rows: WikiRow[]; apply: Record<string, TierApply> } {
+interface TierWikiArgs {
+  wikiResult: WikiMaterialResult | null
+  wikiTier: number | null
+  tiers: TierData[]
+  tierConfigs: TierItemConfig[]
+  config: TierSetConfig
+  shared: Record<string, unknown>
+  schema: MaterialTypeSchema
+  fallbackKeyOf: (i: number) => string
+}
+
+function buildTierWikiData(a: TierWikiArgs): { rows: WikiRow[]; apply: Record<string, TierApply> } {
   const rows: WikiRow[] = []
   const apply: Record<string, TierApply> = {}
+  const { wikiResult, wikiTier } = a
   if (wikiResult == null || wikiTier == null) return { rows, apply }
   const ctx: TierWikiCtx = {
-    res: wikiResult, tier: tiers[wikiTier] ?? emptyTier(), cfg: tierConfigs[wikiTier], i: wikiTier,
-    config, shared, schema, fallbackKey: fallbackKeyOf(wikiTier)
+    res: wikiResult, tier: a.tiers[wikiTier] ?? emptyTier(), cfg: a.tierConfigs[wikiTier], i: wikiTier,
+    config: a.config, shared: a.shared, schema: a.schema, fallbackKey: a.fallbackKeyOf(wikiTier)
   }
   const add = makeTierAdd(rows, apply)
   addTierIdentityRows(add, ctx)
@@ -288,7 +296,7 @@ export default function TierSetForm({
 
   // Review rows for the active tier (built by the module-level tier-wiki helpers above).
   const wikiData = useMemo(
-    () => buildTierWikiData(wikiResult, wikiTier, tiers, tierConfigs, config, shared, schema, tierKey),
+    () => buildTierWikiData({ wikiResult, wikiTier, tiers, tierConfigs, config, shared, schema, fallbackKeyOf: tierKey }),
     [wikiResult, wikiTier, tiers, shared, tierConfigs, config, schema]
   )
 

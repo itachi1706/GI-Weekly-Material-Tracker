@@ -140,7 +140,7 @@ export function hasTrailingNewline(content: string): boolean {
  */
 export function stripTrailingNewlines(s: string): string {
   let end = s.length
-  while (end > 0 && s.charCodeAt(end - 1) === 10 /* \n */) end--
+  while (end > 0 && s[end - 1] === '\n') end--
   return s.slice(0, end)
 }
 

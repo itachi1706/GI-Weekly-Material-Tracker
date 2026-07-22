@@ -88,27 +88,48 @@ const isAsciiDigit = (c: string): boolean => c >= '0' && c <= '9'
 const isInlineSpace = (c: string): boolean =>
   c === ' ' || c === '\t' || c === '\n' || c === '\r' || c === '\f' || c === '\v' || c === ' '
 
+/** End index of the run of chars satisfying `pred`, starting at `from`. */
+function runEnd(s: string, from: number, pred: (c: string) => boolean): number {
+  let i = from
+  while (i < s.length && pred(s[i])) i++
+  return i
+}
+
 /** `[[target|display]]` → `display`, `[[page]]` → `page`. A stray `]` inside leaves the link intact. */
 function stripWikiLinks(s: string): string {
   let out = ''
   let i = 0
   while (i < s.length) {
-    if (s[i] === '[' && s[i + 1] === '[') {
-      const close = s.indexOf(']]', i + 2)
-      if (close !== -1) {
-        const inner = s.slice(i + 2, close)
-        if (!inner.includes(']')) {
-          const pipe = inner.indexOf('|')
-          out += pipe === -1 ? inner : inner.slice(pipe + 1)
-          i = close + 2
-          continue
-        }
-      }
+    const open = s.indexOf('[[', i)
+    if (open === -1) return out + s.slice(i)
+    out += s.slice(i, open)
+    const close = s.indexOf(']]', open + 2)
+    const inner = close === -1 ? '' : s.slice(open + 2, close)
+    if (close !== -1 && !inner.includes(']')) {
+      const pipe = inner.indexOf('|')
+      out += pipe === -1 ? inner : inner.slice(pipe + 1)
+      i = close + 2
+    } else {
+      out += '[[' // not a well-formed link → keep the braces, scan past them
+      i = open + 2
     }
-    out += s[i]
-    i++
   }
   return out
+}
+
+/** Text after the first whitespace run in an external-link body, or '' if there's no label. */
+function externalLinkLabel(inner: string): string {
+  const ws = runEnd(inner, 0, (c) => !isInlineSpace(c)) // end of the URL (first whitespace)
+  const k = runEnd(inner, ws, isInlineSpace) // skip the whitespace run
+  return inner.slice(k)
+}
+
+/** Index of the next `[` that begins an external link (`[http://` / `[https://`), or -1. */
+function nextExternalLink(s: string, from: number): number {
+  for (let i = s.indexOf('[', from); i !== -1; i = s.indexOf('[', i + 1)) {
+    if (s.startsWith('[http://', i) || s.startsWith('[https://', i)) return i
+  }
+  return -1
 }
 
 /** `[http(s)://url label]` → `label`, `[http(s)://url]` → `` (bare link dropped). */
@@ -116,24 +137,13 @@ function stripExternalLinks(s: string): string {
   let out = ''
   let i = 0
   while (i < s.length) {
-    const isLink = s[i] === '[' && (s.startsWith('[http://', i) || s.startsWith('[https://', i))
-    if (isLink) {
-      const close = s.indexOf(']', i + 1)
-      if (close !== -1) {
-        const inner = s.slice(i + 1, close) // "url" or "url<space>label"
-        let ws = 0
-        while (ws < inner.length && !isInlineSpace(inner[ws])) ws++
-        if (ws < inner.length) {
-          let k = ws
-          while (k < inner.length && isInlineSpace(inner[k])) k++
-          out += inner.slice(k) // label after the whitespace run
-        }
-        i = close + 1
-        continue
-      }
-    }
-    out += s[i]
-    i++
+    const open = nextExternalLink(s, i)
+    if (open === -1) return out + s.slice(i)
+    out += s.slice(i, open)
+    const close = s.indexOf(']', open + 1)
+    if (close === -1) return out + s.slice(open) // no closer → nothing more can match
+    out += externalLinkLabel(s.slice(open + 1, close))
+    i = close + 1
   }
   return out
 }
@@ -245,27 +255,31 @@ export function infoboxBlock(wikitext: string, template = 'Character Infobox'): 
  * unanchored search restarts O(n²), S8786). Matches the original `.exec`-then-check semantics:
  * only the first such run is considered — a non-month first run falls through unchanged.
  */
-export function convertBirthday(raw: string | null): string | null {
-  if (!raw) return null
+/** First `<letters> <1–2 digits>` occurrence in `raw` → its month word + day digits, or null. */
+function firstMonthDay(raw: string): { monthWord: string; day: string } | null {
   let i = 0
   while (i < raw.length) {
     if (!isAsciiLetter(raw[i])) {
       i++
       continue
     }
-    let j = i
-    while (j < raw.length && isAsciiLetter(raw[j])) j++ // [A-Za-z]+
-    let k = j
-    while (k < raw.length && isInlineSpace(raw[k])) k++ // \s+
+    const j = runEnd(raw, i, isAsciiLetter) // [A-Za-z]+
+    const k = runEnd(raw, j, isInlineSpace) // \s+
     if (k > j && k < raw.length && isAsciiDigit(raw[k])) {
-      let d = k
-      while (d < raw.length && d < k + 2 && isAsciiDigit(raw[d])) d++ // \d{1,2}
-      const mon = MONTHS[raw.slice(i, j).toLowerCase()]
-      return mon ? `${Number.parseInt(raw.slice(k, d), 10)}/${mon}` : raw
+      const d = Math.min(runEnd(raw, k, isAsciiDigit), k + 2) // \d{1,2}
+      return { monthWord: raw.slice(i, j), day: raw.slice(k, d) }
     }
     i = j // skip the whole letter run (every sub-start fails identically)
   }
-  return raw
+  return null
+}
+
+export function convertBirthday(raw: string | null): string | null {
+  if (!raw) return null
+  const md = firstMonthDay(raw)
+  if (!md) return raw
+  const mon = MONTHS[md.monthWord.toLowerCase()]
+  return mon ? `${Number.parseInt(md.day, 10)}/${mon}` : raw
 }
 
 /**

@@ -129,7 +129,7 @@ function requiredFieldError(f: FieldSpec, values: Record<string, unknown>, image
     return !arr || arr.length === 0 ? `${f.label}: select at least one day.` : null
   }
   const v = values[f.key]
-  return v == null || String(v).trim() === '' ? `${f.label} is required.` : null
+  return v == null || String(v as string).trim() === '' ? `${f.label} is required.` : null
 }
 
 /** A real image path (has a filename), vs a template's bare folder prefix. */
@@ -222,7 +222,7 @@ function addMaterialDetailRows(add: MatAddFn, ctx: MatWikiCtx): void {
 function buildMaterialImageRow(rows: WikiRow[], ctx: MatWikiCtx): { id: string; state: ImageState } | null {
   const { res, key, values, imageState } = ctx
   if (!res.iconUrl) return null
-  const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String(values.name ?? ''))}`
+  const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String((values.name as string) ?? ''))}`
   const file = wikiIconFileName(res.iconUrl, base)
   rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
     fetched: file, changed: describeImage(imageState) !== file })
@@ -239,7 +239,7 @@ function buildMaterialWikiData(
   const ctx: MatWikiCtx = {
     res, values, imageState, key, schema,
     has: new Set(schema.fields.map((f) => f.key)),
-    strVal: (k) => { const v = values[k]; return v == null ? '' : String(v) }
+    strVal: (k) => { const v = values[k]; return v == null ? '' : String(v as string) }
   }
   const add = makeMatAdd(rows, applyVals)
   addMaterialIdentityRows(add, ctx)

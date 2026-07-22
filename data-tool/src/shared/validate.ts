@@ -66,11 +66,19 @@ interface ValidateCtx {
 
 type Rec = Record<string, unknown>
 
+/** A single phase's context for slot checks (bundled to keep the arg count sane). */
+interface PhaseCtx {
+  file: string
+  key: string
+  mapName: string
+  pk: string
+  phase: Rec
+  map: Record<string, string>
+}
+
 /** One ascension/talent phase slot: material ref + type-in-map + phase-vs-map consistency. */
-function checkPhaseMaterialSlot(
-  ctx: ValidateCtx, file: string, key: string, mapName: string, pk: string, n: number,
-  phase: Rec, map: Record<string, string>
-): void {
+function checkPhaseMaterialSlot(ctx: ValidateCtx, p: PhaseCtx, n: number): void {
+  const { file, key, mapName, pk, phase, map } = p
   const type = phase[`material${n}type`] as string | null | undefined
   const name = phase[`material${n}`] as string | null | undefined
   if (name) ctx.refCheck(file, key, `${mapName}[${pk}].material${n}`, name, ctx.materialKeys, 'material')
@@ -93,7 +101,7 @@ function checkMaterialMapAndPhases(
   if (!phases || typeof phases !== 'object') return
   for (const [pk, phase] of Object.entries(phases as Record<string, Rec>)) {
     if (!phase || typeof phase !== 'object') continue
-    for (const n of [1, 2, 3, 4]) checkPhaseMaterialSlot(ctx, file, key, mapName, pk, n, phase, map)
+    for (const n of [1, 2, 3, 4]) checkPhaseMaterialSlot(ctx, { file, key, mapName, pk, phase, map }, n)
   }
 }
 

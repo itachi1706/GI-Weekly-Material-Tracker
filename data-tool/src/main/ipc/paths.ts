@@ -40,12 +40,14 @@ export function resolveWithin(baseDir: string, untrusted: string): string {
  * `.json` writes) and the name must be a bare file (no subdirectory components).
  */
 export function datasetFile(rootPath: string, file: string): string {
-  const abs = resolveWithin(dataDir(rootPath), file)
-  const name = basename(abs)
+  // `basename` strips any directory / `..` components — a path-traversal sanitiser the SonarCloud
+  // taint engine recognises. We then require the untrusted input to have BEEN a bare, recognised
+  // data-file name (so `sub/x.json` or `../x.json` is rejected outright, not silently rebased).
+  const name = basename(file)
   if (name !== file || !isDataFile(name)) {
     throw new Error(`Not a recognised dataset file: ${file}`)
   }
-  return abs
+  return join(dataDir(rootPath), name)
 }
 
 /** Resolve a renderer-supplied image path (relative to `images/`) to a safe absolute path. */
