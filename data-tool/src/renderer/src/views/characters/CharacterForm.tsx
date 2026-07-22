@@ -291,6 +291,279 @@ function draftFromRecord(rec: CharacterRecord, existingKey?: string): Draft {
   }
 }
 
+// ── buildChange helpers ─────────────────────────────────────────────────────────
+// Extracted from the component's buildChange so it stays under the complexity budget (S3776).
+
+/**
+ * Phase material NAME derived from the map (source of truth): `map[type]`, falling back to the base
+ * name only when the map has no value for that type (a missing key never nulls existing data).
+ */
+function phaseNameFrom(type: string | null | undefined, map: Record<string, string>, baseName: string | null): string | null {
+  if (!type) return null
+  const v = map[type]
+  return v?.length ? v : (baseName ?? null)
+}
+
+/**
+ * Resolve an icon's image path. With no active selection ('none'), preserve the base value EXACTLY
+ * (an empty string must round-trip), collapsing only template bare-folder paths to null. Otherwise
+ * build from the state and stage any copy/download op into `iconPlans`.
+ */
+function resolveIconImage(
+  state: ImageState, folder: string, defaultName: string, baseImage: string | null | undefined,
+  iconPlans: ImagePlan[]
+): string | null {
+  if (state.mode === 'none') {
+    if (typeof baseImage === 'string' && baseImage.endsWith('/')) return null
+    return baseImage ?? null
+  }
+  const entry = buildImageEntry(state, folder, defaultName)
+  if (entry.plan && entry.plan.source !== 'existing') iconPlans.push(entry.plan)
+  return entry.path
+}
+
+/** Rebuild an attack/passive talent map, preserving key + field order and staging icon ops. */
+function buildTalentObj(
+  entries: TalentEntryDraft[], kind: 'attack' | 'passive', base: CharacterRecord, iconPlans: ImagePlan[]
+): Record<string, CharacterTalentEntry> {
+  const baseObj = (kind === 'attack' ? base.talents?.attack : base.talents?.passives) ?? {}
+  const out: Record<string, CharacterTalentEntry> = {}
+  for (const e of entries) {
+    const finalKey = (e.keyTouched && e.key.trim() ? e.key.trim() : deriveKey(e.name)) || e.originalKey
+    if (!finalKey) continue
+    const baseEntry = baseObj[e.originalKey]
+    const folder = kind === 'attack' ? (ATTACK_FOLDER[e.type] ?? 'Talents/Normal') : 'Talents/Passive'
+    out[finalKey] = {
+      ...baseEntry,
+      name: e.name.trim() || null,
+      effect: e.effect.trim() || null,
+      image: resolveIconImage(e.imageState, folder, `Talent_${finalKey}`, baseEntry?.image, iconPlans),
+      order: e.order,
+      type: e.type
+    }
+  }
+  return out
+}
+
+/** Ascension phases with material names re-derived from the (edited) ascension map. */
+function buildAscensionPhases(
+  phases: AscPhaseDraft[], base: CharacterRecord, ascensionMap: Record<string, string>
+): Record<string, CharacterAscensionPhase> {
+  const out: Record<string, CharacterAscensionPhase> = {}
+  for (const ph of phases) {
+    const bp = base.ascension?.[ph.levelKey]
+    if (!bp) continue
+    out[ph.levelKey] = {
+      ...bp, level: ph.level, mora: ph.mora,
+      material1qty: ph.q1, material2qty: ph.q2, material3qty: ph.q3, material4qty: ph.q4,
+      material1: phaseNameFrom(bp.material1type, ascensionMap, bp.material1),
+      material2: phaseNameFrom(bp.material2type, ascensionMap, bp.material2),
+      material3: phaseNameFrom(bp.material3type, ascensionMap, bp.material3),
+      material4: phaseNameFrom(bp.material4type, ascensionMap, bp.material4)
+    }
+  }
+  return out
+}
+
+/** Talent ascension levels with material names re-derived from the (edited) talents map. */
+function buildTalentAscension(
+  levels: TalentLevelDraft[], base: CharacterRecord, talentsMap: Record<string, string>
+): Record<string, CharacterTalentLevel> {
+  const out: Record<string, CharacterTalentLevel> = {}
+  for (const tl of levels) {
+    const bp = base.talents?.ascension?.[tl.levelKey]
+    if (!bp) continue
+    out[tl.levelKey] = {
+      ...bp, mora: tl.mora,
+      material1qty: tl.q1, material2qty: tl.q2, material3qty: tl.q3, material4qty: tl.q4,
+      material1: phaseNameFrom(bp.material1type, talentsMap, bp.material1),
+      material2: phaseNameFrom(bp.material2type, talentsMap, bp.material2),
+      material3: phaseNameFrom(bp.material3type, talentsMap, bp.material3),
+      material4: phaseNameFrom(bp.material4type, talentsMap, bp.material4)
+    }
+  }
+  return out
+}
+
+// ── Wiki review-row builders ───────────────────────────────────────────────────
+// Build the review rows + a map of id → Draft mutation. Extracted from the component so each
+// section builder stays small (SonarCloud S3776). Apply fns operate on the accumulator so a
+// multi-row apply composes cleanly; nothing here writes to disk — only into the Draft.
+interface CharWikiCtx {
+  res: WikiCharacterResult
+  draft: Draft
+  mode: 'create' | 'edit'
+  currentKey: string
+}
+type CharAddFn = (row: Omit<WikiRow, 'changed'> & { changed?: boolean }, fn?: (d: Draft) => Draft) => void
+
+function makeCharAdd(rows: WikiRow[], apply: Record<string, (d: Draft) => Draft>): CharAddFn {
+  return (row, fn) => {
+    const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+    rows.push({ ...row, changed })
+    if (fn) apply[row.id] = fn
+  }
+}
+
+/** When creating, re-key an entry from the applied name; in edit mode keys stay put ("never auto-re-key"). */
+function keyPatchFor(mode: 'create' | 'edit', name: string): Partial<TalentEntryDraft> {
+  return mode === 'create' ? { key: deriveKey(name), keyTouched: false } : {}
+}
+
+function addCharIdField(
+  add: CharAddFn, id: string, label: string, current: string, fetched: string | null,
+  fn: (d: Draft, v: string) => Draft
+): void {
+  const v = fetched ?? ''
+  if (!v) return
+  add({ id, group: 'Identity', label, current, fetched: v }, (d) => fn(d, v))
+}
+
+function addCharConfirmRow(add: CharAddFn, id: string, label: string, current: string, fetched: string | null): void {
+  if (!fetched) return
+  add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
+}
+
+function addCharIdentityRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft } = ctx
+  addCharIdField(add, 'id-name', 'Name', draft.name, res.name, (d, v) => ({
+    ...d, name: v, ...(d.keyTouched ? {} : { keyOverride: deriveKey(v) })
+  }))
+  addCharIdField(add, 'id-fullname', 'Full name', draft.fullName, res.fullName, (d, v) => ({ ...d, fullName: v }))
+  addCharIdField(add, 'id-caption', 'Caption', draft.caption, res.caption, (d, v) => ({ ...d, caption: v }))
+  addCharIdField(add, 'id-affiliation', 'Affiliation', draft.affiliation, res.affiliation, (d, v) => ({ ...d, affiliation: v }))
+  addCharIdField(add, 'id-constellation', 'Constellation', draft.constellation, res.constellation, (d, v) => ({ ...d, constellation: v }))
+  addCharIdField(add, 'id-nation', 'Nation', draft.nation, res.nation, (d, v) => ({ ...d, nation: v }))
+  addCharIdField(add, 'id-birthday', 'Birthday', draft.birthday, res.birthday, (d, v) => ({ ...d, birthday: v }))
+  addCharIdField(add, 'id-wiki', 'Wiki URL', draft.wiki, res.wikiUrl, (d, v) => ({ ...d, wiki: v }))
+  if (res.titles.length) {
+    const fetched = res.titles.join(', ')
+    add({ id: 'id-titles', group: 'Identity', label: 'Titles', current: draft.titles.join(', '), fetched },
+      (d) => ({ ...d, titles: [...res.titles] }))
+  }
+}
+
+/** Element + rarity: appliable only when creating (loads the matching template); confirm-only when editing. */
+function addCharElementRarityRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft, mode } = ctx
+  const elFetched = res.element && ELEMENTS.includes(res.element as Element) ? res.element : null
+  const rarFetched = res.rarity != null ? String(res.rarity) : null
+  if (mode === 'create') {
+    if (elFetched)
+      add({ id: 'cf-element', group: 'Identity', label: 'Element', current: draft.element, fetched: elFetched },
+        (d) => ({ ...d, element: elFetched as Element }))
+    if (rarFetched)
+      add({ id: 'cf-rarity', group: 'Identity', label: 'Rarity', current: draft.rarity, fetched: rarFetched },
+        (d) => ({ ...d, rarity: rarFetched }))
+  } else {
+    addCharConfirmRow(add, 'cf-element', 'Element (locked)', draft.element, res.element)
+    addCharConfirmRow(add, 'cf-rarity', 'Rarity (locked)', draft.rarity, rarFetched)
+  }
+  // Weapon is editable (not locked like element/rarity) → apply it (e.g. Nicole = Catalyst).
+  addCharIdField(add, 'id-weapon', 'Weapon', draft.weapon, res.weapon, (d, v) => ({ ...d, weapon: v }))
+}
+
+/** Attacks (matched by type). */
+function addCharAttackRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft, mode } = ctx
+  for (const wt of res.talents) {
+    if (isPassiveType(wt.type)) continue
+    const ai = attackIndexFor(wt, draft.attacks)
+    if (ai < 0) continue
+    const cur = draft.attacks[ai]
+    add({ id: `atk-txt-${ai}`, group: 'Talents', label: `${wt.name} — name & effect`, current: cur.effect, fetched: wt.effect ?? '' },
+      (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, name: wt.name, effect: wt.effect ?? a.effect, ...keyPatchFor(mode, wt.name) } : a) }))
+    if (wt.iconUrl) {
+      const file = wikiIconFileName(wt.iconUrl)
+      add({ id: `atk-icon-${ai}`, group: 'Talents', label: `${wt.name} — icon`, current: describeImage(cur.imageState),
+        fetched: file, changed: describeImage(cur.imageState) !== file },
+        (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, imageState: urlStateFromWiki(wt.iconUrl!) } : a) }))
+    }
+  }
+}
+
+/** Passives (matched by order; unmatched wiki passives append new draft entries). */
+function addCharPassiveRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft, mode } = ctx
+  const wikiPassives = res.talents.filter((t) => isPassiveType(t.type))
+  for (let pi = 0; pi < wikiPassives.length; pi++) {
+    const wp = wikiPassives[pi]
+    if (pi < draft.passives.length) {
+      const cur = draft.passives[pi]
+      add({ id: `pas-txt-${pi}`, group: 'Talents', label: `${wp.name} — name & effect`, current: cur.effect, fetched: wp.effect ?? '' },
+        (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, name: wp.name, effect: wp.effect ?? p.effect, ...keyPatchFor(mode, wp.name) } : p) }))
+      if (wp.iconUrl) {
+        const file = wikiIconFileName(wp.iconUrl)
+        add({ id: `pas-icon-${pi}`, group: 'Talents', label: `${wp.name} — icon`, current: describeImage(cur.imageState),
+          fetched: file, changed: describeImage(cur.imageState) !== file },
+          (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, imageState: urlStateFromWiki(wp.iconUrl!) } : p) }))
+      }
+    } else {
+      // No matching draft passive → append a new one (name + effect + icon together).
+      add({ id: `pas-new-${pi}`, group: 'Talents', label: `${wp.name}`, current: '', fetched: wp.effect ?? wp.name,
+        note: 'no draft match — will append', changed: false },
+        (d) => ({
+          ...d,
+          passives: [...d.passives, {
+            originalKey: '', key: deriveKey(wp.name), keyTouched: false, name: wp.name, effect: wp.effect ?? '',
+            imageState: wp.iconUrl ? urlStateFromWiki(wp.iconUrl) : { mode: 'none' },
+            order: d.passives.length, type: `Passive ${d.passives.length + 1}`
+          }]
+        }))
+    }
+  }
+}
+
+/** Constellations (matched by index). */
+function addCharConstellationRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft } = ctx
+  for (const wc of res.constellations) {
+    const ci = draft.constellationEntries.findIndex((c) => c.key === String(wc.index))
+    if (ci < 0) continue
+    const cur = draft.constellationEntries[ci]
+    add({ id: `con-txt-${wc.index}`, group: 'Constellations', label: `C${wc.index} ${wc.name} — name & effect`, current: cur.effect, fetched: wc.effect ?? '' },
+      (d) => ({ ...d, constellationEntries: d.constellationEntries.map((c, j) => j === ci ? { ...c, name: wc.name, effect: wc.effect ?? c.effect } : c) }))
+    if (wc.iconUrl) {
+      const cbase = sanitizeImageBasename(normalizeImageUrl(wc.iconUrl)).replace(/^Constellation_/, '')
+      const file = wikiIconFileName(wc.iconUrl, cbase)
+      add({ id: `con-icon-${wc.index}`, group: 'Constellations', label: `C${wc.index} — icon`, current: describeImage(cur.imageState),
+        fetched: file, changed: describeImage(cur.imageState) !== file },
+        (d) => ({
+          ...d,
+          constellationEntries: d.constellationEntries.map((c, j) =>
+            j === ci ? { ...c, imageState: urlStateFromWiki(wc.iconUrl!, cbase) } : c)
+        }))
+    }
+  }
+}
+
+/** Portrait candidates (opt-in; saved as the character key, not the wiki filename). */
+function addCharPortraitRows(add: CharAddFn, ctx: CharWikiCtx): void {
+  const { res, draft, currentKey } = ctx
+  res.imageCandidates.forEach((img, i) => {
+    add({ id: `img-${i}`, group: 'Images', label: `Portrait: ${img.label}`, current: describeImage(draft.imageState),
+      fetched: `${currentKey}.png`, changed: false },
+      (d) => ({ ...d, imageState: urlStateFromWiki(img.url, null) }))
+  })
+}
+
+function buildCharacterWikiData(
+  res: WikiCharacterResult | null, draft: Draft, mode: 'create' | 'edit', currentKey: string
+): { rows: WikiRow[]; apply: Record<string, (d: Draft) => Draft> } {
+  const rows: WikiRow[] = []
+  const apply: Record<string, (d: Draft) => Draft> = {}
+  if (!res) return { rows, apply }
+  const ctx: CharWikiCtx = { res, draft, mode, currentKey }
+  const add = makeCharAdd(rows, apply)
+  addCharIdentityRows(add, ctx)
+  addCharElementRarityRows(add, ctx)
+  addCharAttackRows(add, ctx)
+  addCharPassiveRows(add, ctx)
+  addCharConstellationRows(add, ctx)
+  addCharPortraitRows(add, ctx)
+  return { rows, apply }
+}
+
 // ── Props ─────────────────────────────────────────────────────────────────────
 
 interface Props {
@@ -467,109 +740,18 @@ export default function CharacterForm({
       }
       return c
     }
-    const ascChanged = changedSlots(ascSlots, base.materials?.ascension)
-    const talChanged = changedSlots(talSlots, base.materials?.talents)
-
-    const ascensionMap: Record<string, string> = { ...base.materials?.ascension }
-    for (const [k, v] of Object.entries(ascChanged)) ascensionMap[k] = v
-    const talentsMap: Record<string, string> = { ...base.materials?.talents }
-    for (const [k, v] of Object.entries(talChanged)) talentsMap[k] = v
+    // The `materials` map is the source of truth (see phaseNameFrom): a spread merges only the
+    // user-changed slots over the base, preserving pre-existing keys/order for a byte-exact no-op.
+    const ascensionMap: Record<string, string> = { ...base.materials?.ascension, ...changedSlots(ascSlots, base.materials?.ascension) }
+    const talentsMap: Record<string, string> = { ...base.materials?.talents, ...changedSlots(talSlots, base.materials?.talents) }
     const materials = { ...base.materials, ascension: ascensionMap, talents: talentsMap }
 
-    // The `materials` map is the source of truth: each phase's material NAME is DERIVED from
-    // map[materialXtype]. This intentionally corrects stale per-phase names that disagree with the
-    // map in the source data (a known data bug) whenever a character is saved. Falls back to the
-    // base name only if the map has no (non-empty) value for that type, so a missing map key never
-    // silently nulls existing data.
-    const nameFrom = (
-      type: string | null | undefined,
-      map: Record<string, string>,
-      baseName: string | null
-    ): string | null => {
-      if (!type) return null
-      const v = map[type]
-      return v?.length ? v : (baseName ?? null)
-    }
+    const ascension = buildAscensionPhases(draft.ascPhases, base, ascensionMap)
+    const talentAsc = buildTalentAscension(draft.talentLevels, base, talentsMap)
 
-    const ascension: Record<string, CharacterAscensionPhase> = {}
-    for (const ph of draft.ascPhases) {
-      const bp = base.ascension?.[ph.levelKey]
-      if (!bp) continue
-      ascension[ph.levelKey] = {
-        ...bp,
-        level: ph.level,
-        mora: ph.mora,
-        material1qty: ph.q1,
-        material2qty: ph.q2,
-        material3qty: ph.q3,
-        material4qty: ph.q4,
-        material1: nameFrom(bp.material1type, ascensionMap, bp.material1),
-        material2: nameFrom(bp.material2type, ascensionMap, bp.material2),
-        material3: nameFrom(bp.material3type, ascensionMap, bp.material3),
-        material4: nameFrom(bp.material4type, ascensionMap, bp.material4)
-      }
-    }
-
-    const talentAsc: Record<string, CharacterTalentLevel> = {}
-    for (const tl of draft.talentLevels) {
-      const bp = base.talents?.ascension?.[tl.levelKey]
-      if (!bp) continue
-      talentAsc[tl.levelKey] = {
-        ...bp,
-        mora: tl.mora,
-        material1qty: tl.q1,
-        material2qty: tl.q2,
-        material3qty: tl.q3,
-        material4qty: tl.q4,
-        material1: nameFrom(bp.material1type, talentsMap, bp.material1),
-        material2: nameFrom(bp.material2type, talentsMap, bp.material2),
-        material3: nameFrom(bp.material3type, talentsMap, bp.material3),
-        material4: nameFrom(bp.material4type, talentsMap, bp.material4)
-      }
-    }
-
-    // ── Talents (attack/passives) + constellations: rebuild preserving key + field order, edit in
-    // place (keys stable unless the user edits the key field). New/changed icons collect image ops.
+    // Talents (attack/passives) + constellations: rebuilt preserving key + field order; new/changed
+    // icons collect image ops into iconPlans.
     const iconPlans: ImagePlan[] = []
-
-    // Resolve an icon's image path. With no active selection (mode 'none'), preserve the base value
-    // EXACTLY — some entries store "" (not null) and that distinction must round-trip — collapsing
-    // only template bare-folder paths ("Talents/Passive/") to null. Otherwise build from the state
-    // and stage any copy/download op.
-    const resolveIconImage = (
-      state: ImageState, folder: string, defaultName: string, baseImage: string | null | undefined
-    ): string | null => {
-      if (state.mode === 'none') {
-        if (typeof baseImage === 'string' && baseImage.endsWith('/')) return null
-        return baseImage ?? null
-      }
-      const entry = buildImageEntry(state, folder, defaultName)
-      if (entry.plan && entry.plan.source !== 'existing') iconPlans.push(entry.plan)
-      return entry.path
-    }
-
-    const buildTalentObj = (
-      entries: TalentEntryDraft[],
-      kind: 'attack' | 'passive'
-    ): Record<string, CharacterTalentEntry> => {
-      const baseObj = (kind === 'attack' ? base.talents?.attack : base.talents?.passives) ?? {}
-      const out: Record<string, CharacterTalentEntry> = {}
-      for (const e of entries) {
-        const finalKey = (e.keyTouched && e.key.trim() ? e.key.trim() : deriveKey(e.name)) || e.originalKey
-        if (!finalKey) continue
-        const baseEntry = baseObj[e.originalKey]
-        const folder = kind === 'attack' ? (ATTACK_FOLDER[e.type] ?? 'Talents/Normal') : 'Talents/Passive'
-        out[finalKey] = {
-          ...baseEntry,
-          name: e.name.trim() || null,
-          effect: e.effect.trim() || null,
-          image: resolveIconImage(e.imageState, folder, `Talent_${finalKey}`, baseEntry?.image),
-          order: e.order,
-          type: e.type
-        }
-      }
-      return out
-    }
 
     const constellationsObj: Record<string, CharacterConstellation> = {}
     for (const e of draft.constellationEntries) {
@@ -578,7 +760,7 @@ export default function CharacterForm({
         ...baseEntry,
         name: e.name.trim() || null,
         effect: e.effect.trim() || null,
-        image: resolveIconImage(e.imageState, 'Constellation', deriveKey(e.name) || e.key, baseEntry?.image)
+        image: resolveIconImage(e.imageState, 'Constellation', deriveKey(e.name) || e.key, baseEntry?.image, iconPlans)
       }
     }
 
@@ -600,8 +782,8 @@ export default function CharacterForm({
       talents: {
         ...base.talents,
         ascension: talentAsc,
-        passives: buildTalentObj(draft.passives, 'passive'),
-        attack: buildTalentObj(draft.attacks, 'attack')
+        passives: buildTalentObj(draft.passives, 'passive', base, iconPlans),
+        attack: buildTalentObj(draft.attacks, 'attack', base, iconPlans)
       },
       constellations: constellationsObj,
       ascension,
@@ -660,150 +842,10 @@ export default function CharacterForm({
   // Build the review rows + a map of id → Draft mutation. Recomputed from the current draft so the
   // "current" column and match indices stay accurate; apply fns operate on the accumulator so a
   // multi-row apply composes cleanly. Nothing here writes to disk — only into the Draft.
-  const wikiData = useMemo(() => {
-    const res = wikiResult
-    const rows: WikiRow[] = []
-    const apply: Record<string, (d: Draft) => Draft> = {}
-    if (!res) return { rows, apply }
-
-    const add = (
-      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
-      fn?: (d: Draft) => Draft
-    ) => {
-      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
-      rows.push({ ...row, changed })
-      if (fn) apply[row.id] = fn
-    }
-
-    // When creating, a matched attack/passive still carries the template's placeholder key
-    // ("Normal", "Passive_1"); re-key it from the applied name so the object key matches the dataset
-    // convention (e.g. "Soloists_Solicitation"). In edit mode keys are already correct and may carry
-    // intentional disambiguation suffixes, so leave them untouched (the "never auto-re-key" rule).
-    const keyPatch = (name: string): Partial<TalentEntryDraft> =>
-      mode === 'create' ? { key: deriveKey(name), keyTouched: false } : {}
-
-    // Identity (editable text).
-    const idField = (
-      id: string, label: string, current: string, fetched: string | null,
-      fn: (d: Draft, v: string) => Draft
-    ) => {
-      const v = fetched ?? ''
-      if (!v) return
-      add({ id, group: 'Identity', label, current, fetched: v }, (d) => fn(d, v))
-    }
-    idField('id-name', 'Name', draft.name, res.name, (d, v) => ({
-      ...d, name: v, ...(d.keyTouched ? {} : { keyOverride: deriveKey(v) })
-    }))
-    idField('id-fullname', 'Full name', draft.fullName, res.fullName, (d, v) => ({ ...d, fullName: v }))
-    idField('id-caption', 'Caption', draft.caption, res.caption, (d, v) => ({ ...d, caption: v }))
-    idField('id-affiliation', 'Affiliation', draft.affiliation, res.affiliation, (d, v) => ({ ...d, affiliation: v }))
-    idField('id-constellation', 'Constellation', draft.constellation, res.constellation, (d, v) => ({ ...d, constellation: v }))
-    idField('id-nation', 'Nation', draft.nation, res.nation, (d, v) => ({ ...d, nation: v }))
-    idField('id-birthday', 'Birthday', draft.birthday, res.birthday, (d, v) => ({ ...d, birthday: v }))
-    idField('id-wiki', 'Wiki URL', draft.wiki, res.wikiUrl, (d, v) => ({ ...d, wiki: v }))
-    if (res.titles.length) {
-      const fetched = res.titles.join(', ')
-      add({ id: 'id-titles', group: 'Identity', label: 'Titles', current: draft.titles.join(', '), fetched },
-        (d) => ({ ...d, titles: [...res.titles] }))
-    }
-
-    // Element + rarity: appliable ONLY when creating (applying loads the matching template — see
-    // applyWiki). For an existing character they're locked, so show a confirm-only ✓/✗ badge.
-    const confirmRow = (id: string, label: string, current: string, fetched: string | null) => {
-      if (!fetched) return
-      add({ id, group: 'Identity', label, current, fetched, confirmOnly: true, ok: eqi(current, fetched), changed: false })
-    }
-    const elFetched = res.element && ELEMENTS.includes(res.element as Element) ? res.element : null
-    const rarFetched = res.rarity != null ? String(res.rarity) : null
-    if (mode === 'create') {
-      // apply fns just set the field; applyWiki detects these ids and reloads the template first.
-      if (elFetched)
-        add({ id: 'cf-element', group: 'Identity', label: 'Element', current: draft.element, fetched: elFetched },
-          (d) => ({ ...d, element: elFetched as Element }))
-      if (rarFetched)
-        add({ id: 'cf-rarity', group: 'Identity', label: 'Rarity', current: draft.rarity, fetched: rarFetched },
-          (d) => ({ ...d, rarity: rarFetched }))
-    } else {
-      confirmRow('cf-element', 'Element (locked)', draft.element, res.element)
-      confirmRow('cf-rarity', 'Rarity (locked)', draft.rarity, rarFetched)
-    }
-    // Weapon is an editable field (not locked like element/rarity) → apply it (e.g. Nicole = Catalyst).
-    idField('id-weapon', 'Weapon', draft.weapon, res.weapon, (d, v) => ({ ...d, weapon: v }))
-
-    // Talents → attacks (by type) + passives (by order).
-    for (const wt of res.talents) {
-      if (isPassiveType(wt.type)) continue
-      const ai = attackIndexFor(wt, draft.attacks)
-      if (ai < 0) continue
-      const cur = draft.attacks[ai]
-      add({ id: `atk-txt-${ai}`, group: 'Talents', label: `${wt.name} — name & effect`, current: cur.effect, fetched: wt.effect ?? '' },
-        (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, name: wt.name, effect: wt.effect ?? a.effect, ...keyPatch(wt.name) } : a) }))
-      if (wt.iconUrl) {
-        const file = wikiIconFileName(wt.iconUrl)
-        add({ id: `atk-icon-${ai}`, group: 'Talents', label: `${wt.name} — icon`, current: describeImage(cur.imageState),
-          fetched: file, changed: describeImage(cur.imageState) !== file },
-          (d) => ({ ...d, attacks: d.attacks.map((a, j) => j === ai ? { ...a, imageState: urlStateFromWiki(wt.iconUrl!) } : a) }))
-      }
-    }
-    const wikiPassives = res.talents.filter((t) => isPassiveType(t.type))
-    for (let pi = 0; pi < wikiPassives.length; pi++) {
-      const wp = wikiPassives[pi]
-      if (pi < draft.passives.length) {
-        const cur = draft.passives[pi]
-        add({ id: `pas-txt-${pi}`, group: 'Talents', label: `${wp.name} — name & effect`, current: cur.effect, fetched: wp.effect ?? '' },
-          (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, name: wp.name, effect: wp.effect ?? p.effect, ...keyPatch(wp.name) } : p) }))
-        if (wp.iconUrl) {
-          const file = wikiIconFileName(wp.iconUrl)
-          add({ id: `pas-icon-${pi}`, group: 'Talents', label: `${wp.name} — icon`, current: describeImage(cur.imageState),
-            fetched: file, changed: describeImage(cur.imageState) !== file },
-            (d) => ({ ...d, passives: d.passives.map((p, j) => j === pi ? { ...p, imageState: urlStateFromWiki(wp.iconUrl!) } : p) }))
-        }
-      } else {
-        // No matching draft passive → append a new one (name + effect + icon together).
-        add({ id: `pas-new-${pi}`, group: 'Talents', label: `${wp.name}`, current: '', fetched: wp.effect ?? wp.name,
-          note: 'no draft match — will append', changed: false },
-          (d) => ({
-            ...d,
-            passives: [...d.passives, {
-              originalKey: '', key: deriveKey(wp.name), keyTouched: false, name: wp.name, effect: wp.effect ?? '',
-              imageState: wp.iconUrl ? urlStateFromWiki(wp.iconUrl) : { mode: 'none' },
-              order: d.passives.length, type: `Passive ${d.passives.length + 1}`
-            }]
-          }))
-      }
-    }
-
-    // Constellations (by index).
-    for (const wc of res.constellations) {
-      const ci = draft.constellationEntries.findIndex((c) => c.key === String(wc.index))
-      if (ci >= 0) {
-        const cur = draft.constellationEntries[ci]
-        add({ id: `con-txt-${wc.index}`, group: 'Constellations', label: `C${wc.index} ${wc.name} — name & effect`, current: cur.effect, fetched: wc.effect ?? '' },
-          (d) => ({ ...d, constellationEntries: d.constellationEntries.map((c, j) => j === ci ? { ...c, name: wc.name, effect: wc.effect ?? c.effect } : c) }))
-        if (wc.iconUrl) {
-          const cbase = sanitizeImageBasename(normalizeImageUrl(wc.iconUrl)).replace(/^Constellation_/, '')
-          const file = wikiIconFileName(wc.iconUrl, cbase)
-          add({ id: `con-icon-${wc.index}`, group: 'Constellations', label: `C${wc.index} — icon`, current: describeImage(cur.imageState),
-            fetched: file, changed: describeImage(cur.imageState) !== file },
-            (d) => ({
-            ...d,
-            constellationEntries: d.constellationEntries.map((c, j) =>
-              j === ci ? { ...c, imageState: urlStateFromWiki(wc.iconUrl!, cbase) } : c)
-          }))
-        }
-      }
-    }
-
-    // Portrait image candidates (opt-in; multiple → last checked wins). Saved as the character key
-    // (buildChange's default) rather than the wiki filename, matching the dataset convention.
-    res.imageCandidates.forEach((img, i) => {
-      add({ id: `img-${i}`, group: 'Images', label: `Portrait: ${img.label}`, current: describeImage(draft.imageState),
-        fetched: `${currentKey}.png`, changed: false },
-        (d) => ({ ...d, imageState: urlStateFromWiki(img.url, null) }))
-    })
-
-    return { rows, apply }
-  }, [wikiResult, draft])
+  const wikiData = useMemo(
+    () => buildCharacterWikiData(wikiResult, draft, mode, currentKey),
+    [wikiResult, draft]
+  )
 
   const applyWiki = (ids: string[]) => {
     let d = draft

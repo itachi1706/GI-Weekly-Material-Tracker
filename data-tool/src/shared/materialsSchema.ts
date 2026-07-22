@@ -437,6 +437,57 @@ export function defaultImageName(key: string, ext: string): string {
  *  - `computed`: value is derived via computeFn rather than read from form input
  *  - `hoyowiki` empty/NaN → null
  */
+/** Empty string / null / undefined / NaN → null; otherwise the numeric value. */
+function coerceNumberField(v: unknown): number | null {
+  return v === '' || v === null || v === undefined || Number.isNaN(Number(v)) ? null : Number(v)
+}
+
+/** Coerce and write one field's form value onto `record` according to its widget type. */
+function applyWidgetValue(
+  record: MaterialRecord,
+  field: FieldSpec,
+  values: Record<string, unknown>,
+  base: MaterialRecord
+): void {
+  const v = values[field.key]
+  switch (field.widget) {
+    case 'image':
+      // Apply image path directly when a non-empty value is provided; otherwise keep base value.
+      if (v != null && v !== '') record.image = str(v)
+      return
+    case 'number':
+    case 'rarity':
+      record[field.key] = coerceNumberField(v)
+      return
+    case 'bool':
+      record[field.key] = Boolean(v)
+      return
+    case 'textarea':
+    case 'text':
+      record[field.key] = v === '' || v === undefined ? null : (v as string)
+      return
+    case 'select':
+      record[field.key] = v as never
+      return
+    case 'tags': {
+      const clean = (Array.isArray(v) ? v : []).map((s) => String(s).trim()).filter(Boolean)
+      // Don't silently add an empty array to records that have never had this key.
+      if (clean.length > 0 || field.key in base) record[field.key] = clean as never
+      return
+    }
+    case 'days': {
+      const arr = (Array.isArray(v) ? v : []) as number[]
+      record[field.key] = [...arr].sort((a, b) => a - b) as never
+      return
+    }
+    case 'computed':
+      if (field.computeFrom && field.computeFn) {
+        record[field.key] = field.computeFn(values[field.computeFrom]) as never
+      }
+      return
+  }
+}
+
 export function applyFormValues(
   base: MaterialRecord,
   schema: MaterialTypeSchema,
@@ -444,39 +495,7 @@ export function applyFormValues(
 ): MaterialRecord {
   const record: MaterialRecord = { ...base }
   for (const field of schema.fields) {
-    if (field.widget === 'image') {
-      // Apply image path directly when a non-empty value is provided; otherwise keep base value.
-      const img = values[field.key]
-      if (img != null && img !== '') record.image = str(img)
-      continue
-    }
-    const v = values[field.key]
-    if (field.widget === 'number' || field.widget === 'rarity') {
-      record[field.key] =
-        v === '' || v === null || v === undefined || Number.isNaN(Number(v))
-          ? null
-          : Number(v)
-    } else if (field.widget === 'bool') {
-      record[field.key] = Boolean(v)
-    } else if (field.widget === 'textarea' || field.widget === 'text') {
-      record[field.key] = v === '' || v === undefined ? null : (v as string)
-    } else if (field.widget === 'select') {
-      record[field.key] = v as never
-    } else if (field.widget === 'tags') {
-      const arr = (Array.isArray(v) ? v : []) as string[]
-      const clean = arr.map((s) => String(s).trim()).filter(Boolean)
-      // Don't silently add an empty array to records that have never had this key.
-      if (clean.length > 0 || field.key in base) {
-        record[field.key] = clean
-      }
-    } else if (field.widget === 'days') {
-      const arr = (Array.isArray(v) ? v : []) as number[]
-      record[field.key] = [...arr].sort((a, b) => a - b)
-    } else if (field.widget === 'computed') {
-      if (field.computeFrom && field.computeFn) {
-        record[field.key] = field.computeFn(values[field.computeFrom]) as never
-      }
-    }
+    applyWidgetValue(record, field, values, base)
   }
   record.innerType = schema.innerType
   record.usage = { characters: [], weapons: [] }

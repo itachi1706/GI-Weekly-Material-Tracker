@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { MaterialRecord, InsertModeName, WikiMaterialResult } from '@shared/types'
-import { deriveKey, resolveImageFolder, resolveRarityOptions, type MaterialTypeSchema } from '@shared/materialsSchema'
+import { deriveKey, resolveImageFolder, resolveRarityOptions, type FieldSpec, type MaterialTypeSchema } from '@shared/materialsSchema'
 import ImageField from './ImageField'
 import { RaritySelect } from '../shared/rarity'
 import type { ImageState } from './util'
@@ -100,18 +100,36 @@ export function DaysSelect({ value, onChange }: Readonly<{ value: number[]; onCh
 
 // ── initialValues ─────────────────────────────────────────────────────────────
 
+/** Initial form value for one field, per widget type. */
+function initialFieldValue(f: FieldSpec, raw: unknown): unknown {
+  if (f.widget === 'bool') return Boolean(raw)
+  if (f.widget === 'tags' || f.widget === 'days') return Array.isArray(raw) ? raw : []
+  // number / rarity / text / textarea / select: stringify scalars, blank for null/objects
+  return raw == null || typeof raw === 'object' ? '' : String(raw as string)
+}
+
 function initialValues(schema: MaterialTypeSchema, base: MaterialRecord): Record<string, unknown> {
   const v: Record<string, unknown> = {}
   for (const f of schema.fields) {
     if (f.widget === 'image' || f.widget === 'computed') continue
-    const raw = base[f.key]
-    if (f.widget === 'bool') v[f.key] = Boolean(raw)
-    else if (f.widget === 'number' || f.widget === 'rarity') v[f.key] = raw == null || typeof raw === 'object' ? '' : String(raw as string)
-    else if (f.widget === 'tags') v[f.key] = Array.isArray(raw) ? raw : []
-    else if (f.widget === 'days') v[f.key] = Array.isArray(raw) ? raw : []
-    else v[f.key] = raw == null || typeof raw === 'object' ? '' : String(raw as string)
+    v[f.key] = initialFieldValue(f, base[f.key])
   }
   return v
+}
+
+/** Required-field error for one field (null if satisfied), per widget type. */
+function requiredFieldError(f: FieldSpec, values: Record<string, unknown>, imageState: ImageState): string | null {
+  if (f.widget === 'image') return imageState.mode === 'none' ? 'An image is required.' : null
+  if (f.widget === 'tags') {
+    const arr = values[f.key] as string[]
+    return !arr || arr.length === 0 ? `${f.label} is required.` : null
+  }
+  if (f.widget === 'days') {
+    const arr = values[f.key] as number[]
+    return !arr || arr.length === 0 ? `${f.label}: select at least one day.` : null
+  }
+  const v = values[f.key]
+  return v == null || String(v).trim() === '' ? `${f.label} is required.` : null
 }
 
 /** A real image path (has a filename), vs a template's bare folder prefix. */
@@ -121,6 +139,113 @@ function initialImageState(base: MaterialRecord): ImageState {
     return { mode: 'existing', relative: img }
   }
   return { mode: 'none' }
+}
+
+// ── Schema-aware wiki review rows ──────────────────────────────────────────────
+// Value rows patch the `values` map; the icon row sets `imageState`. Only fields present in the
+// active schema are offered. Extracted from the component so each builder stays small (S3776).
+type ApplyValFn = (v: Record<string, unknown>) => Record<string, unknown>
+type MatAddFn = (row: Omit<WikiRow, 'changed'> & { changed?: boolean }, fn?: ApplyValFn) => void
+
+interface MatWikiCtx {
+  res: WikiMaterialResult
+  values: Record<string, unknown>
+  imageState: ImageState
+  key: string
+  schema: MaterialTypeSchema
+  has: Set<string>
+  strVal: (k: string) => string
+}
+
+function makeMatAdd(rows: WikiRow[], applyVals: Record<string, ApplyValFn>): MatAddFn {
+  return (row, fn) => {
+    const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+    rows.push({ ...row, changed })
+    if (fn) applyVals[row.id] = fn
+  }
+}
+
+function addMaterialIdentityRows(add: MatAddFn, ctx: MatWikiCtx): void {
+  const { res, has, strVal } = ctx
+  if (has.has('name') && res.name)
+    add({ id: 'mt-name', group: 'Identity', label: 'Name', current: strVal('name'), fetched: res.name },
+      (v) => ({ ...v, name: res.name }))
+  if (has.has('description') && res.description)
+    add({ id: 'mt-desc', group: 'Identity', label: 'Description', current: strVal('description'), fetched: res.description },
+      (v) => ({ ...v, description: res.description }))
+  if (has.has('wiki') && res.wikiUrl)
+    add({ id: 'mt-wiki', group: 'Identity', label: 'Wiki URL', current: strVal('wiki'), fetched: res.wikiUrl },
+      (v) => ({ ...v, wiki: res.wikiUrl }))
+}
+
+/** Type: mapped from the wiki Item GROUP → this schema's `type`; warn if the page is a different category. */
+function addMaterialTypeRow(add: MatAddFn, ctx: MatWikiCtx): void {
+  const { res, has, strVal, schema } = ctx
+  const inferred = inferWikiCategory(res)
+  if (inferred && inferred !== schema.innerType) {
+    add({ id: 'mt-mismatch', group: 'Details', label: '⚠ Material type', current: schema.label,
+      fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: false, changed: false,
+      note: 'the pasted page is a different material category' })
+    return
+  }
+  if (!has.has('type')) return
+  const typeField = schema.fields.find((f) => f.key === 'type')
+  const typeOptions = (typeField?.options ?? []).map((o) => String(o.value))
+  const mapped = mapWikiType(res, schema.innerType, typeOptions)
+  if (mapped)
+    add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: mapped },
+      (v) => ({ ...v, type: mapped }))
+  else if (res.type)
+    add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: res.type,
+      confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
+}
+
+function addMaterialDetailRows(add: MatAddFn, ctx: MatWikiCtx): void {
+  const { res, has, strVal, values } = ctx
+  if (has.has('obtained') && res.obtained)
+    add({ id: 'mt-obtained', group: 'Details', label: 'Obtained', current: strVal('obtained'), fetched: res.obtained },
+      (v) => ({ ...v, obtained: res.obtained }))
+  if (has.has('days') && res.days) {
+    const daysDisp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
+    add({ id: 'mt-days', group: 'Details', label: 'Available days',
+      current: daysDisp((values.days as number[]) ?? []), fetched: daysDisp(res.days) },
+      (v) => ({ ...v, days: res.days }))
+  }
+  addMaterialTypeRow(add, ctx)
+  // Rarity (appliable; applyWiki snaps it to a valid option for the resulting type).
+  if (has.has('rarity') && res.rarity != null)
+    add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'), fetched: String(res.rarity) },
+      (v) => ({ ...v, rarity: String(res.rarity) }))
+}
+
+/** Icon row + its imageApply; basename from the fetched name so a first-time fill resolves correctly. */
+function buildMaterialImageRow(rows: WikiRow[], ctx: MatWikiCtx): { id: string; state: ImageState } | null {
+  const { res, key, values, imageState } = ctx
+  if (!res.iconUrl) return null
+  const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String(values.name ?? ''))}`
+  const file = wikiIconFileName(res.iconUrl, base)
+  rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
+    fetched: file, changed: describeImage(imageState) !== file })
+  return { id: 'mt-icon', state: urlStateFromWiki(res.iconUrl, base) }
+}
+
+function buildMaterialWikiData(
+  res: WikiMaterialResult | null, values: Record<string, unknown>, imageState: ImageState,
+  key: string, schema: MaterialTypeSchema
+): { rows: WikiRow[]; applyVals: Record<string, ApplyValFn>; imageApply: { id: string; state: ImageState } | null } {
+  const rows: WikiRow[] = []
+  const applyVals: Record<string, ApplyValFn> = {}
+  if (!res) return { rows, applyVals, imageApply: null }
+  const ctx: MatWikiCtx = {
+    res, values, imageState, key, schema,
+    has: new Set(schema.fields.map((f) => f.key)),
+    strVal: (k) => { const v = values[k]; return v == null ? '' : String(v) }
+  }
+  const add = makeMatAdd(rows, applyVals)
+  addMaterialIdentityRows(add, ctx)
+  addMaterialDetailRows(add, ctx)
+  const imageApply = buildMaterialImageRow(rows, ctx)
+  return { rows, applyVals, imageApply }
 }
 
 // ── Main form ─────────────────────────────────────────────────────────────────
@@ -178,80 +303,11 @@ export default function MaterialForm({
       .finally(() => setWikiBusy(false))
   }
 
-  // Schema-aware review rows. Value rows patch the `values` map; the icon row sets `imageState`.
-  // Only fields present in the active schema are offered (e.g. `days` only for domain materials).
-  const wikiData = useMemo(() => {
-    const res = wikiResult
-    const rows: WikiRow[] = []
-    const applyVals: Record<string, (v: Record<string, unknown>) => Record<string, unknown>> = {}
-    let imageApply: { id: string; state: ImageState } | null = null
-    if (!res) return { rows, applyVals, imageApply }
-
-    const has = new Set(schema.fields.map((f) => f.key))
-    const strVal = (k: string): string => { const v = values[k]; return v == null ? '' : String(v) }
-    const add = (
-      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
-      fn?: (v: Record<string, unknown>) => Record<string, unknown>
-    ) => {
-      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
-      rows.push({ ...row, changed })
-      if (fn) applyVals[row.id] = fn
-    }
-    const daysDisp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
-
-    if (has.has('name') && res.name)
-      add({ id: 'mt-name', group: 'Identity', label: 'Name', current: strVal('name'), fetched: res.name },
-        (v) => ({ ...v, name: res.name }))
-    if (has.has('description') && res.description)
-      add({ id: 'mt-desc', group: 'Identity', label: 'Description', current: strVal('description'), fetched: res.description },
-        (v) => ({ ...v, description: res.description }))
-    if (has.has('wiki') && res.wikiUrl)
-      add({ id: 'mt-wiki', group: 'Identity', label: 'Wiki URL', current: strVal('wiki'), fetched: res.wikiUrl },
-        (v) => ({ ...v, wiki: res.wikiUrl }))
-    if (has.has('obtained') && res.obtained)
-      add({ id: 'mt-obtained', group: 'Details', label: 'Obtained', current: strVal('obtained'), fetched: res.obtained },
-        (v) => ({ ...v, obtained: res.obtained }))
-    if (has.has('days') && res.days)
-      add({ id: 'mt-days', group: 'Details', label: 'Available days',
-        current: daysDisp((values.days as number[]) ?? []), fetched: daysDisp(res.days) },
-        (v) => ({ ...v, days: res.days }))
-
-    // Type: mapped from the wiki Item GROUP → this schema's `type` option. If the pasted page is a
-    // different material category, warn instead of applying a wrong value.
-    const inferred = inferWikiCategory(res)
-    if (inferred && inferred !== schema.innerType) {
-      add({ id: 'mt-mismatch', group: 'Details', label: '⚠ Material type', current: schema.label,
-        fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: false, changed: false,
-        note: 'the pasted page is a different material category' })
-    } else if (has.has('type')) {
-      const typeField = schema.fields.find((f) => f.key === 'type')
-      const typeOptions = (typeField?.options ?? []).map((o) => String(o.value))
-      const mapped = mapWikiType(res, schema.innerType, typeOptions)
-      if (mapped)
-        add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: mapped },
-          (v) => ({ ...v, type: mapped }))
-      else if (res.type)
-        add({ id: 'mt-type', group: 'Details', label: 'Type', current: strVal('type'), fetched: res.type,
-          confirmOnly: true, ok: eqi(strVal('type'), res.type), changed: false })
-    }
-
-    // Rarity (appliable; applyWiki snaps it to a valid option for the resulting type).
-    if (has.has('rarity') && res.rarity != null)
-      add({ id: 'mt-rarity', group: 'Details', label: 'Rarity', current: strVal('rarity'), fetched: String(res.rarity) },
-        (v) => ({ ...v, rarity: String(res.rarity) }))
-
-    // Image — dataset convention is Item_<key>; use the fetched name's key so a first-time fill
-    // (before the name row is applied) still resolves the right basename instead of "Item_".
-    if (res.iconUrl) {
-      const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String(values.name ?? ''))}`
-      const file = wikiIconFileName(res.iconUrl, base)
-      rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
-        fetched: file, changed: describeImage(imageState) !== file })
-      imageApply = { id: 'mt-icon', state: urlStateFromWiki(res.iconUrl, base) }
-    }
-
-    return { rows, applyVals, imageApply }
-  }, [wikiResult, values, imageState, key, schema])
+  // Schema-aware review rows (built by the module-level material-wiki helpers above).
+  const wikiData = useMemo(
+    () => buildMaterialWikiData(wikiResult, values, imageState, key, schema),
+    [wikiResult, values, imageState, key, schema]
+  )
 
   const applyWiki = (ids: string[]) => {
     setValues((prev) => {
@@ -273,18 +329,8 @@ export default function MaterialForm({
     const errs: string[] = []
     for (const f of schema.fields) {
       if (!f.required || f.widget === 'computed') continue
-      if (f.widget === 'image') {
-        if (imageState.mode === 'none') errs.push('An image is required.')
-      } else if (f.widget === 'tags') {
-        const arr = values[f.key] as string[]
-        if (!arr || arr.length === 0) errs.push(`${f.label} is required.`)
-      } else if (f.widget === 'days') {
-        const arr = values[f.key] as number[]
-        if (!arr || arr.length === 0) errs.push(`${f.label}: select at least one day.`)
-      } else {
-        const v = values[f.key]
-        if (v == null || String(v).trim() === '') errs.push(`${f.label} is required.`)
-      }
+      const e = requiredFieldError(f, values, imageState)
+      if (e) errs.push(e)
     }
     if (key.trim() === '') errs.push('Record key cannot be empty.')
     return errs

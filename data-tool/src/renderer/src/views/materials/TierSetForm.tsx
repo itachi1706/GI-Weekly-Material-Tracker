@@ -6,6 +6,7 @@ import {
   defaultImageName,
   resolveImageFolder,
   resolveTiers,
+  type FieldSpec,
   type MaterialTypeSchema,
   type TierItemConfig,
   type TierSetConfig
@@ -40,30 +41,29 @@ function emptyTier(): TierData {
 
 // ── Shared values initialiser ─────────────────────────────────────────────────
 
+/** Shared value seeded from an existing record, per widget type. */
+function sharedValueFromRecord(field: FieldSpec, raw: unknown): unknown {
+  if (field.widget === 'tags' || field.widget === 'days') return Array.isArray(raw) ? raw : []
+  if (field.widget === 'bool') return Boolean(raw ?? true)
+  return raw ?? ''
+}
+
+/** Default shared value for a brand-new tier set, per widget type. */
+function sharedDefault(field: FieldSpec): unknown {
+  if (field.widget === 'bool') return true
+  if (field.widget === 'tags' || field.widget === 'days') return []
+  return ''
+}
+
 function initShared(schema: MaterialTypeSchema, fromRecord?: MaterialRecord): Record<string, unknown> {
   const config = schema.tierSet!
   const v: Record<string, unknown> = {}
   for (const key of config.sharedFieldKeys) {
     const field = schema.fields.find((f) => f.key === key)
     if (!field) continue
-    if (fromRecord) {
-      const raw = (fromRecord as Record<string, unknown>)[key]
-      if (field.widget === 'tags' || field.widget === 'days') {
-        v[key] = Array.isArray(raw) ? raw : []
-      } else if (field.widget === 'bool') {
-        v[key] = Boolean(raw ?? true)
-      } else {
-        v[key] = raw ?? ''
-      }
-    } else if (field.widget === 'bool') {
-      v[key] = true
-    } else if (field.widget === 'tags') {
-      v[key] = []
-    } else if (field.widget === 'days') {
-      v[key] = []
-    } else {
-      v[key] = ''
-    }
+    v[key] = fromRecord
+      ? sharedValueFromRecord(field, (fromRecord as Record<string, unknown>)[key])
+      : sharedDefault(field)
   }
   return v
 }
@@ -87,6 +87,106 @@ function tierDataFromRecord(record: MaterialRecord, existingKey: string, config:
 
 function stars(n: number): string {
   return '★'.repeat(Math.min(n, 5))
+}
+
+// ── Per-tier wiki review rows ──────────────────────────────────────────────────
+// Identity/Image patch that tier; Details type/days patch the SHARED section; rarity is
+// confirm-only (each tier's rarity is fixed by position — catches a wrong-tier paste). `apply`
+// entries are tagged tier|shared|image and split in applyWiki. Extracted from the component to
+// keep each builder small (SonarCloud S3776).
+type TierApply =
+  | { kind: 'tier'; patch: Partial<TierData> }
+  | { kind: 'shared'; key: string; value: unknown }
+  | { kind: 'image'; state: ImageState }
+
+type TierAddFn = (row: Omit<WikiRow, 'changed'> & { changed?: boolean }, entry?: TierApply) => void
+
+interface TierWikiCtx {
+  res: WikiMaterialResult
+  tier: TierData
+  cfg: TierItemConfig | undefined
+  i: number
+  config: TierSetConfig
+  shared: Record<string, unknown>
+  schema: MaterialTypeSchema
+  fallbackKey: string
+}
+
+function makeTierAdd(rows: WikiRow[], apply: Record<string, TierApply>): TierAddFn {
+  return (row, entry) => {
+    const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
+    rows.push({ ...row, changed })
+    if (entry) apply[row.id] = entry
+  }
+}
+
+function addTierIdentityRows(add: TierAddFn, ctx: TierWikiCtx): void {
+  const { res, tier, config, shared } = ctx
+  if (res.name)
+    add({ id: 't-name', group: 'Identity', label: 'Name', current: tier.name, fetched: res.name },
+      { kind: 'tier', patch: { name: res.name, ...(tier.keyTouched ? {} : { keyOverride: deriveKey(res.name) }) } })
+  if (res.description)
+    add({ id: 't-desc', group: 'Identity', label: 'Description', current: tier.description, fetched: res.description },
+      { kind: 'tier', patch: { description: res.description } })
+  if (res.obtained) {
+    if (config.sharedObtained)
+      add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String(shared['obtained'] ?? ''), fetched: res.obtained },
+        { kind: 'shared', key: 'obtained', value: res.obtained })
+    else
+      add({ id: 't-obtained', group: 'Identity', label: 'Obtained', current: tier.obtained, fetched: res.obtained },
+        { kind: 'tier', patch: { obtained: res.obtained } })
+  }
+  if (res.wikiUrl)
+    add({ id: 't-wiki', group: 'Identity', label: 'Wiki URL', current: tier.wiki, fetched: res.wikiUrl },
+      { kind: 'tier', patch: { wiki: res.wikiUrl } })
+}
+
+function addTierDetailsRows(add: TierAddFn, ctx: TierWikiCtx): void {
+  const { res, cfg, i, config, shared, schema } = ctx
+  const inferred = inferWikiCategory(res)
+  if (inferred)
+    add({ id: 't-category', group: 'Details', label: 'Category', current: CATEGORY_LABEL[schema.innerType] ?? schema.innerType,
+      fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: inferred === schema.innerType, changed: false,
+      note: inferred === schema.innerType ? undefined : 'pasted page is a different material category' })
+  if (config.sharedFieldKeys.includes('days') && res.days) {
+    const disp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
+    add({ id: 't-days', group: 'Details', label: 'Available days (shared)', current: disp((shared['days'] as number[]) ?? []), fetched: disp(res.days) },
+      { kind: 'shared', key: 'days', value: res.days })
+  }
+  if (cfg && res.rarity != null)
+    add({ id: 't-rarity', group: 'Details', label: `Rarity (tier ${i + 1})`, current: String(cfg.rarity),
+      fetched: String(res.rarity), confirmOnly: true, ok: res.rarity === cfg.rarity, changed: false,
+      note: res.rarity === cfg.rarity ? undefined : 'does not match this tier — wrong page?' })
+}
+
+function addTierImageRow(add: TierAddFn, ctx: TierWikiCtx): void {
+  const { res, tier, fallbackKey } = ctx
+  if (!res.iconUrl) return
+  // Basename from the FETCHED name (first-fill resolves the real name, not "Item_").
+  const base = `Item_${deriveKey(String(res.name ?? '')) || fallbackKey}`
+  const file = wikiIconFileName(res.iconUrl, base)
+  add({ id: 't-icon', group: 'Image', label: 'Icon', current: describeImage(tier.imageState), fetched: file,
+    changed: describeImage(tier.imageState) !== file },
+    { kind: 'image', state: urlStateFromWiki(res.iconUrl, base) })
+}
+
+function buildTierWikiData(
+  wikiResult: WikiMaterialResult | null, wikiTier: number | null, tiers: TierData[],
+  tierConfigs: TierItemConfig[], config: TierSetConfig, shared: Record<string, unknown>,
+  schema: MaterialTypeSchema, fallbackKeyOf: (i: number) => string
+): { rows: WikiRow[]; apply: Record<string, TierApply> } {
+  const rows: WikiRow[] = []
+  const apply: Record<string, TierApply> = {}
+  if (wikiResult == null || wikiTier == null) return { rows, apply }
+  const ctx: TierWikiCtx = {
+    res: wikiResult, tier: tiers[wikiTier] ?? emptyTier(), cfg: tierConfigs[wikiTier], i: wikiTier,
+    config, shared, schema, fallbackKey: fallbackKeyOf(wikiTier)
+  }
+  const add = makeTierAdd(rows, apply)
+  addTierIdentityRows(add, ctx)
+  addTierDetailsRows(add, ctx)
+  addTierImageRow(add, ctx)
+  return { rows, apply }
 }
 
 // ── Props ─────────────────────────────────────────────────────────────────────
@@ -186,77 +286,11 @@ export default function TierSetForm({
       .finally(() => setWikiBusy(false))
   }
 
-  // Review rows for the active tier. Identity/Image patch that tier; Details type/days patch the
-  // SHARED section; rarity is confirm-only (each tier's rarity is fixed by position — catches a
-  // wrong-tier paste). `apply` entries are tagged tier|shared|image and split in applyWiki.
-  type TierApply =
-    | { kind: 'tier'; patch: Partial<TierData> }
-    | { kind: 'shared'; key: string; value: unknown }
-    | { kind: 'image'; state: ImageState }
-  const wikiData = useMemo(() => {
-    const res = wikiResult
-    const i = wikiTier
-    const rows: WikiRow[] = []
-    const apply: Record<string, TierApply> = {}
-    if (res == null || i == null) return { rows, apply }
-    const tier = tiers[i] ?? emptyTier()
-    const cfg = tierConfigs[i]
-
-    const add = (
-      row: Omit<WikiRow, 'changed'> & { changed?: boolean },
-      entry?: TierApply
-    ) => {
-      const changed = row.changed ?? (!!row.fetched.trim() && !eqi(row.fetched, row.current))
-      rows.push({ ...row, changed })
-      if (entry) apply[row.id] = entry
-    }
-
-    // Identity (→ this tier)
-    if (res.name)
-      add({ id: 't-name', group: 'Identity', label: 'Name', current: tier.name, fetched: res.name },
-        { kind: 'tier', patch: { name: res.name, ...(tier.keyTouched ? {} : { keyOverride: deriveKey(res.name) }) } })
-    if (res.description)
-      add({ id: 't-desc', group: 'Identity', label: 'Description', current: tier.description, fetched: res.description },
-        { kind: 'tier', patch: { description: res.description } })
-    if (res.obtained) {
-      if (config.sharedObtained)
-        add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String(shared['obtained'] ?? ''), fetched: res.obtained },
-          { kind: 'shared', key: 'obtained', value: res.obtained })
-      else
-        add({ id: 't-obtained', group: 'Identity', label: 'Obtained', current: tier.obtained, fetched: res.obtained },
-          { kind: 'tier', patch: { obtained: res.obtained } })
-    }
-    if (res.wikiUrl)
-      add({ id: 't-wiki', group: 'Identity', label: 'Wiki URL', current: tier.wiki, fetched: res.wikiUrl },
-        { kind: 'tier', patch: { wiki: res.wikiUrl } })
-
-    // Details — category confirm (mismatch = wrong page), shared days, tier-rarity confirm.
-    const inferred = inferWikiCategory(res)
-    if (inferred)
-      add({ id: 't-category', group: 'Details', label: 'Category', current: CATEGORY_LABEL[schema.innerType] ?? schema.innerType,
-        fetched: CATEGORY_LABEL[inferred] ?? inferred, confirmOnly: true, ok: inferred === schema.innerType, changed: false,
-        note: inferred === schema.innerType ? undefined : 'pasted page is a different material category' })
-    if (config.sharedFieldKeys.includes('days') && res.days) {
-      const disp = (arr: number[]): string => arr.map((n) => DAY_ABBR[n] ?? n).join('/')
-      add({ id: 't-days', group: 'Details', label: 'Available days (shared)', current: disp((shared['days'] as number[]) ?? []), fetched: disp(res.days) },
-        { kind: 'shared', key: 'days', value: res.days })
-    }
-    if (cfg && res.rarity != null)
-      add({ id: 't-rarity', group: 'Details', label: `Rarity (tier ${i + 1})`, current: String(cfg.rarity),
-        fetched: String(res.rarity), confirmOnly: true, ok: res.rarity === cfg.rarity, changed: false,
-        note: res.rarity === cfg.rarity ? undefined : 'does not match this tier — wrong page?' })
-
-    // Image (→ this tier). Basename from the FETCHED name (first-fill resolves the real name, not "Item_").
-    if (res.iconUrl) {
-      const base = `Item_${deriveKey(String(res.name ?? '')) || tierKey(i)}`
-      const file = wikiIconFileName(res.iconUrl, base)
-      add({ id: 't-icon', group: 'Image', label: 'Icon', current: describeImage(tier.imageState), fetched: file,
-        changed: describeImage(tier.imageState) !== file },
-        { kind: 'image', state: urlStateFromWiki(res.iconUrl, base) })
-    }
-
-    return { rows, apply }
-  }, [wikiResult, wikiTier, tiers, shared, tierConfigs, config, schema])
+  // Review rows for the active tier (built by the module-level tier-wiki helpers above).
+  const wikiData = useMemo(
+    () => buildTierWikiData(wikiResult, wikiTier, tiers, tierConfigs, config, shared, schema, tierKey),
+    [wikiResult, wikiTier, tiers, shared, tierConfigs, config, schema]
+  )
 
   const applyWiki = (ids: string[]) => {
     const i = wikiTier
