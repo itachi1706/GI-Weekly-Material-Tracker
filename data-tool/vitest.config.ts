@@ -15,6 +15,9 @@ export default defineConfig({
     include: ['src/**/*.test.ts'],
     coverage: {
       provider: 'v8',
+      // `lcov` → coverage/lcov.info for SonarCloud (see sonar-project.properties); `text` for local runs.
+      reporter: ['text', 'lcov'],
+      reportsDirectory: 'coverage',
       include: ['src/shared/**/*.ts', 'src/main/ipc/wiki.ts'],
       exclude: ['src/**/*.test.ts', 'src/shared/types.ts']
     }

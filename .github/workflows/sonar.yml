@@ -64,6 +64,21 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@61819f33034117e6c686e6a31dba995a85afc9de # v2
         with:
           fallback: 1.0.0
+      - name: Use Node.JS 24 (data-tool)
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+          cache-dependency-path: data-tool/package-lock.json
+      - name: Generate data-tool test coverage (LCOV)
+        working-directory: data-tool
+        run: |
+          npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts
+          npm run test:cov
+      - name: Rebase LCOV paths to repo root
+        # Vitest emits SF paths relative to data-tool/; prefix them so they resolve against the
+        # repo-root project base dir that SonarCloud analyses (file keys are `data-tool/src/...`).
+        run: sed -i 's#^SF:#SF:data-tool/#' data-tool/coverage/lcov.info
       - name: SonarQube Scanner
         uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995 # v8.1.0
         env:
