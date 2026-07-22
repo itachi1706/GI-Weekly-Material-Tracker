@@ -1,9 +1,10 @@
 import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname, relative } from 'node:path'
+import { join, dirname } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
+import { dataDir, datasetFile, imagePath } from './paths'
 import type {
   CharacterChange,
   CharacterRecord,
@@ -14,13 +15,6 @@ import type {
 } from '@shared/types'
 
 const CHARACTERS = ENTITIES.find((e) => e.key === 'characters')!
-
-function dataDir(rootPath: string): string {
-  return join(rootPath, 'data')
-}
-function imagesDir(rootPath: string): string {
-  return join(rootPath, 'images')
-}
 
 async function characterFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
@@ -33,7 +27,7 @@ async function readCharacterRecords(
   rootPath: string,
   file: string
 ): Promise<{ raw: string; parsed: { characters: Record<string, CharacterRecord> } }> {
-  const path = join(dataDir(rootPath), file)
+  const path = datasetFile(rootPath, file)
   if (!existsSync(path)) {
     return { raw: '', parsed: { characters: {} } }
   }
@@ -132,10 +126,7 @@ export async function previewCharacterCommit(
 
 async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
-  const dest = join(imagesDir(rootPath), plan.destRelative)
-  if (relative(imagesDir(rootPath), dest).startsWith('..')) {
-    throw new Error('Path traversal detected')
-  }
+  const dest = imagePath(rootPath, plan.destRelative)
   await mkdir(dirname(dest), { recursive: true })
   if (plan.source === 'localFile') {
     await copyFile(plan.sourcePath, dest)
@@ -157,7 +148,7 @@ export async function commitCharacter(
     }
     if (change.image) await performImageOp(rootPath, change.image)
     for (const plan of change.images ?? []) await performImageOp(rootPath, plan)
-    await writeFile(join(dataDir(rootPath), change.file), preview.after, 'utf-8')
+    await writeFile(datasetFile(rootPath, change.file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) }

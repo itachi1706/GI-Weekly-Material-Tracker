@@ -1,10 +1,11 @@
 import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname, extname, relative } from 'node:path'
+import { join, dirname, extname } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { getMaterialSchema } from '@shared/materialsSchema'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
+import { dataDir, datasetFile, imageDir, imagePath } from './paths'
 import type {
   MaterialChange,
   MaterialRecord,
@@ -16,13 +17,6 @@ import type {
 
 const MATERIALS = ENTITIES.find((e) => e.key === 'materials')!
 
-function dataDir(rootPath: string): string {
-  return join(rootPath, 'data')
-}
-function imagesDir(rootPath: string): string {
-  return join(rootPath, 'images')
-}
-
 async function materialFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
   return files.filter((f) => f.startsWith(MATERIALS.filePrefix!) && f.endsWith('.json')).sort()
@@ -32,7 +26,7 @@ async function readRecords(
   rootPath: string,
   file: string
 ): Promise<{ raw: string; parsed: { materials: Record<string, MaterialRecord> } }> {
-  const path = join(dataDir(rootPath), file)
+  const path = datasetFile(rootPath, file)
   if (!existsSync(path)) {
     return { raw: '', parsed: { materials: {} } }
   }
@@ -90,7 +84,7 @@ export async function listTemplates(rootPath: string): Promise<Record<string, Ma
 
 /** List existing image filenames in an images/ subfolder (for the "pick existing" picker). */
 export async function listImages(rootPath: string, folder: string): Promise<string[]> {
-  const dir = join(imagesDir(rootPath), folder)
+  const dir = imageDir(rootPath, folder)
   if (!existsSync(dir)) return []
   const files = await readdir(dir)
   return files
@@ -122,10 +116,9 @@ async function collectImagesRecursive(dir: string, prefix: string): Promise<stri
  * E.g. ["Characters/Pyro/Amber.png", "Outfits/Thumbnail/Standard/Amber.png"]
  */
 export async function listImagesMulti(rootPath: string, folders: string[]): Promise<string[]> {
-  const imDir = imagesDir(rootPath)
   const results: string[] = []
   for (const folder of folders) {
-    const dirPath = join(imDir, folder)
+    const dirPath = imageDir(rootPath, folder)
     if (!existsSync(dirPath)) continue
     const rel = await collectImagesRecursive(dirPath, '')
     for (const f of rel) results.push(`${folder}/${f}`.replaceAll('\\', '/'))
@@ -145,8 +138,8 @@ function mimeFor(path: string): string {
 export async function previewImage(rootPath: string, plan: ImagePlan): Promise<string | null> {
   try {
     if (plan.source === 'existing') {
-      const abs = join(imagesDir(rootPath), plan.relativePath)
-      if (relative(imagesDir(rootPath), abs).startsWith('..') || !existsSync(abs)) return null
+      const abs = imagePath(rootPath, plan.relativePath)
+      if (!existsSync(abs)) return null
       const buf = await readFile(abs)
       return `data:${mimeFor(abs)};base64,${buf.toString('base64')}`
     }
@@ -234,7 +227,7 @@ export async function previewCommit(
 
 async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
-  const dest = join(imagesDir(rootPath), plan.destRelative)
+  const dest = imagePath(rootPath, plan.destRelative)
   await mkdir(dirname(dest), { recursive: true })
   if (plan.source === 'localFile') {
     await copyFile(plan.sourcePath, dest)
@@ -255,7 +248,7 @@ export async function commit(rootPath: string, change: MaterialChange): Promise<
     // Image op first so a failed download/copy doesn't leave a dangling JSON reference.
     if (change.image) await performImageOp(rootPath, change.image)
 
-    await writeFile(join(dataDir(rootPath), change.file), preview.after, 'utf-8')
+    await writeFile(datasetFile(rootPath, change.file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) }
@@ -309,7 +302,7 @@ export async function batchCommit(
       if (change.image) await performImageOp(rootPath, change.image)
     }
 
-    await writeFile(join(dataDir(rootPath), changes[0].file), preview.after, 'utf-8')
+    await writeFile(datasetFile(rootPath, changes[0].file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) }

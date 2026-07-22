@@ -1,7 +1,8 @@
 import { readFile, writeFile, copyFile, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { dirname } from 'node:path'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
+import { datasetFile, imagePath } from './paths'
 import type {
   BannerChange,
   BannerRecord,
@@ -15,13 +16,6 @@ import type {
 const FILE = 'EventBanners.json'
 const BANNER_TYPES: BannerType[] = ['character', 'weapon', 'standard', 'chronicled']
 
-function dataDir(rootPath: string): string {
-  return join(rootPath, 'data')
-}
-function imagesDir(rootPath: string): string {
-  return join(rootPath, 'images')
-}
-
 interface BannersFile {
   banners: {
     [type: string]: BannerRecord[] | BannerRecord | undefined
@@ -30,7 +24,7 @@ interface BannersFile {
 }
 
 async function readBanners(rootPath: string): Promise<{ raw: string; parsed: BannersFile }> {
-  const path = join(dataDir(rootPath), FILE)
+  const path = datasetFile(rootPath, FILE)
   if (!existsSync(path)) return { raw: '', parsed: { banners: {} } }
   const raw = await readFile(path, 'utf-8')
   const parsed = JSON.parse(raw)
@@ -129,7 +123,7 @@ export async function previewBannerCommit(
 
 async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
-  const dest = join(imagesDir(rootPath), plan.destRelative)
+  const dest = imagePath(rootPath, plan.destRelative)
   await mkdir(dirname(dest), { recursive: true })
   if (plan.source === 'localFile') {
     await copyFile(plan.sourcePath, dest)
@@ -147,7 +141,7 @@ export async function commitBanner(rootPath: string, change: BannerChange): Prom
       return { ok: false, error: preview.formattingDriftWarning }
     }
     if (change.image) await performImageOp(rootPath, change.image)
-    await writeFile(join(dataDir(rootPath), FILE), preview.after, 'utf-8')
+    await writeFile(datasetFile(rootPath, FILE), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) }
