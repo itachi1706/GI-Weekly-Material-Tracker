@@ -37,8 +37,11 @@ export function inferWikiCategory(res: WikiMaterialResult): string | null {
 export function mapWikiType(res: WikiMaterialResult, innerType: string, typeOptions: string[]): string | null {
   let candidate: string | null = null
   if (innerType === 'local_speciality') {
-    const m = /\(([^)]+)\)/.exec(res.type ?? '') // "Local Specialty (Inazuma)" → region
-    if (m) candidate = `Local Speciality (${m[1]})`
+    // "Local Specialty (Inazuma)" → region. Linear indexOf scan (avoids `/\(([^)]+)\)/`, S8786).
+    const t = res.type ?? ''
+    const open = t.indexOf('(')
+    const close = open >= 0 ? t.indexOf(')', open + 1) : -1
+    if (close > open + 1) candidate = `Local Speciality (${t.slice(open + 1, close)})`
   } else if (innerType === 'boss_drops') {
     const g = res.group ?? '', g2 = res.group2 ?? '', t = res.type ?? ''
     if (/ascension gem/i.test(g2) || /ascension gem/i.test(g)) candidate = 'Ascension Gems'

@@ -394,14 +394,24 @@ export const CREATE_OPTIONS: CreateOption[] = [
   { label: 'Domain Material (tier set)', schemaKey: 'domain_material', schema: domainMaterial }
 ]
 
+/** Trim leading and trailing `_` or `-` via a linear scan (avoids `/^[_-]+|[_-]+$/`, S8786). */
+function trimUnderscoreDash(s: string): string {
+  let start = 0
+  let end = s.length
+  while (start < end && (s[start] === '_' || s[start] === '-')) start++
+  while (end > start && (s[end - 1] === '_' || s[end - 1] === '-')) end--
+  return s.slice(start, end)
+}
+
 /** Derive the record key from a display name (spaces → underscores). */
 export function deriveKey(name: string): string {
-  return name.trim()
-    .replaceAll(/[^A-Za-z0-9_\- ]/g, '')  // strip chars outside A-Za-z0-9 _ -
-    .trim()
-    .replaceAll(/\s+/g, '_')               // spaces → underscores
-    .replaceAll(/_+/g, '_')                // collapse consecutive underscores
-    .replaceAll(/^[_-]+|[_-]+$/g, '')      // trim leading/trailing _ or -
+  return trimUnderscoreDash(
+    name.trim()
+      .replaceAll(/[^A-Za-z0-9_\- ]/g, '') // strip chars outside A-Za-z0-9 _ -
+      .trim()
+      .replaceAll(/\s+/g, '_') // spaces → underscores
+      .replaceAll(/_+/g, '_') // collapse consecutive underscores
+  )
 }
 
 /** Default image filename for a new record: `Item_<key>.<ext>`. */

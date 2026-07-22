@@ -12,6 +12,13 @@ import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../share
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
+/** Strip a trailing run of digits (`"mat2"` → `"mat"`) via a linear scan (avoids `/\d+$/`, S8786). */
+function stripTrailingDigits(s: string): string {
+  let end = s.length
+  while (end > 0 && s[end - 1] >= '0' && s[end - 1] <= '9') end--
+  return s.slice(0, end)
+}
+
 const WEAPON_TYPES = ['Sword', 'Claymore', 'Polearm', 'Bow', 'Catalyst'] as const
 type WeaponType = typeof WEAPON_TYPES[number]
 
@@ -224,7 +231,7 @@ export default function WeaponForm({
   // ── Mat slot helpers ─────────────────────────────────────────────────────────
 
   const openPicker = (slotKey: string) => {
-    setPickerState({ slotKey, prefix: slotKey.replace(/\d+$/, '') })
+    setPickerState({ slotKey, prefix: stripTrailingDigits(slotKey) })
   }
 
   const setMatSlot = (key: string, val: string) => {

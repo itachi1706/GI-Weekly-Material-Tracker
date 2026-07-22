@@ -117,12 +117,22 @@ export function hasTrailingNewline(content: string): boolean {
   return content.endsWith('\n')
 }
 
+/**
+ * Remove trailing `\n` characters. Linear scan (not `/\n+$/`, whose unanchored `+$` restart is
+ * O(n²) on adversarial input — SonarCloud S8786).
+ */
+export function stripTrailingNewlines(s: string): string {
+  let end = s.length
+  while (end > 0 && s.charCodeAt(end - 1) === 10 /* \n */) end--
+  return s.slice(0, end)
+}
+
 /** Match a serialized string to a reference file's trailing-newline convention. */
 export function withTrailingNewline(serialized: string, reference: string): string {
   const wanted = hasTrailingNewline(reference)
   const has = hasTrailingNewline(serialized)
   if (wanted && !has) return serialized + '\n'
-  if (!wanted && has) return serialized.replace(/\n+$/, '')
+  if (!wanted && has) return stripTrailingNewlines(serialized)
   return serialized
 }
 

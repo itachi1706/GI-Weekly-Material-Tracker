@@ -34,6 +34,22 @@ describe('cleanInline', () => {
   it('unwraps [[a]] links', () => {
     expect(cleanInline('See [[Mondstadt]].')).toBe('See Mondstadt.')
   })
+  it('keeps text after the first pipe in a multi-pipe link', () => {
+    expect(cleanInline('[[a|b|c]]')).toBe('b|c')
+  })
+  it('leaves a malformed link with a stray ] untouched', () => {
+    expect(cleanInline('[[a]b]]')).toBe('[[a]b]]')
+  })
+  it('unwraps the innermost when links are adjacent to brackets', () => {
+    expect(cleanInline('[[a[[b]]')).toBe('a[[b')
+  })
+  it('keeps the label of an external link and drops a bare url', () => {
+    expect(cleanInline('see [https://ex.com/p Example] here')).toBe('see Example here')
+    expect(cleanInline('ref [https://ex.com/p] done')).toBe('ref done')
+  })
+  it('preserves an empty <> (needs ≥1 char between angle brackets)', () => {
+    expect(cleanInline('a<>b')).toBe('a<>b')
+  })
   it('keeps the display arg of text-wrapping templates', () => {
     expect(cleanInline('{{w|Adventure Rank}} rises.')).toBe('Adventure Rank rises.')
   })
@@ -106,6 +122,13 @@ describe('convertBirthday', () => {
   it('passes through null and unparseable input', () => {
     expect(convertBirthday(null)).toBeNull()
     expect(convertBirthday('sometime')).toBe('sometime')
+  })
+  it('uses the first letters+number run and does not search past a non-month first run', () => {
+    // First triple is "Foo 5"; "Foo" is not a month → the whole value passes through unchanged.
+    expect(convertBirthday('Foo 5 September 3')).toBe('Foo 5 September 3')
+  })
+  it('finds the month even when preceded by a leading number token', () => {
+    expect(convertBirthday('12 October 13')).toBe('13/10')
   })
 })
 

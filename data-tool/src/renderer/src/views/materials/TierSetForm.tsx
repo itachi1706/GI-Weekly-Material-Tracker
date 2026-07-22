@@ -10,6 +10,7 @@ import {
   type TierItemConfig,
   type TierSetConfig
 } from '@shared/materialsSchema'
+import { stripTrailingNewlines } from '@shared/serialize'
 import ImageField from './ImageField'
 import { TagsInput, DaysSelect } from './MaterialForm'
 import { extOf, sanitizeImageBasename, type ImageState } from './util'
@@ -165,7 +166,7 @@ export default function TierSetForm({
     const qual = ['', 'Lv.40+ ', 'Lv.60+ '][i] ?? ''
     const lines = enemies.map((e) => `- Dropped by ${qual}${e}`).join('\n')
     const cur = tiers[i]?.obtained ?? ''
-    const prefix = cur.trim() ? cur.replace(/\n+$/, '') + '\n' : ''
+    const prefix = cur.trim() ? stripTrailingNewlines(cur) + '\n' : ''
     updateTier(i, { obtained: prefix + lines })
   }
 

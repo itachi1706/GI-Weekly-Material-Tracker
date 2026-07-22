@@ -77,24 +77,118 @@ export function decodeEntities(s: string): string {
     .replaceAll('­', '') // bare soft-hyphen character
 }
 
+// ── Linear string scanners ───────────────────────────────────────────────────────
+// The wiki cleaners below replace regex literals whose quantified class + required terminal
+// (`[^\]]*\]\]`, `\S+\s+…]`, `<[^>]+>`, `[a-zA-Z]+$`, …) restart at every position and so run in
+// O(n²) on adversarial input (SonarCloud S8786). Each helper is a single left-to-right scan that
+// reproduces the original match semantics exactly (locked by wiki.test.ts).
+
+const isAsciiLetter = (c: string): boolean => (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
+const isAsciiDigit = (c: string): boolean => c >= '0' && c <= '9'
+const isInlineSpace = (c: string): boolean =>
+  c === ' ' || c === '\t' || c === '\n' || c === '\r' || c === '\f' || c === '\v' || c === ' '
+
+/** `[[target|display]]` → `display`, `[[page]]` → `page`. A stray `]` inside leaves the link intact. */
+function stripWikiLinks(s: string): string {
+  let out = ''
+  let i = 0
+  while (i < s.length) {
+    if (s[i] === '[' && s[i + 1] === '[') {
+      const close = s.indexOf(']]', i + 2)
+      if (close !== -1) {
+        const inner = s.slice(i + 2, close)
+        if (!inner.includes(']')) {
+          const pipe = inner.indexOf('|')
+          out += pipe === -1 ? inner : inner.slice(pipe + 1)
+          i = close + 2
+          continue
+        }
+      }
+    }
+    out += s[i]
+    i++
+  }
+  return out
+}
+
+/** `[http(s)://url label]` → `label`, `[http(s)://url]` → `` (bare link dropped). */
+function stripExternalLinks(s: string): string {
+  let out = ''
+  let i = 0
+  while (i < s.length) {
+    const isLink = s[i] === '[' && (s.startsWith('[http://', i) || s.startsWith('[https://', i))
+    if (isLink) {
+      const close = s.indexOf(']', i + 1)
+      if (close !== -1) {
+        const inner = s.slice(i + 1, close) // "url" or "url<space>label"
+        let ws = 0
+        while (ws < inner.length && !isInlineSpace(inner[ws])) ws++
+        if (ws < inner.length) {
+          let k = ws
+          while (k < inner.length && isInlineSpace(inner[k])) k++
+          out += inner.slice(k) // label after the whitespace run
+        }
+        i = close + 1
+        continue
+      }
+    }
+    out += s[i]
+    i++
+  }
+  return out
+}
+
+/** Remove `<…>` HTML tags (≥1 char between the brackets), repeating until stable like the source. */
+function stripHtmlTags(s: string): string {
+  let prev: string
+  do {
+    prev = s
+    let out = ''
+    let i = 0
+    while (i < s.length) {
+      if (s[i] === '<') {
+        const close = s.indexOf('>', i + 1)
+        if (close > i + 1) {
+          i = close + 1
+          continue
+        }
+      }
+      out += s[i]
+      i++
+    }
+    s = out
+  } while (s !== prev)
+  return s
+}
+
+/** Remove trailing spaces/tabs on every line but the last (the `[ \t]+\n` → `\n` step). */
+function trimSpacesBeforeNewlines(s: string): string {
+  const parts = s.split('\n')
+  for (let idx = 0; idx < parts.length - 1; idx++) {
+    let end = parts[idx].length
+    while (end > 0 && (parts[idx][end - 1] === ' ' || parts[idx][end - 1] === '\t')) end--
+    parts[idx] = parts[idx].slice(0, end)
+  }
+  return parts.join('\n')
+}
+
 /** Strip inline wiki markup from an infobox param value → plain text. */
 export function cleanInline(s: string): string {
   let out = s
     .replaceAll(/<ref[^>]*\/>/gi, '')
     .replaceAll(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
   out = stripUntilStable(out, /<!--[\s\S]*?-->/g) // HTML comments (repeat: nested/overlapping)
+  out = stripWikiLinks(out) // [[a|b]] → b, [[a]] → a
   out = out
-    .replaceAll(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1') // [[a|b]] → b
-    .replaceAll(/\[\[([^\]]*)\]\]/g, '$1') // [[a]] → a
     // Text-wrapping templates: keep the (first) displayed arg. {{w|X}}, {{sic|X}} ("X" [sic]),
     // {{tt|display|title}} (tooltip) — dropping these whole would lose real words (e.g. "Barbara").
     .replaceAll(/\{\{(?:w|zh|ja|ko|sic|tt)\|([^}|]*)(?:\|[^}]*)?\}\}/gi, '$1')
     .replaceAll(/\{\{[^{}]*\}\}/g, '') // drop other (non-text) templates
-    .replaceAll(/\[https?:\/\/\S+\s+([^\]]*)\]/g, '$1') // [url label] → label
-    .replaceAll(/\[https?:\/\/\S+\]/g, '')
+  out = stripExternalLinks(out) // [url label] → label, [url] → ''
+  out = out
     .replaceAll(/'''?/g, '')
     .replaceAll(/<br\s*\/?>/gi, ' ')
-  out = stripUntilStable(out, /<[^>]+>/g) // HTML tags (repeat: a removal can't re-form a tag)
+  out = stripHtmlTags(out) // HTML tags (repeat: a removal can't re-form a tag)
   return decodeEntities(out)
     .replaceAll(/\s+/g, ' ')
     .trim()
@@ -145,13 +239,31 @@ export function infoboxBlock(wikitext: string, template = 'Character Infobox'): 
   return wikitext.slice(start)
 }
 
-/** "October 13th" → "13/10" (the dataset's D/M, NO leading zeros). Unchanged if unparseable. */
+/**
+ * "October 13th" → "13/10" (the dataset's D/M, NO leading zeros). Unchanged if unparseable.
+ * Scans for the first `<letters> <1–2 digits>` run (avoids `/([A-Za-z]+)\s+(\d{1,2})/`, whose
+ * unanchored search restarts O(n²), S8786). Matches the original `.exec`-then-check semantics:
+ * only the first such run is considered — a non-month first run falls through unchanged.
+ */
 export function convertBirthday(raw: string | null): string | null {
   if (!raw) return null
-  const m = /([A-Za-z]+)\s+(\d{1,2})/.exec(raw)
-  if (m) {
-    const mon = MONTHS[m[1].toLowerCase()]
-    if (mon) return `${Number.parseInt(m[2], 10)}/${mon}`
+  let i = 0
+  while (i < raw.length) {
+    if (!isAsciiLetter(raw[i])) {
+      i++
+      continue
+    }
+    let j = i
+    while (j < raw.length && isAsciiLetter(raw[j])) j++ // [A-Za-z]+
+    let k = j
+    while (k < raw.length && isInlineSpace(raw[k])) k++ // \s+
+    if (k > j && k < raw.length && isAsciiDigit(raw[k])) {
+      let d = k
+      while (d < raw.length && d < k + 2 && isAsciiDigit(raw[d])) d++ // \d{1,2}
+      const mon = MONTHS[raw.slice(i, j).toLowerCase()]
+      return mon ? `${Number.parseInt(raw.slice(k, d), 10)}/${mon}` : raw
+    }
+    i = j // skip the whole letter run (every sub-start fails identically)
   }
   return raw
 }
@@ -173,7 +285,8 @@ function cleanBlock($: CheerioAPI, el: AnyNode): string {
     .replace(/\n?Hover over previews[\s\S]*$/i, '')
     .replace(/\n?\(Preview Preferences\)[\s\S]*$/i, '')
     .replaceAll('\u00A0', ' ')
-    .replaceAll(/[ \t]+\n/g, '\n')
+  txt = trimSpacesBeforeNewlines(txt) // was /[ \t]+\n/g (S8786)
+  txt = txt
     .replaceAll(/\n[ \t]+/g, '\n')
     .replaceAll(/\n{3,}/g, '\n\n')
     .trim()
@@ -392,7 +505,9 @@ function substituteEffectVars(effect: string, box: string): string {
 /** Strip a trailing flag letter from a stat value (`9.6%b` → `9.6%`; `7.5%` unchanged). */
 function cleanStatValue(v: string | null): string | null {
   if (!v) return null
-  return v.replace(/[a-zA-Z]+$/, '').trim() || null
+  let end = v.length // trailing ASCII letters (was /[a-zA-Z]+$/, S8786)
+  while (end > 0 && isAsciiLetter(v[end - 1])) end--
+  return v.slice(0, end).trim() || null
 }
 
 /**
