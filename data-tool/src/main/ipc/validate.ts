@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { roundTrips } from '@shared/serialize'
 import { validateDataset, isDataFile, type ValidationReport } from '@shared/validate'
@@ -8,9 +8,10 @@ export function runValidation(rootPath: string): ValidationReport {
   const dataDir = join(rootPath, 'data')
   const imagesDir = join(rootPath, 'images')
 
-  // A dataset root without a data/ dir is a real problem, not a clean dataset: report it as an
-  // ERROR finding (rather than throwing, or returning a "✓ clean" empty report).
-  if (!existsSync(dataDir)) {
+  // A missing data/ dir (or a data path that isn't a directory) is a real problem, not a clean
+  // dataset: report it as an ERROR finding rather than throwing (ENOTDIR would otherwise escape
+  // readdirSync) or returning a "✓ clean" empty report.
+  if (!existsSync(dataDir) || !statSync(dataDir).isDirectory()) {
     return {
       findings: [
         {

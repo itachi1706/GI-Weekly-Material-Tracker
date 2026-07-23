@@ -41,7 +41,7 @@ type Screen =
   | { kind: 'view'; row: MaterialSummary; record: MaterialRecord }
 
 export default function MaterialsView({ rootPath }: Readonly<{ rootPath: string }>) {
-  const { list, loading, reload } = useMaterials(rootPath)
+  const { list, loading, error: listError, reload } = useMaterials(rootPath)
   const [screen, setScreen] = useState<Screen>({ kind: 'list' })
   const [listQuery, setListQuery] = useState('')
   const [listTypeFilter, setListTypeFilter] = useState('')
@@ -211,7 +211,7 @@ export default function MaterialsView({ rootPath }: Readonly<{ rootPath: string 
     <div className="materials">
       {screen.kind === 'list' && (
         <MaterialsList
-          rootPath={rootPath} list={list} loading={loading}
+          rootPath={rootPath} list={list} loading={loading} error={listError}
           query={listQuery} typeFilter={listTypeFilter}
           onQueryChange={setListQuery} onTypeFilterChange={setListTypeFilter}
           onNew={onNew} onOpen={onOpen}

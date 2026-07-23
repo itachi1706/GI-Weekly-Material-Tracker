@@ -18,6 +18,7 @@ interface Props {
   rootPath: string
   list: MaterialSummary[]
   loading: boolean
+  error?: string | null
   // Controlled filter state (lifted to parent so it persists across navigation)
   query: string
   typeFilter: string
@@ -28,7 +29,7 @@ interface Props {
 }
 
 export default function MaterialsList({
-  rootPath, list, loading,
+  rootPath, list, loading, error,
   query, typeFilter, onQueryChange, onTypeFilterChange,
   onNew, onOpen
 }: Readonly<Props>) {
@@ -79,6 +80,8 @@ export default function MaterialsList({
           + New material
         </button>
       </header>
+
+      {error && <div className="form-errors">{error}</div>}
 
       <div className="mat-list-filters">
         <input

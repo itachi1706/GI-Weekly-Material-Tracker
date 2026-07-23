@@ -28,6 +28,7 @@ export default function OutfitsView({ rootPath }: Readonly<{ rootPath: string }>
       const data = await window.api.outfits.list(rootPath)
       if (id !== reqId.current) return
       setList(data)
+      setError(null) // clear any prior load failure once the latest request succeeds
     } catch (e) {
       if (id !== reqId.current) return
       setList([]) // drop stale records rather than showing another root's data on failure

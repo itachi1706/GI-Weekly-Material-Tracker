@@ -4,6 +4,7 @@ import type { MaterialSummary } from '@shared/types'
 export function useMaterials(rootPath: string) {
   const [list, setList] = useState<MaterialSummary[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   // Monotonic request id: only the newest reload() is allowed to update state, so a slow response
   // for a previous rootPath can't clobber the current one (out-of-order resolution).
   const reqId = useRef(0)
@@ -15,11 +16,13 @@ export function useMaterials(rootPath: string) {
       const data = await window.api.materials.list(rootPath)
       if (id !== reqId.current) return
       setList(data)
+      setError(null)
     } catch (e) {
       if (id !== reqId.current) return
-      // Drop stale records rather than showing another root's data on failure.
+      // Drop stale records and surface the failure so the list screen can explain the empty state.
       console.error('[useMaterials] list failed:', e)
       setList([])
+      setError(`Could not load materials: ${(e as Error).message}`)
     } finally {
       if (id === reqId.current) setLoading(false)
     }
@@ -29,5 +32,5 @@ export function useMaterials(rootPath: string) {
     void reload()
   }, [reload])
 
-  return { list, loading, reload }
+  return { list, loading, error, reload }
 }
