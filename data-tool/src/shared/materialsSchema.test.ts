@@ -1,6 +1,17 @@
 import { describe, it, expect } from 'vitest'
-import { deriveKey, applyFormValues, defaultImageName } from './materialsSchema'
-import type { MaterialTypeSchema } from './materialsSchema'
+import {
+  deriveKey,
+  applyFormValues,
+  defaultImageName,
+  getMaterialSchema,
+  resolveRarityOptions,
+  resolveImageFolder,
+  resolveTiers,
+  getTierSetKey,
+  type FieldSpec,
+  type MaterialTypeSchema,
+  type TierSetConfig
+} from './materialsSchema'
 import type { MaterialRecord } from './types'
 
 describe('deriveKey', () => {
@@ -25,6 +36,74 @@ describe('defaultImageName', () => {
     expect(defaultImageName('Hu_Tao', 'PNG')).toBe('Item_Hu_Tao.png')
     expect(defaultImageName('Hu_Tao', '.jpg')).toBe('Item_Hu_Tao.jpg')
     expect(defaultImageName('Hu_Tao', '')).toBe('Item_Hu_Tao.png')
+  })
+})
+
+describe('getMaterialSchema', () => {
+  it('resolves each innerType to its schema', () => {
+    expect(getMaterialSchema('local_speciality')?.innerType).toBe('local_speciality')
+    expect(getMaterialSchema('mob_drops')?.label).toBeTruthy()
+    expect(getMaterialSchema('nope')).toBeUndefined()
+  })
+  it('prefers the file-scoped variant when present (weekly boss drops)', () => {
+    const standard = getMaterialSchema('boss_drops')
+    const weekly = getMaterialSchema('boss_drops', 'Materials-Weekly_Boss_Drops.json')
+    expect(weekly).toBeDefined()
+    expect(weekly).not.toBe(standard)
+  })
+  it('falls back to the unscoped schema for an unknown file', () => {
+    expect(getMaterialSchema('boss_drops', 'Materials-Other.json')).toBe(getMaterialSchema('boss_drops'))
+  })
+})
+
+describe('resolveRarityOptions', () => {
+  it('defaults to 1..5 when a field has no rarityOptions', () => {
+    expect(resolveRarityOptions({ key: 'rarity', label: 'R', widget: 'rarity' }, {})).toEqual([1, 2, 3, 4, 5])
+  })
+  it('returns a static list as-is', () => {
+    const f = { key: 'rarity', label: 'R', widget: 'rarity', rarityOptions: [3, 4] } as unknown as FieldSpec
+    expect(resolveRarityOptions(f, {})).toEqual([3, 4])
+  })
+  it('invokes a function form with the current values', () => {
+    const f = {
+      key: 'rarity', label: 'R', widget: 'rarity',
+      rarityOptions: (v: Record<string, unknown>) => (v.type === 'A' ? [2] : [4, 5])
+    } as unknown as FieldSpec
+    expect(resolveRarityOptions(f, { type: 'A' })).toEqual([2])
+    expect(resolveRarityOptions(f, { type: 'B' })).toEqual([4, 5])
+  })
+})
+
+describe('resolveImageFolder / resolveTiers', () => {
+  it('uses imageFolderFn when present, else the static imageFolder', () => {
+    const base = { imageFolder: 'Static' } as MaterialTypeSchema
+    expect(resolveImageFolder(base, {})).toBe('Static')
+    const dyn = { imageFolder: 'Static', imageFolderFn: (v: Record<string, unknown>) => `Dyn/${v.type}` } as MaterialTypeSchema
+    expect(resolveImageFolder(dyn, { type: 'X' })).toBe('Dyn/X')
+  })
+  it('resolves static and function tier configs', () => {
+    const staticCfg = { tiers: [{ rarity: 2 }, { rarity: 3 }], sharedFieldKeys: [] } as TierSetConfig
+    expect(resolveTiers(staticCfg, {})).toHaveLength(2)
+    const fnCfg = {
+      tiers: (s: Record<string, unknown>) => (s.type === 'forgery' ? [{ rarity: 2 }, { rarity: 3 }, { rarity: 4 }, { rarity: 5 }] : [{ rarity: 2 }, { rarity: 3 }, { rarity: 4 }]),
+      sharedFieldKeys: []
+    } as TierSetConfig
+    expect(resolveTiers(fnCfg, { type: 'forgery' })).toHaveLength(4)
+    expect(resolveTiers(fnCfg, { type: 'mastery' })).toHaveLength(3)
+  })
+})
+
+describe('getTierSetKey', () => {
+  it('keys weekly boss drops by their obtained text', () => {
+    const rec = { obtained: 'Wolf of the North' } as unknown as MaterialRecord
+    expect(getTierSetKey(rec, 'boss_drops', 'Materials-Weekly_Boss_Drops.json')).toBe('weekly:Wolf of the North')
+  })
+  it('keys mob drops by type + sorted enemies', () => {
+    const rec = { type: 'Common', enemies: ['Slime', 'Hilichurl'] } as unknown as MaterialRecord
+    expect(getTierSetKey(rec, 'mob_drops')).toBe('mob:Common:Hilichurl,Slime')
+  })
+  it('returns empty string for types without tier sets', () => {
+    expect(getTierSetKey({} as MaterialRecord, 'local_speciality')).toBe('')
   })
 })
 

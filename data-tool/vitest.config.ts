@@ -18,7 +18,15 @@ export default defineConfig({
       // `lcov` → coverage/lcov.info for SonarCloud (see sonar-project.properties); `text` for local runs.
       reporter: ['text', 'lcov'],
       reportsDirectory: 'coverage',
-      include: ['src/shared/**/*.ts', 'src/main/ipc/wiki.ts'],
+      include: [
+        'src/shared/**/*.ts',
+        'src/main/ipc/wiki.ts',
+        'src/main/ipc/entityStore.ts',
+        'src/main/ipc/paths.ts',
+        'src/renderer/src/views/materials/util.ts',
+        'src/renderer/src/views/materials/materialWiki.ts',
+        'src/renderer/src/views/shared/wikiApply.ts'
+      ],
       exclude: ['src/**/*.test.ts', 'src/shared/types.ts']
     }
   }
