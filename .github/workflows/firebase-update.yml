@@ -16,7 +16,7 @@ jobs:
     name: Build Admin Util Tool # From "Build and Test Admin Util" and "Install Admin Util Dependencies" in GitLab CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Use Node.JS 20
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
@@ -35,7 +35,7 @@ jobs:
     name: Check which files are changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           fetch-depth: 0
       - name: Check if files changed for Realtime DB Banner
@@ -165,7 +165,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.rtdbbanner
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Use Node.JS 20
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
@@ -193,7 +193,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.fspj
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Use Node.JS 20
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
@@ -235,7 +235,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.csd
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - id: 'auth'
         uses: 'google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093'# v3
         with:
@@ -257,7 +257,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fsi
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Update Indexes
         uses: w9jds/firebase-action@47ca9cd931889c1fb7bc67f51597278159cb7c9e # v15.20.0
         with:
@@ -271,7 +271,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fbsr
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Update Storage Security Rules
         uses: w9jds/firebase-action@47ca9cd931889c1fb7bc67f51597278159cb7c9e # v15.20.0
         with:
@@ -299,7 +299,7 @@ jobs:
     needs: [changedfiles]
     if: needs.changedfiles.outputs.fbcf
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Use Node.JS 20
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
@@ -322,7 +322,7 @@ jobs:
     needs: [build-utility, changedfiles]
     if: needs.changedfiles.outputs.fstj
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Use Node.JS 20
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
