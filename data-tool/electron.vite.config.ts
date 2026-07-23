@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import { defineConfig } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 import type { Plugin } from 'vite'
 
@@ -33,11 +33,11 @@ function cspPlugin(): Plugin {
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()],
+    build: { externalizeDeps: true }, // replaces the deprecated externalizeDepsPlugin() (electron-vite 6)
     resolve: { alias: sharedAlias }
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    build: { externalizeDeps: true },
     resolve: { alias: sharedAlias }
   },
   renderer: {

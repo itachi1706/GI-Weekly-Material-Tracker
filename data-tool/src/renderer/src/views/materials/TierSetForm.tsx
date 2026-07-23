@@ -14,7 +14,7 @@ import {
 import { stripTrailingNewlines } from '@shared/serialize'
 import ImageField from './ImageField'
 import { TagsInput, DaysSelect } from './MaterialForm'
-import { extOf, sanitizeImageBasename, type ImageState } from './util'
+import { extOf, sanitizeImageBasename, fieldStr, type ImageState } from './util'
 import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
 import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
 import { DAY_ABBR, CATEGORY_LABEL, inferWikiCategory } from './materialWiki'
@@ -130,7 +130,7 @@ function addTierIdentityRows(add: TierAddFn, ctx: TierWikiCtx): void {
       { kind: 'tier', patch: { description: res.description } })
   if (res.obtained) {
     if (config.sharedObtained)
-      add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: String((shared['obtained'] as string) ?? ''), fetched: res.obtained },
+      add({ id: 't-obtained', group: 'Identity', label: 'Obtained (shared)', current: fieldStr(shared['obtained']), fetched: res.obtained },
         { kind: 'shared', key: 'obtained', value: res.obtained })
     else
       add({ id: 't-obtained', group: 'Identity', label: 'Obtained', current: tier.obtained, fetched: res.obtained },
@@ -331,7 +331,7 @@ export default function TierSetForm({
         if (!(v as string[]).length) errs.push(`${field.label} is required.`)
       } else if (field.widget === 'days') {
         if (!(v as number[]).length) errs.push(`${field.label}: select at least one day.`)
-      } else if (!v || String(v).trim() === '') {
+      } else if (!v || fieldStr(v).trim() === '') {
         errs.push(`${field.label} is required.`)
       }
     }
@@ -381,7 +381,7 @@ export default function TierSetForm({
 
       // Obtained: shared (weekly boss) or per-tier
       const obtained = config.sharedObtained
-        ? String(shared['obtained'] ?? '')
+        ? fieldStr(shared['obtained'])
         : tier.obtained
 
       const values: Record<string, unknown> = {
@@ -427,7 +427,7 @@ export default function TierSetForm({
       return (
         <div className="field" key={key}>
           <label htmlFor="tsf-f1">{field.label}{field.required && <span className="req">*</span>}</label>
-          <select id="tsf-f1" value={String(v ?? '')} onChange={(e) => setSharedField(key, e.target.value)}>
+          <select id="tsf-f1" value={fieldStr(v)} onChange={(e) => setSharedField(key, e.target.value)}>
             <option value="">— select —</option>
             {field.options?.map((o) => (
               <option key={String(o.value)} value={String(o.value)}>{o.label}</option>
@@ -480,7 +480,7 @@ export default function TierSetForm({
           <label htmlFor="tsf-f2">{field.label}{field.required && <span className="req">*</span>}</label>
           <textarea id="tsf-f2"
             rows={3}
-            value={String(v ?? '')}
+            value={fieldStr(v)}
             onChange={(e) => setSharedField(key, e.target.value)}
           />
           {field.help && <p className="field-help">{field.help}</p>}
@@ -492,7 +492,7 @@ export default function TierSetForm({
         <label htmlFor="tsf-f3">{field.label}{field.required && <span className="req">*</span>}</label>
         <input id="tsf-f3"
           type="text"
-          value={String(v ?? '')}
+          value={fieldStr(v)}
           onChange={(e) => setSharedField(key, e.target.value)}
         />
       </div>

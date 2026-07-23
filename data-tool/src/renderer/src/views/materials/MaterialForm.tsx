@@ -3,7 +3,7 @@ import type { MaterialRecord, InsertModeName, WikiMaterialResult } from '@shared
 import { deriveKey, resolveImageFolder, resolveRarityOptions, type FieldSpec, type MaterialTypeSchema } from '@shared/materialsSchema'
 import ImageField from './ImageField'
 import { RaritySelect } from '../shared/rarity'
-import type { ImageState } from './util'
+import { fieldStr, type ImageState } from './util'
 import WikiFillPanel, { type WikiRow } from '../shared/WikiFillPanel'
 import { urlStateFromWiki, wikiIconFileName, describeImage, eqi } from '../shared/wikiApply'
 import { DAY_ABBR, CATEGORY_LABEL, inferWikiCategory, mapWikiType } from './materialWiki'
@@ -129,7 +129,7 @@ function requiredFieldError(f: FieldSpec, values: Record<string, unknown>, image
     return !arr || arr.length === 0 ? `${f.label}: select at least one day.` : null
   }
   const v = values[f.key]
-  return v == null || String(v as string).trim() === '' ? `${f.label} is required.` : null
+  return v == null || fieldStr(v).trim() === '' ? `${f.label} is required.` : null
 }
 
 /** A real image path (has a filename), vs a template's bare folder prefix. */
@@ -222,7 +222,7 @@ function addMaterialDetailRows(add: MatAddFn, ctx: MatWikiCtx): void {
 function buildMaterialImageRow(rows: WikiRow[], ctx: MatWikiCtx): { id: string; state: ImageState } | null {
   const { res, key, values, imageState } = ctx
   if (!res.iconUrl) return null
-  const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(String((values.name as string) ?? ''))}`
+  const base = `Item_${deriveKey(String(res.name ?? '')) || key.trim() || deriveKey(fieldStr(values.name))}`
   const file = wikiIconFileName(res.iconUrl, base)
   rows.push({ id: 'mt-icon', group: 'Image', label: 'Icon', current: describeImage(imageState),
     fetched: file, changed: describeImage(imageState) !== file })
@@ -239,7 +239,7 @@ function buildMaterialWikiData(
   const ctx: MatWikiCtx = {
     res, values, imageState, key, schema,
     has: new Set(schema.fields.map((f) => f.key)),
-    strVal: (k) => { const v = values[k]; return v == null ? '' : String(v as string) }
+    strVal: (k) => fieldStr(values[k])
   }
   const add = makeMatAdd(rows, applyVals)
   addMaterialIdentityRows(add, ctx)
@@ -292,7 +292,7 @@ export default function MaterialForm({
   // ── Wiki auto-fill ─────────────────────────────────────────────────────────────
 
   const fetchMaterialWiki = () => {
-    const url = wikiUrl.trim() || String(values.wiki ?? '').trim()
+    const url = wikiUrl.trim() || fieldStr(values.wiki).trim()
     if (!url) { setWikiError('Paste a Genshin Wiki material URL first.'); return }
     setWikiBusy(true)
     setWikiError(null)
@@ -438,33 +438,33 @@ export default function MaterialForm({
               {f.widget === 'textarea' && (
                 <textarea
                   rows={3}
-                  value={String(v ?? '')}
+                  value={fieldStr(v)}
                   onChange={(e) => setField(f.key, e.target.value)}
                 />
               )}
               {f.widget === 'text' && (
                 <input
                   type="text"
-                  value={String(v ?? '')}
+                  value={fieldStr(v)}
                   onChange={(e) => setField(f.key, e.target.value)}
                 />
               )}
               {f.widget === 'number' && (
                 <input
                   type="number"
-                  value={String(v ?? '')}
+                  value={fieldStr(v)}
                   onChange={(e) => setField(f.key, e.target.value)}
                 />
               )}
               {f.widget === 'rarity' && (
                 <RaritySelect
-                  value={String(v ?? '')}
+                  value={fieldStr(v)}
                   onChange={(val) => setField(f.key, val)}
                   options={resolveRarityOptions(f, values)}
                 />
               )}
               {f.widget === 'select' && (
-                <select value={String(v ?? '')} onChange={(e) => setField(f.key, e.target.value)}>
+                <select value={fieldStr(v)} onChange={(e) => setField(f.key, e.target.value)}>
                   <option value="">— select —</option>
                   {f.options?.map((o) => (
                     <option key={String(o.value)} value={String(o.value)}>

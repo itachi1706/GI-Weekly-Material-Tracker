@@ -20,7 +20,7 @@ async function characterFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
   return files
     .filter((f) => f.startsWith(CHARACTERS.filePrefix!) && f.endsWith('.json'))
-    .sort()
+    .sort((a, b) => a.localeCompare(b))
 }
 
 async function readCharacterRecords(

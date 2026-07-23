@@ -46,7 +46,7 @@ export async function scanDataset(rootPath: string): Promise<DatasetInfo> {
       ent.singleFile
         ? dataFiles.filter((f) => f === ent.singleFile)
         : dataFiles.filter((f) => f.startsWith(ent.filePrefix ?? ''))
-    ).sort()
+    ).sort((a, b) => a.localeCompare(b))
 
     let recordCount = 0
     for (const file of files) {

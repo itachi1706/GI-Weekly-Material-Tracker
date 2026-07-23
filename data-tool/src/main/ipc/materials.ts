@@ -19,7 +19,7 @@ const MATERIALS = ENTITIES.find((e) => e.key === 'materials')!
 
 async function materialFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
-  return files.filter((f) => f.startsWith(MATERIALS.filePrefix!) && f.endsWith('.json')).sort()
+  return files.filter((f) => f.startsWith(MATERIALS.filePrefix!) && f.endsWith('.json')).sort((a, b) => a.localeCompare(b))
 }
 
 async function readRecords(

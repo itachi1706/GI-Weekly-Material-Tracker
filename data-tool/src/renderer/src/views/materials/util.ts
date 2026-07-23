@@ -1,5 +1,14 @@
 import type { ImagePlan } from '@shared/types'
 
+/**
+ * Stringify a form-field value (always a primitive here) for display/props. Casting to the primitive
+ * union keeps SonarCloud S6551 quiet — a bare `String(unknown)` could stringify an object to
+ * "[object Object]", but form values are only ever string/number/boolean.
+ */
+export function fieldStr(v: unknown): string {
+  return v == null ? '' : String(v as string | number | boolean)
+}
+
 /** Extension (no dot, lowercased) from a path or URL; defaults to "png". Ignores a Fandom
  *  `/revision/latest[/scale…]` suffix so the ext is read from the real `…X.png` filename. */
 export function extOf(pathOrUrl: string): string {

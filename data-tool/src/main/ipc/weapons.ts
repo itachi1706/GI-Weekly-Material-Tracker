@@ -18,7 +18,7 @@ const WEAPONS = ENTITIES.find((e) => e.key === 'weapons')!
 
 async function weaponFiles(rootPath: string): Promise<string[]> {
   const files = await readdir(dataDir(rootPath))
-  return files.filter((f) => f.startsWith(WEAPONS.filePrefix!) && f.endsWith('.json')).sort()
+  return files.filter((f) => f.startsWith(WEAPONS.filePrefix!) && f.endsWith('.json')).sort((a, b) => a.localeCompare(b))
 }
 
 async function readWeaponRecords(
