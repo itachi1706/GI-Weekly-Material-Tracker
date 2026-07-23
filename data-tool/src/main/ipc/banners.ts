@@ -1,16 +1,15 @@
-import { readFile, writeFile, copyFile, mkdir } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { dirname } from 'node:path'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
-import { datasetFile, imagePath } from './paths'
+import { datasetFile } from './paths'
+import { planActionText, performImageOp } from './entityStore'
 import type {
   BannerChange,
   BannerRecord,
   BannerSummary,
   BannerType,
   CommitPreview,
-  CommitResult,
-  ImagePlan
+  CommitResult
 } from '@shared/types'
 
 const FILE = 'EventBanners.json'
@@ -90,12 +89,6 @@ function applyChange(parsed: BannersFile, change: BannerChange): void {
   parsed.banners[change.bannerType] = arr
 }
 
-function planActionText(plan: ImagePlan | undefined): string | null {
-  if (!plan || plan.source === 'existing') return null
-  if (plan.source === 'localFile') return `Copy ${plan.sourcePath} → images/${plan.destRelative}`
-  return `Download ${plan.url} → images/${plan.destRelative}`
-}
-
 export async function previewBannerCommit(
   rootPath: string,
   change: BannerChange
@@ -119,19 +112,6 @@ export async function previewBannerCommit(
         ? 'EventBanners.json does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched banners. Run `npm run normalize:format` against the dataset once to fix.'
         : null
   }
-}
-
-async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
-  if (plan.source === 'existing') return
-  const dest = imagePath(rootPath, plan.destRelative)
-  await mkdir(dirname(dest), { recursive: true })
-  if (plan.source === 'localFile') {
-    await copyFile(plan.sourcePath, dest)
-    return
-  }
-  const res = await fetch(plan.url)
-  if (!res.ok) throw new Error(`Image download failed (${res.status}) for ${plan.url}`)
-  await writeFile(dest, Buffer.from(await res.arrayBuffer()))
 }
 
 export async function commitBanner(rootPath: string, change: BannerChange): Promise<CommitResult> {

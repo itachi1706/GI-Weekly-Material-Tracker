@@ -1,11 +1,18 @@
-import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
+import { readFile, readdir, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname, extname } from 'node:path'
+import { join, extname } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { getMaterialSchema } from '@shared/materialsSchema'
-import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
-import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
-import { dataDir, datasetFile, imageDir, imagePath } from './paths'
+import { datasetFile, imageDir, imagePath } from './paths'
+import {
+  listEntityFiles,
+  readEntityRecords,
+  applyKeyedChange,
+  planActionText,
+  performImageOp,
+  serializeRecords,
+  assembleCommit
+} from './entityStore'
 import type {
   MaterialChange,
   MaterialRecord,
@@ -16,32 +23,15 @@ import type {
 } from '@shared/types'
 
 const MATERIALS = ENTITIES.find((e) => e.key === 'materials')!
-
-async function materialFiles(rootPath: string): Promise<string[]> {
-  const files = await readdir(dataDir(rootPath))
-  return files.filter((f) => f.startsWith(MATERIALS.filePrefix!) && f.endsWith('.json')).sort((a, b) => a.localeCompare(b))
-}
-
-async function readRecords(
-  rootPath: string,
-  file: string
-): Promise<{ raw: string; parsed: { materials: Record<string, MaterialRecord> } }> {
-  const path = datasetFile(rootPath, file)
-  if (!existsSync(path)) {
-    return { raw: '', parsed: { materials: {} } }
-  }
-  const raw = await readFile(path, 'utf-8')
-  const parsed = JSON.parse(raw)
-  if (!parsed.materials || typeof parsed.materials !== 'object') parsed.materials = {}
-  return { raw, parsed }
-}
+const DRIFT =
+  'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
 
 /** Flatten all material records across files into browse-list rows. */
 export async function listMaterials(rootPath: string): Promise<MaterialSummary[]> {
   const out: MaterialSummary[] = []
-  for (const file of await materialFiles(rootPath)) {
-    const { parsed } = await readRecords(rootPath, file)
-    for (const [key, rec] of Object.entries(parsed.materials)) {
+  for (const file of await listEntityFiles(rootPath, MATERIALS.filePrefix!)) {
+    const { records } = await readEntityRecords<MaterialRecord>(rootPath, file, 'materials')
+    for (const [key, rec] of Object.entries(records)) {
       out.push({
         key,
         file,
@@ -62,8 +52,8 @@ export async function getMaterial(
   file: string,
   key: string
 ): Promise<MaterialRecord | null> {
-  const { parsed } = await readRecords(rootPath, file)
-  return parsed.materials[key] ?? null
+  const { records } = await readEntityRecords<MaterialRecord>(rootPath, file, 'materials')
+  return records[key] ?? null
 }
 
 /** Return all records in a single file (used for tier-set sibling lookup). */
@@ -71,8 +61,8 @@ export async function getMaterialsForFile(
   rootPath: string,
   file: string
 ): Promise<Record<string, MaterialRecord>> {
-  const { parsed } = await readRecords(rootPath, file)
-  return parsed.materials ?? {}
+  const { records } = await readEntityRecords<MaterialRecord>(rootPath, file, 'materials')
+  return records
 }
 
 /** Template skeletons from templates/materials.json (base objects for new records). */
@@ -87,13 +77,7 @@ export async function listImages(rootPath: string, folder: string): Promise<stri
   const dir = imageDir(rootPath, folder)
   if (!existsSync(dir)) return []
   const files = await readdir(dir)
-  return files
-    .filter((f) => /\.(png|jpe?g|webp|gif)$/i.test(f))
-    .sort((a, b) => {
-      if (a < b) return -1
-      if (a > b) return 1
-      return 0
-    })
+  return files.filter((f) => /\.(png|jpe?g|webp|gif)$/i.test(f)).sort((a, b) => a.localeCompare(b))
 }
 
 /** Recursively collect image paths (relative to the given dir) within a single directory. */
@@ -177,65 +161,16 @@ export async function previewImages(
   return out
 }
 
-/** Apply a change to a records map, returning the new map (order-preserving). */
-function applyChange(
-  records: Record<string, MaterialRecord>,
-  change: MaterialChange
-): Record<string, MaterialRecord> {
-  if (change.op === 'delete') {
-    return removeRecord(records, change.key)
-  }
-  const record = change.record!
-  if (change.op === 'update' && change.originalKey && change.originalKey !== change.key) {
-    return renameRecord(records, change.originalKey, change.key, record, change.ordering)
-  }
-  return insertRecord(records, change.key, record, change.ordering)
-}
-
-function imageActionText(change: MaterialChange): string | null {
-  const plan = change.image
-  if (!plan || plan.source === 'existing') return null // referencing an existing file = no file op
-  if (plan.source === 'localFile')
-    return `Copy ${plan.sourcePath} → images/${plan.destRelative}`
-  return `Download ${plan.url} → images/${plan.destRelative}`
-}
-
 export async function previewCommit(
   rootPath: string,
   change: MaterialChange
 ): Promise<CommitPreview> {
-  const { raw } = await readRecords(rootPath, change.file)
-  const parsed = raw ? JSON.parse(raw) : { materials: {} }
-  const before = raw
-
-  const nextMaterials = applyChange(parsed.materials ?? {}, change)
-  const nextParsed = { ...parsed, materials: nextMaterials }
-  const reference = before || '\n' // new files default to a trailing newline
-  const after = withTrailingNewline(stringifyDataFile(nextParsed), reference)
-
+  const { raw } = await readEntityRecords<MaterialRecord>(rootPath, change.file, 'materials')
   return {
     file: change.file,
-    before,
-    after,
-    imageAction: imageActionText(change),
-    formattingDriftWarning:
-      before && !roundTrips(before)
-        ? 'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
-        : null
+    ...assembleCommit(raw, 'materials', change, DRIFT),
+    imageAction: planActionText(change.image)
   }
-}
-
-async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
-  if (plan.source === 'existing') return
-  const dest = imagePath(rootPath, plan.destRelative)
-  await mkdir(dirname(dest), { recursive: true })
-  if (plan.source === 'localFile') {
-    await copyFile(plan.sourcePath, dest)
-    return
-  }
-  const res = await fetch(plan.url)
-  if (!res.ok) throw new Error(`Image download failed (${res.status}) for ${plan.url}`)
-  await writeFile(dest, Buffer.from(await res.arrayBuffer()))
 }
 
 export async function commit(rootPath: string, change: MaterialChange): Promise<CommitResult> {
@@ -244,10 +179,8 @@ export async function commit(rootPath: string, change: MaterialChange): Promise<
     if (preview.formattingDriftWarning) {
       return { ok: false, error: preview.formattingDriftWarning }
     }
-
     // Image op first so a failed download/copy doesn't leave a dangling JSON reference.
     if (change.image) await performImageOp(rootPath, change.image)
-
     await writeFile(datasetFile(rootPath, change.file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {
@@ -262,28 +195,19 @@ export async function previewBatchCommit(
 ): Promise<CommitPreview> {
   if (changes.length === 0) throw new Error('Empty batch')
   const file = changes[0].file
-  const { raw } = await readRecords(rootPath, file)
-  const parsed = raw ? JSON.parse(raw) : { materials: {} }
+  const { raw } = await readEntityRecords<MaterialRecord>(rootPath, file, 'materials')
 
-  let records = parsed.materials ?? {}
-  for (const change of changes) {
-    records = applyChange(records, change)
-  }
-
-  const reference = raw || '\n'
-  const after = withTrailingNewline(stringifyDataFile({ ...parsed, materials: records }), reference)
-
-  const imageActions = changes.map(imageActionText).filter((s): s is string => s !== null)
+  let records = (raw ? JSON.parse(raw).materials : {}) ?? {}
+  for (const change of changes) records = applyKeyedChange(records, change)
 
   return {
     file,
-    before: raw,
-    after,
-    imageAction: imageActions.length > 0 ? imageActions.join('\n') : null,
-    formattingDriftWarning:
-      raw && !roundTrips(raw)
-        ? 'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
-        : null
+    ...serializeRecords(raw, 'materials', records, DRIFT),
+    imageAction:
+      changes
+        .map((c) => planActionText(c.image))
+        .filter((s): s is string => s !== null)
+        .join('\n') || null
   }
 }
 
@@ -297,11 +221,9 @@ export async function batchCommit(
     if (preview.formattingDriftWarning) {
       return { ok: false, error: preview.formattingDriftWarning }
     }
-
     for (const change of changes) {
       if (change.image) await performImageOp(rootPath, change.image)
     }
-
     await writeFile(datasetFile(rootPath, changes[0].file), preview.after, 'utf-8')
     return { ok: true }
   } catch (err) {

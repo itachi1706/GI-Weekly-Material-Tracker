@@ -1,45 +1,26 @@
-import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { join } from 'node:path'
 import { ENTITIES } from '@shared/entities'
-import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
-import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
-import { dataDir, datasetFile, imagePath } from './paths'
-import type {
-  WeaponChange,
-  WeaponRecord,
-  WeaponSummary,
-  CommitPreview,
-  CommitResult,
-  ImagePlan
-} from '@shared/types'
+import { datasetFile } from './paths'
+import {
+  listEntityFiles,
+  readEntityRecords,
+  planActionText,
+  performImageOp,
+  assembleCommit
+} from './entityStore'
+import type { WeaponChange, WeaponRecord, WeaponSummary, CommitPreview, CommitResult } from '@shared/types'
 
 const WEAPONS = ENTITIES.find((e) => e.key === 'weapons')!
-
-async function weaponFiles(rootPath: string): Promise<string[]> {
-  const files = await readdir(dataDir(rootPath))
-  return files.filter((f) => f.startsWith(WEAPONS.filePrefix!) && f.endsWith('.json')).sort((a, b) => a.localeCompare(b))
-}
-
-async function readWeaponRecords(
-  rootPath: string,
-  file: string
-): Promise<{ raw: string; parsed: { weapons: Record<string, WeaponRecord> } }> {
-  const path = datasetFile(rootPath, file)
-  if (!existsSync(path)) {
-    return { raw: '', parsed: { weapons: {} } }
-  }
-  const raw = await readFile(path, 'utf-8')
-  const parsed = JSON.parse(raw)
-  if (!parsed.weapons || typeof parsed.weapons !== 'object') parsed.weapons = {}
-  return { raw, parsed }
-}
+const DRIFT =
+  'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
 
 export async function listWeapons(rootPath: string): Promise<WeaponSummary[]> {
   const out: WeaponSummary[] = []
-  for (const file of await weaponFiles(rootPath)) {
-    const { parsed } = await readWeaponRecords(rootPath, file)
-    for (const [key, rec] of Object.entries(parsed.weapons)) {
+  for (const file of await listEntityFiles(rootPath, WEAPONS.filePrefix!)) {
+    const { records } = await readEntityRecords<WeaponRecord>(rootPath, file, 'weapons')
+    for (const [key, rec] of Object.entries(records)) {
       out.push({
         key,
         file,
@@ -59,8 +40,8 @@ export async function getWeapon(
   file: string,
   key: string
 ): Promise<WeaponRecord | null> {
-  const { parsed } = await readWeaponRecords(rootPath, file)
-  return parsed.weapons[key] ?? null
+  const { records } = await readEntityRecords<WeaponRecord>(rootPath, file, 'weapons')
+  return records[key] ?? null
 }
 
 export async function listWeaponTemplates(rootPath: string): Promise<Record<string, WeaponRecord>> {
@@ -69,63 +50,16 @@ export async function listWeaponTemplates(rootPath: string): Promise<Record<stri
   return JSON.parse(await readFile(path, 'utf-8'))
 }
 
-function applyChange(
-  records: Record<string, WeaponRecord>,
-  change: WeaponChange
-): Record<string, WeaponRecord> {
-  if (change.op === 'delete') {
-    return removeRecord(records, change.key)
-  }
-  const record = change.record!
-  if (change.op === 'update' && change.originalKey && change.originalKey !== change.key) {
-    return renameRecord(records, change.originalKey, change.key, record, change.ordering)
-  }
-  return insertRecord(records, change.key, record, change.ordering)
-}
-
-function planActionText(plan: ImagePlan | undefined): string | null {
-  if (!plan || plan.source === 'existing') return null
-  if (plan.source === 'localFile')
-    return `Copy ${plan.sourcePath} → images/${plan.destRelative}`
-  return `Download ${plan.url} → images/${plan.destRelative}`
-}
-
 export async function previewWeaponCommit(
   rootPath: string,
   change: WeaponChange
 ): Promise<CommitPreview> {
-  const { raw } = await readWeaponRecords(rootPath, change.file)
-  const parsed = raw ? JSON.parse(raw) : { weapons: {} }
-  const before = raw
-
-  const nextWeapons = applyChange(parsed.weapons ?? {}, change)
-  const nextParsed = { ...parsed, weapons: nextWeapons }
-  const reference = before || '\n'
-  const after = withTrailingNewline(stringifyDataFile(nextParsed), reference)
-
+  const { raw } = await readEntityRecords<WeaponRecord>(rootPath, change.file, 'weapons')
   return {
     file: change.file,
-    before,
-    after,
-    imageAction: planActionText(change.image),
-    formattingDriftWarning:
-      before && !roundTrips(before)
-        ? 'Target file does not round-trip under the current serializer; commit is blocked to avoid reformatting untouched records.'
-        : null
+    ...assembleCommit(raw, 'weapons', change, DRIFT),
+    imageAction: planActionText(change.image)
   }
-}
-
-async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
-  if (plan.source === 'existing') return
-  const dest = imagePath(rootPath, plan.destRelative)
-  await mkdir(dirname(dest), { recursive: true })
-  if (plan.source === 'localFile') {
-    await copyFile(plan.sourcePath, dest)
-    return
-  }
-  const res = await fetch(plan.url)
-  if (!res.ok) throw new Error(`Image download failed (${res.status}) for ${plan.url}`)
-  await writeFile(dest, Buffer.from(await res.arrayBuffer()))
 }
 
 export async function commitWeapon(
