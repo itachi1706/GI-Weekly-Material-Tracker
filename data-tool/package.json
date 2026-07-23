@@ -20,8 +20,8 @@
     "test:materials": "node scripts/materials-commit-test.ts",
     "normalize:format": "node scripts/normalize-format.ts",
     "validate": "node scripts/validate-dataset.ts",
-    "build:mac": "electron-vite build && electron-builder --mac",
-    "build:win": "electron-vite build && electron-builder --win",
+    "build:mac": "electron-vite build && electron-builder --mac --publish never",
+    "build:win": "electron-vite build && electron-builder --win --publish never",
     "dist": "npm run build:mac"
   },
   "dependencies": {
