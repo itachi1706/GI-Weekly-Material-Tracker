@@ -4408,6 +4408,379 @@
       "hoyowiki": 2859,
       "subCollection": {}
     },
+    "Lohen": {
+      "image": "Characters/Cryo/Lohen.png",
+      "gender": "Male",
+      "birthday": "3/4",
+      "caption": "Sharpened Arrowhead",
+      "titles": [
+        "Vice Captain of the Knights of Favonius Ranged Company"
+      ],
+      "name": "Lohen",
+      "fullName": null,
+      "description": "Vice Captain of the Knights of Favonius Ranged Company, a knight known for his unorthodox approach and fondness for unconventional tactics.",
+      "nation": "Mondstadt",
+      "weapon": "Polearm",
+      "rarity": 5,
+      "affiliation": "Knights of Favonius, Adventurers' Guild",
+      "constellation": "Lepus Miles",
+      "outfits": [
+        "Frost-Forged_Edge"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Resistance",
+            "material3qty": 3,
+            "material4": "Firm_Arrowhead",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 2,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 4,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 6,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Resistance",
+            "material3qty": 9,
+            "material4": "Sharp_Arrowhead",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 4,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 6,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 12,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Ascended_Sample_Knight",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Resistance",
+            "material3qty": 16,
+            "material4": "Weathered_Arrowhead",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Moratorium_on_Questioning": {
+            "name": "Moratorium on Questioning",
+            "effect": "When nearby party members accumulate Will to Win for Lohen by dealing DMG while he is in Masterstroke mode, if that DMG is not less than 3,000% of Lohen's Base ATK, it will accumulate an extra 60 Will to Win.",
+            "image": "Talents/Passive/Talent_Moratorium_on_Questioning.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Flippant_Masterpiece": {
+            "name": "Flippant Masterpiece",
+            "effect": "While in Masterstroke mode, for 8s after another nearby party member triggers a Cryo Reaction, that character's ATK is increased by 15%, while Lohen's ATK is increased by 15%.",
+            "image": "Talents/Passive/Talent_Flippant_Masterpiece.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Unhealing_Thorn": {
+            "name": "Unhealing Thorn",
+            "effect": "After completing Witch's Homework: Of Various Foes, Lohen becomes a Hexerei character. When the party includes at least 2 Hexerei characters, you gain the Hexerei: Secret Rite effect, which enhances Hexerei characters.\n\nHexerei: Secret Rite\nWhen the special Elemental Skill Etched Into Bone and Soul hits an opponent or the Elemental Burst Manifest Judgment is unleashed, if Lohen's Will to Win is at 50% or more of its max limit, his Normal Attack and Charged Attack DMG will be increased by 40% for 6s.",
+            "image": "Talents/Passive/Talent_Unhealing_Thorn.png",
+            "order": 2,
+            "type": "Passive 3 (Witch's Eve Rite)"
+          },
+          "When_the_Mood_Strikes": {
+            "name": "When the Mood Strikes",
+            "effect": "Lohen gains \"High Spirits\" for 9s after he unleashes the Elemental Skill Unforeseen Strike: Increases the Skill Level of Unforeseen Strike by 1.\nWhen unleashing an Elemental Skill, if the Level of any other party member's Normal Attack, Elemental Skill, or Elemental Burst is not lower than Lohen's Elemental Skill Level, the duration of this instance of High Spirits will be increased by an additional 6s.\nHigh Spirits can be gained once every 18s.",
+            "image": "Talents/Passive/Talent_When_the_Mood_Strikes.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Spear_of_Favonius_Broken_Oath": {
+            "name": "Spear of Favonius — Broken Oath",
+            "effect": "Normal Attack\nPerforms up to 5 consecutive strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to perform a forward thrust.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Unforeseen_Strike": {
+            "name": "Unforeseen Strike",
+            "effect": "As he searches for weaknesses, Lohen switches to Masterstroke mode. While in this state:\nLohen can actively accumulate Joy, using it to unleash the special Elemental Skill Etched Into Bone and Soul.\nNearby party members can accumulate Will to Win for Lohen, increasing the DMG dealt by Etched Into Bone and Soul.\nLohen can unleash Etched Into Bone and Soul up to 3 times while in Masterstroke mode, after which, he will no longer be able to accumulate Joy.",
+            "image": "Talents/Skill/Talent_Unforeseen_Strike.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Manifest_Judgment": {
+            "name": "Manifest Judgment",
+            "effect": "Performs a swift series of forward strikes, consuming all Will to Win and dealing Cryo DMG. This DMG will be increased based on the amount of Will to Win consumed. If Lohen is in Masterstroke mode when this is performed, the duration of Masterstroke will be extended by 1.65s.",
+            "image": "Talents/Burst/Talent_Manifest_Judgment.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "O Breezes, That So Oft Bear Sorrowful Lament",
+          "effect": "Lohen's maximum Will to Win limit is increased to 300% of its original value.\nAdditionally, when other nearby party members deal DMG while Lohen is in Unforeseen Strike mode, they accumulate 500% as much Will to Win for him as they originally would have.",
+          "image": "Constellation/O_Breezes_That_So_Oft_Bear_Sorrowful_Lament.png"
+        },
+        "2": {
+          "name": "In Flight, I Strike Whatever Flies",
+          "effect": "When in Masterstroke mode, after the special Elemental Skill Etched Into Bone and Soul hits an opponent or the Elemental Burst Manifest Judgment is unleashed, Lohen gains \"Evilsbane Blade\" for 4s: The next time Lohen hits an opponent with a Normal or Charged Attack while in Masterstroke mode, he will follow up with an additional strike that deals AoE Cryo DMG equal to 500% of his ATK, and increase the Elemental Mastery of other nearby party members by 200 for 8s. Evilsbane Blade can be triggered once every 4s.",
+          "image": "Constellation/In_Flight_I_Strike_Whatever_Flies.png"
+        },
+        "3": {
+          "name": "Only the Spear That Wounds Can Heal",
+          "effect": "Increases the Level of Unforeseen Strike by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Only_the_Spear_That_Wounds_Can_Heal.png"
+        },
+        "4": {
+          "name": "Radiant Love, Laughing Death",
+          "effect": "When Lohen unleashes the Elemental Burst Manifest Judgment while in Masterstroke mode, his Will to Win will be maxed out, causing this instance of his Elemental Burst to gain the maximum possible DMG increase.\n\nAdditionally, when Lohen switches to Masterstroke mode, the following will occur depending on how much Elemental Energy he has:\nWhen Elemental Energy is not full: Lohen recovers 15 Elemental Energy.\nWhen Elemental Energy is full: If, during the next 15s, Lohen unleashes the Elemental Burst Manifest Judgment, he will recover 15 Elemental Energy.",
+          "image": "Constellation/Radiant_Love_Laughing_Death.png"
+        },
+        "5": {
+          "name": "Never Ask, Nor Trouble You to Know",
+          "effect": "Increases the Level of Manifest Judgment by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Never_Ask_Nor_Trouble_You_to_Know.png"
+        },
+        "6": {
+          "name": "To Drown, to Sink, Unconscious — Supreme Joy",
+          "effect": "Using the special Elemental Skill Etched Into Bone and Soul and hitting an opponent with it or, while Masterstroke mode is active, unleashing the Elemental Burst Manifest Judgment, will not consume any Will to Win. Instead, Lohen's Joy will be maxed out, and if he hits an opponent the next time he uses the special Elemental Skill Etched Into Bone and Soul, the duration of this instance of Masterstroke will be extended by 1.25s. This effect can be triggered once every 7s.\nAdditionally, the CRIT DMG of all the DMG described above is increased by 175%, and the number of times Lohen can unleash Etched Into Bone and Soul during this instance of Masterstroke is increased by 2.",
+          "image": "Constellation/To_Drown_to_Sink_Unconscious_Supreme_Joy.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Firm_Arrowhead",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Prismatic_Severed_Tail",
+          "level": 40,
+          "material4": "Firm_Arrowhead",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Prismatic_Severed_Tail",
+          "level": 50,
+          "material4": "Sharp_Arrowhead",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Prismatic_Severed_Tail",
+          "level": 60,
+          "material4": "Sharp_Arrowhead",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Prismatic_Severed_Tail",
+          "level": 70,
+          "material4": "Weathered_Arrowhead",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Prismatic_Severed_Tail",
+          "level": 80,
+          "material4": "Weathered_Arrowhead",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Etherwing_Moth",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "gem1": "Shivada_Jade_Silver",
+          "gem2": "Shivada_Jade_Fragment",
+          "gem3": "Shivada_Jade_Chunk",
+          "gem4": "Shivada_Jade_Gemstone",
+          "boss_drop": "Prismatic_Severed_Tail",
+          "local_speciality": "Etherwing_Moth"
+        },
+        "talents": {
+          "common1": "Firm_Arrowhead",
+          "common2": "Sharp_Arrowhead",
+          "common3": "Weathered_Arrowhead",
+          "mastery1": "Teachings_of_Resistance",
+          "mastery2": "Guide_to_Resistance",
+          "mastery3": "Philosophies_of_Resistance",
+          "weekly_boss_drop": "Ascended_Sample_Knight",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "Vice Captain of the Knights of Favonius 5th Company. A young knight who fights on the front lines, using himself as the arrow and his spear as its tip.",
+      "paimonmoepath": "characters/lohen",
+      "genshinggpath": "characters/lohen",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Lohen",
+      "hoyowiki": 10623,
+      "subCollection": {}
+    },
     "Mika": {
       "image": "Characters/Cryo/Mika.png",
       "gender": "Male",
