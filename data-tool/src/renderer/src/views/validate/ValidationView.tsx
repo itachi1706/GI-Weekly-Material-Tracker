@@ -7,6 +7,7 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
+  const [copyError, setCopyError] = useState<string | null>(null)
 
   const [severity, setSeverity] = useState<'all' | 'ERROR' | 'WARN'>('all')
   const [category, setCategory] = useState('')
@@ -64,10 +65,12 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
     if (!report) return
     try {
       await navigator.clipboard.writeText(formatReport(report.findings, report.fileCount))
+      setCopyError(null)
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
     } catch (e) {
-      setError(`Could not copy report to clipboard: ${(e as Error).message}`)
+      // Keep clipboard failures out of the validation-error banner; they're unrelated.
+      setCopyError(`Could not copy report to clipboard: ${(e as Error).message}`)
     }
   }
 
@@ -96,6 +99,7 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
       </header>
 
       {error && <div className="form-errors">Validation failed: {error}</div>}
+      {copyError && <div className="form-errors">{copyError}</div>}
 
       {report && (
         <>

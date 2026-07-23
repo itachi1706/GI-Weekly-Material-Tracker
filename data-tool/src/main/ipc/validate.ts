@@ -8,9 +8,23 @@ export function runValidation(rootPath: string): ValidationReport {
   const dataDir = join(rootPath, 'data')
   const imagesDir = join(rootPath, 'images')
 
-  // A dataset root without a data/ dir yields an empty (but well-formed) report rather than throwing.
+  // A dataset root without a data/ dir is a real problem, not a clean dataset: report it as an
+  // ERROR finding (rather than throwing, or returning a "✓ clean" empty report).
   if (!existsSync(dataDir)) {
-    return { findings: [], fileCount: 0, errorCount: 0, warnCount: 0 }
+    return {
+      findings: [
+        {
+          severity: 'ERROR',
+          category: 'dataset',
+          file: 'data/',
+          key: '',
+          detail: 'No data/ directory found under the dataset root — nothing to validate.'
+        }
+      ],
+      fileCount: 0,
+      errorCount: 1,
+      warnCount: 0
+    }
   }
 
   const names = readdirSync(dataDir).filter(isDataFile)

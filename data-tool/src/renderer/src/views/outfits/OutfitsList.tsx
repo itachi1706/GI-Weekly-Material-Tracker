@@ -12,6 +12,7 @@ interface Props {
   rootPath: string
   list: OutfitSummary[]
   loading: boolean
+  error?: string | null
   query: string
   fileFilter: string
   onQueryChange: (v: string) => void
@@ -21,7 +22,7 @@ interface Props {
 }
 
 export default function OutfitsList({
-  rootPath, list, loading,
+  rootPath, list, loading, error,
   query, fileFilter, onQueryChange, onFileFilterChange,
   onNew, onOpen
 }: Readonly<Props>) {
@@ -63,6 +64,8 @@ export default function OutfitsList({
         <h2>Outfits</h2>
         <button type="button" className="btn-primary" onClick={onNew}>+ New outfit</button>
       </header>
+
+      {error && <div className="form-errors">{error}</div>}
 
       <div className="mat-list-filters">
         <input
