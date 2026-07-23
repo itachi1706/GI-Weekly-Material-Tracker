@@ -1,5 +1,118 @@
 {
   "weapons": {
+    "A_Teaspoon_of_Transcendence": {
+      "secondary_stat_type": "CRIT DMG%",
+      "description": "An object of fantasy with countless definitions amidst an endless sea of stories. On the grand scale of the universe or the realm of dreams, there is no real difference between the holy sword of the brave warrior and the princess's teaspoon, or between the ice-cold clockspring and the key that will unlock the gates of transcendence...",
+      "name": "A Teaspoon of Transcendence",
+      "ascension": {
+        "1": {
+          "material3": "Tattered_Warrant",
+          "level": 20,
+          "material2": "Elite_Mob_1",
+          "material3qty": 3,
+          "material1": "Sundered_Glory_of_the_Far-North_Scions",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000,
+          "material3type": "common1",
+          "material2type": "elite1",
+          "material1type": "forgery1"
+        },
+        "2": {
+          "material3": "Tattered_Warrant",
+          "level": 40,
+          "material2": "Elite_Mob_1",
+          "material3qty": 12,
+          "material1": "Unyielding_Delusion_of_the_Far-North_Scions",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000,
+          "material3type": "common1",
+          "material2type": "elite1",
+          "material1type": "forgery2"
+        },
+        "3": {
+          "material3": "Immaculate_Warrant",
+          "level": 50,
+          "material2": "Elite_Mob_2",
+          "material3qty": 9,
+          "material1": "Unyielding_Delusion_of_the_Far-North_Scions",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000,
+          "material3type": "common2",
+          "material2type": "elite2",
+          "material1type": "forgery2"
+        },
+        "4": {
+          "material3": "Immaculate_Warrant",
+          "level": 60,
+          "material2": "Elite_Mob_2",
+          "material3qty": 14,
+          "material1": "Oblation_of_the_Far-North_Scions",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000,
+          "material3type": "common2",
+          "material2type": "elite2",
+          "material1type": "forgery3"
+        },
+        "5": {
+          "material3": "Frost-Etched_Warrant",
+          "level": 70,
+          "material2": "Elite_Mob_3",
+          "material3qty": 9,
+          "material1": "Oblation_of_the_Far-North_Scions",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000,
+          "material3type": "common3",
+          "material2type": "elite3",
+          "material1type": "forgery3"
+        },
+        "6": {
+          "material3": "Frost-Etched_Warrant",
+          "level": 80,
+          "material2": "Elite_Mob_3",
+          "material3qty": 18,
+          "material1": "Aureate_Radiance_of_the_Far-North_Scions",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000,
+          "material3type": "common3",
+          "material2type": "elite3",
+          "material1type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Tattered_Warrant",
+          "common2": "Immaculate_Warrant",
+          "common3": "Frost-Etched_Warrant",
+          "forgery1": "Sundered_Glory_of_the_Far-North_Scions",
+          "forgery2": "Unyielding_Delusion_of_the_Far-North_Scions",
+          "forgery3": "Oblation_of_the_Far-North_Scions",
+          "forgery4": "Aureate_Radiance_of_the_Far-North_Scions",
+          "elite1": "Elite_Mob_1",
+          "elite2": "Elite_Mob_2",
+          "elite3": "Elite_Mob_3"
+        }
+      },
+      "image": "Weapons/Claymore/Weapon_A_Teaspoon_of_Transcendence.png",
+      "secondary_stat": "9.6%",
+      "rarity": 5,
+      "type": "Claymore",
+      "max_secondary_stat": "44.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "White Fairy's Queening",
+      "effect": "ATK increased by 28~56%.Additionally, each time the equipping character hits an opponent with their Charged Attack, they attain \"Surmount\" for a short time: their Stellar-Conduct DMG is increased by 16~32% for 5s. This effect can stack once every 0.2s, max 3 stacks.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/A_Teaspoon_of_Transcendence",
+      "hoyowiki": 10949,
+      "subCollection": {}
+    },
     "A_Thousand_Blazing_Suns": {
       "secondary_stat_type": "CRIT Rate",
       "description": "A greatsword that dazzles like the rising sun. It has witnessed the extinguishing and rekindling of innumerable suns.",
