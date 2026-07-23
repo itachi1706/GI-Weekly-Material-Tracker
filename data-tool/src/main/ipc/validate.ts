@@ -8,6 +8,11 @@ export function runValidation(rootPath: string): ValidationReport {
   const dataDir = join(rootPath, 'data')
   const imagesDir = join(rootPath, 'images')
 
+  // A dataset root without a data/ dir yields an empty (but well-formed) report rather than throwing.
+  if (!existsSync(dataDir)) {
+    return { findings: [], fileCount: 0, errorCount: 0, warnCount: 0 }
+  }
+
   const names = readdirSync(dataDir).filter(isDataFile)
   const files = names.map((file) => ({ file, raw: readFileSync(join(dataDir, file), 'utf-8') }))
 

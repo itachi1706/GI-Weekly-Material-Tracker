@@ -20,9 +20,13 @@ export default function OutfitsView({ rootPath }: Readonly<{ rootPath: string }>
 
   const reload = async () => {
     setLoading(true)
-    const data = await window.api.outfits.list(rootPath)
-    setList(data)
-    setLoading(false)
+    try {
+      setList(await window.api.outfits.list(rootPath))
+    } catch (e) {
+      setError(`Could not load outfits: ${(e as Error).message}`)
+    } finally {
+      setLoading(false)
+    }
   }
 
   useEffect(() => { void reload() }, [rootPath])

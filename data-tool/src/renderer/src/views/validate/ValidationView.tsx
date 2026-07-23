@@ -62,9 +62,13 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
 
   const copyReport = async (): Promise<void> => {
     if (!report) return
-    await navigator.clipboard.writeText(formatReport(report.findings, report.fileCount))
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1500)
+    try {
+      await navigator.clipboard.writeText(formatReport(report.findings, report.fileCount))
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch (e) {
+      setError(`Could not copy report to clipboard: ${(e as Error).message}`)
+    }
   }
 
   let runLabel = 'Run validation'

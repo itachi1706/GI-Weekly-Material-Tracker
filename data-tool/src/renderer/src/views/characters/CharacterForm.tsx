@@ -996,8 +996,8 @@ export default function CharacterForm({
           <textarea className="talent-entry-effect" rows={3} placeholder="Effect"
             value={e.effect} onChange={(ev) => updateEntry(listKey, i, { effect: ev.target.value })} />
           <div className="talent-entry-key">
-            <label htmlFor="chr-f1">key</label>
-            <input id="chr-f1" type="text" value={displayKey}
+            <label htmlFor={`chr-talent-${listKey}-${i}-key`}>key</label>
+            <input id={`chr-talent-${listKey}-${i}-key`} type="text" value={displayKey}
               onChange={(ev) => updateEntry(listKey, i, { key: ev.target.value, keyTouched: true })} />
           </div>
         </div>

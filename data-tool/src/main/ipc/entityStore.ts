@@ -54,7 +54,11 @@ export function applyKeyedChange<R>(
   if (change.op === 'delete') {
     return removeRecord(records, change.key)
   }
-  const record = change.record!
+  // create/update must carry the record to write; fail loudly at this IPC boundary if it's missing.
+  if (!change.record) {
+    throw new Error(`applyKeyedChange: '${change.op}' for key '${change.key}' is missing a record`)
+  }
+  const record = change.record
   if (change.op === 'update' && change.originalKey && change.originalKey !== change.key) {
     return renameRecord(records, change.originalKey, change.key, record, change.ordering)
   }

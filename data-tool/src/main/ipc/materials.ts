@@ -197,7 +197,12 @@ export async function previewBatchCommit(
   const file = changes[0].file
   const { raw } = await readEntityRecords<MaterialRecord>(rootPath, file, 'materials')
 
-  let records = (raw ? JSON.parse(raw).materials : {}) ?? {}
+  // Mirror readEntityRecords' guard: fall back to {} if `materials` is missing or not an object.
+  const parsedMaterials = raw ? (JSON.parse(raw).materials as unknown) : undefined
+  let records: Record<string, MaterialRecord> =
+    parsedMaterials && typeof parsedMaterials === 'object'
+      ? (parsedMaterials as Record<string, MaterialRecord>)
+      : {}
   for (const change of changes) records = applyKeyedChange(records, change)
 
   return {

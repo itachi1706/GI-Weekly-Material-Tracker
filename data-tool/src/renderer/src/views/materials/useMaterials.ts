@@ -7,8 +7,14 @@ export function useMaterials(rootPath: string) {
 
   const reload = useCallback(async () => {
     setLoading(true)
-    setList(await window.api.materials.list(rootPath))
-    setLoading(false)
+    try {
+      setList(await window.api.materials.list(rootPath))
+    } catch (e) {
+      // Keep the last-known list; surface the failure without leaving an unhandled rejection.
+      console.error('[useMaterials] list failed:', e)
+    } finally {
+      setLoading(false)
+    }
   }, [rootPath])
 
   useEffect(() => {

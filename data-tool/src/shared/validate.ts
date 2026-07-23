@@ -175,7 +175,9 @@ function parseFiles(files: { file: string; raw: string }[], deps: ValidateDeps, 
     try {
       parsed.push({ file, data: JSON.parse(raw) })
     } catch (e) {
+      // Invalid JSON: report it and skip the drift check (a parse failure isn't a formatting drift).
       add('ERROR', 'invalid-json', file, '', `JSON parse failed: ${(e as Error).message}`)
+      continue
     }
     if (!deps.roundTrips(raw)) add('ERROR', 'formatting-drift', file, '', 'does not round-trip (reformats untouched records on commit)')
   }

@@ -498,7 +498,8 @@ export function applyFormValues(
     applyWidgetValue(record, field, values, base)
   }
   record.innerType = schema.innerType
-  record.usage = { characters: [], weapons: [] }
+  // Preserve an existing record's usage relationships (edits); default to empty for new records.
+  record.usage = base.usage ?? { characters: [], weapons: [] }
   record.subCollection ??= {}
   return record
 }
