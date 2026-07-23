@@ -189,7 +189,7 @@ jobs:
           path: ~/.flutter-devtools/apk-code-size-analysis_01.json
   ios:
     name: iOS Unsigned IPA
-    runs-on: macos-14 # For Apple Silicon
+    runs-on: macos-15 # Pinned (not macos-latest) to keep the Xcode 16.1.0 pin below valid; macos-14 retires 2026-11-02
     if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request') || github.event_name == 'workflow_dispatch'  # We only run this on master branch due to the time it takes
     env:
       APP_BUILD_VER: dogfood
@@ -216,7 +216,14 @@ jobs:
         uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1
         with:
           # xcode-version: latest-stable
-          xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
+          xcode-version: '16.4.0'
+      - name: Install iOS platform SDK
+        # Pinned Xcodes on the runner image no longer bundle the iOS platform, so the
+        # generic/platform=iOS destination is missing until we download it explicitly.
+        # Initial simctl list to start it up
+        run: |
+          xcrun simctl list > /dev/null
+          xcodebuild -downloadPlatform iOS
       - name: Cache pubspec dependencies
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:

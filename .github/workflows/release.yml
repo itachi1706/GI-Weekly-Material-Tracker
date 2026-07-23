@@ -316,9 +316,11 @@ jobs:
   generaterelease:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
-    needs: 
+    needs:
       - releaseapk
       - releaseipa
+      - releasedatatoolmac
+      - releasedatatoolwin
     name: Upload Artifact + Deploy Artifact
     permissions:
       contents: write
@@ -329,6 +331,14 @@ jobs:
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           name: flutter-unsigned-ipa-artifact-rel
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: datatool-dmg-artifact-rel
+          path: datatool-dmg
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: datatool-exe-artifact-rel
+          path: datatool-win
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@2b76766acf9574c24b5cec7608be8db5dc17968e # v1.5.0
       - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
@@ -385,8 +395,12 @@ jobs:
           files: |
             apks/*.apk
             apks/*.ipa
+            datatool-dmg/*.dmg
+            datatool-win/*.exe
+            datatool-win/*.exe.blockmap
+            datatool-win/latest.yml
   releaseipa:
-    runs-on: macos-14 # For Apple Silicon
+    runs-on: macos-15 # Pinned (not macos-latest) to keep the Xcode 16.1.0 pin below valid; macos-14 retires 2026-11-02
     name: Generate Release Flutter Unsigned IPA
     env:
       APP_BUILD_VER: beta
@@ -410,7 +424,14 @@ jobs:
         uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1
         with:
           # xcode-version: latest-stable
-          xcode-version: '16.1.0' # https://github.com/actions/runner-images/issues/11335
+          xcode-version: '16.4.0'
+      - name: Install iOS platform SDK
+        # Pinned Xcodes on the runner image no longer bundle the iOS platform, so the
+        # generic/platform=iOS destination is missing until we download it explicitly.
+        # Initial simctl list to start it up
+        run: |
+          xcrun simctl list > /dev/null
+          xcodebuild -downloadPlatform iOS
       - name: Cache pubspec dependencies
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
         with:
@@ -485,3 +506,69 @@ jobs:
           name: flutter-unsigned-ipa-artifact-rel
           path: |
             release/app.ipa
+  releasedatatoolmac:
+    runs-on: macos-latest # current GitHub macOS image; electron-builder emits a UNIVERSAL dmg (Intel + Apple Silicon)
+    name: Generate Release Data Tool macOS (universal .dmg)
+    defaults:
+      run:
+        working-directory: data-tool
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Use Node.JS 24
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+          cache-dependency-path: data-tool/package-lock.json
+      - name: Sync package version to tag (build-only)
+        shell: bash
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          if [[ "$VER" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.].*)?$ ]]; then
+            npm version "$VER" --no-git-tag-version --allow-same-version
+          else
+            echo "Tag '$GITHUB_REF_NAME' is not semver; keeping package.json version."
+          fi
+      - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
+      - name: Build unsigned universal DMG
+        run: npm run build:mac
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: datatool-dmg-artifact-rel
+          path: data-tool/dist/*.dmg
+          if-no-files-found: error
+  releasedatatoolwin:
+    runs-on: windows-latest
+    name: Generate Release Data Tool Windows (.exe)
+    defaults:
+      run:
+        working-directory: data-tool
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Use Node.JS 24
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24.x
+          cache: 'npm'
+          cache-dependency-path: data-tool/package-lock.json
+      - name: Sync package version to tag (build-only)
+        shell: bash
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          if [[ "$VER" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-.].*)?$ ]]; then
+            npm version "$VER" --no-git-tag-version --allow-same-version
+          else
+            echo "Tag '$GITHUB_REF_NAME' is not semver; keeping package.json version."
+          fi
+      - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
+      - name: Build NSIS installer
+        run: npm run build:win
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: datatool-exe-artifact-rel
+          # latest.yml + *.blockmap are the electron-updater metadata Windows self-update needs.
+          path: |
+            data-tool/dist/*.exe
+            data-tool/dist/*.exe.blockmap
+            data-tool/dist/latest.yml
+          if-no-files-found: error

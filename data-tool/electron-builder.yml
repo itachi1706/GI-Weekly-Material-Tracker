@@ -1,0 +1,35 @@
+appId: com.itachi1706.gi-weekly-material-tracker.datatool
+productName: GI Weekly Material Tracker Data Management Tool
+directories:
+  output: dist
+  buildResources: build
+# Feed for electron-updater. Embeds app-update.yml in the package and makes builds emit
+# latest.yml (Windows self-update) / latest-mac.yml. macOS is notice-only (unsigned — see updater.ts).
+publish:
+  provider: github
+  owner: itachi1706
+  repo: GI-Weekly-Material-Tracker
+# Ad-hoc sign the bundle post-pack so the unsigned app still launches on Apple Silicon.
+afterPack: build/afterPack.cjs
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+  - '!dataset/*'
+mac:
+  icon: build/icon.icns
+  target:
+    - target: dmg
+      arch: universal
+  category: public.app-category.developer-tools
+  # Unsigned build — no Apple Developer identity. Gatekeeper may warn on first launch
+  # (right-click → Open, or `xattr -cr <app>`); electron-builder ad-hoc signs the universal
+  # bundle (both the Intel x64 and Apple Silicon arm64 slices).
+  identity: null
+  artifactName: GIWMT-DataTool-${version}-${arch}.${ext}
+win:
+  artifactName: GIWMT-DataTool-${version}-${arch}.${ext}
+  target:
+    - nsis
