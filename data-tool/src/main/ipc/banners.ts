@@ -81,7 +81,12 @@ function applyChange(parsed: BannersFile, change: BannerChange): void {
   if (change.op === 'delete') {
     if (change.index != null) arr.splice(change.index, 1)
   } else if (change.op === 'update') {
-    if (change.index != null && change.record) arr[change.index] = change.record
+    // Only overwrite an existing element; a non-integer or out-of-range index would otherwise
+    // create a hole or a stray non-index property.
+    const idx = change.index
+    if (idx != null && Number.isInteger(idx) && idx >= 0 && idx < arr.length && change.record) {
+      arr[idx] = change.record
+    }
   } else if (change.record) {
     // create → insert at the top (index 0) of the type's array
     arr.unshift(change.record)

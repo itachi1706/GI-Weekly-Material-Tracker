@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { OutfitSummary, OutfitRecord, OutfitChange, CommitPreview as Preview } from '@shared/types'
 import OutfitsList from './OutfitsList'
 import OutfitForm from './OutfitForm'
@@ -17,12 +17,25 @@ export default function OutfitsView({ rootPath }: Readonly<{ rootPath: string }>
   const [preview, setPreview] = useState<{ data: Preview; change: OutfitChange } | null>(null)
   const [applying, setApplying] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Only the newest reload() may update state, so a slow response for a previous rootPath can't
+  // clobber the current one (out-of-order resolution).
+  const reqId = useRef(0)
 
   const reload = async () => {
+    const id = ++reqId.current
     setLoading(true)
-    const data = await window.api.outfits.list(rootPath)
-    setList(data)
-    setLoading(false)
+    try {
+      const data = await window.api.outfits.list(rootPath)
+      if (id !== reqId.current) return
+      setList(data)
+      setError(null) // clear any prior load failure once the latest request succeeds
+    } catch (e) {
+      if (id !== reqId.current) return
+      setList([]) // drop stale records rather than showing another root's data on failure
+      setError(`Could not load outfits: ${(e as Error).message}`)
+    } finally {
+      if (id === reqId.current) setLoading(false)
+    }
   }
 
   useEffect(() => { void reload() }, [rootPath])
@@ -80,6 +93,7 @@ export default function OutfitsView({ rootPath }: Readonly<{ rootPath: string }>
           rootPath={rootPath}
           list={list}
           loading={loading}
+          error={error}
           query={listQuery}
           fileFilter={listFileFilter}
           onQueryChange={setListQuery}

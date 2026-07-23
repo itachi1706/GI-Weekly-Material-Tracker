@@ -1026,7 +1026,7 @@ textarea:focus {
   background: none;
   padding: 4px 2px;
   font-size: 13px;
-  color: var(--text-primary);
+  color: var(--text);
 }
 .entity-link-input:focus {
   outline: none;
@@ -1055,7 +1055,7 @@ textarea:focus {
   border: none;
   cursor: pointer;
   text-align: left;
-  color: var(--text-primary);
+  color: var(--text);
 }
 .entity-link-option:hover,
 .entity-link-option-active {
@@ -1351,7 +1351,7 @@ textarea:focus {
   border: 1px solid var(--border);
   border-radius: 4px;
   background: var(--bg-input, var(--bg-secondary));
-  color: var(--text-primary);
+  color: var(--text);
   cursor: pointer;
   font-size: 12px;
   white-space: nowrap;
@@ -1377,7 +1377,7 @@ textarea:focus {
   flex-shrink: 0;
 }
 .mat-slot-clear:hover {
-  color: var(--text-primary);
+  color: var(--text);
   border-color: var(--text-muted);
 }
 
@@ -1432,7 +1432,7 @@ textarea:focus {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--text-primary);
+  color: var(--text);
 }
 .mat-picker-item:hover {
   background: rgba(255,255,255,0.05);

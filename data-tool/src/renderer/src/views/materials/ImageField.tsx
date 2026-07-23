@@ -44,11 +44,15 @@ export default function ImageField({ rootPath, imageFolder, defaultBasename, sta
   const [browseSearch, setBrowseSearch] = useState('')
 
   useEffect(() => {
-    if (browseSourceFolders) {
-      void window.api.materials.listImagesMulti(rootPath, browseSourceFolders).then(setExisting)
-    } else {
-      void window.api.materials.listImages(rootPath, imageFolder).then(setExisting)
-    }
+    let cancelled = false
+    // Clear immediately so the previous source's filenames don't linger while the new request runs.
+    setExisting([])
+    const p = browseSourceFolders
+      ? window.api.materials.listImagesMulti(rootPath, browseSourceFolders)
+      : window.api.materials.listImages(rootPath, imageFolder)
+    p.then((names) => { if (!cancelled) setExisting(names) })
+      .catch((e) => { if (!cancelled) console.error('[ImageField] listImages failed:', e) })
+    return () => { cancelled = true }
   }, [rootPath, imageFolder, browseSourceFolders?.join(',')])
 
   useEffect(() => {

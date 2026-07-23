@@ -433,7 +433,10 @@ async function fetchParse(url: string): Promise<ParseResult> {
   }
   let json: ParseResponse
   try {
-    const res = await fetch(api, { headers: { 'User-Agent': USER_AGENT } })
+    const res = await fetch(api, {
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(15000) // don't hang the fetch on a stalled wiki request
+    })
     if (!res.ok) throw new Error(`Wiki request failed (HTTP ${res.status}).`)
     json = (await res.json()) as ParseResponse
   } catch (e) {

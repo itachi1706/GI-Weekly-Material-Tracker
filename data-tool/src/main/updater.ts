@@ -59,7 +59,7 @@ function initWindowsUpdater(mainWindow: BrowserWindow): void {
         if (response === 0) autoUpdater.quitAndInstall()
       })
   })
-  void autoUpdater.checkForUpdates()
+  autoUpdater.checkForUpdates().catch((err) => console.warn('[updater] check failed:', err))
 }
 
 async function checkMacUpdate(mainWindow: BrowserWindow): Promise<void> {

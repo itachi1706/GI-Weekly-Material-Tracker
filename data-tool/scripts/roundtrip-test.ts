@@ -1,7 +1,9 @@
 /**
  * Round-trip formatting gate. Run with: npm run test:roundtrip
  *
- * All 8 Materials data files must re-serialize byte-for-byte after the inline-array serializer landed.
+ * Every editable data file — Materials-*, Outfits-*, Weapons-*, Characters-* and EventBanners.json —
+ * must re-serialize byte-for-byte under the inline-array serializer; any file that doesn't is blocked
+ * from commits (a drift would reformat untouched records).
  */
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
