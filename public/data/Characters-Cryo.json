@@ -383,7 +383,8 @@
       "affiliation": "The Steambird",
       "constellation": "Hualina Veritas",
       "outfits": [
-        "All_Is_Overt_Through_My_Lens"
+        "All_Is_Overt_Through_My_Lens",
+        "Hurlock_Variations"
       ],
       "talents": {
         "ascension": {
@@ -1114,7 +1115,8 @@
       "affiliation": "Mictlan",
       "constellation": "Patina Anavatlaca",
       "outfits": [
-        "Dawnseer"
+        "Dawnseer",
+        "Whispers_of_Stars_and_Smoke"
       ],
       "talents": {
         "ascension": {
@@ -5877,6 +5879,379 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Rosaria",
       "hoyowiki": 33,
+      "subCollection": {}
+    },
+    "Sandrone": {
+      "image": "Characters/Cryo/Sandrone.png",
+      "gender": "Female",
+      "birthday": "13/1",
+      "caption": "Mirrored Analysis",
+      "titles": [
+        "The Seventh of the Eleven Fatui Harbingers"
+      ],
+      "name": "Sandrone",
+      "fullName": "Marionette Guillotin",
+      "description": "The Seventh of the Fatui Harbingers, \"Marionette.\" Interprets all phenomena through the prism of mathematics, and is an elegant lady who is never absent from a tea party.",
+      "nation": "Snezhnaya",
+      "weapon": "Claymore",
+      "rarity": 5,
+      "affiliation": "Fatui, Eleven Fatui Harbingers, Adventurers' Guild",
+      "constellation": "Narcissorolegium",
+      "outfits": [
+        "Clockwork_Maidens_Waltz"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Vagrancy",
+            "material3qty": 3,
+            "material4": "Broken_Drive_Shaft",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 2,
+            "material4": "Reinforced_Drive_Shaft",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 4,
+            "material4": "Reinforced_Drive_Shaft",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 6,
+            "material4": "Reinforced_Drive_Shaft",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Vagrancy",
+            "material3qty": 9,
+            "material4": "Reinforced_Drive_Shaft",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 4,
+            "material4": "Precision_Drive_Shaft",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 6,
+            "material4": "Precision_Drive_Shaft",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 12,
+            "material4": "Precision_Drive_Shaft",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Madmans_Restraint",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Vagrancy",
+            "material3qty": 16,
+            "material4": "Precision_Drive_Shaft",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Eternal_Speculation_Engine": {
+            "name": "Eternal Speculation Engine",
+            "effect": "Radiance: Stellar-Conduct: When using the Elemental Skill Formule Phenomenale: Differential Analysis, if Fagio's Decoding Power is greater than 50, the second Prism Shot fired by Fagio at nearby opponents will deal 400% of its original DMG as Fagio's Decoding Power is decreased.\nAdditionally, for every 10 points of Decoding Power Fagio loses, it gains 1 stack of Refined Tactics for 60s (max 10 stacks). When Sandrone uses the Elemental Burst Formule Phenomenale: Q.E.D. while in the Radiance: Stellar-Conduct state, all stacks of Refined Tactics are cleared, causing the Convective Inhibition Ray to deal 100% + (number of stacks cleared) × 10% of its original DMG.",
+            "image": "Talents/Passive/Talent_Eternal_Speculation_Engine.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "A_Ladys_Code_of_Conduct": {
+            "name": "A Lady's Code of Conduct",
+            "effect": "Increases Sandrone's Elemental Mastery based on her ATK. Every 100 ATK will increase her Elemental Mastery by 8. The maximum increase she can gain this way is 160.",
+            "image": "Talents/Passive/Talent_A_Ladys_Code_of_Conduct.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Light_of_Rationalisme": {
+            "name": "Light of Rationalisme",
+            "effect": "When party members trigger Superconduct, it will be changed to Stellar-Conduct, and party members' Base Stellar-Conduct DMG will be increased based on Sandrone's ATK: Every 100 ATK she has increases the Base Stellar-Conduct DMG by 0.7%. The maximum increase that can be gained this way is 14%.\nAdditionally, when Sandrone is within a Polestar Field, she will enter the Radiance: Stellar-Conduct state.",
+            "image": "Talents/Passive/Talent_Light_of_Rationalisme.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "A_Caucus_Prelude_and_a_Long_Tale": {
+            "name": "A Caucus Prelude and a Long Tale",
+            "effect": "When Sandrone is in the party, you will gain additional snack rewards after turning in your Daily Commissions with Katheryne.",
+            "image": "Talents/Passive/Talent_A_Caucus_Prelude_and_a_Long_Tale.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Formule_Phenomenale_Self-Evident_Proposition": {
+            "name": "Formule Phenomenale: Self-Evident Proposition",
+            "effect": "Normal Attack\nGenerates threads that control her weapon using formulae, performing up to 3 consecutive strikes.\n\nCharged Attack\nSummons the Facilitatrice Automatisee Generaliste Interactive et Omnitache, or \"Fagio,\" and switches it to Decoding mode: Unleashes a sweeping fire attack on enemies in front, as well as periodically fires condensed beams, dealing AoE Cryo DMG.\nRadiance: Stellar-Conduct: The condensed beams will instead deal AoE Cryo DMG that is considered Stellar-Conduct DMG.\nWhile in Decoding mode, Fagio's Decoding Power will continuously increase. Firing condensed beams will also further increase its Decoding Power.\nWhen Fagio's Decoding Power reaches the maximum of 100 points, it switches to Power Overdrive mode, in which it fires at opponents with longer intervals, dealing Cryo DMG. It will be unable to switch to Decoding mode at this time.\nWhen not in Decoding mode, Fagio's Decoding Power gradually decreases. When Sandrone is off-field, she will focus on maintaining Fagio, causing its Decoding Power to decrease at 300% the original rate.\nFagio exits Power Overdrive mode when its Decoding Power has decreased to under 50.\n\nPlunging Attack\nPlunges from midair to strike the ground below, dealing DMG to opponents along their path and causing AoE DMG on landing.",
+            "image": "Talents/Normal/Claymore_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Formule_Phenomenale_Differential_Analysis": {
+            "name": "Formule Phenomenale: Differential Analysis",
+            "effect": "With her impeccable, ladylike poise, Sandrone boards the Tea Party Tactical Assault Hovermech and hovers forward for 6s. During this time, Sandrone can control the travel direction of the craft. Pressing Sprint consumes 10 Stamina and launches her into an elegant high-speed hover mode, in which she will move even faster at the cost of 15 Stamina per second.\n\nWhen Sandrone starts hovering, if there are opponents nearby, she will also summon a Prismatic Resonance Cannon and fire 2 Prism Shots at any opponents who have yet to cool down, dealing Cryo DMG.\nRadiance: Stellar-Conduct: The second Prism Shot will instead deal Cryo DMG that is considered Stellar-Conduct DMG.\n\nWhen on the Tea Party Tactical Assault Hovermech, Sandrone will also elegantly and quietly repair Fagio, causing Decoding Power to swiftly decrease.",
+            "image": "Talents/Skill/Talent_Formule_Phenomenale_Differential_Analysis.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Formule_Phenomenale_QED": {
+            "name": "Formule Phenomenale: Q.E.D.",
+            "effect": "In line with established ladylike behavior, Sandrone summons a large number of Prismatic Resonance Cannons for a frontal bombardment before firing on her foes with a Convective Inhibition Ray, dealing AoE Cryo DMG.\nRadiance: Stellar-Conduct: The Convective Inhibition Ray instead deals AoE Cryo DMG that is considered Stellar-Conduct DMG.",
+            "image": "Talents/Burst/Talent_Formule_Phenomenale_Q_E_D.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Morrow After the Golden Dusk",
+          "effect": "When in Decoding mode, Fagio's Decoding Power increases at a 50% lower rate, and all party members deal 30% increased Stellar-Conduct DMG.",
+          "image": "Constellation/Morrow_After_the_Golden_Dusk.png"
+        },
+        "2": {
+          "name": "An Heiress Gazed Into the Looking-Glass",
+          "effect": "Radiance: Stellar-Conduct: Increases CRIT DMG from Charged Attack condensed beams by 40%. Also, each time a beam is fired, CRIT DMG dealt by all condensed beams fired during this Decoding mode period will be further increased by 20%. Max 3 stacks.",
+          "image": "Constellation/An_Heiress_Gazed_Into_the_Looking-Glass.png"
+        },
+        "3": {
+          "name": "Refuse the Wake of Dusk, the Moonlit Yoke",
+          "effect": "Increases the Level of Formule Phenomenale: Self-Evident Proposition by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Refuse_the_Wake_of_Dusk_the_Moonlit_Yoke.png"
+        },
+        "4": {
+          "name": "In Knowledge Lies the World's True Ground",
+          "effect": "When Sandrone deals Stellar-Conduct DMG to an opponent, she will also summon an extra Prismatic Resonance Cannon to fire off a coordinated attack which deals Cryo DMG at 125% of her ATK. This DMG is considered Stellar-Conduct DMG, and the effect can occur once every 4s.",
+          "image": "Constellation/In_Knowledge_Lies_the_Worlds_True_Ground.png"
+        },
+        "5": {
+          "name": "Of All Beside, She Takes No Part",
+          "effect": "Increases the Level of Formule Phenomenale: Q.E.D. by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Of_All_Beside_She_Takes_No_Part.png"
+        },
+        "6": {
+          "name": "Narcissus Wakes, Her Eyes Upon the Dawn",
+          "effect": "When Fagio fires a condensed beam for the third time while in Decoding mode, the beam becomes a more powerful Condensed Cluster Beam that fires continuously. This beam will deal up to 4 additional instances of AoE Cryo DMG at 100% of Sandrone's ATK on top of any subsequent original beam fired.\nRadiance: Stellar-Conduct: The Condensed Cluster Beam will instead deal 4 additional instances of AoE Cryo DMG at 80% of Sandrone's ATK. This DMG is considered Stellar-Conduct DMG.\nAdditionally, all Stellar-Conduct DMG dealt by Sandrone is elevated by 20%.",
+          "image": "Constellation/Narcissus_Wakes_Her_Eyes_Upon_the_Dawn.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Broken_Drive_Shaft",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 40,
+          "material4": "Broken_Drive_Shaft",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 50,
+          "material4": "Reinforced_Drive_Shaft",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 60,
+          "material4": "Reinforced_Drive_Shaft",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 70,
+          "material4": "Precision_Drive_Shaft",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Plume_of_the_Fallen_Watcher",
+          "level": 80,
+          "material4": "Precision_Drive_Shaft",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Subdetection_Unit",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Broken_Drive_Shaft",
+          "common2": "Reinforced_Drive_Shaft",
+          "common3": "Precision_Drive_Shaft",
+          "gem1": "Shivada_Jade_Silver",
+          "gem2": "Shivada_Jade_Fragment",
+          "gem3": "Shivada_Jade_Chunk",
+          "gem4": "Shivada_Jade_Gemstone",
+          "boss_drop": "Plume_of_the_Fallen_Watcher",
+          "local_speciality": "Subdetection_Unit"
+        },
+        "talents": {
+          "common1": "Broken_Drive_Shaft",
+          "common2": "Reinforced_Drive_Shaft",
+          "common3": "Precision_Drive_Shaft",
+          "mastery1": "Teachings_of_Vagrancy",
+          "mastery2": "Guide_to_Vagrancy",
+          "mastery3": "Philosophies_of_Vagrancy",
+          "weekly_boss_drop": "Madmans_Restraint",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "The Seventh of the Fatui Harbingers, \"Marionette.\" Interprets all phenomena through the prism of mathematics, and is an elegant lady who is never absent from a tea party.",
+      "paimonmoepath": "characters/sandrone",
+      "genshinggpath": "characters/sandrone",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sandrone",
+      "hoyowiki": 10920,
       "subCollection": {}
     },
     "Shenhe": {
