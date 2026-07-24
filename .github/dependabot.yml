@@ -11,6 +11,10 @@ updates:
       default-days: 3
     schedule:
       interval: "daily"
+    groups:
+      codeql:
+        patterns:
+          - "github/codeql-action*"
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/util"
@@ -28,6 +32,20 @@ updates:
   # Maintain dependencies for Firebase Cloud Functions
   - package-ecosystem: "npm"
     directory: "/firebase/functions"
+    commit-message:
+      prefix: "build"
+      prefix-development: "chore"
+      include: "scope"
+    cooldown:
+      default-days: 3
+      semver-patch-days: 3
+      semver-minor-days: 3
+      semver-major-days: 7
+    schedule:
+      interval: "daily"
+  # Maintain dependencies for Data Tool
+  - package-ecosystem: "npm"
+    directory: "/data-tool"
     commit-message:
       prefix: "build"
       prefix-development: "chore"
