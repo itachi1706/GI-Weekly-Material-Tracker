@@ -11,6 +11,10 @@ updates:
       default-days: 3
     schedule:
       interval: "daily"
+    groups:
+      codeql:
+        patterns:
+          - "github/codeql-action*"
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/util"
