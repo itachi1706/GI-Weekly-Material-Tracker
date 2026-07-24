@@ -1,14 +1,15 @@
-const admin = require('firebase-admin');
+const { initializeApp, cert } = require('firebase-admin/app');
+const { getDatabase } = require('firebase-admin/database');
 const fs = require('fs');
 
 const serviceAccount = require('./serviceAccountKey.json');
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+initializeApp({
+    credential: cert(serviceAccount),
     databaseURL: "https://gi-weekly-material-tracker-default-rtdb.firebaseio.com/"
 });
 
-const db = admin.database();
+const db = getDatabase();
 
 const ref = db.ref("banners");
 

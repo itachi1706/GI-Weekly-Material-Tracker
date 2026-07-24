@@ -2,19 +2,20 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const parser = require('node-html-parser');
 
 // Firebase
-const admin = require("firebase-admin");
+const { initializeApp, cert } = require('firebase-admin/app');
+const { getDatabase } = require('firebase-admin/database');
 
 // Fetch the service account key JSON file contents
 const serviceAccount = require('./serviceAccountKey.json');
 
 // Initialize the app with a service account, granting admin privileges
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+initializeApp({
+    credential: cert(serviceAccount),
     databaseURL: "https://gi-weekly-material-tracker-default-rtdb.firebaseio.com/"
 });
 
 // As an admin, the app has access to read and write all data, regardless of Security Rules
-const db = admin.database();
+const db = getDatabase();
 
 console.log(">>> Crawling for Promo Codes");
 fetch('https://www.gensh.in/events/promotion-codes')
