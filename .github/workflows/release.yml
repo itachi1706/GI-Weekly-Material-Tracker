@@ -27,7 +27,7 @@ jobs:
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -117,7 +117,7 @@ jobs:
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -204,7 +204,7 @@ jobs:
           channel: 'stable'
           cache: true
       - name: Cache pubspec dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -433,7 +433,7 @@ jobs:
           xcrun simctl list > /dev/null
           xcodebuild -downloadPlatform iOS
       - name: Cache pubspec dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v5
         with:
           path: |
             ${{ env.FLUTTER_HOME }}/.pub-cache
@@ -445,7 +445,7 @@ jobs:
           key: build-pubspec-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: build-pubspec-
       - name: Cache Cocoapods
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v5
         with:
           path: ios/Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('ios/**/Podfile.lock') }}
