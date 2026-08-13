@@ -216,7 +216,7 @@ jobs:
         uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1
         with:
           # xcode-version: latest-stable
-          xcode-version: '16.4.0'
+          xcode-version: '26.2.0'
       - name: Install iOS platform SDK
         # Pinned Xcodes on the runner image no longer bundle the iOS platform, so the
         # generic/platform=iOS destination is missing until we download it explicitly.
