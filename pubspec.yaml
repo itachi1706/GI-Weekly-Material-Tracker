@@ -52,7 +52,6 @@ dependencies:
   flutter_inappwebview: ^6.1.5
   flutter_local_notifications: ^17.2.4
   flutter_rating_bar: ^4.0.1
-  flutter_signin_button: ^2.1.1
   flutter_svg: ^2.2.4
   get: ^4.7.3
   google_sign_in: ^6.3.0
@@ -60,11 +59,12 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   model_viewer_plus: ^1.9.3
   octo_image: ^2.1.0
-  omni_datetime_picker: ^2.3.1
+  omni_datetime_picker: 2.3.1 # Fixed to 2.3.1 until Flutter upgrade past 3.35
   package_info_plus: ^9.0.1
   path_provider: ^2.1.5
   settings_ui: ^2.0.1
   shared_preferences: ^2.5.5
+  sign_in_button: ^5.0.0
   stop_watch_timer: ^3.2.2
   store_redirect: ^2.0.4
   timezone: ^0.9.4
@@ -77,8 +77,8 @@ dev_dependencies:
   #integration_test:
   #  sdk: flutter
   dart_code_linter: ^4.0.3
-  # Disabled until the package updates to support analyzer 6
-#  dependency_validator: ^4.0.0
+  # dart run dependency_validator
+  dependency_validator: ^5.0.5
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
   flutter_native_splash: ^2.4.7

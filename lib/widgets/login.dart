@@ -5,11 +5,11 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/app_secrets.dart';
 import 'package:gi_weekly_material_tracker/firebase_options.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -63,7 +63,7 @@ class LoginPageState extends State<LoginPage> {
   Widget _buildFooter(BuildContext _, AuthAction __) {
     if (!kReleaseMode) {
       return SignInButton(
-        Buttons.Email,
+        Buttons.email,
         onPressed: _signInWithTest,
         text: 'Sign in with Test Account',
       );
