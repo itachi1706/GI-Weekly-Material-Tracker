@@ -169,30 +169,26 @@ class Util {
   }
 
   static Widget loadingScreen() => Scaffold(
-        appBar: AppBar(
-          title: const Text('Loading...'),
-        ),
-        body: Util.centerLoadingCircle('Getting Data'),
-      );
+    appBar: AppBar(title: const Text('Loading...')),
+    body: Util.centerLoadingCircle('Getting Data'),
+  );
 
   static Widget loadingScreenWithDrawer(Widget drawer) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Loading...'),
-        ),
-        drawer: drawer,
-        body: Util.centerLoadingCircle('Getting Data'),
-      );
+    appBar: AppBar(title: const Text('Loading...')),
+    drawer: drawer,
+    body: Util.centerLoadingCircle('Getting Data'),
+  );
 
   static Widget centerLoadingCircle(String loadText) => Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircularProgressIndicator(),
-            const SizedBox(height: 10),
-            Text(loadText),
-          ],
-        ),
-      );
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const CircularProgressIndicator(),
+        const SizedBox(height: 10),
+        Text(loadText),
+      ],
+    ),
+  );
 
   static Future<String> getFirebaseStorageUrl(String ref) async {
     if (kIsWeb) return await _storage.ref(ref).getDownloadURL();
@@ -261,9 +257,7 @@ class Util {
             toolbarTopBackgroundColor: rarityColor,
             hideToolbarBottom: !iOSBottomBar,
           ),
-          webViewSettings: InAppWebViewSettings(
-            javaScriptEnabled: true,
-          ),
+          webViewSettings: InAppWebViewSettings(javaScriptEnabled: true),
         );
 
         await browser.openUrlRequest(

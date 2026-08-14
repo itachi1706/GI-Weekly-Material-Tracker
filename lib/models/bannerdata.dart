@@ -41,25 +41,29 @@ class BannerData {
   });
 
   factory BannerData.fromJson(Map<dynamic, dynamic> parsedJson, String key) {
-    List<String> char = parsedJson['characters']
-        ?.map((s) => s.toString())
-        .toList()
-        .cast<String>() ??
+    List<String> char =
+        parsedJson['characters']
+            ?.map((s) => s.toString())
+            .toList()
+            .cast<String>() ??
         [];
-    List<String> weap = parsedJson['weapons']
-        ?.map((s) => s.toString())
-        .toList()
-        .cast<String>() ??
+    List<String> weap =
+        parsedJson['weapons']
+            ?.map((s) => s.toString())
+            .toList()
+            .cast<String>() ??
         [];
-    List<String> ruChar = parsedJson['rateupcharacters']
-        ?.map((s) => s.toString())
-        .toList()
-        .cast<String>() ??
+    List<String> ruChar =
+        parsedJson['rateupcharacters']
+            ?.map((s) => s.toString())
+            .toList()
+            .cast<String>() ??
         [];
-    List<String> ruWeap = parsedJson['rateupweapon']
-        ?.map((s) => s.toString())
-        .toList()
-        .cast<String>() ??
+    List<String> ruWeap =
+        parsedJson['rateupweapon']
+            ?.map((s) => s.toString())
+            .toList()
+            .cast<String>() ??
         [];
 
     var start = DateTime.parse(parsedJson['start']);
@@ -105,9 +109,4 @@ class BannerData {
   }
 }
 
-enum BannerStatus {
-  upcoming,
-  current,
-  ended,
-  unknown,
-}
+enum BannerStatus { upcoming, current, ended, unknown }

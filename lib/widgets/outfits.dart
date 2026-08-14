@@ -75,8 +75,8 @@ class OutfitListGridState extends State<OutfitListGrid> {
         return GridView.count(
           crossAxisCount:
               (MediaQuery.of(context).orientation == Orientation.portrait)
-                  ? 3
-                  : 6,
+              ? 3
+              : 6,
           children: dt.map((doc) {
             return GestureDetector(
               onTap: () => Get.toNamed('/outfits/${doc.id}'),
@@ -226,22 +226,21 @@ class OutfitInfoGeneralPage extends StatelessWidget {
     widgets.add(
       const Padding(
         padding: EdgeInsets.only(left: 8),
-        child: Text(
-          "Used By",
-          style: TextStyle(fontSize: 24),
-        ),
+        child: Text("Used By", style: TextStyle(fontSize: 24)),
       ),
     );
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
 
     if (info?.characters.isNotEmpty ?? false) {
-      widgets.addAll(GridData.generateCoWGridWidgets(
-        'Characters',
-        info!.characters,
-        'characters',
-        info?.name,
-        MediaQuery.of(context).orientation == Orientation.portrait,
-      ));
+      widgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Characters',
+          info!.characters,
+          'characters',
+          info?.name,
+          MediaQuery.of(context).orientation == Orientation.portrait,
+        ),
+      );
     }
     widgets.removeLast(); // Remove padding at the end
 
@@ -364,9 +363,7 @@ class OutfitModelViewerPageState extends State<OutfitModelViewerPage> {
 
   Widget _buildModel() {
     if (_outfitData == null) {
-      return const Center(
-        child: Text('No Outfit Found'),
-      );
+      return const Center(child: Text('No Outfit Found'));
     } else {
       var gsUrl = Util.costumeGsUrl + _outfitData!.model3D!;
       debugPrint("gsUrl: $gsUrl");

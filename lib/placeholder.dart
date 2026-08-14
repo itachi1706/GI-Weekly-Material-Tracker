@@ -19,18 +19,13 @@ class PlaceholderPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Placeholder Page'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: _signOut,
-          ),
+          IconButton(icon: const Icon(Icons.logout), onPressed: _signOut),
         ],
       ),
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Page Coming Soon'),
-          ],
+          children: [Text('Page Coming Soon')],
         ),
       ),
     );

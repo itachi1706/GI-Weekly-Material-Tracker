@@ -192,10 +192,7 @@ class SettingsPageState extends State<SettingsPage> {
             style: TextStyle(color: Colors.red),
           ),
           trailing: const SizedBox.shrink(),
-          leading: const Icon(
-            Icons.close,
-            color: Colors.red,
-          ),
+          leading: const Icon(Icons.close, color: Colors.red),
           onPressed: _deletePrompt,
         ),
       ],
@@ -290,14 +287,16 @@ class SettingsPageState extends State<SettingsPage> {
     var tiles = _getNotificationTiles();
 
     if (kDebugMode) {
-      tiles.add(SettingsTile(
-        title: const Text('Notification Test Menu'),
-        leading: const Icon(Icons.bug_report),
-        trailing: const SizedBox.shrink(),
-        onPressed: (context) {
-          Get.to(() => const NotificationDebugPage());
-        },
-      ));
+      tiles.add(
+        SettingsTile(
+          title: const Text('Notification Test Menu'),
+          leading: const Icon(Icons.bug_report),
+          trailing: const SizedBox.shrink(),
+          onPressed: (context) {
+            Get.to(() => const NotificationDebugPage());
+          },
+        ),
+      );
     }
 
     return tiles;
@@ -441,14 +440,15 @@ class SettingsPageState extends State<SettingsPage> {
     String loading,
     String title,
   ) {
-    Get.to(() => UniversalSelectorPage(
-              prefName: prefName,
-              defaultValue: defValue,
-              loadingText: loading,
-              settingsOptions: selections,
-              pageTitle: title,
-            ))!
-        .then((value) => _refresh());
+    Get.to(
+      () => UniversalSelectorPage(
+        prefName: prefName,
+        defaultValue: defValue,
+        loadingText: loading,
+        settingsOptions: selections,
+        pageTitle: title,
+      ),
+    )!.then((value) => _refresh());
   }
 
   SettingsSection _infoSettings() {
@@ -482,18 +482,22 @@ class SettingsPageState extends State<SettingsPage> {
       debugPrint(androidInfo.data.toString());
       debugDataArr.add("Type: Android");
       debugDataArr.add(
-          "Version: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})");
+        "Version: Android ${androidInfo.version.release} '${androidInfo.version.codename}' (${androidInfo.version.sdkInt} - #${androidInfo.version.incremental})",
+      );
       debugDataArr.add(
-          "Device Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})");
+        "Device Model: ${androidInfo.manufacturer} ${androidInfo.model} (${androidInfo.brand} ${androidInfo.product})",
+      );
     } else if (Platform.isIOS) {
       debugPrint('iOS Platform');
       var iosInfo = await deviceInfo.iosInfo;
       debugPrint(iosInfo.data.toString());
       debugDataArr.add("Type: iOS");
       debugDataArr.add(
-          "Device Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})");
-      debugDataArr
-          .add("Version: ${iosInfo.systemName} ${iosInfo.systemVersion}");
+        "Device Model: ${iosInfo.modelName} (${iosInfo.utsname.machine})",
+      );
+      debugDataArr.add(
+        "Version: ${iosInfo.systemName} ${iosInfo.systemVersion}",
+      );
     } else {
       debugPrint('Unsupported Platform');
     }
@@ -503,7 +507,9 @@ class SettingsPageState extends State<SettingsPage> {
     await Clipboard.setData(ClipboardData(text: debugData));
     if (mounted) {
       Util.showSnackbarQuick(
-          context, 'Full Debug Info copied to clipboard for sharing');
+        context,
+        'Full Debug Info copied to clipboard for sharing',
+      );
     }
   }
 
@@ -723,9 +729,11 @@ class SettingsPageState extends State<SettingsPage> {
     var mimeType = ["application/json"];
 
     if (kIsWeb) {
-      await launchUrl(Uri.parse(
-        "data:application/octet-stream;base64,${base64Encode(fileData)}",
-      ));
+      await launchUrl(
+        Uri.parse(
+          "data:application/octet-stream;base64,${base64Encode(fileData)}",
+        ),
+      );
 
       return true;
     }
@@ -778,10 +786,7 @@ class SettingsPageState extends State<SettingsPage> {
               onPressed: () => Get.back(),
               child: const Text('Cancel'),
             ),
-            TextButton(
-              onPressed: _deleteAccount,
-              child: const Text('Delete'),
-            ),
+            TextButton(onPressed: _deleteAccount, child: const Text('Delete')),
           ],
         );
       },
@@ -850,9 +855,9 @@ class SettingsPageState extends State<SettingsPage> {
     var dir = Directory(dirPath);
     try {
       if (dir.existsSync()) {
-        dir
-            .listSync(recursive: true, followLinks: false)
-            .forEach((FileSystemEntity entity) {
+        dir.listSync(recursive: true, followLinks: false).forEach((
+          FileSystemEntity entity,
+        ) {
           if (entity is File) {
             fileNum++;
             totalSize += entity.lengthSync();
@@ -872,10 +877,7 @@ class SettingsPageState extends State<SettingsPage> {
     showAboutPage(
       context: context,
       title: const Text('About this app'),
-      values: {
-        'version': _versionStr,
-        'year': DateTime.now().year.toString(),
-      },
+      values: {'version': _versionStr, 'year': DateTime.now().year.toString()},
       applicationLegalese: 'Copyright © Kenneth Soh, {{ year }}',
       applicationDescription: const Text(
         'Weekly Material Planner and Tracking Application for Genshin Impact',
@@ -922,9 +924,11 @@ class SettingsPageState extends State<SettingsPage> {
       applicationIcon: SizedBox(
         width: 100,
         height: 100,
-        child: Image.asset(Util.themeNotifier.isDarkMode()
-            ? 'assets/icons/splash/splash_dark.png'
-            : 'assets/icons/splash/splash.png'),
+        child: Image.asset(
+          Util.themeNotifier.isDarkMode()
+              ? 'assets/icons/splash/splash_dark.png'
+              : 'assets/icons/splash/splash.png',
+        ),
       ),
     );
   }
@@ -989,10 +993,7 @@ class NotificationDebugPage extends StatelessWidget {
           title: const Text('Upcoming Reminders'),
           content: Text(msg),
           actions: [
-            TextButton(
-              onPressed: () => Get.back(),
-              child: const Text('Close'),
-            ),
+            TextButton(onPressed: () => Get.back(), child: const Text('Close')),
           ],
         );
       },
@@ -1109,14 +1110,16 @@ class UniversalSelectorPageState extends State<UniversalSelectorPage> {
         sections: [
           SettingsSection(
             tiles: widget.settingsOptions
-                .map((e) => SettingsTile(
-                      title: Text(e.title),
-                      description: Text(e.description),
-                      trailing: _trailingWidget(e.value),
-                      onPressed: (context) {
-                        _changeValue(e.value);
-                      },
-                    ))
+                .map(
+                  (e) => SettingsTile(
+                    title: Text(e.title),
+                    description: Text(e.description),
+                    trailing: _trailingWidget(e.value),
+                    onPressed: (context) {
+                      _changeValue(e.value);
+                    },
+                  ),
+                )
                 .toList(),
           ),
         ],
@@ -1125,11 +1128,7 @@ class UniversalSelectorPageState extends State<UniversalSelectorPage> {
   }
 
   Widget _trailingWidget(String value) {
-    return Radio<String>(
-      toggleable: false,
-      autofocus: false,
-      value: value,
-    );
+    return Radio<String>(toggleable: false, autofocus: false, value: value);
   }
 
   void _changeValue(String value) async {

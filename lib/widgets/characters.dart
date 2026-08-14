@@ -37,16 +37,19 @@ class CharacterTabController extends StatefulWidget {
 class CharacterTabControllerWidgetState extends State<CharacterTabController> {
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: [
-      CharacterListGrid(notifier: widget.notifier),
-      CharacterListGrid(filter: 'Anemo', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Cryo', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Electro', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Geo', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Hydro', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Pyro', notifier: widget.notifier),
-      CharacterListGrid(filter: 'Dendro', notifier: widget.notifier),
-    ]);
+    return TabBarView(
+      controller: widget.tabController,
+      children: [
+        CharacterListGrid(notifier: widget.notifier),
+        CharacterListGrid(filter: 'Anemo', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Cryo', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Electro', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Geo', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Hydro', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Pyro', notifier: widget.notifier),
+        CharacterListGrid(filter: 'Dendro', notifier: widget.notifier),
+      ],
+    );
   }
 }
 
@@ -99,8 +102,9 @@ class CharacterListGridState extends State<CharacterListGrid> {
     }
 
     return StreamBuilder(
-      stream:
-          (queryRef == null) ? characterRef.snapshots() : queryRef.snapshots(),
+      stream: (queryRef == null)
+          ? characterRef.snapshots()
+          : queryRef.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return const Text('Error occurred getting snapshot');
@@ -125,8 +129,8 @@ class CharacterListGridState extends State<CharacterListGrid> {
         return GridView.count(
           crossAxisCount:
               (MediaQuery.of(context).orientation == Orientation.portrait)
-                  ? 3
-                  : 6,
+              ? 3
+              : 6,
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/characters/${document.id}'),
@@ -173,8 +177,10 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
       if (_info == null) Get.offAndToNamed('/splash');
       _materialData = materialData;
       _bgSource = _prefs.getString('build_guide_source') ?? 'genshin.gg';
-      _rarityColor =
-          GridUtils.getRarityColor(_info!.rarity, crossover: _info!.crossover);
+      _rarityColor = GridUtils.getRarityColor(
+        _info!.rarity,
+        crossover: _info!.crossover,
+      );
     });
   }
 
@@ -313,10 +319,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                _getGenderIcon(
-                  gender,
-                  widget.info!.name ?? 'Unknown',
-                ),
+                _getGenderIcon(gender, widget.info!.name ?? 'Unknown'),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(gender),
@@ -383,10 +386,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
   Widget _getCharacterHeader() {
     return Row(
       children: [
-        GridData.getImageAssetFromFirebase(
-          widget.info!.image,
-          height: 64,
-        ),
+        GridData.getImageAssetFromFirebase(widget.info!.image, height: 64),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -457,8 +457,9 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
         if (data.material4 != null) {
           datasets.add(widget.materialData![data.material4!]?.innerType);
         }
-        tracker![key] =
-            (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+        tracker![key] = (isTracked)
+            ? TrackingStatus.checking
+            : TrackingStatus.notTracked;
       }
 
       tracker = await _processTrackingStatus(datasets, tracker!);
@@ -537,8 +538,10 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     var ascendTier = widget.info!.ascension![_selectedTier!]!;
     var ascensionTierSel = _selectedTier;
 
-    TrackingData.addToRecord('character', '${widget.infoId}_$_selectedTier')
-        .then((value) {
+    TrackingData.addToRecord(
+      'character',
+      '${widget.infoId}_$_selectedTier',
+    ).then((value) {
       if (mounted) {
         _refreshTrackingStatus();
         Util.showSnackbarQuick(
@@ -644,11 +647,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             text: key == null
                 ? ''
                 : widget.materialData![key]?.name ?? 'Unknown Item',
-            children: [
-              TextSpan(
-                text: (qty == 0) ? '' : ' x$qty',
-              ),
-            ],
+            children: [TextSpan(text: (qty == 0) ? '' : ' x$qty')],
           ),
         ),
       ),
@@ -809,8 +808,9 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       );
     }
 
-    var dataMap =
-        SplayTreeMap<String, CharacterAscension>.from(widget.info!.ascension!);
+    var dataMap = SplayTreeMap<String, CharacterAscension>.from(
+      widget.info!.ascension!,
+    );
     var data = dataMap.entries.map((e) => e.value).toList();
 
     if (data.isEmpty) {
@@ -853,10 +853,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
               const Icon(Icons.show_chart),
               Text(curData.level.toString()),
               const Spacer(),
-              Image.asset(
-                'assets/images/items/Icon_Mora.png',
-                height: 16,
-              ),
+              Image.asset('assets/images/items/Icon_Mora.png', height: 16),
               Text(curData.mora.toString()),
               const Spacer(),
               ...GridData.getAscensionMaterialDataWidgets(
@@ -951,7 +948,8 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       bt = 'Current banner';
     }
     // Craft the message
-    var message = '$bt in ${info.lastBannerName}\n'
+    var message =
+        '$bt in ${info.lastBannerName}\n'
         '$endState: ${df.format(info.lastBannerEnd!.toLocal())}';
 
     return GridData.generateInfoLine(
@@ -974,10 +972,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             const Divider(),
             ...GridData.unreleasedCheck(widget.info!.released, 'Character'),
             ..._getCharacterFullNameWidget(widget.info!),
-            ...GridData.generateInfoLine(
-              widget.info!.affiliation!,
-              Icons.flag,
-            ),
+            ...GridData.generateInfoLine(widget.info!.affiliation!, Icons.flag),
             ...GridData.generateInfoLine(
               widget.info!.nation!,
               Icons.location_pin,
@@ -1076,8 +1071,9 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
         if (data.material4 != null) {
           datasets.add(widget.materialData![data.material4!]?.innerType);
         }
-        tracker![key] =
-            (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+        tracker![key] = (isTracked)
+            ? TrackingStatus.checking
+            : TrackingStatus.notTracked;
       }
 
       tracker = await _processTracker(tracker!, datasets);
@@ -1267,11 +1263,7 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
         child: Text.rich(
           TextSpan(
             text: widget.materialData![key]?.name ?? 'Unknown Item',
-            children: [
-              TextSpan(
-                text: (qty == 0) ? '' : ' x$qty',
-              ),
-            ],
+            children: [TextSpan(text: (qty == 0) ? '' : ' x$qty')],
           ),
         ),
       ),
@@ -1480,10 +1472,7 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
                 style: const TextStyle(fontSize: 24),
               ),
               const Spacer(),
-              Image.asset(
-                'assets/images/items/Icon_Mora.png',
-                height: 16,
-              ),
+              Image.asset('assets/images/items/Icon_Mora.png', height: 16),
               Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Text(curData.mora.toString()),
@@ -1560,10 +1549,7 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
             IntrinsicHeight(
               child: Row(
                 children: [
-                  GridData.getImageAssetFromFirebase(
-                    talInfo.image,
-                    height: 32,
-                  ),
+                  GridData.getImageAssetFromFirebase(talInfo.image, height: 32),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

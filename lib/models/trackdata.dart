@@ -16,27 +16,27 @@ class TrackingUserInfo {
     return TrackingUserInfo(
       character: (parsedJson.containsKey('character'))
           ? (parsedJson['character'] as List<dynamic>)
-              .map((e) => e.toString())
-              .toSet()
-              .toList()
+                .map((e) => e.toString())
+                .toSet()
+                .toList()
           : null,
       material: (parsedJson.containsKey('material'))
           ? (parsedJson['material'] as List<dynamic>)
-              .map((e) => e.toString())
-              .toSet()
-              .toList()
+                .map((e) => e.toString())
+                .toSet()
+                .toList()
           : null,
       weapon: (parsedJson.containsKey('weapon'))
           ? (parsedJson['weapon'] as List<dynamic>)
-              .map((e) => e.toString())
-              .toSet()
-              .toList()
+                .map((e) => e.toString())
+                .toSet()
+                .toList()
           : null,
       talent: (parsedJson.containsKey('talents'))
           ? (parsedJson['talents'] as List<dynamic>)
-              .map((e) => e.toString())
-              .toSet()
-              .toList()
+                .map((e) => e.toString())
+                .toSet()
+                .toList()
           : null,
     );
   }

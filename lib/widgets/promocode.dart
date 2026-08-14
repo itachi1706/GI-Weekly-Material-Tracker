@@ -97,8 +97,10 @@ class PromoCodePageState extends State<PromoCodePage> {
                   }
 
                   return Card(
-                    margin:
-                        const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 4,
+                      horizontal: 8,
+                    ),
                     child: ListTile(
                       // tileColor: _getExpiredColor(promoCode.expired),
                       title: Text(promoCode.reward),
@@ -112,8 +114,10 @@ class PromoCodePageState extends State<PromoCodePage> {
                 var promoCodeRegion = _getCode(promoCode);
 
                 return Card(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 8,
+                  ),
                   child: ListTile(
                     title: Text(promoCode.reward),
                     // tileColor: _getExpiredColor(promoCode.expired),
@@ -142,15 +146,15 @@ class PromoCodePageState extends State<PromoCodePage> {
     );
   }
 
-// Disabled until further notice
-// We no longer know whether the code is expired or not
-// Color _getExpiredColor(bool expired) {
-//   return expired
-//       ? (Util.themeNotifier.isDarkMode())
-//           ? Colors.red
-//           : Colors.deepOrangeAccent
-//       : (Util.themeNotifier.isDarkMode())
-//           ? Colors.green
-//           : Colors.lightGreen;
-// }
+  // Disabled until further notice
+  // We no longer know whether the code is expired or not
+  // Color _getExpiredColor(bool expired) {
+  //   return expired
+  //       ? (Util.themeNotifier.isDarkMode())
+  //           ? Colors.red
+  //           : Colors.deepOrangeAccent
+  //       : (Util.themeNotifier.isDarkMode())
+  //           ? Colors.green
+  //           : Colors.lightGreen;
+  // }
 }

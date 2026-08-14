@@ -56,8 +56,8 @@ class DrawerComponentState extends State<DrawerComponent> {
   }
 
   void _launchBattleChronicle() async => await Util.launchWebPage(
-        'https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys',
-      );
+    'https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys',
+  );
 
   void _launchMap() async {
     var pref = await Util.getSharedPreferenceInstance();
@@ -75,10 +75,7 @@ class DrawerComponentState extends State<DrawerComponent> {
     return (kIsWeb)
         ? [
             const Divider(),
-            _drawerItem(
-              iconData: MdiIcons.refresh,
-              title: 'Reload Page',
-            ),
+            _drawerItem(iconData: MdiIcons.refresh, title: 'Reload Page'),
           ]
         : [];
   }
@@ -108,15 +105,12 @@ class DrawerComponentState extends State<DrawerComponent> {
     await Get.offAllNamed('/'); // Go to login screem
   }
 
-  Widget _drawerItem({
-    IconData? iconData,
-    String? iconAsset,
-    String? title,
-  }) {
+  Widget _drawerItem({IconData? iconData, String? iconAsset, String? title}) {
     Widget icon = Icon(iconData);
     if (iconAsset != null) {
       icon = ImageIcon(AssetImage(iconAsset));
     }
+
     return NavigationDrawerDestination(icon: icon, label: Text(title!));
   }
 
@@ -129,36 +123,38 @@ class DrawerComponentState extends State<DrawerComponent> {
     return DrawerHeader(
       // margin: EdgeInsets.zero,
       // padding: EdgeInsets.zero,
-      child: Stack(children: <Widget>[
-        Positioned(
-          bottom: 32.0,
-          left: 16.0,
-          child: Text(
-            name,
-            style: const TextStyle(
-              // color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            bottom: 32.0,
+            left: 16.0,
+            child: Text(
+              name,
+              style: const TextStyle(
+                // color: Colors.black,
+                fontSize: 20.0,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
-        ),
-        Positioned(
-          bottom: 12.0,
-          left: 16.0,
-          child: Text(
-            email,
-            style: const TextStyle(
-              // color: Colors.black,
-              fontSize: 14.0,
+          Positioned(
+            bottom: 12.0,
+            left: 16.0,
+            child: Text(
+              email,
+              style: const TextStyle(
+                // color: Colors.black,
+                fontSize: 14.0,
+              ),
             ),
           ),
-        ),
-        Positioned(
-          bottom: 64.0,
-          left: 16.0,
-          child: _getUserPhoto(photo, photoMode),
-        ),
-      ]),
+          Positioned(
+            bottom: 64.0,
+            left: 16.0,
+            child: _getUserPhoto(photo, photoMode),
+          ),
+        ],
+      ),
     );
   }
 
@@ -167,9 +163,7 @@ class DrawerComponentState extends State<DrawerComponent> {
       return const SizedBox.shrink();
     }
 
-    return CircleAvatar(
-      backgroundImage: CachedNetworkImageProvider(photo!),
-    );
+    return CircleAvatar(backgroundImage: CachedNetworkImageProvider(photo!));
   }
 
   void _onDestinationSelected(int index) {
@@ -197,11 +191,7 @@ class DrawerComponentState extends State<DrawerComponent> {
 
   void _initDrawerWidgets() {
     drawerWidgets = <DrawerModel>[
-      DrawerModel(
-        iconData: Icons.home,
-        title: 'Tracking',
-        route: '/tracking',
-      ),
+      DrawerModel(iconData: Icons.home, title: 'Tracking', route: '/tracking'),
       DrawerModel(
         iconData: Icons.menu_book_outlined,
         title: 'Dictionary',
@@ -259,11 +249,7 @@ class DrawerComponentState extends State<DrawerComponent> {
         route: '/settings',
         offPrev: false,
       ),
-      DrawerModel(
-        iconData: Icons.logout,
-        title: 'Logout',
-        onTap: _signOut,
-      ),
+      DrawerModel(iconData: Icons.logout, title: 'Logout', onTap: _signOut),
     ];
   }
 
@@ -277,11 +263,14 @@ class DrawerComponentState extends State<DrawerComponent> {
         _drawerItem(iconData: Icons.home, title: 'Tracking'),
         _drawerItem(iconData: Icons.menu_book_outlined, title: 'Dictionary'),
         _drawerItem(
-            iconData: MdiIcons.compass, title: 'Parametric Transformer'),
+          iconData: MdiIcons.compass,
+          title: 'Parametric Transformer',
+        ),
         _drawerItem(iconData: MdiIcons.ticket, title: 'Promo Codes'),
         _drawerItem(
-            iconAsset: 'assets/images/items/Item_Primogem.png',
-            title: 'Wish Banners'),
+          iconAsset: 'assets/images/items/Item_Primogem.png',
+          title: 'Wish Banners',
+        ),
         _drawerItem(iconData: MdiIcons.tshirtCrew, title: 'View All Outfits'),
         const Divider(),
         _drawerItem(iconData: MdiIcons.alarm, title: 'Daily Forum Login'),
@@ -305,11 +294,12 @@ class DrawerModel {
   String? route;
   bool offPrev;
 
-  DrawerModel(
-      {this.iconData,
-      this.iconAsset,
-      this.onTap,
-      this.route,
-      this.title,
-      this.offPrev = true});
+  DrawerModel({
+    this.iconData,
+    this.iconAsset,
+    this.onTap,
+    this.route,
+    this.title,
+    this.offPrev = true,
+  });
 }

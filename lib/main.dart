@@ -73,8 +73,9 @@ class MyAppState extends State<MyApp> {
       debugPrint('[APP-CHECK] Adding App Check listener');
       await FirebaseAppCheck.instance.activate(
         // Replace this with your actual site key
-        providerWeb:
-            ReCaptchaV3Provider('6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV'),
+        providerWeb: ReCaptchaV3Provider(
+          '6Lf1pE4iAAAAAIh8KeeTBcgGR4V23-wdcddd9bWV',
+        ),
         providerAndroid: (kDebugMode)
             ? const AndroidDebugProvider()
             : const AndroidPlayIntegrityProvider(),
@@ -128,9 +129,7 @@ class MyAppState extends State<MyApp> {
         GetPage(name: '/menu', page: () => const TransitionPage()),
         GetPage(
           name: '/tracking',
-          page: () => const TrackingPage(
-            title: 'GI Materials Tracker',
-          ),
+          page: () => const TrackingPage(title: 'GI Materials Tracker'),
           transition: Transition.noTransition,
         ),
         GetPage(

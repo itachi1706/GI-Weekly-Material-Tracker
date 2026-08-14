@@ -41,10 +41,7 @@ class ParametricPageState extends State<ParametricPage> {
 
     var notifyParametric = _prefs!.getBool('parametric_notification') ?? false;
     if (notifyParametric) {
-      return const Text(
-        'Enabled',
-        style: TextStyle(color: Colors.green),
-      );
+      return const Text('Enabled', style: TextStyle(color: Colors.green));
     }
 
     return const Text('Disabled', style: TextStyle(color: Colors.red));
@@ -149,9 +146,7 @@ class ParametricPageState extends State<ParametricPage> {
   Future<void> _updateOnlineData(String resetTime) async {
     var uid = Util.getFirebaseUid();
     var time = DateTime.parse(resetTime).millisecondsSinceEpoch;
-    var data = {
-      'parametricReset': time,
-    };
+    var data = {'parametricReset': time};
     await _prefs!.setInt('parametric-reset-time', time);
     await _db
         .collection('userdata')
@@ -162,9 +157,9 @@ class ParametricPageState extends State<ParametricPage> {
 
   void _updateNewEndTime(String? resetTime) {
     setState(() {
-      _endTimeCountdown = DateTime.parse(_newDateTime!)
-          .add(const Duration(days: 6, hours: 22))
-          .millisecondsSinceEpoch;
+      _endTimeCountdown = DateTime.parse(
+        _newDateTime!,
+      ).add(const Duration(days: 6, hours: 22)).millisecondsSinceEpoch;
       _resetTimeString = resetTime;
     });
   }
@@ -172,8 +167,9 @@ class ParametricPageState extends State<ParametricPage> {
   Future<void> _updateNotification() async {
     if (kIsWeb) return; // NO-OP for web
     var notifyParametric = _prefs!.getBool('parametric_notification') ?? false;
-    await NotificationManager.getInstance()!
-        .scheduleParametricReminder(notifyParametric);
+    await NotificationManager.getInstance()!.scheduleParametricReminder(
+      notifyParametric,
+    );
   }
 
   void _resetTime() async {
@@ -218,9 +214,7 @@ class ParametricPageState extends State<ParametricPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Parametric Transformer'),
-      ),
+      appBar: AppBar(title: const Text('Parametric Transformer')),
       drawer: const DrawerComponent(),
       body: SafeArea(
         bottom: true,
@@ -238,9 +232,7 @@ class ParametricPageState extends State<ParametricPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Spacer(
-                    flex: 20,
-                  ),
+                  const Spacer(flex: 20),
                   TextButton(
                     onPressed: _resetTime,
                     child: const Text('Reset Time'),
@@ -250,9 +242,7 @@ class ParametricPageState extends State<ParametricPage> {
                     onPressed: _showLastUseDialog,
                     child: const Text('Set Last Use Time'),
                   ),
-                  const Spacer(
-                    flex: 20,
-                  ),
+                  const Spacer(flex: 20),
                 ],
               ),
               Padding(

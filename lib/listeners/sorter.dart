@@ -71,10 +71,7 @@ class SortBy {
         children: [
           Text(title),
           const Spacer(),
-          Icon(
-            _getSortingData(isNumber, type),
-            color: _matchColor(type),
-          ),
+          Icon(_getSortingData(isNumber, type), color: _matchColor(type)),
         ],
       ),
     );
@@ -101,9 +98,7 @@ class SortBy {
       PopupMenuItem(
         textStyle: TextStyle(color: _matchColor(null)),
         value: '',
-        child: const Row(
-          children: [Text('Default'), Spacer()],
-        ),
+        child: const Row(children: [Text('Default'), Spacer()]),
       ),
       _getSorterMenuWidget('rarity', 'Rarity', true),
     ];
@@ -117,7 +112,7 @@ class SortBy {
     if (!number) {
       if (key != _internalSorter!.getSortKey()) {
         return Icons.sort_by_alpha;
-      } else if (_internalSorter!.isDescending()) {
+      } else if (_internalSorter.isDescending()) {
         return MdiIcons.sortAlphabeticalDescendingVariant;
       } else {
         return MdiIcons.sortAlphabeticalAscendingVariant;
@@ -125,7 +120,7 @@ class SortBy {
     } else {
       if (key != _internalSorter!.getSortKey()) {
         return MdiIcons.sortNumericVariant;
-      } else if (_internalSorter!.isDescending()) {
+      } else if (_internalSorter.isDescending()) {
         return MdiIcons.sortNumericDescendingVariant;
       } else {
         return MdiIcons.sortNumericAscendingVariant;

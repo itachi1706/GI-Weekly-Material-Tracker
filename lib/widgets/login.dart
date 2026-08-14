@@ -60,7 +60,7 @@ class LoginPageState extends State<LoginPage> {
     Get.offAllNamed('/menu');
   }
 
-  Widget _buildFooter(BuildContext _, AuthAction __) {
+  Widget _buildFooter(BuildContext _, AuthAction _) {
     if (!kReleaseMode) {
       return SignInButton(
         Buttons.email,
@@ -73,15 +73,14 @@ class LoginPageState extends State<LoginPage> {
   }
 
   String _getClientId() {
-     var cid = googleClientId;
+    var cid = googleClientId;
 
-     if (defaultTargetPlatform == TargetPlatform.android) {
-        cid = DefaultFirebaseOptions.ios.androidClientId ?? googleClientId;
-     } else
-       if (defaultTargetPlatform == TargetPlatform.iOS) {
-        cid = DefaultFirebaseOptions.ios.iosClientId ?? googleClientId;
-     }
-     debugPrint("Using Google Client ID: $cid");
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      cid = DefaultFirebaseOptions.ios.androidClientId ?? googleClientId;
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      cid = DefaultFirebaseOptions.ios.iosClientId ?? googleClientId;
+    }
+    debugPrint("Using Google Client ID: $cid");
 
     return cid;
   }
@@ -95,11 +94,8 @@ class LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return SignInScreen(
-      providers: [
-        GoogleProvider(clientId: _getClientId()),
-      ],
+      providers: [GoogleProvider(clientId: _getClientId())],
       actions: [
         AuthStateChangeAction<SignedIn>((context, state) {
           _finishLoggedInFlow(state.user);

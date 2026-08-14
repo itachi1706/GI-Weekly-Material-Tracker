@@ -29,15 +29,13 @@ class GridData {
     }
     // debugPrint('getAscensionImage: $itemKey');
 
-    return getImageAssetFromFirebase(
-      data![itemKey]?.image ?? '',
-      height: 16,
-    );
+    return getImageAssetFromFirebase(data![itemKey]?.image ?? '', height: 16);
   }
 
   static Color getCountColor(int? current, int? max, {bw = false}) {
-    var themeColor =
-        (Util.themeNotifier.isDarkMode()) ? Colors.white : Colors.black;
+    var themeColor = (Util.themeNotifier.isDarkMode())
+        ? Colors.white
+        : Colors.black;
 
     if (bw) {
       return (current! >= max!) ? Colors.green : themeColor;
@@ -93,17 +91,16 @@ class GridData {
   }
 
   static Future<Map<String, MaterialDataCommon>?>
-      retrieveMaterialsMapData() async =>
-          (await _retrieveStaticData('materials'))
-              as Map<String, MaterialDataCommon>?;
+  retrieveMaterialsMapData() async =>
+      (await _retrieveStaticData('materials'))
+          as Map<String, MaterialDataCommon>?;
 
   static Future<Map<String, WeaponData>?> retrieveWeaponsMapData() async =>
       (await _retrieveStaticData('weapons')) as Map<String, WeaponData>?;
 
   static Future<Map<String, CharacterData>?>
-      retrieveCharactersMapData() async =>
-          (await _retrieveStaticData('characters'))
-              as Map<String, CharacterData>?;
+  retrieveCharactersMapData() async =>
+      (await _retrieveStaticData('characters')) as Map<String, CharacterData>?;
 
   static Future<Map<String, OutfitData>?> retrieveOutfitsMapData() async =>
       (await _retrieveStaticData('outfits')) as Map<String, OutfitData>?;
@@ -165,10 +162,7 @@ class GridData {
             ),
             Padding(
               padding: const EdgeInsets.all(8),
-              child: Image.memory(
-                Util.kTransparentImage,
-                height: height,
-              ),
+              child: Image.memory(Util.kTransparentImage, height: height),
             ),
           ],
         );
@@ -194,11 +188,7 @@ class GridData {
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Stack(
-            children: [
-              getImageAssetFromFirebase(data.image),
-            ],
-          ),
+          child: Stack(children: [getImageAssetFromFirebase(data.image)]),
         ),
       ),
     );
@@ -219,7 +209,9 @@ class GridData {
         }
         // Get screen density
         var width = MediaQuery.of(context).size.width;
-        final baseUrl = width < 600 ? Util.hoyoWikiMobileUrl : Util.hoyoWikiDesktopUrl;
+        final baseUrl = width < 600
+            ? Util.hoyoWikiMobileUrl
+            : Util.hoyoWikiDesktopUrl;
         final url = "$baseUrl${data.hoyowiki}";
         debugPrint("Launching $url");
         _launchWikiUrl(context, data, url, 'HoYoWiki');
@@ -340,16 +332,19 @@ class GridData {
       } else {
         var effect = txt[0];
         if (effect.toLowerCase() == 'r') {
-          textElements
-              .add(TextSpan(text: txt.substring(1).replaceAll('\\n', '\n')));
+          textElements.add(
+            TextSpan(text: txt.substring(1).replaceAll('\\n', '\n')),
+          );
         } else {
-          textElements.add(TextSpan(
-            text: txt.substring(1).replaceAll('\\n', '\n'),
-            style: TextStyle(
-              color: GridUtils.getElementalColor(effect),
-              fontFamily: 'Product-Sans-Bold',
+          textElements.add(
+            TextSpan(
+              text: txt.substring(1).replaceAll('\\n', '\n'),
+              style: TextStyle(
+                color: GridUtils.getElementalColor(effect),
+                fontFamily: 'Product-Sans-Bold',
+              ),
             ),
-          ));
+          );
         }
       }
     }
@@ -380,18 +375,10 @@ class GridData {
     widgets.add(
       Padding(
         padding: const EdgeInsets.only(left: 8),
-        child: Text(
-          title.toString(),
-          style: const TextStyle(fontSize: 20),
-        ),
+        child: Text(title.toString(), style: const TextStyle(fontSize: 20)),
       ),
     );
-    var wid = GridData._getCharacterOrWeaponGrid(
-      names,
-      type,
-      name,
-      isPortrait,
-    );
+    var wid = GridData._getCharacterOrWeaponGrid(names, type, name, isPortrait);
     if (wid == null) {
       widgets.removeLast(); // Remove title and skip
     } else {
@@ -611,32 +598,39 @@ class GridUtils {
     var isDarkMode = Util.themeNotifier.isDarkMode();
     switch (colorChar.toLowerCase()) {
       case 'a':
-        color =
-            (isDarkMode) ? const Color(0xFF6addbe) : const Color(0xFF26A684);
+        color = (isDarkMode)
+            ? const Color(0xFF6addbe)
+            : const Color(0xFF26A684);
         break;
       case 'c':
-        color =
-            (isDarkMode) ? const Color(0xFF8eaece) : const Color(0xFF4878a8);
+        color = (isDarkMode)
+            ? const Color(0xFF8eaece)
+            : const Color(0xFF4878a8);
         break;
       case 'd':
-        color =
-            (isDarkMode) ? const Color(0xFFa0e938) : const Color(0xFF51810e);
+        color = (isDarkMode)
+            ? const Color(0xFFa0e938)
+            : const Color(0xFF51810e);
         break;
       case 'e':
-        color =
-            (isDarkMode) ? const Color(0xFFc27ed8) : const Color(0xFF9336b0);
+        color = (isDarkMode)
+            ? const Color(0xFFc27ed8)
+            : const Color(0xFF9336b0);
         break;
       case 'g':
-        color =
-            (isDarkMode) ? const Color(0xFFf8b746) : const Color(0xFFb67607);
+        color = (isDarkMode)
+            ? const Color(0xFFf8b746)
+            : const Color(0xFFb67607);
         break;
       case 'h':
-        color =
-            (isDarkMode) ? const Color(0xFF5e8ff7) : const Color(0xFF0b4dda);
+        color = (isDarkMode)
+            ? const Color(0xFF5e8ff7)
+            : const Color(0xFF0b4dda);
         break;
       case 'p':
-        color =
-            (isDarkMode) ? const Color(0xFFeb6f62) : const Color(0xFFbf2818);
+        color = (isDarkMode)
+            ? const Color(0xFFeb6f62)
+            : const Color(0xFFbf2818);
         break;
       default:
         color = (isDarkMode) ? Colors.white : Colors.black;
@@ -674,11 +668,16 @@ class GridUtils {
 
     // Specials
     textData = textData.replaceAll('§hHydro§r-infused', '§hHydro-infused§r');
-    textData =
-        textData.replaceAll('§eElectro§r-Charged', '§eElectro-Charged§r');
+    textData = textData.replaceAll(
+      '§eElectro§r-Charged',
+      '§eElectro-Charged§r',
+    );
     textData = textData.replaceAll('Lunar-Charged', '§eLunar-Charged§r');
     textData = textData.replaceAll('Lunar-§dBloom§r', '§dLunar-Bloom§r');
-    textData = textData.replaceAll('Lunar-§gCrystallize§r', '§gLunar-Crystallize§r');
+    textData = textData.replaceAll(
+      'Lunar-§gCrystallize§r',
+      '§gLunar-Crystallize§r',
+    );
 
     // DMG
     textData = textData.replaceAll('§aAnemo§r DMG', '§aAnemo DMG§r');
@@ -692,8 +691,10 @@ class GridUtils {
     textData = textData.replaceAll('AoE §aAnemo DMG§r', '§aAoE Anemo DMG§r');
     textData = textData.replaceAll('AoE §cCryo DMG§r', '§cAoE Cryo DMG§r');
     textData = textData.replaceAll('AoE §dDendro DMG§r', '§dAoE Dendro DMG§r');
-    textData =
-        textData.replaceAll('AoE §eElectro DMG§r', '§eAoE Electro DMG§r');
+    textData = textData.replaceAll(
+      'AoE §eElectro DMG§r',
+      '§eAoE Electro DMG§r',
+    );
     textData = textData.replaceAll('AoE §gGeo DMG§r', '§gAoE Geo DMG§r');
     textData = textData.replaceAll('AoE §hHydro DMG§r', '§hAoE Hydro DMG§r');
     textData = textData.replaceAll('AoE §pPyro DMG§r', '§pAoE Pyro DMG§r');
@@ -715,8 +716,9 @@ class GridUtils {
       },
     );
     var currentTime = DateTime.now().toLocal();
-    var diff =
-        isCountUp ? currentTime.difference(end) : end.difference(currentTime);
+    var diff = isCountUp
+        ? currentTime.difference(end)
+        : end.difference(currentTime);
     timer.setPresetTime(mSec: diff.inMilliseconds);
     timer.onStartTimer();
 

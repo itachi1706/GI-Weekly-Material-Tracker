@@ -43,14 +43,9 @@ class GlobalTrackingPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Consolidated Material List'),
-          bottom: TabBar(
-            tabAlignment: TabAlignment.center,
-            tabs: _tabs,
-          ),
+          bottom: TabBar(tabAlignment: TabAlignment.center, tabs: _tabs),
         ),
-        body: TabBarView(
-          children: _children,
-        ),
+        body: TabBarView(children: _children),
       ),
     );
   }
@@ -72,12 +67,14 @@ class GlobalTrackerState extends State<GlobalTracker> {
   void initState() {
     super.initState();
 
-    GridData.retrieveMaterialsMapData().then((value) => {
-          setState(() {
-            if (!mounted) return;
-            _materialData = value;
-          }),
-        });
+    GridData.retrieveMaterialsMapData().then(
+      (value) => {
+        setState(() {
+          if (!mounted) return;
+          _materialData = value;
+        }),
+      },
+    );
   }
 
   Widget _getGlobalTrackingList(Map<String?, CommonTracking> conData) {
@@ -110,10 +107,7 @@ class GlobalTrackerState extends State<GlobalTracker> {
                         '${data.current}/${data.max}',
                         style: TextStyle(
                           fontSize: 18,
-                          color: GridData.getCountColor(
-                            data.current,
-                            data.max,
-                          ),
+                          color: GridData.getCountColor(data.current, data.max),
                         ),
                       ),
                     ],
@@ -136,19 +130,14 @@ class GlobalTrackerState extends State<GlobalTracker> {
         children: [
           Text(
             material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ),
           RatingBar.builder(
             ignoreGestures: true,
             itemCount: 5,
             itemSize: 12,
             unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              material.rarity.toString(),
-            )!,
+            initialRating: double.tryParse(material.rarity.toString())!,
             itemBuilder: (context, _) =>
                 const Icon(Icons.star, color: Colors.amber),
             onRatingUpdate: (rating) {
@@ -157,10 +146,7 @@ class GlobalTrackerState extends State<GlobalTracker> {
           ),
           Text(
             material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
+            style: const TextStyle(fontSize: 11, color: Colors.white),
           ),
         ],
       ),
@@ -193,8 +179,9 @@ class GlobalTrackerState extends State<GlobalTracker> {
           // Consolidate stuff together
           var conData = <String?, CommonTracking>{};
           for (var snap in data.docs) {
-            var tmp =
-                TrackingUserData.fromJson(snap.data() as Map<String, dynamic>);
+            var tmp = TrackingUserData.fromJson(
+              snap.data() as Map<String, dynamic>,
+            );
             if (conData.containsKey(tmp.name)) {
               // Append
               conData[tmp.name]!.current =
@@ -252,10 +239,7 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
   Widget _materialHeader() {
     return Row(
       children: [
-        GridData.getImageAssetFromFirebase(
-          _material!.image,
-          height: 64,
-        ),
+        GridData.getImageAssetFromFirebase(_material!.image, height: 64),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -421,10 +405,7 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
                 padding: EdgeInsets.all(8),
                 child: Row(
                   children: [
-                    Text(
-                      'Tracking For',
-                      style: TextStyle(fontSize: 24),
-                    ),
+                    Text('Tracking For', style: TextStyle(fontSize: 24)),
                   ],
                 ),
               ),
@@ -490,16 +471,14 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
   }
 
   void _updateMultiTracking() {
-    UpdateMultiTracking(context, widget.material).itemClickedAction(
-      widget.data,
-      widget.trackerKey,
-      {
-        'img': widget.imageRef,
-        'asc': widget.extraAscensionRef,
-        'type': widget.extraTypeRef,
-      },
-      true,
-    );
+    UpdateMultiTracking(
+      context,
+      widget.material,
+    ).itemClickedAction(widget.data, widget.trackerKey, {
+      'img': widget.imageRef,
+      'asc': widget.extraAscensionRef,
+      'type': widget.extraTypeRef,
+    }, true);
   }
 
   Widget _getCharacterDataImage() {
@@ -508,20 +487,16 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
       width: 64,
       child: Stack(
         children: [
-          GridData.getImageAssetFromFirebase(
-            widget.imageRef,
-            height: 48,
-          ),
+          GridData.getImageAssetFromFirebase(widget.imageRef, height: 48),
           Align(
             alignment: FractionalOffset.bottomLeft,
-            child: Text(GridUtils.getRomanNumberArray(
-              widget.extraAscensionRef - 1,
-            ).toString()),
+            child: Text(
+              GridUtils.getRomanNumberArray(
+                widget.extraAscensionRef - 1,
+              ).toString(),
+            ),
           ),
-          Align(
-            alignment: FractionalOffset.bottomRight,
-            child: _typeWidget,
-          ),
+          Align(alignment: FractionalOffset.bottomRight, child: _typeWidget),
         ],
       ),
     );
@@ -587,7 +562,12 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
   }
 
   void _increment() {
-    incrementData(widget.trackerKey, widget.data.type, widget.data.current!, widget.data.max!);
+    incrementData(
+      widget.trackerKey,
+      widget.data.type,
+      widget.data.current!,
+      widget.data.max!,
+    );
   }
 
   void _decrement() {
@@ -634,10 +614,7 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      widget.name,
-                      style: const TextStyle(fontSize: 20),
-                    ),
+                    Text(widget.name, style: const TextStyle(fontSize: 20)),
                   ],
                 ),
               ),

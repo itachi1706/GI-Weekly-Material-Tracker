@@ -38,9 +38,7 @@ class OutfitData extends CommonData {
     super.wiki,
     super.hoyowiki,
     super.released,
-  }) : super(
-          crossover: false,
-        );
+  }) : super(crossover: false);
 
   factory OutfitData.fromJson(Map<String, dynamic> json) {
     return OutfitData(
