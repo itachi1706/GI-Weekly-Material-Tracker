@@ -1218,6 +1218,29 @@
       "hoyowiki": null,
       "subCollection": {}
     },
+    "Exaiphanes_Blade": {
+      "secondary_stat_type": "CRIT Rate%",
+      "description": "A longsword that once shone with the light of the very stars. In the voyager's hand, it becomes a brand-new light that has nothing to do with any past era.",
+      "name": "Exaiphanes Blade",
+      "ascension": {},
+      "materials": {
+        "ascension": {}
+      },
+      "image": "Weapons/Sword/Weapon_Exaiphanes_Blade.png",
+      "secondary_stat": "7.2%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "33.1%",
+      "max_base_atk": 608,
+      "base_atk": 46,
+      "obtained": "Great Deeds on the Tundra Quest",
+      "effectName": "Traveler's Path",
+      "effect": "When the Traveler equips this, their CRIT DMG increases by (var1)% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by 16% for 8s, and regenerate 3 Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Exaiphanes_Blade",
+      "hoyowiki": 11211,
+      "subCollection": {}
+    },
     "Favonius_Sword": {
       "secondary_stat_type": "Energy Recharge",
       "description": "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
@@ -5614,6 +5637,119 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Uraku_Misugiri",
       "hoyowiki": 5150,
+      "subCollection": {}
+    },
+    "Whitelake_Frostfeather": {
+      "secondary_stat_type": "CRIT Rate%",
+      "description": "A longsword light as the feathers of a snow swan, and which stays pure and untainted at all times.",
+      "name": "Whitelake Frostfeather",
+      "ascension": {
+        "1": {
+          "material3": "Chimeric_Core",
+          "level": 20,
+          "material2": "Hollow_Root_of_Life",
+          "material3qty": 3,
+          "material1": "Measured_Pour_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 5,
+          "material1qty": 5,
+          "mora": 10000,
+          "material3type": "common1",
+          "material2type": "elite1",
+          "material1type": "forgery1"
+        },
+        "2": {
+          "material3": "Chimeric_Core",
+          "level": 40,
+          "material2": "Hollow_Root_of_Life",
+          "material3qty": 12,
+          "material1": "Intoxication_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 20000,
+          "material3type": "common1",
+          "material2type": "elite1",
+          "material1type": "forgery2"
+        },
+        "3": {
+          "material3": "Symbiotic_Chimeric_Nucleus",
+          "level": 50,
+          "material2": "Sprout_Node_of_Life",
+          "material3qty": 9,
+          "material1": "Intoxication_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 9,
+          "material1qty": 9,
+          "mora": 30000,
+          "material3type": "common2",
+          "material2type": "elite2",
+          "material1type": "forgery2"
+        },
+        "4": {
+          "material3": "Symbiotic_Chimeric_Nucleus",
+          "level": 60,
+          "material2": "Sprout_Node_of_Life",
+          "material3qty": 14,
+          "material1": "Exhilaration_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 18,
+          "material1qty": 5,
+          "mora": 45000,
+          "material3type": "common2",
+          "material2type": "elite2",
+          "material1type": "forgery3"
+        },
+        "5": {
+          "material3": "Prime_Chimeric_Nexus",
+          "level": 70,
+          "material2": "Coiled_Core_of_Life",
+          "material3qty": 9,
+          "material1": "Exhilaration_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 14,
+          "material1qty": 9,
+          "mora": 55000,
+          "material3type": "common3",
+          "material2type": "elite3",
+          "material1type": "forgery3"
+        },
+        "6": {
+          "material3": "Prime_Chimeric_Nexus",
+          "level": 80,
+          "material2": "Coiled_Core_of_Life",
+          "material3qty": 18,
+          "material1": "Revelry_of_the_Cellared_Spiritual_Nectar",
+          "material2qty": 27,
+          "material1qty": 6,
+          "mora": 65000,
+          "material3type": "common3",
+          "material2type": "elite3",
+          "material1type": "forgery4"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "forgery1": "Measured_Pour_of_the_Cellared_Spiritual_Nectar",
+          "forgery2": "Intoxication_of_the_Cellared_Spiritual_Nectar",
+          "forgery3": "Exhilaration_of_the_Cellared_Spiritual_Nectar",
+          "forgery4": "Revelry_of_the_Cellared_Spiritual_Nectar",
+          "elite1": "Hollow_Root_of_Life",
+          "elite2": "Sprout_Node_of_Life",
+          "elite3": "Coiled_Core_of_Life"
+        }
+      },
+      "image": "Weapons/Sword/Weapon_Whitelake_Frostfeather.png",
+      "secondary_stat": "4.8%",
+      "rarity": 5,
+      "type": "Sword",
+      "max_secondary_stat": "22.1%",
+      "max_base_atk": 674,
+      "base_atk": 48,
+      "obtained": "Gacha",
+      "effectName": "Snow Swan's Finale",
+      "effect": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by 8~16% for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent.At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by 50~110%, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore 4~6 Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s.This effect can be triggered even when the equipping character is off-field.",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Whitelake_Frostfeather",
+      "hoyowiki": 11210,
       "subCollection": {}
     },
     "Wolf-Fang": {
