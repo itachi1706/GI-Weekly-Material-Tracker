@@ -224,9 +224,7 @@ class DictionaryPageState extends State<DictionaryPage>
       appBar: AppBar(
         title: const Text('Dictionary'),
         bottom: _showAppBar() as PreferredSizeWidget?,
-        actions: [
-          _showSortWidget(),
-        ],
+        actions: [_showSortWidget()],
       ),
       drawer: const DrawerComponent(),
       body: _children[_currentIndex],
@@ -239,10 +237,7 @@ class DictionaryPageState extends State<DictionaryPage>
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),
-          NavigationDestination(
-            icon: Icon(MdiIcons.sword),
-            label: 'Weapons',
-          ),
+          NavigationDestination(icon: Icon(MdiIcons.sword), label: 'Weapons'),
           NavigationDestination(
             icon: Icon(MdiIcons.diamondStone),
             label: 'Materials',

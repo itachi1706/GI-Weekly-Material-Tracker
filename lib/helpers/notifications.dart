@@ -38,8 +38,9 @@ class NotificationManager {
   Future<void> initialize() async {
     _plugin = FlutterLocalNotificationsPlugin();
 
-    const initializationSettingsAndroid =
-        AndroidInitializationSettings('splash');
+    const initializationSettingsAndroid = AndroidInitializationSettings(
+      'splash',
+    );
     final initializationSettingsIOS = DarwinInitializationSettings(
       onDidReceiveLocalNotification: onDidReceiveLocalNotification,
       requestSoundPermission: true,
@@ -108,7 +109,8 @@ class NotificationManager {
     if (GetPlatform.isAndroid) {
       await _plugin!
           .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>()!
+            AndroidFlutterLocalNotificationsPlugin
+          >()!
           .deleteNotificationChannel(channelId);
       if (!silent) {
         Util.showSnackbarQuick(Get.context!, 'Notification Channel deleted');
@@ -197,15 +199,17 @@ class NotificationManager {
     // Prevent creating reminder if reminder time is before current time (aka its over)
     if (toEnable && resetTime > 0) {
       debugPrint('Parametric Reminder Enabled. Calculating reminder time');
-      var remindTime =
-          tz.TZDateTime.fromMillisecondsSinceEpoch(tz.local, resetTime)
-              .add(const Duration(days: 6, hours: 22));
+      var remindTime = tz.TZDateTime.fromMillisecondsSinceEpoch(
+        tz.local,
+        resetTime,
+      ).add(const Duration(days: 6, hours: 22));
       debugPrint('Remind (ms): ${remindTime.millisecondsSinceEpoch}');
       if (remindTime.millisecondsSinceEpoch > currentTime) {
         debugPrint('Scheduling Parametric Transformer Reminder');
 
         if (GetPlatform.isAndroid && !(await _hasNotificationPermission())) {
           _showNotificationRequirementRationale();
+
           return false;
         }
 
@@ -268,15 +272,6 @@ class NotificationManager {
     return true;
   }
 
-  void _showNotificationRequirementRationale() {
-    debugPrint('No permission. Aborting');
-    // Show alert
-    Util.showSnackbarQuick(
-      Get.context!,
-      'Please enable notifications for this app in your phone settings',
-    );
-  }
-
   NotificationDetails craftParametricTransformerReminder() {
     const androidNotificationDetails = AndroidNotificationDetails(
       'notify_parametric',
@@ -294,8 +289,9 @@ class NotificationManager {
       tag: 'weekly_parametric',
     );
 
-    const platformChannelSpecifics =
-        NotificationDetails(android: androidNotificationDetails);
+    const platformChannelSpecifics = NotificationDetails(
+      android: androidNotificationDetails,
+    );
 
     return platformChannelSpecifics;
   }
@@ -316,23 +312,33 @@ class NotificationManager {
       autoCancel: true,
       tag: 'daily_forum',
     );
-    const platformChannelSpecifics =
-        NotificationDetails(android: androidNotificationDetails);
+    const platformChannelSpecifics = NotificationDetails(
+      android: androidNotificationDetails,
+    );
 
     return platformChannelSpecifics;
   }
 
   Future<void> showNotification(
-    List<dynamic> data,
-    NotificationDetails notificationDetails, {
-    String? payload,
-  }) async {
+      List<dynamic> data,
+      NotificationDetails notificationDetails, {
+        String? payload,
+      }) async {
     await _plugin!.show(
       data[0],
       data[1],
       data[2],
       notificationDetails,
       payload: (payload != null) ? payload : null,
+    );
+  }
+
+  void _showNotificationRequirementRationale() {
+    debugPrint('No permission. Aborting');
+    // Show alert
+    Util.showSnackbarQuick(
+      Get.context!,
+      'Please enable notifications for this app in your phone settings',
     );
   }
 
@@ -345,7 +351,8 @@ class NotificationManager {
       debugPrint('Requesting Notification Permission');
       await _plugin!
           .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>()
+            AndroidFlutterLocalNotificationsPlugin
+          >()
           ?.requestNotificationsPermission();
     }
 
@@ -360,15 +367,21 @@ class NotificationManager {
 
     return await _plugin!
             .resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>()
+              AndroidFlutterLocalNotificationsPlugin
+            >()
             ?.areNotificationsEnabled() ??
         false;
   }
 
   tz.TZDateTime _nextInstanceOfMidnight() {
     final now = tz.TZDateTime.now(tz.local); // 12AM GMT+8
-    var scheduledDate =
-        tz.TZDateTime(tz.local, now.year, now.month, now.day, 0);
+    var scheduledDate = tz.TZDateTime(
+      tz.local,
+      now.year,
+      now.month,
+      now.day,
+      0,
+    );
     if (scheduledDate.isBefore(now)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }

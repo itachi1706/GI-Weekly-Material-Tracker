@@ -112,12 +112,9 @@ class TrackingData {
     }
     var uid = Util.getFirebaseUid();
     if (uid == null || key == null) return;
-    await _db
-        .collection('tracking')
-        .doc(uid)
-        .collection(type!)
-        .doc(key)
-        .update({'current': curCnt, 'max': maxCnt});
+    await _db.collection('tracking').doc(uid).collection(type!).doc(key).update(
+      {'current': curCnt, 'max': maxCnt},
+    );
   }
 
   static void incrementCount(
@@ -130,12 +127,9 @@ class TrackingData {
     var uid = Util.getFirebaseUid();
     if (uid == null) return;
 
-    await _db
-        .collection('tracking')
-        .doc(uid)
-        .collection(type!)
-        .doc(key)
-        .update({'current': FieldValue.increment(1)});
+    await _db.collection('tracking').doc(uid).collection(type!).doc(key).update(
+      {'current': FieldValue.increment(1)},
+    );
   }
 
   static void decrementCount(String key, String? type, int curCnt) async {
@@ -143,12 +137,9 @@ class TrackingData {
     var uid = Util.getFirebaseUid();
     if (uid == null) return;
 
-    await _db
-        .collection('tracking')
-        .doc(uid)
-        .collection(type!)
-        .doc(key)
-        .update({'current': FieldValue.increment(-1)});
+    await _db.collection('tracking').doc(uid).collection(type!).doc(key).update(
+      {'current': FieldValue.increment(-1)},
+    );
   }
 
   static void addToCollection(
@@ -167,13 +158,13 @@ class TrackingData {
         .collection(materialType!)
         .doc(key)
         .set({
-      'name': itemKey,
-      'max': numToTrack,
-      'current': 0,
-      'type': materialType,
-      'addedBy': addType,
-      'addData': extraData,
-    });
+          'name': itemKey,
+          'max': numToTrack,
+          'current': 0,
+          'type': materialType,
+          'addedBy': addType,
+          'addData': extraData,
+        });
   }
 
   static Future<void> removeFromRecord(String key, String? item) async {
@@ -280,13 +271,10 @@ class TrackingData {
             child: Text(
               GridUtils.getRomanNumberArray(ascension! - 1).toString(),
               style: const TextStyle(color: Colors.white),
-              textAlign: TextAlign.end,
+              textAlign: .end,
             ),
           ),
-          Align(
-            alignment: FractionalOffset.bottomRight,
-            child: typeWidget,
-          ),
+          Align(alignment: FractionalOffset.bottomRight, child: typeWidget),
         ],
       ),
     );
@@ -298,10 +286,7 @@ class TrackingData {
         padding: EdgeInsets.all(8),
         child: Row(
           children: [
-            Text(
-              'Ascension Materials',
-              style: TextStyle(fontSize: 24),
-            ),
+            Text('Ascension Materials', style: TextStyle(fontSize: 24)),
           ],
         ),
       ),
@@ -377,14 +362,8 @@ class UpdateMultiTracking {
 
   List<Widget> _commonDialogButtons() {
     return [
-      TextButton(
-        onPressed: () => Get.back(),
-        child: const Text('Cancel'),
-      ),
-      TextButton(
-        onPressed: _updateRecord,
-        child: const Text('Update'),
-      ),
+      TextButton(onPressed: () => Get.back(), child: const Text('Cancel')),
+      TextButton(onPressed: _updateRecord, child: const Text('Update')),
     ];
   }
 
@@ -407,10 +386,7 @@ class UpdateMultiTracking {
           content: SingleChildScrollView(
             child: ListBody(
               children: [
-                GridData.getImageAssetFromFirebase(
-                  _material!.image,
-                  height: 48,
-                ),
+                GridData.getImageAssetFromFirebase(_material.image, height: 48),
                 TextField(
                   onChanged: (newValue) {
                     _cntCurrent = newValue;
@@ -447,12 +423,9 @@ class UpdateMultiTracking {
 
   Widget _getImageRow(Map<String, dynamic> extraData) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: .spaceAround,
       children: [
-        GridData.getImageAssetFromFirebase(
-          _material!.image,
-          height: 48,
-        ),
+        GridData.getImageAssetFromFirebase(_material!.image, height: 48),
         TrackingData.getSupportingWidget(
           extraData['img'],
           extraData['asc'],

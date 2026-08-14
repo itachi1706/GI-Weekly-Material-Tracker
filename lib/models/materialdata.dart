@@ -143,10 +143,7 @@ class MaterialDataUsage {
   List<String>? characters;
   List<String>? weapons;
 
-  MaterialDataUsage({
-    this.characters,
-    this.weapons,
-  });
+  MaterialDataUsage({this.characters, this.weapons});
 
   factory MaterialDataUsage.fromJson(Map<String, dynamic> parsedJson) {
     return MaterialDataUsage(

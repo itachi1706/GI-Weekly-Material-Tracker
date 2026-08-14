@@ -64,10 +64,7 @@ class WishListPageState extends State<WishListPage>
         ),
       ),
       drawer: const DrawerComponent(),
-      body: TabBarView(
-        controller: _tabController,
-        children: _children,
-      ),
+      body: TabBarView(controller: _tabController, children: _children),
     );
   }
 }
@@ -130,8 +127,12 @@ class WishPageCard extends StatelessWidget {
   final Map<String, CharacterData> characterInfo;
   final Map<String, WeaponData> weaponInfo;
 
-  const WishPageCard(this.data, this.characterInfo, this.weaponInfo,
-      {super.key});
+  const WishPageCard(
+    this.data,
+    this.characterInfo,
+    this.weaponInfo, {
+    super.key,
+  });
 
   List<Widget> _getCountdown() {
     if (data.type.toLowerCase() == "standard") {
@@ -141,34 +142,34 @@ class WishPageCard extends StatelessWidget {
     var list = <Widget>[];
     switch (data.status) {
       case BannerStatus.upcoming:
-        list.add(CountdownTimer(
-          endTime: data.start.millisecondsSinceEpoch,
-          endWidget: const Text('The banner is now available!'),
-          widgetBuilder: (_, CurrentRemainingTime? time) {
-            if (time == null) {
-              return const Text('Unknown Time');
-            }
+        list.add(
+          CountdownTimer(
+            endTime: data.start.millisecondsSinceEpoch,
+            endWidget: const Text('The banner is now available!'),
+            widgetBuilder: (_, CurrentRemainingTime? time) {
+              if (time == null) {
+                return const Text('Unknown Time');
+              }
 
-            return Text(
-              '${_getRemainingTimeString(time)} to release',
-            );
-          },
-        ));
+              return Text('${_getRemainingTimeString(time)} to release');
+            },
+          ),
+        );
         break;
       case BannerStatus.current:
-        list.add(CountdownTimer(
-          endTime: data.end.millisecondsSinceEpoch,
-          endWidget: const Text('The banner is now over!'),
-          widgetBuilder: (_, CurrentRemainingTime? time) {
-            if (time == null) {
-              return const Text('Unknown Time');
-            }
+        list.add(
+          CountdownTimer(
+            endTime: data.end.millisecondsSinceEpoch,
+            endWidget: const Text('The banner is now over!'),
+            widgetBuilder: (_, CurrentRemainingTime? time) {
+              if (time == null) {
+                return const Text('Unknown Time');
+              }
 
-            return Text(
-              '${_getRemainingTimeString(time)} remaining',
-            );
-          },
-        ));
+              return Text('${_getRemainingTimeString(time)} remaining');
+            },
+          ),
+        );
         break;
       case BannerStatus.ended:
         list.add(const Text('The banner has ended'));
@@ -204,10 +205,7 @@ class WishPageCard extends StatelessWidget {
 
     if (data.rateUpCharacters.isNotEmpty || data.rateUpWeapons.isNotEmpty) {
       finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
-      finalWidgets.add(const Text(
-        "Rate Up",
-        style: TextStyle(fontSize: 18),
-      ));
+      finalWidgets.add(const Text("Rate Up", style: TextStyle(fontSize: 18)));
     }
 
     List<Widget> rowChild = [];
@@ -223,12 +221,14 @@ class WishPageCard extends StatelessWidget {
       }
     }
 
-    finalWidgets.add(Wrap(
-      direction: Axis.horizontal,
-      crossAxisAlignment: WrapCrossAlignment.start,
-      alignment: WrapAlignment.start,
-      children: rowChild,
-    ));
+    finalWidgets.add(
+      Wrap(
+        direction: .horizontal,
+        crossAxisAlignment: .start,
+        alignment: .start,
+        children: rowChild,
+      ),
+    );
 
     if (kDebugMode) {
       finalWidgets.add(Text('Debug Index: ${data.type}/${data.key}'));
@@ -244,15 +244,8 @@ class WishPageCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
-          GridData.getImageAssetFromFirebase(
-            imageUrl,
-            height: 32,
-          ),
-          Icon(
-            MdiIcons.arrowUpBold,
-            color: Colors.green,
-            size: 20,
-          ),
+          GridData.getImageAssetFromFirebase(imageUrl, height: 32),
+          Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20),
         ],
       ),
     );
@@ -277,13 +270,13 @@ class WishPageCard extends StatelessWidget {
     }
 
     return Card(
-      clipBehavior: Clip.antiAlias,
+      clipBehavior: .antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: .start,
+          crossAxisAlignment: .start,
           children: <Widget>[
             Stack(
               children: [
@@ -306,13 +299,10 @@ class WishPageCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: .start,
+                crossAxisAlignment: .start,
                 children: [
-                  Text(
-                    data.name,
-                    style: const TextStyle(fontSize: 18),
-                  ),
+                  Text(data.name, style: const TextStyle(fontSize: 18)),
                   Text(
                     '${df.format(data.start.toLocal())} - ${df.format(data.end.toLocal())}',
                   ),
@@ -375,12 +365,16 @@ class CurrentWishListPageContentState
 
         var data = <BannerData>[];
         for (var element in snapshot.docs) {
-          data.addAll((element.value as List<dynamic>)
-              .asMap()
-              .map((i, e) => MapEntry(i, BannerData.fromJson(e, i.toString())))
-              .values
-              .where((v) => v.status == BannerStatus.current)
-              .toList());
+          data.addAll(
+            (element.value as List<dynamic>)
+                .asMap()
+                .map(
+                  (i, e) => MapEntry(i, BannerData.fromJson(e, i.toString())),
+                )
+                .values
+                .where((v) => v.status == BannerStatus.current)
+                .toList(),
+          );
         }
 
         // Sort permanent banner to the back
@@ -443,10 +437,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: [
-                Text(
-                  '4* RATES',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                Text('4* RATES', style: TextStyle(fontWeight: .bold)),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("- 0.6% for 0-9 rolls\n- 100% at roll 10"),
@@ -469,7 +460,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
               children: [
                 const Text(
                   '5* RATES',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: .bold),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
@@ -489,46 +480,54 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     var finalWidgets = <Widget>[];
 
     finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    var isPortrait = MediaQuery.of(context).orientation == .portrait;
 
     if (_bannerInfo!.rateUpCharacters.isNotEmpty) {
-      finalWidgets.addAll(GridData.generateCoWGridWidgets(
-        'Rate Up Characters',
-        _bannerInfo!.rateUpCharacters,
-        'characters',
-        _bannerInfo?.name,
-        isPortrait,
-      ));
+      finalWidgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Rate Up Characters',
+          _bannerInfo!.rateUpCharacters,
+          'characters',
+          _bannerInfo?.name,
+          isPortrait,
+        ),
+      );
     }
 
     if (_bannerInfo!.rateUpWeapons.isNotEmpty) {
-      finalWidgets.addAll(GridData.generateCoWGridWidgets(
-        'Rate Up Weapons',
-        _bannerInfo!.rateUpWeapons,
-        'weapons',
-        _bannerInfo?.name,
-        isPortrait,
-      ));
+      finalWidgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Rate Up Weapons',
+          _bannerInfo!.rateUpWeapons,
+          'weapons',
+          _bannerInfo?.name,
+          isPortrait,
+        ),
+      );
     }
 
     if (_bannerInfo!.characters.isNotEmpty) {
-      finalWidgets.addAll(GridData.generateCoWGridWidgets(
-        'Characters',
-        _bannerInfo!.characters,
-        'characters',
-        _bannerInfo?.name,
-        isPortrait,
-      ));
+      finalWidgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Characters',
+          _bannerInfo!.characters,
+          'characters',
+          _bannerInfo?.name,
+          isPortrait,
+        ),
+      );
     }
 
     if (_bannerInfo!.weapons.isNotEmpty) {
-      finalWidgets.addAll(GridData.generateCoWGridWidgets(
-        'Weapons',
-        _bannerInfo!.weapons,
-        'weapons',
-        _bannerInfo?.name,
-        isPortrait,
-      ));
+      finalWidgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Weapons',
+          _bannerInfo!.weapons,
+          'weapons',
+          _bannerInfo?.name,
+          isPortrait,
+        ),
+      );
     }
 
     finalWidgets.removeLast(); // Remove padding at the end
@@ -538,9 +537,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
 
   Widget _unknownBanner() {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Unknown Banner'),
-      ),
+      appBar: AppBar(title: const Text('Unknown Banner')),
       body: const Center(child: Text('Cannot find banner information')),
     );
   }
@@ -556,48 +553,56 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     var list = <Widget>[];
     switch (_bannerInfo!.status) {
       case BannerStatus.upcoming:
-        list.add(CountdownTimer(
-          endTime: _bannerInfo!.start.millisecondsSinceEpoch,
-          endWidget: const Text('The banner is now available!'),
-          widgetBuilder: (_, CurrentRemainingTime? time) {
-            if (time == null) {
-              return const Text('Unknown Time');
-            }
+        list.add(
+          CountdownTimer(
+            endTime: _bannerInfo!.start.millisecondsSinceEpoch,
+            endWidget: const Text('The banner is now available!'),
+            widgetBuilder: (_, CurrentRemainingTime? time) {
+              if (time == null) {
+                return const Text('Unknown Time');
+              }
 
-            return _getTimeStringWidget(
-              '${_getRemainingTimeString(time)} to release',
-            );
-          },
-        ));
+              return _getTimeStringWidget(
+                '${_getRemainingTimeString(time)} to release',
+              );
+            },
+          ),
+        );
         list.add(const Divider());
         break;
       case BannerStatus.current:
-        list.add(CountdownTimer(
-          endTime: _bannerInfo!.end.millisecondsSinceEpoch,
-          endWidget: const Text('The banner is now over!'),
-          widgetBuilder: (_, CurrentRemainingTime? time) {
-            if (time == null) {
-              return const Text('Unknown Time');
-            }
+        list.add(
+          CountdownTimer(
+            endTime: _bannerInfo!.end.millisecondsSinceEpoch,
+            endWidget: const Text('The banner is now over!'),
+            widgetBuilder: (_, CurrentRemainingTime? time) {
+              if (time == null) {
+                return const Text('Unknown Time');
+              }
 
-            return _getTimeStringWidget(
-              '${_getRemainingTimeString(time)} remaining',
-            );
-          },
-        ));
+              return _getTimeStringWidget(
+                '${_getRemainingTimeString(time)} remaining',
+              );
+            },
+          ),
+        );
         list.add(const Divider());
         break;
       case BannerStatus.ended:
-        list.addAll(GridData.generateInfoLine(
-          'The banner has ended',
-          Icons.hourglass_bottom,
-        ));
+        list.addAll(
+          GridData.generateInfoLine(
+            'The banner has ended',
+            Icons.hourglass_bottom,
+          ),
+        );
         break;
       default:
-        list.addAll(GridData.generateInfoLine(
-          'Unknown Banner Status',
-          Icons.hourglass_bottom,
-        ));
+        list.addAll(
+          GridData.generateInfoLine(
+            'Unknown Banner Status',
+            Icons.hourglass_bottom,
+          ),
+        );
         break;
     }
 
@@ -693,14 +698,12 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     var df = Util.defaultDateFormat;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_bannerInfo!.name),
-      ),
+      appBar: AppBar(title: Text(_bannerInfo!.name)),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: .start,
+          mainAxisAlignment: .start,
+          mainAxisSize: .min,
           children: [
             GridData.getImageAssetFromFirebase(_bannerInfo!.image),
             ..._checkIfChronicled(),

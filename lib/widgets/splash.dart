@@ -10,7 +10,6 @@ import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
-
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -79,13 +78,15 @@ class SplashPageState extends State<SplashPage> {
           }
           debugPrint('[FB] Configuring Crash Reporting');
           FlutterError.onError = crashHandler.recordFlutterError;
-          Isolate.current.addErrorListener(RawReceivePort((pair) async {
-            final List<dynamic> errorAndStacktrace = pair;
-            await crashHandler.recordError(
-              errorAndStacktrace.first,
-              errorAndStacktrace.last,
-            );
-          }).sendPort);
+          Isolate.current.addErrorListener(
+            RawReceivePort((pair) async {
+              final List<dynamic> errorAndStacktrace = pair;
+              await crashHandler.recordError(
+                errorAndStacktrace.first,
+                errorAndStacktrace.last,
+              );
+            }).sendPort,
+          );
         }
         debugPrint(
           'Firebase Crashlytics: ${crashHandler.isCrashlyticsCollectionEnabled}',
@@ -109,13 +110,11 @@ class SplashPageState extends State<SplashPage> {
 
   Future<String> _login() async {
     _miscInit();
-    var res = await Future.wait(
-      [
-        _initFirebase(),
-        _setupNotifications(),
-        Future.delayed(const Duration(seconds: 2)),
-      ],
-    );
+    var res = await Future.wait([
+      _initFirebase(),
+      _setupNotifications(),
+      Future.delayed(const Duration(seconds: 2)),
+    ]);
 
     return (res[0]) ? '/menu' : '/';
   }
@@ -131,20 +130,16 @@ class SplashPageState extends State<SplashPage> {
 
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand,
+        fit: .expand,
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              color: backgroundColor,
-            ),
-          ),
+          Container(decoration: BoxDecoration(color: backgroundColor)),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: .start,
             children: <Widget>[
               Expanded(
                 flex: 2,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: .center,
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.transparent,
@@ -154,9 +149,7 @@ class SplashPageState extends State<SplashPage> {
                         child: Container(child: image),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10.0),
-                    ),
+                    const Padding(padding: EdgeInsets.only(top: 10.0)),
                     Text(
                       'Genshin Impact Weekly Material Tracker',
                       style: TextStyle(
@@ -171,16 +164,12 @@ class SplashPageState extends State<SplashPage> {
               Expanded(
                 flex: 1,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: .center,
                   children: <Widget>[
                     const CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color?>(
-                        null,
-                      ),
+                      valueColor: AlwaysStoppedAnimation<Color?>(null),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                    ),
+                    const Padding(padding: EdgeInsets.only(top: 20.0)),
                     Padding(
                       padding: const EdgeInsets.only(top: 10.0),
                       child: Text(

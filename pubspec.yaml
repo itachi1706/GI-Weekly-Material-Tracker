@@ -22,7 +22,8 @@ version: 1.0.0+1
 #version: 1.0.0+141
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.10.0 <4.0.0'
+  flutter: '>=3.38.0'
 
 dependencies:
   flutter:
@@ -57,11 +58,11 @@ dependencies:
   google_sign_in: ^6.3.0
   intl: ^0.20.2
   material_design_icons_flutter: ^7.0.7296
-  model_viewer_plus: ^1.9.3
+  model_viewer_plus: ^1.10.0
   octo_image: ^2.1.0
   omni_datetime_picker: 2.3.1 # Fixed to 2.3.1 until Flutter upgrade past 3.35
   package_info_plus: ^9.0.1
-  path_provider: ^2.1.5
+  path_provider: ^2.1.6
   settings_ui: ^2.0.1
   shared_preferences: ^2.5.5
   sign_in_button: ^5.0.0
@@ -76,9 +77,10 @@ dev_dependencies:
   # We disable integration test as we are not running any currently
   #integration_test:
   #  sdk: flutter
-  dart_code_linter: ^4.0.3
+  dart_code_linter: ^4.2.0
   # dart run dependency_validator
   dependency_validator: ^5.0.5
+  dot_shorthand_converter: ^0.0.3
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
   flutter_native_splash: ^2.4.7

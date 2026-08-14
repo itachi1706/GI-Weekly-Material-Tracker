@@ -28,13 +28,16 @@ class MaterialTabController extends StatefulWidget {
 class MaterialTabControllerState extends State<MaterialTabController> {
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: [
-      MaterialListGrid(notifier: widget.notifier),
-      MaterialListGrid(filter: 'boss_drops', notifier: widget.notifier),
-      MaterialListGrid(filter: 'domain_material', notifier: widget.notifier),
-      MaterialListGrid(filter: 'mob_drops', notifier: widget.notifier),
-      MaterialListGrid(filter: 'local_speciality', notifier: widget.notifier),
-    ]);
+    return TabBarView(
+      controller: widget.tabController,
+      children: [
+        MaterialListGrid(notifier: widget.notifier),
+        MaterialListGrid(filter: 'boss_drops', notifier: widget.notifier),
+        MaterialListGrid(filter: 'domain_material', notifier: widget.notifier),
+        MaterialListGrid(filter: 'mob_drops', notifier: widget.notifier),
+        MaterialListGrid(filter: 'local_speciality', notifier: widget.notifier),
+      ],
+    );
   }
 }
 
@@ -87,8 +90,9 @@ class MaterialListGridState extends State<MaterialListGrid> {
     }
 
     return StreamBuilder(
-      stream:
-          (queryRef == null) ? materialRef.snapshots() : queryRef.snapshots(),
+      stream: (queryRef == null)
+          ? materialRef.snapshots()
+          : queryRef.snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return const Text('Error occurred getting snapshot');
@@ -105,8 +109,9 @@ class MaterialListGridState extends State<MaterialListGrid> {
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
-          crossAxisCount:
-              (Get.context!.orientation == Orientation.portrait) ? 3 : 6,
+          crossAxisCount: (Get.context!.orientation == .portrait)
+              ? 3
+              : 6,
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/materials/${document.id}'),
@@ -167,13 +172,13 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       children: [
         GridData.getImageAssetFromFirebase(_info!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _info!.type!,
-                textAlign: TextAlign.start,
+                textAlign: .start,
                 style: const TextStyle(fontSize: 20),
               ),
             ),
@@ -199,12 +204,13 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       if (!mounted) return;
       _addCheckObtained = false;
     });
-    TrackingData.isBeingTracked('material', _infoId)
-        .then((isTracked) => setState(() {
-              if (!mounted) return;
-              _isAdded = isTracked;
-              _addCheckObtained = true;
-            }));
+    TrackingData.isBeingTracked('material', _infoId).then(
+      (isTracked) => setState(() {
+        if (!mounted) return;
+        _isAdded = isTracked;
+        _addCheckObtained = true;
+      }),
+    );
   }
 
   Widget _getFabWidget() {
@@ -284,8 +290,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
                     });
                   },
                   controller: _textEditingController,
-                  decoration:
-                      const InputDecoration(labelText: 'Quantity to track'),
+                  decoration: const InputDecoration(
+                    labelText: 'Quantity to track',
+                  ),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -347,34 +354,35 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
     widgets.add(
       const Padding(
         padding: EdgeInsets.only(left: 8),
-        child: Text(
-          "Used By",
-          style: TextStyle(fontSize: 24),
-        ),
+        child: Text("Used By", style: TextStyle(fontSize: 24)),
       ),
     );
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
 
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    var isPortrait = MediaQuery.of(context).orientation == .portrait;
 
     if (usage.characters?.isNotEmpty ?? false) {
-      widgets.addAll(GridData.generateCoWGridWidgets(
-        'Characters',
-        _info?.usage!.characters,
-        'characters',
-        _info?.name,
-        isPortrait,
-      ));
+      widgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Characters',
+          _info?.usage!.characters,
+          'characters',
+          _info?.name,
+          isPortrait,
+        ),
+      );
     }
 
     if (usage.weapons?.isNotEmpty ?? false) {
-      widgets.addAll(GridData.generateCoWGridWidgets(
-        'Weapons',
-        _info?.usage!.weapons,
-        'weapons',
-        _info?.name,
-        isPortrait,
-      ));
+      widgets.addAll(
+        GridData.generateCoWGridWidgets(
+          'Weapons',
+          _info?.usage!.weapons,
+          'weapons',
+          _info?.name,
+          isPortrait,
+        ),
+      );
     }
 
     widgets.removeLast(); // Remove padding at the end
@@ -408,9 +416,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
         padding: const EdgeInsets.all(8),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: .start,
+            mainAxisAlignment: .start,
+            mainAxisSize: .min,
             children: [
               _getMaterialHeader(),
               const Divider(),

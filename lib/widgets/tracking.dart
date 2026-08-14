@@ -138,9 +138,11 @@ class TrackerPageState extends State<TrackerPage> {
     var w = await GridData.retrieveWeaponsMapData();
     var o = await GridData.retrieveOutfitsMapData();
 
-    debugPrint("Found ${c?.length ?? 0} characters, "
-        "${m?.length ?? 0} materials, ${w?.length ?? 0} weapons, "
-        "${o?.length ?? 0} outfits");
+    debugPrint(
+      "Found ${c?.length ?? 0} characters, "
+      "${m?.length ?? 0} materials, ${w?.length ?? 0} weapons, "
+      "${o?.length ?? 0} outfits",
+    );
 
     if (mounted) {
       setState(() {
@@ -207,11 +209,13 @@ class PlannerPageState extends State<PlannerPage> {
   @override
   void initState() {
     super.initState();
-    GridData.retrieveMaterialsMapData().then((value) => {
-          setState(() {
-            _matData = value;
-          }),
-        });
+    GridData.retrieveMaterialsMapData().then(
+      (value) => {
+        setState(() {
+          _matData = value;
+        }),
+      },
+    );
 
     Util.getSharedPreferenceInstance().then((value) {
       _location = value.getString('location') ?? 'Asia';
@@ -250,7 +254,7 @@ class PlannerPageState extends State<PlannerPage> {
 
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
@@ -340,8 +344,8 @@ class PlannerPageState extends State<PlannerPage> {
 
     return currentDay
         ? (Util.themeNotifier.isDarkMode())
-            ? Colors.green
-            : Colors.lightGreen
+              ? Colors.green
+              : Colors.lightGreen
         : Colors.transparent;
   }
 
@@ -387,58 +391,59 @@ class PlannerPageState extends State<PlannerPage> {
 
     return StreamBuilder(
       stream: ref.snapshots(),
-      builder: (
-        context,
-        AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
-      ) {
-        if (snapshot.hasError) {
-          return const Text('Error occurred getting snapshot');
-        }
+      builder:
+          (
+            context,
+            AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
+          ) {
+            if (snapshot.hasError) {
+              return const Text('Error occurred getting snapshot');
+            }
 
-        if (snapshot.connectionState == ConnectionState.waiting ||
-            _matData == null) {
-          return Util.centerLoadingCircle('');
-        }
+            if (snapshot.connectionState == ConnectionState.waiting ||
+                _matData == null) {
+              return Util.centerLoadingCircle('');
+            }
 
-        var data = snapshot.data!;
-        var uniqueMaterials = data.docs
-            .map((snapshot) => snapshot.data()['name'].toString())
-            .toSet()
-            .toList();
+            var data = snapshot.data!;
+            var uniqueMaterials = data.docs
+                .map((snapshot) => snapshot.data()['name'].toString())
+                .toSet()
+                .toList();
 
-        var finalDomainMaterials = <String>[];
-        // Tabulate the materials and remove completed ones
-        for (var element in uniqueMaterials) {
-          var cur = 0, max = 0;
-          data.docs
-              .where((element2) => element2.data()['name'] == element)
-              .forEach((element) {
-            cur += element.data()['current'] as int;
-            max += element.data()['max'] as int;
-          });
+            var finalDomainMaterials = <String>[];
+            // Tabulate the materials and remove completed ones
+            for (var element in uniqueMaterials) {
+              var cur = 0, max = 0;
+              data.docs
+                  .where((element2) => element2.data()['name'] == element)
+                  .forEach((element) {
+                    cur += element.data()['current'] as int;
+                    max += element.data()['max'] as int;
+                  });
 
-          if (cur < max) {
-            finalDomainMaterials.add(element);
-          }
-        }
+              if (cur < max) {
+                finalDomainMaterials.add(element);
+              }
+            }
 
-        var mappedData = <int, Set<String>>{};
-        for (var i = 1; i <= 7; i++) {
-          mappedData.putIfAbsent(i, () => {});
-        }
-        for (var domainMaterial in finalDomainMaterials) {
-          if (_matData![domainMaterial] is! MaterialDataDomains) continue;
+            var mappedData = <int, Set<String>>{};
+            for (var i = 1; i <= 7; i++) {
+              mappedData.putIfAbsent(i, () => {});
+            }
+            for (var domainMaterial in finalDomainMaterials) {
+              if (_matData![domainMaterial] is! MaterialDataDomains) continue;
 
-          var daysForMaterial =
-              (_matData![domainMaterial] as MaterialDataDomains).days!;
+              var daysForMaterial =
+                  (_matData![domainMaterial] as MaterialDataDomains).days!;
 
-          for (var day in daysForMaterial) {
-            mappedData[day]!.add(domainMaterial);
-          }
-        }
+              for (var day in daysForMaterial) {
+                mappedData[day]!.add(domainMaterial);
+              }
+            }
 
-        return _buildWeeklyMaterials(mappedData);
-      },
+            return _buildWeeklyMaterials(mappedData);
+          },
     );
   }
 }
@@ -471,7 +476,7 @@ class TrackerCardState extends State<TrackerCard>
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    tapTargetSize: .shrinkWrap,
     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
@@ -487,57 +492,39 @@ class TrackerCardState extends State<TrackerCard>
     MaterialDataCommon material,
     bool dialog,
   ) {
-    UpdateMultiTracking(
-      context,
-      material,
-    ).itemClickedAction(
-      data,
-      dataId,
-      {
-        'img': extraImageRef,
-        'asc': extraAscensionRef,
-        'type': extraTypeRef,
-      },
-      dialog,
-    );
+    UpdateMultiTracking(context, material).itemClickedAction(data, dataId, {
+      'img': extraImageRef,
+      'asc': extraAscensionRef,
+      'type': extraTypeRef,
+    }, dialog);
   }
 
   Widget _trackerInfo() {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: .start,
+        mainAxisAlignment: .start,
         children: [
           Text(
             widget.material.name!,
-            style: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ),
           RatingBar.builder(
             ignoreGestures: true,
             itemCount: 5,
             itemSize: 12,
             unratedColor: Colors.transparent,
-            initialRating: double.tryParse(
-              widget.material.rarity.toString(),
-            )!,
-            itemBuilder: (context, _) => const Icon(
-              Icons.star,
-              color: Colors.amber,
-            ),
+            initialRating: double.tryParse(widget.material.rarity.toString())!,
+            itemBuilder: (context, _) =>
+                const Icon(Icons.star, color: Colors.amber),
             onRatingUpdate: (rating) {
               debugPrint(rating.toString());
             },
           ),
           Text(
             widget.material.obtained!.replaceAll('\\n', '\n'),
-            style: const TextStyle(
-              fontSize: 11,
-              color: Colors.white,
-            ),
+            style: const TextStyle(fontSize: 11, color: Colors.white),
           ),
         ],
       ),
@@ -568,10 +555,7 @@ class TrackerCardState extends State<TrackerCard>
               child: TextButton(
                 style: _flatButtonStyle,
                 onPressed: _decrement,
-                child: const Icon(
-                  Icons.remove,
-                  color: Colors.white,
-                ),
+                child: const Icon(Icons.remove, color: Colors.white),
               ),
             ),
             GestureDetector(
@@ -671,7 +655,7 @@ class TrackerCardState extends State<TrackerCard>
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: .center,
             children: [
               GridData.getImageAssetFromFirebase(
                 widget.material.image,

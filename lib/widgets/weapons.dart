@@ -34,14 +34,17 @@ class WeaponTabController extends StatefulWidget {
 class WeaponTabControllerState extends State<WeaponTabController> {
   @override
   Widget build(BuildContext context) {
-    return TabBarView(controller: widget.tabController, children: [
-      WeaponListGrid(notifier: widget.notifier),
-      WeaponListGrid(filter: 'Bow', notifier: widget.notifier),
-      WeaponListGrid(filter: 'Catalyst', notifier: widget.notifier),
-      WeaponListGrid(filter: 'Claymore', notifier: widget.notifier),
-      WeaponListGrid(filter: 'Polearm', notifier: widget.notifier),
-      WeaponListGrid(filter: 'Sword', notifier: widget.notifier),
-    ]);
+    return TabBarView(
+      controller: widget.tabController,
+      children: [
+        WeaponListGrid(notifier: widget.notifier),
+        WeaponListGrid(filter: 'Bow', notifier: widget.notifier),
+        WeaponListGrid(filter: 'Catalyst', notifier: widget.notifier),
+        WeaponListGrid(filter: 'Claymore', notifier: widget.notifier),
+        WeaponListGrid(filter: 'Polearm', notifier: widget.notifier),
+        WeaponListGrid(filter: 'Sword', notifier: widget.notifier),
+      ],
+    );
   }
 }
 
@@ -111,8 +114,9 @@ class WeaponListGridState extends State<WeaponListGrid> {
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
-          crossAxisCount:
-              (Get.context!.orientation == Orientation.portrait) ? 3 : 6,
+          crossAxisCount: (Get.context!.orientation == .portrait)
+              ? 3
+              : 6,
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/weapons/${document.id}'),
@@ -193,7 +197,8 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       bt = 'Current banner';
     }
     // Craft the message
-    var message = '$bt in ${_info!.lastBannerName}\n'
+    var message =
+        '$bt in ${_info!.lastBannerName}\n'
         '$endState: ${df.format(_info!.lastBannerEnd!.toLocal())}';
 
     return GridData.generateInfoLine(
@@ -206,8 +211,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
   List<Widget> _getSeriesIfExists(WeaponData info) {
     var finalWidgets = <Widget>[const SizedBox.shrink()];
     if (info.series != null) {
-      finalWidgets =
-          GridData.generateInfoLine(info.series!, MdiIcons.bookshelf);
+      finalWidgets = GridData.generateInfoLine(
+        info.series!,
+        MdiIcons.bookshelf,
+      );
     }
 
     return finalWidgets;
@@ -227,11 +234,11 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       children: [
         GridData.getImageAssetFromFirebase(_info!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             Text(
               _info!.type!,
-              textAlign: TextAlign.start,
+              textAlign: .start,
               style: const TextStyle(fontSize: 20),
             ),
             RatingBar.builder(
@@ -306,9 +313,11 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       });
     }
 
-    _checkStatusAndMaterialList().then((tracker) => setState(() {
-          _isBeingTracked = tracker;
-        }));
+    _checkStatusAndMaterialList().then(
+      (tracker) => setState(() {
+        _isBeingTracked = tracker;
+      }),
+    );
   }
 
   Future<Map<String, TrackingStatus>> _checkStatusAndMaterialList() async {
@@ -318,8 +327,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var datasets = <String?>{};
     // Check tracking status and get material list
     for (var key in _isBeingTracked!.keys) {
-      var isTracked =
-          TrackingData.isBeingTrackedLocal(dataList, '${_infoId}_$key');
+      var isTracked = TrackingData.isBeingTrackedLocal(
+        dataList,
+        '${_infoId}_$key',
+      );
       var data = _info!.ascension![key]!;
       if (data.material1 != null) {
         datasets.add(_materialData![data.material1!]?.innerType);
@@ -330,8 +341,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       if (data.material3 != null) {
         datasets.add(_materialData![data.material3!]?.innerType);
       }
-      tracker[key] =
-          (isTracked) ? TrackingStatus.checking : TrackingStatus.notTracked;
+      tracker[key] = (isTracked)
+          ? TrackingStatus.checking
+          : TrackingStatus.notTracked;
     }
 
     // Get all datasets into a map to check if completed
@@ -396,8 +408,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var ascendTier = _info!.ascension![_selectedTier!]!;
     var ascensionTierSel = _selectedTier;
 
-    TrackingData.addToRecord('weapon', '${_infoId}_$_selectedTier')
-        .then((value) {
+    TrackingData.addToRecord('weapon', '${_infoId}_$_selectedTier').then((
+      value,
+    ) {
       if (mounted) {
         _refreshTrackingStatus();
         Util.showSnackbarQuick(
@@ -444,8 +457,9 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
     var ascendTier = _info!.ascension![_selectedTier!]!;
     var ascensionTierSel = _selectedTier;
 
-    TrackingData.removeFromRecord('weapon', '${_infoId}_$_selectedTier')
-        .then((value) {
+    TrackingData.removeFromRecord('weapon', '${_infoId}_$_selectedTier').then((
+      value,
+    ) {
       if (mounted) {
         _refreshTrackingStatus();
         Util.showSnackbarQuick(
@@ -482,13 +496,10 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       Expanded(
         child: Text.rich(
           TextSpan(
-            text:
-                key == null ? '' : _materialData![key]?.name ?? 'Unknown Item',
-            children: [
-              TextSpan(
-                text: (qty == 0) ? '' : ' x$qty',
-              ),
-            ],
+            text: key == null
+                ? ''
+                : _materialData![key]?.name ?? 'Unknown Item',
+            children: [TextSpan(text: (qty == 0) ? '' : ' x$qty')],
           ),
         ),
       ),
@@ -641,10 +652,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         const Icon(Icons.show_chart),
         Text(curData.level.toString()),
         const Spacer(),
-        Image.asset(
-          'assets/images/items/Icon_Mora.png',
-          height: 16,
-        ),
+        Image.asset('assets/images/items/Icon_Mora.png', height: 16),
         Text(curData.mora.toString()),
         const Spacer(),
         _getAscensionImage(curData.material1),
