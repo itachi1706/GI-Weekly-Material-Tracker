@@ -93,7 +93,7 @@ class GlobalTrackerState extends State<GlobalTracker> {
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: .center,
                 children: [
                   GridData.getImageAssetFromFirebase(
                     material.image,
@@ -125,8 +125,8 @@ class GlobalTrackerState extends State<GlobalTracker> {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: .start,
+        mainAxisAlignment: .start,
         children: [
           Text(
             material.name!,
@@ -241,13 +241,13 @@ class GlobalMaterialPageState extends State<GlobalMaterialPage> {
       children: [
         GridData.getImageAssetFromFirebase(_material!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _material!.type!,
-                textAlign: TextAlign.start,
+                textAlign: .start,
                 style: const TextStyle(fontSize: 20),
               ),
             ),
@@ -450,7 +450,7 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
 
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     minimumSize: const Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    tapTargetSize: .shrinkWrap,
     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
@@ -605,14 +605,14 @@ class GlobalTrackerCardState extends State<GlobalTrackerCard>
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: .center,
             children: [
               _getCharacterDataImage(),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 200,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: .start,
+                  mainAxisAlignment: .start,
                   children: [
                     Text(widget.name, style: const TextStyle(fontSize: 20)),
                   ],

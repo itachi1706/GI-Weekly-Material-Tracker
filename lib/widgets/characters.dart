@@ -128,7 +128,7 @@ class CharacterListGridState extends State<CharacterListGrid> {
 
         return GridView.count(
           crossAxisCount:
-              (MediaQuery.of(context).orientation == Orientation.portrait)
+              (MediaQuery.of(context).orientation == .portrait)
               ? 3
               : 6,
           children: dt.map((document) {
@@ -388,13 +388,13 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
       children: [
         GridData.getImageAssetFromFirebase(widget.info!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             SizedBox(
               width: 200,
               child: Text(
                 widget.info!.caption!,
-                textAlign: TextAlign.start,
+                textAlign: .start,
                 style: const TextStyle(fontSize: 20),
               ),
             ),
@@ -1551,13 +1551,13 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
                 children: [
                   GridData.getImageAssetFromFirebase(talInfo.image, height: 32),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: .start,
                     children: [
                       SizedBox(
                         width: MediaQuery.of(context).size.width - 80,
                         child: Text(
                           talInfo.name!,
-                          textAlign: TextAlign.start,
+                          textAlign: .start,
                           style: const TextStyle(fontSize: 18),
                         ),
                       ),
@@ -1616,7 +1616,7 @@ class CharacterTalentPageState extends State<CharacterTalentPage> {
       padding: const EdgeInsets.all(8),
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             const Text('Attack Talents', style: TextStyle(fontSize: 18)),
             ..._attackTalentWidgets(),
@@ -1682,7 +1682,7 @@ class CharacterConstellationPage extends StatelessWidget {
                       child: Text(
                         GridUtils.getRomanNumberArray(index - 1).toString(),
                         style: const TextStyle(color: Colors.white),
-                        textAlign: TextAlign.end,
+                        textAlign: .end,
                       ),
                     ),
                   ],
@@ -1691,7 +1691,7 @@ class CharacterConstellationPage extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 80,
                   child: Text(
                     constellation.name!,
-                    textAlign: TextAlign.start,
+                    textAlign: .start,
                     style: const TextStyle(fontSize: 18),
                   ),
                 ),
@@ -1720,7 +1720,7 @@ class CharacterConstellationPage extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: _constellationWidgets(context),
         ),
       ),

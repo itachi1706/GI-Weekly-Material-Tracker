@@ -271,7 +271,7 @@ class TrackingData {
             child: Text(
               GridUtils.getRomanNumberArray(ascension! - 1).toString(),
               style: const TextStyle(color: Colors.white),
-              textAlign: TextAlign.end,
+              textAlign: .end,
             ),
           ),
           Align(alignment: FractionalOffset.bottomRight, child: typeWidget),
@@ -423,7 +423,7 @@ class UpdateMultiTracking {
 
   Widget _getImageRow(Map<String, dynamic> extraData) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: .spaceAround,
       children: [
         GridData.getImageAssetFromFirebase(_material!.image, height: 48),
         TrackingData.getSupportingWidget(

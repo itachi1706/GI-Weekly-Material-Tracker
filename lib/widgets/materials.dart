@@ -109,7 +109,7 @@ class MaterialListGridState extends State<MaterialListGrid> {
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
-          crossAxisCount: (Get.context!.orientation == Orientation.portrait)
+          crossAxisCount: (Get.context!.orientation == .portrait)
               ? 3
               : 6,
           children: dt.map((document) {
@@ -172,13 +172,13 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
       children: [
         GridData.getImageAssetFromFirebase(_info!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width - 128,
               child: Text(
                 _info!.type!,
-                textAlign: TextAlign.start,
+                textAlign: .start,
                 style: const TextStyle(fontSize: 20),
               ),
             ),
@@ -359,7 +359,7 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
     );
     widgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
 
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    var isPortrait = MediaQuery.of(context).orientation == .portrait;
 
     if (usage.characters?.isNotEmpty ?? false) {
       widgets.addAll(
@@ -416,9 +416,9 @@ class MaterialInfoPageState extends State<MaterialInfoPage> {
         padding: const EdgeInsets.all(8),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: .start,
+            mainAxisAlignment: .start,
+            mainAxisSize: .min,
             children: [
               _getMaterialHeader(),
               const Divider(),

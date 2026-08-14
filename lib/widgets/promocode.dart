@@ -76,7 +76,7 @@ class PromoCodePageState extends State<PromoCodePage> {
               child: Text(
                 'Click to launch page with code pre-filled\nLong-click to copy code to clipboard\nCurrently viewing promo codes for $_location.\nNote: Some codes may have expired',
                 style: const TextStyle(fontSize: 12),
-                textAlign: TextAlign.center,
+                textAlign: .center,
               ),
             ),
             FirebaseDatabaseListView(

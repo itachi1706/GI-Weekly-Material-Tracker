@@ -254,7 +254,7 @@ class PlannerPageState extends State<PlannerPage> {
 
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
@@ -476,7 +476,7 @@ class TrackerCardState extends State<TrackerCard>
   final ButtonStyle _flatButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black87,
     minimumSize: const Size(0, 0),
-    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    tapTargetSize: .shrinkWrap,
     padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
@@ -503,8 +503,8 @@ class TrackerCardState extends State<TrackerCard>
     return SizedBox(
       width: MediaQuery.of(context).size.width - 180,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: .start,
+        mainAxisAlignment: .start,
         children: [
           Text(
             widget.material.name!,
@@ -655,7 +655,7 @@ class TrackerCardState extends State<TrackerCard>
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: .center,
             children: [
               GridData.getImageAssetFromFirebase(
                 widget.material.image,

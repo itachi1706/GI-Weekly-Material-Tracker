@@ -133,7 +133,7 @@ class DrawerComponentState extends State<DrawerComponent> {
               style: const TextStyle(
                 // color: Colors.black,
                 fontSize: 20.0,
-                fontWeight: FontWeight.w500,
+                fontWeight: .w500,
               ),
             ),
           ),

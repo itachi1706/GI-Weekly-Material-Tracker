@@ -24,7 +24,7 @@ class PlaceholderPage extends StatelessWidget {
       ),
       body: const Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: [Text('Page Coming Soon')],
         ),
       ),
@@ -43,7 +43,7 @@ class PlaceholderWidgetContainer extends StatelessWidget {
       color: color,
       child: const Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: [
             Text(
               'Coming Soon!',

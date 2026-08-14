@@ -941,7 +941,7 @@ class SettingsPageState extends State<SettingsPage> {
         title: const Text('Debug Info'),
         content: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: .start,
             children: [
               Text('Version: $_versionStr'),
               Text('App Check Token: $_appCheckToken'),

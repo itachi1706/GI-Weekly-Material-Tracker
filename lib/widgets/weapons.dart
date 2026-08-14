@@ -114,7 +114,7 @@ class WeaponListGridState extends State<WeaponListGrid> {
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
-          crossAxisCount: (Get.context!.orientation == Orientation.portrait)
+          crossAxisCount: (Get.context!.orientation == .portrait)
               ? 3
               : 6,
           children: dt.map((document) {
@@ -234,11 +234,11 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
       children: [
         GridData.getImageAssetFromFirebase(_info!.image, height: 64),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: .start,
           children: [
             Text(
               _info!.type!,
-              textAlign: TextAlign.start,
+              textAlign: .start,
               style: const TextStyle(fontSize: 20),
             ),
             RatingBar.builder(

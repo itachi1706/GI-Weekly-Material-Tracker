@@ -223,9 +223,9 @@ class WishPageCard extends StatelessWidget {
 
     finalWidgets.add(
       Wrap(
-        direction: Axis.horizontal,
-        crossAxisAlignment: WrapCrossAlignment.start,
-        alignment: WrapAlignment.start,
+        direction: .horizontal,
+        crossAxisAlignment: .start,
+        alignment: .start,
         children: rowChild,
       ),
     );
@@ -270,13 +270,13 @@ class WishPageCard extends StatelessWidget {
     }
 
     return Card(
-      clipBehavior: Clip.antiAlias,
+      clipBehavior: .antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: () => Get.toNamed('/bannerinfo/${data.type}/${data.key}'),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: .start,
+          crossAxisAlignment: .start,
           children: <Widget>[
             Stack(
               children: [
@@ -299,8 +299,8 @@ class WishPageCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: .start,
+                crossAxisAlignment: .start,
                 children: [
                   Text(data.name, style: const TextStyle(fontSize: 18)),
                   Text(
@@ -437,7 +437,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: [
-                Text('4* RATES', style: TextStyle(fontWeight: FontWeight.bold)),
+                Text('4* RATES', style: TextStyle(fontWeight: .bold)),
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text("- 0.6% for 0-9 rolls\n- 100% at roll 10"),
@@ -460,7 +460,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
               children: [
                 const Text(
                   '5* RATES',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: .bold),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
@@ -480,7 +480,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
     var finalWidgets = <Widget>[];
 
     finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    var isPortrait = MediaQuery.of(context).orientation == .portrait;
 
     if (_bannerInfo!.rateUpCharacters.isNotEmpty) {
       finalWidgets.addAll(
@@ -701,9 +701,9 @@ class BannerInfoPageState extends State<BannerInfoPage> {
       appBar: AppBar(title: Text(_bannerInfo!.name)),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: .start,
+          mainAxisAlignment: .start,
+          mainAxisSize: .min,
           children: [
             GridData.getImageAssetFromFirebase(_bannerInfo!.image),
             ..._checkIfChronicled(),

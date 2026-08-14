@@ -140,7 +140,7 @@ class GridData {
                   errorBuilder: (context, obj, trace) =>
                       const Icon(Icons.error),
                   image: getFirebaseImage(snapshot.data.toString()),
-                  fit: BoxFit.fitWidth,
+                  fit: .fitWidth,
                   placeholderFadeInDuration: const Duration(seconds: 2),
                 ),
               ),
@@ -178,10 +178,10 @@ class GridData {
           padding: const EdgeInsets.all(2),
           child: Text(
             data.name ?? 'Unknown',
-            textAlign: TextAlign.center,
+            textAlign: .center,
             style: const TextStyle(
               fontSize: 12,
-              fontWeight: FontWeight.bold,
+              fontWeight: .bold,
               color: Colors.white,
             ),
           ),
@@ -237,12 +237,12 @@ class GridData {
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: .start,
                   children: [
                     Text(
                       header,
                       style: const TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: .bold,
                         decoration: TextDecoration.underline,
                         fontSize: 16,
                       ),
@@ -278,8 +278,8 @@ class GridData {
               child: Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: .start,
+                  mainAxisAlignment: .start,
                   children: [
                     Text(textData.replaceAll('\\n', '\n')),
                     ...extraWidgetsBelow ?? [const SizedBox.shrink()],

@@ -130,16 +130,16 @@ class SplashPageState extends State<SplashPage> {
 
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand,
+        fit: .expand,
         children: <Widget>[
           Container(decoration: BoxDecoration(color: backgroundColor)),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: .start,
             children: <Widget>[
               Expanded(
                 flex: 2,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: .center,
                   children: [
                     CircleAvatar(
                       backgroundColor: Colors.transparent,
@@ -164,7 +164,7 @@ class SplashPageState extends State<SplashPage> {
               Expanded(
                 flex: 1,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: .center,
                   children: <Widget>[
                     const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color?>(null),

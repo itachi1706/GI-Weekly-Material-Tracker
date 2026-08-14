@@ -113,7 +113,7 @@ class MyAppState extends State<MyApp> {
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.dark,
+          brightness: .dark,
           seedColor: Colors.deepOrange,
         ),
         fontFamily: 'Product-Sans',

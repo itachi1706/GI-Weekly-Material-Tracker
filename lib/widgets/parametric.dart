@@ -60,12 +60,12 @@ class ParametricPageState extends State<ParametricPage> {
       endWidget: const Text(
         'ITEM READY!',
         style: TextStyle(
-          fontWeight: FontWeight.bold,
+          fontWeight: .bold,
           color: Colors.red,
           fontSize: 32,
         ),
       ),
-      textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+      textStyle: const TextStyle(fontWeight: .bold, fontSize: 32),
     );
   }
 
@@ -226,11 +226,11 @@ class ParametricPageState extends State<ParametricPage> {
               ),
               const Text(
                 'Refreshing in',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                style: TextStyle(fontWeight: .bold, fontSize: 24),
               ),
               _countdownTimer(),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: .center,
                 children: [
                   const Spacer(flex: 20),
                   TextButton(
@@ -251,8 +251,8 @@ class ParametricPageState extends State<ParametricPage> {
               ),
               const Spacer(),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: .center,
+                crossAxisAlignment: .end,
                 children: [
                   const Text('Notifications: '),
                   _getNotificationState(),
