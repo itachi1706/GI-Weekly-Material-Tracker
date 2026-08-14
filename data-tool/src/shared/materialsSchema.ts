@@ -104,7 +104,7 @@ export function resolveTiers(config: TierSetConfig, shared: Record<string, unkno
 // ── Shared region lists ──────────────────────────────────────────────────────
 
 const GENSHIN_REGIONS = [
-  'Mondstadt', 'Liyue', 'Inazuma', 'Sumeru', 'Fontaine', 'Natlan', 'Nod-Krai'
+  'Mondstadt', 'Liyue', 'Inazuma', 'Sumeru', 'Fontaine', 'Natlan', 'Nod-Krai', 'Snezhnaya'
 ] as const
 
 // ── local_speciality ─────────────────────────────────────────────────────────
