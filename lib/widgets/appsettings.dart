@@ -515,6 +515,7 @@ class SettingsPageState extends State<SettingsPage> {
         SnackBar(
           content: const Text('Version copied to clipboard'),
           duration: const Duration(seconds: 2),
+          persist: false,
           action: SnackBarAction(
             label: 'Full Debug Info',
             onPressed: () => _getDeviceInfoInternal(),
