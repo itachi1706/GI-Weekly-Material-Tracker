@@ -1673,6 +1673,114 @@
       },
       "hoyowiki": 10979,
       "subCollection": {}
+    },
+    "Hollow_Root_of_Life": {
+      "image": "Materials/Elite_Mob/Item_Hollow_Root_of_Life.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A branch dropped by a Leshy before it returned to silence.\nWith only a few crystals grown upon it, this branch holds little power and gives off a faint glow.",
+      "enemies": ["Wildwood Leshys"],
+      "obtained": "- Dropped by Wildwood Leshys",
+      "name": "Hollow Root of Life",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Hollow_Root_of_Life",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11376,
+      "subCollection": {}
+    },
+    "Sprout_Node_of_Life": {
+      "image": "Materials/Elite_Mob/Item_Sprout_Node_of_Life.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A branch dropped by a Leshy before it returned to silence.\nA branch bearing a fair number of crystals. It feels heavy in the hand, and traces of vitality can still be felt within it even after it has broken away from the Leshy's body.",
+      "enemies": ["Wildwood Leshys"],
+      "obtained": "- Alchemy (3x Hollow Root of Life)\n- Dropped by Lv.40+ Wildwood Leshys",
+      "name": "Sprout Node of Life",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Sprout_Node_of_Life",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11377,
+      "subCollection": {}
+    },
+    "Coiled_Core_of_Life": {
+      "image": "Materials/Elite_Mob/Item_Coiled_Core_of_Life.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "A branch dropped by a Leshy before it returned to silence.\nA branch with a fully formed crystal core. It contains vitality that will not easily fade. If buried in the soil, it would likely grow into a new Leshy before long.",
+      "enemies": ["Wildwood Leshys"],
+      "obtained": "- Alchemy (3x Sprout Node of Life)\n- Dropped by Lv.60+ Wildwood Leshys",
+      "name": "Coiled Core of Life",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Coiled_Core_of_Life",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11378,
+      "subCollection": {}
+    },
+    "Accreted_Fragment": {
+      "image": "Materials/Elite_Mob/Item_Accreted_Fragment.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An accretion formed by powerful Volkodlak.\nAn accretion that has only just begun to attach to an internal organ or bone. As the Volkodlak's power grows, it may eventually cover an entire region of the body, or a whole organ.",
+      "enemies": ["Volkodlak Brutes"],
+      "obtained": "- Dropped by Volkodlak Brutes",
+      "name": "Accreted Fragment",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Accreted_Fragment",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11373,
+      "subCollection": {}
+    },
+    "Accreted_Mass": {
+      "image": "Materials/Elite_Mob/Item_Accreted_Mass.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An accretion formed by powerful Volkodlak.\nAn accretion that has clung to an internal organ or bone for a long time. Once removed, such accretions are regarded as symbols of power and carefully preserved by the creature's descendants.",
+      "enemies": ["Volkodlak Brutes"],
+      "obtained": "- Alchemy (3x Accreted Fragment)\n- Dropped by Lv.40+ Volkodlak Brutes",
+      "name": "Accreted Mass",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Accreted_Mass",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11374,
+      "subCollection": {}
+    },
+    "Accreted_Growth": {
+      "image": "Materials/Elite_Mob/Item_Accreted_Growth.png",
+      "rarity": 4,
+      "type": "Common Ascension Material (Elite)",
+      "innerType": "mob_drops",
+      "description": "An accretion formed by powerful Volkodlak.\nAn accretion that has fully fused with an organ or bone. One could even say it's a newly grown bone or organ at the nodes of the Volkodlak's power circulation. Only long-lived Volkodlaks who have ceaselessly honed their strength can form such growths within their bodies.",
+      "enemies": ["Volkodlak Brutes"],
+      "obtained": "- Alchemy (3x Accreted Mass)\n- Dropped by Lv.60+ Volkodlak Brutes",
+      "name": "Accreted Growth",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Accreted_Growth",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11375,
+      "subCollection": {}
     }
   }
 }
