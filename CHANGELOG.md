@@ -1,3 +1,8 @@
+# 4.1.3
+Note: This is just a minor update before we do more major changes
+- Added Lunar Crystalize
+- Many dependecy updates and bug fixes
+
 # 4.1.2
 - Fixed black text issue for global tracking
 
