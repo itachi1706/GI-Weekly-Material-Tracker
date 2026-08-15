@@ -149,7 +149,10 @@ const ATTACK_FOLDER: Record<string, string> = {
   'Elemental Burst': 'Talents/Burst'
 }
 const PASSIVE_TYPES = [
-  'Passive 1', 'Passive 2', 'Passive 3', 'Passive 4 (Utility)', 'Alternate Sprint'
+  'Passive 1', 'Passive 2', 'Passive 3', 
+  'Passive 3 (Stellar Jubilee)', 'Passive 3 (Night Realm\'s Gift)', 'Passive 3 (Moonsign Benediction)',
+  'Passive 3 (Witch\'s Eve Rite)', 'Passive 4 (Utility)', 
+  'Passive 4 (Additional Talent)', 'Alternate Sprint'
 ]
 
 // ── Draft ───────────────────────────────────────────────────────────────────

@@ -5150,6 +5150,379 @@
       "hoyowiki": 3462,
       "subCollection": {}
     },
+    "Odette": {
+      "image": "Characters/Cryo/Odette.png",
+      "gender": "Female",
+      "birthday": "20/2",
+      "caption": "Swirling Snow",
+      "titles": [
+        "Prima Ballerina of the Korolevskiy Troupe"
+      ],
+      "name": "Odette",
+      "fullName": "Odette Spessiva",
+      "description": "A famed Snezhnayan ballerina who blossoms against the frozen landscape with a beauty as sharp as frost.",
+      "nation": "Snezhnaya",
+      "weapon": "Sword",
+      "rarity": 5,
+      "affiliation": "Korolevskiy Troupe, Fatui, Rokot",
+      "constellation": "Cygnus Olor",
+      "outfits": [
+        "Snow_Swans_Dance"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Charity",
+            "material3qty": 3,
+            "material4": "Ethereal_Glimmershard",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 2,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 4,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 6,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 9,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Twisted_Withered_Branch",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 4,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Twisted_Withered_Branch",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 6,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Twisted_Withered_Branch",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 12,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Twisted_Withered_Branch",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 16,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Spring_Rite_of_the_Chosen_One": {
+            "name": "Spring Rite of the Chosen One",
+            "effect": "When Odette summons her Solo Dance Double, she also obtains 4 stacks of Marvelous Splendor.",
+            "image": "Talents/Passive/Talent_Spring_Rite_of_the_Chosen_One.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Pathetique_of_Pateticheskaya": {
+            "name": "Pathetique of Pateticheskaya",
+            "effect": "For every 100 ATK Odette has over 1,000, her Stellar Glimmer DMG is additionally increased by 1.5% of the original DMG. She can deal up to 30% more additional DMG in this way.",
+            "image": "Talents/Passive/Talent_Pathetique_of_Pateticheskaya.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Stellar_Jubilee_Dance_of_Aurore": {
+            "name": "Stellar Jubilee: Dance of Aurore",
+            "effect": "Odette will enter the Radiance: Stellar-Conduct state when she is inside a Polestar Field, or the Radiance: Stellar Swirl state for 8s after a nearby party member triggers a Stellar Swirl reaction.\nWhen a party member triggers a Superconduct or Cryo Swirl reaction, it becomes a Stellar-Conduct or Stellar Swirl reaction instead, and the Base DMG of said reaction is also increased by 0.7% for every 100 points of Odette's ATK. A maximum increase of 14% can be obtained in this way.",
+            "image": "Talents/Passive/Talent_Stellar_Jubilee_Dance_of_Aurore.png",
+            "order": 2,
+            "type": "Passive 3 (Stellar Jubilee)"
+          },
+          "Echo_of_Winter_Daydreams": {
+            "name": "Echo of Winter Daydreams",
+            "effect": "Shows the locations of Snezhnaya's Local Specialties on the mini-map.\nPracticing dance in one's spare time might even trigger other effects...",
+            "image": "Talents/Passive/Talent_Echo_of_Winter_Daydreams.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Snow_Swan_Variation": {
+            "name": "Snow Swan Variation",
+            "effect": "Normal Attack\nUnleashes a sword attack of up to 5 consecutive strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to unleash a dazzling slash on opponents in front of her.\n\nPlunging Attack\nAttacks opponents in her path while plunging from mid-air, then deals AoE DMG upon landing.",
+            "image": "Talents/Normal/Sword_Cryo.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Adagio_Phantom_Night_Dancers": {
+            "name": "Adagio: Phantom Night Dancers",
+            "effect": "With slow, graceful dance steps, Odette deals AoE Cryo DMG to the opponent, and also summons her Solo Dance Double to the field.\nIf a Dance Double summoned by Odette is already on the field, this will re-summon the Dance Double and reset its duration.\n\nSolo Dance Double\nAlternates between the Plume and Wing dance moves, periodically attacking nearby opponents and dealing to them AoE Cryo DMG.\nAdditionally, for 6s after unleashing the Elemental Skill Adagio: Phantom Night Dancers, Odette's Elemental Skill Adagio: Phantom Night Dancers will become the special Elemental Skill Adagio: Coda at Dawn's Tolling instead, where a dance duet deals AoE Cryo DMG to nearby opponents over time. Then, when the duet ends, she deals another instance of AoE Cryo DMG that is considered Stellar-Conduct or Stellar Swirl DMG.",
+            "image": "Talents/Skill/Talent_Adagio_Phantom_Night_Dancers.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Presto_Bluebird_Finale": {
+            "name": "Presto: Bluebird Finale",
+            "effect": "With quick, lively dance steps, Odette deals multiple instances of AoE Cryo DMG, and summons her Solo Dance Double. She also gains Snow Swan's Dream, which increases the Stellar Glimmer reaction DMG Odette deals.\nAdditionally, for 6s after unleashing the Elemental Burst Presto: Bluebird Finale, Odette's Elemental Skill Adagio: Phantom Night Dancers will be replaced with the special Elemental Skill Adagio: Coda at Dawn's Tolling instead.\n\nIf there is a Solo Dance Double summoned by Odette on the field, it will be summoned to her side with its duration refreshed.",
+            "image": "Talents/Burst/Talent_Presto_Bluebird_Finale.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "\"On This Danceless Morn, She Gazes at Her Reflection\"",
+          "effect": "After unleashing the special Elemental Skill Adagio: Coda at Dawn's Tolling, at the dance duet's end Odette will deal an additional instance of Cryo AoE DMG to nearby opponents that is considered:\nRadiance: Stellar-Conduct or when not in a Radiance state: Stellar-Conduct reaction DMG at 300% of Odette's ATK;\nRadiance: Stellar Swirl: Stellar Swirl reaction DMG at 450% of Odette's ATK.\n\nAdditionally, the Passive Talent \"Spring Rite of the Chosen One\" is also enhanced: now, when the Solo Dance Double is summoned, Odette also gains 2 stacks of Marvelous Splendor. When Odette is off-field, the rate at which Marvelous Splendor is removed is sped up to 2 stacks per second.",
+          "image": "Constellation/On_This_Danceless_Morn_She_Gazes_at_Her_Reflection.png"
+        },
+        "2": {
+          "name": "\"I Must See the Snow Swan's Unseen Dream for Myself, She Thought\"",
+          "effect": "The Passive Talent \"Spring Rite of the Chosen One\" is enhanced as follows: every stack of Marvelous Splendor active also increases the character's ATK by 7%.\nAdditionally, if Odette is in the Radiance: Stellar Glimmer state when there is a Solo Dance Double on the field, opponents near the Dance Double will also have their corresponding Elemental RES lowered by 20%.Radiance: Stellar-Conduct: Cryo and Electro.\nRadiance: Stellar Swirl: Cryo and Anemo.",
+          "image": "Constellation/I_Must_See_the_Snow_Swans_Unseen_Dream_for_Myself_She_Thought.png"
+        },
+        "3": {
+          "name": "\"I'll Chase the Shouting Wind Along, Climbing Alone As I Go\"",
+          "effect": "Increases the Level of Adagio: Phantom Night Dancers by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Ill_Chase_the_Shouting_Wind_Along_Climbing_Alone_As_I_Go.png"
+        },
+        "4": {
+          "name": "\"Up, Up the Long, Delirious, Burning Blue\"",
+          "effect": "The Elemental Burst Presto: Bluebird Finale is enhanced as follows: when Odette obtains Snow Swan's Dream, Stellar Glimmer reaction DMG dealt by other nearby party members is increased by 50% of Snow Swan Dream's effects.\n\nAdditionally, when a party member deals Stellar Glimmer reaction DMG to an opponent, Odette will also join in with a coordinated attack, dealing an instance of AoE Cryo DMG. This effect, which can trigger once every 3.5s, will be considered:Radiance: Stellar-Conduct or when not in a Radiance state: Stellar-Conduct reaction DMG at 66% of Odette's ATK.\nRadiance: Stellar Swirl: Stellar Swirl reaction DMG at 99% of Odette's ATK.",
+          "image": "Constellation/Up_Up_the_Long_Delirious_Burning_Blue.png"
+        },
+        "5": {
+          "name": "\"Oh! I Have Slipped the Surly Bonds of Earth\"",
+          "effect": "Increases the Level of Presto: Bluebird Finale by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Oh_I_Have_Slipped_the_Surly_Bonds_of_Earth.png"
+        },
+        "6": {
+          "name": "\"Put Out My Hand, and Touched the Face of the Divine\"",
+          "effect": "The Passive Talent \"Spring Rite of the Chosen One\" is enhanced as follows: When all nearby party members have been granted Marvelous Splendor by Odette, her own Marvelous Splendor stacks will no longer decrease.\nAdditionally, characters affected by Marvelous Splendor have their Stellar Glimmer reaction DMG dealt to opponents elevated by 25%, and Stellar Glimmer reaction DMG dealt by Odette is elevated by an additional 20%.",
+          "image": "Constellation/Put_Out_My_Hand_and_Touched_the_Face_of_the_Divine.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Shivada_Jade_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Ethereal_Glimmershard",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 40,
+          "material4": "Ethereal_Glimmershard",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Shivada_Jade_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 50,
+          "material4": "Ethereal_Crystal",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 60,
+          "material4": "Ethereal_Crystal",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Shivada_Jade_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 70,
+          "material4": "Ethereal_Crystalscale_Stone",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Shivada_Jade_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 80,
+          "material4": "Ethereal_Crystalscale_Stone",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Ethereal_Glimmershard",
+          "common2": "Ethereal_Crystal",
+          "common3": "Ethereal_Crystalscale_Stone",
+          "gem1": "Shivada_Jade_Silver",
+          "gem2": "Shivada_Jade_Fragment",
+          "gem3": "Shivada_Jade_Chunk",
+          "gem4": "Shivada_Jade_Gemstone",
+          "boss_drop": "Unscorched_Blossom_Branch",
+          "local_speciality": "Frostfairy_Flower"
+        },
+        "talents": {
+          "common1": "Ethereal_Glimmershard",
+          "common2": "Ethereal_Crystal",
+          "common3": "Ethereal_Crystalscale_Stone",
+          "mastery1": "Teachings_of_Charity",
+          "mastery2": "Guide_to_Charity",
+          "mastery3": "Philosophies_of_Charity",
+          "weekly_boss_drop": "Twisted_Withered_Branch",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "The prima ballerina of the Korolevskiy Troupe, clear and unyielding as the ice.",
+      "paimonmoepath": "characters/odette",
+      "genshinggpath": "characters/odette",
+      "element": "Cryo",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Odette",
+      "hoyowiki": 11162,
+      "subCollection": {}
+    },
     "Qiqi": {
       "image": "Characters/Cryo/Qiqi.png",
       "gender": "Female",

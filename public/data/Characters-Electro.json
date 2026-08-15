@@ -1,5 +1,378 @@
 {
   "characters": {
+    "Alyosha": {
+      "image": "Characters/Electro/Alyosha.png",
+      "gender": "Male",
+      "birthday": "9/2",
+      "caption": "Swift-Striding Hound",
+      "titles": [
+        "Winter Hunter"
+      ],
+      "name": "Alyosha",
+      "fullName": null,
+      "description": "A \"professional hunter\" and master of the Snezhnayan snowfields. A fierce, distinct \"idealism\" burns beneath his calm demeanor.",
+      "nation": "Snezhnaya",
+      "weapon": "Polearm",
+      "rarity": 4,
+      "affiliation": "Snezhnaya, Rokot",
+      "constellation": "Canis Borzoides",
+      "outfits": [
+        "Frost-Cloaked_Ambusher"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Fortitude",
+            "material3qty": 3,
+            "material4": "Chimeric_Core",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 2,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 4,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 6,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 9,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 4,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 6,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 12,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Elixir_of_the_Heretic",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 16,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Awakened_By_the_Baying_Hounds": {
+            "name": "Awakened By the Baying Hounds",
+            "effect": "When Tugarin attacks, it will also restore HP to nearby active characters at 120% of Alyosha's ATK.",
+            "image": "Talents/Passive/Talent_Awakened_By_the_Baying_Hounds.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Suffer_the_Winter_Wheat_Will": {
+            "name": "Suffer the Winter Wheat Will",
+            "effect": "Increases the DMG Alyosha deals with his Elemental Skill and Elemental Burst by 0.35% for every 1% of his Energy Recharge. Up to a 70% increase can be obtained in this way.",
+            "image": "Talents/Passive/Talent_Suffer_the_Winter_Wheat_Will.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Into_the_Fray": {
+            "name": "Into the Fray",
+            "effect": "Alyosha will enter the Radiance: Stellar-Conduct state when inside a Polestar Field.\nRadiance: Stellar-Conduct: The Hunter's Precision effect obtained when the Hunter's Mark is activated will also increase Stellar-Conduct DMG dealt by all currently active party members by 20%.",
+            "image": "Talents/Passive/Talent_Into_the_Fray.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "Treetop_Watch": {
+            "name": "Treetop Watch",
+            "effect": "Displays the location of nearby resources unique to Snezhnaya on the mini-map.",
+            "image": "Talents/Passive/Talent_Treetop_Watch.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Skirmishing_Spear": {
+            "name": "Skirmishing Spear",
+            "effect": "Normal Attack\nPerforms up to 4 consecutive spear strikes and applies the Hunter's MarkA special effect Alyosha can apply on the opponent.\nWhen this effect is applied to an opponent who is already under the Hunter's Mark effect, it will activate Hunter's Mark instead, which removes said mark and grants all nearby party members the Hunter's Precision effect, which increases their ATK when they are on the field. to the opponent hit by the final strike.\n\nCharged Attack\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents in his path.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Polearm_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Thunderbolt_Strike": {
+            "name": "Thunderbolt Strike",
+            "effect": "Follows his hunter's instincts. Tap or hold to produce different effects as well as apply the Hunter's MarkA special effect Alyosha can apply on the opponent.\nWhen this effect is applied to an opponent who is already under the Hunter's Mark effect, it will activate Hunter's Mark instead, which removes said mark and grants all nearby party members the Hunter's Precision effect, which increases their ATK when they are on the field. effect to the hit opponents.\n\nTapping\nFires at opponents in front of him, dealing AoE Electro DMG.\n\nHolding\nEnters aiming mode, then targets opponents within a certain area in front of him. Alyosha's Interruption RES is enhanced when in this mode.\nAt the end of the button hold, he deals Electro DMG to the targeted opponents.",
+            "image": "Talents/Skill/Talent_Thunderbolt_Strike.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Hunters_Advance": {
+            "name": "Hunter's Advance",
+            "effect": "Summons his trusted companion Tugarin to fight alongside him on the field. This also turns an area in front of him into a Fulgurite Hunting Field for a short time.\n\nFulgurite Hunting Field\n· Continuously taunts nearby opponents to incite them to attack.\n· Every 2s, deals an instance of AoE Electro DMG to any opponent that enters the field.\n\nTugarin\n· If there are any opponents nearby, Tugarin will quickly move close to an opponent and maul them every 2s, dealing Electro DMG.\n· If an opponent affected by the Hunter's Mark effect is hit, the Hunter's Mark will also be activated.\n· Where there are multiple opponents, Tugarin will attack those affected by the Hunter's Mark effect first.",
+            "image": "Talents/Burst/Talent_Hunters_Advance.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Frostvale Thunderclap",
+          "effect": "Alyosha regenerates 15 Elemental Energy when nearby party members trigger an Electro-related reaction on an opponent. This effect can trigger once every 18s.",
+          "image": "Constellation/Frostvale_Thunderclap.png"
+        },
+        "2": {
+          "name": "Howl From Afar",
+          "effect": "The duration of the Elemental Burst Hunter's Advance is extended by 6s.\nAdditionally, each time Tugarin attacks the opponent, he will also apply the Hunter's Mark to a target. This effect does not activate existing Hunter's Marks.",
+          "image": "Constellation/Howl_From_Afar.png"
+        },
+        "3": {
+          "name": "Friendly Call",
+          "effect": "Increases the Level of the Elemental Skill Thunderbolt Strike by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Friendly_Call.png"
+        },
+        "4": {
+          "name": "Harvest the Spoils",
+          "effect": "When Tugarin attacks, he will also restore 60% of Alyosha's ATK as HP to the nearby party member with the lowest HP by percentage.",
+          "image": "Constellation/Harvest_the_Spoils.png"
+        },
+        "5": {
+          "name": "When the Nightbird Falls Silent",
+          "effect": "Increases the Level of the Elemental Burst Hunter's Advance by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/When_the_Nightbird_Falls_Silent.png"
+        },
+        "6": {
+          "name": "Standard Reclaimed",
+          "effect": "The Hunter's Precision effect obtained from activating a Hunter's Mark can now stack, max 2 stacks. When the stack count reaches 2, currently active party members will also have their Elemental Mastery increased by 100.",
+          "image": "Constellation/Standard_Reclaimed.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Chimeric_Core",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Flockingweed",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 40,
+          "material4": "Chimeric_Core",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Flockingweed",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 50,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Flockingweed",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 60,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Flockingweed",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 70,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Flockingweed",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 80,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Flockingweed",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Severed_Tail_of_the_Sky-Roamer",
+          "local_speciality": "Flockingweed"
+        },
+        "talents": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "mastery1": "Teachings_of_Fortitude",
+          "mastery2": "Guide_to_Fortitude",
+          "mastery3": "Philosophies_of_Fortitude",
+          "weekly_boss_drop": "Elixir_of_the_Heretic",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "A \"professional hunter\" mastering the Snezhnayan snowfields. Beneath his calm demeanor, a fiercely distinct \"ideal\" seems to burn.",
+      "paimonmoepath": "characters/alyosha",
+      "genshinggpath": "characters/alyosha",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Alyosha",
+      "hoyowiki": 11163,
+      "subCollection": {}
+    },
     "Beidou": {
       "image": "Characters/Electro/Beidou.png",
       "gender": "Female",

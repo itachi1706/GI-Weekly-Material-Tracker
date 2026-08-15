@@ -917,6 +917,114 @@
       },
       "hoyowiki": 8607,
       "subCollection": {}
+    },
+    "Ethereal_Glimmershard": {
+      "image": "Materials/Common_Mob/Item_Ethereal_Glimmershard.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The remains of a Snezhnayan fae left behind after battle.\nThese shards once coated the creature's body like crystalline scales. Upon falling away, they stripped themselves of all colors, shifting into something akin to the dusty dross of a moth's wings.",
+      "enemies": ["Snowland Fae"],
+      "obtained": "- Dropped by Snowland Fae",
+      "name": "Ethereal Glimmershard",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ethereal_Glimmershard",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11367,
+      "subCollection": {}
+    },
+    "Ethereal_Crystal": {
+      "image": "Materials/Common_Mob/Item_Ethereal_Crystal.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The remains of a Snezhnayan fae left behind after battle.\nA shattered fragment of the crystalline scales that once grew upon the fae's body. Though it is now a mere empty shell, one can still sense the echo of the unique power that once dwelt within.",
+      "enemies": ["Snowland Fae"],
+      "obtained": "- Alchemy (3x Ethereal Glimmershard)\n- Dropped by Lv.40+ Snowland Fae",
+      "name": "Ethereal Crystal",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ethereal_Crystal",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11368,
+      "subCollection": {}
+    },
+    "Ethereal_Crystalscale_Stone": {
+      "image": "Materials/Common_Mob/Item_Ethereal_Crystalscale_Stone.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The remains of a Snezhnayan fae left behind after battle.\nA crystalline scale that once grew upon the fae's body. It is said that fae possessing a greater abundance of these scales command far greater power. Yet, none can say whether this magic truly originates from within their forms — merely channeled outward through the crystal chunks — or if the chunks themselves are the very vessels of their power.",
+      "enemies": ["Snowland Fae"],
+      "obtained": "- Alchemy (3x Ethereal Crystal)\n- Dropped by Lv.60+ Snowland Fae",
+      "name": "Ethereal Crystalscale Stone",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Ethereal_Crystalscale_Stone",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11369,
+      "subCollection": {}
+    },
+    "Chimeric_Core": {
+      "image": "Materials/Common_Mob/Item_Chimeric_Core.png",
+      "rarity": 1,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The internal core harvested from aberrant man-made monsters.\nThis is the most fundamental core grown within a man-made monster. Yet, simple as it may be, it contains the primordial design for the growth of all man-made creations.",
+      "enemies": ["Aberrant Chimeric Monsters"],
+      "obtained": "- Dropped by Aberrant Chimeric Monsters",
+      "name": "Chimeric Core",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Chimeric_Core",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11370,
+      "subCollection": {}
+    },
+    "Symbiotic_Chimeric_Nucleus": {
+      "image": "Materials/Common_Mob/Item_Symbiotic_Chimeric_Nucleus.png",
+      "rarity": 2,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The internal core harvested from aberrant man-made monsters.\nA relatively complex core harvested from a man-made monster. This symbiotic nucleus is engineered to sustain the biological cycles of two distinct life-forms, seamlessly weaving them into a single organism.",
+      "enemies": ["Aberrant Chimeric Monsters"],
+      "obtained": "- Alchemy (3x Chimeric Core)\n- Dropped by Lv.40+ Aberrant Chimeric Monsters",
+      "name": "Symbiotic Chimeric Nucleus",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Symbiotic_Chimeric_Nucleus",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11371,
+      "subCollection": {}
+    },
+    "Prime_Chimeric_Nexus": {
+      "image": "Materials/Common_Mob/Item_Prime_Chimeric_Nexus.png",
+      "rarity": 3,
+      "type": "Common Ascension Material (Normal)",
+      "innerType": "mob_drops",
+      "description": "The internal core harvested from aberrant man-made monsters.\nThe most complex core a man-made monster can possibly sustain, serving as an artificially engineered yet flawless seed of life. Whoever brought this creation into life has surely unlocked the very secrets of how life itself is shaped.",
+      "enemies": ["Aberrant Chimeric Monsters"],
+      "obtained": "- Alchemy (3x Symbiotic Chimeric Nucleus)\n- Dropped by Lv.60+ Aberrant Chimeric Monsters",
+      "name": "Prime Chimeric Nexus",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Prime_Chimeric_Nexus",
+      "usage": {
+        "characters": [],
+        "weapons": []
+      },
+      "hoyowiki": 11372,
+      "subCollection": {}
     }
   }
 }
