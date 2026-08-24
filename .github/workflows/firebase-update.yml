@@ -259,7 +259,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
       - name: Update Indexes
-        uses: w9jds/firebase-action@d22ff47470f4628073cf145378b43b6f198f05ae # v15.26.0
+        uses: w9jds/firebase-action@5b73b1274a2229c7598af09e6e95addfb75f897b # v15.28.1
         with:
           args: deploy --only firestore:indexes --force
         env:
@@ -273,21 +273,21 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
       - name: Update Storage Security Rules
-        uses: w9jds/firebase-action@d22ff47470f4628073cf145378b43b6f198f05ae # v15.26.0
+        uses: w9jds/firebase-action@5b73b1274a2229c7598af09e6e95addfb75f897b # v15.28.1
         with:
           args: deploy --only storage
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
       - name: Update Firestore Security Rules
-        uses: w9jds/firebase-action@d22ff47470f4628073cf145378b43b6f198f05ae # v15.26.0
+        uses: w9jds/firebase-action@5b73b1274a2229c7598af09e6e95addfb75f897b # v15.28.1
         with:
           args: deploy --only firestore:rules
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           PROJECT_PATH: firebase
       - name: Update Realtime DB Security Rules
-        uses: w9jds/firebase-action@d22ff47470f4628073cf145378b43b6f198f05ae # v15.26.0
+        uses: w9jds/firebase-action@5b73b1274a2229c7598af09e6e95addfb75f897b # v15.28.1
         with:
           args: deploy --only database
         env:
@@ -310,7 +310,7 @@ jobs:
         run: npm ci --ignore-scripts
         working-directory: firebase/functions
       - name: Update Firebase Cloud Function
-        uses: w9jds/firebase-action@d22ff47470f4628073cf145378b43b6f198f05ae # v15.26.0
+        uses: w9jds/firebase-action@5b73b1274a2229c7598af09e6e95addfb75f897b # v15.28.1
         with:
           args: deploy --only functions
         env:
