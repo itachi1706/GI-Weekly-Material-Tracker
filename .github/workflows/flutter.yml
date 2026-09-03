@@ -359,7 +359,7 @@ jobs:
         with:
           name: flutter-firebase-release-artifact
       - name: Git Commit Data
-        uses: rlespinasse/git-commit-data-action@2b76766acf9574c24b5cec7608be8db5dc17968e # v1.5.0
+        uses: rlespinasse/git-commit-data-action@d3d5d8e0de9e9545cb1fadd33f9664db98c64cc7 # v1.5.1
       - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
         id: short-sha
         with:
