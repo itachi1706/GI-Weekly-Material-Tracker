@@ -1,25 +1,29 @@
 import { BrowserWindow, session } from 'electron'
+import type { Session } from 'electron'
 
 /**
  * Downloads images from Fandom's CDN (static.wikia.nocookie.net), which now fronts responses with a
- * Cloudflare bot-check. A plain `fetch` can never pass it — the check requires actually running the
- * challenge's JS — so on a mitigated response we fall back to driving a real (hidden, reused)
- * Chromium window through it, then replay the request with the cookies that earns.
+ * Cloudflare bot-check. A plain request can never pass it — the check requires actually running the
+ * challenge's JS — so on a mitigated response we drive a real Chromium window through it once, then
+ * retry. All requests go through the same Electron session as that window (`ses.fetch`), so the
+ * clearance cookie is attached by Chromium's own cookie jar (scoped to the right host) and the request
+ * carries the same network fingerprint that earned it.
  */
 
 const PARTITION = 'persist:wiki-cdn'
-const REFERER = 'https://genshin-impact.fandom.com/'
+const REQUEST_TIMEOUT_MS = 20000
 const AUTO_CLEAR_TIMEOUT_MS = 8000 // time to let a non-interactive "managed challenge" clear on its own
 const INTERACTIVE_TIMEOUT_MS = 120000 // time to let the user solve a visible Turnstile prompt
 const POLL_MS = 400
-const CHALLENGE_TITLE_RE = /just a moment|attention required|checking your browser/i
+
+/** Hosts we're willing to open a verification window for — never arbitrary pasted URLs. */
+const SOLVABLE_HOST_SUFFIXES = ['nocookie.net', 'fandom.com']
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms))
 
 /**
  * Electron's default UA embeds "Electron/x.y.z", a token several bot-detection products block
- * outright. Swap in a plain desktop-Chrome UA built from the bundled Chromium version instead, so the
- * hidden window looks like an ordinary browser rather than an app shell.
+ * outright. Use a plain desktop-Chrome UA built from the bundled Chromium version instead.
  */
 export function chromeUserAgent(): string {
   const platform =
@@ -41,116 +45,154 @@ export function looksLikeCloudflareChallenge(res: Response): boolean {
   return res.headers.get('cf-mitigated') === 'challenge'
 }
 
-let solverWindow: BrowserWindow | null = null
+/** True for the Fandom hosts (and their subdomains) whose bot-check we'll drive a window through. */
+export function isSolvableHost(url: string): boolean {
+  let host: string
+  try {
+    host = new URL(url).hostname.toLowerCase()
+  } catch {
+    return false
+  }
+  return SOLVABLE_HOST_SUFFIXES.some((s) => host === s || host.endsWith(`.${s}`))
+}
 
-function getSolverWindow(): BrowserWindow {
-  if (solverWindow && !solverWindow.isDestroyed()) return solverWindow
+/**
+ * Fandom's CDN transcodes to WebP for Chrome-like clients regardless of `Accept`, which would land
+ * WebP bytes in the dataset's `.png` files. `format=original` serves the file as uploaded.
+ */
+export function withOriginalFormat(url: string): string {
+  let u: URL
+  try {
+    u = new URL(url)
+  } catch {
+    return url
+  }
+  const host = u.hostname.toLowerCase()
+  if (host !== 'nocookie.net' && !host.endsWith('.nocookie.net')) return url
+  if (!u.searchParams.has('format')) u.searchParams.set('format', 'original')
+  return u.toString()
+}
+
+let cdnSession: Session | null = null
+
+function getSession(): Session {
+  if (cdnSession) return cdnSession
+  const ses = session.fromPartition(PARTITION)
+  ses.setUserAgent(chromeUserAgent())
+  // The verification window should only ever render the challenge/image, never save files.
+  ses.on('will-download', (event) => event.preventDefault())
+  cdnSession = ses
+  return ses
+}
+
+function createSolverWindow(url: string): BrowserWindow {
   const win = new BrowserWindow({
     width: 480,
     height: 640,
     show: false,
     title: 'Verifying image host…',
     webPreferences: {
-      session: session.fromPartition(PARTITION),
+      session: getSession(),
       sandbox: true,
       contextIsolation: true
     }
   })
-  win.webContents.setUserAgent(chromeUserAgent())
-  win.on('closed', () => {
-    if (solverWindow === win) solverWindow = null
+  const { hostname } = new URL(url)
+  win.webContents.setWindowOpenHandler(() => ({ action: 'deny' }))
+  // The challenge only reloads the same URL (with Cloudflare's own query params); block anything else.
+  win.webContents.on('will-navigate', (event, target) => {
+    try {
+      if (new URL(target).hostname !== hostname) event.preventDefault()
+    } catch {
+      event.preventDefault()
+    }
   })
-  solverWindow = win
   return win
 }
 
 /**
- * Navigate the hidden solver window to `url` and wait for Cloudflare's challenge to clear. Chromium
- * usually clears a "managed challenge" on its own within a couple of seconds — it only needs to run
- * the page's JS, unlike a plain `fetch`. If it instead renders an interactive prompt (e.g. a Turnstile
- * checkbox), the window is revealed so the user can complete it, then hidden again once the page moves
- * past the challenge.
+ * Whether the window has moved past the challenge to the image itself. Checks the loaded document's
+ * MIME type rather than its title, because Cloudflare localizes the interstitial's title.
+ */
+async function showsImage(win: BrowserWindow): Promise<boolean> {
+  try {
+    const type: unknown = await win.webContents.executeJavaScript('document.contentType', false)
+    return typeof type === 'string' && type.startsWith('image/')
+  } catch {
+    return false // mid-navigation (the challenge reloading itself) — treat as not cleared yet
+  }
+}
+
+/**
+ * Load `url` in a fresh, hidden verification window and wait for Cloudflare's challenge to clear.
+ * Chromium usually clears a "managed challenge" on its own within a couple of seconds. If it renders
+ * an interactive prompt instead (e.g. a Turnstile checkbox), the window is revealed so the user can
+ * complete it. The window is always destroyed afterwards — the clearance cookie lives in the
+ * persistent session, and a lingering hidden window would keep the app from quitting.
  */
 async function passCloudflareChallenge(url: string): Promise<void> {
-  const win = getSolverWindow()
-  await win.loadURL(url).catch(() => {
-    // Navigating straight to an image resource can report a navigation error even when the request
-    // itself went through (e.g. it gets handled as a download) — the title poll below is the real signal.
-  })
-
-  const isChallenge = (): boolean => CHALLENGE_TITLE_RE.test(win.webContents.getTitle())
-
-  const waitWhileChallenged = async (timeoutMs: number): Promise<boolean> => {
-    const deadline = Date.now() + timeoutMs
-    while (Date.now() < deadline) {
-      if (win.isDestroyed()) throw new Error('Verification window was closed before completing.')
-      if (!isChallenge()) return true
-      await sleep(POLL_MS)
-    }
-    return false
-  }
-
-  if (await waitWhileChallenged(AUTO_CLEAR_TIMEOUT_MS)) return
-
-  win.show()
+  const win = createSolverWindow(url)
   try {
-    if (!(await waitWhileChallenged(INTERACTIVE_TIMEOUT_MS))) {
+    await win.loadURL(url).catch((e: { code?: string }) => {
+      // ERR_ABORTED is the challenge page reloading itself mid-load; anything else is a real failure.
+      if (e.code !== 'ERR_ABORTED') throw e
+    })
+
+    const waitForImage = async (timeoutMs: number): Promise<boolean> => {
+      const deadline = Date.now() + timeoutMs
+      while (Date.now() < deadline) {
+        if (win.isDestroyed()) throw new Error('Verification window was closed before completing.')
+        if (await showsImage(win)) return true
+        await sleep(POLL_MS)
+      }
+      return false
+    }
+
+    if (await waitForImage(AUTO_CLEAR_TIMEOUT_MS)) return
+    win.show()
+    if (!(await waitForImage(INTERACTIVE_TIMEOUT_MS))) {
       throw new Error("Timed out waiting for the image host's bot-check to clear.")
     }
   } finally {
-    if (!win.isDestroyed()) win.hide()
+    if (!win.isDestroyed()) win.destroy()
   }
 }
 
-/** Cookie header string for `url` from the solver window's (persistent) session. */
-async function cookieHeaderFor(url: string): Promise<string> {
-  const cookies = await getSolverWindow().webContents.session.cookies.get({ url })
-  return cookies.map((c) => `${c.name}=${c.value}`).join('; ')
-}
-
-// Dedupe concurrent challenge-solves (e.g. a grid of thumbnails all 403ing at once) onto one pass —
-// they all clear the same Cloudflare cookie, so only one needs to drive the window.
-let clearancePromise: Promise<void> | null = null
+// One in-flight solve per host, so a grid of thumbnails all 403ing at once shares a single window,
+// while a challenge on a different host still gets its own pass.
+const clearanceByHost = new Map<string, Promise<void>>()
 function ensureClearance(url: string): Promise<void> {
-  clearancePromise ??= passCloudflareChallenge(url).finally(() => {
-    clearancePromise = null
-  })
-  return clearancePromise
+  const host = new URL(url).hostname
+  let p = clearanceByHost.get(host)
+  if (!p) {
+    p = passCloudflareChallenge(url).finally(() => clearanceByHost.delete(host))
+    clearanceByHost.set(host, p)
+  }
+  return p
 }
-
-// Cached from the last successful verification so later downloads can skip straight to a plain fetch
-// instead of re-driving the solver window every time.
-let cachedCookieHeader: string | null = null
 
 /**
- * Download an image, transparently solving Fandom's Cloudflare bot-check when it's shown. Tries a
- * plain request first (cheap, and most requests still aren't challenged); only drives the hidden
- * browser when that comes back mitigated.
+ * Download an image, transparently solving Fandom's Cloudflare bot-check when it's shown. Only
+ * Fandom hosts get the verification window; a challenge from any other host fails like a normal 403.
  */
 export async function fetchImageBuffer(
-  url: string
+  requestedUrl: string
 ): Promise<{ buffer: Buffer; contentType: string | null }> {
-  const baseHeaders: Record<string, string> = {
-    'User-Agent': chromeUserAgent(),
-    Referer: REFERER,
-    Accept: 'image/avif,image/webp,image/png,image/*,*/*;q=0.8'
-  }
-  const attempt = (cookie: string | null): Promise<Response> =>
-    fetch(url, { headers: cookie ? { ...baseHeaders, Cookie: cookie } : baseHeaders })
+  const url = withOriginalFormat(requestedUrl)
+  const attempt = (): Promise<Response> =>
+    getSession().fetch(url, {
+      headers: { Accept: 'image/avif,image/webp,image/png,image/*,*/*;q=0.8' },
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
+    })
 
-  let res = await attempt(cachedCookieHeader)
-  if (res.ok) {
-    return { buffer: Buffer.from(await res.arrayBuffer()), contentType: res.headers.get('content-type') }
+  let res = await attempt()
+  if (!res.ok && looksLikeCloudflareChallenge(res) && isSolvableHost(url)) {
+    await res.body?.cancel()
+    await ensureClearance(url)
+    res = await attempt()
   }
-  if (!looksLikeCloudflareChallenge(res)) {
-    throw new Error(`Image download failed (${res.status}) for ${url}`)
-  }
-
-  await ensureClearance(url)
-  cachedCookieHeader = await cookieHeaderFor(url)
-  res = await attempt(cachedCookieHeader)
   if (!res.ok) {
-    throw new Error(`Image download failed (${res.status}) for ${url} (after passing verification)`)
+    throw new Error(`Image download failed (${res.status}) for ${requestedUrl}`)
   }
   return { buffer: Buffer.from(await res.arrayBuffer()), contentType: res.headers.get('content-type') }
 }
