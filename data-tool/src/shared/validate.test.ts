@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { validateDataset, isDataFile, type ValidateDeps, type Finding } from './validate'
+import { describe, it, expect, vi } from 'vitest'
+import { validateDataset, isDataFile, sniffImageFormat, formatForExtension, type ValidateDeps, type Finding } from './validate'
 
 // Default stubs: everything round-trips and every image exists. Override per test.
 const run = (
@@ -107,5 +107,58 @@ describe('validateDataset', () => {
       { file: 'Outfits-Standard.json', raw: '{"outfits":{"Sea Breeze":{"character":"Jean","image":"x.png"}}}' }
     ])
     expect(cats(f)).not.toContain('broken-ref')
+  })
+})
+
+describe('sniffImageFormat / formatForExtension', () => {
+  const bytes = (...b: number[]): Uint8Array => Uint8Array.from(b)
+  const ascii = (s: string): number[] => [...s].map((c) => c.codePointAt(0)!)
+  it('identifies the dataset image formats by magic bytes', () => {
+    expect(sniffImageFormat(bytes(0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 0))).toBe('png')
+    expect(sniffImageFormat(bytes(0xff, 0xd8, 0xff, 0xe0))).toBe('jpeg')
+    expect(sniffImageFormat(bytes(...ascii('GIF89a')))).toBe('gif')
+    expect(sniffImageFormat(bytes(...ascii('RIFF'), 1, 2, 3, 4, ...ascii('WEBP')))).toBe('webp')
+  })
+  it('returns null for unknown or truncated headers', () => {
+    expect(sniffImageFormat(bytes(...ascii('<!DOCTYPE')))).toBeNull()
+    expect(sniffImageFormat(bytes(...ascii('RIFF'), 1, 2, 3, 4, ...ascii('WAVE')))).toBeNull()
+    expect(sniffImageFormat(bytes(0x89, 0x50))).toBeNull()
+  })
+  it('maps extensions (case-insensitive, jpg = jpeg)', () => {
+    expect(formatForExtension('a/b.PNG')).toBe('png')
+    expect(formatForExtension('a.jpg')).toBe('jpeg')
+    expect(formatForExtension('a.txt')).toBeNull()
+  })
+})
+
+describe('image-format check', () => {
+  const WEBP = Uint8Array.from([0x52, 0x49, 0x46, 0x46, 0, 0, 0, 0, 0x57, 0x45, 0x42, 0x50])
+  const PNG = Uint8Array.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 0])
+  const mats = (image: string): { file: string; raw: string } => ({
+    file: 'Materials-Elite_Mob.json',
+    raw: JSON.stringify({ materials: { x: { name: 'X', image } } })
+  })
+
+  it('flags a .png whose bytes are WebP, carrying the image path for the fix action', () => {
+    const f = run([mats('Materials/X.png')], { imageHeader: () => WEBP })
+    expect(f).toEqual([
+      {
+        severity: 'WARN',
+        category: 'image-format',
+        file: 'Materials-Elite_Mob.json',
+        key: 'x',
+        detail: 'image: Materials/X.png is actually WEBP, not PNG',
+        imagePath: 'Materials/X.png'
+      }
+    ])
+  })
+  it('passes a real PNG, and skips the check when no header reader is supplied', () => {
+    expect(run([mats('Materials/X.png')], { imageHeader: () => PNG })).toEqual([])
+    expect(run([mats('Materials/X.png')])).toEqual([])
+  })
+  it('does not read headers for missing images', () => {
+    const imageHeader = vi.fn(() => WEBP)
+    expect(cats(run([mats('Materials/X.png')], { imageExists: () => false, imageHeader }))).toEqual(['missing-image'])
+    expect(imageHeader).not.toHaveBeenCalled()
   })
 })

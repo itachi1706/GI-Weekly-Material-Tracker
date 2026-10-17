@@ -14,6 +14,31 @@ export interface Finding {
   file: string
   key: string
   detail: string
+  /** Image path (relative to images/) the finding is about, when it's a fixable image-file problem. */
+  imagePath?: string
+}
+
+export type ImageFormat = 'png' | 'jpeg' | 'gif' | 'webp'
+
+/** Bytes needed by `sniffImageFormat` (WebP's signature ends at offset 12). */
+export const IMAGE_HEADER_BYTES = 12
+
+/** Identify an image by its magic bytes, or null if it's none of the formats the dataset uses. */
+export function sniffImageFormat(header: Uint8Array): ImageFormat | null {
+  const ascii = (from: number, to: number): string => String.fromCodePoint(...header.subarray(from, to))
+  if (header.length >= 8 && [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a].every((b, i) => header[i] === b)) return 'png'
+  if (header.length >= 3 && header[0] === 0xff && header[1] === 0xd8 && header[2] === 0xff) return 'jpeg'
+  if (header.length >= 6 && /^GIF8[79]a$/.test(ascii(0, 6))) return 'gif'
+  if (header.length >= 12 && ascii(0, 4) === 'RIFF' && ascii(8, 12) === 'WEBP') return 'webp'
+  return null
+}
+
+/** The format a file's extension promises, or null for a non-image extension. */
+export function formatForExtension(path: string): ImageFormat | null {
+  const ext = /\.([a-z0-9]+)$/i.exec(path)?.[1].toLowerCase()
+  if (ext === 'png' || ext === 'gif' || ext === 'webp') return ext
+  if (ext === 'jpg' || ext === 'jpeg') return 'jpeg'
+  return null
 }
 
 /** Structured result returned to the renderer by the `validate:run` IPC. */
@@ -29,6 +54,8 @@ export interface ValidateDeps {
   imageExists: (relPath: string) => boolean
   /** The byte-identity round-trip gate from serialize.ts. */
   roundTrips: (raw: string) => boolean
+  /** First `IMAGE_HEADER_BYTES` of an existing image (relative to images/); omit to skip the format check. */
+  imageHeader?: (relPath: string) => Uint8Array | null
 }
 
 /** File-name filter for the data files this validator scans. */
@@ -53,7 +80,7 @@ const rootKey = (file: string): string => {
  * `validateDataset` run so the top-level helpers below stay small (SonarCloud S3776).
  */
 interface ValidateCtx {
-  add: (severity: Severity, category: string, file: string, key: string, detail: string) => void
+  add: (severity: Severity, category: string, file: string, key: string, detail: string, imagePath?: string) => void
   checkText: (file: string, key: string, field: string, val: unknown) => void
   checkImage: (file: string, key: string, field: string, val: unknown) => void
   refCheck: (file: string, key: string, field: string, val: unknown, set: Set<string>, kind: string) => void
@@ -190,8 +217,8 @@ function parseFiles(files: { file: string; raw: string }[], deps: ValidateDeps, 
  */
 export function validateDataset(files: { file: string; raw: string }[], deps: ValidateDeps): Finding[] {
   const findings: Finding[] = []
-  const add: ValidateCtx['add'] = (severity, category, file, key, detail) => {
-    findings.push({ severity, category, file, key, detail })
+  const add: ValidateCtx['add'] = (severity, category, file, key, detail, imagePath) => {
+    findings.push(imagePath ? { severity, category, file, key, detail, imagePath } : { severity, category, file, key, detail })
   }
 
   const parsed = parseFiles(files, deps, add)
@@ -211,7 +238,13 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
   const checkImage: ValidateCtx['checkImage'] = (file, key, field, val) => {
     if (val === '') { add('ERROR', 'empty-image', file, key, `${field} is "" (use a real path or null)`); return }
     if (typeof val !== 'string' || !val || val.endsWith('/')) return
-    if (!deps.imageExists(val)) add('WARN', 'missing-image', file, key, `${field}: file not found — ${val}`)
+    if (!deps.imageExists(val)) { add('WARN', 'missing-image', file, key, `${field}: file not found — ${val}`); return }
+    const expected = formatForExtension(val)
+    const header = expected && deps.imageHeader?.(val)
+    const actual = header ? sniffImageFormat(header) : null
+    // e.g. Fandom's CDN serves WebP for a `.png` URL unless asked for format=original.
+    if (expected && actual && actual !== expected)
+      add('WARN', 'image-format', file, key, `${field}: ${val} is actually ${actual.toUpperCase()}, not ${expected.toUpperCase()}`, val)
   }
   const refCheck: ValidateCtx['refCheck'] = (file, key, field, val, set, kind) => {
     if (typeof val === 'string' && val && !set.has(val)) add('ERROR', 'broken-ref', file, key, `${field} → unknown ${kind} "${val}"`)

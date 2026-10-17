@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { formatReport, type Finding, type ValidationReport } from '@shared/validate'
+import ImageReplaceFix from './ImageReplaceFix'
 
 /** Read-only dataset validation, run in-app via the `validate:run` IPC (same rules as `npm run validate`). */
 export default function ValidationView({ rootPath }: Readonly<{ rootPath: string }>) {
@@ -12,11 +13,14 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
   const [severity, setSeverity] = useState<'all' | 'ERROR' | 'WARN'>('all')
   const [category, setCategory] = useState('')
   const [query, setQuery] = useState('')
+  // Image paths fixed via "Replace from URL" since the last run (one file can back several findings).
+  const [replaced, setReplaced] = useState<Set<string>>(() => new Set())
 
   const run = useCallback(async () => {
     setLoading(true)
     setError(null)
     setCopied(false)
+    setReplaced(new Set())
     try {
       setReport(await window.api.validate.run(rootPath))
     } catch (e) {
@@ -161,6 +165,14 @@ export default function ValidationView({ rootPath }: Readonly<{ rootPath: string
                           {f.key && <span className="validate-key">{f.key}</span>}
                         </div>
                         <div className="validate-detail">{f.detail}</div>
+                        {f.category === 'image-format' && f.imagePath && (
+                          <ImageReplaceFix
+                            rootPath={rootPath}
+                            imagePath={f.imagePath}
+                            replaced={replaced.has(f.imagePath)}
+                            onReplaced={(path) => setReplaced((prev) => new Set(prev).add(path))}
+                          />
+                        )}
                       </li>
                     ))}
                   </ul>

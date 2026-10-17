@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { selectDatasetFolder, selectImageFile } from './ipc/dialog'
 import { scanDataset } from './ipc/dataset'
-import { runValidation } from './ipc/validate'
+import { runValidation, replaceImageFromUrl } from './ipc/validate'
 import { initAutoUpdate } from './updater'
 import {
   listMaterials,
@@ -225,6 +225,9 @@ function registerIpc(): void {
 
   // Dataset validation (report-only). Reuses the shared rules that back `npm run validate`.
   ipcMain.handle('validate:run', () => runValidation(getDatasetRoot()))
+  ipcMain.handle('validate:replaceImage', (_e, _root, relativePath: string, url: string) =>
+    replaceImageFromUrl(getDatasetRoot(), relativePath, url)
+  )
 }
 
 app.whenReady().then(() => {
