@@ -1,10 +1,23 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync, symlinkSync, readdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 const fetchImageBuffer = vi.fn()
 vi.mock('./imageFetch', () => ({ fetchImageBuffer: (url: string) => fetchImageBuffer(url) }))
+
+// Lets a test make the final rename fail, to prove a failed replace leaves the original intact.
+const fsControl = vi.hoisted(() => ({ failRename: false }))
+vi.mock('node:fs/promises', async (importOriginal) => {
+  const real = await importOriginal<typeof import('node:fs/promises')>()
+  return {
+    ...real,
+    rename: async (from: string, to: string): Promise<void> => {
+      if (fsControl.failRename) throw new Error('simulated disk failure')
+      return real.rename(from, to)
+    }
+  }
+})
 
 import { replaceImageFromUrl, runValidation } from './validate'
 
@@ -21,7 +34,10 @@ beforeEach(() => {
   mkdirSync(join(root, 'data'))
   writeFileSync(img('Materials/X.png'), WEBP)
 })
-afterEach(() => rmSync(root, { recursive: true, force: true }))
+afterEach(() => {
+  fsControl.failRename = false
+  rmSync(root, { recursive: true, force: true })
+})
 
 describe('replaceImageFromUrl', () => {
   it('overwrites the file when the download really is the extension’s format', async () => {
@@ -46,6 +62,38 @@ describe('replaceImageFromUrl', () => {
     expect(existsSync(join(root, 'escape.png'))).toBe(false)
     expect(existsSync(img('Materials/New.png'))).toBe(false)
     expect(fetchImageBuffer).not.toHaveBeenCalled()
+  })
+})
+
+describe('replaceImageFromUrl filesystem safety', () => {
+  it('leaves no temp file behind after a successful replace', async () => {
+    fetchImageBuffer.mockResolvedValue({ buffer: PNG, contentType: 'image/png' })
+    await replaceImageFromUrl(root, 'Materials/X.png', URL_)
+    expect(readdirSync(img('Materials'))).toEqual(['X.png'])
+  })
+  it('keeps the original image (and cleans up) when the replace fails mid-way', async () => {
+    fetchImageBuffer.mockResolvedValue({ buffer: PNG, contentType: 'image/png' })
+    fsControl.failRename = true
+    await expect(replaceImageFromUrl(root, 'Materials/X.png', URL_)).rejects.toThrow(/simulated disk failure/)
+    expect(readFileSync(img('Materials/X.png'))).toEqual(WEBP)
+    expect(readdirSync(img('Materials'))).toEqual(['X.png'])
+  })
+  it('refuses to write through a symlinked image file', async () => {
+    const outside = join(root, 'outside.png')
+    writeFileSync(outside, WEBP)
+    symlinkSync(outside, img('Materials/Link.png'))
+    fetchImageBuffer.mockResolvedValue({ buffer: PNG, contentType: 'image/png' })
+    await expect(replaceImageFromUrl(root, 'Materials/Link.png', URL_)).rejects.toThrow(/Not a regular image file/)
+    expect(readFileSync(outside)).toEqual(WEBP)
+  })
+  it('refuses a folder symlink that leads outside images/', async () => {
+    const outsideDir = join(root, 'elsewhere')
+    mkdirSync(outsideDir)
+    writeFileSync(join(outsideDir, 'Evil.png'), WEBP)
+    symlinkSync(outsideDir, img('Linked'))
+    fetchImageBuffer.mockResolvedValue({ buffer: PNG, contentType: 'image/png' })
+    await expect(replaceImageFromUrl(root, 'Linked/Evil.png', URL_)).rejects.toThrow(/escapes/)
+    expect(readFileSync(join(outsideDir, 'Evil.png'))).toEqual(WEBP)
   })
 })
 

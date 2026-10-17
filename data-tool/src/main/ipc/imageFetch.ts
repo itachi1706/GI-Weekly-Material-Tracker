@@ -14,6 +14,7 @@ const PARTITION = 'persist:wiki-cdn'
 const REQUEST_TIMEOUT_MS = 20000
 const VERIFY_TIMEOUT_MS = 120000 // time to let the user complete the check in the window
 const POLL_MS = 400
+const PROBE_TIMEOUT_MS = 1000
 
 /** Hosts we're willing to open a verification window for — never arbitrary pasted URLs. */
 const SOLVABLE_HOST_SUFFIXES = ['nocookie.net', 'fandom.com']
@@ -115,7 +116,12 @@ function createSolverWindow(url: string): BrowserWindow {
  */
 async function showsImage(win: BrowserWindow): Promise<boolean> {
   try {
-    const type: unknown = await win.webContents.executeJavaScript('document.contentType', false)
+    // executeJavaScript waits for a pending load to finish, so cap it — a stalled page must not
+    // stall the caller's deadline checks.
+    const type: unknown = await Promise.race([
+      win.webContents.executeJavaScript('document.contentType', false),
+      sleep(PROBE_TIMEOUT_MS).then(() => null)
+    ])
     return typeof type === 'string' && type.startsWith('image/')
   } catch {
     return false // mid-navigation (the challenge reloading itself) — treat as not cleared yet
@@ -134,14 +140,17 @@ async function passCloudflareChallenge(url: string): Promise<void> {
     win.show()
     win.focus()
   })
+  // The deadline covers the initial load too, so loadURL isn't awaited: a page that never finishes
+  // loading would otherwise hold the window open forever.
+  const deadline = Date.now() + VERIFY_TIMEOUT_MS
+  let loadError: unknown = null
+  win.loadURL(url).catch((e: { code?: string }) => {
+    // ERR_ABORTED is the challenge page reloading itself (or our destroy()); anything else is real.
+    if (e.code !== 'ERR_ABORTED') loadError = e
+  })
   try {
-    await win.loadURL(url).catch((e: { code?: string }) => {
-      // ERR_ABORTED is the challenge page reloading itself mid-load; anything else is a real failure.
-      if (e.code !== 'ERR_ABORTED') throw e
-    })
-
-    const deadline = Date.now() + VERIFY_TIMEOUT_MS
     while (Date.now() < deadline) {
+      if (loadError) throw loadError
       if (win.isDestroyed()) throw new Error('Verification window was closed before completing.')
       if (await showsImage(win)) return
       await sleep(POLL_MS)

@@ -1,6 +1,39 @@
 import { describe, it, expect, vi } from 'vitest'
 
-vi.mock('electron', () => ({ BrowserWindow: class {}, session: { fromPartition: vi.fn() } }))
+// Minimal stand-ins for the Electron session + verification window. By default the window's page
+// never finishes loading and never answers a probe — the stalled-page case.
+const electron = vi.hoisted(() => {
+  const windows: { shown: boolean; destroyed: boolean }[] = []
+  class FakeWindow {
+    shown = false
+    destroyed = false
+    webContents = {
+      setWindowOpenHandler: vi.fn(),
+      on: vi.fn(),
+      executeJavaScript: vi.fn(() => new Promise(() => {}))
+    }
+    loadURL = vi.fn(() => new Promise(() => {}))
+    constructor() {
+      windows.push(this)
+    }
+    once(_event: string, cb: () => void): void {
+      cb()
+    }
+    show(): void {
+      this.shown = true
+    }
+    focus(): void {}
+    isDestroyed(): boolean {
+      return this.destroyed
+    }
+    destroy(): void {
+      this.destroyed = true
+    }
+  }
+  const ses = { setUserAgent: vi.fn(), on: vi.fn(), fetch: vi.fn() }
+  return { windows, FakeWindow, ses }
+})
+vi.mock('electron', () => ({ BrowserWindow: electron.FakeWindow, session: { fromPartition: () => electron.ses } }))
 
 import {
   chromeUserAgent,
@@ -14,6 +47,22 @@ describe('fetchImageBuffer', () => {
   it('only accepts http(s) URLs (session.fetch would otherwise read file:// paths)', async () => {
     await expect(fetchImageBuffer('file:///etc/passwd')).rejects.toThrow(/Only http\(s\)/)
     await expect(fetchImageBuffer('javascript:alert(1)')).rejects.toThrow(/Only http\(s\)/)
+  })
+
+  it('times out and destroys the verification window even if its page never finishes loading', async () => {
+    vi.useFakeTimers()
+    try {
+      electron.ses.fetch.mockResolvedValue(
+        new Response('challenge', { status: 403, headers: { 'cf-mitigated': 'challenge' } })
+      )
+      const result = expect(fetchImageBuffer('https://static.wikia.nocookie.net/x.png')).rejects.toThrow(/Timed out/)
+      await vi.advanceTimersByTimeAsync(121_000)
+      await result
+      expect(electron.windows).toHaveLength(1)
+      expect(electron.windows[0]).toMatchObject({ shown: true, destroyed: true })
+    } finally {
+      vi.useRealTimers()
+    }
   })
 })
 
