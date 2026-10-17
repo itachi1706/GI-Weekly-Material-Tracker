@@ -5171,6 +5171,379 @@
       "hoyowiki": 42,
       "subCollection": {}
     },
+    "Vodyanitsa": {
+      "image": "Characters/Hydro/Vodyanitsa.png",
+      "gender": "Female",
+      "birthday": "29/3",
+      "caption": "Lingering Siren-Song",
+      "titles": [
+        "Prima Donna of the Korolevskiy Troupe"
+      ],
+      "name": "Vodyanitsa",
+      "fullName": null,
+      "description": "Prima Donna of the Korolevskiy Troupe and a Water Imp who has parted from her kin.",
+      "nation": "Snezhnaya",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Korolevskiy Troupe, Rokot",
+      "constellation": "Piscicula Aurea",
+      "outfits": [
+        "Surging_Resonance"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Fortitude",
+            "material3qty": 3,
+            "material4": "Chimeric_Core",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 2,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 4,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 6,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Fortitude",
+            "material3qty": 9,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 4,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 6,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Madmans_Restraint",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 12,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Madmans_Restraint",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Fortitude",
+            "material3qty": 16,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "The_Last_Djeguako_Songstress": {
+            "name": "The Last Djeguako Songstress",
+            "effect": "When the Elemental Skill Rechitativ: Sonorous Dawn is used, any Stellar Vortex on the field will turn into a Wandering Vortex instead. While the Song of Ages Past effect is active, nearby party members' Stellar Swirl reactions will generate Wandering Vortex instead.\nGenerating or detonating a Wandering Vortex will also reduce nearby opponents' Anemo RES by 35% for 6s.\nAdditionally, nearby party members who enter the Radiance: Stellar Swirl state while Song of Ages Past is in effect will have the Radiance: Stellar Swirl state extended by 4s.",
+            "image": "Talents/Passive/Talent_The_Last_Djeguako_Songstress.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Dirge_of_the_Fandyr": {
+            "name": "Dirge of the Fandyr",
+            "effect": "When the Elemental Skill Rechitativ: Sonorous Dawn is used, Vodyanitsa will also gain 25 stacks of Lead Vocal as well as 10 stacks of Chorus.\nThe two effects above last 30s each, and the stack count is refreshed when the Elemental Skill is used.",
+            "image": "Talents/Passive/Talent_Dirge_of_the_Fandyr.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Echoes_Over_the_Frozen_Lake": {
+            "name": "Echoes Over the Frozen Lake",
+            "effect": "Holding the Elemental Skill outside of combat will cause Vodyanitsa to embody her true Water Imp form and swim for up to 10s at the cost of Stamina. Naturally, as a Water Imp, she can also move across the water's surface. Vodyanitsa will exit her Water Imp form when the Elemental Skill is used again, when the duration ends, or when all Stamina is depleted.\nAdditionally, while Vodyanitsa can swim faster, her Stamina consumption rate is also increased.",
+            "image": "Talents/Passive/Talent_Echoes_Over_the_Frozen_Lake.png",
+            "order": 2,
+            "type": "Passive 3"
+          },
+          "Heartless_Siren_Song": {
+            "name": "Heartless Siren Song",
+            "effect": "As the Prima Donna of the Korolevskiy Troupe, Vodyanitsa sings in person in place of playing an instrument.",
+            "image": "Talents/Passive/Talent_Heartless_Siren_Song.png",
+            "order": 3,
+            "type": "Passive 4"
+          }
+        },
+        "attack": {
+          "Psyshkhwe_Arietta": {
+            "name": "Psyshkhwe Arietta",
+            "effect": "Normal Attack\nSings an ancient song of the Water Imps, unleashing up to 4 strikes. This deals Hydro DMG to the opponent.\n\nCharged Attack\nConsumes a certain amount of Stamina to hurl a water ball forward, dealing Hydro DMG.\n\nPlunging Attack\nPlunges towards the ground from mid-air, damaging all opponents along the path. Deals AoE Hydro DMG upon impact with the ground.",
+            "image": "Talents/Normal/Catalyst_Hydro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Rechitativ_Sonorous_Dawn": {
+            "name": "Rechitativ: Sonorous Dawn",
+            "effect": "Reveals her true Water Imp form, dealing AoE Hydro DMG and gaining the Song of Ages Past effect: While this effect is active, Vodyanitsa summons the ancient Horn of Spring's Call, periodically moving closer to an opponent in a swift movement to attack them, dealing Hydro DMG.\nThe above two types of attacks will also decrease the Hydro RES and Cryo RES of opponents hit. Additionally, while the Song of Ages Past effect is active, the party's active character gains increased resistance to interruption and periodically regenerates HP based on Vodyanitsa's Max HP.",
+            "image": "Talents/Skill/Talent_Rechitativ_Sonorous_Dawn.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Koda_Sink_With_Thee": {
+            "name": "Koda: Sink With Thee",
+            "effect": "Leads a song of the Water Imps which lures its listeners to their doom. This deals AoE Hydro DMG to the opponent.\nWhen in the Song of Ages Past state, DMG dealt is further increased.",
+            "image": "Talents/Burst/Talent_Koda_Sink_With_Thee.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "Waters in Full Splendor",
+          "effect": "Each time Vodyanitsa triggers the healing effect of Song of Ages Past, it also increases the ATK of all nearby party members by 0.8% of her Max HP for 5s.",
+          "image": "Constellation/Waters_in_Full_Splendor.png"
+        },
+        "2": {
+          "name": "Echoes That Pierce the Snow",
+          "effect": "When the Horn of Spring's Call from the Elemental Skill Rechitativ: Sonorous Dawn attacks the opponent, Vodyanitsa gains the \"Two Voices in Black and White\" effect which increases the CRIT DMG from Hydro DMG and Cryo DMG dealt by the currently active party member by 50% for 5s.\nIf there is a Wandering Vortex present on the field or in the 5s after a Wandering Vortex explodes, the effect changes to: increases the CRIT DMG from Stellar Swirl reaction DMG caused by the currently active party member by 60% for 5s.\nAdditionally, the Elemental Skill Rechitativ: Sonorous Dawn is enhanced as follows: the duration of the Song of Ages Past effect is extended by 9s.",
+          "image": "Constellation/Echoes_That_Pierce_the_Snow.png"
+        },
+        "3": {
+          "name": "Song Lingering on a Spring Morning",
+          "effect": "Increases the Level of the Elemental Skill Rechitativ: Sonorous Dawn by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Song_Lingering_on_a_Spring_Morning.png"
+        },
+        "4": {
+          "name": "Melancholic Voice Upon the Gentle Waters",
+          "effect": "When Vodyanitsa triggers the healing effect of Song of Ages Past, an additional effect will be triggered based on the healed character's HP.\nIf the character's HP is below 40%: The healing is increased by 50%; and\nIf the character's HP is 40% or above: Vodyanitsa's Max HP is increased by 20% for 6s. Max 3 stacks, and each stack's duration is counted independently.",
+          "image": "Constellation/Melancholic_Voice_Upon_the_Gentle_Waters.png"
+        },
+        "5": {
+          "name": "Together, Down Into the Deep",
+          "effect": "Increases the Level of the Elemental Burst Koda: Sink With Thee by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Song_Lingering_on_a_Spring_Morning.png"
+        },
+        "6": {
+          "name": "Neverending Song of Revelry",
+          "effect": "The Constellation Echoes That Pierce the Snow is enhanced: \"Two Voices in Black and White\" now applies to all nearby party members.\nAdditionally, while the Song of Ages Past effect is active, Stellar Swirl reaction DMG dealt by nearby party members is elevated by 25% while Hydro DMG and Cryo DMG dealt are increased by 60%.",
+          "image": "Constellation/Neverending_Song_of_Revelry.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Varunada_Lazurite_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Chimeric_Core",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 40,
+          "material4": "Chimeric_Core",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Varunada_Lazurite_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 50,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 60,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Varunada_Lazurite_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 70,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Varunada_Lazurite_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Unscorched_Blossom_Branch",
+          "level": 80,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Frostfairy_Flower",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "gem1": "Varunada_Lazurite_Silver",
+          "gem2": "Varunada_Lazurite_Fragment",
+          "gem3": "Varunada_Lazurite_Chunk",
+          "gem4": "Varunada_Lazurite_Gemstone",
+          "boss_drop": "Unscorched_Blossom_Branch",
+          "local_speciality": "Frostfairy_Flower"
+        },
+        "talents": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "mastery1": "Teachings_of_Fortitude",
+          "mastery2": "Guide_to_Fortitude",
+          "mastery3": "Philosophies_of_Fortitude",
+          "weekly_boss_drop": "Madmans_Restraint",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "Prima Donna of the Korolevskiy Troupe and a Water Imp who has parted from her kin.",
+      "paimonmoepath": "characters/vodyanitsa",
+      "genshinggpath": "characters/vodyanitsa",
+      "element": "Hydro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Vodyanitsa",
+      "hoyowiki": 11702,
+      "subCollection": {}
+    },
     "Xingqiu": {
       "image": "Characters/Hydro/Xingqiu.png",
       "gender": "Male",
