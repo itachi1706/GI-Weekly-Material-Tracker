@@ -27,12 +27,15 @@ const findings = validateDataset(files, {
   imageExists: (rel) => existsSync(join(imagesDir, rel)),
   roundTrips,
   imageHeader: (rel) => {
-    const fd = openSync(join(imagesDir, rel), 'r')
+    let fd: number | null = null
     try {
+      fd = openSync(join(imagesDir, rel), 'r')
       const buf = Buffer.alloc(IMAGE_HEADER_BYTES)
       return buf.subarray(0, readSync(fd, buf, 0, IMAGE_HEADER_BYTES, 0))
+    } catch {
+      return null // unreadable (e.g. a directory named *.png) — skip the format check, like the app does
     } finally {
-      closeSync(fd)
+      if (fd !== null) closeSync(fd)
     }
   }
 })

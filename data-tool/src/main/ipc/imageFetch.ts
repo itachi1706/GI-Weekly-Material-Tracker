@@ -3,17 +3,16 @@ import type { Session } from 'electron'
 
 /**
  * Downloads images from Fandom's CDN (static.wikia.nocookie.net), which now fronts responses with a
- * Cloudflare bot-check. A plain request can never pass it — the check requires actually running the
- * challenge's JS — so on a mitigated response we drive a real Chromium window through it once, then
- * retry. All requests go through the same Electron session as that window (`ses.fetch`), so the
- * clearance cookie is attached by Chromium's own cookie jar (scoped to the right host) and the request
- * carries the same network fingerprint that earned it.
+ * Cloudflare bot-check. Requests normally go straight through; when one is challenged, we open a
+ * visible window on the same Electron session so the user can complete the check themselves, then
+ * retry. All requests use that session (`ses.fetch`), so the clearance cookie is attached by
+ * Chromium's own cookie jar (scoped to the right host) and the request carries the same network
+ * fingerprint that earned it.
  */
 
 const PARTITION = 'persist:wiki-cdn'
 const REQUEST_TIMEOUT_MS = 20000
-const AUTO_CLEAR_TIMEOUT_MS = 8000 // time to let a non-interactive "managed challenge" clear on its own
-const INTERACTIVE_TIMEOUT_MS = 120000 // time to let the user solve a visible Turnstile prompt
+const VERIFY_TIMEOUT_MS = 120000 // time to let the user complete the check in the window
 const POLL_MS = 400
 
 /** Hosts we're willing to open a verification window for — never arbitrary pasted URLs. */
@@ -90,7 +89,7 @@ function createSolverWindow(url: string): BrowserWindow {
     width: 480,
     height: 640,
     show: false,
-    title: 'Verifying image host…',
+    title: 'Verify image host — complete the check to continue',
     webPreferences: {
       session: getSession(),
       sandbox: true,
@@ -124,35 +123,30 @@ async function showsImage(win: BrowserWindow): Promise<boolean> {
 }
 
 /**
- * Load `url` in a fresh, hidden verification window and wait for Cloudflare's challenge to clear.
- * Chromium usually clears a "managed challenge" on its own within a couple of seconds. If it renders
- * an interactive prompt instead (e.g. a Turnstile checkbox), the window is revealed so the user can
- * complete it. The window is always destroyed afterwards — the clearance cookie lives in the
- * persistent session, and a lingering hidden window would keep the app from quitting.
+ * Open `url` in a verification window and wait for the user to complete Cloudflare's check. Shown
+ * straight away: a hidden window never clears the challenge on its own (observed: it sits on
+ * "Just a moment..." indefinitely). The window is always destroyed afterwards — the clearance cookie
+ * lives in the persistent session, and a lingering window would keep the app from quitting.
  */
 async function passCloudflareChallenge(url: string): Promise<void> {
   const win = createSolverWindow(url)
+  win.once('ready-to-show', () => {
+    win.show()
+    win.focus()
+  })
   try {
     await win.loadURL(url).catch((e: { code?: string }) => {
       // ERR_ABORTED is the challenge page reloading itself mid-load; anything else is a real failure.
       if (e.code !== 'ERR_ABORTED') throw e
     })
 
-    const waitForImage = async (timeoutMs: number): Promise<boolean> => {
-      const deadline = Date.now() + timeoutMs
-      while (Date.now() < deadline) {
-        if (win.isDestroyed()) throw new Error('Verification window was closed before completing.')
-        if (await showsImage(win)) return true
-        await sleep(POLL_MS)
-      }
-      return false
+    const deadline = Date.now() + VERIFY_TIMEOUT_MS
+    while (Date.now() < deadline) {
+      if (win.isDestroyed()) throw new Error('Verification window was closed before completing.')
+      if (await showsImage(win)) return
+      await sleep(POLL_MS)
     }
-
-    if (await waitForImage(AUTO_CLEAR_TIMEOUT_MS)) return
-    win.show()
-    if (!(await waitForImage(INTERACTIVE_TIMEOUT_MS))) {
-      throw new Error("Timed out waiting for the image host's bot-check to clear.")
-    }
+    throw new Error("Timed out waiting for the image host's bot-check to clear.")
   } finally {
     if (!win.isDestroyed()) win.destroy()
   }
@@ -178,6 +172,10 @@ function ensureClearance(url: string): Promise<void> {
 export async function fetchImageBuffer(
   requestedUrl: string
 ): Promise<{ buffer: Buffer; contentType: string | null }> {
+  // session.fetch (unlike Node's fetch) also serves file:// and custom schemes — images only come from the web.
+  if (!/^https?:$/.test(new URL(requestedUrl).protocol)) {
+    throw new Error(`Only http(s) image URLs are supported: ${requestedUrl}`)
+  }
   const url = withOriginalFormat(requestedUrl)
   const attempt = (): Promise<Response> =>
     getSession().fetch(url, {

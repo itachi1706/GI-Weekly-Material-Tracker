@@ -235,13 +235,21 @@ export function validateDataset(files: { file: string; raw: string }[], deps: Va
   const checkText: ValidateCtx['checkText'] = (file, key, field, val) => {
     if (typeof val === 'string' && MARKUP.test(val)) add('ERROR', 'text-hygiene', file, key, `${field}: markup/garbage — ${JSON.stringify(val.slice(0, 60))}`)
   }
+  // Shared images (e.g. a weapon-type attack icon) are referenced by many records — sniff each once.
+  const formatByPath = new Map<string, ImageFormat | null>()
+  const actualFormat = (rel: string): ImageFormat | null => {
+    if (!formatByPath.has(rel)) {
+      const header = deps.imageHeader?.(rel)
+      formatByPath.set(rel, header ? sniffImageFormat(header) : null)
+    }
+    return formatByPath.get(rel)!
+  }
   const checkImage: ValidateCtx['checkImage'] = (file, key, field, val) => {
     if (val === '') { add('ERROR', 'empty-image', file, key, `${field} is "" (use a real path or null)`); return }
     if (typeof val !== 'string' || !val || val.endsWith('/')) return
     if (!deps.imageExists(val)) { add('WARN', 'missing-image', file, key, `${field}: file not found — ${val}`); return }
     const expected = formatForExtension(val)
-    const header = expected && deps.imageHeader?.(val)
-    const actual = header ? sniffImageFormat(header) : null
+    const actual = expected ? actualFormat(val) : null
     // e.g. Fandom's CDN serves WebP for a `.png` URL unless asked for format=original.
     if (expected && actual && actual !== expected)
       add('WARN', 'image-format', file, key, `${field}: ${val} is actually ${actual.toUpperCase()}, not ${expected.toUpperCase()}`, val)

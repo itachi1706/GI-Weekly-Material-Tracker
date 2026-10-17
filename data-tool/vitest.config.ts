@@ -22,6 +22,8 @@ export default defineConfig({
         'src/shared/**/*.ts',
         'src/main/ipc/wiki.ts',
         'src/main/ipc/entityStore.ts',
+        'src/main/ipc/imageFetch.ts',
+        'src/main/ipc/validate.ts',
         'src/main/ipc/paths.ts',
         'src/renderer/src/views/materials/util.ts',
         'src/renderer/src/views/materials/materialWiki.ts',

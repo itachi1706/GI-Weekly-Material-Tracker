@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { formatForExtension } from '@shared/validate'
 import { normalizeImageUrl } from '../materials/util'
 import { useImage } from '../shared/imageCache'
@@ -24,6 +24,9 @@ export default function ImageReplaceFix({ rootPath, imagePath, replaced, onRepla
   const [busy, setBusy] = useState<'preview' | 'replace' | null>(null)
   const [error, setError] = useState<string | null>(null)
   const current = useImage(rootPath, open ? imagePath : null)
+  // Bumped on every URL edit/preview, so a slow preview can't land after the URL has changed and
+  // offer to replace the file with a URL the user never saw.
+  const previewSeq = useRef(0)
 
   if (replaced) return <div className="validate-fix-done">✓ Replaced — re-run validation to confirm.</div>
   if (!open) {
@@ -41,11 +44,13 @@ export default function ImageReplaceFix({ rootPath, imagePath, replaced, onRepla
   const loadPreview = async (): Promise<void> => {
     const u = normalizeImageUrl(url)
     if (!u) return
+    const seq = ++previewSeq.current
     setUrl(u)
     setBusy('preview')
     setError(null)
     setPreview(null)
     const data = await window.api.materials.previewImage(rootPath, { source: 'url', url: u, destRelative: '' })
+    if (seq !== previewSeq.current) return
     setBusy(null)
     if (data) setPreview(data)
     else setError('Could not load an image from that URL.')
@@ -72,8 +77,10 @@ export default function ImageReplaceFix({ rootPath, imagePath, replaced, onRepla
           placeholder="Paste the original image URL (e.g. static.wikia.nocookie.net/…)"
           value={url}
           onChange={(e) => {
+            previewSeq.current++
             setUrl(e.target.value)
             setPreview(null)
+            setBusy((b) => (b === 'preview' ? null : b))
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') void loadPreview()

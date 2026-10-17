@@ -156,6 +156,13 @@ describe('image-format check', () => {
     expect(run([mats('Materials/X.png')], { imageHeader: () => PNG })).toEqual([])
     expect(run([mats('Materials/X.png')])).toEqual([])
   })
+  it('reads each shared image header once, however many records reference it', () => {
+    const imageHeader = vi.fn(() => WEBP)
+    const raw = JSON.stringify({ materials: { a: { name: 'A', image: 'Shared.png' }, b: { name: 'B', image: 'Shared.png' } } })
+    const f = run([{ file: 'Materials-Elite_Mob.json', raw }], { imageHeader })
+    expect(cats(f)).toEqual(['image-format', 'image-format'])
+    expect(imageHeader).toHaveBeenCalledTimes(1)
+  })
   it('does not read headers for missing images', () => {
     const imageHeader = vi.fn(() => WEBP)
     expect(cats(run([mats('Materials/X.png')], { imageExists: () => false, imageHeader }))).toEqual(['missing-image'])

@@ -2,7 +2,20 @@ import { describe, it, expect, vi } from 'vitest'
 
 vi.mock('electron', () => ({ BrowserWindow: class {}, session: { fromPartition: vi.fn() } }))
 
-import { chromeUserAgent, looksLikeCloudflareChallenge, isSolvableHost, withOriginalFormat } from './imageFetch'
+import {
+  chromeUserAgent,
+  looksLikeCloudflareChallenge,
+  isSolvableHost,
+  withOriginalFormat,
+  fetchImageBuffer
+} from './imageFetch'
+
+describe('fetchImageBuffer', () => {
+  it('only accepts http(s) URLs (session.fetch would otherwise read file:// paths)', async () => {
+    await expect(fetchImageBuffer('file:///etc/passwd')).rejects.toThrow(/Only http\(s\)/)
+    await expect(fetchImageBuffer('javascript:alert(1)')).rejects.toThrow(/Only http\(s\)/)
+  })
+})
 
 describe('withOriginalFormat', () => {
   const cdn = 'https://static.wikia.nocookie.net/gensin-impact/images/6/6e/X.png/revision/latest'
