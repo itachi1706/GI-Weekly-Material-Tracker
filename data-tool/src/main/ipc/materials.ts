@@ -4,6 +4,7 @@ import { join, extname } from 'node:path'
 import { ENTITIES } from '@shared/entities'
 import { getMaterialSchema } from '@shared/materialsSchema'
 import { datasetFile, imageDir, imagePath } from './paths'
+import { fetchImageBuffer } from './imageFetch'
 import {
   listEntityFiles,
   readEntityRecords,
@@ -133,11 +134,9 @@ export async function previewImage(rootPath: string, plan: ImagePlan): Promise<s
       return `data:${mimeFor(plan.sourcePath)};base64,${buf.toString('base64')}`
     }
     // url
-    const res = await fetch(plan.url)
-    if (!res.ok) return null
-    const buf = Buffer.from(await res.arrayBuffer())
-    const mime = res.headers.get('content-type') ?? mimeFor(plan.url)
-    return `data:${mime};base64,${buf.toString('base64')}`
+    const { buffer, contentType } = await fetchImageBuffer(plan.url)
+    const mime = contentType ?? mimeFor(plan.url)
+    return `data:${mime};base64,${buffer.toString('base64')}`
   } catch {
     return null
   }

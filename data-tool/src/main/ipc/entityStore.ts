@@ -4,6 +4,7 @@ import { dirname } from 'node:path'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
 import { dataDir, datasetFile, imagePath } from './paths'
+import { fetchImageBuffer } from './imageFetch'
 import type { InsertModeName, ImagePlan } from '@shared/types'
 
 /**
@@ -127,7 +128,6 @@ export async function performImageOp(rootPath: string, plan: ImagePlan): Promise
     await copyFile(plan.sourcePath, dest)
     return
   }
-  const res = await fetch(plan.url)
-  if (!res.ok) throw new Error(`Image download failed (${res.status}) for ${plan.url}`)
-  await writeFile(dest, Buffer.from(await res.arrayBuffer()))
+  const { buffer } = await fetchImageBuffer(plan.url)
+  await writeFile(dest, buffer)
 }
