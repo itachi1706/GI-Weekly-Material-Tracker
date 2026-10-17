@@ -135,7 +135,10 @@ const api = {
   validate: {
     /** Scan the dataset (report-only) and return structured findings. */
     run: (rootPath: string): Promise<ValidationReport> =>
-      ipcRenderer.invoke('validate:run', rootPath)
+      ipcRenderer.invoke('validate:run', rootPath),
+    /** Overwrite an existing image with the one at `url` (rejects if its real format doesn't match the extension). */
+    replaceImage: (rootPath: string, relativePath: string, url: string): Promise<void> =>
+      ipcRenderer.invoke('validate:replaceImage', rootPath, relativePath, url)
   }
 }
 

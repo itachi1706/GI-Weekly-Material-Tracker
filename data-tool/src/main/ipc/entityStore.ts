@@ -1,9 +1,10 @@
-import { readFile, readdir, writeFile, copyFile, mkdir } from 'node:fs/promises'
+import { readFile, readdir, writeFile, copyFile, constants } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
-import { dirname } from 'node:path'
 import { insertRecord, removeRecord, renameRecord } from '@shared/ordering'
 import { stringifyDataFile, withTrailingNewline, roundTrips } from '@shared/serialize'
-import { dataDir, datasetFile, imagePath } from './paths'
+import { dataDir, datasetFile } from './paths'
+import { fetchImageBuffer } from './imageFetch'
+import { resolveImageWriteTarget, replaceAtomically } from './imageWrite'
 import type { InsertModeName, ImagePlan } from '@shared/types'
 
 /**
@@ -121,13 +122,12 @@ export function assembleCommit<R>(
 /** Perform a pending image copy/download into images/ (no-op for an existing-file reference). */
 export async function performImageOp(rootPath: string, plan: ImagePlan): Promise<void> {
   if (plan.source === 'existing') return
-  const dest = imagePath(rootPath, plan.destRelative)
-  await mkdir(dirname(dest), { recursive: true })
+  const target = await resolveImageWriteTarget(rootPath, plan.destRelative, { mustExist: false })
   if (plan.source === 'localFile') {
-    await copyFile(plan.sourcePath, dest)
+    const { sourcePath } = plan
+    await replaceAtomically(target, (tmp) => copyFile(sourcePath, tmp, constants.COPYFILE_EXCL))
     return
   }
-  const res = await fetch(plan.url)
-  if (!res.ok) throw new Error(`Image download failed (${res.status}) for ${plan.url}`)
-  await writeFile(dest, Buffer.from(await res.arrayBuffer()))
+  const { buffer } = await fetchImageBuffer(plan.url)
+  await replaceAtomically(target, (tmp) => writeFile(tmp, buffer, { flag: 'wx' }))
 }

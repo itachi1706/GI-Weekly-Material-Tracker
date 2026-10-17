@@ -9,10 +9,10 @@
  * Report-only — never writes. Fix findings in the canonical data by hand (the phase-vs-map bug in
  * particular can't be safely auto-fixed: sometimes the MAP is the wrong side, not the phase).
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, openSync, readSync, closeSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { roundTrips } from '../src/shared/serialize.ts'
-import { validateDataset, formatReport, isDataFile } from '../src/shared/validate.ts'
+import { validateDataset, formatReport, isDataFile, IMAGE_HEADER_BYTES } from '../src/shared/validate.ts'
 import { resolveDataDir } from './paths.ts'
 
 const args = process.argv.slice(2)
@@ -25,7 +25,19 @@ const files = names.map((file) => ({ file, raw: readFileSync(join(dataDir, file)
 
 const findings = validateDataset(files, {
   imageExists: (rel) => existsSync(join(imagesDir, rel)),
-  roundTrips
+  roundTrips,
+  imageHeader: (rel) => {
+    let fd: number | null = null
+    try {
+      fd = openSync(join(imagesDir, rel), 'r')
+      const buf = Buffer.alloc(IMAGE_HEADER_BYTES)
+      return buf.subarray(0, readSync(fd, buf, 0, IMAGE_HEADER_BYTES, 0))
+    } catch {
+      return null // unreadable (e.g. a directory named *.png) — skip the format check, like the app does
+    } finally {
+      if (fd !== null) closeSync(fd)
+    }
+  }
 })
 
 console.log(formatReport(findings, names.length))

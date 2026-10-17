@@ -24,6 +24,8 @@ mac:
     - target: dmg
       arch: universal
   category: public.app-category.developer-tools
+  # Electron 44 dropped macOS 12; make the OS refuse to launch it there instead of crashing.
+  minimumSystemVersion: '13.0'
   # Unsigned build — no Apple Developer identity. Gatekeeper may warn on first launch
   # (right-click → Open, or `xattr -cr <app>`); electron-builder ad-hoc signs the universal
   # bundle (both the Intel x64 and Apple Silicon arm64 slices).
