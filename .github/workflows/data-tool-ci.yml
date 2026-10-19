@@ -61,7 +61,7 @@ jobs:
       - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build unsigned universal DMG
         run: npm run build:mac
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: datatool-dmg-ci
           path: data-tool/dist/*.dmg
@@ -89,7 +89,7 @@ jobs:
       - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build NSIS installer
         run: npm run build:win
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: datatool-exe-ci
           path: data-tool/dist/*.exe
