@@ -92,7 +92,7 @@ jobs:
         run: |
           cp build/app/outputs/apk/release/app-release.apk ./release
           cp build/app/outputs/apk/release/app-release.apk ./app-fatapk.apk
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: flutter-android-artifact-rel
           path: |
@@ -176,7 +176,7 @@ jobs:
         run: flutter build appbundle
       - name: Move App Bundle to location
         run: cp build/app/outputs/bundle/release/app-release.aab ./appbundle-signed.aab
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: flutter-android-aab-artifact-rel
           path: |
@@ -246,7 +246,7 @@ jobs:
           mkdir -p firebase/public
           mv build/web/* ./firebase/public
           zip -r webapp.zip ./firebase/public
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: flutter-web-artifact-rel
           path: |
@@ -501,7 +501,7 @@ jobs:
           cd release
           ls -lh .
           cd ..
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: flutter-unsigned-ipa-artifact-rel
           path: |
@@ -536,7 +536,7 @@ jobs:
       - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build unsigned universal DMG
         run: npm run build:mac
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: datatool-dmg-artifact-rel
           path: data-tool/dist/*.dmg
@@ -571,7 +571,7 @@ jobs:
       - run: npm ci --ignore-scripts # supply-chain hardening: block dependency lifecycle scripts (none are needed to build/package here)
       - name: Build NSIS installer
         run: npm run build:win
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: datatool-exe-artifact-rel
           # latest.yml + *.blockmap are the electron-updater metadata Windows self-update needs.
