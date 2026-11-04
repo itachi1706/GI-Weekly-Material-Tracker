@@ -4792,6 +4792,379 @@
       "hoyowiki": 2,
       "subCollection": {}
     },
+    "Mitya": {
+      "image": "Characters/Electro/Mitya.png",
+      "gender": "Male",
+      "birthday": "8/2",
+      "caption": "Rules Set at Naught",
+      "titles": [
+        "Specialist, Royal Energy Commission of Snezhnaya"
+      ],
+      "name": "Mitya",
+      "fullName": null,
+      "description": "An exceptionally ingenious energy specialist and a master of the fine art of \"schedule-dodging.\"",
+      "nation": "Snezhnaya",
+      "weapon": "Catalyst",
+      "rarity": 5,
+      "affiliation": "Royal Energy Commission of Snezhnaya, Armory Palace",
+      "constellation": "Nodus Gordianus",
+      "outfits": [
+        "Logical_Leap"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Charity",
+            "material3qty": 3,
+            "material4": "Chimeric_Core",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 2,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 4,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 6,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Charity",
+            "material3qty": 9,
+            "material4": "Symbiotic_Chimeric_Nucleus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 4,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 6,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 12,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Mask_of_the_Virtuous_Doctor",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Charity",
+            "material3qty": 16,
+            "material4": "Prime_Chimeric_Nexus",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Baseline_Stress_Test": {
+            "name": "Baseline Stress Test",
+            "effect": "The Detection Core created by the Elemental Skill Principle: Variable Detection is enhanced. Depending on the state of the Detection Core created:Steady State: All nearby party members gain 30 Elemental Mastery for each Gradient Beacon Mitya has;\nOverloaded: After nearby party members trigger Stellar-Conduct reactions, instead obtain 1 Gradient Beacon every 1.5s for 6s.",
+            "image": "Talents/Passive/Talent_Baseline_Stress_Test.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Explosive_Reagent_Safe_Limits_Exceeded": {
+            "name": "Explosive Reagent: Safe Limits Exceeded",
+            "effect": "The duration of Gradient Beacons is increased to 10s. Additionally, Mitya's CRIT Rate increases by 5% for 15s after creating a Gradient Beacon. This effect can stack up to 4 times.",
+            "image": "Talents/Passive/Talent_Explosive_Reagent_Safe_Limits_Exceeded.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Top-Secret_Protocol": {
+            "name": "Top-Secret Protocol",
+            "effect": "When party members trigger Superconduct, it will be changed to Stellar-Conduct. Stellar-Conduct reactions will no longer create Starlight Prisms, and will instead create 1 Gradient Beacon nearby every 1.5s for 3s. These Beacons can be carried by Mitya and transform the area around them into an even larger Polestar Field.\nAdditionally, the Base Stellar-Conduct DMG dealt by all nearby party members will be increased based on Mitya's Elemental Mastery: Every point of Elemental Mastery he has increases Base Stellar-Conduct DMG by 0.028%. The maximum Base DMG increase that can be gained this way is 14%. While within a Polestar Field, Mitya will also enter the Radiance: Stellar-Conduct state.",
+            "image": "Talents/Passive/Talent_Top-Secret_Protocol.png",
+            "order": 2,
+            "type": "Passive 3 (Stellar Jubilee)"
+          },
+          "Energy_Catalysis": {
+            "name": "Energy Catalysis",
+            "effect": "When destructible rocks are nearby, Detection Core: Steady State can quickly clear them.\nAdditionally, when Mitya is in the party, creating Prime Ice Construct: Basic Heat Source does not consume Kresnik Energy.",
+            "image": "Talents/Passive/Talent_Energy_Catalysis.png",
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Chain_Reaction": {
+            "name": "Chain Reaction",
+            "effect": "Normal Attack\nPerforms a maximum of 3 attacks that deal Electro DMG.\n\nCharged Attack\nConsumes a certain amount of Stamina to deal AoE Electro DMG to the area in front after a short casting time.\nMitya will instead perform the special Charged Attack Gradient Detonation, which consumes no Stamina, if a Detection Core: Overload created by Mitya himself is currently on the field and he has at least 1 Gradient Beacon: Deals 1 instance of AoE Electro DMG to the area in front and continuously consumes Gradient Beacons while held. Each Gradient Beacon consumed deals 1 instance of AoE Electro DMG to the area in front that is considered Stellar-Conduct reaction DMG.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE Electro DMG upon impact.",
+            "image": "Talents/Normal/Catalyst_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Principle_Variable_Detection": {
+            "name": "Principle: Variable Detection",
+            "effect": "Conducts a theoretically relatively safe experiment at a theoretically relatively safe yield, dealing AoE Electro DMG and creating a Detection Core in different ways depending on whether the Skill is tapped or held.\n\nTapping the Elemental Skill Principle: Variable Detection again within 6s after using it changes the Detection Core's state. The Detection Core's state can be changed in this way every 1.5s.",
+            "image": "Talents/Skill/Talent_Principle_Variable_Detection.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Analysis_Gradient_Theory": {
+            "name": "Analysis: Gradient Theory",
+            "effect": "Let the elements burst forth like inspiration itself! Deals AoE Electro DMG and creates 3 Gradient Beacons.",
+            "image": "Talents/Burst/Talent_Analysis_Gradient_Theory.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "The Observer Seeking What Is Missing",
+          "effect": "The maximum number of Gradient Beacons Mitya can carry is increased to 5. Using the Elemental Skill Principle: Variable Detection additionally creates 1 Gradient Beacon.\nWhile the Detection Core is present, your own active character's CRIT DMG is increased by 40%.\nAdditionally, Mitya regenerates 10 Elemental Energy when a Gradient Beacon is created. This effect can be triggered once every 8s.",
+          "image": "Constellation/The_Observer_Seeking_What_Is_Missing.png"
+        },
+        "2": {
+          "name": "The Matter That Slumbers Beyond Inertness",
+          "effect": "While the Detection Core is present, all opponents within the Polestar Field have their Cryo RES and Electro RES decreased by 20%.\nAdditionally, if the Detection Core created is:Steady State: All nearby party members gain 123 Elemental Mastery;\nOverloaded: Your active character gains 234 Elemental Mastery.",
+          "image": "Constellation/The_Matter_That_Slumbers_Beyond_Inertness.png"
+        },
+        "3": {
+          "name": "The Knotted String of Invariant Topology",
+          "effect": "Increases the Level of the Elemental Skill Principle: Variable Detection by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/The_Knotted_String_of_Invariant_Topology.png"
+        },
+        "4": {
+          "name": "The Isotopes Born of Decay",
+          "effect": "Detection Cores created by Mitya himself deals 1 instance of AoE Electro DMG equal to 300% of Mitya's Elemental Mastery to nearby opponents for every 5 Gradient Beacons consumed while it is on the field. This DMG is considered Stellar-Conduct reaction DMG.",
+          "image": "Constellation/The_Isotopes_Born_of_Decay.png"
+        },
+        "5": {
+          "name": "The Periodic Law That Orders All",
+          "effect": "Increases the Level of Normal Attack: Chain Reaction by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/The_Periodic_Law_That_Orders_All.png"
+        },
+        "6": {
+          "name": "Elemental Transition at the Gate of Reason",
+          "effect": "Detection Core is enhanced. If the Detection Core:\n- Is in the Steady State: Detection Core deals 115% of its original DMG. \n- Is Overloaded: There is a 34% chance to create 1 new Gradient Beacon whenever Mitya consumes a Gradient Beacon with the Detection Core.\nAdditionally, Stellar-Conduct reaction DMG dealt by all nearby party members is Elevated by 20%.",
+          "image": "Constellation/Elemental_Transition_at_the_Gate_of_Reason.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Chimeric_Core",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Kristallfold",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Shattered_Stability_Anchor",
+          "level": 40,
+          "material4": "Chimeric_Core",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Kristallfold",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Shattered_Stability_Anchor",
+          "level": 50,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Kristallfold",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Shattered_Stability_Anchor",
+          "level": 60,
+          "material4": "Symbiotic_Chimeric_Nucleus",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Kristallfold",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Shattered_Stability_Anchor",
+          "level": 70,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Kristallfold",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Shattered_Stability_Anchor",
+          "level": 80,
+          "material4": "Prime_Chimeric_Nexus",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Kristallfold",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Shattered_Stability_Anchor",
+          "local_speciality": "Kristallfold"
+        },
+        "talents": {
+          "common1": "Chimeric_Core",
+          "common2": "Symbiotic_Chimeric_Nucleus",
+          "common3": "Prime_Chimeric_Nexus",
+          "mastery1": "Teachings_of_Charity",
+          "mastery2": "Guide_to_Charity",
+          "mastery3": "Philosophies_of_Charity",
+          "weekly_boss_drop": "Mask_of_the_Virtuous_Doctor",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "An energy research specialist at the Royal Energy Commission, enstrusted with important, confidential projects. Geniuses tend to be a handful, and he is no exception.",
+      "paimonmoepath": "characters/mitya",
+      "genshinggpath": "characters/mitya",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Mitya",
+      "hoyowiki": 11827,
+      "subCollection": {}
+    },
     "Ororon": {
       "image": "Characters/Electro/Ororon.png",
       "gender": "Male",
@@ -6272,6 +6645,379 @@
       "released": true,
       "wiki": "https://genshin-impact.fandom.com/wiki/Sethos",
       "hoyowiki": 5598,
+      "subCollection": {}
+    },
+    "Valeriy": {
+      "image": "Characters/Electro/Valeriy.png",
+      "gender": "Male",
+      "birthday": "24/3",
+      "caption": "Fort Fulguration",
+      "titles": [
+        "Commander of the Special Assignments Battalion"
+      ],
+      "name": "Valeriy",
+      "fullName": "Valeriy Ivanovich Denisov",
+      "description": "Commander of the Special Assignments Battalion. A soldier skilled at protecting key personnel and keeping operations on track.",
+      "nation": "Snezhnaya",
+      "weapon": "Sword",
+      "rarity": 4,
+      "affiliation": "Fatui Grenadier Guards First Regiment, Armory Palace",
+      "constellation": "Ursus Magnus",
+      "outfits": [
+        "Steel_and_Sash"
+      ],
+      "talents": {
+        "ascension": {
+          "2": {
+            "mora": 12500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Teachings_of_Glory",
+            "material3qty": 3,
+            "material4": "Ethereal_Glimmershard",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery1",
+            "material4type": "common1"
+          },
+          "3": {
+            "mora": 17500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Glory",
+            "material3qty": 2,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 3,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "4": {
+            "mora": 25000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Glory",
+            "material3qty": 4,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "5": {
+            "mora": 30000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Glory",
+            "material3qty": 6,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "6": {
+            "mora": 37500,
+            "material1": null,
+            "material1qty": 0,
+            "material2": null,
+            "material2qty": 0,
+            "material3": "Guide_to_Glory",
+            "material3qty": 9,
+            "material4": "Ethereal_Crystal",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": null,
+            "material3type": "mastery2",
+            "material4type": "common2"
+          },
+          "7": {
+            "mora": 120000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Counterfeit_Resin",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Glory",
+            "material3qty": 4,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 4,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "8": {
+            "mora": 260000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Counterfeit_Resin",
+            "material2qty": 1,
+            "material3": "Philosophies_of_Glory",
+            "material3qty": 6,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 6,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "9": {
+            "mora": 450000,
+            "material1": null,
+            "material1qty": 0,
+            "material2": "Counterfeit_Resin",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Glory",
+            "material3qty": 12,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 9,
+            "material1type": null,
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          },
+          "10": {
+            "mora": 700000,
+            "material1": "Crown_of_Insight",
+            "material1qty": 1,
+            "material2": "Counterfeit_Resin",
+            "material2qty": 2,
+            "material3": "Philosophies_of_Glory",
+            "material3qty": 16,
+            "material4": "Ethereal_Crystalscale_Stone",
+            "material4qty": 12,
+            "material1type": "crown",
+            "material2type": "weekly_boss_drop",
+            "material3type": "mastery3",
+            "material4type": "common3"
+          }
+        },
+        "passives": {
+          "Advance_With_the_Creeping_Barrage": {
+            "name": "Advance With the Creeping Barrage",
+            "effect": "Valeriy gains 5 Impact Momentum whenever another nearby active character in the party hits an opponent with an attack whose Elemental Type is Electro while the Thunderburst Shells from his Elemental Burst Focused Fire: Lightning Salvo are falling. He can gain up to 80 Impact Momentum in this way after each use of his Elemental Burst.",
+            "image": "Talents/Passive/Talent_Advance_With_the_Creeping_Barrage.png",
+            "order": 0,
+            "type": "Passive 1"
+          },
+          "Into_the_Breach": {
+            "name": "Into the Breach",
+            "effect": "Offensive Directive is enhanced based on the amount of Impact Momentum consumed when performing his special Charged Attack Direct-Fire Mortar: Point-Blank Bombardment. Each point consumed further increases the DMG granted by Offensive Directive. If Valeriy is:\n- In the Radiance: Stellar-Conduct state: Each point of Impact Momentum consumed increases this DMG by an amount equal to 0.9% of Valeriy's ATK;\n- Not in the Radiance: Stellar-Conduct state: Each point of Impact Momentum consumed increases this DMG by an amount equal to 0.3% of Valeriy's ATK.",
+            "image": "Talents/Passive/Talent_Into_the_Breach.png",
+            "order": 1,
+            "type": "Passive 2"
+          },
+          "Subzero_Conditioning": {
+            "name": "Subzero Conditioning",
+            "effect": "Valeriy enters the Radiance: Stellar-Conduct state while within a Polestar Field.",
+            "image": null,
+            "order": 2,
+            "type": "Passive 3 (Stellar Jubilee)"
+          },
+          "Tundra_Operational_Intelligence": {
+            "name": "Tundra Operational Intelligence",
+            "effect": "Gains 25% more rewards when dispatched on a Snezhnaya (not including Nod-Krai) Expedition for 20 hours.",
+            "image": null,
+            "order": 3,
+            "type": "Passive 4 (Utility)"
+          }
+        },
+        "attack": {
+          "Guard_Tactics_Sword_and_Shield": {
+            "name": "Guard Tactics: Sword and Shield",
+            "effect": "Normal Attack\nPerforms up to 3 consecutive sword strikes.\n\nCharged Attack\nConsumes a certain amount of Stamina to leap forward and slam the ground, dealing Physical DMG to nearby opponents.\nWhen Valeriy has at least 40 Impact Momentum, he will consume all Impact Momentum to instead perform the special Charged Attack Direct-Fire Mortar: Point-Blank Bombardment.\n\nPlunging Attack\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "image": "Talents/Normal/Sword_Electro.png",
+            "order": 0,
+            "type": "Normal/Charged Attack"
+          },
+          "Active_Defense_Bastion_Charge": {
+            "name": "Active Defense: Bastion Charge",
+            "effect": "Valeriy raises his shield cannon and charges forward, dealing AoE Electro DMG, gaining 40 Impact Momentum, and deploying a Supercharged Shield.\nThe Supercharged Shield's DMG Absorption scales with Valeriy's ATK, and has 250% absorption efficiency against Electro DMG.",
+            "image": "Talents/Skill/Talent_Active_Defense_Bastion_Charge.png",
+            "order": 1,
+            "type": "Elemental Skill"
+          },
+          "Focused_Fire_Lightning_Salvo": {
+            "name": "Focused Fire: Lightning Salvo",
+            "effect": "Deals AoE Electro DMG to nearby opponents and fires a Thunderburst Shell high into the air. The Thunderburst Shell disperses into a barrage of projectiles that rain down, dealing AoE Electro DMG to nearby opponents.",
+            "image": "Talents/Burst/Talent_Focused_Fire_Lightning_Salvo.png",
+            "order": 2,
+            "type": "Elemental Burst"
+          }
+        }
+      },
+      "constellations": {
+        "1": {
+          "name": "The Cadence of Suppressive Fire",
+          "effect": "Valeriy regenerates 6 Elemental Energy after performing the special Charged Attack Direct-Fire Mortar: Point-Blank Bombardment. For every 10 Impact Momentum consumed beyond 40 when performing this special Charged Attack, he regenerates an additional 1.5 Elemental Energy. Each time he performs Direct-Fire Mortar: Point-Blank Bombardment, he can regenerate up to 15 Elemental Energy in this way. This effect can trigger once every 15s.\nAdditionally, each time Valeriy enters combat, the first time he uses his Elemental Skill Active Defense: Bastion Charge, he gains an additional amount of Impact Momentum equal to 150% of the amount normally gained.",
+          "image": "Constellation/The_Cadence_of_Suppressive_Fire.png"
+        },
+        "2": {
+          "name": "Ranks That Charge as One",
+          "effect": "All nearby party members gain 100 Elemental Mastery for 18s after Valeriy uses his Elemental Skill Active Defense: Bastion Charge.\nAdditionally, while protected by a Supercharged Shield, if Valeriy is already at maximum Impact Momentum, any further Impact Momentum he would gain is instead converted into increased DMG Absorption for the shield. Each point of excess Impact Momentum increases the Supercharged Shield's DMG Absorption by an amount equal to 8% of Valeriy's ATK. Up to 20 excess Impact Momentum can be converted in this way.",
+          "image": "Constellation/Ranks_That_Charge_as_One.png"
+        },
+        "3": {
+          "name": "Vigilance at Close Quarters",
+          "effect": "Increases the Level of Normal Attack Guard Tactics: Sword and Shield by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Vigilance_at_Close_Quarters.png"
+        },
+        "4": {
+          "name": "Fortitude Unshaken by Attrition",
+          "effect": "Impact Momentum's limit is increased by 30, and its charging efficiency is increased by 30%.\nAdditionally, the Ascension Talent Advance With the Creeping Barrage is enhanced: The maximum amount of Impact Momentum that can be gained from this Talent after using the Elemental Burst is 104. You must unlock the Ascension Talent Advance With the Creeping Barrage to gain access to this effect.",
+          "image": "Constellation/Fortitude_Unshaken_by_Attrition.png"
+        },
+        "5": {
+          "name": "Resolve to Divide and Destroy",
+          "effect": "Increases the Level of the Elemental Skill Active Defense: Bastion Charge by 3.\nMaximum upgrade level is 15.",
+          "image": "Constellation/Resolve_to_Divide_and_Destroy.png"
+        },
+        "6": {
+          "name": "The Strength to Breach Enemy Lines",
+          "effect": "The special Charged Attack Direct-Fire Mortar: Point-Blank Bombardment and Thunderburst Shells from Elemental Burst Focused Fire: Lightning Salvo are enhanced: Their DMG is increased by 100%, and opponents they hit have the CRIT Rate of Electro DMG they take increased by 10% for 7s. If the Electro DMG taken is Stellar-Conduct reaction DMG, that DMG instance's CRIT DMG is also increased by 40%.",
+          "image": "Constellation/The_Strength_to_Breach_Enemy_Lines.png"
+        }
+      },
+      "ascension": {
+        "1": {
+          "material2qty": 0,
+          "material1": "Vajrada_Amethyst_Silver",
+          "material1qty": 1,
+          "mora": 20000,
+          "material2": null,
+          "level": 20,
+          "material4": "Ethereal_Glimmershard",
+          "material4qty": 3,
+          "material3qty": 3,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem1",
+          "material2type": null,
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "2": {
+          "material2qty": 2,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 3,
+          "mora": 40000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 40,
+          "material4": "Ethereal_Glimmershard",
+          "material4qty": 15,
+          "material3qty": 10,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common1"
+        },
+        "3": {
+          "material2qty": 4,
+          "material1": "Vajrada_Amethyst_Fragment",
+          "material1qty": 6,
+          "mora": 60000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 50,
+          "material4": "Ethereal_Crystal",
+          "material4qty": 12,
+          "material3qty": 20,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem2",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "4": {
+          "material2qty": 8,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 3,
+          "mora": 80000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 60,
+          "material4": "Ethereal_Crystal",
+          "material4qty": 18,
+          "material3qty": 30,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common2"
+        },
+        "5": {
+          "material2qty": 12,
+          "material1": "Vajrada_Amethyst_Chunk",
+          "material1qty": 6,
+          "mora": 100000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 70,
+          "material4": "Ethereal_Crystalscale_Stone",
+          "material4qty": 12,
+          "material3qty": 45,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem3",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        },
+        "6": {
+          "material2qty": 20,
+          "material1": "Vajrada_Amethyst_Gemstone",
+          "material1qty": 6,
+          "mora": 120000,
+          "material2": "Severed_Tail_of_the_Sky-Roamer",
+          "level": 80,
+          "material4": "Ethereal_Crystalscale_Stone",
+          "material4qty": 24,
+          "material3qty": 60,
+          "material3": "Fairy_Wormwood",
+          "material1type": "gem4",
+          "material2type": "boss_drop",
+          "material3type": "local_speciality",
+          "material4type": "common3"
+        }
+      },
+      "materials": {
+        "ascension": {
+          "common1": "Ethereal_Glimmershard",
+          "common2": "Ethereal_Crystal",
+          "common3": "Ethereal_Crystalscale_Stone",
+          "gem1": "Vajrada_Amethyst_Silver",
+          "gem2": "Vajrada_Amethyst_Fragment",
+          "gem3": "Vajrada_Amethyst_Chunk",
+          "gem4": "Vajrada_Amethyst_Gemstone",
+          "boss_drop": "Severed_Tail_of_the_Sky-Roamer",
+          "local_speciality": "Fairy_Wormwood"
+        },
+        "talents": {
+          "common1": "Ethereal_Glimmershard",
+          "common2": "Ethereal_Crystal",
+          "common3": "Ethereal_Crystalscale_Stone",
+          "mastery1": "Teachings_of_Glory",
+          "mastery2": "Guide_to_Glory",
+          "mastery3": "Philosophies_of_Glory",
+          "weekly_boss_drop": "Counterfeit_Resin",
+          "crown": "Crown_of_Insight"
+        }
+      },
+      "introduction": "The distinguished Commander of the Special Assignments Battalion, Armory Palace Royal Grenadier Guards, First Regiment. Whether protecting key personnel or keeping work on schedule, he is a steadfast shield.",
+      "paimonmoepath": "characters/valeriy",
+      "genshinggpath": "characters/valeriy",
+      "element": "Electro",
+      "released": true,
+      "wiki": "https://genshin-impact.fandom.com/wiki/Valeriy",
+      "hoyowiki": 11828,
       "subCollection": {}
     },
     "Varesa": {
