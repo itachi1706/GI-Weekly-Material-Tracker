@@ -66,7 +66,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
+      - uses: benjlevesque/short-sha@927c81f2595b42017c0183c9f6f3336644908afa # v5.0
         id: short-sha
         with:
           length: 8
@@ -156,7 +156,7 @@ jobs:
         run: |
           echo $FLUTTER_KEYSTORE | base64 -d > android/app/flutter.jks
           echo $KEY_PROPERTIES | base64 -d > android/key.properties
-      - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
+      - uses: benjlevesque/short-sha@927c81f2595b42017c0183c9f6f3336644908afa # v5.0
         id: short-sha
         with:
           length: 8
@@ -226,7 +226,7 @@ jobs:
         run: |
           echo $GOOGLE_SVC_DART | base64 -d > lib/firebase_options.dart
           echo $PUB_SEC_DART | base64 -d > lib/app_secrets.dart
-      - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
+      - uses: benjlevesque/short-sha@927c81f2595b42017c0183c9f6f3336644908afa # v5.0
         id: short-sha
         with:
           length: 8
@@ -341,7 +341,7 @@ jobs:
           path: datatool-win
       - name: Git Commit Data
         uses: rlespinasse/git-commit-data-action@d3d5d8e0de9e9545cb1fadd33f9664db98c64cc7 # v1.5.1
-      - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
+      - uses: benjlevesque/short-sha@927c81f2595b42017c0183c9f6f3336644908afa # v5.0
         id: short-sha
         with:
           length: 8
@@ -454,7 +454,7 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Test Flutter Doctor
         run: flutter doctor -v  
-      - uses: benjlevesque/short-sha@dbe07338b37c456ce06d23409b35a56a7815eef4 # v4.0
+      - uses: benjlevesque/short-sha@927c81f2595b42017c0183c9f6f3336644908afa # v5.0
         id: short-sha
         with:
           length: 8
