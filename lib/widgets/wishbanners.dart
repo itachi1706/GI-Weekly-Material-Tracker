@@ -12,7 +12,7 @@ import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 final FirebaseDatabase db = FirebaseDatabase.instance;
@@ -458,10 +458,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: [
-                const Text(
-                  '5* RATES',
-                  style: TextStyle(fontWeight: .bold),
-                ),
+                const Text('5* RATES', style: TextStyle(fontWeight: .bold)),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(

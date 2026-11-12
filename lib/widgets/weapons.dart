@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
@@ -11,7 +12,6 @@ import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
@@ -114,9 +114,7 @@ class WeaponListGridState extends State<WeaponListGrid> {
         var dt = GridData.getDataListFilteredRelease(snapshot.data!.docs);
 
         return GridView.count(
-          crossAxisCount: (Get.context!.orientation == .portrait)
-              ? 3
-              : 6,
+          crossAxisCount: (Get.context!.orientation == .portrait) ? 3 : 6,
           children: dt.map((document) {
             return GestureDetector(
               onTap: () => Get.toNamed('/weapons/${document.id}'),
