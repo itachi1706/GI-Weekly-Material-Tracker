@@ -202,20 +202,22 @@ class WishPageCard extends StatelessWidget {
 
   List<Widget> _getRateUps() {
     List<Widget> finalWidgets = [];
+    var hasRateUpChar = data.rateUpCharacters.isNotEmpty;
+    var hasRateUpWep = data.rateUpWeapons.isNotEmpty;
 
-    if (data.rateUpCharacters.isNotEmpty || data.rateUpWeapons.isNotEmpty) {
+    if (hasRateUpChar || hasRateUpWep) {
       finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
       finalWidgets.add(const Text("Rate Up", style: TextStyle(fontSize: 18)));
     }
 
     List<Widget> rowChild = [];
-    if (data.rateUpCharacters.isNotEmpty) {
+    if (hasRateUpChar) {
       for (var character in data.rateUpCharacters) {
         rowChild.add(_getRateUpStack(characterInfo[character]?.image));
       }
     }
 
-    if (data.rateUpWeapons.isNotEmpty) {
+    if (hasRateUpWep) {
       for (var weapon in data.rateUpWeapons) {
         rowChild.add(_getRateUpStack(weaponInfo[weapon]?.image));
       }

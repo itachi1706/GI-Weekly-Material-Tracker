@@ -77,13 +77,13 @@ dev_dependencies:
   # We disable integration test as we are not running any currently
   #integration_test:
   #  sdk: flutter
-  dart_code_linter: ^4.2.0
+  dart_code_linter: ^4.4.5
   # dart run dependency_validator
-  dependency_validator: ^5.0.5
+  dependency_validator: ^5.1.0
   dot_shorthand_converter: ^0.0.3
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
-  flutter_native_splash: ^2.4.7
+  flutter_native_splash: ^2.4.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
