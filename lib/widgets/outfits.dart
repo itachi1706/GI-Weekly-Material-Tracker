@@ -134,7 +134,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
       tooltip: 'View 3D Model (ALPHA)',
       backgroundColor: _rarityColor,
       foregroundColor: GridUtils.getHeaderColor(context),
-      child: Icon(MdiIcons.tshirtCrew),
+      child: const Icon(MdiIcons.tshirtCrew),
     );
   }
 

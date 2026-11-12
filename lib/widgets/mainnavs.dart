@@ -55,7 +55,7 @@ class TrackingPageState extends State<TrackingPage>
         bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           IconButton(
-            icon: Icon(MdiIcons.fileDocument),
+            icon: const Icon(MdiIcons.fileDocument),
             tooltip: 'View Consolidated Material List',
             onPressed: () => Get.toNamed('/globalTracking'),
           ),
@@ -237,8 +237,8 @@ class DictionaryPageState extends State<DictionaryPage>
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),
-          NavigationDestination(icon: Icon(MdiIcons.sword), label: 'Weapons'),
-          NavigationDestination(
+          const NavigationDestination(icon: Icon(MdiIcons.sword), label: 'Weapons'),
+          const NavigationDestination(
             icon: Icon(MdiIcons.diamondStone),
             label: 'Materials',
           ),

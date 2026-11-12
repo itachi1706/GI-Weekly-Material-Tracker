@@ -247,7 +247,7 @@ class WishPageCard extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           GridData.getImageAssetFromFirebase(imageUrl, height: 32),
-          Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20),
+          const Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20),
         ],
       ),
     );

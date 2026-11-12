@@ -268,7 +268,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [
-            Icon(MdiIcons.swordCross),
+            const Icon(MdiIcons.swordCross),
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: (maxBaseAtk == null)
@@ -283,7 +283,7 @@ class WeaponInfoPageState extends State<WeaponInfoPage> {
         padding: const EdgeInsets.all(8),
         child: Row(
           children: [
-            Icon(MdiIcons.shield),
+            const Icon(MdiIcons.shield),
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
               child: (maxSecondaryStat == null)
