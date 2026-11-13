@@ -302,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -x \"${PODS_ROOT}/FirebaseCrashlytics/run\" ]; then\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\nfi\n";
+			shellScript = "# Locate Crashlytics run script: CocoaPods, Xcode DerivedData (SPM), or Flutter build dir (SPM)\nfor candidate in \\\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\" \\\n  \"${OBJROOT%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\" \\\n  \"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\" \\\n  \"${PROJECT_DIR}/../build/ios/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"; do\n  if [ -x \"$candidate\" ]; then\n    exec \"$candidate\"\n  fi\ndone\necho \"error: Firebase Crashlytics run script not found\"\nexit 1\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
