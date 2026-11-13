@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
-import 'package:gi_weekly_material_tracker/placeholder.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -51,7 +50,7 @@ class NotificationManager {
       iOS: initializationSettingsIOS,
     );
     await _plugin!.initialize(
-      initializationSettings,
+      settings: initializationSettings,
       onDidReceiveNotificationResponse: selectNotification,
     );
 
@@ -101,7 +100,7 @@ class NotificationManager {
           .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin
           >()!
-          .deleteNotificationChannel(channelId);
+          .deleteNotificationChannel(channelId: channelId);
       if (!silent) {
         Util.showSnackbarQuick(Get.context!, 'Notification Channel deleted');
       } else {
@@ -169,7 +168,7 @@ class NotificationManager {
     bool resetNotificationChannel = false,
   }) async {
     var data = getParametricTransformerMessages();
-    await _plugin!.cancel(data[0], tag: 'weekly_parametric');
+    await _plugin!.cancel(id: data[0], tag: 'weekly_parametric');
     debugPrint('Deleted Parametric Transformer Reminder');
 
     if (resetNotificationChannel) {
@@ -204,11 +203,11 @@ class NotificationManager {
         }
 
         await _plugin!.zonedSchedule(
-          data[0],
-          data[1],
-          data[2],
-          remindTime,
-          craftParametricTransformerReminder(),
+          id: data[0],
+          title: data[1],
+          body: data[2],
+          scheduledDate: remindTime,
+          notificationDetails: craftParametricTransformerReminder(),
           payload: 'parametric-weekly',
           androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         );
@@ -227,7 +226,7 @@ class NotificationManager {
     bool resetNotificationChannel = false,
   }) async {
     var data = getDailyCheckInMessages();
-    await _plugin!.cancel(data[0], tag: 'daily_forum');
+    await _plugin!.cancel(id: data[0], tag: 'daily_forum');
     debugPrint('Deleted Daily Forum Reminder');
 
     if (resetNotificationChannel) {
@@ -244,11 +243,11 @@ class NotificationManager {
       }
 
       await _plugin!.zonedSchedule(
-        data[0],
-        data[1],
-        data[2],
-        _nextInstanceOfMidnight(),
-        craftDailyForumReminder(),
+        id: data[0],
+        title: data[1],
+        body: data[2],
+        scheduledDate: _nextInstanceOfMidnight(),
+        notificationDetails: craftDailyForumReminder(),
         matchDateTimeComponents: DateTimeComponents.time,
         payload: 'forum-login',
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
@@ -320,10 +319,10 @@ class NotificationManager {
     String? payload,
   }) async {
     await _plugin!.show(
-      data[0],
-      data[1],
-      data[2],
-      notificationDetails,
+      id: data[0],
+      title: data[1],
+      body: data[2],
+      notificationDetails: notificationDetails,
       payload: (payload != null) ? payload : null,
     );
   }
