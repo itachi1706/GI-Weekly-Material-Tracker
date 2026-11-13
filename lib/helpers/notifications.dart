@@ -41,13 +41,12 @@ class NotificationManager {
     const initializationSettingsAndroid = AndroidInitializationSettings(
       'splash',
     );
-    final initializationSettingsIOS = DarwinInitializationSettings(
-      onDidReceiveLocalNotification: onDidReceiveLocalNotification,
+    const initializationSettingsIOS = DarwinInitializationSettings(
       requestSoundPermission: true,
       requestBadgePermission: true,
       requestAlertPermission: true,
     );
-    final initializationSettings = InitializationSettings(
+    const initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
       iOS: initializationSettingsIOS,
     );
@@ -60,15 +59,6 @@ class NotificationManager {
     tz.setLocalLocation(tz.getLocation('Asia/Singapore'));
 
     debugPrint('Initializing Notification Manager');
-  }
-
-  void onDidReceiveLocalNotification(
-    int id,
-    String? title,
-    String? body,
-    String? payload,
-  ) {
-    PlaceholderUtil.showUnimplementedSnackbar(Get.context!);
   }
 
   Future rescheduleAllScheduledReminders() async {
@@ -219,8 +209,6 @@ class NotificationManager {
           data[2],
           remindTime,
           craftParametricTransformerReminder(),
-          uiLocalNotificationDateInterpretation:
-              UILocalNotificationDateInterpretation.absoluteTime,
           payload: 'parametric-weekly',
           androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         );
@@ -261,8 +249,6 @@ class NotificationManager {
         data[2],
         _nextInstanceOfMidnight(),
         craftDailyForumReminder(),
-        uiLocalNotificationDateInterpretation:
-            UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.time,
         payload: 'forum-login',
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
@@ -289,8 +275,13 @@ class NotificationManager {
       tag: 'weekly_parametric',
     );
 
+    const iOSNotificationDetails = DarwinNotificationDetails(
+      threadIdentifier: 'notify_parametric',
+    );
+
     const platformChannelSpecifics = NotificationDetails(
       android: androidNotificationDetails,
+      iOS: iOSNotificationDetails,
     );
 
     return platformChannelSpecifics;
@@ -312,18 +303,22 @@ class NotificationManager {
       autoCancel: true,
       tag: 'daily_forum',
     );
+    const iOSNotificationDetails = DarwinNotificationDetails(
+      threadIdentifier: 'notify_forum',
+    );
     const platformChannelSpecifics = NotificationDetails(
       android: androidNotificationDetails,
+      iOS: iOSNotificationDetails,
     );
 
     return platformChannelSpecifics;
   }
 
   Future<void> showNotification(
-      List<dynamic> data,
-      NotificationDetails notificationDetails, {
-        String? payload,
-      }) async {
+    List<dynamic> data,
+    NotificationDetails notificationDetails, {
+    String? payload,
+  }) async {
     await _plugin!.show(
       data[0],
       data[1],
@@ -342,6 +337,7 @@ class NotificationManager {
     );
   }
 
+  // TODO: Add support for web (https://pub.dev/packages/flutter_local_notifications#web-setup)
   Future<bool> _hasNotificationPermission() async {
     debugPrint('Ensuring we have permissions');
     if (_plugin == null) return false;
