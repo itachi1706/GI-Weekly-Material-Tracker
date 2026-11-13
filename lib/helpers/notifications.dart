@@ -336,7 +336,6 @@ class NotificationManager {
     );
   }
 
-  // TODO: Add support for web (https://pub.dev/packages/flutter_local_notifications#web-setup)
   Future<bool> _hasNotificationPermission() async {
     debugPrint('Ensuring we have permissions');
     if (_plugin == null) return false;
