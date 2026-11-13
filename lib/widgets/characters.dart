@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,6 @@ import 'package:gi_weekly_material_tracker/models/materialdata.dart';
 import 'package:gi_weekly_material_tracker/models/trackdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/outfits.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
 
@@ -127,8 +127,7 @@ class CharacterListGridState extends State<CharacterListGrid> {
         }
 
         return GridView.count(
-          crossAxisCount:
-              (MediaQuery.of(context).orientation == .portrait)
+          crossAxisCount: (MediaQuery.of(context).orientation == .portrait)
               ? 3
               : 6,
           children: dt.map((document) {
@@ -243,7 +242,7 @@ class CharacterInfoMainPageState extends State<CharacterInfoMainPage> {
               tooltip: 'View Wiki',
             ),
             IconButton(
-              icon: Icon(MdiIcons.swordCross),
+              icon: const Icon(MdiIcons.swordCross),
               onPressed: _openCharBuildGuide,
               tooltip: 'Build Guide ($_bgSource)',
             ),
@@ -355,7 +354,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(MdiIcons.weatherNight),
+                const Icon(MdiIcons.weatherNight),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(widget.info!.constellation!),
@@ -369,7 +368,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                Icon(MdiIcons.swordCross),
+                const Icon(MdiIcons.swordCross),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
                   child: Text(widget.info!.weapon!),
@@ -896,7 +895,7 @@ class CharacterInfoPageState extends State<CharacterInfoPage> {
     }
 
     if (name.startsWith('Traveler')) {
-      return Icon(MdiIcons.genderMaleFemale);
+      return const Icon(MdiIcons.genderMaleFemale);
     }
 
     return Icon(icon, color: color);

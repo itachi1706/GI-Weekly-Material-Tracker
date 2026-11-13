@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
 import 'package:gi_weekly_material_tracker/models/outfitdata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -73,8 +73,7 @@ class OutfitListGridState extends State<OutfitListGrid> {
         }
 
         return GridView.count(
-          crossAxisCount:
-              (MediaQuery.of(context).orientation == .portrait)
+          crossAxisCount: (MediaQuery.of(context).orientation == .portrait)
               ? 3
               : 6,
           children: dt.map((doc) {
@@ -135,7 +134,7 @@ class OutfitInfoMainPageState extends State<OutfitInfoMainPage> {
       tooltip: 'View 3D Model (ALPHA)',
       backgroundColor: _rarityColor,
       foregroundColor: GridUtils.getHeaderColor(context),
-      child: Icon(MdiIcons.tshirtCrew),
+      child: const Icon(MdiIcons.tshirtCrew),
     );
   }
 

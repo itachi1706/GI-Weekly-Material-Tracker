@@ -12,12 +12,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/notifications.dart';
 import 'package:gi_weekly_material_tracker/helpers/tracker.dart';
 import 'package:gi_weekly_material_tracker/models/settings_selector_configuration.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -359,7 +359,7 @@ class SettingsPageState extends State<SettingsPage> {
       SettingsTile(
         title: const Text('Build Guide Source'),
         value: Text(_buildSource),
-        leading: Icon(MdiIcons.swordCross),
+        leading: const Icon(MdiIcons.swordCross),
         onPressed: (_) => _launchSelectorPage(
           _buildGuide,
           "build_guide_source",
@@ -383,7 +383,7 @@ class SettingsPageState extends State<SettingsPage> {
       SettingsTile(
         title: const Text('Game Server Location'),
         value: Text(_location),
-        leading: Icon(MdiIcons.server),
+        leading: const Icon(MdiIcons.server),
         onPressed: (_) => _launchSelectorPage(
           _region,
           'location',
@@ -395,7 +395,7 @@ class SettingsPageState extends State<SettingsPage> {
       SettingsTile(
         title: const Text('Mobile Game Launcher'),
         value: Text(_gameLauncher),
-        leading: Icon(MdiIcons.controller),
+        leading: const Icon(MdiIcons.controller),
         onPressed: (_) => _launchSelectorPage(
           _mobileGameApp,
           'game_launcher',
@@ -422,7 +422,7 @@ class SettingsPageState extends State<SettingsPage> {
         ),
         SettingsTile(
           title: const Text('Clear Cache', style: TextStyle(color: Colors.red)),
-          leading: Icon(MdiIcons.trashCanOutline, color: Colors.red),
+          leading: const Icon(MdiIcons.trashCanOutline, color: Colors.red),
           trailing: const SizedBox.shrink(),
           enabled: !kIsWeb,
           onPressed: (context) {

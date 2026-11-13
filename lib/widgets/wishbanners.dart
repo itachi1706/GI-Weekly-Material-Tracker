@@ -12,7 +12,7 @@ import 'package:gi_weekly_material_tracker/models/characterdata.dart';
 import 'package:gi_weekly_material_tracker/models/weapondata.dart';
 import 'package:gi_weekly_material_tracker/util.dart';
 import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 final FirebaseDatabase db = FirebaseDatabase.instance;
@@ -202,20 +202,22 @@ class WishPageCard extends StatelessWidget {
 
   List<Widget> _getRateUps() {
     List<Widget> finalWidgets = [];
+    var hasRateUpChar = data.rateUpCharacters.isNotEmpty;
+    var hasRateUpWep = data.rateUpWeapons.isNotEmpty;
 
-    if (data.rateUpCharacters.isNotEmpty || data.rateUpWeapons.isNotEmpty) {
+    if (hasRateUpChar || hasRateUpWep) {
       finalWidgets.add(const Padding(padding: EdgeInsets.only(top: 10)));
       finalWidgets.add(const Text("Rate Up", style: TextStyle(fontSize: 18)));
     }
 
     List<Widget> rowChild = [];
-    if (data.rateUpCharacters.isNotEmpty) {
+    if (hasRateUpChar) {
       for (var character in data.rateUpCharacters) {
         rowChild.add(_getRateUpStack(characterInfo[character]?.image));
       }
     }
 
-    if (data.rateUpWeapons.isNotEmpty) {
+    if (hasRateUpWep) {
       for (var weapon in data.rateUpWeapons) {
         rowChild.add(_getRateUpStack(weaponInfo[weapon]?.image));
       }
@@ -245,7 +247,7 @@ class WishPageCard extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           GridData.getImageAssetFromFirebase(imageUrl, height: 32),
-          Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20),
+          const Icon(MdiIcons.arrowUpBold, color: Colors.green, size: 20),
         ],
       ),
     );
@@ -458,10 +460,7 @@ class BannerInfoPageState extends State<BannerInfoPage> {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Row(
               children: [
-                const Text(
-                  '5* RATES',
-                  style: TextStyle(fontWeight: .bold),
-                ),
+                const Text('5* RATES', style: TextStyle(fontWeight: .bold)),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Text(

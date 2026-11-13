@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gi_weekly_material_tracker/helpers/grid.dart';
@@ -8,7 +9,6 @@ import 'package:gi_weekly_material_tracker/widgets/drawer.dart';
 import 'package:gi_weekly_material_tracker/widgets/materials.dart';
 import 'package:gi_weekly_material_tracker/widgets/tracking.dart';
 import 'package:gi_weekly_material_tracker/widgets/weapons.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class TrackingPage extends StatefulWidget {
   final String? title;
@@ -55,7 +55,7 @@ class TrackingPageState extends State<TrackingPage>
         bottom: _showAppBar() as PreferredSizeWidget?,
         actions: [
           IconButton(
-            icon: Icon(MdiIcons.fileDocument),
+            icon: const Icon(MdiIcons.fileDocument),
             tooltip: 'View Consolidated Material List',
             onPressed: () => Get.toNamed('/globalTracking'),
           ),
@@ -237,8 +237,8 @@ class DictionaryPageState extends State<DictionaryPage>
             icon: Icon(Icons.account_circle),
             label: 'Characters',
           ),
-          NavigationDestination(icon: Icon(MdiIcons.sword), label: 'Weapons'),
-          NavigationDestination(
+          const NavigationDestination(icon: Icon(MdiIcons.sword), label: 'Weapons'),
+          const NavigationDestination(
             icon: Icon(MdiIcons.diamondStone),
             label: 'Materials',
           ),
